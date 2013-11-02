@@ -1,0 +1,51 @@
+* Upgrade Drupal 7 core, modules, or themes
+  Only do one on any given pass.
+** Log in as root (will need later)
+   ???
+** Set site to offline
+   admin/config/development/maintenance 
+** Disable contributed modules (may take several passes)
+   Chaos tools
+   IMCE
+   OAuth
+   Advanced help
+   Libraries
+   Pathauto
+   Token
+   Twitter
+   Twitter Post
+   CAPTCHA
+   Image CAPTCHA
+   reCAPTCHA
+   Google Analysis
+   jQuery Update
+   Views
+   Views UI   
+** Upgrade modules
+*** Get an unpack new module(s)
+    wget http://ftp.drupal.org/files/projects/recaptcha-7.x-1.10.tar.gz
+    tar -zxvf recaptcha-7.x-1.10.tar.gz
+*** Juggle with old version of module, while saving it
+    mv htdocs/sites/all/modules/recaptcha ./recaptcha-7.x-1.9
+    mv recaptcha htdocs/sites/all/modules/
+** Upgrade themes
+   Essentially the same as modules.
+** Upgrade Drupal
+*** Get and unpack new drupal
+   wget <new drupal>
+   tar -zxvf <new drupal>
+*** Juggle old and new directories
+   mv htdocs drupal-7.YY
+   mv drupal-7.XX htdocs
+*** Move "sites"
+   mv htdocs/sites htdocs/sites.orig
+   mv drupal-7.YY/sites htdocs
+*** Move misc.
+   mv htdocs/.htaccess htdocs/.htaccess.orig
+   mv drupal-7.YY/.htaccess htdocs
+** Go directly to update.php
+   update.php
+** Enable contributed modules (same as above)
+   admin/modules
+** Set site to online
+   admin/config/development/maintenance
