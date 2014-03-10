@@ -1,0 +1,7 @@
+
+.ui-autocomplete {
+    list-style-type: none;
+    padding:0;
+    margin: 2px;
+    width: 20em;
+}
