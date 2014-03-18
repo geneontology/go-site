@@ -6,9 +6,14 @@
    admin/config/development/maintenance 
 ** Disable contributed modules (may take several passes)
    Chaos tools
+   #Facebook API
+   #Facebook Apps
+   #FB Streams
+   #FB Extended Permissions
    IMCE
    OAuth
    Advanced help
+   Invisimail
    Libraries
    Pathauto
    Token
@@ -20,7 +25,8 @@
    Google Analysis
    jQuery Update
    Views
-   Views UI   
+   Views UI
+   Webforms
 ** Upgrade modules
 *** Get an unpack new module(s)
     wget http://ftp.drupal.org/files/projects/recaptcha-7.x-1.10.tar.gz
