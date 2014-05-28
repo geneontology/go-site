@@ -55,9 +55,15 @@
 **** Move "sites"
      mv htdocs/sites htdocs/sites.orig
      mv drupal-7.YY/sites htdocs
-**** Move misc.
+**** Move .htaccess files
      mv htdocs/.htaccess htdocs/.htaccess.orig
      mv drupal-7.YY/.htaccess htdocs
+     mv htdocs/sites/default/files/.htaccess htdocs/sites/default/files/.htaccess.orig
+     mv drupal-7.YY/sites/default/files/.htaccess htdocs/sites/default/files/.htaccess
+     ---
+     Make sure that http://drupal.org/SA-CORE-2013-003 is in the 
+     temporary files directory.
+     See /admin/reports/status for details.
 *** Go directly to update.php
     /update.php
     Check error log: /admin/reports/dblog
