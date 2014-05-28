@@ -45,7 +45,7 @@
    : sudo service apache2 restart
 ** Miscellaneous niceties
 *** XSS scripting protection for http://drupal.org/SA-CORE-2013-003
-   In "/tmp/.htaccess":
+   In .htaccess in /tmp:
    #+BEGIN_EXAMPLE
    # Turn off all options we don't need.
    Options None
