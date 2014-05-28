@@ -1,19 +1,19 @@
 * Upgrade/update Drupal 7 core, modules, or themes
 ** Backup file tree and database
    For example:
-   cd /srv/www-expo && tar -cjf /srv/spideroak-export/beta/drupal-file-tree.tar.bz2 htdocs
-   mysqldump -h localhost -u dump -pPASSWORD_HERE drupal_expo | bzip2  > /srv/spideroak-export/beta/mysql.sql.bz2
+   : cd /srv/www-expo && tar -cjf /srv/spideroak-export/beta/drupal-file-tree.tar.bz2 htdocs
+   : mysqldump -h localhost -u dump -pPASSWORD_HERE drupal_expo | bzip2  > /srv/spideroak-export/beta/mysql.sql.bz2
 ** Log into Drupal as root (will need later as well)
-   make sure you have all scripts and sites enabled
+   Make sure you have all scripts and sites enabled,
 ** Set site to offline
-   /admin/config/development/maintenance 
+   At: /admin/config/development/maintenance 
 ** Disable contributed modules (may take several passes)
-   Chaos tools
-   #Facebook API
-   #Facebook Apps
-   #FB Streams
-   #FB Extended Permissions
-   Table of Contents
+   - Chaos tools
+   - #Facebook API
+   - #Facebook Apps
+   - #FB Streams
+   - #FB Extended Permissions
+   - Table of Contents
    IMCE
    OAuth
    Advanced help
@@ -35,39 +35,38 @@
    Only do one on any given pass.
 *** Upgrade modules
 **** Get an unpack new module(s)
-     for example:
-     wget http://ftp.drupal.org/files/projects/recaptcha-7.x-1.10.tar.gz
-     tar -zxvf recaptcha-7.x-1.10.tar.gz
+     For example:
+     : wget http://ftp.drupal.org/files/projects/recaptcha-7.x-1.10.tar.gz
+     : tar -zxvf recaptcha-7.x-1.10.tar.gz
 **** Juggle with old version of module, while saving it
      For example:
-     mv htdocs/sites/all/modules/recaptcha ./recaptcha-7.x-1.9
-     mv recaptcha htdocs/sites/all/modules/
+     : mv htdocs/sites/all/modules/recaptcha ./recaptcha-7.x-1.9
+     : mv recaptcha htdocs/sites/all/modules/
 *** Upgrade themes
     Essentially the same as modules. For our Bootstrap and JS
     overlays, see the special instructions for them.
 *** Upgrade Drupal
 **** Get and unpack new drupal
-     wget <new drupal>
-     tar -zxvf <new drupal>
+     : wget <new drupal>
+     : tar -zxvf <new drupal>
 **** Juggle old and new directories
-     mv htdocs drupal-7.YY
-     mv drupal-7.XX htdocs
+     : mv htdocs drupal-7.YY
+     : mv drupal-7.XX htdocs
 **** Move "sites"
-     mv htdocs/sites htdocs/sites.orig
-     mv drupal-7.YY/sites htdocs
+     : mv htdocs/sites htdocs/sites.orig
+     : mv drupal-7.YY/sites htdocs
 **** Move .htaccess files
-     mv htdocs/.htaccess htdocs/.htaccess.orig
-     mv drupal-7.YY/.htaccess htdocs
-     mv htdocs/sites/default/files/.htaccess htdocs/sites/default/files/.htaccess.orig
-     mv drupal-7.YY/sites/default/files/.htaccess htdocs/sites/default/files/.htaccess
-     ---
+     : mv htdocs/.htaccess htdocs/.htaccess.orig
+     : mv drupal-7.YY/.htaccess htdocs
+     : mv htdocs/sites/default/files/.htaccess htdocs/sites/default/files/.htaccess.orig
+     : mv drupal-7.YY/sites/default/files/.htaccess htdocs/sites/default/files/.htaccess
      Make sure that http://drupal.org/SA-CORE-2013-003 is in the 
      temporary files directory.
-     See /admin/reports/status for details.
+     See: /admin/reports/status for details.
 *** Go directly to update.php
-    /update.php
+    At: /update.php.
     Check error log: /admin/reports/dblog
 ** Enable contributed modules (same as above)
-   /admin/modules
+   At: /admin/modules
 ** Set site to online
-   /admin/config/development/maintenance
+   At: /admin/config/development/maintenance
