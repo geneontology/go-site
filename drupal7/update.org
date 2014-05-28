@@ -14,23 +14,23 @@
    - #FB Streams
    - #FB Extended Permissions
    - Table of Contents
-   IMCE
-   OAuth
-   Advanced help
-   Invisimail
-   Libraries
-   Pathauto
-   Token
-   Twitter
-   Twitter Post
-   CAPTCHA
-   Image CAPTCHA
-   reCAPTCHA
-   Google Analytics
-   jQuery Update
-   Views
-   Views UI
-   Webforms
+   - IMCE
+   - OAuth
+   - Advanced help
+   - Invisimail
+   - Libraries
+   - Pathauto
+   - Token
+   - Twitter
+   - Twitter Post
+   - CAPTCHA
+   - Image CAPTCHA
+   - reCAPTCHA
+   - Google Analytics
+   - jQuery Update
+   - Views
+   - Views UI
+   - Webforms
 ** Upgrade
    Only do one on any given pass.
 *** Upgrade modules
