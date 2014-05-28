@@ -45,7 +45,7 @@
    : sudo service apache2 restart
 ** Miscellaneous niceties
 *** XSS scripting protection for http://drupal.org/SA-CORE-2013-003
-   In \/tmp/.htaccess:
+   In "/tmp/.htaccess":
    #+BEGIN_EXAMPLE
    # Turn off all options we don't need.
    Options None
@@ -67,6 +67,6 @@
    #+END_EXAMPLE
 *** Cron
     Will need something like the following (from Drupal internal
-    instrcutions):
+    instructions):
    : 00 23 * * * wget -qO- http://???/cron.php?cron_key=??? &> /dev/null
 
