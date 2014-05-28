@@ -1,6 +1,9 @@
-* Upgrade Drupal 7 core, modules, or themes
-** Backup everything
-** Log in as root (will need later as well)
+* Upgrade/update Drupal 7 core, modules, or themes
+** Backup file tree and database
+   For example:
+   cd /srv/www-expo && tar -cjf /srv/spideroak-export/beta/drupal-file-tree.tar.bz2 htdocs
+   mysqldump -h localhost -u dump -pPASSWORD_HERE drupal_expo | bzip2  > /srv/spideroak-export/beta/mysql.sql.bz2
+** Log into Drupal as root (will need later as well)
    make sure you have all scripts and sites enabled
 ** Set site to offline
    /admin/config/development/maintenance 
