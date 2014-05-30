@@ -20,9 +20,11 @@
    - Invisimail
    - Libraries
    - Pathauto
+   - Redirect
    - Token
    - Twitter
    - Twitter Post
+   - Global Redirect
    - CAPTCHA
    - Image CAPTCHA
    - reCAPTCHA
