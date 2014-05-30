@@ -25,7 +25,8 @@
    htdocs/sites/default/settings.php.
 ** Apache 2 setup
    : sudo a2enmod rewrite
-   Change in default configuration in /etc/apache2/sites-enabled/000-default.conf:
+   Make the necessary changes in the default configuration in
+   /etc/apache2/sites-available/000-default.conf:
    : #DocumentRoot /var/www/html
    : DocumentRoot /srv/go-site/htdocs
    : <Directory /srv/go-site/htdocs>
