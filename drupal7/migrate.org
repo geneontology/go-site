@@ -1,7 +1,7 @@
 * How to get the GO site going from the file tarball and DB dump
   Using a clean Ubuntu AWS 14.04 image as the example.
 ** Packages
-   : sudo apt-get -u install apache2 apache2-utils php5-gd mysql-client mysql-server libapache2-mod-php5 php5-mysql
+   : sudo apt-get -u install apache2 apache2-utils php5-gd mysql-client mysql-server libapache2-mod-php5 php5-mysql php5-curl
    And because we're not savages:
    : sudo apt-get -u install emacs24 emacs24-el
 ** Directory layout and file tree
