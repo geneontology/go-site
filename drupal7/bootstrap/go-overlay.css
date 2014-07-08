@@ -4,7 +4,7 @@
     padding:0;
     margin: 2px;
     width: 20em;
-    /* These is to fix some quirks that are showing up on Macs. */
+    /* These are to fix some quirks that are showing up on Macs. */
     /* Maybe a platform-specific stylesheet? */
     background-color: white;
     border-color: #bbbbbb;
@@ -12,11 +12,17 @@
     border-style: solid;
 }
 
-/* This is to fix some quirks that are showing up on Macs. */
+/* These two are to fix some quirks that are showing up on Macs. */
 /* Maybe a platform-specific stylesheet? */
 .ui-helper-hidden-accessible {
     visibility: hidden;
     display: none;
+}
+a.ui-state-focus {
+    background-color: #eeeeee;
+    border-color: #aaaaaa;
+    border-width: 1px;
+    border-style: solid;
 }
 
 .book-navigation {
