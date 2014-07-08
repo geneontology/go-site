@@ -4,10 +4,19 @@
     padding:0;
     margin: 2px;
     width: 20em;
+    /* These is to fix some quirks that are showing up on Macs. */
+    /* Maybe a platform-specific stylesheet? */
     background-color: white;
     border-color: #bbbbbb;
     border-width: 1px;
     border-style: solid;
+}
+
+/* This is to fix some quirks that are showing up on Macs. */
+/* Maybe a platform-specific stylesheet? */
+.ui-helper-hidden-accessible {
+    visibility: hidden;
+    display: none;
 }
 
 .book-navigation {
