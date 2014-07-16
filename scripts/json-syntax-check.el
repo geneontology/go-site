@@ -9,6 +9,7 @@
 ;; Check that the JSON syntax is correct in the current buffer by
 ;; reading it in and parsing it.
 (defun json-current-buffer-syntax-check ()
+  "Check the JSON syntax in the current buffer."
   (interactive)
   (condition-case nil
       (if (json-read-from-string (buffer-string)) t nil)))
