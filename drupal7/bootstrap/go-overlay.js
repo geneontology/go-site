@@ -130,14 +130,14 @@ function GOOverlayInit(){
 
       var tcache = [
 	//'<table class="table table-striped table-bordered table-hover table-condensed">',
-	'<table class="table table-striped table-bordered table-hover">',
+	'<table id="sortable-download-table" class="table table-striped table-bordered table-hover">',
 	'<thead>',
 	'<tr>',
-	'<td>Species/Database</td>',
-	'<td>Gene&nbsp;products annotated</td>',
-	'<td>Annotations</td>',
-	'<td>Submission date</td>',
-	'<td>File</td>',
+	'<th>Species/Database<img style="border: 0px;" src="http://a2-static1.stanford.edu/images/reorder.gif" title="Reorder" alt="[Reorder]" /></th>',
+	'<th>Gene&nbsp;products annotated<img style="border: 0px;" src="http://a2-static1.stanford.edu/images/reorder.gif" title="Reorder" alt="[Reorder]" /></th>',
+	'<th>Annotations</th>',
+	'<th>Submission date<img style="border: 0px;" src="http://a2-static1.stanford.edu/images/reorder.gif" title="Reorder" alt="[Reorder]" /></th>',
+	'<th>File</th>',
 	'</tr>',
 	'</thead>',
 	'<tbody>',
@@ -148,6 +148,7 @@ function GOOverlayInit(){
 
       jQuery(gamt).empty();
       jQuery(gamt).append(tcache.join(''));
+      jQuery('#sortable-download-table').tablesorter();
     }
   }
 }

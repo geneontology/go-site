@@ -139,6 +139,7 @@ stylesheets[all][] = bbop.css
 ;;stylesheets[all][] = amigo2.css
 stylesheets[all][] = go-overlay.css
 scripts[] = jquery-ui-1.10.3.custom.min.js
+scripts[] = jquery.tablesorter.min.js
 scripts[] = bbop.js
 scripts[] = amigo2.js
 scripts[] = go-overlay.js
