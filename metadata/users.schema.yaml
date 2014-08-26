@@ -1,0 +1,31 @@
+####
+#### Use kwalify and this schema to validate the config files.
+#### Example:
+####    kwalify -f ./config/users.schema.yaml ./config/users.yaml
+####
+type: seq
+sequence:
+  - type: map
+    mapping:
+      "email-md5":
+        type: str
+        required: true
+      "xref":
+        type: str
+        required: true
+      "nickname":
+        type: str
+        required: true
+      "orcid":
+        type: str
+        required: false
+      "authorizations":
+        type: map
+        required: false
+        mapping:
+          "termgenie-go":
+            type: str
+            required: false
+          "minerva-go":
+            type: bool
+            required: false
