@@ -1,443 +1,560 @@
 -
   nickname: 'Huaiyu Mi'
-  email-md5: 7e66eb2d15fe29c8a051e43000cc681c
+  email-md5:
+    - 7e66eb2d15fe29c8a051e43000cc681c
   authorizations:
     minerva-go: true
   xref: 'GOC:hm'
+  uri: 'GOC:hm'
 -
   nickname: 'Seth Carbon'
-  email-md5: 65d762aea47eaf21e2b19177f448b3c3
+  email-md5:
+    - 65d762aea47eaf21e2b19177f448b3c3
   authorizations:
     minerva-go: true
   xref: 'GOC:sjc'
+  uri: 'GOC:sjc'
 -
   nickname: 'Heiko Dietze'
-  email-md5: 61ab06ea85d8658a7e17cc30295dafbd
+  email-md5:
+    - 61ab06ea85d8658a7e17cc30295dafbd
   authorizations:
     minerva-go: true
   xref: 'GOC:hd'
-  orcid: 'http://orcid.org/0000-0003-0234-1688'
+  uri: 'http://orcid.org/0000-0003-0234-1688'
 -
   nickname: 'Chris Mungall'
-  email-md5: 5611a7dfafec2dfcc4c6da9fa5ce7a84
+  email-md5:
+    - 5611a7dfafec2dfcc4c6da9fa5ce7a84
   authorizations:
     minerva-go: true
   xref: 'GOC:cjm'
-  orcid: 'http://orcid.org/0000-0002-6601-2165'
+  uri: 'http://orcid.org/0000-0002-6601-2165'
 -
   nickname: 'David P. Hill'
-  email-md5: 65769275d47653aced3fae5ab1f805b1
+  email-md5:
+    - 65769275d47653aced3fae5ab1f805b1
   authorizations:
     minerva-go: true
   xref: 'GOC:dph'
-  orcid: 'http://orcid.org/0000-0001-7476-6306'
+  uri: 'http://orcid.org/0000-0001-7476-6306'
 -
   nickname: 'Tanya Berardini'
-  email-md5: 82fc9d312d1ed22725cb4ecd55df6878
+  email-md5:
+    - 82fc9d312d1ed22725cb4ecd55df6878
   authorizations:
     minerva-go: true
   xref: 'GOC:tb'
-  orcid: 'http://orcid.org/0000-0002-3837-8864'
+  uri: 'http://orcid.org/0000-0002-3837-8864'
 -
   nickname: 'Paola Roncaglia'
-  email-md5: 98ca4b42efb7564953508c74394d8634
+  email-md5:
+    - 98ca4b42efb7564953508c74394d8634
   authorizations:
     minerva-go: true
   xref: 'GOC:pr'
-  orcid: 'http://orcid.org/0000-0002-2825-0621'
+  uri: 'http://orcid.org/0000-0002-2825-0621'
 -
   nickname: 'Rebecca Foulger'
-  email-md5: 67660068792406332d36a17cd886a5e6
+  email-md5:
+    - 67660068792406332d36a17cd886a5e6
   authorizations:
     minerva-go: true
   xref: 'GOC:bf'
-  orcid: 'http://orcid.org/0000-0001-8682-8754'
+  uri: 'http://orcid.org/0000-0001-8682-8754'
 -
   nickname: 'Amelia Ireland'
-  email-md5: 84a9c2d76c17fb92ae022b1b80fe0b27
+  email-md5:
+    - 84a9c2d76c17fb92ae022b1b80fe0b27
   authorizations: {  }
   xref: 'GOC:ai'
+  uri: 'GOC:ai'
 -
   nickname: 'Harold Drabkin'
-  email-md5: 9bac0f35f8afc5a22677fa7c950b681d
+  email-md5:
+    - 9bac0f35f8afc5a22677fa7c950b681d
   authorizations:
     minerva-go: true
   xref: 'GOC:hjd'
+  uri: 'GOC:hjd'
 -
   nickname: 'Jane Lomax'
-  email-md5: dad114c06bf7c24dd3aeeedf79fe8168
+  email-md5:
+    - dad114c06bf7c24dd3aeeedf79fe8168
   authorizations:
     minerva-go: true
   xref: 'GOC:jl'
-  orcid: 'http://orcid.org/0000-0001-8865-4321'
+  uri: 'http://orcid.org/0000-0001-8865-4321'
 -
   nickname: 'Kimberly Van Auken'
-  email-md5: 52a4b1e1f8519d5ad27335e0b920eb7e
+  email-md5:
+    - 52a4b1e1f8519d5ad27335e0b920eb7e
   authorizations:
     minerva-go: true
   xref: 'GOC:kmv'
+  uri: 'GOC:kmv'
 -
   nickname: 'Donghui Li'
-  email-md5: 956bb66ec7d213352c0d751377cb299a
+  email-md5:
+    - 956bb66ec7d213352c0d751377cb299a
   authorizations:
     minerva-go: true
   xref: 'GOC:dhl'
+  uri: 'GOC:dhl'
 -
   nickname: 'Karen Christie'
-  email-md5: af6c0d66acf0836edf60f3e8b1e6b7c9
+  email-md5:
+    - af6c0d66acf0836edf60f3e8b1e6b7c9
   authorizations:
     minerva-go: true
   xref: 'GOC:krc'
+  uri: 'GOC:krc'
 -
   nickname: 'Stacia Engel'
-  email-md5: 8688146764c94ec2dad5b1a47b047c73
+  email-md5:
+    - 8688146764c94ec2dad5b1a47b047c73
   authorizations:
     minerva-go: true
   xref: 'GOC:se'
-  orcid: 'http://orcid.org/0000-0001-5472-917X'
+  uri: 'http://orcid.org/0000-0001-5472-917X'
 -
   nickname: 'Midori Harris'
-  email-md5: f92c1acf7ecd91f8b798d4f4526795dd
+  email-md5:
+    - f92c1acf7ecd91f8b798d4f4526795dd
   authorizations:
     minerva-go: true
   xref: 'GOC:mah'
-  orcid: 'http://orcid.org/0000-0003-4148-4606'
+  uri: 'http://orcid.org/0000-0003-4148-4606'
 -
   nickname: 'Yasmin Alam-Faruque'
-  email-md5: dcec55f1f13d54c59c64f061dbb52797
+  email-md5:
+    - dcec55f1f13d54c59c64f061dbb52797
   authorizations:
     minerva-go: true
   xref: 'GOC:yaf'
+  uri: 'GOC:yaf'
 -
   nickname: 'Rachael Huntley'
-  email-md5: 3beee3c95e50a25e13cf834785fb2b21
+  email-md5:
+    - 3beee3c95e50a25e13cf834785fb2b21
   authorizations:
     minerva-go: true
   xref: 'GOC:rph'
+  uri: 'GOC:rph'
 -
   nickname: 'Varsha Khodiyar'
-  email-md5: 0a23c8a275ee44e7304d76fe98b7b0b1
+  email-md5:
+    - 0a23c8a275ee44e7304d76fe98b7b0b1
   authorizations: {  }
   xref: 'GOC:vk'
+  uri: 'GOC:vk'
 -
   nickname: 'Antonia Lock'
-  email-md5: 7e821339ca29fac9f47d78ce3bed1c11
+  email-md5:
+    - 7e821339ca29fac9f47d78ce3bed1c11
   authorizations:
     minerva-go: true
   xref: 'GOC:al'
-  orcid: 'http://orcid.org/0000-0003-1179-5999'
+  uri: 'http://orcid.org/0000-0003-1179-5999'
 -
   nickname: 'Pablo Porras Millan'
-  email-md5: 8a64baba4e3e7eb11dd41526530cdc30
+  email-md5:
+    - 8a64baba4e3e7eb11dd41526530cdc30
   authorizations:
     minerva-go: true
   xref: 'GOC:ppm'
+  uri: 'GOC:ppm'
 -
   nickname: 'Prudence Mutowo'
-  email-md5: c1e6bbfeb859c09c827614d106331252
+  email-md5:
+    - c1e6bbfeb859c09c827614d106331252
   authorizations:
     minerva-go: true
   xref: 'GOC:pm'
+  uri: 'GOC:pm'
 -
   nickname: 'Ruth Lovering'
-  email-md5: 87b721597d5a997234f5a8f61bde469b
+  email-md5:
+    - 87b721597d5a997234f5a8f61bde469b
   authorizations:
     minerva-go: true
   xref: 'GOC:rl'
+  uri: 'GOC:rl'
 -
   nickname: 'Susan Tweedie'
-  email-md5: b979cd6be9eec5bef6c92a1ff4173306
+  email-md5:
+    - b979cd6be9eec5bef6c92a1ff4173306
   authorizations:
     minerva-go: true
   xref: 'GOC:sart'
-  orcid: 'http://orcid.org/0000-0003-1818-8243'
+  uri: 'http://orcid.org/0000-0003-1818-8243'
 -
   nickname: 'Shur-Jen Wang'
-  email-md5: f6cb73c2299e72ab430475ba02567e49
+  email-md5:
+    - f6cb73c2299e72ab430475ba02567e49
   authorizations:
     minerva-go: true
   xref: 'GOC:sjw'
+  uri: 'GOC:sjw'
 -
   nickname: 'Diane Inglis'
-  email-md5: 601f7b3e4f8165ba4be5057e65143f76
+  email-md5:
+    - 601f7b3e4f8165ba4be5057e65143f76
   authorizations:
     minerva-go: true
   xref: 'GOC:di'
+  uri: 'GOC:di'
 -
   nickname: 'Maria Costanzo'
-  email-md5: 0049fc37c812f45193a4500186dd622a
+  email-md5:
+    - 0049fc37c812f45193a4500186dd622a
   authorizations:
     minerva-go: true
   xref: 'GOC:mcc'
-  orcid: 'http://orcid.org/0000-0001-9043-693X'
+  uri: 'http://orcid.org/0000-0001-9043-693X'
 -
   nickname: 'Stan Laulederkind'
-  email-md5: f9d6b79638672cdbba515fb1e60b81e8
+  email-md5:
+    - f9d6b79638672cdbba515fb1e60b81e8
   authorizations:
     minerva-go: true
   xref: 'GOC:sl'
+  uri: 'GOC:sl'
 -
   nickname: 'Selina Dwight'
-  email-md5: 5cf46e6664c70bd80092a55367950f2d
+  email-md5:
+    - 5cf46e6664c70bd80092a55367950f2d
   authorizations:
     minerva-go: true
   xref: 'GOC:ss'
+  uri: 'GOC:ss'
 -
   nickname: 'Val Wood'
-  email-md5: 945b113a7c06ea578318b77dbc31d990
+  email-md5:
+    - 945b113a7c06ea578318b77dbc31d990
   authorizations:
     minerva-go: true
   xref: 'GOC:vw'
-  orcid: 'http://orcid.org/0000-0001-6330-7526'
+  uri: 'http://orcid.org/0000-0001-6330-7526'
 -
   nickname: 'Trudy Torto'
-  email-md5: b7c9c4fec6813374ff3ffa10b7e0be1b
+  email-md5:
+    - b7c9c4fec6813374ff3ffa10b7e0be1b
   authorizations:
     minerva-go: true
   xref: 'GOC:tt'
+  uri: 'GOC:tt'
 -
   nickname: 'Jodi Hirschman'
-  email-md5: db80b5b690c934af872903cdc4985a22
+  email-md5:
+    - db80b5b690c934af872903cdc4985a22
   authorizations:
     minerva-go: true
   xref: 'GOC:jh'
+  uri: 'GOC:jh'
 -
   nickname: 'Dianna Fisk'
-  email-md5: ce6b7d80ecad08852a1c06bf24fb7f5a
+  email-md5:
+    - ce6b7d80ecad08852a1c06bf24fb7f5a
   authorizations:
     minerva-go: true
   xref: 'GOC:dgf'
+  uri: 'GOC:dgf'
 -
   nickname: 'Robert Dodson'
-  email-md5: 0187a194e1fe3ce4482be77cdfe32c79
+  email-md5:
+    - 0187a194e1fe3ce4482be77cdfe32c79
   authorizations:
     minerva-go: true
   xref: 'GOC:rjd'
+  uri: 'GOC:rjd'
 -
   nickname: 'Lionel Breuza'
-  email-md5: 3bda03dbc02aa0fb8467c81beb5481b6
+  email-md5:
+    - 3bda03dbc02aa0fb8467c81beb5481b6
   authorizations:
     minerva-go: true
   xref: 'GOC:lb'
+  uri: 'GOC:lb'
 -
   nickname: 'Rama Balakrishnan'
-  email-md5: a7c69cee7738a961f8bf5c0f9a9ff874
+  email-md5:
+    - a7c69cee7738a961f8bf5c0f9a9ff874
   authorizations:
     minerva-go: true
   xref: 'GOC:rb'
-  orcid: 'http://orcid.org/0000-0003-2468-9933'
+  uri: 'http://orcid.org/0000-0003-2468-9933'
 -
   nickname: 'Brenley McIntosh'
-  email-md5: 439abe0f9680c9b6a016f44e23d2e3a4
+  email-md5:
+    - 439abe0f9680c9b6a016f44e23d2e3a4
   authorizations:
     minerva-go: true
   xref: 'GOC:bm'
+  uri: 'GOC:bm'
 -
   nickname: 'Claudia Rato da Silva'
-  email-md5: 53a33cd048b9032e65454b9672b7fd4f
+  email-md5:
+    - 53a33cd048b9032e65454b9672b7fd4f
   authorizations:
     minerva-go: true
   xref: 'GOC:crds'
+  uri: 'GOC:crds'
 -
   nickname: 'Alan Bridge'
-  email-md5: dc11dd680545ac2aa73044fc222db268
+  email-md5:
+    - dc11dd680545ac2aa73044fc222db268
   authorizations:
     minerva-go: true
   xref: 'GOC:ab'
+  uri: 'GOC:ab'
 -
   nickname: 'Ranjana Kishore'
-  email-md5: 12e3a61abf80a74384cf251641d48fd0
+  email-md5:
+    - 12e3a61abf80a74384cf251641d48fd0
   authorizations:
     minerva-go: true
   xref: 'GOC:rk'
+  uri: 'GOC:rk'
 -
   nickname: 'David Fashena'
-  email-md5: 98719862c7d4df82e2866cea63eaefb0
+  email-md5:
+    - 98719862c7d4df82e2866cea63eaefb0
   authorizations:
     minerva-go: true
   xref: 'GOC:dsf'
+  uri: 'GOC:dsf'
 -
   nickname: 'Helen Parkinson'
-  email-md5: ca849fa17a251946fc841296544f14f1
+  email-md5:
+    - ca849fa17a251946fc841296544f14f1
   authorizations:
     minerva-go: true
   xref: 'GOC:hp'
+  uri: 'GOC:hp'
 -
   nickname: 'Laurel Cooper'
-  email-md5: f89228b8459a2a5bb6c8b0c25d611e0d
+  email-md5:
+    - f89228b8459a2a5bb6c8b0c25d611e0d
   authorizations:
     minerva-go: true
   xref: 'GOC:lc'
+  uri: 'GOC:lc'
 -
   nickname: 'Andre Stutz'
-  email-md5: 69e41e8a803dd018c7e7073e0b0fd3f3
+  email-md5:
+    - 69e41e8a803dd018c7e7073e0b0fd3f3
   authorizations:
     minerva-go: true
   xref: 'GOC:ans'
+  uri: 'GOC:ans'
 -
   nickname: 'Michel Schneider'
-  email-md5: d5ba5a1fe3db79ae75578d3e7783ac94
+  email-md5:
+    - d5ba5a1fe3db79ae75578d3e7783ac94
   authorizations:
     minerva-go: true
   xref: 'GOC:ms'
+  uri: 'GOC:ms'
 -
   nickname: 'Peter D''Eustachio'
-  email-md5: ba0ab426088546c5a9acf014a722fdd5
+  email-md5:
+    - ba0ab426088546c5a9acf014a722fdd5
   authorizations:
     minerva-go: true
   xref: 'GOC:pde'
+  uri: 'GOC:pde'
 -
   nickname: 'Pascale Gaudet'
-  email-md5: 55e50a7c9ce412fdcbdfbb57caeb0aaa
+  email-md5:
+    - 55e50a7c9ce412fdcbdfbb57caeb0aaa
+    - e92521fb31f573641b4bdd6b9b7b088b
   authorizations:
     minerva-go: true
   xref: 'GOC:pg'
-  orcid: 'http://orcid.org/0000-0003-1813-6857'
--
-  nickname: 'Pascale Gaudet'
-  email-md5: e92521fb31f573641b4bdd6b9b7b088b
-  authorizations:
-    minerva-go: true
-  xref: 'GOC:pg'
-  orcid: 'http://orcid.org/0000-0003-1813-6857'
+  uri: 'http://orcid.org/0000-0003-1813-6857'
 -
   nickname: 'Michele Magrane'
-  email-md5: 2ae8276bb8b2eb2a2f62ad6361d2af6d
+  email-md5:
+    - 2ae8276bb8b2eb2a2f62ad6361d2af6d
   authorizations:
     minerva-go: true
   xref: 'GOC:mm2'
+  uri: 'GOC:mm2'
 -
   nickname: 'Doug Howe'
-  email-md5: fe3f8f564f46c7b5876f76d86089e71c
+  email-md5:
+    - fe3f8f564f46c7b5876f76d86089e71c
   authorizations:
     minerva-go: true
   xref: 'GOC:dgh'
-  orcid: 'http://orcid.org/0000-0001-5831-7439'
+  uri: 'http://orcid.org/0000-0001-5831-7439'
 -
   nickname: 'Sylvain Poux'
-  email-md5: dc9b175604eafb96720c1a6ca7980cd4
+  email-md5:
+    - dc9b175604eafb96720c1a6ca7980cd4
   authorizations:
     minerva-go: true
   xref: 'GOC:sp'
+  uri: 'GOC:sp'
 -
   nickname: 'Mary L. Schaeffer'
-  email-md5: 024f54a93edddb9690970c2281f728b7
+  email-md5:
+    - 024f54a93edddb9690970c2281f728b7
   authorizations:
     minerva-go: true
   xref: 'GOC:mls'
+  uri: 'GOC:mls'
 -
   nickname: 'Birgit Melda'
-  email-md5: f8b0b6bba244b89fd625b8994bdd1744
+  email-md5:
+    - f8b0b6bba244b89fd625b8994bdd1744
   authorizations:
     minerva-go: true
   xref: 'GOC:bhm'
+  uri: 'GOC:bhm'
 -
   nickname: 'Anne Estreicher'
-  email-md5: b656cb1ab16819a79c770231982988f1
+  email-md5:
+    - b656cb1ab16819a79c770231982988f1
   authorizations:
     minerva-go: true
   xref: 'GOC:ae'
+  uri: 'GOC:ae'
 -
   nickname: 'Guillaume Keller'
-  email-md5: f3c8177c584faab5eae5d6a411a91976
+  email-md5:
+    - f3c8177c584faab5eae5d6a411a91976
   authorizations:
     minerva-go: true
   xref: 'GOC:gk'
+  uri: 'GOC:gk'
 -
   nickname: 'Elena Cibrian Uhalte'
-  email-md5: 1d5e7a8509c6a8bc9d5472b1ff5f570d
+  email-md5:
+    - 1d5e7a8509c6a8bc9d5472b1ff5f570d
   authorizations:
     minerva-go: true
   xref: 'GOC:ecu'
+  uri: 'GOC:ecu'
 -
   nickname: 'Ursula Hinz'
-  email-md5: 8796f95a22eb1783692cb06d8c69d190
+  email-md5:
+    - 8796f95a22eb1783692cb06d8c69d190
   authorizations:
     minerva-go: true
   xref: 'GOC:uh'
+  uri: 'GOC:uh'
 -
   nickname: 'David Osumi-Sutherland'
-  email-md5: 3e373dc40c5b80696bed3d0987fea2dc
+  email-md5:
+    - 3e373dc40c5b80696bed3d0987fea2dc
   authorizations:
     minerva-go: true
   xref: 'GOC:dos'
+  uri: 'GOC:dos'
 -
   nickname: 'Magdalen Lindeberg'
-  email-md5: ab543d1ed0770d00f679aa6df6bb4048
+  email-md5:
+    - ab543d1ed0770d00f679aa6df6bb4048
   authorizations:
     minerva-go: true
   xref: 'GOC:ml'
+  uri: 'GOC:ml'
 -
   nickname: 'Nevila Nouspikel'
-  email-md5: 688d5d2cd34ad4eabc188653d120561b
+  email-md5:
+    - 688d5d2cd34ad4eabc188653d120561b
   authorizations:
     minerva-go: true
   xref: 'GOC:nhn'
+  uri: 'GOC:nhn'
 -
   nickname: 'Moni Munoz-Torres'
-  email-md5: 10c7ac321b4dd7fcca0c2eccc81ff78f
+  email-md5:
+    - 10c7ac321b4dd7fcca0c2eccc81ff78f
   authorizations:
     minerva-go: true
   xref: 'GOC:mmt'
+  uri: 'GOC:mmt'
 -
   nickname: 'Dani Welter'
-  email-md5: 583eaf69b34a4dcbb51d019f7eede0f0
+  email-md5:
+    - 583eaf69b34a4dcbb51d019f7eede0f0
   authorizations:
     minerva-go: true
   xref: 'GOC:dw'
-  orcid: 'http://orcid.org/0000-0003-1058-2668'
+  uri: 'http://orcid.org/0000-0003-1058-2668'
 -
   nickname: 'Anna Melidoni'
-  email-md5: ac1bfce31c215d31cd99e43281811dad
+  email-md5:
+    - ac1bfce31c215d31cd99e43281811dad
   authorizations:
     minerva-go: true
   xref: 'GOC:anm'
+  uri: 'GOC:anm'
 -
   nickname: 'Aleksandra Shypitsyna'
-  email-md5: 211b318809e38f23520d0bd64f4a2330
+  email-md5:
+    - 211b318809e38f23520d0bd64f4a2330
   authorizations:
     minerva-go: true
   xref: 'GOC:als'
+  uri: 'GOC:als'
 -
   nickname: 'Paul Denny'
-  email-md5: a72a432b85b5f44d05e2e124e5ebfd23
+  email-md5:
+    - a72a432b85b5f44d05e2e124e5ebfd23
   authorizations:
     minerva-go: true
   xref: 'GOC:pad'
+  uri: 'GOC:pad'
 -
   nickname: 'Sejal Patel'
-  email-md5: 724b4f5c03cd807d3977f8ae4c43970a
+  email-md5:
+    - 724b4f5c03cd807d3977f8ae4c43970a
   authorizations:
     minerva-go: true
   xref: 'GOC:sjp'
+  uri: 'GOC:sjp'
 -
   nickname: 'Petra Fey'
-  email-md5: 816b724b99c13b7fd733a9401f879f4e
+  email-md5:
+    - 816b724b99c13b7fd733a9401f879f4e
   authorizations:
     minerva-go: true
   xref: 'GOC:pf'
+  uri: 'GOC:pf'
 -
   nickname: 'Mike Rice'
-  email-md5: a9c277d0f6301c4d5c48bb593268536d
+  email-md5:
+    - a9c277d0f6301c4d5c48bb593268536d
   authorizations:
     minerva-go: true
   xref: 'GOC:mr'
+  uri: 'GOC:mr'
 -
   nickname: 'Anne E. Thessen'
-  email-md5: 50406c097b7cc168e38ca1980f1c4bc2
+  email-md5:
+    - 50406c097b7cc168e38ca1980f1c4bc2
   authorizations:
     minerva-go: true
   xref: 'GOC:at'
-  orcid: 'http://orcid.org/0000-0002-2908-3327?'
+  uri: 'http://orcid.org/0000-0002-2908-3327?'
 -
   nickname: 'Ingrid Keseler'
-  email-md5: af515eed93a426d45d1d01200f4e8399
+  email-md5:
+    - af515eed93a426d45d1d01200f4e8399
   authorizations:
     minerva-go: true
   xref: 'GOC:imk'
+  uri: 'GOC:imk'
 -
   nickname: 'Duncan Legge'
-  email-md5: e76fdf6a52a910f0bdd2c521f964c1d4
+  email-md5:
+    - e76fdf6a52a910f0bdd2c521f964c1d4
   authorizations:
     minerva-go: true
   xref: 'GOC:dl'
+  uri: 'GOC:dl'
+

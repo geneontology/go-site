@@ -1,24 +1,24 @@
 ####
 #### Use kwalify and this schema to validate the config files.
 #### Example:
-####    kwalify -f ./config/users.schema.yaml ./config/users.yaml
+####    kwalify -f ./metadata/users.schema.yaml ./metadata/users.yaml
 ####
 type: seq
 sequence:
   - type: map
     mapping:
-      "email-md5":
+      "uri":
         type: str
         required: true
-      "xref":
-        type: str
-        required: true
+        unique: true
       "nickname":
         type: str
         required: true
-      "orcid":
-        type: str
+      "email-md5":
+        type: seq
         required: false
+        sequence:
+          - type: str
       "authorizations":
         type: map
         required: false
@@ -29,3 +29,7 @@ sequence:
           "minerva-go":
             type: bool
             required: false
+      "xref":
+        type: str
+        required: false
+        unique: true
