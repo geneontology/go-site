@@ -1,4 +1,12 @@
 -
+  nickname: 'Paul Thomas'
+  email-md5:
+    - da10a16689cf88cb221b159bb9aefbfe
+  authorizations:
+    minerva-go: true
+  xref: 'GOC:pt'
+  uri: 'GOC:pt'
+-
   nickname: 'Huaiyu Mi'
   email-md5:
     - 7e66eb2d15fe29c8a051e43000cc681c
