@@ -1,3 +1,18 @@
+;;;
+;;; Example to get md5sum:
+;;;  echo -n blargle@argle.com | md5sum
+;;;
+;;; If no external ID, also update GO repo's:
+;;;  trunk/doc/GO.curator_dbxrefs
+;;;
+-
+  nickname: 'Dexter Pratt'
+  email-md5:
+    - 1c98b0f0a4b0dc79242cfaaf739f9cc8
+  authorizations:
+    minerva-go: true
+  xref: 'GOC:dp'
+  uri: 'GOC:dp'
 -
   nickname: 'Paul Thomas'
   email-md5:
