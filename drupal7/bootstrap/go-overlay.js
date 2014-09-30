@@ -97,7 +97,7 @@ function GOOverlayInit(){
 		}
 
 		// Get the link to the README.
-		var readme_link = readme_url + id;
+		var readme_link = readme_url + id + '.README';
 
 		// Only show one link, external get top.
 		var link = external;
@@ -124,7 +124,7 @@ function GOOverlayInit(){
 		    date,
 		    '</td>',
 		    '<td>',
-		    readme_link,
+		    '<a href="' + readme_link + '">README</a>',
 		    '</td>',
 		    '<td>',
 		    '<a href="' + link + '">' + fname + '</a>',
