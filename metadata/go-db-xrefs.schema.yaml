@@ -1,0 +1,51 @@
+####
+#### Use kwalify and this schema to validate the config files.
+#### Example:
+####    kwalify -f ./metadata/go-db-xrefs.schema.yaml ./metadata/go-db-xrefs.yaml
+####
+type: seq
+sequence:
+  - type: map
+    mapping:
+      "database":
+        type: str
+        required: true
+        unique: true
+      "synonyms":
+        type: seq
+        required: false
+        sequence:
+          - type: str
+      "name":
+        type: str
+        required: true
+      "description":
+        type: str
+        required: false
+      "generic_url":
+        type: str
+        required: true
+      "entity_types":
+        type: seq
+        required: false
+        sequence:
+          - type: map
+            mapping:
+              "type_id":
+                type: str
+                required: true
+              "type_name":
+                type: str
+                required: true
+              "id_syntax":
+                type: str
+                required: false
+              "url_syntax":
+                type: str
+                required: false
+              "example_id":
+                type: str
+                required: false
+              "example_url":
+                type: str
+                required: false
