@@ -48,13 +48,9 @@ sequence:
               "url_syntax":
                 type: str
                 required: false
-              "example_ids":
-                type: seq
+              "example_id":
+                type: str
                 required: false
-                sequence:
-                  - type: str
-              "example_urls":
-                type: seq
+              "example_url":
+                type: str
                 required: false
-                sequence:
-                  - type: str
