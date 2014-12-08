@@ -2677,13 +2677,19 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: (gene:[0-9]{7,12})|(locus:[0-9]{7})
+      id_syntax: gene:[0-9]{7,12}
       url_syntax: http://arabidopsis.org/servlets/TairObject?accession=[example_id]
       example_ids:
         - TAIR:gene:2062713
-        - TAIR:locus:2146653
       example_urls:
         - http://arabidopsis.org/servlets/TairObject?accession=gene:2062713
+    - type_name: splicing variant
+      type_id: SO:0001568
+      id_syntax: locus:[0-9]{7}
+      url_syntax: http://arabidopsis.org/servlets/TairObject?accession=[example_id]
+      example_ids:
+        - TAIR:locus:2146653
+      example_urls:
         - http://arabidopsis.org/servlets/TairObject?accession=locus:2146653
 - database: taxon
   name: NCBI Taxonomy
