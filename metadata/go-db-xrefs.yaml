@@ -2317,8 +2317,8 @@
       url_syntax: http://arabidopsis.org/servlets/TairObject?accession=[example_id]
       example_id: TAIR:gene:2062713
       example_url: http://arabidopsis.org/servlets/TairObject?accession=gene:2062713
-    - type_name: splicing variant
-      type_id: SO:0001568
+    - type_name: primary transcript
+      type_id: SO:0000185
       id_syntax: locus:[0-9]{7}
       url_syntax: http://arabidopsis.org/servlets/TairObject?accession=[example_id]
       example_id: TAIR:locus:2146653
