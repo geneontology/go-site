@@ -38,6 +38,14 @@
   xref: 'GOC:sjc'
   uri: 'GOC:sjc'
 -
+  nickname: 'Jeremy Nguyen Xuan'
+  email-md5:
+    - d62320e131b827615ba8da3decafa6f3
+  authorizations:
+    minerva-go: true
+  xref: 'GOC:jnx'
+  uri: 'GOC:jnx'
+-
   nickname: 'Heiko Dietze'
   email-md5:
     - 61ab06ea85d8658a7e17cc30295dafbd
