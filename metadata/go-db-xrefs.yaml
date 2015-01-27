@@ -14,7 +14,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^AT[MC0-5]G[0-9]{5}(\.[0-9]{1})?$
+      id_syntax: ^A[Tt][MmCc0-5][Gg][0-9]{5}(\.[0-9]{1})?$
       url_syntax: http://arabidopsis.org/servlets/TairObject?type=locus&name=[example_id]
       example_id: AGI_LocusCode:At2g17950
       example_url: http://arabidopsis.org/servlets/TairObject?type=locus&name=At2g17950
@@ -590,8 +590,8 @@
   generic_urls:
     - http://ecoliwiki.net/
   entity_types:
-    - type_name: entity
-      type_id: BET:0000000
+    - type_name: gene
+      type_id: SO:0000704
       id_syntax: ^[A-Za-z]{3,4}$
 - database: EMBL
   name: EMBL Nucleotide Sequence Database
@@ -803,6 +803,7 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: (LmjF\.\d{2}\.\d{4})|(PF3D7_\d{7})|(Tb\d+\.[A-Za-z0-9]+\.\d+)
+id_syntax: (^(LmjF|LinJ|LmxM)\.[0-9]{2}\.[0-9]{4}$)|(^PF3D7_[0-9]{7}$)|(^Tb[0-9]+\.[A-Za-z0-9]+\.[0-9]+$)|(^TcCLB\.[0-9]{6}\.[0-9]+$)
       url_syntax: http://www.genedb.org/gene/[example_id]
       example_id: PF3D7_1467300
       example_url: http://www.genedb.org/gene/PF3D7_1467300
@@ -1004,6 +1005,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
+      id_syntax: ^[0-9]+$
       url_syntax: http://www.genenames.org/data/hgnc_data.php?hgnc_id=HGNC:[example_id]
       example_id: HGNC:29
       example_url: http://www.genenames.org/data/hgnc_data.php?hgnc_id=HGNC:29
@@ -1675,8 +1677,9 @@
   generic_urls:
     - http://www.pantherdb.org/
   entity_types:
-    - type_name: entity
-      type_id: BET:0000000
+    - type_name: protein family
+      type_id: NCIT:C20130
+      id_syntax: ^PTN[0-9]{9}|PTHR[0-9]{5}_[A-Z0-9]+$
       url_syntax: http://www.pantherdb.org/panther/lookupId.jsp?id=[example_id]
       example_id: PANTHER:PTHR11455
       example_url: http://www.pantherdb.org/panther/lookupId.jsp?id=PTHR10000
@@ -2109,6 +2112,20 @@
       url_syntax: http://www.ebi.ac.uk/rhea/reaction.xhtml?id=[example_id]
       example_id: RHEA:25811
       example_url: http://www.ebi.ac.uk/rhea/reaction.xhtml?id=25811
+# - database: RNAcentral
+#   name: RNAcentral
+#   description: An international database of ncRNA sequences
+#   generic_urls:
+#     - http://rnacentral.org
+#   entity_types:
+#     - type_name: rna
+# example_id: RNAcentral:URS000047C79B_9606
+# local_id_syntax: ^URS[0-9A-F]{10}([_\/][0-9]+){0,1}$
+# url_syntax: http://rnacentral.org/rna/[example_id]
+# url_example: http://rnacentral.org/rna/URS000047C79B
+# url_example: http://rnacentral.org/rna/URS000047C79B_9606
+# url_example: http://rnacentral.org/rna/URS000047C79B/9606
+# entity_type: ??? ! RNA
 - database: RNAmods
   name: RNA Modification Database
   synonyms:
