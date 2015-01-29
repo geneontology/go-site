@@ -14,7 +14,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^A[Tt][MmCc0-5][Gg][0-9]{5}(\.[0-9]{1})?$
+      id_syntax: A[Tt][MmCc0-5][Gg][0-9]{5}(\.[0-9]{1})?
       url_syntax: http://arabidopsis.org/servlets/TairObject?type=locus&name=[example_id]
       example_id: AGI_LocusCode:At2g17950
       example_url: http://arabidopsis.org/servlets/TairObject?type=locus&name=At2g17950
@@ -80,7 +80,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^ASPL[0-9]{10}$
+      id_syntax: ASPL[0-9]{10}
       url_syntax: http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid=[example_id]
       example_id: AspGD:ASPL0000067538
       example_url: http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid=ASPL0000067538
@@ -261,7 +261,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      id_syntax: ^(CE|GH|GT|PL)\d+$
+      id_syntax: (CE|GH|GT|PL)\d+
       url_syntax: http://www.cazy.org/[example_id].html
       example_id: CAZY:PL11
       example_url: http://www.cazy.org/PL11.html
@@ -293,7 +293,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^(CAL|CAF)[0-9]{7}$
+      id_syntax: (CAL|CAF)[0-9]{7}
       url_syntax: http://www.candidagenome.org/cgi-bin/locus.pl?dbid=[example_id]
       example_id: CGD:CAL0005516
       example_url: http://www.candidagenome.org/cgi-bin/locus.pl?dbid=CAL0005516
@@ -343,7 +343,7 @@
   entity_types:
     - type_name: chemical entity
       type_id: CHEBI:24431
-      id_syntax: ^[0-9]{1,6}$
+      id_syntax: [0-9]{1,6}
       url_syntax: http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:[example_id]
       example_id: CHEBI:17234
       example_url: http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:17234
@@ -354,7 +354,7 @@
   entity_types:
     - type_name: cell
       type_id: GO:0005623
-      id_syntax: ^[0-9]{7}$
+      id_syntax: [0-9]{7}
       url_syntax: http://purl.obolibrary.org/obo/CL_[example_id]
       example_id: CL:0000041
       example_url: http://purl.obolibrary.org/obo/CL_0000041
@@ -423,7 +423,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      id_syntax: ^\d+$
+      id_syntax: \d+
       url_syntax: http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=[example_id]
       example_id: dbSNP:rs3131969
       example_url: http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=rs3131969
@@ -463,7 +463,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^DDB_G[0-9]{7}$
+      id_syntax: DDB_G[0-9]{7}
       url_syntax: http://dictybase.org/gene/[example_id]
       example_id: dictyBase:DDB_G0277859
       example_url: http://dictybase.org/gene/DDB_G0277859
@@ -496,7 +496,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      id_syntax: ^10\.[0-9]+\/.*$
+      id_syntax: 10\.[0-9]+\/.*
       url_syntax: http://dx.doi.org/DOI:[example_id]
       example_id: DOI:10.1016/S0963-9969(99)00021-6
       example_url: http://dx.doi.org/DOI:10.1016/S0963-9969(99)00021-6
@@ -518,7 +518,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^EB[0-9]{4}$
+      id_syntax: EB[0-9]{4}
       url_syntax: http://www.biolws1.york.ac.uk/echobase/Gene.cfm?recordID=[example_id]
       example_id: EchoBASE:EB0231
       example_url: http://www.biolws1.york.ac.uk/echobase/Gene.cfm?recordID=EB0231
@@ -529,7 +529,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^ECK[0-9]{4}$
+      id_syntax: ECK[0-9]{4}
       url_syntax: http://www.ecogene.org/geneInfo.php?eck_id=[example_id]
       example_id: ECK:ECK3746
       example_url: http://www.ecogene.org/geneInfo.php?eck_id=ECK3746
@@ -540,16 +540,16 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      id_syntax: ^\d{7}$
+      id_syntax: \d{7}
       example_id: ECO:0000002
 - database: EcoCyc
   name: Encyclopedia of E. coli metabolism
   generic_urls:
     - http://ecocyc.org/
   entity_types:
-    - type_name: biological process
+    - type_name: biological_process
       type_id: GO:0008150
-      id_syntax: ^EG[0-9]{5}$
+      id_syntax: EG[0-9]{5}
       url_syntax: http://biocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY&object=[example_id]
       example_id: EcoCyc:P2-PWY
       example_url: http://biocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY&object=P2-PWY
@@ -572,7 +572,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^EG[0-9]{5}$
+      id_syntax: EG[0-9]{5}
       url_syntax: http://www.ecogene.org/geneInfo.php?eg_id=[example_id]
       example_id: ECOGENE:EG10818
       example_url: http://www.ecogene.org/geneInfo.php?eg_id=EG10818
@@ -592,7 +592,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^[A-Za-z]{3,4}$
+      id_syntax: [A-Za-z]{3,4}
 - database: EMBL
   name: EMBL Nucleotide Sequence Database
   description: International nucleotide sequence database collaboration, comprising EMBL-EBI nucleotide sequence data library (EMBL-Bank), DNA DataBank of Japan (DDBJ), and NCBI GenBank
@@ -601,7 +601,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^([A-Z]{1}[0-9]{5})|([A-Z]{2}[0-9]{6})|([A-Z]{4}[0-9]{8,9})$
+      id_syntax: ([A-Z]{1}[0-9]{5})|([A-Z]{2}[0-9]{6})|([A-Z]{4}[0-9]{8,9})
       url_syntax: http://www.ebi.ac.uk/cgi-bin/emblfetch?style=html&Submit=Go&id=[example_id]
       example_id: EMBL:AA816246
       example_url: http://www.ebi.ac.uk/cgi-bin/emblfetch?style=html&Submit=Go&id=AA816246
@@ -613,7 +613,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      id_syntax: ^([A-Z]{1}[0-9]{5})|([A-Z]{2}[0-9]{6})|([A-Z]{4}[0-9]{8,9})$
+      id_syntax: ([A-Z]{1}[0-9]{5})|([A-Z]{2}[0-9]{6})|([A-Z]{4}[0-9]{8,9})
       url_syntax: http://www.ebi.ac.uk/ena/data/view/[example_id]
       example_id: ENA:AA816246
       example_url: http://www.ebi.ac.uk/ena/data/view/AA816246
@@ -626,19 +626,19 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^ENS[A-Z0-9]{10,17}$
+      id_syntax: ENS[A-Z0-9]{10,17}
       url_syntax: http://www.ensembl.org/id/[example_id]
       example_id: ENSEMBL:ENSP00000265949
       example_url: http://www.ensembl.org/id/ENSP00000265949
     - type_name: protein
       type_id: PR:000000001
-      id_syntax: ^ENS[A-Z0-9]{10,17}$
+      id_syntax: ENS[A-Z0-9]{10,17}
       url_syntax: http://www.ensembl.org/id/[example_id]
       example_id: ENSEMBL:ENSP00000265949
       example_url: http://www.ensembl.org/id/ENSP00000265949
     - type_name: transcript
       type_id: SO:0000673
-      id_syntax: ^ENS[A-Z0-9]{10,17}$
+      id_syntax: ENS[A-Z0-9]{10,17}
       url_syntax: http://www.ensembl.org/id/[example_id]
       example_id: ENSEMBL:ENSP00000265949
       example_url: http://www.ensembl.org/id/ENSP00000265949
@@ -649,7 +649,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^ENSG[0-9]{9,16}$
+      id_syntax: ENSG[0-9]{9,16}
       url_syntax: http://www.ensembl.org/id/[example_id]
       example_id: ENSEMBL_GeneID:ENSG00000126016
       example_url: http://www.ensembl.org/id/ENSG00000126016
@@ -660,7 +660,7 @@
   entity_types:
     - type_name: protein
       type_id: PR:000000001
-      id_syntax: ^ENSP[0-9]{9,16}$
+      id_syntax: ENSP[0-9]{9,16}
       url_syntax: http://www.ensembl.org/id/[example_id]
       example_id: ENSEMBL_ProteinID:ENSP00000361027
       example_url: http://www.ensembl.org/id/ENSP00000361027
@@ -671,7 +671,7 @@
   entity_types:
     - type_name: transcript
       type_id: SO:0000673
-      id_syntax: ^ENST[0-9]{9,16}$
+      id_syntax: ENST[0-9]{9,16}
       url_syntax: http://www.ensembl.org/id/[example_id]
       example_id: ENSEMBL_TranscriptID:ENST00000371959
       example_url: http://www.ensembl.org/id/ENST00000371959
@@ -724,7 +724,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^FBgn[0-9]{7}$
+      id_syntax: FBgn[0-9]{7}
       url_syntax: http://flybase.org/reports/[example_id].html
       example_id: FB:FBgn0000024
       example_url: http://flybase.org/reports/FBgn0000024.html
@@ -753,7 +753,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      id_syntax: ^\d{7}$
+      id_syntax: \d{7}
       example_id: FYPO:0000001
 - database: GDB
   name: Human Genome Database
@@ -835,27 +835,27 @@
   generic_urls:
     - http://amigo.geneontology.org/
   entity_types:
-    - type_name: molecular function
+    - type_name: molecular_function
       type_id: GO:0003674
-      id_syntax: ^\d{7}$
+      id_syntax: \d{7}
       url_syntax: http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:[example_id]
       example_id: GO:0004352
       example_url: http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:0004352
-    - type_name: biological process
+    - type_name: biological_process
       type_id: GO:0008150
-      id_syntax: ^\d{7}$
+      id_syntax: \d{7}
       url_syntax: http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:[example_id]
       example_id: GO:0004352
       example_url: http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:0004352
-    - type_name: cellular component
+    - type_name: cellular_component
       type_id: GO:0005575
-      id_syntax: ^\d{7}$
+      id_syntax: \d{7}
       url_syntax: http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:[example_id]
       example_id: GO:0004352
       example_url: http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:0004352
     - type_name: macromolecular complex
       type_id: GO:0032991
-      id_syntax: ^\d{7}$
+      id_syntax: \d{7}
       url_syntax: http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:[example_id]
       example_id: GO:0004352
       example_url: http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:0004352
@@ -874,7 +874,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      id_syntax: ^\d{7}$
+      id_syntax: \d{7}
       url_syntax: http://www.geneontology.org/cgi-bin/references.cgi#GO_REF:[example_id]
       example_id: GO_REF:0000001
       example_url: http://www.geneontology.org/cgi-bin/references.cgi#GO_REF:0000001
@@ -911,7 +911,7 @@
   entity_types:
     - type_name: protein
       type_id: PR:000000001
-      id_syntax: ^[A-Z][0-9][A-Z0-9]{3}[0-9]$
+      id_syntax: [A-Z][0-9][A-Z0-9]{3}[0-9]
       url_syntax: http://www.gramene.org/db/searches/browser?search_type=All&RGN=on&query=[example_id]
       example_id: GR:sd1
       example_url: http://www.gramene.org/db/searches/browser?search_type=All&RGN=on&query=sd1
@@ -936,7 +936,7 @@
   entity_types:
     - type_name: protein
       type_id: PR:000000001
-      id_syntax: ^[A-Z][0-9][A-Z0-9]{3}[0-9]$
+      id_syntax: [A-Z][0-9][A-Z0-9]{3}[0-9]
       url_syntax: http://www.gramene.org/db/protein/protein_search?acc=[example_id]
       example_id: GR_PROTEIN:Q6VSV0
       example_url: http://www.gramene.org/db/protein/protein_search?acc=Q6VSV0
@@ -1004,7 +1004,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^[0-9]+$
+      id_syntax: [0-9]+
       url_syntax: http://www.genenames.org/data/hgnc_data.php?hgnc_id=HGNC:[example_id]
       example_id: HGNC:29
       example_url: http://www.genenames.org/data/hgnc_data.php?hgnc_id=HGNC:29
@@ -1079,13 +1079,13 @@
   entity_types:
     - type_name: molecular interaction
       type_id: BET:0000013
-      id_syntax: ^[0-9]+$
+      id_syntax: EBI-[0-9]+
       url_syntax: http://www.ebi.ac.uk/intact/search/do/search?searchString=[example_id]
       example_id: IntAct:EBI-17086
       example_url: http://www.ebi.ac.uk/intact/search/do/search?searchString=EBI-17086
     - type_name: protein complex
       type_id: GO:0043234
-      id_syntax: ^[0-9]+$
+      id_syntax: [0-9]+
       url_syntax: http://www.ebi.ac.uk/intact/search/do/search?searchString=[example_id]
       example_id: IntAct:EBI-17086
       example_url: http://www.ebi.ac.uk/intact/search/do/search?searchString=EBI-17086
@@ -1099,7 +1099,7 @@
   entity_types:
     - type_name: polypeptide region
       type_id: SO:0000839
-      id_syntax: ^IPR\d{6}$
+      id_syntax: IPR\d{6}
       url_syntax: http://www.ebi.ac.uk/interpro/entry/[example_id]
       example_id: InterPro:IPR000001
       example_url: http://www.ebi.ac.uk/interpro/entry/IPR015421
@@ -1200,9 +1200,9 @@
   generic_urls:
     - http://cmr.jcvi.org/
   entity_types:
-    - type_name: biological process
+    - type_name: biological_process
       type_id: GO:0008150
-      id_syntax: ^GenProp[0-9]{4}$
+      id_syntax: GenProp[0-9]{4}
       url_syntax: http://cmr.jcvi.org/cgi-bin/CMR/shared/GenomePropDefinition.cgi?prop_acc=[example_id]
       example_id: JCVI_GenProp:GenProp0120
       example_url: http://cmr.jcvi.org/cgi-bin/CMR/shared/GenomePropDefinition.cgi?prop_acc=GenProp0120
@@ -1263,7 +1263,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      id_syntax: ^\d(\.\d{1,2}){2}\.\d{1,3}$
+      id_syntax: \d(\.\d{1,2}){2}\.\d{1,3}
       url_syntax: http://www.genome.jp/dbget-bin/www_bget?ec:[example_id]
       example_id: KEGG_ENZYME:2.1.1.4
       example_url: http://www.genome.jp/dbget-bin/www_bget?ec:2.1.1.4
@@ -1274,7 +1274,7 @@
   entity_types:
     - type_name: chemical entity
       type_id: CHEBI:24431
-      id_syntax: ^C\d{5}$
+      id_syntax: C\d{5}
       url_syntax: http://www.genome.jp/dbget-bin/www_bget?cpd:[example_id]
       example_id: KEGG_LIGAND:C00577
       example_url: http://www.genome.jp/dbget-bin/www_bget?cpd:C00577
@@ -1295,7 +1295,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      id_syntax: ^R\d+$
+      id_syntax: R\d+
       url_syntax: http://www.genome.jp/dbget-bin/www_bget?rn:[example_id]
       example_id: KEGG:R02328
       example_url: http://www.genome.jp/dbget-bin/www_bget?rn:R02328
@@ -1346,7 +1346,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^[A-Za-z][A-Za-z0-9]*$
+      id_syntax: [A-Za-z][A-Za-z0-9]*
       url_syntax: http://www.maizegdb.org/cgi-bin/displaylocusresults.cgi?term=[example_id]
       example_id: MaizeGDB_Locus:ZmPK1
       example_url: http://www.maizegdb.org/cgi-bin/displaylocusresults.cgi?term=ZmPK1
@@ -1420,13 +1420,13 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^MGI:[0-9]{5,}$
+      id_syntax: MGI:[0-9]{5,}
       url_syntax: http://www.informatics.jax.org/accession/[example_id]
       example_id: MGI:MGI:80863
       example_url: http://www.informatics.jax.org/accession/MGI:80863
     - type_name: variation
       type_id: VariO:0001
-      id_syntax: ^MGI:[0-9]{5,}$
+      id_syntax: MGI:[0-9]{5,}
       url_syntax: http://www.informatics.jax.org/accession/[example_id]
       example_id: MGI:MGI:80863
       example_url: http://www.informatics.jax.org/accession/MGI:80863
@@ -1515,7 +1515,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^\d+$
+      id_syntax: \d+
       url_syntax: http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve&db=gene&list_uids=[example_id]
       example_id: NCBI_Gene:4771
       example_url: http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve&db=gene&list_uids=4771
@@ -1526,7 +1526,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^[0-9]{6,}$
+      id_syntax: [0-9]{6,}
       url_syntax: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=[example_id]
       example_id: NCBI_gi:113194944
       example_url: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=113194944
@@ -1537,7 +1537,7 @@
   entity_types:
     - type_name: protein
       type_id: PR:000000001
-      id_syntax: ^[A-Z]{3}[0-9]{5}(\.[0-9]+)?$
+      id_syntax: [A-Z]{3}[0-9]{5}(\.[0-9]+)?
       url_syntax: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=[example_id]
       example_id: NCBI_GP:EAL72968
       example_url: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=EAL72968
@@ -1583,7 +1583,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      id_syntax: ^\d{7}$
+      id_syntax: \d{7}
       example_id: OBI:0000038
 - database: OBO_REL
   name: OBO relation ontology
@@ -1678,7 +1678,7 @@
   entity_types:
     - type_name: protein family
       type_id: NCIT:C20130
-      id_syntax: ^PTN[0-9]{9}|PTHR[0-9]{5}_[A-Z0-9]+$
+      id_syntax: PTN[0-9]{9}|PTHR[0-9]{5}_[A-Z0-9]+
       url_syntax: http://www.pantherdb.org/panther/lookupId.jsp?id=[example_id]
       example_id: PANTHER:PTHR11455
       example_url: http://www.pantherdb.org/panther/lookupId.jsp?id=PTHR10000
@@ -1715,7 +1715,7 @@
   entity_types:
     - type_name: protein
       type_id: PR:000000001
-      id_syntax: ^[A-Za-z0-9]{4}$
+      id_syntax: [A-Za-z0-9]{4}
       url_syntax: http://www.rcsb.org/pdb/cgi/explore.cgi?pdbId=[example_id]
       example_id: PDB:1A4U
       example_url: http://www.rcsb.org/pdb/cgi/explore.cgi?pdbId=1A4U
@@ -1727,13 +1727,13 @@
   entity_types:
     - type_name: sequence feature
       type_id: SO:0000110
-      id_syntax: ^PF[0-9]{5}$
+      id_syntax: PF[0-9]{5}
       url_syntax: http://www.sanger.ac.uk/cgi-bin/Pfam/getacc?[example_id]
       example_id: Pfam:PF00046
       example_url: http://www.sanger.ac.uk/cgi-bin/Pfam/getacc?PF00046
     - type_name: polypeptide region
       type_id: SO:0000839
-      id_syntax: ^PF[0-9]{5}$
+      id_syntax: PF[0-9]{5}
       url_syntax: http://www.sanger.ac.uk/cgi-bin/Pfam/getacc?[example_id]
       example_id: Pfam:PF00046
       example_url: http://www.sanger.ac.uk/cgi-bin/Pfam/getacc?PF00046
@@ -1785,7 +1785,7 @@
   entity_types:
     - type_name: protein
       type_id: PR:000000001
-      id_syntax: ^[A-Z]{1}[0-9]{5}$
+      id_syntax: [A-Z]{1}[0-9]{5}
       url_syntax: http://pir.georgetown.edu/cgi-bin/pirwww/nbrfget?uid=[example_id]
       example_id: PIR:I49499
       example_url: http://pir.georgetown.edu/cgi-bin/pirwww/nbrfget?uid=I49499
@@ -1819,7 +1819,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      id_syntax: ^[0-9]+$
+      id_syntax: [0-9]+
       url_syntax: http://www.ncbi.nlm.nih.gov/pubmed/[example_id]
       example_id: PMID:4208797
       example_url: http://www.ncbi.nlm.nih.gov/pubmed/4208797
@@ -1830,13 +1830,13 @@
   entity_types:
     - type_name: plant anatomical entity
       type_id: PO:0025131
-      id_syntax: ^[0-9]{7}$
+      id_syntax: [0-9]{7}
       url_syntax: http://www.plantontology.org/amigo/go.cgi?action=query&view=query&search_constraint=terms&query=PO:[example_id]
       example_id: PO:0009004
       example_url: http://www.plantontology.org/amigo/go.cgi?action=query&view=query&search_constraint=terms&query=PO:0009004
     - type_name: plant structure development stage
       type_id: PO:0009012
-      id_syntax: ^[0-9]{7}$
+      id_syntax: [0-9]{7}
       url_syntax: http://www.plantontology.org/amigo/go.cgi?action=query&view=query&search_constraint=terms&query=PO:[example_id]
       example_id: PO:0009004
       example_url: http://www.plantontology.org/amigo/go.cgi?action=query&view=query&search_constraint=terms&query=PO:0009004
@@ -1864,7 +1864,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^S\w+(\.)?\w+(\.)?$
+      id_syntax: S\w+(\.)?\w+(\.)?
       url_syntax: http://www.pombase.org/spombe/result/[example_id]
       example_id: PomBase:SPBC11B10.09
       example_url: http://www.pombase.org/spombe/result/SPBC11B10.09
@@ -1892,7 +1892,7 @@
   entity_types:
     - type_name: protein
       type_id: PR:000000001
-      id_syntax: ^[0-9]{9}$
+      id_syntax: [0-9]{9}
       url_syntax: http://www.proconsortium.org/cgi-bin/pro/entry_pro?id=PR:[example_id]
       example_id: PR:000025380
       example_url: http://www.proconsortium.org/cgi-bin/pro/entry_pro?id=PR:000025380
@@ -1937,7 +1937,7 @@
   entity_types:
     - type_name: protein
       type_id: PR:000000001
-      id_syntax: ^[A-Z]{3}[0-9]{5}(\.[0-9]+)?$
+      id_syntax: [A-Z]{3}[0-9]{5}(\.[0-9]+)?
       example_id: protein_id:CAA71991
 - database: PROW
   name: Protein Reviews on the Web
@@ -2009,7 +2009,7 @@
   entity_types:
     - type_name: chemical entity
       type_id: CHEBI:24431
-      id_syntax: ^[0-9]+$
+      id_syntax: [0-9]+
       url_syntax: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&DB=pccompound&term=[example_id]
       example_id: PubChem_Compound:2244
       example_url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&DB=pccompound&term=2244
@@ -2020,7 +2020,7 @@
   entity_types:
     - type_name: chemical entity
       type_id: CHEBI:24431
-      id_syntax: ^[0-9]{4,}$
+      id_syntax: [0-9]{4,}
       url_syntax: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&DB=pcsubstance&term=[example_id]
       example_id: PubChem_Substance:4594
       example_url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&DB=pcsubstance&term=4594
@@ -2033,7 +2033,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      id_syntax: ^REACT_[0-9]+$
+      id_syntax: REACT_[0-9]+
       url_syntax: http://www.reactome.org/cgi-bin/eventbrowser_st_id?ST_ID=[example_id]
       example_id: Reactome:REACT_604
       example_url: http://www.reactome.org/cgi-bin/eventbrowser_st_id?ST_ID=REACT_604
@@ -2061,13 +2061,13 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^(NC|AC|NG|NT|NW|NZ|NM|NR|XM|XR|NP|AP|XP|YP|ZP)_[0-9]+(\.[0-9]+){0,1}$
+      id_syntax: (NC|AC|NG|NT|NW|NZ|NM|NR|XM|XR|NP|AP|XP|YP|ZP)_[0-9]+(\.[0-9]+){0,1}
       url_syntax: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=[example_id]
       example_id: RefSeq:XP_001068954
       example_url: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=XP_001068954
     - type_name: protein
       type_id: PR:000000001
-      id_syntax: ^(NC|AC|NG|NT|NW|NZ|NM|NR|XM|XR|NP|AP|XP|YP|ZP)_[0-9]+(\.[0-9]+){0,1}$
+      id_syntax: (NC|AC|NG|NT|NW|NZ|NM|NR|XM|XR|NP|AP|XP|YP|ZP)_[0-9]+(\.[0-9]+){0,1}
       url_syntax: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=[example_id]
       example_id: RefSeq:XP_001068954
       example_url: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=XP_001068954
@@ -2098,7 +2098,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^[0-9]{4,7}$
+      id_syntax: [0-9]{4,7}
       url_syntax: http://rgd.mcw.edu/generalSearch/RgdSearch.jsp?quickSearch=1&searchKeyword=[example_id]
       example_id: RGD:2004
       example_url: http://rgd.mcw.edu/generalSearch/RgdSearch.jsp?quickSearch=1&searchKeyword=2004
@@ -2121,7 +2121,7 @@
   entity_types:
     - type_name: ribonucleic acid
       type_id: CHEBI:33697
-      id_syntax: ^URS[0-9A-F]{10}([_\/][0-9]+){0,1}$
+      id_syntax: URS[0-9A-F]{10}([_\/][0-9]+){0,1}
       url_syntax: http://rnacentral.org/rna/[example_id]
       example_id: RNAcentral:URS000047C79B_9606
       example_url: http://rnacentral.org/rna/URS000047C79B_9606
@@ -2195,7 +2195,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^S[0-9]{9}$
+      id_syntax: S[0-9]{9}
       url_syntax: http://db.yeastgenome.org/cgi-bin/locus.pl?dbid=[example_id]
       example_id: SGD:S000006169
       example_url: http://db.yeastgenome.org/cgi-bin/locus.pl?dbid=S000006169
@@ -2263,13 +2263,13 @@
   entity_types:
     - type_name: sequence attribute
       type_id: SO:0000400
-      id_syntax: ^\d{7}$
+      id_syntax: \d{7}
       url_syntax: http://song.sourceforge.net/SOterm_tables.html#SO:[example_id]
       example_id: SO:0000195
       example_url: http://song.sourceforge.net/SOterm_tables.html#SO:0000195
     - type_name: sequence feature
       type_id: SO:0000110
-      id_syntax: ^\d{7}$
+      id_syntax: \d{7}
       url_syntax: http://song.sourceforge.net/SOterm_tables.html#SO:[example_id]
       example_id: SO:0000195
       example_url: http://song.sourceforge.net/SOterm_tables.html#SO:0000195
@@ -2280,7 +2280,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      id_syntax: ^[0-9]{2}/[0-9]{2}[A-Z][0-9]{2}$
+      id_syntax: [0-9]{2}/[0-9]{2}[A-Z][0-9]{2}
       url_syntax: http://www.riken.jp/SPD/[example_id].html
       example_id: SPD:05/05F01
       example_url: http://www.riken.jp/SPD/05/05F01.html
@@ -2414,7 +2414,7 @@
   entity_types:
     - type_name: anatomical entity
       type_id: CARO:0000000
-      id_syntax: ^[0-9]{7}$
+      id_syntax: [0-9]{7}
       url_syntax: http://purl.obolibrary.org/obo/UBERON_[example_id]
       example_id: URBERON:0002398
       example_url: http://purl.obolibrary.org/obo/UBERON_0002398
@@ -2504,7 +2504,7 @@
   generic_urls:
     - http://www.grenoble.prabi.fr/obiwarehouse/unipathway
   entity_types:
-    - type_name: biological process
+    - type_name: biological_process
       type_id: GO:0008150
       url_syntax: http://www.grenoble.prabi.fr/obiwarehouse/unipathway/upa?upid=[example_id]
       example_id: UniPathway:UPA00155
@@ -2519,7 +2519,7 @@
   entity_types:
     - type_name: protein
       type_id: PR:000000001
-      id_syntax: ^([OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z]([0-9][A-Z][A-Z0-9]{2}){1,2}[0-9])((-[0-9]+)|:PRO_[0-9]{10}|:VAR_[0-9]{6}){0,1}$
+      id_syntax: ([OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z]([0-9][A-Z][A-Z0-9]{2}){1,2}[0-9])((-[0-9]+)|:PRO_[0-9]{10}|:VAR_[0-9]{6}){0,1}
       url_syntax: http://www.uniprot.org/uniprot/[example_id]
       example_id: UniProtKB:P51587
       example_url: http://www.uniprot.org/uniprot/P51587
@@ -2658,7 +2658,7 @@
   entity_types:
     - type_name: quality
       type_id: PATO:0000001
-      id_syntax: ^[0-9]{7}$
+      id_syntax: [0-9]{7}
       url_syntax: http://www.wormbase.org/species/c_elegans/phenotype/WBPhenotype:[example_id]
       example_id: WBPhenotype:0002117
       example_url: http://www.wormbase.org/species/c_elegans/phenotype/WBPhenotype:0000154
@@ -2686,13 +2686,13 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ^ZDB-(GENE|GENO|MRPHLNO)-[0-9]{6}-[0-9]+$
+      id_syntax: ZDB-(GENE|GENO|MRPHLNO)-[0-9]{6}-[0-9]+
       url_syntax: http://zfin.org/cgi-bin/ZFIN_jump?record=[example_id]
       example_id: ZFIN:ZDB-GENE-990415-103
       example_url: http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-GENE-990415-103
     - type_name: variation
       type_id: VariO:0001
-      id_syntax: ^ZDB-(GENE|GENO|MRPHLNO)-[0-9]{6}-[0-9]+$
+      id_syntax: ZDB-(GENE|GENO|MRPHLNO)-[0-9]{6}-[0-9]+
       url_syntax: http://zfin.org/cgi-bin/ZFIN_jump?record=[example_id]
       example_id: ZFIN:ZDB-GENE-990415-103
       example_url: http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-GENE-990415-103
