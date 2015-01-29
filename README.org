@@ -15,6 +15,11 @@ Every directory should have its own description.
   Ideally, any critical functionality can be rewritten in a simpler
   and more reusable way than the original.
 
+* metadata
+
+  The location of all core GO-related metadata. Most notably
+  db-xrefs.yaml.
+  
 * scripts
 
   TODO
