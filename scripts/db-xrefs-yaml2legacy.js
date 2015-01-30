@@ -52,8 +52,33 @@ function newline(){
 
 // Output header.
 function output_static_header(){
-    out('!version: $Revision: 2.302 $');
-    out('!date: $Date: 2012/09/20 21:04:35 $');
+
+    //out('!version: $Revision: 2.302 $');
+    //out('!date: $Date: 2012/09/20 21:04:35 $');
+    function get_date() {
+
+	function full_str(num){
+	    var res = (num < 10 ? "0" : "") + num;
+	    return res;
+	}
+
+	var date = new Date();
+	
+	var hour = full_str(date.getHours());
+	var min  = full_str(date.getMinutes());
+	var sec  = full_str(date.getSeconds());
+	var year = date.getFullYear();
+	var month = full_str(date.getMonth() + 1);
+	var day  = full_str(date.getDate());
+	
+	return [year, month, day].join('/') + ' ' + [hour, min, sec].join(':');
+    }
+
+    out('!date: ' + get_date());
+    out('!');
+    out('!WARNING: This file is READ-ONLY. Any changes will be overwritten.');
+    out('!WARNING: The upstream read/write version is available at:');
+    out('!WARNING: https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml');
     out('!');
     out('!Gene Ontology');
     out('!Abbreviations for cross-referenced databases.');
