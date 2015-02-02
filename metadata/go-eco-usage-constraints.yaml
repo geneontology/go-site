@@ -1,0 +1,226 @@
+entity_type: &protein
+  id: PR:000000001
+  name: protein
+entity_type: &chemical_entity
+  id: CHEBI:24431
+  name: chemical entity
+entity_type: &gene
+  id: SO:0000704
+  name: gene
+entity_type: &protein_complex
+  id: GO:0043234
+  name: protein complex
+entity_type: &genotype
+  id: SO:0001027
+  name: genotype
+entity_type: &variation
+  id: VariO:0001
+  name: variation
+entity_type: &protein_family
+  id: NCIT:C20130
+  name: protein family
+entity_type: &polypeptide_region
+  id: SO:0000839
+  name: polypeptide region
+entity_type: &rule
+  id: IAO:0000055
+  name: rule
+entity_type: &biological_process
+  id: GO:0008150
+  name: biological_process
+entity_type: &cellular_component
+  id: GO:0005575
+  name: cellular component
+entity_type: &molecular_function
+  id: GO:0003674
+  name: molecular_function
+entity_type: &vocabulary
+  id: SIO:001080
+  name: vocabulary
+entity_type: &catalytic_activity
+  id: GO:0003824
+  name: catalytic activity
+entity_type: &phenotype
+  id: UPHENO:0001001
+  entity_name: phenotype
+entity_type: &rna
+  id: CHEBI:33697
+  entity_name: ribonucleic acid
+
+eco_usage_constraints:
+  - eco_id: ECO:0000353
+    go_evidence: IPI
+    with_presence: conditional
+    with_presence_condition:
+      condition: db_object_type eq 'complex'
+      when_false: mandatory
+      when_true: optional
+    with_structure: compound
+    with_entities:
+    - entity_type: *protein
+    - entity_type: *chemical_entity
+    - entity_type: *gene
+    - entity_type: *protein_complex
+    - entity_type: *rna
+  - eco_id: ECO:0000316
+    go_evidence: IGI
+    with_presence: mandatory
+    with_structure: compound
+    with_entities:
+    - entity_type: *gene
+    - entity_type: *genotype
+    - entity_type: *protein
+    - entity_type: *variation
+    - entity_type: *protein_complex
+    - entity_type: *rna
+  - eco_id: ECO:0000318
+    go_evidence: IBA
+    with_presence: mandatory
+    with_structure: simple
+    with_entities:
+    - entity_type: *gene
+    - entity_type: *protein
+    - entity_type: *protein_family
+    - entity_type: *rna
+  - eco_id: ECO:0000319
+    go_evidence: IBD
+    with_presence: mandatory
+    with_structure: simple
+    with_entities:
+    - entity_type: *gene
+    - entity_type: *protein
+    - entity_type: *protein_family
+    - entity_type: *rna
+  - eco_id: ECO:0000320
+    go_evidence: IKR
+    with_presence: conditional
+    with_presence_condition:
+      condition: reference matches '^GO_REF:[0-9]{7}$'
+      when_false: optional
+      when_true: mandatory
+    with_structure: simple
+    with_entities:
+    - entity_type: *polypeptide_region
+    - entity_type: *rule
+    - entity_type: *protein_family
+  - eco_id: ECO:0000321
+    go_evidence: IRD
+    with_presence: mandatory
+    with_structure: simple
+    with_entities:
+    - entity_type: *gene
+    - entity_type: *protein
+    - entity_type: *protein_family
+    - entity_type: *rna
+  - eco_id: ECO:0000250
+    go_evidence: ISS
+    with_presence: mandatory
+    with_structure: simple
+    with_entities:
+    - entity_type: *gene
+    - entity_type: *protein
+    - entity_type: *protein_complex
+    - entity_type: *rna
+  - eco_id: ECO:0000266
+    go_evidence: ISO
+    with_presence: mandatory
+    with_structure: simple
+    with_entities:
+    - entity_type: *gene
+    - entity_type: *protein
+    - entity_type: *protein_family
+    - entity_type: *protein_complex
+    - entity_type: *rna
+  - eco_id: ECO:0000247
+    go_evidence: ISA
+    with_presence: mandatory
+    with_structure: simple
+    with_entities:
+    - entity_type: *gene
+    - entity_type: *protein
+    - entity_type: *polypeptide_region
+    - entity_type: *protein_family
+    - entity_type: *rna
+  - eco_id: ECO:0000305
+    go_evidence: IC
+    with_presence: mandatory
+    with_structure: compound
+    with_entities:
+    - entity_type: *biological_process
+    - entity_type: *cellular_component
+    - entity_type: *molecular_function
+  - eco_id: ECO:0000501
+    go_evidence: IEA
+    with_presence: mandatory
+    with_structure: simple
+    with_entities:
+    - entity_type: *gene
+    - entity_type: *protein
+    - entity_type: *polypeptide_region
+    - entity_type: *rule
+    - entity_type: *vocabulary
+    - entity_type: *catalytic_activity
+    - entity_type: *biological_process
+    - entity_type: *protein_complex
+    - entity_type: *rna
+  - eco_id: ECO:0000255
+    go_evidence: ISM
+    with_presence: recommended
+    with_structure: simple
+    with_entities:
+    - entity_type: *polypeptide_region
+  - eco_id: ECO:0000317
+    go_evidence: IGC
+    with_presence: recommended
+    with_structure: compound
+    with_entities:
+    - entity_type: *gene
+    - entity_type: *protein
+    - entity_type: *biological_process
+    - entity_type: *rna
+  - eco_id: ECO:0000315
+    go_evidence: IMP
+    with_presence: optional
+    with_structure: compound
+    with_entities:
+    - entity_type: *gene
+    - entity_type: *phenotype
+    - entity_type: *genotype
+    - entity_type: *protein
+    - entity_type: *variation
+    - entity_type: *chemical_entity
+    - entity_type: *protein_complex
+    - entity_type: *rna
+  - eco_id: ECO:0000245
+    go_evidence: RCA
+    with_presence: optional
+    with_structure: simple
+    with_entities:
+    - entity_type: *gene
+    - entity_type: *protein
+    - entity_type: *polypeptide_region
+    - entity_type: *rule
+    - entity_type: *vocabulary
+    - entity_type: *catalytic_activity
+    - entity_type: *biological_process
+    - entity_type: *protein_complex
+    - entity_type: *rna
+  - eco_id: ECO:0000269
+    go_evidence: EXP
+    with_presence: disallowed
+  - eco_id: ECO:0000314
+    go_evidence: IDA
+    with_presence: disallowed
+  - eco_id: ECO:0000270
+    go_evidence: IEP
+    with_presence: disallowed
+  - eco_id: ECO:0000304
+    go_evidence: TAS
+    with_presence: disallowed
+  - eco_id: ECO:0000303
+    go_evidence: NAS
+    with_presence: disallowed
+  - eco_id: ECO:0000307
+    go_evidence: ND
+    with_presence: disallowed
+
