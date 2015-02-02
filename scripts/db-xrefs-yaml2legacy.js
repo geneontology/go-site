@@ -87,7 +87,7 @@ function output_static_header(){
     out('!databases may have many other access routes or mirror sites.');
     out('!');
     out('!This data is available as a web page at');
-    out('!http://www.geneontology.org/cgi-bin/xrefs.cgi');
+    out('!http://amigo.geneontology.org/xrefs');
 }
 
 // Write out an enity_type into a stanza.
