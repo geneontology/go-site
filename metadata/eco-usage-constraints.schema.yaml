@@ -48,11 +48,11 @@ mapping:
               "when_true":
                 type: str
                 required: true
-                enum: [ mandatory, optional, disallowed ]
+                enum: [ mandatory, optional, disallowed, recommended ]
               "when_false":
                 type: str
                 required: true
-                enum: [ mandatory, optional, disallowed ]
+                enum: [ mandatory, optional, disallowed , recommended ]
           "with_structure":
             type: str
             required: false
