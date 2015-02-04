@@ -1,10 +1,11 @@
 ####
 #### Use kwalify and this schema to validate the config files.
 #### Example:
-####    kwalify -l -f ./metadata/go-db-xrefs.schema.yaml ./metadata/go-db-xrefs.yaml
+####    kwalify -E -m ./metadata/db-xrefs.schema.yaml
+####    kwalify -E -f ./metadata/db-xrefs.schema.yaml ./metadata/db-xrefs.yaml
 ####
 #### To convert to JSON once passed:
-####    ./node_modules/yamljs/bin/yaml2json -p ./metadata/go-db-xrefs.yaml > ./metadata/go-db-xrefs.json
+####    ./node_modules/yamljs/bin/yaml2json -p ./metadata/db-xrefs.yaml > ./metadata/db-xrefs.json
 ####
 type: seq
 sequence:
