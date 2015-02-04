@@ -838,27 +838,27 @@
     - type_name: molecular_function
       type_id: GO:0003674
       id_syntax: \d{7}
-      url_syntax: http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:[example_id]
+      url_syntax: http://amigo.geneontology.org/amigo/term/GO:[example_id]
       example_id: GO:0004352
-      example_url: http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:0004352
+      example_url: http://amigo.geneontology.org/amigo/term/GO:0004352
     - type_name: biological_process
       type_id: GO:0008150
       id_syntax: \d{7}
-      url_syntax: http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:[example_id]
+      url_syntax: http://amigo.geneontology.org/amigo/term/GO:[example_id]
       example_id: GO:0004352
-      example_url: http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:0004352
+      example_url: http://amigo.geneontology.org/amigo/term/GO:0004352
     - type_name: cellular_component
       type_id: GO:0005575
       id_syntax: \d{7}
-      url_syntax: http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:[example_id]
+      url_syntax: http://amigo.geneontology.org/amigo/term/GO:[example_id]
       example_id: GO:0004352
-      example_url: http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:0004352
+      example_url: http://amigo.geneontology.org/amigo/term/GO:0004352
     - type_name: macromolecular complex
       type_id: GO:0032991
       id_syntax: \d{7}
-      url_syntax: http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:[example_id]
+      url_syntax: http://amigo.geneontology.org/amigo/term/GO:[example_id]
       example_id: GO:0004352
-      example_url: http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:0004352
+      example_url: http://amigo.geneontology.org/amigo/term/GO:0004352
 - database: GO_Central
   name: GO Central
   description: Manual annotation from PAINT curators into the UniProt Protein2GO curation tool.
