@@ -6,6 +6,7 @@ from behave import *
 import urllib2
 import urllib
 import json
+import jsonpath_rw
 
 ## The basic and critical remote collector.
 ## It defines:
@@ -76,3 +77,41 @@ def step_impl(context, prop):
         assert True is False
     else:
         assert context.content_json.get(prop)
+
+@then('the JSON should have the JSONPath "{jsonpath}"')
+def step_impl(context, jsonpath):
+    if not context.content_json :
+        ## Apparently no JSON at all...
+        assert True is False
+    else:
+        jsonpath_expr = jsonpath_rw.parse(jsonpath)
+        res = jsonpath_expr.find(context.content_json)
+        #assert len(res) > 0
+        #print(res)
+        assert res
+
+@then('the JSON should have JSONPath "{jsonpath}" equal to string "{value}"')
+def step_impl(context, jsonpath, value):
+    if not context.content_json :
+        ## Apparently no JSON at all...
+        assert True is False
+    else:
+        jsonpath_expr = jsonpath_rw.parse(jsonpath)
+        res = jsonpath_expr.find(context.content_json)
+        if not res[0] :
+            assert True is False
+        else: 
+            assert res[0].value == value
+
+@then('the JSON should have JSONPath "{jsonpath}" equal to float "{value}"')
+def step_impl(context, jsonpath, value):
+    if not context.content_json :
+        ## Apparently no JSON at all...
+        assert True is False
+    else:
+        jsonpath_expr = jsonpath_rw.parse(jsonpath)
+        res = jsonpath_expr.find(context.content_json)
+        if not res[0] :
+            assert True is False
+        else: 
+            assert res[0].value == float(value)

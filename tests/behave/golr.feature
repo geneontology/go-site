@@ -13,3 +13,6 @@ Feature: Gene Ontology's public GOlr service is not a silly rabbit
      then the JSON should have the top-level property "responseHeader"
       and the JSON should have the top-level property "response"
       and the JSON should have the top-level property "facet_counts"
+      and the JSON should have the JSONPath "response.docs[*].score"
+      and the JSON should have JSONPath "responseHeader.params.rows" equal to string "10"
+      and the JSON should have JSONPath "response.docs[0].score" equal to float "1.0"
