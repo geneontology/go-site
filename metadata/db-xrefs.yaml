@@ -2196,9 +2196,9 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: S[0-9]{9}
-      url_syntax: http://db.yeastgenome.org/cgi-bin/locus.pl?dbid=[example_id]
+      url_syntax:  http://www.yeastgenome.org/locus/[example_id]/overview
       example_id: SGD:S000006169
-      example_url: http://db.yeastgenome.org/cgi-bin/locus.pl?dbid=S000006169
+      example_url:  http://www.yeastgenome.org/locus/S000006169/overview
 - database: SGD_LOCUS
   name: Saccharomyces Genome Database
   generic_urls:
@@ -2206,9 +2206,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://db.yeastgenome.org/cgi-bin/locus.pl?locus=[example_id]
+      url_syntax: http://www.yeastgenome.org/locus/[example_id]/overview
       example_id: SGD_LOCUS:GAL4
-      example_url: http://db.yeastgenome.org/cgi-bin/locus.pl?locus=GAL4
+      example_url: http://www.yeastgenome.org/locus/S000006169/overview
 - database: SGD_REF
   name: Saccharomyces Genome Database
   generic_urls:
@@ -2216,9 +2216,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://db.yeastgenome.org/cgi-bin/reference/reference.pl?dbid=[example_id]
+      url_syntax:  http://www.yeastgenome.org/reference/[example_is]/overview
       example_id: SGD_REF:S000049602
-      example_url: http://db.yeastgenome.org/cgi-bin/reference/reference.pl?dbid=S000049602
+      example_url:  http://www.yeastgenome.org/reference/S000049602/overview
 - database: SGN
   name: Sol Genomics Network
   generic_urls:
