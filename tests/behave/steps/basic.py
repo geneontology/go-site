@@ -25,11 +25,11 @@ def step_impl(context, url):
     ## Make the attempt, fail.
     response = None
     try: response = urllib2.urlopen(req)
-    except URLError as e:
+    except urllib2.URLError as e:
+        if hasattr(e, 'code'):
+            print('Server error, code: ', e.code)
         if hasattr(e, 'reason'):
             print('Failed to reach server: ', e.reason)
-        elif hasattr(e, 'code'):
-            print('Server error, code: ', e.code)
         assert True is False
     else:        
         ## Final
