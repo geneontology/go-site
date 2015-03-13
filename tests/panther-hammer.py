@@ -23,7 +23,7 @@ for x in range(0, 100):
     ## Make attempt to contact server, fail.
     response = None
     try: response = urllib2.urlopen(req)
-    except URLError as e:
+    except urllib2.URLError as e:
         if hasattr(e, 'reason'):
             print('Failed to reach server: ', e.reason)
         elif hasattr(e, 'code'):
