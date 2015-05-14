@@ -2564,9 +2564,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://vega.sanger.ac.uk/perl/searchview?species=all&idx=All&q=[example_id]
+      url_syntax: http://vega.sanger.ac.uk/id/[example_id]
       example_id: VEGA:OTTHUMP00000000661
-      example_url: http://vega.sanger.ac.uk/perl/searchview?species=all&idx=All&q=OTTHUMP00000000661
+      example_url: http://vega.sanger.ac.uk/id/OTTHUMP00000000661
 - database: VIDA
   name: Virus Database at University College London
   generic_urls:
