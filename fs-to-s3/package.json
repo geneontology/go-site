@@ -1,0 +1,35 @@
+{
+    "name": "fs-to-s3",
+    "version": "0.0.1",
+    "description": "Filesystem to S3.",
+    "keywords": [
+	"application",
+	"gene ontology",
+	"GO",
+	"utility"
+    ],
+    "author": {
+	"name": "SJC",
+	"email": "sjcarbon@lbl.gov",
+	"url": "http://berkeleybop.org/"
+    },
+    "homepage": "http://berkeleybop.org/",
+    "repository": {
+	"type": "git",
+	"url": "https://github.com/geneontology/go-exp"
+    },
+    "engines": {
+	"node": ">= 0.10.0",
+	"npm": ">= 2.7.4"
+    },
+    "bin": {
+	"noctua-repl": "./fs-to-s3.js"
+    },
+    "dependencies": {
+	"findit": "~2.0.0",
+	"underscore": "~1.8.3",
+	"minimist": "~1.1.1"
+    },
+    "devDependencies": {
+    }
+}

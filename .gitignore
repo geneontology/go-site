@@ -1,3 +1,12 @@
+## Don't generally want Selenium log files.
+tests/*/*.log
+
+## Don't want the virtualenv stuff for python leaking in.
+tests/behave/bin
+tests/behave/include
+tests/behave/lib
+tests/behave/local
+
 ## Emacs things (from 
 ## https://github.com/github/gitignore/blob/master/Global/Emacs.gitignore).
 *~
