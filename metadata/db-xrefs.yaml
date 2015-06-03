@@ -1510,6 +1510,7 @@
   synonyms:
     - GeneID
     - LocusID
+    - NCBIGene
   generic_urls:
     - http://www.ncbi.nlm.nih.gov/
   entity_types:
