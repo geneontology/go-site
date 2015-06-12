@@ -1388,7 +1388,7 @@
 - database: MeSH
   name: Medical Subject Headings
   generic_urls:
-    - http://www.nlm.nih.gov/mesh/2005/MBrowser.html
+    - https://www.nlm.nih.gov/mesh/MBrowser.html
   entity_types:
     - type_name: entity
       type_id: BET:0000000
