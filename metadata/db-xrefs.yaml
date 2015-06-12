@@ -1392,9 +1392,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.nlm.nih.gov/cgi/mesh/2005/MB_cgi?mode=&term=[example_id]
-      example_id: MeSH:mitosis
-      example_url: http://www.nlm.nih.gov/cgi/mesh/2005/MB_cgi?mode=&term=mitosis
+      url_syntax: http://www.nlm.nih.gov/cgi/mesh/2015/MB_cgi?view=expanded&field=uid&term=[example_id]
+      example_id: MeSH:D017209
+      example_url: http://www.nlm.nih.gov/cgi/mesh/2015/MB_cgi?view=expanded&field=uid&term=D017209
 - database: MetaCyc
   name: Metabolic Encyclopedia of metabolic and other pathways
   generic_urls:
