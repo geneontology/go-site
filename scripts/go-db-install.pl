@@ -573,7 +573,7 @@ if( ! $opt_n && ! $already_loaded_p ){
   ll("[DB] Finished addition.");
 
   ## Test additional view path.
-  my $view_dir_path = $sql_path . 'sql/view/';
+  my $view_dir_path = $sql_path . '/view/';
   die "Views directory not accessible."
     if ! -d  $view_dir_path || ! -R $view_dir_path;
   ll("[SYSTEM] Found: \"" . $view_dir_path . "\".");
