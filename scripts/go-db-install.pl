@@ -319,13 +319,13 @@ if( $opt_D ){
     ## The check depends on how the DB names are structured.
     if( $opt_i ){
       if ( $file =~ /(\d{8})/ ) {
-	if( $ftp_date eq '_NO_FTP_DATE_' || $ftp_date > $1 ){
+	if( $ftp_date eq '_NO_FTP_DATE_' || $ftp_date < $1 ){
 	  $ftp_date = $1;
 	}
       }
     }else{
       if ( $file =~ /(\d{6})/ ) {
-	if( $ftp_date eq '_NO_FTP_DATE_' || $ftp_date > $1 ){
+	if( $ftp_date eq '_NO_FTP_DATE_' || $ftp_date < $1 ){
 	  $ftp_date = $1;
 	}
       }
