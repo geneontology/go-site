@@ -1,0 +1,7 @@
+BEGIN MATERIALIZE
+CALL create_mview_in_place('max_entropy_per_gp_by_ont');
+CREATE INDEX max_entropy_per_gp_by_ont_idx1 ON max_entropy_per_gp_by_ont(gene_product_id);
+CREATE UNIQUE INDEX max_entropy_per_gp_by_ont_idx2 ON max_entropy_per_gp_by_ont(gene_product_id, term_type);
+CREATE UNIQUE INDEX max_entropy_per_gp_by_ont_idx3 ON max_entropy_per_gp_by_ont(gene_product_id, term_type,max_entropy);
+END MATERIALIZE
+

@@ -1,0 +1,14 @@
+go-prejoined-views.sql
+go-graph-views.sql
+go-obd-bridge.sql
+go-information-content-views.sql
+go-annotation-reports.sql
+go-evidence-views.sql
+go-stats-views.sql
+go-taxon-views.sql
+go-seq-views.sql
+go-homolset-views.sql
+go-refgenomes-views.sql
+#go-term-motif-correlation.sql
+#go-uniq-assoc.sql
+new-views.sql

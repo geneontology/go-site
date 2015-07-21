@@ -1,0 +1,21 @@
+
+Views are virtual tables - they are intensional rather than
+extensional. i.e. their contents are determined dynamically at query
+time.
+
+Views allow for simplification of SQL queries by allowing common
+patterns to be captured and named.
+
+The views are arranged in a modular fashion, and named go-*.sql
+
+Implementation of views in slow in MySQL, so it is sometimes necessary
+to materialize views. See the code in sql/util.
+
+Materialization commands are stored as comments in the main view SQL
+definition files. The Makefile translates these and generated the
+materialized-*.mysql files.
+
+See also:
+
+- Makefile
+- go-db-perl/scripts/go_db_install.pl

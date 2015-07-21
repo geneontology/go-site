@@ -1,0 +1,5 @@
+CALL create_mview_in_place('dbxrefd');
+CREATE UNIQUE INDEX dbxrefd_idx1 ON dbxrefd(id);
+CREATE INDEX dbxrefd_idx2 ON dbxrefd(xref_key);
+CREATE INDEX dbxrefd_idx3 ON dbxrefd(xref_dbname);
+CREATE UNIQUE INDEX dbxrefd_idx4 ON dbxrefd(xref_str);

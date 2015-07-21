@@ -100,23 +100,9 @@ my %local = (
 #getopts('Fhvzijxng:m:a:s:f:l:d:u:p:P:t:e:D:M:');
 getopts('hvzijxng:m:a:s:f:l:d:u:p:P:t:e:D:M:F');
 
-## Hunt down the paths and let's try and get all of the likely
-## libraries in. Trying "use lib" didn't work so well, so got hacky
-## with PERL5LIB.
-my($go_dev_path, $remainder) =
-  split 'go-db-perl/scripts/go_db_install', realpath($0);
-my @try_libs =
- (
-  $go_dev_path . 'go-db-perl',
-  $go_dev_path . 'go-perl',
-  $go_dev_path . 'amigo/perl',
-  $go_dev_path . '../gobo-dbic'
- );
-if( defined $ENV{PERL5LIB} ){
-  $ENV{PERL5LIB} = join(':', @try_libs) . ':' . $ENV{PERL5LIB};
-}else{
-  $ENV{PERL5LIB} = join(':', @try_libs);
-}
+## Hunt down the paths.
+my($go_dev_path, $remainder) = split 'scripts/go-db-install', realpath($0);
+my $sql_path = $go_dev_path . '/scripts/legacy-sql/';
 
 ## Print help through perldoc.
 if ( $opt_h ) {
@@ -511,7 +497,7 @@ if( $opt_M ){
   ## "go-deb/go-db-perl/sql/migrate".
 
   ## Test additional migrate path.
-  my $migrate_dir_path = $go_dev_path . 'sql/migrate/';
+  my $migrate_dir_path = $sql_path . '/migrate/';
   die "Migrates directory not accessible."
     if ! -d  $migrate_dir_path || ! -R $migrate_dir_path;
   ll("[SYSTEM] Found: \"" . $migrate_dir_path . "\".");
@@ -569,7 +555,7 @@ if( ! $opt_n && ! $already_loaded_p ){
   ## "go-deb/go-db-perl/sql/utils".
 
   ## Test matview procedure path.
-  my $util_exec_path = $go_dev_path . 'sql/util/materialized_views_proc.sql';
+  my $util_exec_path = $sql_path . '/util/materialized_views_proc.sql';
   die "Couldn\'t find materialized_views_proc.sql"
     if ! -f  $util_exec_path || ! -R $util_exec_path;
   my $short_name = basename($util_exec_path);
@@ -587,7 +573,7 @@ if( ! $opt_n && ! $already_loaded_p ){
   ll("[DB] Finished addition.");
 
   ## Test additional view path.
-  my $view_dir_path = $go_dev_path . 'sql/view/';
+  my $view_dir_path = $sql_path . 'sql/view/';
   die "Views directory not accessible."
     if ! -d  $view_dir_path || ! -R $view_dir_path;
   ll("[SYSTEM] Found: \"" . $view_dir_path . "\".");

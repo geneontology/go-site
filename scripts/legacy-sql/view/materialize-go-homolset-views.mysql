@@ -1,0 +1,8 @@
+CALL create_mview_in_place('total_gps_by_homolset');
+CREATE UNIQUE INDEX total_gps_by_homolset_idx1 ON total_gps_by_homolset(homolset_id);
+CREATE UNIQUE INDEX total_gps_by_homolset_idx2 ON total_gps_by_homolset(homolset_id,total_gps);
+CALL create_mview_in_place('total_species_by_homolset');
+CREATE UNIQUE INDEX total_species_by_homolset_idx1 ON total_species_by_homolset(homolset_id);
+CREATE UNIQUE INDEX total_species_by_homolset_idx2 ON total_species_by_homolset(homolset_id,total_species);
+CALL create_mview_in_place('species_with_homolset');
+CREATE UNIQUE INDEX species_with_homolset_idx1 ON species_with_homolset(species_id);
