@@ -314,17 +314,20 @@ if( $opt_D ){
   my $ftp_date = '_NO_FTP_DATE_';
 
   ## Find date of most recent database in archive.
+  ## Latest date scan for: https://github.com/geneontology/go-site/issues/86
   foreach my $file (@listing) {
     ## The check depends on how the DB names are structured.
     if( $opt_i ){
       if ( $file =~ /(\d{8})/ ) {
-	$ftp_date = $1;
-	last;
+	if( $ftp_date eq '_NO_FTP_DATE_' || $ftp_date > $1 ){
+	  $ftp_date = $1;
+	}
       }
     }else{
       if ( $file =~ /(\d{6})/ ) {
-	$ftp_date = $1;
-	last;
+	if( $ftp_date eq '_NO_FTP_DATE_' || $ftp_date > $1 ){
+	  $ftp_date = $1;
+	}
       }
     }
   }
