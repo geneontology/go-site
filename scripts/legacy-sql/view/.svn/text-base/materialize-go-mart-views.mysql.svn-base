@@ -1,6 +1,0 @@
-CALL create_mview_in_place('term_with_concat_synonyms');
-CREATE UNIQUE INDEX term_with_concat_synonyms_idx1 ON term_with_concat_synonyms(id);
-
-CALL create_mview_in_place('gene_product_with_concat_synonyms');
-CREATE UNIQUE INDEX gene_product_with_concat_synonyms_idx1 ON gene_product_with_concat_synonyms(id);
-

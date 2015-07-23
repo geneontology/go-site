@@ -1,1 +1,0 @@
-CALL create_mview_in_place('association_evidence_with');
