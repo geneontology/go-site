@@ -595,4 +595,11 @@
     minerva-go: true
   xref: 'GOC:dl'
   uri: 'GOC:dl'
-
+-
+  nickname: 'Anushya Muruganujan'
+  email-md5:
+    - 2032c0dc70a2aa2c3cadf452302a7e8d
+  authorizations:
+    minerva-go: true
+  xref: 'GOC:am'
+  uri: 'GOC:am'
