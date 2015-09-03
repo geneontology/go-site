@@ -603,3 +603,11 @@
     minerva-go: true
   xref: 'GOC:am'
   uri: 'GOC:am'
+-
+  nickname: 'Mike Livstone'
+  email-md5:
+    - 8e80fce402cd52cb2455d4c6c51720a5
+  authorizations:
+    minerva-go: true
+  xref: 'GOC:ml2'
+  uri: 'GOC:ml2'
