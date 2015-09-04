@@ -2551,7 +2551,7 @@
 - database: UniRule
   name: Manually curated rules for automatic annotation of UniProtKB unreviewed entries
   generic_urls:
-    - http:http://www.uniprot.org/program/automatic_annotation
+    - http://www.uniprot.org/program/automatic_annotation
 - database: VBRC
   name: Viral Bioinformatics Resource Center
   generic_urls:
