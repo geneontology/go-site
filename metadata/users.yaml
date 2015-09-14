@@ -130,7 +130,7 @@
   authorizations:
     minerva-go: true
   xref: 'GOC:kmv'
-  uri: 'GOC:kmv'
+  uri: 'http://orcid.org/0000-0002-1706-4196'
 -
   nickname: 'Donghui Li'
   email-md5:
