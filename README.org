@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/geneontology/go-site.svg)](https://travis-ci.org/geneontology/go-site)
+
 A collection of metadata, files, and tools associated with the GO public
 website and geneontology.org web presence.
 
