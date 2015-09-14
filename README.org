@@ -3,6 +3,15 @@ and geneontology.org web presence.
 
 Every directory should have its own description.
 
+* metadata
+
+  The location of all core GO-related metadata. Most notably
+  db-xrefs.yaml.
+  
+* scripts
+
+  TODO
+
 * drupal7
 
   The files that we're using tp modify our Drupal 7 installation from
@@ -14,13 +23,4 @@ Every directory should have its own description.
   This files an scripts that we want to preserve from the old GO site.
   Ideally, any critical functionality can be rewritten in a simpler
   and more reusable way than the original.
-
-* metadata
-
-  The location of all core GO-related metadata. Most notably
-  db-xrefs.yaml.
-  
-* scripts
-
-  TODO
 
