@@ -11,6 +11,10 @@ sequence:
         type: str
         required: true
         unique: true
+      "xref":
+        type: str
+        required: false
+        unique: true
       "nickname":
         type: str
         required: true
@@ -42,10 +46,27 @@ sequence:
               "allow-freeform-litxref-optional":
                 type: bool
                 required: false
-          "minerva-go":
-            type: bool
+          "noctua-go":
+            type: map
             required: false
-      "xref":
+            mapping:
+              "allow-edit":
+                type: bool
+                required: false
+              "allow-admin":
+                type: bool
+                required: false
+              "temporary-user":
+                type: bool
+                required: false
+              "model-lock":
+                type: seq
+                required: false
+                sequence:
+                  - type: str
+      "comment":
         type: str
         required: false
-        unique: true
+      "organization":
+        type: str
+        required: false
