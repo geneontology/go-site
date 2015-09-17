@@ -644,7 +644,7 @@
     noctua-go:
       allow-edit: true
   xref: 'GOC:at'
-  uri: 'http://orcid.org/0000-0002-2908-3327?'
+  uri: 'http://orcid.org/0000-0002-2908-3327'
 -
   nickname: 'Ingrid Keseler'
   email-md5:
