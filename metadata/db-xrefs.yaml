@@ -2551,7 +2551,13 @@
 - database: UniRule
   name: Manually curated rules for automatic annotation of UniProtKB unreviewed entries
   generic_urls:
-    - http://www.uniprot.org/help/unirule
+    - http://www.uniprot.org/unirule
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: http://www.uniprot.org/unirule/[example_id]
+      example_id: UniRule:UR000107224
+      example_url: http://www.uniprot.org/unirule/UR000107224
 - database: VBRC
   name: Viral Bioinformatics Resource Center
   generic_urls:
