@@ -54,9 +54,19 @@ function update_with(base, base_xref_map, in_entry){
 	die('no id found for entry in incoming entry: ' + in_entry);
     }
     
+    // Attempt to find the user we'd be referring to.
+    var ref_user = null;
+    if( base[id] ){
+	ref_user = base[id];
+    }else if( base_xref_map[id] ){
+	ref_user = base[base_xref_map[id]];
+    }else if( in_entry['xref'] ){
+	ref_user = base[base_xref_map[in_entry['xref']]];
+    }
+
     // If not there, a new user.
-    if( ! base[id] && ! base_xref_map[id] ){
-	//console.log('new user: ' + id);
+    if( ! ref_user ){
+	//console.error('new user: ' + id);
 	
 	var new_user = {
 	    uri: id
@@ -66,6 +76,12 @@ function update_with(base, base_xref_map, in_entry){
 	}
 	if( in_entry['nickname'] ){
 	    new_user['nickname'] = in_entry['nickname'];
+	}
+	if( in_entry['organization'] ){
+	    new_user['organization'] = in_entry['organization'];
+	}
+	if( in_entry['comment'] ){
+	    new_user['comment'] = in_entry['comment'];
 	}
 	// And a slightly more complicated email2md5.
 	if( in_entry['email'] ){
@@ -78,31 +94,30 @@ function update_with(base, base_xref_map, in_entry){
 
     }else{
 
-	// Not a new user, so try and locate the "record".
-	var ref_user = null;
-	if( base[id] ){
-	    ref_user = base[id];
-	}else{
-	    ref_user = base[base_xref_map[id]];
-	}
-
 	// Possibly update current user.
 	//console.log('update current user: ', ref_user);
-	if( in_entry['xref'] && in_entry['xref'] !== ref_user['xref'] ){
+	//console.error('update current user: ', ref_user);
+	//console.error('with entry: ', in_entry);
+	if( in_entry['uri'] && (in_entry['uri'] !== ref_user['uri']) ){
+	    //console.log('update uri for: ' + ref_user['uri']);
+	    ref_user['uri'] = in_entry['uri'];
+	}
+	if( in_entry['xref'] && (in_entry['xref'] !== ref_user['xref']) ){
 	    //console.log('update xref for: ' + ref_user['uri']);
 	    ref_user['xref'] = in_entry['xref'];
 	}
-	if( in_entry['nickname'] && in_entry['nickname'] !== ref_user['nickname'] ){
+	if( in_entry['nickname'] && (in_entry['nickname'] !== ref_user['nickname']) ){
 	    //console.log('update nickname for: ' + ref_user['uri']);
 	    ref_user['nickname'] = in_entry['nickname'];
 	}
-	if( in_entry['organization'] && in_entry['organization'] !== ref_user['organization'] ){
+	if( in_entry['organization'] && (in_entry['organization'] !== ref_user['organization']) ){
 	    //console.log('update organization for: ' + ref_user['uri']);
 	    ref_user['organization'] = in_entry['organization'];
 	}
-	if( in_entry['comment'] && in_entry['comment'] !== ref_user['comment'] ){
-	    //console.log('update comment for: ' + ref_user['uri']);
+	if( in_entry['comment'] && (in_entry['comment'] !== ref_user['comment']) ){
+	    //console.error('update comment for: ' + ref_user['uri']);
 	    ref_user['comment'] = in_entry['comment'];
+	    //console.error('new: ', ref_user);
 	}
 
 	// And a slightly more complicated email2md5 detection and addition.
@@ -113,8 +128,28 @@ function update_with(base, base_xref_map, in_entry){
 		ref_user['email-md5'].push(md5ed);
 	    }
 	}
+
+	// Remove any old copies.
+	var deletables = [ in_entry['uri'],
+			   in_entry['xref'],
+			   ref_user['uri'],
+			   ref_user['xref']
+			 ];
+	each(deletables, function(d){
+	    if( d ){
+		delete base[d];
+		delete base_xref_map[d];
+	    }
+	});
+
+	// Add the freshly merged copy.
+	base[id] = ref_user;
     }
 
+    // Update the xref map as well if necessary.
+    if( base[id]['xref'] ){
+	base_xref_map[base[id]['xref']] = base[id]['uri'];
+    }
 }
 
 ///
@@ -134,7 +169,6 @@ if( argv['f'] ){ base_file = argv['f']; }
 var base_user_list = YAML.parse(fs.readFileSync(base_file, 'utf-8'));
 
 var users = {};
-var users_xref_map = {}; // xref to uri, if available
 each(base_user_list, function(entry){
 
     // uri is the key.
@@ -144,12 +178,18 @@ each(base_user_list, function(entry){
 	var uri = entry['uri'];
 	users[uri] = entry;
     }
+});
 
-    // Also make a map of xref to uri.
+// Generate an initial map of xref to uri.
+var users_xref_map = {};
+each(us.values(users), function(entry){
     if( entry['xref'] ){
 	users_xref_map[entry['xref']] = entry['uri'];
     }
 });
+
+//console.error('INIT: check GOC user a: ', users['http://orcid.org/0000-0002-9791-0064']);
+//console.error('INIT: check GOC user b: ', users['GOC:gr']);
 
 ///
 /// Add/update TG users.
@@ -185,6 +225,9 @@ each(tg_user_list, function(tg_entry){
     update_with(users, users_xref_map, try_entry);
 });
 
+//console.error('TG: check GOC user a: ', users['http://orcid.org/0000-0002-9791-0064']);
+//console.error('TG: check GOC user b: ', users['GOC:gr']);
+
 ///
 /// Add/update data from GO.curators_dbxrefs.
 ///
@@ -211,19 +254,34 @@ each(goc_lines, function(line){
 	// Skip.
     }else{
 	var goc_user = {
-	    uri: xref
+	    uri: xref,
+	    xref: xref
 	};
 	if( fields[1] ){ goc_user['organization'] = fields[1]; }
 	if( fields[2] ){ goc_user['nickname'] = fields[2]; }
 	if( fields[3] ){ goc_user['comment'] = fields[3]; }
 
-	//console.log('GOC user: ', goc_user);
+	// There may be a field 5 for orcids.
+	if( fields[4] ){
+	    var f4 = fields[4];
+	    //console.error('GOC secret field user: ' + f4.substring(0, 7));
+	    if( f4.substring(0, 7) === 'http://' ){
+		goc_user['uri'] = f4;
+		//console.error('GOC secret field user: ', goc_user);
+	    }
+	}
 
 	// Merge GOC user into main group.
+	//if( xref === 'GOC:gr' ){
+	//console.error('pre GOC user: ', goc_user);
 	update_with(users, users_xref_map, goc_user);
+	//console.error('post GOC user: ', users[goc_user['uri']]);
+	//}
     }
 });
 
+//console.error('GO: check GOC user a: ', users['http://orcid.org/0000-0002-9791-0064']);
+//console.error('GO: check GOC user b: ', users['GOC:gr']);
 //console.log(goc_raw_text);
 
 ///
@@ -312,6 +370,10 @@ each(tg_perm_map, function(perms, email){
 
     }
 });
+
+//console.error('TGP: check GOC user a: ', users['http://orcid.org/0000-0002-9791-0064']);
+//console.error('TGP: check GOC user b: ', users['GOC:gr']);
+//console.log(goc_raw_text);
 
 ///
 /// Final dump.
