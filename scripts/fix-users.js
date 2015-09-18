@@ -95,9 +95,6 @@ function update_with(base, base_xref_map, in_entry){
     }else{
 
 	// Possibly update current user.
-	//console.log('update current user: ', ref_user);
-	//console.error('update current user: ', ref_user);
-	//console.error('with entry: ', in_entry);
 	if( in_entry['uri'] && (in_entry['uri'] !== ref_user['uri']) ){
 	    //console.log('update uri for: ' + ref_user['uri']);
 	    ref_user['uri'] = in_entry['uri'];
@@ -188,9 +185,6 @@ each(us.values(users), function(entry){
     }
 });
 
-//console.error('INIT: check GOC user a: ', users['http://orcid.org/0000-0002-9791-0064']);
-//console.error('INIT: check GOC user b: ', users['GOC:gr']);
-
 ///
 /// Add/update TG users.
 ///
@@ -208,14 +202,12 @@ each(tg_user_list, function(tg_entry){
 
     // Try and find an "id".
     var id = tg_entry['orchid'];
-    if( ! id ){
-	id = tg_entry['xref'];
-    }
 
-    // An ID is required--hard exit if none found.
-    if( ! id ){
-	die('no id found for entry in TG users');
-    }
+    // // An ID is required--hard exit if none found.
+    // // This is temporary code.
+    // if( ! id ){
+    // 	die('no id found for entry in TG users');
+    // }
 
     try_entry['uri'] = id;
     try_entry['xref'] = tg_entry['xref'];
@@ -224,9 +216,6 @@ each(tg_user_list, function(tg_entry){
 
     update_with(users, users_xref_map, try_entry);
 });
-
-//console.error('TG: check GOC user a: ', users['http://orcid.org/0000-0002-9791-0064']);
-//console.error('TG: check GOC user b: ', users['GOC:gr']);
 
 ///
 /// Add/update data from GO.curators_dbxrefs.
@@ -237,13 +226,9 @@ var goc_file = null;
 if( argv['d'] ){ goc_file = argv['d']; }
 var goc_raw_text = fs.readFileSync(goc_file, 'utf-8');
 var goc_lines = goc_raw_text.split("\n");
-//console.log('num entries: ' + goc_lines.length);
 each(goc_lines, function(line){
     var fields = line.split("\t");
     // console.log(' num fields: ' + fields.length);
-    // //if( fields.length === 5 ){
-    // 	console.log(fields);
-    // //}
     
     // Skip anything not GOC.
     var xref = fields[0];
@@ -254,7 +239,6 @@ each(goc_lines, function(line){
 	// Skip.
     }else{
 	var goc_user = {
-	    uri: xref,
 	    xref: xref
 	};
 	if( fields[1] ){ goc_user['organization'] = fields[1]; }
@@ -264,7 +248,6 @@ each(goc_lines, function(line){
 	// There may be a field 5 for orcids.
 	if( fields[4] ){
 	    var f4 = fields[4];
-	    //console.error('GOC secret field user: ' + f4.substring(0, 7));
 	    if( f4.substring(0, 7) === 'http://' ){
 		goc_user['uri'] = f4;
 		//console.error('GOC secret field user: ', goc_user);
@@ -272,17 +255,9 @@ each(goc_lines, function(line){
 	}
 
 	// Merge GOC user into main group.
-	//if( xref === 'GOC:gr' ){
-	//console.error('pre GOC user: ', goc_user);
 	update_with(users, users_xref_map, goc_user);
-	//console.error('post GOC user: ', users[goc_user['uri']]);
-	//}
     }
 });
-
-//console.error('GO: check GOC user a: ', users['http://orcid.org/0000-0002-9791-0064']);
-//console.error('GO: check GOC user b: ', users['GOC:gr']);
-//console.log(goc_raw_text);
 
 ///
 /// Add/update TG permissions.
@@ -296,7 +271,7 @@ each(users, function(u){
     });
 });
 
-// TermGenie user permissions.
+// Apply TermGenie user permissions.
 var tg_perm_file = null;
 if( argv['p'] ){ tg_perm_file = argv['p']; }
 var tg_perm_map = JSON.parse(fs.readFileSync(tg_perm_file, 'utf-8'));
@@ -370,10 +345,6 @@ each(tg_perm_map, function(perms, email){
 
     }
 });
-
-//console.error('TGP: check GOC user a: ', users['http://orcid.org/0000-0002-9791-0064']);
-//console.error('TGP: check GOC user b: ', users['GOC:gr']);
-//console.log(goc_raw_text);
 
 ///
 /// Final dump.
