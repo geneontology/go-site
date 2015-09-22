@@ -1800,19 +1800,6 @@
     - ca849fa17a251946fc841296544f14f1
     - 7da8a4640eb919c6f97581190be625d4
   authorizations:
-<<<<<<< HEAD
-    minerva-go: true
-  xref: 'GOC:ml2'
-  uri: 'GOC:ml2'
--
-  nickname: 'Peter Robinson'
-  email-md5:
-    - c727817e3b98721cf962f69613afd192
-  authorizations:
-    minerva-go: true
-  xref: 'GOC:pnr'
-  uri: 'GOC:pnr'
-=======
     noctua-go:
       allow-edit: true
     termgenie-go:
@@ -2153,4 +2140,3 @@
   nickname: 'Revision of the autophagy branch (David H, Paola, Paul D, Ruth, Becky, Marc F and field experts)'
   organization: 'working group project'
 
->>>>>>> 5740044f03c47287edee78b58c9e14f19e14b95f
