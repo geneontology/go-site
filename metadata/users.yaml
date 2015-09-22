@@ -611,3 +611,11 @@
     minerva-go: true
   xref: 'GOC:ml2'
   uri: 'GOC:ml2'
+-
+  nickname: 'Peter Robinson'
+  email-md5:
+    - c727817e3b98721cf962f69613afd192
+  authorizations:
+    minerva-go: true
+  xref: 'GOC:pnr'
+  uri: 'GOC:pnr'
