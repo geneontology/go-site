@@ -2217,7 +2217,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax:  http://www.yeastgenome.org/reference/[example_is]/overview
+      url_syntax:  http://www.yeastgenome.org/reference/[example_id]/overview
       example_id: SGD_REF:S000049602
       example_url:  http://www.yeastgenome.org/reference/S000049602/overview
 - database: SGN
@@ -2551,7 +2551,13 @@
 - database: UniRule
   name: Manually curated rules for automatic annotation of UniProtKB unreviewed entries
   generic_urls:
-    - http:http://www.uniprot.org/program/automatic_annotation
+    - http://www.uniprot.org/unirule
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: http://www.uniprot.org/unirule/[example_id]
+      example_id: UniRule:UR000107224
+      example_url: http://www.uniprot.org/unirule/UR000107224
 - database: VBRC
   name: Viral Bioinformatics Resource Center
   generic_urls:
