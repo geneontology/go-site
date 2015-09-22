@@ -2139,4 +2139,14 @@
   xref: 'GOC:autophagy'
   nickname: 'Revision of the autophagy branch (David H, Paola, Paul D, Ruth, Becky, Marc F and field experts)'
   organization: 'working group project'
+-
+  uri: 'GOC:pnr'
+  xref: 'GOC:pnr'
+  nickname: 'Peter Robinson'
+  email-md5:
+    - c727817e3b98721cf962f69613afd192
+  authorizations:
+    minerva-go: true
+
+
 
