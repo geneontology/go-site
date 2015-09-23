@@ -8,4 +8,4 @@ install:
   - gem install kwalify
 script:
   ## Quick user data check.
-  - kwalify -f metadata/users.schema.yaml metadata/users.yaml
+  - kwalify -f metadata/users.schema.yaml metadata/users.yaml | grep INVALID; test $? -ne 0
