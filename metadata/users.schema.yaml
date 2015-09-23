@@ -1,5 +1,9 @@
 ####
 #### Use kwalify and this schema to validate the config files.
+####
+#### Example hash generation:
+####    echo "foo.bar@bib.edu" | md5sum
+####
 #### Example:
 ####    kwalify -f ./metadata/users.schema.yaml ./metadata/users.yaml
 ####

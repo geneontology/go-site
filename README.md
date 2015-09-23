@@ -10,7 +10,7 @@ Every directory should have its own description.
 # metadata
 
   The location of all core GO-related metadata. Most notably
-  db-xrefs.yaml.
+  db-xrefs.yaml and users.yaml.
   
 # scripts
 

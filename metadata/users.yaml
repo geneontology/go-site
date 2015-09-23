@@ -1,4 +1,13 @@
 -
+  nickname: 'Anushya Muruganujan'
+  email-md5:
+    - 7a6de9c32a9efb9fb4287a1285a9d26d
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  xref: 'GOC:amu'
+  uri: 'GOC:amu'
+-
   nickname: 'Paul Thomas'
   email-md5:
     - 84c8bfa613c72bb30f82839e1ce78a55
@@ -2147,6 +2156,3 @@
     - c727817e3b98721cf962f69613afd192
   authorizations:
     minerva-go: true
-
-
-
