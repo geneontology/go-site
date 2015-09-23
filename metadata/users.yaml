@@ -2155,4 +2155,5 @@
   email-md5:
     - c727817e3b98721cf962f69613afd192
   authorizations:
-    minerva-go: true
+    noctua-go:
+      allow-edit: true

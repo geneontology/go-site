@@ -4,8 +4,9 @@
 #### Example hash generation:
 ####    echo "foo.bar@bib.edu" | md5sum
 ####
-#### Example:
+#### Examples:
 ####    kwalify -f ./metadata/users.schema.yaml ./metadata/users.yaml
+####    kwalify -f ./metadata/users.schema.yaml ./metadata/users.yaml | grep INVALID; test $? -ne 0
 ####
 type: seq
 sequence:
