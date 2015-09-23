@@ -9,3 +9,8 @@ install:
 script:
   ## Quick user data check.
   - kwalify -f metadata/users.schema.yaml metadata/users.yaml | grep INVALID; test $? -ne 0
+notifications:
+  email:
+    - sjcarbon@lbl.gov
+    - cjmungall@lbl.gov
+    - hdietze@lbl.gov
