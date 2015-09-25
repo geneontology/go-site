@@ -1,7 +1,16 @@
 -
+  nickname: 'Jim Knowles'
+  email-md5:
+    - e10e731bffebbca8fbe2c5f86a02419f
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  xref: 'GOC:jk'
+  uri: 'GOC:jk'
+-
   nickname: 'Anushya Muruganujan'
   email-md5:
-    - 7a6de9c32a9efb9fb4287a1285a9d26d
+    - 2032c0dc70a2aa2c3cadf452302a7e8d
   authorizations:
     noctua-go:
       allow-edit: true
