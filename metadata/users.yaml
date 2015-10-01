@@ -206,6 +206,7 @@
   authorizations:
     termgenie-go:
       allow-write: true
+      allow-freeform: true
 -
   nickname: 'Ruth Lovering'
   email-md5:
