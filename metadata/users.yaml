@@ -1752,7 +1752,7 @@
   nickname: 'Erik Segerdell'
   organization: ZFIN
 -
-  nickname: 'Leyla Bayraktaroglu'
+  nickname: 'Lionel Breuza'
   email-md5:
     - 3bda03dbc02aa0fb8467c81beb5481b6
   authorizations:
@@ -1762,7 +1762,7 @@
       allow-write: true
   xref: 'GOC:lb'
   uri: 'GOC:lb'
-  organization: ZFIN
+  organization: UniProt
 -
   uri: 'GOC:mh'
   xref: 'GOC:mh'
