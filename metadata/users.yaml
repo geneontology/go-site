@@ -1300,6 +1300,11 @@
   nickname: 'Lorenza Mittempergher'
   organization: TRAIT
 -
+  uri: 'GOC:lam'
+  xref: 'GOC:lam'
+  nickname: 'Lukas Mueller'
+  organization: 'SGN (Solanaceae Genome Network)'
+-
   uri: 'GOC:ar'
   xref: 'GOC:ar'
   nickname: 'Alan Ruttenberg'
