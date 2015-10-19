@@ -563,6 +563,7 @@
   nickname: 'Elena Speretta'
   email-md5:
     - e4c08a3f5b380e6103ac2cc3d94d83ff
+    - c961c90fe1e38150467f235fe1ba6737
   organization: GOA
   authorizations:
     termgenie-go:
