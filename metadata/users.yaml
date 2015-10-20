@@ -569,6 +569,16 @@
     termgenie-go:
       allow-write: true
 -
+  uri: 'GOC:ah'
+  xref: 'GOC:ah'
+  nickname: 'Alex Holmes'
+  email-md5:
+    - b7f33ede546b87737fd185642dbd2bb8
+  organization: GOA
+  authorizations:
+    termgenie-go:
+      allow-write: true
+-
   uri: 'GOC:ecd'
   xref: 'GOC:ecd'
   nickname: 'Emily Dimmer'
