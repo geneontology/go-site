@@ -1179,8 +1179,9 @@
       allow-write: true
       allow-freeform: true
   xref: 'GOC:dhl'
-  uri: 'GOC:dhl'
+  uri: 'http://orcid.org/0000-0003-3335-4537'
   organization: TAIR
+  comment: 'http://orcid.org/0000-0003-3335-4537'
 -
   uri: 'GOC:ds'
   xref: 'GOC:ds'
