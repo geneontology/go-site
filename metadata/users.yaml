@@ -322,8 +322,6 @@
   organization: DDB
 -
   nickname: 'Amanda Mackie'
-  email-md5:
-    - 2032c0dc70a2aa2c3cadf452302a7e8d
   authorizations:
     noctua-go:
       allow-edit: true
