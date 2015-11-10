@@ -1,0 +1,41 @@
+{
+    "name": "go-site",
+    "version": "0.0.1",
+    "license": "BSD-3-Clause",
+    "description": ".",
+    "keywords": [
+        "application",
+        "gene ontology",
+        "GO",
+        "amigo",
+        "bbop"
+    ],
+    "author": "SJC <sjcarbon@lbl.gov> (http://berkeleybop.org/)",
+    "homepage": "http://berkeleybop.org/",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/geneontology/go-site.git"
+    },
+    "engines": {
+        "node": ">= 0.12.2",
+        "npm": ">= 2.7.4"
+    },
+    "dependencies": {
+        "aws-sdk": "2.0.4",
+        "minimist": "0.2.0",
+        "underscore": "1.8.3",
+	"yamljs": "0.2.3"
+    },
+    "devDependencies": {
+    },
+    "bundleDependencies": [],
+    "private": false,
+    "bugs": {
+        "url": "https://github.com/geneontology/go-site/issues"
+    },
+    "directories": {
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
+}
