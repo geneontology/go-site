@@ -249,9 +249,14 @@
   nickname: 'Nicolas Le Novere'
   organization: BIOMD
 -
+  nickname: 'Isabelle Cusin'
   uri: 'GOC:ic'
   xref: 'GOC:ic'
-  nickname: 'Isabelle Cusin'
+  email-md5:
+    - a35c6a73b68acd8ba279d77dad079d8f
+  authorizations:
+    noctua-go:
+      allow-edit: true
   organization: CALIPHO
 -
   uri: 'GOC:add'
@@ -1485,9 +1490,14 @@
   nickname: 'Livia Famiglietti'
   organization: UniProt
 -
-  uri: 'GOC:mf'
-  xref: 'GOC:mf'
   nickname: 'Marc Feuermann'
+  uri: 'http://orcid.org/0000-0002-4187-2863'
+  xref: 'GOC:mf'
+  email-md5:
+    - a70eb53334ef240f607a3ca63272dcaa
+  authorizations:
+    noctua-go:
+      allow-edit: true
   organization: UniProt
 -
   uri: 'GOC:mcb'
@@ -2160,3 +2170,30 @@
   authorizations:
     noctua-go:
       allow-edit: true
+-
+  nickname: 'Aurore Britan'
+  uri: 'http://orcid.org/0000-0002-9846-2590'
+  email-md5:
+    - 511024223bef1686c82af8cee07aa5ab
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: SIB
+-
+  nickname: 'Valerie Hinard'
+  uri: 'http://orcid.org/0000-0001-5891-169X'
+  email-md5:
+    - f82886a594366a817267e7843aaa94eb
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: SIB
+-
+  nickname: 'Giulia Antonazzo'
+  uri: 'http://orcid.org/0000-0003-0086-5621'
+  email-md5:
+    - 7379792826dca5b368ea626350f42fdb
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: FlyBase
