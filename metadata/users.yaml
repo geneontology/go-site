@@ -307,7 +307,6 @@
   xref: 'GOC:pg'
   uri: 'http://orcid.org/0000-0003-1813-6857'
   organization: DDB
-  comment: 'http://orcid.org/0000-0003-1813-6857'
 -
   nickname: 'Robert Dodson'
   email-md5:
@@ -410,9 +409,8 @@
       allow-freeform-litxref-optional: true
       allow-management: true
   xref: 'GOC:dos'
-  uri: 'GOC:dos'
+  uri: 'http://orcid.org/0000-0002-7073-9172'
   organization: GO
-  comment: 'http://orcid.org/0000-0002-7073-9172'
 -
   uri: 'GOC:rc'
   xref: 'GOC:rc'
@@ -431,7 +429,6 @@
   xref: 'GOC:sart'
   uri: 'http://orcid.org/0000-0003-1818-8243'
   organization: FB
-  comment: 'http://orcid.org/0000-0003-1818-8243'
 -
   uri: 'GOC:mb'
   xref: 'GOC:mb'
@@ -466,7 +463,7 @@
   xref: 'GOC:bf'
   uri: 'http://orcid.org/0000-0001-8682-8754'
   organization: 'UCL-Parkinson''s UK Annotation Project'
-  comment: 'former affiliations: FB, UniProt, GO; http://orcid.org/0000-0001-8682-8754'
+  comment: 'former affiliations: FB, UniProt, GO'
 -
   uri: 'GOC:ceb'
   xref: 'GOC:ceb'
@@ -498,7 +495,6 @@
   xref: 'GOC:jl'
   uri: 'http://orcid.org/0000-0001-8865-4321'
   organization: GO
-  comment: 'http://orcid.org/0000-0001-8865-4321'
 -
   uri: 'http://orcid.org/0000-0002-9551-6370'
   xref: 'GOC:mec'
@@ -507,7 +503,6 @@
     - 792d70ba0832fd43a97a9d4ec5136c86
     - a1f4be95870984265a3b33604a963b01
   organization: GO
-  comment: 'http://orcid.org/0000-0002-9551-6370'
   authorizations:
     termgenie-go:
       allow-write: true
@@ -531,7 +526,6 @@
   xref: 'GOC:pr'
   uri: 'http://orcid.org/0000-0002-2825-0621'
   organization: GO
-  comment: 'http://orcid.org/0000-0002-2825-0621'
 -
   uri: 'GOC:curators'
   xref: 'GOC:curators'
@@ -678,7 +672,6 @@
   xref: 'GOC:dph'
   uri: 'http://orcid.org/0000-0001-7476-6306'
   organization: MGI
-  comment: 'http://orcid.org/0000-0001-7476-6306'
 -
   uri: 'GOC:tfm'
   xref: 'GOC:tfm'
@@ -725,11 +718,10 @@
   nickname: 'Li Ni'
   organization: MGI
 -
-  uri: 'GOC:jab'
-  xref: 'GOC:jab'
   nickname: 'Judith Blake'
+  uri: 'http://orcid.org/0000-0001-8522-334X'
+  xref: 'GOC:jab'
   organization: MGI
-  comment: 'http://orcid.org/0000-0001-8522-334X'
 -
   nickname: 'Claudia Rato da Silva'
   email-md5:
@@ -819,7 +811,6 @@
   xref: 'GOC:al'
   uri: 'http://orcid.org/0000-0003-1179-5999'
   organization: PomBase
-  comment: 'http://orcid.org/0000-0003-1179-5999'
 -
   uri: 'GOC:jb'
   xref: 'GOC:jb'
@@ -838,7 +829,7 @@
   xref: 'GOC:mah'
   uri: 'http://orcid.org/0000-0003-4148-4606'
   organization: PomBase
-  comment: 'http://orcid.org/0000-0003-4148-4606 former affiliations: GO editorial office; MGI; SGD in distant past'
+  comment: 'former affiliations: GO editorial office; MGI; SGD in distant past'
 -
   nickname: 'Val Wood'
   email-md5:
@@ -852,7 +843,7 @@
   xref: 'GOC:vw'
   uri: 'http://orcid.org/0000-0001-6330-7526'
   organization: PomBase
-  comment: 'http://orcid.org/0000-0001-6330-7526 former affiliation: GeneDB_Spombe'
+  comment: 'former affiliation: GeneDB_Spombe'
 -
   uri: 'GOC:fz'
   xref: 'GOC:fz'
@@ -995,7 +986,6 @@
   xref: 'GOC:cjm'
   uri: 'http://orcid.org/0000-0002-6601-2165'
   organization: LBL
-  comment: 'http://orcid.org/0000-0002-6601-2165'
 -
   uri: 'GOC:as'
   xref: 'GOC:as'
@@ -1031,9 +1021,8 @@
     termgenie-go:
       allow-write: true
   xref: 'GOC:dgf'
-  uri: 'GOC:dgf'
+  uri: 'http://orcid.org/0000-0003-4929-9472'
   organization: SGD
-  comment: 'http://orcid.org/0000-0003-4929-9472'
 -
   uri: 'GOC:ew'
   xref: 'GOC:ew'
@@ -1097,7 +1086,6 @@
   xref: 'GOC:mcc'
   uri: 'http://orcid.org/0000-0001-9043-693X'
   organization: SGD
-  comment: 'http://orcid.org/0000-0001-9043-693X'
 -
   nickname: 'Rama Balakrishnan'
   email-md5:
@@ -1111,7 +1099,6 @@
   xref: 'GOC:rb'
   uri: 'http://orcid.org/0000-0003-2468-9933'
   organization: SGD
-  comment: 'http://orcid.org/0000-0003-2468-9933'
 -
   uri: 'GOC:rn'
   xref: 'GOC:rn'
@@ -1135,14 +1122,13 @@
   xref: 'GOC:se'
   uri: 'http://orcid.org/0000-0001-5472-917X'
   organization: SGD
-  comment: 'http://orcid.org/0000-0001-5472-917X'
 -
   uri: 'GOC:ssd'
   xref: 'GOC:ssd'
   nickname: 'Selina Dwight'
   organization: SGD
 -
-  nickname: 'http://orcid.org/0000-0003-1058-2668'
+  nickname: 'Dani Welter'
   email-md5:
     - 583eaf69b34a4dcbb51d019f7eede0f0
   authorizations:
@@ -1152,7 +1138,7 @@
       allow-write: true
   xref: 'GOC:dw'
   uri: 'http://orcid.org/0000-0003-1058-2668'
-  organization: 'SPOT (EBI)     Dani Welter'
+  organization: 'SPOT (EBI)'
 -
   uri: 'GOC:db'
   xref: 'GOC:db'
@@ -1181,7 +1167,6 @@
   xref: 'GOC:dhl'
   uri: 'http://orcid.org/0000-0003-3335-4537'
   organization: TAIR
-  comment: 'http://orcid.org/0000-0003-3335-4537'
 -
   uri: 'GOC:ds'
   xref: 'GOC:ds'
@@ -1258,7 +1243,6 @@
   xref: 'GOC:tb'
   uri: 'http://orcid.org/0000-0002-3837-8864'
   organization: TAIR
-  comment: 'http://orcid.org/0000-0002-3837-8864'
 -
   uri: 'GOC:yl'
   xref: 'GOC:yl'
@@ -1436,9 +1420,8 @@
     termgenie-go:
       allow-write: true
   xref: 'GOC:ecu'
-  uri: 'GOC:ecu'
+  uri: 'http://orcid.org/0000-0002-0987-9862'
   organization: UniProt
-  comment: 'http://orcid.org/0000-0002-0987-9862'
 -
   uri: 'GOC:ec'
   xref: 'GOC:ec'
@@ -1742,7 +1725,6 @@
   xref: 'GOC:dgh'
   uri: 'http://orcid.org/0000-0001-5831-7439'
   organization: ZFIN
-  comment: 'http://orcid.org/0000-0001-5831-7439'
 -
   nickname: 'David Fashena'
   email-md5:
@@ -1756,15 +1738,14 @@
   uri: 'GOC:dsf'
   organization: ZFIN
 -
-  uri: 'GOC:cvs'
-  xref: 'GOC:cvs'
   nickname: 'Ceri Van Slyke'
+  uri: 'http://orcid.org/0000-0002-2244-7917'
+  xref: 'GOC:cvs'
   organization: ZFIN
-  comment: 'http://orcid.org/0000-0002-2244-7917'
 -
+  nickname: 'Erik Segerdell'
   uri: 'GOC:ejs'
   xref: 'GOC:ejs'
-  nickname: 'Erik Segerdell'
   organization: ZFIN
 -
   nickname: 'Lionel Breuza'
@@ -1779,11 +1760,10 @@
   uri: 'GOC:lb'
   organization: UniProt
 -
-  uri: 'GOC:mh'
-  xref: 'GOC:mh'
   nickname: 'Melissa Haendel'
+  uri: 'http://orcid.org/0000-0001-9114-8737'
+  xref: 'GOC:mh'
   organization: OHSU
-  comment: 'http://orcid.org/0000-0001-9114-8737'
 -
   uri: 'GOC:sat'
   xref: 'GOC:sat'
@@ -1795,11 +1775,10 @@
   nickname: 'Sridhar Ramachandran'
   organization: ZFIN
 -
-  uri: 'GOC:ymb'
-  xref: 'GOC:ymb'
   nickname: 'Yvonne M Bradford'
+  uri: 'http://orcid.org/0000-0002-9900-7880'
+  xref: 'GOC:ymb'
   organization: ZFIN
-  comment: 'http://orcid.org/0000-0002-9900-7880'
 -
   uri: 'GOC:obol'
   xref: 'GOC:obol'
@@ -2152,7 +2131,6 @@
   xref: 'GOC:at'
   uri: 'http://orcid.org/0000-0002-2908-3327'
   organization: 'Ronin Institute'
-  comment: 0000-0002-2908-3327
 -
   uri: 'GOC:BioGRID'
   xref: 'GOC:BioGRID'
@@ -2174,9 +2152,9 @@
   nickname: 'Revision of the autophagy branch (David H, Paola, Paul D, Ruth, Becky, Marc F and field experts)'
   organization: 'working group project'
 -
+  nickname: 'Peter Robinson'
   uri: 'GOC:pnr'
   xref: 'GOC:pnr'
-  nickname: 'Peter Robinson'
   email-md5:
     - c727817e3b98721cf962f69613afd192
   authorizations:
