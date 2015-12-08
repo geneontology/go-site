@@ -2197,3 +2197,13 @@
     noctua-go:
       allow-edit: true
   organization: FlyBase
+-
+  nickname: 'Anne Niknejad'
+  uri: 'GOC:ani'
+  xref: 'GOC:ani'
+  email-md5:
+    - b63b38a114f54e74e6b7e22f728fc6a2
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: SIB
