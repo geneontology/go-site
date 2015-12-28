@@ -2707,3 +2707,15 @@
       url_syntax: http://zfin.org/cgi-bin/ZFIN_jump?record=[example_id]
       example_id: ZFIN:ZDB-GENE-990415-103
       example_url: http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-GENE-990415-103
+- database: GRIN
+  name: Germplasm Resources Information Network
+  synonyms:
+    - GRIN
+  generic_urls:
+    - http://www.ars-grin.gov/
+  entity_types:
+    - type_name: germplasm
+      type_id: GRIN:0000000
+      url_syntax: https://npgsweb.ars-grin.gov/gringlobal/accessiondetail.aspx?id=[example_id]
+      example_id: GRIN:1882640
+      example_url: https://npgsweb.ars-grin.gov/gringlobal/accessiondetail.aspx?id=1882640
