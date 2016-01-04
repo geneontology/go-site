@@ -275,7 +275,7 @@
   xref: 'GOC:dsd'
   nickname: 'David S. Dougall'
   organization: CL
-  comment: 'member of Richard Scheuermann''s group; not directly affiliated with a database, but collaborates on Cell Ontology development'
+  comment: "member of Richard Scheuermann's group; not directly affiliated with a database, but collaborates on Cell Ontology development"
 -
   uri: 'GOC:cl'
   xref: 'GOC:cl'
@@ -467,7 +467,7 @@
       allow-management: true
   xref: 'GOC:bf'
   uri: 'http://orcid.org/0000-0001-8682-8754'
-  organization: 'UCL-Parkinson''s UK Annotation Project'
+  organization: "UCL-Parkinson's UK Annotation Project"
   comment: 'former affiliations: FB, UniProt, GO'
 -
   uri: 'GOC:ceb'
@@ -903,7 +903,7 @@
   nickname: 'Mark Williams'
   organization: Reactome
 -
-  nickname: 'Peter D''Eustachio'
+  nickname: "Peter D'Eustachio"
   email-md5:
     - ba0ab426088546c5a9acf014a722fdd5
   authorizations:
@@ -1316,8 +1316,8 @@
 -
   uri: 'GOC:PARL'
   xref: 'GOC:PARL'
-  nickname: 'UCL-Parkinson''s UK Annotation Project'
-  organization: 'UCL-Parkinson''s UK Annotation Project'
+  nickname: "UCL-Parkinson's UK Annotation Project"
+  organization: "UCL-Parkinson's UK Annotation Project"
 -
   nickname: 'Paul Denny'
   email-md5:
@@ -1329,12 +1329,12 @@
       allow-write: true
   xref: 'GOC:pad'
   uri: 'GOC:pad'
-  organization: 'UCL-Parkinson''s UK Annotation Project'
+  organization: "UCL-Parkinson's UK Annotation Project"
 -
   uri: 'GOC:mat'
   xref: 'GOC:mat'
   nickname: 'Mathew Tata'
-  organization: 'UCL-Parkinson''s UK Annotation Project'
+  organization: "UCL-Parkinson's UK Annotation Project"
   comment: 'Student working with the PARL group at UCL'
 -
   uri: 'GOC:aa'
@@ -2078,7 +2078,7 @@
 -
   uri: 'GOC:sensu'
   xref: 'GOC:sensu'
-  nickname: 'overhaul of ''sensu'' terms'
+  nickname: 'overhaul of "sensu" terms'
   organization: 'working group project'
 -
   uri: 'GOC:signaling'
