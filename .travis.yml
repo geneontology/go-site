@@ -8,10 +8,10 @@ install:
   - gem install kwalify
 script:
   ## Quick user data check.
-  - kwalify -E -m metadata/users.schema.yaml | grep INVALID; test $? -ne 0
-  - kwalify -E -f metadata/users.schema.yaml metadata/users.yaml | grep INVALID; test $? -ne 0
-  - kwalify -E -m metadata/db-xrefs.schema.yaml | grep INVALID; test $? -ne 0
-  - kwalify -E -f metadata/db-xrefs.schema.yaml metadata/db-xrefs.yaml | grep INVALID; test $? -ne 0
+  - kwalify -E -m metadata/users.schema.yaml 2>&1 | grep 'INVALID\|ERROR'; test $? -ne 0
+  - kwalify -E -f metadata/users.schema.yaml metadata/users.yaml 2>&1 | grep 'INVALID\|ERROR'; test $? -ne 0
+  - kwalify -E -m metadata/db-xrefs.schema.yaml 2>&1 | grep 'INVALID\|ERROR'; test $? -ne 0
+  - kwalify -E -f metadata/db-xrefs.schema.yaml metadata/db-xrefs.yaml 2>&1 | grep 'INVALID\|ERROR'; test $? -ne 0
 notifications:
   email:
     - sjcarbon@lbl.gov
