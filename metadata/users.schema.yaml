@@ -16,10 +16,12 @@ sequence:
         type: str
         required: true
         unique: true
+        pattern: /^[\/\.\-\:\w]+$/
       "xref":
         type: str
         required: false
         unique: true
+        pattern: /^\w+:\w+$/
       "nickname":
         type: str
         required: true
