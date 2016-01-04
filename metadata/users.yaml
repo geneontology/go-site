@@ -157,6 +157,11 @@
       allow-write: true
       allow-freeform: true
 -
+uri: 'http://orcid.org/0000-0002-3898-1727'
+  xref: 'GOC:bc’
+  nickname: 'Barbara Czub'
+  organization: BHF-UCL
+-
   uri: 'GOC:ebc'
   xref: 'GOC:ebc'
   nickname: 'Evelyn Camon'
