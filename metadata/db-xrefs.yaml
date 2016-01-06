@@ -1525,7 +1525,7 @@
 - database: MetaCyc
   name: Metabolic Encyclopedia of metabolic and other pathways
   synonyms:
-  - METACYC
+    - METACYC
   generic_urls:
     - http://metacyc.org/
   entity_types:
@@ -1623,7 +1623,7 @@
 - database: NASC_code
   name: Nottingham Arabidopsis Stock Centre Seeds Database
   synonyms:
-  - NASC
+    - NASC
   generic_urls:
     - http://arabidopsis.info
   entity_types:
@@ -2189,7 +2189,7 @@
 - database: Reactome
   name: Reactome - a curated knowledgebase of biological pathways
   synonyms:
-  - REACTOME
+    - REACTOME
     - REAC
   generic_urls:
     - http://www.reactome.org/
@@ -2255,7 +2255,7 @@
 - database: RGD
   name: Rat Genome Database
   synonyms:
-  - RAD
+    - RAD
     - RGDID
   generic_urls:
     - http://rgd.mcw.edu/
@@ -2396,7 +2396,7 @@
 - database: SGN
   name: Sol Genomics Network
   synonyms:
-  - SGN_gene
+    - SGN_gene
   generic_urls:
     - http://www.sgn.cornell.edu/
   entity_types:
@@ -2493,7 +2493,7 @@
 - database: SPTR
   name: SRS database at EBI
   synonyms:
-  - SP
+    - SP
   generic_urls:
     - http://srs.ebi.ac.uk
   entity_types:
@@ -2630,9 +2630,9 @@
 - database: TR
   name: TREMBL
   synonyms:
-  - SPTREMBL
-  - TREMBL
-  - TrEMBL
+    - SPTREMBL
+    - TREMBL
+    - TrEMBL
   generic_urls:
     - http://www.ebi.ac.uk/swissprot/
   entity_types:
