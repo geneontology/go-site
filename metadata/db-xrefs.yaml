@@ -1426,7 +1426,7 @@
     - type_name: entity
       type_id: BET:0000000
       url_syntax: http://www.maizegdb.org/cgi-bin/displaytraitrecord.cgi?id=[example_id]
-      example_id: example:
+      example_id: MACSC_REF:78112
       example_url: http://www.maizegdb.org/cgi-bin/displaytraitrecord.cgi?id=78112
 - database: MaizeGDB
   name: MaizeGDB
