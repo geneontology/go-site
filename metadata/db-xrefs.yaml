@@ -1476,7 +1476,8 @@
       type_id: BET:0000000
       url_syntax: http://maizegdb.org/data_center/stock?id=[example_id]
       example_id: MaizeGDB_stock:12098
-      example_url: http://maizegdb.org/data_center/stock?id=12098- database: MEDLINE
+      example_url: http://maizegdb.org/data_center/stock?id=12098
+- database: MEDLINE
   name: Medline literature database
   generic_urls:
     - http://www.nlm.nih.gov/databases/databases_medline.html
