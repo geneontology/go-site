@@ -1524,7 +1524,7 @@
 - database: MetaCyc
   name: Metabolic Encyclopedia of metabolic and other pathways
   synonyms:
-  	- METACYC
+  - METACYC
   generic_urls:
     - http://metacyc.org/
   entity_types:
