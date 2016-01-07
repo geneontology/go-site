@@ -1457,9 +1457,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.maizegdb.org/cgi-bin/id_search.cgi?id=[example_id]
-      example_id: MaizeGDB:881225
-      example_url: http://www.maizegdb.org/cgi-bin/id_search.cgi?id=881225
+      url_syntax: http://maizegdb.org/gene_center/gene/[example_id]
+      example_id: MaizeGDB:12098
+      example_url: http://maizegdb.org/gene_center/gene/12098 
 - database: MaizeGDB_Locus
   name: MaizeGDB
   generic_urls:
@@ -1478,9 +1478,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.maizegdb.org/cgi-bin/displaytraitrecord.cgi?id=[example_id]
+      url_syntax: http://www.maizegdb.org/data_center/trait?id=[example_id]
       example_id: MaizeGDB_QTL:78112
-      example_url: http://www.maizegdb.org/cgi-bin/displaytraitrecord.cgi?id=78112
+      example_url: http://www.maizegdb.org/data_center/trait?id=78112
 - database: MaizeGDB_REF
   name: Maize Genetics and Genomics Database
   generic_urls:
