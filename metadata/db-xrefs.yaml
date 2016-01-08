@@ -1199,9 +1199,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: https://en.wikipedia.org/w/index.php?title=Special%3ABookSources&isbn=[example_id]
+      url_syntax: http://openisbn.com/search.php?q=[example_id]&isbn=1/
       example_id: ISBN:0781702534
-      example_url: https://en.wikipedia.org/w/index.php?title=Special%3ABookSources&isbn=0123456789
+      example_url: http://openisbn.com/search.php?q=0781702534&isbn=1/
 - database: ISRR
   name: International Society for Root Research
   generic_urls:
@@ -1973,6 +1973,16 @@
       url_syntax: http://pir.georgetown.edu/cgi-bin/ipcSF?id=[example_id]
       example_id: PIRSF:SF002327
       example_url: http://pir.georgetown.edu/cgi-bin/ipcSF?id=SF002327
+- database: Planteome_gene
+  name: Generic planteome genes without homes
+  generic_urls:
+    - http://www.google.com
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: https://www.google.com/search?q=[example_id]
+      example_id: Planteome_gene:AC148152.3_FGT008
+      example_url: https://www.google.com/search?q=AC148152.3_FGT008
 - database: PlantSystematics_image_archive
   name: PlantSystematics.org
   generic_urls:
