@@ -983,7 +983,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.gramene.org/db/genes/search_gene?acc=GR:[example_id]
+      url_syntax: http://www.gramene.org/db/genes/search_gene?acc=[example_id]
       example_id: GR_GENE:GR:0060198
       example_url: http://www.gramene.org/db/genes/search_gene?acc=GR:0060198
 - database: GR_MUT
