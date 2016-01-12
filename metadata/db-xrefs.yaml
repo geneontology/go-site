@@ -642,6 +642,17 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: "[A-Za-z]{3,4}"
+- database: EMAPA
+  name: Mouse gross anatomy and development, abstract
+  description: "A time-independent Mouse Anatomical Dictionary; part of Gene Expression Database"
+  generic_urls:
+    - http://emouseatlas.org/
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: "http://www.informatics.jax.org/vocab/gxd/anatomy/[example_id]"
+      example_id: EMAPA:0000003
+      example_url: "http://www.informatics.jax.org/vocab/gxd/anatomy/EMAPA:16894"
 - database: EMBL
   name: EMBL Nucleotide Sequence Database
   description: International nucleotide sequence database collaboration, comprising EMBL-EBI nucleotide sequence data library (EMBL-Bank), DNA DataBank of Japan (DDBJ), and NCBI GenBank
