@@ -2206,6 +2206,7 @@
   authorizations:
     noctua-go:
       allow-edit: true
+  xref: 'GOC:ga'
   organization: FlyBase
 -
   nickname: 'Anne Niknejad'
