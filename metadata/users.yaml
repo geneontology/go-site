@@ -2207,6 +2207,8 @@
   authorizations:
     noctua-go:
       allow-edit: true
+    termgenie-go:
+      allow-write: true
   xref: 'GOC:ga'
   organization: FlyBase
 -
