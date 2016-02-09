@@ -767,6 +767,16 @@
       url_syntax: http://www.expasy.ch/cgi-bin/nicezyme.pl?[example_id]
       example_id: ENZYME:EC 1.1.1.1
       example_url: http://www.expasy.ch/cgi-bin/nicezyme.pl?1.1.1.1
+- database: EO_GIT
+  name: GitHub
+  generic_urls:
+    - https://github.com/Planteome/plant-environment-ontology
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: https://github.com/Planteome/plant-environment-ontology/issues/[example_id]
+      example_id: EO_GIT:76
+      example_url: https://github.com/Planteome/plant-environment-ontology/issues/76
 - database: Eurofung
   name: Eurofungbase community annotation
   generic_urls:
@@ -2045,6 +2055,16 @@
       url_syntax: http://www.plantontology.org/amigo/go.cgi?action=query&view=query&search_constraint=terms&query=PO:[example_id]
       example_id: PO:0009004
       example_url: http://www.plantontology.org/amigo/go.cgi?action=query&view=query&search_constraint=terms&query=PO:0009004
+- database: PO_GIT
+  name: GitHub
+  generic_urls:
+    - https://github.com/Planteome/plant-ontology
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: https://github.com/Planteome/plant-ontology/issues/[example_id]
+      example_id: PO_GIT:626
+      example_url: https://github.com/Planteome/plant-ontology/issues/626
 - database: PO_REF
   name: Plant Ontology custom references
   generic_urls:
@@ -2161,6 +2181,16 @@
       url_syntax: http://v2.pseudomonas.com/getAnnotation.do?locusID=[example_id]
       example_id: PseudoCAP:PA4756
       example_url: http://v2.pseudomonas.com/getAnnotation.do?locusID=PA4756
+- database: PSO_GIT
+  name: GitHub
+  generic_urls:
+    - https://github.com/Planteome/plant-stress-ontology
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: https://github.com/Planteome/plant-stress-ontology/issues/[example_id]
+      example_id: PSO_GIT:169
+      example_url: https://github.com/Planteome/plant-stress-ontology/issues/169
 - database: PSI-MI
   name: Proteomic Standard Initiative for Molecular Interaction
   synonyms:
@@ -2680,6 +2710,16 @@
       url_syntax: http://db.ciliate.org/cgi-bin/reference/reference.pl?dbid=[example_id]
       example_id: TGD_REF:T000005818
       example_url: http://db.ciliate.org/cgi-bin/reference/reference.pl?dbid=T000005818
+- database: TO_GIT
+  name: GitHub
+  generic_urls:
+    - https://github.com/Planteome/plant-trait-ontology
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: https://github.com/Planteome/plant-trait-ontology/issues/[example_id]
+      example_id: TO_GIT:381
+      example_url: https://github.com/Planteome/plant-trait-ontology/issues/381
 - database: TR
   name: TREMBL
   synonyms:
