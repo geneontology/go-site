@@ -759,7 +759,7 @@
 - database: EO_GIT
   name: GitHub
   generic_urls:
-    -https://github.com/Planteome/plant-environment-ontology
+    - https://github.com/Planteome/plant-environment-ontology
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -2054,7 +2054,7 @@
 - database: PO_GIT
   name: GitHub
   generic_urls:
-    -https://github.com/Planteome/plant-ontology
+    - https://github.com/Planteome/plant-ontology
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -2180,7 +2180,7 @@
 - database: PSO_GIT
   name: GitHub
   generic_urls:
-    -https://github.com/Planteome/plant-stress-ontology
+    - https://github.com/Planteome/plant-stress-ontology
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -2709,7 +2709,7 @@
 - database: TO_GIT
   name: GitHub
   generic_urls:
-    -https://github.com/Planteome/plant-trait-ontology
+    - https://github.com/Planteome/plant-trait-ontology
   entity_types:
     - type_name: entity
       type_id: BET:0000000
