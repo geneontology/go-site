@@ -899,13 +899,6 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-- database: GermOnline
-  name: GermOnline
-  generic_urls:
-    - http://www.germonline.org/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
 - database: GO
   name: Gene Ontology Database
   generic_urls:
