@@ -1799,6 +1799,11 @@
   organization: ZFIN
 -
   nickname: 'Yvonne M Bradford'
+  email-md5:
+    - 47d38d21434f4cc3c851130425f3f416
+  authorizations:
+    termgenie-go:
+      allow-write: true
   uri: 'http://orcid.org/0000-0002-9900-7880'
   xref: 'GOC:ymb'
   organization: ZFIN
