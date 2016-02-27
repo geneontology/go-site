@@ -1784,7 +1784,12 @@
   organization: UniProt
 -
   nickname: 'Melissa Haendel'
+  email-md5:
+    - 6c5e50debb93f1f802ad7256952fc488
   uri: 'http://orcid.org/0000-0001-9114-8737'
+  authorizations:
+    noctua-go:
+      allow-edit: true
   xref: 'GOC:mh'
   organization: OHSU
 -
