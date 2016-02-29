@@ -579,6 +579,16 @@
     termgenie-go:
       allow-write: true
 -
+  uri: 'GOC:hbye'
+  xref: 'GOC:hbye'
+  nickname: 'Hema Bye-A-Jee'
+  email-md5:
+    - eeaf1be2f013ee3e4fe9204b8e48a1a6
+  organization: UniProt
+  authorizations:
+    termgenie-go:
+      allow-write: true
+-
   uri: 'GOC:ah'
   xref: 'GOC:ah'
   nickname: 'Alex Holmes'
