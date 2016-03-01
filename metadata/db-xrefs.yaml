@@ -745,10 +745,10 @@
       url_syntax: http://www.ensemblgenomes.org/id/[example_ID]
       example_id: EnsemblFungi:YOR197W
       example_url: http://www.ensemblgenomes.org/id/YOR197W
-- database: EnsemblPlants/Gramene
+- database: EnsemblPlants
   name: Ensembl Plants, the Ensembl Genomes database for accessing plant genome data
   synonyms:
-    - EnsemblPlants
+    - EnsemblPlants/Gramene
   generic_urls:
     - http://plants.ensembl.org/
   entity_types:
