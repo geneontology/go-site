@@ -736,7 +736,7 @@
       example_id: ENSEMBL_TranscriptID:ENST00000371959
       example_url: http://www.ensembl.org/id/ENST00000371959
 - database: EnsemblFungi
-  name: Ensembl Fungi, the Ensembl Genomes database for accessing fungal genome data
+  name: Ensembl Fungi, the Ensembl database for accessing genome-scale data from fungi.
   generic_urls:
     - http://fungi.ensembl.org/
   entity_types:
@@ -745,8 +745,18 @@
       url_syntax: http://www.ensemblgenomes.org/id/[example_ID]
       example_id: EnsemblFungi:YOR197W
       example_url: http://www.ensemblgenomes.org/id/YOR197W
+- database: EnsemblMetazoa
+  name: Ensembl Metazoa, the Ensembl database for accessing genome-scale data from non-vertebrate metazoa.
+  generic_urls:
+    - http://metazoa.ensembl.org/
+  entity_types:
+    - type_name: gene
+      type_id: SO:0000704
+      url_syntax: http://www.ensemblgenomes.org/id/[example_ID]
+      example_id: EnsemblMetazoa:FBgn0052693
+      example_url: http://www.ensemblgenomes.org/id/FBgn0052693
 - database: EnsemblPlants
-  name: Ensembl Plants, the Ensembl Genomes database for accessing plant genome data
+  name: Ensembl Plants, the Ensembl database for accessing genome-scale data from plants.
   synonyms:
     - EnsemblPlants/Gramene
   generic_urls:
@@ -757,6 +767,16 @@
       url_syntax: http://www.ensemblgenomes.org/id/[example_ID]
       example_id: EnsemblPlants:LOC_Os01g22954
       example_url: http://www.ensemblgenomes.org/id/LOC_Os01g22954
+- database: EnsemblProtists
+  name: Ensembl Protists, the Ensembl database for accessing genome-scale data from protists.
+  generic_urls:
+    - http://protists.ensembl.org/
+  entity_types:
+    - type_name: gene
+      type_id: SO:0000704
+      url_syntax: http://www.ensemblgenomes.org/id/[example_ID]
+      example_id: EnsemblProtists:PFL2550w
+      example_url: http://www.ensemblgenomes.org/id/PFL2550w
 - database: ENZYME
   name: Swiss Institute of Bioinformatics enzyme database
   generic_urls:
