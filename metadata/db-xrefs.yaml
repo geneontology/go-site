@@ -1721,9 +1721,9 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: \d+
-      url_syntax: http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve&db=gene&list_uids=[example_id]
+      url_syntax: http://www.ncbi.nlm.nih.gov/gene/[example_id]
       example_id: NCBI_Gene:4771
-      example_url: http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve&db=gene&list_uids=4771
+      example_url: http://www.ncbi.nlm.nih.gov/gene/4771
 - database: NCBI_gi
   name: NCBI databases
   generic_urls:
