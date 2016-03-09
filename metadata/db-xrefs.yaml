@@ -1233,6 +1233,16 @@
     - type_name: entity
       type_id: BET:0000000
       example_id: IPI:IPI00000005.1
+- database: IRIC
+  name: International Rice Research Institute
+  generic_urls:
+    - http://oryzasnp.org
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: http://oryzasnp.org/iric-portal/_variety.zul?irisid=[example_id]
+      example_id: IRIS%20313-11252
+      example_url: http://oryzasnp.org/iric-portal/_variety.zul?irisid=IRIS%20313-11252
 - database: ISBN
   name: International Standard Book Number
   generic_urls:
