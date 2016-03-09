@@ -1202,10 +1202,10 @@
     - type_name: entity
       type_id: BET:0000000
       example_id: IPI:IPI00000005.1
-- database: IRRI
+- database: IRIC
   name: International Rice Research Institute
   generic_urls:
-    - http://irri.org
+    - http://oryzasnp.org
   entity_types:
     - type_name: entity
       type_id: BET:0000000
