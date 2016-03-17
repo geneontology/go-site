@@ -648,8 +648,8 @@
   generic_urls:
     - http://emouseatlas.org/
   entity_types:
-    - type_name: entity
-      type_id: BET:0000000
+    - type_name: anatomical entity
+      type_id: CARO:0000000
       url_syntax: "http://www.informatics.jax.org/vocab/gxd/anatomy/EMAPA:[example_id]"
       example_id: EMAPA:0000003
       example_url: "http://www.informatics.jax.org/vocab/gxd/anatomy/EMAPA:16894"
