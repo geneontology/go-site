@@ -650,7 +650,7 @@
   entity_types:
     - type_name: anatomical entity
       type_id: CARO:0000000
-      id_syntax: [0-9]{5}
+      id_syntax: "[0-9]{5}"
       url_syntax: "http://www.informatics.jax.org/vocab/gxd/anatomy/EMAPA:[example_id]"
       example_id: EMAPA:16032
       example_url: "http://www.informatics.jax.org/vocab/gxd/anatomy/EMAPA:16894"
