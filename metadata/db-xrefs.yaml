@@ -2805,52 +2805,52 @@
       example_id: URBERON:0002398
       example_url: http://purl.obolibrary.org/obo/UBERON_0002398
 - database: UM-BBD
-  name: University of Minnesota Biocatalysis/Biodegradation Database
+  name: EAWAG Biocatalysis/Biodegradation Database
   generic_urls:
-    - http://umbbd.msi.umn.edu/
+    - http://eawag-bbd.ethz.ch/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
 - database: UM-BBD_enzymeID
-  name: University of Minnesota Biocatalysis/Biodegradation Database
+  name: EAWAG Biocatalysis/Biodegradation Database
   generic_urls:
-    - http://umbbd.msi.umn.edu/
+    - http://eawag-bbd.ethz.ch/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://umbbd.msi.umn.edu/servlets/pageservlet?ptype=ep&enzymeID=[example_id]
+      url_syntax: http://eawag-bbd.ethz.ch/servlets/pageservlet?ptype=ep&enzymeID=[example_id]
       example_id: UM-BBD_enzymeID:e0413
-      example_url: http://umbbd.msi.umn.edu/servlets/pageservlet?ptype=ep&enzymeID=e0230
+      example_url: http://eawag-bbd.ethz.ch/servlets/pageservlet?ptype=ep&enzymeID=e0230
 - database: UM-BBD_pathwayID
-  name: University of Minnesota Biocatalysis/Biodegradation Database
+  name: EAWAG Biocatalysis/Biodegradation Database
   generic_urls:
-    - http://umbbd.msi.umn.edu/
+    - http://eawag-bbd.ethz.ch/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://umbbd.msi.umn.edu/[example_id]/[example_id]_map.html
+      url_syntax: http://eawag-bbd.ethz.ch/[example_id]/[example_id]_map.html
       example_id: UM-BBD_pathwayID:acr
-      example_url: http://umbbd.msi.umn.edu/acr/acr_map.html
+      example_url: http://eawag-bbd.ethz.ch/acr/acr_map.html
 - database: UM-BBD_reactionID
-  name: University of Minnesota Biocatalysis/Biodegradation Database
+  name: EAWAG Biocatalysis/Biodegradation Database
   generic_urls:
-    - http://umbbd.msi.umn.edu/
+    - http://eawag-bbd.ethz.ch/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://umbbd.msi.umn.edu/servlets/pageservlet?ptype=r&reacID=[example_id]
+      url_syntax: http://eawag-bbd.ethz.ch/servlets/pageservlet?ptype=r&reacID=[example_id]
       example_id: UM-BBD_reactionID:r0129
-      example_url: http://umbbd.msi.umn.edu/servlets/pageservlet?ptype=r&reacID=r0129
+      example_url: http://eawag-bbd.ethz.ch/servlets/pageservlet?ptype=r&reacID=r0129
 - database: UM-BBD_ruleID
-  name: University of Minnesota Biocatalysis/Biodegradation Database
+  name: EAWAG Biocatalysis/Biodegradation Database
   generic_urls:
-    - http://umbbd.msi.umn.edu/
+    - http://eawag-bbd.ethz.ch/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://umbbd.msi.umn.edu/servlets/rule.jsp?rule=[example_id]
+      url_syntax: http://eawag-bbd.ethz.ch/servlets/rule.jsp?rule=[example_id]
       example_id: UM-BBD_ruleID:bt0330
-      example_url: http://umbbd.msi.umn.edu/servlets/rule.jsp?rule=bt0330
+      example_url: http://eawag-bbd.ethz.ch/servlets/rule.jsp?rule=bt0330
 - database: UniGene
   name: UniGene
   description: NCBI transcript cluster database, organized by transcriptome. Each UniGene entry is a set of transcript sequences that appear to come from the same transcription locus (gene or expressed pseudogene).
