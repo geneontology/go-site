@@ -1159,6 +1159,7 @@
   nickname: 'Dani Welter'
   email-md5:
     - 583eaf69b34a4dcbb51d019f7eede0f0
+    - 3f4da4804976ac88536a6fe0ef77f817
   authorizations:
     noctua-go:
       allow-edit: true
