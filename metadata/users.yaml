@@ -522,6 +522,8 @@
     - a1f4be95870984265a3b33604a963b01
   organization: GO
   authorizations:
+    noctua-go:
+      allow-edit: true
     termgenie-go:
       allow-write: true
       allow-review: true
