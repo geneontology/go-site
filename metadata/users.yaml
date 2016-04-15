@@ -1,3 +1,6 @@
+# The users.yaml file is updated in TermGenie every six hours.
+# TermGenie restarts at 9 pm (Pacific time Zone), aka 5 am (UK time), which also refreshes the configuration. 
+# Should there be a need for a faster update, the configuration can be refreshed by hand on the server; please email Heiko.
 -
   nickname: 'Jim Knowles'
   email-md5:
@@ -522,6 +525,8 @@
     - a1f4be95870984265a3b33604a963b01
   organization: GO
   authorizations:
+    noctua-go:
+      allow-edit: true
     termgenie-go:
       allow-write: true
       allow-review: true
@@ -1160,6 +1165,7 @@
   nickname: 'Dani Welter'
   email-md5:
     - 583eaf69b34a4dcbb51d019f7eede0f0
+    - 3f4da4804976ac88536a6fe0ef77f817
   authorizations:
     noctua-go:
       allow-edit: true
