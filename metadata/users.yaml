@@ -754,6 +754,11 @@
   nickname: 'Judith Blake'
   uri: 'http://orcid.org/0000-0001-8522-334X'
   xref: 'GOC:jab'
+  email-md5:
+    - 6ea952218c0da22097c3cab09fbb5c36
+  authorizations:
+    noctua-go:
+      allow-edit: true
   organization: MGI
 -
   nickname: 'Claudia Rato da Silva'
