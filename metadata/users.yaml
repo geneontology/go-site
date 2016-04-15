@@ -2269,3 +2269,12 @@
     noctua-go:
       allow-edit: true
   organization: EMBL-EBI
+-
+  nickname: "Alex Bateman"
+  uri: 'http://orcid.org/0000-0002-6982-4660'
+  email-md5:
+    - af32cf0251de5801656a01abc87347d8
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: EMBL-EBI
