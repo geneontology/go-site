@@ -306,7 +306,7 @@
     termgenie-go:
       allow-write: true
   xref: 'GOC:pf'
-  uri: 'GOC:pf'
+  uri: 'http://orcid.org/0000-0002-4532-2703'
   organization: DDB
 -
   nickname: 'Pascale Gaudet'
@@ -829,6 +829,7 @@
 -
   nickname: 'Antonia Lock'
   email-md5:
+    - e0d33c1c706cdbd74d033961f2f9bb43
     - 7e821339ca29fac9f47d78ce3bed1c11
   authorizations:
     noctua-go:
@@ -2149,6 +2150,7 @@
   nickname: 'Monica Munoz-Torres'
   email-md5:
     - 10c7ac321b4dd7fcca0c2eccc81ff78f
+    - 0317fbb65069c545c831431d73e2d0fc
   authorizations:
     noctua-go:
       allow-edit: true
@@ -2243,3 +2245,21 @@
     noctua-go:
       allow-edit: true
   organization: SIB
+-
+  nickname: "Claire O'Donovan"
+  uri: 'http://orcid.org/0000-0001-8051-7429'
+  email-md5:
+    - d4b32aa1fdf6e448fdcac39e1029b29d
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: EMBL-EBI
+-
+  nickname: "Amaia Sangrador"
+  uri: 'http://orcid.org/0000-0001-6688-429X'
+  email-md5:
+    - df1dc4e85198a40a3fe2e0ce710e93a6
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: EMBL-EBI
