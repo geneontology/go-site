@@ -1,0 +1,47 @@
+{
+    "name": "go-site-jenkins-node-scripts",
+    "version": "0.0.1",
+    "license": "BSD-3-Clause",
+    "description": "Some scripts, yo!",
+    "keywords": [
+        "node",
+        "npm",
+        "client",
+        "server",
+        "Gene Ontology",
+        "GO",
+        "bbop",
+        "Berkeley BOP",
+        "Jenkins"
+    ],
+    "author": "SJC <sjcarbon@lbl.gov> (http://berkeleybop.org/)",
+    "homepage": "http://berkeleybop.org/",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/geneontology/go-site.git"
+    },
+    "engines": {
+        "node": ">= 0.12.4",
+        "npm": ">= 2.15.1"
+    },
+    "dependencies": {
+        "minimist": "~1.1.1",
+        "sync-request": "2.0.1",
+        "underscore": "1.8.3"
+    },
+    "devDependencies": {
+        "gulp": "^3.8.11"
+    },
+    "bundleDependencies": [],
+    "private": false,
+    "directories": {
+        "doc": "doc",
+        "test": "tests"
+    },
+    "bugs": {
+        "url": "https://github.com/geneontology/go-site/issues"
+    },
+    "scripts": {
+        "test": "./node_modules/.bin/gulp test"
+    }
+}
