@@ -1244,6 +1244,16 @@
       url_syntax: http://oryzasnp.org/iric-portal/_variety.zul?irisid=[example_id]
       example_id: IRIS%20313-11252
       example_url: http://oryzasnp.org/iric-portal/_variety.zul?irisid=IRIS%20313-11252
+- database: IRGC
+  name: International Rice Genebank Collection
+  generic_urls:
+    - https://www.genesys-pgr.org
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: https://www.genesys-pgr.org/acn/search?q=IRGC+[example_id]
+      example_id: IRGC:10012
+      example_url: https://www.genesys-pgr.org/acn/search?q=IRGC+10013
 - database: ISBN
   name: International Standard Book Number
   generic_urls:
