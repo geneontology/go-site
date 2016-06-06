@@ -717,10 +717,15 @@
   nickname: 'Tony Planchart'
   organization: MGI
 -
+  nickname: 'Dmitry Sitnikov'
   uri: 'GOC:dms'
   xref: 'GOC:dms'
-  nickname: 'Dmitry Sitnikov'
+  email-md5:
+    - 5ee6809ed1e68d38c7366e9ae14a5b9e
   organization: MGI
+  authorizations:
+    noctua-go:
+      allow-edit: true
 -
   uri: 'GOC:cls'
   xref: 'GOC:cls'
@@ -746,10 +751,15 @@
   uri: 'GOC:hjd'
   organization: MGI
 -
-  uri: 'GOC:ln'
-  xref: 'GOC:ln'
   nickname: 'Li Ni'
+  uri: 'http://orcid.org/0000-0002-9796-7693'
+  xref: 'GOC:ln'
+  email-md5:
+    - e39ac0f072d7278ae76953722298f26f
   organization: MGI
+  authorizations:
+    noctua-go:
+      allow-edit: true
 -
   nickname: 'Judith Blake'
   uri: 'http://orcid.org/0000-0001-8522-334X'
