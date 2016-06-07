@@ -738,6 +738,25 @@
       allow-write: true
       allow-freeform: true
 -
+  nickname: 'Grace Stafford'
+  email-md5:
+    - 1108e1579ce5583a35c743cb3a85afa7
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  xref: 'GOC:id'
+  uri: 'GOC:id'
+  organization: MGI
+-
+  nickname: 'Mary Dolan'
+  email-md5:
+    - d5acbd91b75ea699632b1d569e342a53
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  uri: 'http://orcid.org/0000-0001-7732-3295'
+  organization: MGI
+-
   nickname: 'Harold Drabkin'
   email-md5:
     - 9bac0f35f8afc5a22677fa7c950b681d
