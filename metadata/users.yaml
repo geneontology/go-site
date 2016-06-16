@@ -1418,6 +1418,15 @@
   uri: 'GOC:ae'
   organization: UniProt
 -
+  nickname: 'Mitsuteru Nakao'
+  email-md5:
+    - 9090e122cba40b90124ea8eb4859bf8e
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  uri: 'http://orcid.org/0000-0002-7734-0826'
+  organization: Eisai
+-
   nickname: 'Alan Bridge'
   email-md5:
     - dc11dd680545ac2aa73044fc222db268
