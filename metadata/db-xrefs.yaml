@@ -798,6 +798,16 @@
       url_syntax: https://github.com/Planteome/plant-environment-ontology/issues/[example_id]
       example_id: EO_GIT:76
       example_url: https://github.com/Planteome/plant-environment-ontology/issues/76
+- database: EuPathDB
+  name: The Eukaryotic Pathogen Database
+  generic_urls:
+    - http://eupathdb.org
+  entity_types:
+    - type_name: gene
+      type_id: BET:0000000
+      url_syntax: http://eupathdb.org/gene/[example_id]
+      example_id: EuPathDB:LtaP17.1490
+      example_url: http://eupathdb.org/gene/LtaP17.1490
 - database: Eurofung
   name: Eurofungbase community annotation
   generic_urls:
