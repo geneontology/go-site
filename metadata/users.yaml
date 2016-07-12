@@ -2321,3 +2321,21 @@
     noctua-go:
       allow-edit: true
   organization: EMBL-EBI
+-
+  nickname: "Frank Koopmans"
+  uri: 'http://orcid.org/0000-0002-4973-5732'
+  email-md5:
+    - b1979eaa19640f88f4eae7e968401083
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: SynGO
+-
+  nickname: "Pim van Nierop"
+  uri: 'http://orcid.org/0000-0003-0593-3443'
+  email-md5:
+    - 8a249393af4561952b7283f8ca183919
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: SynGO
