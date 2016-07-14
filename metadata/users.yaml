@@ -2339,3 +2339,12 @@
     noctua-go:
       allow-edit: true
   organization: SynGO
+-
+  nickname: "Jim Balhoff"
+  uri: 'http://orcid.org/0000-0002-8688-6599'
+  email-md5:
+    - f28e1be9fc622bffbecb166378ef2456
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: GO
