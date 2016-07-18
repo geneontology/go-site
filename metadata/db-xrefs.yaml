@@ -2691,6 +2691,20 @@
       url_syntax: http://www.ebi.uniprot.org/uniprot-srv/uniProtView.do?proteinac=[example_id]
       example_id: Swiss-Prot:P45867
       example_url: http://www.ebi.uniprot.org/uniprot-srv/uniProtView.do?proteinac=P45867
+- database: SynGO
+  name: The Synapse Gene Ontology and Annotation Initiative
+  generic_urls:
+    - http://geneontology.org/page/syngo-synapse-biology
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+- database: SynGO-UCL
+  name: The Synapse Gene Ontology and Annotation Initiative at UCL
+  generic_urls:
+    - http://geneontology.org/page/syngo-synapse-biology
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
 - database: SYSCILIA_CCNET
   name: Syscilia
   description: A systems biology approach to dissect cilia function and its disruption in human genetic disease
