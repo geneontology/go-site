@@ -2348,3 +2348,12 @@
     noctua-go:
       allow-edit: true
   organization: GO
+-
+  nickname: "Matthew Brush"
+  uri: 'http://orcid.org/0000-0002-1048-5019'
+  email-md5:
+    - 9a341903b5ee360a8de9670a7bc0a159
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: OHSU
