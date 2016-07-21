@@ -2352,7 +2352,7 @@
   nickname: "Matthew Brush"
   uri: 'http://orcid.org/0000-0002-1048-5019'
   email-md5:
-    - 9a341903b5ee360a8de9670a7bc0a159
+    - 693f54b57c5b0fd811daaa764f0a408a
   authorizations:
     noctua-go:
       allow-edit: true
