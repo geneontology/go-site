@@ -2354,7 +2354,7 @@
   email-md5:
     - 7a113f413bef0385f3f26ea11500697e
   authorizations:
-    noctua-obo:
+    noctua-go:
       allow-edit: true
   organization: PhenotypeRCN
 -
