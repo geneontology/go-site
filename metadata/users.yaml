@@ -2349,6 +2349,15 @@
       allow-edit: true
   organization: GO
 -
+  nickname: "Istvan Miko"
+  uri: 'http://orcid.org/0000-0001-9719-0215'
+  email-md5:
+    - 7a113f413bef0385f3f26ea11500697e
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: PhenotypeRCN
+-
   nickname: "Matthew Brush"
   uri: 'http://orcid.org/0000-0002-1048-5019'
   email-md5:
