@@ -2,9 +2,9 @@
 use strict;
 
 # Usage:
-#  cd ontology/editors
-#  markup-inference-report.pl go_inferences_difflog.txt
-#  See: markup-inference-report.pl go_inferences_difflog.txt
+#  curl -L http://purl.obolibrary.org/obo/go/editors/go_inferences_difflog.txt | ./markup-inference-report.pl
+#
+#  See: https://github.com/geneontology/go-ontology/issues/12485
 
 my $today = `date +%Y-%m-%d`;
 chomp $today;
