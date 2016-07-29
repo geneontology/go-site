@@ -273,12 +273,6 @@
       allow-edit: true
   organization: CALIPHO
 -
-  uri: 'GOC:add'
-  xref: 'GOC:add'
-  nickname: 'Alex Diehl'
-  organization: CL
-  comment: 'formerly MGI; now Univ. Buffalo'
--
   uri: 'GOC:amm'
   xref: 'GOC:amm'
   nickname: 'Anna Maria Masci'
@@ -654,11 +648,6 @@
   xref: 'GOC:yaf'
   uri: 'GOC:yaf'
   organization: GOA
--
-  uri: 'GOC:pj'
-  xref: 'GOC:pj'
-  nickname: 'Pankaj Jaiswal'
-  organization: 'GR, PO'
 -
   nickname: 'Birgit Melda'
   email-md5:
@@ -2368,3 +2357,50 @@
     noctua-go:
       allow-edit: true
   organization: OHSU
+-
+  nickname: "Wasila Dahdul"
+  uri: 'http://orcid.org/0000-0003-3162-7490'
+  email-md5:
+    - c4cc79c1a42a3421eede8fd303bce97b
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: USD
+-
+  nickname: "Alexander Diehl"
+  uri: 'http://orcid.org/0000-0001-9990-8331'
+  email-md5:
+    - b620974b9361d4b213f40f286b11ae3e
+  xref: 'GOC:add'
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: University at Buffalo
+-
+  nickname: "Jean-Philippe Francois Gourdine"
+  uri: 'http://orcid.org/0000-0001-9969-8610'
+  email-md5:
+    - 02f07e64c15efd21bcb53209aa9fdcf0
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: OHSU
+-
+  nickname: "Justin Preece"
+  uri: 'http://orcid.org/0000-0001-5406-4905'
+  email-md5:
+    - 0c93d771ecbe7f79da921d148bbc523b
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: OSU
+-
+  nickname: "Pankaj Jaiswal"
+  uri: 'http://orcid.org/0000-0002-1005-8383'
+  email-md5:
+    - 8a9733d55915899470bb4f488cb02d0b
+  xref: 'GOC:pj'
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: OSU
