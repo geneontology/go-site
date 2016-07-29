@@ -44,6 +44,7 @@
   authorizations:
     noctua-go:
       allow-edit: true
+      allow-admin: true
     termgenie-go:
       allow-write: true
       allow-review: true
@@ -1045,6 +1046,7 @@
   authorizations:
     noctua-go:
       allow-edit: true
+      allow-admin: true
     termgenie-go:
       allow-write: true
       allow-review: true
