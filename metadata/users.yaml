@@ -911,14 +911,15 @@
   nickname: 'Laurel Cooper'
   email-md5:
     - f89228b8459a2a5bb6c8b0c25d611e0d
+    - b5c9d1c80d688dbe4766f40d8461d8c0
   authorizations:
     noctua-go:
       allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:lc'
-  uri: 'GOC:lc'
-  organization: PO
+  uri: 'http://orcid.org/0000-0002-6379-8932'
+  organization: OSU
 -
   uri: 'GOC:lmo'
   xref: 'GOC:lmo'
@@ -1860,6 +1861,8 @@
   authorizations:
     termgenie-go:
       allow-write: true
+    noctua-go:
+      allow-edit: true
   uri: 'http://orcid.org/0000-0002-9900-7880'
   xref: 'GOC:ymb'
   organization: ZFIN
@@ -2404,3 +2407,129 @@
     noctua-go:
       allow-edit: true
   organization: OSU
+-
+  nickname: "Mark Jensen"
+  uri: 'http://orcid.org/0000-0001-9228-8838'
+  email-md5:
+    - f94b258f360ac5e23bdae69665f1abed
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: University at Buffalo
+-
+  nickname: "Nancy George"
+  uri: 'http://orcid.org/0000-0002-6470-2429'
+  email-md5:
+    - e9e16245c16495c1939a3f94cfe10014
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: EMBO
+-
+  nickname: "Pier Luigi Buttigieg"
+  uri: 'http://orcid.org/0000-0002-4366-3088'
+  email-md5:
+    - 119420f70952561ee251188593af2c22
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: AWI
+-
+  nickname: "Bridget C Hanna"
+  uri: 'http://orcid.org/0000-0001-8798-3326'
+  email-md5:
+    - 615524629ee74d978a22e37e302fb891
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: Harvard T.H. Chan School of Public Health
+-
+  nickname: "Daniel Keith"
+  uri: 'http://orcid.org/0000-0002-1643-6242'
+  email-md5:
+    - 1da7b1538b4b21f1cfe7ce462965a549
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: OHSU
+-
+  nickname: "Thomas Hahn"
+  uri: 'http://orcid.org/0000-0002-3499-1346'
+  email-md5:
+    - 28b281ff7eb6702879dc492d46640789
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: UALR
+-
+  nickname: "Karl Helmer"
+  uri: 'http://orcid.org/0000-0002-5113-6843'
+  email-md5:
+    - ade6fb1b95edb06e29febb863f6df9d0
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: MGH
+-
+  nickname: "Justin Elser"
+  uri: 'http://orcid.org/0000-0003-0921-1982'
+  email-md5:
+    - 127b8bf1b1867d4639eb18b126505863
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: OSU
+-
+  nickname: "Sabrina Toro"
+  uri: 'http://orcid.org/0000-0002-4142-7153'
+  email-md5:
+    - aa55bd9a0d99bcc48fa70b99b356abba
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: ZFIN
+-
+  nickname: "William Duncan"
+  uri: 'http://orcid.org/0000-0001-9625-1899'
+  email-md5:
+    - a674a0c01d206479aa80032570eae279
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: Roswell Park Cancer Institute
+-
+  nickname: "Medha Devare"
+  uri: 'http://orcid.org/0000-0003-0041-4812'
+  email-md5:
+    - 996df2555af6fbe9083d4e9a4d92b528
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: CGIAR
+-
+  nickname: "Cynthia J Grondin"
+  uri: 'http://orcid.org/0000-0002-4642-1738'
+  email-md5:
+    - 86dadf06302586b8d2667c6e60f0a60c
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: NCSU
+-
+  nickname: "Suzanna Lewis"
+  uri: 'http://orcid.org/0000-0002-8343-612X'
+  email-md5:
+    - caad47c5134fca150d4e9ff086c1d7f5
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization:  LBNL
+-
+  nickname: "Jie Liu"
+  uri: 'http://orcid.org/0000-0002-9280-1539'
+  email-md5:
+    - a479c2d87277745766db1dd1a6551a7f
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: ???
