@@ -1814,6 +1814,11 @@
   organization: ZFIN
 -
   nickname: 'Ceri Van Slyke'
+  email-md5:
+    - 52a87c38e1ea0a39ee3ac5e8f23e1f6c
+  authorizations:
+    noctua-go:
+      allow-edit: true
   uri: 'http://orcid.org/0000-0002-2244-7917'
   xref: 'GOC:cvs'
   organization: ZFIN
@@ -2533,3 +2538,12 @@
     noctua-go:
       allow-edit: true
   organization: ADM
+-
+  nickname: "Ronglin Wang"
+  uri: 'http://orcid.org/0000-0002-6537-9758'
+  email-md5:
+    - 6fe3d0f5a77c3f18a4403a2d6db7ab52
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: US EPA
