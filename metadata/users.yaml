@@ -2547,3 +2547,12 @@
     noctua-go:
       allow-edit: true
   organization: US EPA
+-
+  nickname: "Matthew Lange"
+  uri: 'http://orcid.org/0000-0002-6148-7962'
+  email-md5:
+    - 21fe7d3d1db7e96c7a3221c8d31e136b
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: UC Davis
