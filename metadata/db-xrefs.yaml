@@ -2320,7 +2320,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      id_syntax: R-[A-Z]{3}-[0-9]+(-[0-9]+){0,1}(\.[0-9+]+){0,1}
+      id_syntax: R-[A-Z]{3}-[0-9]+(-[0-9]+){0,1}(\.[0-9]+){0,1}
       url_syntax: http://www.reactome.org/cgi-bin/eventbrowser_st_id?ST_ID=[example_id]
       example_id: Reactome:REACT_604
       example_url: http://www.reactome.org/cgi-bin/eventbrowser_st_id?ST_ID=REACT_604
