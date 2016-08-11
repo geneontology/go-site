@@ -1,11 +1,6 @@
 language: ruby
 rvm: "1.9.3"
-python:
-  - "3.4"
 
-before_install:
-#  - sudo apt-get -y install python3-pip python-dev
-  - python3 -V
 # before_install:
 #   - sudo apt-get update -qq
 #   - sudo apt-get install -qq kwalify
@@ -20,7 +15,6 @@ script:
   - kwalify -E -f metadata/db-xrefs.schema.yaml metadata/db-xrefs.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
   - kwalify -E -m metadata/datasets.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
   - kwalify -E -f metadata/datasets.schema.yaml metadata/datasets/*.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  - ./scripts/combine-datasets-metadata.py metadata/datasets/*.yaml > metadata/datasets.json
 notifications:
   email:
     - sjcarbon@lbl.gov
