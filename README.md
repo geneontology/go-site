@@ -7,11 +7,20 @@ As well, the tracker is used as a catch-all for anything not tied to another GO 
 
 Every directory should have its own description.
 
+Any of the files here can be edited via the [go-site page on github](https://github.com/geneontology/go-site/). After editing, create a pull request. Edits will be checked for validity by travis (see the [.travis.yml](.travis.yml) file).
+
 # metadata
 
-  The location of all core GO-related metadata. Most notably
-  db-xrefs.yaml and users.yaml.
-  
+The location of all core GO-related metadata. Most notably:
+
+ - [db-xrefs.yaml](metadata/db-xrefs.yaml) - prefix registry
+ - [users.yaml](metadata/users.yaml) - metadata on GOC members and contributors
+ - [datasets/](metadata/datasets/) - metadata on contributed and released files
+
+Each of the these has their own yaml schema.
+
+See the [metadata/README.md](metadata/README.md) for more details
+
 # scripts
 
   Maintenance and support scripts.
@@ -22,8 +31,11 @@ Every directory should have its own description.
   stock. This may also serve as a base for when we push onto a
   service.
 
-# cgi-bin
+# cgi-bin (legacy)
 
   This files an scripts that we want to preserve from the old GO site.
   Ideally, any critical functionality can be rewritten in a simpler
   and more reusable way than the original.
+
+
+

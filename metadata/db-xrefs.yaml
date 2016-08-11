@@ -1,3 +1,6 @@
+# Metadata on databases and database prefixes of relevances to the GOC
+# See the README.md in this directory for more details.
+#
 - database: AgBase
   name: AgBase resource for functional analysis of agricultural plant and animal gene products
   generic_urls:

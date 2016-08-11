@@ -1,3 +1,6 @@
+# Metadata on GOC members and contributors
+# See the README.md in this directory for more details.
+#
 # The users.yaml file is updated in TermGenie every six hours.
 # TermGenie restarts at 9 pm (Pacific time Zone), aka 5 am (UK time), which also refreshes the configuration. 
 # Should there be a need for a faster update, the configuration can be refreshed by hand on the server; please email Heiko.
