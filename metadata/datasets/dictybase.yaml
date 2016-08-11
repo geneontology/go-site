@@ -1,0 +1,18 @@
+-    
+ id: dictybase.gaf
+ label: "dictybase gaf file"
+ description: "gaf file for dictybase from dictyBase"
+ url: http://geneontology.org/gene-associations/gene_association.dictyBase.gz
+ type: gaf
+ dataset: dictybase
+ submitter: dictybase
+ compression: gzip
+ source: http://geneontology.org/gene-associations/submissions/gene_association.dictyBase.gz
+ entity_type: 
+ status: active
+ taxa:
+   - NCBITaxon:44689
+   - NCBITaxon:352472
+   - NCBITaxon:5782
+   - NCBITaxon:366501
+

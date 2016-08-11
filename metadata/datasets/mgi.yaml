@@ -1,0 +1,45 @@
+-    
+ id: mgi.gaf
+ label: "mgi gaf file"
+ description: "gaf file for mgi from Mouse Genome Informatics"
+ url: http://geneontology.org/gene-associations/gene_association.mgi.gz
+ type: gaf
+ dataset: mgi
+ submitter: mgi
+ compression: gzip
+ source: http://geneontology.org/gene-associations/submissions/gene_association.mgi.gz
+ entity_type: 
+ status: active
+ taxa:
+   - NCBITaxon:10090
+
+-    
+ id: mgi.gpad
+ label: "mgi gpad file"
+ description: "gpad file for mgi from Mouse Genome Informatics"
+ url: http://geneontology.org/gpad-gpi/release/mgi.gpa.gz
+ type: gpad
+ dataset: mgi
+ submitter: mgi
+ compression: gzip
+ source: http://geneontology.org/gpad-gpi/release/submissions/mgi.gpa.gz
+ entity_type: 
+ status: active
+ taxa:
+   - NCBITaxon:10090
+
+-    
+ id: mgi.gpi
+ label: "mgi gpi file"
+ description: "gpi file for mgi from Mouse Genome Informatics"
+ url: http://geneontology.org/gpad-gpi/release/mgi.gpi.gz
+ type: gpi
+ dataset: mgi
+ submitter: mgi
+ compression: gzip
+ source: ftp://ftp.informatics.jax.org/pub/reports/mgi.gpi.gz
+ entity_type: 
+ status: active
+ taxa:
+   - NCBITaxon:10090
+

@@ -1,0 +1,15 @@
+-    
+ id: cgd.gaf
+ label: "cgd gaf file"
+ description: "gaf file for cgd from Candida Genome Database"
+ url: http://geneontology.org/gene-associations/gene_association.cgd.gz
+ type: gaf
+ dataset: cgd
+ submitter: cgd
+ compression: gzip
+ source: http://geneontology.org/gene-associations/submissions/gene_association.cgd.gz
+ entity_type: 
+ status: active
+ taxa:
+   - NCBITaxon:5476
+

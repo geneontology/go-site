@@ -1,0 +1,15 @@
+-    
+ id: ecocyc.gaf
+ label: "ecocyc gaf file"
+ description: "gaf file for ecocyc from Encyclopedia of E. coli metabolism"
+ url: http://geneontology.org/gene-associations/gene_association.ecocyc.gz
+ type: gaf
+ dataset: ecocyc
+ submitter: ecocyc
+ compression: gzip
+ source: http://geneontology.org/gene-associations/submissions/gene_association.ecocyc.gz
+ entity_type: 
+ status: active
+ taxa:
+   - NCBITaxon:83333
+

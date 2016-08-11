@@ -1,0 +1,15 @@
+-    
+ id: fb.gaf
+ label: "fb gaf file"
+ description: "gaf file for fb from FlyBase"
+ url: http://geneontology.org/gene-associations/gene_association.fb.gz
+ type: gaf
+ dataset: fb
+ submitter: fb
+ compression: gzip
+ source: http://geneontology.org/gene-associations/submissions/gene_association.fb.gz
+ entity_type: 
+ status: active
+ taxa:
+   - NCBITaxon:7227
+

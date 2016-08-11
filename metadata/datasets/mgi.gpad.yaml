@@ -1,0 +1,14 @@
+-    
+ id: mgi.gpad.gaf
+ label: "mgi.gpad gaf file"
+ description: "gaf file for mgi.gpad from mgi.gpad"
+ url: http://geneontology.org/gene-associations/gene_association.mgi.gpad.gz
+ type: gaf
+ dataset: mgi.gpad
+ submitter: mgi.gpad
+ compression: gzip
+ source: http://geneontology.org/gene-associations/submissions/gene_association.mgi.gpad.gz
+ entity_type: 
+ status: active
+ taxa:
+

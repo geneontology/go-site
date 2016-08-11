@@ -1,0 +1,16 @@
+-    
+ id: pombase.gaf
+ label: "pombase gaf file"
+ description: "gaf file for pombase from PomBase"
+ url: http://geneontology.org/gene-associations/gene_association.pombase.gz
+ type: gaf
+ dataset: pombase
+ submitter: pombase
+ compression: gzip
+ source: http://geneontology.org/gene-associations/submissions/gene_association.pombase.gz
+ entity_type: 
+ status: active
+ taxa:
+   - NCBITaxon:284812
+   - NCBITaxon:4896
+
