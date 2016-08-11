@@ -1,3 +1,13 @@
+Collections of metadata files of use by the GOC.
+
+In general we follow the pattern:
+
+ * metadata source in YAML
+ * schema for each file also specified in YAML
+ * metadata can be edited via github web interface, followed by Pull Request
+ * Travis-CI checks file against schema - see the [../.travis.yml](../.travis.yml), if passes can be merged
+
+
 # users.yaml
 
  - [users.yaml](users.yaml) - metadata on GOC members and contributors
