@@ -1,15 +1,19 @@
--    
- id: pseudocap.gaf
- label: "pseudocap gaf file"
- description: "gaf file for pseudocap from Pseudomonas Genome Project"
- url: http://geneontology.org/gene-associations/gene_association.pseudocap.gz
- type: gaf
- dataset: pseudocap
- submitter: pseudocap
- compression: gzip
- source: http://geneontology.org/gene-associations/submissions/gene_association.pseudocap.gz
- entity_type: 
- status: active
- taxa:
-   - NCBITaxon:208964
+id: pseudocap
+label: Pseudomonas Genome Project
+description: "GO data for Pseudomonas Genome Project"
+datasets:
+ -    
+   id: pseudocap.gaf
+   label: "pseudocap gaf file"
+   description: "gaf file for pseudocap from Pseudomonas Genome Project"
+   url: http://geneontology.org/gene-associations/gene_association.pseudocap.gz
+   type: gaf
+   dataset: pseudocap
+   submitter: pseudocap
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.pseudocap.gz
+   entity_type: 
+   status: active
+   taxa:
+    - NCBITaxon:208964
 

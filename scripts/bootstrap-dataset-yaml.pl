@@ -225,7 +225,7 @@ sub emit {
     if (!@taxids) {
         print STDERR "NO TAXA FOR '$subdb' (dataset=$dataset)\n";
     }
-    my $TAXA = join("", (map {"   - $_\n"} @taxids));
+    my $TAXA = join("", (map {"    - $_\n"} @taxids));
 
     my $ofn = "datasets/$auth.yaml";
     if ($is_append{$ofn}) {
@@ -233,27 +233,31 @@ sub emit {
     }
     else {
         open(F, ">$ofn") || die $ofn;
-        $is_append{$ofn}++;        
+        print F "id: $auth\n";
+        print F "label: $dbname\n";
+        print F "description: \"GO data for $dbname\"\n";
+        print F "datasets:\n";
     }
+    $is_append{$ofn}++;        
     my $status = 'active';
     if ($auth eq 'reactome' || $auth eq 'goa_pdb') {
         $status = "inactive";
     }
     
     print F <<EOM;
--    
- id: $id
- label: "$dataset $type file"
- description: "$type file for $dataset from $dbname"
- url: $url
- type: $type
- dataset: $dataset
- submitter: $auth
- compression: gzip
- source: $src
- entity_type: $entity_type
- status: $status
- taxa:
+ -    
+   id: $id
+   label: "$dataset $type file"
+   description: "$type file for $dataset from $dbname"
+   url: $url
+   type: $type
+   dataset: $dataset
+   submitter: $auth
+   compression: gzip
+   source: $src
+   entity_type: $entity_type
+   status: $status
+   taxa:
 $TAXA
 EOM
 

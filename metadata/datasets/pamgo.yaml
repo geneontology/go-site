@@ -1,67 +1,71 @@
--    
- id: pamgo_atumefaciens.gaf
- label: "pamgo_atumefaciens gaf file"
- description: "gaf file for pamgo_atumefaciens from Plant-Associated Microbe Gene Ontology Interest Group"
- url: http://geneontology.org/gene-associations/gene_association.PAMGO_Atumefaciens.gz
- type: gaf
- dataset: pamgo_atumefaciens
- submitter: pamgo
- compression: gzip
- source: http://geneontology.org/gene-associations/submissions/gene_association.PAMGO_Atumefaciens.gz
- entity_type: 
- status: active
- taxa:
-   - NCBITaxon:176299
+id: pamgo
+label: Plant-Associated Microbe Gene Ontology Interest Group
+description: "GO data for Plant-Associated Microbe Gene Ontology Interest Group"
+datasets:
+ -    
+   id: pamgo_atumefaciens.gaf
+   label: "pamgo_atumefaciens gaf file"
+   description: "gaf file for pamgo_atumefaciens from Plant-Associated Microbe Gene Ontology Interest Group"
+   url: http://geneontology.org/gene-associations/gene_association.PAMGO_Atumefaciens.gz
+   type: gaf
+   dataset: pamgo_atumefaciens
+   submitter: pamgo
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.PAMGO_Atumefaciens.gz
+   entity_type: 
+   status: active
+   taxa:
+    - NCBITaxon:176299
 
--    
- id: pamgo_ddadantii.gaf
- label: "pamgo_ddadantii gaf file"
- description: "gaf file for pamgo_ddadantii from Plant-Associated Microbe Gene Ontology Interest Group"
- url: http://geneontology.org/gene-associations/gene_association.PAMGO_Ddadantii.gz
- type: gaf
- dataset: pamgo_ddadantii
- submitter: pamgo
- compression: gzip
- source: http://geneontology.org/gene-associations/submissions/gene_association.PAMGO_Ddadantii.gz
- entity_type: 
- status: active
- taxa:
-   - NCBITaxon:198628
+ -    
+   id: pamgo_ddadantii.gaf
+   label: "pamgo_ddadantii gaf file"
+   description: "gaf file for pamgo_ddadantii from Plant-Associated Microbe Gene Ontology Interest Group"
+   url: http://geneontology.org/gene-associations/gene_association.PAMGO_Ddadantii.gz
+   type: gaf
+   dataset: pamgo_ddadantii
+   submitter: pamgo
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.PAMGO_Ddadantii.gz
+   entity_type: 
+   status: active
+   taxa:
+    - NCBITaxon:198628
 
--    
- id: pamgo_mgrisea.gaf
- label: "pamgo_mgrisea gaf file"
- description: "gaf file for pamgo_mgrisea from Plant-Associated Microbe Gene Ontology Interest Group"
- url: http://geneontology.org/gene-associations/gene_association.PAMGO_Mgrisea.gz
- type: gaf
- dataset: pamgo_mgrisea
- submitter: pamgo
- compression: gzip
- source: http://geneontology.org/gene-associations/submissions/gene_association.PAMGO_Mgrisea.gz
- entity_type: 
- status: active
- taxa:
-   - NCBITaxon:148305
+ -    
+   id: pamgo_mgrisea.gaf
+   label: "pamgo_mgrisea gaf file"
+   description: "gaf file for pamgo_mgrisea from Plant-Associated Microbe Gene Ontology Interest Group"
+   url: http://geneontology.org/gene-associations/gene_association.PAMGO_Mgrisea.gz
+   type: gaf
+   dataset: pamgo_mgrisea
+   submitter: pamgo
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.PAMGO_Mgrisea.gz
+   entity_type: 
+   status: active
+   taxa:
+    - NCBITaxon:148305
 
--    
- id: pamgo_oomycetes.gaf
- label: "pamgo_oomycetes gaf file"
- description: "gaf file for pamgo_oomycetes from Plant-Associated Microbe Gene Ontology Interest Group"
- url: http://geneontology.org/gene-associations/gene_association.PAMGO_Oomycetes.gz
- type: gaf
- dataset: pamgo_oomycetes
- submitter: pamgo
- compression: gzip
- source: http://geneontology.org/gene-associations/submissions/gene_association.PAMGO_Oomycetes.gz
- entity_type: 
- status: active
- taxa:
-   - NCBITaxon:67593
-   - NCBITaxon:4787
-   - NCBITaxon:123356
-   - NCBITaxon:4786
-   - NCBITaxon:4784
-   - NCBITaxon:4785
-   - NCBITaxon:4792
-   - NCBITaxon:65070
+ -    
+   id: pamgo_oomycetes.gaf
+   label: "pamgo_oomycetes gaf file"
+   description: "gaf file for pamgo_oomycetes from Plant-Associated Microbe Gene Ontology Interest Group"
+   url: http://geneontology.org/gene-associations/gene_association.PAMGO_Oomycetes.gz
+   type: gaf
+   dataset: pamgo_oomycetes
+   submitter: pamgo
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.PAMGO_Oomycetes.gz
+   entity_type: 
+   status: active
+   taxa:
+    - NCBITaxon:123356
+    - NCBITaxon:4787
+    - NCBITaxon:4784
+    - NCBITaxon:4786
+    - NCBITaxon:67593
+    - NCBITaxon:65070
+    - NCBITaxon:4785
+    - NCBITaxon:4792
 

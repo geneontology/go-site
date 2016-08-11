@@ -1,43 +1,47 @@
--    
- id: gramene_oryza.gaf
- label: "gramene_oryza gaf file"
- description: "gaf file for gramene_oryza from gramene_oryza"
- url: http://geneontology.org/gene-associations/gene_association.gramene_oryza.gz
- type: gaf
- dataset: gramene_oryza
- submitter: gramene
- compression: gzip
- source: http://geneontology.org/gene-associations/submissions/gene_association.gramene_oryza.gz
- entity_type: 
- status: active
- taxa:
-   - NCBITaxon:4529
-   - NCBITaxon:83308
-   - NCBITaxon:65489
-   - NCBITaxon:4538
-   - NCBITaxon:77588
-   - NCBITaxon:110451
-   - NCBITaxon:4530
-   - NCBITaxon:83309
-   - NCBITaxon:29690
-   - NCBITaxon:4537
-   - NCBITaxon:364100
-   - NCBITaxon:127571
-   - NCBITaxon:4528
-   - NCBITaxon:52545
-   - NCBITaxon:110450
-   - NCBITaxon:40148
-   - NCBITaxon:4534
-   - NCBITaxon:29689
-   - NCBITaxon:40149
-   - NCBITaxon:39947
-   - NCBITaxon:4533
-   - NCBITaxon:4535
-   - NCBITaxon:4532
-   - NCBITaxon:83307
-   - NCBITaxon:39946
-   - NCBITaxon:364099
-   - NCBITaxon:65491
-   - NCBITaxon:4536
-   - NCBITaxon:63629
+id: gramene
+label: gramene_oryza
+description: "GO data for gramene_oryza"
+datasets:
+ -    
+   id: gramene_oryza.gaf
+   label: "gramene_oryza gaf file"
+   description: "gaf file for gramene_oryza from gramene_oryza"
+   url: http://geneontology.org/gene-associations/gene_association.gramene_oryza.gz
+   type: gaf
+   dataset: gramene_oryza
+   submitter: gramene
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.gramene_oryza.gz
+   entity_type: 
+   status: active
+   taxa:
+    - NCBITaxon:4536
+    - NCBITaxon:39947
+    - NCBITaxon:4528
+    - NCBITaxon:63629
+    - NCBITaxon:4532
+    - NCBITaxon:4530
+    - NCBITaxon:39946
+    - NCBITaxon:110451
+    - NCBITaxon:52545
+    - NCBITaxon:4535
+    - NCBITaxon:4538
+    - NCBITaxon:110450
+    - NCBITaxon:40148
+    - NCBITaxon:4529
+    - NCBITaxon:29690
+    - NCBITaxon:29689
+    - NCBITaxon:364099
+    - NCBITaxon:83307
+    - NCBITaxon:65491
+    - NCBITaxon:127571
+    - NCBITaxon:65489
+    - NCBITaxon:364100
+    - NCBITaxon:4534
+    - NCBITaxon:40149
+    - NCBITaxon:4533
+    - NCBITaxon:77588
+    - NCBITaxon:83309
+    - NCBITaxon:4537
+    - NCBITaxon:83308
 

@@ -1,15 +1,19 @@
--    
- id: tair.gaf
- label: "tair gaf file"
- description: "gaf file for tair from The Arabidopsis Information Resource"
- url: http://geneontology.org/gene-associations/gene_association.tair.gz
- type: gaf
- dataset: tair
- submitter: tair
- compression: gzip
- source: http://geneontology.org/gene-associations/submissions/gene_association.tair.gz
- entity_type: 
- status: active
- taxa:
-   - NCBITaxon:3702
+id: tair
+label: The Arabidopsis Information Resource
+description: "GO data for The Arabidopsis Information Resource"
+datasets:
+ -    
+   id: tair.gaf
+   label: "tair gaf file"
+   description: "gaf file for tair from The Arabidopsis Information Resource"
+   url: http://geneontology.org/gene-associations/gene_association.tair.gz
+   type: gaf
+   dataset: tair
+   submitter: tair
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.tair.gz
+   entity_type: 
+   status: active
+   taxa:
+    - NCBITaxon:3702
 
