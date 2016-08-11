@@ -1,0 +1,19 @@
+id: rgd
+label: Rat Genome Database
+description: "GO data for Rat Genome Database"
+datasets:
+ -    
+   id: rgd.gaf
+   label: "rgd gaf file"
+   description: "gaf file for rgd from Rat Genome Database"
+   url: http://geneontology.org/gene-associations/gene_association.rgd.gz
+   type: gaf
+   dataset: rgd
+   submitter: rgd
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.rgd.gz
+   entity_type: 
+   status: active
+   taxa:
+    - NCBITaxon:10116
+

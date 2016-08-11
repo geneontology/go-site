@@ -1,0 +1,19 @@
+id: zfin
+label: Zebrafish Information Network
+description: "GO data for Zebrafish Information Network"
+datasets:
+ -    
+   id: zfin.gaf
+   label: "zfin gaf file"
+   description: "gaf file for zfin from Zebrafish Information Network"
+   url: http://geneontology.org/gene-associations/gene_association.zfin.gz
+   type: gaf
+   dataset: zfin
+   submitter: zfin
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.zfin.gz
+   entity_type: 
+   status: active
+   taxa:
+    - NCBITaxon:7955
+

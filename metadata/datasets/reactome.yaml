@@ -1,0 +1,18 @@
+id: reactome
+label: Reactome - a curated knowledgebase of biological pathways
+description: "GO data for Reactome - a curated knowledgebase of biological pathways"
+datasets:
+ -    
+   id: reactome.gaf
+   label: "reactome gaf file"
+   description: "gaf file for reactome from Reactome - a curated knowledgebase of biological pathways"
+   url: http://geneontology.org/gene-associations/gene_association.reactome.gz
+   type: gaf
+   dataset: reactome
+   submitter: reactome
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.reactome.gz
+   entity_type: 
+   status: inactive
+   taxa:
+

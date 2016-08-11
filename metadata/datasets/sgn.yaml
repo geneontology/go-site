@@ -1,0 +1,19 @@
+id: sgn
+label: Sol Genomics Network
+description: "GO data for Sol Genomics Network"
+datasets:
+ -    
+   id: sgn.gaf
+   label: "sgn gaf file"
+   description: "gaf file for sgn from Sol Genomics Network"
+   url: http://geneontology.org/gene-associations/gene_association.sgn.gz
+   type: gaf
+   dataset: sgn
+   submitter: sgn
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.sgn.gz
+   entity_type: 
+   status: active
+   taxa:
+    - NCBITaxon:4081
+

@@ -1,0 +1,20 @@
+id: aspgd
+label: Aspergillus Genome Database
+description: "GO data for Aspergillus Genome Database"
+datasets:
+ -    
+   id: aspgd.gaf
+   label: "aspgd gaf file"
+   description: "gaf file for aspgd from Aspergillus Genome Database"
+   url: http://geneontology.org/gene-associations/gene_association.aspgd.gz
+   type: gaf
+   dataset: aspgd
+   submitter: aspgd
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.aspgd.gz
+   entity_type: 
+   status: active
+   taxa:
+    - NCBITaxon:162425
+    - NCBITaxon:5085
+

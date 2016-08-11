@@ -1,0 +1,19 @@
+id: wb
+label: WormBase database of nematode biology
+description: "GO data for WormBase database of nematode biology"
+datasets:
+ -    
+   id: wb.gaf
+   label: "wb gaf file"
+   description: "gaf file for wb from WormBase database of nematode biology"
+   url: http://geneontology.org/gene-associations/gene_association.wb.gz
+   type: gaf
+   dataset: wb
+   submitter: wb
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.wb.gz
+   entity_type: 
+   status: active
+   taxa:
+    - NCBITaxon:6239
+
