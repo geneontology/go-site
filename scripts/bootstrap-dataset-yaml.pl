@@ -225,7 +225,7 @@ sub emit {
     if (!@taxids) {
         print STDERR "NO TAXA FOR '$subdb' (dataset=$dataset)\n";
     }
-    my $TAXA = join("", (map {"    - $_\n"} @taxids));
+    my $TAXA = join("", (map {"    - $_\n"} (sort @taxids)));
 
     my $ofn = "datasets/$auth.yaml";
     if ($is_append{$ofn}) {

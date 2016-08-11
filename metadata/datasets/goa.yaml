@@ -15,11 +15,11 @@ datasets:
    entity_type: protein
    status: active
    taxa:
+    - NCBITaxon:208524
     - NCBITaxon:208525
+    - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-    - NCBITaxon:208526
-    - NCBITaxon:208524
 
  -    
    id: goa_chicken.gpi
@@ -34,11 +34,11 @@ datasets:
    entity_type: protein
    status: active
    taxa:
+    - NCBITaxon:208524
     - NCBITaxon:208525
+    - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-    - NCBITaxon:208526
-    - NCBITaxon:208524
 
  -    
    id: goa_chicken_complex.gpad
@@ -53,11 +53,11 @@ datasets:
    entity_type: complex
    status: active
    taxa:
+    - NCBITaxon:208524
     - NCBITaxon:208525
+    - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-    - NCBITaxon:208526
-    - NCBITaxon:208524
 
  -    
    id: goa_chicken_complex.gpi
@@ -72,11 +72,11 @@ datasets:
    entity_type: complex
    status: active
    taxa:
+    - NCBITaxon:208524
     - NCBITaxon:208525
+    - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-    - NCBITaxon:208526
-    - NCBITaxon:208524
 
  -    
    id: goa_chicken_isoform.gpad
@@ -91,11 +91,11 @@ datasets:
    entity_type: isoform
    status: active
    taxa:
+    - NCBITaxon:208524
     - NCBITaxon:208525
+    - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-    - NCBITaxon:208526
-    - NCBITaxon:208524
 
  -    
    id: goa_chicken_isoform.gpi
@@ -110,11 +110,11 @@ datasets:
    entity_type: isoform
    status: active
    taxa:
+    - NCBITaxon:208524
     - NCBITaxon:208525
+    - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-    - NCBITaxon:208526
-    - NCBITaxon:208524
 
  -    
    id: goa_chicken_rna.gpad
@@ -129,11 +129,11 @@ datasets:
    entity_type: rna
    status: active
    taxa:
+    - NCBITaxon:208524
     - NCBITaxon:208525
+    - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-    - NCBITaxon:208526
-    - NCBITaxon:208524
 
  -    
    id: goa_chicken_rna.gpi
@@ -148,11 +148,11 @@ datasets:
    entity_type: rna
    status: active
    taxa:
+    - NCBITaxon:208524
     - NCBITaxon:208525
+    - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-    - NCBITaxon:208526
-    - NCBITaxon:208524
 
  -    
    id: goa_cow.gpad
@@ -167,9 +167,9 @@ datasets:
    entity_type: protein
    status: active
    taxa:
+    - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-    - NCBITaxon:297284
 
  -    
    id: goa_cow.gpi
@@ -184,9 +184,9 @@ datasets:
    entity_type: protein
    status: active
    taxa:
+    - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-    - NCBITaxon:297284
 
  -    
    id: goa_cow_complex.gpad
@@ -201,9 +201,9 @@ datasets:
    entity_type: complex
    status: active
    taxa:
+    - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-    - NCBITaxon:297284
 
  -    
    id: goa_cow_complex.gpi
@@ -218,9 +218,9 @@ datasets:
    entity_type: complex
    status: active
    taxa:
+    - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-    - NCBITaxon:297284
 
  -    
    id: goa_cow_isoform.gpad
@@ -235,9 +235,9 @@ datasets:
    entity_type: isoform
    status: active
    taxa:
+    - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-    - NCBITaxon:297284
 
  -    
    id: goa_cow_isoform.gpi
@@ -252,9 +252,9 @@ datasets:
    entity_type: isoform
    status: active
    taxa:
+    - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-    - NCBITaxon:297284
 
  -    
    id: goa_cow_rna.gpad
@@ -269,9 +269,9 @@ datasets:
    entity_type: rna
    status: active
    taxa:
+    - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-    - NCBITaxon:297284
 
  -    
    id: goa_cow_rna.gpi
@@ -286,9 +286,9 @@ datasets:
    entity_type: rna
    status: active
    taxa:
+    - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-    - NCBITaxon:297284
 
  -    
    id: goa_dog.gpad

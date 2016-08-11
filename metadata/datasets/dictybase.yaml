@@ -15,8 +15,8 @@ datasets:
    entity_type: 
    status: active
    taxa:
+    - NCBITaxon:352472
     - NCBITaxon:366501
     - NCBITaxon:44689
-    - NCBITaxon:352472
     - NCBITaxon:5782
 

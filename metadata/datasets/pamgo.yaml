@@ -61,11 +61,11 @@ datasets:
    status: active
    taxa:
     - NCBITaxon:123356
-    - NCBITaxon:4787
     - NCBITaxon:4784
-    - NCBITaxon:4786
-    - NCBITaxon:67593
-    - NCBITaxon:65070
     - NCBITaxon:4785
+    - NCBITaxon:4786
+    - NCBITaxon:4787
     - NCBITaxon:4792
+    - NCBITaxon:65070
+    - NCBITaxon:67593
 

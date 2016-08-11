@@ -15,24 +15,24 @@ datasets:
    entity_type: 
    status: active
    taxa:
-    - NCBITaxon:264730
-    - NCBITaxon:220664
-    - NCBITaxon:195099
-    - NCBITaxon:223283
     - NCBITaxon:167879
-    - NCBITaxon:246200
-    - NCBITaxon:243231
-    - NCBITaxon:198094
-    - NCBITaxon:212042
-    - NCBITaxon:686
-    - NCBITaxon:205920
-    - NCBITaxon:228405
-    - NCBITaxon:246194
-    - NCBITaxon:243164
-    - NCBITaxon:211586
-    - NCBITaxon:227377
+    - NCBITaxon:195099
     - NCBITaxon:195103
-    - NCBITaxon:243233
+    - NCBITaxon:198094
+    - NCBITaxon:205920
+    - NCBITaxon:211586
+    - NCBITaxon:212042
+    - NCBITaxon:220664
     - NCBITaxon:222891
+    - NCBITaxon:223283
+    - NCBITaxon:227377
+    - NCBITaxon:228405
+    - NCBITaxon:243164
+    - NCBITaxon:243231
+    - NCBITaxon:243233
+    - NCBITaxon:246194
+    - NCBITaxon:246200
+    - NCBITaxon:264730
     - NCBITaxon:265669
+    - NCBITaxon:686
 
