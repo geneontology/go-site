@@ -2582,15 +2582,15 @@
     - type_name: sequence attribute
       type_id: SO:0000400
       id_syntax: \d{7}
-      url_syntax: http://song.sourceforge.net/SOterm_tables.html#SO:[example_id]
+      url_syntax: http://www.sequenceontology.org/browser/current_svn/term/SO:[example_id]
       example_id: SO:0000195
-      example_url: http://song.sourceforge.net/SOterm_tables.html#SO:0000195
+      example_url: http://www.sequenceontology.org/browser/current_svn/term/SO:0001850
     - type_name: sequence feature
       type_id: SO:0000110
       id_syntax: \d{7}
-      url_syntax: http://song.sourceforge.net/SOterm_tables.html#SO:[example_id]
+      url_syntax: http://www.sequenceontology.org/browser/current_svn/term/SO:[example_id]
       example_id: SO:0000195
-      example_url: http://song.sourceforge.net/SOterm_tables.html#SO:0000195
+      example_url: http://www.sequenceontology.org/browser/current_svn/term/SO:0001850
 - database: Soy_gene
   name: SoyBase
   generic_urls:
