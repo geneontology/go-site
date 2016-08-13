@@ -14,6 +14,7 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.sgn.gz
    entity_type: 
    status: active
+   species_code: Solanaceae
    taxa:
     - NCBITaxon:4081
 

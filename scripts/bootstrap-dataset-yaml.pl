@@ -2,6 +2,27 @@
 use YAML::Syck;
 use strict;
 
+my %spcode = (
+    sgd => 'Scer',
+    pombase => 'Spom',
+    mgi => 'Mmus',
+    zfin => 'Drer',
+    rgd => 'Rnor',
+    dictybase => 'Ddis',
+    fb => 'Dmel',
+    tair => 'Atal',
+    wb => 'Cele',
+    gramene_oryza => 'Oryz',
+    goa_human => 'Hsap',
+    goa_dog => 'Cfam',
+    goa_chicken => 'Ggal',
+    goa_cow => 'Btau',
+    goa_pig => 'Sscr',
+    sgn => 'Solanaceae',
+    pseudocap => 'Pseudomonas',
+
+    );
+
 my %taxon2db = (
     'taxon:5476' => 'cgd',
     'taxon:162425' => 'aspgd',
@@ -243,6 +264,8 @@ sub emit {
     if ($auth eq 'reactome' || $auth eq 'goa_pdb') {
         $status = "inactive";
     }
+    my $species_code = $spcode{$subdb};
+    
     
     print F <<EOM;
  -    
@@ -257,6 +280,7 @@ sub emit {
    source: $src
    entity_type: $entity_type
    status: $status
+   species_code: $species_code
    taxa:
 $TAXA
 EOM
@@ -268,6 +292,6 @@ EOM
 =head1 USAGE
 
 cd go-site/metadata
-../scripts/bootstrap-dataset-yaml.pl ~/repos/go/gene-associations/submission/*gz ~/repos/go/gpad-gpi/submission/*gz > datasets.yaml
+../scripts/bootstrap-dataset-yaml.pl ~/repos/go/gene-associations/*gz ~/repos/go/gpad-gpi/submission/*gz
 
 =cut

@@ -14,6 +14,7 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.mgi.gz
    entity_type: 
    status: active
+   species_code: Mmus
    taxa:
     - NCBITaxon:10090
 
@@ -29,6 +30,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/mgi.gpa.gz
    entity_type: 
    status: active
+   species_code: Mmus
    taxa:
     - NCBITaxon:10090
 
@@ -44,6 +46,7 @@ datasets:
    source: ftp://ftp.informatics.jax.org/pub/reports/mgi.gpi.gz
    entity_type: 
    status: active
+   species_code: Mmus
    taxa:
     - NCBITaxon:10090
 

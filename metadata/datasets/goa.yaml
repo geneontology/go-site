@@ -14,6 +14,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_chicken.gpa.gz
    entity_type: protein
    status: active
+   species_code: Ggal
    taxa:
     - NCBITaxon:208524
     - NCBITaxon:208525
@@ -33,6 +34,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_chicken.gpi.gz
    entity_type: protein
    status: active
+   species_code: Ggal
    taxa:
     - NCBITaxon:208524
     - NCBITaxon:208525
@@ -52,6 +54,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_chicken_complex.gpa.gz
    entity_type: complex
    status: active
+   species_code: Ggal
    taxa:
     - NCBITaxon:208524
     - NCBITaxon:208525
@@ -71,6 +74,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_chicken_complex.gpi.gz
    entity_type: complex
    status: active
+   species_code: Ggal
    taxa:
     - NCBITaxon:208524
     - NCBITaxon:208525
@@ -90,6 +94,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_chicken_isoform.gpa.gz
    entity_type: isoform
    status: active
+   species_code: Ggal
    taxa:
     - NCBITaxon:208524
     - NCBITaxon:208525
@@ -109,6 +114,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_chicken_isoform.gpi.gz
    entity_type: isoform
    status: active
+   species_code: Ggal
    taxa:
     - NCBITaxon:208524
     - NCBITaxon:208525
@@ -128,6 +134,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_chicken_rna.gpa.gz
    entity_type: rna
    status: active
+   species_code: Ggal
    taxa:
     - NCBITaxon:208524
     - NCBITaxon:208525
@@ -147,6 +154,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_chicken_rna.gpi.gz
    entity_type: rna
    status: active
+   species_code: Ggal
    taxa:
     - NCBITaxon:208524
     - NCBITaxon:208525
@@ -166,6 +174,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_cow.gpa.gz
    entity_type: protein
    status: active
+   species_code: Btau
    taxa:
     - NCBITaxon:297284
     - NCBITaxon:30523
@@ -183,6 +192,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_cow.gpi.gz
    entity_type: protein
    status: active
+   species_code: Btau
    taxa:
     - NCBITaxon:297284
     - NCBITaxon:30523
@@ -200,6 +210,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_cow_complex.gpa.gz
    entity_type: complex
    status: active
+   species_code: Btau
    taxa:
     - NCBITaxon:297284
     - NCBITaxon:30523
@@ -217,6 +228,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_cow_complex.gpi.gz
    entity_type: complex
    status: active
+   species_code: Btau
    taxa:
     - NCBITaxon:297284
     - NCBITaxon:30523
@@ -234,6 +246,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_cow_isoform.gpa.gz
    entity_type: isoform
    status: active
+   species_code: Btau
    taxa:
     - NCBITaxon:297284
     - NCBITaxon:30523
@@ -251,6 +264,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_cow_isoform.gpi.gz
    entity_type: isoform
    status: active
+   species_code: Btau
    taxa:
     - NCBITaxon:297284
     - NCBITaxon:30523
@@ -268,6 +282,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_cow_rna.gpa.gz
    entity_type: rna
    status: active
+   species_code: Btau
    taxa:
     - NCBITaxon:297284
     - NCBITaxon:30523
@@ -285,6 +300,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_cow_rna.gpi.gz
    entity_type: rna
    status: active
+   species_code: Btau
    taxa:
     - NCBITaxon:297284
     - NCBITaxon:30523
@@ -302,6 +318,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_dog.gpa.gz
    entity_type: protein
    status: active
+   species_code: Cfam
    taxa:
     - NCBITaxon:9615
 
@@ -317,6 +334,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_dog.gpi.gz
    entity_type: protein
    status: active
+   species_code: Cfam
    taxa:
     - NCBITaxon:9615
 
@@ -332,6 +350,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_dog_complex.gpa.gz
    entity_type: complex
    status: active
+   species_code: Cfam
    taxa:
     - NCBITaxon:9615
 
@@ -347,6 +366,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_dog_complex.gpi.gz
    entity_type: complex
    status: active
+   species_code: Cfam
    taxa:
     - NCBITaxon:9615
 
@@ -362,6 +382,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_dog_isoform.gpa.gz
    entity_type: isoform
    status: active
+   species_code: Cfam
    taxa:
     - NCBITaxon:9615
 
@@ -377,6 +398,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_dog_isoform.gpi.gz
    entity_type: isoform
    status: active
+   species_code: Cfam
    taxa:
     - NCBITaxon:9615
 
@@ -392,6 +414,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_dog_rna.gpa.gz
    entity_type: rna
    status: active
+   species_code: Cfam
    taxa:
     - NCBITaxon:9615
 
@@ -407,6 +430,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_dog_rna.gpi.gz
    entity_type: rna
    status: active
+   species_code: Cfam
    taxa:
     - NCBITaxon:9615
 
@@ -422,6 +446,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_human.gpa.gz
    entity_type: protein
    status: active
+   species_code: Hsap
    taxa:
     - NCBITaxon:9606
 
@@ -437,6 +462,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_human.gpi.gz
    entity_type: protein
    status: active
+   species_code: Hsap
    taxa:
     - NCBITaxon:9606
 
@@ -452,6 +478,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_human_complex.gpa.gz
    entity_type: complex
    status: active
+   species_code: Hsap
    taxa:
     - NCBITaxon:9606
 
@@ -467,6 +494,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_human_complex.gpi.gz
    entity_type: complex
    status: active
+   species_code: Hsap
    taxa:
     - NCBITaxon:9606
 
@@ -482,6 +510,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_human_isoform.gpa.gz
    entity_type: isoform
    status: active
+   species_code: Hsap
    taxa:
     - NCBITaxon:9606
 
@@ -497,6 +526,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_human_isoform.gpi.gz
    entity_type: isoform
    status: active
+   species_code: Hsap
    taxa:
     - NCBITaxon:9606
 
@@ -512,6 +542,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_human_rna.gpa.gz
    entity_type: rna
    status: active
+   species_code: Hsap
    taxa:
     - NCBITaxon:9606
 
@@ -527,6 +558,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_human_rna.gpi.gz
    entity_type: rna
    status: active
+   species_code: Hsap
    taxa:
     - NCBITaxon:9606
 
@@ -542,6 +574,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_pig.gpa.gz
    entity_type: protein
    status: active
+   species_code: Sscr
    taxa:
     - NCBITaxon:9823
 
@@ -557,6 +590,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_pig.gpi.gz
    entity_type: protein
    status: active
+   species_code: Sscr
    taxa:
     - NCBITaxon:9823
 
@@ -572,6 +606,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_pig_complex.gpa.gz
    entity_type: complex
    status: active
+   species_code: Sscr
    taxa:
     - NCBITaxon:9823
 
@@ -587,6 +622,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_pig_complex.gpi.gz
    entity_type: complex
    status: active
+   species_code: Sscr
    taxa:
     - NCBITaxon:9823
 
@@ -602,6 +638,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_pig_isoform.gpa.gz
    entity_type: isoform
    status: active
+   species_code: Sscr
    taxa:
     - NCBITaxon:9823
 
@@ -617,6 +654,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_pig_isoform.gpi.gz
    entity_type: isoform
    status: active
+   species_code: Sscr
    taxa:
     - NCBITaxon:9823
 
@@ -632,6 +670,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_pig_rna.gpa.gz
    entity_type: rna
    status: active
+   species_code: Sscr
    taxa:
     - NCBITaxon:9823
 
@@ -647,6 +686,7 @@ datasets:
    source: http://geneontology.org/gpad-gpi/release/submissions/goa_pig_rna.gpi.gz
    entity_type: rna
    status: active
+   species_code: Sscr
    taxa:
     - NCBITaxon:9823
 

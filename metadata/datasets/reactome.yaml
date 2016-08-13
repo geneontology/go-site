@@ -14,5 +14,6 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.reactome.gz
    entity_type: 
    status: inactive
+   species_code: 
    taxa:
 

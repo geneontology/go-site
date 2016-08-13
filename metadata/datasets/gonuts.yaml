@@ -14,5 +14,6 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.gonuts.gz
    entity_type: 
    status: active
+   species_code: 
    taxa:
 

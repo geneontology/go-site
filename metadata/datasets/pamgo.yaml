@@ -14,6 +14,7 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.PAMGO_Atumefaciens.gz
    entity_type: 
    status: active
+   species_code: 
    taxa:
     - NCBITaxon:176299
 
@@ -29,6 +30,7 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.PAMGO_Ddadantii.gz
    entity_type: 
    status: active
+   species_code: 
    taxa:
     - NCBITaxon:198628
 
@@ -44,6 +46,7 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.PAMGO_Mgrisea.gz
    entity_type: 
    status: active
+   species_code: 
    taxa:
     - NCBITaxon:148305
 
@@ -59,6 +62,7 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.PAMGO_Oomycetes.gz
    entity_type: 
    status: active
+   species_code: 
    taxa:
     - NCBITaxon:123356
     - NCBITaxon:4784

@@ -14,6 +14,7 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.wb.gz
    entity_type: 
    status: active
+   species_code: Cele
    taxa:
     - NCBITaxon:6239
 

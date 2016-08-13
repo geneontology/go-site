@@ -14,6 +14,7 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.pombase.gz
    entity_type: 
    status: active
+   species_code: Spom
    taxa:
     - NCBITaxon:284812
     - NCBITaxon:4896

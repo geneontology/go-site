@@ -14,6 +14,7 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.dictyBase.gz
    entity_type: 
    status: active
+   species_code: Ddis
    taxa:
     - NCBITaxon:352472
     - NCBITaxon:366501
