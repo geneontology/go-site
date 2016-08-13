@@ -14,8 +14,27 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.aspgd.gz
    entity_type: 
    status: active
-   species_code: 
+   species_code: Aspergillus
    taxa:
+    - NCBITaxon:1033177
+    - NCBITaxon:1073089
+    - NCBITaxon:1137211
+    - NCBITaxon:1160497
     - NCBITaxon:162425
+    - NCBITaxon:331117
+    - NCBITaxon:332952
+    - NCBITaxon:341663
+    - NCBITaxon:344612
+    - NCBITaxon:41063
+    - NCBITaxon:451804
+    - NCBITaxon:46472
+    - NCBITaxon:5061
+    - NCBITaxon:5062
     - NCBITaxon:5085
+    - NCBITaxon:602072
+    - NCBITaxon:690307
+    - NCBITaxon:746128
+    - NCBITaxon:75750
+    - NCBITaxon:767769
+    - NCBITaxon:767770
 
