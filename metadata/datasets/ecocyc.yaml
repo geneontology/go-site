@@ -5,7 +5,7 @@ datasets:
  -    
    id: ecocyc.gaf
    label: "ecocyc gaf file"
-   description: "gaf data for EcoCyc and EcoliWiki collaborative annotation for E. coli K-12"
+   description: "gaf file for ecocyc from Encyclopedia of E. coli metabolism"
    url: http://geneontology.org/gene-associations/gene_association.ecocyc.gz
    type: gaf
    dataset: ecocyc

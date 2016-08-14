@@ -5,7 +5,7 @@ datasets:
  -    
    id: goa_chicken.gpad
    label: "goa_chicken gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_chicken from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_chicken.gpa.gz
    type: gpad
    dataset: goa_chicken
@@ -25,7 +25,7 @@ datasets:
  -    
    id: goa_chicken.gpi
    label: "goa_chicken gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_chicken from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_chicken.gpi.gz
    type: gpi
    dataset: goa_chicken
@@ -45,7 +45,7 @@ datasets:
  -    
    id: goa_chicken_complex.gpad
    label: "goa_chicken_complex gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_chicken_complex from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_chicken_complex.gpa.gz
    type: gpad
    dataset: goa_chicken_complex
@@ -65,7 +65,7 @@ datasets:
  -    
    id: goa_chicken_complex.gpi
    label: "goa_chicken_complex gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_chicken_complex from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_chicken_complex.gpi.gz
    type: gpi
    dataset: goa_chicken_complex
@@ -85,7 +85,7 @@ datasets:
  -    
    id: goa_chicken_isoform.gpad
    label: "goa_chicken_isoform gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_chicken_isoform from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_chicken_isoform.gpa.gz
    type: gpad
    dataset: goa_chicken_isoform
@@ -105,7 +105,7 @@ datasets:
  -    
    id: goa_chicken_isoform.gpi
    label: "goa_chicken_isoform gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_chicken_isoform from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_chicken_isoform.gpi.gz
    type: gpi
    dataset: goa_chicken_isoform
@@ -125,7 +125,7 @@ datasets:
  -    
    id: goa_chicken_rna.gpad
    label: "goa_chicken_rna gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_chicken_rna from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_chicken_rna.gpa.gz
    type: gpad
    dataset: goa_chicken_rna
@@ -145,7 +145,7 @@ datasets:
  -    
    id: goa_chicken_rna.gpi
    label: "goa_chicken_rna gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_chicken_rna from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_chicken_rna.gpi.gz
    type: gpi
    dataset: goa_chicken_rna
@@ -165,7 +165,7 @@ datasets:
  -    
    id: goa_cow.gpad
    label: "goa_cow gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_cow from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_cow.gpa.gz
    type: gpad
    dataset: goa_cow
@@ -183,7 +183,7 @@ datasets:
  -    
    id: goa_cow.gpi
    label: "goa_cow gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_cow from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_cow.gpi.gz
    type: gpi
    dataset: goa_cow
@@ -201,7 +201,7 @@ datasets:
  -    
    id: goa_cow_complex.gpad
    label: "goa_cow_complex gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_cow_complex from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_cow_complex.gpa.gz
    type: gpad
    dataset: goa_cow_complex
@@ -219,7 +219,7 @@ datasets:
  -    
    id: goa_cow_complex.gpi
    label: "goa_cow_complex gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_cow_complex from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_cow_complex.gpi.gz
    type: gpi
    dataset: goa_cow_complex
@@ -237,7 +237,7 @@ datasets:
  -    
    id: goa_cow_isoform.gpad
    label: "goa_cow_isoform gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_cow_isoform from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_cow_isoform.gpa.gz
    type: gpad
    dataset: goa_cow_isoform
@@ -255,7 +255,7 @@ datasets:
  -    
    id: goa_cow_isoform.gpi
    label: "goa_cow_isoform gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_cow_isoform from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_cow_isoform.gpi.gz
    type: gpi
    dataset: goa_cow_isoform
@@ -273,7 +273,7 @@ datasets:
  -    
    id: goa_cow_rna.gpad
    label: "goa_cow_rna gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_cow_rna from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_cow_rna.gpa.gz
    type: gpad
    dataset: goa_cow_rna
@@ -291,7 +291,7 @@ datasets:
  -    
    id: goa_cow_rna.gpi
    label: "goa_cow_rna gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_cow_rna from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_cow_rna.gpi.gz
    type: gpi
    dataset: goa_cow_rna
@@ -309,7 +309,7 @@ datasets:
  -    
    id: goa_dog.gpad
    label: "goa_dog gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_dog from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_dog.gpa.gz
    type: gpad
    dataset: goa_dog
@@ -325,7 +325,7 @@ datasets:
  -    
    id: goa_dog.gpi
    label: "goa_dog gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_dog from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_dog.gpi.gz
    type: gpi
    dataset: goa_dog
@@ -341,7 +341,7 @@ datasets:
  -    
    id: goa_dog_complex.gpad
    label: "goa_dog_complex gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_dog_complex from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_dog_complex.gpa.gz
    type: gpad
    dataset: goa_dog_complex
@@ -357,7 +357,7 @@ datasets:
  -    
    id: goa_dog_complex.gpi
    label: "goa_dog_complex gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_dog_complex from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_dog_complex.gpi.gz
    type: gpi
    dataset: goa_dog_complex
@@ -373,7 +373,7 @@ datasets:
  -    
    id: goa_dog_isoform.gpad
    label: "goa_dog_isoform gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_dog_isoform from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_dog_isoform.gpa.gz
    type: gpad
    dataset: goa_dog_isoform
@@ -389,7 +389,7 @@ datasets:
  -    
    id: goa_dog_isoform.gpi
    label: "goa_dog_isoform gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_dog_isoform from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_dog_isoform.gpi.gz
    type: gpi
    dataset: goa_dog_isoform
@@ -405,7 +405,7 @@ datasets:
  -    
    id: goa_dog_rna.gpad
    label: "goa_dog_rna gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_dog_rna from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_dog_rna.gpa.gz
    type: gpad
    dataset: goa_dog_rna
@@ -421,7 +421,7 @@ datasets:
  -    
    id: goa_dog_rna.gpi
    label: "goa_dog_rna gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_dog_rna from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_dog_rna.gpi.gz
    type: gpi
    dataset: goa_dog_rna
@@ -437,7 +437,7 @@ datasets:
  -    
    id: goa_human.gpad
    label: "goa_human gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_human from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_human.gpa.gz
    type: gpad
    dataset: goa_human
@@ -453,7 +453,7 @@ datasets:
  -    
    id: goa_human.gpi
    label: "goa_human gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_human from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_human.gpi.gz
    type: gpi
    dataset: goa_human
@@ -469,7 +469,7 @@ datasets:
  -    
    id: goa_human_complex.gpad
    label: "goa_human_complex gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_human_complex from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_human_complex.gpa.gz
    type: gpad
    dataset: goa_human_complex
@@ -485,7 +485,7 @@ datasets:
  -    
    id: goa_human_complex.gpi
    label: "goa_human_complex gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_human_complex from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_human_complex.gpi.gz
    type: gpi
    dataset: goa_human_complex
@@ -501,7 +501,7 @@ datasets:
  -    
    id: goa_human_isoform.gpad
    label: "goa_human_isoform gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_human_isoform from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_human_isoform.gpa.gz
    type: gpad
    dataset: goa_human_isoform
@@ -517,7 +517,7 @@ datasets:
  -    
    id: goa_human_isoform.gpi
    label: "goa_human_isoform gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_human_isoform from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_human_isoform.gpi.gz
    type: gpi
    dataset: goa_human_isoform
@@ -533,7 +533,7 @@ datasets:
  -    
    id: goa_human_rna.gpad
    label: "goa_human_rna gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_human_rna from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_human_rna.gpa.gz
    type: gpad
    dataset: goa_human_rna
@@ -549,7 +549,7 @@ datasets:
  -    
    id: goa_human_rna.gpi
    label: "goa_human_rna gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_human_rna from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_human_rna.gpi.gz
    type: gpi
    dataset: goa_human_rna
@@ -565,7 +565,7 @@ datasets:
  -    
    id: goa_pig.gpad
    label: "goa_pig gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_pig from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_pig.gpa.gz
    type: gpad
    dataset: goa_pig
@@ -581,7 +581,7 @@ datasets:
  -    
    id: goa_pig.gpi
    label: "goa_pig gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_pig from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_pig.gpi.gz
    type: gpi
    dataset: goa_pig
@@ -597,7 +597,7 @@ datasets:
  -    
    id: goa_pig_complex.gpad
    label: "goa_pig_complex gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_pig_complex from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_pig_complex.gpa.gz
    type: gpad
    dataset: goa_pig_complex
@@ -613,7 +613,7 @@ datasets:
  -    
    id: goa_pig_complex.gpi
    label: "goa_pig_complex gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_pig_complex from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_pig_complex.gpi.gz
    type: gpi
    dataset: goa_pig_complex
@@ -629,7 +629,7 @@ datasets:
  -    
    id: goa_pig_isoform.gpad
    label: "goa_pig_isoform gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_pig_isoform from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_pig_isoform.gpa.gz
    type: gpad
    dataset: goa_pig_isoform
@@ -645,7 +645,7 @@ datasets:
  -    
    id: goa_pig_isoform.gpi
    label: "goa_pig_isoform gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_pig_isoform from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_pig_isoform.gpi.gz
    type: gpi
    dataset: goa_pig_isoform
@@ -661,7 +661,7 @@ datasets:
  -    
    id: goa_pig_rna.gpad
    label: "goa_pig_rna gpad file"
-   description: "gpad data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpad file for goa_pig_rna from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_pig_rna.gpa.gz
    type: gpad
    dataset: goa_pig_rna
@@ -677,7 +677,7 @@ datasets:
  -    
    id: goa_pig_rna.gpi
    label: "goa_pig_rna gpi file"
-   description: "gpi data for UniProt GO Annotation program (UniProt-GOA)"
+   description: "gpi file for goa_pig_rna from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gpad-gpi/release/goa_pig_rna.gpi.gz
    type: gpi
    dataset: goa_pig_rna

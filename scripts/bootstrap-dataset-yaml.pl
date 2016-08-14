@@ -296,7 +296,8 @@ sub emit {
         $status = "inactive";
     }
     my $species_code = $spcode{$subdb};
-    my $dataset_description = "$type data for $ch->{project_name}" || "$type file for $dataset from $authname";
+    #my $dataset_description = "$type data for $ch->{project_name}" || "$type file for $dataset from $authname";
+    my $dataset_description = "$type file for $dataset from $authname";
     print F <<EOM;
  -    
    id: $id

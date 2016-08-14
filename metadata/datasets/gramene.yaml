@@ -5,7 +5,7 @@ datasets:
  -    
    id: gramene_oryza.gaf
    label: "gramene_oryza gaf file"
-   description: "gaf data for Gramene"
+   description: "gaf file for gramene_oryza from gramene_oryza"
    url: http://geneontology.org/gene-associations/gene_association.gramene_oryza.gz
    type: gaf
    dataset: gramene_oryza

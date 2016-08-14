@@ -5,7 +5,7 @@ datasets:
  -    
    id: pombase.gaf
    label: "pombase gaf file"
-   description: "gaf data for PomBase"
+   description: "gaf file for pombase from PomBase"
    url: http://geneontology.org/gene-associations/gene_association.pombase.gz
    type: gaf
    dataset: pombase

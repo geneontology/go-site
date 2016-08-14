@@ -5,7 +5,7 @@ datasets:
  -    
    id: rgd.gaf
    label: "rgd gaf file"
-   description: "gaf data for Rat Genome Database (RGD)"
+   description: "gaf file for rgd from Rat Genome Database"
    url: http://geneontology.org/gene-associations/gene_association.rgd.gz
    type: gaf
    dataset: rgd

@@ -5,7 +5,7 @@ datasets:
  -    
    id: pseudocap.gaf
    label: "pseudocap gaf file"
-   description: "gaf data for Pseudomonas Community Annotation Project (PseudoCAP)"
+   description: "gaf file for pseudocap from Pseudomonas Genome Project"
    url: http://geneontology.org/gene-associations/gene_association.pseudocap.gz
    type: gaf
    dataset: pseudocap

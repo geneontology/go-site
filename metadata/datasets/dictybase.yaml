@@ -5,7 +5,7 @@ datasets:
  -    
    id: dictybase.gaf
    label: "dictybase gaf file"
-   description: "gaf data for dictyBase"
+   description: "gaf file for dictybase from dictyBase"
    url: http://geneontology.org/gene-associations/gene_association.dictyBase.gz
    type: gaf
    dataset: dictybase
