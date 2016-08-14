@@ -5,7 +5,7 @@ datasets:
  -    
    id: tair.gaf
    label: "tair gaf file"
-   description: "gaf file for tair from The Arabidopsis Information Resource"
+   description: "gaf data for The Arabidopsis Information Resource (TAIR)"
    url: http://geneontology.org/gene-associations/gene_association.tair.gz
    type: gaf
    dataset: tair

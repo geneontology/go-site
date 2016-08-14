@@ -5,7 +5,7 @@ datasets:
  -    
    id: fb.gaf
    label: "fb gaf file"
-   description: "gaf file for fb from FlyBase"
+   description: "gaf data for FlyBase"
    url: http://geneontology.org/gene-associations/gene_association.fb.gz
    type: gaf
    dataset: fb

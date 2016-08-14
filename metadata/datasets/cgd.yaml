@@ -5,7 +5,7 @@ datasets:
  -    
    id: cgd.gaf
    label: "cgd gaf file"
-   description: "gaf file for cgd from Candida Genome Database"
+   description: "gaf data for Candida Genome Database (CGD)"
    url: http://geneontology.org/gene-associations/gene_association.cgd.gz
    type: gaf
    dataset: cgd

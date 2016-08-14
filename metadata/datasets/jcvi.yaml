@@ -5,7 +5,7 @@ datasets:
  -    
    id: jcvi.gaf
    label: "jcvi gaf file"
-   description: "gaf file for jcvi from J. Craig Venter Institute"
+   description: "gaf data for The J. Craig Venter Institute"
    url: http://geneontology.org/gene-associations/gene_association.jcvi.gz
    type: gaf
    dataset: jcvi

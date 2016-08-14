@@ -5,7 +5,7 @@ datasets:
  -    
    id: zfin.gaf
    label: "zfin gaf file"
-   description: "gaf file for zfin from Zebrafish Information Network"
+   description: "gaf data for The Zebrafish Information Network"
    url: http://geneontology.org/gene-associations/gene_association.zfin.gz
    type: gaf
    dataset: zfin

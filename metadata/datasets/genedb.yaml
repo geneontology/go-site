@@ -5,7 +5,7 @@ datasets:
  -    
    id: genedb_lmajor.gaf
    label: "genedb_lmajor gaf file"
-   description: "gaf file for genedb_lmajor from GeneDB"
+   description: "gaf data for Leishmania major GeneDB"
    url: http://geneontology.org/gene-associations/gene_association.GeneDB_Lmajor.gz
    type: gaf
    dataset: genedb_lmajor
@@ -21,7 +21,7 @@ datasets:
  -    
    id: genedb_pfalciparum.gaf
    label: "genedb_pfalciparum gaf file"
-   description: "gaf file for genedb_pfalciparum from GeneDB"
+   description: "gaf data for Plasmodium falciparum GeneDB"
    url: http://geneontology.org/gene-associations/gene_association.GeneDB_Pfalciparum.gz
    type: gaf
    dataset: genedb_pfalciparum
@@ -37,7 +37,7 @@ datasets:
  -    
    id: genedb_tbrucei.gaf
    label: "genedb_tbrucei gaf file"
-   description: "gaf file for genedb_tbrucei from GeneDB"
+   description: "gaf data for Trypanosoma brucei GeneDB"
    url: http://geneontology.org/gene-associations/gene_association.GeneDB_Tbrucei.gz
    type: gaf
    dataset: genedb_tbrucei
@@ -53,7 +53,7 @@ datasets:
  -    
    id: genedb_tsetse.gaf
    label: "genedb_tsetse gaf file"
-   description: "gaf file for genedb_tsetse from GeneDB"
+   description: "gaf data for Glossina morsitans GeneDB"
    url: http://geneontology.org/gene-associations/gene_association.GeneDB_tsetse.gz
    type: gaf
    dataset: genedb_tsetse

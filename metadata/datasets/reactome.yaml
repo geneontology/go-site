@@ -5,7 +5,7 @@ datasets:
  -    
    id: reactome.gaf
    label: "reactome gaf file"
-   description: "gaf file for reactome from Reactome - a curated knowledgebase of biological pathways"
+   description: "gaf data for Reactome (CSHL & EBI)"
    url: http://geneontology.org/gene-associations/gene_association.reactome.gz
    type: gaf
    dataset: reactome

@@ -5,7 +5,7 @@ datasets:
  -    
    id: sgd.gaf
    label: "sgd gaf file"
-   description: "gaf file for sgd from Saccharomyces Genome Database"
+   description: "gaf data for Saccharomyces Genome Database (SGD)"
    url: http://geneontology.org/gene-associations/gene_association.sgd.gz
    type: gaf
    dataset: sgd

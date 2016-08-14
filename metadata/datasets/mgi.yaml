@@ -5,7 +5,7 @@ datasets:
  -    
    id: mgi.gaf
    label: "mgi gaf file"
-   description: "gaf file for mgi from Mouse Genome Informatics"
+   description: "gaf data for Mouse Genome Informatics (MGI)"
    url: http://geneontology.org/gene-associations/gene_association.mgi.gz
    type: gaf
    dataset: mgi
@@ -21,7 +21,7 @@ datasets:
  -    
    id: mgi.gpad
    label: "mgi gpad file"
-   description: "gpad file for mgi from Mouse Genome Informatics"
+   description: "gpad data for Mouse Genome Informatics (MGI)"
    url: http://geneontology.org/gpad-gpi/release/mgi.gpa.gz
    type: gpad
    dataset: mgi
@@ -37,7 +37,7 @@ datasets:
  -    
    id: mgi.gpi
    label: "mgi gpi file"
-   description: "gpi file for mgi from Mouse Genome Informatics"
+   description: "gpi data for Mouse Genome Informatics (MGI)"
    url: http://geneontology.org/gpad-gpi/release/mgi.gpi.gz
    type: gpi
    dataset: mgi

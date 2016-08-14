@@ -5,7 +5,7 @@ datasets:
  -    
    id: pamgo_atumefaciens.gaf
    label: "pamgo_atumefaciens gaf file"
-   description: "gaf file for pamgo_atumefaciens from Plant-Associated Microbe Gene Ontology Interest Group"
+   description: "gaf data for Agrobacterium Genome Consortium (PAMGO project)"
    url: http://geneontology.org/gene-associations/gene_association.PAMGO_Atumefaciens.gz
    type: gaf
    dataset: pamgo_atumefaciens
@@ -21,7 +21,7 @@ datasets:
  -    
    id: pamgo_ddadantii.gaf
    label: "pamgo_ddadantii gaf file"
-   description: "gaf file for pamgo_ddadantii from Plant-Associated Microbe Gene Ontology Interest Group"
+   description: "gaf data for University of Wisconsin, genome annotation of Dickeya dadantii (PAMGO project)"
    url: http://geneontology.org/gene-associations/gene_association.PAMGO_Ddadantii.gz
    type: gaf
    dataset: pamgo_ddadantii
@@ -37,7 +37,7 @@ datasets:
  -    
    id: pamgo_mgrisea.gaf
    label: "pamgo_mgrisea gaf file"
-   description: "gaf file for pamgo_mgrisea from Plant-Associated Microbe Gene Ontology Interest Group"
+   description: "gaf data for North Carolina State University, genome annotation of Magnaporthe grisea (PAMGO project)"
    url: http://geneontology.org/gene-associations/gene_association.PAMGO_Mgrisea.gz
    type: gaf
    dataset: pamgo_mgrisea
@@ -53,7 +53,7 @@ datasets:
  -    
    id: pamgo_oomycetes.gaf
    label: "pamgo_oomycetes gaf file"
-   description: "gaf file for pamgo_oomycetes from Plant-Associated Microbe Gene Ontology Interest Group"
+   description: "gaf data for Virginia Bioinformatics Institute Oomycete Genome Annotation (PAMGO project)"
    url: http://geneontology.org/gene-associations/gene_association.PAMGO_Oomycetes.gz
    type: gaf
    dataset: pamgo_oomycetes

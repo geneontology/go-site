@@ -141,8 +141,17 @@ my %xrefh = ();
 foreach my $x (@$xrefs) {
     $xrefh{lc($x->{database})} = $x;
 }
+my %confh = ();
 
 foreach (@ARGV) {
+    if (m@(\w+)\.gaf\.conf$@) {
+        parseconf(lc($1), $_);
+        next;
+    }
+    elsif (m@(\w+)\.conf$@) {
+        parseconf(lc($1), $_);
+        next;
+    }
     unless (m@\.gz$@) {
         next;
     }
@@ -187,13 +196,34 @@ foreach my $f (keys %is_append) {
 
 exit 0;
 
+sub parseconf {
+    my ($dataset, $fn) = @_;
+    #print STDERR "PARSING: $dataset FROM $fn\n";
+    my $h = {};
+    $confh{$dataset} = $h;
+    open(F,$fn) || die $fn;
+    while(<F>) {
+        chomp;
+        if (m@(\w+)=(.*)@) {
+            $h->{$1} = $2;
+        }
+    }
+    close(F);
+}
+
 sub emit {
     my ($type, $dataset, $file) = @_;
     $dataset = lc($dataset);
-    my $dbname;
+    my $authname;
     my $subdb = $dataset;
     my $auth = $dataset;
     my $entity_type = '';
+
+    my $ch = $confh{$dataset};
+    if (!$ch) {
+        print STDERR "NO CONF FOR: $dataset\n";
+        $ch = {};
+    }
     
     if ($dataset =~ m@_@) {
         if ($dataset =~ m@(\w+)_(\w+)_(\w+)@) {
@@ -217,11 +247,11 @@ sub emit {
     }
     my $dbmeta = $xrefh{$auth};
     if ($dbmeta) {
-        $dbname = $dbmeta->{name};
+        $authname = $dbmeta->{name};
     }
     else {
         print STDERR "NO ENTRY FOR: $auth (db $dataset)\n";
-        $dbname = $dataset;
+        $authname = $dataset;
     }
     
     my $base = $file;
@@ -253,10 +283,11 @@ sub emit {
         open(F, ">>$ofn") || die $ofn;
     }
     else {
+        # HEADER
         open(F, ">$ofn") || die $ofn;
         print F "id: $auth\n";
-        print F "label: $dbname\n";
-        print F "description: \"GO data for $dbname\"\n";
+        print F "label: $authname\n";
+        print F "description: \"GO data for $authname\"\n";
         print F "datasets:\n";
     }
     $is_append{$ofn}++;        
@@ -265,13 +296,12 @@ sub emit {
         $status = "inactive";
     }
     my $species_code = $spcode{$subdb};
-    
-    
+    my $dataset_description = "$type data for $ch->{project_name}" || "$type file for $dataset from $authname";
     print F <<EOM;
  -    
    id: $id
    label: "$dataset $type file"
-   description: "$type file for $dataset from $dbname"
+   description: "$dataset_description"
    url: $url
    type: $type
    dataset: $dataset
