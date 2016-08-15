@@ -161,6 +161,8 @@
   authorizations:
     termgenie-go:
       allow-write: true
+    noctua-go:
+      allow-edit: true
   organization: BHF-UCL
 -
   uri: 'GOC:ame'
