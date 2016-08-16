@@ -1563,7 +1563,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.maizegdb.org/cgi-bin/id_search.cgi?id=[example_id]
+      url_syntax: http://maizegdb.org/data_center/reference?id=[example_id]
+      example_id: MaizeGDB_REF:9021423
+      example_url: http://maizegdb.org/data_center/reference?id=9021423
 - database: MaizeGDB_stock
   name: Maize Genetics and Genomics Database
   generic_urls:
