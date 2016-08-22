@@ -573,14 +573,16 @@
   uri: 'GOC:als'
   organization: GOA
 -
-  uri: 'GOC:es'
-  xref: 'GOC:es'
   nickname: 'Elena Speretta'
+  uri: 'http://orcid.org/0000-0003-1506-7438'
+  xref: 'GOC:es'
   email-md5:
     - e4c08a3f5b380e6103ac2cc3d94d83ff
     - c961c90fe1e38150467f235fe1ba6737
   organization: GOA
   authorizations:
+    noctua-go:
+      allow-edit: true
     termgenie-go:
       allow-write: true
 -
@@ -1624,15 +1626,17 @@
   nickname: 'Paula Duek Roggli'
   organization: UniProt
 -
-  uri: 'GOC:pga'
-  xref: 'GOC:pga'
   nickname: 'Penelope Garmiri'
+  uri: 'http://orcid.org/0000-0002-2283-2575'
+  xref: 'GOC:pga'
   email-md5:
     - 66204f7039a6c6d6daeac682221e3773
-  organization: UniProt
   authorizations:
+    noctua-go:
+      allow-edit: true
     termgenie-go:
       allow-write: true
+  organization: UniProt
 -
   uri: 'GOC:plm'
   xref: 'GOC:plm'
@@ -2201,6 +2205,8 @@
   organization: 'working group project'
 -
   nickname: 'Monica Munoz-Torres'
+  uri: 'http://orcid.org/0000-0001-8430-6039'
+  xref: 'GOC:mmt'
   email-md5:
     - 10c7ac321b4dd7fcca0c2eccc81ff78f
     - 0317fbb65069c545c831431d73e2d0fc
@@ -2209,8 +2215,6 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-  xref: 'GOC:mmt'
-  uri: 'GOC:mmt'
   organization: LBNL
 -
   uri: 'GOC:giardia'
