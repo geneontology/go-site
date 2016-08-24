@@ -50,9 +50,8 @@ foreach my $ref (@refs) {
     delete $ref->{comment};
     
     open(F, ">$fn") || die $fn;
-    print F "---\n";
-    print F "layout: goref\n";
     print F Dump($ref); 
+    print F "layout: goref\n";
     print F "---\n\n";
     print F "$abstract\n";
     if ($comment) {
