@@ -44,6 +44,8 @@ foreach my $ref (@refs) {
     $ref->{id} = "GO_REF:$id";
     my $fn = "goref-$id.md";
 
+    my $title = $ref->{title};
+    delete $ref->{title};
     my $abstract = $ref->{abstract};
     delete $ref->{abstract};
     my $comment = $ref->{comment};
@@ -53,6 +55,7 @@ foreach my $ref (@refs) {
     print F Dump($ref); 
     print F "layout: goref\n";
     print F "---\n\n";
+    print F "## $title\n\n";
     print F "$abstract\n";
     if ($comment) {
         print F "\n## Comments\n\n";
