@@ -586,6 +586,18 @@
     termgenie-go:
       allow-write: true
 -
+  nickname: 'George Georghiou'
+  uri: 'http://orcid.org/0000-0001-5067-3199'
+  xref: 'GOC:gg'
+  email-md5:
+    - a5d3f603d546cc29f906118a5d9762a4
+  organization: GOA
+  authorizations:
+    noctua-go:
+      allow-edit: true
+    termgenie-go:
+      allow-write: true
+-
   uri: 'GOC:hbye'
   xref: 'GOC:hbye'
   nickname: 'Hema Bye-A-Jee'
