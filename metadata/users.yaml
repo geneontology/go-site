@@ -1141,6 +1141,8 @@
   organization: SGD
 -
   nickname: 'Karen Christie'
+  uri: 'http://orcid.org/0000-0001-5501-853X'
+  xref: 'GOC:krc'
   email-md5:
     - af6c0d66acf0836edf60f3e8b1e6b7c9
   authorizations:
@@ -1149,8 +1151,6 @@
     termgenie-go:
       allow-write: true
       allow-freeform: true
-  xref: 'GOC:krc'
-  uri: 'GOC:krc'
   organization: SGD
 -
   nickname: 'Maria Costanzo'
