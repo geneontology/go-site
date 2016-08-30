@@ -1403,7 +1403,7 @@
     termgenie-go:
       allow-write: true
   xref: 'GOC:pad'
-  uri: 'GOC:pad'
+  uri: 'http://orcid.org/0000-0003-4659-6893'
   organization: "UCL-Parkinson's UK Annotation Project"
 -
   uri: 'GOC:mat'
