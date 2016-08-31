@@ -1559,9 +1559,14 @@
   nickname: 'Kirill Degtyarenko'
   organization: UniProt
 -
-  uri: 'GOC:klp'
-  xref: 'GOC:klp'
   nickname: 'Klemens Pichler'
+  uri: 'http://orcid.org/0000-0001-6099-8931'
+  xref: 'GOC:klp'
+  email-md5:
+    - 774e21706bb2937d5cd30edf73c6469d
+  authorizations:
+    noctua-go:
+      allow-edit: true
   organization: UniProt
 -
   uri: 'GOC:ka'
@@ -2577,3 +2582,57 @@
     noctua-go:
       allow-edit: true
   organization: UC Davis
+-
+  nickname: "Daniel Gonzalez"
+  uri: 'http://orcid.org/0000-0002-3919-1380'
+  email-md5:
+    - 634abb3b6437498bec616150ef57270d
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: EMBL-EBI
+-
+  nickname: "Emma Hatton-Ellis"
+  uri: 'http://orcid.org/0000-0002-7262-1928'
+  email-md5:
+    - 2d2a5cce07b6ea476ae866ddf83b440d
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: EMBL-EBI
+-
+  nickname: "Barbara Palka"
+  uri: 'http://orcid.org/0000-0001-8256-1466'
+  email-md5:
+    - ebaf882a667319fea1abc78811b565e4
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: EMBL-EBI
+-
+  nickname: "Ramona Britto"
+  uri: 'http://orcid.org/0000-0003-1011-5410'
+  email-md5:
+    - cb9c22aab5ab96df62098f7407c1069f
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: EMBL-EBI
+-
+  nickname: "Alistair MacDougall"
+  uri: 'http://orcid.org/0000-0003-2857-3460 '
+  email-md5:
+    - 0dcbbae41504af90fcca94f8f756a961
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: EBI
+-
+  nickname: "Mary Ann Tuli"
+  uri: 'http://orcid.org/0000-0002-4667-9528'
+  email-md5:
+    - cefa19821d8dda55a07a755a964e4946
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: WB
