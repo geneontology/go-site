@@ -2637,3 +2637,12 @@
     noctua-go:
       allow-edit: true
   organization: WB
+-
+  nickname: "Jacqueline Hayles"
+  uri: 'http://orcid.org/0000-0002-8599-8206'
+  email-md5:
+    - d0e31b86f6f57470844a06bcc4e49a6d
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: Crick
