@@ -768,7 +768,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      url_syntax: http://www.ensemblgenomes.org/id/[example_ID]
+      url_syntax: http://www.ensemblgenomes.org/id/[example_id]
       example_id: EnsemblPlants:LOC_Os01g22954
       example_url: http://www.ensemblgenomes.org/id/LOC_Os01g22954
 - database: EnsemblProtists
