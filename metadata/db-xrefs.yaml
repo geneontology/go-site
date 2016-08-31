@@ -746,7 +746,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      url_syntax: http://www.ensemblgenomes.org/id/[example_ID]
+      url_syntax: http://www.ensemblgenomes.org/id/[example_id]
       example_id: EnsemblFungi:YOR197W
       example_url: http://www.ensemblgenomes.org/id/YOR197W
 - database: EnsemblMetazoa
@@ -756,7 +756,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      url_syntax: http://www.ensemblgenomes.org/id/[example_ID]
+      url_syntax: http://www.ensemblgenomes.org/id/[example_id]
       example_id: EnsemblMetazoa:FBgn0052693
       example_url: http://www.ensemblgenomes.org/id/FBgn0052693
 - database: EnsemblPlants
@@ -778,7 +778,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      url_syntax: http://www.ensemblgenomes.org/id/[example_ID]
+      url_syntax: http://www.ensemblgenomes.org/id/[example_id]
       example_id: EnsemblProtists:PFL2550w
       example_url: http://www.ensemblgenomes.org/id/PFL2550w
 - database: ENZYME
