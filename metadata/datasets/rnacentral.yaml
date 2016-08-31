@@ -1,0 +1,19 @@
+id: rnacentral
+label: RNA Central
+description: "An international database of ncRNA sequences"
+datasets:
+ -    
+   id: rnacentral.gpi
+   label: "RNACentral gpi file"
+   description: "gpi file for RNA central, all species"
+   url: ftp://ftp.ebi.ac.uk/pub/databases/RNAcentral/current_release/gpi/rnacentral.gpi.gz
+   type: gpi
+   dataset: rnacentral
+   submitter: rnacentral
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/RNAcentral/current_release/gpi/rnacentral.gpi.gz
+   entity_type: rna
+   status: active
+   taxa:
+    - NCBITaxon:1
+
