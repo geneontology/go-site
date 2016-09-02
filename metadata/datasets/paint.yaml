@@ -16,6 +16,7 @@ datasets:
    status: active
    species_code: 
    taxa:
+    - NCBITaxon:5476
 
  -    
    id: paint_dictybase.gaf
@@ -31,6 +32,10 @@ datasets:
    status: active
    species_code: Ddis
    taxa:
+    - NCBITaxon:352472
+    - NCBITaxon:366501
+    - NCBITaxon:44689
+    - NCBITaxon:5782
 
  -    
    id: paint_ecocyc.gaf
@@ -46,6 +51,7 @@ datasets:
    status: active
    species_code: 
    taxa:
+    - NCBITaxon:83333
 
  -    
    id: paint_fb.gaf
@@ -61,6 +67,7 @@ datasets:
    status: active
    species_code: Dmel
    taxa:
+    - NCBITaxon:7227
 
  -    
    id: paint_goa_chicken.gaf
@@ -106,6 +113,7 @@ datasets:
    status: active
    species_code: Mmus
    taxa:
+    - NCBITaxon:10090
 
  -    
    id: paint_other.gaf
@@ -136,6 +144,8 @@ datasets:
    status: active
    species_code: Spom
    taxa:
+    - NCBITaxon:284812
+    - NCBITaxon:4896
 
  -    
    id: paint_rgd.gaf
@@ -151,6 +161,7 @@ datasets:
    status: active
    species_code: Rnor
    taxa:
+    - NCBITaxon:10116
 
  -    
    id: paint_sgd.gaf
@@ -166,6 +177,11 @@ datasets:
    status: active
    species_code: Scer
    taxa:
+    - NCBITaxon:285006
+    - NCBITaxon:307796
+    - NCBITaxon:41870
+    - NCBITaxon:4932
+    - NCBITaxon:559292
 
  -    
    id: paint_tair.gaf
@@ -181,6 +197,7 @@ datasets:
    status: active
    species_code: Atal
    taxa:
+    - NCBITaxon:3702
 
  -    
    id: paint_wb.gaf
@@ -196,6 +213,7 @@ datasets:
    status: active
    species_code: Cele
    taxa:
+    - NCBITaxon:6239
 
  -    
    id: paint_zfin.gaf
@@ -211,4 +229,5 @@ datasets:
    status: active
    species_code: Drer
    taxa:
+    - NCBITaxon:7955
 
