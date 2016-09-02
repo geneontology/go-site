@@ -246,6 +246,11 @@ sub emit {
         
     }
     my $dbmeta = $xrefh{$auth};
+
+    if ($dataset =~ m@paint_(\S+)@) {
+        $dbmeta = { name => 'PAINT' };
+    }
+
     if ($dbmeta) {
         $authname = $dbmeta->{name};
     }
@@ -264,6 +269,8 @@ sub emit {
     if ($auth eq 'mgi' && $type eq 'gpi') {
         $src = "ftp://ftp.informatics.jax.org/pub/reports/mgi.gpi.gz";
     }
+
+    my $EXTRA = "";
     
     my @taxids = ();
     foreach my $k (keys %taxon2db) {
@@ -277,6 +284,7 @@ sub emit {
                 my $t = $k;
                 $t =~ s@taxon:@NCBITaxon:@;
                 push (@taxids, $t);
+                
             }
         }
     }
@@ -285,6 +293,7 @@ sub emit {
     }
     my $TAXA = join("", (map {"    - $_\n"} (sort @taxids)));
 
+    
     my $ofn = "datasets/$auth.yaml";
     if ($is_append{$ofn}) {
         open(F, ">>$ofn") || die $ofn;
@@ -305,6 +314,7 @@ sub emit {
     my $species_code = $spcode{$subdb};
     if (!$species_code && $subdb =~ m@paint_(\w+)@) {
         $species_code = $spcode{$1};
+        $EXTRA .= "   merges_into: $1\n";
     }
     
     #my $dataset_description = "$type data for $ch->{project_name}" || "$type file for $dataset from $authname";
@@ -324,7 +334,7 @@ sub emit {
    status: $status
    species_code: $species_code
    taxa:
-$TAXA
+$TAXA$EXTRA   
 EOM
 
    close(F);

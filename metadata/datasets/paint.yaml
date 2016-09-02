@@ -1,11 +1,11 @@
 id: paint
-label: paint_cgd
-description: "GO data for paint_cgd"
+label: PAINT
+description: "GO data for PAINT"
 datasets:
  -    
    id: paint_cgd.gaf
    label: "paint_cgd gaf file"
-   description: "gaf file for paint_cgd from paint_cgd"
+   description: "gaf file for paint_cgd from PAINT"
    url: http://geneontology.org/gene-associations/gene_association.paint_cgd.gz
    type: gaf
    dataset: paint_cgd
@@ -17,11 +17,12 @@ datasets:
    species_code: 
    taxa:
     - NCBITaxon:5476
-
+   merges_into: cgd
+   
  -    
    id: paint_dictybase.gaf
    label: "paint_dictybase gaf file"
-   description: "gaf file for paint_dictybase from paint_dictybase"
+   description: "gaf file for paint_dictybase from PAINT"
    url: http://geneontology.org/gene-associations/gene_association.paint_dictyBase.gz
    type: gaf
    dataset: paint_dictybase
@@ -36,11 +37,12 @@ datasets:
     - NCBITaxon:366501
     - NCBITaxon:44689
     - NCBITaxon:5782
-
+   merges_into: dictybase
+   
  -    
    id: paint_ecocyc.gaf
    label: "paint_ecocyc gaf file"
-   description: "gaf file for paint_ecocyc from paint_ecocyc"
+   description: "gaf file for paint_ecocyc from PAINT"
    url: http://geneontology.org/gene-associations/gene_association.paint_ecocyc.gz
    type: gaf
    dataset: paint_ecocyc
@@ -52,11 +54,12 @@ datasets:
    species_code: 
    taxa:
     - NCBITaxon:83333
-
+   merges_into: ecocyc
+   
  -    
    id: paint_fb.gaf
    label: "paint_fb gaf file"
-   description: "gaf file for paint_fb from paint_fb"
+   description: "gaf file for paint_fb from PAINT"
    url: http://geneontology.org/gene-associations/gene_association.paint_fb.gz
    type: gaf
    dataset: paint_fb
@@ -68,11 +71,12 @@ datasets:
    species_code: Dmel
    taxa:
     - NCBITaxon:7227
-
+   merges_into: fb
+   
  -    
    id: paint_goa_chicken.gaf
    label: "paint_goa_chicken gaf file"
-   description: "gaf file for paint_goa_chicken from paint_goa_chicken"
+   description: "gaf file for paint_goa_chicken from PAINT"
    url: http://geneontology.org/gene-associations/gene_association.paint_goa_chicken.gz
    type: gaf
    dataset: paint_goa_chicken
@@ -83,11 +87,12 @@ datasets:
    status: active
    species_code: 
    taxa:
-
+   merges_into: goa
+   
  -    
    id: paint_goa_human.gaf
    label: "paint_goa_human gaf file"
-   description: "gaf file for paint_goa_human from paint_goa_human"
+   description: "gaf file for paint_goa_human from PAINT"
    url: http://geneontology.org/gene-associations/gene_association.paint_goa_human.gz
    type: gaf
    dataset: paint_goa_human
@@ -98,11 +103,12 @@ datasets:
    status: active
    species_code: 
    taxa:
-
+   merges_into: goa
+   
  -    
    id: paint_mgi.gaf
    label: "paint_mgi gaf file"
-   description: "gaf file for paint_mgi from paint_mgi"
+   description: "gaf file for paint_mgi from PAINT"
    url: http://geneontology.org/gene-associations/gene_association.paint_mgi.gz
    type: gaf
    dataset: paint_mgi
@@ -114,11 +120,12 @@ datasets:
    species_code: Mmus
    taxa:
     - NCBITaxon:10090
-
+   merges_into: mgi
+   
  -    
    id: paint_other.gaf
    label: "paint_other gaf file"
-   description: "gaf file for paint_other from paint_other"
+   description: "gaf file for paint_other from PAINT"
    url: http://geneontology.org/gene-associations/gene_association.paint_other.gz
    type: gaf
    dataset: paint_other
@@ -129,11 +136,12 @@ datasets:
    status: active
    species_code: 
    taxa:
-
+   merges_into: other
+   
  -    
    id: paint_pombase.gaf
    label: "paint_pombase gaf file"
-   description: "gaf file for paint_pombase from paint_pombase"
+   description: "gaf file for paint_pombase from PAINT"
    url: http://geneontology.org/gene-associations/gene_association.paint_pombase.gz
    type: gaf
    dataset: paint_pombase
@@ -146,11 +154,12 @@ datasets:
    taxa:
     - NCBITaxon:284812
     - NCBITaxon:4896
-
+   merges_into: pombase
+   
  -    
    id: paint_rgd.gaf
    label: "paint_rgd gaf file"
-   description: "gaf file for paint_rgd from paint_rgd"
+   description: "gaf file for paint_rgd from PAINT"
    url: http://geneontology.org/gene-associations/gene_association.paint_rgd.gz
    type: gaf
    dataset: paint_rgd
@@ -162,11 +171,12 @@ datasets:
    species_code: Rnor
    taxa:
     - NCBITaxon:10116
-
+   merges_into: rgd
+   
  -    
    id: paint_sgd.gaf
    label: "paint_sgd gaf file"
-   description: "gaf file for paint_sgd from paint_sgd"
+   description: "gaf file for paint_sgd from PAINT"
    url: http://geneontology.org/gene-associations/gene_association.paint_sgd.gz
    type: gaf
    dataset: paint_sgd
@@ -182,11 +192,12 @@ datasets:
     - NCBITaxon:41870
     - NCBITaxon:4932
     - NCBITaxon:559292
-
+   merges_into: sgd
+   
  -    
    id: paint_tair.gaf
    label: "paint_tair gaf file"
-   description: "gaf file for paint_tair from paint_tair"
+   description: "gaf file for paint_tair from PAINT"
    url: http://geneontology.org/gene-associations/gene_association.paint_tair.gz
    type: gaf
    dataset: paint_tair
@@ -198,11 +209,12 @@ datasets:
    species_code: Atal
    taxa:
     - NCBITaxon:3702
-
+   merges_into: tair
+   
  -    
    id: paint_wb.gaf
    label: "paint_wb gaf file"
-   description: "gaf file for paint_wb from paint_wb"
+   description: "gaf file for paint_wb from PAINT"
    url: http://geneontology.org/gene-associations/gene_association.paint_wb.gz
    type: gaf
    dataset: paint_wb
@@ -214,11 +226,12 @@ datasets:
    species_code: Cele
    taxa:
     - NCBITaxon:6239
-
+   merges_into: wb
+   
  -    
    id: paint_zfin.gaf
    label: "paint_zfin gaf file"
-   description: "gaf file for paint_zfin from paint_zfin"
+   description: "gaf file for paint_zfin from PAINT"
    url: http://geneontology.org/gene-associations/gene_association.paint_zfin.gz
    type: gaf
    dataset: paint_zfin
@@ -230,4 +243,5 @@ datasets:
    species_code: Drer
    taxa:
     - NCBITaxon:7955
-
+   merges_into: zfin
+   
