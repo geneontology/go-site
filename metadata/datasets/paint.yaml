@@ -29,7 +29,7 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.paint_dictyBase.gz
    entity_type: 
    status: active
-   species_code: 
+   species_code: Ddis
    taxa:
 
  -    
@@ -59,7 +59,7 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.paint_fb.gz
    entity_type: 
    status: active
-   species_code: 
+   species_code: Dmel
    taxa:
 
  -    
@@ -104,7 +104,7 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.paint_mgi.gz
    entity_type: 
    status: active
-   species_code: 
+   species_code: Mmus
    taxa:
 
  -    
@@ -134,7 +134,7 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.paint_pombase.gz
    entity_type: 
    status: active
-   species_code: 
+   species_code: Spom
    taxa:
 
  -    
@@ -149,7 +149,7 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.paint_rgd.gz
    entity_type: 
    status: active
-   species_code: 
+   species_code: Rnor
    taxa:
 
  -    
@@ -164,7 +164,7 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.paint_sgd.gz
    entity_type: 
    status: active
-   species_code: 
+   species_code: Scer
    taxa:
 
  -    
@@ -179,7 +179,7 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.paint_tair.gz
    entity_type: 
    status: active
-   species_code: 
+   species_code: Atal
    taxa:
 
  -    
@@ -194,7 +194,7 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.paint_wb.gz
    entity_type: 
    status: active
-   species_code: 
+   species_code: Cele
    taxa:
 
  -    
@@ -209,6 +209,6 @@ datasets:
    source: http://geneontology.org/gene-associations/submissions/gene_association.paint_zfin.gz
    entity_type: 
    status: active
-   species_code: 
+   species_code: Drer
    taxa:
 

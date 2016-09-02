@@ -272,6 +272,13 @@ sub emit {
             $t =~ s@taxon:@NCBITaxon:@;
             push (@taxids, $t);
         }
+        if ($subdb =~ m@paint_(\S+)@) {
+            if ($1 eq lc($taxon2db{$k})) {
+                my $t = $k;
+                $t =~ s@taxon:@NCBITaxon:@;
+                push (@taxids, $t);
+            }
+        }
     }
     if (!@taxids) {
         print STDERR "NO TAXA FOR '$subdb' (dataset=$dataset)\n";
@@ -296,6 +303,10 @@ sub emit {
         $status = "inactive";
     }
     my $species_code = $spcode{$subdb};
+    if (!$species_code && $subdb =~ m@paint_(\w+)@) {
+        $species_code = $spcode{$1};
+    }
+    
     #my $dataset_description = "$type data for $ch->{project_name}" || "$type file for $dataset from $authname";
     my $dataset_description = "$type file for $dataset from $authname";
     print F <<EOM;
