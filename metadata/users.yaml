@@ -2657,7 +2657,7 @@
     noctua-go:
       allow-edit: true
   organization: EMBL-EBI
-  -
+-
   nickname: 'Rossana Zaru'
   uri: 'http://orcid.org/0000-0002-3358-4423'
   xref: 'GOC:rz'
