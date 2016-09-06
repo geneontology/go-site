@@ -2657,3 +2657,15 @@
     noctua-go:
       allow-edit: true
   organization: EMBL-EBI
+  -
+  nickname: 'Rossana Zaru'
+  uri: 'http://orcid.org/0000-0002-3358-4423'
+  xref: 'GOC:rz'
+  email-md5:
+    - 0de11318dae17ecd44c3cbc35378622a
+  authorizations:
+    noctua-go:
+      allow-edit: true
+    termgenie-go:
+      allow-write: true
+  organization: EMBL-EBI
