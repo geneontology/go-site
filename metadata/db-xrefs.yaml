@@ -2095,22 +2095,22 @@
       example_id: PMID:4208797
       example_url: http://www.ncbi.nlm.nih.gov/pubmed/4208797
 - database: PO
-  name: Plant Ontology Consortium Database
+  name: Plant Ontology
   generic_urls:
-    - http://www.plantontology.org/
+    - http://www.planteome.org/
   entity_types:
     - type_name: plant anatomical entity
       type_id: PO:0025131
       id_syntax: '[0-9]{7}'
-      url_syntax: http://www.plantontology.org/amigo/go.cgi?action=query&view=query&search_constraint=terms&query=PO:[example_id]
+      url_syntax: http://browser.planteome.org/amigo/term/PO:[example_id]
       example_id: PO:0009004
-      example_url: http://www.plantontology.org/amigo/go.cgi?action=query&view=query&search_constraint=terms&query=PO:0009004
+      example_url: http://browser.planteome.org/amigo/term/PO:0009004
     - type_name: plant structure development stage
       type_id: PO:0009012
       id_syntax: '[0-9]{7}'
-      url_syntax: http://www.plantontology.org/amigo/go.cgi?action=query&view=query&search_constraint=terms&query=PO:[example_id]
-      example_id: PO:0009004
-      example_url: http://www.plantontology.org/amigo/go.cgi?action=query&view=query&search_constraint=terms&query=PO:0009004
+      url_syntax: http://browser.planteome.org/amigo/term/PO:[example_id]
+      example_id: PO:0025131
+      example_url: http://browser.planteome.org/amigo/term/PO:0025131
 - database: PO_GIT
   name: GitHub
   generic_urls:
