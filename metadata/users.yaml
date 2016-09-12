@@ -1845,6 +1845,8 @@
   email-md5:
     - 52a87c38e1ea0a39ee3ac5e8f23e1f6c
   authorizations:
+    termgenie-go:
+      allow-write: true
     noctua-go:
       allow-edit: true
   uri: 'http://orcid.org/0000-0002-2244-7917'
