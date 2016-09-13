@@ -2657,3 +2657,12 @@
     noctua-go:
       allow-edit: true
   organization: EMBL-EBI
+-
+  nickname: "Satrajit Ghosh"
+  uri: 'http://orcid.org/0000-0002-5312-6729'
+  email-md5:
+    - 1c8c8eeba90d924df74f588bc2f1de23
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: NIDASH
