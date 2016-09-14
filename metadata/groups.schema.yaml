@@ -1,0 +1,20 @@
+####
+#### Use kwalify and this schema to validate the config files.
+####
+#### Examples:
+####    kwalify -f ./metadata/groups.schema.yaml ./metadata/groups.yaml
+####    kwalify -f ./metadata/groups.schema.yaml ./metadata/groups.yaml | grep INVALID; test $? -ne 0
+####
+type: seq
+sequence:
+  - type: map
+    mapping:
+      "id":
+        type: str
+        required: true
+        unique: true
+        pattern: /^[\/\.\-\:\w]+$/
+      "label":
+        type: str
+        required: true
+        unique: true

@@ -1,0 +1,16 @@
+####
+#### Metadata on GOC groups.
+#### See the README.md in this directory for more details.
+####
+-
+  label: 'LBL'
+  id: http://lbl.gov
+-
+  label: 'GO Central'
+  id: http://geneontology.org
+-
+  label: 'Planteome'
+  id: http://planteome.org
+-
+  label: 'Berkeley BOP'
+  id: http://berkeleybop.org
