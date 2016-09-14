@@ -77,3 +77,8 @@ sequence:
       "organization":
         type: str
         required: false
+      "groups":
+        type: seq
+        required: false
+        sequence:
+          - type: str

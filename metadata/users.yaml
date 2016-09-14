@@ -55,6 +55,10 @@
       allow-management: true
   xref: 'GOC:sjc'
   uri: 'GOC:sjc'
+  groups:
+    - 'http://geneontology.org'
+    - 'http://planteome.org'
+    - 'http://lbl.gov'
 -
   nickname: 'Jeremy Nguyen Xuan'
   email-md5:
@@ -1067,6 +1071,10 @@
   xref: 'GOC:cjm'
   uri: 'http://orcid.org/0000-0002-6601-2165'
   organization: LBL
+  groups:
+    - 'http://geneontology.org'
+    - 'http://planteome.org'
+    - 'http://lbl.gov'
 -
   uri: 'GOC:as'
   xref: 'GOC:as'
