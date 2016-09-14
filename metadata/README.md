@@ -23,6 +23,14 @@ hash, you should use:
 echo -n "foo.bar@bib.example" | md5sum
 ```
 
+# groups.yaml
+
+ - [groups.yaml](groups.yaml) - metadata on GOC groups
+ - [groups.schema.yaml](groups.schema.yaml) - schema
+
+At this point, mostly used to help tracking of contributions in the
+Noctua system.
+
 # db-xrefs.yaml
 
  - [db-xrefs.yaml](db-xrefs.yaml) - prefix registry

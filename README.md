@@ -16,6 +16,7 @@ The location of all core GO-related metadata. Most notably:
 
  - [db-xrefs.yaml](metadata/db-xrefs.yaml) - prefix registry
  - [users.yaml](metadata/users.yaml) - metadata on GOC members and contributors
+ - [groups.yaml](metadata/groups.yaml) - metadata on GOC groups
  - [datasets/](metadata/datasets/) - metadata on contributed and released files
 
 Each of the these has their own yaml schema.
