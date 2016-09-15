@@ -48,6 +48,10 @@
     noctua-go:
       allow-edit: true
       allow-admin: true
+    noctua:
+      go:
+        allow-edit: true
+        allow-admin: true
     termgenie-go:
       allow-write: true
       allow-review: true
