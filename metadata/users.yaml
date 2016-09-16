@@ -55,7 +55,7 @@
       allow-freeform: true
       allow-management: true
   xref: 'GOC:sjc'
-  uri: 'GOC:sjc'
+  uri: 'http://orcid.org/0000-0001-8244-1536'
   groups:
     - 'http://geneontology.org'
     - 'http://planteome.org'
