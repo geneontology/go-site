@@ -45,9 +45,6 @@
   email-md5:
     - 65d762aea47eaf21e2b19177f448b3c3
   authorizations:
-    noctua-go:
-      allow-edit: true
-      allow-admin: true
     noctua:
       go:
         allow-edit: true
