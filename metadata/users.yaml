@@ -163,6 +163,7 @@
   nickname: 'Barbara Czub'
   email-md5:
     - 05856707bf8eca390ae3ddcf689e9011
+    - 99b4072c338978afc0a90bc7f217cef8
   authorizations:
     termgenie-go:
       allow-write: true
