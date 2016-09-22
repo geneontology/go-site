@@ -999,6 +999,13 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
+- database: GOC-OWL
+  name: Gene Ontology Consortium - Logical inferences
+  generic_urls:
+    - http://www.geneontology.org/
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
 - database: GONUTS
   name: Gene Ontology Normal Usage Tracking System (GONUTS)
   description: Third party documentation for GO and community annotation system.
