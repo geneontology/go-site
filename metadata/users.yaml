@@ -2690,3 +2690,12 @@
     noctua-go:
       allow-edit: true
   organization: NIDASH
+-
+  nickname: "Raymond Lee"
+  uri: 'http://orcid.org/0000-0002-8151-7479'
+  email-md5:
+    - 55a339645c9d8022ea8ab3f9316b8459
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: WB
