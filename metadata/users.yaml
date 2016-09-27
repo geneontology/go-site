@@ -775,6 +775,7 @@
   organization: MGI
 -
   nickname: 'Harold Drabkin'
+  uri: 'http://orcid.org/0000-0003-2689-5511'
   email-md5:
     - 9bac0f35f8afc5a22677fa7c950b681d
   authorizations:
@@ -784,7 +785,6 @@
       allow-write: true
       allow-freeform: true
   xref: 'GOC:hjd'
-  uri: 'GOC:hjd'
   organization: MGI
 -
   nickname: 'Li Ni'
