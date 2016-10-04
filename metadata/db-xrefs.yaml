@@ -984,6 +984,8 @@
 - database: GO_Noctua
   name: GO Noctua
   description: Manual annotation derived from LEGO annotations
+  generic_urls:
+    - https://github.com/geneontology/noctua-models
   entity_types:
     - type_name: entity
       type_id: BET:0000000
