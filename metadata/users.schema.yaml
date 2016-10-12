@@ -5,6 +5,7 @@
 ####    echo "foo.bar@bib.edu" | md5sum
 ####
 #### Examples:
+####    kwalify -m ./metadata/users.schema.yaml
 ####    kwalify -f ./metadata/users.schema.yaml ./metadata/users.yaml
 ####    kwalify -f ./metadata/users.schema.yaml ./metadata/users.yaml | grep INVALID; test $? -ne 0
 ####
@@ -108,3 +109,23 @@ sequence:
         required: false
         sequence:
           - type: str
+      "accounts":
+        type: map
+        required: false
+        mapping:
+          "github":
+            type: str
+            required: false
+            unique: true
+          "google-plus":
+            type: str
+            required: false
+            unique: true
+          # "orcid":
+          #   type: str
+          #   required: false
+          #   unique: true
+          # "email-md5":
+          #   type: str
+          #   required: false
+          #   unique: true

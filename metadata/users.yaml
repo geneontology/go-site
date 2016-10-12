@@ -60,6 +60,9 @@
     - 'http://geneontology.org'
     - 'http://planteome.org'
     - 'http://lbl.gov'
+  accounts:
+    github: 'kltm'
+    google-plus: '112360324542574840929'
 -
   nickname: 'Jeremy Nguyen Xuan'
   email-md5:
