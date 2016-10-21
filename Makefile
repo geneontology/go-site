@@ -1,5 +1,5 @@
 
-METADATA := users
+METADATA := db-xrefs groups users
 
 all: $(patsubst %,kwalify-%,$(METADATA))
 
