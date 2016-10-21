@@ -1,0 +1,247 @@
+id: paint
+label: PAINT
+description: "GO data for PAINT"
+datasets:
+ -    
+   id: paint_cgd.gaf
+   label: "paint_cgd gaf file"
+   description: "gaf file for paint_cgd from PAINT"
+   url: http://geneontology.org/gene-associations/gene_association.paint_cgd.gz
+   type: gaf
+   dataset: paint_cgd
+   submitter: paint
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_cgd.gz
+   entity_type: 
+   status: active
+   species_code: 
+   taxa:
+    - NCBITaxon:5476
+   merges_into: cgd
+   
+ -    
+   id: paint_dictybase.gaf
+   label: "paint_dictybase gaf file"
+   description: "gaf file for paint_dictybase from PAINT"
+   url: http://geneontology.org/gene-associations/gene_association.paint_dictyBase.gz
+   type: gaf
+   dataset: paint_dictybase
+   submitter: paint
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_dictyBase.gz
+   entity_type: 
+   status: active
+   species_code: Ddis
+   taxa:
+    - NCBITaxon:352472
+    - NCBITaxon:366501
+    - NCBITaxon:44689
+    - NCBITaxon:5782
+   merges_into: dictybase
+   
+ -    
+   id: paint_ecocyc.gaf
+   label: "paint_ecocyc gaf file"
+   description: "gaf file for paint_ecocyc from PAINT"
+   url: http://geneontology.org/gene-associations/gene_association.paint_ecocyc.gz
+   type: gaf
+   dataset: paint_ecocyc
+   submitter: paint
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_ecocyc.gz
+   entity_type: 
+   status: active
+   species_code: 
+   taxa:
+    - NCBITaxon:83333
+   merges_into: ecocyc
+   
+ -    
+   id: paint_fb.gaf
+   label: "paint_fb gaf file"
+   description: "gaf file for paint_fb from PAINT"
+   url: http://geneontology.org/gene-associations/gene_association.paint_fb.gz
+   type: gaf
+   dataset: paint_fb
+   submitter: paint
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_fb.gz
+   entity_type: 
+   status: active
+   species_code: Dmel
+   taxa:
+    - NCBITaxon:7227
+   merges_into: fb
+   
+ -    
+   id: paint_goa_chicken.gaf
+   label: "paint_goa_chicken gaf file"
+   description: "gaf file for paint_goa_chicken from PAINT"
+   url: http://geneontology.org/gene-associations/gene_association.paint_goa_chicken.gz
+   type: gaf
+   dataset: paint_goa_chicken
+   submitter: paint
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_goa_chicken.gz
+   entity_type: chicken
+   status: active
+   species_code: 
+   taxa:
+   merges_into: goa
+   
+ -    
+   id: paint_goa_human.gaf
+   label: "paint_goa_human gaf file"
+   description: "gaf file for paint_goa_human from PAINT"
+   url: http://geneontology.org/gene-associations/gene_association.paint_goa_human.gz
+   type: gaf
+   dataset: paint_goa_human
+   submitter: paint
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_goa_human.gz
+   entity_type: human
+   status: active
+   species_code: 
+   taxa:
+   merges_into: goa
+   
+ -    
+   id: paint_mgi.gaf
+   label: "paint_mgi gaf file"
+   description: "gaf file for paint_mgi from PAINT"
+   url: http://geneontology.org/gene-associations/gene_association.paint_mgi.gz
+   type: gaf
+   dataset: paint_mgi
+   submitter: paint
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_mgi.gz
+   entity_type: 
+   status: active
+   species_code: Mmus
+   taxa:
+    - NCBITaxon:10090
+   merges_into: mgi
+   
+ -    
+   id: paint_other.gaf
+   label: "paint_other gaf file"
+   description: "gaf file for paint_other from PAINT"
+   url: http://geneontology.org/gene-associations/gene_association.paint_other.gz
+   type: gaf
+   dataset: paint_other
+   submitter: paint
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_other.gz
+   entity_type: 
+   status: active
+   species_code: 
+   taxa:
+   merges_into: other
+   
+ -    
+   id: paint_pombase.gaf
+   label: "paint_pombase gaf file"
+   description: "gaf file for paint_pombase from PAINT"
+   url: http://geneontology.org/gene-associations/gene_association.paint_pombase.gz
+   type: gaf
+   dataset: paint_pombase
+   submitter: paint
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_pombase.gz
+   entity_type: 
+   status: active
+   species_code: Spom
+   taxa:
+    - NCBITaxon:284812
+    - NCBITaxon:4896
+   merges_into: pombase
+   
+ -    
+   id: paint_rgd.gaf
+   label: "paint_rgd gaf file"
+   description: "gaf file for paint_rgd from PAINT"
+   url: http://geneontology.org/gene-associations/gene_association.paint_rgd.gz
+   type: gaf
+   dataset: paint_rgd
+   submitter: paint
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_rgd.gz
+   entity_type: 
+   status: active
+   species_code: Rnor
+   taxa:
+    - NCBITaxon:10116
+   merges_into: rgd
+   
+ -    
+   id: paint_sgd.gaf
+   label: "paint_sgd gaf file"
+   description: "gaf file for paint_sgd from PAINT"
+   url: http://geneontology.org/gene-associations/gene_association.paint_sgd.gz
+   type: gaf
+   dataset: paint_sgd
+   submitter: paint
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_sgd.gz
+   entity_type: 
+   status: active
+   species_code: Scer
+   taxa:
+    - NCBITaxon:285006
+    - NCBITaxon:307796
+    - NCBITaxon:41870
+    - NCBITaxon:4932
+    - NCBITaxon:559292
+   merges_into: sgd
+   
+ -    
+   id: paint_tair.gaf
+   label: "paint_tair gaf file"
+   description: "gaf file for paint_tair from PAINT"
+   url: http://geneontology.org/gene-associations/gene_association.paint_tair.gz
+   type: gaf
+   dataset: paint_tair
+   submitter: paint
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_tair.gz
+   entity_type: 
+   status: active
+   species_code: Atal
+   taxa:
+    - NCBITaxon:3702
+   merges_into: tair
+   
+ -    
+   id: paint_wb.gaf
+   label: "paint_wb gaf file"
+   description: "gaf file for paint_wb from PAINT"
+   url: http://geneontology.org/gene-associations/gene_association.paint_wb.gz
+   type: gaf
+   dataset: paint_wb
+   submitter: paint
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_wb.gz
+   entity_type: 
+   status: active
+   species_code: Cele
+   taxa:
+    - NCBITaxon:6239
+   merges_into: wb
+   
+ -    
+   id: paint_zfin.gaf
+   label: "paint_zfin gaf file"
+   description: "gaf file for paint_zfin from PAINT"
+   url: http://geneontology.org/gene-associations/gene_association.paint_zfin.gz
+   type: gaf
+   dataset: paint_zfin
+   submitter: paint
+   compression: gzip
+   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_zfin.gz
+   entity_type: 
+   status: active
+   species_code: Drer
+   taxa:
+    - NCBITaxon:7955
+   merges_into: zfin
+   

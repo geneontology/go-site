@@ -67,6 +67,10 @@ mapping:
             type: str
             required: false
             unique: false
+          "merges_into":
+            type: str
+            required: false
+            unique: false
           "contact_email":
             type: str
             required: false
