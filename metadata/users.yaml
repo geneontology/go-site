@@ -2235,6 +2235,11 @@
   nickname: 'cilium terms (Paola and the Syscilia consortium)'
   organization: 'working group project'
 -
+  uri: 'GOC:PomBase'
+  xref: 'GOC:PomBase'
+  nickname: 'dbxref created to allow easy counting of terms added by pomBase curators'
+  organization: 'PomBase'
+-
   nickname: 'Monica Munoz-Torres'
   uri: 'http://orcid.org/0000-0001-8430-6039'
   xref: 'GOC:mmt'
