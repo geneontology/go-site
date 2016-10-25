@@ -2704,3 +2704,28 @@
     noctua-go:
       allow-edit: true
   organization: WB
+-
+  nickname: "Malcolm Fisher"
+  uri: 'http://orcid.org/0000-0003-1074-8103'
+  email-md5:
+    - f28ff1081377a5278fd2e9ff01c35215
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: XenBase
+  accounts:
+    google-plus: '117715867093154659921'
+# -
+#   nickname: ""
+#   uri: ''
+#   email-md5:
+#     - 
+#   authorizations:
+#     noctua-go:
+#       allow-edit: true
+#   organization: 
+#   groups:
+#     - ''
+#   accounts:
+#     github: ''
+#     google-plus: ''
