@@ -120,11 +120,12 @@ sequence:
             type: str
             required: false
             unique: true
-          # "orcid":
-          #   type: str
-          #   required: false
-          #   unique: true
-          # "email-md5":
-          #   type: str
-          #   required: false
-          #   unique: true
+          "orcid":
+            type: str
+            required: false
+            unique: true
+          "email-md5":
+            type: seq
+            required: false
+            sequence:
+              - type: str
