@@ -998,7 +998,7 @@
       type_id: BET:0000000
       id_syntax: \d{7}
       url_syntax: http://purl.obolibrary.org/obo/go/references/[example_id]
-      example_id: 0000001
+      example_id: "0000001"
       example_url: http://purl.obolibrary.org/obo/go/references/0000001
 - database: GOC
   name: Gene Ontology Consortium
