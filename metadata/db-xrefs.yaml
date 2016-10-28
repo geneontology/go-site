@@ -992,14 +992,14 @@
 - database: GO_REF
   name: Gene Ontology Database references
   generic_urls:
-    - http://www.geneontology.org/
+    - http://purl.obolibrary.org/obo/go/references/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
       id_syntax: \d{7}
-      url_syntax: http://www.geneontology.org/cgi-bin/references.cgi#GO_REF:[example_id]
-      example_id: GO_REF:0000001
-      example_url: http://www.geneontology.org/cgi-bin/references.cgi#GO_REF:0000001
+      url_syntax: http://purl.obolibrary.org/obo/go/references/[example_id]
+      example_id: 0000001
+      example_url: http://purl.obolibrary.org/obo/go/references/0000001
 - database: GOC
   name: Gene Ontology Consortium
   generic_urls:
