@@ -139,12 +139,14 @@ function makeHtmlSave(s) {
 
 function getNewTickets(username, projectname, range) {
     // Example: https://api.github.com/search/issues?q=repo:geneontology/go-ontology+created:=>2015-08-05&type=Issues&per_page=100
-    return getTickets(username, projectname, range, 'created:=>');
+    type = 'created:'; //instead of 'created:=>'
+    return getTickets(username, projectname, range, type );
 }
 
 function getUpdatedTickets(username, projectname, range) {
     // Example: https://api.github.com/search/issues?q=repo:geneontology/go-ontology+updated:=>2015-08-05&type=Issues&per_page=100
-    return getTickets(username, projectname, range, 'updated:=>');
+    type = 'updated:'; //instead of 'updated:=>'
+    return getTickets(username, projectname, range, type);
 }
 
 /**
