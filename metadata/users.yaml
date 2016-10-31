@@ -1121,15 +1121,21 @@
   uri: 'http://orcid.org/0000-0003-4929-9472'
   organization: SGD
 -
-  uri: 'GOC:ew'
+  uri: 'http://orcid.org/0000-0001-9799-5523'
   xref: 'GOC:ew'
   nickname: 'Edith Wong'
   email-md5:
     - ab69ceef7068adeed08e0a38aaa9539c
+    - cd939e00b2e9a939e151fcc6d2516ef0
   organization: SGD
   authorizations:
     termgenie-go:
       allow-write: true
+    noctua:
+      go:
+        allow-edit: true
+  accounts:
+    github: 'edwong57'
 -
   uri: 'GOC:elh'
   xref: 'GOC:elh'
@@ -1211,8 +1217,9 @@
   email-md5:
     - 8688146764c94ec2dad5b1a47b047c73
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -2717,14 +2724,39 @@
   organization: XenBase
   accounts:
     google-plus: '117715867093154659921'
+-
+  nickname: "Christian Grove"
+  uri: 'http://orcid.org/0000-0001-9076-6015'
+  email-md5:
+    - f00a4d8dce61e251624a99fed04385f4
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  organization: ZFIN
+  accounts:
+    github: 'chris-grove'
+-
+  nickname: "Olivia Lang"
+  uri: 'http://orcid.org/0000-0002-5886-363X'
+  email-md5:
+    - 8cb0f722515de37b1d05747738fd86e1
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: SGD
+  accounts:
+    github: ''
 # -
 #   nickname: ""
 #   uri: ''
 #   email-md5:
 #     - 
 #   authorizations:
-#     noctua-go:
-#       allow-edit: true
+#    noctua:
+#      go:
+#        allow-edit: true
 #   organization: 
 #   groups:
 #     - ''
