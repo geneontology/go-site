@@ -1896,11 +1896,6 @@
   xref: 'GOC:mh'
   organization: OHSU
 -
-  uri: 'GOC:sat'
-  xref: 'GOC:sat'
-  nickname: 'Sabrina Toro'
-  organization: ZFIN
--
   uri: 'GOC:sr'
   xref: 'GOC:sr'
   nickname: 'Sridhar Ramachandran'
@@ -2539,6 +2534,7 @@
 -
   nickname: "Sabrina Toro"
   uri: 'http://orcid.org/0000-0002-4142-7153'
+  xref: 'GOC:sat'
   email-md5:
     - aa55bd9a0d99bcc48fa70b99b356abba
   authorizations:
