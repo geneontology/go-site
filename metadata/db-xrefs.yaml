@@ -2139,13 +2139,13 @@
 - database: PO_REF
   name: Plant Ontology custom references
   generic_urls:
-    - http://wiki.plantontology.org:8080/index.php/PO_references
+    - http://planteome.org/po_ref
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://wiki.plantontology.org:8080/index.php/PO_REF:[example_id]
+      url_syntax: http://planteome.org/po_ref/[example_id]
       example_id: PO_REF:00001
-      example_url: http://wiki.plantontology.org:8080/index.php/PO_REF:00001
+      example_url: http://planteome.org/po_ref/00001
 - database: POC
   name: Plant Ontology Consortium
   generic_urls:
