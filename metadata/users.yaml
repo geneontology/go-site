@@ -1083,6 +1083,8 @@
     - 'http://geneontology.org'
     - 'http://planteome.org'
     - 'http://lbl.gov'
+  accounts:
+    github: 'cmungall'
 -
   uri: 'GOC:as'
   xref: 'GOC:as'
