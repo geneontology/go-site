@@ -1265,6 +1265,7 @@
   nickname: 'Donghui Li'
   email-md5:
     - 956bb66ec7d213352c0d751377cb299a
+    - 181e343a68ffb867cd031faafc827b3b
   authorizations:
     noctua-go:
       allow-edit: true
@@ -1274,6 +1275,8 @@
   xref: 'GOC:dhl'
   uri: 'http://orcid.org/0000-0003-3335-4537'
   organization: TAIR
+  accounts:
+    github: 'dhldhl'
 -
   uri: 'GOC:ds'
   xref: 'GOC:ds'
@@ -2726,6 +2729,7 @@
   organization: XenBase
   accounts:
     google-plus: '117715867093154659921'
+    github: malcolmfisher103
 -
   nickname: "Christian Grove"
   uri: 'http://orcid.org/0000-0001-9076-6015'
@@ -2750,6 +2754,18 @@
   organization: SGD
   accounts:
     github: 'owlang'
+-
+  nickname: "Suzi Aleksander"
+  uri: 'http://orcid.org/0000-0001-6787-2901'
+  email-md5:
+    - 4c6434117cef942c05aaeee7e0bec853
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: 'E. coli'
+  accounts:
+    github: 'suzialeksander'
 # -
 #   nickname: ""
 #   uri: ''
