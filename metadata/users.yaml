@@ -363,11 +363,6 @@
   nickname: 'Athena Mason'
   organization: 'E. coli'
 -
-  uri: 'GOC:das'
-  xref: 'GOC:das'
-  nickname: 'Debby Siegele'
-  organization: 'E. coli'
--
   uri: 'GOC:jh2'
   xref: 'GOC:jh2'
   nickname: 'Jim Hu'
@@ -2787,6 +2782,19 @@
   organization: IGS
   accounts:
     github: 'mchibucos'
+-
+  nickname: "Debby Siegele"
+  xref: 'GOC:das'
+  uri: 'http://orcid.org/0000-0001-8935-0696'
+  email-md5:
+    - 1bdb7f274ade49f24e617eaaf364c344
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: 'E. coli'
+  accounts:
+    github: 'dsiegele'
 # -
 #   nickname: ""
 #   uri: ''
