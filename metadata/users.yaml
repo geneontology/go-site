@@ -1847,6 +1847,7 @@
   nickname: 'Doug Howe'
   email-md5:
     - fe3f8f564f46c7b5876f76d86089e71c
+    - 16ab5561c58ea349cb4c55622fc348c6
   authorizations:
     noctua-go:
       allow-edit: true
