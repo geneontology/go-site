@@ -1694,14 +1694,17 @@
   email-md5:
     - dc9b175604eafb96720c1a6ca7980cd4
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
   xref: 'GOC:sp'
-  uri: 'GOC:sp'
+  uri: 'http://orcid.org/0000-0001-7299-6685'
   organization: UniProt
+  accounts:
+    github: 'sylvainpoux'
 -
   nickname: 'Shyamala Sundaram'
   email-md5:
