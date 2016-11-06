@@ -855,11 +855,6 @@
   nickname: 'Candace Collmer'
   organization: PAMGO
 -
-  uri: 'GOC:mcc2'
-  xref: 'GOC:mcc2'
-  nickname: 'Marcus Chibucos'
-  organization: PAMGO
--
   nickname: 'Magdalen Lindeberg'
   email-md5:
     - ab543d1ed0770d00f679aa6df6bb4048
@@ -2779,6 +2774,19 @@
   organization: TAIR
   accounts:
     github: 'lreiser'
+-
+  nickname: "Marcus Chibucos"
+  xref: 'GOC:mcc2'
+  uri: 'http://orcid.org/0000-0001-9586-0780'
+  email-md5:
+    - c30dfaf88e3a1eca070de8281a049e91
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: IGS
+  accounts:
+    github: 'mchibucos'
 # -
 #   nickname: ""
 #   uri: ''
