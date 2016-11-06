@@ -2798,6 +2798,18 @@
   organization: 'E. coli'
   accounts:
     github: 'dsiegele'
+-
+  nickname: "Christian Pich"
+  uri: 'http://orcid.org/0000-0001-5334-4542'
+  email-md5:
+    - b4c377ccd7885fa327c27bdd4cfca8ad
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: ZFIN
+  accounts:
+    github: 'cmpich'
 # -
 #   nickname: ""
 #   uri: ''
