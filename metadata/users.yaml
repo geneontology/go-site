@@ -1847,9 +1847,14 @@
     termgenie-go:
       allow-write: true
       allow-freeform: true
+  groups:
+    - 'http://geneontology.org'
+    - 'http://zfin.org'
   xref: 'GOC:dgh'
   uri: 'http://orcid.org/0000-0001-5831-7439'
   organization: ZFIN
+  accounts:
+    github: 'doughowe'
 -
   nickname: 'David Fashena'
   email-md5:
@@ -2546,7 +2551,12 @@
   authorizations:
     noctua-go:
       allow-edit: true
+  groups:
+    - "http://geneontology.org"
+    - "http://zfin.org"
   organization: ZFIN
+  accounts:
+    github: 'sabrinatoro'
 -
   nickname: "William Duncan"
   uri: 'http://orcid.org/0000-0001-9625-1899'
