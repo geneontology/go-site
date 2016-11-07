@@ -251,6 +251,8 @@
   uri: 'http://orcid.org/0000-0002-9791-0064'
   organization: BHF-UCL
   comment: 'formerly HGNC'
+  accounts:
+    github: RLovering
 -
   nickname: 'Varsha Khodiyar'
   email-md5:
