@@ -410,6 +410,8 @@
       allow-write: true
     noctua-go:
       allow-edit: true
+  accounts:
+    github: hattrill
 -
   uri: 'GOC:hb'
   xref: 'GOC:hb'
