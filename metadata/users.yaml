@@ -605,8 +605,10 @@
     termgenie-go:
       allow-write: true
   xref: 'GOC:als'
-  uri: 'GOC:als'
+  uri: 'http://orcid.org/0000-0003-3829-1600'
   organization: GOA
+  accounts:
+    github: 'zebrafishembryo'
 -
   nickname: 'Elena Speretta'
   uri: 'http://orcid.org/0000-0003-1506-7438'
@@ -760,6 +762,9 @@
   xref: 'GOC:dph'
   uri: 'http://orcid.org/0000-0001-7476-6306'
   organization: MGI
+  accounts:
+    github: ukemi
+    orcid: '0000-0001-7476-6306'
 -
   uri: 'GOC:tfm'
   xref: 'GOC:tfm'
@@ -839,6 +844,8 @@
     noctua:
       go:
         allow-edit: true
+  accounts:
+    github: 'LiNiMGI'
 -
   nickname: 'Judith Blake'
   uri: 'http://orcid.org/0000-0001-8522-334X'
@@ -1224,6 +1231,8 @@
       allow-write: true
       allow-freeform: true
   organization: SGD
+  accounts:
+    github: 'krchristie'
 -
   nickname: 'Maria Costanzo'
   email-md5:
@@ -1915,8 +1924,10 @@
     termgenie-go:
       allow-write: true
   xref: 'GOC:rk'
-  uri: 'GOC:rk'
+  uri: 'http://orcid.org/0000-0002-1478-7671'
   organization: WB
+  accounts:
+    github: 'rankishore'
 -
   nickname: 'Doug Howe'
   email-md5:
@@ -2858,6 +2869,8 @@
       go:
         allow-edit: true
   organization: WB
+  accounts:
+    github: raymond91125
 -
   nickname: "Malcolm Fisher"
   uri: 'http://orcid.org/0000-0003-1074-8103'
