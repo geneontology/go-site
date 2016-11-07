@@ -723,6 +723,9 @@
   xref: 'GOC:dph'
   uri: 'http://orcid.org/0000-0001-7476-6306'
   organization: MGI
+  accounts:
+    github: ukemi
+    orcid: '0000-0001-7476-6306'
 -
   uri: 'GOC:tfm'
   xref: 'GOC:tfm'
