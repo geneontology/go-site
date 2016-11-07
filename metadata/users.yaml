@@ -9,8 +9,9 @@
   email-md5:
     - e10e731bffebbca8fbe2c5f86a02419f
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   xref: 'GOC:jk'
   uri: 'GOC:jk'
 -
@@ -18,8 +19,9 @@
   email-md5:
     - 2032c0dc70a2aa2c3cadf452302a7e8d
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   xref: 'GOC:amu'
   uri: 'GOC:amu'
 -
@@ -27,8 +29,9 @@
   email-md5:
     - 84c8bfa613c72bb30f82839e1ce78a55
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   xref: 'GOC:pt'
   uri: 'GOC:pt'
 -
@@ -36,8 +39,9 @@
   email-md5:
     - 7e66eb2d15fe29c8a051e43000cc681c
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   xref: 'GOC:hm'
   uri: 'GOC:hm'
 -
@@ -71,8 +75,9 @@
   email-md5:
     - d62320e131b827615ba8da3decafa6f3
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   xref: 'GOC:jnx'
   uri: 'GOC:jnx'
 -
@@ -80,8 +85,9 @@
   email-md5:
     - ac1bfce31c215d31cd99e43281811dad
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   xref: 'GOC:anm'
   uri: 'GOC:anm'
 -
@@ -89,8 +95,9 @@
   email-md5:
     - 8e80fce402cd52cb2455d4c6c51720a5
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   xref: 'GOC:ml2'
   uri: 'GOC:ml2'
 -
@@ -98,8 +105,9 @@
   email-md5:
     - 61ab06ea85d8658a7e17cc30295dafbd
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-review: true
@@ -113,8 +121,9 @@
   email-md5:
     - 1c98b0f0a4b0dc79242cfaaf739f9cc8
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   xref: 'GOC:dp'
   uri: 'GOC:dp'
   organization: UCSD
@@ -138,8 +147,9 @@
   email-md5:
     - a9c277d0f6301c4d5c48bb593268536d
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:mr'
@@ -150,8 +160,9 @@
   email-md5:
     - 601f7b3e4f8165ba4be5057e65143f76
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -173,8 +184,9 @@
   authorizations:
     termgenie-go:
       allow-write: true
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: BHF-UCL
 -
   uri: 'GOC:ame'
@@ -243,8 +255,9 @@
   email-md5:
     - 87b721597d5a997234f5a8f61bde469b
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:rl'
@@ -265,8 +278,9 @@
   email-md5:
     - 724b4f5c03cd807d3977f8ae4c43970a
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -286,8 +300,9 @@
   email-md5:
     - a35c6a73b68acd8ba279d77dad079d8f
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: CALIPHO
 -
   uri: 'GOC:amm'
@@ -316,8 +331,9 @@
   email-md5:
     - 816b724b99c13b7fd733a9401f879f4e
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:pf'
@@ -329,8 +345,9 @@
     - 55e50a7c9ce412fdcbdfbb57caeb0aaa
     - e92521fb31f573641b4bdd6b9b7b088b
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -342,8 +359,9 @@
   email-md5:
     - 0187a194e1fe3ce4482be77cdfe32c79
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:rjd'
@@ -352,8 +370,9 @@
 -
   nickname: 'Amanda Mackie'
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   xref: 'GOC:am'
   uri: 'GOC:am'
   organization: EcoCyc
@@ -372,8 +391,9 @@
   email-md5:
     - 439abe0f9680c9b6a016f44e23d2e3a4
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -406,8 +426,9 @@
   authorizations:
     termgenie-go:
       allow-write: true
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
 -
   uri: 'GOC:hb'
   xref: 'GOC:hb'
@@ -428,8 +449,9 @@
   email-md5:
     - 3e373dc40c5b80696bed3d0987fea2dc
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-review: true
@@ -449,8 +471,9 @@
   email-md5:
     - b979cd6be9eec5bef6c92a1ff4173306
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -480,8 +503,9 @@
   email-md5:
     - 67660068792406332d36a17cd886a5e6
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-review: true
@@ -512,8 +536,9 @@
   email-md5:
     - dad114c06bf7c24dd3aeeedf79fe8168
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-review: true
@@ -532,8 +557,9 @@
     - a1f4be95870984265a3b33604a963b01
   organization: GO
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-review: true
@@ -545,8 +571,9 @@
   email-md5:
     - 98ca4b42efb7564953508c74394d8634
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-review: true
@@ -572,8 +599,9 @@
   email-md5:
     - 211b318809e38f23520d0bd64f4a2330
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:als'
@@ -588,8 +616,9 @@
     - c961c90fe1e38150467f235fe1ba6737
   organization: GOA
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
 -
@@ -600,8 +629,9 @@
     - a5d3f603d546cc29f906118a5d9762a4
   organization: GOA
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
 -
@@ -612,8 +642,9 @@
     - eeaf1be2f013ee3e4fe9204b8e48a1a6
   organization: UniProt
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
 -
@@ -636,8 +667,9 @@
   email-md5:
     - c1e6bbfeb859c09c827614d106331252
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -650,8 +682,9 @@
     - 3beee3c95e50a25e13cf834785fb2b21
     - 35a1ee6e08a0eb2d914ca1529f2fd770
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -669,8 +702,9 @@
   email-md5:
     - dcec55f1f13d54c59c64f061dbb52797
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:yaf'
@@ -681,8 +715,9 @@
   email-md5:
     - f8b0b6bba244b89fd625b8994bdd1744
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -695,8 +730,9 @@
   email-md5:
     - af515eed93a426d45d1d01200f4e8399
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:imk'
@@ -712,8 +748,9 @@
   email-md5:
     - 65769275d47653aced3fae5ab1f805b1
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-review: true
@@ -742,8 +779,9 @@
     - 5ee6809ed1e68d38c7366e9ae14a5b9e
   organization: MGI
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
 -
   uri: 'GOC:cls'
   xref: 'GOC:cls'
@@ -760,8 +798,9 @@
   email-md5:
     - 1108e1579ce5583a35c743cb3a85afa7
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   xref: 'GOC:id'
   uri: 'GOC:id'
   organization: MGI
@@ -770,8 +809,9 @@
   email-md5:
     - d5acbd91b75ea699632b1d569e342a53
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   uri: 'http://orcid.org/0000-0001-7732-3295'
   organization: MGI
 -
@@ -780,8 +820,9 @@
   email-md5:
     - 9bac0f35f8afc5a22677fa7c950b681d
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -795,8 +836,9 @@
     - e39ac0f072d7278ae76953722298f26f
   organization: MGI
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
 -
   nickname: 'Judith Blake'
   uri: 'http://orcid.org/0000-0001-8522-334X'
@@ -804,16 +846,18 @@
   email-md5:
     - 6ea952218c0da22097c3cab09fbb5c36
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: MGI
 -
   nickname: 'Claudia Rato da Silva'
   email-md5:
     - 53a33cd048b9032e65454b9672b7fd4f
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:crds'
@@ -854,8 +898,9 @@
   email-md5:
     - ab543d1ed0770d00f679aa6df6bb4048
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -884,8 +929,9 @@
     - e0d33c1c706cdbd74d033961f2f9bb43
     - 7e821339ca29fac9f47d78ce3bed1c11
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -902,8 +948,9 @@
   email-md5:
     - f92c1acf7ecd91f8b798d4f4526795dd
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -916,8 +963,9 @@
   email-md5:
     - 945b113a7c06ea578318b77dbc31d990
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -936,8 +984,9 @@
     - f89228b8459a2a5bb6c8b0c25d611e0d
     - b5c9d1c80d688dbe4766f40d8461d8c0
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:lc'
@@ -984,8 +1033,9 @@
   email-md5:
     - ba0ab426088546c5a9acf014a722fdd5
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -1017,8 +1067,9 @@
   email-md5:
     - f6cb73c2299e72ab430475ba02567e49
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:sjw'
@@ -1029,8 +1080,9 @@
   email-md5:
     - f9d6b79638672cdbba515fb1e60b81e8
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -1057,9 +1109,10 @@
   email-md5:
     - 5611a7dfafec2dfcc4c6da9fa5ce7a84
   authorizations:
-    noctua-go:
-      allow-edit: true
-      allow-admin: true
+    noctua:
+      go:
+        allow-edit: true
+        allow-admin: true
     termgenie-go:
       allow-write: true
       allow-review: true
@@ -1105,8 +1158,9 @@
   email-md5:
     - ce6b7d80ecad08852a1c06bf24fb7f5a
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:dgf'
@@ -1143,8 +1197,9 @@
   email-md5:
     - db80b5b690c934af872903cdc4985a22
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:jh'
@@ -1162,8 +1217,9 @@
   email-md5:
     - af6c0d66acf0836edf60f3e8b1e6b7c9
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -1173,8 +1229,9 @@
   email-md5:
     - 0049fc37c812f45193a4500186dd622a
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -1186,8 +1243,9 @@
   email-md5:
     - a7c69cee7738a961f8bf5c0f9a9ff874
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -1229,8 +1287,9 @@
     - 583eaf69b34a4dcbb51d019f7eede0f0
     - 3f4da4804976ac88536a6fe0ef77f817
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:dw'
@@ -1257,8 +1316,9 @@
     - 956bb66ec7d213352c0d751377cb299a
     - 181e343a68ffb867cd031faafc827b3b
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -1332,8 +1392,9 @@
   email-md5:
     - 82fc9d312d1ed22725cb4ecd55df6878
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-review: true
@@ -1418,8 +1479,9 @@
   email-md5:
     - a72a432b85b5f44d05e2e124e5ebfd23
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:pad'
@@ -1441,8 +1503,9 @@
   email-md5:
     - b656cb1ab16819a79c770231982988f1
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:ae'
@@ -1453,8 +1516,9 @@
   email-md5:
     - 9090e122cba40b90124ea8eb4859bf8e
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   uri: 'http://orcid.org/0000-0002-7734-0826'
   organization: Eisai
 -
@@ -1462,8 +1526,9 @@
   email-md5:
     - dc11dd680545ac2aa73044fc222db268
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -1475,8 +1540,9 @@
   email-md5:
     - 69e41e8a803dd018c7e7073e0b0fd3f3
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:ans'
@@ -1512,8 +1578,9 @@
   email-md5:
     - e76fdf6a52a910f0bdd2c521f964c1d4
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:dl'
@@ -1524,8 +1591,9 @@
   email-md5:
     - 1d5e7a8509c6a8bc9d5472b1ff5f570d
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:ecu'
@@ -1556,8 +1624,9 @@
   email-md5:
     - f3c8177c584faab5eae5d6a411a91976
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:gk'
@@ -1585,8 +1654,9 @@
   email-md5:
     - 774e21706bb2937d5cd30edf73c6469d
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: UniProt
 -
   uri: 'GOC:ka'
@@ -1605,8 +1675,9 @@
   email-md5:
     - a70eb53334ef240f607a3ca63272dcaa
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: UniProt
 -
   uri: 'GOC:mcb'
@@ -1618,8 +1689,9 @@
   email-md5:
     - d5ba5a1fe3db79ae75578d3e7783ac94
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:ms'
@@ -1635,8 +1707,9 @@
   email-md5:
     - 2ae8276bb8b2eb2a2f62ad6361d2af6d
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:mm2'
@@ -1669,8 +1742,9 @@
   email-md5:
     - 66204f7039a6c6d6daeac682221e3773
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   organization: UniProt
@@ -1710,8 +1784,9 @@
   email-md5:
     - 5cf46e6664c70bd80092a55367950f2d
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:ss'
@@ -1722,8 +1797,9 @@
   email-md5:
     - 8796f95a22eb1783692cb06d8c69d190
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:uh'
@@ -1739,8 +1815,9 @@
   email-md5:
     - 024f54a93edddb9690970c2281f728b7
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:mls'
@@ -1751,8 +1828,9 @@
   email-md5:
     - 688d5d2cd34ad4eabc188653d120561b
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:nhn'
@@ -1773,8 +1851,9 @@
   email-md5:
     - 8a64baba4e3e7eb11dd41526530cdc30
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:ppm'
@@ -1815,8 +1894,9 @@
   email-md5:
     - 52a4b1e1f8519d5ad27335e0b920eb7e
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -1829,8 +1909,9 @@
   email-md5:
     - 12e3a61abf80a74384cf251641d48fd0
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:rk'
@@ -1842,8 +1923,9 @@
     - fe3f8f564f46c7b5876f76d86089e71c
     - 16ab5561c58ea349cb4c55622fc348c6
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -1860,8 +1942,9 @@
   email-md5:
     - 98719862c7d4df82e2866cea63eaefb0
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:dsf'
@@ -1874,8 +1957,9 @@
   authorizations:
     termgenie-go:
       allow-write: true
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   uri: 'http://orcid.org/0000-0002-2244-7917'
   xref: 'GOC:cvs'
   organization: ZFIN
@@ -1889,8 +1973,9 @@
   email-md5:
     - 3bda03dbc02aa0fb8467c81beb5481b6
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:lb'
@@ -1902,8 +1987,9 @@
     - 6c5e50debb93f1f802ad7256952fc488
   uri: 'http://orcid.org/0000-0001-9114-8737'
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   xref: 'GOC:mh'
   organization: OHSU
 -
@@ -1918,8 +2004,9 @@
   authorizations:
     termgenie-go:
       allow-write: true
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   uri: 'http://orcid.org/0000-0002-9900-7880'
   xref: 'GOC:ymb'
   organization: ZFIN
@@ -1938,8 +2025,9 @@
   email-md5:
     - b7c9c4fec6813374ff3ffa10b7e0be1b
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: true
@@ -1957,8 +2045,9 @@
     - ca849fa17a251946fc841296544f14f1
     - 7da8a4640eb919c6f97581190be625d4
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:hp'
@@ -2260,8 +2349,9 @@
     - 0317fbb65069c545c831431d73e2d0fc
     - 1cf7f1399ec6b4f52fe3e1209b063f5d
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   organization: LBNL
@@ -2275,8 +2365,9 @@
   email-md5:
     - 50406c097b7cc168e38ca1980f1c4bc2
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:at'
@@ -2309,16 +2400,18 @@
   email-md5:
     - c727817e3b98721cf962f69613afd192
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
 -
   nickname: 'Aurore Britan'
   uri: 'http://orcid.org/0000-0002-9846-2590'
   email-md5:
     - 511024223bef1686c82af8cee07aa5ab
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: SIB
 -
   nickname: 'Valerie Hinard'
@@ -2326,8 +2419,9 @@
   email-md5:
     - f82886a594366a817267e7843aaa94eb
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: SIB
 -
   nickname: 'Giulia Antonazzo'
@@ -2335,8 +2429,9 @@
   email-md5:
     - 7379792826dca5b368ea626350f42fdb
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:ga'
@@ -2348,8 +2443,9 @@
   email-md5:
     - b63b38a114f54e74e6b7e22f728fc6a2
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: SIB
 -
   nickname: "Claire O'Donovan"
@@ -2357,8 +2453,9 @@
   email-md5:
     - d4b32aa1fdf6e448fdcac39e1029b29d
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: EMBL-EBI
 -
   nickname: "Amaia Sangrador"
@@ -2366,8 +2463,9 @@
   email-md5:
     - df1dc4e85198a40a3fe2e0ce710e93a6
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: EMBL-EBI
 -
   nickname: "Alex Bateman"
@@ -2375,8 +2473,9 @@
   email-md5:
     - af32cf0251de5801656a01abc87347d8
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: EMBL-EBI
 -
   nickname: "Frank Koopmans"
@@ -2384,8 +2483,9 @@
   email-md5:
     - b1979eaa19640f88f4eae7e968401083
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: SynGO
 -
   nickname: "Pim van Nierop"
@@ -2393,8 +2493,9 @@
   email-md5:
     - 8a249393af4561952b7283f8ca183919
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: SynGO
 -
   nickname: "Jim Balhoff"
@@ -2402,8 +2503,9 @@
   email-md5:
     - f28e1be9fc622bffbecb166378ef2456
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: GO
 -
   nickname: "Istvan Miko"
@@ -2411,8 +2513,9 @@
   email-md5:
     - 7a113f413bef0385f3f26ea11500697e
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: PhenotypeRCN
 -
   nickname: "Matthew Brush"
@@ -2420,8 +2523,9 @@
   email-md5:
     - 693f54b57c5b0fd811daaa764f0a408a
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: OHSU
 -
   nickname: "Wasila Dahdul"
@@ -2429,8 +2533,9 @@
   email-md5:
     - c4cc79c1a42a3421eede8fd303bce97b
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: USD
 -
   nickname: "Alexander Diehl"
@@ -2439,8 +2544,9 @@
     - b620974b9361d4b213f40f286b11ae3e
   xref: 'GOC:add'
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: University at Buffalo
 -
   nickname: "Jean-Philippe Francois Gourdine"
@@ -2448,8 +2554,9 @@
   email-md5:
     - 02f07e64c15efd21bcb53209aa9fdcf0
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: OHSU
 -
   nickname: "Justin Preece"
@@ -2457,8 +2564,9 @@
   email-md5:
     - 0c93d771ecbe7f79da921d148bbc523b
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: OSU
 -
   nickname: "Pankaj Jaiswal"
@@ -2467,8 +2575,9 @@
     - 8a9733d55915899470bb4f488cb02d0b
   xref: 'GOC:pj'
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: OSU
 -
   nickname: "Mark Jensen"
@@ -2476,8 +2585,9 @@
   email-md5:
     - f94b258f360ac5e23bdae69665f1abed
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: University at Buffalo
 -
   nickname: "Nancy George"
@@ -2485,8 +2595,9 @@
   email-md5:
     - e9e16245c16495c1939a3f94cfe10014
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: EMBO
 -
   nickname: "Pier Luigi Buttigieg"
@@ -2494,8 +2605,9 @@
   email-md5:
     - 119420f70952561ee251188593af2c22
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: AWI
 -
   nickname: "Bridget C Hanna"
@@ -2503,8 +2615,9 @@
   email-md5:
     - 615524629ee74d978a22e37e302fb891
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: Harvard T.H. Chan School of Public Health
 -
   nickname: "Daniel Keith"
@@ -2512,8 +2625,9 @@
   email-md5:
     - 1da7b1538b4b21f1cfe7ce462965a549
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: OHSU
 -
   nickname: "Thomas Hahn"
@@ -2521,8 +2635,9 @@
   email-md5:
     - 28b281ff7eb6702879dc492d46640789
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: UALR
 -
   nickname: "Karl Helmer"
@@ -2530,8 +2645,9 @@
   email-md5:
     - ade6fb1b95edb06e29febb863f6df9d0
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: MGH
 -
   nickname: "Justin Elser"
@@ -2539,8 +2655,9 @@
   email-md5:
     - 127b8bf1b1867d4639eb18b126505863
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: OSU
 -
   nickname: "Sabrina Toro"
@@ -2549,8 +2666,9 @@
   email-md5:
     - aa55bd9a0d99bcc48fa70b99b356abba
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - "http://geneontology.org"
     - "http://zfin.org"
@@ -2563,8 +2681,9 @@
   email-md5:
     - a674a0c01d206479aa80032570eae279
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: Roswell Park Cancer Institute
 -
   nickname: "Medha Devare"
@@ -2572,8 +2691,9 @@
   email-md5:
     - 996df2555af6fbe9083d4e9a4d92b528
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: CGIAR
 -
   nickname: "Cynthia J Grondin"
@@ -2581,8 +2701,9 @@
   email-md5:
     - 86dadf06302586b8d2667c6e60f0a60c
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: NCSU
 -
   nickname: "Suzanna Lewis"
@@ -2590,8 +2711,9 @@
   email-md5:
     - caad47c5134fca150d4e9ff086c1d7f5
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization:  LBNL
 -
   nickname: "Jie Liu"
@@ -2599,8 +2721,9 @@
   email-md5:
     - a479c2d87277745766db1dd1a6551a7f
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: ADM
 -
   nickname: "Ronglin Wang"
@@ -2608,8 +2731,9 @@
   email-md5:
     - 6fe3d0f5a77c3f18a4403a2d6db7ab52
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: US EPA
 -
   nickname: "Matthew Lange"
@@ -2617,8 +2741,9 @@
   email-md5:
     - 21fe7d3d1db7e96c7a3221c8d31e136b
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: UC Davis
 -
   nickname: "Daniel Gonzalez"
@@ -2626,8 +2751,9 @@
   email-md5:
     - 634abb3b6437498bec616150ef57270d
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: EMBL-EBI
 -
   nickname: "Emma Hatton-Ellis"
@@ -2635,8 +2761,9 @@
   email-md5:
     - 2d2a5cce07b6ea476ae866ddf83b440d
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: EMBL-EBI
 -
   nickname: "Barbara Palka"
@@ -2644,8 +2771,9 @@
   email-md5:
     - ebaf882a667319fea1abc78811b565e4
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: EMBL-EBI
 -
   nickname: "Ramona Britto"
@@ -2653,8 +2781,9 @@
   email-md5:
     - cb9c22aab5ab96df62098f7407c1069f
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: EMBL-EBI
 -
   nickname: "Alistair MacDougall"
@@ -2662,8 +2791,9 @@
   email-md5:
     - 0dcbbae41504af90fcca94f8f756a961
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: EBI
 -
   nickname: "Mary Ann Tuli"
@@ -2671,8 +2801,9 @@
   email-md5:
     - cefa19821d8dda55a07a755a964e4946
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: WB
 -
   nickname: "Jacqueline Hayles"
@@ -2680,8 +2811,9 @@
   email-md5:
     - d0e31b86f6f57470844a06bcc4e49a6d
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: Crick
 -
   nickname: "Nidhi Tyagi"
@@ -2689,8 +2821,9 @@
   email-md5:
     - c3c4847dd8d71c1d667d5bf7895d4a9e
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: EMBL-EBI
 -
   nickname: 'Rossana Zaru'
@@ -2699,8 +2832,9 @@
   email-md5:
     - 0de11318dae17ecd44c3cbc35378622a
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
   organization: EMBL-EBI
@@ -2710,8 +2844,9 @@
   email-md5:
     - 1c8c8eeba90d924df74f588bc2f1de23
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: NIDASH
 -
   nickname: "Raymond Lee"
@@ -2719,8 +2854,9 @@
   email-md5:
     - 55a339645c9d8022ea8ab3f9316b8459
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: WB
 -
   nickname: "Malcolm Fisher"
@@ -2728,8 +2864,9 @@
   email-md5:
     - f28ff1081377a5278fd2e9ff01c35215
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   organization: XenBase
   accounts:
     google-plus: '117715867093154659921'
