@@ -1836,6 +1836,8 @@
   xref: 'GOC:kmv'
   uri: 'http://orcid.org/0000-0002-1706-4196'
   organization: WB
+  accounts:
+    github: 'vanaukenk'
   comment: 'GOC:kva is also used; occasionally MAH goes through and updates to GOC:kmv'
 -
   nickname: 'Ranjana Kishore'
