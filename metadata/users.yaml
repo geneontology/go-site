@@ -41,6 +41,22 @@
   xref: 'GOC:hm'
   uri: 'GOC:hm'
 -
+  nickname: 'Nathan Dunn'
+  email-md5:
+    - 7da61ebeb6459e809d61aebf28f2a315
+  authorizations:
+    termgenie-go:
+      allow-write: true
+      allow-review: true
+      allow-freeform: true
+      allow-management: false
+  uri: 'http://orcid.org/0000-0002-4862-3181'
+  accounts:
+    github: nathandunn
+    orcid: '0000-0002-4862-3181'
+    email-md5:
+     - 7da61ebeb6459e809d61aebf28f2a315
+-
   nickname: 'Seth Carbon'
   email-md5:
     - 65d762aea47eaf21e2b19177f448b3c3
