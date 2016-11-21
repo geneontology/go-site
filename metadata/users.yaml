@@ -41,6 +41,31 @@
   xref: 'GOC:hm'
   uri: 'GOC:hm'
 -
+  nickname: 'Nathan Dunn'
+  email-md5:
+    - XYZ
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+        allow-admin: true
+    termgenie-go:
+      allow-write: true
+      allow-review: true
+      allow-freeform: true
+      allow-management: true
+  xref: 'GOC:???'
+  uri: 'http://orcid.org/0000-0002-4862-3181'
+  groups:
+    - 'http://geneontology.org'
+    - 'http://lbl.gov'
+  accounts:
+    github: nathandunn
+    google-plus: '???'
+    orcid: '0000-0002-4862-3181'
+    email-md5:
+     - ???
+-
   nickname: 'Seth Carbon'
   email-md5:
     - 65d762aea47eaf21e2b19177f448b3c3
