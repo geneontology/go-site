@@ -43,28 +43,19 @@
 -
   nickname: 'Nathan Dunn'
   email-md5:
-    - XYZ
+    - 7da61ebeb6459e809d61aebf28f2a315
   authorizations:
-    noctua:
-      go:
-        allow-edit: true
-        allow-admin: true
     termgenie-go:
       allow-write: true
       allow-review: true
       allow-freeform: true
-      allow-management: true
-  xref: 'GOC:???'
+      allow-management: false
   uri: 'http://orcid.org/0000-0002-4862-3181'
-  groups:
-    - 'http://geneontology.org'
-    - 'http://lbl.gov'
   accounts:
     github: nathandunn
-    google-plus: '???'
     orcid: '0000-0002-4862-3181'
     email-md5:
-     - ???
+     - 7da61ebeb6459e809d61aebf28f2a315
 -
   nickname: 'Seth Carbon'
   email-md5:
