@@ -29,6 +29,8 @@
   authorizations:
     noctua-go:
       allow-edit: true
+  accounts:
+    github: thomaspd
   xref: 'GOC:pt'
   uri: 'GOC:pt'
 -
@@ -171,6 +173,8 @@
     termgenie-go:
       allow-write: true
       allow-freeform: true
+  accounts:
+    github: dianeoinglis
   xref: 'GOC:di'
   uri: 'GOC:di'
   organization: AspGD/CGD
@@ -192,6 +196,8 @@
     noctua-go:
       allow-edit: true
   organization: BHF-UCL
+  accounts:
+    github: barbaraczub
 -
   uri: 'GOC:ame'
   xref: 'GOC:ame'
@@ -341,6 +347,8 @@
   xref: 'GOC:pf'
   uri: 'http://orcid.org/0000-0002-4532-2703'
   organization: DDB
+  accounts:
+    github: pfey03
 -
   nickname: 'Pascale Gaudet'
   email-md5:
@@ -355,6 +363,8 @@
   xref: 'GOC:pg'
   uri: 'http://orcid.org/0000-0003-1813-6857'
   organization: DDB
+  accounts:
+    github: pgaudet
 -
   nickname: 'Robert Dodson'
   email-md5:
@@ -459,6 +469,8 @@
   xref: 'GOC:dos'
   uri: 'http://orcid.org/0000-0002-7073-9172'
   organization: GO
+  accounts:
+    github: dosumis
 -
   uri: 'GOC:rc'
   xref: 'GOC:rc'
@@ -560,6 +572,8 @@
       allow-freeform: true
       allow-freeform-litxref-optional: true
       allow-management: true
+  accounts:
+    github: mcourtot
 -
   nickname: 'Paola Roncaglia'
   email-md5:
@@ -576,6 +590,8 @@
   xref: 'GOC:pr'
   uri: 'http://orcid.org/0000-0002-2825-0621'
   organization: GO
+  accounts:
+    github: paolaroncaglia
 -
   uri: 'GOC:curators'
   xref: 'GOC:curators'
@@ -812,6 +828,8 @@
       allow-freeform: true
   xref: 'GOC:hjd'
   organization: MGI
+  accounts:
+    github: hdrabkin
 -
   nickname: 'Li Ni'
   uri: 'http://orcid.org/0000-0002-9796-7693'
@@ -938,6 +956,8 @@
   uri: 'http://orcid.org/0000-0003-4148-4606'
   organization: PomBase
   comment: 'former affiliations: GO editorial office; MGI; SGD in distant past'
+  accounts:
+    github: mah11
 -
   nickname: 'Val Wood'
   email-md5:
@@ -952,6 +972,8 @@
   uri: 'http://orcid.org/0000-0001-6330-7526'
   organization: PomBase
   comment: 'former affiliation: GeneDB_Spombe'
+  accounts:
+    github: ValWood
 -
   uri: 'GOC:fz'
   xref: 'GOC:fz'
@@ -970,6 +992,8 @@
   xref: 'GOC:lc'
   uri: 'http://orcid.org/0000-0002-6379-8932'
   organization: OSU
+  accounts:
+    github: cooperl09
 -
   uri: 'GOC:lmo'
   xref: 'GOC:lmo'
@@ -1372,6 +1396,8 @@
   xref: 'GOC:tb'
   uri: 'http://orcid.org/0000-0002-3837-8864'
   organization: TAIR
+  accounts:
+    github: tberardini
 -
   uri: 'GOC:yl'
   xref: 'GOC:yl'
@@ -1637,6 +1663,8 @@
     noctua-go:
       allow-edit: true
   organization: UniProt
+  accounts:
+    github: marcfeuermann
 -
   uri: 'GOC:mcb'
   xref: 'GOC:mcb'
@@ -1775,6 +1803,8 @@
   xref: 'GOC:mls'
   uri: 'GOC:mls'
   organization: MaizeGDB
+  accounts:
+    github: mlschaeffer
 -
   nickname: 'Nevila Hyka-Nouspikel'
   email-md5:
@@ -1912,6 +1942,8 @@
   uri: 'http://orcid.org/0000-0002-2244-7917'
   xref: 'GOC:cvs'
   organization: ZFIN
+  accounts:
+    github: cerivs
 -
   nickname: 'Erik Segerdell'
   uri: 'GOC:ejs'
@@ -1956,6 +1988,8 @@
   uri: 'http://orcid.org/0000-0002-9900-7880'
   xref: 'GOC:ymb'
   organization: ZFIN
+  accounts:
+    github: ybradford
 -
   uri: 'GOC:obol'
   xref: 'GOC:obol'
@@ -2298,6 +2332,8 @@
     termgenie-go:
       allow-write: true
   organization: LBNL
+  accounts:
+    github: monicacecilia
 -
   uri: 'GOC:giardia'
   xref: 'GOC:giardia'
@@ -2344,6 +2380,8 @@
   authorizations:
     noctua-go:
       allow-edit: true
+  accounts:
+    github: pnrobinson
 -
   nickname: 'Aurore Britan'
   uri: 'http://orcid.org/0000-0002-9846-2590'
@@ -2438,6 +2476,8 @@
     noctua-go:
       allow-edit: true
   organization: GO
+  accounts:
+    github: balhoff
 -
   nickname: "Istvan Miko"
   uri: 'http://orcid.org/0000-0001-9719-0215'
@@ -2503,6 +2543,8 @@
     noctua-go:
       allow-edit: true
   organization: OSU
+  accounts:
+    github: jaiswalp
 -
   nickname: "Mark Jensen"
   uri: 'http://orcid.org/0000-0001-9228-8838'
@@ -2530,6 +2572,8 @@
     noctua-go:
       allow-edit: true
   organization: AWI
+  accounts:
+    github: pbuttigieg
 -
   nickname: "Bridget C Hanna"
   uri: 'http://orcid.org/0000-0001-8798-3326'
