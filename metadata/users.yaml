@@ -697,6 +697,8 @@
   uri: 'http://orcid.org/0000-0001-6718-3559'
   organization: BHF-UCL
   comment: 'formerly GOA'
+  accounts:
+    github: rachhuntley
 -
   uri: 'GOC:vl'
   xref: 'GOC:vl'
@@ -2412,6 +2414,8 @@
       allow-write: true
   xref: 'GOC:ga'
   organization: FlyBase
+  accounts:
+    github: gantonazzo
 -
   nickname: 'Anne Niknejad'
   uri: 'GOC:ani'
