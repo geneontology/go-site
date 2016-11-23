@@ -1218,7 +1218,7 @@
     termgenie-go:
       allow-write: true
       allow-freeform: true
-  organization: SGD
+  organization: MGI
   accounts:
     github: 'krchristie'
 -
