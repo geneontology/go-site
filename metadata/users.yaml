@@ -2667,9 +2667,15 @@
   email-md5:
     - caad47c5134fca150d4e9ff086c1d7f5
   authorizations:
-    noctua-go:
-      allow-edit: true
-  organization:  LBNL
+    noctua:
+      go:
+        allow-edit: true
+  organization: LBL
+  groups:
+    - 'http://geneontology.org'
+    - 'http://lbl.gov'
+  accounts:
+    github: selewis
 -
   nickname: "Jie Liu"
   uri: 'http://orcid.org/0000-0002-9280-1539'
