@@ -9,7 +9,7 @@
 //// { "accessKeyId": "XXX", "secretAccessKey": "YYY", "region": "us-west-1" }
 ////
 //// Example usage:
-////  node ./scripts/ontologies-to-s3.js -f ~/local/share/secrets/bbop/aws/s3/aws-go-push.json -d ~/all-my-ontologies -b go-amigo-usage-logs/master
+////  node ./scripts/ontologies-to-s3.js -f ~/local/share/secrets/bbop/aws/s3/aws-go-push.json -d ~/all-my-ontologies -b bbop-ontologies/
 ////
 
 var AWS = require('aws-sdk');
