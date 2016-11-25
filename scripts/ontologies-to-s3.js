@@ -11,6 +11,9 @@
 //// Example usage:
 ////  node ./scripts/ontologies-to-s3.js -f ~/local/share/secrets/bbop/aws/s3/aws-go-push.json -d ~/all-my-ontologies -b bbop-ontologies/
 ////
+//// Or more on point:
+////  @smaug:~/go-site# node ./scripts/ontologies-to-s3.js -f ~/aws-go-push.json -d /srv/nfs/ontologies -b bbop-ontologies/
+////
 
 var AWS = require('aws-sdk');
 var us = require('underscore');
@@ -126,7 +129,11 @@ if( ! prefix || prefix === '' ){
 us.each(target_files, function(tfile){
     
     var fbuffer = fs.readFileSync(tfile['full']);
-
+    // var fstream = fs.createReadStream(tfile['full']);
+    // fstream.on('error', function(err) {
+    // 	console.log('File Error', err);
+    // });
+    
     _ll('PUTting: ' + tfile['rel']);
     
     s3.putObject({
@@ -134,11 +141,13 @@ us.each(target_files, function(tfile){
 	'ContentType': tfile['mime'],
 	'Key': tfile['rel'],
 	'Body': fbuffer
-    }, function(error, response){
+	//'Body': fstream
+    }, function(error, data){
 	if( error ){
 	    _die('PUT fail on ' + tfile['rel'] + '; ' + error);
 	}else{
-	    process.exit(0);
+	    _ll('Upload success: ' + tfile['rel']);
+	    //process.exit(0);
 	}
     });
 });
