@@ -12,6 +12,9 @@
 //// the machine went down; I'm guessing that it some spawned some rogue
 //// processes and did not cleanly die.
 ////
+//// TODO: If a script like this is to be used, it must force doing things
+//// absolutely serially.
+////
 //// Recursively upload the ontologies in a directory to a given S3
 //// bucket.
 ////
