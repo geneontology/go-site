@@ -1,4 +1,17 @@
 ////
+//// DO NOT USE!!!!
+//// SERIOUSLY. BUG.
+////
+//// smaug died trying this script. A nice example nonetheless.
+//// The reason for failure, I believe, is actually the async nature of
+//// the upload, the scan was still happening while it slowly tried to upload
+//// files, also async. That probably meant that it was trying to do hundreds
+//// of uploads at the same time. It quickly fell behind and some internal
+//// buffer was overflowed before it managed to even get one file uploaded.
+//// Anyways, after the overflow error, it hung on for a few minutes and then
+//// the machine went down; I'm guessing that it some spawned some rogue
+//// processes and did not cleanly die.
+////
 //// Recursively upload the ontologies in a directory to a given S3
 //// bucket.
 ////
