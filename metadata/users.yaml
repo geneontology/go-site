@@ -730,6 +730,8 @@
   uri: 'GOC:bhm'
   organization: InTact
   comment: 'Birgit Meldal'
+  accounts:
+    github: bmeldal
 -
   nickname: 'Ingrid Keseler'
   email-md5:
