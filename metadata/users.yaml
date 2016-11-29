@@ -53,8 +53,8 @@
       allow-freeform: true
       allow-management: false
   uri: 'http://orcid.org/0000-0002-4862-3181'
+  github: nathandunn
   accounts:
-    github: nathandunn
     orcid: '0000-0002-4862-3181'
     email-md5:
      - 7da61ebeb6459e809d61aebf28f2a315
@@ -78,6 +78,7 @@
     - 'http://geneontology.org'
     - 'http://planteome.org'
     - 'http://lbl.gov'
+  github: kltm
   accounts:
     github: kltm
     google-plus: '112360324542574840929'
@@ -574,6 +575,7 @@
       allow-management: true
   accounts:
     github: mcourtot
+  github: mcourtot
 -
   nickname: 'Paola Roncaglia'
   email-md5:
@@ -768,6 +770,7 @@
   accounts:
     github: ukemi
     orcid: '0000-0001-7476-6306'
+  github: ukemi
 -
   uri: 'GOC:tfm'
   xref: 'GOC:tfm'
@@ -1128,6 +1131,7 @@
     - 'http://geneontology.org'
     - 'http://planteome.org'
     - 'http://lbl.gov'
+  github: 'cmungall'
   accounts:
     github: 'cmungall'
 -
@@ -1183,6 +1187,7 @@
         allow-edit: true
   accounts:
     github: 'edwong57'
+  github: 'edwong57'
 -
   uri: 'GOC:elh'
   xref: 'GOC:elh'
@@ -1225,6 +1230,7 @@
   organization: MGI
   accounts:
     github: 'krchristie'
+  github: 'krchristie'
 -
   nickname: 'Maria Costanzo'
   email-md5:
@@ -1324,6 +1330,7 @@
   organization: TAIR
   accounts:
     github: 'dhldhl'
+  github: 'dhldhl'
 -
   uri: 'GOC:ds'
   xref: 'GOC:ds'
@@ -1402,6 +1409,7 @@
   organization: TAIR
   accounts:
     github: tberardini
+  github: 'tberardini'
 -
   uri: 'GOC:yl'
   xref: 'GOC:yl'
@@ -1669,6 +1677,7 @@
   organization: UniProt
   accounts:
     github: marcfeuermann
+  github: marcfeuermann
 -
   uri: 'GOC:mcb'
   xref: 'GOC:mcb'
@@ -1766,6 +1775,7 @@
   organization: UniProt
   accounts:
     github: 'sylvainpoux'
+  github: 'sylvainpoux'    
 -
   nickname: 'Shyamala Sundaram'
   email-md5:
@@ -1809,6 +1819,7 @@
   organization: MaizeGDB
   accounts:
     github: mlschaeffer
+  github: 'mlschaeffer'     
 -
   nickname: 'Nevila Hyka-Nouspikel'
   email-md5:
@@ -1888,6 +1899,7 @@
   organization: WB
   accounts:
     github: 'vanaukenk'
+  github: 'vanaukenk'
   comment: 'GOC:kva is also used; occasionally MAH goes through and updates to GOC:kmv'
 -
   nickname: 'Ranjana Kishore'
@@ -1903,6 +1915,7 @@
   organization: WB
   accounts:
     github: 'rankishore'
+  github: 'rankishore'
 -
   nickname: 'Doug Howe'
   email-md5:
@@ -1922,6 +1935,7 @@
   organization: ZFIN
   accounts:
     github: 'doughowe'
+  github: 'doughowe'
 -
   nickname: 'David Fashena'
   email-md5:
@@ -1948,6 +1962,7 @@
   organization: ZFIN
   accounts:
     github: cerivs
+  github: cerivs
 -
   nickname: 'Erik Segerdell'
   uri: 'GOC:ejs'
@@ -1994,6 +2009,7 @@
   organization: ZFIN
   accounts:
     github: ybradford
+  github: ybradford
 -
   uri: 'GOC:obol'
   xref: 'GOC:obol'
@@ -2338,6 +2354,7 @@
   organization: LBNL
   accounts:
     github: monicacecilia
+  github: monicacecilia
 -
   uri: 'GOC:giardia'
   xref: 'GOC:giardia'
@@ -2386,6 +2403,7 @@
       allow-edit: true
   accounts:
     github: pnrobinson
+  github: pnrobinson
 -
   nickname: 'Aurore Britan'
   uri: 'http://orcid.org/0000-0002-9846-2590'
@@ -2484,6 +2502,7 @@
   organization: GO
   accounts:
     github: balhoff
+  github: balhoff
 -
   nickname: "Istvan Miko"
   uri: 'http://orcid.org/0000-0001-9719-0215'
