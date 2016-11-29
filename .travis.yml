@@ -1,22 +1,13 @@
-language: ruby
-rvm: "1.9.3"
+language: python
+python:
+  - "3.4"
 
-# before_install:
-#   - sudo apt-get update -qq
-#   - sudo apt-get install -qq kwalify
-## Possible other way.
 install:
-  - gem install kwalify
+  - pip3 install pykwalify
 script:
   ## Quick user data check.
-  - kwalify -E -m metadata/users.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  - kwalify -E -f metadata/users.schema.yaml metadata/users.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  - kwalify -E -m metadata/groups.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  - kwalify -E -f metadata/groups.schema.yaml metadata/groups.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  - kwalify -E -m metadata/db-xrefs.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  - kwalify -E -f metadata/db-xrefs.schema.yaml metadata/db-xrefs.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  - kwalify -E -m metadata/datasets.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  - kwalify -E -f metadata/datasets.schema.yaml metadata/datasets/*.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
+  - make test
+  - ./scripts/combine-datasets-metadata.py metadata/datasets/*.yaml > metadata/datasets.json
 notifications:
   email:
     - sjcarbon@lbl.gov
