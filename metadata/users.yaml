@@ -45,7 +45,7 @@
 -
   nickname: 'Nathan Dunn'
   email-md5:
-    - 7da61ebeb6459e809d61aebf28f2a315
+    - 9afebd4cf92acca9aa2bdb557f96b504
   authorizations:
     termgenie-go:
       allow-write: true
