@@ -184,21 +184,6 @@
   nickname: 'Courtland Yockey'
   organization: AstraZeneca
 -
-  uri: 'http://orcid.org/0000-0002-3898-1727'
-  xref: 'GOC:bc'
-  nickname: 'Barbara Czub'
-  email-md5:
-    - 05856707bf8eca390ae3ddcf689e9011
-    - 99b4072c338978afc0a90bc7f217cef8
-  authorizations:
-    termgenie-go:
-      allow-write: true
-    noctua-go:
-      allow-edit: true
-  organization: BHF-UCL
-  accounts:
-    github: barbaraczub
--
   uri: 'GOC:ame'
   xref: 'GOC:ame'
   nickname: 'Anna Melidoni (formerly BHF-UCL)'
@@ -2911,6 +2896,22 @@
   organization: ZFIN
   accounts:
     github: 'cmpich'
+-
+  nickname: "Barbara Kramarz"
+  uri: 'http://orcid.org/0000-0002-3898-1727'
+  xref: 'GOC:bc'
+  email-md5:
+    - 05856707bf8eca390ae3ddcf689e9011
+    - 99b4072c338978afc0a90bc7f217cef8
+  authorizations:
+    termgenie-go:
+      allow-write: true
+    noctua:
+      go:
+        allow-edit: true
+  organization: BHF-UCL
+  accounts:
+    github: 'BarbaraCzub'
 # -
 #   nickname: ""
 #   uri: ''
