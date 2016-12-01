@@ -163,6 +163,8 @@
   xref: 'GOC:mr'
   uri: 'GOC:mr'
   organization: AgBase
+  accounts:
+    github: michaelerice
 -
   nickname: 'Diane Inglis'
   email-md5:
@@ -643,6 +645,8 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
+  accounts:
+    github: hbye
 -
   uri: 'GOC:ah'
   xref: 'GOC:ah'
@@ -930,6 +934,8 @@
   xref: 'GOC:al'
   uri: 'http://orcid.org/0000-0003-1179-5999'
   organization: PomBase
+  accounts:
+    github: Antonialock
 -
   uri: 'GOC:jb'
   xref: 'GOC:jb'
@@ -1036,6 +1042,8 @@
   xref: 'GOC:pde'
   uri: 'GOC:pde'
   organization: Reactome
+  accounts:
+    github: deustp01
 -
   uri: 'GOC:phg'
   xref: 'GOC:phg'
@@ -1081,6 +1089,8 @@
   xref: 'GOC:sl'
   uri: 'GOC:sl'
   organization: RGD
+  accounts:
+    github: slaulederkind 
 -
   uri: 'GOC:st'
   xref: 'GOC:st'
@@ -1282,6 +1292,8 @@
   xref: 'GOC:dw'
   uri: 'http://orcid.org/0000-0003-1058-2668'
   organization: 'SPOT (EBI)'
+  accounts:
+    github: daniwelter
 -
   uri: 'GOC:db'
   xref: 'GOC:db'
@@ -2024,6 +2036,8 @@
   xref: 'GOC:hp'
   uri: 'GOC:hp'
   organization: EBI
+  accounts:
+    github: helenp
 -
   uri: 'GOC:sk'
   xref: 'GOC:sk'
