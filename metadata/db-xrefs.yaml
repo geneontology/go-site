@@ -2861,8 +2861,14 @@
       type_id: CARO:0000000
       id_syntax: '[0-9]{7}'
       url_syntax: http://purl.obolibrary.org/obo/UBERON_[example_id]
-      example_id: URBERON:0002398
+      example_id: UBERON:0002398
       example_url: http://purl.obolibrary.org/obo/UBERON_0002398
+    - type_name: life cycle stage
+      type_id: UBERON:0000105 
+      id_syntax: '[0-9]{7}'
+      url_syntax: http://purl.obolibrary.org/obo/UBERON_[example_id]
+      example_id: UBERON:0000069
+ 
 - database: UM-BBD
   name: EAWAG Biocatalysis/Biodegradation Database
   generic_urls:
