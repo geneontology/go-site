@@ -362,6 +362,8 @@
   xref: 'GOC:rjd'
   uri: 'GOC:rjd'
   organization: DDB
+  accounts:
+    github: rjdodson
 -
   nickname: 'Amanda Mackie'
   authorizations:
