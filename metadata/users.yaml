@@ -245,6 +245,8 @@
     termgenie-go:
       allow-write: true
       allow-freeform: true
+  accounts:
+    github: NancyCampbell
 -
   nickname: 'Ruth Lovering'
   email-md5:
