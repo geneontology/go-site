@@ -1326,7 +1326,7 @@
   uri: 'http://orcid.org/0000-0003-3335-4537'
   organization: TAIR
   accounts:
-    github: 'dhldhl'
+    github: dhldhl
 -
   uri: 'GOC:ds'
   xref: 'GOC:ds'
@@ -1362,6 +1362,11 @@
   authorizations:
     termgenie-go:
       allow-write: true
+    noctua-go:
+      allow-edit: true
+  accounts:
+    github: lreiser
+  uri: 'http://orcid.org/0000-0003-0073-0858'
 -
   uri: 'GOC:mg'
   xref: 'GOC:mg'
