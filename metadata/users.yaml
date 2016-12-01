@@ -621,6 +621,8 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
+  accounts:
+    github: esperetta
 -
   nickname: 'George Georghiou'
   uri: 'http://orcid.org/0000-0001-5067-3199'
@@ -710,7 +712,7 @@
   uri: 'GOC:yaf'
   organization: GOA
 -
-  nickname: 'Birgit Melda'
+  nickname: 'Birgit Meldal'
   email-md5:
     - f8b0b6bba244b89fd625b8994bdd1744
   authorizations:
@@ -1736,6 +1738,8 @@
     termgenie-go:
       allow-write: true
   organization: UniProt
+  accounts: 
+    github: pgarmiri 
 -
   uri: 'GOC:plm'
   xref: 'GOC:plm'
