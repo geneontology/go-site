@@ -1353,16 +1353,6 @@
   nickname: 'Katica Ilic'
   organization: TAIR
 -
-  uri: 'GOC:lr'
-  xref: 'GOC:lr'
-  nickname: 'Leonore Reiser'
-  email-md5:
-    - 12db676395b362177f57aecbe87fbf50
-  organization: TAIR
-  authorizations:
-    termgenie-go:
-      allow-write: true
--
   uri: 'GOC:mg'
   xref: 'GOC:mg'
   nickname: 'Margarita Garcia'
@@ -2871,9 +2861,12 @@
 -
   nickname: "Leonore Reiser"
   uri: 'http://orcid.org/0000-0003-0073-0858'
+  xref: 'GOC:lr'
   email-md5:
     - 12db676395b362177f57aecbe87fbf50
   authorizations:
+    termgenie-go:
+      allow-write: true
     noctua:
      go:
        allow-edit: true
