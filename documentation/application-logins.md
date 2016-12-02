@@ -3,7 +3,7 @@
 * Context
 * Relevant GitHub tickets
 * How does it work?
- * Example
+  * Example stanza
 * How do I login?
 * What if it doesn’t work?
 * FAQs
@@ -34,17 +34,17 @@ information.
 To work properly an entry should minimally include the following stanzas:
 
 * <b>authorizations</b> indicate the various access levels
- * <b>termgenie-go</b> for TermGenie login
-  * <b>allow-write</b> to allow creation of new terms using the templates
-  * <b>allow-review</b> to enable access to the commit review interface (typically for GO editors)
-  * <b>Allow-freeform</b> to enable access to TG free form
- * <b>noctua</b>
-  * <b>go</b>
-   * <b>allow-edit</b> for logins to the GO instance of Noctua
+  * <b>termgenie-go</b> for TermGenie login
+    * <b>allow-write</b> to allow creation of new terms using the templates
+    * <b>allow-review</b> to enable access to the commit review interface (typically for GO editors)
+    * <b>allow-freeform</b> to enable access to TG free form
+  * <b>noctua</b>
+    * <b>go</b>
+      * <b>allow-edit</b> for logins to the GO instance of Noctua
 * <b>accounts</b> to register various login accounts to external sites
- * <b>github</b> should be included here, with your GitHub username as the value
+  * <b>github</b> should be included here, with your GitHub username as the value
 
-#### Example
+#### Example stanza
 
 ```yaml
 -
@@ -74,7 +74,7 @@ Once your metadata has been captured properly as per above, you should
 be able to log in in your favorite web browser. You should be
 presented with a login window like:
 
-TODO
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
 Enter your GitHub username and password and you should be redirected
 to the TG template page where you can create your commit.
@@ -99,7 +99,8 @@ happens/error messages.
 ### FAQs:
 
 1. Do I still need my Persona username/password? <br>
-Not for TermGenie. Everything is authenticated via GitHub.
+No. Unless you have made special arrangements with the administrators,
+everything is authenticated via GitHub.
 
-2. (TermGenie) I was able to login using my Persona username and password but can’t commit <br>
-If you don’t have a github account in the users.yaml file, the system will as a fallback attempt to log you in using your Persona credentials. This still seems to work as of today (Dec 1 2016) but will not allow you to commit terms. For full TG functionality you *need* to log in using your GitHub credentials.
+2. (<b>TermGenie</b>) I was able to login using my Persona username and password but can’t commit <br>
+If you don’t have a _github_ account in the users.yaml file, the system will as a fallback attempt to log you in using your Persona credentials. This still seems to work as of today (Dec 1 2016) but will not allow you to commit terms. For full TG functionality you *need* to log in using your GitHub credentials.
