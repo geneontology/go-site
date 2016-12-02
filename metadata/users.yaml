@@ -50,7 +50,7 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-management: false
   uri: 'http://orcid.org/0000-0002-4862-3181'
   accounts:
@@ -70,7 +70,7 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-management: true
   xref: 'GOC:sjc'
   uri: 'http://orcid.org/0000-0001-8244-1536'
@@ -121,7 +121,7 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
   xref: 'GOC:hd'
@@ -174,7 +174,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   accounts:
     github: dianeoinglis
   xref: 'GOC:di'
@@ -195,7 +195,7 @@
   authorizations:
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
 -
   uri: 'GOC:ebc'
   xref: 'GOC:ebc'
@@ -246,7 +246,7 @@
   authorizations:
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   accounts:
     github: NancyCampbell
 -
@@ -282,7 +282,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:sjp'
   uri: 'GOC:sjp'
   organization: 'University of Toronto'
@@ -348,7 +348,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:pg'
   uri: 'http://orcid.org/0000-0003-1813-6857'
   organization: DDB
@@ -395,7 +395,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:bm'
   uri: 'GOC:bm'
   organization: 'E. coli'
@@ -454,7 +454,7 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
   xref: 'GOC:dos'
@@ -476,7 +476,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:sart'
   uri: 'http://orcid.org/0000-0003-1818-8243'
   organization: FB
@@ -508,7 +508,7 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
   xref: 'GOC:bf'
@@ -540,7 +540,7 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
   xref: 'GOC:jl'
@@ -560,7 +560,7 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
   accounts:
@@ -575,7 +575,7 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
   xref: 'GOC:pr'
@@ -673,7 +673,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:pm'
   uri: 'GOC:pm'
   organization: GOA
@@ -687,7 +687,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:rph'
   uri: 'http://orcid.org/0000-0001-6718-3559'
   organization: BHF-UCL
@@ -720,7 +720,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:bhm'
   uri: 'GOC:bhm'
   organization: InTact
@@ -754,7 +754,7 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
   xref: 'GOC:dph'
@@ -794,7 +794,7 @@
   authorizations:
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
 -
   nickname: 'Grace Stafford'
   email-md5:
@@ -824,7 +824,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:hjd'
   organization: MGI
   accounts:
@@ -902,7 +902,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:ml'
   uri: 'GOC:ml'
   organization: PAMGO
@@ -932,7 +932,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:al'
   uri: 'http://orcid.org/0000-0003-1179-5999'
   organization: PomBase
@@ -952,7 +952,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:mah'
   uri: 'http://orcid.org/0000-0003-4148-4606'
   organization: PomBase
@@ -968,7 +968,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:vw'
   uri: 'http://orcid.org/0000-0001-6330-7526'
   organization: PomBase
@@ -1040,7 +1040,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:pde'
   uri: 'GOC:pde'
   organization: Reactome
@@ -1087,7 +1087,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:sl'
   uri: 'GOC:sl'
   organization: RGD
@@ -1222,7 +1222,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   organization: MGI
   accounts:
     github: 'krchristie'
@@ -1235,7 +1235,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:mcc'
   uri: 'http://orcid.org/0000-0001-9043-693X'
   organization: SGD
@@ -1248,7 +1248,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:rb'
   uri: 'http://orcid.org/0000-0003-2468-9933'
   organization: SGD
@@ -1272,7 +1272,7 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:se'
   uri: 'http://orcid.org/0000-0001-5472-917X'
   organization: SGD
@@ -1321,7 +1321,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:dhl'
   uri: 'http://orcid.org/0000-0003-3335-4537'
   organization: TAIR
@@ -1387,7 +1387,7 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
   xref: 'GOC:tb'
@@ -1518,7 +1518,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:ab'
   uri: 'GOC:ab'
   organization: UniProt
@@ -1755,7 +1755,7 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:sp'
   uri: 'http://orcid.org/0000-0001-7299-6685'
   organization: UniProt
@@ -1877,7 +1877,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:kmv'
   uri: 'http://orcid.org/0000-0002-1706-4196'
   organization: WB
@@ -1908,7 +1908,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   groups:
     - 'http://geneontology.org'
     - 'http://zfin.org'
@@ -2008,7 +2008,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:tt'
   uri: 'GOC:tt'
   organization: VBI
