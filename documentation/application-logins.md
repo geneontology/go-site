@@ -31,8 +31,11 @@ credentials. To do so, they read the
 that is used by applications written for the GO to coordinate user
 information.
 
-To work properly an entry should minimally include the following stanzas:
+To work properly, an entry for a TermGenie-only should minimally include the
+following stanzas:
 
+* <b>uri</b> the unique identifier for a user
+* <b>nickname</b> the common name for the user
 * <b>authorizations</b> indicate the various access levels
   * <b>termgenie-go</b> for TermGenie login
     * <b>allow-write</b> to allow creation of new terms using the templates
@@ -43,6 +46,24 @@ To work properly an entry should minimally include the following stanzas:
       * <b>allow-edit</b> for logins to the GO instance of Noctua
 * <b>accounts</b> to register various login accounts to external sites
   * <b>github</b> should be included here, with your GitHub username as the value
+
+To work properly, an entry for a Noctua-only should minimally include
+the following stanzas:
+
+* <b>uri</b> the unique identifier for a user
+* <b>nickname</b> the common name for the user
+* <b>organization</b> the common label for the current organization of the user
+  * <b>noctua</b>
+    * <b>go</b>
+      * <b>allow-edit</b> for logins to the GO instance of Noctua
+* <b>accounts</b> to register various login accounts to external sites
+  * <b>github</b> should be included here, with your GitHub username as the value
+
+Noctua also supports **groups** for users who have various
+affiliations. If you're interested in using these, please contact the
+GO Helpdesk.
+
+Naturally, these can be mixed and matched as required for the user.
 
 #### Example stanza
 
