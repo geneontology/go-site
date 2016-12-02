@@ -98,14 +98,15 @@ When you try an login, you should be presented with a login window like:
 
 ![Image of login](https://raw.githubusercontent.com/geneontology/go-site/master/documentation/images/login-tg-screenshot.png)
 
-Enter your GitHub username and password and you should be redirected
-to the TG template page where you can create your commit.
+Enter your GitHub username and password.
 
 If it is the first time you have tried to login to a particular application, you should be presented with a login window like:
 
 ![Image of scope authorization](https://raw.githubusercontent.com/geneontology/go-site/master/documentation/images/authorize-tg-screenshot.png)
 
-Accept this and continue back to your application.
+Accept this and continue back to your application. For TermGenie, you
+should be redirected to the TermGenie template page where you can
+create your commit. For Noctua, click the **Return** button.
 
 ### What if it doesn’t work?
 
