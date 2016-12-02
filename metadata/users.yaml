@@ -201,13 +201,13 @@
   xref: 'GOC:ebc'
   nickname: 'Evelyn Camon'
   organization: BHF-UCL
-  comment: 'formerly GOA'
+  comment: 'status inactive, formerly GOA'
 -
   uri: 'GOC:gr'
   xref: 'GOC:gr'
   nickname: 'Greg Rowe'
   organization: BHF-UCL
-  comment: 'Masters Student working with the BHF group at UCL'
+  comment: 'status inactive, Masters Student working with the BHF group at UCL'
 -
   uri: 'GOC:hal'
   xref: 'GOC:hal'
@@ -215,7 +215,7 @@
   email-md5:
     - e4a501963ab7181d1e40298d93741e50
   organization: BHF-UCL
-  comment: 'Masters Student working with the BHF group at UCL   '
+  comment: 'status inactive, Masters Student working with the BHF group at UCL   '
   authorizations:
     termgenie-go:
       allow-write: true
@@ -224,7 +224,8 @@
   xref: 'GOC:jbu'
   nickname: 'Jessica Buxton'
   organization: BHF-UCL
-  comment: 'Collaborator with the BHF group at UCL'
+  comment: 'status inactive, Collaborator with the BHF group at UCL'
+ 
 -
   uri: 'http://orcid.org/0000-0001-9510-5320'
   xref: 'GOC:kom'
@@ -232,7 +233,7 @@
   email-md5:
     - 59418a02b3237575e70fd9f79da8d244
   organization: BHF-UCL
-  comment: 'Masters Student working with the BHF group at UCL'
+  comment: 'status inactive, Masters Student working with the BHF group at UCL'
   authorizations:
     termgenie-go:
       allow-write: true
@@ -286,7 +287,7 @@
   xref: 'GOC:sjp'
   uri: 'GOC:sjp'
   organization: 'University of Toronto'
-  comment: 'formerly BHF_UCL'
+  comment: 'status inactive, formerly BHF_UCL'
 -
   uri: 'GOC:nln'
   xref: 'GOC:nln'
@@ -1477,12 +1478,13 @@
   xref: 'GOC:pad'
   uri: 'http://orcid.org/0000-0003-4659-6893'
   organization: "UCL-Parkinson's UK Annotation Project"
+  comment: 'status inactive'
 -
   uri: 'GOC:mat'
   xref: 'GOC:mat'
   nickname: 'Mathew Tata'
   organization: "UCL-Parkinson's UK Annotation Project"
-  comment: 'Student working with the PARL group at UCL'
+  comment: 'status inactive, Student working with the PARL group at UCL'
 -
   uri: 'GOC:aa'
   xref: 'GOC:aa'
