@@ -95,7 +95,7 @@ Once your metadata has been captured properly as per above, you should
 be able to log in in your favorite web browser. You should be
 presented with a login window like:
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Image of login scope authorization](https://raw.githubusercontent.com/geneontology/go-site/master/documentation/images/authorize-tg-screenshot.png)
 
 Enter your GitHub username and password and you should be redirected
 to the TG template page where you can create your commit.
