@@ -215,7 +215,7 @@
   email-md5:
     - e4a501963ab7181d1e40298d93741e50
   organization: BHF-UCL
-  comment: 'status inactive, Masters Student working with the BHF group at UCL   '
+  comment: 'status inactive, Masters Student working with the BHF group at UCL'
   authorizations:
     termgenie-go:
       allow-write: true
@@ -1043,19 +1043,20 @@
   organization: Reactome
 -
   nickname: "Peter D'Eustachio"
+  uri: 'GOC:pde'
+  xref: 'GOC:pde'
   email-md5:
     - ba0ab426088546c5a9acf014a722fdd5
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-freeform: false
-  xref: 'GOC:pde'
-  uri: 'GOC:pde'
   organization: Reactome
   accounts:
-    github: deustp01
+    github: 'deustp01'
 -
   uri: 'GOC:phg'
   xref: 'GOC:phg'
