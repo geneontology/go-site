@@ -797,6 +797,15 @@
       allow-write: true
       allow-freeform: false
 -
+  uri: 'http://orcid.org/0000-0003-4606-0597'
+  xref: 'GOC:smb'
+  nickname: 'Sue Bello'
+  organization: MGI
+  authorizations:
+    termgenie-go:
+      allow-write: true
+      allow-freeform: false
+-
   nickname: 'Grace Stafford'
   email-md5:
     - 1108e1579ce5583a35c743cb3a85afa7
