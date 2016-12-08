@@ -225,8 +225,7 @@
   nickname: 'Jessica Buxton'
   organization: BHF-UCL
   comment: 'status inactive, Collaborator with the BHF group at UCL'
- 
--
+ -
   uri: 'http://orcid.org/0000-0001-9510-5320'
   xref: 'GOC:kom'
   nickname: 'Klaus Mitchell'
@@ -440,6 +439,9 @@
   xref: 'GOC:mc'
   nickname: 'Marta Costa'
   organization: FB
+  uri: 'http://orcid.org/0000-0001-5948-3092'
+  accounts:
+    github: mmc46
 -
   uri: 'GOC:ma'
   xref: 'GOC:ma'
@@ -805,6 +807,8 @@
     termgenie-go:
       allow-write: true
       allow-freeform: false
+  accounts:
+    github: sbello
 -
   nickname: 'Grace Stafford'
   email-md5:
