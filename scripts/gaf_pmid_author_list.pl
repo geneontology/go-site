@@ -49,7 +49,7 @@ for my $id (keys %pmids){
     my ($query_key, $web_env);
 	foreach my $line ( @result_array )   # Search each line of the returned document for...
 	{
-	   print "$line\n";
+	   #print "$line\n";
 	   if( $line =~ m/<QueryKey>(.*)<\/QueryKey>/ )  # ...the query key, and...
 	   {
 		  $query_key  = $1;
