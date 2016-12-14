@@ -435,11 +435,10 @@
   nickname: 'Heather Butler'
   organization: FB
 -
-  uri: 'GOC:mc'
+  uri: 'http://orcid.org/0000-0001-5948-3092'
   xref: 'GOC:mc'
   nickname: 'Marta Costa'
   organization: FB
-  uri: 'http://orcid.org/0000-0001-5948-3092'
   accounts:
     github: mmc46
 -
