@@ -1,5 +1,5 @@
 [![Stories in Ready](https://badge.waffle.io/geneontology/go-site.png?label=ready&title=Ready)](https://waffle.io/geneontology/go-site)
-[![Build Status](https://travis-ci.org/geneontology/go-site.svg)](https://travis-ci.org/geneontology/go-site)
+[![Build Status](https://travis-ci.org/geneontology/go-site.svg?branch=master)](https://travis-ci.org/geneontology/go-site?branch=master)
 
 A collection of metadata, files, and tools associated with the GO public
 website and geneontology.org web presence.
