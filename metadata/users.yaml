@@ -364,7 +364,7 @@
     termgenie-go:
       allow-write: true
   xref: 'GOC:rjd'
-  uri: 'GOC:rjd'
+  uri: 'http://orcid.org/0000-0002-2757-5950'
   organization: DDB
   accounts:
     github: rjdodson
@@ -2942,6 +2942,18 @@
   organization: BHF-UCL
   accounts:
     github: 'BarbaraCzub'
+-
+  nickname: "Hans-Michael Muller"
+  uri: 'http://orcid.org/0000-0003-1036-3051'
+  email-md5:
+    - f4e3ff656a9a5ace8642819c114f2dcd
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: WB
+  accounts:
+    github: 'goldturtle'
 # -
 #   nickname: ""
 #   uri: ''
