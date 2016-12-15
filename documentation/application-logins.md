@@ -77,8 +77,9 @@ Naturally, these can be mixed and matched as required for the user.
     - a1f4be95870984265a3b33604a963b01
   organization: GO
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-review: true
