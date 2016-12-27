@@ -1099,6 +1099,18 @@
       url_syntax: http://www.gramene.org/db/literature/pub_search?ref_id=[example_id]
       example_id: GR_REF:659
       example_url: http://www.gramene.org/db/literature/pub_search?ref_id=659
+- database: GRIMS
+  name: IRRI Genetic Resources Information Management System
+  synonyms:
+    - irri
+  generic_urls:
+    - https://www.genesys-pgr.org
+  entity_types:
+    - type_name: germplasm
+      type_id: BET:0000000
+      url_syntax: https://www.genesys-pgr.org/acn/search2?q=IRGC+[example_id]
+      example_id: GRIMS:90637
+      example_url: https://www.genesys-pgr.org/acn/search2?q=IRGC+90637
 - database: GRIN
   name: Germplasm Resources Information Network
   synonyms:
