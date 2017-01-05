@@ -1123,6 +1123,18 @@
       url_syntax: https://npgsweb.ars-grin.gov/gringlobal/accessiondetail.aspx?id=[example_id]
       example_id: GRIN:1882640
       example_url: https://npgsweb.ars-grin.gov/gringlobal/accessiondetail.aspx?id=1882640
+- database: GRINDesc
+  name: Germplasm Resources Information Network
+  synonyms:
+    - grin descriptors
+  generic_urls:
+    - http://www.ars-grin.gov/
+  entity_types:
+    - type_name: germplasm descriptors
+      type_id: BET:0000000
+      url_syntax: https://npgsweb.ars-grin.gov/gringlobal/descriptordetail.aspx?id=[example_id]
+      example_id: GRINdesc:89033
+      example_url: https://npgsweb.ars-grin.gov/gringlobal/descriptordetail.aspx?id=89033
 - database: H-invDB
   name: H-invitational Database
   generic_urls:
