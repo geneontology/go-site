@@ -1125,8 +1125,6 @@
       example_url: https://npgsweb.ars-grin.gov/gringlobal/accessiondetail.aspx?id=1882640
 - database: GRINDesc
   name: Germplasm Resources Information Network
-  synonyms:
-    - grin descriptors
   generic_urls:
     - http://www.ars-grin.gov/
   entity_types:
