@@ -84,6 +84,13 @@
       url_syntax: http://www.arabidopsis.org:1555/ARA/NEW-IMAGE?type=NIL&object=[example_id]
       example_id: AraCyc:PWYQT-62
       example_url: http://www.arabidopsis.org:1555/ARA/NEW-IMAGE?type=NIL&object=PWYQT-62
+- database: ARUK-UCL
+  name: Alzheimers Research Gene Ontology Initiative
+  generic_urls:
+    - http://www.ucl.ac.uk/functional-gene-annotation/neurological
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
 - database: ASAP
   name: A Systematic Annotation Package for Community Analysis of Genomes
   generic_urls:
