@@ -597,6 +597,12 @@
   nickname: 'The Developmental Biology Interest Group'
   organization: 'GO Interest Group'
 -
+  uri: 'GOC:aruk'
+  xref: 'GOC:aruk'
+  nickname: 'Annotation of amyloid-beta binding proteins'
+  organization: GO
+  comment: "Annotation of amyloid-beta binding proteins, funded by Alzheimer's Research UK"
+-
   nickname: 'Aleksandra Shypitsyna'
   email-md5:
     - 211b318809e38f23520d0bd64f4a2330
