@@ -600,7 +600,7 @@
   uri: 'GOC:aruk'
   xref: 'GOC:aruk'
   nickname: 'Annotation of amyloid-beta binding proteins'
-  organization: GO
+  organization: ARUK-UCL
   comment: "Annotation of amyloid-beta binding proteins, funded by Alzheimer's Research UK"
 -
   nickname: 'Aleksandra Shypitsyna'
