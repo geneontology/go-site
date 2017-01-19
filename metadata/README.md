@@ -24,7 +24,8 @@ aliases and accounts.
 
 _note_ - for historic purposes, some entries in users.yaml are
 actually transient _groups_ of users. these will be migrated to
-groups.yaml
+groups.yaml. The main blocker for this is that TG reads users.yaml but
+not groups.yaml.
 
 Fields:
 
