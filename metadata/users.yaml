@@ -2811,6 +2811,8 @@
     termgenie-go:
       allow-write: true
   organization: EMBL-EBI
+  accounts:
+    github: rozaru
 -
   nickname: "Satrajit Ghosh"
   uri: 'http://orcid.org/0000-0002-5312-6729'
