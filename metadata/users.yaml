@@ -2963,17 +2963,17 @@
   accounts:
     github: 'goldturtle'
 # -
-#   nickname: ""
-#   uri: ''
+#   nickname: "Karen Yook"
+#   uri: 'http://orcid.org/0000-0002-4457-6787'
 #   email-md5:
 #     - 
 #   authorizations:
 #    noctua:
 #      go:
 #        allow-edit: true
-#   organization: 
+#   organization: WB 
 #   groups:
 #     - ''
 #   accounts:
-#     github: ''
+#     github: 'kyook'
 #     google-plus: ''
