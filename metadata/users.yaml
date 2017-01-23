@@ -1880,10 +1880,15 @@
   nickname: 'Carol Bastiani'
   organization: WB
 -
+  nickname: 'Daniela Raciti'
+  authorizations:
+    noctua-go
+      allow-edit: true
   uri: 'GOC:dr'
   xref: 'GOC:dr'
-  nickname: 'Daniela Raciti'
   organization: WB
+  accounts:
+    github: 'draciti'
 -
   uri: 'GOC:ems'
   xref: 'GOC:ems'
