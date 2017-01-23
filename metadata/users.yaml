@@ -1882,7 +1882,7 @@
 -
   nickname: 'Daniela Raciti'
   authorizations:
-    noctua-go
+    noctua-go:
       allow-edit: true
   uri: 'GOC:dr'
   xref: 'GOC:dr'
