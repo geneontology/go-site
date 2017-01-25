@@ -2984,3 +2984,32 @@
 #   accounts:
 #     github: 'kyook'
 #     google-plus: ''
+# -
+#   nickname: "Fatima Silva-Franco"
+#   uri: 'http://orcid.org/0000-0002-2900-027X'
+#   email-md5:
+#     - 
+#   authorizations:
+#    noctua:
+#      go:
+#        allow-edit: true
+#   organization: University of Liverpool 
+#   groups:
+#     - 'http://eupathdb.org'
+#     - 'http://www.genedb.org'
+#   accounts:
+#     github: 'fatimasilva'
+# -
+#   nickname: "Ulrike Bohme"
+#   uri: 'http://orcid.org/0000-0002-0248-5924'
+#   email-md5:
+#     - 
+#   authorizations:
+#    noctua:
+#      go:
+#        allow-edit: true
+#   organization: The Wellcome Trust Sanger Institute
+#   groups:
+#     - 'http://www.genedb.org'
+#   accounts:
+#     github: 'uliboehme'
