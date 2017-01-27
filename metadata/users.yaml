@@ -792,6 +792,8 @@
   authorizations:
     noctua-go:
       allow-edit: true
+  accounts:
+    github: dms321
 -
   uri: 'GOC:cls'
   xref: 'GOC:cls'
