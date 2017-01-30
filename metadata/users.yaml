@@ -2971,18 +2971,54 @@
   organization: WB
   accounts:
     github: 'goldturtle'
+-
+  nickname: "Karen Yook"
+  uri: 'http://orcid.org/0000-0002-4457-6787'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: WB
+  accounts:
+    github: 'kyook'
+-
+  nickname: "Fatima Silva-Franco"
+  uri: 'http://orcid.org/0000-0002-2900-027X'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: University of Liverpool
+  groups:
+    - 'http://eupathdb.org'
+    - 'http://www.genedb.org'
+  accounts:
+    github: 'fatimasilva'
+-
+  nickname: "Ulrike Bohme"
+  uri: 'http://orcid.org/0000-0002-0248-5924'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: The Wellcome Trust Sanger Institute
+  groups:
+    - 'http://www.genedb.org'
+  accounts:
+    github: 'uliboehme'
 # -
-#   nickname: "Karen Yook"
-#   uri: 'http://orcid.org/0000-0002-4457-6787'
+#   nickname: ""
+#   uri: ''
 #   email-md5:
 #     - 
 #   authorizations:
 #    noctua:
 #      go:
-#        allow-edit: true
-#   organization: WB 
+#        allow-edit:
+#   organization: 
 #   groups:
 #     - ''
 #   accounts:
-#     github: 'kyook'
+#     github: ''
 #     google-plus: ''
+#
