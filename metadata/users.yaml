@@ -2489,6 +2489,8 @@
     noctua-go:
       allow-edit: true
   organization: SynGO
+  accounts:
+    github: ftwkoopmans
 -
   nickname: "Pim van Nierop"
   uri: 'http://orcid.org/0000-0003-0593-3443'
@@ -2498,6 +2500,8 @@
     noctua-go:
       allow-edit: true
   organization: SynGO
+  accounts:
+    github: Pimmelorus
 -
   nickname: "Jim Balhoff"
   uri: 'http://orcid.org/0000-0002-8688-6599'
@@ -3021,4 +3025,3 @@
 #   accounts:
 #     github: ''
 #     google-plus: ''
-#
