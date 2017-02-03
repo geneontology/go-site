@@ -11,16 +11,19 @@
 //// { "accessKeyId": "XXX", "secretAccessKey": "YYY", "region": "us-west-1" }
 ////
 //// Example usage (amigo/master):
-////  node ./scripts/install-bug-log-lister.js -f ~/local/share/secrets/bbop/aws/s3/aws-go-log-viewer.json -b go-amigo-usage-logs/master
+////  node ./scripts/install-bug-log-lister.js -f ~/local/share/secrets/bbop/aws/s3/aws-go-log-viewer.json -b go-amigo-usage-logs/2.4.x
 ////
 //// Example usage (noctua/master):
 ////  node ./scripts/install-bug-log-lister.js -f ~/local/share/secrets/bbop/aws/s3/aws-go-log-viewer.json -b go-noctua-usage-logs/master
 ////
+//// Example usage (apollo/2.0.5), with debug on:
+////  node ./scripts/install-bug-log-lister.js -f ~/local/share/secrets/bbop/aws/s3/aws-apollo-log-viewer.json -b apollo-usage-logs/2.0.5 -d
+////
 
 var AWS = require('aws-sdk');
 var us = require('underscore');
-//var opts = require('minimist');
 var dns = require('dns');
+var querystring = require('querystring');
 
 ///
 /// Helpers.
@@ -31,6 +34,13 @@ var each = us.each;
 
 function _ll(arg1){
     console.log(arg1); 
+}
+
+var debug = false;
+function _debug(arg1){
+    if( debug ){
+	console.log(arg1);
+    }
 }
 
 // Two or one  args.
@@ -62,6 +72,13 @@ function _of_interest_p(str){
 
 var argv = require('minimist')(process.argv.slice(2));
 
+// Add extra "debugging" messages.
+debug = argv['d'] || argv['debug'];
+if( debug ){
+    _debug('Debugging is on.');
+}else{
+}
+
 // AWS credentials from CLI.
 var credential_file = argv['f'] || argv['file'];
 if( ! credential_file ){
@@ -86,7 +103,7 @@ if( ! bucket_raw ){
 	prefix = parts[1];
     }
     
-    //_ll('Will use bucket: ' + bucket + ', with prefix: ' + prefix);
+    _debug('Will use bucket: ' + bucket + ', with prefix: ' + prefix);
 }
 
 ///
@@ -95,6 +112,7 @@ if( ! bucket_raw ){
 
 var ipv4_re = '(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])(?:\\.(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])){3}';
 var date_re = /\[(.*)\]/;
+var parameters_re = /\?(.*)\ HTTP/;
 
 // Get the bucket listings.
 var s3 = new AWS.S3({params: {Bucket: bucket, Prefix: prefix}});
@@ -102,7 +120,8 @@ s3.listObjects(function(err, data){
     if(err){
 	_die(err, err.stack);
     }else{
-
+	_debug('In list objects loop.');
+	
 	// Extract the keys from the listing.
 	if( data.Contents ){
 	    each( data.Contents, function(obj){
@@ -113,24 +132,42 @@ s3.listObjects(function(err, data){
 		    if( err ){
 			_die(err, err.stack);
 		    }else{
+			_debug('In get objects loop.');
 			
 			// Break the body into separate lines
 			var body = data.Body.toString('utf8');
 			var lines = body.split("\n");
 			us.each(lines, function(line){
+			    _debug('In line loop.');
 
 			    // Filter out anything we don't need.
 			    if( _of_interest_p(line) ){
-				//console.log(line);
+				_debug('```');
+				_debug(line);
+				_debug('```');
 				
-				// Pull out IP addresses.
+				// Pull out IP addresses, date, and
+				// parameters.
 				var ip_matches = line.match(ipv4_re);
 				var date_matches = line.match(date_re);
-				//console.log(ip_matches);
-				//console.log(date_matches);
+				var parameter_matches = parameters_re.exec(line);
+				_debug(ip_matches);
+				_debug(date_matches);
+				_debug(parameter_matches);
+
+				// Assemble the strings we want to
+				// display in the TSV log.
 				var ip = ip_matches[0];
 				var date = date_matches[1];
-				console.log([ip, date].join("\t"));
+                                var parameters = "";
+				if( parameter_matches ){
+				    parameters = parameter_matches[1];
+				}				
+			    }
+
+			    // Log line only on contents.
+			    if( ip || date || parameters ){
+				console.log([ip, date, parameters].join("\t"));
 			    }
 			});
 		    }
