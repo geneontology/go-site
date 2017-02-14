@@ -265,7 +265,7 @@ sub emit {
     my $loc = $type eq 'gaf' ? 'gene-associations' : 'gpad-gpi/release';
     my $url = "http://geneontology.org/$loc/$base";
 
-    my $src = "http://geneontology.org/$loc/submissions/$base";
+    my $src = "http://geneontology.org/$loc/submission/$base";
     if ($auth eq 'mgi' && $type eq 'gpi') {
         $src = "ftp://ftp.informatics.jax.org/pub/reports/mgi.gpi.gz";
     }
