@@ -11,7 +11,7 @@ datasets:
    dataset: pombase
    submitter: pombase
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.pombase.gz
+   source: http://geneontology.org/gene-associations/submission/gene_association.pombase.gz
    entity_type: 
    status: active
    species_code: Spom

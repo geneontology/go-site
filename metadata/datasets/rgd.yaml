@@ -11,7 +11,7 @@ datasets:
    dataset: rgd
    submitter: rgd
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.rgd.gz
+   source: http://geneontology.org/gene-associations/submission/gene_association.rgd.gz
    entity_type: 
    status: active
    species_code: Rnor

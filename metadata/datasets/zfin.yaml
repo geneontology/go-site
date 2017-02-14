@@ -11,7 +11,7 @@ datasets:
    dataset: zfin
    submitter: zfin
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.zfin.gz
+   source: http://geneontology.org/gene-associations/submission/gene_association.zfin.gz
    entity_type: 
    status: active
    species_code: Drer

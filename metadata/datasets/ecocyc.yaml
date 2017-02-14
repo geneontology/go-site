@@ -11,7 +11,7 @@ datasets:
    dataset: ecocyc
    submitter: ecocyc
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.ecocyc.gz
+   source: http://geneontology.org/gene-associations/submission/gene_association.ecocyc.gz
    entity_type: 
    status: active
    species_code: 
