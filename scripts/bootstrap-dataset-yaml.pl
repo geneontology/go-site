@@ -174,6 +174,9 @@ foreach (@ARGV) {
     elsif (m@(\w+)_association.gpa.gz@) {
         emit('gpad', $1, $_);
     }
+    elsif (m@(\w+).gaf.gz@) {
+        emit('gaf', $1, $_);
+    }
     elsif (m@(\w+).gpi.gz@) {
         emit('gpi', $1, $_);
     }
