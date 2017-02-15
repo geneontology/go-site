@@ -47,7 +47,7 @@ def generate_targets(ds, alist):
     print("## --------------------")
     print("## {}".format(ds))
     print("## --------------------")
-    rule(all(ds),filtered_gaf(ds))
+    rule(all(ds), filtered_gaf(ds)+" "+filtered_gpad(ds)+" "+gpi(ds))
     # for now we assume everything comes from a GAF
     if 'gaf' in types:
         [gaf] = [a for a in alist if a['type']=='gaf']
@@ -57,13 +57,21 @@ def generate_targets(ds, alist):
              'wget --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
     rule(filtered_gaf(ds),src_gaf(ds),
          './util/filter-gaf.pl -i $< -w > $@.tmp && mv $@.tmp $@')
+    rule(filtered_gpad(ds),filtered_gaf(ds),
+         'owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@')
+    rule(gpi(ds),filtered_gaf(ds),
+         'owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@')
 
 def all(ds):
     return 'all_'+ds
 def src_gaf(ds):
     return 'target/{ds}-src.gaf.gz'.format(ds=ds)
 def filtered_gaf(ds):
-    return 'target/{ds}-filtered.gaf.gz'.format(ds=ds)
+    return 'target/{ds}-filtered.gaf'.format(ds=ds)
+def filtered_gpad(ds):
+    return 'target/{ds}-filtered.gpad'.format(ds=ds)
+def gpi(ds):
+    return 'target/{ds}.gpi'.format(ds=ds)
 
 def rule(tgt,dep,ex='echo done'):
     s = "{tgt}: {dep}\n\t{ex}\n".format(tgt=tgt,dep=dep,ex=ex)
