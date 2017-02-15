@@ -1,7 +1,7 @@
 OBO= http://purl.obolibrary.org/obo/
 METADATA_DIR=../metadata/datasets
 
-all: all_gafs
+all: target/Makefile all_gafs
 
 test:
 	$(foo)
@@ -26,8 +26,8 @@ target/GO.xrf_abbs:
 proc:
 	./util/dataset-metadata-processor.py $(METADATA_DIR)/*.yaml
 
-target/Makefile:
-	./util/dataset-metadata-processor.py ../metadata/datasets/*.yaml > $@.tmp && mv $@.tmp $@
+target/Makefile: ./util/dataset-metadata-processor.py
+	$< ../metadata/datasets/*.yaml > $@.tmp && mv $@.tmp $@
 
 include target/Makefile
 

@@ -29,6 +29,9 @@ def main():
         if ds == 'paint':
             # TODO
             continue
+        if ds == 'rnacentral':
+            # TODO
+            continue
         
         if ds not in artifacts_by_dataset:
             artifacts_by_dataset[ds] = []
