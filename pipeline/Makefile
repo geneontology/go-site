@@ -26,7 +26,7 @@ target/GO.xrf_abbs:
 proc:
 	./util/dataset-metadata-processor.py $(METADATA_DIR)/*.yaml
 
-target/Makefile: ./util/dataset-metadata-processor.py
+target/Makefile: ./util/generate-makefile.py
 	$< ../metadata/datasets/*.yaml > $@.tmp && mv $@.tmp $@
 
 include target/Makefile
