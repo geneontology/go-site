@@ -272,6 +272,10 @@ sub emit {
     if ($auth eq 'mgi' && $type eq 'gpi') {
         $src = "ftp://ftp.informatics.jax.org/pub/reports/mgi.gpi.gz";
     }
+    if ($auth eq 'goa' && $dataset =~ m@goa_([a-z]+)@) {
+        # e.g. ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_rna.gpi.gz
+        $src = "ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/" . uc($1) . "/$base";
+    }
 
     my $EXTRA = "";
     
