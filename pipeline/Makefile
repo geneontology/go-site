@@ -1,7 +1,7 @@
 OBO= http://purl.obolibrary.org/obo/
 METADATA_DIR=../metadata/datasets
 
-all: target/Makefile all_gafs
+all: target/Makefile extra_files all_gafs
 
 test:
 	$(foo)
