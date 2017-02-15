@@ -56,7 +56,10 @@ def generate_targets(ds, alist):
         rule(all(ds), '','echo no metadata')
         return
     
-    rule(all(ds), filtered_gaf(ds)+" "+filtered_gpad(ds)+" "+gpi(ds))
+    rule(all(ds), targetdir(ds)+" "+filtered_gaf(ds)+" "+filtered_gpad(ds)+" "+gpi(ds))
+
+    rule(targetdir(ds),'',
+         'mkdir $@')
     
     # for now we assume everything comes from a GAF
     if 'gaf' in types:
@@ -72,16 +75,18 @@ def generate_targets(ds, alist):
     rule(gpi(ds),filtered_gaf(ds),
          'owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@')
 
+def targetdir(ds):
+    return 'target/{ds}/'.format(ds=ds)
 def all(ds):
     return 'all_'+ds
 def src_gaf(ds):
-    return 'target/{ds}-src.gaf.gz'.format(ds=ds)
+    return '{dir}{ds}-src.gaf.gz'.format(dir=targetdir(ds),ds=ds)
 def filtered_gaf(ds):
-    return 'target/{ds}-filtered.gaf'.format(ds=ds)
+    return '{dir}{ds}-filtered.gaf'.format(dir=targetdir(ds),ds=ds)
 def filtered_gpad(ds):
-    return 'target/{ds}-filtered.gpad'.format(ds=ds)
+    return '{dir}{ds}-filtered.gpad'.format(dir=targetdir(ds),ds=ds)
 def gpi(ds):
-    return 'target/{ds}.gpi'.format(ds=ds)
+    return 'target/{ds}.gpi'.format(dir=targetdir(ds),ds=ds)
 
 def rule(tgt,dep,ex='echo done'):
     s = "{tgt}: {dep}\n\t{ex}\n".format(tgt=tgt,dep=dep,ex=ex)

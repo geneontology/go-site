@@ -15,11 +15,12 @@ clean:
 null:
 	echo hi
 
+.PHONY: extra_files
 extra_files: target/go.obo target/GO.xrf_abbs
 
 # TODO - update
-target/go.obo: null
-	$(call wget, $(OBO)/go.obo)
+target/go.obo:
+	wget --no-check-certificate $(OBO)/go.obo -O $@.tmp && mv $@.tmp $@ && touch $@
 target/GO.xrf_abbs: 
 	node ../scripts/db-xrefs-yaml2legacy.js  -i ../metadata/db-xrefs.yaml  > $@.tmp && mv $@.tmp $@
 
