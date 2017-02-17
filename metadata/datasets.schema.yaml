@@ -91,14 +91,6 @@ mapping:
             type: str
             required: false
             unique: false
-          "contact_email":
-            type: str
-            required: false
-            unique: false
-          "report_email":
-            type: str
-            required: false
-            unique: false
           "entity_type":
             type: str
             required: false
