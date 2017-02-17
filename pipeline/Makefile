@@ -16,7 +16,7 @@ null:
 	echo hi
 
 .PHONY: extra_files
-extra_files: target/go.obo target/GO.xrf_abbs target/datasets-metadata.json
+extra_files: target/go.obo target/datasets-metadata.json
 
 # TODO - update
 target/datasets-metadata.json:
@@ -24,8 +24,8 @@ target/datasets-metadata.json:
 
 target/go.obo:
 	wget --no-check-certificate $(OBO)/go.obo -O $@.tmp && mv $@.tmp $@ && touch $@
-target/GO.xrf_abbs: 
-	node ../scripts/db-xrefs-yaml2legacy.js  -i ../metadata/db-xrefs.yaml  > $@.tmp && mv $@.tmp $@
+#target/GO.xrf_abbs: 
+#	node ../scripts/db-xrefs-yaml2legacy.js  -i ../metadata/db-xrefs.yaml  > $@.tmp && mv $@.tmp $@
 
 proc:
 	./util/dataset-metadata-processor.py $(METADATA_DIR)/*.yaml
