@@ -37,6 +37,7 @@ target/go.obo:
 proc:
 	./util/dataset-metadata-processor.py $(METADATA_DIR)/*.yaml
 
+
 # ----------------------------------------
 # OWLTools checks
 # ----------------------------------------
@@ -53,7 +54,7 @@ OWLTOOLS_GAFCHECK = owltools $(CATALOG_DETAILS) $(GAF_OWL) \
 --gaf-validation-unsatisfiable-module $@-incoherent.owl \
 --experimental-gaf-prediction-file $@-prediction-experimental.gaf \
 --experimental-gaf-prediction-report-file $@-prediction-experimental-report.txt \
---gaf-run-checks && touch $@
+--gaf-run-checks || echo 'errors found' ; touch $@
 
 # ----------------------------------------
 # Makefile for building GAFs
