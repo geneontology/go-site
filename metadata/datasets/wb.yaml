@@ -1,6 +1,11 @@
 id: wb
 label: WormBase database of nematode biology
 description: "GO data for WormBase database of nematode biology"
+project_name: "WormBase"
+contact_email: "help@wormbase.org"
+project_url: "http://www.wormbase.org/"
+funding_source: "US National Institutes of Health, UK Medical Research Council, UK Biotechnology and Biological Sciences Research Council"
+email_report: "ranjana@its.caltech.edu,vanauken@caltech.edu"
 datasets:
  -    
    id: wb.gaf

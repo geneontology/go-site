@@ -1,6 +1,11 @@
 id: genedb
 label: GeneDB
 description: "GO data for GeneDB"
+project_name: "Leishmania major GeneDB"
+contact_email: "mb4@sanger.ac.uk"
+project_url: "http://www.genedb.org/leish"
+funding_source: "unspecified"
+email_report: "mb4@sanger.ac.uk,maa@sanger.ac.uk"
 datasets:
  -    
    id: genedb_lmajor.gaf

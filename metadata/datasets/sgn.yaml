@@ -1,6 +1,11 @@
 id: sgn
 label: Sol Genomics Network
 description: "GO data for Sol Genomics Network"
+project_name: "Sol Genomics Network (SGN)"
+contact_email: "nm249@cornell.edu"
+project_url: "http://solgenomics.net"
+funding_source: "USDA grant 2007-02777 and BARD grant FI3702005"
+email_report: "nm249@cornell.edu"
 datasets:
  -    
    id: sgn.gaf

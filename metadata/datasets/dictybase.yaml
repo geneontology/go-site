@@ -1,6 +1,11 @@
 id: dictybase
 label: dictyBase
 description: "GO data for dictyBase"
+project_name: "dictyBase"
+contact_email: "dictybase@northwestern.edu"
+project_url: "http://dictybase.org"
+funding_source: "NIH (NIGMS and NHGRI)"
+email_report: "dictybase@northwestern.edu"
 datasets:
  -    
    id: dictybase.gaf
