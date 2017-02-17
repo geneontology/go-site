@@ -60,8 +60,14 @@ def generate_targets(ds, alist):
         print("# Metadata incomplete\n")
         rule(all(ds), '','echo no metadata')
         return
-    
-    rule(all(ds), targetdir(ds)+" "+gzip(filtered_gaf(ds))+" "+gzip(filtered_gpad(ds))+" "+gzip(gpi(ds)) + " " + owltools_gafcheck(ds))
+    if ds == 'goa_pdb':
+        print("# Skipping\n")
+        rule(all(ds), '','echo no metadata')
+        return
+
+    ds_targets = [targetdir(ds), gzip(filtered_gaf(ds)), gzip(filtered_gpad(ds)), gzip(gpi(ds))]
+    ds_targets.append(owltools_gafcheck(ds))
+    rule(all(ds), " ".join(ds_targets))
 
     rule(targetdir(ds),'',
          'mkdir $@')
