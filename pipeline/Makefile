@@ -34,6 +34,6 @@ target/Makefile: ./util/generate-makefile.py
 	$< ../metadata/datasets/*.yaml > $@.tmp && mv $@.tmp $@
 
 %.gz: %
-	gzip -f $<
+	gzip -c $< > $@
 include target/Makefile
 
