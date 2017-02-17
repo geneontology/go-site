@@ -21,6 +21,26 @@ mapping:
     type: str
     required: true
     unique: true
+  "project_name":
+    type: str
+    required: false
+    unique: false
+  "contact_email":
+    type: str
+    required: false
+    unique: false
+  "project_url":
+    type: str
+    required: false
+    unique: false
+  "funding_source":
+    type: str
+    required: false
+    unique: false
+  "email_report":
+    type: str
+    required: false
+    unique: false
   "datasets":
     type: seq
     required: true
