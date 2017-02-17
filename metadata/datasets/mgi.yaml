@@ -11,7 +11,7 @@ datasets:
    dataset: mgi
    submitter: mgi
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.mgi.gz
+   source: http://www.informatics.jax.org/downloads/reports/gene_association.mgi.gz
    entity_type: 
    status: active
    species_code: Mmus
@@ -27,7 +27,7 @@ datasets:
    dataset: mgi
    submitter: mgi
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/mgi.gpa.gz
+   source: http://www.informatics.jax.org/downloads/reports/mgi.gpa.gz
    entity_type: 
    status: active
    species_code: Mmus
@@ -43,7 +43,7 @@ datasets:
    dataset: mgi
    submitter: mgi
    compression: gzip
-   source: ftp://ftp.informatics.jax.org/pub/reports/mgi.gpi.gz
+   source: http://www.informatics.jax.org/downloads/reports/mgi.gpi.gz
    entity_type: 
    status: active
    species_code: Mmus

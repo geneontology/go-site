@@ -49,10 +49,11 @@ our $opt_i;
 our $opt_p;
 our $opt_x;
 our $opt_v;
+our $opt_z;
 
 use Getopt::Std;
 
-getopts('hqdewrto:i:p:x:v:');
+getopts('hqdewrto:i:p:x:v:z:');
 
 # TRUE if the user wants the details report
 # otherwise just the summary is provided
@@ -64,8 +65,15 @@ my $writegood = defined($opt_w);
 my $writereport = defined($opt_r);
 my $taxonlogwrite = defined($opt_t);
 my $gafversion = $opt_v;
+my $errfile = $opt_z;
 my $inputfile = "-";
 my $projectname = "";
+
+# cjm
+my $errfh;
+if ($errfile) {
+    open $errfh, '>', $errfile or die "Cannot open $errfile";
+}
 
 # set defaults
 $gafversion = 2 unless ($gafversion);
@@ -201,6 +209,10 @@ my $gene_assoc_header = "";
 ### parse gene associations file
 &parse_gene_assoc_file;
 
+if ($errfh) {
+    $errfh->close();
+}
+
 exit;
 
 ###############################################################################
@@ -282,7 +294,7 @@ END
     {
 	$abbsfile = $opt_x;
     }
-	
+
     if ($opt_i)
     {
 	$inputfile = $opt_i;
@@ -608,7 +620,7 @@ sub parse_gene_assoc_config_file
 
     $configfile = "${base_file_name}.conf";
 
-    open (META, $configfile) || die "Cannot open file $configfile for reading: $!\n";
+    open (META, $configfile) || warn "Cannot open file $configfile for reading: $!\n";
 
     while ( <META> )
     {
@@ -1543,12 +1555,17 @@ sub parse_gene_assoc_file
 	    print "$line\n" if ($writegood);
 	    $totallines++;
 	} 
-	elsif ($writebad)
-	{
-	    print STDOUT "$line\n";
+	else {
+            if ($errfh) {
+                print $errfh "$line\n";
+            }
+            if ($writebad)
+            {
+                print STDOUT "$line\n";
+            }
+            
 	}
-       
-	}
+    }
     
     close(INPUT);
 

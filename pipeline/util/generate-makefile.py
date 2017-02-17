@@ -69,7 +69,7 @@ def generate_targets(ds, alist):
         rule(src_gaf(ds),'',
              'wget --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
     rule(filtered_gaf(ds),src_gaf(ds),
-         './util/filter-gaf.pl -i $< -w > $@.tmp && mv $@.tmp $@')
+         'gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p '+ds+' -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@')
     rule(filtered_gpad(ds),filtered_gaf(ds),
          'owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@')
     rule(gpi(ds),filtered_gaf(ds),
@@ -86,7 +86,7 @@ def filtered_gaf(ds):
 def filtered_gpad(ds):
     return '{dir}{ds}-filtered.gpad'.format(dir=targetdir(ds),ds=ds)
 def gpi(ds):
-    return 'target/{ds}.gpi'.format(dir=targetdir(ds),ds=ds)
+    return '{dir}{ds}.gpi'.format(dir=targetdir(ds),ds=ds)
 
 def rule(tgt,dep,ex='echo done'):
     s = "{tgt}: {dep}\n\t{ex}\n".format(tgt=tgt,dep=dep,ex=ex)

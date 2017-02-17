@@ -1,4 +1,4 @@
-OBO= http://purl.obolibrary.org/obo/
+OBO= http://purl.obolibrary.org/obo
 METADATA_DIR=../metadata/datasets
 
 all: target/Makefile extra_files all_gafs
@@ -9,16 +9,19 @@ test:
 
 .PHONY: clean
 clean:
-	rm target/*
+	rm -rf target/*
 
 .PHONY: null
 null:
 	echo hi
 
 .PHONY: extra_files
-extra_files: target/go.obo target/GO.xrf_abbs
+extra_files: target/go.obo target/GO.xrf_abbs target/datasets-metadata.json
 
 # TODO - update
+target/datasets-metadata.json:
+	../scripts/combine-datasets-metadata.py ../metadata/datasets/*yaml > $@.tmp && mv $@.tmp $@
+
 target/go.obo:
 	wget --no-check-certificate $(OBO)/go.obo -O $@.tmp && mv $@.tmp $@ && touch $@
 target/GO.xrf_abbs: 

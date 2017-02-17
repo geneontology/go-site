@@ -270,7 +270,7 @@ sub emit {
 
     my $src = "http://geneontology.org/$loc/submission/$base";
     if ($auth eq 'mgi' && $type eq 'gpi') {
-        $src = "ftp://ftp.informatics.jax.org/pub/reports/mgi.gpi.gz";
+        $src = "http://www.informatics.jax.org/downloads/reports/";
     }
     if ($auth eq 'goa' && $dataset =~ m@goa_([a-z]+)@) {
         # e.g. ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_rna.gpi.gz
