@@ -142,10 +142,11 @@ while(<>) {
 if (!$report_fh) {
     $report_fh = *stderr;
 }
-print $report_fh "DATASET: $dsname\n\n";
-print $report_fh "TOTAL ERRS: $n_errs\n\n";
-print $report_fh "TOTAL ROWS: $n_rows\n\n";
-print $report_fh "TOTAL ROWS OK: $n_rows_ok\n\n";
+print $report_fh "## Report for: $dsname\n\n";
+print $report_fh " * total errors: $n_errs\n";
+print $report_fh " * total rows: $n_rows\n\n";
+print $report_fh " * total rows OK: $n_rows_ok\n\n";
+print $report_fh " * total rows with errors: $n_rows_errs\n\n";
 
 $err_fh->close() if $err_fh;
 $report_fh->close() if $report_fh;

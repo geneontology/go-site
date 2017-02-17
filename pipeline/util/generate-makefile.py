@@ -46,6 +46,11 @@ def main():
     rule('all_gafs', ' '.join(targets), 'echo done')
         
 def generate_targets(ds, alist):
+    """
+    Generate makefile targets for a dataset, e.g. sgd, goa_human_rna
+
+    Note any dataset can have multiple artifacts associated with it: gaf, gpad, gpi, ...
+    """
     types = [a['type'] for a in alist]
 
     print("## --------------------")
@@ -56,7 +61,7 @@ def generate_targets(ds, alist):
         rule(all(ds), '','echo no metadata')
         return
     
-    rule(all(ds), targetdir(ds)+" "+gzip(filtered_gaf(ds))+" "+gzip(filtered_gpad(ds))+" "+gzip(gpi(ds)))
+    rule(all(ds), targetdir(ds)+" "+gzip(filtered_gaf(ds))+" "+gzip(filtered_gpad(ds))+" "+gzip(gpi(ds)) + " " + owltools_gafcheck(ds))
 
     rule(targetdir(ds),'',
          'mkdir $@')
@@ -70,6 +75,8 @@ def generate_targets(ds, alist):
              'wget --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
     rule(filtered_gaf(ds),src_gaf(ds),
          'gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p '+ds+' -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@')
+    rule(owltools_gafcheck(ds),src_gaf(ds),
+         '$(OWLTOOLS_GAFCHECK)')
     rule(filtered_gpad(ds),filtered_gaf(ds),
          'owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@')
     rule(gpi(ds),filtered_gaf(ds),
@@ -85,6 +92,8 @@ def filtered_gaf(ds):
     return '{dir}{ds}-filtered.gaf'.format(dir=targetdir(ds),ds=ds)
 def filtered_gpad(ds):
     return '{dir}{ds}-filtered.gpad'.format(dir=targetdir(ds),ds=ds)
+def owltools_gafcheck(ds):
+    return '{dir}{ds}-gafcheck'.format(dir=targetdir(ds),ds=ds)
 def gpi(ds):
     return '{dir}{ds}.gpi'.format(dir=targetdir(ds),ds=ds)
 def gzip(f):

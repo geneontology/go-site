@@ -1,7 +1,8 @@
 OBO= http://purl.obolibrary.org/obo
 METADATA_DIR=../metadata/datasets
+REPORT=target/combined.report
 
-all: target/Makefile extra_files all_gafs
+all: target/Makefile extra_files all_gafs $(REPORT)
 
 test:
 	$(foo)
@@ -11,9 +12,15 @@ test:
 clean:
 	rm -rf target/*
 
-.PHONY: null
-null:
-	echo hi
+# ----------------------------------------
+# Generic conversion
+# ----------------------------------------
+%.gz: %
+	gzip -c $< > $@
+
+# ----------------------------------------
+# Additional metadata files required
+# ----------------------------------------
 
 .PHONY: extra_files
 extra_files: target/go.obo target/datasets-metadata.json
@@ -30,10 +37,32 @@ target/go.obo:
 proc:
 	./util/dataset-metadata-processor.py $(METADATA_DIR)/*.yaml
 
+# ----------------------------------------
+# OWLTools checks
+# ----------------------------------------
+
+CATALOG_DETAILS=
+GAF_OWL= http://purl.obolibrary.org/obo/go/extensions/go-gaf.owl
+OWLTOOLS_GAFCHECK = owltools $(CATALOG_DETAILS) $(GAF_OWL) \
+--gaf $< \
+--createReport \
+--gaf-report-file $@-report.txt \
+--gaf-report-summary-file $@-summary.txt \
+--gaf-prediction-file $@-prediction.gaf \
+--gaf-prediction-report-file $@-prediction-report.txt \
+--gaf-validation-unsatisfiable-module $@-incoherent.owl \
+--experimental-gaf-prediction-file $@-prediction-experimental.gaf \
+--experimental-gaf-prediction-report-file $@-prediction-experimental-report.txt \
+--gaf-run-checks && touch $@
+
+# ----------------------------------------
+# Makefile for building GAFs
+# ----------------------------------------
+# this defines 'all_gafs'
 target/Makefile: ./util/generate-makefile.py
 	$< ../metadata/datasets/*.yaml > $@.tmp && mv $@.tmp $@
 
-%.gz: %
-	gzip -c $< > $@
 include target/Makefile
 
+$(REPORT): all_gafs
+	cat target/*/*.report > $@
