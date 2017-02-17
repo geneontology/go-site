@@ -1,6 +1,11 @@
 id: cgd
 label: Candida Genome Database
 description: "GO data for Candida Genome Database"
+project_name: "Candida Genome Database (CGD)"
+contact_email: "candida-curator@lists.stanford.edu"
+project_url: "http://www.candidagenome.org/"
+funding_source: "NIDCR at US NIH, grant number 1-R01-DE015873-01"
+email_report: "candida-curator@lists.stanford.edu"
 datasets:
  -    
    id: cgd.gaf

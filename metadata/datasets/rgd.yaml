@@ -1,6 +1,11 @@
 id: rgd
 label: Rat Genome Database
 description: "GO data for Rat Genome Database"
+project_name: "Rat Genome Database (RGD)"
+contact_email: "slaulede@mcw.edu"
+project_url: "http://rgd.mcw.edu/"
+funding_source: "NHLBI at US NIH, grant number 2R01HL064541"
+email_report: "rgd.developers@mcw.edu, rgd.pipelines@mcw.edu"
 datasets:
  -    
    id: rgd.gaf

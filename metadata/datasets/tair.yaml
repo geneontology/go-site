@@ -1,6 +1,11 @@
 id: tair
 label: The Arabidopsis Information Resource
 description: "GO data for The Arabidopsis Information Resource"
+project_name: "The Arabidopsis Information Resource (TAIR)"
+contact_email: "curator@arabidopsis.org"
+project_url: "http://www.arabidopsis.org"
+funding_source: "NSF grants DBI-9978564 and DBI-0417062"
+email_report: "curator@arabidopsis.org"
 datasets:
  -    
    id: tair.gaf

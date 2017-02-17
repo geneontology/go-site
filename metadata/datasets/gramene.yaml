@@ -1,6 +1,11 @@
 id: gramene
 label: gramene_oryza
 description: "GO data for gramene_oryza"
+project_name: "Gramene"
+contact_email: "gramene@gramene.org"
+project_url: "http://www.gramene.org"
+funding_source: "unspecified"
+email_report: "jaiswalp@science.oregonstate.edu"
 datasets:
  -    
    id: gramene_oryza.gaf

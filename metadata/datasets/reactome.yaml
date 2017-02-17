@@ -1,6 +1,11 @@
 id: reactome
 label: Reactome - a curated knowledgebase of biological pathways
 description: "GO data for Reactome - a curated knowledgebase of biological pathways"
+project_name: "Reactome (CSHL & EBI)"
+contact_email: "help@reactome.org"
+project_url: "http://www.reactome.org/"
+funding_source: "US National Institutes of Health (P41 HG003751); European Union Sixth Framework Programme (LSHG-CT-2003-503269)"
+email_report: "joel.weiser@oicr.on.ca,robin.haw@oicr.on.ca"
 datasets:
  -    
    id: reactome.gaf

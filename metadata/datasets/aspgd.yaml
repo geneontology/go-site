@@ -1,6 +1,11 @@
 id: aspgd
 label: Aspergillus Genome Database
 description: "GO data for Aspergillus Genome Database"
+project_name: "Aspergillus Genome Database (CGD)"
+contact_email: "aspergillus-curator@lists.stanford.edu"
+project_url: "http://aspergillusgenomes.org/"
+funding_source: "NIAID US NIH"
+email_report: "aspergillus-curator@lists.stanford.edu"
 datasets:
  -    
    id: aspgd.gaf

@@ -1,6 +1,11 @@
 id: jcvi
 label: J. Craig Venter Institute
 description: "GO data for J. Craig Venter Institute"
+project_name: "The J. Craig Venter Institute"
+contact_email: "sdurkin@jcvi.org, rmadupu@jcvi.org"
+project_url: "http://cmr.jcvi.org/"
+funding_source: "unspecified"
+email_report: "sdurkin@jcvi.org, rmadupu@jcvi.org"
 datasets:
  -    
    id: jcvi.gaf

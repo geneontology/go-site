@@ -1,6 +1,11 @@
 id: pamgo
 label: Plant-Associated Microbe Gene Ontology Interest Group
 description: "GO data for Plant-Associated Microbe Gene Ontology Interest Group"
+project_name: "Agrobacterium Genome Consortium (PAMGO project)"
+contact_email: "setubal@vbi.vt.edu"
+project_url: "http://www.agrobacterium.org/"
+funding_source: "NSF/NRI-CSREES"
+email_report: "setubal@vbi.vt.edu"
 datasets:
  -    
    id: pamgo_atumefaciens.gaf
