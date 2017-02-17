@@ -56,7 +56,7 @@ def generate_targets(ds, alist):
         rule(all(ds), '','echo no metadata')
         return
     
-    rule(all(ds), targetdir(ds)+" "+filtered_gaf(ds)+" "+filtered_gpad(ds)+" "+gpi(ds))
+    rule(all(ds), targetdir(ds)+" "+gzip(filtered_gaf(ds))+" "+gzip(filtered_gpad(ds))+" "+gzip(gpi(ds)))
 
     rule(targetdir(ds),'',
          'mkdir $@')
@@ -87,6 +87,8 @@ def filtered_gpad(ds):
     return '{dir}{ds}-filtered.gpad'.format(dir=targetdir(ds),ds=ds)
 def gpi(ds):
     return '{dir}{ds}.gpi'.format(dir=targetdir(ds),ds=ds)
+def gzip(f):
+    return '{}.gz'.format(f)
 
 def rule(tgt,dep,ex='echo done'):
     s = "{tgt}: {dep}\n\t{ex}\n".format(tgt=tgt,dep=dep,ex=ex)
