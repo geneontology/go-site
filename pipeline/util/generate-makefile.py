@@ -65,7 +65,7 @@ def generate_targets(ds, alist):
         rule(all(ds), '','echo no metadata')
         return
 
-    ds_targets = [targetdir(ds), gzip(filtered_gaf(ds)), gzip(filtered_gpad(ds)), gzip(gpi(ds))]
+    ds_targets = [targetdir(ds), gzip(filtered_gaf(ds)), gzip(filtered_gpad(ds)), gzip(gpi(ds)), gzip(ttl(ds))]
     ds_targets.append(owltools_gafcheck(ds))
     rule(all(ds), " ".join(ds_targets))
 
@@ -87,6 +87,9 @@ def generate_targets(ds, alist):
          'owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@')
     rule(gpi(ds),filtered_gaf(ds),
          'owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@')
+    rule(ttl(ds),filtered_gaf(ds),
+         'MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@')
+
 
 def targetdir(ds):
     return 'target/{ds}/'.format(ds=ds)
@@ -98,6 +101,8 @@ def filtered_gaf(ds):
     return '{dir}{ds}-filtered.gaf'.format(dir=targetdir(ds),ds=ds)
 def filtered_gpad(ds):
     return '{dir}{ds}-filtered.gpad'.format(dir=targetdir(ds),ds=ds)
+def ttl(ds):
+    return '{dir}{ds}.ttl'.format(dir=targetdir(ds),ds=ds)
 def owltools_gafcheck(ds):
     return '{dir}{ds}-gafcheck'.format(dir=targetdir(ds),ds=ds)
 def gpi(ds):

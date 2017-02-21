@@ -16,425 +16,9 @@
 ## WARNING: no source for: goc_zfin.gaf
 ## WARNING: Skipping RNAC: rnacentral.gpi
 ## --------------------
-## pamgo_oomycetes
-## --------------------
-all_pamgo_oomycetes: target/pamgo_oomycetes/ target/pamgo_oomycetes/pamgo_oomycetes-filtered.gaf.gz target/pamgo_oomycetes/pamgo_oomycetes-filtered.gpad.gz target/pamgo_oomycetes/pamgo_oomycetes.gpi.gz target/pamgo_oomycetes/pamgo_oomycetes-gafcheck
-	echo done
-
-target/pamgo_oomycetes/: 
-	mkdir $@
-
-target/pamgo_oomycetes/pamgo_oomycetes-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Oomycetes.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/pamgo_oomycetes/pamgo_oomycetes-filtered.gaf: target/pamgo_oomycetes/pamgo_oomycetes-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p pamgo_oomycetes -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/pamgo_oomycetes/pamgo_oomycetes-gafcheck: target/pamgo_oomycetes/pamgo_oomycetes-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/pamgo_oomycetes/pamgo_oomycetes-filtered.gpad: target/pamgo_oomycetes/pamgo_oomycetes-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/pamgo_oomycetes/pamgo_oomycetes.gpi: target/pamgo_oomycetes/pamgo_oomycetes-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## paint_mgi
-## --------------------
-all_paint_mgi: target/paint_mgi/ target/paint_mgi/paint_mgi-filtered.gaf.gz target/paint_mgi/paint_mgi-filtered.gpad.gz target/paint_mgi/paint_mgi.gpi.gz target/paint_mgi/paint_mgi-gafcheck
-	echo done
-
-target/paint_mgi/: 
-	mkdir $@
-
-target/paint_mgi/paint_mgi-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_mgi.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/paint_mgi/paint_mgi-filtered.gaf: target/paint_mgi/paint_mgi-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_mgi -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/paint_mgi/paint_mgi-gafcheck: target/paint_mgi/paint_mgi-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/paint_mgi/paint_mgi-filtered.gpad: target/paint_mgi/paint_mgi-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/paint_mgi/paint_mgi.gpi: target/paint_mgi/paint_mgi-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## paint_zfin
-## --------------------
-all_paint_zfin: target/paint_zfin/ target/paint_zfin/paint_zfin-filtered.gaf.gz target/paint_zfin/paint_zfin-filtered.gpad.gz target/paint_zfin/paint_zfin.gpi.gz target/paint_zfin/paint_zfin-gafcheck
-	echo done
-
-target/paint_zfin/: 
-	mkdir $@
-
-target/paint_zfin/paint_zfin-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_zfin.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/paint_zfin/paint_zfin-filtered.gaf: target/paint_zfin/paint_zfin-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_zfin -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/paint_zfin/paint_zfin-gafcheck: target/paint_zfin/paint_zfin-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/paint_zfin/paint_zfin-filtered.gpad: target/paint_zfin/paint_zfin-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/paint_zfin/paint_zfin.gpi: target/paint_zfin/paint_zfin-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## goa_pdb
-## --------------------
-# Skipping
-
-all_goa_pdb: 
-	echo no metadata
-
-## --------------------
-## goa_cow
-## --------------------
-all_goa_cow: target/goa_cow/ target/goa_cow/goa_cow-filtered.gaf.gz target/goa_cow/goa_cow-filtered.gpad.gz target/goa_cow/goa_cow.gpi.gz target/goa_cow/goa_cow-gafcheck
-	echo done
-
-target/goa_cow/: 
-	mkdir $@
-
-target/goa_cow/goa_cow-src.gaf.gz: 
-	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/goa_cow/goa_cow-filtered.gaf: target/goa_cow/goa_cow-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_cow -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/goa_cow/goa_cow-gafcheck: target/goa_cow/goa_cow-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/goa_cow/goa_cow-filtered.gpad: target/goa_cow/goa_cow-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/goa_cow/goa_cow.gpi: target/goa_cow/goa_cow-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## ecocyc
-## --------------------
-all_ecocyc: target/ecocyc/ target/ecocyc/ecocyc-filtered.gaf.gz target/ecocyc/ecocyc-filtered.gpad.gz target/ecocyc/ecocyc.gpi.gz target/ecocyc/ecocyc-gafcheck
-	echo done
-
-target/ecocyc/: 
-	mkdir $@
-
-target/ecocyc/ecocyc-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.ecocyc.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/ecocyc/ecocyc-filtered.gaf: target/ecocyc/ecocyc-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p ecocyc -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/ecocyc/ecocyc-gafcheck: target/ecocyc/ecocyc-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/ecocyc/ecocyc-filtered.gpad: target/ecocyc/ecocyc-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/ecocyc/ecocyc.gpi: target/ecocyc/ecocyc-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## goa_dog_complex
-## --------------------
-all_goa_dog_complex: target/goa_dog_complex/ target/goa_dog_complex/goa_dog_complex-filtered.gaf.gz target/goa_dog_complex/goa_dog_complex-filtered.gpad.gz target/goa_dog_complex/goa_dog_complex.gpi.gz target/goa_dog_complex/goa_dog_complex-gafcheck
-	echo done
-
-target/goa_dog_complex/: 
-	mkdir $@
-
-target/goa_dog_complex/goa_dog_complex-src.gaf.gz: 
-	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_complex.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/goa_dog_complex/goa_dog_complex-filtered.gaf: target/goa_dog_complex/goa_dog_complex-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_dog_complex -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/goa_dog_complex/goa_dog_complex-gafcheck: target/goa_dog_complex/goa_dog_complex-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/goa_dog_complex/goa_dog_complex-filtered.gpad: target/goa_dog_complex/goa_dog_complex-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/goa_dog_complex/goa_dog_complex.gpi: target/goa_dog_complex/goa_dog_complex-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## paint_wb
-## --------------------
-all_paint_wb: target/paint_wb/ target/paint_wb/paint_wb-filtered.gaf.gz target/paint_wb/paint_wb-filtered.gpad.gz target/paint_wb/paint_wb.gpi.gz target/paint_wb/paint_wb-gafcheck
-	echo done
-
-target/paint_wb/: 
-	mkdir $@
-
-target/paint_wb/paint_wb-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_wb.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/paint_wb/paint_wb-filtered.gaf: target/paint_wb/paint_wb-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_wb -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/paint_wb/paint_wb-gafcheck: target/paint_wb/paint_wb-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/paint_wb/paint_wb-filtered.gpad: target/paint_wb/paint_wb-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/paint_wb/paint_wb.gpi: target/paint_wb/paint_wb-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## jcvi
-## --------------------
-all_jcvi: target/jcvi/ target/jcvi/jcvi-filtered.gaf.gz target/jcvi/jcvi-filtered.gpad.gz target/jcvi/jcvi.gpi.gz target/jcvi/jcvi-gafcheck
-	echo done
-
-target/jcvi/: 
-	mkdir $@
-
-target/jcvi/jcvi-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.jcvi.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/jcvi/jcvi-filtered.gaf: target/jcvi/jcvi-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p jcvi -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/jcvi/jcvi-gafcheck: target/jcvi/jcvi-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/jcvi/jcvi-filtered.gpad: target/jcvi/jcvi-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/jcvi/jcvi.gpi: target/jcvi/jcvi-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## genedb_lmajor
-## --------------------
-all_genedb_lmajor: target/genedb_lmajor/ target/genedb_lmajor/genedb_lmajor-filtered.gaf.gz target/genedb_lmajor/genedb_lmajor-filtered.gpad.gz target/genedb_lmajor/genedb_lmajor.gpi.gz target/genedb_lmajor/genedb_lmajor-gafcheck
-	echo done
-
-target/genedb_lmajor/: 
-	mkdir $@
-
-target/genedb_lmajor/genedb_lmajor-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.GeneDB_Lmajor.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/genedb_lmajor/genedb_lmajor-filtered.gaf: target/genedb_lmajor/genedb_lmajor-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p genedb_lmajor -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/genedb_lmajor/genedb_lmajor-gafcheck: target/genedb_lmajor/genedb_lmajor-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/genedb_lmajor/genedb_lmajor-filtered.gpad: target/genedb_lmajor/genedb_lmajor-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/genedb_lmajor/genedb_lmajor.gpi: target/genedb_lmajor/genedb_lmajor-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## gonuts
-## --------------------
-all_gonuts: target/gonuts/ target/gonuts/gonuts-filtered.gaf.gz target/gonuts/gonuts-filtered.gpad.gz target/gonuts/gonuts.gpi.gz target/gonuts/gonuts-gafcheck
-	echo done
-
-target/gonuts/: 
-	mkdir $@
-
-target/gonuts/gonuts-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.gonuts.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/gonuts/gonuts-filtered.gaf: target/gonuts/gonuts-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p gonuts -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/gonuts/gonuts-gafcheck: target/gonuts/gonuts-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/gonuts/gonuts-filtered.gpad: target/gonuts/gonuts-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/gonuts/gonuts.gpi: target/gonuts/gonuts-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## goa_dog_isoform
-## --------------------
-all_goa_dog_isoform: target/goa_dog_isoform/ target/goa_dog_isoform/goa_dog_isoform-filtered.gaf.gz target/goa_dog_isoform/goa_dog_isoform-filtered.gpad.gz target/goa_dog_isoform/goa_dog_isoform.gpi.gz target/goa_dog_isoform/goa_dog_isoform-gafcheck
-	echo done
-
-target/goa_dog_isoform/: 
-	mkdir $@
-
-target/goa_dog_isoform/goa_dog_isoform-src.gaf.gz: 
-	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_isoform.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/goa_dog_isoform/goa_dog_isoform-filtered.gaf: target/goa_dog_isoform/goa_dog_isoform-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_dog_isoform -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/goa_dog_isoform/goa_dog_isoform-gafcheck: target/goa_dog_isoform/goa_dog_isoform-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/goa_dog_isoform/goa_dog_isoform-filtered.gpad: target/goa_dog_isoform/goa_dog_isoform-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/goa_dog_isoform/goa_dog_isoform.gpi: target/goa_dog_isoform/goa_dog_isoform-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## goa_pig_complex
-## --------------------
-all_goa_pig_complex: target/goa_pig_complex/ target/goa_pig_complex/goa_pig_complex-filtered.gaf.gz target/goa_pig_complex/goa_pig_complex-filtered.gpad.gz target/goa_pig_complex/goa_pig_complex.gpi.gz target/goa_pig_complex/goa_pig_complex-gafcheck
-	echo done
-
-target/goa_pig_complex/: 
-	mkdir $@
-
-target/goa_pig_complex/goa_pig_complex-src.gaf.gz: 
-	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_complex.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/goa_pig_complex/goa_pig_complex-filtered.gaf: target/goa_pig_complex/goa_pig_complex-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_pig_complex -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/goa_pig_complex/goa_pig_complex-gafcheck: target/goa_pig_complex/goa_pig_complex-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/goa_pig_complex/goa_pig_complex-filtered.gpad: target/goa_pig_complex/goa_pig_complex-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/goa_pig_complex/goa_pig_complex.gpi: target/goa_pig_complex/goa_pig_complex-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## pamgo_atumefaciens
-## --------------------
-all_pamgo_atumefaciens: target/pamgo_atumefaciens/ target/pamgo_atumefaciens/pamgo_atumefaciens-filtered.gaf.gz target/pamgo_atumefaciens/pamgo_atumefaciens-filtered.gpad.gz target/pamgo_atumefaciens/pamgo_atumefaciens.gpi.gz target/pamgo_atumefaciens/pamgo_atumefaciens-gafcheck
-	echo done
-
-target/pamgo_atumefaciens/: 
-	mkdir $@
-
-target/pamgo_atumefaciens/pamgo_atumefaciens-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Atumefaciens.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/pamgo_atumefaciens/pamgo_atumefaciens-filtered.gaf: target/pamgo_atumefaciens/pamgo_atumefaciens-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p pamgo_atumefaciens -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/pamgo_atumefaciens/pamgo_atumefaciens-gafcheck: target/pamgo_atumefaciens/pamgo_atumefaciens-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/pamgo_atumefaciens/pamgo_atumefaciens-filtered.gpad: target/pamgo_atumefaciens/pamgo_atumefaciens-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/pamgo_atumefaciens/pamgo_atumefaciens.gpi: target/pamgo_atumefaciens/pamgo_atumefaciens-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## pamgo_mgrisea
-## --------------------
-all_pamgo_mgrisea: target/pamgo_mgrisea/ target/pamgo_mgrisea/pamgo_mgrisea-filtered.gaf.gz target/pamgo_mgrisea/pamgo_mgrisea-filtered.gpad.gz target/pamgo_mgrisea/pamgo_mgrisea.gpi.gz target/pamgo_mgrisea/pamgo_mgrisea-gafcheck
-	echo done
-
-target/pamgo_mgrisea/: 
-	mkdir $@
-
-target/pamgo_mgrisea/pamgo_mgrisea-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Mgrisea.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/pamgo_mgrisea/pamgo_mgrisea-filtered.gaf: target/pamgo_mgrisea/pamgo_mgrisea-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p pamgo_mgrisea -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/pamgo_mgrisea/pamgo_mgrisea-gafcheck: target/pamgo_mgrisea/pamgo_mgrisea-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/pamgo_mgrisea/pamgo_mgrisea-filtered.gpad: target/pamgo_mgrisea/pamgo_mgrisea-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/pamgo_mgrisea/pamgo_mgrisea.gpi: target/pamgo_mgrisea/pamgo_mgrisea-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## zfin
-## --------------------
-all_zfin: target/zfin/ target/zfin/zfin-filtered.gaf.gz target/zfin/zfin-filtered.gpad.gz target/zfin/zfin.gpi.gz target/zfin/zfin-gafcheck
-	echo done
-
-target/zfin/: 
-	mkdir $@
-
-target/zfin/zfin-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.zfin.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/zfin/zfin-filtered.gaf: target/zfin/zfin-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p zfin -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/zfin/zfin-gafcheck: target/zfin/zfin-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/zfin/zfin-filtered.gpad: target/zfin/zfin-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/zfin/zfin.gpi: target/zfin/zfin-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## pseudocap
-## --------------------
-all_pseudocap: target/pseudocap/ target/pseudocap/pseudocap-filtered.gaf.gz target/pseudocap/pseudocap-filtered.gpad.gz target/pseudocap/pseudocap.gpi.gz target/pseudocap/pseudocap-gafcheck
-	echo done
-
-target/pseudocap/: 
-	mkdir $@
-
-target/pseudocap/pseudocap-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.pseudocap.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/pseudocap/pseudocap-filtered.gaf: target/pseudocap/pseudocap-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p pseudocap -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/pseudocap/pseudocap-gafcheck: target/pseudocap/pseudocap-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/pseudocap/pseudocap-filtered.gpad: target/pseudocap/pseudocap-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/pseudocap/pseudocap.gpi: target/pseudocap/pseudocap-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## goa_human_isoform
-## --------------------
-all_goa_human_isoform: target/goa_human_isoform/ target/goa_human_isoform/goa_human_isoform-filtered.gaf.gz target/goa_human_isoform/goa_human_isoform-filtered.gpad.gz target/goa_human_isoform/goa_human_isoform.gpi.gz target/goa_human_isoform/goa_human_isoform-gafcheck
-	echo done
-
-target/goa_human_isoform/: 
-	mkdir $@
-
-target/goa_human_isoform/goa_human_isoform-src.gaf.gz: 
-	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_isoform.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/goa_human_isoform/goa_human_isoform-filtered.gaf: target/goa_human_isoform/goa_human_isoform-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_human_isoform -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/goa_human_isoform/goa_human_isoform-gafcheck: target/goa_human_isoform/goa_human_isoform-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/goa_human_isoform/goa_human_isoform-filtered.gpad: target/goa_human_isoform/goa_human_isoform-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/goa_human_isoform/goa_human_isoform.gpi: target/goa_human_isoform/goa_human_isoform-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
 ## paint_dictybase
 ## --------------------
-all_paint_dictybase: target/paint_dictybase/ target/paint_dictybase/paint_dictybase-filtered.gaf.gz target/paint_dictybase/paint_dictybase-filtered.gpad.gz target/paint_dictybase/paint_dictybase.gpi.gz target/paint_dictybase/paint_dictybase-gafcheck
+all_paint_dictybase: target/paint_dictybase/ target/paint_dictybase/paint_dictybase-filtered.gaf.gz target/paint_dictybase/paint_dictybase-filtered.gpad.gz target/paint_dictybase/paint_dictybase.gpi.gz target/paint_dictybase/paint_dictybase.ttl.gz target/paint_dictybase/paint_dictybase-gafcheck
 	echo done
 
 target/paint_dictybase/: 
@@ -455,610 +39,13 @@ target/paint_dictybase/paint_dictybase-filtered.gpad: target/paint_dictybase/pai
 target/paint_dictybase/paint_dictybase.gpi: target/paint_dictybase/paint_dictybase-filtered.gaf
 	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
 
-## --------------------
-## paint_tair
-## --------------------
-all_paint_tair: target/paint_tair/ target/paint_tair/paint_tair-filtered.gaf.gz target/paint_tair/paint_tair-filtered.gpad.gz target/paint_tair/paint_tair.gpi.gz target/paint_tair/paint_tair-gafcheck
-	echo done
-
-target/paint_tair/: 
-	mkdir $@
-
-target/paint_tair/paint_tair-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_tair.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/paint_tair/paint_tair-filtered.gaf: target/paint_tair/paint_tair-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_tair -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/paint_tair/paint_tair-gafcheck: target/paint_tair/paint_tair-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/paint_tair/paint_tair-filtered.gpad: target/paint_tair/paint_tair-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/paint_tair/paint_tair.gpi: target/paint_tair/paint_tair-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## tair
-## --------------------
-all_tair: target/tair/ target/tair/tair-filtered.gaf.gz target/tair/tair-filtered.gpad.gz target/tair/tair.gpi.gz target/tair/tair-gafcheck
-	echo done
-
-target/tair/: 
-	mkdir $@
-
-target/tair/tair-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.tair.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/tair/tair-filtered.gaf: target/tair/tair-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p tair -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/tair/tair-gafcheck: target/tair/tair-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/tair/tair-filtered.gpad: target/tair/tair-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/tair/tair.gpi: target/tair/tair-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## rgd
-## --------------------
-all_rgd: target/rgd/ target/rgd/rgd-filtered.gaf.gz target/rgd/rgd-filtered.gpad.gz target/rgd/rgd.gpi.gz target/rgd/rgd-gafcheck
-	echo done
-
-target/rgd/: 
-	mkdir $@
-
-target/rgd/rgd-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.rgd.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/rgd/rgd-filtered.gaf: target/rgd/rgd-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p rgd -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/rgd/rgd-gafcheck: target/rgd/rgd-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/rgd/rgd-filtered.gpad: target/rgd/rgd-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/rgd/rgd.gpi: target/rgd/rgd-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## paint_ecocyc
-## --------------------
-all_paint_ecocyc: target/paint_ecocyc/ target/paint_ecocyc/paint_ecocyc-filtered.gaf.gz target/paint_ecocyc/paint_ecocyc-filtered.gpad.gz target/paint_ecocyc/paint_ecocyc.gpi.gz target/paint_ecocyc/paint_ecocyc-gafcheck
-	echo done
-
-target/paint_ecocyc/: 
-	mkdir $@
-
-target/paint_ecocyc/paint_ecocyc-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_ecocyc.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/paint_ecocyc/paint_ecocyc-filtered.gaf: target/paint_ecocyc/paint_ecocyc-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_ecocyc -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/paint_ecocyc/paint_ecocyc-gafcheck: target/paint_ecocyc/paint_ecocyc-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/paint_ecocyc/paint_ecocyc-filtered.gpad: target/paint_ecocyc/paint_ecocyc-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/paint_ecocyc/paint_ecocyc.gpi: target/paint_ecocyc/paint_ecocyc-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## pamgo_ddadantii
-## --------------------
-all_pamgo_ddadantii: target/pamgo_ddadantii/ target/pamgo_ddadantii/pamgo_ddadantii-filtered.gaf.gz target/pamgo_ddadantii/pamgo_ddadantii-filtered.gpad.gz target/pamgo_ddadantii/pamgo_ddadantii.gpi.gz target/pamgo_ddadantii/pamgo_ddadantii-gafcheck
-	echo done
-
-target/pamgo_ddadantii/: 
-	mkdir $@
-
-target/pamgo_ddadantii/pamgo_ddadantii-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Ddadantii.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/pamgo_ddadantii/pamgo_ddadantii-filtered.gaf: target/pamgo_ddadantii/pamgo_ddadantii-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p pamgo_ddadantii -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/pamgo_ddadantii/pamgo_ddadantii-gafcheck: target/pamgo_ddadantii/pamgo_ddadantii-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/pamgo_ddadantii/pamgo_ddadantii-filtered.gpad: target/pamgo_ddadantii/pamgo_ddadantii-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/pamgo_ddadantii/pamgo_ddadantii.gpi: target/pamgo_ddadantii/pamgo_ddadantii-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## paint_goa_chicken
-## --------------------
-all_paint_goa_chicken: target/paint_goa_chicken/ target/paint_goa_chicken/paint_goa_chicken-filtered.gaf.gz target/paint_goa_chicken/paint_goa_chicken-filtered.gpad.gz target/paint_goa_chicken/paint_goa_chicken.gpi.gz target/paint_goa_chicken/paint_goa_chicken-gafcheck
-	echo done
-
-target/paint_goa_chicken/: 
-	mkdir $@
-
-target/paint_goa_chicken/paint_goa_chicken-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_goa_chicken.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/paint_goa_chicken/paint_goa_chicken-filtered.gaf: target/paint_goa_chicken/paint_goa_chicken-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_goa_chicken -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/paint_goa_chicken/paint_goa_chicken-gafcheck: target/paint_goa_chicken/paint_goa_chicken-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/paint_goa_chicken/paint_goa_chicken-filtered.gpad: target/paint_goa_chicken/paint_goa_chicken-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/paint_goa_chicken/paint_goa_chicken.gpi: target/paint_goa_chicken/paint_goa_chicken-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## goa_chicken_isoform
-## --------------------
-all_goa_chicken_isoform: target/goa_chicken_isoform/ target/goa_chicken_isoform/goa_chicken_isoform-filtered.gaf.gz target/goa_chicken_isoform/goa_chicken_isoform-filtered.gpad.gz target/goa_chicken_isoform/goa_chicken_isoform.gpi.gz target/goa_chicken_isoform/goa_chicken_isoform-gafcheck
-	echo done
-
-target/goa_chicken_isoform/: 
-	mkdir $@
-
-target/goa_chicken_isoform/goa_chicken_isoform-src.gaf.gz: 
-	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_isoform.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/goa_chicken_isoform/goa_chicken_isoform-filtered.gaf: target/goa_chicken_isoform/goa_chicken_isoform-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_chicken_isoform -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/goa_chicken_isoform/goa_chicken_isoform-gafcheck: target/goa_chicken_isoform/goa_chicken_isoform-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/goa_chicken_isoform/goa_chicken_isoform-filtered.gpad: target/goa_chicken_isoform/goa_chicken_isoform-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/goa_chicken_isoform/goa_chicken_isoform.gpi: target/goa_chicken_isoform/goa_chicken_isoform-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## reactome
-## --------------------
-all_reactome: target/reactome/ target/reactome/reactome-filtered.gaf.gz target/reactome/reactome-filtered.gpad.gz target/reactome/reactome.gpi.gz target/reactome/reactome-gafcheck
-	echo done
-
-target/reactome/: 
-	mkdir $@
-
-target/reactome/reactome-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.reactome.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/reactome/reactome-filtered.gaf: target/reactome/reactome-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p reactome -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/reactome/reactome-gafcheck: target/reactome/reactome-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/reactome/reactome-filtered.gpad: target/reactome/reactome-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/reactome/reactome.gpi: target/reactome/reactome-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## paint_cgd
-## --------------------
-all_paint_cgd: target/paint_cgd/ target/paint_cgd/paint_cgd-filtered.gaf.gz target/paint_cgd/paint_cgd-filtered.gpad.gz target/paint_cgd/paint_cgd.gpi.gz target/paint_cgd/paint_cgd-gafcheck
-	echo done
-
-target/paint_cgd/: 
-	mkdir $@
-
-target/paint_cgd/paint_cgd-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_cgd.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/paint_cgd/paint_cgd-filtered.gaf: target/paint_cgd/paint_cgd-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_cgd -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/paint_cgd/paint_cgd-gafcheck: target/paint_cgd/paint_cgd-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/paint_cgd/paint_cgd-filtered.gpad: target/paint_cgd/paint_cgd-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/paint_cgd/paint_cgd.gpi: target/paint_cgd/paint_cgd-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## fb
-## --------------------
-all_fb: target/fb/ target/fb/fb-filtered.gaf.gz target/fb/fb-filtered.gpad.gz target/fb/fb.gpi.gz target/fb/fb-gafcheck
-	echo done
-
-target/fb/: 
-	mkdir $@
-
-target/fb/fb-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.fb.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/fb/fb-filtered.gaf: target/fb/fb-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p fb -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/fb/fb-gafcheck: target/fb/fb-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/fb/fb-filtered.gpad: target/fb/fb-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/fb/fb.gpi: target/fb/fb-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## goa_cow_complex
-## --------------------
-all_goa_cow_complex: target/goa_cow_complex/ target/goa_cow_complex/goa_cow_complex-filtered.gaf.gz target/goa_cow_complex/goa_cow_complex-filtered.gpad.gz target/goa_cow_complex/goa_cow_complex.gpi.gz target/goa_cow_complex/goa_cow_complex-gafcheck
-	echo done
-
-target/goa_cow_complex/: 
-	mkdir $@
-
-target/goa_cow_complex/goa_cow_complex-src.gaf.gz: 
-	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_complex.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/goa_cow_complex/goa_cow_complex-filtered.gaf: target/goa_cow_complex/goa_cow_complex-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_cow_complex -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/goa_cow_complex/goa_cow_complex-gafcheck: target/goa_cow_complex/goa_cow_complex-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/goa_cow_complex/goa_cow_complex-filtered.gpad: target/goa_cow_complex/goa_cow_complex-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/goa_cow_complex/goa_cow_complex.gpi: target/goa_cow_complex/goa_cow_complex-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## goa_chicken
-## --------------------
-all_goa_chicken: target/goa_chicken/ target/goa_chicken/goa_chicken-filtered.gaf.gz target/goa_chicken/goa_chicken-filtered.gpad.gz target/goa_chicken/goa_chicken.gpi.gz target/goa_chicken/goa_chicken-gafcheck
-	echo done
-
-target/goa_chicken/: 
-	mkdir $@
-
-target/goa_chicken/goa_chicken-src.gaf.gz: 
-	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/goa_chicken/goa_chicken-filtered.gaf: target/goa_chicken/goa_chicken-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_chicken -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/goa_chicken/goa_chicken-gafcheck: target/goa_chicken/goa_chicken-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/goa_chicken/goa_chicken-filtered.gpad: target/goa_chicken/goa_chicken-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/goa_chicken/goa_chicken.gpi: target/goa_chicken/goa_chicken-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## genedb_pfalciparum
-## --------------------
-all_genedb_pfalciparum: target/genedb_pfalciparum/ target/genedb_pfalciparum/genedb_pfalciparum-filtered.gaf.gz target/genedb_pfalciparum/genedb_pfalciparum-filtered.gpad.gz target/genedb_pfalciparum/genedb_pfalciparum.gpi.gz target/genedb_pfalciparum/genedb_pfalciparum-gafcheck
-	echo done
-
-target/genedb_pfalciparum/: 
-	mkdir $@
-
-target/genedb_pfalciparum/genedb_pfalciparum-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.GeneDB_Pfalciparum.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/genedb_pfalciparum/genedb_pfalciparum-filtered.gaf: target/genedb_pfalciparum/genedb_pfalciparum-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p genedb_pfalciparum -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/genedb_pfalciparum/genedb_pfalciparum-gafcheck: target/genedb_pfalciparum/genedb_pfalciparum-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/genedb_pfalciparum/genedb_pfalciparum-filtered.gpad: target/genedb_pfalciparum/genedb_pfalciparum-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/genedb_pfalciparum/genedb_pfalciparum.gpi: target/genedb_pfalciparum/genedb_pfalciparum-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## aspgd
-## --------------------
-all_aspgd: target/aspgd/ target/aspgd/aspgd-filtered.gaf.gz target/aspgd/aspgd-filtered.gpad.gz target/aspgd/aspgd.gpi.gz target/aspgd/aspgd-gafcheck
-	echo done
-
-target/aspgd/: 
-	mkdir $@
-
-target/aspgd/aspgd-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.aspgd.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/aspgd/aspgd-filtered.gaf: target/aspgd/aspgd-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p aspgd -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/aspgd/aspgd-gafcheck: target/aspgd/aspgd-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/aspgd/aspgd-filtered.gpad: target/aspgd/aspgd-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/aspgd/aspgd.gpi: target/aspgd/aspgd-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## genedb_tbrucei
-## --------------------
-all_genedb_tbrucei: target/genedb_tbrucei/ target/genedb_tbrucei/genedb_tbrucei-filtered.gaf.gz target/genedb_tbrucei/genedb_tbrucei-filtered.gpad.gz target/genedb_tbrucei/genedb_tbrucei.gpi.gz target/genedb_tbrucei/genedb_tbrucei-gafcheck
-	echo done
-
-target/genedb_tbrucei/: 
-	mkdir $@
-
-target/genedb_tbrucei/genedb_tbrucei-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.GeneDB_Tbrucei.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/genedb_tbrucei/genedb_tbrucei-filtered.gaf: target/genedb_tbrucei/genedb_tbrucei-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p genedb_tbrucei -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/genedb_tbrucei/genedb_tbrucei-gafcheck: target/genedb_tbrucei/genedb_tbrucei-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/genedb_tbrucei/genedb_tbrucei-filtered.gpad: target/genedb_tbrucei/genedb_tbrucei-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/genedb_tbrucei/genedb_tbrucei.gpi: target/genedb_tbrucei/genedb_tbrucei-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## goa_human
-## --------------------
-all_goa_human: target/goa_human/ target/goa_human/goa_human-filtered.gaf.gz target/goa_human/goa_human-filtered.gpad.gz target/goa_human/goa_human.gpi.gz target/goa_human/goa_human-gafcheck
-	echo done
-
-target/goa_human/: 
-	mkdir $@
-
-target/goa_human/goa_human-src.gaf.gz: 
-	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/goa_human/goa_human-filtered.gaf: target/goa_human/goa_human-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_human -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/goa_human/goa_human-gafcheck: target/goa_human/goa_human-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/goa_human/goa_human-filtered.gpad: target/goa_human/goa_human-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/goa_human/goa_human.gpi: target/goa_human/goa_human-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## gramene_oryza
-## --------------------
-all_gramene_oryza: target/gramene_oryza/ target/gramene_oryza/gramene_oryza-filtered.gaf.gz target/gramene_oryza/gramene_oryza-filtered.gpad.gz target/gramene_oryza/gramene_oryza.gpi.gz target/gramene_oryza/gramene_oryza-gafcheck
-	echo done
-
-target/gramene_oryza/: 
-	mkdir $@
-
-target/gramene_oryza/gramene_oryza-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.gramene_oryza.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/gramene_oryza/gramene_oryza-filtered.gaf: target/gramene_oryza/gramene_oryza-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p gramene_oryza -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/gramene_oryza/gramene_oryza-gafcheck: target/gramene_oryza/gramene_oryza-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/gramene_oryza/gramene_oryza-filtered.gpad: target/gramene_oryza/gramene_oryza-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/gramene_oryza/gramene_oryza.gpi: target/gramene_oryza/gramene_oryza-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## paint_goa_human
-## --------------------
-all_paint_goa_human: target/paint_goa_human/ target/paint_goa_human/paint_goa_human-filtered.gaf.gz target/paint_goa_human/paint_goa_human-filtered.gpad.gz target/paint_goa_human/paint_goa_human.gpi.gz target/paint_goa_human/paint_goa_human-gafcheck
-	echo done
-
-target/paint_goa_human/: 
-	mkdir $@
-
-target/paint_goa_human/paint_goa_human-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_goa_human.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/paint_goa_human/paint_goa_human-filtered.gaf: target/paint_goa_human/paint_goa_human-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_goa_human -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/paint_goa_human/paint_goa_human-gafcheck: target/paint_goa_human/paint_goa_human-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/paint_goa_human/paint_goa_human-filtered.gpad: target/paint_goa_human/paint_goa_human-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/paint_goa_human/paint_goa_human.gpi: target/paint_goa_human/paint_goa_human-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## mgi
-## --------------------
-all_mgi: target/mgi/ target/mgi/mgi-filtered.gaf.gz target/mgi/mgi-filtered.gpad.gz target/mgi/mgi.gpi.gz target/mgi/mgi-gafcheck
-	echo done
-
-target/mgi/: 
-	mkdir $@
-
-target/mgi/mgi-src.gaf.gz: 
-	wget --no-check-certificate http://www.informatics.jax.org/downloads/reports/gene_association.mgi.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/mgi/mgi-filtered.gaf: target/mgi/mgi-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p mgi -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/mgi/mgi-gafcheck: target/mgi/mgi-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/mgi/mgi-filtered.gpad: target/mgi/mgi-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/mgi/mgi.gpi: target/mgi/mgi-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## goa_human_rna
-## --------------------
-all_goa_human_rna: target/goa_human_rna/ target/goa_human_rna/goa_human_rna-filtered.gaf.gz target/goa_human_rna/goa_human_rna-filtered.gpad.gz target/goa_human_rna/goa_human_rna.gpi.gz target/goa_human_rna/goa_human_rna-gafcheck
-	echo done
-
-target/goa_human_rna/: 
-	mkdir $@
-
-target/goa_human_rna/goa_human_rna-src.gaf.gz: 
-	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_rna.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/goa_human_rna/goa_human_rna-filtered.gaf: target/goa_human_rna/goa_human_rna-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_human_rna -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/goa_human_rna/goa_human_rna-gafcheck: target/goa_human_rna/goa_human_rna-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/goa_human_rna/goa_human_rna-filtered.gpad: target/goa_human_rna/goa_human_rna-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/goa_human_rna/goa_human_rna.gpi: target/goa_human_rna/goa_human_rna-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## sgn
-## --------------------
-all_sgn: target/sgn/ target/sgn/sgn-filtered.gaf.gz target/sgn/sgn-filtered.gpad.gz target/sgn/sgn.gpi.gz target/sgn/sgn-gafcheck
-	echo done
-
-target/sgn/: 
-	mkdir $@
-
-target/sgn/sgn-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.sgn.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/sgn/sgn-filtered.gaf: target/sgn/sgn-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p sgn -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/sgn/sgn-gafcheck: target/sgn/sgn-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/sgn/sgn-filtered.gpad: target/sgn/sgn-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/sgn/sgn.gpi: target/sgn/sgn-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## pombase
-## --------------------
-all_pombase: target/pombase/ target/pombase/pombase-filtered.gaf.gz target/pombase/pombase-filtered.gpad.gz target/pombase/pombase.gpi.gz target/pombase/pombase-gafcheck
-	echo done
-
-target/pombase/: 
-	mkdir $@
-
-target/pombase/pombase-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.pombase.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/pombase/pombase-filtered.gaf: target/pombase/pombase-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p pombase -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/pombase/pombase-gafcheck: target/pombase/pombase-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/pombase/pombase-filtered.gpad: target/pombase/pombase-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/pombase/pombase.gpi: target/pombase/pombase-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## genedb_tsetse
-## --------------------
-all_genedb_tsetse: target/genedb_tsetse/ target/genedb_tsetse/genedb_tsetse-filtered.gaf.gz target/genedb_tsetse/genedb_tsetse-filtered.gpad.gz target/genedb_tsetse/genedb_tsetse.gpi.gz target/genedb_tsetse/genedb_tsetse-gafcheck
-	echo done
-
-target/genedb_tsetse/: 
-	mkdir $@
-
-target/genedb_tsetse/genedb_tsetse-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.GeneDB_tsetse.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/genedb_tsetse/genedb_tsetse-filtered.gaf: target/genedb_tsetse/genedb_tsetse-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p genedb_tsetse -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/genedb_tsetse/genedb_tsetse-gafcheck: target/genedb_tsetse/genedb_tsetse-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/genedb_tsetse/genedb_tsetse-filtered.gpad: target/genedb_tsetse/genedb_tsetse-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/genedb_tsetse/genedb_tsetse.gpi: target/genedb_tsetse/genedb_tsetse-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## goa_pig_rna
-## --------------------
-all_goa_pig_rna: target/goa_pig_rna/ target/goa_pig_rna/goa_pig_rna-filtered.gaf.gz target/goa_pig_rna/goa_pig_rna-filtered.gpad.gz target/goa_pig_rna/goa_pig_rna.gpi.gz target/goa_pig_rna/goa_pig_rna-gafcheck
-	echo done
-
-target/goa_pig_rna/: 
-	mkdir $@
-
-target/goa_pig_rna/goa_pig_rna-src.gaf.gz: 
-	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_rna.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/goa_pig_rna/goa_pig_rna-filtered.gaf: target/goa_pig_rna/goa_pig_rna-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_pig_rna -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/goa_pig_rna/goa_pig_rna-gafcheck: target/goa_pig_rna/goa_pig_rna-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/goa_pig_rna/goa_pig_rna-filtered.gpad: target/goa_pig_rna/goa_pig_rna-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/goa_pig_rna/goa_pig_rna.gpi: target/goa_pig_rna/goa_pig_rna-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## goa_cow_isoform
-## --------------------
-all_goa_cow_isoform: target/goa_cow_isoform/ target/goa_cow_isoform/goa_cow_isoform-filtered.gaf.gz target/goa_cow_isoform/goa_cow_isoform-filtered.gpad.gz target/goa_cow_isoform/goa_cow_isoform.gpi.gz target/goa_cow_isoform/goa_cow_isoform-gafcheck
-	echo done
-
-target/goa_cow_isoform/: 
-	mkdir $@
-
-target/goa_cow_isoform/goa_cow_isoform-src.gaf.gz: 
-	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_isoform.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/goa_cow_isoform/goa_cow_isoform-filtered.gaf: target/goa_cow_isoform/goa_cow_isoform-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_cow_isoform -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/goa_cow_isoform/goa_cow_isoform-gafcheck: target/goa_cow_isoform/goa_cow_isoform-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/goa_cow_isoform/goa_cow_isoform-filtered.gpad: target/goa_cow_isoform/goa_cow_isoform-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/goa_cow_isoform/goa_cow_isoform.gpi: target/goa_cow_isoform/goa_cow_isoform-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+target/paint_dictybase/paint_dictybase.ttl: target/paint_dictybase/paint_dictybase-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
 
 ## --------------------
 ## goa_chicken_rna
 ## --------------------
-all_goa_chicken_rna: target/goa_chicken_rna/ target/goa_chicken_rna/goa_chicken_rna-filtered.gaf.gz target/goa_chicken_rna/goa_chicken_rna-filtered.gpad.gz target/goa_chicken_rna/goa_chicken_rna.gpi.gz target/goa_chicken_rna/goa_chicken_rna-gafcheck
+all_goa_chicken_rna: target/goa_chicken_rna/ target/goa_chicken_rna/goa_chicken_rna-filtered.gaf.gz target/goa_chicken_rna/goa_chicken_rna-filtered.gpad.gz target/goa_chicken_rna/goa_chicken_rna.gpi.gz target/goa_chicken_rna/goa_chicken_rna.ttl.gz target/goa_chicken_rna/goa_chicken_rna-gafcheck
 	echo done
 
 target/goa_chicken_rna/: 
@@ -1079,138 +66,13 @@ target/goa_chicken_rna/goa_chicken_rna-filtered.gpad: target/goa_chicken_rna/goa
 target/goa_chicken_rna/goa_chicken_rna.gpi: target/goa_chicken_rna/goa_chicken_rna-filtered.gaf
 	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
 
-## --------------------
-## sgd
-## --------------------
-all_sgd: target/sgd/ target/sgd/sgd-filtered.gaf.gz target/sgd/sgd-filtered.gpad.gz target/sgd/sgd.gpi.gz target/sgd/sgd-gafcheck
-	echo done
-
-target/sgd/: 
-	mkdir $@
-
-target/sgd/sgd-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.sgd.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/sgd/sgd-filtered.gaf: target/sgd/sgd-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p sgd -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/sgd/sgd-gafcheck: target/sgd/sgd-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/sgd/sgd-filtered.gpad: target/sgd/sgd-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/sgd/sgd.gpi: target/sgd/sgd-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## goa_human_complex
-## --------------------
-all_goa_human_complex: target/goa_human_complex/ target/goa_human_complex/goa_human_complex-filtered.gaf.gz target/goa_human_complex/goa_human_complex-filtered.gpad.gz target/goa_human_complex/goa_human_complex.gpi.gz target/goa_human_complex/goa_human_complex-gafcheck
-	echo done
-
-target/goa_human_complex/: 
-	mkdir $@
-
-target/goa_human_complex/goa_human_complex-src.gaf.gz: 
-	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_complex.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/goa_human_complex/goa_human_complex-filtered.gaf: target/goa_human_complex/goa_human_complex-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_human_complex -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/goa_human_complex/goa_human_complex-gafcheck: target/goa_human_complex/goa_human_complex-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/goa_human_complex/goa_human_complex-filtered.gpad: target/goa_human_complex/goa_human_complex-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/goa_human_complex/goa_human_complex.gpi: target/goa_human_complex/goa_human_complex-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## wb
-## --------------------
-all_wb: target/wb/ target/wb/wb-filtered.gaf.gz target/wb/wb-filtered.gpad.gz target/wb/wb.gpi.gz target/wb/wb-gafcheck
-	echo done
-
-target/wb/: 
-	mkdir $@
-
-target/wb/wb-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.wb.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/wb/wb-filtered.gaf: target/wb/wb-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p wb -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/wb/wb-gafcheck: target/wb/wb-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/wb/wb-filtered.gpad: target/wb/wb-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/wb/wb.gpi: target/wb/wb-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## goa_dog_rna
-## --------------------
-all_goa_dog_rna: target/goa_dog_rna/ target/goa_dog_rna/goa_dog_rna-filtered.gaf.gz target/goa_dog_rna/goa_dog_rna-filtered.gpad.gz target/goa_dog_rna/goa_dog_rna.gpi.gz target/goa_dog_rna/goa_dog_rna-gafcheck
-	echo done
-
-target/goa_dog_rna/: 
-	mkdir $@
-
-target/goa_dog_rna/goa_dog_rna-src.gaf.gz: 
-	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_rna.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/goa_dog_rna/goa_dog_rna-filtered.gaf: target/goa_dog_rna/goa_dog_rna-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_dog_rna -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/goa_dog_rna/goa_dog_rna-gafcheck: target/goa_dog_rna/goa_dog_rna-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/goa_dog_rna/goa_dog_rna-filtered.gpad: target/goa_dog_rna/goa_dog_rna-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/goa_dog_rna/goa_dog_rna.gpi: target/goa_dog_rna/goa_dog_rna-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## paint_other
-## --------------------
-all_paint_other: target/paint_other/ target/paint_other/paint_other-filtered.gaf.gz target/paint_other/paint_other-filtered.gpad.gz target/paint_other/paint_other.gpi.gz target/paint_other/paint_other-gafcheck
-	echo done
-
-target/paint_other/: 
-	mkdir $@
-
-target/paint_other/paint_other-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_other.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/paint_other/paint_other-filtered.gaf: target/paint_other/paint_other-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_other -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/paint_other/paint_other-gafcheck: target/paint_other/paint_other-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/paint_other/paint_other-filtered.gpad: target/paint_other/paint_other-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/paint_other/paint_other.gpi: target/paint_other/paint_other-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## xenbase
-## --------------------
-# Metadata incomplete
-
-all_xenbase: 
-	echo no metadata
+target/goa_chicken_rna/goa_chicken_rna.ttl: target/goa_chicken_rna/goa_chicken_rna-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
 
 ## --------------------
 ## dictybase
 ## --------------------
-all_dictybase: target/dictybase/ target/dictybase/dictybase-filtered.gaf.gz target/dictybase/dictybase-filtered.gpad.gz target/dictybase/dictybase.gpi.gz target/dictybase/dictybase-gafcheck
+all_dictybase: target/dictybase/ target/dictybase/dictybase-filtered.gaf.gz target/dictybase/dictybase-filtered.gpad.gz target/dictybase/dictybase.gpi.gz target/dictybase/dictybase.ttl.gz target/dictybase/dictybase-gafcheck
 	echo done
 
 target/dictybase/: 
@@ -1231,130 +93,40 @@ target/dictybase/dictybase-filtered.gpad: target/dictybase/dictybase-filtered.ga
 target/dictybase/dictybase.gpi: target/dictybase/dictybase-filtered.gaf
 	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
 
+target/dictybase/dictybase.ttl: target/dictybase/dictybase-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
 ## --------------------
-## goa_dog
+## zfin
 ## --------------------
-all_goa_dog: target/goa_dog/ target/goa_dog/goa_dog-filtered.gaf.gz target/goa_dog/goa_dog-filtered.gpad.gz target/goa_dog/goa_dog.gpi.gz target/goa_dog/goa_dog-gafcheck
+all_zfin: target/zfin/ target/zfin/zfin-filtered.gaf.gz target/zfin/zfin-filtered.gpad.gz target/zfin/zfin.gpi.gz target/zfin/zfin.ttl.gz target/zfin/zfin-gafcheck
 	echo done
 
-target/goa_dog/: 
+target/zfin/: 
 	mkdir $@
 
-target/goa_dog/goa_dog-src.gaf.gz: 
-	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+target/zfin/zfin-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.zfin.gz -O $@.tmp && mv $@.tmp $@ && touch $@
 
-target/goa_dog/goa_dog-filtered.gaf: target/goa_dog/goa_dog-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_dog -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+target/zfin/zfin-filtered.gaf: target/zfin/zfin-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p zfin -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
 
-target/goa_dog/goa_dog-gafcheck: target/goa_dog/goa_dog-src.gaf.gz
+target/zfin/zfin-gafcheck: target/zfin/zfin-src.gaf.gz
 	$(OWLTOOLS_GAFCHECK)
 
-target/goa_dog/goa_dog-filtered.gpad: target/goa_dog/goa_dog-filtered.gaf
+target/zfin/zfin-filtered.gpad: target/zfin/zfin-filtered.gaf
 	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
 
-target/goa_dog/goa_dog.gpi: target/goa_dog/goa_dog-filtered.gaf
+target/zfin/zfin.gpi: target/zfin/zfin-filtered.gaf
 	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
 
-## --------------------
-## paint_rgd
-## --------------------
-all_paint_rgd: target/paint_rgd/ target/paint_rgd/paint_rgd-filtered.gaf.gz target/paint_rgd/paint_rgd-filtered.gpad.gz target/paint_rgd/paint_rgd.gpi.gz target/paint_rgd/paint_rgd-gafcheck
-	echo done
-
-target/paint_rgd/: 
-	mkdir $@
-
-target/paint_rgd/paint_rgd-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_rgd.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/paint_rgd/paint_rgd-filtered.gaf: target/paint_rgd/paint_rgd-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_rgd -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/paint_rgd/paint_rgd-gafcheck: target/paint_rgd/paint_rgd-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/paint_rgd/paint_rgd-filtered.gpad: target/paint_rgd/paint_rgd-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/paint_rgd/paint_rgd.gpi: target/paint_rgd/paint_rgd-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## goa_pig
-## --------------------
-all_goa_pig: target/goa_pig/ target/goa_pig/goa_pig-filtered.gaf.gz target/goa_pig/goa_pig-filtered.gpad.gz target/goa_pig/goa_pig.gpi.gz target/goa_pig/goa_pig-gafcheck
-	echo done
-
-target/goa_pig/: 
-	mkdir $@
-
-target/goa_pig/goa_pig-src.gaf.gz: 
-	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/goa_pig/goa_pig-filtered.gaf: target/goa_pig/goa_pig-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_pig -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/goa_pig/goa_pig-gafcheck: target/goa_pig/goa_pig-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/goa_pig/goa_pig-filtered.gpad: target/goa_pig/goa_pig-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/goa_pig/goa_pig.gpi: target/goa_pig/goa_pig-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## cgd
-## --------------------
-all_cgd: target/cgd/ target/cgd/cgd-filtered.gaf.gz target/cgd/cgd-filtered.gpad.gz target/cgd/cgd.gpi.gz target/cgd/cgd-gafcheck
-	echo done
-
-target/cgd/: 
-	mkdir $@
-
-target/cgd/cgd-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.cgd.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/cgd/cgd-filtered.gaf: target/cgd/cgd-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p cgd -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/cgd/cgd-gafcheck: target/cgd/cgd-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/cgd/cgd-filtered.gpad: target/cgd/cgd-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/cgd/cgd.gpi: target/cgd/cgd-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
-
-## --------------------
-## paint_sgd
-## --------------------
-all_paint_sgd: target/paint_sgd/ target/paint_sgd/paint_sgd-filtered.gaf.gz target/paint_sgd/paint_sgd-filtered.gpad.gz target/paint_sgd/paint_sgd.gpi.gz target/paint_sgd/paint_sgd-gafcheck
-	echo done
-
-target/paint_sgd/: 
-	mkdir $@
-
-target/paint_sgd/paint_sgd-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_sgd.gz -O $@.tmp && mv $@.tmp $@ && touch $@
-
-target/paint_sgd/paint_sgd-filtered.gaf: target/paint_sgd/paint_sgd-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_sgd -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
-
-target/paint_sgd/paint_sgd-gafcheck: target/paint_sgd/paint_sgd-src.gaf.gz
-	$(OWLTOOLS_GAFCHECK)
-
-target/paint_sgd/paint_sgd-filtered.gpad: target/paint_sgd/paint_sgd-filtered.gaf
-	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
-
-target/paint_sgd/paint_sgd.gpi: target/paint_sgd/paint_sgd-filtered.gaf
-	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+target/zfin/zfin.ttl: target/zfin/zfin-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
 
 ## --------------------
 ## goa_chicken_complex
 ## --------------------
-all_goa_chicken_complex: target/goa_chicken_complex/ target/goa_chicken_complex/goa_chicken_complex-filtered.gaf.gz target/goa_chicken_complex/goa_chicken_complex-filtered.gpad.gz target/goa_chicken_complex/goa_chicken_complex.gpi.gz target/goa_chicken_complex/goa_chicken_complex-gafcheck
+all_goa_chicken_complex: target/goa_chicken_complex/ target/goa_chicken_complex/goa_chicken_complex-filtered.gaf.gz target/goa_chicken_complex/goa_chicken_complex-filtered.gpad.gz target/goa_chicken_complex/goa_chicken_complex.gpi.gz target/goa_chicken_complex/goa_chicken_complex.ttl.gz target/goa_chicken_complex/goa_chicken_complex-gafcheck
 	echo done
 
 target/goa_chicken_complex/: 
@@ -1375,82 +147,210 @@ target/goa_chicken_complex/goa_chicken_complex-filtered.gpad: target/goa_chicken
 target/goa_chicken_complex/goa_chicken_complex.gpi: target/goa_chicken_complex/goa_chicken_complex-filtered.gaf
 	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
 
+target/goa_chicken_complex/goa_chicken_complex.ttl: target/goa_chicken_complex/goa_chicken_complex-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
 ## --------------------
-## goa_pig_isoform
+## goa_human
 ## --------------------
-all_goa_pig_isoform: target/goa_pig_isoform/ target/goa_pig_isoform/goa_pig_isoform-filtered.gaf.gz target/goa_pig_isoform/goa_pig_isoform-filtered.gpad.gz target/goa_pig_isoform/goa_pig_isoform.gpi.gz target/goa_pig_isoform/goa_pig_isoform-gafcheck
+all_goa_human: target/goa_human/ target/goa_human/goa_human-filtered.gaf.gz target/goa_human/goa_human-filtered.gpad.gz target/goa_human/goa_human.gpi.gz target/goa_human/goa_human.ttl.gz target/goa_human/goa_human-gafcheck
 	echo done
 
-target/goa_pig_isoform/: 
+target/goa_human/: 
 	mkdir $@
 
-target/goa_pig_isoform/goa_pig_isoform-src.gaf.gz: 
-	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_isoform.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+target/goa_human/goa_human-src.gaf.gz: 
+	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
 
-target/goa_pig_isoform/goa_pig_isoform-filtered.gaf: target/goa_pig_isoform/goa_pig_isoform-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_pig_isoform -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+target/goa_human/goa_human-filtered.gaf: target/goa_human/goa_human-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_human -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
 
-target/goa_pig_isoform/goa_pig_isoform-gafcheck: target/goa_pig_isoform/goa_pig_isoform-src.gaf.gz
+target/goa_human/goa_human-gafcheck: target/goa_human/goa_human-src.gaf.gz
 	$(OWLTOOLS_GAFCHECK)
 
-target/goa_pig_isoform/goa_pig_isoform-filtered.gpad: target/goa_pig_isoform/goa_pig_isoform-filtered.gaf
+target/goa_human/goa_human-filtered.gpad: target/goa_human/goa_human-filtered.gaf
 	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
 
-target/goa_pig_isoform/goa_pig_isoform.gpi: target/goa_pig_isoform/goa_pig_isoform-filtered.gaf
+target/goa_human/goa_human.gpi: target/goa_human/goa_human-filtered.gaf
 	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
 
+target/goa_human/goa_human.ttl: target/goa_human/goa_human-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
 ## --------------------
-## paint_pombase
+## goa_human_rna
 ## --------------------
-all_paint_pombase: target/paint_pombase/ target/paint_pombase/paint_pombase-filtered.gaf.gz target/paint_pombase/paint_pombase-filtered.gpad.gz target/paint_pombase/paint_pombase.gpi.gz target/paint_pombase/paint_pombase-gafcheck
+all_goa_human_rna: target/goa_human_rna/ target/goa_human_rna/goa_human_rna-filtered.gaf.gz target/goa_human_rna/goa_human_rna-filtered.gpad.gz target/goa_human_rna/goa_human_rna.gpi.gz target/goa_human_rna/goa_human_rna.ttl.gz target/goa_human_rna/goa_human_rna-gafcheck
 	echo done
 
-target/paint_pombase/: 
+target/goa_human_rna/: 
 	mkdir $@
 
-target/paint_pombase/paint_pombase-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_pombase.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+target/goa_human_rna/goa_human_rna-src.gaf.gz: 
+	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_rna.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
 
-target/paint_pombase/paint_pombase-filtered.gaf: target/paint_pombase/paint_pombase-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_pombase -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+target/goa_human_rna/goa_human_rna-filtered.gaf: target/goa_human_rna/goa_human_rna-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_human_rna -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
 
-target/paint_pombase/paint_pombase-gafcheck: target/paint_pombase/paint_pombase-src.gaf.gz
+target/goa_human_rna/goa_human_rna-gafcheck: target/goa_human_rna/goa_human_rna-src.gaf.gz
 	$(OWLTOOLS_GAFCHECK)
 
-target/paint_pombase/paint_pombase-filtered.gpad: target/paint_pombase/paint_pombase-filtered.gaf
+target/goa_human_rna/goa_human_rna-filtered.gpad: target/goa_human_rna/goa_human_rna-filtered.gaf
 	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
 
-target/paint_pombase/paint_pombase.gpi: target/paint_pombase/paint_pombase-filtered.gaf
+target/goa_human_rna/goa_human_rna.gpi: target/goa_human_rna/goa_human_rna-filtered.gaf
 	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
 
+target/goa_human_rna/goa_human_rna.ttl: target/goa_human_rna/goa_human_rna-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
 ## --------------------
-## paint_fb
+## pamgo_ddadantii
 ## --------------------
-all_paint_fb: target/paint_fb/ target/paint_fb/paint_fb-filtered.gaf.gz target/paint_fb/paint_fb-filtered.gpad.gz target/paint_fb/paint_fb.gpi.gz target/paint_fb/paint_fb-gafcheck
+all_pamgo_ddadantii: target/pamgo_ddadantii/ target/pamgo_ddadantii/pamgo_ddadantii-filtered.gaf.gz target/pamgo_ddadantii/pamgo_ddadantii-filtered.gpad.gz target/pamgo_ddadantii/pamgo_ddadantii.gpi.gz target/pamgo_ddadantii/pamgo_ddadantii.ttl.gz target/pamgo_ddadantii/pamgo_ddadantii-gafcheck
 	echo done
 
-target/paint_fb/: 
+target/pamgo_ddadantii/: 
 	mkdir $@
 
-target/paint_fb/paint_fb-src.gaf.gz: 
-	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_fb.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+target/pamgo_ddadantii/pamgo_ddadantii-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Ddadantii.gz -O $@.tmp && mv $@.tmp $@ && touch $@
 
-target/paint_fb/paint_fb-filtered.gaf: target/paint_fb/paint_fb-src.gaf.gz
-	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_fb -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+target/pamgo_ddadantii/pamgo_ddadantii-filtered.gaf: target/pamgo_ddadantii/pamgo_ddadantii-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p pamgo_ddadantii -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
 
-target/paint_fb/paint_fb-gafcheck: target/paint_fb/paint_fb-src.gaf.gz
+target/pamgo_ddadantii/pamgo_ddadantii-gafcheck: target/pamgo_ddadantii/pamgo_ddadantii-src.gaf.gz
 	$(OWLTOOLS_GAFCHECK)
 
-target/paint_fb/paint_fb-filtered.gpad: target/paint_fb/paint_fb-filtered.gaf
+target/pamgo_ddadantii/pamgo_ddadantii-filtered.gpad: target/pamgo_ddadantii/pamgo_ddadantii-filtered.gaf
 	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
 
-target/paint_fb/paint_fb.gpi: target/paint_fb/paint_fb-filtered.gaf
+target/pamgo_ddadantii/pamgo_ddadantii.gpi: target/pamgo_ddadantii/pamgo_ddadantii-filtered.gaf
 	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/pamgo_ddadantii/pamgo_ddadantii.ttl: target/pamgo_ddadantii/pamgo_ddadantii-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## goa_dog
+## --------------------
+all_goa_dog: target/goa_dog/ target/goa_dog/goa_dog-filtered.gaf.gz target/goa_dog/goa_dog-filtered.gpad.gz target/goa_dog/goa_dog.gpi.gz target/goa_dog/goa_dog.ttl.gz target/goa_dog/goa_dog-gafcheck
+	echo done
+
+target/goa_dog/: 
+	mkdir $@
+
+target/goa_dog/goa_dog-src.gaf.gz: 
+	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/goa_dog/goa_dog-filtered.gaf: target/goa_dog/goa_dog-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_dog -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/goa_dog/goa_dog-gafcheck: target/goa_dog/goa_dog-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/goa_dog/goa_dog-filtered.gpad: target/goa_dog/goa_dog-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/goa_dog/goa_dog.gpi: target/goa_dog/goa_dog-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/goa_dog/goa_dog.ttl: target/goa_dog/goa_dog-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## goa_pdb
+## --------------------
+# Skipping
+
+all_goa_pdb: 
+	echo no metadata
+
+## --------------------
+## goa_pig_complex
+## --------------------
+all_goa_pig_complex: target/goa_pig_complex/ target/goa_pig_complex/goa_pig_complex-filtered.gaf.gz target/goa_pig_complex/goa_pig_complex-filtered.gpad.gz target/goa_pig_complex/goa_pig_complex.gpi.gz target/goa_pig_complex/goa_pig_complex.ttl.gz target/goa_pig_complex/goa_pig_complex-gafcheck
+	echo done
+
+target/goa_pig_complex/: 
+	mkdir $@
+
+target/goa_pig_complex/goa_pig_complex-src.gaf.gz: 
+	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_complex.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/goa_pig_complex/goa_pig_complex-filtered.gaf: target/goa_pig_complex/goa_pig_complex-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_pig_complex -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/goa_pig_complex/goa_pig_complex-gafcheck: target/goa_pig_complex/goa_pig_complex-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/goa_pig_complex/goa_pig_complex-filtered.gpad: target/goa_pig_complex/goa_pig_complex-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/goa_pig_complex/goa_pig_complex.gpi: target/goa_pig_complex/goa_pig_complex-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/goa_pig_complex/goa_pig_complex.ttl: target/goa_pig_complex/goa_pig_complex-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## genedb_lmajor
+## --------------------
+all_genedb_lmajor: target/genedb_lmajor/ target/genedb_lmajor/genedb_lmajor-filtered.gaf.gz target/genedb_lmajor/genedb_lmajor-filtered.gpad.gz target/genedb_lmajor/genedb_lmajor.gpi.gz target/genedb_lmajor/genedb_lmajor.ttl.gz target/genedb_lmajor/genedb_lmajor-gafcheck
+	echo done
+
+target/genedb_lmajor/: 
+	mkdir $@
+
+target/genedb_lmajor/genedb_lmajor-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.GeneDB_Lmajor.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/genedb_lmajor/genedb_lmajor-filtered.gaf: target/genedb_lmajor/genedb_lmajor-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p genedb_lmajor -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/genedb_lmajor/genedb_lmajor-gafcheck: target/genedb_lmajor/genedb_lmajor-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/genedb_lmajor/genedb_lmajor-filtered.gpad: target/genedb_lmajor/genedb_lmajor-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/genedb_lmajor/genedb_lmajor.gpi: target/genedb_lmajor/genedb_lmajor-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/genedb_lmajor/genedb_lmajor.ttl: target/genedb_lmajor/genedb_lmajor-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## gramene_oryza
+## --------------------
+all_gramene_oryza: target/gramene_oryza/ target/gramene_oryza/gramene_oryza-filtered.gaf.gz target/gramene_oryza/gramene_oryza-filtered.gpad.gz target/gramene_oryza/gramene_oryza.gpi.gz target/gramene_oryza/gramene_oryza.ttl.gz target/gramene_oryza/gramene_oryza-gafcheck
+	echo done
+
+target/gramene_oryza/: 
+	mkdir $@
+
+target/gramene_oryza/gramene_oryza-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.gramene_oryza.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/gramene_oryza/gramene_oryza-filtered.gaf: target/gramene_oryza/gramene_oryza-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p gramene_oryza -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/gramene_oryza/gramene_oryza-gafcheck: target/gramene_oryza/gramene_oryza-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/gramene_oryza/gramene_oryza-filtered.gpad: target/gramene_oryza/gramene_oryza-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/gramene_oryza/gramene_oryza.gpi: target/gramene_oryza/gramene_oryza-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/gramene_oryza/gramene_oryza.ttl: target/gramene_oryza/gramene_oryza-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
 
 ## --------------------
 ## goa_cow_rna
 ## --------------------
-all_goa_cow_rna: target/goa_cow_rna/ target/goa_cow_rna/goa_cow_rna-filtered.gaf.gz target/goa_cow_rna/goa_cow_rna-filtered.gpad.gz target/goa_cow_rna/goa_cow_rna.gpi.gz target/goa_cow_rna/goa_cow_rna-gafcheck
+all_goa_cow_rna: target/goa_cow_rna/ target/goa_cow_rna/goa_cow_rna-filtered.gaf.gz target/goa_cow_rna/goa_cow_rna-filtered.gpad.gz target/goa_cow_rna/goa_cow_rna.gpi.gz target/goa_cow_rna/goa_cow_rna.ttl.gz target/goa_cow_rna/goa_cow_rna-gafcheck
 	echo done
 
 target/goa_cow_rna/: 
@@ -1471,6 +371,1286 @@ target/goa_cow_rna/goa_cow_rna-filtered.gpad: target/goa_cow_rna/goa_cow_rna-fil
 target/goa_cow_rna/goa_cow_rna.gpi: target/goa_cow_rna/goa_cow_rna-filtered.gaf
 	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
 
-all_gafs: all_pamgo_oomycetes all_paint_mgi all_paint_zfin all_goa_pdb all_goa_cow all_ecocyc all_goa_dog_complex all_paint_wb all_jcvi all_genedb_lmajor all_gonuts all_goa_dog_isoform all_goa_pig_complex all_pamgo_atumefaciens all_pamgo_mgrisea all_zfin all_pseudocap all_goa_human_isoform all_paint_dictybase all_paint_tair all_tair all_rgd all_paint_ecocyc all_pamgo_ddadantii all_paint_goa_chicken all_goa_chicken_isoform all_reactome all_paint_cgd all_fb all_goa_cow_complex all_goa_chicken all_genedb_pfalciparum all_aspgd all_genedb_tbrucei all_goa_human all_gramene_oryza all_paint_goa_human all_mgi all_goa_human_rna all_sgn all_pombase all_genedb_tsetse all_goa_pig_rna all_goa_cow_isoform all_goa_chicken_rna all_sgd all_goa_human_complex all_wb all_goa_dog_rna all_paint_other all_xenbase all_dictybase all_goa_dog all_paint_rgd all_goa_pig all_cgd all_paint_sgd all_goa_chicken_complex all_goa_pig_isoform all_paint_pombase all_paint_fb all_goa_cow_rna
+target/goa_cow_rna/goa_cow_rna.ttl: target/goa_cow_rna/goa_cow_rna-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## paint_zfin
+## --------------------
+all_paint_zfin: target/paint_zfin/ target/paint_zfin/paint_zfin-filtered.gaf.gz target/paint_zfin/paint_zfin-filtered.gpad.gz target/paint_zfin/paint_zfin.gpi.gz target/paint_zfin/paint_zfin.ttl.gz target/paint_zfin/paint_zfin-gafcheck
+	echo done
+
+target/paint_zfin/: 
+	mkdir $@
+
+target/paint_zfin/paint_zfin-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_zfin.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/paint_zfin/paint_zfin-filtered.gaf: target/paint_zfin/paint_zfin-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_zfin -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/paint_zfin/paint_zfin-gafcheck: target/paint_zfin/paint_zfin-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/paint_zfin/paint_zfin-filtered.gpad: target/paint_zfin/paint_zfin-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/paint_zfin/paint_zfin.gpi: target/paint_zfin/paint_zfin-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/paint_zfin/paint_zfin.ttl: target/paint_zfin/paint_zfin-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## pamgo_oomycetes
+## --------------------
+all_pamgo_oomycetes: target/pamgo_oomycetes/ target/pamgo_oomycetes/pamgo_oomycetes-filtered.gaf.gz target/pamgo_oomycetes/pamgo_oomycetes-filtered.gpad.gz target/pamgo_oomycetes/pamgo_oomycetes.gpi.gz target/pamgo_oomycetes/pamgo_oomycetes.ttl.gz target/pamgo_oomycetes/pamgo_oomycetes-gafcheck
+	echo done
+
+target/pamgo_oomycetes/: 
+	mkdir $@
+
+target/pamgo_oomycetes/pamgo_oomycetes-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Oomycetes.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/pamgo_oomycetes/pamgo_oomycetes-filtered.gaf: target/pamgo_oomycetes/pamgo_oomycetes-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p pamgo_oomycetes -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/pamgo_oomycetes/pamgo_oomycetes-gafcheck: target/pamgo_oomycetes/pamgo_oomycetes-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/pamgo_oomycetes/pamgo_oomycetes-filtered.gpad: target/pamgo_oomycetes/pamgo_oomycetes-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/pamgo_oomycetes/pamgo_oomycetes.gpi: target/pamgo_oomycetes/pamgo_oomycetes-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/pamgo_oomycetes/pamgo_oomycetes.ttl: target/pamgo_oomycetes/pamgo_oomycetes-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## goa_cow_complex
+## --------------------
+all_goa_cow_complex: target/goa_cow_complex/ target/goa_cow_complex/goa_cow_complex-filtered.gaf.gz target/goa_cow_complex/goa_cow_complex-filtered.gpad.gz target/goa_cow_complex/goa_cow_complex.gpi.gz target/goa_cow_complex/goa_cow_complex.ttl.gz target/goa_cow_complex/goa_cow_complex-gafcheck
+	echo done
+
+target/goa_cow_complex/: 
+	mkdir $@
+
+target/goa_cow_complex/goa_cow_complex-src.gaf.gz: 
+	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_complex.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/goa_cow_complex/goa_cow_complex-filtered.gaf: target/goa_cow_complex/goa_cow_complex-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_cow_complex -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/goa_cow_complex/goa_cow_complex-gafcheck: target/goa_cow_complex/goa_cow_complex-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/goa_cow_complex/goa_cow_complex-filtered.gpad: target/goa_cow_complex/goa_cow_complex-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/goa_cow_complex/goa_cow_complex.gpi: target/goa_cow_complex/goa_cow_complex-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/goa_cow_complex/goa_cow_complex.ttl: target/goa_cow_complex/goa_cow_complex-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## pamgo_atumefaciens
+## --------------------
+all_pamgo_atumefaciens: target/pamgo_atumefaciens/ target/pamgo_atumefaciens/pamgo_atumefaciens-filtered.gaf.gz target/pamgo_atumefaciens/pamgo_atumefaciens-filtered.gpad.gz target/pamgo_atumefaciens/pamgo_atumefaciens.gpi.gz target/pamgo_atumefaciens/pamgo_atumefaciens.ttl.gz target/pamgo_atumefaciens/pamgo_atumefaciens-gafcheck
+	echo done
+
+target/pamgo_atumefaciens/: 
+	mkdir $@
+
+target/pamgo_atumefaciens/pamgo_atumefaciens-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Atumefaciens.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/pamgo_atumefaciens/pamgo_atumefaciens-filtered.gaf: target/pamgo_atumefaciens/pamgo_atumefaciens-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p pamgo_atumefaciens -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/pamgo_atumefaciens/pamgo_atumefaciens-gafcheck: target/pamgo_atumefaciens/pamgo_atumefaciens-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/pamgo_atumefaciens/pamgo_atumefaciens-filtered.gpad: target/pamgo_atumefaciens/pamgo_atumefaciens-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/pamgo_atumefaciens/pamgo_atumefaciens.gpi: target/pamgo_atumefaciens/pamgo_atumefaciens-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/pamgo_atumefaciens/pamgo_atumefaciens.ttl: target/pamgo_atumefaciens/pamgo_atumefaciens-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## jcvi
+## --------------------
+all_jcvi: target/jcvi/ target/jcvi/jcvi-filtered.gaf.gz target/jcvi/jcvi-filtered.gpad.gz target/jcvi/jcvi.gpi.gz target/jcvi/jcvi.ttl.gz target/jcvi/jcvi-gafcheck
+	echo done
+
+target/jcvi/: 
+	mkdir $@
+
+target/jcvi/jcvi-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.jcvi.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/jcvi/jcvi-filtered.gaf: target/jcvi/jcvi-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p jcvi -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/jcvi/jcvi-gafcheck: target/jcvi/jcvi-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/jcvi/jcvi-filtered.gpad: target/jcvi/jcvi-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/jcvi/jcvi.gpi: target/jcvi/jcvi-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/jcvi/jcvi.ttl: target/jcvi/jcvi-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## mgi
+## --------------------
+all_mgi: target/mgi/ target/mgi/mgi-filtered.gaf.gz target/mgi/mgi-filtered.gpad.gz target/mgi/mgi.gpi.gz target/mgi/mgi.ttl.gz target/mgi/mgi-gafcheck
+	echo done
+
+target/mgi/: 
+	mkdir $@
+
+target/mgi/mgi-src.gaf.gz: 
+	wget --no-check-certificate http://www.informatics.jax.org/downloads/reports/gene_association.mgi.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/mgi/mgi-filtered.gaf: target/mgi/mgi-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p mgi -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/mgi/mgi-gafcheck: target/mgi/mgi-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/mgi/mgi-filtered.gpad: target/mgi/mgi-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/mgi/mgi.gpi: target/mgi/mgi-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/mgi/mgi.ttl: target/mgi/mgi-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## paint_fb
+## --------------------
+all_paint_fb: target/paint_fb/ target/paint_fb/paint_fb-filtered.gaf.gz target/paint_fb/paint_fb-filtered.gpad.gz target/paint_fb/paint_fb.gpi.gz target/paint_fb/paint_fb.ttl.gz target/paint_fb/paint_fb-gafcheck
+	echo done
+
+target/paint_fb/: 
+	mkdir $@
+
+target/paint_fb/paint_fb-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_fb.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/paint_fb/paint_fb-filtered.gaf: target/paint_fb/paint_fb-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_fb -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/paint_fb/paint_fb-gafcheck: target/paint_fb/paint_fb-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/paint_fb/paint_fb-filtered.gpad: target/paint_fb/paint_fb-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/paint_fb/paint_fb.gpi: target/paint_fb/paint_fb-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/paint_fb/paint_fb.ttl: target/paint_fb/paint_fb-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## paint_sgd
+## --------------------
+all_paint_sgd: target/paint_sgd/ target/paint_sgd/paint_sgd-filtered.gaf.gz target/paint_sgd/paint_sgd-filtered.gpad.gz target/paint_sgd/paint_sgd.gpi.gz target/paint_sgd/paint_sgd.ttl.gz target/paint_sgd/paint_sgd-gafcheck
+	echo done
+
+target/paint_sgd/: 
+	mkdir $@
+
+target/paint_sgd/paint_sgd-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_sgd.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/paint_sgd/paint_sgd-filtered.gaf: target/paint_sgd/paint_sgd-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_sgd -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/paint_sgd/paint_sgd-gafcheck: target/paint_sgd/paint_sgd-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/paint_sgd/paint_sgd-filtered.gpad: target/paint_sgd/paint_sgd-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/paint_sgd/paint_sgd.gpi: target/paint_sgd/paint_sgd-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/paint_sgd/paint_sgd.ttl: target/paint_sgd/paint_sgd-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## pombase
+## --------------------
+all_pombase: target/pombase/ target/pombase/pombase-filtered.gaf.gz target/pombase/pombase-filtered.gpad.gz target/pombase/pombase.gpi.gz target/pombase/pombase.ttl.gz target/pombase/pombase-gafcheck
+	echo done
+
+target/pombase/: 
+	mkdir $@
+
+target/pombase/pombase-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.pombase.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/pombase/pombase-filtered.gaf: target/pombase/pombase-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p pombase -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/pombase/pombase-gafcheck: target/pombase/pombase-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/pombase/pombase-filtered.gpad: target/pombase/pombase-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/pombase/pombase.gpi: target/pombase/pombase-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/pombase/pombase.ttl: target/pombase/pombase-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## tair
+## --------------------
+all_tair: target/tair/ target/tair/tair-filtered.gaf.gz target/tair/tair-filtered.gpad.gz target/tair/tair.gpi.gz target/tair/tair.ttl.gz target/tair/tair-gafcheck
+	echo done
+
+target/tair/: 
+	mkdir $@
+
+target/tair/tair-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.tair.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/tair/tair-filtered.gaf: target/tair/tair-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p tair -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/tair/tair-gafcheck: target/tair/tair-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/tair/tair-filtered.gpad: target/tair/tair-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/tair/tair.gpi: target/tair/tair-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/tair/tair.ttl: target/tair/tair-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## sgd
+## --------------------
+all_sgd: target/sgd/ target/sgd/sgd-filtered.gaf.gz target/sgd/sgd-filtered.gpad.gz target/sgd/sgd.gpi.gz target/sgd/sgd.ttl.gz target/sgd/sgd-gafcheck
+	echo done
+
+target/sgd/: 
+	mkdir $@
+
+target/sgd/sgd-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.sgd.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/sgd/sgd-filtered.gaf: target/sgd/sgd-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p sgd -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/sgd/sgd-gafcheck: target/sgd/sgd-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/sgd/sgd-filtered.gpad: target/sgd/sgd-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/sgd/sgd.gpi: target/sgd/sgd-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/sgd/sgd.ttl: target/sgd/sgd-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## paint_rgd
+## --------------------
+all_paint_rgd: target/paint_rgd/ target/paint_rgd/paint_rgd-filtered.gaf.gz target/paint_rgd/paint_rgd-filtered.gpad.gz target/paint_rgd/paint_rgd.gpi.gz target/paint_rgd/paint_rgd.ttl.gz target/paint_rgd/paint_rgd-gafcheck
+	echo done
+
+target/paint_rgd/: 
+	mkdir $@
+
+target/paint_rgd/paint_rgd-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_rgd.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/paint_rgd/paint_rgd-filtered.gaf: target/paint_rgd/paint_rgd-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_rgd -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/paint_rgd/paint_rgd-gafcheck: target/paint_rgd/paint_rgd-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/paint_rgd/paint_rgd-filtered.gpad: target/paint_rgd/paint_rgd-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/paint_rgd/paint_rgd.gpi: target/paint_rgd/paint_rgd-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/paint_rgd/paint_rgd.ttl: target/paint_rgd/paint_rgd-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## goa_cow
+## --------------------
+all_goa_cow: target/goa_cow/ target/goa_cow/goa_cow-filtered.gaf.gz target/goa_cow/goa_cow-filtered.gpad.gz target/goa_cow/goa_cow.gpi.gz target/goa_cow/goa_cow.ttl.gz target/goa_cow/goa_cow-gafcheck
+	echo done
+
+target/goa_cow/: 
+	mkdir $@
+
+target/goa_cow/goa_cow-src.gaf.gz: 
+	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/goa_cow/goa_cow-filtered.gaf: target/goa_cow/goa_cow-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_cow -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/goa_cow/goa_cow-gafcheck: target/goa_cow/goa_cow-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/goa_cow/goa_cow-filtered.gpad: target/goa_cow/goa_cow-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/goa_cow/goa_cow.gpi: target/goa_cow/goa_cow-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/goa_cow/goa_cow.ttl: target/goa_cow/goa_cow-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## aspgd
+## --------------------
+all_aspgd: target/aspgd/ target/aspgd/aspgd-filtered.gaf.gz target/aspgd/aspgd-filtered.gpad.gz target/aspgd/aspgd.gpi.gz target/aspgd/aspgd.ttl.gz target/aspgd/aspgd-gafcheck
+	echo done
+
+target/aspgd/: 
+	mkdir $@
+
+target/aspgd/aspgd-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.aspgd.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/aspgd/aspgd-filtered.gaf: target/aspgd/aspgd-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p aspgd -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/aspgd/aspgd-gafcheck: target/aspgd/aspgd-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/aspgd/aspgd-filtered.gpad: target/aspgd/aspgd-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/aspgd/aspgd.gpi: target/aspgd/aspgd-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/aspgd/aspgd.ttl: target/aspgd/aspgd-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## paint_wb
+## --------------------
+all_paint_wb: target/paint_wb/ target/paint_wb/paint_wb-filtered.gaf.gz target/paint_wb/paint_wb-filtered.gpad.gz target/paint_wb/paint_wb.gpi.gz target/paint_wb/paint_wb.ttl.gz target/paint_wb/paint_wb-gafcheck
+	echo done
+
+target/paint_wb/: 
+	mkdir $@
+
+target/paint_wb/paint_wb-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_wb.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/paint_wb/paint_wb-filtered.gaf: target/paint_wb/paint_wb-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_wb -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/paint_wb/paint_wb-gafcheck: target/paint_wb/paint_wb-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/paint_wb/paint_wb-filtered.gpad: target/paint_wb/paint_wb-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/paint_wb/paint_wb.gpi: target/paint_wb/paint_wb-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/paint_wb/paint_wb.ttl: target/paint_wb/paint_wb-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## paint_cgd
+## --------------------
+all_paint_cgd: target/paint_cgd/ target/paint_cgd/paint_cgd-filtered.gaf.gz target/paint_cgd/paint_cgd-filtered.gpad.gz target/paint_cgd/paint_cgd.gpi.gz target/paint_cgd/paint_cgd.ttl.gz target/paint_cgd/paint_cgd-gafcheck
+	echo done
+
+target/paint_cgd/: 
+	mkdir $@
+
+target/paint_cgd/paint_cgd-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_cgd.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/paint_cgd/paint_cgd-filtered.gaf: target/paint_cgd/paint_cgd-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_cgd -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/paint_cgd/paint_cgd-gafcheck: target/paint_cgd/paint_cgd-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/paint_cgd/paint_cgd-filtered.gpad: target/paint_cgd/paint_cgd-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/paint_cgd/paint_cgd.gpi: target/paint_cgd/paint_cgd-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/paint_cgd/paint_cgd.ttl: target/paint_cgd/paint_cgd-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## fb
+## --------------------
+all_fb: target/fb/ target/fb/fb-filtered.gaf.gz target/fb/fb-filtered.gpad.gz target/fb/fb.gpi.gz target/fb/fb.ttl.gz target/fb/fb-gafcheck
+	echo done
+
+target/fb/: 
+	mkdir $@
+
+target/fb/fb-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.fb.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/fb/fb-filtered.gaf: target/fb/fb-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p fb -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/fb/fb-gafcheck: target/fb/fb-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/fb/fb-filtered.gpad: target/fb/fb-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/fb/fb.gpi: target/fb/fb-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/fb/fb.ttl: target/fb/fb-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## xenbase
+## --------------------
+# Metadata incomplete
+
+all_xenbase: 
+	echo no metadata
+
+## --------------------
+## goa_human_isoform
+## --------------------
+all_goa_human_isoform: target/goa_human_isoform/ target/goa_human_isoform/goa_human_isoform-filtered.gaf.gz target/goa_human_isoform/goa_human_isoform-filtered.gpad.gz target/goa_human_isoform/goa_human_isoform.gpi.gz target/goa_human_isoform/goa_human_isoform.ttl.gz target/goa_human_isoform/goa_human_isoform-gafcheck
+	echo done
+
+target/goa_human_isoform/: 
+	mkdir $@
+
+target/goa_human_isoform/goa_human_isoform-src.gaf.gz: 
+	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_isoform.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/goa_human_isoform/goa_human_isoform-filtered.gaf: target/goa_human_isoform/goa_human_isoform-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_human_isoform -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/goa_human_isoform/goa_human_isoform-gafcheck: target/goa_human_isoform/goa_human_isoform-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/goa_human_isoform/goa_human_isoform-filtered.gpad: target/goa_human_isoform/goa_human_isoform-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/goa_human_isoform/goa_human_isoform.gpi: target/goa_human_isoform/goa_human_isoform-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/goa_human_isoform/goa_human_isoform.ttl: target/goa_human_isoform/goa_human_isoform-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## genedb_tbrucei
+## --------------------
+all_genedb_tbrucei: target/genedb_tbrucei/ target/genedb_tbrucei/genedb_tbrucei-filtered.gaf.gz target/genedb_tbrucei/genedb_tbrucei-filtered.gpad.gz target/genedb_tbrucei/genedb_tbrucei.gpi.gz target/genedb_tbrucei/genedb_tbrucei.ttl.gz target/genedb_tbrucei/genedb_tbrucei-gafcheck
+	echo done
+
+target/genedb_tbrucei/: 
+	mkdir $@
+
+target/genedb_tbrucei/genedb_tbrucei-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.GeneDB_Tbrucei.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/genedb_tbrucei/genedb_tbrucei-filtered.gaf: target/genedb_tbrucei/genedb_tbrucei-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p genedb_tbrucei -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/genedb_tbrucei/genedb_tbrucei-gafcheck: target/genedb_tbrucei/genedb_tbrucei-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/genedb_tbrucei/genedb_tbrucei-filtered.gpad: target/genedb_tbrucei/genedb_tbrucei-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/genedb_tbrucei/genedb_tbrucei.gpi: target/genedb_tbrucei/genedb_tbrucei-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/genedb_tbrucei/genedb_tbrucei.ttl: target/genedb_tbrucei/genedb_tbrucei-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## paint_pombase
+## --------------------
+all_paint_pombase: target/paint_pombase/ target/paint_pombase/paint_pombase-filtered.gaf.gz target/paint_pombase/paint_pombase-filtered.gpad.gz target/paint_pombase/paint_pombase.gpi.gz target/paint_pombase/paint_pombase.ttl.gz target/paint_pombase/paint_pombase-gafcheck
+	echo done
+
+target/paint_pombase/: 
+	mkdir $@
+
+target/paint_pombase/paint_pombase-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_pombase.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/paint_pombase/paint_pombase-filtered.gaf: target/paint_pombase/paint_pombase-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_pombase -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/paint_pombase/paint_pombase-gafcheck: target/paint_pombase/paint_pombase-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/paint_pombase/paint_pombase-filtered.gpad: target/paint_pombase/paint_pombase-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/paint_pombase/paint_pombase.gpi: target/paint_pombase/paint_pombase-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/paint_pombase/paint_pombase.ttl: target/paint_pombase/paint_pombase-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## genedb_pfalciparum
+## --------------------
+all_genedb_pfalciparum: target/genedb_pfalciparum/ target/genedb_pfalciparum/genedb_pfalciparum-filtered.gaf.gz target/genedb_pfalciparum/genedb_pfalciparum-filtered.gpad.gz target/genedb_pfalciparum/genedb_pfalciparum.gpi.gz target/genedb_pfalciparum/genedb_pfalciparum.ttl.gz target/genedb_pfalciparum/genedb_pfalciparum-gafcheck
+	echo done
+
+target/genedb_pfalciparum/: 
+	mkdir $@
+
+target/genedb_pfalciparum/genedb_pfalciparum-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.GeneDB_Pfalciparum.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/genedb_pfalciparum/genedb_pfalciparum-filtered.gaf: target/genedb_pfalciparum/genedb_pfalciparum-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p genedb_pfalciparum -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/genedb_pfalciparum/genedb_pfalciparum-gafcheck: target/genedb_pfalciparum/genedb_pfalciparum-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/genedb_pfalciparum/genedb_pfalciparum-filtered.gpad: target/genedb_pfalciparum/genedb_pfalciparum-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/genedb_pfalciparum/genedb_pfalciparum.gpi: target/genedb_pfalciparum/genedb_pfalciparum-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/genedb_pfalciparum/genedb_pfalciparum.ttl: target/genedb_pfalciparum/genedb_pfalciparum-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## reactome
+## --------------------
+all_reactome: target/reactome/ target/reactome/reactome-filtered.gaf.gz target/reactome/reactome-filtered.gpad.gz target/reactome/reactome.gpi.gz target/reactome/reactome.ttl.gz target/reactome/reactome-gafcheck
+	echo done
+
+target/reactome/: 
+	mkdir $@
+
+target/reactome/reactome-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.reactome.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/reactome/reactome-filtered.gaf: target/reactome/reactome-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p reactome -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/reactome/reactome-gafcheck: target/reactome/reactome-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/reactome/reactome-filtered.gpad: target/reactome/reactome-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/reactome/reactome.gpi: target/reactome/reactome-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/reactome/reactome.ttl: target/reactome/reactome-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## paint_goa_chicken
+## --------------------
+all_paint_goa_chicken: target/paint_goa_chicken/ target/paint_goa_chicken/paint_goa_chicken-filtered.gaf.gz target/paint_goa_chicken/paint_goa_chicken-filtered.gpad.gz target/paint_goa_chicken/paint_goa_chicken.gpi.gz target/paint_goa_chicken/paint_goa_chicken.ttl.gz target/paint_goa_chicken/paint_goa_chicken-gafcheck
+	echo done
+
+target/paint_goa_chicken/: 
+	mkdir $@
+
+target/paint_goa_chicken/paint_goa_chicken-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_goa_chicken.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/paint_goa_chicken/paint_goa_chicken-filtered.gaf: target/paint_goa_chicken/paint_goa_chicken-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_goa_chicken -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/paint_goa_chicken/paint_goa_chicken-gafcheck: target/paint_goa_chicken/paint_goa_chicken-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/paint_goa_chicken/paint_goa_chicken-filtered.gpad: target/paint_goa_chicken/paint_goa_chicken-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/paint_goa_chicken/paint_goa_chicken.gpi: target/paint_goa_chicken/paint_goa_chicken-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/paint_goa_chicken/paint_goa_chicken.ttl: target/paint_goa_chicken/paint_goa_chicken-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## gonuts
+## --------------------
+all_gonuts: target/gonuts/ target/gonuts/gonuts-filtered.gaf.gz target/gonuts/gonuts-filtered.gpad.gz target/gonuts/gonuts.gpi.gz target/gonuts/gonuts.ttl.gz target/gonuts/gonuts-gafcheck
+	echo done
+
+target/gonuts/: 
+	mkdir $@
+
+target/gonuts/gonuts-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.gonuts.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/gonuts/gonuts-filtered.gaf: target/gonuts/gonuts-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p gonuts -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/gonuts/gonuts-gafcheck: target/gonuts/gonuts-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/gonuts/gonuts-filtered.gpad: target/gonuts/gonuts-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/gonuts/gonuts.gpi: target/gonuts/gonuts-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/gonuts/gonuts.ttl: target/gonuts/gonuts-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## paint_ecocyc
+## --------------------
+all_paint_ecocyc: target/paint_ecocyc/ target/paint_ecocyc/paint_ecocyc-filtered.gaf.gz target/paint_ecocyc/paint_ecocyc-filtered.gpad.gz target/paint_ecocyc/paint_ecocyc.gpi.gz target/paint_ecocyc/paint_ecocyc.ttl.gz target/paint_ecocyc/paint_ecocyc-gafcheck
+	echo done
+
+target/paint_ecocyc/: 
+	mkdir $@
+
+target/paint_ecocyc/paint_ecocyc-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_ecocyc.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/paint_ecocyc/paint_ecocyc-filtered.gaf: target/paint_ecocyc/paint_ecocyc-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_ecocyc -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/paint_ecocyc/paint_ecocyc-gafcheck: target/paint_ecocyc/paint_ecocyc-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/paint_ecocyc/paint_ecocyc-filtered.gpad: target/paint_ecocyc/paint_ecocyc-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/paint_ecocyc/paint_ecocyc.gpi: target/paint_ecocyc/paint_ecocyc-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/paint_ecocyc/paint_ecocyc.ttl: target/paint_ecocyc/paint_ecocyc-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## rgd
+## --------------------
+all_rgd: target/rgd/ target/rgd/rgd-filtered.gaf.gz target/rgd/rgd-filtered.gpad.gz target/rgd/rgd.gpi.gz target/rgd/rgd.ttl.gz target/rgd/rgd-gafcheck
+	echo done
+
+target/rgd/: 
+	mkdir $@
+
+target/rgd/rgd-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.rgd.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/rgd/rgd-filtered.gaf: target/rgd/rgd-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p rgd -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/rgd/rgd-gafcheck: target/rgd/rgd-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/rgd/rgd-filtered.gpad: target/rgd/rgd-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/rgd/rgd.gpi: target/rgd/rgd-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/rgd/rgd.ttl: target/rgd/rgd-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## pamgo_mgrisea
+## --------------------
+all_pamgo_mgrisea: target/pamgo_mgrisea/ target/pamgo_mgrisea/pamgo_mgrisea-filtered.gaf.gz target/pamgo_mgrisea/pamgo_mgrisea-filtered.gpad.gz target/pamgo_mgrisea/pamgo_mgrisea.gpi.gz target/pamgo_mgrisea/pamgo_mgrisea.ttl.gz target/pamgo_mgrisea/pamgo_mgrisea-gafcheck
+	echo done
+
+target/pamgo_mgrisea/: 
+	mkdir $@
+
+target/pamgo_mgrisea/pamgo_mgrisea-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Mgrisea.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/pamgo_mgrisea/pamgo_mgrisea-filtered.gaf: target/pamgo_mgrisea/pamgo_mgrisea-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p pamgo_mgrisea -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/pamgo_mgrisea/pamgo_mgrisea-gafcheck: target/pamgo_mgrisea/pamgo_mgrisea-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/pamgo_mgrisea/pamgo_mgrisea-filtered.gpad: target/pamgo_mgrisea/pamgo_mgrisea-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/pamgo_mgrisea/pamgo_mgrisea.gpi: target/pamgo_mgrisea/pamgo_mgrisea-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/pamgo_mgrisea/pamgo_mgrisea.ttl: target/pamgo_mgrisea/pamgo_mgrisea-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## goa_cow_isoform
+## --------------------
+all_goa_cow_isoform: target/goa_cow_isoform/ target/goa_cow_isoform/goa_cow_isoform-filtered.gaf.gz target/goa_cow_isoform/goa_cow_isoform-filtered.gpad.gz target/goa_cow_isoform/goa_cow_isoform.gpi.gz target/goa_cow_isoform/goa_cow_isoform.ttl.gz target/goa_cow_isoform/goa_cow_isoform-gafcheck
+	echo done
+
+target/goa_cow_isoform/: 
+	mkdir $@
+
+target/goa_cow_isoform/goa_cow_isoform-src.gaf.gz: 
+	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_isoform.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/goa_cow_isoform/goa_cow_isoform-filtered.gaf: target/goa_cow_isoform/goa_cow_isoform-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_cow_isoform -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/goa_cow_isoform/goa_cow_isoform-gafcheck: target/goa_cow_isoform/goa_cow_isoform-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/goa_cow_isoform/goa_cow_isoform-filtered.gpad: target/goa_cow_isoform/goa_cow_isoform-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/goa_cow_isoform/goa_cow_isoform.gpi: target/goa_cow_isoform/goa_cow_isoform-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/goa_cow_isoform/goa_cow_isoform.ttl: target/goa_cow_isoform/goa_cow_isoform-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## pseudocap
+## --------------------
+all_pseudocap: target/pseudocap/ target/pseudocap/pseudocap-filtered.gaf.gz target/pseudocap/pseudocap-filtered.gpad.gz target/pseudocap/pseudocap.gpi.gz target/pseudocap/pseudocap.ttl.gz target/pseudocap/pseudocap-gafcheck
+	echo done
+
+target/pseudocap/: 
+	mkdir $@
+
+target/pseudocap/pseudocap-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.pseudocap.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/pseudocap/pseudocap-filtered.gaf: target/pseudocap/pseudocap-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p pseudocap -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/pseudocap/pseudocap-gafcheck: target/pseudocap/pseudocap-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/pseudocap/pseudocap-filtered.gpad: target/pseudocap/pseudocap-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/pseudocap/pseudocap.gpi: target/pseudocap/pseudocap-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/pseudocap/pseudocap.ttl: target/pseudocap/pseudocap-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## goa_chicken
+## --------------------
+all_goa_chicken: target/goa_chicken/ target/goa_chicken/goa_chicken-filtered.gaf.gz target/goa_chicken/goa_chicken-filtered.gpad.gz target/goa_chicken/goa_chicken.gpi.gz target/goa_chicken/goa_chicken.ttl.gz target/goa_chicken/goa_chicken-gafcheck
+	echo done
+
+target/goa_chicken/: 
+	mkdir $@
+
+target/goa_chicken/goa_chicken-src.gaf.gz: 
+	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/goa_chicken/goa_chicken-filtered.gaf: target/goa_chicken/goa_chicken-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_chicken -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/goa_chicken/goa_chicken-gafcheck: target/goa_chicken/goa_chicken-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/goa_chicken/goa_chicken-filtered.gpad: target/goa_chicken/goa_chicken-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/goa_chicken/goa_chicken.gpi: target/goa_chicken/goa_chicken-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/goa_chicken/goa_chicken.ttl: target/goa_chicken/goa_chicken-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## paint_mgi
+## --------------------
+all_paint_mgi: target/paint_mgi/ target/paint_mgi/paint_mgi-filtered.gaf.gz target/paint_mgi/paint_mgi-filtered.gpad.gz target/paint_mgi/paint_mgi.gpi.gz target/paint_mgi/paint_mgi.ttl.gz target/paint_mgi/paint_mgi-gafcheck
+	echo done
+
+target/paint_mgi/: 
+	mkdir $@
+
+target/paint_mgi/paint_mgi-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_mgi.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/paint_mgi/paint_mgi-filtered.gaf: target/paint_mgi/paint_mgi-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_mgi -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/paint_mgi/paint_mgi-gafcheck: target/paint_mgi/paint_mgi-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/paint_mgi/paint_mgi-filtered.gpad: target/paint_mgi/paint_mgi-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/paint_mgi/paint_mgi.gpi: target/paint_mgi/paint_mgi-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/paint_mgi/paint_mgi.ttl: target/paint_mgi/paint_mgi-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## goa_pig_isoform
+## --------------------
+all_goa_pig_isoform: target/goa_pig_isoform/ target/goa_pig_isoform/goa_pig_isoform-filtered.gaf.gz target/goa_pig_isoform/goa_pig_isoform-filtered.gpad.gz target/goa_pig_isoform/goa_pig_isoform.gpi.gz target/goa_pig_isoform/goa_pig_isoform.ttl.gz target/goa_pig_isoform/goa_pig_isoform-gafcheck
+	echo done
+
+target/goa_pig_isoform/: 
+	mkdir $@
+
+target/goa_pig_isoform/goa_pig_isoform-src.gaf.gz: 
+	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_isoform.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/goa_pig_isoform/goa_pig_isoform-filtered.gaf: target/goa_pig_isoform/goa_pig_isoform-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_pig_isoform -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/goa_pig_isoform/goa_pig_isoform-gafcheck: target/goa_pig_isoform/goa_pig_isoform-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/goa_pig_isoform/goa_pig_isoform-filtered.gpad: target/goa_pig_isoform/goa_pig_isoform-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/goa_pig_isoform/goa_pig_isoform.gpi: target/goa_pig_isoform/goa_pig_isoform-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/goa_pig_isoform/goa_pig_isoform.ttl: target/goa_pig_isoform/goa_pig_isoform-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## goa_pig
+## --------------------
+all_goa_pig: target/goa_pig/ target/goa_pig/goa_pig-filtered.gaf.gz target/goa_pig/goa_pig-filtered.gpad.gz target/goa_pig/goa_pig.gpi.gz target/goa_pig/goa_pig.ttl.gz target/goa_pig/goa_pig-gafcheck
+	echo done
+
+target/goa_pig/: 
+	mkdir $@
+
+target/goa_pig/goa_pig-src.gaf.gz: 
+	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/goa_pig/goa_pig-filtered.gaf: target/goa_pig/goa_pig-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_pig -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/goa_pig/goa_pig-gafcheck: target/goa_pig/goa_pig-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/goa_pig/goa_pig-filtered.gpad: target/goa_pig/goa_pig-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/goa_pig/goa_pig.gpi: target/goa_pig/goa_pig-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/goa_pig/goa_pig.ttl: target/goa_pig/goa_pig-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## wb
+## --------------------
+all_wb: target/wb/ target/wb/wb-filtered.gaf.gz target/wb/wb-filtered.gpad.gz target/wb/wb.gpi.gz target/wb/wb.ttl.gz target/wb/wb-gafcheck
+	echo done
+
+target/wb/: 
+	mkdir $@
+
+target/wb/wb-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.wb.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/wb/wb-filtered.gaf: target/wb/wb-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p wb -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/wb/wb-gafcheck: target/wb/wb-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/wb/wb-filtered.gpad: target/wb/wb-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/wb/wb.gpi: target/wb/wb-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/wb/wb.ttl: target/wb/wb-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## paint_tair
+## --------------------
+all_paint_tair: target/paint_tair/ target/paint_tair/paint_tair-filtered.gaf.gz target/paint_tair/paint_tair-filtered.gpad.gz target/paint_tair/paint_tair.gpi.gz target/paint_tair/paint_tair.ttl.gz target/paint_tair/paint_tair-gafcheck
+	echo done
+
+target/paint_tair/: 
+	mkdir $@
+
+target/paint_tair/paint_tair-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_tair.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/paint_tair/paint_tair-filtered.gaf: target/paint_tair/paint_tair-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_tair -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/paint_tair/paint_tair-gafcheck: target/paint_tair/paint_tair-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/paint_tair/paint_tair-filtered.gpad: target/paint_tair/paint_tair-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/paint_tair/paint_tair.gpi: target/paint_tair/paint_tair-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/paint_tair/paint_tair.ttl: target/paint_tair/paint_tair-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## paint_goa_human
+## --------------------
+all_paint_goa_human: target/paint_goa_human/ target/paint_goa_human/paint_goa_human-filtered.gaf.gz target/paint_goa_human/paint_goa_human-filtered.gpad.gz target/paint_goa_human/paint_goa_human.gpi.gz target/paint_goa_human/paint_goa_human.ttl.gz target/paint_goa_human/paint_goa_human-gafcheck
+	echo done
+
+target/paint_goa_human/: 
+	mkdir $@
+
+target/paint_goa_human/paint_goa_human-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_goa_human.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/paint_goa_human/paint_goa_human-filtered.gaf: target/paint_goa_human/paint_goa_human-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_goa_human -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/paint_goa_human/paint_goa_human-gafcheck: target/paint_goa_human/paint_goa_human-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/paint_goa_human/paint_goa_human-filtered.gpad: target/paint_goa_human/paint_goa_human-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/paint_goa_human/paint_goa_human.gpi: target/paint_goa_human/paint_goa_human-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/paint_goa_human/paint_goa_human.ttl: target/paint_goa_human/paint_goa_human-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## ecocyc
+## --------------------
+all_ecocyc: target/ecocyc/ target/ecocyc/ecocyc-filtered.gaf.gz target/ecocyc/ecocyc-filtered.gpad.gz target/ecocyc/ecocyc.gpi.gz target/ecocyc/ecocyc.ttl.gz target/ecocyc/ecocyc-gafcheck
+	echo done
+
+target/ecocyc/: 
+	mkdir $@
+
+target/ecocyc/ecocyc-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.ecocyc.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/ecocyc/ecocyc-filtered.gaf: target/ecocyc/ecocyc-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p ecocyc -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/ecocyc/ecocyc-gafcheck: target/ecocyc/ecocyc-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/ecocyc/ecocyc-filtered.gpad: target/ecocyc/ecocyc-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/ecocyc/ecocyc.gpi: target/ecocyc/ecocyc-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/ecocyc/ecocyc.ttl: target/ecocyc/ecocyc-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## paint_other
+## --------------------
+all_paint_other: target/paint_other/ target/paint_other/paint_other-filtered.gaf.gz target/paint_other/paint_other-filtered.gpad.gz target/paint_other/paint_other.gpi.gz target/paint_other/paint_other.ttl.gz target/paint_other/paint_other-gafcheck
+	echo done
+
+target/paint_other/: 
+	mkdir $@
+
+target/paint_other/paint_other-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_other.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/paint_other/paint_other-filtered.gaf: target/paint_other/paint_other-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p paint_other -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/paint_other/paint_other-gafcheck: target/paint_other/paint_other-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/paint_other/paint_other-filtered.gpad: target/paint_other/paint_other-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/paint_other/paint_other.gpi: target/paint_other/paint_other-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/paint_other/paint_other.ttl: target/paint_other/paint_other-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## goa_dog_rna
+## --------------------
+all_goa_dog_rna: target/goa_dog_rna/ target/goa_dog_rna/goa_dog_rna-filtered.gaf.gz target/goa_dog_rna/goa_dog_rna-filtered.gpad.gz target/goa_dog_rna/goa_dog_rna.gpi.gz target/goa_dog_rna/goa_dog_rna.ttl.gz target/goa_dog_rna/goa_dog_rna-gafcheck
+	echo done
+
+target/goa_dog_rna/: 
+	mkdir $@
+
+target/goa_dog_rna/goa_dog_rna-src.gaf.gz: 
+	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_rna.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/goa_dog_rna/goa_dog_rna-filtered.gaf: target/goa_dog_rna/goa_dog_rna-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_dog_rna -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/goa_dog_rna/goa_dog_rna-gafcheck: target/goa_dog_rna/goa_dog_rna-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/goa_dog_rna/goa_dog_rna-filtered.gpad: target/goa_dog_rna/goa_dog_rna-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/goa_dog_rna/goa_dog_rna.gpi: target/goa_dog_rna/goa_dog_rna-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/goa_dog_rna/goa_dog_rna.ttl: target/goa_dog_rna/goa_dog_rna-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## cgd
+## --------------------
+all_cgd: target/cgd/ target/cgd/cgd-filtered.gaf.gz target/cgd/cgd-filtered.gpad.gz target/cgd/cgd.gpi.gz target/cgd/cgd.ttl.gz target/cgd/cgd-gafcheck
+	echo done
+
+target/cgd/: 
+	mkdir $@
+
+target/cgd/cgd-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.cgd.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/cgd/cgd-filtered.gaf: target/cgd/cgd-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p cgd -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/cgd/cgd-gafcheck: target/cgd/cgd-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/cgd/cgd-filtered.gpad: target/cgd/cgd-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/cgd/cgd.gpi: target/cgd/cgd-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/cgd/cgd.ttl: target/cgd/cgd-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## genedb_tsetse
+## --------------------
+all_genedb_tsetse: target/genedb_tsetse/ target/genedb_tsetse/genedb_tsetse-filtered.gaf.gz target/genedb_tsetse/genedb_tsetse-filtered.gpad.gz target/genedb_tsetse/genedb_tsetse.gpi.gz target/genedb_tsetse/genedb_tsetse.ttl.gz target/genedb_tsetse/genedb_tsetse-gafcheck
+	echo done
+
+target/genedb_tsetse/: 
+	mkdir $@
+
+target/genedb_tsetse/genedb_tsetse-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.GeneDB_tsetse.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/genedb_tsetse/genedb_tsetse-filtered.gaf: target/genedb_tsetse/genedb_tsetse-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p genedb_tsetse -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/genedb_tsetse/genedb_tsetse-gafcheck: target/genedb_tsetse/genedb_tsetse-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/genedb_tsetse/genedb_tsetse-filtered.gpad: target/genedb_tsetse/genedb_tsetse-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/genedb_tsetse/genedb_tsetse.gpi: target/genedb_tsetse/genedb_tsetse-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/genedb_tsetse/genedb_tsetse.ttl: target/genedb_tsetse/genedb_tsetse-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## goa_chicken_isoform
+## --------------------
+all_goa_chicken_isoform: target/goa_chicken_isoform/ target/goa_chicken_isoform/goa_chicken_isoform-filtered.gaf.gz target/goa_chicken_isoform/goa_chicken_isoform-filtered.gpad.gz target/goa_chicken_isoform/goa_chicken_isoform.gpi.gz target/goa_chicken_isoform/goa_chicken_isoform.ttl.gz target/goa_chicken_isoform/goa_chicken_isoform-gafcheck
+	echo done
+
+target/goa_chicken_isoform/: 
+	mkdir $@
+
+target/goa_chicken_isoform/goa_chicken_isoform-src.gaf.gz: 
+	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_isoform.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/goa_chicken_isoform/goa_chicken_isoform-filtered.gaf: target/goa_chicken_isoform/goa_chicken_isoform-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_chicken_isoform -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/goa_chicken_isoform/goa_chicken_isoform-gafcheck: target/goa_chicken_isoform/goa_chicken_isoform-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/goa_chicken_isoform/goa_chicken_isoform-filtered.gpad: target/goa_chicken_isoform/goa_chicken_isoform-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/goa_chicken_isoform/goa_chicken_isoform.gpi: target/goa_chicken_isoform/goa_chicken_isoform-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/goa_chicken_isoform/goa_chicken_isoform.ttl: target/goa_chicken_isoform/goa_chicken_isoform-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## goa_dog_isoform
+## --------------------
+all_goa_dog_isoform: target/goa_dog_isoform/ target/goa_dog_isoform/goa_dog_isoform-filtered.gaf.gz target/goa_dog_isoform/goa_dog_isoform-filtered.gpad.gz target/goa_dog_isoform/goa_dog_isoform.gpi.gz target/goa_dog_isoform/goa_dog_isoform.ttl.gz target/goa_dog_isoform/goa_dog_isoform-gafcheck
+	echo done
+
+target/goa_dog_isoform/: 
+	mkdir $@
+
+target/goa_dog_isoform/goa_dog_isoform-src.gaf.gz: 
+	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_isoform.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/goa_dog_isoform/goa_dog_isoform-filtered.gaf: target/goa_dog_isoform/goa_dog_isoform-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_dog_isoform -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/goa_dog_isoform/goa_dog_isoform-gafcheck: target/goa_dog_isoform/goa_dog_isoform-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/goa_dog_isoform/goa_dog_isoform-filtered.gpad: target/goa_dog_isoform/goa_dog_isoform-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/goa_dog_isoform/goa_dog_isoform.gpi: target/goa_dog_isoform/goa_dog_isoform-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/goa_dog_isoform/goa_dog_isoform.ttl: target/goa_dog_isoform/goa_dog_isoform-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## sgn
+## --------------------
+all_sgn: target/sgn/ target/sgn/sgn-filtered.gaf.gz target/sgn/sgn-filtered.gpad.gz target/sgn/sgn.gpi.gz target/sgn/sgn.ttl.gz target/sgn/sgn-gafcheck
+	echo done
+
+target/sgn/: 
+	mkdir $@
+
+target/sgn/sgn-src.gaf.gz: 
+	wget --no-check-certificate http://geneontology.org/gene-associations/submission/gene_association.sgn.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/sgn/sgn-filtered.gaf: target/sgn/sgn-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p sgn -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/sgn/sgn-gafcheck: target/sgn/sgn-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/sgn/sgn-filtered.gpad: target/sgn/sgn-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/sgn/sgn.gpi: target/sgn/sgn-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/sgn/sgn.ttl: target/sgn/sgn-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## goa_pig_rna
+## --------------------
+all_goa_pig_rna: target/goa_pig_rna/ target/goa_pig_rna/goa_pig_rna-filtered.gaf.gz target/goa_pig_rna/goa_pig_rna-filtered.gpad.gz target/goa_pig_rna/goa_pig_rna.gpi.gz target/goa_pig_rna/goa_pig_rna.ttl.gz target/goa_pig_rna/goa_pig_rna-gafcheck
+	echo done
+
+target/goa_pig_rna/: 
+	mkdir $@
+
+target/goa_pig_rna/goa_pig_rna-src.gaf.gz: 
+	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_rna.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/goa_pig_rna/goa_pig_rna-filtered.gaf: target/goa_pig_rna/goa_pig_rna-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_pig_rna -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/goa_pig_rna/goa_pig_rna-gafcheck: target/goa_pig_rna/goa_pig_rna-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/goa_pig_rna/goa_pig_rna-filtered.gpad: target/goa_pig_rna/goa_pig_rna-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/goa_pig_rna/goa_pig_rna.gpi: target/goa_pig_rna/goa_pig_rna-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/goa_pig_rna/goa_pig_rna.ttl: target/goa_pig_rna/goa_pig_rna-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## goa_human_complex
+## --------------------
+all_goa_human_complex: target/goa_human_complex/ target/goa_human_complex/goa_human_complex-filtered.gaf.gz target/goa_human_complex/goa_human_complex-filtered.gpad.gz target/goa_human_complex/goa_human_complex.gpi.gz target/goa_human_complex/goa_human_complex.ttl.gz target/goa_human_complex/goa_human_complex-gafcheck
+	echo done
+
+target/goa_human_complex/: 
+	mkdir $@
+
+target/goa_human_complex/goa_human_complex-src.gaf.gz: 
+	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_complex.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/goa_human_complex/goa_human_complex-filtered.gaf: target/goa_human_complex/goa_human_complex-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_human_complex -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/goa_human_complex/goa_human_complex-gafcheck: target/goa_human_complex/goa_human_complex-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/goa_human_complex/goa_human_complex-filtered.gpad: target/goa_human_complex/goa_human_complex-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/goa_human_complex/goa_human_complex.gpi: target/goa_human_complex/goa_human_complex-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/goa_human_complex/goa_human_complex.ttl: target/goa_human_complex/goa_human_complex-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+## --------------------
+## goa_dog_complex
+## --------------------
+all_goa_dog_complex: target/goa_dog_complex/ target/goa_dog_complex/goa_dog_complex-filtered.gaf.gz target/goa_dog_complex/goa_dog_complex-filtered.gpad.gz target/goa_dog_complex/goa_dog_complex.gpi.gz target/goa_dog_complex/goa_dog_complex.ttl.gz target/goa_dog_complex/goa_dog_complex-gafcheck
+	echo done
+
+target/goa_dog_complex/: 
+	mkdir $@
+
+target/goa_dog_complex/goa_dog_complex-src.gaf.gz: 
+	wget --no-check-certificate ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_complex.gaf.gz -O $@.tmp && mv $@.tmp $@ && touch $@
+
+target/goa_dog_complex/goa_dog_complex-filtered.gaf: target/goa_dog_complex/goa_dog_complex-src.gaf.gz
+	gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p goa_dog_complex -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@
+
+target/goa_dog_complex/goa_dog_complex-gafcheck: target/goa_dog_complex/goa_dog_complex-src.gaf.gz
+	$(OWLTOOLS_GAFCHECK)
+
+target/goa_dog_complex/goa_dog_complex-filtered.gpad: target/goa_dog_complex/goa_dog_complex-filtered.gaf
+	owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@
+
+target/goa_dog_complex/goa_dog_complex.gpi: target/goa_dog_complex/goa_dog_complex-filtered.gaf
+	owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@
+
+target/goa_dog_complex/goa_dog_complex.ttl: target/goa_dog_complex/goa_dog_complex-filtered.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
+
+all_gafs: all_paint_dictybase all_goa_chicken_rna all_dictybase all_zfin all_goa_chicken_complex all_goa_human all_goa_human_rna all_pamgo_ddadantii all_goa_dog all_goa_pdb all_goa_pig_complex all_genedb_lmajor all_gramene_oryza all_goa_cow_rna all_paint_zfin all_pamgo_oomycetes all_goa_cow_complex all_pamgo_atumefaciens all_jcvi all_mgi all_paint_fb all_paint_sgd all_pombase all_tair all_sgd all_paint_rgd all_goa_cow all_aspgd all_paint_wb all_paint_cgd all_fb all_xenbase all_goa_human_isoform all_genedb_tbrucei all_paint_pombase all_genedb_pfalciparum all_reactome all_paint_goa_chicken all_gonuts all_paint_ecocyc all_rgd all_pamgo_mgrisea all_goa_cow_isoform all_pseudocap all_goa_chicken all_paint_mgi all_goa_pig_isoform all_goa_pig all_wb all_paint_tair all_paint_goa_human all_ecocyc all_paint_other all_goa_dog_rna all_cgd all_genedb_tsetse all_goa_chicken_isoform all_goa_dog_isoform all_sgn all_goa_pig_rna all_goa_human_complex all_goa_dog_complex
 	echo done
 

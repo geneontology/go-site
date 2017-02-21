@@ -2,6 +2,9 @@ OBO= http://purl.obolibrary.org/obo
 METADATA_DIR=../metadata/datasets
 REPORT=target/combined.report
 
+GAF_OWL_REMOTE= http://purl.obolibrary.org/obo/go/extensions/go-gaf.owl
+GAF_OWL= target/go-gaf.owl
+
 all: target/Makefile extra_files all_gafs $(REPORT)
 
 test:
@@ -23,7 +26,7 @@ clean:
 # ----------------------------------------
 
 .PHONY: extra_files
-extra_files: target/go.obo target/datasets-metadata.json
+extra_files: target/go.obo target/datasets-metadata.json $(GAF_OWL)
 
 # TODO - update
 target/datasets-metadata.json:
@@ -31,6 +34,9 @@ target/datasets-metadata.json:
 
 target/go.obo:
 	wget --no-check-certificate $(OBO)/go.obo -O $@.tmp && mv $@.tmp $@ && touch $@
+$(GAF_OWL):
+	owltools $(GAF_OWL_REMOTE) --merge-imports-closure -o $@
+
 #target/GO.xrf_abbs: 
 #	node ../scripts/db-xrefs-yaml2legacy.js  -i ../metadata/db-xrefs.yaml  > $@.tmp && mv $@.tmp $@
 
@@ -43,7 +49,6 @@ proc:
 # ----------------------------------------
 
 CATALOG_DETAILS=
-GAF_OWL= http://purl.obolibrary.org/obo/go/extensions/go-gaf.owl
 OWLTOOLS_GAFCHECK = owltools $(CATALOG_DETAILS) $(GAF_OWL) \
 --gaf $< \
 --createReport \
