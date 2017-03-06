@@ -21,7 +21,6 @@ var engine = new node_engine(golr_response);
 var sd = new amigo.data.server();
 //_ll(us.keys(sd));
 var golr_url = sd.golr_base();
-_debug('Target: ' + golr_url);
 var go = new golr_manager(golr_url, gconf, engine, 'sync');
 var linker = new amigo.linker();
 
@@ -94,6 +93,8 @@ if( ! in_file ){
 ///
 /// Main.
 ///
+
+_debug('Target: ' + golr_url);
 
 // Read in the rules files.
 var raw_file = fs.readFileSync(in_file, 'utf-8');
