@@ -14,7 +14,6 @@ var fs = require("fs");
 var node_engine = require('bbop-rest-manager').sync_request;
 var amigo = require('amigo2');
 var golr_conf = require('golr-conf');
-var golr_conf = require('golr-conf');
 var golr_manager = require('bbop-manager-golr');
 var golr_response = require('bbop-response-golr');
 var gconf = new golr_conf.conf(amigo.data.golr);
@@ -22,6 +21,7 @@ var engine = new node_engine(golr_response);
 var sd = new amigo.data.server();
 //_ll(us.keys(sd));
 var golr_url = sd.golr_base();
+_debug('Target: ' + golr_url);
 var go = new golr_manager(golr_url, gconf, engine, 'sync');
 var linker = new amigo.linker();
 
