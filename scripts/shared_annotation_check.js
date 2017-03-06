@@ -224,7 +224,8 @@ each(logic_checks, function(arg_list, key){
 	});
 	
 	// Fetch the data and grab the info we want.
-	var resp = go.fetch();
+	//var resp = go.fetch();
+	var resp = go.search();
 	var count = resp.total_documents();
 	//var bookmark = go.get_state_url();
 	var bookmark = 'http://amigo.geneontology.org/amigo/search/bioentity?' +
