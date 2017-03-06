@@ -16,11 +16,13 @@ var amigo = require('amigo2');
 var golr_conf = require('golr-conf');
 var golr_manager = require('bbop-manager-golr');
 var golr_response = require('bbop-response-golr');
+//
 var gconf = new golr_conf.conf(amigo.data.golr);
 var engine = new node_engine(golr_response);
 var sd = new amigo.data.server();
 //_ll(us.keys(sd));
-var golr_url = sd.golr_base();
+//var golr_url = sd.golr_base();
+var golr_url = 'http://golr.geneontology.org/';
 var go = new golr_manager(golr_url, gconf, engine, 'sync');
 var linker = new amigo.linker();
 
@@ -52,23 +54,6 @@ function _die(m1, m2){
     process.exit(-1);
 }
 
-// Helper to bookmark into A2.
-function _link_to_a2(bookmark){
-
-    var retl =
-	    // BUG/TODO:
-	    //sdata.app_base() + '/' + 
-	    //'http://amigo2.berkeleybop.org/cgi-bin/amigo2' + '/' + 
-	    //linker.url(encodeURIComponent(bookmark), 'search');
-	    linker.url(bookmark, 'search', go.get_personality());
-
-    // Seems to be something wonky in the local config we're pulling
-    // from.
-    //retl = retl.replace('localhost', 'amigo2.berkeleybop.org');
-
-    return retl;
-}
-
 ///
 /// Opts.
 ///
@@ -95,6 +80,14 @@ if( ! in_file ){
 ///
 
 _debug('Target: ' + golr_url);
+// delete amigo.data.golr;
+// delete amigo.data.xrefs;
+// delete amigo.data.context;
+// delete amigo.data.xrefs;
+// delete amigo.data.statistics;
+// _debug(JSON.stringify(us.keys(amigo.data), null, 4));
+// _debug(JSON.stringify(amigo.data, null, 4));
+// _die();
 
 // Read in the rules files.
 var raw_file = fs.readFileSync(in_file, 'utf-8');
@@ -169,8 +162,10 @@ function run_n_way_and(arg_list){
     //var resp = go.fetch();
     var resp = go.search();
     var count = resp.total_documents();
-    var bookmark = go.get_state_url();
-
+    //var bookmark = go.get_state_url();
+    var bookmark = 'http://amigo.geneontology.org/amigo/search/bioentity?' +
+	    go.get_filter_query_string();
+    
     // Reset from the last iteration.
     go.reset_query_filters();
 
@@ -189,7 +184,7 @@ each(no_overlap_checks, function(arg_list, key){
 	_ll('ERROR : exclusive count of ' +
 	    count + ' on: ' +
 	    key + "\n\t" +
-	    _link_to_a2(bookmark));
+	    bookmark);
     }
 });
 
@@ -231,7 +226,9 @@ each(logic_checks, function(arg_list, key){
 	// Fetch the data and grab the info we want.
 	var resp = go.fetch();
 	var count = resp.total_documents();
-	var bookmark = go.get_state_url();
+	//var bookmark = go.get_state_url();
+	var bookmark = 'http://amigo.geneontology.org/amigo/search/bioentity?' +
+		go.get_filter_query_string();
 
 	// Test the count to make sure that there were annotations
 	// for at least one of the choices.
@@ -241,7 +238,7 @@ each(logic_checks, function(arg_list, key){
 	    check_errors++;
 	    _ll('ERROR : bad co-annotations for: ' +
 		key + "\n\t" +
-		_link_to_a2(bookmark));
+		bookmark);
 	    // }else{
 	    //     check_errors.push('PASS: co-annotation for: ' + key);
 	    // }
