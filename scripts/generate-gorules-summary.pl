@@ -48,7 +48,7 @@ sub print_block {
     my $title = $obj->{title};
     $out .= "## $title\n\n";
 
-    $out .= " * id: [GORULE:$id](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-$id.md\n";
+    $out .= " * id: [GORULE:$id](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-$id.md)\n";
 
     my $status = $obj->{status};
     $out .= " * status: $status\n" if $status;

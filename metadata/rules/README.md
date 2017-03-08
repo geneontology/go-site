@@ -24,7 +24,7 @@
 <a name="gorule0000001"/>
 ## Basic GAF checks
 
- * id: [GORULE:0000001](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000001.md
+ * id: [GORULE:0000001](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000001.md)
  * status: Implemented
 
 
@@ -41,7 +41,7 @@
 <a name="gorule0000002"/>
 ## No 'NOT' annotations to 'protein binding ; GO:0005515'
 
- * id: [GORULE:0000002](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000002.md
+ * id: [GORULE:0000002](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000002.md)
  * status: Implemented
 
 
@@ -52,7 +52,7 @@
 <a name="gorule0000003"/>
 ## Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field
 
- * id: [GORULE:0000003](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000003.md
+ * id: [GORULE:0000003](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000003.md)
  * status: Implemented
 
 
@@ -62,7 +62,7 @@
 <a name="gorule0000004"/>
 ## Reciprocal annotations for 'protein binding ; GO:0005515'
 
- * id: [GORULE:0000004](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000004.md
+ * id: [GORULE:0000004](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000004.md)
  * status: Approved
 
 
@@ -72,7 +72,7 @@
 <a name="gorule0000005"/>
 ## No ISS or ISS-related annotations to 'protein binding ; GO:0005515'
 
- * id: [GORULE:0000005](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000005.md
+ * id: [GORULE:0000005](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000005.md)
  * status: Approved
 
 
@@ -108,7 +108,7 @@ This rule only applies to GO:0005515, as descendant terms such as <span class="t
 <a name="gorule0000006"/>
 ## IEP usage is restricted to terms from the Biological Process ontology
 
- * id: [GORULE:0000006](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000006.md
+ * id: [GORULE:0000006](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000006.md)
  * status: Implemented
 
 
@@ -117,7 +117,7 @@ This rule only applies to GO:0005515, as descendant terms such as <span class="t
 <a name="gorule0000007"/>
 ## IPI should not be used with catalytic activity molecular function terms
 
- * id: [GORULE:0000007](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000007.md
+ * id: [GORULE:0000007](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000007.md)
  * status: Proposed
 
 
@@ -126,7 +126,7 @@ This rule only applies to GO:0005515, as descendant terms such as <span class="t
 <a name="gorule0000008"/>
 ## No annotations should be made to uninformative high level terms
 
- * id: [GORULE:0000008](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000008.md
+ * id: [GORULE:0000008](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000008.md)
  * status: Proposed
 
 
@@ -143,7 +143,7 @@ but a human curator should always be able to find a more specific annotation.</p
 <a name="gorule0000009"/>
 ## Annotation Intersection Alerts
 
- * id: [GORULE:0000009](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000009.md
+ * id: [GORULE:0000009](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000009.md)
  * status: Proposed
 
 
@@ -151,7 +151,7 @@ To be added
 <a name="gorule0000010"/>
 ## PubMed reference formatting must be correct
 
- * id: [GORULE:0000010](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000010.md
+ * id: [GORULE:0000010](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000010.md)
  * status: Proposed
 
 
@@ -166,7 +166,7 @@ To be added
 <a name="gorule0000011"/>
 ## ND annotations to root nodes only
 
- * id: [GORULE:0000011](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000011.md
+ * id: [GORULE:0000011](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000011.md)
  * status: Proposed
 
 
@@ -186,7 +186,7 @@ The SQL code identifies all <span class="evCode">ND</span> annotations that do n
 <a name="gorule0000013"/>
 ## Taxon-appropriate annotation check
 
- * id: [GORULE:0000013](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000013.md
+ * id: [GORULE:0000013](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000013.md)
  * status: Proposed
 
 
@@ -195,7 +195,7 @@ The SQL code identifies all <span class="evCode">ND</span> annotations that do n
 <a name="gorule0000014"/>
 ## Valid GO term ID
 
- * id: [GORULE:0000014](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000014.md
+ * id: [GORULE:0000014](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000014.md)
  * status: Proposed
 
 
@@ -203,7 +203,7 @@ This check ensures that the GO IDs used for annotations are valid IDs and are no
 <a name="gorule0000015"/>
 ## Dual species taxon check
 
- * id: [GORULE:0000015](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000015.md
+ * id: [GORULE:0000015](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000015.md)
  * status: Proposed
 
 
@@ -211,7 +211,7 @@ Dual species annotations are used to capture information about multi-organism in
 <a name="gorule0000016"/>
 ## IC annotations require a With/From GO ID
 
- * id: [GORULE:0000016](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000016.md
+ * id: [GORULE:0000016](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000016.md)
  * status: Approved
 
 
@@ -219,7 +219,7 @@ Dual species annotations are used to capture information about multi-organism in
 <a name="gorule0000017"/>
 ## IDA annotations must not have a With/From entry
 
- * id: [GORULE:0000017](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000017.md
+ * id: [GORULE:0000017](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000017.md)
  * status: Approved
 
 
@@ -227,7 +227,7 @@ Use IDA only when no identifier can be placed in the "With/From" column. When th
 <a name="gorule0000018"/>
 ## IPI annotations require a With/From entry
 
- * id: [GORULE:0000018](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000018.md
+ * id: [GORULE:0000018](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000018.md)
  * status: Approved
 
 
@@ -235,7 +235,7 @@ Use IDA only when no identifier can be placed in the "With/From" column. When th
 <a name="gorule0000019"/>
 ## Generic Reasoner Validation Check
 
- * id: [GORULE:0000019](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000019.md
+ * id: [GORULE:0000019](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000019.md)
  * status: Implemented
 
 
@@ -247,7 +247,7 @@ complete DL reasoner such as HermiT. </p>
 <a name="gorule0000020"/>
 ## Automatic repair of annotations to merged or obsoleted terms
 
- * id: [GORULE:0000020](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000020.md
+ * id: [GORULE:0000020](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000020.md)
  * status: Approved
 
 
@@ -264,7 +264,7 @@ the GAF line.
 <a name="gorule0000021"/>
 ## Check with/from for sequence similarity evidence for valid database ID
 
- * id: [GORULE:0000021](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000021.md
+ * id: [GORULE:0000021](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000021.md)
  * status: Approved
 
 
@@ -273,7 +273,7 @@ that is either identical to or a descendant of the main annotation.
 <a name="gorule0000022"/>
 ## Check for, and filter, annotations made to retracted publications
 
- * id: [GORULE:0000022](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000022.md
+ * id: [GORULE:0000022](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000022.md)
  * status: Pending
 
 
