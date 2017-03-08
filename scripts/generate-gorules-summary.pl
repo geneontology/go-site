@@ -43,7 +43,7 @@ sub print_block {
     my $obj = Load($block);
     my $id = $obj->{id};
     $id =~ s@GORULE:@@;
-    $out.= "<a name=\"gorule$id\"/>\n";
+    $out.= "\n<a name=\"gorule$id\"/>\n";
 
     my $title = $obj->{title};
     $out .= "## $title\n\n";
@@ -53,7 +53,7 @@ sub print_block {
     my $status = $obj->{status};
     $out .= " * status: $status\n" if $status;
 
-    $out .= "\n";
+    $out .= "\n\n";
     push(@rules, " * <a href=\"#gorule$id\">GORULE:$id $title</a>");
 }
 
