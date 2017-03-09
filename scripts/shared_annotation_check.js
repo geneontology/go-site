@@ -25,6 +25,10 @@ var sd = new amigo.data.server();
 var golr_url = 'http://golr.geneontology.org/';
 var go = new golr_manager(golr_url, gconf, engine, 'sync');
 var linker = new amigo.linker();
+// For getting term info later.
+var rest_engine = require('bbop-rest-manager').sync_request;
+var response_json = require('bbop-rest-response').json;
+var resty = new rest_engine(response_json);
 
 ///
 /// Helpers.
@@ -52,6 +56,37 @@ function _die(m1, m2){
 	console.error('ERROR:', m1);
     }
     process.exit(-1);
+}
+
+function term_info_url(tid){
+    return 'http://amigo.geneontology.org/amigo/term/'+tid+'/json';
+}
+
+var memo = {};
+function get_term_name(tid){
+    var ret = tid;
+
+    if( memo[tid] ){
+	ret = memo[tid];
+    }else{	
+	try {
+	    
+	    resty.resource(term_info_url(tid));
+	    var r = resty.fetch();
+	    if( r && r.okay() ){
+		var res = r.raw();
+		if( res['results'] && res['results']['name'] && us.isString(res['results']['name']) ){
+		    ret = res['results']['name'];
+		    memo[tid] = ret;
+		}
+	    }
+	    
+	}catch(e){
+            ret = tid;
+	}
+    }
+
+    return ret;
 }
 
 ///
@@ -179,6 +214,9 @@ each(no_overlap_checks, function(arg_list, key){
     var count = run_results[0];
     var bookmark = run_results[1];
     _ll('Checked exclusive: '+ arg_list.join(' && ') +' ('+ count +')');
+    _ll('.................. ' +
+	us.map(arg_list, function(e){ return get_term_name(e); }).join(', ')
+       );
     if( count !== 0 ){
 	check_errors++;
 	_ll('ERROR : exclusive count of ' +
@@ -186,6 +224,7 @@ each(no_overlap_checks, function(arg_list, key){
 	    key + "\t" +
 	    bookmark);
     }
+    _ll('');
 });
 
 // Now try the !AND logic tests.
@@ -235,6 +274,10 @@ each(logic_checks, function(arg_list, key){
 	// for at least one of the choices.
 	_ll('Checked exclusion: ' + arg1 + ' && ' + arg2  + ' && !(' +  
 	    exclusion_list.join(' || ') + ') (' + count + ')');
+	_ll('.................. ' + get_term_name(arg1) + ', ' + get_term_name(arg2) + ', ' +
+	    us.map(exclusion_list,
+		   function(e){ return get_term_name(e); }).join(', ')
+	   );
 	if( count !== 0 ){
 	    check_errors++;
 	    _ll('ERROR : bad co-annotations for: ' +
@@ -244,6 +287,7 @@ each(logic_checks, function(arg_list, key){
 	    //     check_errors.push('PASS: co-annotation for: ' + key);
 	    // }
 	}
+	_ll('');
     }
 });
 
