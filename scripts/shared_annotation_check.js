@@ -183,7 +183,7 @@ each(no_overlap_checks, function(arg_list, key){
 	check_errors++;
 	_ll('ERROR : exclusive count of ' +
 	    count + ' on: ' +
-	    key + "\n\t" +
+	    key + "\t" +
 	    bookmark);
     }
 });
@@ -238,7 +238,7 @@ each(logic_checks, function(arg_list, key){
 	if( count !== 0 ){
 	    check_errors++;
 	    _ll('ERROR : bad co-annotations for: ' +
-		key + "\n\t" +
+		key + "\t" +
 		bookmark);
 	    // }else{
 	    //     check_errors.push('PASS: co-annotation for: ' + key);
