@@ -241,6 +241,13 @@
       url_syntax: http://gowiki.tamu.edu/wiki/index.php/[example_id]
       example_id: MYCS2:A0QNF5
       example_url: http://gowiki.tamu.edu/wiki/index.php/MYCS2:A0QNF5
+- database: CAFA
+  name: Critical Assessment of Protein Function Annotation
+  generic_urls:
+    - http://biofunctionprediction.org/cafa/
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
 - database: CAS
   name: CAS Chemical Registry
   description: CAS REGISTRY is the most authoritative collection of disclosed chemical substance information, containing more than 54 million organic and inorganic substances and 62 million sequences. CAS REGISTRY covers substances identified from the scientific literature from 1957 to the present, with additional substances going back to the early 1900s.
@@ -2893,11 +2900,10 @@
       example_id: UBERON:0002398
       example_url: http://purl.obolibrary.org/obo/UBERON_0002398
     - type_name: life cycle stage
-      type_id: UBERON:0000105 
+      type_id: UBERON:0000105
       id_syntax: '[0-9]{7}'
       url_syntax: http://purl.obolibrary.org/obo/UBERON_[example_id]
       example_id: UBERON:0000069
- 
 - database: UM-BBD
   name: EAWAG Biocatalysis/Biodegradation Database
   generic_urls:
