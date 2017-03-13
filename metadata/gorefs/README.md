@@ -1,3 +1,9 @@
+# GO REFs
+
+This is a collection of references used by the GO Consortium
+
+To see how to add to this file, see [README-editors.md](README-editors.md)
+
  * <a href="#goref0000001">GO_REF:0000001 GO Consortium unpublished data</a>
  * <a href="#goref0000002">GO_REF:0000002 Gene Ontology annotation through association of InterPro records with GO terms.</a>
  * <a href="#goref0000003">GO_REF:0000003 Gene Ontology annotation based on Enzyme Commission mapping.</a>

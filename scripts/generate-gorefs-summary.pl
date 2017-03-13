@@ -2,7 +2,11 @@
 use strict;
 use YAML::Syck; $YAML::Syck::ImplicitTyping = 1;
 use Data::Dumper;
-# Supremely hacky script, see https://github.com/geneontology/go-site/issues/282
+# Supremely hacky script, see https://github.com/geneontology/go-site/issues/271
+
+print "# GO REFs\n\n";
+print "This is a collection of references used by the GO Consortium\n\n";
+print "To see how to add to this file, see [README-editors.md](README-editors.md)\n\n";
 
 my $yaml = 0;
 my $block = "";
