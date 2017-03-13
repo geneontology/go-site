@@ -2,7 +2,7 @@ Collections of metadata files of use by the GOC.
 
 In general we follow the pattern:
 
- * metadata source in YAML
+ * metadata source in YAML (or YAML embedded inside Markdown)
  * schema for each file also specified in YAML
  * metadata can be edited via github web interface, followed by Pull Request
  * Travis-CI checks file against schema - see the [../.travis.yml](../.travis.yml), if passes can be merged
@@ -93,12 +93,29 @@ These are added by Noctua. Note the user must select one or more group roles (mu
 
 # db-xrefs.yaml
 
+Registry of database prefixes
+
  - [db-xrefs.yaml](db-xrefs.yaml) - prefix registry
  - [db-xrefs.schema.yaml](db-xrefs.schema.yaml) - schema
 
 # datasets
 
+Metadata about locations and contents of GAFS and GPADs contributed to GO Central
+
 See the [datasets/](datasets) directory for more details
 
  - [datasets.schema.yaml](datasets.schema.yaml) - schema
+
+# gorules
+
+Enumerated rules used for QC within the GO
+
+See the [gorules/](gorules) directory for more details
+
+# gorefs
+
+Ad-hoc references and publications referenced within GO, where no PMID or DOI available.
+
+See the [gorefs/](gorefs) directory for more details
+
 
