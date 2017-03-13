@@ -7,6 +7,6 @@ How to add a reference to the system:
  5. Select "make changes on a new branch" if requested
  6. Click the button to make a Pull Request
 
-A member of GO Central will review your changes and either incorporate
+A member of GO Central will review your changes and either incorporate. This person will also update the index -- the [README.md](README.md) file. This is done by typing `make all` on the command line after checking out the repo.
 
 Note the same procedure can be used to make edits to existing GOREFS.
