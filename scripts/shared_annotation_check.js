@@ -1,7 +1,7 @@
 ////
 //// Determine if the rules in the rules file are true. Complain if not.
 //// Usage like:
-//// : node ./scripts/shared_annotation_check.js -i ./scripts/shared_annotation_check.rules
+//// : node ./scripts/shared_annotation_check.js -i ./scripts/shared_annotation_check.rules-new
 ////
 
 // General.
@@ -133,10 +133,8 @@ if( typeof(raw_file) !== 'string' ){
 }
 
 // Our rules variables.
- // Looks like {idA : [arg1A, arg2A], ...}
-var no_overlap_checks = {};
-// Looks like {idA : [arg1A, arg2A, [or1A, or2A, ...]], ...}
-var logic_checks = {};
+// Looks like {idA : {term1: arg1A, term2: arg2A}, intersection_exceptions: [], ...}
+var intersection_checks = {};
 var check_errors = 0;
 
 // Parse the rules file.
@@ -146,152 +144,130 @@ var clean_file = string.trim(raw_file);
 var rule_lines = string.lines(clean_file);
 //_debug('rule_lines');
 //_debug(rule_lines);
-each(rule_lines, function(raw_line){
+each(rule_lines, function(raw_line, index){
 
     var line = string.trim(raw_line);
     //_debug('line');
     //_debug(line);
-    var columns = line.split(/\s*,\s*/);
+    var columns = line.split(/\t/);
     //_debug('columns');
-    _debug(columns);
+    //_debug(columns);
     
-    // Make sure that it is at least grossly a rule.
-    if( columns.length !== 3 ){ _die('Bad rule: ' + raw_line); }
-
     // Switch between NO_OVERLAP and logic modes.
-    var arg1 = columns[0];
-    var arg2 = columns[1];
-    var logic = columns[2];
-    if( logic === 'NO_OVERLAP' ){
-	// Simple check.
-	//_ll('Simple check: ' + arg1 + ', ' + arg2);
-	no_overlap_checks[arg1 + ';' + arg2] = [arg1, arg2];
-    }else{
-	// Parse logic.
-	var parsed_logic = logic.split(/\s*OR\s*/);
-	var or_log_bun = [arg1, arg2, parsed_logic];
-	//_ll('TODO: Logic check: ' + bbop.core.dump(or_log_bun));
-	logic_checks[arg1 + ';' + arg2 + ';' + logic] = or_log_bun;
+    var term1 = columns[0];
+    var term2 = columns[1];
+    var intersection_exceptions_raw = columns[2];
+    var gp_exceptions_raw = columns[3];
+
+    // Make sure that it is at least grossly a rule.
+    if( ! term1 || ! term2 ){ _die('Bad rule: ' + raw_line); }
+
+    // Parse logic.
+    var intersection_exceptions = [];
+    if( intersection_exceptions_raw ){
+	intersection_exceptions =
+	    intersection_exceptions_raw.split(/\s*\|\s*/);
     }
+    var gp_exceptions = [];
+    if( gp_exceptions_raw ){
+	gp_exceptions =
+	    gp_exceptions_raw.split(/\s*\|\s*/);
+    }
+
+    var ln = index + 1;
+    intersection_checks[ln] = {
+	'line_number': ln,
+	'raw': raw_line,
+	'term1': term1,
+	'term2': term2,
+	'intersection_exceptions': intersection_exceptions,
+	'gp_exceptions': gp_exceptions
+    };
+
 });
 
-// Next, setup the manager environment.
-_debug('Parsed rules, setting up manager...');
-//go.add_query_filter('document_category', 'annotation', ['*']);
-go.add_query_filter('document_category', 'bioentity', ['*']);
-//go.add_query_filter('taxon', 'NCBITaxon:4896', ['*']);
-//go.set_personality('annotation');
-go.set_personality('bioentity');
-go.debug(false); // I think the default is still on?
+//_debug(intersection_checks);
+//_die('done');
 
-// Runs an n-way AND in the closure and returns the count and a
-// bookmark to the data in question.
-function run_n_way_and(arg_list){
+// Now try the !AND logic tests.
+_debug('Running intersection checks...');
+each(intersection_checks, function(args){    
+	
+    // Next, setup the manager environment.
+    _debug('Parsed rules, setting up manager...');
+    var go = new golr_manager(golr_url, gconf, engine, 'sync');
+    //go.add_query_filter('document_category', 'annotation', ['*']);
+    go.add_query_filter('document_category', 'bioentity', ['*']);
+    //go.add_query_filter('taxon', 'NCBITaxon:4896', ['*']);
+    //go.set_personality('annotation');
+    go.set_personality('bioentity');
+    go.debug(false); // I think the default is still on?
+
+    // Add the first part of the base intersections.
+    go.add_query_filter('isa_partof_closure', args['term1']);
+    go.add_query_filter('isa_partof_closure', args['term2']);
     
-    // Add all of the items in the simple 
-    each(arg_list, function(arg){
-	go.add_query_filter('isa_partof_closure', arg);
+    // Add all of the items in term exceptions part.
+    each(args['intersection_exceptions'], function(exarg){
+	go.add_query_filter('isa_partof_closure', exarg, ['-']);
     });
 
-    // Fetch the data and grab the number we want.
+    // Add all of the items in gp exceptions part.
+    each(args['gp_exceptions'], function(exarg){
+	go.add_query_filter('bioentity', exarg, ['-']);
+    });
+    
+    // Fetch the data and grab the info we want.
     //var resp = go.fetch();
     var resp = go.search();
     var count = resp.total_documents();
     //var bookmark = go.get_state_url();
     var bookmark = 'http://amigo.geneontology.org/amigo/search/bioentity?' +
 	    go.get_filter_query_string();
+
+    // Report.
+    var report_string = 'Check intersection: ' +
+	    args['term1'] + ' && ' + args['term2'];
+    if( args['intersection_exceptions'].length !== 0 ){
+	report_string +=
+	    ' && !(' + args['intersection_exceptions'].join(' || ') + ')';
+    }
+    if( args['gp_exceptions'].length !== 0 ){
+	report_string +=
+	    ' && !(' + args['gp_exceptions'].join(' || ') + ')';
+    }
+    report_string += ' (' + count + ')';
+    _ll(report_string);
     
-    // Reset from the last iteration.
-    go.reset_query_filters();
+    // Human readable names.
+    var readable_str = '................... "' +
+	    get_term_name(args['term1']) + '", "' +
+	    get_term_name(args['term2']) + '"';
+    if( args['intersection_exceptions'].length !== 0 ){
+	readable_str += '; with term exceptions: "' +
+	    us.map(args['intersection_exceptions'],
+		   function(e){ return get_term_name(e); }).join('", "') + '"';
+    }
+    if( args['gp_exceptions'].length !== 0 ){
+	readable_str += '; with GP exceptions: "' +
+	    us.map(args['gp_exceptions'],
+		   function(e){ return e; }).join('", "') + '"';
+    }
+    _ll(readable_str);
 
-    return [count, bookmark];
-}
-
-// First, we cycle though all the simple exclusivity tests.
-_debug('Running simple exclusivity checks...');
-each(no_overlap_checks, function(arg_list, key){
-    var run_results = run_n_way_and(arg_list);
-    var count = run_results[0];
-    var bookmark = run_results[1];
-    _ll('Checked exclusive: '+ arg_list.join(' && ') +' ('+ count +')');
-    _ll('.................. ' +
-	us.map(arg_list, function(e){ return get_term_name(e); }).join(', ')
-       );
+    // Liost error or not.
     if( count !== 0 ){
 	check_errors++;
-	_ll('ERROR : exclusive count of ' +
-	    count + ' on: ' +
-	    key + "\t" +
-	    bookmark);
-    }
-    _ll('');
-});
-
-// Now try the !AND logic tests.
-_debug('Running AND series logic checks...');
-each(logic_checks, function(arg_list, key){
-    
-    var arg1 = arg_list[0];
-    var arg2 = arg_list[1];
-    var exclusion_list = arg_list[2];
-    
-    // print('To check (inclusive): ' + arg1 + ', ' + arg2  + '; ' +  
-    //       exclusion_list.join(' && '));
-    
-    // First, see if there is any point in proceeding.
-    var run_results = run_n_way_and([arg1, arg2]);
-    var check_cnt = run_results[0];
-    if( check_cnt === 0 ){
-	
-	_ll('Checked exclusion; trivially passed with no base overlap: ' +
-	    arg1 + ' && ' + arg2 + ' (0)');
-	
+	_ll('ERROR: found intersection annotations: ' + bookmark);
     }else{
-
-	//print('Logic parse...');
-	
-	// Reset from last iteration.
-	go.reset_query_filters();
-	
-	// Add the first part of the base intersections.
-	go.add_query_filter('isa_partof_closure', arg1);
-	go.add_query_filter('isa_partof_closure', arg2);
-	
-	// Add all of the items in the simple 
-	each(exclusion_list, function(exarg){
-	    go.add_query_filter('isa_partof_closure', exarg, ['-']);
-	});
-	
-	// Fetch the data and grab the info we want.
-	//var resp = go.fetch();
-	var resp = go.search();
-	var count = resp.total_documents();
-	//var bookmark = go.get_state_url();
-	var bookmark = 'http://amigo.geneontology.org/amigo/search/bioentity?' +
-		go.get_filter_query_string();
-
-	// Test the count to make sure that there were annotations
-	// for at least one of the choices.
-	_ll('Checked exclusion: ' + arg1 + ' && ' + arg2  + ' && !(' +  
-	    exclusion_list.join(' || ') + ') (' + count + ')');
-	_ll('.................. ' + get_term_name(arg1) + ', ' + get_term_name(arg2) + ', ' +
-	    us.map(exclusion_list,
-		   function(e){ return get_term_name(e); }).join(', ')
-	   );
-	if( count !== 0 ){
-	    check_errors++;
-	    _ll('ERROR : bad co-annotations for: ' +
-		key + "\t" +
-		bookmark);
-	    // }else{
-	    //     check_errors.push('PASS: co-annotation for: ' + key);
-	    // }
-	}
-	_ll('');
+	_ll('PASS: ' + bookmark);
     }
+
+    _ll('');
+
 });
 
-// Report.
+// Summary report.
 // I removed the bad exits here because reporting and jenkins-style
 // build success need to be different things.
 // Maybe reconsider once the ontology is fixed.
