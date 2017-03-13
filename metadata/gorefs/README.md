@@ -102,7 +102,7 @@
  * <a href="#goref0000109">GO_REF:0000109 Gene Ontology annotation based on curation of genome-wide subcellular localisation of proteins using fluorescent protein tagging in Trypanosoma brucei.</a>
  * <a href="#goref0000110">GO_REF:0000110 Gene Ontology annotation of Drosophila melanogaster nuclear genes encoding proteins targeted to the mitochondrion.</a>
  * <a href="#goref0000111">GO_REF:0000111 Gene Ontology annotations Inferred by Curator (IC) using at least one Inferred by Sequence Similarity (ISS) annotation to support the inference</a>
-
+ * <a href="#goref0000112">GO_REF:0000112 Gene Ontology annotation by CACAO biocurators</a>
 
 
 <a name="goref0000001"/>
@@ -1262,3 +1262,14 @@ Gene Ontology annotation of Drosophila melanogaster nuclear genes encoding prote
 
 
 The Gene Ontology Consortium uses the IC (Inferred by Curator) evidence code when assignment of a GO term cannot be supported by direct experimental or sequence-based evidence, but can, based on a curator’s biological knowledge, be reasonably inferred from existing GO annotations to the same gene/gene product.  Use of the IC evidence code with GO_REF:0000109 indicates that a curator inferred the GO term based on at least one supporting annotation with an ‘Inferred from Sequence Similarity’ (ISS) evidence code.  Note that additional supporting annotations may be experimentally evidenced. When using GO_REF:0000109, the 'with/from' field must contain all GO identifiers used as supporting annotations.
+
+<a name="goref0000112"/>
+## Gene Ontology annotation by CACAO biocurators
+
+ * id: [GO_REF:0000112](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000112.md)
+ * year: 2017
+ * authors: Ivan Erill, James Hu, Community Assessment of Community Annotation with Ontologies
+
+
+
+This GO reference describes the criteria used by biocurators participating in the Community Assessment of Community Annotation with Ontologies (CACAO) to annotate gene products from genomes of interest through the use of computational methods to establish and manually validate function or homology to gene products. In particular, this GO reference describes the criteria used to make annotations based on evidence codes ISS, ISA, ISO, ISM and IGC. To perform ISS-, ISA-, and ISO-based annotations on a gene product, CACAO biocurators use sequence- and structure-based search algorithms (e.g. BLASTP, HHPred) to establish homology, conservation of sequence and structure functional determinants between the target gene product and gene products from other organisms with published GO annotations supported by experimental codes and lacking NOT qualifiers. These gene products are referenced in the WITH field of the annotation using their xref database accession. ISM-based annotations make use of published computational methods (e.g. TMHMM, SignalP) to predict gene product structure, localization or function. IGC-based annotations are made on the basis of suggestive evidence for function based on synteny. Parameters and criteria for use of all computational methods (e.g. e-value) are listed and versioned in the publicly available CACAO documentation (http://gowiki.tamu.edu/). Annotations made by CACAO biocurators are reviewed by CACAO team instructors before their release.
