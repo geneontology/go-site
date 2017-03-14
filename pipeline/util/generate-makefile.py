@@ -18,7 +18,7 @@ def main():
     artifacts = []
     artifacts_by_dataset = {}
     for fn in args.files:
-        f = open(fn, 'r') 
+        f = open(fn, 'r')
         obj = yaml.load(f)
         artifacts.extend(obj['datasets'])
         f.close()
@@ -36,15 +36,15 @@ def main():
             print("## WARNING: Skipping RNAC: {}".format(a['id']))
             # TODO
             continue
-        
+
         if ds not in artifacts_by_dataset:
             artifacts_by_dataset[ds] = []
         artifacts_by_dataset[ds].append(a)
     for (ds,alist) in artifacts_by_dataset.items():
         generate_targets(ds, alist)
     targets = [all(ds) for ds in artifacts_by_dataset.keys()]
-    rule('all_gafs', ' '.join(targets), 'echo done')
-        
+    rule('all_targets', ' '.join(targets), 'echo done')
+
 def generate_targets(ds, alist):
     """
     Generate makefile targets for a dataset, e.g. sgd, goa_human_rna
@@ -70,8 +70,8 @@ def generate_targets(ds, alist):
     rule(all(ds), " ".join(ds_targets))
 
     rule(targetdir(ds),'',
-         'mkdir $@')
-    
+         'mkdir -p $@')
+
     # for now we assume everything comes from a GAF
     if 'gaf' in types:
         [gaf] = [a for a in alist if a['type']=='gaf']
@@ -87,12 +87,12 @@ def generate_targets(ds, alist):
          'owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@')
     rule(gpi(ds),filtered_gaf(ds),
          'owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@')
-    rule(ttl(ds),filtered_gaf(ds),
-         'MINERVA_CLI_MEMORY=16G minerva-cli.sh $(GAF_OWL) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@')
+    rule(ttl(ds),"{} $(ONT_MERGED)".format(filtered_gaf(ds)),
+         'MINERVA_CLI_MEMORY=16G minerva-cli.sh $(ONT_MERGED) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@')
 
 
 def targetdir(ds):
-    return 'target/{ds}/'.format(ds=ds)
+    return 'target/gafs/{ds}/'.format(ds=ds)
 def all(ds):
     return 'all_'+ds
 def src_gaf(ds):
@@ -116,4 +116,3 @@ def rule(tgt,dep,ex='echo done'):
 
 if __name__ == "__main__":
     main()
-    
