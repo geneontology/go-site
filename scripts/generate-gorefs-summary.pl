@@ -86,7 +86,7 @@ sub print_block {
     my $authors = $obj->{authors};
     $out .= " * authors: $authors\n" if $authors;
 
-    my $ext_accs = $obj->{external_accessions} || [];
+    my $ext_accs = $obj->{external_accession} || [];
     $out .= " * ext xref: $_\n" foreach @$ext_accs;
     
     $out .= "\n\n";
