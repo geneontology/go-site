@@ -1,7 +1,7 @@
 ////
 //// Determine if the rules in the rules file are true. Complain if not.
 //// Usage like:
-//// : node ./scripts/shared_annotation_check.js -i ./scripts/shared_annotation_check.rules-new
+//// : node ./scripts/shared_annotation_check.js -i ./scripts/shared_annotation_check.rules
 ////
 
 // General.
@@ -19,6 +19,7 @@ var golr_response = require('bbop-response-golr');
 //
 var gconf = new golr_conf.conf(amigo.data.golr);
 var engine = new node_engine(golr_response);
+engine.method('POST'); // may make some large requests
 var sd = new amigo.data.server();
 //_ll(us.keys(sd));
 //var golr_url = sd.golr_base();
@@ -135,7 +136,11 @@ if( typeof(raw_file) !== 'string' ){
 // Our rules variables.
 // Looks like {idA : {term1: arg1A, term2: arg2A}, intersection_exceptions: [], ...}
 var intersection_checks = {};
-var check_errors = 0;
+var error_intersection_accumulator = 0;
+var rules_skipped = 0;
+var all_annotation_accumulator = 0;
+var exp_annotation_accumulator = 0;
+var iea_annotation_accumulator = 0;
 
 // Parse the rules file.
 var clean_file = string.trim(raw_file);
@@ -192,16 +197,15 @@ each(rule_lines, function(raw_line, index){
 // Now try the !AND logic tests.
 _debug('Running intersection checks...');
 each(intersection_checks, function(args){    
-	
+
     // Next, setup the manager environment.
     _debug('Parsed rules, setting up manager...');
     var go = new golr_manager(golr_url, gconf, engine, 'sync');
-    //go.add_query_filter('document_category', 'annotation', ['*']);
     go.add_query_filter('document_category', 'bioentity', ['*']);
-    //go.add_query_filter('taxon', 'NCBITaxon:4896', ['*']);
-    //go.set_personality('annotation');
     go.set_personality('bioentity');
     go.debug(false); // I think the default is still on?
+    go.set_results_count(100000); // get up to 100000
+    go.current_fl = 'bioentity'; // only want the bioentities back, since we may have a lot
 
     // Add the first part of the base intersections.
     go.add_query_filter('isa_partof_closure', args['term1']);
@@ -211,20 +215,19 @@ each(intersection_checks, function(args){
     each(args['intersection_exceptions'], function(exarg){
 	go.add_query_filter('isa_partof_closure', exarg, ['-']);
     });
-
+    
     // Add all of the items in gp exceptions part.
     each(args['gp_exceptions'], function(exarg){
 	go.add_query_filter('bioentity', exarg, ['-']);
     });
     
     // Fetch the data and grab the info we want.
-    //var resp = go.fetch();
     var resp = go.search();
     var count = resp.total_documents();
     //var bookmark = go.get_state_url();
     var bookmark = 'http://amigo.geneontology.org/amigo/search/bioentity?' +
 	    go.get_filter_query_string();
-
+    
     // Report.
     var report_string = 'Check intersection: ' +
 	    args['term1'] + ' && ' + args['term2'];
@@ -246,7 +249,7 @@ each(intersection_checks, function(args){
     if( args['intersection_exceptions'].length !== 0 ){
 	readable_str += '; with term exceptions: "' +
 	    us.map(args['intersection_exceptions'],
-		   function(e){ return get_term_name(e); }).join('", "') + '"';
+		   function(e){ return get_term_name(e); }).join('", "')+'"';
     }
     if( args['gp_exceptions'].length !== 0 ){
 	readable_str += '; with GP exceptions: "' +
@@ -254,15 +257,116 @@ each(intersection_checks, function(args){
 		   function(e){ return e; }).join('", "') + '"';
     }
     _ll(readable_str);
-
-    // Liost error or not.
-    if( count !== 0 ){
-	check_errors++;
-	_ll('ERROR: found intersection annotations: ' + bookmark);
-    }else{
+    
+    // List error or not.
+    if( count === 0 ){
 	_ll('PASS: ' + bookmark);
-    }
+    }else{
+	
+	(function(){
 
+	    error_intersection_accumulator++;
+	    _ll('ERROR: found intersection annotations: ' + bookmark);
+
+	    // Okay, collect all of the genes in the intersection, except...
+	    var bioentities = [];
+	    var docs = resp.documents();
+	    each(docs, function(doc){
+		// Filter out GP exceptions.
+		if( ! us.contains(args['gp_exceptions'], doc['bioentity'])){
+		    bioentities.push(doc['bioentity']);
+		}
+	    });
+	    //_ll('BIOENTITIES: ' + bioentities.length);
+
+	    if( bioentities.length > 100 ){
+		_ll('Too large for annotation summary: +100');
+		rules_skipped++;
+	    }else{
+		
+		var local_all_accumulator = 0;
+		var local_exp_accumulator = 0;
+		var local_iea_accumulator = 0;
+
+		// Withing the intersection tests, look at three different aspects
+		// of annotations to help explore what is going on.
+		var ann_bookmark = 'tbd';
+		each(['total', 'exp', 'iea'], function(test_type){
+		    
+		    var go = new golr_manager(golr_url, gconf, engine, 'sync');
+		    go.add_query_filter('document_category', 'annotation', ['*']);
+		    go.set_personality('annotation');
+		    go.debug(false); // I think the default is still on?
+		    go.set_results_count(0); // just want counts
+		    
+		    // Pin current bioentity.
+		    var additional = '';
+		    if( ! us.isEmpty(args['intersection_exceptions']) ){
+			additional = ' -"' +
+			    args['intersection_exceptions'].join('" -"') +
+			    '"';
+		    }
+
+		    var qstr = '(("' +
+			    args['term1'] + '" OR "' +
+			    args['term2'] + '")' +
+			    additional +')';
+		    
+		    go.add_query_filter('isa_partof_closure', qstr);
+		    //_ll('&fq=isa_partof_closure:' + qstr);
+		    
+		    var bstr = '("' + bioentities.join('" OR "') + '")';
+		    go.add_query_filter('bioentity', bstr);
+		    //_ll('&fq=bioentity:' + bstr);
+		    
+		    // Depending on our current type, add different evidence
+		    // filters, or none at all.
+		    if( test_type === 'total' ){
+			// Pass.
+		    }else if( test_type === 'exp' ){
+			go.add_query_filter('evidence_subset_closure_label',
+					    'experimental evidence');
+		    }else if( test_type === 'iea' ){
+			go.add_query_filter('evidence_subset_closure_label',
+					    'evidence used in automatic assertion');
+		    }
+		    
+		    // Fetch the data and grab the info we want.
+		    var resp = go.search();
+		    var count = resp.total_documents();
+
+		    // Accumulate the counts separately.
+		    if( test_type === 'total' ){
+			ann_bookmark =
+			    'http://amigo.geneontology.org/amigo/search/annotation?'+ go.get_filter_query_string();
+			all_annotation_accumulator += count;
+			local_all_accumulator += count;
+		    }else if( test_type === 'exp' ){
+			exp_annotation_accumulator += count;
+			local_exp_accumulator += count;
+		    }else if( test_type === 'iea' ){
+			iea_annotation_accumulator += count;
+			local_iea_accumulator += count;
+		    }
+		    
+		    // // Report.
+		    // var report_string = 'Annotations ('+test_type+'): ' + count;
+		    // _ll(report_string);
+		    // //_ll(bookmark);
+		});
+
+		// Report.
+		var ann_report_string = 'Annotation summary: total (' +
+			local_all_accumulator + '), exp (' +
+			local_exp_accumulator + '), iea (' +
+			local_iea_accumulator+ ')';
+		_ll(ann_report_string + '; ' + ann_bookmark);
+	    }
+
+	})();
+    }    
+    
+    // Spacing for next "set".
     _ll('');
 
 });
@@ -272,8 +376,12 @@ each(intersection_checks, function(args){
 // build success need to be different things.
 // Maybe reconsider once the ontology is fixed.
 _ll('Looked at ' + rule_lines.length + ' rules.');
-if( check_errors > 0 ){
-    _die('Completed with ' + check_errors + ' broken rule(s).');
+_ll('Skipped ' + rules_skipped + ' rules when making annotation summary due to size.');
+_ll('For remaining annotation summary, found ' + all_annotation_accumulator + ' total erring annotation(s);');
+_ll('with ' + exp_annotation_accumulator + ' EXP annotation(s);');
+_ll('and ' + iea_annotation_accumulator + ' IEA annotation(s).');
+if( error_intersection_accumulator > 0 ){
+    _die('Exiting with ' + error_intersection_accumulator + ' broken rule(s).');
 }else{
-    _ll('Done--completed with no broken rules.');
+    _ll('Completed with no broken rules :)');
 }
