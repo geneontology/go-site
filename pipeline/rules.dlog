@@ -1,0 +1,24 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rgo: <http://rdf.geneontology.org/local#>
+
+# A non-owl prefix is used to avoid unnecessary execution of these rules on the actual ontology axioms
+
+rgo:TransitiveProperty(rdfs:subClassOf) .
+
+rgo:TransitiveProperty(rdfs:subPropertyOf) .
+
+[?s, ?p, ?o2] :- rgo:TransitiveProperty(?p), [?s, ?p, ?o], [?o, ?p, ?o2], FILTER(isIRI(?s) && isIRI(?o2)) .
+
+rgo:TransitiveProperty(?p2) :- owl:TransitiveProperty(?p), BIND(IRI(CONCAT(STR(?p), "_SOME")) AS ?p2), FILTER(isIRI(?p)) .
+
+rgo:ExistentialRelation(?p2) :- owl:ObjectProperty(?p), BIND(IRI(CONCAT(STR(?p), "_SOME")) AS ?p2), FILTER(isIRI(?p)) .
+
+[?sub, ?p2, ?filler] :- [?sub, rdfs:subClassOf, ?sup], [?sup, owl:someValuesFrom, ?filler], [?sup, owl:onProperty, ?p], BIND(IRI(CONCAT(STR(?p), "_SOME")) AS ?p2) .
+
+[?sub, ?p, ?o] :- [?sub, rdfs:subClassOf, ?sup], [?sup, ?p, ?o], rgo:ExistentialRelation(?p) .
+
+# Let the emr deal with this
+# [?sub2, rdfs:subPropertyOf, ?sup2] :- [?sub, rdfs:subPropertyOf, ?sup], owl:ObjectProperty(?sub), owl:ObjectProperty(?sup), FILTER(isIRI(?sub), FILTER(isIRI(?sup), BIND(IRI(CONCAT(STR(?sub), "_SOME")) AS ?sub2), BIND(IRI(CONCAT(STR(?sup), "_SOME")) AS ?sup2) .
+
