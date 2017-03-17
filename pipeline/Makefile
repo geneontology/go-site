@@ -78,8 +78,8 @@ target/noctua-models:
 	if [ ! -d target/nocuta-models ]; then git clone https://github.com/geneontology/noctua-models.git target/noctua-models; fi
 
 RDFOX_MEM ?= 32G
-target/rdf/rdfox.ttl: $(ONT_MERGED)
-	export JAVA_OPTS="-Xmx$(RDFOX_MEM)" && rdfox-cli --ontology=$(ONT_MERGED) --rules=rules.dlog --data=target/rdf --threads=24 --reason --export=target/rdf/rdfox.ttl --inferred-only --excluded-properties=exclude.txt
+target/rdfox.ttl: $(ONT_MERGED)
+	export JAVA_OPTS="-Xmx$(RDFOX_MEM)" && rdfox-cli --ontology=$(ONT_MERGED) --rules=rules.dlog --data=target/rdf --threads=24 --reason --export=target/rdfox.ttl --inferred-only --excluded-properties=exclude.txt
 
 target/rdf: $(REPORT) target/noctua-models $(ONT_MERGED)
 	mkdir -p target/rdf
@@ -96,9 +96,9 @@ BGMEM ?= 32G
 BG = java -server -XX:+UseG1GC -Xmx$(BGMEM) -cp $(BGJAR) com.bigdata.rdf.store.DataLoader
 
 # Load blazegraph
-target/blazegraph.jnl: $(BGJAR) target/rdf target/rdf/rdfox.ttl
+target/blazegraph.jnl: $(BGJAR) target/rdf target/rdfox.ttl
 	$(BG) -defaultGraph http://geneontology.org/rdf/ conf/blazegraph.properties target/rdf
-	$(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties $<
+	$(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties target/rdf/rdfox.ttl
 #
 # load-inferences: target/rdf/rdfox.ttl
 # 	$(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties $<
