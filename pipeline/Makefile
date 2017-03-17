@@ -70,7 +70,7 @@ target/Makefile: ./util/generate-makefile.py
 
 include target/Makefile
 
-$(REPORT): all_mgi #all_targets normally
+$(REPORT): all_targets
 	cat target/gafs/*/*.report > $@
 
 target/noctua-models:
