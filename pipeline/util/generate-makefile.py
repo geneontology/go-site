@@ -40,9 +40,10 @@ def main():
         if ds not in artifacts_by_dataset:
             artifacts_by_dataset[ds] = []
         artifacts_by_dataset[ds].append(a)
+
     for (ds,alist) in artifacts_by_dataset.items():
         generate_targets(ds, alist)
-    targets = [all(ds) for ds in artifacts_by_dataset.keys()]
+    targets = [ds for ds in artifacts_by_dataset.keys()]
     rule('all_targets', ' '.join(targets), 'echo done')
 
 def generate_targets(ds, alist):
@@ -58,16 +59,25 @@ def generate_targets(ds, alist):
     print("## --------------------")
     if 'gaf' not in types and 'gpad' not in types:
         print("# Metadata incomplete\n")
-        rule(all(ds), '','echo no metadata')
+        rule(ds, '','echo no metadata')
         return
     if ds == 'goa_pdb':
+    # TODO move to another config file for 'skips'
         print("# Skipping\n")
-        rule(all(ds), '','echo no metadata')
+        rule(ds, '','echo no metadata')
         return
+
+    # If any item has the aggregate field, then we just want to pass it through and not run
+    # all the targets
+    ds_aggregate = any([("aggregates" in item) for item in alist])
 
     ds_targets = [targetdir(ds), gzip(filtered_gaf(ds)), gzip(filtered_gpad(ds)), gzip(gpi(ds)), gzip(ttl(ds))]
     ds_targets.append(owltools_gafcheck(ds))
-    rule(all(ds), " ".join(ds_targets))
+
+    if ds_aggregate:
+        ds_targets = [targetdir(ds), gzip(filtered_gaf(ds))]
+
+    rule(ds, " ".join(ds_targets))
 
     rule(targetdir(ds),'',
          'mkdir -p $@')

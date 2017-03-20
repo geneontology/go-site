@@ -4,7 +4,7 @@
 ## --------------------
 ## aspgd
 ## --------------------
-all_aspgd: target/gafs/aspgd/ target/gafs/aspgd/aspgd-filtered.gaf.gz target/gafs/aspgd/aspgd-filtered.gpad.gz target/gafs/aspgd/aspgd.gpi.gz target/gafs/aspgd/aspgd.ttl.gz target/gafs/aspgd/aspgd-gafcheck
+aspgd: target/gafs/aspgd/ target/gafs/aspgd/aspgd-filtered.gaf.gz target/gafs/aspgd/aspgd-filtered.gpad.gz target/gafs/aspgd/aspgd.gpi.gz target/gafs/aspgd/aspgd.ttl.gz target/gafs/aspgd/aspgd-gafcheck
 	echo done
 
 target/gafs/aspgd/: 
@@ -31,7 +31,7 @@ target/gafs/aspgd/aspgd.ttl: target/gafs/aspgd/aspgd-filtered.gaf $(ONT_MERGED)
 ## --------------------
 ## cgd
 ## --------------------
-all_cgd: target/gafs/cgd/ target/gafs/cgd/cgd-filtered.gaf.gz target/gafs/cgd/cgd-filtered.gpad.gz target/gafs/cgd/cgd.gpi.gz target/gafs/cgd/cgd.ttl.gz target/gafs/cgd/cgd-gafcheck
+cgd: target/gafs/cgd/ target/gafs/cgd/cgd-filtered.gaf.gz target/gafs/cgd/cgd-filtered.gpad.gz target/gafs/cgd/cgd.gpi.gz target/gafs/cgd/cgd.ttl.gz target/gafs/cgd/cgd-gafcheck
 	echo done
 
 target/gafs/cgd/: 
@@ -58,7 +58,7 @@ target/gafs/cgd/cgd.ttl: target/gafs/cgd/cgd-filtered.gaf $(ONT_MERGED)
 ## --------------------
 ## dictybase
 ## --------------------
-all_dictybase: target/gafs/dictybase/ target/gafs/dictybase/dictybase-filtered.gaf.gz target/gafs/dictybase/dictybase-filtered.gpad.gz target/gafs/dictybase/dictybase.gpi.gz target/gafs/dictybase/dictybase.ttl.gz target/gafs/dictybase/dictybase-gafcheck
+dictybase: target/gafs/dictybase/ target/gafs/dictybase/dictybase-filtered.gaf.gz target/gafs/dictybase/dictybase-filtered.gpad.gz target/gafs/dictybase/dictybase.gpi.gz target/gafs/dictybase/dictybase.ttl.gz target/gafs/dictybase/dictybase-gafcheck
 	echo done
 
 target/gafs/dictybase/: 
@@ -85,7 +85,7 @@ target/gafs/dictybase/dictybase.ttl: target/gafs/dictybase/dictybase-filtered.ga
 ## --------------------
 ## ecocyc
 ## --------------------
-all_ecocyc: target/gafs/ecocyc/ target/gafs/ecocyc/ecocyc-filtered.gaf.gz target/gafs/ecocyc/ecocyc-filtered.gpad.gz target/gafs/ecocyc/ecocyc.gpi.gz target/gafs/ecocyc/ecocyc.ttl.gz target/gafs/ecocyc/ecocyc-gafcheck
+ecocyc: target/gafs/ecocyc/ target/gafs/ecocyc/ecocyc-filtered.gaf.gz target/gafs/ecocyc/ecocyc-filtered.gpad.gz target/gafs/ecocyc/ecocyc.gpi.gz target/gafs/ecocyc/ecocyc.ttl.gz target/gafs/ecocyc/ecocyc-gafcheck
 	echo done
 
 target/gafs/ecocyc/: 
@@ -112,7 +112,7 @@ target/gafs/ecocyc/ecocyc.ttl: target/gafs/ecocyc/ecocyc-filtered.gaf $(ONT_MERG
 ## --------------------
 ## fb
 ## --------------------
-all_fb: target/gafs/fb/ target/gafs/fb/fb-filtered.gaf.gz target/gafs/fb/fb-filtered.gpad.gz target/gafs/fb/fb.gpi.gz target/gafs/fb/fb.ttl.gz target/gafs/fb/fb-gafcheck
+fb: target/gafs/fb/ target/gafs/fb/fb-filtered.gaf.gz target/gafs/fb/fb-filtered.gpad.gz target/gafs/fb/fb.gpi.gz target/gafs/fb/fb.ttl.gz target/gafs/fb/fb-gafcheck
 	echo done
 
 target/gafs/fb/: 
@@ -139,7 +139,7 @@ target/gafs/fb/fb.ttl: target/gafs/fb/fb-filtered.gaf $(ONT_MERGED)
 ## --------------------
 ## genedb_lmajor
 ## --------------------
-all_genedb_lmajor: target/gafs/genedb_lmajor/ target/gafs/genedb_lmajor/genedb_lmajor-filtered.gaf.gz target/gafs/genedb_lmajor/genedb_lmajor-filtered.gpad.gz target/gafs/genedb_lmajor/genedb_lmajor.gpi.gz target/gafs/genedb_lmajor/genedb_lmajor.ttl.gz target/gafs/genedb_lmajor/genedb_lmajor-gafcheck
+genedb_lmajor: target/gafs/genedb_lmajor/ target/gafs/genedb_lmajor/genedb_lmajor-filtered.gaf.gz target/gafs/genedb_lmajor/genedb_lmajor-filtered.gpad.gz target/gafs/genedb_lmajor/genedb_lmajor.gpi.gz target/gafs/genedb_lmajor/genedb_lmajor.ttl.gz target/gafs/genedb_lmajor/genedb_lmajor-gafcheck
 	echo done
 
 target/gafs/genedb_lmajor/: 
@@ -166,7 +166,7 @@ target/gafs/genedb_lmajor/genedb_lmajor.ttl: target/gafs/genedb_lmajor/genedb_lm
 ## --------------------
 ## genedb_pfalciparum
 ## --------------------
-all_genedb_pfalciparum: target/gafs/genedb_pfalciparum/ target/gafs/genedb_pfalciparum/genedb_pfalciparum-filtered.gaf.gz target/gafs/genedb_pfalciparum/genedb_pfalciparum-filtered.gpad.gz target/gafs/genedb_pfalciparum/genedb_pfalciparum.gpi.gz target/gafs/genedb_pfalciparum/genedb_pfalciparum.ttl.gz target/gafs/genedb_pfalciparum/genedb_pfalciparum-gafcheck
+genedb_pfalciparum: target/gafs/genedb_pfalciparum/ target/gafs/genedb_pfalciparum/genedb_pfalciparum-filtered.gaf.gz target/gafs/genedb_pfalciparum/genedb_pfalciparum-filtered.gpad.gz target/gafs/genedb_pfalciparum/genedb_pfalciparum.gpi.gz target/gafs/genedb_pfalciparum/genedb_pfalciparum.ttl.gz target/gafs/genedb_pfalciparum/genedb_pfalciparum-gafcheck
 	echo done
 
 target/gafs/genedb_pfalciparum/: 
@@ -193,7 +193,7 @@ target/gafs/genedb_pfalciparum/genedb_pfalciparum.ttl: target/gafs/genedb_pfalci
 ## --------------------
 ## genedb_tbrucei
 ## --------------------
-all_genedb_tbrucei: target/gafs/genedb_tbrucei/ target/gafs/genedb_tbrucei/genedb_tbrucei-filtered.gaf.gz target/gafs/genedb_tbrucei/genedb_tbrucei-filtered.gpad.gz target/gafs/genedb_tbrucei/genedb_tbrucei.gpi.gz target/gafs/genedb_tbrucei/genedb_tbrucei.ttl.gz target/gafs/genedb_tbrucei/genedb_tbrucei-gafcheck
+genedb_tbrucei: target/gafs/genedb_tbrucei/ target/gafs/genedb_tbrucei/genedb_tbrucei-filtered.gaf.gz target/gafs/genedb_tbrucei/genedb_tbrucei-filtered.gpad.gz target/gafs/genedb_tbrucei/genedb_tbrucei.gpi.gz target/gafs/genedb_tbrucei/genedb_tbrucei.ttl.gz target/gafs/genedb_tbrucei/genedb_tbrucei-gafcheck
 	echo done
 
 target/gafs/genedb_tbrucei/: 
@@ -220,7 +220,7 @@ target/gafs/genedb_tbrucei/genedb_tbrucei.ttl: target/gafs/genedb_tbrucei/genedb
 ## --------------------
 ## genedb_tsetse
 ## --------------------
-all_genedb_tsetse: target/gafs/genedb_tsetse/ target/gafs/genedb_tsetse/genedb_tsetse-filtered.gaf.gz target/gafs/genedb_tsetse/genedb_tsetse-filtered.gpad.gz target/gafs/genedb_tsetse/genedb_tsetse.gpi.gz target/gafs/genedb_tsetse/genedb_tsetse.ttl.gz target/gafs/genedb_tsetse/genedb_tsetse-gafcheck
+genedb_tsetse: target/gafs/genedb_tsetse/ target/gafs/genedb_tsetse/genedb_tsetse-filtered.gaf.gz target/gafs/genedb_tsetse/genedb_tsetse-filtered.gpad.gz target/gafs/genedb_tsetse/genedb_tsetse.gpi.gz target/gafs/genedb_tsetse/genedb_tsetse.ttl.gz target/gafs/genedb_tsetse/genedb_tsetse-gafcheck
 	echo done
 
 target/gafs/genedb_tsetse/: 
@@ -247,7 +247,7 @@ target/gafs/genedb_tsetse/genedb_tsetse.ttl: target/gafs/genedb_tsetse/genedb_ts
 ## --------------------
 ## goa_chicken
 ## --------------------
-all_goa_chicken: target/gafs/goa_chicken/ target/gafs/goa_chicken/goa_chicken-filtered.gaf.gz target/gafs/goa_chicken/goa_chicken-filtered.gpad.gz target/gafs/goa_chicken/goa_chicken.gpi.gz target/gafs/goa_chicken/goa_chicken.ttl.gz target/gafs/goa_chicken/goa_chicken-gafcheck
+goa_chicken: target/gafs/goa_chicken/ target/gafs/goa_chicken/goa_chicken-filtered.gaf.gz target/gafs/goa_chicken/goa_chicken-filtered.gpad.gz target/gafs/goa_chicken/goa_chicken.gpi.gz target/gafs/goa_chicken/goa_chicken.ttl.gz target/gafs/goa_chicken/goa_chicken-gafcheck
 	echo done
 
 target/gafs/goa_chicken/: 
@@ -274,7 +274,7 @@ target/gafs/goa_chicken/goa_chicken.ttl: target/gafs/goa_chicken/goa_chicken-fil
 ## --------------------
 ## goa_chicken_complex
 ## --------------------
-all_goa_chicken_complex: target/gafs/goa_chicken_complex/ target/gafs/goa_chicken_complex/goa_chicken_complex-filtered.gaf.gz target/gafs/goa_chicken_complex/goa_chicken_complex-filtered.gpad.gz target/gafs/goa_chicken_complex/goa_chicken_complex.gpi.gz target/gafs/goa_chicken_complex/goa_chicken_complex.ttl.gz target/gafs/goa_chicken_complex/goa_chicken_complex-gafcheck
+goa_chicken_complex: target/gafs/goa_chicken_complex/ target/gafs/goa_chicken_complex/goa_chicken_complex-filtered.gaf.gz target/gafs/goa_chicken_complex/goa_chicken_complex-filtered.gpad.gz target/gafs/goa_chicken_complex/goa_chicken_complex.gpi.gz target/gafs/goa_chicken_complex/goa_chicken_complex.ttl.gz target/gafs/goa_chicken_complex/goa_chicken_complex-gafcheck
 	echo done
 
 target/gafs/goa_chicken_complex/: 
@@ -301,7 +301,7 @@ target/gafs/goa_chicken_complex/goa_chicken_complex.ttl: target/gafs/goa_chicken
 ## --------------------
 ## goa_chicken_isoform
 ## --------------------
-all_goa_chicken_isoform: target/gafs/goa_chicken_isoform/ target/gafs/goa_chicken_isoform/goa_chicken_isoform-filtered.gaf.gz target/gafs/goa_chicken_isoform/goa_chicken_isoform-filtered.gpad.gz target/gafs/goa_chicken_isoform/goa_chicken_isoform.gpi.gz target/gafs/goa_chicken_isoform/goa_chicken_isoform.ttl.gz target/gafs/goa_chicken_isoform/goa_chicken_isoform-gafcheck
+goa_chicken_isoform: target/gafs/goa_chicken_isoform/ target/gafs/goa_chicken_isoform/goa_chicken_isoform-filtered.gaf.gz target/gafs/goa_chicken_isoform/goa_chicken_isoform-filtered.gpad.gz target/gafs/goa_chicken_isoform/goa_chicken_isoform.gpi.gz target/gafs/goa_chicken_isoform/goa_chicken_isoform.ttl.gz target/gafs/goa_chicken_isoform/goa_chicken_isoform-gafcheck
 	echo done
 
 target/gafs/goa_chicken_isoform/: 
@@ -328,7 +328,7 @@ target/gafs/goa_chicken_isoform/goa_chicken_isoform.ttl: target/gafs/goa_chicken
 ## --------------------
 ## goa_chicken_rna
 ## --------------------
-all_goa_chicken_rna: target/gafs/goa_chicken_rna/ target/gafs/goa_chicken_rna/goa_chicken_rna-filtered.gaf.gz target/gafs/goa_chicken_rna/goa_chicken_rna-filtered.gpad.gz target/gafs/goa_chicken_rna/goa_chicken_rna.gpi.gz target/gafs/goa_chicken_rna/goa_chicken_rna.ttl.gz target/gafs/goa_chicken_rna/goa_chicken_rna-gafcheck
+goa_chicken_rna: target/gafs/goa_chicken_rna/ target/gafs/goa_chicken_rna/goa_chicken_rna-filtered.gaf.gz target/gafs/goa_chicken_rna/goa_chicken_rna-filtered.gpad.gz target/gafs/goa_chicken_rna/goa_chicken_rna.gpi.gz target/gafs/goa_chicken_rna/goa_chicken_rna.ttl.gz target/gafs/goa_chicken_rna/goa_chicken_rna-gafcheck
 	echo done
 
 target/gafs/goa_chicken_rna/: 
@@ -355,7 +355,7 @@ target/gafs/goa_chicken_rna/goa_chicken_rna.ttl: target/gafs/goa_chicken_rna/goa
 ## --------------------
 ## goa_cow
 ## --------------------
-all_goa_cow: target/gafs/goa_cow/ target/gafs/goa_cow/goa_cow-filtered.gaf.gz target/gafs/goa_cow/goa_cow-filtered.gpad.gz target/gafs/goa_cow/goa_cow.gpi.gz target/gafs/goa_cow/goa_cow.ttl.gz target/gafs/goa_cow/goa_cow-gafcheck
+goa_cow: target/gafs/goa_cow/ target/gafs/goa_cow/goa_cow-filtered.gaf.gz target/gafs/goa_cow/goa_cow-filtered.gpad.gz target/gafs/goa_cow/goa_cow.gpi.gz target/gafs/goa_cow/goa_cow.ttl.gz target/gafs/goa_cow/goa_cow-gafcheck
 	echo done
 
 target/gafs/goa_cow/: 
@@ -382,7 +382,7 @@ target/gafs/goa_cow/goa_cow.ttl: target/gafs/goa_cow/goa_cow-filtered.gaf $(ONT_
 ## --------------------
 ## goa_cow_complex
 ## --------------------
-all_goa_cow_complex: target/gafs/goa_cow_complex/ target/gafs/goa_cow_complex/goa_cow_complex-filtered.gaf.gz target/gafs/goa_cow_complex/goa_cow_complex-filtered.gpad.gz target/gafs/goa_cow_complex/goa_cow_complex.gpi.gz target/gafs/goa_cow_complex/goa_cow_complex.ttl.gz target/gafs/goa_cow_complex/goa_cow_complex-gafcheck
+goa_cow_complex: target/gafs/goa_cow_complex/ target/gafs/goa_cow_complex/goa_cow_complex-filtered.gaf.gz target/gafs/goa_cow_complex/goa_cow_complex-filtered.gpad.gz target/gafs/goa_cow_complex/goa_cow_complex.gpi.gz target/gafs/goa_cow_complex/goa_cow_complex.ttl.gz target/gafs/goa_cow_complex/goa_cow_complex-gafcheck
 	echo done
 
 target/gafs/goa_cow_complex/: 
@@ -409,7 +409,7 @@ target/gafs/goa_cow_complex/goa_cow_complex.ttl: target/gafs/goa_cow_complex/goa
 ## --------------------
 ## goa_cow_isoform
 ## --------------------
-all_goa_cow_isoform: target/gafs/goa_cow_isoform/ target/gafs/goa_cow_isoform/goa_cow_isoform-filtered.gaf.gz target/gafs/goa_cow_isoform/goa_cow_isoform-filtered.gpad.gz target/gafs/goa_cow_isoform/goa_cow_isoform.gpi.gz target/gafs/goa_cow_isoform/goa_cow_isoform.ttl.gz target/gafs/goa_cow_isoform/goa_cow_isoform-gafcheck
+goa_cow_isoform: target/gafs/goa_cow_isoform/ target/gafs/goa_cow_isoform/goa_cow_isoform-filtered.gaf.gz target/gafs/goa_cow_isoform/goa_cow_isoform-filtered.gpad.gz target/gafs/goa_cow_isoform/goa_cow_isoform.gpi.gz target/gafs/goa_cow_isoform/goa_cow_isoform.ttl.gz target/gafs/goa_cow_isoform/goa_cow_isoform-gafcheck
 	echo done
 
 target/gafs/goa_cow_isoform/: 
@@ -436,7 +436,7 @@ target/gafs/goa_cow_isoform/goa_cow_isoform.ttl: target/gafs/goa_cow_isoform/goa
 ## --------------------
 ## goa_cow_rna
 ## --------------------
-all_goa_cow_rna: target/gafs/goa_cow_rna/ target/gafs/goa_cow_rna/goa_cow_rna-filtered.gaf.gz target/gafs/goa_cow_rna/goa_cow_rna-filtered.gpad.gz target/gafs/goa_cow_rna/goa_cow_rna.gpi.gz target/gafs/goa_cow_rna/goa_cow_rna.ttl.gz target/gafs/goa_cow_rna/goa_cow_rna-gafcheck
+goa_cow_rna: target/gafs/goa_cow_rna/ target/gafs/goa_cow_rna/goa_cow_rna-filtered.gaf.gz target/gafs/goa_cow_rna/goa_cow_rna-filtered.gpad.gz target/gafs/goa_cow_rna/goa_cow_rna.gpi.gz target/gafs/goa_cow_rna/goa_cow_rna.ttl.gz target/gafs/goa_cow_rna/goa_cow_rna-gafcheck
 	echo done
 
 target/gafs/goa_cow_rna/: 
@@ -463,7 +463,7 @@ target/gafs/goa_cow_rna/goa_cow_rna.ttl: target/gafs/goa_cow_rna/goa_cow_rna-fil
 ## --------------------
 ## goa_dog
 ## --------------------
-all_goa_dog: target/gafs/goa_dog/ target/gafs/goa_dog/goa_dog-filtered.gaf.gz target/gafs/goa_dog/goa_dog-filtered.gpad.gz target/gafs/goa_dog/goa_dog.gpi.gz target/gafs/goa_dog/goa_dog.ttl.gz target/gafs/goa_dog/goa_dog-gafcheck
+goa_dog: target/gafs/goa_dog/ target/gafs/goa_dog/goa_dog-filtered.gaf.gz target/gafs/goa_dog/goa_dog-filtered.gpad.gz target/gafs/goa_dog/goa_dog.gpi.gz target/gafs/goa_dog/goa_dog.ttl.gz target/gafs/goa_dog/goa_dog-gafcheck
 	echo done
 
 target/gafs/goa_dog/: 
@@ -490,7 +490,7 @@ target/gafs/goa_dog/goa_dog.ttl: target/gafs/goa_dog/goa_dog-filtered.gaf $(ONT_
 ## --------------------
 ## goa_dog_complex
 ## --------------------
-all_goa_dog_complex: target/gafs/goa_dog_complex/ target/gafs/goa_dog_complex/goa_dog_complex-filtered.gaf.gz target/gafs/goa_dog_complex/goa_dog_complex-filtered.gpad.gz target/gafs/goa_dog_complex/goa_dog_complex.gpi.gz target/gafs/goa_dog_complex/goa_dog_complex.ttl.gz target/gafs/goa_dog_complex/goa_dog_complex-gafcheck
+goa_dog_complex: target/gafs/goa_dog_complex/ target/gafs/goa_dog_complex/goa_dog_complex-filtered.gaf.gz target/gafs/goa_dog_complex/goa_dog_complex-filtered.gpad.gz target/gafs/goa_dog_complex/goa_dog_complex.gpi.gz target/gafs/goa_dog_complex/goa_dog_complex.ttl.gz target/gafs/goa_dog_complex/goa_dog_complex-gafcheck
 	echo done
 
 target/gafs/goa_dog_complex/: 
@@ -517,7 +517,7 @@ target/gafs/goa_dog_complex/goa_dog_complex.ttl: target/gafs/goa_dog_complex/goa
 ## --------------------
 ## goa_dog_isoform
 ## --------------------
-all_goa_dog_isoform: target/gafs/goa_dog_isoform/ target/gafs/goa_dog_isoform/goa_dog_isoform-filtered.gaf.gz target/gafs/goa_dog_isoform/goa_dog_isoform-filtered.gpad.gz target/gafs/goa_dog_isoform/goa_dog_isoform.gpi.gz target/gafs/goa_dog_isoform/goa_dog_isoform.ttl.gz target/gafs/goa_dog_isoform/goa_dog_isoform-gafcheck
+goa_dog_isoform: target/gafs/goa_dog_isoform/ target/gafs/goa_dog_isoform/goa_dog_isoform-filtered.gaf.gz target/gafs/goa_dog_isoform/goa_dog_isoform-filtered.gpad.gz target/gafs/goa_dog_isoform/goa_dog_isoform.gpi.gz target/gafs/goa_dog_isoform/goa_dog_isoform.ttl.gz target/gafs/goa_dog_isoform/goa_dog_isoform-gafcheck
 	echo done
 
 target/gafs/goa_dog_isoform/: 
@@ -544,7 +544,7 @@ target/gafs/goa_dog_isoform/goa_dog_isoform.ttl: target/gafs/goa_dog_isoform/goa
 ## --------------------
 ## goa_dog_rna
 ## --------------------
-all_goa_dog_rna: target/gafs/goa_dog_rna/ target/gafs/goa_dog_rna/goa_dog_rna-filtered.gaf.gz target/gafs/goa_dog_rna/goa_dog_rna-filtered.gpad.gz target/gafs/goa_dog_rna/goa_dog_rna.gpi.gz target/gafs/goa_dog_rna/goa_dog_rna.ttl.gz target/gafs/goa_dog_rna/goa_dog_rna-gafcheck
+goa_dog_rna: target/gafs/goa_dog_rna/ target/gafs/goa_dog_rna/goa_dog_rna-filtered.gaf.gz target/gafs/goa_dog_rna/goa_dog_rna-filtered.gpad.gz target/gafs/goa_dog_rna/goa_dog_rna.gpi.gz target/gafs/goa_dog_rna/goa_dog_rna.ttl.gz target/gafs/goa_dog_rna/goa_dog_rna-gafcheck
 	echo done
 
 target/gafs/goa_dog_rna/: 
@@ -571,7 +571,7 @@ target/gafs/goa_dog_rna/goa_dog_rna.ttl: target/gafs/goa_dog_rna/goa_dog_rna-fil
 ## --------------------
 ## goa_human
 ## --------------------
-all_goa_human: target/gafs/goa_human/ target/gafs/goa_human/goa_human-filtered.gaf.gz target/gafs/goa_human/goa_human-filtered.gpad.gz target/gafs/goa_human/goa_human.gpi.gz target/gafs/goa_human/goa_human.ttl.gz target/gafs/goa_human/goa_human-gafcheck
+goa_human: target/gafs/goa_human/ target/gafs/goa_human/goa_human-filtered.gaf.gz target/gafs/goa_human/goa_human-filtered.gpad.gz target/gafs/goa_human/goa_human.gpi.gz target/gafs/goa_human/goa_human.ttl.gz target/gafs/goa_human/goa_human-gafcheck
 	echo done
 
 target/gafs/goa_human/: 
@@ -598,7 +598,7 @@ target/gafs/goa_human/goa_human.ttl: target/gafs/goa_human/goa_human-filtered.ga
 ## --------------------
 ## goa_human_complex
 ## --------------------
-all_goa_human_complex: target/gafs/goa_human_complex/ target/gafs/goa_human_complex/goa_human_complex-filtered.gaf.gz target/gafs/goa_human_complex/goa_human_complex-filtered.gpad.gz target/gafs/goa_human_complex/goa_human_complex.gpi.gz target/gafs/goa_human_complex/goa_human_complex.ttl.gz target/gafs/goa_human_complex/goa_human_complex-gafcheck
+goa_human_complex: target/gafs/goa_human_complex/ target/gafs/goa_human_complex/goa_human_complex-filtered.gaf.gz target/gafs/goa_human_complex/goa_human_complex-filtered.gpad.gz target/gafs/goa_human_complex/goa_human_complex.gpi.gz target/gafs/goa_human_complex/goa_human_complex.ttl.gz target/gafs/goa_human_complex/goa_human_complex-gafcheck
 	echo done
 
 target/gafs/goa_human_complex/: 
@@ -625,7 +625,7 @@ target/gafs/goa_human_complex/goa_human_complex.ttl: target/gafs/goa_human_compl
 ## --------------------
 ## goa_human_isoform
 ## --------------------
-all_goa_human_isoform: target/gafs/goa_human_isoform/ target/gafs/goa_human_isoform/goa_human_isoform-filtered.gaf.gz target/gafs/goa_human_isoform/goa_human_isoform-filtered.gpad.gz target/gafs/goa_human_isoform/goa_human_isoform.gpi.gz target/gafs/goa_human_isoform/goa_human_isoform.ttl.gz target/gafs/goa_human_isoform/goa_human_isoform-gafcheck
+goa_human_isoform: target/gafs/goa_human_isoform/ target/gafs/goa_human_isoform/goa_human_isoform-filtered.gaf.gz target/gafs/goa_human_isoform/goa_human_isoform-filtered.gpad.gz target/gafs/goa_human_isoform/goa_human_isoform.gpi.gz target/gafs/goa_human_isoform/goa_human_isoform.ttl.gz target/gafs/goa_human_isoform/goa_human_isoform-gafcheck
 	echo done
 
 target/gafs/goa_human_isoform/: 
@@ -652,7 +652,7 @@ target/gafs/goa_human_isoform/goa_human_isoform.ttl: target/gafs/goa_human_isofo
 ## --------------------
 ## goa_human_rna
 ## --------------------
-all_goa_human_rna: target/gafs/goa_human_rna/ target/gafs/goa_human_rna/goa_human_rna-filtered.gaf.gz target/gafs/goa_human_rna/goa_human_rna-filtered.gpad.gz target/gafs/goa_human_rna/goa_human_rna.gpi.gz target/gafs/goa_human_rna/goa_human_rna.ttl.gz target/gafs/goa_human_rna/goa_human_rna-gafcheck
+goa_human_rna: target/gafs/goa_human_rna/ target/gafs/goa_human_rna/goa_human_rna-filtered.gaf.gz target/gafs/goa_human_rna/goa_human_rna-filtered.gpad.gz target/gafs/goa_human_rna/goa_human_rna.gpi.gz target/gafs/goa_human_rna/goa_human_rna.ttl.gz target/gafs/goa_human_rna/goa_human_rna-gafcheck
 	echo done
 
 target/gafs/goa_human_rna/: 
@@ -679,7 +679,7 @@ target/gafs/goa_human_rna/goa_human_rna.ttl: target/gafs/goa_human_rna/goa_human
 ## --------------------
 ## goa_pig
 ## --------------------
-all_goa_pig: target/gafs/goa_pig/ target/gafs/goa_pig/goa_pig-filtered.gaf.gz target/gafs/goa_pig/goa_pig-filtered.gpad.gz target/gafs/goa_pig/goa_pig.gpi.gz target/gafs/goa_pig/goa_pig.ttl.gz target/gafs/goa_pig/goa_pig-gafcheck
+goa_pig: target/gafs/goa_pig/ target/gafs/goa_pig/goa_pig-filtered.gaf.gz
 	echo done
 
 target/gafs/goa_pig/: 
@@ -706,7 +706,7 @@ target/gafs/goa_pig/goa_pig.ttl: target/gafs/goa_pig/goa_pig-filtered.gaf $(ONT_
 ## --------------------
 ## goa_pig_complex
 ## --------------------
-all_goa_pig_complex: target/gafs/goa_pig_complex/ target/gafs/goa_pig_complex/goa_pig_complex-filtered.gaf.gz target/gafs/goa_pig_complex/goa_pig_complex-filtered.gpad.gz target/gafs/goa_pig_complex/goa_pig_complex.gpi.gz target/gafs/goa_pig_complex/goa_pig_complex.ttl.gz target/gafs/goa_pig_complex/goa_pig_complex-gafcheck
+goa_pig_complex: target/gafs/goa_pig_complex/ target/gafs/goa_pig_complex/goa_pig_complex-filtered.gaf.gz target/gafs/goa_pig_complex/goa_pig_complex-filtered.gpad.gz target/gafs/goa_pig_complex/goa_pig_complex.gpi.gz target/gafs/goa_pig_complex/goa_pig_complex.ttl.gz target/gafs/goa_pig_complex/goa_pig_complex-gafcheck
 	echo done
 
 target/gafs/goa_pig_complex/: 
@@ -733,7 +733,7 @@ target/gafs/goa_pig_complex/goa_pig_complex.ttl: target/gafs/goa_pig_complex/goa
 ## --------------------
 ## goa_pig_isoform
 ## --------------------
-all_goa_pig_isoform: target/gafs/goa_pig_isoform/ target/gafs/goa_pig_isoform/goa_pig_isoform-filtered.gaf.gz target/gafs/goa_pig_isoform/goa_pig_isoform-filtered.gpad.gz target/gafs/goa_pig_isoform/goa_pig_isoform.gpi.gz target/gafs/goa_pig_isoform/goa_pig_isoform.ttl.gz target/gafs/goa_pig_isoform/goa_pig_isoform-gafcheck
+goa_pig_isoform: target/gafs/goa_pig_isoform/ target/gafs/goa_pig_isoform/goa_pig_isoform-filtered.gaf.gz target/gafs/goa_pig_isoform/goa_pig_isoform-filtered.gpad.gz target/gafs/goa_pig_isoform/goa_pig_isoform.gpi.gz target/gafs/goa_pig_isoform/goa_pig_isoform.ttl.gz target/gafs/goa_pig_isoform/goa_pig_isoform-gafcheck
 	echo done
 
 target/gafs/goa_pig_isoform/: 
@@ -760,7 +760,7 @@ target/gafs/goa_pig_isoform/goa_pig_isoform.ttl: target/gafs/goa_pig_isoform/goa
 ## --------------------
 ## goa_pig_rna
 ## --------------------
-all_goa_pig_rna: target/gafs/goa_pig_rna/ target/gafs/goa_pig_rna/goa_pig_rna-filtered.gaf.gz target/gafs/goa_pig_rna/goa_pig_rna-filtered.gpad.gz target/gafs/goa_pig_rna/goa_pig_rna.gpi.gz target/gafs/goa_pig_rna/goa_pig_rna.ttl.gz target/gafs/goa_pig_rna/goa_pig_rna-gafcheck
+goa_pig_rna: target/gafs/goa_pig_rna/ target/gafs/goa_pig_rna/goa_pig_rna-filtered.gaf.gz target/gafs/goa_pig_rna/goa_pig_rna-filtered.gpad.gz target/gafs/goa_pig_rna/goa_pig_rna.gpi.gz target/gafs/goa_pig_rna/goa_pig_rna.ttl.gz target/gafs/goa_pig_rna/goa_pig_rna-gafcheck
 	echo done
 
 target/gafs/goa_pig_rna/: 
@@ -789,13 +789,13 @@ target/gafs/goa_pig_rna/goa_pig_rna.ttl: target/gafs/goa_pig_rna/goa_pig_rna-fil
 ## --------------------
 # Skipping
 
-all_goa_pdb: 
+goa_pdb: 
 	echo no metadata
 
 ## --------------------
 ## gonuts
 ## --------------------
-all_gonuts: target/gafs/gonuts/ target/gafs/gonuts/gonuts-filtered.gaf.gz target/gafs/gonuts/gonuts-filtered.gpad.gz target/gafs/gonuts/gonuts.gpi.gz target/gafs/gonuts/gonuts.ttl.gz target/gafs/gonuts/gonuts-gafcheck
+gonuts: target/gafs/gonuts/ target/gafs/gonuts/gonuts-filtered.gaf.gz target/gafs/gonuts/gonuts-filtered.gpad.gz target/gafs/gonuts/gonuts.gpi.gz target/gafs/gonuts/gonuts.ttl.gz target/gafs/gonuts/gonuts-gafcheck
 	echo done
 
 target/gafs/gonuts/: 
@@ -822,7 +822,7 @@ target/gafs/gonuts/gonuts.ttl: target/gafs/gonuts/gonuts-filtered.gaf $(ONT_MERG
 ## --------------------
 ## gramene_oryza
 ## --------------------
-all_gramene_oryza: target/gafs/gramene_oryza/ target/gafs/gramene_oryza/gramene_oryza-filtered.gaf.gz target/gafs/gramene_oryza/gramene_oryza-filtered.gpad.gz target/gafs/gramene_oryza/gramene_oryza.gpi.gz target/gafs/gramene_oryza/gramene_oryza.ttl.gz target/gafs/gramene_oryza/gramene_oryza-gafcheck
+gramene_oryza: target/gafs/gramene_oryza/ target/gafs/gramene_oryza/gramene_oryza-filtered.gaf.gz target/gafs/gramene_oryza/gramene_oryza-filtered.gpad.gz target/gafs/gramene_oryza/gramene_oryza.gpi.gz target/gafs/gramene_oryza/gramene_oryza.ttl.gz target/gafs/gramene_oryza/gramene_oryza-gafcheck
 	echo done
 
 target/gafs/gramene_oryza/: 
@@ -849,7 +849,7 @@ target/gafs/gramene_oryza/gramene_oryza.ttl: target/gafs/gramene_oryza/gramene_o
 ## --------------------
 ## jcvi
 ## --------------------
-all_jcvi: target/gafs/jcvi/ target/gafs/jcvi/jcvi-filtered.gaf.gz target/gafs/jcvi/jcvi-filtered.gpad.gz target/gafs/jcvi/jcvi.gpi.gz target/gafs/jcvi/jcvi.ttl.gz target/gafs/jcvi/jcvi-gafcheck
+jcvi: target/gafs/jcvi/ target/gafs/jcvi/jcvi-filtered.gaf.gz target/gafs/jcvi/jcvi-filtered.gpad.gz target/gafs/jcvi/jcvi.gpi.gz target/gafs/jcvi/jcvi.ttl.gz target/gafs/jcvi/jcvi-gafcheck
 	echo done
 
 target/gafs/jcvi/: 
@@ -876,7 +876,7 @@ target/gafs/jcvi/jcvi.ttl: target/gafs/jcvi/jcvi-filtered.gaf $(ONT_MERGED)
 ## --------------------
 ## mgi
 ## --------------------
-all_mgi: target/gafs/mgi/ target/gafs/mgi/mgi-filtered.gaf.gz target/gafs/mgi/mgi-filtered.gpad.gz target/gafs/mgi/mgi.gpi.gz target/gafs/mgi/mgi.ttl.gz target/gafs/mgi/mgi-gafcheck
+mgi: target/gafs/mgi/ target/gafs/mgi/mgi-filtered.gaf.gz target/gafs/mgi/mgi-filtered.gpad.gz target/gafs/mgi/mgi.gpi.gz target/gafs/mgi/mgi.ttl.gz target/gafs/mgi/mgi-gafcheck
 	echo done
 
 target/gafs/mgi/: 
@@ -903,7 +903,7 @@ target/gafs/mgi/mgi.ttl: target/gafs/mgi/mgi-filtered.gaf $(ONT_MERGED)
 ## --------------------
 ## paint_cgd
 ## --------------------
-all_paint_cgd: target/gafs/paint_cgd/ target/gafs/paint_cgd/paint_cgd-filtered.gaf.gz target/gafs/paint_cgd/paint_cgd-filtered.gpad.gz target/gafs/paint_cgd/paint_cgd.gpi.gz target/gafs/paint_cgd/paint_cgd.ttl.gz target/gafs/paint_cgd/paint_cgd-gafcheck
+paint_cgd: target/gafs/paint_cgd/ target/gafs/paint_cgd/paint_cgd-filtered.gaf.gz target/gafs/paint_cgd/paint_cgd-filtered.gpad.gz target/gafs/paint_cgd/paint_cgd.gpi.gz target/gafs/paint_cgd/paint_cgd.ttl.gz target/gafs/paint_cgd/paint_cgd-gafcheck
 	echo done
 
 target/gafs/paint_cgd/: 
@@ -930,7 +930,7 @@ target/gafs/paint_cgd/paint_cgd.ttl: target/gafs/paint_cgd/paint_cgd-filtered.ga
 ## --------------------
 ## paint_dictybase
 ## --------------------
-all_paint_dictybase: target/gafs/paint_dictybase/ target/gafs/paint_dictybase/paint_dictybase-filtered.gaf.gz target/gafs/paint_dictybase/paint_dictybase-filtered.gpad.gz target/gafs/paint_dictybase/paint_dictybase.gpi.gz target/gafs/paint_dictybase/paint_dictybase.ttl.gz target/gafs/paint_dictybase/paint_dictybase-gafcheck
+paint_dictybase: target/gafs/paint_dictybase/ target/gafs/paint_dictybase/paint_dictybase-filtered.gaf.gz target/gafs/paint_dictybase/paint_dictybase-filtered.gpad.gz target/gafs/paint_dictybase/paint_dictybase.gpi.gz target/gafs/paint_dictybase/paint_dictybase.ttl.gz target/gafs/paint_dictybase/paint_dictybase-gafcheck
 	echo done
 
 target/gafs/paint_dictybase/: 
@@ -957,7 +957,7 @@ target/gafs/paint_dictybase/paint_dictybase.ttl: target/gafs/paint_dictybase/pai
 ## --------------------
 ## paint_ecocyc
 ## --------------------
-all_paint_ecocyc: target/gafs/paint_ecocyc/ target/gafs/paint_ecocyc/paint_ecocyc-filtered.gaf.gz target/gafs/paint_ecocyc/paint_ecocyc-filtered.gpad.gz target/gafs/paint_ecocyc/paint_ecocyc.gpi.gz target/gafs/paint_ecocyc/paint_ecocyc.ttl.gz target/gafs/paint_ecocyc/paint_ecocyc-gafcheck
+paint_ecocyc: target/gafs/paint_ecocyc/ target/gafs/paint_ecocyc/paint_ecocyc-filtered.gaf.gz target/gafs/paint_ecocyc/paint_ecocyc-filtered.gpad.gz target/gafs/paint_ecocyc/paint_ecocyc.gpi.gz target/gafs/paint_ecocyc/paint_ecocyc.ttl.gz target/gafs/paint_ecocyc/paint_ecocyc-gafcheck
 	echo done
 
 target/gafs/paint_ecocyc/: 
@@ -984,7 +984,7 @@ target/gafs/paint_ecocyc/paint_ecocyc.ttl: target/gafs/paint_ecocyc/paint_ecocyc
 ## --------------------
 ## paint_fb
 ## --------------------
-all_paint_fb: target/gafs/paint_fb/ target/gafs/paint_fb/paint_fb-filtered.gaf.gz target/gafs/paint_fb/paint_fb-filtered.gpad.gz target/gafs/paint_fb/paint_fb.gpi.gz target/gafs/paint_fb/paint_fb.ttl.gz target/gafs/paint_fb/paint_fb-gafcheck
+paint_fb: target/gafs/paint_fb/ target/gafs/paint_fb/paint_fb-filtered.gaf.gz target/gafs/paint_fb/paint_fb-filtered.gpad.gz target/gafs/paint_fb/paint_fb.gpi.gz target/gafs/paint_fb/paint_fb.ttl.gz target/gafs/paint_fb/paint_fb-gafcheck
 	echo done
 
 target/gafs/paint_fb/: 
@@ -1011,7 +1011,7 @@ target/gafs/paint_fb/paint_fb.ttl: target/gafs/paint_fb/paint_fb-filtered.gaf $(
 ## --------------------
 ## paint_goa_chicken
 ## --------------------
-all_paint_goa_chicken: target/gafs/paint_goa_chicken/ target/gafs/paint_goa_chicken/paint_goa_chicken-filtered.gaf.gz target/gafs/paint_goa_chicken/paint_goa_chicken-filtered.gpad.gz target/gafs/paint_goa_chicken/paint_goa_chicken.gpi.gz target/gafs/paint_goa_chicken/paint_goa_chicken.ttl.gz target/gafs/paint_goa_chicken/paint_goa_chicken-gafcheck
+paint_goa_chicken: target/gafs/paint_goa_chicken/ target/gafs/paint_goa_chicken/paint_goa_chicken-filtered.gaf.gz target/gafs/paint_goa_chicken/paint_goa_chicken-filtered.gpad.gz target/gafs/paint_goa_chicken/paint_goa_chicken.gpi.gz target/gafs/paint_goa_chicken/paint_goa_chicken.ttl.gz target/gafs/paint_goa_chicken/paint_goa_chicken-gafcheck
 	echo done
 
 target/gafs/paint_goa_chicken/: 
@@ -1038,7 +1038,7 @@ target/gafs/paint_goa_chicken/paint_goa_chicken.ttl: target/gafs/paint_goa_chick
 ## --------------------
 ## paint_goa_human
 ## --------------------
-all_paint_goa_human: target/gafs/paint_goa_human/ target/gafs/paint_goa_human/paint_goa_human-filtered.gaf.gz target/gafs/paint_goa_human/paint_goa_human-filtered.gpad.gz target/gafs/paint_goa_human/paint_goa_human.gpi.gz target/gafs/paint_goa_human/paint_goa_human.ttl.gz target/gafs/paint_goa_human/paint_goa_human-gafcheck
+paint_goa_human: target/gafs/paint_goa_human/ target/gafs/paint_goa_human/paint_goa_human-filtered.gaf.gz target/gafs/paint_goa_human/paint_goa_human-filtered.gpad.gz target/gafs/paint_goa_human/paint_goa_human.gpi.gz target/gafs/paint_goa_human/paint_goa_human.ttl.gz target/gafs/paint_goa_human/paint_goa_human-gafcheck
 	echo done
 
 target/gafs/paint_goa_human/: 
@@ -1065,7 +1065,7 @@ target/gafs/paint_goa_human/paint_goa_human.ttl: target/gafs/paint_goa_human/pai
 ## --------------------
 ## paint_mgi
 ## --------------------
-all_paint_mgi: target/gafs/paint_mgi/ target/gafs/paint_mgi/paint_mgi-filtered.gaf.gz target/gafs/paint_mgi/paint_mgi-filtered.gpad.gz target/gafs/paint_mgi/paint_mgi.gpi.gz target/gafs/paint_mgi/paint_mgi.ttl.gz target/gafs/paint_mgi/paint_mgi-gafcheck
+paint_mgi: target/gafs/paint_mgi/ target/gafs/paint_mgi/paint_mgi-filtered.gaf.gz target/gafs/paint_mgi/paint_mgi-filtered.gpad.gz target/gafs/paint_mgi/paint_mgi.gpi.gz target/gafs/paint_mgi/paint_mgi.ttl.gz target/gafs/paint_mgi/paint_mgi-gafcheck
 	echo done
 
 target/gafs/paint_mgi/: 
@@ -1092,7 +1092,7 @@ target/gafs/paint_mgi/paint_mgi.ttl: target/gafs/paint_mgi/paint_mgi-filtered.ga
 ## --------------------
 ## paint_other
 ## --------------------
-all_paint_other: target/gafs/paint_other/ target/gafs/paint_other/paint_other-filtered.gaf.gz target/gafs/paint_other/paint_other-filtered.gpad.gz target/gafs/paint_other/paint_other.gpi.gz target/gafs/paint_other/paint_other.ttl.gz target/gafs/paint_other/paint_other-gafcheck
+paint_other: target/gafs/paint_other/ target/gafs/paint_other/paint_other-filtered.gaf.gz target/gafs/paint_other/paint_other-filtered.gpad.gz target/gafs/paint_other/paint_other.gpi.gz target/gafs/paint_other/paint_other.ttl.gz target/gafs/paint_other/paint_other-gafcheck
 	echo done
 
 target/gafs/paint_other/: 
@@ -1119,7 +1119,7 @@ target/gafs/paint_other/paint_other.ttl: target/gafs/paint_other/paint_other-fil
 ## --------------------
 ## paint_pombase
 ## --------------------
-all_paint_pombase: target/gafs/paint_pombase/ target/gafs/paint_pombase/paint_pombase-filtered.gaf.gz target/gafs/paint_pombase/paint_pombase-filtered.gpad.gz target/gafs/paint_pombase/paint_pombase.gpi.gz target/gafs/paint_pombase/paint_pombase.ttl.gz target/gafs/paint_pombase/paint_pombase-gafcheck
+paint_pombase: target/gafs/paint_pombase/ target/gafs/paint_pombase/paint_pombase-filtered.gaf.gz target/gafs/paint_pombase/paint_pombase-filtered.gpad.gz target/gafs/paint_pombase/paint_pombase.gpi.gz target/gafs/paint_pombase/paint_pombase.ttl.gz target/gafs/paint_pombase/paint_pombase-gafcheck
 	echo done
 
 target/gafs/paint_pombase/: 
@@ -1146,7 +1146,7 @@ target/gafs/paint_pombase/paint_pombase.ttl: target/gafs/paint_pombase/paint_pom
 ## --------------------
 ## paint_rgd
 ## --------------------
-all_paint_rgd: target/gafs/paint_rgd/ target/gafs/paint_rgd/paint_rgd-filtered.gaf.gz target/gafs/paint_rgd/paint_rgd-filtered.gpad.gz target/gafs/paint_rgd/paint_rgd.gpi.gz target/gafs/paint_rgd/paint_rgd.ttl.gz target/gafs/paint_rgd/paint_rgd-gafcheck
+paint_rgd: target/gafs/paint_rgd/ target/gafs/paint_rgd/paint_rgd-filtered.gaf.gz target/gafs/paint_rgd/paint_rgd-filtered.gpad.gz target/gafs/paint_rgd/paint_rgd.gpi.gz target/gafs/paint_rgd/paint_rgd.ttl.gz target/gafs/paint_rgd/paint_rgd-gafcheck
 	echo done
 
 target/gafs/paint_rgd/: 
@@ -1173,7 +1173,7 @@ target/gafs/paint_rgd/paint_rgd.ttl: target/gafs/paint_rgd/paint_rgd-filtered.ga
 ## --------------------
 ## paint_sgd
 ## --------------------
-all_paint_sgd: target/gafs/paint_sgd/ target/gafs/paint_sgd/paint_sgd-filtered.gaf.gz target/gafs/paint_sgd/paint_sgd-filtered.gpad.gz target/gafs/paint_sgd/paint_sgd.gpi.gz target/gafs/paint_sgd/paint_sgd.ttl.gz target/gafs/paint_sgd/paint_sgd-gafcheck
+paint_sgd: target/gafs/paint_sgd/ target/gafs/paint_sgd/paint_sgd-filtered.gaf.gz target/gafs/paint_sgd/paint_sgd-filtered.gpad.gz target/gafs/paint_sgd/paint_sgd.gpi.gz target/gafs/paint_sgd/paint_sgd.ttl.gz target/gafs/paint_sgd/paint_sgd-gafcheck
 	echo done
 
 target/gafs/paint_sgd/: 
@@ -1200,7 +1200,7 @@ target/gafs/paint_sgd/paint_sgd.ttl: target/gafs/paint_sgd/paint_sgd-filtered.ga
 ## --------------------
 ## paint_tair
 ## --------------------
-all_paint_tair: target/gafs/paint_tair/ target/gafs/paint_tair/paint_tair-filtered.gaf.gz target/gafs/paint_tair/paint_tair-filtered.gpad.gz target/gafs/paint_tair/paint_tair.gpi.gz target/gafs/paint_tair/paint_tair.ttl.gz target/gafs/paint_tair/paint_tair-gafcheck
+paint_tair: target/gafs/paint_tair/ target/gafs/paint_tair/paint_tair-filtered.gaf.gz target/gafs/paint_tair/paint_tair-filtered.gpad.gz target/gafs/paint_tair/paint_tair.gpi.gz target/gafs/paint_tair/paint_tair.ttl.gz target/gafs/paint_tair/paint_tair-gafcheck
 	echo done
 
 target/gafs/paint_tair/: 
@@ -1227,7 +1227,7 @@ target/gafs/paint_tair/paint_tair.ttl: target/gafs/paint_tair/paint_tair-filtere
 ## --------------------
 ## paint_wb
 ## --------------------
-all_paint_wb: target/gafs/paint_wb/ target/gafs/paint_wb/paint_wb-filtered.gaf.gz target/gafs/paint_wb/paint_wb-filtered.gpad.gz target/gafs/paint_wb/paint_wb.gpi.gz target/gafs/paint_wb/paint_wb.ttl.gz target/gafs/paint_wb/paint_wb-gafcheck
+paint_wb: target/gafs/paint_wb/ target/gafs/paint_wb/paint_wb-filtered.gaf.gz target/gafs/paint_wb/paint_wb-filtered.gpad.gz target/gafs/paint_wb/paint_wb.gpi.gz target/gafs/paint_wb/paint_wb.ttl.gz target/gafs/paint_wb/paint_wb-gafcheck
 	echo done
 
 target/gafs/paint_wb/: 
@@ -1254,7 +1254,7 @@ target/gafs/paint_wb/paint_wb.ttl: target/gafs/paint_wb/paint_wb-filtered.gaf $(
 ## --------------------
 ## paint_zfin
 ## --------------------
-all_paint_zfin: target/gafs/paint_zfin/ target/gafs/paint_zfin/paint_zfin-filtered.gaf.gz target/gafs/paint_zfin/paint_zfin-filtered.gpad.gz target/gafs/paint_zfin/paint_zfin.gpi.gz target/gafs/paint_zfin/paint_zfin.ttl.gz target/gafs/paint_zfin/paint_zfin-gafcheck
+paint_zfin: target/gafs/paint_zfin/ target/gafs/paint_zfin/paint_zfin-filtered.gaf.gz target/gafs/paint_zfin/paint_zfin-filtered.gpad.gz target/gafs/paint_zfin/paint_zfin.gpi.gz target/gafs/paint_zfin/paint_zfin.ttl.gz target/gafs/paint_zfin/paint_zfin-gafcheck
 	echo done
 
 target/gafs/paint_zfin/: 
@@ -1281,7 +1281,7 @@ target/gafs/paint_zfin/paint_zfin.ttl: target/gafs/paint_zfin/paint_zfin-filtere
 ## --------------------
 ## pamgo_atumefaciens
 ## --------------------
-all_pamgo_atumefaciens: target/gafs/pamgo_atumefaciens/ target/gafs/pamgo_atumefaciens/pamgo_atumefaciens-filtered.gaf.gz target/gafs/pamgo_atumefaciens/pamgo_atumefaciens-filtered.gpad.gz target/gafs/pamgo_atumefaciens/pamgo_atumefaciens.gpi.gz target/gafs/pamgo_atumefaciens/pamgo_atumefaciens.ttl.gz target/gafs/pamgo_atumefaciens/pamgo_atumefaciens-gafcheck
+pamgo_atumefaciens: target/gafs/pamgo_atumefaciens/ target/gafs/pamgo_atumefaciens/pamgo_atumefaciens-filtered.gaf.gz target/gafs/pamgo_atumefaciens/pamgo_atumefaciens-filtered.gpad.gz target/gafs/pamgo_atumefaciens/pamgo_atumefaciens.gpi.gz target/gafs/pamgo_atumefaciens/pamgo_atumefaciens.ttl.gz target/gafs/pamgo_atumefaciens/pamgo_atumefaciens-gafcheck
 	echo done
 
 target/gafs/pamgo_atumefaciens/: 
@@ -1308,7 +1308,7 @@ target/gafs/pamgo_atumefaciens/pamgo_atumefaciens.ttl: target/gafs/pamgo_atumefa
 ## --------------------
 ## pamgo_ddadantii
 ## --------------------
-all_pamgo_ddadantii: target/gafs/pamgo_ddadantii/ target/gafs/pamgo_ddadantii/pamgo_ddadantii-filtered.gaf.gz target/gafs/pamgo_ddadantii/pamgo_ddadantii-filtered.gpad.gz target/gafs/pamgo_ddadantii/pamgo_ddadantii.gpi.gz target/gafs/pamgo_ddadantii/pamgo_ddadantii.ttl.gz target/gafs/pamgo_ddadantii/pamgo_ddadantii-gafcheck
+pamgo_ddadantii: target/gafs/pamgo_ddadantii/ target/gafs/pamgo_ddadantii/pamgo_ddadantii-filtered.gaf.gz target/gafs/pamgo_ddadantii/pamgo_ddadantii-filtered.gpad.gz target/gafs/pamgo_ddadantii/pamgo_ddadantii.gpi.gz target/gafs/pamgo_ddadantii/pamgo_ddadantii.ttl.gz target/gafs/pamgo_ddadantii/pamgo_ddadantii-gafcheck
 	echo done
 
 target/gafs/pamgo_ddadantii/: 
@@ -1335,7 +1335,7 @@ target/gafs/pamgo_ddadantii/pamgo_ddadantii.ttl: target/gafs/pamgo_ddadantii/pam
 ## --------------------
 ## pamgo_mgrisea
 ## --------------------
-all_pamgo_mgrisea: target/gafs/pamgo_mgrisea/ target/gafs/pamgo_mgrisea/pamgo_mgrisea-filtered.gaf.gz target/gafs/pamgo_mgrisea/pamgo_mgrisea-filtered.gpad.gz target/gafs/pamgo_mgrisea/pamgo_mgrisea.gpi.gz target/gafs/pamgo_mgrisea/pamgo_mgrisea.ttl.gz target/gafs/pamgo_mgrisea/pamgo_mgrisea-gafcheck
+pamgo_mgrisea: target/gafs/pamgo_mgrisea/ target/gafs/pamgo_mgrisea/pamgo_mgrisea-filtered.gaf.gz target/gafs/pamgo_mgrisea/pamgo_mgrisea-filtered.gpad.gz target/gafs/pamgo_mgrisea/pamgo_mgrisea.gpi.gz target/gafs/pamgo_mgrisea/pamgo_mgrisea.ttl.gz target/gafs/pamgo_mgrisea/pamgo_mgrisea-gafcheck
 	echo done
 
 target/gafs/pamgo_mgrisea/: 
@@ -1362,7 +1362,7 @@ target/gafs/pamgo_mgrisea/pamgo_mgrisea.ttl: target/gafs/pamgo_mgrisea/pamgo_mgr
 ## --------------------
 ## pamgo_oomycetes
 ## --------------------
-all_pamgo_oomycetes: target/gafs/pamgo_oomycetes/ target/gafs/pamgo_oomycetes/pamgo_oomycetes-filtered.gaf.gz target/gafs/pamgo_oomycetes/pamgo_oomycetes-filtered.gpad.gz target/gafs/pamgo_oomycetes/pamgo_oomycetes.gpi.gz target/gafs/pamgo_oomycetes/pamgo_oomycetes.ttl.gz target/gafs/pamgo_oomycetes/pamgo_oomycetes-gafcheck
+pamgo_oomycetes: target/gafs/pamgo_oomycetes/ target/gafs/pamgo_oomycetes/pamgo_oomycetes-filtered.gaf.gz target/gafs/pamgo_oomycetes/pamgo_oomycetes-filtered.gpad.gz target/gafs/pamgo_oomycetes/pamgo_oomycetes.gpi.gz target/gafs/pamgo_oomycetes/pamgo_oomycetes.ttl.gz target/gafs/pamgo_oomycetes/pamgo_oomycetes-gafcheck
 	echo done
 
 target/gafs/pamgo_oomycetes/: 
@@ -1389,7 +1389,7 @@ target/gafs/pamgo_oomycetes/pamgo_oomycetes.ttl: target/gafs/pamgo_oomycetes/pam
 ## --------------------
 ## pombase
 ## --------------------
-all_pombase: target/gafs/pombase/ target/gafs/pombase/pombase-filtered.gaf.gz target/gafs/pombase/pombase-filtered.gpad.gz target/gafs/pombase/pombase.gpi.gz target/gafs/pombase/pombase.ttl.gz target/gafs/pombase/pombase-gafcheck
+pombase: target/gafs/pombase/ target/gafs/pombase/pombase-filtered.gaf.gz target/gafs/pombase/pombase-filtered.gpad.gz target/gafs/pombase/pombase.gpi.gz target/gafs/pombase/pombase.ttl.gz target/gafs/pombase/pombase-gafcheck
 	echo done
 
 target/gafs/pombase/: 
@@ -1416,7 +1416,7 @@ target/gafs/pombase/pombase.ttl: target/gafs/pombase/pombase-filtered.gaf $(ONT_
 ## --------------------
 ## pseudocap
 ## --------------------
-all_pseudocap: target/gafs/pseudocap/ target/gafs/pseudocap/pseudocap-filtered.gaf.gz target/gafs/pseudocap/pseudocap-filtered.gpad.gz target/gafs/pseudocap/pseudocap.gpi.gz target/gafs/pseudocap/pseudocap.ttl.gz target/gafs/pseudocap/pseudocap-gafcheck
+pseudocap: target/gafs/pseudocap/ target/gafs/pseudocap/pseudocap-filtered.gaf.gz target/gafs/pseudocap/pseudocap-filtered.gpad.gz target/gafs/pseudocap/pseudocap.gpi.gz target/gafs/pseudocap/pseudocap.ttl.gz target/gafs/pseudocap/pseudocap-gafcheck
 	echo done
 
 target/gafs/pseudocap/: 
@@ -1443,7 +1443,7 @@ target/gafs/pseudocap/pseudocap.ttl: target/gafs/pseudocap/pseudocap-filtered.ga
 ## --------------------
 ## reactome
 ## --------------------
-all_reactome: target/gafs/reactome/ target/gafs/reactome/reactome-filtered.gaf.gz target/gafs/reactome/reactome-filtered.gpad.gz target/gafs/reactome/reactome.gpi.gz target/gafs/reactome/reactome.ttl.gz target/gafs/reactome/reactome-gafcheck
+reactome: target/gafs/reactome/ target/gafs/reactome/reactome-filtered.gaf.gz target/gafs/reactome/reactome-filtered.gpad.gz target/gafs/reactome/reactome.gpi.gz target/gafs/reactome/reactome.ttl.gz target/gafs/reactome/reactome-gafcheck
 	echo done
 
 target/gafs/reactome/: 
@@ -1470,7 +1470,7 @@ target/gafs/reactome/reactome.ttl: target/gafs/reactome/reactome-filtered.gaf $(
 ## --------------------
 ## rgd
 ## --------------------
-all_rgd: target/gafs/rgd/ target/gafs/rgd/rgd-filtered.gaf.gz target/gafs/rgd/rgd-filtered.gpad.gz target/gafs/rgd/rgd.gpi.gz target/gafs/rgd/rgd.ttl.gz target/gafs/rgd/rgd-gafcheck
+rgd: target/gafs/rgd/ target/gafs/rgd/rgd-filtered.gaf.gz target/gafs/rgd/rgd-filtered.gpad.gz target/gafs/rgd/rgd.gpi.gz target/gafs/rgd/rgd.ttl.gz target/gafs/rgd/rgd-gafcheck
 	echo done
 
 target/gafs/rgd/: 
@@ -1497,7 +1497,7 @@ target/gafs/rgd/rgd.ttl: target/gafs/rgd/rgd-filtered.gaf $(ONT_MERGED)
 ## --------------------
 ## sgd
 ## --------------------
-all_sgd: target/gafs/sgd/ target/gafs/sgd/sgd-filtered.gaf.gz target/gafs/sgd/sgd-filtered.gpad.gz target/gafs/sgd/sgd.gpi.gz target/gafs/sgd/sgd.ttl.gz target/gafs/sgd/sgd-gafcheck
+sgd: target/gafs/sgd/ target/gafs/sgd/sgd-filtered.gaf.gz target/gafs/sgd/sgd-filtered.gpad.gz target/gafs/sgd/sgd.gpi.gz target/gafs/sgd/sgd.ttl.gz target/gafs/sgd/sgd-gafcheck
 	echo done
 
 target/gafs/sgd/: 
@@ -1524,7 +1524,7 @@ target/gafs/sgd/sgd.ttl: target/gafs/sgd/sgd-filtered.gaf $(ONT_MERGED)
 ## --------------------
 ## sgn
 ## --------------------
-all_sgn: target/gafs/sgn/ target/gafs/sgn/sgn-filtered.gaf.gz target/gafs/sgn/sgn-filtered.gpad.gz target/gafs/sgn/sgn.gpi.gz target/gafs/sgn/sgn.ttl.gz target/gafs/sgn/sgn-gafcheck
+sgn: target/gafs/sgn/ target/gafs/sgn/sgn-filtered.gaf.gz target/gafs/sgn/sgn-filtered.gpad.gz target/gafs/sgn/sgn.gpi.gz target/gafs/sgn/sgn.ttl.gz target/gafs/sgn/sgn-gafcheck
 	echo done
 
 target/gafs/sgn/: 
@@ -1551,7 +1551,7 @@ target/gafs/sgn/sgn.ttl: target/gafs/sgn/sgn-filtered.gaf $(ONT_MERGED)
 ## --------------------
 ## tair
 ## --------------------
-all_tair: target/gafs/tair/ target/gafs/tair/tair-filtered.gaf.gz target/gafs/tair/tair-filtered.gpad.gz target/gafs/tair/tair.gpi.gz target/gafs/tair/tair.ttl.gz target/gafs/tair/tair-gafcheck
+tair: target/gafs/tair/ target/gafs/tair/tair-filtered.gaf.gz target/gafs/tair/tair-filtered.gpad.gz target/gafs/tair/tair.gpi.gz target/gafs/tair/tair.ttl.gz target/gafs/tair/tair-gafcheck
 	echo done
 
 target/gafs/tair/: 
@@ -1578,7 +1578,7 @@ target/gafs/tair/tair.ttl: target/gafs/tair/tair-filtered.gaf $(ONT_MERGED)
 ## --------------------
 ## wb
 ## --------------------
-all_wb: target/gafs/wb/ target/gafs/wb/wb-filtered.gaf.gz target/gafs/wb/wb-filtered.gpad.gz target/gafs/wb/wb.gpi.gz target/gafs/wb/wb.ttl.gz target/gafs/wb/wb-gafcheck
+wb: target/gafs/wb/ target/gafs/wb/wb-filtered.gaf.gz target/gafs/wb/wb-filtered.gpad.gz target/gafs/wb/wb.gpi.gz target/gafs/wb/wb.ttl.gz target/gafs/wb/wb-gafcheck
 	echo done
 
 target/gafs/wb/: 
@@ -1605,7 +1605,7 @@ target/gafs/wb/wb.ttl: target/gafs/wb/wb-filtered.gaf $(ONT_MERGED)
 ## --------------------
 ## zfin
 ## --------------------
-all_zfin: target/gafs/zfin/ target/gafs/zfin/zfin-filtered.gaf.gz target/gafs/zfin/zfin-filtered.gpad.gz target/gafs/zfin/zfin.gpi.gz target/gafs/zfin/zfin.ttl.gz target/gafs/zfin/zfin-gafcheck
+zfin: target/gafs/zfin/ target/gafs/zfin/zfin-filtered.gaf.gz target/gafs/zfin/zfin-filtered.gpad.gz target/gafs/zfin/zfin.gpi.gz target/gafs/zfin/zfin.ttl.gz target/gafs/zfin/zfin-gafcheck
 	echo done
 
 target/gafs/zfin/: 
@@ -1629,6 +1629,6 @@ target/gafs/zfin/zfin.gpi: target/gafs/zfin/zfin-filtered.gaf
 target/gafs/zfin/zfin.ttl: target/gafs/zfin/zfin-filtered.gaf $(ONT_MERGED)
 	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(ONT_MERGED) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@
 
-all_targets: all_aspgd all_cgd all_dictybase all_ecocyc all_fb all_genedb_lmajor all_genedb_pfalciparum all_genedb_tbrucei all_genedb_tsetse all_goa_chicken all_goa_chicken_complex all_goa_chicken_isoform all_goa_chicken_rna all_goa_cow all_goa_cow_complex all_goa_cow_isoform all_goa_cow_rna all_goa_dog all_goa_dog_complex all_goa_dog_isoform all_goa_dog_rna all_goa_human all_goa_human_complex all_goa_human_isoform all_goa_human_rna all_goa_pig all_goa_pig_complex all_goa_pig_isoform all_goa_pig_rna all_goa_pdb all_gonuts all_gramene_oryza all_jcvi all_mgi all_paint_cgd all_paint_dictybase all_paint_ecocyc all_paint_fb all_paint_goa_chicken all_paint_goa_human all_paint_mgi all_paint_other all_paint_pombase all_paint_rgd all_paint_sgd all_paint_tair all_paint_wb all_paint_zfin all_pamgo_atumefaciens all_pamgo_ddadantii all_pamgo_mgrisea all_pamgo_oomycetes all_pombase all_pseudocap all_reactome all_rgd all_sgd all_sgn all_tair all_wb all_zfin
+all_targets: aspgd cgd dictybase ecocyc fb genedb_lmajor genedb_pfalciparum genedb_tbrucei genedb_tsetse goa_chicken goa_chicken_complex goa_chicken_isoform goa_chicken_rna goa_cow goa_cow_complex goa_cow_isoform goa_cow_rna goa_dog goa_dog_complex goa_dog_isoform goa_dog_rna goa_human goa_human_complex goa_human_isoform goa_human_rna goa_pig goa_pig_complex goa_pig_isoform goa_pig_rna goa_pdb gonuts gramene_oryza jcvi mgi paint_cgd paint_dictybase paint_ecocyc paint_fb paint_goa_chicken paint_goa_human paint_mgi paint_other paint_pombase paint_rgd paint_sgd paint_tair paint_wb paint_zfin pamgo_atumefaciens pamgo_ddadantii pamgo_mgrisea pamgo_oomycetes pombase pseudocap reactome rgd sgd sgn tair wb zfin
 	echo done
 
