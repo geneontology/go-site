@@ -88,7 +88,7 @@ def generate_targets(ds, alist):
     rule(gpi(ds),filtered_gaf(ds),
          'owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@')
     rule(ttl(ds),"{} $(ONT_MERGED)".format(filtered_gaf(ds)),
-         'MINERVA_CLI_MEMORY=16G minerva-cli.sh $(ONT_MERGED) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@')
+         'MINERVA_CLI_MEMORY=$(MINERVA_CLI_MEMORY) minerva-cli.sh $(ONT_MERGED) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@')
 
 
 def targetdir(ds):

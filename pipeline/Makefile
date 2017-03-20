@@ -1,6 +1,7 @@
 OBO= http://purl.obolibrary.org/obo
 METADATA_DIR=../metadata/datasets
 REPORT=target/combined.report
+MINERVA_CLI_MEMORY=16G
 
 all: target/Makefile extra_files $(REPORT) target/blazegraph.jnl
 	mkdir -p target
