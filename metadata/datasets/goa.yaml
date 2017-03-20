@@ -1070,7 +1070,7 @@ datasets:
    taxa:
     - NCBITaxon:1
 
--    
+ -    
    id: goa_uniprot_all.gpi
    label: "goa_uniprot_all gpi file"
    description: "gpi file for goa_uniprot_all from EBI Gene Ontology Annotation Database"
@@ -1086,7 +1086,7 @@ datasets:
    taxa:
     - NCBITaxon:1
 
--    
+ -    
    id: goa_uniprot_all.gpad
    label: "goa_uniprot_all gpad file"
    description: "gpad file for goa_uniprot_all from EBI Gene Ontology Annotation Database"
@@ -1118,7 +1118,7 @@ datasets:
    taxa:
     - NCBITaxon:1
 
--    
+ -    
    id: goa_uniprot_gcrp.gpi
    label: "goa_uniprot_gcrp gpi file"
    description: "gpi file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
@@ -1134,7 +1134,7 @@ datasets:
    taxa:
     - NCBITaxon:1
 
--    
+ -    
    id: goa_uniprot_gcrp.gpad
    label: "goa_uniprot_gcrp gpad file"
    description: "gpad file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
