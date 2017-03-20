@@ -1054,3 +1054,99 @@ datasets:
    taxa:
     - NCBITaxon:9823
    
+ -    
+   id: goa_uniprot_all.gaf
+   label: "goa_uniprot_all gaf file"
+   description: "gaf file for goa_uniprot_all from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_uniprot_all.gaf.gz
+   type: gaf
+   dataset: goa_uniprot_all
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gaf.gz
+   entity_type: all
+   status: active
+   aggregates: goa
+   taxa:
+    - NCBITaxon:1
+
+-    
+   id: goa_uniprot_all.gpi
+   label: "goa_uniprot_all gpi file"
+   description: "gpi file for goa_uniprot_all from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_uniprot_all.gpi.gz
+   type: gpi
+   dataset: goa_uniprot_all
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gpi.gz
+   entity_type: all
+   status: active
+   aggregates: goa
+   taxa:
+    - NCBITaxon:1
+
+-    
+   id: goa_uniprot_all.gpad
+   label: "goa_uniprot_all gpad file"
+   description: "gpad file for goa_uniprot_all from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_uniprot_all.gpa.gz
+   type: gpad
+   dataset: goa_uniprot_all
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gpa.gz
+   entity_type: all
+   status: active
+   aggregates: goa
+   taxa:
+    - NCBITaxon:1
+
+ -    
+   id: goa_uniprot_gcrp.gaf
+   label: "goa_uniprot_gcrp gaf file"
+   description: "gaf file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gaf.gz
+   type: gaf
+   dataset: goa_uniprot_gcrp
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gaf.gz
+   entity_type: all
+   status: active
+   aggregates: goa
+   taxa:
+    - NCBITaxon:1
+
+-    
+   id: goa_uniprot_gcrp.gpi
+   label: "goa_uniprot_gcrp gpi file"
+   description: "gpi file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gpi.gz
+   type: gpi
+   dataset: goa_uniprot_gcrp
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gpi.gz
+   entity_type: all
+   status: active
+   aggregates: goa
+   taxa:
+    - NCBITaxon:1
+
+-    
+   id: goa_uniprot_gcrp.gpad
+   label: "goa_uniprot_gcrp gpad file"
+   description: "gpad file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gpa.gz
+   type: gpad
+   dataset: goa_uniprot_gcrp
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gpa.gz
+   entity_type: all
+   status: active
+   aggregates: goa
+   taxa:
+    - NCBITaxon:1
+    
