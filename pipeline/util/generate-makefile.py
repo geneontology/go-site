@@ -43,7 +43,7 @@ def main():
 
     for (ds,alist) in artifacts_by_dataset.items():
         generate_targets(ds, alist)
-    targets = [ds for ds in artifacts_by_dataset.keys()]
+    targets = [all_files(ds) for ds in artifacts_by_dataset.keys()]
     rule('all_targets', ' '.join(targets), 'echo done')
 
 def generate_targets(ds, alist):
@@ -59,12 +59,12 @@ def generate_targets(ds, alist):
     print("## --------------------")
     if 'gaf' not in types and 'gpad' not in types:
         print("# Metadata incomplete\n")
-        rule(ds, '','echo no metadata')
+        rule(all_files(ds), '','echo no metadata')
         return
     if ds == 'goa_pdb':
     # TODO move to another config file for 'skips'
         print("# Skipping\n")
-        rule(ds, '','echo no metadata')
+        rule(all_files(ds), '','echo no metadata')
         return
 
     # If any item has the aggregate field, then we just want to pass it through and not run
@@ -77,7 +77,7 @@ def generate_targets(ds, alist):
     if ds_aggregate:
         ds_targets = [targetdir(ds), gzip(filtered_gaf(ds))]
 
-    rule(ds, " ".join(ds_targets))
+    rule(all_files(ds), " ".join(ds_targets))
 
     rule(targetdir(ds),'',
          'mkdir -p $@')
@@ -103,7 +103,7 @@ def generate_targets(ds, alist):
 
 def targetdir(ds):
     return 'target/gafs/{ds}/'.format(ds=ds)
-def all(ds):
+def all_files(ds):
     return 'all_'+ds
 def src_gaf(ds):
     return '{dir}{ds}-src.gaf.gz'.format(dir=targetdir(ds),ds=ds)
