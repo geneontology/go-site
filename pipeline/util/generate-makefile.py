@@ -71,7 +71,7 @@ def generate_targets(ds, alist):
     # all the targets
     ds_aggregate = any([("aggregates" in item) for item in alist])
 
-    ds_targets = [targetdir(ds), gzip(filtered_gaf(ds)), gzip(filtered_gpad(ds)), gzip(gpi(ds)), gzip(ttl(ds))]
+    ds_targets = [targetdir(ds), gzip(filtered_gaf(ds)), gzip(filtered_gpad(ds)), gzip(gpi(ds)), gzip(ttl(ds)), inferred(ds)]
     ds_targets.append(owltools_gafcheck(ds))
 
     if ds_aggregate:
@@ -99,6 +99,8 @@ def generate_targets(ds, alist):
          'owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@')
     rule(ttl(ds),"{} $(ONT_MERGED)".format(filtered_gaf(ds)),
          'MINERVA_CLI_MEMORY=16G minerva-cli.sh $(ONT_MERGED) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@')
+    rule(inferred(ds), "{} $(ONT_MERGED)".format(ttl(ds)),
+        "mkdir -p target/inferred\n\texport JAVA_OPTS=\"-Xmx$(RDFOX_MEM)\" && rdfox-cli --ontology=$(ONT_MERGED) --rules=rules.dlog --data=$(<D) --threads=24 --reason --export=$@ --inferred-only --excluded-properties=exclude.txt")
 
 
 def targetdir(ds):
@@ -113,6 +115,8 @@ def filtered_gpad(ds):
     return '{dir}{ds}-filtered.gpad'.format(dir=targetdir(ds),ds=ds)
 def ttl(ds):
     return '{dir}{ds}.ttl'.format(dir=targetdir(ds),ds=ds)
+def inferred(ds):
+    return "target/inferred/{ds}_inferred.ttl".format(ds=ds)
 def owltools_gafcheck(ds):
     return '{dir}{ds}-gafcheck'.format(dir=targetdir(ds),ds=ds)
 def gpi(ds):
