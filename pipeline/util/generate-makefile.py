@@ -104,7 +104,7 @@ def generate_targets(ds, alist):
 
 
 def targetdir(ds):
-    return 'target/gafs/{ds}/'.format(ds=ds)
+    return 'target/groups/{ds}/'.format(ds=ds)
 def all_files(ds):
     return 'all_'+ds
 def src_gaf(ds):

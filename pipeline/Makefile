@@ -1,6 +1,7 @@
 OBO= http://purl.obolibrary.org/obo
 METADATA_DIR=../metadata/datasets
 REPORT=target/combined.report
+RDFOX_MEM ?= 32G
 
 all: target/Makefile extra_files $(REPORT) target/blazegraph.jnl
 	mkdir -p target
@@ -70,21 +71,16 @@ target/Makefile: ./util/generate-makefile.py
 
 include target/Makefile
 
-$(REPORT): target/Makefile all_mgi
-	cat target/gafs/*/*.report > $@
+$(REPORT): target/Makefile all_targets
+	cat target/groups/*/*.report > $@
 
 target/noctua-models:
 	# If target/noctua-models does not exist, then clone it
 	if [ ! -d target/nocuta-models ]; then git clone https://github.com/geneontology/noctua-models.git target/noctua-models; fi
 
-RDFOX_MEM ?= 32G
-target/inferred/%_inferred.ttl: target/gafs/%/%.ttl $(ONT_MERGED)
-	mkdir -p target/inferred
-	export JAVA_OPTS="-Xmx$(RDFOX_MEM)" && rdfox-cli --ontology=$(ONT_MERGED) --rules=rules.dlog --data=$< --threads=24 --reason --export=$@ --inferred-only --excluded-properties=exclude.txt
-
 target/rdf: $(REPORT) target/noctua-models $(ONT_MERGED)
 	mkdir -p target/rdf
-	cp target/gafs/*/*.ttl target/rdf/
+	cp target/groups/*/*.ttl target/rdf/
 	cp target/noctua-models/models/* target/rdf/
 	cp $(ONT_MERGED) target/rdf/go-graphstore-merged.ttl
 
