@@ -100,7 +100,7 @@ def generate_targets(ds, alist):
     rule(ttl(ds),"{} $(ONT_MERGED)".format(filtered_gaf(ds)),
         'MINERVA_CLI_MEMORY=16G minerva-cli.sh $(ONT_MERGED) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@')
     rule(inferred_ttl(ds), ttl(ds),
-        "mkdir -p target/inferred\nexport JAVA_OPTS=\"-Xmx$(RDFOX_MEM)\" rdfox-cli --ontology=$(ONT_MERGED) --rules=rules.dlog --data=$(<D) --threads=24 --reason --export=$@ --inferred-only --excluded-properties=exclude.txt")
+        "mkdir -p target/inferred\n\texport JAVA_OPTS=\"-Xmx$(RDFOX_MEM)\" rdfox-cli --ontology=$(ONT_MERGED) --rules=rules.dlog --data=$(<D) --threads=24 --reason --export=$@ --inferred-only --excluded-properties=exclude.txt")
 
 
 def targetdir(ds):
