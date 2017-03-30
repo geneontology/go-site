@@ -72,7 +72,7 @@ target/Makefile: ./util/generate-makefile.py
 include target/Makefile
 
 $(REPORT): all_targets
-	cat target/gafs/*/*.report > $@
+	cat target/groups/*/*.report > $@
 
 target/noctua-models:
 	# If target/noctua-models does not exist, then clone it
@@ -84,7 +84,7 @@ target/rdfox.ttl: $(ONT_MERGED)
 
 target/rdf: $(REPORT) target/noctua-models $(ONT_MERGED)
 	mkdir -p target/rdf
-	cp target/gafs/*/*.ttl target/rdf/
+	cp target/groups/*/*.ttl target/rdf/
 	cp target/noctua-models/models/* target/rdf/
 	cp $(ONT_MERGED) target/rdf/go-graphstore-merged.ttl
 
