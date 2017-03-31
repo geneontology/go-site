@@ -50,6 +50,7 @@ conform to the GAF spec, and come from the original GAF check script.
 
 
 <a name="gorule0000002"/>
+
 ## No 'NOT' annotations to 'protein binding ; GO:0005515'
 
  * id: [GORULE:0000002](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000002.md)
@@ -76,6 +77,7 @@ guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
 on the GO wiki.
 
 <a name="gorule0000003"/>
+
 ## Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field
 
  * id: [GORULE:0000003](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000003.md)
@@ -97,6 +99,7 @@ guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
 on the GO wiki.
 
 <a name="gorule0000004"/>
+
 ## Reciprocal annotations for 'protein binding ; GO:0005515'
 
  * id: [GORULE:0000004](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000004.md)
@@ -117,6 +120,7 @@ guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
 on the GO wiki.
 
 <a name="gorule0000005"/>
+
 ## No ISS or ISS-related annotations to 'protein binding ; GO:0005515'
 
  * id: [GORULE:0000005](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000005.md)
@@ -168,6 +172,7 @@ guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
 on the GO wiki.
 
 <a name="gorule0000006"/>
+
 ## IEP usage is restricted to terms from the Biological Process ontology
 
  * id: [GORULE:0000006](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000006.md)
@@ -186,6 +191,7 @@ guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
 on the GO wiki.
 
 <a name="gorule0000007"/>
+
 ## IPI should not be used with catalytic activity molecular function terms
 
  * id: [GORULE:0000007](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000007.md)
@@ -210,6 +216,7 @@ guide](http://wiki.geneontology.org/index.php/Annotations_to_Catalytic_activity_
 on the GO wiki.
 
 <a name="gorule0000008"/>
+
 ## No annotations should be made to uninformative high level terms
 
  * id: [GORULE:0000008](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000008.md)
@@ -236,6 +243,7 @@ still offer some general information, but a human curator should always
 be able to find a more specific annotation.
 
 <a name="gorule0000009"/>
+
 ## Annotation Intersection Alerts
 
  * id: [GORULE:0000009](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000009.md)
@@ -245,6 +253,7 @@ be able to find a more specific annotation.
 To be added
 
 <a name="gorule0000010"/>
+
 ## PubMed reference formatting must be correct
 
  * id: [GORULE:0000010](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000010.md)
@@ -265,6 +274,7 @@ This is proposed as a HARD QC check: incorrectly formatted references
 will be removed.
 
 <a name="gorule0000011"/>
+
 ## ND annotations to root nodes only
 
  * id: [GORULE:0000011](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000011.md)
@@ -293,6 +303,7 @@ it in the [GO references
 file](http://www.geneontology.org/cgi-bin/references.cgi).
 
 <a name="gorule0000013"/>
+
 ## Taxon-appropriate annotation check
 
  * id: [GORULE:0000013](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000013.md)
@@ -305,6 +316,7 @@ inappropriate species or sets of species. See
 for more details.
 
 <a name="gorule0000014"/>
+
 ## Valid GO term ID
 
  * id: [GORULE:0000014](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000014.md)
@@ -315,6 +327,7 @@ This check ensures that the GO IDs used for annotations are valid IDs
 and are not obsolete.
 
 <a name="gorule0000015"/>
+
 ## Dual species taxon check
 
  * id: [GORULE:0000015](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000015.md)
@@ -331,6 +344,7 @@ biological process term 'GO:0051704 : multi-organism process' or the
 cellular component term 'GO:0044215 : other organism' as an ancestor.
 
 <a name="gorule0000016"/>
+
 ## IC annotations require a With/From GO ID
 
  * id: [GORULE:0000016](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000016.md)
@@ -342,6 +356,7 @@ more information, see the [IC evidence code
 guidelines](http://www.geneontology.org/GO.evidence.shtml#ic).
 
 <a name="gorule0000017"/>
+
 ## IDA annotations must not have a With/From entry
 
  * id: [GORULE:0000017](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000017.md)
@@ -352,6 +367,7 @@ Use IDA only when no identifier can be placed in the "With/From" column.
 When there is an appropriate ID for the "With/From" column, use IPI.
 
 <a name="gorule0000018"/>
+
 ## IPI annotations require a With/From entry
 
  * id: [GORULE:0000018](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000018.md)
@@ -371,6 +387,7 @@ with/from column." All annotations made after January 1 2012 that break
 this rule will be removed.
 
 <a name="gorule0000019"/>
+
 ## Generic Reasoner Validation Check
 
  * id: [GORULE:0000019](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000019.md)
@@ -383,6 +400,7 @@ for consistency and unsatisfiable classes over using a complete DL
 reasoner such as HermiT.
 
 <a name="gorule0000020"/>
+
 ## Automatic repair of annotations to merged or obsoleted terms
 
  * id: [GORULE:0000020](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000020.md)
@@ -397,6 +415,7 @@ into a term S (i.e. S has alt\_id of T) then T is replaced by S in the
 GAF line.
 
 <a name="gorule0000021"/>
+
 ## Check with/from for sequence similarity evidence for valid database ID
 
  * id: [GORULE:0000021](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000021.md)
@@ -408,6 +427,7 @@ a valid gene or gene product identifier that is annotated with a GO term
 that is either identical to or a descendant of the main annotation.
 
 <a name="gorule0000022"/>
+
 ## Check for, and filter, annotations made to retracted publications
 
  * id: [GORULE:0000022](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000022.md)
