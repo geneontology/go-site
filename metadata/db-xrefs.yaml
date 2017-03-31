@@ -441,6 +441,13 @@
       url_syntax: http://www.ncbi.nlm.nih.gov/COG/new/release/coglist.cgi?pathw=[example_id]
       example_id: COG_Pathway:14
       example_url: http://www.ncbi.nlm.nih.gov/COG/new/release/coglist.cgi?pathw=14
+- database: CollecTF
+  name: Database of transcription factor binding sites (TFBS) in the Bacteria domain
+  generic_urls:
+    - http://www.collectf.org/
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
 - database: CORIELL
   name: Coriell Institute for Medical Research
   description: The Coriell Cell Repositories provide essential research reagents to the scientific community by establishing, verifying, maintaining, and distributing cell cultures and DNA derived from cell cultures. These collections, supported by funds from the National Institutes of Health (NIH) and several foundations, are extensively utilized by research scientists around the world. 

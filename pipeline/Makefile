@@ -67,6 +67,7 @@ OWLTOOLS_GAFCHECK = owltools $(CATALOG_DETAILS) $(GAF_OWL) \
 # ----------------------------------------
 # this defines 'all_targets'
 target/Makefile: ./util/generate-makefile.py
+	mkdir -p target
 	$< ../metadata/datasets/*.yaml > $@.tmp && mv $@.tmp $@
 
 include target/Makefile
