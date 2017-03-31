@@ -94,9 +94,9 @@ BGMEM ?= 32G
 BG = java -server -XX:+UseG1GC -Xmx$(BGMEM) -cp $(BGJAR) com.bigdata.rdf.store.DataLoader
 
 # Load blazegraph
-target/blazegraph.jnl: $(BGJAR) target/rdf # target/rdfox.ttl
+target/blazegraph.jnl: $(BGJAR) target/rdf target/inferred
 	$(BG) -defaultGraph http://geneontology.org/rdf/ conf/blazegraph.properties target/rdf
-	# $(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties target/rdf/rdfox.ttl
+	$(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties target/inferred/
 
 #
 # load-inferences: target/rdf/rdfox.ttl
