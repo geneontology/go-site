@@ -23,6 +23,7 @@
 
 
 <a name="gorule0000001"/>
+
 ## Basic GAF checks
 
  * id: [GORULE:0000001](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000001.md)
