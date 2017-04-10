@@ -1,0 +1,9 @@
+[program:graphstore]
+command=bash blazegraph_start.sh
+directory=/home/graphstore
+autostart=true
+autorestart=true
+startretries=3
+stderr_logfile=/var/log/blazegraph/blazegraph.err.log
+stdout_logfile=/var/log/blazegraph/blazegraph.out.log
+user=graphstore
