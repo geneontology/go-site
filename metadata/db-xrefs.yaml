@@ -3200,3 +3200,14 @@
       url_syntax: http://zfin.org/cgi-bin/ZFIN_jump?record=[example_id]
       example_id: ZFIN:ZDB-GENE-990415-103
       example_url: http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-GENE-990415-103
+- database: PLANA_REF
+  name: Planaria Ontology Database References
+  generic_urls:
+    - http://purl.obolibrary.org/obo/plana/references/
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      id_syntax: \d{7}
+      url_syntax: http://purl.obolibrary.org/obo/plana/references/[example_id]
+      example_id: "0000001"
+      example_url: http://purl.obolibrary.org/obo/plana/references/0000001
