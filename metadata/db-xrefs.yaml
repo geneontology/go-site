@@ -570,9 +570,9 @@
     - type_name: entity
       type_id: BET:0000000
       id_syntax: 10\.[0-9]+\/.*
-      url_syntax: http://dx.doi.org/DOI:[example_id]
+      url_syntax: http://dx.doi.org/[example_id]
       example_id: DOI:10.1016/S0963-9969(99)00021-6
-      example_url: http://dx.doi.org/DOI:10.1016/S0963-9969(99)00021-6
+      example_url: http://dx.doi.org/10.1016/S0963-9969(99)00021-6
 - database: EC
   name: Enzyme Commission
   generic_urls:
