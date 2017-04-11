@@ -3208,6 +3208,6 @@
     - type_name: entity
       type_id: BET:0000000
       id_syntax: \d{7}
-      url_syntax: http://purl.obolibrary.org/obo/plana/references/[example_id]
+      url_syntax: http://purl.obolibrary.org/obo/plana/references/planaref-[example_id].md
       example_id: "0000001"
-      example_url: http://purl.obolibrary.org/obo/plana/references/0000001
+      example_url: http://purl.obolibrary.org/obo/plana/references/planaref-0000001.md
