@@ -1,6 +1,7 @@
 OBO= http://purl.obolibrary.org/obo
 METADATA_DIR=../metadata/datasets
 REPORT=target/combined.report
+RDFOX_MEM ?= 32G
 
 all: target/Makefile extra_files $(REPORT) target/blazegraph.jnl
 	mkdir -p target
@@ -71,20 +72,16 @@ target/Makefile: ./util/generate-makefile.py
 
 include target/Makefile
 
-$(REPORT): all_targets
-	cat target/gafs/*/*.report > $@
+$(REPORT): target/Makefile all_targets
+	cat target/groups/*/*.report > $@
 
 target/noctua-models:
 	# If target/noctua-models does not exist, then clone it
 	if [ ! -d target/nocuta-models ]; then git clone https://github.com/geneontology/noctua-models.git target/noctua-models; fi
 
-RDFOX_MEM ?= 32G
-target/rdfox.ttl: $(ONT_MERGED)
-	export JAVA_OPTS="-Xmx$(RDFOX_MEM)" && rdfox-cli --ontology=$(ONT_MERGED) --rules=rules.dlog --data=target/rdf --threads=24 --reason --export=target/rdfox.ttl --inferred-only --excluded-properties=exclude.txt
-
 target/rdf: $(REPORT) target/noctua-models $(ONT_MERGED)
 	mkdir -p target/rdf
-	cp target/gafs/*/*.ttl target/rdf/
+	cp target/groups/*/*.ttl target/rdf/
 	cp target/noctua-models/models/* target/rdf/
 	cp $(ONT_MERGED) target/rdf/go-graphstore-merged.ttl
 
@@ -97,9 +94,10 @@ BGMEM ?= 32G
 BG = java -server -XX:+UseG1GC -Xmx$(BGMEM) -cp $(BGJAR) com.bigdata.rdf.store.DataLoader
 
 # Load blazegraph
-target/blazegraph.jnl: $(BGJAR) target/rdf # target/rdfox.ttl
+target/blazegraph.jnl: $(BGJAR) target/rdf target/inferred
 	$(BG) -defaultGraph http://geneontology.org/rdf/ conf/blazegraph.properties target/rdf
-	# $(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties target/rdf/rdfox.ttl
+	$(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties target/inferred/
+
 #
 # load-inferences: target/rdf/rdfox.ttl
 # 	$(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties $<
