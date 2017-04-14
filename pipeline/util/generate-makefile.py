@@ -55,7 +55,7 @@ def main():
     rule('all_targets_simple', simple_targets)
     
     ttl_targets = [all_ttl(ds) for ds in artifacts_by_dataset.keys()]
-    rule('all_targets_tll', ttl_targets)
+    rule('all_targets_ttl', ttl_targets)
 
 def generate_targets(ds, alist):
     """
