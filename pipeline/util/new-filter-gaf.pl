@@ -205,3 +205,9 @@ sub report_errors {
     print $err_fh "! BAD: $line\n";
     print $err_fh "! ERR: @line_errs\n\n";
 }
+
+sub report_warning {
+    my ($line, @line_warns) = @_;
+    print $err_fh "! WARNING: $line\n";
+    print $err_fh "! WARNING: @line_warns\n\n";
+}

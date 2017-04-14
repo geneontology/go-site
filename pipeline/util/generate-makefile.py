@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+"""
+Generates a Makefile based on metadata descriptions of source files.
+"""
+
 __author__ = 'cjm'
 
 import argparse
@@ -44,7 +48,7 @@ def main():
     for (ds,alist) in artifacts_by_dataset.items():
         generate_targets(ds, alist)
     targets = [all_files(ds) for ds in artifacts_by_dataset.keys()]
-    rule('all_targets', ' '.join(targets), 'echo done')
+    rule('all_targets', targets)
 
 def generate_targets(ds, alist):
     """
@@ -56,42 +60,42 @@ def generate_targets(ds, alist):
 
     print("## --------------------")
     print("## {}".format(ds))
-    print("## --------------------")
+    print("## --------------------\n")
     if 'gaf' not in types and 'gpad' not in types:
         print("# Metadata incomplete\n")
-        rule(all_files(ds), '','echo no metadata')
+        rule(all_files(ds))
         return
     if ds == 'goa_pdb':
-    # TODO move to another config file for 'skips'
+        # TODO move to another config file for 'skips'
         print("# Skipping\n")
-        rule(all_files(ds), '','echo no metadata')
+        rule(all_files(ds))
         return
 
     # If any item has the aggregate field, then we just want to pass it through and not run
     # all the targets
     is_ds_aggregated = any([("aggregates" in item) for item in alist])
 
-    ds_targets = [targetdir(ds), gzip(filtered_gaf(ds)), gzip(filtered_gpad(ds)), gzip(gpi(ds))]
+    ds_targets = [create_targetdir(ds), gzip(filtered_gaf(ds)), gzip(filtered_gpad(ds)), gzip(gpi(ds))]
     ds_targets.append(owltools_gafcheck(ds))
 
     if is_ds_aggregated:
-        ds_targets = [targetdir(ds), gzip(filtered_gaf(ds))]
+        ds_targets = [create_targetdir(ds), gzip(filtered_gaf(ds))]
 
-    rule(all_files(ds), " ".join(ds_targets))
+    rule(all_files(ds), ds_targets)
 
     ds_all_ttl = ds_targets + [inferred_ttl(ds), gzip(ttl(ds))]
-    rule(all_ttl(ds), " ".join(ds_all_ttl))
+    rule(all_ttl(ds), ds_all_ttl)
 
 
-    rule(targetdir(ds),'',
-         'mkdir -p $@')
+    rule(create_targetdir(ds),[],
+         'mkdir -p '+targetdir(ds))
 
     # for now we assume everything comes from a GAF
     if 'gaf' in types:
         [gaf] = [a for a in alist if a['type']=='gaf']
         url = gaf['source']
         # GAF from source
-        rule(src_gaf(ds),'',
+        rule(src_gaf(ds),[],
              'wget --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
     rule(filtered_gaf(ds),src_gaf(ds),
          'gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p '+ds+' --noiea-file '+noiea_gaf(ds)+' -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@')
@@ -107,6 +111,8 @@ def generate_targets(ds, alist):
         "mkdir -p target/inferred\n\texport JAVA_OPTS=\"-Xmx$(RDFOX_MEM)\" && rdfox-cli --ontology=$(ONT_MERGED) --rules=rules.dlog --data=$(<D) --threads=24 --reason --export=$@ --inferred-only --excluded-properties=exclude.txt")
 
 
+def create_targetdir(ds):
+    return 'create_targetdir_'+ds
 def targetdir(ds):
     return 'target/groups/{ds}/'.format(ds=ds)
 def all_files(ds):
@@ -132,9 +138,15 @@ def gpi(ds):
 def gzip(f):
     return '{}.gz'.format(f)
 
-def rule(tgt,dep,ex='echo done'):
-    s = "{tgt}: {dep}\n\t{ex}\n".format(tgt=tgt,dep=dep,ex=ex)
-    print(s)
+def rule(target,dependencies=[],executable=None, comments=None):
+    if comments != None:
+        print("## {}".format(comments))
+    if isinstance(dependencies,list):
+        dependencies = " ".join(dependencies)
+    print("{}: {}".format(target,dependencies))
+    if executable is not None:
+        print("\t{}".format(executable))
+    print()
 
 if __name__ == "__main__":
     main()
