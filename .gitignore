@@ -24,3 +24,7 @@ rules.log
 pipeline/target/
 pipeline/env
 pipeline/*.log
+
+*.egg-info
+env
+__pycache__
