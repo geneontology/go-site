@@ -50,12 +50,14 @@ def main():
         
     targets = [all_files(ds) for ds in artifacts_by_dataset.keys()]
     rule('all_targets', targets)
-    
-    simple_targets = [all_files(ds) for ds in artifacts_by_dataset.keys() if ds != 'goa_uniprot_all' and ds != 'goa_uniprot_gcrp']
-    rule('all_targets_simple', simple_targets)
-    
-    ttl_targets = [all_ttl(ds) for ds in artifacts_by_dataset.keys()]
-    rule('all_targets_ttl', ttl_targets)
+
+    simple_ds_list = [ds for ds in artifacts_by_dataset.keys() if ds != 'goa_uniprot_all' and ds != 'goa_uniprot_gcrp']
+    simple_targets = [all_files(ds) for ds in simple_ds_list]
+    rule('all_targets_simple', simple_targets, comments='Excludes aggregated (goa_uniprot)')
+
+    # for now, do not do ttl on goa_uniprot_all
+    ttl_targets = [all_ttl(ds) for ds in simple_ds_list]
+    rule('all_targets_ttl', ttl_targets, comments='RDF targets. Excludes aggregated (goa_uniprot)')
 
 def generate_targets(ds, alist):
     """
