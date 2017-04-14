@@ -16,7 +16,14 @@ New GO pipeline. For context, see:
 
 ## Jenkins Job
 
- * https://build.berkeleybop.org/job/go-gaf-pipeline-NEW/
+Note these are not in production
+
+ * https://build.berkeleybop.org/job/go-gaf-release-snapshot
+    * excludes ttl, excludes goa_uniprot_all, runs daily
+ * https://build.berkeleybop.org/job/go-gaf-release-production
+    * excludes ttl, runs weekly
+ * https://build.berkeleybop.org/job/go-gaf-release-experimental
+    * includes ttl
 
 Everything is driven by a makefile. It should be possible to run the makefile locally, on an amazon machine slaved to jenkins, etc
 
