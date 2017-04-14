@@ -2,9 +2,11 @@ OBO= http://purl.obolibrary.org/obo
 METADATA_DIR=../metadata/datasets
 REPORT=target/combined.report
 RDFOX_MEM ?= 32G
+GAF_OWL = target/go-gaf.owl
 
-all: target/Makefile extra_files $(REPORT) target/blazegraph.jnl
-	mkdir -p target
+all: target/Makefile extra_files $(REPORT) 
+
+all_blazegraph: all target/blazegraph.jnl
 
 test:
 	$(foo)
@@ -29,7 +31,7 @@ $(ONT_MERGED):
 .PRECIOUS: target/go-graphstore-merged.ttl
 
 .PHONY: extra_files
-extra_files: target/go.obo target/datasets-metadata.json $(ONT_MERGED)
+extra_files: $(GAF_OWL) target/go.obo target/datasets-metadata.json $(ONT_MERGED)
 
 # TODO - update
 target/datasets-metadata.json:
@@ -48,6 +50,9 @@ proc:
 # ----------------------------------------
 # OWLTools checks
 # ----------------------------------------
+
+$(GAF_OWL):
+	owltools $(OBO)/go/extensions/go-gaf.owl --merge-imports-closure --remove-annotation-assertions -l -r --add-obo-shorthand-to-properties -o $@
 
 CATALOG_DETAILS=
 OWLTOOLS_GAFCHECK = owltools $(CATALOG_DETAILS) $(GAF_OWL) \

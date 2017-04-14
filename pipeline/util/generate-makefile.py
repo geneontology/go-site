@@ -49,6 +49,8 @@ def main():
         generate_targets(ds, alist)
     targets = [all_files(ds) for ds in artifacts_by_dataset.keys()]
     rule('all_targets', targets)
+    ttl_targets = [all_ttl(ds) for ds in artifacts_by_dataset.keys()]
+    rule('all_targets_tll', ttl_targets)
 
 def generate_targets(ds, alist):
     """
@@ -99,7 +101,7 @@ def generate_targets(ds, alist):
              'wget --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
     rule(filtered_gaf(ds),src_gaf(ds),
          'gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p '+ds+' --noiea-file '+noiea_gaf(ds)+' -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@')
-    rule(owltools_gafcheck(ds),src_gaf(ds),
+    rule(owltools_gafcheck(ds),filtered_gaf(ds),
          '$(OWLTOOLS_GAFCHECK)')
     rule(filtered_gpad(ds),filtered_gaf(ds),
          'owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@')
