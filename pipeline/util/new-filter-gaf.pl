@@ -180,6 +180,7 @@ while(<>) {
 
     my $is_modified = 0;
     $_ = $line;
+    chomp;
     if ($is_modified) {
         $_ = join("\t", ($db,
                          $db_object_id,

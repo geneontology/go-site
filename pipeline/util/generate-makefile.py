@@ -47,8 +47,13 @@ def main():
 
     for (ds,alist) in artifacts_by_dataset.items():
         generate_targets(ds, alist)
+        
     targets = [all_files(ds) for ds in artifacts_by_dataset.keys()]
     rule('all_targets', targets)
+    
+    simple_targets = [all_files(ds) for ds in artifacts_by_dataset.keys() if ds != 'goa_uniprot_all' and ds != 'goa_uniprot_gcrp']
+    rule('all_targets_simple', simple_targets)
+    
     ttl_targets = [all_ttl(ds) for ds in artifacts_by_dataset.keys()]
     rule('all_targets_tll', ttl_targets)
 

@@ -25,13 +25,9 @@ clean:
 # ----------------------------------------
 # Additional metadata files required
 # ----------------------------------------
-ONT_MERGED = target/go-graphstore-merged.ttl
-$(ONT_MERGED):
-	OWLTOOLS_MEMORY=12G owltools go-graphstore.owl --merge-imports-closure -o -f turtle $@
-.PRECIOUS: target/go-graphstore-merged.ttl
 
 .PHONY: extra_files
-extra_files: $(GAF_OWL) target/go.obo target/datasets-metadata.json $(ONT_MERGED)
+extra_files: $(GAF_OWL) target/go.obo target/datasets-metadata.json
 
 # TODO - update
 target/datasets-metadata.json:
@@ -83,6 +79,15 @@ $(REPORT): target/Makefile all_targets
 target/noctua-models:
 	# If target/noctua-models does not exist, then clone it
 	if [ ! -d target/nocuta-models ]; then git clone https://github.com/geneontology/noctua-models.git target/noctua-models; fi
+
+# ----------------------------------------
+# RDF
+# ----------------------------------------
+
+ONT_MERGED = target/go-graphstore-merged.ttl
+$(ONT_MERGED):
+	OWLTOOLS_MEMORY=12G owltools go-graphstore.owl --merge-imports-closure -o -f turtle $@
+.PRECIOUS: target/go-graphstore-merged.ttl
 
 target/rdf: $(REPORT) target/noctua-models $(ONT_MERGED)
 	mkdir -p target/rdf
