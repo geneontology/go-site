@@ -69,15 +69,19 @@ def generate_targets(ds, alist):
 
     # If any item has the aggregate field, then we just want to pass it through and not run
     # all the targets
-    ds_aggregate = any([("aggregates" in item) for item in alist])
+    is_ds_aggregated = any([("aggregates" in item) for item in alist])
 
-    ds_targets = [targetdir(ds), gzip(filtered_gaf(ds)), gzip(filtered_gpad(ds)), gzip(gpi(ds)), gzip(ttl(ds)), inferred(ds)]
+    ds_targets = [targetdir(ds), gzip(filtered_gaf(ds)), gzip(filtered_gpad(ds)), gzip(gpi(ds))]
     ds_targets.append(owltools_gafcheck(ds))
 
-    if ds_aggregate:
+    if is_ds_aggregated:
         ds_targets = [targetdir(ds), gzip(filtered_gaf(ds))]
 
     rule(all_files(ds), " ".join(ds_targets))
+
+    ds_all_ttl = ds_targets + [inferred_ttl(ds), gzip(ttl(ds))]
+    rule(all_ttl(ds), " ".join(ds_all_ttl))
+
 
     rule(targetdir(ds),'',
          'mkdir -p $@')
@@ -90,7 +94,7 @@ def generate_targets(ds, alist):
         rule(src_gaf(ds),'',
              'wget --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
     rule(filtered_gaf(ds),src_gaf(ds),
-         'gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p '+ds+' -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@')
+         'gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p '+ds+' --noiea-file '+noiea_gaf(ds)+' -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@')
     rule(owltools_gafcheck(ds),src_gaf(ds),
          '$(OWLTOOLS_GAFCHECK)')
     rule(filtered_gpad(ds),filtered_gaf(ds),
@@ -99,7 +103,7 @@ def generate_targets(ds, alist):
          'owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@')
     rule(ttl(ds),"{} $(ONT_MERGED)".format(filtered_gaf(ds)),
          'MINERVA_CLI_MEMORY=16G minerva-cli.sh $(ONT_MERGED) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@')
-    rule(inferred(ds), "{} $(ONT_MERGED)".format(ttl(ds)),
+    rule(inferred_ttl(ds), "{} $(ONT_MERGED)".format(ttl(ds)),
         "mkdir -p target/inferred\n\texport JAVA_OPTS=\"-Xmx$(RDFOX_MEM)\" && rdfox-cli --ontology=$(ONT_MERGED) --rules=rules.dlog --data=$(<D) --threads=24 --reason --export=$@ --inferred-only --excluded-properties=exclude.txt")
 
 
@@ -107,15 +111,19 @@ def targetdir(ds):
     return 'target/groups/{ds}/'.format(ds=ds)
 def all_files(ds):
     return 'all_'+ds
+def all_ttl(ds):
+    return 'ttl_all_'+ds
 def src_gaf(ds):
     return '{dir}{ds}-src.gaf.gz'.format(dir=targetdir(ds),ds=ds)
 def filtered_gaf(ds):
-    return '{dir}{ds}-filtered.gaf'.format(dir=targetdir(ds),ds=ds)
+    return '{dir}{ds}.gaf'.format(dir=targetdir(ds),ds=ds)
+def noiea_gaf(ds):
+    return '{dir}{ds}_noiea.gaf'.format(dir=targetdir(ds),ds=ds)
 def filtered_gpad(ds):
-    return '{dir}{ds}-filtered.gpad'.format(dir=targetdir(ds),ds=ds)
+    return '{dir}{ds}.gpad'.format(dir=targetdir(ds),ds=ds)
 def ttl(ds):
     return '{dir}{ds}.ttl'.format(dir=targetdir(ds),ds=ds)
-def inferred(ds):
+def inferred_ttl(ds):
     return "target/inferred/{ds}_inferred.ttl".format(ds=ds)
 def owltools_gafcheck(ds):
     return '{dir}{ds}-gafcheck'.format(dir=targetdir(ds),ds=ds)
