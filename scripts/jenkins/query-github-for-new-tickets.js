@@ -154,7 +154,7 @@ function getUpdatedTickets(username, projectname, range) {
  * TODO: handle pagination, maybe add a retry count
  */
 function getTickets(username, projectname, range, type) {
-    var url = 'https://api.github.com/search/issues?q=repo:'+username+'/'+projectname+'+'+type+range+'&type=Issues&per_page=100';
+    var url = 'https://api.github.com/search/issues?q=repo:'+username+'/'+projectname+'+'+range+'&type=Issues&per_page=100';
     //console.log(url);
     var res = getUrl(url);
     //console.log(res);
