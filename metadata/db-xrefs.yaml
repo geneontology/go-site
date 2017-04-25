@@ -1716,15 +1716,15 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: MGI:[0-9]{5,}
-      url_syntax: http://www.informatics.jax.org/accession/[example_id]
-      example_id: MGI:MGI:80863
+      id_syntax: [0-9]{5,}
+      url_syntax: http://www.informatics.jax.org/accession/MGI:[example_id]
+      example_id: MGI:80863
       example_url: http://www.informatics.jax.org/accession/MGI:80863
     - type_name: variation
       type_id: VariO:0001
-      id_syntax: MGI:[0-9]{5,}
-      url_syntax: http://www.informatics.jax.org/accession/[example_id]
-      example_id: MGI:MGI:80863
+      id_syntax: [0-9]{5,}
+      url_syntax: http://www.informatics.jax.org/accession/MGI:[example_id]
+      example_id: MGI:80863
       example_url: http://www.informatics.jax.org/accession/MGI:80863
 - database: MIPS_funcat
   name: MIPS Functional Catalogue
