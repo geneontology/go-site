@@ -3010,6 +3010,16 @@
     - 'http://www.genedb.org'
   accounts:
     github: 'uliboehme'
+-
+  nickname: "Astrid Lægreid"
+  uri: 'http://orcid.org/0000-0002-3941-4257'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: NTNU
+  accounts:
+    github: 'astridla'
 # -
 #   nickname: ""
 #   uri: ''
