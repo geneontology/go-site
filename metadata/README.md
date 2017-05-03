@@ -72,9 +72,9 @@ for full details.
  - [groups.schema.yaml](groups.schema.yaml) - schema
 
 Groups encompasses organizations, projects, working groups, content
-meetings, grants, etc. We call them groups as these typically consist
-of groups of users. Some groups may be transient. Others may be
-permanent institutions.
+meetings, grants, etc. We call these "groups" as these typically consist
+of groups of users. Some groups may be transient (e.g. projects or working groups). Others may be
+permanent institutions, such as Cambridge University.
 
 Fields:
 
@@ -83,7 +83,11 @@ Fields:
 
 __TODO__: each group should have a point of contact, and that POC should be in users
 
-Tracking contributions to GO:
+## SOP for adding new groups
+
+Click on [groups.yaml](groups.yaml) and add a new entry. The group **must** have a stable URL that directs to a page about the group. See existing entries for details.
+
+## Tracking contributions to GO using groups.yaml
 
 In the GO graphstore, we typically have triples:
 
