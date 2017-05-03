@@ -85,7 +85,9 @@ __TODO__: each group should have a point of contact, and that POC should be in u
 
 ## SOP for adding new groups
 
-Click on [groups.yaml](groups.yaml) and add a new entry. The group **must** have a stable URL that directs to a page about the group. See existing entries for details.
+Click on [groups.yaml](groups.yaml) and add a new entry. This assumes you have familiarity with making pull requests via the github web interface. If you can't do that file a ticket in this tracker.
+
+The group **must** have a stable URL that directs to a page about the group. See existing entries for details.
 
 ## Tracking contributions to GO using groups.yaml
 
