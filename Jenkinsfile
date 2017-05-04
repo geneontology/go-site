@@ -24,7 +24,7 @@ pipeline {
     stage('Ready ZFIN GAF') {
       steps {
         build 'gaf-production'
-        stash(name: 'zfin-gaf', includes: 'pipeline/target/groups/zfin/zfin.gaf')
+        stash(name: 'zfin-gaf', includes: '*.gaf', useDefaultExcludes: true, excludes: '**')
       }
     }
     stage('Recover ZFIN GAF') {
