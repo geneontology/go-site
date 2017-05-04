@@ -18,11 +18,10 @@ pipeline {
     }
     stage('Ready OWLTools') {
       steps {
-        git(url: 'https://github.com/owlcollab/owltools.git', branch: 'master')
         build 'owltools-build'
       }
     }
-    stage('ZFIN GAF') {
+    stage('Ready ZFIN GAF') {
       steps {
         build 'gaf-production'
       }
