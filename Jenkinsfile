@@ -8,20 +8,9 @@ pipeline {
             echo 'Hello, Pipeline.'
             
           },
-          "Pre-step": {
-            sh '''## Experimental stanza to support mounting the sshfs using the "hidden"
-## skyhook identity.
-mkdir -p $WORKSPACE/mnt/ || true
-sshfs -oStrictHostKeyChecking=no -o IdentitiesOnly=true -o IdentityFile=$SKYHOOK_IDENTITY -o idmap=user skyhook@skyhook.berkeleybop.org:/home/skyhook $WORKSPACE/mnt/
-
-## Copy the product to the right location.
-mkdir -p $WORKSPACE/mnt/bin/ || true
-
-date > $WORKSPACE/mnt/date.txt
-
-## Bail on the filesystem.
-fusermount -u $WORKSPACE/mnt/
-'''
+          "Nihao": {
+            echo 'Daijia Hao'
+            sleep 5
             
           }
         )
@@ -36,6 +25,12 @@ fusermount -u $WORKSPACE/mnt/
       steps {
         build 'gaf-production'
         stash(name: 'zfin-gaf', includes: 'pipeline/target/groups/zfin/zfin.gaf')
+      }
+    }
+    stage('Recover ZFIN GAF') {
+      steps {
+        unstash 'zfin-gaf'
+        sh 'head pipeline/target/groups/zfin/zfin.gaf'
       }
     }
   }
