@@ -22,5 +22,10 @@ pipeline {
         build 'owltools-build'
       }
     }
+    stage('ZFIN GAF') {
+      steps {
+        build 'gaf-production'
+      }
+    }
   }
 }
