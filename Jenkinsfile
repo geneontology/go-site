@@ -21,12 +21,13 @@ pipeline {
         build 'owltools-build'
       }
     }
-    stage('Ready ZFIN GAF') {
+    stage('Ready PomBase GAF') {
       steps {
-        build 'gaf-production'
-        sh 'ls -AlF pipeline'
-        sh 'ls -AlF pipeline/target/groups'
-        stash(name: 'pombase-gaf', includes: '**', useDefaultExcludes: true)
+        node(label: 'node') {
+          build 'gaf-production'
+          stash(name: 'pombase-gaf', includes: '**')
+        }
+        
       }
     }
     stage('Recover PomBase GAF') {
