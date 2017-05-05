@@ -23,7 +23,7 @@ pipeline {
     }
     stage('Ready PomBase GAF') {
       steps {
-        node(label: 'node') {
+        node {
           build 'gaf-production'
           stash(name: 'pombase-gaf', includes: '**')
         }
