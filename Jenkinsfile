@@ -3,22 +3,26 @@ pipeline {
   stages {
     stage('Hello') {
       steps {
+        echo 'Hello, Pipeline.'
+      }
+    }
+    stage('Ready OWLTools') {
+      steps {
         parallel(
-          "Hello, Pipeline!": {
-            echo 'Hello, Pipeline.'
+          "Ready OWLTools": {
+            build 'owltools-build'
             
           },
-          "Nihao": {
-            echo 'Daijia Hao'
-            sleep 5
+          "Ready RDFox": {
+            build 'rdfox-cli-build'
             
           }
         )
       }
     }
-    stage('Ready OWLTools') {
+    stage('Produce GAF') {
       steps {
-        build 'owltools-build'
+        build 'gaf-production'
       }
     }
   }
