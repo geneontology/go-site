@@ -25,7 +25,7 @@ pipeline {
       steps {
         node(label: 'generic') {
           build 'gaf-production'
-          stash(name: 'pombase-gaf', includes: '**')
+          stash(name: 'pombase-gaf', includes: 'pipeline/*')
         }
         
       }
