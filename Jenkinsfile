@@ -24,7 +24,9 @@ pipeline {
     stage('Ready ZFIN GAF') {
       steps {
         build 'gaf-production'
-        stash(name: 'pombase-gaf', useDefaultExcludes: true, includes: 'pipeline/target/groups/*')
+        sh 'ls -AlF pipeline'
+        sh 'ls -AlF pipeline/target/groups'
+        stash(name: 'pombase-gaf', includes: '**', useDefaultExcludes: true)
       }
     }
     stage('Recover PomBase GAF') {
