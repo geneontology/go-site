@@ -23,8 +23,11 @@ pipeline {
     }
     stage('Ready PomBase GAF') {
       steps {
-        build 'gaf-production'
-        stash(name: 'pombase-gaf', includes: '**')
+        node(label: 'generic') {
+          build 'gaf-production'
+          stash(name: 'pombase-gaf', includes: '**')
+        }
+        
       }
     }
     stage('Recover PomBase GAF') {
