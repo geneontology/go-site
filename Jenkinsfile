@@ -24,8 +24,8 @@ pipeline {
     stage('Ready PomBase GAF') {
       steps {
         node(label: 'generic') {
-          build 'gaf-production'
-          stash(name: 'pombase-gaf', includes: 'pipeline/*')
+          sh 'cd pipeline && make clean && make test && make extra_files && make all_pombase'
+          stash(includes: '**', name: 'pombase-gaf')
         }
         
       }
