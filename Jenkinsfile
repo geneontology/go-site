@@ -30,7 +30,7 @@ pipeline {
     stage('Recover PomBase GAF') {
       steps {
         unstash 'pombase-gaf'
-        sh 'head pipeline/target/groups/pombase/pombase.gaf'
+        sh 'ls -AlF'
       }
     }
   }
