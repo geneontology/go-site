@@ -6,7 +6,7 @@ pipeline {
         echo 'Hello, Pipeline.'
       }
     }
-    stage('Ready OWLTools') {
+    stage('Ready early software') {
       steps {
         parallel(
           "Ready OWLTools": {
@@ -20,7 +20,7 @@ pipeline {
         )
       }
     }
-    stage('Produce GAF') {
+    stage('Produce GAFs') {
       steps {
         build 'gaf-production'
       }
