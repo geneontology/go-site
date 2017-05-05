@@ -31,6 +31,10 @@ pipeline {
       steps {
         unstash 'pombase-gaf'
         sh 'ls -AlF'
+        sh 'ls -AlF pipeline'
+        sh 'ls -AlF pipeline/target'
+        sh 'ls -AlF pipeline/target/groups'
+        sh 'ls -AlF pipeline/target/groups/pombase'
       }
     }
   }
