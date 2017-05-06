@@ -1,12 +1,21 @@
 pipeline {
   agent any
   stages {
-    stage('Hello') {
+    stage('Initialize') {
       steps {
-        echo 'Hello, Pipeline.'
+        parallel(
+          "Initialize": {
+            echo 'Hello, Pipeline.'
+            
+          },
+          "Reset": {
+            build 'shkyhook-reset'
+            
+          }
+        )
       }
     }
-    stage('Ready early software') {
+    stage('Ready production software') {
       steps {
         build 'owltools-build'
       }
