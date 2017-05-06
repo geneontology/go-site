@@ -9,7 +9,7 @@ pipeline {
             
           },
           "Reset": {
-            build 'shkyhook-reset'
+            build 'skyhook-reset'
             
           }
         )
