@@ -8,16 +8,7 @@ pipeline {
     }
     stage('Ready early software') {
       steps {
-        parallel(
-          "Ready OWLTools": {
-            build 'owltools-build'
-            
-          },
-          "Ready RDFox": {
-            build 'rdfox-cli-build'
-            
-          }
-        )
+        build 'owltools-build'
       }
     }
     stage('Produce GAFs') {
