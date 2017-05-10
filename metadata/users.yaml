@@ -1847,6 +1847,8 @@
   xref: 'GOC:dgh'
   uri: 'http://orcid.org/0000-0001-5831-7439'
   organization: ZFIN
+  accounts:
+     github: 'doughowe'
 -
   nickname: 'David Fashena'
   email-md5:
@@ -1857,8 +1859,10 @@
     termgenie-go:
       allow-write: true
   xref: 'GOC:dsf'
-  uri: 'GOC:dsf'
+  uri: 'http://orcid.org/0000-0001-9656-0683'
   organization: ZFIN
+  accounts:
+     github: 'SomeCallMeDave'
 -
   nickname: 'Ceri Van Slyke'
   email-md5:
@@ -1875,7 +1879,7 @@
   nickname: 'Erik Segerdell'
   uri: 'GOC:ejs'
   xref: 'GOC:ejs'
-  organization: ZFIN
+  organization: 'GOC:ejs'
 -
   nickname: 'Lionel Breuza'
   email-md5:
@@ -1899,10 +1903,18 @@
   xref: 'GOC:mh'
   organization: OHSU
 -
+  nickname: 'Sridhar Ramachandran'
   uri: 'GOC:sr'
   xref: 'GOC:sr'
-  nickname: 'Sridhar Ramachandran'
+  email-md5:
+    - 
+  uri: 'http://orcid.org/0000-0002-2246-3722'
+  authorizations:
+    noctua-go:
+      allow-edit: true
   organization: ZFIN
+  accounts:
+     github: 'sramachandran'
 -
   nickname: 'Yvonne M Bradford'
   email-md5:
@@ -2544,6 +2556,30 @@
     noctua-go:
       allow-edit: true
   organization: ZFIN
+  accounts:
+     github: 'SabrinaToro'
+  -
+  nickname: "Ken Frazer
+  uri: 'http://orcid.org/0000-0002-6889-0711'
+  xref:
+  email-md5:
+    - 
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: ZFIN
+  -
+  nickname: "Leyla Ruzicka"
+  uri: 'http://orcid.org/0000-0002-1009-339X'
+  xref: 
+  email-md5:
+  accounts:
+     github: 'LeylaR'
+    - 
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: ZFIN
 -
   nickname: "William Duncan"
   uri: 'http://orcid.org/0000-0001-9625-1899'
@@ -2730,7 +2766,7 @@
     noctua:
       go:
         allow-edit: true
-  organization: ZFIN
+  organization: WB
   accounts:
     github: 'chris-grove'
 -
