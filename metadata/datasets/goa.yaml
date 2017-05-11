@@ -1,6 +1,11 @@
 id: goa
 label: EBI Gene Ontology Annotation Database
 description: "GO data for EBI Gene Ontology Annotation Database"
+project_name: "UniProt GO Annotation program (UniProt-GOA)"
+contact_email: "goa@ebi.ac.uk"
+project_url: "http://www.ebi.ac.uk/GOA"
+funding_source: "unspecified"
+email_report: "goa@ebi.ac.uk"
 datasets:
  -    
    id: goa_chicken.gpad
@@ -11,7 +16,7 @@ datasets:
    dataset: goa_chicken
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_chicken.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken.gpa.gz
    entity_type: protein
    status: active
    species_code: Ggal
@@ -21,7 +26,7 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-
+   
  -    
    id: goa_chicken.gpi
    label: "goa_chicken gpi file"
@@ -31,7 +36,7 @@ datasets:
    dataset: goa_chicken
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_chicken.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken.gpi.gz
    entity_type: protein
    status: active
    species_code: Ggal
@@ -41,7 +46,7 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-
+   
  -    
    id: goa_chicken_complex.gpad
    label: "goa_chicken_complex gpad file"
@@ -51,7 +56,7 @@ datasets:
    dataset: goa_chicken_complex
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_chicken_complex.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_complex.gpa.gz
    entity_type: complex
    status: active
    species_code: Ggal
@@ -61,7 +66,7 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-
+   
  -    
    id: goa_chicken_complex.gpi
    label: "goa_chicken_complex gpi file"
@@ -71,7 +76,7 @@ datasets:
    dataset: goa_chicken_complex
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_chicken_complex.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_complex.gpi.gz
    entity_type: complex
    status: active
    species_code: Ggal
@@ -81,7 +86,7 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-
+   
  -    
    id: goa_chicken_isoform.gpad
    label: "goa_chicken_isoform gpad file"
@@ -91,7 +96,7 @@ datasets:
    dataset: goa_chicken_isoform
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_chicken_isoform.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_isoform.gpa.gz
    entity_type: isoform
    status: active
    species_code: Ggal
@@ -101,7 +106,7 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-
+   
  -    
    id: goa_chicken_isoform.gpi
    label: "goa_chicken_isoform gpi file"
@@ -111,7 +116,7 @@ datasets:
    dataset: goa_chicken_isoform
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_chicken_isoform.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_isoform.gpi.gz
    entity_type: isoform
    status: active
    species_code: Ggal
@@ -121,7 +126,7 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-
+   
  -    
    id: goa_chicken_rna.gpad
    label: "goa_chicken_rna gpad file"
@@ -131,7 +136,7 @@ datasets:
    dataset: goa_chicken_rna
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_chicken_rna.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_rna.gpa.gz
    entity_type: rna
    status: active
    species_code: Ggal
@@ -141,7 +146,7 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-
+   
  -    
    id: goa_chicken_rna.gpi
    label: "goa_chicken_rna gpi file"
@@ -151,7 +156,7 @@ datasets:
    dataset: goa_chicken_rna
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_chicken_rna.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_rna.gpi.gz
    entity_type: rna
    status: active
    species_code: Ggal
@@ -161,7 +166,7 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-
+   
  -    
    id: goa_cow.gpad
    label: "goa_cow gpad file"
@@ -171,7 +176,7 @@ datasets:
    dataset: goa_cow
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_cow.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow.gpa.gz
    entity_type: protein
    status: active
    species_code: Btau
@@ -179,7 +184,7 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-
+   
  -    
    id: goa_cow.gpi
    label: "goa_cow gpi file"
@@ -189,7 +194,7 @@ datasets:
    dataset: goa_cow
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_cow.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow.gpi.gz
    entity_type: protein
    status: active
    species_code: Btau
@@ -197,7 +202,7 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-
+   
  -    
    id: goa_cow_complex.gpad
    label: "goa_cow_complex gpad file"
@@ -207,7 +212,7 @@ datasets:
    dataset: goa_cow_complex
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_cow_complex.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_complex.gpa.gz
    entity_type: complex
    status: active
    species_code: Btau
@@ -215,7 +220,7 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-
+   
  -    
    id: goa_cow_complex.gpi
    label: "goa_cow_complex gpi file"
@@ -225,7 +230,7 @@ datasets:
    dataset: goa_cow_complex
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_cow_complex.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_complex.gpi.gz
    entity_type: complex
    status: active
    species_code: Btau
@@ -233,7 +238,7 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-
+   
  -    
    id: goa_cow_isoform.gpad
    label: "goa_cow_isoform gpad file"
@@ -243,7 +248,7 @@ datasets:
    dataset: goa_cow_isoform
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_cow_isoform.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_isoform.gpa.gz
    entity_type: isoform
    status: active
    species_code: Btau
@@ -251,7 +256,7 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-
+   
  -    
    id: goa_cow_isoform.gpi
    label: "goa_cow_isoform gpi file"
@@ -261,7 +266,7 @@ datasets:
    dataset: goa_cow_isoform
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_cow_isoform.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_isoform.gpi.gz
    entity_type: isoform
    status: active
    species_code: Btau
@@ -269,7 +274,7 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-
+   
  -    
    id: goa_cow_rna.gpad
    label: "goa_cow_rna gpad file"
@@ -279,7 +284,7 @@ datasets:
    dataset: goa_cow_rna
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_cow_rna.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_rna.gpa.gz
    entity_type: rna
    status: active
    species_code: Btau
@@ -287,7 +292,7 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-
+   
  -    
    id: goa_cow_rna.gpi
    label: "goa_cow_rna gpi file"
@@ -297,7 +302,7 @@ datasets:
    dataset: goa_cow_rna
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_cow_rna.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_rna.gpi.gz
    entity_type: rna
    status: active
    species_code: Btau
@@ -305,7 +310,7 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-
+   
  -    
    id: goa_dog.gpad
    label: "goa_dog gpad file"
@@ -315,13 +320,13 @@ datasets:
    dataset: goa_dog
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_dog.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog.gpa.gz
    entity_type: protein
    status: active
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-
+   
  -    
    id: goa_dog.gpi
    label: "goa_dog gpi file"
@@ -331,13 +336,13 @@ datasets:
    dataset: goa_dog
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_dog.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog.gpi.gz
    entity_type: protein
    status: active
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-
+   
  -    
    id: goa_dog_complex.gpad
    label: "goa_dog_complex gpad file"
@@ -347,13 +352,13 @@ datasets:
    dataset: goa_dog_complex
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_dog_complex.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_complex.gpa.gz
    entity_type: complex
    status: active
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-
+   
  -    
    id: goa_dog_complex.gpi
    label: "goa_dog_complex gpi file"
@@ -363,13 +368,13 @@ datasets:
    dataset: goa_dog_complex
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_dog_complex.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_complex.gpi.gz
    entity_type: complex
    status: active
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-
+   
  -    
    id: goa_dog_isoform.gpad
    label: "goa_dog_isoform gpad file"
@@ -379,13 +384,13 @@ datasets:
    dataset: goa_dog_isoform
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_dog_isoform.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_isoform.gpa.gz
    entity_type: isoform
    status: active
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-
+   
  -    
    id: goa_dog_isoform.gpi
    label: "goa_dog_isoform gpi file"
@@ -395,13 +400,13 @@ datasets:
    dataset: goa_dog_isoform
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_dog_isoform.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_isoform.gpi.gz
    entity_type: isoform
    status: active
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-
+   
  -    
    id: goa_dog_rna.gpad
    label: "goa_dog_rna gpad file"
@@ -411,13 +416,13 @@ datasets:
    dataset: goa_dog_rna
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_dog_rna.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_rna.gpa.gz
    entity_type: rna
    status: active
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-
+   
  -    
    id: goa_dog_rna.gpi
    label: "goa_dog_rna gpi file"
@@ -427,13 +432,13 @@ datasets:
    dataset: goa_dog_rna
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_dog_rna.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_rna.gpi.gz
    entity_type: rna
    status: active
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-
+   
  -    
    id: goa_human.gpad
    label: "goa_human gpad file"
@@ -443,13 +448,13 @@ datasets:
    dataset: goa_human
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_human.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human.gpa.gz
    entity_type: protein
    status: active
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-
+   
  -    
    id: goa_human.gpi
    label: "goa_human gpi file"
@@ -459,13 +464,13 @@ datasets:
    dataset: goa_human
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_human.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human.gpi.gz
    entity_type: protein
    status: active
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-
+   
  -    
    id: goa_human_complex.gpad
    label: "goa_human_complex gpad file"
@@ -475,13 +480,13 @@ datasets:
    dataset: goa_human_complex
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_human_complex.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_complex.gpa.gz
    entity_type: complex
    status: active
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-
+   
  -    
    id: goa_human_complex.gpi
    label: "goa_human_complex gpi file"
@@ -491,13 +496,13 @@ datasets:
    dataset: goa_human_complex
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_human_complex.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_complex.gpi.gz
    entity_type: complex
    status: active
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-
+   
  -    
    id: goa_human_isoform.gpad
    label: "goa_human_isoform gpad file"
@@ -507,13 +512,13 @@ datasets:
    dataset: goa_human_isoform
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_human_isoform.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_isoform.gpa.gz
    entity_type: isoform
    status: active
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-
+   
  -    
    id: goa_human_isoform.gpi
    label: "goa_human_isoform gpi file"
@@ -523,13 +528,13 @@ datasets:
    dataset: goa_human_isoform
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_human_isoform.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_isoform.gpi.gz
    entity_type: isoform
    status: active
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-
+   
  -    
    id: goa_human_rna.gpad
    label: "goa_human_rna gpad file"
@@ -539,13 +544,13 @@ datasets:
    dataset: goa_human_rna
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_human_rna.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_rna.gpa.gz
    entity_type: rna
    status: active
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-
+   
  -    
    id: goa_human_rna.gpi
    label: "goa_human_rna gpi file"
@@ -555,13 +560,13 @@ datasets:
    dataset: goa_human_rna
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_human_rna.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_rna.gpi.gz
    entity_type: rna
    status: active
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-
+   
  -    
    id: goa_pig.gpad
    label: "goa_pig gpad file"
@@ -571,13 +576,13 @@ datasets:
    dataset: goa_pig
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_pig.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig.gpa.gz
    entity_type: protein
    status: active
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-
+   
  -    
    id: goa_pig.gpi
    label: "goa_pig gpi file"
@@ -587,13 +592,13 @@ datasets:
    dataset: goa_pig
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_pig.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig.gpi.gz
    entity_type: protein
    status: active
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-
+   
  -    
    id: goa_pig_complex.gpad
    label: "goa_pig_complex gpad file"
@@ -603,13 +608,13 @@ datasets:
    dataset: goa_pig_complex
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_pig_complex.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_complex.gpa.gz
    entity_type: complex
    status: active
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-
+   
  -    
    id: goa_pig_complex.gpi
    label: "goa_pig_complex gpi file"
@@ -619,13 +624,13 @@ datasets:
    dataset: goa_pig_complex
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_pig_complex.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_complex.gpi.gz
    entity_type: complex
    status: active
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-
+   
  -    
    id: goa_pig_isoform.gpad
    label: "goa_pig_isoform gpad file"
@@ -635,13 +640,13 @@ datasets:
    dataset: goa_pig_isoform
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_pig_isoform.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_isoform.gpa.gz
    entity_type: isoform
    status: active
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-
+   
  -    
    id: goa_pig_isoform.gpi
    label: "goa_pig_isoform gpi file"
@@ -651,13 +656,13 @@ datasets:
    dataset: goa_pig_isoform
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_pig_isoform.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_isoform.gpi.gz
    entity_type: isoform
    status: active
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-
+   
  -    
    id: goa_pig_rna.gpad
    label: "goa_pig_rna gpad file"
@@ -667,13 +672,13 @@ datasets:
    dataset: goa_pig_rna
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_pig_rna.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_rna.gpa.gz
    entity_type: rna
    status: active
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-
+   
  -    
    id: goa_pig_rna.gpi
    label: "goa_pig_rna gpi file"
@@ -683,10 +688,465 @@ datasets:
    dataset: goa_pig_rna
    submitter: goa
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/goa_pig_rna.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_rna.gpi.gz
    entity_type: rna
    status: active
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
+   
+ -    
+   id: goa_chicken.gaf
+   label: "goa_chicken gaf file"
+   description: "gaf file for goa_chicken from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_chicken.gaf.gz
+   type: gaf
+   dataset: goa_chicken
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken.gaf.gz
+   entity_type: protein
+   status: active
+   species_code: Ggal
+   taxa:
+    - NCBITaxon:208524
+    - NCBITaxon:208525
+    - NCBITaxon:208526
+    - NCBITaxon:400035
+    - NCBITaxon:9031
+   
+ -    
+   id: goa_chicken_complex.gaf
+   label: "goa_chicken_complex gaf file"
+   description: "gaf file for goa_chicken_complex from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_chicken_complex.gaf.gz
+   type: gaf
+   dataset: goa_chicken_complex
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_complex.gaf.gz
+   entity_type: complex
+   status: active
+   species_code: Ggal
+   taxa:
+    - NCBITaxon:208524
+    - NCBITaxon:208525
+    - NCBITaxon:208526
+    - NCBITaxon:400035
+    - NCBITaxon:9031
+   
+ -    
+   id: goa_chicken_isoform.gaf
+   label: "goa_chicken_isoform gaf file"
+   description: "gaf file for goa_chicken_isoform from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_chicken_isoform.gaf.gz
+   type: gaf
+   dataset: goa_chicken_isoform
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_isoform.gaf.gz
+   entity_type: isoform
+   status: active
+   species_code: Ggal
+   taxa:
+    - NCBITaxon:208524
+    - NCBITaxon:208525
+    - NCBITaxon:208526
+    - NCBITaxon:400035
+    - NCBITaxon:9031
+   
+ -    
+   id: goa_chicken_rna.gaf
+   label: "goa_chicken_rna gaf file"
+   description: "gaf file for goa_chicken_rna from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_chicken_rna.gaf.gz
+   type: gaf
+   dataset: goa_chicken_rna
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_rna.gaf.gz
+   entity_type: rna
+   status: active
+   species_code: Ggal
+   taxa:
+    - NCBITaxon:208524
+    - NCBITaxon:208525
+    - NCBITaxon:208526
+    - NCBITaxon:400035
+    - NCBITaxon:9031
+   
+ -    
+   id: goa_cow.gaf
+   label: "goa_cow gaf file"
+   description: "gaf file for goa_cow from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_cow.gaf.gz
+   type: gaf
+   dataset: goa_cow
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow.gaf.gz
+   entity_type: protein
+   status: active
+   species_code: Btau
+   taxa:
+    - NCBITaxon:297284
+    - NCBITaxon:30523
+    - NCBITaxon:9913
+   
+ -    
+   id: goa_cow_complex.gaf
+   label: "goa_cow_complex gaf file"
+   description: "gaf file for goa_cow_complex from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_cow_complex.gaf.gz
+   type: gaf
+   dataset: goa_cow_complex
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_complex.gaf.gz
+   entity_type: complex
+   status: active
+   species_code: Btau
+   taxa:
+    - NCBITaxon:297284
+    - NCBITaxon:30523
+    - NCBITaxon:9913
+   
+ -    
+   id: goa_cow_isoform.gaf
+   label: "goa_cow_isoform gaf file"
+   description: "gaf file for goa_cow_isoform from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_cow_isoform.gaf.gz
+   type: gaf
+   dataset: goa_cow_isoform
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_isoform.gaf.gz
+   entity_type: isoform
+   status: active
+   species_code: Btau
+   taxa:
+    - NCBITaxon:297284
+    - NCBITaxon:30523
+    - NCBITaxon:9913
+   
+ -    
+   id: goa_cow_rna.gaf
+   label: "goa_cow_rna gaf file"
+   description: "gaf file for goa_cow_rna from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_cow_rna.gaf.gz
+   type: gaf
+   dataset: goa_cow_rna
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_rna.gaf.gz
+   entity_type: rna
+   status: active
+   species_code: Btau
+   taxa:
+    - NCBITaxon:297284
+    - NCBITaxon:30523
+    - NCBITaxon:9913
+   
+ -    
+   id: goa_dog.gaf
+   label: "goa_dog gaf file"
+   description: "gaf file for goa_dog from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_dog.gaf.gz
+   type: gaf
+   dataset: goa_dog
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog.gaf.gz
+   entity_type: protein
+   status: active
+   species_code: Cfam
+   taxa:
+    - NCBITaxon:9615
+   
+ -    
+   id: goa_dog_complex.gaf
+   label: "goa_dog_complex gaf file"
+   description: "gaf file for goa_dog_complex from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_dog_complex.gaf.gz
+   type: gaf
+   dataset: goa_dog_complex
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_complex.gaf.gz
+   entity_type: complex
+   status: active
+   species_code: Cfam
+   taxa:
+    - NCBITaxon:9615
+   
+ -    
+   id: goa_dog_isoform.gaf
+   label: "goa_dog_isoform gaf file"
+   description: "gaf file for goa_dog_isoform from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_dog_isoform.gaf.gz
+   type: gaf
+   dataset: goa_dog_isoform
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_isoform.gaf.gz
+   entity_type: isoform
+   status: active
+   species_code: Cfam
+   taxa:
+    - NCBITaxon:9615
+   
+ -    
+   id: goa_dog_rna.gaf
+   label: "goa_dog_rna gaf file"
+   description: "gaf file for goa_dog_rna from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_dog_rna.gaf.gz
+   type: gaf
+   dataset: goa_dog_rna
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_rna.gaf.gz
+   entity_type: rna
+   status: active
+   species_code: Cfam
+   taxa:
+    - NCBITaxon:9615
+   
+ -    
+   id: goa_human.gaf
+   label: "goa_human gaf file"
+   description: "gaf file for goa_human from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_human.gaf.gz
+   type: gaf
+   dataset: goa_human
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human.gaf.gz
+   entity_type: protein
+   status: active
+   species_code: Hsap
+   taxa:
+    - NCBITaxon:9606
+   
+ -    
+   id: goa_human_complex.gaf
+   label: "goa_human_complex gaf file"
+   description: "gaf file for goa_human_complex from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_human_complex.gaf.gz
+   type: gaf
+   dataset: goa_human_complex
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_complex.gaf.gz
+   entity_type: complex
+   status: active
+   species_code: Hsap
+   taxa:
+    - NCBITaxon:9606
+   
+ -    
+   id: goa_human_isoform.gaf
+   label: "goa_human_isoform gaf file"
+   description: "gaf file for goa_human_isoform from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_human_isoform.gaf.gz
+   type: gaf
+   dataset: goa_human_isoform
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_isoform.gaf.gz
+   entity_type: isoform
+   status: active
+   species_code: Hsap
+   taxa:
+    - NCBITaxon:9606
+   
+ -    
+   id: goa_human_rna.gaf
+   label: "goa_human_rna gaf file"
+   description: "gaf file for goa_human_rna from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_human_rna.gaf.gz
+   type: gaf
+   dataset: goa_human_rna
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_rna.gaf.gz
+   entity_type: rna
+   status: active
+   species_code: Hsap
+   taxa:
+    - NCBITaxon:9606
+   
+ -    
+   id: goa_pdb.gaf
+   label: "goa_pdb gaf file"
+   description: "gaf file for goa_pdb from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_pdb.gaf.gz
+   type: gaf
+   dataset: goa_pdb
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PDB/goa_pdb.gaf.gz
+   entity_type: protein
+   status: active
+   species_code: 
+   taxa:
+   
+ -    
+   id: goa_pig.gaf
+   label: "goa_pig gaf file"
+   description: "gaf file for goa_pig from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_pig.gaf.gz
+   type: gaf
+   dataset: goa_pig
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig.gaf.gz
+   entity_type: protein
+   status: active
+   species_code: Sscr
+   taxa:
+    - NCBITaxon:9823
+   
+ -    
+   id: goa_pig_complex.gaf
+   label: "goa_pig_complex gaf file"
+   description: "gaf file for goa_pig_complex from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_pig_complex.gaf.gz
+   type: gaf
+   dataset: goa_pig_complex
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_complex.gaf.gz
+   entity_type: complex
+   status: active
+   species_code: Sscr
+   taxa:
+    - NCBITaxon:9823
+   
+ -    
+   id: goa_pig_isoform.gaf
+   label: "goa_pig_isoform gaf file"
+   description: "gaf file for goa_pig_isoform from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_pig_isoform.gaf.gz
+   type: gaf
+   dataset: goa_pig_isoform
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_isoform.gaf.gz
+   entity_type: isoform
+   status: active
+   species_code: Sscr
+   taxa:
+    - NCBITaxon:9823
+   
+ -    
+   id: goa_pig_rna.gaf
+   label: "goa_pig_rna gaf file"
+   description: "gaf file for goa_pig_rna from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_pig_rna.gaf.gz
+   type: gaf
+   dataset: goa_pig_rna
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_rna.gaf.gz
+   entity_type: rna
+   status: active
+   species_code: Sscr
+   taxa:
+    - NCBITaxon:9823
+   
+ -    
+   id: goa_uniprot_all.gaf
+   label: "goa_uniprot_all gaf file"
+   description: "gaf file for goa_uniprot_all from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_uniprot_all.gaf.gz
+   type: gaf
+   dataset: goa_uniprot_all
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gaf.gz
+   entity_type: all
+   status: active
+   aggregates: goa
+   taxa:
+    - NCBITaxon:1
 
+ -    
+   id: goa_uniprot_all.gpi
+   label: "goa_uniprot_all gpi file"
+   description: "gpi file for goa_uniprot_all from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_uniprot_all.gpi.gz
+   type: gpi
+   dataset: goa_uniprot_all
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gpi.gz
+   entity_type: all
+   status: active
+   aggregates: goa
+   taxa:
+    - NCBITaxon:1
+
+ -    
+   id: goa_uniprot_all.gpad
+   label: "goa_uniprot_all gpad file"
+   description: "gpad file for goa_uniprot_all from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_uniprot_all.gpa.gz
+   type: gpad
+   dataset: goa_uniprot_all
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gpa.gz
+   entity_type: all
+   status: active
+   aggregates: goa
+   taxa:
+    - NCBITaxon:1
+
+ -    
+   id: goa_uniprot_gcrp.gaf
+   label: "goa_uniprot_gcrp gaf file"
+   description: "gaf file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gaf.gz
+   type: gaf
+   dataset: goa_uniprot_gcrp
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gaf.gz
+   entity_type: all
+   status: active
+   aggregates: goa
+   taxa:
+    - NCBITaxon:1
+
+ -    
+   id: goa_uniprot_gcrp.gpi
+   label: "goa_uniprot_gcrp gpi file"
+   description: "gpi file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gpi.gz
+   type: gpi
+   dataset: goa_uniprot_gcrp
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gpi.gz
+   entity_type: all
+   status: active
+   aggregates: goa
+   taxa:
+    - NCBITaxon:1
+
+ -    
+   id: goa_uniprot_gcrp.gpad
+   label: "goa_uniprot_gcrp gpad file"
+   description: "gpad file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gpa.gz
+   type: gpad
+   dataset: goa_uniprot_gcrp
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gpa.gz
+   entity_type: all
+   status: active
+   aggregates: goa
+   taxa:
+    - NCBITaxon:1
+    

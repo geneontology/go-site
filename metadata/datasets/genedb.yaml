@@ -1,6 +1,11 @@
 id: genedb
 label: GeneDB
 description: "GO data for GeneDB"
+project_name: "Leishmania major GeneDB"
+contact_email: "mb4@sanger.ac.uk"
+project_url: "http://www.genedb.org/leish"
+funding_source: "unspecified"
+email_report: "mb4@sanger.ac.uk,maa@sanger.ac.uk"
 datasets:
  -    
    id: genedb_lmajor.gaf
@@ -11,7 +16,7 @@ datasets:
    dataset: genedb_lmajor
    submitter: genedb
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.GeneDB_Lmajor.gz
+   source: http://geneontology.org/gene-associations/submission/gene_association.GeneDB_Lmajor.gz
    entity_type: 
    status: active
    species_code: 
@@ -27,7 +32,7 @@ datasets:
    dataset: genedb_pfalciparum
    submitter: genedb
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.GeneDB_Pfalciparum.gz
+   source: http://geneontology.org/gene-associations/submission/gene_association.GeneDB_Pfalciparum.gz
    entity_type: 
    status: active
    species_code: 
@@ -43,7 +48,7 @@ datasets:
    dataset: genedb_tbrucei
    submitter: genedb
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.GeneDB_Tbrucei.gz
+   source: http://geneontology.org/gene-associations/submission/gene_association.GeneDB_Tbrucei.gz
    entity_type: 
    status: active
    species_code: 
@@ -59,7 +64,7 @@ datasets:
    dataset: genedb_tsetse
    submitter: genedb
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.GeneDB_tsetse.gz
+   source: http://geneontology.org/gene-associations/submission/gene_association.GeneDB_tsetse.gz
    entity_type: 
    status: active
    species_code: 

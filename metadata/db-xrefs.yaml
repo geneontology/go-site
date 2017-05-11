@@ -84,6 +84,13 @@
       url_syntax: http://www.arabidopsis.org:1555/ARA/NEW-IMAGE?type=NIL&object=[example_id]
       example_id: AraCyc:PWYQT-62
       example_url: http://www.arabidopsis.org:1555/ARA/NEW-IMAGE?type=NIL&object=PWYQT-62
+- database: ARUK-UCL
+  name: Alzheimers Research Gene Ontology Initiative
+  generic_urls:
+    - http://www.ucl.ac.uk/functional-gene-annotation/neurological
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
 - database: ASAP
   name: A Systematic Annotation Package for Community Analysis of Genomes
   generic_urls:
@@ -234,6 +241,13 @@
       url_syntax: http://gowiki.tamu.edu/wiki/index.php/[example_id]
       example_id: MYCS2:A0QNF5
       example_url: http://gowiki.tamu.edu/wiki/index.php/MYCS2:A0QNF5
+- database: CAFA
+  name: Critical Assessment of Protein Function Annotation
+  generic_urls:
+    - http://biofunctionprediction.org/cafa/
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
 - database: CAS
   name: CAS Chemical Registry
   description: CAS REGISTRY is the most authoritative collection of disclosed chemical substance information, containing more than 54 million organic and inorganic substances and 62 million sequences. CAS REGISTRY covers substances identified from the scientific literature from 1957 to the present, with additional substances going back to the early 1900s.
@@ -427,6 +441,13 @@
       url_syntax: http://www.ncbi.nlm.nih.gov/COG/new/release/coglist.cgi?pathw=[example_id]
       example_id: COG_Pathway:14
       example_url: http://www.ncbi.nlm.nih.gov/COG/new/release/coglist.cgi?pathw=14
+- database: CollecTF
+  name: Database of transcription factor binding sites (TFBS) in the Bacteria domain
+  generic_urls:
+    - http://www.collectf.org/
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
 - database: CORIELL
   name: Coriell Institute for Medical Research
   description: The Coriell Cell Repositories provide essential research reagents to the scientific community by establishing, verifying, maintaining, and distributing cell cultures and DNA derived from cell cultures. These collections, supported by funds from the National Institutes of Health (NIH) and several foundations, are extensively utilized by research scientists around the world. 
@@ -549,9 +570,9 @@
     - type_name: entity
       type_id: BET:0000000
       id_syntax: 10\.[0-9]+\/.*
-      url_syntax: http://dx.doi.org/DOI:[example_id]
+      url_syntax: http://dx.doi.org/[example_id]
       example_id: DOI:10.1016/S0963-9969(99)00021-6
-      example_url: http://dx.doi.org/DOI:10.1016/S0963-9969(99)00021-6
+      example_url: http://dx.doi.org/10.1016/S0963-9969(99)00021-6
 - database: EC
   name: Enzyme Commission
   generic_urls:
@@ -1099,6 +1120,18 @@
       url_syntax: http://www.gramene.org/db/literature/pub_search?ref_id=[example_id]
       example_id: GR_REF:659
       example_url: http://www.gramene.org/db/literature/pub_search?ref_id=659
+- database: GRIMS
+  name: IRRI Genetic Resources Information Management System
+  synonyms:
+    - irri
+  generic_urls:
+    - https://www.genesys-pgr.org
+  entity_types:
+    - type_name: germplasm
+      type_id: BET:0000000
+      url_syntax: https://www.genesys-pgr.org/acn/search2?q=IRGC+[example_id]
+      example_id: GRIMS:90637
+      example_url: https://www.genesys-pgr.org/acn/search2?q=IRGC+90637
 - database: GRIN
   name: Germplasm Resources Information Network
   synonyms:
@@ -1111,6 +1144,16 @@
       url_syntax: https://npgsweb.ars-grin.gov/gringlobal/accessiondetail.aspx?id=[example_id]
       example_id: GRIN:1882640
       example_url: https://npgsweb.ars-grin.gov/gringlobal/accessiondetail.aspx?id=1882640
+- database: GRINDesc
+  name: Germplasm Resources Information Network
+  generic_urls:
+    - http://www.ars-grin.gov/
+  entity_types:
+    - type_name: germplasm descriptors
+      type_id: BET:0000000
+      url_syntax: https://npgsweb.ars-grin.gov/gringlobal/descriptordetail.aspx?id=[example_id]
+      example_id: GRINdesc:89033
+      example_url: https://npgsweb.ars-grin.gov/gringlobal/descriptordetail.aspx?id=89033
 - database: H-invDB
   name: H-invitational Database
   generic_urls:
@@ -1989,20 +2032,20 @@
   name: Pfam database of protein families
   description: Pfam is a collection of protein families represented by sequence alignments and hidden Markov models (HMMs)
   generic_urls:
-    - http://www.sanger.ac.uk/Software/Pfam/
+    - http://pfam.xfam.org
   entity_types:
     - type_name: sequence feature
       type_id: SO:0000110
       id_syntax: PF[0-9]{5}
-      url_syntax: http://www.sanger.ac.uk/cgi-bin/Pfam/getacc?[example_id]
+      url_syntax: http://pfam.xfam.org/family/[example_id]
       example_id: Pfam:PF00046
-      example_url: http://www.sanger.ac.uk/cgi-bin/Pfam/getacc?PF00046
+      example_url: http://pfam.xfam.org/family/PF00069
     - type_name: polypeptide region
       type_id: SO:0000839
       id_syntax: PF[0-9]{5}
-      url_syntax: http://www.sanger.ac.uk/cgi-bin/Pfam/getacc?[example_id]
+      url_syntax: http://pfam.xfam.org/family/[example_id]
       example_id: Pfam:PF00046
-      example_url: http://www.sanger.ac.uk/cgi-bin/Pfam/getacc?PF00046
+      example_url: http://pfam.xfam.org/family/PF00069
 - database: PfamB
   name: Pfam-B supplement to Pfam
   generic_urls:
@@ -2861,8 +2904,13 @@
       type_id: CARO:0000000
       id_syntax: '[0-9]{7}'
       url_syntax: http://purl.obolibrary.org/obo/UBERON_[example_id]
-      example_id: URBERON:0002398
+      example_id: UBERON:0002398
       example_url: http://purl.obolibrary.org/obo/UBERON_0002398
+    - type_name: life cycle stage
+      type_id: UBERON:0000105
+      id_syntax: '[0-9]{7}'
+      url_syntax: http://purl.obolibrary.org/obo/UBERON_[example_id]
+      example_id: UBERON:0000069
 - database: UM-BBD
   name: EAWAG Biocatalysis/Biodegradation Database
   generic_urls:

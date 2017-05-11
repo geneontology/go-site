@@ -1,6 +1,11 @@
 id: mgi
 label: Mouse Genome Informatics
 description: "GO data for Mouse Genome Informatics"
+project_name: "Mouse Genome Informatics (MGI)"
+contact_email: "mgi-help@jax.org"
+project_url: "http://www.informatics.jax.org/"
+funding_source: "NHGRI of US National Institutes of Health"
+email_report: "harold.drabkin@jax.org"
 datasets:
  -    
    id: mgi.gaf
@@ -11,7 +16,7 @@ datasets:
    dataset: mgi
    submitter: mgi
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.mgi.gz
+   source: http://www.informatics.jax.org/downloads/reports/gene_association.mgi.gz
    entity_type: 
    status: active
    species_code: Mmus
@@ -27,7 +32,7 @@ datasets:
    dataset: mgi
    submitter: mgi
    compression: gzip
-   source: http://geneontology.org/gpad-gpi/release/submissions/mgi.gpa.gz
+   source: http://www.informatics.jax.org/downloads/reports/mgi.gpa.gz
    entity_type: 
    status: active
    species_code: Mmus
@@ -43,7 +48,7 @@ datasets:
    dataset: mgi
    submitter: mgi
    compression: gzip
-   source: ftp://ftp.informatics.jax.org/pub/reports/mgi.gpi.gz
+   source: http://www.informatics.jax.org/downloads/reports/mgi.gpi.gz
    entity_type: 
    status: active
    species_code: Mmus

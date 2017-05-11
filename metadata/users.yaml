@@ -29,6 +29,8 @@
   authorizations:
     noctua-go:
       allow-edit: true
+  accounts:
+    github: thomaspd
   xref: 'GOC:pt'
   uri: 'GOC:pt'
 -
@@ -41,6 +43,22 @@
   xref: 'GOC:hm'
   uri: 'GOC:hm'
 -
+  nickname: 'Nathan Dunn'
+  email-md5:
+    - 9afebd4cf92acca9aa2bdb557f96b504
+  authorizations:
+    termgenie-go:
+      allow-write: true
+      allow-review: true
+      allow-freeform: false
+      allow-management: false
+  uri: 'http://orcid.org/0000-0002-4862-3181'
+  accounts:
+    github: nathandunn
+    orcid: '0000-0002-4862-3181'
+    email-md5:
+     - 7da61ebeb6459e809d61aebf28f2a315
+-
   nickname: 'Seth Carbon'
   email-md5:
     - 65d762aea47eaf21e2b19177f448b3c3
@@ -52,7 +70,7 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-management: true
   xref: 'GOC:sjc'
   uri: 'http://orcid.org/0000-0001-8244-1536'
@@ -103,7 +121,7 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
   xref: 'GOC:hd'
@@ -145,6 +163,8 @@
   xref: 'GOC:mr'
   uri: 'GOC:mr'
   organization: AgBase
+  accounts:
+    github: michaelerice
 -
   nickname: 'Diane Inglis'
   email-md5:
@@ -154,7 +174,9 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
+  accounts:
+    github: dianeoinglis
   xref: 'GOC:di'
   uri: 'GOC:di'
   organization: AspGD/CGD
@@ -163,19 +185,6 @@
   xref: 'GOC:cy'
   nickname: 'Courtland Yockey'
   organization: AstraZeneca
--
-  uri: 'http://orcid.org/0000-0002-3898-1727'
-  xref: 'GOC:bc'
-  nickname: 'Barbara Czub'
-  email-md5:
-    - 05856707bf8eca390ae3ddcf689e9011
-    - 99b4072c338978afc0a90bc7f217cef8
-  authorizations:
-    termgenie-go:
-      allow-write: true
-    noctua-go:
-      allow-edit: true
-  organization: BHF-UCL
 -
   uri: 'GOC:ame'
   xref: 'GOC:ame'
@@ -186,19 +195,19 @@
   authorizations:
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
 -
   uri: 'GOC:ebc'
   xref: 'GOC:ebc'
   nickname: 'Evelyn Camon'
   organization: BHF-UCL
-  comment: 'formerly GOA'
+  comment: 'status inactive, formerly GOA'
 -
   uri: 'GOC:gr'
   xref: 'GOC:gr'
   nickname: 'Greg Rowe'
   organization: BHF-UCL
-  comment: 'Masters Student working with the BHF group at UCL'
+  comment: 'status inactive, Masters Student working with the BHF group at UCL'
 -
   uri: 'GOC:hal'
   xref: 'GOC:hal'
@@ -206,7 +215,7 @@
   email-md5:
     - e4a501963ab7181d1e40298d93741e50
   organization: BHF-UCL
-  comment: 'Masters Student working with the BHF group at UCL   '
+  comment: 'status inactive, Masters Student working with the BHF group at UCL'
   authorizations:
     termgenie-go:
       allow-write: true
@@ -215,7 +224,7 @@
   xref: 'GOC:jbu'
   nickname: 'Jessica Buxton'
   organization: BHF-UCL
-  comment: 'Collaborator with the BHF group at UCL'
+  comment: 'status inactive, Collaborator with the BHF group at UCL'
 -
   uri: 'http://orcid.org/0000-0001-9510-5320'
   xref: 'GOC:kom'
@@ -223,7 +232,7 @@
   email-md5:
     - 59418a02b3237575e70fd9f79da8d244
   organization: BHF-UCL
-  comment: 'Masters Student working with the BHF group at UCL'
+  comment: 'status inactive, Masters Student working with the BHF group at UCL'
   authorizations:
     termgenie-go:
       allow-write: true
@@ -237,7 +246,9 @@
   authorizations:
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
+  accounts:
+    github: NancyCampbell
 -
   nickname: 'Ruth Lovering'
   email-md5:
@@ -251,6 +262,8 @@
   uri: 'http://orcid.org/0000-0002-9791-0064'
   organization: BHF-UCL
   comment: 'formerly HGNC'
+  accounts:
+    github: RLovering
 -
   nickname: 'Varsha Khodiyar'
   email-md5:
@@ -269,11 +282,11 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:sjp'
   uri: 'GOC:sjp'
   organization: 'University of Toronto'
-  comment: 'formerly BHF_UCL'
+  comment: 'status inactive, formerly BHF_UCL'
 -
   uri: 'GOC:nln'
   xref: 'GOC:nln'
@@ -323,6 +336,8 @@
   xref: 'GOC:pf'
   uri: 'http://orcid.org/0000-0002-4532-2703'
   organization: DDB
+  accounts:
+    github: pfey03
 -
   nickname: 'Pascale Gaudet'
   email-md5:
@@ -333,10 +348,12 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:pg'
   uri: 'http://orcid.org/0000-0003-1813-6857'
   organization: DDB
+  accounts:
+    github: pgaudet
 -
   nickname: 'Robert Dodson'
   email-md5:
@@ -347,8 +364,10 @@
     termgenie-go:
       allow-write: true
   xref: 'GOC:rjd'
-  uri: 'GOC:rjd'
+  uri: 'http://orcid.org/0000-0002-2757-5950'
   organization: DDB
+  accounts:
+    github: rjdodson
 -
   nickname: 'Amanda Mackie'
   authorizations:
@@ -376,7 +395,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:bm'
   uri: 'GOC:bm'
   organization: 'E. coli'
@@ -408,16 +427,20 @@
       allow-write: true
     noctua-go:
       allow-edit: true
+  accounts:
+    github: hattrill
 -
   uri: 'GOC:hb'
   xref: 'GOC:hb'
   nickname: 'Heather Butler'
   organization: FB
 -
-  uri: 'GOC:mc'
+  uri: 'http://orcid.org/0000-0001-5948-3092'
   xref: 'GOC:mc'
   nickname: 'Marta Costa'
   organization: FB
+  accounts:
+    github: mmc46
 -
   uri: 'GOC:ma'
   xref: 'GOC:ma'
@@ -433,12 +456,14 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
   xref: 'GOC:dos'
   uri: 'http://orcid.org/0000-0002-7073-9172'
   organization: GO
+  accounts:
+    github: dosumis
 -
   uri: 'GOC:rc'
   xref: 'GOC:rc'
@@ -453,7 +478,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:sart'
   uri: 'http://orcid.org/0000-0003-1818-8243'
   organization: FB
@@ -485,7 +510,7 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
   xref: 'GOC:bf'
@@ -517,7 +542,7 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
   xref: 'GOC:jl'
@@ -537,9 +562,11 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
+  accounts:
+    github: mcourtot
 -
   nickname: 'Paola Roncaglia'
   email-md5:
@@ -550,12 +577,14 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
   xref: 'GOC:pr'
   uri: 'http://orcid.org/0000-0002-2825-0621'
   organization: GO
+  accounts:
+    github: paolaroncaglia
 -
   uri: 'GOC:curators'
   xref: 'GOC:curators'
@@ -568,6 +597,12 @@
   nickname: 'The Developmental Biology Interest Group'
   organization: 'GO Interest Group'
 -
+  uri: 'GOC:aruk'
+  xref: 'GOC:aruk'
+  nickname: 'Annotation of amyloid-beta binding proteins'
+  organization: ARUK-UCL
+  comment: "Annotation of amyloid-beta binding proteins, funded by Alzheimer's Research UK"
+-
   nickname: 'Aleksandra Shypitsyna'
   email-md5:
     - 211b318809e38f23520d0bd64f4a2330
@@ -577,8 +612,10 @@
     termgenie-go:
       allow-write: true
   xref: 'GOC:als'
-  uri: 'GOC:als'
+  uri: 'http://orcid.org/0000-0003-3829-1600'
   organization: GOA
+  accounts:
+    github: 'zebrafishembryo'
 -
   nickname: 'Elena Speretta'
   uri: 'http://orcid.org/0000-0003-1506-7438'
@@ -592,6 +629,8 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
+  accounts:
+    github: esperetta
 -
   nickname: 'George Georghiou'
   uri: 'http://orcid.org/0000-0001-5067-3199'
@@ -616,6 +655,8 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
+  accounts:
+    github: hbye
 -
   uri: 'GOC:ah'
   xref: 'GOC:ah'
@@ -640,7 +681,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:pm'
   uri: 'GOC:pm'
   organization: GOA
@@ -654,11 +695,13 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:rph'
   uri: 'http://orcid.org/0000-0001-6718-3559'
   organization: BHF-UCL
   comment: 'formerly GOA'
+  accounts:
+    github: rachhuntley
 -
   uri: 'GOC:vl'
   xref: 'GOC:vl'
@@ -677,7 +720,7 @@
   uri: 'GOC:yaf'
   organization: GOA
 -
-  nickname: 'Birgit Melda'
+  nickname: 'Birgit Meldal'
   email-md5:
     - f8b0b6bba244b89fd625b8994bdd1744
   authorizations:
@@ -685,11 +728,13 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:bhm'
   uri: 'GOC:bhm'
   organization: InTact
   comment: 'Birgit Meldal'
+  accounts:
+    github: bmeldal
 -
   nickname: 'Ingrid Keseler'
   email-md5:
@@ -717,12 +762,15 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
   xref: 'GOC:dph'
   uri: 'http://orcid.org/0000-0001-7476-6306'
   organization: MGI
+  accounts:
+    github: ukemi
+    orcid: '0000-0001-7476-6306'
 -
   uri: 'GOC:tfm'
   xref: 'GOC:tfm'
@@ -744,6 +792,8 @@
   authorizations:
     noctua-go:
       allow-edit: true
+  accounts:
+    github: dms321
 -
   uri: 'GOC:cls'
   xref: 'GOC:cls'
@@ -754,7 +804,18 @@
   authorizations:
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
+-
+  uri: 'http://orcid.org/0000-0003-4606-0597'
+  xref: 'GOC:smb'
+  nickname: 'Sue Bello'
+  organization: MGI
+  authorizations:
+    termgenie-go:
+      allow-write: true
+      allow-freeform: false
+  accounts:
+    github: sbello
 -
   nickname: 'Grace Stafford'
   email-md5:
@@ -784,9 +845,11 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:hjd'
   organization: MGI
+  accounts:
+    github: hdrabkin
 -
   nickname: 'Li Ni'
   uri: 'http://orcid.org/0000-0002-9796-7693'
@@ -797,6 +860,8 @@
   authorizations:
     noctua-go:
       allow-edit: true
+  accounts:
+    github: 'LiNiMGI'
 -
   nickname: 'Judith Blake'
   uri: 'http://orcid.org/0000-0001-8522-334X'
@@ -858,7 +923,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:ml'
   uri: 'GOC:ml'
   organization: PAMGO
@@ -888,10 +953,12 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:al'
   uri: 'http://orcid.org/0000-0003-1179-5999'
   organization: PomBase
+  accounts:
+    github: Antonialock
 -
   uri: 'GOC:jb'
   xref: 'GOC:jb'
@@ -906,11 +973,13 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:mah'
   uri: 'http://orcid.org/0000-0003-4148-4606'
   organization: PomBase
   comment: 'former affiliations: GO editorial office; MGI; SGD in distant past'
+  accounts:
+    github: mah11
 -
   nickname: 'Val Wood'
   email-md5:
@@ -920,11 +989,13 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:vw'
   uri: 'http://orcid.org/0000-0001-6330-7526'
   organization: PomBase
   comment: 'former affiliation: GeneDB_Spombe'
+  accounts:
+    github: ValWood
 -
   uri: 'GOC:fz'
   xref: 'GOC:fz'
@@ -943,6 +1014,8 @@
   xref: 'GOC:lc'
   uri: 'http://orcid.org/0000-0002-6379-8932'
   organization: OSU
+  accounts:
+    github: cooperl09
 -
   uri: 'GOC:lmo'
   xref: 'GOC:lmo'
@@ -981,17 +1054,20 @@
   organization: Reactome
 -
   nickname: "Peter D'Eustachio"
+  uri: 'GOC:pde'
+  xref: 'GOC:pde'
   email-md5:
     - ba0ab426088546c5a9acf014a722fdd5
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
-  xref: 'GOC:pde'
-  uri: 'GOC:pde'
+      allow-freeform: false
   organization: Reactome
+  accounts:
+    github: 'deustp01'
 -
   uri: 'GOC:phg'
   xref: 'GOC:phg'
@@ -1033,10 +1109,12 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:sl'
   uri: 'GOC:sl'
   organization: RGD
+  accounts:
+    github: slaulederkind 
 -
   uri: 'GOC:st'
   xref: 'GOC:st'
@@ -1166,8 +1244,10 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
-  organization: SGD
+      allow-freeform: false
+  organization: MGI
+  accounts:
+    github: 'krchristie'
 -
   nickname: 'Maria Costanzo'
   email-md5:
@@ -1177,7 +1257,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:mcc'
   uri: 'http://orcid.org/0000-0001-9043-693X'
   organization: SGD
@@ -1190,7 +1270,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:rb'
   uri: 'http://orcid.org/0000-0003-2468-9933'
   organization: SGD
@@ -1214,7 +1294,7 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:se'
   uri: 'http://orcid.org/0000-0001-5472-917X'
   organization: SGD
@@ -1236,6 +1316,8 @@
   xref: 'GOC:dw'
   uri: 'http://orcid.org/0000-0003-1058-2668'
   organization: 'SPOT (EBI)'
+  accounts:
+    github: daniwelter
 -
   uri: 'GOC:db'
   xref: 'GOC:db'
@@ -1261,7 +1343,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:dhl'
   uri: 'http://orcid.org/0000-0003-3335-4537'
   organization: TAIR
@@ -1292,16 +1374,6 @@
   xref: 'GOC:ki'
   nickname: 'Katica Ilic'
   organization: TAIR
--
-  uri: 'GOC:lr'
-  xref: 'GOC:lr'
-  nickname: 'Leonore Reiser'
-  email-md5:
-    - 12db676395b362177f57aecbe87fbf50
-  organization: TAIR
-  authorizations:
-    termgenie-go:
-      allow-write: true
 -
   uri: 'GOC:mg'
   xref: 'GOC:mg'
@@ -1337,12 +1409,14 @@
     termgenie-go:
       allow-write: true
       allow-review: true
-      allow-freeform: true
+      allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
   xref: 'GOC:tb'
   uri: 'http://orcid.org/0000-0002-3837-8864'
   organization: TAIR
+  accounts:
+    github: tberardini
 -
   uri: 'GOC:yl'
   xref: 'GOC:yl'
@@ -1425,12 +1499,13 @@
   xref: 'GOC:pad'
   uri: 'http://orcid.org/0000-0003-4659-6893'
   organization: "UCL-Parkinson's UK Annotation Project"
+  comment: 'status inactive'
 -
   uri: 'GOC:mat'
   xref: 'GOC:mat'
   nickname: 'Mathew Tata'
   organization: "UCL-Parkinson's UK Annotation Project"
-  comment: 'Student working with the PARL group at UCL'
+  comment: 'status inactive, Student working with the PARL group at UCL'
 -
   uri: 'GOC:aa'
   xref: 'GOC:aa'
@@ -1466,7 +1541,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:ab'
   uri: 'GOC:ab'
   organization: UniProt
@@ -1608,6 +1683,8 @@
     noctua-go:
       allow-edit: true
   organization: UniProt
+  accounts:
+    github: marcfeuermann
 -
   uri: 'GOC:mcb'
   xref: 'GOC:mcb'
@@ -1674,6 +1751,8 @@
     termgenie-go:
       allow-write: true
   organization: UniProt
+  accounts: 
+    github: pgarmiri 
 -
   uri: 'GOC:plm'
   xref: 'GOC:plm'
@@ -1694,14 +1773,17 @@
   email-md5:
     - dc9b175604eafb96720c1a6ca7980cd4
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:sp'
-  uri: 'GOC:sp'
+  uri: 'http://orcid.org/0000-0001-7299-6685'
   organization: UniProt
+  accounts:
+    github: 'sylvainpoux'
 -
   nickname: 'Shyamala Sundaram'
   email-md5:
@@ -1743,6 +1825,8 @@
   xref: 'GOC:mls'
   uri: 'GOC:mls'
   organization: MaizeGDB
+  accounts:
+    github: mlschaeffer
 -
   nickname: 'Nevila Hyka-Nouspikel'
   email-md5:
@@ -1798,10 +1882,15 @@
   nickname: 'Carol Bastiani'
   organization: WB
 -
+  nickname: 'Daniela Raciti'
+  authorizations:
+    noctua-go:
+      allow-edit: true
   uri: 'GOC:dr'
   xref: 'GOC:dr'
-  nickname: 'Daniela Raciti'
   organization: WB
+  accounts:
+    github: 'draciti'
 -
   uri: 'GOC:ems'
   xref: 'GOC:ems'
@@ -1816,10 +1905,12 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:kmv'
   uri: 'http://orcid.org/0000-0002-1706-4196'
   organization: WB
+  accounts:
+    github: 'vanaukenk'
   comment: 'GOC:kva is also used; occasionally MAH goes through and updates to GOC:kmv'
 -
   nickname: 'Ranjana Kishore'
@@ -1831,8 +1922,10 @@
     termgenie-go:
       allow-write: true
   xref: 'GOC:rk'
-  uri: 'GOC:rk'
+  uri: 'http://orcid.org/0000-0002-1478-7671'
   organization: WB
+  accounts:
+    github: 'rankishore'
 -
   nickname: 'Doug Howe'
   authorizations:
@@ -1840,12 +1933,15 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
+  groups:
+    - 'http://geneontology.org'
+    - 'http://zfin.org'
   xref: 'GOC:dgh'
   uri: 'http://orcid.org/0000-0001-5831-7439'
   organization: ZFIN
   accounts:
-     github: 'doughowe'
+    github: 'doughowe'
 -
   nickname: 'David Fashena'
   authorizations:
@@ -1868,6 +1964,8 @@
   uri: 'http://orcid.org/0000-0002-2244-7917'
   xref: 'GOC:cvs'
   organization: ZFIN
+  accounts:
+    github: cerivs
 -
   nickname: 'Erik Segerdell'
   uri: 'GOC:ejs'
@@ -1916,6 +2014,8 @@
   uri: 'http://orcid.org/0000-0002-9900-7880'
   xref: 'GOC:ymb'
   organization: ZFIN
+  accounts:
+    github: ybradford
 -
   uri: 'GOC:obol'
   xref: 'GOC:obol'
@@ -1935,7 +2035,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: true
+      allow-freeform: false
   xref: 'GOC:tt'
   uri: 'GOC:tt'
   organization: VBI
@@ -1957,6 +2057,8 @@
   xref: 'GOC:hp'
   uri: 'GOC:hp'
   organization: EBI
+  accounts:
+    github: helenp
 -
   uri: 'GOC:sk'
   xref: 'GOC:sk'
@@ -2258,6 +2360,8 @@
     termgenie-go:
       allow-write: true
   organization: LBNL
+  accounts:
+    github: monicacecilia
 -
   uri: 'GOC:giardia'
   xref: 'GOC:giardia'
@@ -2304,6 +2408,8 @@
   authorizations:
     noctua-go:
       allow-edit: true
+  accounts:
+    github: pnrobinson
 -
   nickname: 'Aurore Britan'
   uri: 'http://orcid.org/0000-0002-9846-2590'
@@ -2334,6 +2440,8 @@
       allow-write: true
   xref: 'GOC:ga'
   organization: FlyBase
+  accounts:
+    github: gantonazzo
 -
   nickname: 'Anne Niknejad'
   uri: 'GOC:ani'
@@ -2380,6 +2488,8 @@
     noctua-go:
       allow-edit: true
   organization: SynGO
+  accounts:
+    github: ftwkoopmans
 -
   nickname: "Pim van Nierop"
   uri: 'http://orcid.org/0000-0003-0593-3443'
@@ -2389,6 +2499,8 @@
     noctua-go:
       allow-edit: true
   organization: SynGO
+  accounts:
+    github: Pimmelorus
 -
   nickname: "Jim Balhoff"
   uri: 'http://orcid.org/0000-0002-8688-6599'
@@ -2398,6 +2510,8 @@
     noctua-go:
       allow-edit: true
   organization: GO
+  accounts:
+    github: balhoff
 -
   nickname: "Istvan Miko"
   uri: 'http://orcid.org/0000-0001-9719-0215'
@@ -2463,6 +2577,8 @@
     noctua-go:
       allow-edit: true
   organization: OSU
+  accounts:
+    github: jaiswalp
 -
   nickname: "Mark Jensen"
   uri: 'http://orcid.org/0000-0001-9228-8838'
@@ -2490,6 +2606,8 @@
     noctua-go:
       allow-edit: true
   organization: AWI
+  accounts:
+    github: pbuttigieg
 -
   nickname: "Bridget C Hanna"
   uri: 'http://orcid.org/0000-0001-8798-3326'
@@ -2556,13 +2674,17 @@
   nickname: "Leyla Ruzicka"
   uri: 'http://orcid.org/0000-0002-1009-339X'
   xref: 'GOC:lr'
-  email-md5:
   accounts:
      github: 'LeylaR'
   authorizations:
     noctua-go:
       allow-edit: true
+  groups:
+    - "http://geneontology.org"
+    - "http://zfin.org"
   organization: ZFIN
+  accounts:
+    github: 'sabrinatoro'
 -
   nickname: "William Duncan"
   uri: 'http://orcid.org/0000-0001-9625-1899'
@@ -2596,9 +2718,15 @@
   email-md5:
     - caad47c5134fca150d4e9ff086c1d7f5
   authorizations:
-    noctua-go:
-      allow-edit: true
-  organization:  LBNL
+    noctua:
+      go:
+        allow-edit: true
+  organization: LBL
+  groups:
+    - 'http://geneontology.org'
+    - 'http://lbl.gov'
+  accounts:
+    github: selewis
 -
   nickname: "Jie Liu"
   uri: 'http://orcid.org/0000-0002-9280-1539'
@@ -2680,6 +2808,8 @@
     noctua-go:
       allow-edit: true
   organization: WB
+  accounts:
+    github: tuli
 -
   nickname: "Jacqueline Hayles"
   uri: 'http://orcid.org/0000-0002-8599-8206'
@@ -2710,6 +2840,8 @@
     termgenie-go:
       allow-write: true
   organization: EMBL-EBI
+  accounts:
+    github: rozaru
 -
   nickname: "Satrajit Ghosh"
   uri: 'http://orcid.org/0000-0002-5312-6729'
@@ -2728,6 +2860,8 @@
     noctua-go:
       allow-edit: true
   organization: WB
+  accounts:
+    github: raymond91125
 -
   nickname: "Malcolm Fisher"
   uri: 'http://orcid.org/0000-0003-1074-8103'
@@ -2779,9 +2913,12 @@
 -
   nickname: "Leonore Reiser"
   uri: 'http://orcid.org/0000-0003-0073-0858'
+  xref: 'GOC:lr'
   email-md5:
     - 12db676395b362177f57aecbe87fbf50
   authorizations:
+    termgenie-go:
+      allow-write: true
     noctua:
      go:
        allow-edit: true
@@ -2814,6 +2951,89 @@
   organization: 'E. coli'
   accounts:
     github: 'dsiegele'
+-
+  nickname: "Christian Pich"
+  uri: 'http://orcid.org/0000-0001-5334-4542'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: ZFIN
+  accounts:
+    github: 'cmpich'
+-
+  nickname: "Barbara Kramarz"
+  uri: 'http://orcid.org/0000-0002-3898-1727'
+  xref: 'GOC:bc'
+  email-md5:
+    - 05856707bf8eca390ae3ddcf689e9011
+    - 99b4072c338978afc0a90bc7f217cef8
+  authorizations:
+    termgenie-go:
+      allow-write: true
+    noctua:
+      go:
+        allow-edit: true
+  organization: BHF-UCL
+  accounts:
+    github: 'BarbaraCzub'
+-
+  nickname: "Hans-Michael Muller"
+  uri: 'http://orcid.org/0000-0003-1036-3051'
+  email-md5:
+    - f4e3ff656a9a5ace8642819c114f2dcd
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: WB
+  accounts:
+    github: 'goldturtle'
+-
+  nickname: "Karen Yook"
+  uri: 'http://orcid.org/0000-0002-4457-6787'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: WB
+  accounts:
+    github: 'kyook'
+-
+  nickname: "Fatima Silva-Franco"
+  uri: 'http://orcid.org/0000-0002-2900-027X'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: University of Liverpool
+  groups:
+    - 'http://eupathdb.org'
+    - 'http://www.genedb.org'
+  accounts:
+    github: 'fatimasilva'
+-
+  nickname: "Ulrike Bohme"
+  uri: 'http://orcid.org/0000-0002-0248-5924'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: The Wellcome Trust Sanger Institute
+  groups:
+    - 'http://www.genedb.org'
+  accounts:
+    github: 'uliboehme'
+-
+  nickname: "Astrid Lægreid"
+  uri: 'http://orcid.org/0000-0002-3941-4257'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: NTNU
+  accounts:
+    github: 'astridla'
 # -
 #   nickname: ""
 #   uri: ''
@@ -2822,7 +3042,7 @@
 #   authorizations:
 #    noctua:
 #      go:
-#        allow-edit: true
+#        allow-edit:
 #   organization: 
 #   groups:
 #     - ''

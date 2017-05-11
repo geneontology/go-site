@@ -1,16 +1,42 @@
 # GO Dataset Metadata
 
-Metadata on datasets available from the GOC, organized by contributor.
+Metadata on gene association datasets available from the GOC, organized by contributor. This drives the new GO association file publishing pipeline:
+
+ * https://build.berkeleybop.org/job/go-gaf-pipeline-NEW/
+
+Soon the contents of this page will be driven by this job
+
+ * http://geneontology.org/page/download-annotations
+
+ See [GO Infrastructure Plan USC 2016](https://drive.google.com/open?id=0B8kRPmmvPJU3S1Fwck9CTzNEUVE) for details
+ 
+See also https://github.com/geneontology/go-site/issues/207 
+
+Pipeline configuration: https://github.com/geneontology/go-site/tree/master/pipeline
+
+## Editing the metadata
+
+Anyone can suggest edits to any of the yaml files in this repo (in general the files will be edited either by GO Central, or by a representative from each producer). These edits are made by Pull Requests, which are evaluated by a member of GO Central, and merged if appropriate and the travis tests pass.
 
 ## Schema
 
 See [../datasets.schema.yaml](../datasets.schema.yaml)
 
-(in flux)
+Any edit is checked against this schema
 
-## How is this used?
+## Jenkins Jobs
 
-The metadata here will drive pages such as:
+ *  https://build.berkeleybop.org/job/go-gaf-pipeline-NEW/ (not active yet)
+ * https://build.berkeleybop.org/job/publish-go-site-datasets-json/
+
+
+## NEO
+
+This drives the noctua entity ontology which drives selection in noctua
+
+### Future
+
+Ultimately, the metadata here will drive pages such as:
 http://geneontology.org/page/download-annotations
 
 And will also drive loading of Golr and the GO graphstore

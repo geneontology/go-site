@@ -11,7 +11,7 @@ datasets:
    dataset: paint_cgd
    submitter: paint
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_cgd.gz
+   source: http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_cgd.gz
    entity_type: 
    status: active
    species_code: 
@@ -28,7 +28,7 @@ datasets:
    dataset: paint_dictybase
    submitter: paint
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_dictyBase.gz
+   source: http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_dictyBase.gz
    entity_type: 
    status: active
    species_code: Ddis
@@ -48,7 +48,7 @@ datasets:
    dataset: paint_ecocyc
    submitter: paint
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_ecocyc.gz
+   source: http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_ecocyc.gz
    entity_type: 
    status: active
    species_code: 
@@ -65,7 +65,7 @@ datasets:
    dataset: paint_fb
    submitter: paint
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_fb.gz
+   source: http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_fb.gz
    entity_type: 
    status: active
    species_code: Dmel
@@ -82,7 +82,7 @@ datasets:
    dataset: paint_goa_chicken
    submitter: paint
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_goa_chicken.gz
+   source: http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_goa_chicken.gz
    entity_type: chicken
    status: active
    species_code: 
@@ -98,7 +98,7 @@ datasets:
    dataset: paint_goa_human
    submitter: paint
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_goa_human.gz
+   source: http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_goa_human.gz
    entity_type: human
    status: active
    species_code: 
@@ -114,7 +114,7 @@ datasets:
    dataset: paint_mgi
    submitter: paint
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_mgi.gz
+   source: http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_mgi.gz
    entity_type: 
    status: active
    species_code: Mmus
@@ -131,7 +131,7 @@ datasets:
    dataset: paint_other
    submitter: paint
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_other.gz
+   source: http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_other.gz
    entity_type: 
    status: active
    species_code: 
@@ -147,7 +147,7 @@ datasets:
    dataset: paint_pombase
    submitter: paint
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_pombase.gz
+   source: http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_pombase.gz
    entity_type: 
    status: active
    species_code: Spom
@@ -165,7 +165,7 @@ datasets:
    dataset: paint_rgd
    submitter: paint
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_rgd.gz
+   source: http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_rgd.gz
    entity_type: 
    status: active
    species_code: Rnor
@@ -182,7 +182,7 @@ datasets:
    dataset: paint_sgd
    submitter: paint
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_sgd.gz
+   source: http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_sgd.gz
    entity_type: 
    status: active
    species_code: Scer
@@ -203,7 +203,7 @@ datasets:
    dataset: paint_tair
    submitter: paint
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_tair.gz
+   source: http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_tair.gz
    entity_type: 
    status: active
    species_code: Atal
@@ -220,7 +220,7 @@ datasets:
    dataset: paint_wb
    submitter: paint
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_wb.gz
+   source: http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_wb.gz
    entity_type: 
    status: active
    species_code: Cele
@@ -237,7 +237,7 @@ datasets:
    dataset: paint_zfin
    submitter: paint
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.paint_zfin.gz
+   source: http://geneontology.org/gene-associations/submission/paint/pre-submission/gene_association.paint_zfin.gz
    entity_type: 
    status: active
    species_code: Drer

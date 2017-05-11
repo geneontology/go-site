@@ -1,6 +1,11 @@
 id: pseudocap
 label: Pseudomonas Genome Project
 description: "GO data for Pseudomonas Genome Project"
+project_name: "Pseudomonas Community Annotation Project (PseudoCAP)"
+contact_email: "pseudocap-mail@sfu.ca"
+project_url: "http://www.pseudomonas.com"
+funding_source: "Cystic Fibrosis Foundation, Therapeutics"
+
 datasets:
  -    
    id: pseudocap.gaf
@@ -11,7 +16,7 @@ datasets:
    dataset: pseudocap
    submitter: pseudocap
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.pseudocap.gz
+   source: http://geneontology.org/gene-associations/submission/gene_association.pseudocap.gz
    entity_type: 
    status: active
    species_code: Pseudomonas

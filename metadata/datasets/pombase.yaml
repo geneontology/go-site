@@ -1,6 +1,11 @@
 id: pombase
 label: PomBase
 description: "GO data for PomBase"
+project_name: "PomBase"
+contact_email: "helpdesk@pombase.org"
+project_url: "http://www.pombase.org/"
+funding_source: "Wellcome Trust"
+email_report: "helpdesk@pombase.org"
 datasets:
  -    
    id: pombase.gaf
@@ -11,7 +16,7 @@ datasets:
    dataset: pombase
    submitter: pombase
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.pombase.gz
+   source: http://geneontology.org/gene-associations/submission/gene_association.pombase.gz
    entity_type: 
    status: active
    species_code: Spom

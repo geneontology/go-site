@@ -1,6 +1,11 @@
 id: fb
 label: FlyBase
 description: "GO data for FlyBase"
+project_name: "FlyBase"
+contact_email: "gocur@morgan.harvard.edu"
+project_url: "http://flybase.org"
+funding_source: "MRC at UK MRC, grant number G1000968 "
+email_report: "gocur@morgan.harvard.edu"
 datasets:
  -    
    id: fb.gaf
@@ -11,7 +16,7 @@ datasets:
    dataset: fb
    submitter: fb
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.fb.gz
+   source: http://geneontology.org/gene-associations/submission/gene_association.fb.gz
    entity_type: 
    status: active
    species_code: Dmel

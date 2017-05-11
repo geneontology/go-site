@@ -174,6 +174,9 @@ foreach (@ARGV) {
     elsif (m@(\w+)_association.gpa.gz@) {
         emit('gpad', $1, $_);
     }
+    elsif (m@(\w+).gaf.gz@) {
+        emit('gaf', $1, $_);
+    }
     elsif (m@(\w+).gpi.gz@) {
         emit('gpi', $1, $_);
     }
@@ -265,9 +268,13 @@ sub emit {
     my $loc = $type eq 'gaf' ? 'gene-associations' : 'gpad-gpi/release';
     my $url = "http://geneontology.org/$loc/$base";
 
-    my $src = "http://geneontology.org/$loc/submissions/$base";
+    my $src = "http://geneontology.org/$loc/submission/$base";
     if ($auth eq 'mgi' && $type eq 'gpi') {
-        $src = "ftp://ftp.informatics.jax.org/pub/reports/mgi.gpi.gz";
+        $src = "http://www.informatics.jax.org/downloads/reports/";
+    }
+    if ($auth eq 'goa' && $dataset =~ m@goa_([a-z]+)@) {
+        # e.g. ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_rna.gpi.gz
+        $src = "ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/" . uc($1) . "/$base";
     }
 
     my $EXTRA = "";

@@ -1,6 +1,11 @@
 id: pamgo
 label: Plant-Associated Microbe Gene Ontology Interest Group
 description: "GO data for Plant-Associated Microbe Gene Ontology Interest Group"
+project_name: "Agrobacterium Genome Consortium (PAMGO project)"
+contact_email: "setubal@vbi.vt.edu"
+project_url: "http://www.agrobacterium.org/"
+funding_source: "NSF/NRI-CSREES"
+email_report: "setubal@vbi.vt.edu"
 datasets:
  -    
    id: pamgo_atumefaciens.gaf
@@ -11,7 +16,7 @@ datasets:
    dataset: pamgo_atumefaciens
    submitter: pamgo
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.PAMGO_Atumefaciens.gz
+   source: http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Atumefaciens.gz
    entity_type: 
    status: active
    species_code: 
@@ -27,7 +32,7 @@ datasets:
    dataset: pamgo_ddadantii
    submitter: pamgo
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.PAMGO_Ddadantii.gz
+   source: http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Ddadantii.gz
    entity_type: 
    status: active
    species_code: 
@@ -43,7 +48,7 @@ datasets:
    dataset: pamgo_mgrisea
    submitter: pamgo
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.PAMGO_Mgrisea.gz
+   source: http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Mgrisea.gz
    entity_type: 
    status: active
    species_code: 
@@ -59,7 +64,7 @@ datasets:
    dataset: pamgo_oomycetes
    submitter: pamgo
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.PAMGO_Oomycetes.gz
+   source: http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Oomycetes.gz
    entity_type: 
    status: active
    species_code: 

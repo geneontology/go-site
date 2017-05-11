@@ -1,6 +1,11 @@
 id: gramene
 label: gramene_oryza
 description: "GO data for gramene_oryza"
+project_name: "Gramene"
+contact_email: "gramene@gramene.org"
+project_url: "http://www.gramene.org"
+funding_source: "unspecified"
+email_report: "jaiswalp@science.oregonstate.edu"
 datasets:
  -    
    id: gramene_oryza.gaf
@@ -11,7 +16,7 @@ datasets:
    dataset: gramene_oryza
    submitter: gramene
    compression: gzip
-   source: http://geneontology.org/gene-associations/submissions/gene_association.gramene_oryza.gz
+   source: http://geneontology.org/gene-associations/submission/gene_association.gramene_oryza.gz
    entity_type: 
    status: active
    species_code: Oryz
