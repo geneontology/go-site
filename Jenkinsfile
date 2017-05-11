@@ -42,7 +42,6 @@ pipeline {
     stage('TODO: Sanity I') {
       steps {
         echo 'TODO: sanity'
-
       }
     }
     stage('Produce derivatives') {
@@ -62,7 +61,6 @@ pipeline {
     stage('TODO: Sanity II') {
       steps {
         echo 'TODO: sanity'
-
       }
     }
     stage('Publish') {
@@ -87,7 +85,6 @@ pipeline {
     stage('TODO: Final status') {
       steps {
         echo 'TODO: final'
-
       }
     }
   }
