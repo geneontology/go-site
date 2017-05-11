@@ -29,14 +29,20 @@ pipeline {
         )
       }
     }
+    stage('Produce ontology') {
+      steps {
+        build 'ontology-production'
+      }
+    }
     stage('Produce GAFs') {
       steps {
         build 'gaf-production'
       }
     }
-    stage('Produce ontology') {
+    stage('TODO: Sanity I') {
       steps {
-        build 'ontology-production'
+        echo 'TODO: sanity'
+
       }
     }
     stage('Produce derivatives') {
@@ -51,6 +57,12 @@ pipeline {
             
           }
         )
+      }
+    }
+    stage('TODO: Sanity II') {
+      steps {
+        echo 'TODO: sanity'
+
       }
     }
     stage('Publish') {
@@ -70,6 +82,12 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'TODO: deploy AmiGO'
+      }
+    }
+    stage('TODO: Final status') {
+      steps {
+        echo 'TODO: final'
+
       }
     }
   }
