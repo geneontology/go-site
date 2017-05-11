@@ -55,7 +55,16 @@ pipeline {
     }
     stage('Publish') {
       steps {
-        echo 'TODO: S3 publisher from sshfs'
+        parallel(
+          "Ontology publish": {
+            build 'ontology-publish'
+            
+          },
+          "GAF publish": {
+            build 'gaf-publish'
+            
+          }
+        )
       }
     }
     stage('Deploy') {
