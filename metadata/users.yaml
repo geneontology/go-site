@@ -1998,14 +1998,14 @@
   organization: ZFIN
   accounts:
      github: 'SabrinaToro'
-  -
+-
   nickname: "Ken Frazer
   uri: 'http://orcid.org/0000-0002-6889-0711'
   xref: 'GOC:ksf'
   authorizations:
     noctua-go:
       allow-edit: true
-  -
+-
   nickname: "Leyla Ruzicka"
   uri: 'http://orcid.org/0000-0002-1009-339X'
   xref: 'GOC:lr'
