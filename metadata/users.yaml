@@ -1928,9 +1928,6 @@
     github: 'rankishore'
 -
   nickname: 'Doug Howe'
-  email-md5:
-    - fe3f8f564f46c7b5876f76d86089e71c
-    - 16ab5561c58ea349cb4c55622fc348c6
   authorizations:
     noctua-go:
       allow-edit: true
@@ -1947,20 +1944,18 @@
     github: 'doughowe'
 -
   nickname: 'David Fashena'
-  email-md5:
-    - 98719862c7d4df82e2866cea63eaefb0
   authorizations:
     noctua-go:
       allow-edit: true
     termgenie-go:
       allow-write: true
   xref: 'GOC:dsf'
-  uri: 'GOC:dsf'
+  uri: 'http://orcid.org/0000-0001-9656-0683'
   organization: ZFIN
+  accounts:
+     github: 'SomeCallMeDave'
 -
   nickname: 'Ceri Van Slyke'
-  email-md5:
-    - 52a87c38e1ea0a39ee3ac5e8f23e1f6c
   authorizations:
     termgenie-go:
       allow-write: true
@@ -1972,10 +1967,72 @@
   accounts:
     github: cerivs
 -
+  nickname: 'Sridhar Ramachandran'
+  xref: 'GOC:sr'
+  uri: 'http://orcid.org/0000-0002-2246-3722'
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: ZFIN
+  accounts:
+     github: 'sramachandran'
+-
+  nickname: 'Yvonne M Bradford'
+  authorizations:
+    termgenie-go:
+      allow-write: true
+    noctua-go:
+      allow-edit: true
+  uri: 'http://orcid.org/0000-0002-9900-7880'
+  xref: 'GOC:ymb'
+  organization: ZFIN
+  accounts:
+    github: ybradford
+-
+  nickname: 'Sabrina Toro'
+  uri: 'http://orcid.org/0000-0002-4142-7153'
+  xref: 'GOC:sat'
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  organization: ZFIN
+  accounts:
+     github: 'SabrinaToro'
+-
+  nickname: 'Ken Frazer'
+  uri: 'http://orcid.org/0000-0002-6889-0711'
+  xref: 'GOC:ksf'
+  authorizations:
+    noctua-go:
+      allow-edit: true
+-
+  nickname: 'Leyla Ruzicka'
+  uri: 'http://orcid.org/0000-0002-1009-339X'
+  xref: 'GOC:lrz'
+  accounts:
+     github: 'LeylaR'
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  groups:
+    - 'http://geneontology.org'
+    - 'http://zfin.org'
+  organization: ZFIN
+-
+  nickname: 'Christian Pich'
+  uri: 'http://orcid.org/0000-0001-5334-4542'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: ZFIN
+  accounts:
+    github: 'cmpich'
+-
   nickname: 'Erik Segerdell'
   uri: 'GOC:ejs'
   xref: 'GOC:ejs'
-  organization: ZFIN
+  organization: 'GOC:ejs'
 -
   nickname: 'Lionel Breuza'
   email-md5:
@@ -1998,25 +2055,6 @@
       allow-edit: true
   xref: 'GOC:mh'
   organization: OHSU
--
-  uri: 'GOC:sr'
-  xref: 'GOC:sr'
-  nickname: 'Sridhar Ramachandran'
-  organization: ZFIN
--
-  nickname: 'Yvonne M Bradford'
-  email-md5:
-    - 47d38d21434f4cc3c851130425f3f416
-  authorizations:
-    termgenie-go:
-      allow-write: true
-    noctua-go:
-      allow-edit: true
-  uri: 'http://orcid.org/0000-0002-9900-7880'
-  xref: 'GOC:ymb'
-  organization: ZFIN
-  accounts:
-    github: ybradford
 -
   uri: 'GOC:obol'
   xref: 'GOC:obol'
@@ -2655,21 +2693,6 @@
       allow-edit: true
   organization: OSU
 -
-  nickname: "Sabrina Toro"
-  uri: 'http://orcid.org/0000-0002-4142-7153'
-  xref: 'GOC:sat'
-  email-md5:
-    - aa55bd9a0d99bcc48fa70b99b356abba
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  groups:
-    - "http://geneontology.org"
-    - "http://zfin.org"
-  organization: ZFIN
-  accounts:
-    github: 'sabrinatoro'
--
   nickname: "William Duncan"
   uri: 'http://orcid.org/0000-0001-9625-1899'
   email-md5:
@@ -2867,7 +2890,7 @@
     noctua:
       go:
         allow-edit: true
-  organization: ZFIN
+  organization: WB
   accounts:
     github: 'chris-grove'
 -
@@ -2935,18 +2958,6 @@
   organization: 'E. coli'
   accounts:
     github: 'dsiegele'
--
-  nickname: "Christian Pich"
-  uri: 'http://orcid.org/0000-0001-5334-4542'
-  email-md5:
-    - b4c377ccd7885fa327c27bdd4cfca8ad
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: ZFIN
-  accounts:
-    github: 'cmpich'
 -
   nickname: "Barbara Kramarz"
   uri: 'http://orcid.org/0000-0002-3898-1727'
