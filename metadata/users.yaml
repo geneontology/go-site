@@ -1989,7 +1989,7 @@
   accounts:
     github: ybradford
 -
-  nickname: "Sabrina Toro"
+  nickname: 'Sabrina Toro'
   uri: 'http://orcid.org/0000-0002-4142-7153'
   xref: 'GOC:sat'
   authorizations:
@@ -1999,14 +1999,14 @@
   accounts:
      github: 'SabrinaToro'
 -
-  nickname: "Ken Frazer
+  nickname: 'Ken Frazer'
   uri: 'http://orcid.org/0000-0002-6889-0711'
   xref: 'GOC:ksf'
   authorizations:
     noctua-go:
       allow-edit: true
 -
-  nickname: "Leyla Ruzicka"
+  nickname: 'Leyla Ruzicka'
   uri: 'http://orcid.org/0000-0002-1009-339X'
   xref: 'GOC:lr'
   accounts:
@@ -2015,11 +2015,11 @@
     noctua-go:
       allow-edit: true
   groups:
-    - "http://geneontology.org"
-    - "http://zfin.org"
+    - 'http://geneontology.org'
+    - 'http://zfin.org'
   organization: ZFIN
 -
-  nickname: "Christian Pich"
+  nickname: 'Christian Pich'
   uri: 'http://orcid.org/0000-0001-5334-4542'
   authorizations:
    noctua:
