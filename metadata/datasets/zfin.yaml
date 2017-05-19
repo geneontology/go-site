@@ -3,9 +3,9 @@ label: Zebrafish Information Network
 description: "GO data for Zebrafish Information Network"
 project_name: "The Zebrafish Information Network"
 contact_email: "zfinadmin@zfin.org"
-project_url: "http://www.zfin.org/"
+project_url: "https://zfin.org/"
 funding_source: "NIH (P41 HG002659)"
-email_report: "dhowe@zfin.org,sabrina@uoregon.edu"
+email_report: "dhowe@zfin.org,sabrina@zfin.org"
 datasets:
  -    
    id: zfin.gaf
@@ -16,7 +16,7 @@ datasets:
    dataset: zfin
    submitter: zfin
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.zfin.gz
+   source: https://zfin.org/downloads/gene_association.zfin.gz 
    entity_type: 
    status: active
    species_code: Drer
