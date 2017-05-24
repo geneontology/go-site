@@ -1803,12 +1803,12 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-- database: NCBI_Gene
+- database: NCBIGene
   name: NCBI Gene
   synonyms:
     - GeneID
     - LocusID
-    - NCBIGene
+    - NCBI_Gene
   generic_urls:
     - http://www.ncbi.nlm.nih.gov/
   entity_types:
