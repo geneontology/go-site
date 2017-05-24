@@ -10,6 +10,8 @@ import argparse
 import yaml
 from json import dumps
 
+SKIP = ["goa_pdb"]
+
 def main():
 
     parser = argparse.ArgumentParser(description='GO Metadata'
@@ -51,7 +53,7 @@ def main():
     targets = [all_files(ds) for ds in artifacts_by_dataset.keys()]
     rule('all_targets', targets)
 
-    simple_ds_list = [ds for ds in artifacts_by_dataset.keys() if ds != 'goa_uniprot_all' and ds != 'goa_uniprot_gcrp']
+    simple_ds_list = [ds for ds in artifacts_by_dataset.keys() if ds != 'goa_uniprot_all' and ds != 'goa_uniprot_gcrp' and ds not in SKIP]
     simple_targets = [all_files(ds) for ds in simple_ds_list]
     rule('all_targets_simple', simple_targets, comments='Excludes aggregated (goa_uniprot)')
 
@@ -74,7 +76,7 @@ def generate_targets(ds, alist):
         print("# Metadata incomplete\n")
         rule(all_files(ds))
         return
-    if ds == 'goa_pdb':
+    if ds in SKIP:
         # TODO move to another config file for 'skips'
         print("# Skipping\n")
         rule(all_files(ds))
