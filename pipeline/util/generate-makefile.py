@@ -117,7 +117,7 @@ def generate_targets(ds, alist):
     rule(ttl(ds),"{} $(ONT_MERGED)".format(filtered_gaf(ds)),
          'MINERVA_CLI_MEMORY=16G minerva-cli.sh $(ONT_MERGED) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@')
     rule(inferred_ttl(ds), "{} $(ONT_MERGED)".format(ttl(ds)),
-        "mkdir -p target/inferred\n\tarachne --ontology=$(ONT_MERGED) --data=$(<D) --export=$@ --inferred-only")
+        "mkdir -p target/inferred\n\tarachne --ontology=$(ONT_MERGED) --data=$< --export=$@ --inferred-only")
 
 
 def create_targetdir(ds):
