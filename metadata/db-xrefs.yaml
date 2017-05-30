@@ -2373,6 +2373,16 @@
       url_syntax: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&DB=pcsubstance&term=[example_id]
       example_id: PubChem_Substance:4594
       example_url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&DB=pcsubstance&term=4594
+- database: RAP-DB
+  name: Rice annotation Project database
+  generic_urls:
+    - http://rapdb.dna.affrc.go.jp
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: http://rapdb.dna.affrc.go.jp/tools/search/run?id=on&attr=desc&attr=cgs&attr=cgn&attr=cgss&attr=cgns&attr=rgss&attr=rgns&keyword=[example_id]
+      example_id: RAP-DB:OS01T0100600-01
+      example_url: http://rapdb.dna.affrc.go.jp/tools/search/run?id=on&attr=desc&attr=cgs&attr=cgn&attr=cgss&attr=cgns&attr=rgss&attr=rgns&keyword=Os01g0100200
 - database: Reactome
   name: Reactome - a curated knowledgebase of biological pathways
   synonyms:
