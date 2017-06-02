@@ -47,7 +47,7 @@ def main():
 
     for (ds,alist) in artifacts_by_dataset.items():
         generate_targets(ds, alist)
-        
+
     targets = [all_files(ds) for ds in artifacts_by_dataset.keys()]
     rule('all_targets', targets)
 
@@ -117,7 +117,7 @@ def generate_targets(ds, alist):
     rule(ttl(ds),"{} $(ONT_MERGED)".format(filtered_gaf(ds)),
          'MINERVA_CLI_MEMORY=16G minerva-cli.sh $(ONT_MERGED) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@')
     rule(inferred_ttl(ds), "{} $(ONT_MERGED)".format(ttl(ds)),
-        "mkdir -p target/inferred\n\texport JAVA_OPTS=\"-Xmx$(RDFOX_MEM)\" && rdfox-cli --ontology=$(ONT_MERGED) --rules=rules.dlog --data=$(<D) --threads=24 --reason --export=$@ --inferred-only --excluded-properties=exclude.txt")
+        "mkdir -p target/inferred\n\tarachne --ontology=$(ONT_MERGED) --data=$< --export=$@ --inferred-only")
 
 
 def create_targetdir(ds):
