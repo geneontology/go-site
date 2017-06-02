@@ -104,6 +104,7 @@
 - database: AspGD
   name: Aspergillus Genome Database
   synonyms:
+    - ASPGD
     - AspGDID
   generic_urls:
     - http://www.aspergillusgenome.org/
@@ -996,6 +997,8 @@
       example_url: http://amigo.geneontology.org/amigo/term/GO:0004352
 - database: GO_Central
   name: GO Central
+  synonyms:
+    - GO_CENTRAL
   description: Manual annotation from PAINT curators into the UniProt Protein2GO curation tool.
   generic_urls:
     - http://www.geneontology.org/GO.refgenome.shtml
@@ -2409,6 +2412,8 @@
       example_url: http://rebase.neb.com/rebase/enz/EcoRI.html
 - database: RefGenome
   name: GO Reference Genomes
+  synonyms:
+    - REFGENOME
   generic_urls:
     - http://www.geneontology.org/GO.refgenome.shtml
   entity_types:
