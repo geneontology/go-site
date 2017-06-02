@@ -5,7 +5,7 @@ RDFOX_MEM ?= 32G
 GAF_OWL = target/go-gaf.owl
 ONT_MERGED = target/go-graphstore-merged.ttl
 
-all: target/Makefile extra_files $(REPORT) 
+all: target/Makefile extra_files $(REPORT)
 
 all_blazegraph: all target/blazegraph.jnl
 
@@ -115,4 +115,4 @@ target/blazegraph.jnl: $(BGJAR) target/rdf target/inferred
 # 	$(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties $<
 
 bg-start:
-	java -server -Xmx8g -Dbigdata.propertyFile=conf/blazegraph.properties -jar $(BGJAR)
+	java -server -Xmx32g -Djetty.port=8899 -Djetty.overrideWebXml=conf/readonly_cors.xml -Dbigdata.propertyFile=conf/blazegraph.properties -cp target/jars/blazegraph-jar.jar:target/jars/jetty-servlets.jar com.bigdata.rdf.sail.webapp.StandaloneNanoSparqlServer
