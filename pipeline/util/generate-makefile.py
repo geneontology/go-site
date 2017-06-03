@@ -109,7 +109,7 @@ def generate_targets(ds, alist):
         rule(src_gaf_zip(ds),[targetdir(ds)],
              'wget --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
     rule(filtered_gaf(ds),src_gaf_zip(ds),
-         'gzip -dcf $< > {src_gaf}\n\tontobio-parse-assocs.py -f {src_gaf} -o {filtered_gaf} -m {target}{ds}.report validate'.format(src_gaf=src_gaf(ds), filtered_gaf=filtered_gaf(ds), target=targetdir(ds), ds=ds))
+         'gzip -dcf $< > {src_gaf}\n\tontobio-parse-assocs.py --filter-out IEA -f {src_gaf} -o {filtered_gaf} -m {target}{ds}.report validate'.format(src_gaf=src_gaf(ds), filtered_gaf=filtered_gaf(ds), target=targetdir(ds), ds=ds))
     rule(owltools_gafcheck(ds),filtered_gaf(ds),
          '$(OWLTOOLS_GAFCHECK)')
     rule(filtered_gpad(ds),filtered_gaf(ds),
