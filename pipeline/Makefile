@@ -43,6 +43,14 @@ target/go.obo:
 proc:
 	./util/dataset-metadata-processor.py $(METADATA_DIR)/*.yaml
 
+# ----------------------------------------
+# Install Virtualenv
+# ----------------------------------------
+PY_ENV=target/env
+
+$(PY_ENV):
+	python3 -m venv $(PY_ENV)
+
 
 # ----------------------------------------
 # OWLTools checks
@@ -68,9 +76,10 @@ OWLTOOLS_GAFCHECK = owltools $(CATALOG_DETAILS) $(GAF_OWL) \
 # Makefile for building GAFs
 # ----------------------------------------
 # this defines 'all_targets'
-target/Makefile: ./util/generate-makefile.py
+target/Makefile: ./util/generate-makefile.py $(PY_ENV)
 	mkdir -p target
-	$< ../metadata/datasets/*.yaml > $@.tmp && mv $@.tmp $@
+	$(PY_ENV)/bin/pip3 install -r requirements.txt
+	$(PY_ENV)/bin/python3 $< ../metadata/datasets/*.yaml > $@.tmp && mv $@.tmp $@
 
 include target/Makefile
 

@@ -10,6 +10,8 @@ import argparse
 import yaml
 from json import dumps
 
+SKIP = ["goa_pdb"]
+
 def main():
 
     parser = argparse.ArgumentParser(description='GO Metadata'
@@ -51,7 +53,7 @@ def main():
     targets = [all_files(ds) for ds in artifacts_by_dataset.keys()]
     rule('all_targets', targets)
 
-    simple_ds_list = [ds for ds in artifacts_by_dataset.keys() if ds != 'goa_uniprot_all' and ds != 'goa_uniprot_gcrp']
+    simple_ds_list = [ds for ds in artifacts_by_dataset.keys() if ds != 'goa_uniprot_all' and ds != 'goa_uniprot_gcrp' and ds not in SKIP]
     simple_targets = [all_files(ds) for ds in simple_ds_list]
     rule('all_targets_simple', simple_targets, comments='Excludes aggregated (goa_uniprot)')
 
@@ -74,7 +76,7 @@ def generate_targets(ds, alist):
         print("# Metadata incomplete\n")
         rule(all_files(ds))
         return
-    if ds == 'goa_pdb':
+    if ds in SKIP:
         # TODO move to another config file for 'skips'
         print("# Skipping\n")
         rule(all_files(ds))
@@ -84,19 +86,19 @@ def generate_targets(ds, alist):
     # all the targets
     is_ds_aggregated = any([("aggregates" in item) for item in alist])
 
-    ds_targets = [create_targetdir(ds), gzip(filtered_gaf(ds)), gzip(filtered_gpad(ds)), gzip(gpi(ds))]
+    ds_targets = [targetdir(ds), gzip(filtered_gaf(ds)), gzip(filtered_gpad(ds)), gzip(gpi(ds))]
     ds_targets.append(owltools_gafcheck(ds))
 
     if is_ds_aggregated:
-        ds_targets = [create_targetdir(ds), gzip(filtered_gaf(ds))]
+        ds_targets = [targetdir(ds), gzip(filtered_gaf(ds))]
 
     rule(all_files(ds), ds_targets)
 
-    ds_all_ttl = ds_targets + [inferred_ttl(ds), gzip(ttl(ds))]
+    ds_all_ttl = ds_targets + [inferred_ttl(ds), ttl(ds)]
     rule(all_ttl(ds), ds_all_ttl)
 
 
-    rule(create_targetdir(ds),[],
+    rule(targetdir(ds),[],
          'mkdir -p '+targetdir(ds))
 
     # for now we assume everything comes from a GAF
@@ -104,10 +106,10 @@ def generate_targets(ds, alist):
         [gaf] = [a for a in alist if a['type']=='gaf']
         url = gaf['source']
         # GAF from source
-        rule(src_gaf(ds),[],
+        rule(src_gaf_zip(ds),[targetdir(ds)],
              'wget --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
-    rule(filtered_gaf(ds),src_gaf(ds),
-         'gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p '+ds+' --noiea-file '+noiea_gaf(ds)+' -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@')
+    rule(filtered_gaf(ds),src_gaf_zip(ds),
+         'gzip -dcf $< > {src_gaf}\n\tontobio-parse-assocs.py --filter-out IEA -f {src_gaf} -o {filtered_gaf} -m {target}{ds}.report validate'.format(src_gaf=src_gaf(ds), filtered_gaf=filtered_gaf(ds), target=targetdir(ds), ds=ds))
     rule(owltools_gafcheck(ds),filtered_gaf(ds),
          '$(OWLTOOLS_GAFCHECK)')
     rule(filtered_gpad(ds),filtered_gaf(ds),
@@ -128,8 +130,10 @@ def all_files(ds):
     return 'all_'+ds
 def all_ttl(ds):
     return 'ttl_all_'+ds
-def src_gaf(ds):
+def src_gaf_zip(ds):
     return '{dir}{ds}-src.gaf.gz'.format(dir=targetdir(ds),ds=ds)
+def src_gaf(ds):
+    return "{dir}{ds}-src.gaf".format(dir=targetdir(ds), ds=ds)
 def filtered_gaf(ds):
     return '{dir}{ds}.gaf'.format(dir=targetdir(ds),ds=ds)
 def noiea_gaf(ds):
