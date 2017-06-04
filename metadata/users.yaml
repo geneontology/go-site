@@ -3168,6 +3168,16 @@
   organization: Planteome
   accounts:
     github: 'githubkumard'
+-
+  nickname: "Eric Douglass"
+  uri: 'http://orcid.org/0000-0001-6946-1807'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: GO
+  accounts:
+    github: 'dougli1sqrd'
 # -
 #   nickname: ""
 #   uri: ''
