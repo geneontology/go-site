@@ -3178,6 +3178,16 @@
   organization: GO
   accounts:
     github: 'dougli1sqrd'
+-
+  nickname: "Kent Shefchek"
+  uri: 'http://orcid.org/0000-0001-6439-2224'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: OHSU
+  accounts:
+    github: 'kshefchek'
 # -
 #   nickname: ""
 #   uri: ''
