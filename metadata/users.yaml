@@ -2623,6 +2623,8 @@
     noctua-go:
       allow-edit: true
   organization: OSU
+  groups:
+    - 'http://planteome.org'
   accounts:
     github: jaiswalp
 -
