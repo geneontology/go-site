@@ -637,12 +637,13 @@
   xref: 'GOC:gg'
   email-md5:
     - a5d3f603d546cc29f906118a5d9762a4
-  organization: GOA
+  organization: EMBL-EBI
   authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
+   noctua:
+     go:
+       allow-edit: true
+  accounts:
+    github: 'ggeorghiou'
 -
   nickname: 'Hema Bye-A-Jee'
   uri: 'http://orcid.org/0000-0003-2464-7688'
@@ -869,9 +870,12 @@
   email-md5:
     - 6ea952218c0da22097c3cab09fbb5c36
   authorizations:
-    noctua-go:
-      allow-edit: true
+   noctua:
+     go:
+       allow-edit: true
   organization: MGI
+  accounts:
+    github: 'JudyBalke'
 -
   nickname: 'Claudia Rato da Silva'
   email-md5:
@@ -1111,10 +1115,10 @@
       allow-write: true
       allow-freeform: false
   xref: 'GOC:sl'
-  uri: 'GOC:sl'
+  uri: 'http://orcid.org/0000-0001-5356-4174-4174'
   organization: RGD
   accounts:
-    github: slaulederkind 
+    github: slaulederkind
 -
   uri: 'GOC:st'
   xref: 'GOC:st'
@@ -2603,9 +2607,12 @@
   email-md5:
     - 0c93d771ecbe7f79da921d148bbc523b
   authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: OSU
+   noctua:
+     go:
+       allow-edit: true
+  organization: Planteome
+  accounts:
+    github: 'preecej'
 -
   nickname: "Pankaj Jaiswal"
   uri: 'http://orcid.org/0000-0002-1005-8383'
@@ -3031,6 +3038,136 @@
   organization: NTNU
   accounts:
     github: 'astridla'
+-
+  nickname: "George Thomas Hayman"
+  uri: 'http://orcid.org/0000-0002-9553-7227'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: RGD
+  accounts:
+    github: 'gthayman'
+-
+  nickname: "Emily Heald Camozzi"
+  uri: 'http://orcid.org/0000-0003-0855-3059'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: SGD
+  accounts:
+    github: 'emilycamozzi'
+-
+  nickname: "Amy Singer"
+  uri: 'http://orcid.org/0000-0002-9663-3237'
+  authorizations:
+   noctua:
+     go:
+       allow-edit:
+  organization: ZFIN
+  accounts:
+    github: 'asingeror'
+-
+  nickname: "Marie-Angélique Laporte"
+  uri: 'http://orcid.org/0000-0002-8461-9745'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: Bioversity International
+  accounts:
+    github: 'mariealaporte'
+-
+  nickname: "Austin"
+  uri: 'http://orcid.org/0000-0001-6996-0040'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: Planteome
+  accounts:
+    github: 'austinmeier'
+-
+  nickname: "Gerard Lazo"
+  uri: 'http://orcid.org/000-0002-9160-2052'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: USDA
+  accounts:
+    github: 'gerard.lazo'
+-
+  nickname: "Priyanka Garg"
+  uri: 'http://orcid.org/0000-0002-8293-0329'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: Planteome
+  accounts:
+    github: 'priya8328'
+-
+  nickname: "Matthew Geniza"
+  uri: 'http://orcid.org/0000-0003-4828-7891'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: OSU
+  accounts:
+    github: 'genizamt'
+-
+  nickname: "Noor Al-Bader"
+  uri: 'http://orcid.org/0000-0002-0511-6972'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: OSU
+  accounts:
+    github: 'noor-albader'
+-
+  nickname: "Sushma Naithani"
+  uri: 'http://orcid.org/0000-0001-7819-4552'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: OSU
+  accounts:
+    github: 'naithanis'
+-
+  nickname: "Parul Gupta"
+  uri: 'http://orcid.org/0000-0002-0190-8753'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: OSU
+  accounts:
+    github: 'guptapa'
+-
+  nickname: "Tom Conlin"
+  uri: 'http://orcid.org/0000-0003-0355-5581'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: Monarch
+  accounts:
+    github: 'TomConlin'
+-
+  nickname: "Dhirendra Kumar"
+  uri: 'http://orcid.org/0000-0001-8899-9055'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: Planteome
+  accounts:
+    github: 'githubkumard'
 # -
 #   nickname: ""
 #   uri: ''
