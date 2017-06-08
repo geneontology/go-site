@@ -10,10 +10,11 @@ setup(
         "requests==2.13.0",
         "pyYaml==3.12",
         "pykwalify==1.6.0",
-        "SPARQLWrapper==1.8.0"
+        "SPARQLWrapper==1.8.0",
+        "yamldown==0.1.3"
     ],
     entry_points='''
         [console_scripts]
-        rulerunner=rulerunner.main:cli
+        sparta=rulerunner.main:cli
     '''
 )

@@ -1,5 +1,20 @@
 from typing import List, Dict
 import SPARQLWrapper
+import yaml
+
+OBO_PREFIXES = {
+    "http://purl.obolibrary.org/obo/GO_": "GO:",
+    "http://purl.obolibrary.org/obo/RO_": "RO:",
+    "http://purl.obolibrary.org/obo/ECO_": "ECO:",
+    "http://purl.obolibrary.org/obo/BFO_": "BFO:",
+}
+
+def prefix_uri(uri: str) -> str:
+    for part_uri in OBO_PREFIXES:
+        if uri.startswith(part_uri):
+            return "{prefix}{num}".format(prefix=OBO_PREFIXES[part_uri], num=uri.rsplit("_", 1)[1])
+
+    return uri
 
 class RuleResult(object):
     """
@@ -17,9 +32,19 @@ class RuleResult(object):
             - rule (JSON Dict): The in memory dictionary of the GO Rule
             expressed in YAML.
         """
+
+        def _passing(returned, rule):
+            if len(returned) == 0:
+                return "Pass"
+            elif rule["fail_mode"] == "hard":
+                return "Fail"
+            else:
+                return "Warning"
+
         self.returned = returned
         self.rule = rule
-        self.passing = "pass" if len(returned) == 0 else "fail"
+        self.passing = _passing(returned, rule)
+
 
     def jsonify(self) -> Dict:
         """
@@ -39,14 +64,27 @@ class RuleResult(object):
                 break
 
         result_dict = {
-            "name": self.rule["rule"]["name"],
-            "sparql": self.rule["rule"]["sparql"],
+            "name": self.rule["id"],
+            "sparql": sparql_from(self.rule),
             "pass": self.passing,
-            "fail_mode": self.rule["rule"]["fail_mode"],
+            "fail_mode": self.rule["fail_mode"],
             "some_results": returned_dict,
-            "total_found": len(self.returned)
+            "violations_found": len(self.returned)
         }
         return result_dict
+
+    def verbose_readable(self) -> str:
+        readable = []
+        for entry in self.returned:
+            line = {var: prefix_uri(entry[var]["value"]) for var in entry}
+            readable.append(line)
+
+        return yaml.dump(readable, default_flow_style=False)
+
+    def short_summary(self) -> str:
+        summary = "{name} - {passing}: {number} violation(s)".format(name=self.rule["id"], passing=self.passing, number=len(self.returned))
+        return summary
+
 
 def run_query(query, endpoint):
     """
@@ -66,7 +104,7 @@ def test_rule(rule: Dict, endpoint: str) -> RuleResult:
         - rule: JSON/YAML dictionary of the GO Rule with a sparql query to run
         - endpoint: A SPARQL endpoint
     """
-    query_results = run_query(rule["rule"]["sparql"], endpoint)
+    query_results = run_query(sparql_from(rule), endpoint)
     return RuleResult(query_results["results"]["bindings"], rule)
 
 def generate_results_json(rule_results_list: List[RuleResult]) -> Dict:
@@ -77,19 +115,28 @@ def generate_results_json(rule_results_list: List[RuleResult]) -> Dict:
     "build" can be 'pass', 'unstable', or 'fail' if the results have no failures,
     have only at least soft failures, or have any hard failures respectively.
     This can be read by a tool to know if the Rule checks should ultimately be
-    declared unstable or failed. 
+    declared unstable or failed.
     """
     results_json = [result.jsonify() for result in rule_results_list]
 
     build = "pass"
     for result in rule_results_list:
-        if result.passing == "fail" and result.rule["rule"]["fail_mode"] == "soft" and build == "pass":
+        if result.passing == "Warning" and build == "pass":
             build = "unstable"
-        if result.passing == "fail" and result.rule["rule"]["fail_mode"] == "hard" and build != "fail":
+        if result.passing == "Fail" and build != "fail":
             build = "fail"
             break
 
     return {
         "build": build,
-        "results": rules_results_json
+        "results": results_json
     }
+
+def sparql_from(gorule: Dict) -> str:
+    impls = gorule.get("implementations", [])
+    sparql = ""
+    for impl in impls:
+        if impl["language"] == "sparql":
+            return impl["code"]
+
+    return ""
