@@ -47,7 +47,7 @@ you can supply the `--out` option:
     sparta --out results.json http://rdf.geneontology.org/blazegraph/sparql
 
 Lastly, you can supply the `--schema` option and specify a schema file to
-validate Rules YAML files with. By default sparta will look in the `schema`
-directory in `rule-runner` main directory:
+validate Rules YAML files with. By default sparta will look in the `metadata`
+directory in top level go-site main directory for `rules.schema.yml`:
 
-    rulerunner --schema my/schema/file http://rdf.geneontology.org/blazegraph/sparql
+    sparta --schema my/schema/file http://rdf.geneontology.org/blazegraph/sparql
