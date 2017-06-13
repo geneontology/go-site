@@ -1283,9 +1283,9 @@
     - type_name: protein complex
       type_id: GO:0043234
       id_syntax: EBI-[0-9]+
-      url_syntax: http://www.ebi.ac.uk/intact/search/do/search?searchString=[example_id]
-      example_id: IntAct:EBI-17086
-      example_url: http://www.ebi.ac.uk/intact/search/do/search?searchString=EBI-17086
+      url_syntax: http://www.ebi.ac.uk/complexportal/complex/[example_id]
+      example_id: IntAct:EBI-10205244
+      example_url: http://www.ebi.ac.uk/complexportal/complex/EBI-10205244
 - database: InterPro
   name: InterPro database of protein domains and motifs
   synonyms:
