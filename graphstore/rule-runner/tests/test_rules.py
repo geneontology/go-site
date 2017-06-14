@@ -45,6 +45,14 @@ class TestRules(unittest.TestCase):
 
         self.assertEqual(1, len(results))
 
+    def test_rule_14(self):
+        results = query(14)
+        print("Results:")
+        for row in results:
+            print(row)
+
+        self.assertEqual(1, len(results))
+
 
 if __name__ == "__main__":
     unittest.main()
