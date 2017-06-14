@@ -1,0 +1,24 @@
+@prefix : <http://geneontology.org/go-site/rule-runner/test#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix RO: <http://purl.obolibrary.org/obo/RO_> .
+@prefix has_evidence: <http://geneontology.org/lego/evidence> .
+@prefix ECO: <http://purl.obolibrary.org/obo/ECO_> .
+@prefix IEP: <http://purl.obolibrary.org/obo/ECO_0000270> .
+@prefix GO: <http://purl.obolibrary.org/obo/GO_> .
+@prefix biological_process: <http://purl.obolibrary.org/obo/GO_0008150> .
+
+
+
+_:s has_evidence: :e ;
+    owl:annotatedSource :i ;
+    owl:annotatedProperty :r ;
+    owl:annotatedTarget :j .
+
+:e a IEP: .
+
+:i :r :j .
+
+:i a owl:Thing .
+:j a GO:0005575 . # Cellular Component; not Biological Process

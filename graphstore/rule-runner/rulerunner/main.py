@@ -7,6 +7,7 @@ import re
 import logging
 import glob
 import yamldown
+import rdflib
 
 from typing import Union, Dict
 
@@ -107,6 +108,18 @@ def test(ctx, endpoint, rule_path, verbose, schema, out):
 
     if result.passing in ["Warn", "Fail"]:
         ctx.exit(1)
+
+
+@cli.command()
+@click.argument("turtle", type=click.Path(exists=True))
+@click.option("sparql_file", "--file", "-f", type=click.File(), required=True)
+def local(turtle, sparql_file):
+    g = rdflib.Graph()
+    g.parse(turtle, format="ttl")
+    results = g.query(sparql_file.read())
+
+    for row in results:
+        click.echo(row)
 
 
 def rules_directory(path=None):
