@@ -1307,6 +1307,8 @@
   xref: 'GOC:se'
   uri: 'http://orcid.org/0000-0001-5472-917X'
   organization: SGD
+  accounts:
+    github: srengel
 -
   uri: 'GOC:ssd'
   xref: 'GOC:ssd'
