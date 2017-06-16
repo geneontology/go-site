@@ -3073,7 +3073,7 @@
   authorizations:
    noctua:
      go:
-       allow-edit:
+       allow-edit: true
   organization: ZFIN
   accounts:
     github: 'asingeror'
