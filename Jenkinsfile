@@ -1,6 +1,9 @@
 pipeline {
   agent any
-  stages {
+    environment {
+        PIPELINE_NAME = 'snapshot'
+    }
+    stages {
     stage('Initialize') {
       steps {
         parallel(
