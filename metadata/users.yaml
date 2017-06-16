@@ -1305,7 +1305,7 @@
       allow-write: true
       allow-freeform: false
   xref: 'GOC:se'
-  uri: 'http://orcid.org/0000-0001-5472-917X'
+  uri: 'http://orcid.org/0000h-0001-5472-917X'
   organization: SGD
   accounts:
     github: srengel
@@ -3213,7 +3213,7 @@
   authorizations:
    noctua:
      go:
-       allow-edit:
+       allow-edit: true
   organization: SGD
   accounts:
     github: 'marekskrzypek'
