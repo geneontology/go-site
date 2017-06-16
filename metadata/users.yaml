@@ -1279,7 +1279,7 @@
   uri: 'http://orcid.org/0000-0003-2468-9933'
   organization: SGD
 -
-  uri: 'GOC:rn'
+  uri: 'http://orcid.org/0000-0002-3726-7441'
   xref: 'GOC:rn'
   nickname: 'Rob Nash'
   email-md5:
@@ -1288,6 +1288,11 @@
   authorizations:
     termgenie-go:
       allow-write: true
+    noctua:
+      go:
+        allow-edit: true
+  accounts:
+    github: robnash
 -
   nickname: 'Stacia Engel'
   email-md5:
@@ -1300,8 +1305,10 @@
       allow-write: true
       allow-freeform: false
   xref: 'GOC:se'
-  uri: 'http://orcid.org/0000-0001-5472-917X'
+  uri: 'http://orcid.org/0000h-0001-5472-917X'
   organization: SGD
+  accounts:
+    github: srengel
 -
   uri: 'GOC:ssd'
   xref: 'GOC:ssd'
@@ -3066,7 +3073,7 @@
   authorizations:
    noctua:
      go:
-       allow-edit:
+       allow-edit: true
   organization: ZFIN
   accounts:
     github: 'asingeror'
@@ -3190,6 +3197,26 @@
   organization: OHSU
   accounts:
     github: 'kshefchek'
+-
+  nickname: "Terry L. Jackson"
+  uri: 'http://orcid.org/0000-0003-2387-6411'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: SGD
+  accounts:
+    github: 'Jackson73'
+-
+  nickname: "Marek Skrzypek"
+  uri: 'http://orcid.org/0000-0001-6749-615X'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: SGD
+  accounts:
+    github: 'marekskrzypek'
 # -
 #   nickname: ""
 #   uri: ''

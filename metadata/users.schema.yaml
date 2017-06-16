@@ -83,7 +83,7 @@ sequence:
                 mapping:
                   "allow-edit":
                     type: bool
-                    required: false
+                    required: true
                   "allow-admin":
                     type: bool
                     required: false
