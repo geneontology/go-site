@@ -105,6 +105,9 @@ BGMEM ?= 32G
 BG = java -server -XX:+UseG1GC -Xmx$(BGMEM) -cp $(BGJAR) com.bigdata.rdf.store.DataLoader
 
 # Load blazegraph
+
+BG_PORT = 8899
+
 target/blazegraph.jnl: $(BGJAR) target/rdf target/inferred
 	$(BG) -defaultGraph http://geneontology.org/rdf/ conf/blazegraph.properties target/rdf
 	$(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties target/inferred/
@@ -114,4 +117,4 @@ target/blazegraph.jnl: $(BGJAR) target/rdf target/inferred
 # 	$(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties $<
 
 bg-start:
-	java -server -Xmx32g -Djetty.port=8899 -Djetty.overrideWebXml=conf/readonly_cors.xml -Dbigdata.propertyFile=conf/blazegraph.properties -cp target/jars/blazegraph-jar.jar:target/jars/jetty-servlets.jar com.bigdata.rdf.sail.webapp.StandaloneNanoSparqlServer
+	java -server -Xmx32g -Djetty.port=$(BG_PORT) -Djetty.overrideWebXml=conf/readonly_cors.xml -Dbigdata.propertyFile=conf/blazegraph.properties -cp target/jars/blazegraph-jar.jar:target/jars/jetty-servlets.jar com.bigdata.rdf.sail.webapp.StandaloneNanoSparqlServer
