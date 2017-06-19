@@ -3217,6 +3217,26 @@
   organization: SGD
   accounts:
     github: 'marekskrzypek'
+-
+  nickname: "Kevin MacPherson"
+  uri: 'http://orcid.org/0000-0002-2657-8762'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: SGD
+  accounts:
+    github: 'kmacpher5'
+-
+  nickname: "Sage Hellerstedt"
+  uri: 'http://orcid.org/0000-0002-5299-5308'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: SGD
+  accounts:
+    github: 'Shellerstedt'
 # -
 #   nickname: ""
 #   uri: ''
