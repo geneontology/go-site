@@ -15,13 +15,14 @@ pipeline {
 			build 'skyhook-reset'
 			
 		    }
-		),
-		"Env echo A": {
-		    echo 'env: $BRANCH_NAME'
-		},
-		"Env echo B": {		    
-		    echo env.getEnvironment()
-		}
+		// ),
+		// "Env echo A": {
+		//     echo 'env: $BRANCH_NAME'
+		// },
+		// "Env echo B": {		    
+		//     echo env.getEnvironment()
+		    // }
+		)
 	    }
 	}
 	// stage('Ready production software') {
