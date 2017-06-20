@@ -104,6 +104,7 @@
 - database: AspGD
   name: Aspergillus Genome Database
   synonyms:
+    - ASPGD
     - AspGDID
   generic_urls:
     - http://www.aspergillusgenome.org/
@@ -996,6 +997,8 @@
       example_url: http://amigo.geneontology.org/amigo/term/GO:0004352
 - database: GO_Central
   name: GO Central
+  synonyms:
+    - GO_CENTRAL
   description: Manual annotation from PAINT curators into the UniProt Protein2GO curation tool.
   generic_urls:
     - http://www.geneontology.org/GO.refgenome.shtml
@@ -1280,9 +1283,9 @@
     - type_name: protein complex
       type_id: GO:0043234
       id_syntax: EBI-[0-9]+
-      url_syntax: http://www.ebi.ac.uk/intact/search/do/search?searchString=[example_id]
-      example_id: IntAct:EBI-17086
-      example_url: http://www.ebi.ac.uk/intact/search/do/search?searchString=EBI-17086
+      url_syntax: http://www.ebi.ac.uk/complexportal/complex/[example_id]
+      example_id: IntAct:EBI-10205244
+      example_url: http://www.ebi.ac.uk/complexportal/complex/EBI-10205244
 - database: InterPro
   name: InterPro database of protein domains and motifs
   synonyms:
@@ -2373,6 +2376,16 @@
       url_syntax: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&DB=pcsubstance&term=[example_id]
       example_id: PubChem_Substance:4594
       example_url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&DB=pcsubstance&term=4594
+- database: RAP-DB
+  name: Rice annotation Project database
+  generic_urls:
+    - http://rapdb.dna.affrc.go.jp
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: http://rapdb.dna.affrc.go.jp/tools/search/run?id=on&attr=desc&attr=cgs&attr=cgn&attr=cgss&attr=cgns&attr=rgss&attr=rgns&keyword=[example_id]
+      example_id: RAP-DB:OS01T0100600-01
+      example_url: http://rapdb.dna.affrc.go.jp/tools/search/run?id=on&attr=desc&attr=cgs&attr=cgn&attr=cgss&attr=cgns&attr=rgss&attr=rgns&keyword=Os01g0100200
 - database: Reactome
   name: Reactome - a curated knowledgebase of biological pathways
   synonyms:
@@ -2399,6 +2412,8 @@
       example_url: http://rebase.neb.com/rebase/enz/EcoRI.html
 - database: RefGenome
   name: GO Reference Genomes
+  synonyms:
+    - REFGENOME
   generic_urls:
     - http://www.geneontology.org/GO.refgenome.shtml
   entity_types:

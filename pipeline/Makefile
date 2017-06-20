@@ -5,7 +5,7 @@ RDFOX_MEM ?= 32G
 GAF_OWL = target/go-gaf.owl
 ONT_MERGED = target/go-graphstore-merged.ttl
 
-all: target/Makefile extra_files $(REPORT) 
+all: target/Makefile extra_files $(REPORT)
 
 all_blazegraph: all target/blazegraph.jnl
 
@@ -43,7 +43,6 @@ target/go.obo:
 proc:
 	./util/dataset-metadata-processor.py $(METADATA_DIR)/*.yaml
 
-
 # ----------------------------------------
 # OWLTools checks
 # ----------------------------------------
@@ -70,7 +69,7 @@ OWLTOOLS_GAFCHECK = owltools $(CATALOG_DETAILS) $(GAF_OWL) \
 # this defines 'all_targets'
 target/Makefile: ./util/generate-makefile.py
 	mkdir -p target
-	$< ../metadata/datasets/*.yaml > $@.tmp && mv $@.tmp $@
+	python3 $< ../metadata/datasets/*.yaml > $@.tmp && mv $@.tmp $@
 
 include target/Makefile
 
@@ -115,4 +114,4 @@ target/blazegraph.jnl: $(BGJAR) target/rdf target/inferred
 # 	$(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties $<
 
 bg-start:
-	java -server -Xmx8g -Dbigdata.propertyFile=conf/blazegraph.properties -jar $(BGJAR)
+	java -server -Xmx32g -Djetty.port=8899 -Djetty.overrideWebXml=conf/readonly_cors.xml -Dbigdata.propertyFile=conf/blazegraph.properties -cp target/jars/blazegraph-jar.jar:target/jars/jetty-servlets.jar com.bigdata.rdf.sail.webapp.StandaloneNanoSparqlServer
