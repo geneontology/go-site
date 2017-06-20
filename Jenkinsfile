@@ -24,6 +24,7 @@ pipeline {
 		echo "BRANCH_NAME"
 		echo BRANCH_NAME
 		sh 'printenv'
+		sh 'echo $BRANCH_NAME'
 	    }
 	}
     }
