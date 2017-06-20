@@ -15,7 +15,7 @@ pipeline {
 			build 'skyhook-reset'
 			
 		    }
-		}
+		),
 		"Env echo A": {
 		    echo 'env: $BRANCH_NAME'
 		},
