@@ -1,0 +1,20 @@
+@prefix : <http://geneontology.org/go-site/rule-runner/test#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix has_evidence: <http://geneontology.org/lego/evidence> .
+@prefix ECO: <http://purl.obolibrary.org/obo/ECO_> .
+@prefix GO: <http://purl.obolibrary.org/obo/GO_> .
+
+_:s has_evidence: :e ;
+    owl:annotatedSource :i ;
+    owl:annotatedProperty :r ;
+    owl:annotatedTarget :j .
+
+:i :r :j .
+
+:i a owl:Thing .
+:j a :go_class .
+
+:go_class a rdfs:Class ;
+    owl:deprecated true .
