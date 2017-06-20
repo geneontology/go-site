@@ -15,5 +15,11 @@ pipeline {
         )
       }
     }
+    stage('Env test A') {
+      steps {
+        echo 'env'
+        echo '$BRANCH_NAME'
+      }
+    }
   }
 }
