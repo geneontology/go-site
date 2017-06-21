@@ -22,13 +22,13 @@
   id: http://informatics.jax.org
 -
   label: 'RGD'
-  id: http://rgd.mcw.edu/
+  id: http://rgd.mcw.edu
 -
   label: 'ARUK-UCL'
-  id: "https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl/"
+  id: http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl
 -
   label: 'BHF-UCL'
-  id: "http://www.ucl.ac.uk/functional-gene-annotation#BHF"
+  id: http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular
 -
   label: 'SynGO-UCL'
-  id: "https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl/"
+  id: https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl
