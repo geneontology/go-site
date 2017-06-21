@@ -351,7 +351,10 @@
       allow-freeform: false
   xref: 'GOC:pg'
   uri: 'http://orcid.org/0000-0003-1813-6857'
-  organization: DDB
+  organization: GOC
+  groups:
+  - https://www.nextprot.org/
+  - http://geneontology.org/
   accounts:
     github: pgaudet
 -
