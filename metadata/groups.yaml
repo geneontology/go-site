@@ -32,3 +32,6 @@
 -
   label: 'SynGO-UCL'
   id: https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl
+-
+  label: 'neXtProt'
+  id: https://www.nextprot.org/
