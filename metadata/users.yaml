@@ -2988,6 +2988,10 @@
       go:
         allow-edit: true
   organization: BHF-UCL
+  groups:
+    - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
+    - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl'
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl'
   accounts:
     github: 'BarbaraCzub'
 -
