@@ -17,3 +17,18 @@
 -
   label: 'ZFIN'
   id: http://zfin.org
+-
+  label: 'MGI'
+  id: http://informatics.jax.org
+-
+  label: 'RGD'
+  id: http://rgd.mcw.edu/
+-
+  label: 'ARUK-UCL'
+  id: "https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl/"
+-
+  label: 'BHF-UCL'
+  id: "http://www.ucl.ac.uk/functional-gene-annotation#BHF"
+-
+  label: 'SynGO-UCL'
+  id: "https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl/"
