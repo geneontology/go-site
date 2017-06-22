@@ -704,6 +704,8 @@
   uri: 'http://orcid.org/0000-0001-6718-3559'
   organization: BHF-UCL
   comment: 'formerly GOA'
+  groups:
+    - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
   accounts:
     github: rachhuntley
 -
