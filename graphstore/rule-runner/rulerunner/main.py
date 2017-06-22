@@ -15,7 +15,7 @@ from pykwalify.core import Core
 
 from rulerunner import rule
 
-SCHEMA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../metadata/rules.schema.yml")
+SCHEMA = os.path.join(os.getcwd(), "../metadata/rules.schema.yml")
 
 class RuleParameter(click.Path):
     name = "rule"
@@ -124,7 +124,7 @@ def local(turtle, sparql_file):
 
 def rules_directory(path=None):
     if path is None:
-        return os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../metadata/rules/")
+        return os.path.join(os.getcwd(), "../metadata/rules/")
     else:
         return path
 

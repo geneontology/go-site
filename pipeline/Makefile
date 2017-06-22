@@ -63,6 +63,53 @@ OWLTOOLS_GAFCHECK = owltools $(CATALOG_DETAILS) $(GAF_OWL) \
 --experimental-gaf-prediction-report-file $@-prediction-experimental-report.txt \
 --gaf-run-checks || echo 'errors found' ; touch $@
 
+
+%-gafcheck: %.gaf.gz
+	gzip -dcf $< > $*.gaf
+	owltools $(CATALOG_DETAILS) $(GAF_OWL) \
+	--gaf $*.gaf \
+	--createReport \
+	--gaf-report-file $@-report.txt \
+	--gaf-report-summary-file $@-summary.txt \
+	--gaf-prediction-file $@-prediction.gaf \
+	--gaf-prediction-report-file $@-prediction-report.txt \
+	--gaf-validation-unsatisfiable-module $@-incoherent.owl \
+	--experimental-gaf-prediction-file $@-prediction-experimental.gaf \
+	--experimental-gaf-prediction-report-file $@-prediction-experimental-report.txt \
+	--gaf-run-checks || echo 'errors found' ; touch $@
+	rm -f $*.gaf
+
+%.gaf.gz: %-src.gaf.gz
+	gzip -dcf $< > $*-src.gaf
+	ontobio-parse-assocs.py --filter-out IEA -f $*-src.gaf -o $*.gaf -m $*.report validate
+	rm $*-src.gaf
+	gzip -f $*.gaf
+
+%.gpad.gz: %.gaf.gz
+	gzip -dcf $< > $*.gaf
+	owltools --gaf $*.gaf --write-gpad -o $*.gpad.tmp && mv $*.gpad.tmp $*.gpad
+	rm $*.gaf
+	gzip -f $*.gpad
+
+%.gpi.gz: %.gaf.gz
+	gzip -dcf $< > $*.gaf
+	owltools --gaf $*.gaf --write-gpi -o $*.gpi.tmp && mv $*.gpi.tmp $*.gpi
+	rm $*.gaf
+	gzip -f $*.gpi
+
+%_cam.ttl: %.gaf.gz $(ONT_MERGED)
+	gzip -dcf  $< > $*.gaf
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(ONT_MERGED) --gaf $*.gaf --gaf-lego-individuals --skip-merge --format turtle -o $*_cam.ttl.tmp && mv $*_cam.ttl.tmp $*_cam.ttl
+	rm $*.gaf
+
+# % -> target/groups/goa_chicken_complex/goa_chicken_complex_cam.ttl
+#	   target/groups/goa_chicken_complex/goa_chicken_complex_inferred.ttl
+%_inferred.ttl: %_cam.ttl
+	mkdir -p target/inferred
+	arachne --ontology=$(ONT_MERGED) --data=$< --export=$@ --inferred-only
+
+
+
 # ----------------------------------------
 # Makefile for building GAFs
 # ----------------------------------------
@@ -89,10 +136,11 @@ $(ONT_MERGED):
 	OWLTOOLS_MEMORY=12G owltools go-graphstore.owl --merge-imports-closure -o -f turtle $@
 .PRECIOUS: $(ONT_MERGED)
 
-
-target/rdf: $(REPORT) target/noctua-models $(ONT_MERGED)
+# $(REPORT)
+target/rdf: target/noctua-models $(ONT_MERGED)
 	mkdir -p target/rdf
-	cp target/groups/*/*.ttl target/rdf/
+	cp target/groups/*/*_inferred.ttl target/inferred
+	cp target/groups/*/*_cam.ttl target/rdf/
 	cp target/noctua-models/models/* target/rdf/
 	cp $(ONT_MERGED) target/rdf/go-graphstore-merged.ttl
 
@@ -111,6 +159,9 @@ BG_PORT = 8899
 target/blazegraph.jnl: $(BGJAR) target/rdf target/inferred
 	$(BG) -defaultGraph http://geneontology.org/rdf/ conf/blazegraph.properties target/rdf
 	$(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties target/inferred/
+
+run-sparta: target/blazegraph.jnl
+	./triplestore-rulecheck.sh 8898
 
 #
 # load-inferences: target/rdf/rdfox.ttl
