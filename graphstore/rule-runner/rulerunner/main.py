@@ -137,7 +137,7 @@ def load_yamldown(path):
             return yamldown.load(f)[0]
 
     except Exception as e:
-        raise click.Exception(e.message)
+        raise click.ClickException(str(e))
 
 def validate(yml_rule: Dict, schema_path: str):
     """
