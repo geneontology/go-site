@@ -774,6 +774,9 @@
   xref: 'GOC:dph'
   uri: 'http://orcid.org/0000-0001-7476-6306'
   organization: MGI
+  groups:
+    - 'http://informatics.jax.org'
+    - 'http://geneontology.org/'
   accounts:
     github: ukemi
     orcid: '0000-0001-7476-6306'
@@ -795,6 +798,8 @@
   email-md5:
     - 5ee6809ed1e68d38c7366e9ae14a5b9e
   organization: MGI
+  groups:
+    - 'http://informatics.jax.org'
   authorizations:
     noctua-go:
       allow-edit: true
@@ -841,6 +846,9 @@
       allow-edit: true
   uri: 'http://orcid.org/0000-0001-7732-3295'
   organization: MGI
+  groups:
+    - 'http://informatics.jax.org'
+    - 'http://geneontology.org/'
 -
   nickname: 'Harold Drabkin'
   uri: 'http://orcid.org/0000-0003-2689-5511'
@@ -854,6 +862,9 @@
       allow-freeform: false
   xref: 'GOC:hjd'
   organization: MGI
+  groups:
+    - 'http://informatics.jax.org'
+    - 'http://geneontology.org/'
   accounts:
     github: hdrabkin
 -
@@ -863,6 +874,8 @@
   email-md5:
     - e39ac0f072d7278ae76953722298f26f
   organization: MGI
+  groups:
+    - 'http://informatics.jax.org'
   authorizations:
     noctua-go:
       allow-edit: true
@@ -879,6 +892,9 @@
      go:
        allow-edit: true
   organization: MGI
+  groups:
+    - 'http://informatics.jax.org'
+    - 'http://geneontology.org/'
   accounts:
     github: 'judyblake'
 -
@@ -1255,6 +1271,9 @@
       allow-write: true
       allow-freeform: false
   organization: MGI
+  groups:
+    - 'http://informatics.jax.org'
+    - 'http://geneontology.org/'
   accounts:
     github: 'krchristie'
 -
