@@ -848,7 +848,7 @@
   organization: MGI
   groups:
     - 'http://informatics.jax.org'
-    - 'http://geneontology.org/'
+    - 'http://geneontology.org'
 -
   nickname: 'Harold Drabkin'
   uri: 'http://orcid.org/0000-0003-2689-5511'
