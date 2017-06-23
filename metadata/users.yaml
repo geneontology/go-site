@@ -776,7 +776,7 @@
   organization: MGI
   groups:
     - 'http://informatics.jax.org'
-    - 'http://geneontology.org/'
+    - 'http://geneontology.org'
   accounts:
     github: ukemi
     orcid: '0000-0001-7476-6306'
@@ -864,7 +864,7 @@
   organization: MGI
   groups:
     - 'http://informatics.jax.org'
-    - 'http://geneontology.org/'
+    - 'http://geneontology.org'
   accounts:
     github: hdrabkin
 -
@@ -894,7 +894,7 @@
   organization: MGI
   groups:
     - 'http://informatics.jax.org'
-    - 'http://geneontology.org/'
+    - 'http://geneontology.org'
   accounts:
     github: 'judyblake'
 -
@@ -1273,7 +1273,7 @@
   organization: MGI
   groups:
     - 'http://informatics.jax.org'
-    - 'http://geneontology.org/'
+    - 'http://geneontology.org'
   accounts:
     github: 'krchristie'
 -
