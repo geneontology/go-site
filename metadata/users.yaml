@@ -763,8 +763,9 @@
   email-md5:
     - 65769275d47653aced3fae5ab1f805b1
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-review: true
