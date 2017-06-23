@@ -13,7 +13,8 @@ sequence:
         type: str
         required: true
         unique: true
-        pattern: /^[\/\.\-\:\w]+$/
+        ## Pattern lookahead to prevent trailing slashes.
+        pattern: /^(http(s?)\:\/\/\w[\/\.\-\:\w]+)(?<!\/)$/
       "label":
         type: str
         required: true
