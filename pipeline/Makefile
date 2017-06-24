@@ -51,18 +51,6 @@ $(GAF_OWL):
 	owltools $(OBO)/go/extensions/go-gaf.owl --merge-imports-closure --remove-annotation-assertions -l -r --add-obo-shorthand-to-properties -o $@
 
 CATALOG_DETAILS=
-OWLTOOLS_GAFCHECK = owltools $(CATALOG_DETAILS) $(GAF_OWL) \
---gaf $< \
---createReport \
---gaf-report-file $@-report.txt \
---gaf-report-summary-file $@-summary.txt \
---gaf-prediction-file $@-prediction.gaf \
---gaf-prediction-report-file $@-prediction-report.txt \
---gaf-validation-unsatisfiable-module $@-incoherent.owl \
---experimental-gaf-prediction-file $@-prediction-experimental.gaf \
---experimental-gaf-prediction-report-file $@-prediction-experimental-report.txt \
---gaf-run-checks || echo 'errors found' ; touch $@
-
 
 %-gafcheck: %.gaf.gz
 	gzip -dcf $< > $*.gaf
@@ -102,13 +90,9 @@ OWLTOOLS_GAFCHECK = owltools $(CATALOG_DETAILS) $(GAF_OWL) \
 	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(ONT_MERGED) --gaf $*.gaf --gaf-lego-individuals --skip-merge --format turtle -o $*_cam.ttl.tmp && mv $*_cam.ttl.tmp $*_cam.ttl
 	rm $*.gaf
 
-# % -> target/groups/goa_chicken_complex/goa_chicken_complex_cam.ttl
-#	   target/groups/goa_chicken_complex/goa_chicken_complex_inferred.ttl
 %_inferred.ttl: %_cam.ttl
 	mkdir -p target/inferred
 	arachne --ontology=$(ONT_MERGED) --data=$< --export=$@ --inferred-only
-
-
 
 # ----------------------------------------
 # Makefile for building GAFs

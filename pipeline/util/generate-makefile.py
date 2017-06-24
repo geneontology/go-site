@@ -108,21 +108,6 @@ def generate_targets(ds, alist):
         # GAF from source
         rule(src_gaf_zip(ds),[targetdir(ds)],
              'wget --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
-    # rule(filtered_data("gaf.gz", ds), src_gaf_zip(ds),
-    #     "\n".join([
-    #         'gzip -dcf $< > {src_gaf}',
-    #         'ontobio-parse-assocs.py --filter-out IEA -f {src_gaf} -o {filtered_gaf} -m {target}{ds}.report validate',
-    #         'rm {src_gaf}',
-    #         'gzip -f {unzipped_gaf}'
-    #     ]).format(src_gaf=src_gaf(ds), filtered_gaf=filtered_gaf(ds), target=targetdir(ds), ds=ds, unzipped_gaf=filtered_data("gaf", ds)))
-    # rule(filtered_gpad(ds),filtered_gaf(ds),
-    #      'owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@')
-    # rule(gpi(ds),filtered_gaf(ds),
-    #      'owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@')
-    # rule(ttl(ds),"{} $(ONT_MERGED)".format(filtered_gaf(ds)),
-    #      'MINERVA_CLI_MEMORY=16G minerva-cli.sh $(ONT_MERGED) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@')
-    # rule(inferred_ttl(ds), "{} $(ONT_MERGED)".format(ttl(ds)),
-    #     "mkdir -p target/inferred\narachne --ontology=$(ONT_MERGED) --data=$< --export=$@ --inferred-only")
 
 
 def create_targetdir(ds):
