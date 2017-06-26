@@ -3063,7 +3063,7 @@
     - type_name: entity
       type_id: BET:0000000
       url_syntax: http://www.uniprot.org/unirule/[example_id]
-      id_syntax: UR[0-9]{9}
+      id_syntax: UR[0-9]{9}|MF_[0-9]{5}|PIRNR[0-9]{6}|PRU[0-9]{5}|RU[0-9]{6}
       example_id: UniRule:UR000107224
       example_url: http://www.uniprot.org/unirule/UR000107224
 - database: VBRC
