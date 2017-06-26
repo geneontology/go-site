@@ -113,11 +113,11 @@ def generate_targets(ds, alist):
     rule(owltools_gafcheck(ds),filtered_gaf(ds),
          '$(OWLTOOLS_GAFCHECK)')
     rule(filtered_gpad(ds),filtered_gaf(ds),
-         'owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@')
+         'owltools --log-error --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@')
     rule(gpi(ds),filtered_gaf(ds),
-         'owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@')
+         'owltools --log-error --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@')
     rule(ttl(ds),"{} $(ONT_MERGED)".format(filtered_gaf(ds)),
-         'MINERVA_CLI_MEMORY=16G minerva-cli.sh $(ONT_MERGED) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@')
+         'MINERVA_CLI_MEMORY=16G minerva-cli.sh --log-error $(ONT_MERGED) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@')
     rule(inferred_ttl(ds), "{} $(ONT_MERGED)".format(ttl(ds)),
         "mkdir -p target/inferred\n\tarachne --ontology=$(ONT_MERGED) --data=$< --export=$@ --inferred-only")
 
