@@ -35,3 +35,7 @@
 -
   label: 'neXtProt'
   id: https://www.nextprot.org
+-
+  label: 'PomBase'
+  id: http://www.pombase.org
+  
