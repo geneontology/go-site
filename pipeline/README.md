@@ -27,7 +27,17 @@ Note these are not in production
 
 Everything is driven by a makefile. It should be possible to run the makefile locally, on an amazon machine slaved to jenkins, etc
 
+## Environment
+
+The pipeline/environment.sh script can be used to setup the environment before the makefile
+is run. Use `source` to run the script:
+
+    source environment.sh
+
+or
+
+    . environment.sh
+
 ## Status
 
 Note yet active. Running in parallel.
-
