@@ -351,7 +351,10 @@
       allow-freeform: false
   xref: 'GOC:pg'
   uri: 'http://orcid.org/0000-0003-1813-6857'
-  organization: DDB
+  organization: GO Central
+  groups:
+    - 'https://www.nextprot.org'
+    - 'http://geneontology.org'
   accounts:
     github: pgaudet
 -
@@ -701,6 +704,8 @@
   uri: 'http://orcid.org/0000-0001-6718-3559'
   organization: BHF-UCL
   comment: 'formerly GOA'
+  groups:
+    - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
   accounts:
     github: rachhuntley
 -
@@ -758,8 +763,9 @@
   email-md5:
     - 65769275d47653aced3fae5ab1f805b1
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
       allow-review: true
@@ -769,6 +775,9 @@
   xref: 'GOC:dph'
   uri: 'http://orcid.org/0000-0001-7476-6306'
   organization: MGI
+  groups:
+    - 'http://informatics.jax.org'
+    - 'http://geneontology.org'
   accounts:
     github: ukemi
     orcid: '0000-0001-7476-6306'
@@ -790,6 +799,8 @@
   email-md5:
     - 5ee6809ed1e68d38c7366e9ae14a5b9e
   organization: MGI
+  groups:
+    - 'http://informatics.jax.org'
   authorizations:
     noctua-go:
       allow-edit: true
@@ -836,6 +847,9 @@
       allow-edit: true
   uri: 'http://orcid.org/0000-0001-7732-3295'
   organization: MGI
+  groups:
+    - 'http://informatics.jax.org'
+    - 'http://geneontology.org'
 -
   nickname: 'Harold Drabkin'
   uri: 'http://orcid.org/0000-0003-2689-5511'
@@ -849,6 +863,9 @@
       allow-freeform: false
   xref: 'GOC:hjd'
   organization: MGI
+  groups:
+    - 'http://informatics.jax.org'
+    - 'http://geneontology.org'
   accounts:
     github: hdrabkin
 -
@@ -858,6 +875,8 @@
   email-md5:
     - e39ac0f072d7278ae76953722298f26f
   organization: MGI
+  groups:
+    - 'http://informatics.jax.org'
   authorizations:
     noctua-go:
       allow-edit: true
@@ -874,6 +893,9 @@
      go:
        allow-edit: true
   organization: MGI
+  groups:
+    - 'http://informatics.jax.org'
+    - 'http://geneontology.org'
   accounts:
     github: 'judyblake'
 -
@@ -1250,6 +1272,9 @@
       allow-write: true
       allow-freeform: false
   organization: MGI
+  groups:
+    - 'http://informatics.jax.org'
+    - 'http://geneontology.org'
   accounts:
     github: 'krchristie'
 -
@@ -1358,6 +1383,8 @@
   xref: 'GOC:dhl'
   uri: 'http://orcid.org/0000-0003-3335-4537'
   organization: TAIR
+  groups:
+    - 'http://www.arabidopsis.org'
   accounts:
     github: 'dhldhl'
 -
@@ -1426,6 +1453,8 @@
   xref: 'GOC:tb'
   uri: 'http://orcid.org/0000-0002-3837-8864'
   organization: TAIR
+  groups:
+    - 'http://www.arabidopsis.org'
   accounts:
     github: tberardini
 -
@@ -2946,6 +2975,8 @@
      go:
        allow-edit: true
   organization: TAIR
+  groups:
+    - 'http://www.arabidopsis.org'
   accounts:
     github: 'lreiser'
 -
@@ -2988,6 +3019,10 @@
       go:
         allow-edit: true
   organization: BHF-UCL
+  groups:
+    - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
+    - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl'
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl'
   accounts:
     github: 'BarbaraCzub'
 -
@@ -3237,6 +3272,16 @@
   organization: SGD
   accounts:
     github: 'Shellerstedt'
+-    
+  nickname: "Jane Mendel"
+  uri: 'http://orcid.org/0000-0003-2273-477X'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: WB
+  accounts:
+    github: 'mendelje'
 # -
 #   nickname: ""
 #   uri: ''
