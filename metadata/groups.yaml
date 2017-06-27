@@ -38,3 +38,10 @@
 -
   label: 'SGD'
   id: http://www.yeastgenome.org
+-
+  label: 'PomBase'
+  id: http://www.pombase.org
+-
+  label: 'TAIR'
+  id: http://www.arabidopsis.org
+
