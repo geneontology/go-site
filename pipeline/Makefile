@@ -48,10 +48,10 @@ proc:
 # ----------------------------------------
 
 $(GAF_OWL):
-	owltools $(OBO)/go/extensions/go-gaf.owl --merge-imports-closure --remove-annotation-assertions -l -r --add-obo-shorthand-to-properties -o $@
+	owltools --log-error $(OBO)/go/extensions/go-gaf.owl --merge-imports-closure --remove-annotation-assertions -l -r --add-obo-shorthand-to-properties -o $@
 
 CATALOG_DETAILS=
-OWLTOOLS_GAFCHECK = owltools $(CATALOG_DETAILS) $(GAF_OWL) \
+OWLTOOLS_GAFCHECK = owltools --log-error $(CATALOG_DETAILS) $(GAF_OWL) \
 --gaf $< \
 --createReport \
 --gaf-report-file $@-report.txt \
@@ -86,7 +86,7 @@ target/noctua-models:
 
 
 $(ONT_MERGED):
-	OWLTOOLS_MEMORY=12G owltools go-graphstore.owl --merge-imports-closure -o -f turtle $@
+	OWLTOOLS_MEMORY=12G owltools --log-error go-graphstore.owl --merge-imports-closure -o -f turtle $@
 .PRECIOUS: $(ONT_MERGED)
 
 
