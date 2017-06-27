@@ -3275,7 +3275,7 @@
        allow-edit: true
   organization: SGD
   groups:
-    - 'http://www.yeastgenome.org
+    - 'http://www.yeastgenome.org'
   accounts:
     github: 'kmacpher5'
 -
