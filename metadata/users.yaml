@@ -1229,7 +1229,7 @@
     - cd939e00b2e9a939e151fcc6d2516ef0
   organization: SGD
   groups:
-    - 'http//:www.yeastgenome.org'
+    - 'http://www.yeastgenome.org'
   authorizations:
     termgenie-go:
       allow-write: true
