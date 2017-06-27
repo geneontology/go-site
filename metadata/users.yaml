@@ -1228,6 +1228,8 @@
     - ab69ceef7068adeed08e0a38aaa9539c
     - cd939e00b2e9a939e151fcc6d2516ef0
   organization: SGD
+  groups:
+    - 'http:www.yeastgenome.org'
   authorizations:
     termgenie-go:
       allow-write: true
@@ -1314,6 +1316,8 @@
   email-md5:
     - 0dcb74135234ebffddc3931f28eab539
   organization: SGD
+  groups:
+    - 'http://www.yeastgenome.org'
   authorizations:
     termgenie-go:
       allow-write: true
@@ -3104,6 +3108,8 @@
      go:
        allow-edit: true
   organization: SGD
+  groups:
+    - 'http://www.yeastgenome.org'
   accounts:
     github: 'emilycamozzi'
 -
@@ -3244,6 +3250,8 @@
      go:
        allow-edit: true
   organization: SGD
+  groups:
+    - 'http://www.yeastgenome.org'
   accounts:
     github: 'Jackson73'
 -
@@ -3254,6 +3262,8 @@
      go:
        allow-edit: true
   organization: SGD
+  groups:
+    - 'http://www.yeastgenome.org'
   accounts:
     github: 'marekskrzypek'
 -
@@ -3264,6 +3274,8 @@
      go:
        allow-edit: true
   organization: SGD
+  groups:
+    - 'http://www.yeastgenome.org
   accounts:
     github: 'kmacpher5'
 -
@@ -3274,6 +3286,8 @@
      go:
        allow-edit: true
   organization: SGD
+  groups:
+    - 'http://www.yeastgenome.org'
   accounts:
     github: 'Shellerstedt'
 -    
