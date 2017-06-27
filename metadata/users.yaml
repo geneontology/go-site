@@ -1383,6 +1383,8 @@
   xref: 'GOC:dhl'
   uri: 'http://orcid.org/0000-0003-3335-4537'
   organization: TAIR
+  groups:
+    - 'http://www.arabidopsis.org'
   accounts:
     github: 'dhldhl'
 -
@@ -1451,6 +1453,8 @@
   xref: 'GOC:tb'
   uri: 'http://orcid.org/0000-0002-3837-8864'
   organization: TAIR
+  groups:
+    - 'http://www.arabidopsis.org'
   accounts:
     github: tberardini
 -
@@ -2971,6 +2975,8 @@
      go:
        allow-edit: true
   organization: TAIR
+  groups:
+    - 'http://www.arabidopsis.org'
   accounts:
     github: 'lreiser'
 -
@@ -3266,6 +3272,16 @@
   organization: SGD
   accounts:
     github: 'Shellerstedt'
+-    
+  nickname: "Jane Mendel"
+  uri: 'http://orcid.org/0000-0003-2273-477X'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: WB
+  accounts:
+    github: 'mendelje'
 # -
 #   nickname: ""
 #   uri: ''
