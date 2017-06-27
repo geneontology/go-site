@@ -54,7 +54,7 @@ CATALOG_DETAILS=
 
 %-gafcheck: %.gaf.gz
 	gzip -dcf $< > $*.gaf
-	owltools $(CATALOG_DETAILS) $(GAF_OWL) \
+	owltools --log-error $(CATALOG_DETAILS) $(GAF_OWL) \
 	--gaf $*.gaf \
 	--createReport \
 	--gaf-report-file $@-report.txt \
@@ -75,13 +75,13 @@ CATALOG_DETAILS=
 
 %.gpad.gz: %.gaf.gz
 	gzip -dcf $< > $*.gaf
-	owltools --gaf $*.gaf --write-gpad -o $*.gpad.tmp && mv $*.gpad.tmp $*.gpad
+	owltools --log-error --gaf $*.gaf --write-gpad -o $*.gpad.tmp && mv $*.gpad.tmp $*.gpad
 	rm $*.gaf
 	gzip -f $*.gpad
 
 %.gpi.gz: %.gaf.gz
 	gzip -dcf $< > $*.gaf
-	owltools --gaf $*.gaf --write-gpi -o $*.gpi.tmp && mv $*.gpi.tmp $*.gpi
+	owltools --log-error --gaf $*.gaf --write-gpi -o $*.gpi.tmp && mv $*.gpi.tmp $*.gpi
 	rm $*.gaf
 	gzip -f $*.gpi
 
