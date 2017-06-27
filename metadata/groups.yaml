@@ -35,3 +35,7 @@
 -
   label: 'neXtProt'
   id: https://www.nextprot.org
+-
+  label: 'TAIR'
+  id: http://www.arabidopsis.org
+-
