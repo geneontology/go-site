@@ -1234,6 +1234,8 @@
     noctua:
       go:
         allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
   accounts:
     github: 'edwong57'
 -
@@ -1320,6 +1322,8 @@
     noctua:
       go:
         allow-edit: true
+  groups:
+  - 'http://www.yeastgenome.org'
   accounts:
     github: robnash
 -
@@ -1336,6 +1340,8 @@
   xref: 'GOC:se'
   uri: 'http://orcid.org/0000h-0001-5472-917X'
   organization: SGD
+  groups:
+  - 'http://www.yeastgenome.org'
   accounts:
     github: srengel
 -
@@ -2952,6 +2958,8 @@
      go:
        allow-edit: true
   organization: SGD
+  groups:
+  - 'http://www.yeastgenome.org'
   accounts:
     github: 'owlang'
 -
@@ -3104,6 +3112,8 @@
      go:
        allow-edit: true
   organization: SGD
+  groups:
+  - 'http://www.yeastgenome.org'
   accounts:
     github: 'emilycamozzi'
 -
@@ -3244,6 +3254,8 @@
      go:
        allow-edit: true
   organization: SGD
+  groups:
+  - 'http://www.yeastgenome.org'
   accounts:
     github: 'Jackson73'
 -
@@ -3254,6 +3266,8 @@
      go:
        allow-edit: true
   organization: SGD
+  groups:
+  - 'http://www.yeastgenome.org'
   accounts:
     github: 'marekskrzypek'
 -
@@ -3264,6 +3278,8 @@
      go:
        allow-edit: true
   organization: SGD
+  groups:
+  - 'http://www.yeastgenome.org'
   accounts:
     github: 'kmacpher5'
 -
@@ -3274,6 +3290,8 @@
      go:
        allow-edit: true
   organization: SGD
+  groups:
+    - 'http://www.yeastgenome.org'
   accounts:
     github: 'Shellerstedt'
 -    
