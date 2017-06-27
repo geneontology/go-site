@@ -262,6 +262,10 @@
   uri: 'http://orcid.org/0000-0002-9791-0064'
   organization: BHF-UCL
   comment: 'formerly HGNC'
+  groups:
+    - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
+    - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl'
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl'
   accounts:
     github: RLovering
 -
