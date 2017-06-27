@@ -9,6 +9,6 @@ bg_start $1
 export BG_PID=$!
 echo "Wait for blazegraph to start..."
 sleep 3
-sparta group $ENDPOINT --out target/rules.json --rules ../metadata/rules --schema ../metadata/rules.schema.yml
+sparta group $ENDPOINT --out target/rules.json
 echo "Killing blazegraph on $BG_PID"
 kill $BG_PID

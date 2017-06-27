@@ -9,7 +9,7 @@ def query(rule_number):
     rule_id = "{:0>7}".format(rule_number)
     name = "gorule-{id}.md".format(id=rule_id)
     data_name = "gorule-{id}-test.ttl".format(id=rule_id)
-    rule_path = os.path.join(rules_directory(), name)
+    rule_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), "../../../metadata/rules/", name)
     data_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", data_name)
     return check_rule_with_data(rule_path, data_path)
 

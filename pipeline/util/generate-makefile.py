@@ -108,18 +108,6 @@ def generate_targets(ds, alist):
         # GAF from source
         rule(src_gaf_zip(ds),[targetdir(ds)],
              'wget --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
-    rule(filtered_gaf(ds),src_gaf_zip(ds),
-         'gzip -dcf $< > {src_gaf}\n\tontobio-parse-assocs.py --filter-out IEA -f {src_gaf} -o {filtered_gaf} -m {target}{ds}.report validate'.format(src_gaf=src_gaf(ds), filtered_gaf=filtered_gaf(ds), target=targetdir(ds), ds=ds))
-    rule(owltools_gafcheck(ds),filtered_gaf(ds),
-         '$(OWLTOOLS_GAFCHECK)')
-    rule(filtered_gpad(ds),filtered_gaf(ds),
-         'owltools --log-error --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@')
-    rule(gpi(ds),filtered_gaf(ds),
-         'owltools --log-error --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@')
-    rule(ttl(ds),"{} $(ONT_MERGED)".format(filtered_gaf(ds)),
-         'MINERVA_CLI_MEMORY=16G minerva-cli.sh --log-error $(ONT_MERGED) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@')
-    rule(inferred_ttl(ds), "{} $(ONT_MERGED)".format(ttl(ds)),
-        "mkdir -p target/inferred\n\tarachne --ontology=$(ONT_MERGED) --data=$< --export=$@ --inferred-only")
 
 
 def create_targetdir(ds):
@@ -136,14 +124,16 @@ def src_gaf(ds):
     return "{dir}{ds}-src.gaf".format(dir=targetdir(ds), ds=ds)
 def filtered_gaf(ds):
     return '{dir}{ds}.gaf'.format(dir=targetdir(ds),ds=ds)
+def filtered_data(fmt, ds):
+    return '{dir}{ds}.{fmt}'.format(dir=targetdir(ds), ds=ds, fmt=fmt)
 def noiea_gaf(ds):
     return '{dir}{ds}_noiea.gaf'.format(dir=targetdir(ds),ds=ds)
 def filtered_gpad(ds):
     return '{dir}{ds}.gpad'.format(dir=targetdir(ds),ds=ds)
 def ttl(ds):
-    return '{dir}{ds}.ttl'.format(dir=targetdir(ds),ds=ds)
+    return '{dir}{ds}_cam.ttl'.format(dir=targetdir(ds),ds=ds)
 def inferred_ttl(ds):
-    return "target/inferred/{ds}_inferred.ttl".format(ds=ds)
+    return "{dir}{ds}_inferred.ttl".format(dir=targetdir(ds), ds=ds)
 def owltools_gafcheck(ds):
     return '{dir}{ds}-gafcheck'.format(dir=targetdir(ds),ds=ds)
 def gpi(ds):
@@ -158,7 +148,8 @@ def rule(target,dependencies=[],executable=None, comments=None):
         dependencies = " ".join(dependencies)
     print("{}: {}".format(target,dependencies))
     if executable is not None:
-        print("\t{}".format(executable))
+        for line in executable.split("\n"):
+            print("\t{}".format(line))
     print()
 
 if __name__ == "__main__":
