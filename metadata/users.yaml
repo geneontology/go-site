@@ -341,7 +341,7 @@
   uri: 'http://orcid.org/0000-0002-4532-2703'
   organization: DDB
   groups:
-  - 'http:dictybase.org'
+    - 'http:dictybase.org'
   accounts:
     github: pfey03
 -
@@ -375,8 +375,8 @@
   xref: 'GOC:rjd'
   uri: 'http://orcid.org/0000-0002-2757-5950'
   organization: DDB
-   groups:
-  - 'http:dictybase.org'
+  groups:
+    - 'http:dictybase.org'
   accounts:
     github: rjdodson
 -
