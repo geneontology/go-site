@@ -44,4 +44,6 @@
 -
   label: 'TAIR'
   id: http://www.arabidopsis.org
-
+-
+  label: 'dictyBase'
+  id: http://dictybase.org
