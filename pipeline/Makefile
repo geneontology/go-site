@@ -34,9 +34,9 @@ target/datasets-metadata.json:
 target/go.obo:
 	wget --no-check-certificate $(OBO)/go.obo -O $@.tmp && mv $@.tmp $@ && touch $@
 
-ENVIRONMENT = snapshot
+ONTOLOGY = $(OBO)/go/snapshot/go.json
 target/go-ontology.json:
-	wget --no-check-certificate $(OBO)/go/$(ENVIRONMENT)/go.json -O $@.tmp && mv $@.tmp $@ && touch $@
+	wget --no-check-certificate $(ONTOLOGY) -O $@.tmp && mv $@.tmp $@ && touch $@
 
 # target/GO.xrf_abbs:
 #	node ../scripts/db-xrefs-yaml2legacy.js  -i ../metadata/db-xrefs.yaml  > $@.tmp && mv $@.tmp $@
