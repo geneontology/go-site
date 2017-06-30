@@ -5,13 +5,10 @@ RDFOX_MEM ?= 32G
 GAF_OWL = target/go-gaf.owl
 ONT_MERGED = target/go-graphstore-merged.ttl
 
+
 all: target/Makefile extra_files $(REPORT)
 
 all_blazegraph: all target/blazegraph.jnl
-
-test:
-	$(foo)
-	$(call foo, bar)
 
 .PHONY: clean
 clean:
@@ -37,8 +34,9 @@ target/datasets-metadata.json:
 target/go.obo:
 	wget --no-check-certificate $(OBO)/go.obo -O $@.tmp && mv $@.tmp $@ && touch $@
 
-target/go-snapshot.json:
-	wget --no-check-certificate $(OBO)/go/snapshot/go.json -O $@.tmp && mv $@.tmp $@ && touch $@
+ENVIRONMENT = snapshot
+target/go-ontology.json:
+	wget --no-check-certificate $(OBO)/go/$(ENVIRONMENT)/go.json -O $@.tmp && mv $@.tmp $@ && touch $@
 
 # target/GO.xrf_abbs:
 #	node ../scripts/db-xrefs-yaml2legacy.js  -i ../metadata/db-xrefs.yaml  > $@.tmp && mv $@.tmp $@
@@ -70,9 +68,9 @@ CATALOG_DETAILS=
 	--gaf-run-checks || echo 'errors found' ; touch $@
 	rm -f $*.gaf
 
-%.gaf.gz: %-src.gaf.gz target/go-snapshot.json
+%.gaf.gz: %-src.gaf.gz target/go-ontology.json
 	gzip -dcf $< > $*-src.gaf
-	ontobio-parse-assocs.py -r target/go-snapshot.json --filter-out IEA -f $*-src.gaf -o $*.gaf -m $*.report validate
+	ontobio-parse-assocs.py -r target/go-ontology.json --filter-out IEA -f $*-src.gaf -o $*.gaf -m $*.report validate
 	rm $*-src.gaf
 	gzip -f $*.gaf
 
