@@ -707,6 +707,7 @@
   name: Ensembl database of automatically annotated genomic data
   synonyms:
     - Ensembl
+    - ensembl
   generic_urls:
     - http://www.ensembl.org/
   entity_types:
