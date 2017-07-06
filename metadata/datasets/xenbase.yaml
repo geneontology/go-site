@@ -19,7 +19,7 @@ datasets:
    source: ftp://ftp.xenbase.org/pub/GenePageReports/xenbase.gpi.gz
    entity_type: 
    status: active
-   species_code: Xtr, Xla
+   species_code: Xenopus
    taxa:
     - NCBITaxon:8364
     - NCBITaxon:8355
