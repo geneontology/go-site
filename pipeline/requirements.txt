@@ -1,2 +1,3 @@
 PyYAML==3.12
-ontobio==0.2.10
+ontobio==0.2.12
+pandas
