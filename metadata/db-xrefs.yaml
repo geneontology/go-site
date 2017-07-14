@@ -3227,3 +3227,13 @@
       url_syntax: http://purl.obolibrary.org/obo/plana/references/[example_id]
       example_id: "0000001"
       example_url: http://purl.obolibrary.org/obo/plana/references/0000001
+- database: PROQUEST
+  name: Proquest Dissertations Publishing
+  generic_urls:
+    - http://www.proquest.com
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: https://search.proquest.com/docview/[example_id]
+      example_id: PROQUEST:1426182399
+      example_url: https://search.proquest.com/docview/1426182399
