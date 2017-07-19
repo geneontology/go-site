@@ -919,9 +919,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://gene3d.biochem.ucl.ac.uk/superfamily/?accession=[example_id]
-      example_id: Gene3D:G3DSA:3.30.390.30
-      example_url: http://gene3d.biochem.ucl.ac.uk/superfamily/?accession=G3DSA%3A3.30.390.30
+      url_syntax: http://gene3d.biochem.ucl.ac.uk/search?mode=family&sterm=[example_id]
+      example_id: Gene3D:3.30.390.30
+      example_url: http://gene3d.biochem.ucl.ac.uk/search?mode=family&sterm=3.30.390.30
 - database: GeneDB
   name: GeneDB
   generic_urls:
