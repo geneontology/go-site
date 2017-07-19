@@ -26,6 +26,11 @@
 -
   label: 'ARUK-UCL'
   id: http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl
+  contacts:
+  - name: Ruth Lovering
+    github: RLovering
+  - name: Barbara Kramaz
+    github: BarbaraCzub
 -
   label: 'BHF-UCL'
   id: http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular
