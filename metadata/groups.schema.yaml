@@ -19,3 +19,26 @@ sequence:
         type: str
         required: true
         unique: true
+      "active_from":
+        type: str
+        required: false
+        pattern: /^\d\d\-\d\d\-\d\d\d\d$/
+      "active_to":
+        type: str
+        required: false
+      "contacts":
+        type: seq
+        required: false
+        sequence:
+          - type: map
+            mapping:
+              "name":
+                type: str
+                required: true
+              "emaul":
+                type: str
+                required: false
+              "github":
+                type: str
+                required: false
+
