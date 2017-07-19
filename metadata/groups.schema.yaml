@@ -19,26 +19,18 @@ sequence:
         type: str
         required: true
         unique: true
-      "active_from":
+      "active-from":
         type: str
         required: false
-        pattern: /^\d\d\-\d\d\-\d\d\d\d$/
-      "active_to":
+        pattern: /^\d\d\d\d\-\d\d\-\d\d$/
+      "active-to":
         type: str
         required: false
+        pattern: /^\d\d\d\d\-\d\d\-\d\d$/
       "contacts":
         type: seq
         required: false
         sequence:
-          - type: map
-            mapping:
-              "name":
-                type: str
-                required: true
-              "emaul":
-                type: str
-                required: false
-              "github":
-                type: str
-                required: false
-
+          - type: str
+            ## Pattern lookahead to prevent trailing slashes.
+            pattern: /^(http(s?)\:\/\/\w[\/\.\-\:\w]+)(?<!\/)$/
