@@ -55,7 +55,7 @@ CATALOG_DETAILS=
 
 %-gafcheck: %.gaf.gz
 	gzip -dcf $< > $*.gaf
-	owltools --log-error $(CATALOG_DETAILS) $(GAF_OWL) \
+	owltools --log-info $(CATALOG_DETAILS) $(GAF_OWL) \
 	--gaf $*.gaf \
 	--createReport \
 	--gaf-report-file $@-report.txt \
@@ -70,8 +70,7 @@ CATALOG_DETAILS=
 
 %.gaf.gz: %-src.gaf.gz target/go-ontology.json
 	gzip -dcf $< > $*-src.gaf
-	ontobio-parse-assocs.py -r target/go-ontology.json --filter-out IEA -f $*-src.gaf -o $*_noiea.gaf -m $*_noiea.report validate
-	ontobio-parse-assocs.py -r target/go-ontology.json -f $*-src.gaf -o $*.gaf -m $*.report validate
+	ontobio-parse-assocs.py -r target/go-ontology.json --filter-out IEA --filtered-file $*_noiea.gaf -f $*-src.gaf -o $*.gaf -m $*.report validate
 	rm $*-src.gaf
 	gzip -f $*_noiea.gaf
 	gzip -f $*.gaf

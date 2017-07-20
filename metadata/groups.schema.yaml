@@ -19,3 +19,18 @@ sequence:
         type: str
         required: true
         unique: true
+      "active-from":
+        type: str
+        required: false
+        pattern: /^\d\d\d\d\-\d\d\-\d\d$/
+      "active-to":
+        type: str
+        required: false
+        pattern: /^\d\d\d\d\-\d\d\-\d\d$/
+#      "contacts":
+#        type: seq
+#        required: false
+#        sequence:
+#          - type: str
+#            ## Pattern lookahead to prevent trailing slashes.
+#            pattern: /^(http(s?)\:\/\/\w[\/\.\-\:\w]+)(?<!\/)$/
