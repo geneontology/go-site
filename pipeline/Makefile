@@ -4,6 +4,8 @@ REPORT=target/combined.report
 RDFOX_MEM ?= 32G
 GAF_OWL = target/go-gaf.owl
 ONT_MERGED = target/go-graphstore-merged.ttl
+PY_ENV = target/env
+PY_BIN = $(PY_ENV)/bin
 
 
 all: target/Makefile extra_files $(REPORT)
@@ -53,6 +55,8 @@ $(GAF_OWL):
 
 CATALOG_DETAILS=
 
+PARSE_ASSOCS = $(PY_BIN)/ontobio-parse-assocs.py
+
 %-gafcheck: %.gaf.gz
 	gzip -dcf $< > $*.gaf
 	owltools --log-warning $(CATALOG_DETAILS) $(GAF_OWL) \
@@ -70,7 +74,7 @@ CATALOG_DETAILS=
 
 %.gaf.gz: %-src.gaf.gz target/go-ontology.json
 	gzip -dcf $< > $*-src.gaf
-	python3 ontobio-parse-assocs.py -r target/go-ontology.json --filter-out IEA --filtered-file $*_noiea.gaf -f $*-src.gaf -o $*.gaf -m $*.report validate
+	python3 $(PARSE_ASSOCS) -r target/go-ontology.json --filter-out IEA --filtered-file $*_noiea.gaf -f $*-src.gaf -o $*.gaf -m $*.report validate
 	rm $*-src.gaf
 	gzip -f $*_noiea.gaf
 	gzip -f $*.gaf
