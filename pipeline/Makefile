@@ -29,7 +29,7 @@ extra_files: $(GAF_OWL) target/go.obo target/datasets-metadata.json
 
 # TODO - update
 target/datasets-metadata.json:
-	../scripts/combine-datasets-metadata.py ../metadata/datasets/*yaml > $@.tmp && mv $@.tmp $@
+	python3 ../scripts/combine-datasets-metadata.py ../metadata/datasets/*yaml > $@.tmp && mv $@.tmp $@
 
 target/go.obo:
 	wget --no-check-certificate $(OBO)/go.obo -O $@.tmp && mv $@.tmp $@ && touch $@
@@ -42,7 +42,7 @@ target/go-ontology.json:
 #	node ../scripts/db-xrefs-yaml2legacy.js  -i ../metadata/db-xrefs.yaml  > $@.tmp && mv $@.tmp $@
 
 proc:
-	./util/dataset-metadata-processor.py $(METADATA_DIR)/*.yaml
+	python3 ./util/dataset-metadata-processor.py $(METADATA_DIR)/*.yaml
 
 # ----------------------------------------
 # OWLTools checks
@@ -70,7 +70,7 @@ CATALOG_DETAILS=
 
 %.gaf.gz: %-src.gaf.gz target/go-ontology.json
 	gzip -dcf $< > $*-src.gaf
-	ontobio-parse-assocs.py -r target/go-ontology.json --filter-out IEA --filtered-file $*_noiea.gaf -f $*-src.gaf -o $*.gaf -m $*.report validate
+	python3 ontobio-parse-assocs.py -r target/go-ontology.json --filter-out IEA --filtered-file $*_noiea.gaf -f $*-src.gaf -o $*.gaf -m $*.report validate
 	rm $*-src.gaf
 	gzip -f $*_noiea.gaf
 	gzip -f $*.gaf
