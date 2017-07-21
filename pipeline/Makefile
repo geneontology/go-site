@@ -55,7 +55,7 @@ CATALOG_DETAILS=
 
 %-gafcheck: %.gaf.gz
 	gzip -dcf $< > $*.gaf
-	owltools --log-info $(CATALOG_DETAILS) $(GAF_OWL) \
+	owltools --log-warning $(CATALOG_DETAILS) $(GAF_OWL) \
 	--gaf $*.gaf \
 	--createReport \
 	--gaf-report-file $@-report.txt \
