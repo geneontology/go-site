@@ -4,8 +4,8 @@ REPORT=target/combined.report
 RDFOX_MEM ?= 32G
 GAF_OWL = target/go-gaf.owl
 ONT_MERGED = target/go-graphstore-merged.ttl
-PY_ENV = target/env
-PY_BIN = $(PY_ENV)/bin
+PY_ENV ?= target/env
+PY_BIN ?= $(PY_ENV)/bin
 
 
 all: target/Makefile extra_files $(REPORT)
