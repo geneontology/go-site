@@ -2471,15 +2471,15 @@
       example_url: http://rgd.mcw.edu/generalSearch/RgdSearch.jsp?quickSearch=1&searchKeyword=2004
 - database: RHEA
   name: Rhea, the Annotated Reactions Database
-  description: Rhea is a freely available, manually annotated database of chemical reactions created in collaboration with the Swiss Institute of Bioinformatics (SIB).
+  description: Rhea is a manually annotated database of chemical reactions. All data in Rhea is freely accessible and available for anyone to use.
   generic_urls:
-    - http://www.ebi.ac.uk/rhea/
+    - http://www.rhea-db.org
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.ebi.ac.uk/rhea/reaction.xhtml?id=[example_id]
+      url_syntax: http://www.rhea-db.org/reaction.xhtml?id=[example_id]
       example_id: RHEA:25811
-      example_url: http://www.ebi.ac.uk/rhea/reaction.xhtml?id=25811
+      example_url: http://www.rhea-db.org/reaction.xhtml?id=25811
 - database: RiceSES
   name: Rice Knowledge Bank
   generic_urls:
