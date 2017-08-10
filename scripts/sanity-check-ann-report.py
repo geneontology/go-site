@@ -165,15 +165,23 @@ def main():
         count_gaf_src = obj['actual']['gaf-source']
         count_gaf_prod = obj['actual']['gaf-product']
 
-        ## Checks.
+        ###
+        ### Checks.
+        ###
+
+        ## There must be a product.
         if count_gaf_prod == 0:
             die_screaming('No product found for: ' + aid)
+        ## Product must not be a "severe" reduction from source.
         if count_gaf_prod < (count_gaf_src / 2):
             die_screaming('Severe reduction of product for: ' + aid)
+        ## No fatal remarks should have been made.
         if lines_fatal > 0:
             die_screaming('Fatal error in: ' + aid)
-        if lines_assocs < ( lines_in_file * 0.9):
-            die_screaming('Associations worryingly sparse in: ' + aid)
+        ## Source count should not be more than 10% off from reported
+        ## count.
+        if count_gaf_src < (((lines_in_file - lines_assocs) + lines_skipped) * 0.9):
+            die_screaming('Expected associations worryingly reduced: ' + aid)
 
         print(aid + ' okay...')
         
