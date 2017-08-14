@@ -1309,6 +1309,16 @@
     - type_name: entity
       type_id: BET:0000000
       example_id: IPI:IPI00000005.1
+- database: iPTMnet
+  name: iPTMnet protein post-translational modification database
+  generic_urls:
+    - http://annotation.dbi.udel.edu/iptmnet/
+  entity_types:
+      - type_name: entity
+      type_id: BET:0000000
+      url_syntax: http://annotation.dbi.udel.edu/iptmnet/entry/[example_id]/
+      example_id: iPTM:P06493
+      example_url: http://annotation.dbi.udel.edu/iptmnet/entry/P06493/
 - database: IRIC
   name: International Rice Research Institute
   generic_urls:
