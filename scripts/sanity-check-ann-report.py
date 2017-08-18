@@ -3,11 +3,13 @@
 #### This script assumes access to skyhook, or a flat directory of
 #### pipeline association products.
 ####
-#### Example usage:
+#### Example usage to analyze "whatever":
 ####  python3 sanity-check-ann-report.py --help
+####  mkdir -p /tmp/foo || true
 ####  sshfs -oStrictHostKeyChecking=no -o IdentitiesOnly=true -o IdentityFile=/home/sjcarbon/local/share/secrets/bbop/ssh-keys/foo.skyhook -o idmap=user skyhook@skyhook.berkeleybop.org:/home/skyhook /tmp/mnt/
-####  python3 sanity-check-ann-report.py -v -d /tmp/mnt/master/annotations/
+####  cp /tmp/mnt/master/annotations/whatever* /tmp/foo
 ####  fusermount -u /tmp/mnt
+####  python3 sanity-check-ann-report.py -v -d /tmp/foo/
 ####
 
 import sys
