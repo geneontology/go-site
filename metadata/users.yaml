@@ -41,7 +41,9 @@
     noctua-go:
       allow-edit: true
   xref: 'GOC:hm'
-  uri: 'GOC:hm'
+  uri: 'http://orcid.org/0000-0001-8721-202X'
+  accounts:
+    github: huaiyumi
 -
   nickname: 'Nathan Dunn'
   email-md5:
