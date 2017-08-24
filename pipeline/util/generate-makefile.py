@@ -94,9 +94,8 @@ def generate_targets(ds, alist):
 
     rule(all_files(ds), ds_targets)
 
-    ds_all_ttl = ds_targets + [inferred_ttl(ds), ttl(ds)]
+    ds_all_ttl = ds_targets + [ttl(ds)]
     rule(all_ttl(ds), ds_all_ttl)
-
 
     rule(targetdir(ds),[],
          'mkdir -p '+targetdir(ds))
@@ -118,6 +117,8 @@ def all_files(ds):
     return 'all_'+ds
 def all_ttl(ds):
     return 'ttl_all_'+ds
+def all_asserted_ttl(ds):
+    return 'ttl_asserted_all_'+ds
 def src_gaf_zip(ds):
     return '{dir}{ds}-src.gaf.gz'.format(dir=targetdir(ds),ds=ds)
 def src_gaf(ds):
