@@ -127,12 +127,9 @@ $(ONT_MERGED):
 .PRECIOUS: $(ONT_MERGED)
 
 # $(REPORT)
-target/rdf: target/noctua-models $(ONT_MERGED)
+target/rdf: $(ONT_MERGED)
 	mkdir -p target/rdf
-	cp target/groups/*/*_inferred.ttl target/inferred
 	cp target/groups/*/*_cam.ttl target/rdf/
-	cp target/noctua-models/models/* target/rdf/
-	cp $(ONT_MERGED) target/rdf/go-graphstore-merged.ttl
 
 BGJAR = target/jars/blazegraph-jar.jar
 $(BGJAR):
@@ -145,10 +142,15 @@ BG = java -server -XX:+UseG1GC -Xmx$(BGMEM) -cp $(BGJAR) com.bigdata.rdf.store.D
 # Load blazegraph
 
 BG_PORT = 8899
+NOCTUA_GO_CAMS = ".*model\\.geneontology\\.org.*"
+CAM_GRAPH_QUERY = 'SELECT ?source_graph WHERE { { SELECT DISTINCT ?source_graph WHERE { GRAPH ?source_graph { ?s ?p ?o . } } } FILTER regex(str(?source_graph), $(NOCTUA_GO_CAMS)) }'
+BG_PROPERTIES = conf/blazegraph.properties
+LOAD_TARGETS = $(ONT_MERGED) target/rdf target/noctua-models/models
 
-target/blazegraph.jnl: $(BGJAR) target/rdf target/inferred
-	$(BG) -defaultGraph http://geneontology.org/rdf/ conf/blazegraph.properties target/rdf
-	$(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties target/inferred/
+
+target/blazegraph.jnl: $(BGJAR) target/rdf target/noctua-models
+	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties load --use-ontology-graph $(LOAD_TARGETS)
+	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(ONT_MERGED)
 
 run-sparta: target/blazegraph.jnl
 	./triplestore-rulecheck.sh 8898
