@@ -152,6 +152,17 @@ target/blazegraph.jnl: $(BGJAR) target/rdf target/noctua-models
 	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties load --use-ontology-graph $(LOAD_TARGETS)
 	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(ONT_MERGED)
 
+target/blazegraph-internal.jnl: target/blazegraph.jnl
+	cp $< $@
+	blazegraph-runner --journal=$@ update sparql/insert/insert_inferred_graph_link.sparql
+	blazegraph-runner --journal=$@ update sparql/insert/insert_gaf_metadata.sparql
+	blazegraph-runner --journal=$@ update sparql/insert/insert_noctua_metadata.sparql
+	blazegraph-runner --journal=$@ update sparql/insert/insert_ontology_metadata.sparql
+
+target/blazegraph-production.jnl: target/blazegraph-internal.jnl
+	cp $< $@
+	blazegraph-runner --journal=$@ update sparql/delete/delete_non_production.sparql
+
 run-sparta: target/blazegraph.jnl
 	./triplestore-rulecheck.sh 8898
 

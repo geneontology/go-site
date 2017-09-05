@@ -1,0 +1,62 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <http://geneontology.org/>
+
+SELECT ?nonprod ?production ?allnoctua (?nonprod + ?production as ?computedtotal)
+WHERE {
+
+  {
+    SELECT (COUNT(?nps) as ?nonprod) WHERE {
+      GRAPH ?npg {
+        ?npg :graphType :noctuaCam .
+        ?nps ?npp ?npo  .
+      }
+      MINUS {
+        {
+          GRAPH ?npg {
+            ?npg <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
+            ?nps ?npp ?npo  .
+          }
+        } UNION {
+          GRAPH ?npg {
+            ?npg :inferredFrom ?prod .
+            ?nps ?npp ?npo
+          }
+          GRAPH ?prod {
+            ?prod <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
+            ?nps ?npp ?npo
+          }
+        }
+      }
+    }
+  }
+  {
+    SELECT (COUNT(?ps) as ?production) WHERE {
+      {
+        {
+          GRAPH ?prodg {
+            ?prodg <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
+            ?ps ?pp ?po .
+          }
+        } UNION {
+          GRAPH ?prodg {
+            ?prodg :inferredFrom ?jprod .
+            ?ps ?pp ?po .
+          }
+          GRAPH ?jprod {
+            ?jprod <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
+            ?ps ?pp ?po .
+          }
+        }
+      }
+    }
+  }
+  {
+    SELECT (COUNT(?alls) as ?allnoctua) WHERE {
+      GRAPH ?allg {
+        ?allg :graphType :noctuaCam .
+        ?alls ?allp ?allo .
+      }
+    }
+  }
+}
