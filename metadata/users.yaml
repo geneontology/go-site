@@ -1784,10 +1784,16 @@
   nickname: 'Nicky Mulder'
   organization: UniProt
 -
-  uri: 'GOC:pm2'
-  xref: 'GOC:pm2'
   nickname: 'Patrick Masson'
+  xref: 'GOC:pm2'
+  uri: 'http://orcid.org/0000-0001-7646-0052'
   organization: UniProt
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  accounts: 
+    github: pmasson55
 -
   uri: 'GOC:pdr'
   xref: 'GOC:pdr'
@@ -1806,7 +1812,7 @@
       allow-write: true
   organization: UniProt
   accounts: 
-    github: pgarmiri 
+    github: pgarmiri
 -
   uri: 'GOC:plm'
   xref: 'GOC:plm'
