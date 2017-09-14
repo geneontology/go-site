@@ -57,7 +57,7 @@ CATALOG_DETAILS=
 
 PARSE_ASSOCS = $(PY_BIN)/ontobio-parse-assocs.py
 
-%-gafcheck: %.gaf.gz
+%-gafcheck: %.gaf.gz $(GAF_OWL)
 	gzip -dcf $< > $*.gaf
 	owltools --log-warning $(CATALOG_DETAILS) $(GAF_OWL) \
 	--gaf $*.gaf \
@@ -93,7 +93,7 @@ PARSE_ASSOCS = $(PY_BIN)/ontobio-parse-assocs.py
 
 %_cam.ttl: %.gaf.gz $(ONT_MERGED)
 	gzip -dcf  $< > $*.gaf
-	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(ONT_MERGED) --gaf $*.gaf --gaf-lego-individuals --skip-merge --format turtle -o $*_cam.ttl.tmp && mv $*_cam.ttl.tmp $*_cam.ttl
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh --log-error $(ONT_MERGED) --gaf $*.gaf --gaf-lego-individuals --skip-merge --format turtle -o $*_cam.ttl.tmp && mv $*_cam.ttl.tmp $*_cam.ttl
 	rm $*.gaf
 
 %_inferred.ttl: %_cam.ttl
@@ -163,8 +163,8 @@ target/blazegraph-production.jnl: target/blazegraph-internal.jnl
 	cp $< $@
 	blazegraph-runner --journal=$@ update sparql/delete/delete_non_production.sparql
 
-run-sparta: target/blazegraph.jnl
-	./triplestore-rulecheck.sh 8898
+target/sparta-report.json: target/blazegraph-production.jnl
+	./triplestore-rulecheck.sh 8898 $< $@
 
 #
 # load-inferences: target/rdf/rdfox.ttl

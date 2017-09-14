@@ -10,7 +10,7 @@
   </context-param>
   <context-param>
     <param-name>queryTimeout</param-name>
-    <param-value>60000</param-value>
+    <param-value>3000000</param-value>
   </context-param>
   <filter>
     <filter-name>cross-origin</filter-name>
