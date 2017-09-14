@@ -106,7 +106,7 @@ def generate_targets(ds, alist):
         url = gaf['source']
         # GAF from source
         rule(src_gaf_zip(ds),[targetdir(ds)],
-             'wget --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
+             'wget --retry-connrefused --waitretry=10 -t 10 --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
 
 def skip_source(ds, data):
     types = [a['type'] for a in data]
