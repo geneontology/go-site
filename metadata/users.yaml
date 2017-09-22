@@ -76,6 +76,7 @@
       allow-management: true
   xref: 'GOC:sjc'
   uri: 'http://orcid.org/0000-0001-8244-1536'
+  organization: LBL
   groups:
     - 'http://geneontology.org'
     - 'http://planteome.org'
@@ -90,9 +91,6 @@
   nickname: 'Jeremy Nguyen Xuan'
   email-md5:
     - d62320e131b827615ba8da3decafa6f3
-  authorizations:
-    noctua-go:
-      allow-edit: true
   xref: 'GOC:jnx'
   uri: 'GOC:jnx'
 -
@@ -117,15 +115,6 @@
   nickname: 'Heiko Dietze'
   email-md5:
     - 61ab06ea85d8658a7e17cc30295dafbd
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-review: true
-      allow-freeform: false
-      allow-freeform-litxref-optional: true
-      allow-management: true
   xref: 'GOC:hd'
   uri: 'http://orcid.org/0000-0003-0234-1688'
 -
@@ -2458,7 +2447,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-  organization: LBNL
+  organization: LBL
   accounts:
     github: monicacecilia
 -
@@ -3312,6 +3301,15 @@
   organization: WB
   accounts:
     github: 'mendelje'
+-    
+  nickname: "Nemo Nobody"
+  comment: "Demonstrastion user for various software."
+  uri: 'GOC:nemo'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: LBL
 # -
 #   nickname: ""
 #   uri: ''
