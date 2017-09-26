@@ -114,12 +114,10 @@ def test(ctx, endpoint, rule_path, verbose, schema, out):
 @click.argument("turtle", type=click.Path(exists=True))
 @click.option("sparql_file", "--file", "-f", type=click.File(), required=True)
 def local(turtle, sparql_file):
-    g = rdflib.Graph()
-    g.parse(turtle, format="ttl")
+    g = rdflib.ConjunctiveGraph()
+    g.parse(turtle, format="trig")
     results = g.query(sparql_file.read())
-
-    for row in results:
-        click.echo(row)
+    click.echo(results.serialize(format="txt"))
 
 
 def rules_directory(path=None):
