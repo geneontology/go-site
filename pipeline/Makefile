@@ -164,7 +164,7 @@ target/blazegraph-production.jnl: target/blazegraph-internal.jnl
 	blazegraph-runner --journal=$@ update sparql/delete/delete_non_production.sparql
 
 target/sparta-report.json: target/blazegraph-production.jnl
-	./triplestore-rulecheck.sh 8898 $< $@
+	PY_ENV=$(PY_ENV) ./triplestore-rulecheck.sh 8898 $< $@
 
 #
 # load-inferences: target/rdf/rdfox.ttl
