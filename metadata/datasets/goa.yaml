@@ -1,7 +1,7 @@
 id: goa
 label: EBI Gene Ontology Annotation Database
 description: "GO data for EBI Gene Ontology Annotation Database"
-project_name: "UniProt GO Annotation program (UniProt-GOA)"
+project_name: "EBI GO Annotation program (GOA)"
 contact_email: "goa@ebi.ac.uk"
 project_url: "http://www.ebi.ac.uk/GOA"
 funding_source: "unspecified"
