@@ -15,7 +15,6 @@ datasets:
    type: gaf
    dataset: zfin
    submitter: zfin
-   compression: gzip
    source: https://zfin.org/downloads/gene_association.zfin.gz 
    entity_type: 
    status: active
