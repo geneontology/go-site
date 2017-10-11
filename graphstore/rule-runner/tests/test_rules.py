@@ -2,6 +2,7 @@ import unittest
 import rdflib
 import os
 
+from rdflib import term
 from rulerunner.main import load_yamldown, validate, rules_directory
 from rulerunner import rule
 
@@ -22,8 +23,9 @@ def check_rule_with_data(rule_path, data_path):
     if not rule.sparql_from(r):
         raise Exception("No SPARQL impl for rule {}".format(rule_path))
 
-    g = rdflib.Graph()
-    g.parse(data_path, format="ttl")
+    g = rdflib.graph.ConjunctiveGraph()
+    test_data_graph = g.parse(data_path, format="ttl", publicID="http://geneontology.org/rules/test")
+    test_data_graph.add((term.URIRef("http://geneontology.org/rules/test"), term.URIRef("http://geneontology.org/graphType"), term.URIRef("http://geneontology.org/gafCam")))
     results = g.query(rule.sparql_from(r))
     return results
 

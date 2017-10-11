@@ -32,7 +32,7 @@
   accounts:
     github: thomaspd
   xref: 'GOC:pt'
-  uri: 'GOC:pt'
+  uri: 'http://orcid.org/0000-0002-9074-3507'
 -
   nickname: 'Huaiyu Mi'
   email-md5:
@@ -41,7 +41,9 @@
     noctua-go:
       allow-edit: true
   xref: 'GOC:hm'
-  uri: 'GOC:hm'
+  uri: 'http://orcid.org/0000-0001-8721-202X'
+  accounts:
+    github: huaiyumi
 -
   nickname: 'Nathan Dunn'
   email-md5:
@@ -74,6 +76,7 @@
       allow-management: true
   xref: 'GOC:sjc'
   uri: 'http://orcid.org/0000-0001-8244-1536'
+  organization: LBL
   groups:
     - 'http://geneontology.org'
     - 'http://planteome.org'
@@ -88,9 +91,6 @@
   nickname: 'Jeremy Nguyen Xuan'
   email-md5:
     - d62320e131b827615ba8da3decafa6f3
-  authorizations:
-    noctua-go:
-      allow-edit: true
   xref: 'GOC:jnx'
   uri: 'GOC:jnx'
 -
@@ -115,15 +115,6 @@
   nickname: 'Heiko Dietze'
   email-md5:
     - 61ab06ea85d8658a7e17cc30295dafbd
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-review: true
-      allow-freeform: false
-      allow-freeform-litxref-optional: true
-      allow-management: true
   xref: 'GOC:hd'
   uri: 'http://orcid.org/0000-0003-0234-1688'
 -
@@ -1782,10 +1773,16 @@
   nickname: 'Nicky Mulder'
   organization: UniProt
 -
-  uri: 'GOC:pm2'
-  xref: 'GOC:pm2'
   nickname: 'Patrick Masson'
+  xref: 'GOC:pm2'
+  uri: 'http://orcid.org/0000-0001-7646-0052'
   organization: UniProt
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  accounts: 
+    github: pmasson55
 -
   uri: 'GOC:pdr'
   xref: 'GOC:pdr'
@@ -1804,7 +1801,7 @@
       allow-write: true
   organization: UniProt
   accounts: 
-    github: pgarmiri 
+    github: pgarmiri
 -
   uri: 'GOC:plm'
   xref: 'GOC:plm'
@@ -2450,7 +2447,7 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
-  organization: LBNL
+  organization: LBL
   accounts:
     github: monicacecilia
 -
@@ -3304,6 +3301,28 @@
   organization: WB
   accounts:
     github: 'mendelje'
+-    
+  nickname: "Nemo Nobody"
+  comment: "Demonstrastion user for various software."
+  uri: 'GOC:nemo'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: LBL
+-
+  nickname: "Hyeongsik Kim"
+  uri: 'http://orcid.org/0000-0002-3002-9838'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  organization: LBL
+  groups:
+    - 'http://lbl.gov'
+    - 'http://geneontology.org'
+  accounts:
+    github: 'yy20716'
 # -
 #   nickname: ""
 #   uri: ''

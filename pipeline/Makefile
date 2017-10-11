@@ -4,6 +4,8 @@ REPORT=target/combined.report
 RDFOX_MEM ?= 32G
 GAF_OWL = target/go-gaf.owl
 ONT_MERGED = target/go-graphstore-merged.ttl
+PY_ENV ?= target/env
+PY_BIN ?= $(PY_ENV)/bin
 
 
 all: target/Makefile extra_files $(REPORT)
@@ -29,7 +31,7 @@ extra_files: $(GAF_OWL) target/go.obo target/datasets-metadata.json
 
 # TODO - update
 target/datasets-metadata.json:
-	../scripts/combine-datasets-metadata.py ../metadata/datasets/*yaml > $@.tmp && mv $@.tmp $@
+	python3 ../scripts/combine-datasets-metadata.py ../metadata/datasets/*yaml > $@.tmp && mv $@.tmp $@
 
 target/go.obo:
 	wget --no-check-certificate $(OBO)/go.obo -O $@.tmp && mv $@.tmp $@ && touch $@
@@ -42,7 +44,7 @@ target/go-ontology.json:
 #	node ../scripts/db-xrefs-yaml2legacy.js  -i ../metadata/db-xrefs.yaml  > $@.tmp && mv $@.tmp $@
 
 proc:
-	./util/dataset-metadata-processor.py $(METADATA_DIR)/*.yaml
+	python3 ./util/dataset-metadata-processor.py $(METADATA_DIR)/*.yaml
 
 # ----------------------------------------
 # OWLTools checks
@@ -53,9 +55,11 @@ $(GAF_OWL):
 
 CATALOG_DETAILS=
 
-%-gafcheck: %.gaf.gz
+PARSE_ASSOCS = $(PY_BIN)/ontobio-parse-assocs.py
+
+%-gafcheck: %.gaf.gz $(GAF_OWL)
 	gzip -dcf $< > $*.gaf
-	owltools --log-info $(CATALOG_DETAILS) $(GAF_OWL) \
+	owltools --log-warning $(CATALOG_DETAILS) $(GAF_OWL) \
 	--gaf $*.gaf \
 	--createReport \
 	--gaf-report-file $@-report.txt \
@@ -70,7 +74,7 @@ CATALOG_DETAILS=
 
 %.gaf.gz: %-src.gaf.gz target/go-ontology.json
 	gzip -dcf $< > $*-src.gaf
-	ontobio-parse-assocs.py -r target/go-ontology.json --filter-out IEA --filtered-file $*_noiea.gaf -f $*-src.gaf -o $*.gaf -m $*.report validate
+	python3 $(PARSE_ASSOCS) -r target/go-ontology.json --filter-out IEA --filtered-file $*_noiea.gaf -f $*-src.gaf -o $*.gaf -m $*.report validate
 	rm $*-src.gaf
 	gzip -f $*_noiea.gaf
 	gzip -f $*.gaf
@@ -89,7 +93,7 @@ CATALOG_DETAILS=
 
 %_cam.ttl: %.gaf.gz $(ONT_MERGED)
 	gzip -dcf  $< > $*.gaf
-	MINERVA_CLI_MEMORY=16G minerva-cli.sh $(ONT_MERGED) --gaf $*.gaf --gaf-lego-individuals --skip-merge --format turtle -o $*_cam.ttl.tmp && mv $*_cam.ttl.tmp $*_cam.ttl
+	MINERVA_CLI_MEMORY=16G minerva-cli.sh --log-error $(ONT_MERGED) --gaf $*.gaf --gaf-lego-individuals --skip-merge --format turtle -o $*_cam.ttl.tmp && mv $*_cam.ttl.tmp $*_cam.ttl
 	rm $*.gaf
 
 %_inferred.ttl: %_cam.ttl
@@ -123,12 +127,9 @@ $(ONT_MERGED):
 .PRECIOUS: $(ONT_MERGED)
 
 # $(REPORT)
-target/rdf: target/noctua-models $(ONT_MERGED)
+target/rdf: $(ONT_MERGED)
 	mkdir -p target/rdf
-	cp target/groups/*/*_inferred.ttl target/inferred
 	cp target/groups/*/*_cam.ttl target/rdf/
-	cp target/noctua-models/models/* target/rdf/
-	cp $(ONT_MERGED) target/rdf/go-graphstore-merged.ttl
 
 BGJAR = target/jars/blazegraph-jar.jar
 $(BGJAR):
@@ -141,13 +142,29 @@ BG = java -server -XX:+UseG1GC -Xmx$(BGMEM) -cp $(BGJAR) com.bigdata.rdf.store.D
 # Load blazegraph
 
 BG_PORT = 8899
+NOCTUA_GO_CAMS = ".*model\\.geneontology\\.org.*"
+CAM_GRAPH_QUERY = 'SELECT ?source_graph WHERE { { SELECT DISTINCT ?source_graph WHERE { GRAPH ?source_graph { ?s ?p ?o . } } } FILTER regex(str(?source_graph), $(NOCTUA_GO_CAMS)) }'
+BG_PROPERTIES = conf/blazegraph.properties
+LOAD_TARGETS = $(ONT_MERGED) target/rdf target/noctua-models/models
 
-target/blazegraph.jnl: $(BGJAR) target/rdf target/inferred
-	$(BG) -defaultGraph http://geneontology.org/rdf/ conf/blazegraph.properties target/rdf
-	$(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties target/inferred/
 
-run-sparta: target/blazegraph.jnl
-	./triplestore-rulecheck.sh 8898
+target/blazegraph.jnl: $(BGJAR) target/rdf target/noctua-models
+	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties load --use-ontology-graph $(LOAD_TARGETS)
+	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(ONT_MERGED)
+
+target/blazegraph-internal.jnl: target/blazegraph.jnl
+	cp $< $@
+	blazegraph-runner --journal=$@ update sparql/insert/insert_inferred_graph_link.sparql
+	blazegraph-runner --journal=$@ update sparql/insert/insert_gaf_metadata.sparql
+	blazegraph-runner --journal=$@ update sparql/insert/insert_noctua_metadata.sparql
+	blazegraph-runner --journal=$@ update sparql/insert/insert_ontology_metadata.sparql
+
+target/blazegraph-production.jnl: target/blazegraph-internal.jnl
+	cp $< $@
+	blazegraph-runner --journal=$@ update sparql/delete/delete_non_production.sparql
+
+target/sparta-report.json: target/blazegraph-production.jnl
+	PY_ENV=$(PY_ENV) ./triplestore-rulecheck.sh 8898 $< $@
 
 #
 # load-inferences: target/rdf/rdfox.ttl

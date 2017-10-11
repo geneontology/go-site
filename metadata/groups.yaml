@@ -47,3 +47,6 @@
 -
   label: 'dictyBase'
   id: http://dictybase.org
+-
+  label: 'WB'
+  id: http://www.wormbase.org

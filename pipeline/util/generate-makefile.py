@@ -10,7 +10,7 @@ import argparse
 import yaml
 from json import dumps
 
-SKIP = ["goa_pdb"]
+SKIP = ["goa_pdb", "goa_uniprot_all", "goa_uniprot_gcrp"]
 
 def main():
 
@@ -53,7 +53,7 @@ def main():
     targets = [all_files(ds) for ds in artifacts_by_dataset.keys()]
     rule('all_targets', targets)
 
-    simple_ds_list = [ds for ds in artifacts_by_dataset.keys() if ds != 'goa_uniprot_all' and ds != 'goa_uniprot_gcrp' and ds not in SKIP]
+    simple_ds_list = [ds for (ds, data) in artifacts_by_dataset.items() if not skip_source(ds, data)]
     simple_targets = [all_files(ds) for ds in simple_ds_list]
     rule('all_targets_simple', simple_targets, comments='Excludes aggregated (goa_uniprot)')
 
@@ -94,9 +94,8 @@ def generate_targets(ds, alist):
 
     rule(all_files(ds), ds_targets)
 
-    ds_all_ttl = ds_targets + [inferred_ttl(ds), ttl(ds)]
+    ds_all_ttl = ds_targets + [ttl(ds)]
     rule(all_ttl(ds), ds_all_ttl)
-
 
     rule(targetdir(ds),[],
          'mkdir -p '+targetdir(ds))
@@ -107,8 +106,11 @@ def generate_targets(ds, alist):
         url = gaf['source']
         # GAF from source
         rule(src_gaf_zip(ds),[targetdir(ds)],
-             'wget --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
+             'wget --retry-connrefused --waitretry=10 -t 10 --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
 
+def skip_source(ds, data):
+    types = [a['type'] for a in data]
+    return ds in SKIP or ('gaf' not in types and 'gpad' not in types)
 
 def create_targetdir(ds):
     return 'create_targetdir_'+ds
