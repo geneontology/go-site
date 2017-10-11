@@ -3310,6 +3310,19 @@
      go:
        allow-edit: true
   organization: LBL
+-
+  nickname: "Hyeongsik Kim"
+  uri: 'http://orcid.org/0000-0002-3002-9838'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  organization: LBL
+  groups:
+    - 'http://lbl.gov'
+    - 'http://geneontology.org'
+  accounts:
+    github: 'yy20716'
 # -
 #   nickname: ""
 #   uri: ''
