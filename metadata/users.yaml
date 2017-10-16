@@ -1938,6 +1938,8 @@
   uri: 'GOC:dr'
   xref: 'GOC:dr'
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: 'draciti'
 -
@@ -1958,6 +1960,8 @@
   xref: 'GOC:kmv'
   uri: 'http://orcid.org/0000-0002-1706-4196'
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: 'vanaukenk'
   comment: 'GOC:kva is also used; occasionally MAH goes through and updates to GOC:kmv'
@@ -1973,6 +1977,8 @@
   xref: 'GOC:rk'
   uri: 'http://orcid.org/0000-0002-1478-7671'
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: 'rankishore'
 -
@@ -2869,6 +2875,8 @@
     noctua-go:
       allow-edit: true
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: tuli
 -
@@ -2945,6 +2953,8 @@
       go:
         allow-edit: true
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: 'chris-grove'
 -
@@ -3044,6 +3054,8 @@
      go:
        allow-edit: true
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: 'goldturtle'
 -
@@ -3054,6 +3066,8 @@
      go:
        allow-edit: true
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: 'kyook'
 -
@@ -3299,6 +3313,8 @@
      go:
        allow-edit: true
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: 'mendelje'
 -    
