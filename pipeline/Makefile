@@ -57,24 +57,24 @@ CATALOG_DETAILS=
 
 PARSE_ASSOCS = $(PY_BIN)/ontobio-parse-assocs.py
 
-%-gafcheck: %.gaf.gz $(GAF_OWL)
+%-report.txt: %.gaf.gz $(GAF_OWL)
 	gzip -dcf $< > $*.gaf
 	owltools --log-warning $(CATALOG_DETAILS) $(GAF_OWL) \
 	--gaf $*.gaf \
 	--createReport \
-	--gaf-report-file $@-report.txt \
-	--gaf-report-summary-file $@-summary.txt \
-	--gaf-prediction-file $@-prediction.gaf \
-	--gaf-prediction-report-file $@-prediction-report.txt \
-	--gaf-validation-unsatisfiable-module $@-incoherent.owl \
-	--experimental-gaf-prediction-file $@-prediction-experimental.gaf \
-	--experimental-gaf-prediction-report-file $@-prediction-experimental-report.txt \
-	--gaf-run-checks || echo 'errors found' ; touch $@
+	--gaf-report-file $*-report.txt \
+	--gaf-report-summary-file $*-summary.txt \
+	--gaf-prediction-file $*-prediction.gaf \
+	--gaf-prediction-report-file $*-prediction-report.txt \
+	--gaf-validation-unsatisfiable-module $*-incoherent.owl \
+	--experimental-gaf-prediction-file $*-prediction-experimental.gaf \
+	--experimental-gaf-prediction-report-file $*-prediction-experimental-report.txt \
+	--gaf-run-checks || echo 'errors found'
 	rm -f $*.gaf
 
 %.gaf.gz: %-src.gaf.gz target/go-ontology.json
 	gzip -dcf $< > $*-src.gaf
-	python3 $(PARSE_ASSOCS) -r target/go-ontology.json --filter-out IEA --filtered-file $*_noiea.gaf -f $*-src.gaf -o $*.gaf -m $*.report validate
+	python3 $(PARSE_ASSOCS) -r target/go-ontology.json --filter-out IEA --filtered-file $*_noiea.gaf -f $*-src.gaf -o $*.gaf -m $*.report.md validate
 	rm $*-src.gaf
 	gzip -f $*_noiea.gaf
 	gzip -f $*.gaf
