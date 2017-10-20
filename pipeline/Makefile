@@ -1,6 +1,6 @@
 OBO= http://purl.obolibrary.org/obo
 METADATA_DIR=../metadata/datasets
-REPORT=target/combined.report
+REPORT=target/combined.report.md
 RDFOX_MEM ?= 32G
 GAF_OWL = target/go-gaf.owl
 ONT_MERGED = target/go-graphstore-merged.ttl
@@ -112,7 +112,7 @@ target/Makefile: ./util/generate-makefile.py
 include target/Makefile
 
 $(REPORT): target/Makefile all_targets
-	cat target/groups/*/*.report > $@
+	cat target/groups/*/*.report.md > $@
 
 target/noctua-models:
 	# If target/noctua-models does not exist, then clone it
