@@ -74,7 +74,7 @@ PARSE_ASSOCS = $(PY_BIN)/ontobio-parse-assocs.py
 
 %.gaf.gz: %-src.gaf.gz target/go-ontology.json
 	gzip -dcf $< > $*-src.gaf
-	python3 $(PARSE_ASSOCS) -r target/go-ontology.json --filter-out IEA --filtered-file $*_noiea.gaf -f $*-src.gaf -o $*.gaf -m $*.report.md validate
+	python3 $(PARSE_ASSOCS) -r target/go-ontology.json --filter-out IEA --filtered-file $*_noiea.gaf -f $*-src.gaf -o $*.gaf --report-md $*.report.md --report-json $*.report.json validate
 	rm $*-src.gaf
 	gzip -f $*_noiea.gaf
 	gzip -f $*.gaf
@@ -94,6 +94,7 @@ PARSE_ASSOCS = $(PY_BIN)/ontobio-parse-assocs.py
 %_cam.ttl: %.gaf.gz $(ONT_MERGED)
 	gzip -dcf  $< > $*.gaf
 	MINERVA_CLI_MEMORY=16G minerva-cli.sh --log-error $(ONT_MERGED) --gaf $*.gaf --gaf-lego-individuals --skip-merge --format turtle -o $*_cam.ttl.tmp && mv $*_cam.ttl.tmp $*_cam.ttl
+	gzip -cf $@ > $@.gz
 	rm $*.gaf
 
 %_inferred.ttl: %_cam.ttl
