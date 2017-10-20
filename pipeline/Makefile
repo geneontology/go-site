@@ -57,12 +57,12 @@ CATALOG_DETAILS=
 
 PARSE_ASSOCS = $(PY_BIN)/ontobio-parse-assocs.py
 
-%-report.txt: %.gaf.gz $(GAF_OWL)
+%-owltools-check.txt: %.gaf.gz $(GAF_OWL)
 	gzip -dcf $< > $*.gaf
 	owltools --log-warning $(CATALOG_DETAILS) $(GAF_OWL) \
 	--gaf $*.gaf \
 	--createReport \
-	--gaf-report-file $*-report.txt \
+	--gaf-report-file $*-owltools-check.txt \
 	--gaf-report-summary-file $*-summary.txt \
 	--gaf-prediction-file $*-prediction.gaf \
 	--gaf-prediction-report-file $*-prediction-report.txt \

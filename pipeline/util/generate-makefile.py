@@ -142,7 +142,7 @@ def ttl(ds):
 def inferred_ttl(ds):
     return "{dir}{ds}_inferred.ttl".format(dir=targetdir(ds), ds=ds)
 def owltools_gafcheck(ds):
-    return '{dir}{ds}-gafcheck'.format(dir=targetdir(ds),ds=ds)
+    return '{dir}{ds}-owltools-check.txt'.format(dir=targetdir(ds),ds=ds)
 def gpi(ds):
     return '{dir}{ds}.gpi'.format(dir=targetdir(ds),ds=ds)
 def gzip(f):
