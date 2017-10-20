@@ -79,8 +79,10 @@ def main():
         ###
         
         ## Read.
+        ## WARNING: Using the markdown version is a holdover from when
+        ## the markdown version was the only version.
         read_data = None
-        with open(args.directory + '/' + aid + '.report') as f:
+        with open(args.directory + '/' + aid + '.report.md') as f:
             read_data = f.read()
         f.closed
 
