@@ -3339,6 +3339,18 @@
     - 'http://geneontology.org'
   accounts:
     github: 'yy20716'
+-
+  nickname: "Jae Cho"
+  uri: 'http://orcid.org/0000-0002-6534-116X'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  organization: WB
+  groups:
+    - 'http://www.wormbase.org'
+  accounts:
+    github: 'WBjae'
 # -
 #   nickname: ""
 #   uri: ''
