@@ -33,7 +33,7 @@ InterPro,Alex Mitchell,@almitchell
 InterPro,Lorna Richardson,@happy-lorna
 InterPro,Neil Rawlings,@ndrawlings
 InterPro,Hsin-Yu Chang,@EBI-Hsinyu
-JCVI,,
+JCVI,Not actively maintainted,
 LIFEdb,Stefan Wiemann,
 MENGO,,
 MGI,Judy Blake,@judyblake 
@@ -42,12 +42,12 @@ MGI,Harold Drabkin,@hdrabkin
 MGI,David Hill,@ukemi
 MTBBASE,,
 NTNU_SB,Astrid Lægreid,
-PAMGO_GAT,,
-PAMGO_MGG,,
+PAMGO_GAT,Not actively maintainted,
+PAMGO_MGG,Not actively maintainted,
 ParkinsonsUK-UCL,Barbara Kramarz,@BarbaraCzub
 ParkinsonsUK-UCL,Paul Denny,@Pauldenny
 ParkinsonsUK-UCL,Ruth Lovering,@RLovering
-PINC,Pascale Gaudet,@pgaudet
+PINC,Not actively maintainted- contact Pascale Gaudet,@pgaudet
 PomBase,ValWood,@valwood
 PomBase,Midori Harris,@mah11
 PomBase,Antonia Lock,@antonialock
@@ -59,7 +59,7 @@ SGD,Stacia Engel,@srengel
 SYSCILIA_CCNET,Karen Christie,@krchristie
 TAIR,Tanya Berardini,@tberardini
 TAIR,Leonore Reiser,@lreiser
-TIGR,,
+TIGR,Not actively maintainted,
 UniProt (Swiss-Prot/Geneva),Sylvain Poux,@sylvainpoux 
 UniProt (EBI),Penelope Garmiri,@pgarmiri
 UniProt (EBI),Georghiou,@ggeorghiou
