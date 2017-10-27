@@ -3258,6 +3258,19 @@
   accounts:
     github: 'kshefchek'
 -
+  nickname: "Maureen Hoatlin"
+  uri: 'http://orcid.org/0000-0002-6521-9543'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: OHSU
+  groups:
+    - 'http://monarchinitiative.org'
+    - 'https://ncats.nih.gov/translator'
+  accounts:
+    github: 'dnahotline'
+-
   nickname: "Terry L. Jackson"
   uri: 'http://orcid.org/0000-0003-2387-6411'
   authorizations:
