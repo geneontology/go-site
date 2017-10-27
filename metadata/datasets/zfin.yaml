@@ -31,7 +31,6 @@ datasets:
    type: gpi
    dataset: zfin
    submitter: zfin
-   compression: gzip
    source: https://zfin.org/downloads/zfin.gpi
    entity_type: 
    status: active
