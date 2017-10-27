@@ -60,7 +60,9 @@ SYSCILIA_CCNET,Karen Christie,@krchristie
 TAIR,Tanya Berardini,@tberardini
 TAIR,Leonore Reiser,@lreiser
 TIGR,,
-UniProt,,
+UniProt (Swiss-Prot/Geneva),Sylvain Poux,@sylvainpoux 
+UniProt (EBI),Penelope Garmiri,@pgarmiri
+UniProt (EBI),Georghiou,@ggeorghiou
 WormBase,Kimberly Van Auken,@vanaukenk
 ZFIN,Sabrina Toro,@sabrinatoro
 ZFIN,Doug Howe,@doughowe
