@@ -21,7 +21,7 @@ import logging
 import glob
 import os
 import json
-from contextlib import closing
+#from contextlib import closing
 import yaml
 import requests
 
@@ -35,13 +35,38 @@ def die_screaming(instr):
     LOG.error(instr)
     sys.exit(1)
 
-def remote_json(url):
-    """Get a remote JSON resource"""
-    ret = {}
-    with closing(requests.get(url, stream=False)) as resp:
-        if resp.status_code == 200:
-            ret = resp.json()
+def wikidata_taxon_name(tid):
+    """Get the taxon name for a taxon ID (if available) via Wikidata."""
+
+    ## Default return is the ID itself.
+    ret = 'NCBITaxon:' + tid
+
+    query = 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> ' + \
+      'SELECT * WHERE { ?tid wdt:P685 "'+tid+'" . ?tid wdt:P225 ?name }'
+    headers = {'accept': 'application/sparql-results+json'}
+    resp = requests.post('https://query.wikidata.org/sparql', \
+                    data={'query':query}, headers=headers, stream=False)
+    if resp.status_code == 200:
+        jret = resp.json()
+        ## Make sure we got what we wanted.
+        if jret and jret.get('results', False) and \
+          jret['results'].get('bindings', False) and \
+          len(jret['results']['bindings']) == 1 and \
+          jret['results']['bindings'][0].get('name', False):
+            ret = jret['results']['bindings'][0]['name'].get('value', tid)
+
+    # with closing(requests.get(url, stream=False)) as resp:
+    #     if resp.status_code == 200:
+    #         ret = resp.json()
     return ret
+
+# def remote_json(url):
+#     """Get a remote JSON resource"""
+#     ret = {}
+#     with closing(requests.get(url, stream=False)) as resp:
+#         if resp.status_code == 200:
+#             ret = resp.json()
+#     return ret
 
 def main():
     """The main runner for our script."""
@@ -195,11 +220,10 @@ def main():
                         LOG.info('cache hit for: ' + id2labels[taxa_id])
                     else:
                         LOG.info('cache miss for: ' + taxa_id)
-                        url = 'http://amigo2.berkeleybop.org/amigo/term/'+taxa_id+'/json'
-                        id2labels[taxa_id] = \
-                          remote_json(url).get('results', {}).get('name', taxa_id)
+                        id_part = taxa_id.split(':')[1]
+                        id2labels[taxa_id] = wikidata_taxon_name(id_part)
 
-                    resource['metadata']['taxa_labal_map'][taxa_id] = \
+                    resource['metadata']['taxa_label_map'][taxa_id] = \
                       id2labels[taxa_id]
 
     ## Final writeout.
