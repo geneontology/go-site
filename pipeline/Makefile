@@ -56,6 +56,7 @@ $(GAF_OWL):
 CATALOG_DETAILS=
 
 PARSE_ASSOCS = $(PY_BIN)/ontobio-parse-assocs.py
+RDF_GEN = $(PY_BIN)/rdfgen.py
 
 %-owltools-check.txt: %.gaf.gz $(GAF_OWL)
 	gzip -dcf $< > $*.gaf
@@ -93,7 +94,7 @@ PARSE_ASSOCS = $(PY_BIN)/ontobio-parse-assocs.py
 
 %_cam.ttl: %.gaf.gz $(ONT_MERGED)
 	gzip -dcf  $< > $*.gaf
-	MINERVA_CLI_MEMORY=16G minerva-cli.sh --log-error $(ONT_MERGED) --gaf $*.gaf --gaf-lego-individuals --skip-merge --format turtle -o $*_cam.ttl.tmp && mv $*_cam.ttl.tmp $*_cam.ttl
+	python3 $(RDF_GEN) convert -a gaf -r target/go-ontology.json -o $*_cam.ttl.tmp $*.gaf && mv $*_cam.ttl.tmp $*_cam.ttl
 	gzip -cf $@ > $@.gz
 	rm $*.gaf
 
@@ -143,20 +144,21 @@ BG = java -server -XX:+UseG1GC -Xmx$(BGMEM) -cp $(BGJAR) com.bigdata.rdf.store.D
 # Load blazegraph
 
 BG_PORT = 8899
-NOCTUA_GO_CAMS = ".*model\\.geneontology\\.org.*"
-CAM_GRAPH_QUERY = 'SELECT ?source_graph WHERE { { SELECT DISTINCT ?source_graph WHERE { GRAPH ?source_graph { ?s ?p ?o . } } } FILTER regex(str(?source_graph), $(NOCTUA_GO_CAMS)) }'
+METAGO = <http://model.geneontology.org/>
+GO_GRAPHSTORE_URI = <http://purl.obolibrary.org/obo/go/extensions/go-graphstore.owl>
+CAM_GRAPH_QUERY = 'PREFIX metago: $(METAGO) SELECT ?sourceGraph WHERE { { SELECT DISTINCT ?sourceGraph WHERE { GRAPH ?sourceGraph { ?s ?p ?o . } } } FILTER (?sourceGraph != $(GO_GRAPHSTORE_URI)) FILTER NOT EXISTS { ?sourceGraph metago:graphType metago:gafCam . } }'
 BG_PROPERTIES = conf/blazegraph.properties
 LOAD_TARGETS = $(ONT_MERGED) target/rdf target/noctua-models/models
 
 
 target/blazegraph.jnl: $(BGJAR) target/rdf target/noctua-models
 	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties load --use-ontology-graph $(LOAD_TARGETS)
-	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(ONT_MERGED)
+	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(ONT_MERGED) --append-graph-name="_inferred"
 
 target/blazegraph-internal.jnl: target/blazegraph.jnl
 	cp $< $@
 	blazegraph-runner --journal=$@ update sparql/insert/insert_inferred_graph_link.sparql
-	blazegraph-runner --journal=$@ update sparql/insert/insert_gaf_metadata.sparql
+	# blazegraph-runner --journal=$@ update sparql/insert/insert_gaf_metadata.sparql
 	blazegraph-runner --journal=$@ update sparql/insert/insert_noctua_metadata.sparql
 	blazegraph-runner --journal=$@ update sparql/insert/insert_ontology_metadata.sparql
 
