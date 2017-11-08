@@ -1990,8 +1990,8 @@
       allow-write: true
       allow-freeform: false
   groups:
-    - 'http://geneontology.org'
     - 'http://zfin.org'
+    - 'http://geneontology.org'
   xref: 'GOC:dgh'
   uri: 'http://orcid.org/0000-0001-5831-7439'
   organization: ZFIN
@@ -2004,6 +2004,9 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
   xref: 'GOC:dsf'
   uri: 'http://orcid.org/0000-0001-9656-0683'
   organization: ZFIN
@@ -2017,7 +2020,10 @@
     noctua-go:
       allow-edit: true
   uri: 'http://orcid.org/0000-0002-2244-7917'
-  xref: 'GOC:cvs'
+ groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
+ xref: 'GOC:cvs'
   organization: ZFIN
   accounts:
     github: cerivs
@@ -2028,6 +2034,9 @@
   authorizations:
     noctua-go:
       allow-edit: true
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
   organization: ZFIN
   accounts:
      github: 'sramachand'
@@ -2039,6 +2048,9 @@
     noctua-go:
       allow-edit: true
   uri: 'http://orcid.org/0000-0002-9900-7880'
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
   xref: 'GOC:ymb'
   organization: ZFIN
   accounts:
@@ -2050,6 +2062,9 @@
   authorizations:
     noctua-go:
       allow-edit: true
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
   organization: ZFIN
   accounts:
      github: 'sabrinatoro'
@@ -2057,6 +2072,9 @@
   nickname: 'Ken Frazer'
   uri: 'http://orcid.org/0000-0002-6889-0711'
   xref: 'GOC:ksf'
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
   authorizations:
     noctua-go:
       allow-edit: true
@@ -2070,8 +2088,8 @@
     noctua-go:
       allow-edit: true
   groups:
-    - 'http://geneontology.org'
     - 'http://zfin.org'
+    - 'http://geneontology.org'
   organization: ZFIN
 -
   nickname: 'Christian Pich'
@@ -2080,6 +2098,9 @@
    noctua:
      go:
        allow-edit: true
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
   organization: ZFIN
   accounts:
     github: 'cmpich'
@@ -3135,6 +3156,9 @@
      go:
        allow-edit: true
   organization: ZFIN
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
   accounts:
     github: 'asingeror'
 -
