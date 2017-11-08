@@ -815,7 +815,7 @@
       example_id: ENZYME:EC 1.1.1.1
       example_url: http://www.expasy.ch/cgi-bin/nicezyme.pl?1.1.1.1
 - database: EO_GIT
-  name: GitHub
+  name: GitHub Issue Tracker for EO
   generic_urls:
     - https://github.com/Planteome/plant-environment-ontology
   entity_types:
@@ -2053,7 +2053,7 @@
       example_id: PDB:1A4U
       example_url: http://www.rcsb.org/pdb/cgi/explore.cgi?pdbId=1A4U
 - database: PECO_GIT
-  name: GitHub
+  name: GitHub Issue Tracker for PECO
   generic_urls:
     - https://github.com/Planteome/plant-experimental-conditions-ontology
   entity_types:
@@ -2204,7 +2204,7 @@
       example_id: PO:0025131
       example_url: http://browser.planteome.org/amigo/term/PO:0025131
 - database: PO_GIT
-  name: GitHub
+  name: GitHub Issue Tracker for PO
   generic_urls:
     - https://github.com/Planteome/plant-ontology
   entity_types:
@@ -2330,7 +2330,7 @@
       example_id: PseudoCAP:PA4756
       example_url: http://v2.pseudomonas.com/getAnnotation.do?locusID=PA4756
 - database: PSO_GIT
-  name: GitHub
+  name: GitHub Issue Tracker for PSO
   generic_urls:
     - https://github.com/Planteome/plant-stress-ontology
   entity_types:
@@ -2896,7 +2896,7 @@
       example_id: TGD_REF:T000005818
       example_url: http://db.ciliate.org/cgi-bin/reference/reference.pl?dbid=T000005818
 - database: TO_GIT
-  name: GitHub
+  name: GitHub Issue Tracker for TO
   generic_urls:
     - https://github.com/Planteome/plant-trait-ontology
   entity_types:
