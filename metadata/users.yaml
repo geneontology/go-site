@@ -2020,10 +2020,10 @@
     noctua-go:
       allow-edit: true
   uri: 'http://orcid.org/0000-0002-2244-7917'
- groups:
+  groups:
     - 'http://zfin.org'
     - 'http://geneontology.org'
- xref: 'GOC:cvs'
+  xref: 'GOC:cvs'
   organization: ZFIN
   accounts:
     github: cerivs
