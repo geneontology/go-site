@@ -94,7 +94,7 @@ RDF_GEN = $(PY_BIN)/rdfgen.py
 
 %_cam.ttl: %.gaf.gz $(ONT_MERGED)
 	gzip -dcf  $< > $*.gaf
-	python3 $(RDF_GEN) convert -a gaf -r target/go-ontology.json -o $*_cam.ttl.tmp $*.gaf && mv $*_cam.ttl.tmp $*_cam.ttl
+	python3 $(RDF_GEN) convert -a gaf -r target/go-ontology.json -o $*_cam.ttl $*.gaf
 	gzip -cf $@ > $@.gz
 	rm $*.gaf
 
@@ -145,20 +145,19 @@ BG = java -server -XX:+UseG1GC -Xmx$(BGMEM) -cp $(BGJAR) com.bigdata.rdf.store.D
 
 BG_PORT = 8899
 METAGO = <http://model.geneontology.org/>
-GO_GRAPHSTORE_URI = <http://purl.obolibrary.org/obo/go/extensions/go-graphstore.owl>
-CAM_GRAPH_QUERY = 'PREFIX metago: $(METAGO) SELECT ?sourceGraph WHERE { { SELECT DISTINCT ?sourceGraph WHERE { GRAPH ?sourceGraph { ?s ?p ?o . } } } FILTER (?sourceGraph != $(GO_GRAPHSTORE_URI)) FILTER NOT EXISTS { ?sourceGraph metago:graphType metago:gafCam . } }'
+GO_GRAPHSTORE_URI = http://purl.obolibrary.org/obo/go/extensions/go-graphstore.owl
+CAM_GRAPH_QUERY = 'PREFIX metago: $(METAGO) SELECT ?source_graph WHERE { { SELECT DISTINCT ?source_graph WHERE { GRAPH ?source_graph { ?s ?p ?o . } } } FILTER (?source_graph != <$(GO_GRAPHSTORE_URI)>) FILTER NOT EXISTS { ?source_graph metago:graphType metago:gafCam . } }'
 BG_PROPERTIES = conf/blazegraph.properties
 LOAD_TARGETS = $(ONT_MERGED) target/rdf target/noctua-models/models
 
 
 target/blazegraph.jnl: $(BGJAR) target/rdf target/noctua-models
 	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties load --use-ontology-graph $(LOAD_TARGETS)
-	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(ONT_MERGED) --append-graph-name="_inferred"
+	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(GO_GRAPHSTORE_URI) --append-graph-name="_inferred"
 
 target/blazegraph-internal.jnl: target/blazegraph.jnl
 	cp $< $@
 	blazegraph-runner --journal=$@ update sparql/insert/insert_inferred_graph_link.sparql
-	# blazegraph-runner --journal=$@ update sparql/insert/insert_gaf_metadata.sparql
 	blazegraph-runner --journal=$@ update sparql/insert/insert_noctua_metadata.sparql
 	blazegraph-runner --journal=$@ update sparql/insert/insert_ontology_metadata.sparql
 
