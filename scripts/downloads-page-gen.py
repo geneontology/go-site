@@ -1,0 +1,82 @@
+"""Create a downloads page for the current GO release."""
+####
+#### Create a downloads page for the current GO release.
+####
+#### Example usage to analyze "whatever":
+####  python3 downloads-page-gen.py --help
+####  python3 ./scripts/downloads-page-gen.py -v --report /tmp/all_combined.report.json --inject ./scripts/downloads-page-template.html
+####
+
+## Standard imports.
+import sys
+import argparse
+import logging
+#import glob
+#import os
+import json
+#import yaml
+import pystache
+
+## Logger basic setup.
+logging.basicConfig(level=logging.INFO)
+LOG = logging.getLogger('downloads-page')
+LOG.setLevel(logging.WARNING)
+
+def die_screaming(instr):
+    """Make sure we exit in a way that will get Jenkins's attention."""
+    LOG.error(instr)
+    sys.exit(1)
+
+def main():
+    """The main runner for our script."""
+
+    ## Deal with incoming.
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument('-r', '--report',
+                        help='Combined report JSON file')
+    parser.add_argument('-i', '--inject',
+                        help='Mustache template file to inject into')
+    parser.add_argument('-v', '--verbose', action='store_true',
+                        help='More verbose output')
+    args = parser.parse_args()
+
+    if args.verbose:
+        LOG.setLevel(logging.INFO)
+        LOG.info('Verbose: on')
+
+    ## Ensure directory.
+    if not args.report:
+        die_screaming('need a report argument')
+    LOG.info('Will operate on: ' + args.report)
+    if not args.inject:
+        die_screaming('need an inject argument')
+    LOG.info('Will inject into: ' + args.inject)
+    # ## Ensure output file.
+    # if not args.output:
+    #     die_screaming('need an output file argument')
+    # LOG.info('Will output to: ' + args.output)
+
+    output_template = None
+    with open(args.inject) as fhandle:
+        output_template = fhandle.read()
+
+    read_data = None
+    with open(args.report) as fhandle:
+        read_data = json.loads(fhandle.read())
+
+    # ## Read in all of the useful data from the metadata data sources.
+    # for datum in read_data:
+    #     LOG.info('current: ' + datum['id'])
+
+    output = pystache.render(output_template, read_data)
+
+    ## Final writeout.
+    #with open(args.output, 'w+') as fhandle:
+    #    fhandle.write(json.dumps(lookup, sort_keys=True, indent=4))
+    print(output)
+
+## You saw it coming...
+if __name__ == '__main__':
+    main()
