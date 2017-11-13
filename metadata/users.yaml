@@ -2950,6 +2950,8 @@
     noctua-go:
       allow-edit: true
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: raymond91125
 -
