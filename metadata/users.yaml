@@ -1781,7 +1781,7 @@
     noctua:
       go:
         allow-edit: true
-  accounts: 
+  accounts:
     github: pmasson55
 -
   uri: 'GOC:pdr'
@@ -1800,7 +1800,7 @@
     termgenie-go:
       allow-write: true
   organization: UniProt
-  accounts: 
+  accounts:
     github: pgarmiri
 -
   uri: 'GOC:plm'
@@ -3344,7 +3344,7 @@
     - 'http://www.yeastgenome.org'
   accounts:
     github: 'Shellerstedt'
--    
+-
   nickname: "Jane Mendel"
   uri: 'http://orcid.org/0000-0003-2273-477X'
   authorizations:
@@ -3356,7 +3356,7 @@
     - 'http://www.wormbase.org'
   accounts:
     github: 'mendelje'
--    
+-
   nickname: "Nemo Nobody"
   comment: "Demonstrastion user for various software."
   uri: 'GOC:nemo'
@@ -3390,16 +3390,26 @@
     - 'http://www.wormbase.org'
   accounts:
     github: 'WBjae'
+-
+  nickname: "Tremayne Mushayahama"
+  uri: 'http://orcid.org/0000-0002-2874-6934'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  organization: USC
+  accounts:
+    github: 'tmushayahama'
 # -
 #   nickname: ""
 #   uri: ''
 #   email-md5:
-#     - 
+#     -
 #   authorizations:
 #    noctua:
 #      go:
 #        allow-edit:
-#   organization: 
+#   organization:
 #   groups:
 #     - ''
 #   accounts:
