@@ -1335,6 +1335,8 @@
   xref: 'GOC:se'
   uri: 'http://orcid.org/0000h-0001-5472-917X'
   organization: SGD
+  groups:
+    - 'http://www.yeastgenome.org'
   accounts:
     github: srengel
 -
