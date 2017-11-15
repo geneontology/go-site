@@ -1,4 +1,4 @@
 PyYAML==3.12
-ontobio==0.2.23
+ontobio==0.2.24
 pandas
 click
