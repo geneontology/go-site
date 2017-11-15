@@ -23,15 +23,21 @@ import subprocess
 
 ## Logger basic setup.
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger('sanity')
-logger.setLevel(logging.WARNING)
+LOGGER = logging.getLogger('sanity')
+LOGGER.setLevel(logging.WARNING)
 
 ## Make sure we exit in a way that will get Jenkins's attention.
-def die_screaming(str):
-    logger.error(str)
-    sys.exit(1)
+DIED_SCREAMING_P = False
+
+def die_screaming(string):
+    """ Die and take our toys home. """
+    global DIED_SCREAMING_P
+    LOGGER.error(string)
+    DIED_SCREAMING_P = True
+    #sys.exit(1)
 
 def main():
+
     ## Deal with incoming.
     parser = argparse.ArgumentParser(
         description=__doc__,
@@ -47,30 +53,30 @@ def main():
     regexp_lines_in_file = re.compile(r'Lines in file.*: (.*)$', re.MULTILINE)
     regexp_lines_assocs = re.compile(r'Associations: (.*)$', re.MULTILINE)
     regexp_lines_fatal = re.compile(r'FATAL: (.*)$', re.MULTILINE)
-    
+
     ## Get logger doing something.
-    
+
     if args.verbose:
-        logger.setLevel(logging.INFO)
-        logger.info('Verbose: on')
+        LOGGER.setLevel(logging.INFO)
+        LOGGER.info('Verbose: on')
 
     ## Ensure directory.
     if not args.directory:
         die_screaming('need a directory argument')
-    logger.info('Will operate in: ' + args.directory)
+    LOGGER.info('Will operate in: ' + args.directory)
 
     ids = []
-    
+
     ## Get files out of target directory, searching for the IDs
     ## independent of the metadata (as we'll need to check that too).
     src_filenames = glob.glob(args.directory + '/*-src.*')
-    logger.info(src_filenames)
+    LOGGER.info(src_filenames)
     for src_filename in src_filenames:
         ## Chop off all extensions.
         potential_id = src_filename
         ## I don't know what extensions we'll be using in the future,
         ## so just chop everything off.
-        while os.path.splitext(potential_id)[1] != '' :
+        while os.path.splitext(potential_id)[1] != '':
             potential_id = os.path.splitext(potential_id)[0]
         ## Trim off the path.
         potential_id = os.path.basename(potential_id)
@@ -88,21 +94,20 @@ def main():
 
         # if aid == 'goa_uniprot_all':
         #     break
-        
+
         ###
         ### Extract information from the report.
         ###
-        
-        logger.info("Processing: " + aid)
-        
+
+        LOGGER.info("Processing: " + aid)
+
         ## Read.
         ## WARNING: Using the markdown version is a holdover from when
         ## the markdown version was the only version.
         read_data = None
-        with open(args.directory + '/' + aid + '.report.md') as f:
-            read_data = f.read()
-        f.closed
-        
+        with open(args.directory + '/' + aid + '.report.md') as fileh:
+            read_data = fileh.read()
+
         ## Better be something in there.
         if not read_data:
             die_screaming('No report found for :' + aid)
@@ -112,19 +117,19 @@ def main():
         if len(res) != 1:
             die_screaming('Too wrong # matches for associations: ' + len(res))
         lines_assocs = int(res[0])
-        
+
         ## Lines skipped.
         res = regexp_lines_skipped.findall(read_data)
         if len(res) != 1:
             die_screaming('Too wrong # matches for lines skipped: ' + len(res))
         lines_skipped = int(res[0])
-        
+
         ## Lines in file.
         res = regexp_lines_in_file.findall(read_data)
         if len(res) != 1:
             die_screaming('Too wrong # matches for lines in file: ' + len(res))
         lines_in_file = int(res[0])
-        
+
         ## Lines that are fatal.
         res = regexp_lines_fatal.findall(read_data)
         if len(res) != 1:
@@ -132,7 +137,7 @@ def main():
         lines_fatal = int(res[0])
 
         ###
-        ### Extract information from actual using grep.        
+        ### Extract information from actual using grep.
         ###  grep EXIT STATUS
         ###  The following exit values are returned:
         ###  0 One or more matches were found.
@@ -149,7 +154,7 @@ def main():
         elif foo.returncode == 2:
             die_screaming('Bad file on: ' + str(foo))
         count_gaf_src = int(foo.stdout)
-        
+
         ## Get product count.
         foo = subprocess.run(
             'zgrep -Ec "$" ' + args.directory + '/' + aid + '.gaf.gz',
@@ -159,22 +164,33 @@ def main():
         elif foo.returncode == 2:
             die_screaming('Bad file on: ' + str(foo))
         count_gaf_prod = int(foo.stdout)
-        
+
+        ## Check to see if there is a header/comments.
+        foo = subprocess.run(
+            'zgrep -Ec "^!" ' + args.directory + '/' + aid + '.gaf.gz',
+            shell=True, check=False, stdout=subprocess.PIPE)
+        if type(foo) is not subprocess.CompletedProcess:
+            die_screaming('Shell fail on: ' + str(foo))
+        elif foo.returncode == 2:
+            die_screaming('Bad file on: ' + str(foo))
+        comments_gaf_prod = int(foo.stdout)
+
         ## Assemble report object.
         lookup[aid] = {
             'id': aid,
-            'lines': {
+            'lines': { # reported lines
                 'total': lines_in_file,
                 'fatal': lines_fatal,
                 'associations': lines_assocs,
                 'skipped': lines_skipped
             },
-            'actual': {
+            'actual': { # actual lines
                 'gaf-source': count_gaf_src,
-                'gaf-product': count_gaf_prod
+                'gaf-product': count_gaf_prod,
+                'gaf-product-comments': comments_gaf_prod
             }
         }
-    logger.info(lookup)
+    LOGGER.info(lookup)
 
     ###
     ### Final QC crunching.
@@ -189,17 +205,22 @@ def main():
         lines_skipped = obj['lines']['skipped']
         count_gaf_src = obj['actual']['gaf-source']
         count_gaf_prod = obj['actual']['gaf-product']
+        count_gaf_prod_comments = obj['actual']['gaf-product-comments']
 
         ###
         ### Checks.
         ###
 
+        ## All files must have /some/ kind of header showing version.
+        ## We will approximate that by just looking for comments.
+        if count_gaf_prod_comments == 0:
+            die_screaming('No comments (header) in product found for: ' + aid)
         ## There must be a product when something comes in.
         ## Keep in mind that the src files sometimes have header
         ## comments, but no content, so we give a buffer of 8.
         if count_gaf_prod == 0 and count_gaf_src > 8:
-            logger.warning('count_gaf_src ' + str(count_gaf_src))
-            logger.warning('count_gaf_prod ' + str(count_gaf_prod))
+            LOGGER.warning('count_gaf_src ' + str(count_gaf_src))
+            LOGGER.warning('count_gaf_prod ' + str(count_gaf_prod))
             die_screaming('No product found for: ' + aid)
         ## Product must not be a "severe" reduction from source, but
         ## only in cases of larger files.
@@ -214,10 +235,14 @@ def main():
             die_screaming('Expected associations worryingly reduced: ' + aid)
 
         print(aid + ' okay...')
-        
-    print('All passing.')
 
-    
+    if DIED_SCREAMING_P:
+        print('Errors happened.')
+        sys.exit(1)
+    else:
+        print('All passing.')
+
+
 ## You saw it coming...
 if __name__ == '__main__':
     main()
