@@ -1,0 +1,33 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <http://model.geneontology.org/>
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o
+  }
+}
+WHERE {
+
+  GRAPH ?g {
+    ?g :graphType :noctuaCam .
+    ?s ?p ?o .
+  }
+  MINUS {
+    {
+      GRAPH ?g {
+        ?g <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
+        ?s ?p ?o .
+      }
+    } UNION {
+      GRAPH ?g {
+        ?g :inferredFrom ?prod .
+        ?s ?p ?o
+      }
+      GRAPH ?prod {
+        ?prod <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
+        ?s ?p ?o
+      }
+    }
+  }
+}

@@ -10,6 +10,9 @@ import argparse
 import yaml
 from json import dumps
 
+SKIP = ["goa_pdb", "goa_uniprot_gcrp"]
+ONLY_GAF = ["goa_uniprot_all"]
+
 def main():
 
     parser = argparse.ArgumentParser(description='GO Metadata'
@@ -47,11 +50,11 @@ def main():
 
     for (ds,alist) in artifacts_by_dataset.items():
         generate_targets(ds, alist)
-        
+
     targets = [all_files(ds) for ds in artifacts_by_dataset.keys()]
     rule('all_targets', targets)
 
-    simple_ds_list = [ds for ds in artifacts_by_dataset.keys() if ds != 'goa_uniprot_all' and ds != 'goa_uniprot_gcrp']
+    simple_ds_list = [ds for (ds, data) in artifacts_by_dataset.items() if not skip_source(ds, data)]
     simple_targets = [all_files(ds) for ds in simple_ds_list]
     rule('all_targets_simple', simple_targets, comments='Excludes aggregated (goa_uniprot)')
 
@@ -74,7 +77,7 @@ def generate_targets(ds, alist):
         print("# Metadata incomplete\n")
         rule(all_files(ds))
         return
-    if ds == 'goa_pdb':
+    if ds in SKIP:
         # TODO move to another config file for 'skips'
         print("# Skipping\n")
         rule(all_files(ds))
@@ -84,19 +87,22 @@ def generate_targets(ds, alist):
     # all the targets
     is_ds_aggregated = any([("aggregates" in item) for item in alist])
 
-    ds_targets = [create_targetdir(ds), gzip(filtered_gaf(ds)), gzip(filtered_gpad(ds)), gzip(gpi(ds))]
-    ds_targets.append(owltools_gafcheck(ds))
+    ds_targets = [targetdir(ds)]
+
+    if ds not in ONLY_GAF:
+        ds_targets += [gzip(filtered_gaf(ds)), gzip(filtered_gpad(ds)), gzip(gpi(ds)), owltools_gafcheck(ds)]
 
     if is_ds_aggregated:
-        ds_targets = [create_targetdir(ds), gzip(filtered_gaf(ds))]
+        ds_targets = [targetdir(ds), gzip(filtered_gaf(ds))]
 
     rule(all_files(ds), ds_targets)
 
-    ds_all_ttl = ds_targets + [inferred_ttl(ds), gzip(ttl(ds))]
+    ds_all_ttl = ds_targets + [ttl(ds)]
+    if ds in ONLY_GAF:
+        ds_all_ttl = ds_targets
     rule(all_ttl(ds), ds_all_ttl)
 
-
-    rule(create_targetdir(ds),[],
+    rule(targetdir(ds),[],
          'mkdir -p '+targetdir(ds))
 
     # for now we assume everything comes from a GAF
@@ -104,21 +110,12 @@ def generate_targets(ds, alist):
         [gaf] = [a for a in alist if a['type']=='gaf']
         url = gaf['source']
         # GAF from source
-        rule(src_gaf(ds),[],
-             'wget --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
-    rule(filtered_gaf(ds),src_gaf(ds),
-         'gzip -dc $< | ./util/new-filter-gaf.pl -m target/datasets-metadata.json -p '+ds+' --noiea-file '+noiea_gaf(ds)+' -e $@.errors -r $@.report > $@.tmp && mv $@.tmp $@')
-    rule(owltools_gafcheck(ds),filtered_gaf(ds),
-         '$(OWLTOOLS_GAFCHECK)')
-    rule(filtered_gpad(ds),filtered_gaf(ds),
-         'owltools --gaf $< --write-gpad -o $@.tmp && mv $@.tmp $@')
-    rule(gpi(ds),filtered_gaf(ds),
-         'owltools --gaf $< --write-gpi -o $@.tmp && mv $@.tmp $@')
-    rule(ttl(ds),"{} $(ONT_MERGED)".format(filtered_gaf(ds)),
-         'MINERVA_CLI_MEMORY=16G minerva-cli.sh $(ONT_MERGED) --gaf $< --gaf-lego-individuals --skip-merge --format turtle -o $@.tmp && mv $@.tmp $@')
-    rule(inferred_ttl(ds), "{} $(ONT_MERGED)".format(ttl(ds)),
-        "mkdir -p target/inferred\n\texport JAVA_OPTS=\"-Xmx$(RDFOX_MEM)\" && rdfox-cli --ontology=$(ONT_MERGED) --rules=rules.dlog --data=$(<D) --threads=24 --reason --export=$@ --inferred-only --excluded-properties=exclude.txt")
+        rule(src_gaf_zip(ds),[targetdir(ds)],
+             'wget --retry-connrefused --waitretry=10 -t 10 --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
 
+def skip_source(ds, data):
+    types = [a['type'] for a in data]
+    return ds in SKIP or ('gaf' not in types and 'gpad' not in types)
 
 def create_targetdir(ds):
     return 'create_targetdir_'+ds
@@ -128,20 +125,24 @@ def all_files(ds):
     return 'all_'+ds
 def all_ttl(ds):
     return 'ttl_all_'+ds
-def src_gaf(ds):
+def src_gaf_zip(ds):
     return '{dir}{ds}-src.gaf.gz'.format(dir=targetdir(ds),ds=ds)
+def src_gaf(ds):
+    return "{dir}{ds}-src.gaf".format(dir=targetdir(ds), ds=ds)
 def filtered_gaf(ds):
     return '{dir}{ds}.gaf'.format(dir=targetdir(ds),ds=ds)
+def filtered_data(fmt, ds):
+    return '{dir}{ds}.{fmt}'.format(dir=targetdir(ds), ds=ds, fmt=fmt)
 def noiea_gaf(ds):
     return '{dir}{ds}_noiea.gaf'.format(dir=targetdir(ds),ds=ds)
 def filtered_gpad(ds):
     return '{dir}{ds}.gpad'.format(dir=targetdir(ds),ds=ds)
 def ttl(ds):
-    return '{dir}{ds}.ttl'.format(dir=targetdir(ds),ds=ds)
+    return '{dir}{ds}_cam.ttl'.format(dir=targetdir(ds),ds=ds)
 def inferred_ttl(ds):
-    return "target/inferred/{ds}_inferred.ttl".format(ds=ds)
+    return "{dir}{ds}_inferred.ttl".format(dir=targetdir(ds), ds=ds)
 def owltools_gafcheck(ds):
-    return '{dir}{ds}-gafcheck'.format(dir=targetdir(ds),ds=ds)
+    return '{dir}{ds}-owltools-check.txt'.format(dir=targetdir(ds),ds=ds)
 def gpi(ds):
     return '{dir}{ds}.gpi'.format(dir=targetdir(ds),ds=ds)
 def gzip(f):
@@ -154,7 +155,8 @@ def rule(target,dependencies=[],executable=None, comments=None):
         dependencies = " ".join(dependencies)
     print("{}: {}".format(target,dependencies))
     if executable is not None:
-        print("\t{}".format(executable))
+        for line in executable.split("\n"):
+            print("\t{}".format(line))
     print()
 
 if __name__ == "__main__":

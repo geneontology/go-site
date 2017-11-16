@@ -104,6 +104,7 @@
 - database: AspGD
   name: Aspergillus Genome Database
   synonyms:
+    - ASPGD
     - AspGDID
   generic_urls:
     - http://www.aspergillusgenome.org/
@@ -706,6 +707,7 @@
   name: Ensembl database of automatically annotated genomic data
   synonyms:
     - Ensembl
+    - ensembl
   generic_urls:
     - http://www.ensembl.org/
   entity_types:
@@ -813,7 +815,7 @@
       example_id: ENZYME:EC 1.1.1.1
       example_url: http://www.expasy.ch/cgi-bin/nicezyme.pl?1.1.1.1
 - database: EO_GIT
-  name: GitHub
+  name: GitHub Issue Tracker for EO
   generic_urls:
     - https://github.com/Planteome/plant-environment-ontology
   entity_types:
@@ -917,9 +919,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://gene3d.biochem.ucl.ac.uk/superfamily/?accession=[example_id]
-      example_id: Gene3D:G3DSA:3.30.390.30
-      example_url: http://gene3d.biochem.ucl.ac.uk/superfamily/?accession=G3DSA%3A3.30.390.30
+      url_syntax: http://gene3d.biochem.ucl.ac.uk/search?mode=family&sterm=[example_id]
+      example_id: Gene3D:3.30.390.30
+      example_url: http://gene3d.biochem.ucl.ac.uk/search?mode=family&sterm=3.30.390.30
 - database: GeneDB
   name: GeneDB
   generic_urls:
@@ -996,6 +998,8 @@
       example_url: http://amigo.geneontology.org/amigo/term/GO:0004352
 - database: GO_Central
   name: GO Central
+  synonyms:
+    - GO_CENTRAL
   description: Manual annotation from PAINT curators into the UniProt Protein2GO curation tool.
   generic_urls:
     - http://www.geneontology.org/GO.refgenome.shtml
@@ -1280,9 +1284,9 @@
     - type_name: protein complex
       type_id: GO:0043234
       id_syntax: EBI-[0-9]+
-      url_syntax: http://www.ebi.ac.uk/intact/search/do/search?searchString=[example_id]
-      example_id: IntAct:EBI-17086
-      example_url: http://www.ebi.ac.uk/intact/search/do/search?searchString=EBI-17086
+      url_syntax: http://www.ebi.ac.uk/complexportal/complex/[example_id]
+      example_id: IntAct:EBI-10205244
+      example_url: http://www.ebi.ac.uk/complexportal/complex/EBI-10205244
 - database: InterPro
   name: InterPro database of protein domains and motifs
   synonyms:
@@ -1305,6 +1309,16 @@
     - type_name: entity
       type_id: BET:0000000
       example_id: IPI:IPI00000005.1
+- database: iPTMnet
+  name: iPTMnet protein post-translational modification database
+  generic_urls:
+    - http://annotation.dbi.udel.edu/iptmnet/
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: http://annotation.dbi.udel.edu/iptmnet/entry/[example_id]/
+      example_id: iPTM:P06493
+      example_url: http://annotation.dbi.udel.edu/iptmnet/entry/P06493/
 - database: IRIC
   name: International Rice Research Institute
   generic_urls:
@@ -1912,6 +1926,16 @@
       url_syntax: http://sourceforge.net/p/obo/plant-ontology-po-term-requests/[example_id]
       example_id: OBO_SF2_PO:500
       example_url: http://sourceforge.net/p/obo/plant-ontology-po-term-requests/500
+- database: OBO_SF2_PECO
+  name: Source Forge OBO plant-experimental-conditions-ontology (PECO) term request tracker
+  generic_urls:
+    - generic_url
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: https://sourceforge.net/p/obo/plant-environment-ontology-eo/[example_id]
+      example_id: OBO_SF2_PECO:89
+      example_url: https://sourceforge.net/p/obo/plant-environment-ontology-eo/89/  
 - database: OMIM
   name: Mendelian Inheritance in Man
   synonyms:
@@ -2028,6 +2052,16 @@
       url_syntax: http://www.rcsb.org/pdb/cgi/explore.cgi?pdbId=[example_id]
       example_id: PDB:1A4U
       example_url: http://www.rcsb.org/pdb/cgi/explore.cgi?pdbId=1A4U
+- database: PECO_GIT
+  name: GitHub Issue Tracker for PECO
+  generic_urls:
+    - https://github.com/Planteome/plant-experimental-conditions-ontology
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: https://github.com/Planteome/plant-environment-ontology/issues/[example_id]
+      example_id: PECO_GIT:76
+      example_url: https://github.com/Planteome/plant-experimental-conditions-ontology/issues/76
 - database: Pfam
   name: Pfam database of protein families
   description: Pfam is a collection of protein families represented by sequence alignments and hidden Markov models (HMMs)
@@ -2170,7 +2204,7 @@
       example_id: PO:0025131
       example_url: http://browser.planteome.org/amigo/term/PO:0025131
 - database: PO_GIT
-  name: GitHub
+  name: GitHub Issue Tracker for PO
   generic_urls:
     - https://github.com/Planteome/plant-ontology
   entity_types:
@@ -2296,7 +2330,7 @@
       example_id: PseudoCAP:PA4756
       example_url: http://v2.pseudomonas.com/getAnnotation.do?locusID=PA4756
 - database: PSO_GIT
-  name: GitHub
+  name: GitHub Issue Tracker for PSO
   generic_urls:
     - https://github.com/Planteome/plant-stress-ontology
   entity_types:
@@ -2373,6 +2407,16 @@
       url_syntax: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&DB=pcsubstance&term=[example_id]
       example_id: PubChem_Substance:4594
       example_url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&DB=pcsubstance&term=4594
+- database: RAP-DB
+  name: Rice annotation Project database
+  generic_urls:
+    - http://rapdb.dna.affrc.go.jp
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: http://rapdb.dna.affrc.go.jp/tools/search/run?id=on&attr=desc&attr=cgs&attr=cgn&attr=cgss&attr=cgns&attr=rgss&attr=rgns&keyword=[example_id]
+      example_id: RAP-DB:OS01T0100600-01
+      example_url: http://rapdb.dna.affrc.go.jp/tools/search/run?id=on&attr=desc&attr=cgs&attr=cgn&attr=cgss&attr=cgns&attr=rgss&attr=rgns&keyword=Os01g0100200
 - database: Reactome
   name: Reactome - a curated knowledgebase of biological pathways
   synonyms:
@@ -2399,6 +2443,8 @@
       example_url: http://rebase.neb.com/rebase/enz/EcoRI.html
 - database: RefGenome
   name: GO Reference Genomes
+  synonyms:
+    - REFGENOME
   generic_urls:
     - http://www.geneontology.org/GO.refgenome.shtml
   entity_types:
@@ -2455,15 +2501,15 @@
       example_url: http://rgd.mcw.edu/generalSearch/RgdSearch.jsp?quickSearch=1&searchKeyword=2004
 - database: RHEA
   name: Rhea, the Annotated Reactions Database
-  description: Rhea is a freely available, manually annotated database of chemical reactions created in collaboration with the Swiss Institute of Bioinformatics (SIB).
+  description: Rhea is a manually annotated database of chemical reactions. All data in Rhea is freely accessible and available for anyone to use.
   generic_urls:
-    - http://www.ebi.ac.uk/rhea/
+    - http://www.rhea-db.org
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.ebi.ac.uk/rhea/reaction.xhtml?id=[example_id]
+      url_syntax: http://www.rhea-db.org/reaction.xhtml?id=[example_id]
       example_id: RHEA:25811
-      example_url: http://www.ebi.ac.uk/rhea/reaction.xhtml?id=25811
+      example_url: http://www.rhea-db.org/reaction.xhtml?id=25811
 - database: RiceSES
   name: Rice Knowledge Bank
   generic_urls:
@@ -2793,6 +2839,12 @@
       url_syntax: http://arabidopsis.org/servlets/TairObject?accession=[example_id]
       example_id: TAIR:locus:2146653
       example_url: http://arabidopsis.org/servlets/TairObject?accession=locus:2146653
+    - type_name: communication
+      type_id: BET:0000000
+      id_syntax: Communication:[0-9]{7,12}
+      url_syntax: http://arabidopsis.org/servlets/TairObject?type=communication&id=[example_id]
+      example_id: TAIR:Communication:1345790
+      example_url: http://arabidopsis.org/servlets/TairObject?type=communication&id=1345790
 - database: taxon
   name: NCBI Taxonomy
   synonyms:
@@ -2844,7 +2896,7 @@
       example_id: TGD_REF:T000005818
       example_url: http://db.ciliate.org/cgi-bin/reference/reference.pl?dbid=T000005818
 - database: TO_GIT
-  name: GitHub
+  name: GitHub Issue Tracker for TO
   generic_urls:
     - https://github.com/Planteome/plant-trait-ontology
   entity_types:
@@ -3048,7 +3100,7 @@
     - type_name: entity
       type_id: BET:0000000
       url_syntax: http://www.uniprot.org/unirule/[example_id]
-      id_syntax: UR[0-9]{9}
+      id_syntax: UR[0-9]{9}|MF_[0-9]{5}|PIRNR[0-9]{6}|PRU[0-9]{5}|RU[0-9]{6}
       example_id: UniRule:UR000107224
       example_url: http://www.uniprot.org/unirule/UR000107224
 - database: VBRC
@@ -3200,3 +3252,14 @@
       url_syntax: http://zfin.org/cgi-bin/ZFIN_jump?record=[example_id]
       example_id: ZFIN:ZDB-GENE-990415-103
       example_url: http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-GENE-990415-103
+- database: PLANA_REF
+  name: Planaria Ontology Database References
+  generic_urls:
+    - http://purl.obolibrary.org/obo/plana/references/
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      id_syntax: \d{7}
+      url_syntax: http://purl.obolibrary.org/obo/plana/references/[example_id]
+      example_id: "0000001"
+      example_url: http://purl.obolibrary.org/obo/plana/references/0000001

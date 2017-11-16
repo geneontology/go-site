@@ -1,9 +1,6 @@
 ## NPM.
 node_modules
 
-## ???
-tests
-
 ## Emacs things (from
 ## https://github.com/github/gitignore/blob/master/Global/Emacs.gitignore).
 *~
@@ -24,3 +21,7 @@ rules.log
 pipeline/target/
 pipeline/env
 pipeline/*.log
+
+*.egg-info
+env
+__pycache__

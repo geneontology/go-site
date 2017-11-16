@@ -179,6 +179,17 @@ eco_usage_constraints:
       - entity_type: *protein
       - entity_type: *biological_process
       - entity_type: *rna
+  - eco_id: ECO:0007003
+    go_evidence: HGI
+    with_presence: mandatory
+    with_structure: compound
+    with_entities:
+      - entity_type: *gene
+      - entity_type: *genotype
+      - entity_type: *protein
+      - entity_type: *variation
+      - entity_type: *protein_complex
+      - entity_type: *rna
   - eco_id: ECO:0000315
     go_evidence: IMP
     with_presence: optional
@@ -206,6 +217,19 @@ eco_usage_constraints:
       - entity_type: *biological_process
       - entity_type: *protein_complex
       - entity_type: *rna
+  - eco_id: ECO:0007001
+    go_evidence: HMP
+    with_presence: optional
+    with_structure: compound
+    with_entities:
+      - entity_type: *gene
+      - entity_type: *phenotype
+      - entity_type: *genotype
+      - entity_type: *protein
+      - entity_type: *variation
+      - entity_type: *chemical_entity
+      - entity_type: *protein_complex
+      - entity_type: *rna
   - eco_id: ECO:0000269
     go_evidence: EXP
     with_presence: disallowed
@@ -223,4 +247,13 @@ eco_usage_constraints:
     with_presence: disallowed
   - eco_id: ECO:0000307
     go_evidence: ND
+    with_presence: disallowed
+  - eco_id: ECO:0006056
+    go_evidence: HTP
+    with_presence: disallowed
+  - eco_id: ECO:0007005
+    go_evidence: HDA
+    with_presence: disallowed
+  - eco_id: ECO:0007007
+    go_evidence: HEP
     with_presence: disallowed

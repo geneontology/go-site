@@ -83,7 +83,7 @@ sequence:
                 mapping:
                   "allow-edit":
                     type: bool
-                    required: false
+                    required: true
                   "allow-admin":
                     type: bool
                     required: false
@@ -108,6 +108,8 @@ sequence:
         required: false
         sequence:
           - type: str
+            ## Pattern lookahead to prevent trailing slashes.
+            pattern: /^(http(s?)\:\/\/\w[\/\.\-\:\w]+)(?<!\/)$/
       "accounts":
         type: map
         required: false
