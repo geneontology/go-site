@@ -1484,6 +1484,7 @@
   entity_types:
     - type_name: polypeptide region
       type_id: SO:0000839
+      id_syntax: TIGR[0-9]{5}
       url_syntax: http://search.jcvi.org/search?p&q=[example_id]
       example_id: JCVI_TIGRFAMS:TIGR00254
       example_url: http://search.jcvi.org/search?p&q=TIGR00254
