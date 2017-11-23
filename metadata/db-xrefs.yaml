@@ -2868,6 +2868,7 @@
   entity_types:
     - type_name: protein
       type_id: PR:000000001
+      id_syntax: [0-9]+\.[A-Z](\.[0-9]+)+
       url_syntax: http://www.tcdb.org/tcdb/index.php?tc=[example_id]
       example_id: TC:9.A.4.1.1
       example_url: http://www.tcdb.org/tcdb/index.php?tc=9.A.4.1.1
