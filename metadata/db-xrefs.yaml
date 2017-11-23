@@ -1423,11 +1423,13 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
+      id_syntax: [A-Z][A-Za-z0-9_]+(\.[0-9])?
       url_syntax: http://cmr.jcvi.org/cgi-bin/CMR/shared/GenePage.cgi?locus=[example_id]
       example_id: JCVI_CMR:VCA0557
       example_url: http://cmr.jcvi.org/cgi-bin/CMR/shared/GenePage.cgi?locus=VCA0557
     - type_name: protein
       type_id: PR:000000001
+      id_syntax: [A-Z][A-Za-z0-9_]+(\.[0-9])?
       url_syntax: http://cmr.jcvi.org/cgi-bin/CMR/shared/GenePage.cgi?locus=[example_id]
       example_id: JCVI_CMR:VCA0557
       example_url: http://cmr.jcvi.org/cgi-bin/CMR/shared/GenePage.cgi?locus=VCA0557
