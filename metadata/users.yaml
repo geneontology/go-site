@@ -735,7 +735,7 @@
       allow-write: true
       allow-freeform: false
   xref: 'GOC:bhm'
-  uri: 'GOC:bhm'
+  uri: 'http://orcid.org/0000-0003-4062-6158'
   organization: InTact
   comment: 'Birgit Meldal'
   accounts:
@@ -3402,6 +3402,16 @@
   organization: USC
   accounts:
     github: 'tmushayahama'
+-
+  nickname: "Livia Perfetto"
+  uri: 'http://orcid.org/0000-0003-4392-8725'
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  xref: 'GOC:lnp'  
+  organization: InTact
+  accounts:
+    github: 'liviap'
 # -
 #   nickname: ""
 #   uri: ''
