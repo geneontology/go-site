@@ -50,3 +50,6 @@
 -
   label: 'WB'
   id: http://www.wormbase.org
+-
+  label: 'IntAct'
+  id: https://www.ebi.ac.uk/intact
