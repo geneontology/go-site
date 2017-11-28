@@ -982,6 +982,8 @@
   xref: 'GOC:al'
   uri: 'http://orcid.org/0000-0003-1179-5999'
   organization: PomBase
+  groups:
+    - 'https://www.pombase.org'
   accounts:
     github: Antonialock
 -
@@ -1002,6 +1004,8 @@
   xref: 'GOC:mah'
   uri: 'http://orcid.org/0000-0003-4148-4606'
   organization: PomBase
+  groups:
+    - 'https://www.pombase.org'
   comment: 'former affiliations: GO editorial office; MGI; SGD in distant past'
   accounts:
     github: mah11
@@ -1018,6 +1022,8 @@
   xref: 'GOC:vw'
   uri: 'http://orcid.org/0000-0001-6330-7526'
   organization: PomBase
+  groups:
+    - 'https://www.pombase.org'
   comment: 'former affiliation: GeneDB_Spombe'
   accounts:
     github: ValWood
