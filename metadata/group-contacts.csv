@@ -1,69 +1,69 @@
-Group,Contact name,Contact GitHub ID
-AgBase,Jinhui Zhang,@jinhuiz 
-Alzheimers_University_of_Toronto,Barbara Kramarz,@BarbaraCzub
-Alzheimers_University_of_Toronto,Ruth Lovering,@RLovering
-ASPGD,Marek Skrzypek,@marekskrzypek
-BHF-UCL,Rachael Huntley,@rachhuntley
-BHF-UCL,Barbara Kramarz,@BarbaraCzub
-BHF-UCL,Ruth Lovering,@RLovering
-BHF-UCL,Nancy Campbell,@NancyCampbell
-CACAO,Suzy Alexander,@suzialeksander
-CACAO,Jim Hu,@jimhu-tamu 
-CGD,Marek Skrzypek,@marekskrzypek
-DFLAT,Donna Slonim,
-dictyBase,Petra Fey,@pfey03
-dictyBase,Robert Dodson,@rjdodson
-EcoCyc,Ingrid Keseler,@keseler
-EcoliWiki,Jim Hu,@jimhu-tamu 
-Ensembl,,
-EnsemblFungi,,
-EnsemblPlants,,
-FlyBase,Helen Attrill,@hattrill
-FlyBase,Giulia Antonazzo,@gantonazzo
-GDB,EBI/GOC,@ggeorghiou
-GeneDB,Fatima Silva Franco,@fatimasilva
-GOC,Pascale Gaudet,@pgaudet
-GO_Central,Pascale Gaudet,@pgaudet
-GR,Pankaj Jaiswal,
-HGNC,Ruth Lovering,@RLovering
-HPA,Emma Lundberg, emma.lundberg AT scilifelab.se
-IntAct,Birgit Meldal,@bmeldal
-InterPro,Amaia Sangrador,@asangrador
-InterPro,Alex Mitchell,@almitchell
-InterPro,Lorna Richardson,@happy-lorna
-InterPro,Neil Rawlings,@ndrawlings
-InterPro,Hsin-Yu Chang,@EBI-Hsinyu
-JCVI,Not actively maintainted,
-LIFEdb,Stefan Wiemann,s.wiemann AT dkfz-heidelberg.de
-MENGO,,
-MGI,Judy Blake,@judyblake 
-MGI,Karen Christie,@krchristie
-MGI,Harold Drabkin,@hdrabkin
-MGI,David Hill,@ukemi
-MTBBASE,,
-NTNU_SB,Astrid Lægreid,
-PAMGO_GAT,Not actively maintainted,
-PAMGO_MGG,Not actively maintainted,
-ParkinsonsUK-UCL,Barbara Kramarz,@BarbaraCzub
-ParkinsonsUK-UCL,Paul Denny,@Pauldenny
-ParkinsonsUK-UCL,Ruth Lovering,@RLovering
-PINC,Not actively maintainted- GO_Central,@pgaudet
-PomBase,ValWood,@valwood
-PomBase,Midori Harris,@mah11
-PomBase,Antonia Lock,@antonialock
-PseudoCAP,Fiona Brinkman,@fionabrinkman
-PseudoCAP,General Group,brinkmanlab
-Reactome,Peter D'Eustachio,@deustp01
-RGD,Stan Laulederkind,@slaulederkind
-Roslin_Institute,Not actively maintainted,
-SGD,Stacia Engel,@srengel
-SYSCILIA_CCNET,Karen Christie,@krchristie
-TAIR,Tanya Berardini,@tberardini
-TAIR,Leonore Reiser,@lreiser
-TIGR,Not actively maintainted,
-UniProt (Swiss-Prot/Geneva),Sylvain Poux,@sylvainpoux 
-UniProt (EBI),Penelope Garmiri,@pgarmiri
-UniProt (EBI),George Georghiou,@ggeorghiou
-WormBase,Kimberly Van Auken,@vanaukenk
-ZFIN,Sabrina Toro,@sabrinatoro
-ZFIN,Doug Howe,@doughowe
+Group,Contact name,Contact GitHub ID, Expertise
+AgBase,Jinhui Zhang,@jinhuiz, 
+Alzheimers_University_of_Toronto,Barbara Kramarz,@BarbaraCzub,
+Alzheimers_University_of_Toronto,Ruth Lovering,@RLovering,
+ASPGD,Marek Skrzypek,@marekskrzypek,
+BHF-UCL,Rachael Huntley,@rachhuntley,
+BHF-UCL,Barbara Kramarz,@BarbaraCzub,
+BHF-UCL,Ruth Lovering,@RLovering,
+BHF-UCL,Nancy Campbell,@NancyCampbell,
+CACAO,Suzy Alexander,@suzialeksander,
+CACAO,Jim Hu,@jimhu-tamu, 
+CGD,Marek Skrzypek,@marekskrzypek,
+DFLAT,Donna Slonim,Donna.Slonim AT tufts.edu,
+dictyBase,Petra Fey,@pfey03,
+dictyBase,Robert Dodson,@rjdodson,
+EcoCyc,Ingrid Keseler,@keseler,
+EcoliWiki,Jim Hu,@jimhu-tamu,
+Ensembl,,,
+EnsemblFungi,,,
+EnsemblPlants,,,
+FlyBase,Helen Attrill,@hattrill,
+FlyBase,Giulia Antonazzo,@gantonazzo,
+GDB,EBI/GOC,@ggeorghiou,
+GeneDB,Fatima Silva Franco,@fatimasilva,
+GOC,Pascale Gaudet,@pgaudet,
+GO_Central,Pascale Gaudet,@pgaudet,
+GR,Pankaj Jaiswal,,
+HGNC,Ruth Lovering,@RLovering,
+HPA,Emma Lundberg, emma.lundberg AT scilifelab.se,
+IntAct,Birgit Meldal,@bmeldal,
+InterPro,Amaia Sangrador,@asangrador,
+InterPro,Alex Mitchell,@almitchell,
+InterPro,Lorna Richardson,@happy-lorna,
+InterPro,Neil Rawlings,@ndrawlings,
+InterPro,Hsin-Yu Chang,@EBI-Hsinyu,
+JCVI,,,
+LIFEdb,Stefan Wiemann,s.wiemann AT dkfz-heidelberg.de,
+MENGO,,,
+MGI,Judy Blake,@judyblake,
+MGI,Karen Christie,@krchristie,
+MGI,Harold Drabkin,@hdrabkin,
+MGI,David Hill,@ukemi,
+MTBBASE,,,
+NTNU_SB,Astrid Lægreid,,
+PAMGO_GAT,Not actively maintainted,,
+PAMGO_MGG,Not actively maintainted,,
+ParkinsonsUK-UCL,Barbara Kramarz,@BarbaraCzub,
+ParkinsonsUK-UCL,Paul Denny,@Pauldenny,
+ParkinsonsUK-UCL,Ruth Lovering,@RLovering,
+PINC,Not actively maintainted- GO_Central,@pgaudet,
+PomBase,ValWood,@valwood,
+PomBase,Midori Harris,@mah11,
+PomBase,Antonia Lock,@antonialock,
+PseudoCAP,Fiona Brinkman,@fionabrinkman,
+PseudoCAP,General Group,brinkmanlab,
+Reactome,Peter D'Eustachio,@deustp01,
+RGD,Stan Laulederkind,@slaulederkind,
+Roslin_Institute,Not actively maintainted,,
+SGD,Stacia Engel,@srengel,
+SYSCILIA_CCNET,Karen Christie,@krchristie,
+TAIR,Tanya Berardini,@tberardini,
+TAIR,Leonore Reiser,@lreiser,
+TIGR,Not actively maintainted,,
+UniProt (Swiss-Prot/Geneva),Sylvain Poux,@sylvainpoux, 
+UniProt (EBI),Penelope Garmiri,@pgarmiri,
+UniProt (EBI),George Georghiou,@ggeorghiou,
+WormBase,Kimberly Van Auken,@vanaukenk,
+ZFIN,Sabrina Toro,@sabrinatoro,
+ZFIN,Doug Howe,@doughowe,
