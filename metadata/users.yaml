@@ -2971,6 +2971,8 @@
     noctua-go:
       allow-edit: true
   organization: XenBase
+  groups:
+    - 'http://www.xenbase.org'
   accounts:
     google-plus: '117715867093154659921'
     github: malcolmfisher103
