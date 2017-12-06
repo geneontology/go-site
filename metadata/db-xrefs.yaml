@@ -2279,6 +2279,7 @@
   entity_types:
     - type_name: polypeptide region
       type_id: SO:0000839
+      id_syntax: PR[0-9]{5}
       url_syntax: http://www.bioinf.manchester.ac.uk/cgi-bin/dbbrowser/sprint/searchprintss.cgi?display_opts=Prints&category=None&queryform=false&regexpr=off&prints_accn=[example_id]
       example_id: PRINTS:PR00025
       example_url: http://www.bioinf.manchester.ac.uk/cgi-bin/dbbrowser/sprint/searchprintss.cgi?display_opts=Prints&category=None&queryform=false&regexpr=off&prints_accn=PR00025
@@ -2300,6 +2301,7 @@
   entity_types:
     - type_name: polypeptide region
       type_id: SO:0000839
+      id_syntax: PS[0-9]{5}
       url_syntax: http://www.expasy.ch/cgi-bin/prosite-search-ac?[example_id]
       example_id: Prosite:PS00365
       example_url: http://www.expasy.ch/cgi-bin/prosite-search-ac?PS00365
