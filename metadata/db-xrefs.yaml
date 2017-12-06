@@ -1842,7 +1842,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: '[0-9]{6,}'
+      id_syntax: '[0-9]{5,}'
       url_syntax: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=[example_id]
       example_id: NCBI_gi:113194944
       example_url: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=113194944
