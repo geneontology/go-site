@@ -53,3 +53,6 @@
 -
   label: 'IntAct'
   id: https://www.ebi.ac.uk/intact
+-
+  label: 'FlyBase'
+  id: http://flybase.org
