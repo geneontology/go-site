@@ -429,6 +429,8 @@
       allow-write: true
     noctua-go:
       allow-edit: true
+  groups:
+    - 'http://flybase.org'
   accounts:
     github: hattrill
 -
@@ -737,6 +739,8 @@
   xref: 'GOC:bhm'
   uri: 'http://orcid.org/0000-0003-4062-6158'
   organization: InTact
+  groups:
+    - 'https://www.ebi.ac.uk/intact'
   comment: 'Birgit Meldal'
   accounts:
     github: bmeldal
@@ -1943,7 +1947,7 @@
   authorizations:
     noctua-go:
       allow-edit: true
-  uri: 'GOC:dr'
+  uri: 'https://orcid.org/0000-0002-4945-5837'
   xref: 'GOC:dr'
   organization: WB
   groups:
@@ -1966,7 +1970,7 @@
       allow-write: true
       allow-freeform: false
   xref: 'GOC:kmv'
-  uri: 'http://orcid.org/0000-0002-1706-4196'
+  uri: 'https://orcid.org/0000-0002-1706-4196'
   organization: WB
   groups:
     - 'http://www.wormbase.org'
@@ -1983,7 +1987,7 @@
     termgenie-go:
       allow-write: true
   xref: 'GOC:rk'
-  uri: 'http://orcid.org/0000-0002-1478-7671'
+  uri: 'https://orcid.org/0000-0002-1478-7671'
   organization: WB
   groups:
     - 'http://www.wormbase.org'
@@ -2563,6 +2567,8 @@
       allow-write: true
   xref: 'GOC:ga'
   organization: FlyBase
+  groups:
+    - 'http://flybase.org'
   accounts:
     github: gantonazzo
 -
@@ -2897,7 +2903,7 @@
   organization: EBI
 -
   nickname: "Mary Ann Tuli"
-  uri: 'http://orcid.org/0000-0002-4667-9528'
+  uri: 'https://orcid.org/0000-0002-4667-9528'
   email-md5:
     - cefa19821d8dda55a07a755a964e4946
   authorizations:
@@ -2951,7 +2957,7 @@
   organization: NIDASH
 -
   nickname: "Raymond Lee"
-  uri: 'http://orcid.org/0000-0002-8151-7479'
+  uri: 'https://orcid.org/0000-0002-8151-7479'
   email-md5:
     - 55a339645c9d8022ea8ab3f9316b8459
   authorizations:
@@ -2976,7 +2982,7 @@
     github: malcolmfisher103
 -
   nickname: "Christian Grove"
-  uri: 'http://orcid.org/0000-0001-9076-6015'
+  uri: 'https://orcid.org/0000-0001-9076-6015'
   email-md5:
     - f00a4d8dce61e251624a99fed04385f4
   authorizations:
@@ -3077,7 +3083,7 @@
     github: 'BarbaraCzub'
 -
   nickname: "Hans-Michael Muller"
-  uri: 'http://orcid.org/0000-0003-1036-3051'
+  uri: 'https://orcid.org/0000-0003-1036-3051'
   email-md5:
     - f4e3ff656a9a5ace8642819c114f2dcd
   authorizations:
@@ -3091,7 +3097,7 @@
     github: 'goldturtle'
 -
   nickname: "Karen Yook"
-  uri: 'http://orcid.org/0000-0002-4457-6787'
+  uri: 'https://orcid.org/0000-0002-4457-6787'
   authorizations:
    noctua:
      go:
@@ -3354,7 +3360,7 @@
     github: 'Shellerstedt'
 -
   nickname: "Jane Mendel"
-  uri: 'http://orcid.org/0000-0003-2273-477X'
+  uri: 'https://orcid.org/0000-0003-2273-477X'
   authorizations:
    noctua:
      go:
@@ -3388,7 +3394,7 @@
     github: 'yy20716'
 -
   nickname: "Jae Cho"
-  uri: 'http://orcid.org/0000-0002-6534-116X'
+  uri: 'https://orcid.org/0000-0002-6534-116X'
   authorizations:
     noctua:
       go:
@@ -3416,6 +3422,8 @@
       allow-edit: true
   xref: 'GOC:lnp'  
   organization: InTact
+  groups:
+    - 'https://www.ebi.ac.uk/intact'
   accounts:
     github: 'liviap'
 # -
