@@ -429,6 +429,8 @@
       allow-write: true
     noctua-go:
       allow-edit: true
+  groups:
+    - 'http://flybase.org'   
   accounts:
     github: hattrill
 -
@@ -738,6 +740,8 @@
   uri: 'http://orcid.org/0000-0003-4062-6158'
   organization: InTact
   comment: 'Birgit Meldal'
+  groups:
+    - 'https://www.ebi.ac.uk/intact'
   accounts:
     github: bmeldal
 -
@@ -1943,7 +1947,7 @@
   authorizations:
     noctua-go:
       allow-edit: true
-  uri: 'GOC:dr'
+  uri: 'http://orcid.org/0000-0002-4945-5837'
   xref: 'GOC:dr'
   organization: WB
   groups:
@@ -2563,6 +2567,8 @@
       allow-write: true
   xref: 'GOC:ga'
   organization: FlyBase
+  groups:
+    - 'http://flybase.org'
   accounts:
     github: gantonazzo
 -
@@ -3416,6 +3422,8 @@
       allow-edit: true
   xref: 'GOC:lnp'  
   organization: InTact
+  groups:
+    - 'https://www.ebi.ac.uk/intact'
   accounts:
     github: 'liviap'
 # -
