@@ -3426,6 +3426,18 @@
     - 'https://www.ebi.ac.uk/intact'
   accounts:
     github: 'liviap'
+-
+  nickname: 'Ben Good'
+  authorizations:
+    noctua-go:
+      allow-edit: true
+      allow-admin: true
+  uri: 'http://orcid.org/0000-0002-7334-7852'
+  organization: LBL
+  groups:
+    - 'http://geneontology.org'
+  accounts:
+    github: 'goodb'
 # -
 #   nickname: ""
 #   uri: ''
