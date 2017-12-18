@@ -350,8 +350,8 @@
   uri: 'http://orcid.org/0000-0003-1813-6857'
   organization: GO Central
   groups:
-    - 'https://www.nextprot.org'
     - 'http://geneontology.org'
+    - 'https://www.nextprot.org'
   accounts:
     github: pgaudet
 -
@@ -429,6 +429,8 @@
       allow-write: true
     noctua-go:
       allow-edit: true
+  groups:
+    - 'http://flybase.org'   
   accounts:
     github: hattrill
 -
@@ -601,9 +603,9 @@
 -
   uri: 'GOC:aruk'
   xref: 'GOC:aruk'
-  nickname: 'Annotation of amyloid-beta binding proteins'
+  nickname: 'Annotation of proteins associated with dementia'
   organization: ARUK-UCL
-  comment: "Annotation of amyloid-beta binding proteins, funded by Alzheimer's Research UK"
+  comment: "Annotation of proteins associated with dementia, funded by Alzheimer's Research UK"
 -
   nickname: 'Aleksandra Shypitsyna'
   email-md5:
@@ -735,9 +737,11 @@
       allow-write: true
       allow-freeform: false
   xref: 'GOC:bhm'
-  uri: 'GOC:bhm'
+  uri: 'http://orcid.org/0000-0003-4062-6158'
   organization: InTact
   comment: 'Birgit Meldal'
+  groups:
+    - 'https://www.ebi.ac.uk/intact'
   accounts:
     github: bmeldal
 -
@@ -982,6 +986,8 @@
   xref: 'GOC:al'
   uri: 'http://orcid.org/0000-0003-1179-5999'
   organization: PomBase
+  groups:
+    - 'https://www.pombase.org'
   accounts:
     github: Antonialock
 -
@@ -1002,6 +1008,8 @@
   xref: 'GOC:mah'
   uri: 'http://orcid.org/0000-0003-4148-4606'
   organization: PomBase
+  groups:
+    - 'https://www.pombase.org'
   comment: 'former affiliations: GO editorial office; MGI; SGD in distant past'
   accounts:
     github: mah11
@@ -1018,6 +1026,8 @@
   xref: 'GOC:vw'
   uri: 'http://orcid.org/0000-0001-6330-7526'
   organization: PomBase
+  groups:
+    - 'https://www.pombase.org'
   comment: 'former affiliation: GeneDB_Spombe'
   accounts:
     github: ValWood
@@ -1335,6 +1345,8 @@
   xref: 'GOC:se'
   uri: 'http://orcid.org/0000h-0001-5472-917X'
   organization: SGD
+  groups:
+    - 'http://www.yeastgenome.org'
   accounts:
     github: srengel
 -
@@ -1781,7 +1793,7 @@
     noctua:
       go:
         allow-edit: true
-  accounts: 
+  accounts:
     github: pmasson55
 -
   uri: 'GOC:pdr'
@@ -1800,7 +1812,7 @@
     termgenie-go:
       allow-write: true
   organization: UniProt
-  accounts: 
+  accounts:
     github: pgarmiri
 -
   uri: 'GOC:plm'
@@ -1935,9 +1947,11 @@
   authorizations:
     noctua-go:
       allow-edit: true
-  uri: 'GOC:dr'
+  uri: 'http://orcid.org/0000-0002-4945-5837'
   xref: 'GOC:dr'
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: 'draciti'
 -
@@ -1958,6 +1972,8 @@
   xref: 'GOC:kmv'
   uri: 'http://orcid.org/0000-0002-1706-4196'
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: 'vanaukenk'
   comment: 'GOC:kva is also used; occasionally MAH goes through and updates to GOC:kmv'
@@ -1973,6 +1989,8 @@
   xref: 'GOC:rk'
   uri: 'http://orcid.org/0000-0002-1478-7671'
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: 'rankishore'
 -
@@ -1984,8 +2002,8 @@
       allow-write: true
       allow-freeform: false
   groups:
-    - 'http://geneontology.org'
     - 'http://zfin.org'
+    - 'http://geneontology.org'
   xref: 'GOC:dgh'
   uri: 'http://orcid.org/0000-0001-5831-7439'
   organization: ZFIN
@@ -1998,6 +2016,9 @@
       allow-edit: true
     termgenie-go:
       allow-write: true
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
   xref: 'GOC:dsf'
   uri: 'http://orcid.org/0000-0001-9656-0683'
   organization: ZFIN
@@ -2011,6 +2032,9 @@
     noctua-go:
       allow-edit: true
   uri: 'http://orcid.org/0000-0002-2244-7917'
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
   xref: 'GOC:cvs'
   organization: ZFIN
   accounts:
@@ -2022,6 +2046,9 @@
   authorizations:
     noctua-go:
       allow-edit: true
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
   organization: ZFIN
   accounts:
      github: 'sramachand'
@@ -2033,6 +2060,9 @@
     noctua-go:
       allow-edit: true
   uri: 'http://orcid.org/0000-0002-9900-7880'
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
   xref: 'GOC:ymb'
   organization: ZFIN
   accounts:
@@ -2044,6 +2074,9 @@
   authorizations:
     noctua-go:
       allow-edit: true
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
   organization: ZFIN
   accounts:
      github: 'sabrinatoro'
@@ -2051,6 +2084,9 @@
   nickname: 'Ken Frazer'
   uri: 'http://orcid.org/0000-0002-6889-0711'
   xref: 'GOC:ksf'
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
   authorizations:
     noctua-go:
       allow-edit: true
@@ -2064,8 +2100,8 @@
     noctua-go:
       allow-edit: true
   groups:
-    - 'http://geneontology.org'
     - 'http://zfin.org'
+    - 'http://geneontology.org'
   organization: ZFIN
 -
   nickname: 'Christian Pich'
@@ -2074,6 +2110,9 @@
    noctua:
      go:
        allow-edit: true
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
   organization: ZFIN
   accounts:
     github: 'cmpich'
@@ -2528,6 +2567,8 @@
       allow-write: true
   xref: 'GOC:ga'
   organization: FlyBase
+  groups:
+    - 'http://flybase.org'
   accounts:
     github: gantonazzo
 -
@@ -2869,6 +2910,8 @@
     noctua-go:
       allow-edit: true
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: tuli
 -
@@ -2921,6 +2964,8 @@
     noctua-go:
       allow-edit: true
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: raymond91125
 -
@@ -2945,6 +2990,8 @@
       go:
         allow-edit: true
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: 'chris-grove'
 -
@@ -3044,6 +3091,8 @@
      go:
        allow-edit: true
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: 'goldturtle'
 -
@@ -3054,6 +3103,8 @@
      go:
        allow-edit: true
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: 'kyook'
 -
@@ -3121,6 +3172,9 @@
      go:
        allow-edit: true
   organization: ZFIN
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
   accounts:
     github: 'asingeror'
 -
@@ -3244,6 +3298,19 @@
   accounts:
     github: 'kshefchek'
 -
+  nickname: "Maureen Hoatlin"
+  uri: 'http://orcid.org/0000-0002-6521-9543'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: OHSU
+  groups:
+    - 'http://monarchinitiative.org'
+    - 'https://ncats.nih.gov/translator'
+  accounts:
+    github: 'dnahotline'
+-
   nickname: "Terry L. Jackson"
   uri: 'http://orcid.org/0000-0003-2387-6411'
   authorizations:
@@ -3291,7 +3358,7 @@
     - 'http://www.yeastgenome.org'
   accounts:
     github: 'Shellerstedt'
--    
+-
   nickname: "Jane Mendel"
   uri: 'http://orcid.org/0000-0003-2273-477X'
   authorizations:
@@ -3299,9 +3366,11 @@
      go:
        allow-edit: true
   organization: WB
+  groups:
+    - 'http://www.wormbase.org'
   accounts:
     github: 'mendelje'
--    
+-
   nickname: "Nemo Nobody"
   comment: "Demonstrastion user for various software."
   uri: 'GOC:nemo'
@@ -3310,16 +3379,75 @@
      go:
        allow-edit: true
   organization: LBL
+-
+  nickname: "Hyeongsik Kim"
+  uri: 'http://orcid.org/0000-0002-3002-9838'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  organization: LBL
+  groups:
+    - 'http://lbl.gov'
+    - 'http://geneontology.org'
+  accounts:
+    github: 'yy20716'
+-
+  nickname: "Jae Cho"
+  uri: 'http://orcid.org/0000-0002-6534-116X'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  organization: WB
+  groups:
+    - 'http://www.wormbase.org'
+  accounts:
+    github: 'WBjae'
+-
+  nickname: "Tremayne Mushayahama"
+  uri: 'http://orcid.org/0000-0002-2874-6934'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  organization: USC
+  accounts:
+    github: 'tmushayahama'
+-
+  nickname: "Livia Perfetto"
+  uri: 'http://orcid.org/0000-0003-4392-8725'
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  xref: 'GOC:lnp'  
+  organization: InTact
+  groups:
+    - 'https://www.ebi.ac.uk/intact'
+  accounts:
+    github: 'liviap'
+-
+  nickname: 'Ben Good'
+  authorizations:
+    noctua-go:
+      allow-edit: true
+      allow-admin: true
+  uri: 'http://orcid.org/0000-0002-7334-7852'
+  organization: LBL
+  groups:
+    - 'http://geneontology.org'
+  accounts:
+    github: 'goodb'
 # -
 #   nickname: ""
 #   uri: ''
 #   email-md5:
-#     - 
+#     -
 #   authorizations:
 #    noctua:
 #      go:
 #        allow-edit:
-#   organization: 
+#   organization:
 #   groups:
 #     - ''
 #   accounts:

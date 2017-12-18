@@ -10,7 +10,8 @@ import argparse
 import yaml
 from json import dumps
 
-SKIP = ["goa_pdb", "goa_uniprot_all", "goa_uniprot_gcrp"]
+SKIP = ["goa_pdb", "goa_uniprot_gcrp"]
+ONLY_GAF = ["goa_uniprot_all"]
 
 def main():
 
@@ -86,8 +87,10 @@ def generate_targets(ds, alist):
     # all the targets
     is_ds_aggregated = any([("aggregates" in item) for item in alist])
 
-    ds_targets = [targetdir(ds), gzip(filtered_gaf(ds)), gzip(filtered_gpad(ds)), gzip(gpi(ds))]
-    ds_targets.append(owltools_gafcheck(ds))
+    ds_targets = [targetdir(ds)]
+
+    if ds not in ONLY_GAF:
+        ds_targets += [gzip(filtered_gaf(ds)), gzip(filtered_gpad(ds)), gzip(gpi(ds)), owltools_gafcheck(ds)]
 
     if is_ds_aggregated:
         ds_targets = [targetdir(ds), gzip(filtered_gaf(ds))]
@@ -95,6 +98,8 @@ def generate_targets(ds, alist):
     rule(all_files(ds), ds_targets)
 
     ds_all_ttl = ds_targets + [ttl(ds)]
+    if ds in ONLY_GAF:
+        ds_all_ttl = ds_targets
     rule(all_ttl(ds), ds_all_ttl)
 
     rule(targetdir(ds),[],
@@ -137,7 +142,7 @@ def ttl(ds):
 def inferred_ttl(ds):
     return "{dir}{ds}_inferred.ttl".format(dir=targetdir(ds), ds=ds)
 def owltools_gafcheck(ds):
-    return '{dir}{ds}-gafcheck'.format(dir=targetdir(ds),ds=ds)
+    return '{dir}{ds}-owltools-check.txt'.format(dir=targetdir(ds),ds=ds)
 def gpi(ds):
     return '{dir}{ds}.gpi'.format(dir=targetdir(ds),ds=ds)
 def gzip(f):

@@ -22,4 +22,18 @@ datasets:
    species_code: Drer
    taxa:
     - NCBITaxon:7955
-
+ -    
+   id: zfin.gpi
+   label: "zfin gpi file"
+   description: "gpi file for zfin from Zebrafish Information Network"
+   url: http://geneontology.org/gpad-gpi/release/zfin.gpi.gz
+   type: gpi
+   dataset: zfin
+   submitter: zfin
+   compression: gzip
+   source: https://zfin.org/downloads/zfin.gpi.gz 
+   entity_type: 
+   status: active
+   species_code: Drer
+   taxa:
+    - NCBITaxon:7955

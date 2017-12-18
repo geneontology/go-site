@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+	  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html lang="en" dir="ltr"
+      xmlns:content="http://purl.org/rss/1.0/modules/content/"
+      xmlns:dc="http://purl.org/dc/terms/"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:sioc="http://rdfs.org/sioc/ns#"
+      xmlns:sioct="http://rdfs.org/sioc/types#"
+      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <head profile="http://www.w3.org/1999/xhtml/vocab">
+
+
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="http://geneontology.org/sites/default/files/go-logo-favicon_0.ico" type="image/vnd.microsoft.icon" />
+    <link rel="shortcut icon" href="logo-circle.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" crossorigin="anonymous">
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.0/vue.js"></script> -->
+    <!-- <script type="text/javascript" src="RUD.bundle.js"></script> -->
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <title>Download Annotations | Gene Ontology Consortium</title>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    	<span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="navbar-brand" href="index.html#home">
+    	<img src="http://geneontology.org/sites/default/files/go-logo-icon.mini__0.png" height="30" class="d-inline-block align-top" alt="">
+    	Gene Ontology Consortium
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="http://geneontology.org" id="nav01" aria-haspopup="true" aria-expanded="false">Home</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://geneontology.org/page/documentation" id="nav02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+            <div class="dropdown-menu" aria-labelledby="nav02">
+
+
+    	      <a class="dropdown-item" href="http://geneontology.org/page/documentation" title="">Introduction</a>
+    	      <a class="dropdown-item" href="http://geneontology.org/faq-page" title="">FAQs</a>
+    	      <a class="dropdown-item" href="http://geneontology.org/page/ontology-documentation">Ontology</a>
+    	      <a class="dropdown-item" href="http://geneontology.org/page/annotation">Annotation</a>
+    	      <a class="dropdown-item" href="http://geneontology.org/page/annotation-extension">Annotation Extension</a>
+    	      <a class="dropdown-item" href="http://geneontology.org/page/go-database">GO database</a>
+    	      <a class="dropdown-item" href="http://geneontology.org/page/file-format-guide">File format guide</a>
+    	      <a class="dropdown-item" href="http://geneontology.org/page/annotation-tools-downloads-and-beyond">Annotation Tools, Downloads, and Beyond</a>
+    	      <a class="dropdown-item" href="http://geneontology.org/page/contributing-go">Contributing to GO</a>
+    	      <a class="dropdown-item" href="http://geneontology.org/page/submitting-go-annotations">Submitting GO Annotations</a>
+    	      <a class="dropdown-item" href="http://geneontology.org/page/other-useful-links">Other useful information</a>
+
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://geneontology.org/page/downloads" id="nav03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Downloads</a>
+            <div class="dropdown-menu" aria-labelledby="nav03">
+              <a class="dropdown-item" href="http://geneontology.org/page/downloads" id="nav-crit" aria-haspopup="true" aria-expanded="false">Overview</a>
+              <a class="dropdown-item" href="http://geneontology.org/page/download-annotations" id="nav-crit" aria-haspopup="true" aria-expanded="false">Annotations</a>
+              <a class="dropdown-item" href="http://geneontology.org/page/download-ontology" id="nav-crit" aria-haspopup="true" aria-expanded="false">Ontology</a>
+              <a class="dropdown-item" href="http://geneontology.org/page/download-mappings" id="nav-crit" aria-haspopup="true" aria-expanded="false">Mappings</a>
+            </div>
+    	  </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://geneontology.org/page/go-community" id="nav04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+            <div class="dropdown-menu" aria-labelledby="nav04">
+              <a class="dropdown-item" href="http://geneontology.org/page/go-community" id="nav-crit" aria-haspopup="true" aria-expanded="false">Overview</a>
+              <a class="dropdown-item" href="http://geneontology.org/page/go-projects" id="nav-crit" aria-haspopup="true" aria-expanded="false">GO Projects</a>
+              <a class="dropdown-item" href="http://geneontology.org/page/collaborations" id="nav-crit" aria-haspopup="true" aria-expanded="false">Collaborations</a>
+              <a class="dropdown-item" href="http://geneontology.org/aggregator" id="nav-crit" aria-haspopup="true" aria-expanded="false">Web Feeds</a>
+              <a class="dropdown-item" href="http://wiki.geneontology.org" id="nav-crit" aria-haspopup="true" aria-expanded="false">GO Wiki</a>
+              <a class="dropdown-item" href="http://geneontology.org/page/go-consortium-contributors-list" id="nav-crit" aria-haspopup="true" aria-expanded="false">GO Contributors</a>
+              <a class="dropdown-item" href="http://geneontology.org/page/go-mailing-lists" id="nav-crit" aria-haspopup="true" aria-expanded="false">GO Mailing Lists</a>
+            </div>
+    	  </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://geneontology.org/page/go-tools-registry" id="nav05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tools</a>
+            <div class="dropdown-menu" aria-labelledby="nav05">
+              <a class="dropdown-item" href="http://amigo.geneontology.org" id="nav-crit" aria-haspopup="true" aria-expanded="false">AmiGO</a>
+              <a class="dropdown-item" href="http://amigo.geneontology.org/goose" id="nav-crit" aria-haspopup="true" aria-expanded="false">GOOSE</a>
+              <a class="dropdown-item" href="http://geneontology.org/page/go-enrichment-analysis" id="nav-crit" aria-haspopup="true" aria-expanded="false">GO Enrichment Analysis</a>
+              <a class="dropdown-item" href="http://amigo.geneontology.org/amigo/software_list" id="nav-crit" aria-haspopup="true" aria-expanded="false">Other GOC Tools</a>
+            </div>
+    	  </li>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://geneontology.org/page/about" id="nav06" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu" aria-labelledby="nav06">
+              <a class="dropdown-item" href="http://geneontology.org/page/about" id="nav-crit" aria-haspopup="true" aria-expanded="false">Overview</a>
+              <a class="dropdown-item" href="http://geneontology.org/page/publications" id="nav-crit" aria-haspopup="true" aria-expanded="false">Publications</a>
+              <a class="dropdown-item" href="http://geneontology.org/page/go-citation-policy" id="nav-crit" aria-haspopup="true" aria-expanded="false">Citation policy</a>
+              <a class="dropdown-item" href="http://geneontology.org/page/use-and-license" id="nav-crit" aria-haspopup="true" aria-expanded="false">Use and license</a>
+            </div>
+    	  </li>
+
+    	  <li class="nav-item">
+            <a class="nav-link" href="http://geneontology.org/page/contact-go" id="nav07" aria-haspopup="true" aria-expanded="false">Contact us</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </nav>
+
+    <!-- Top nav menu spacer. -->
+    <div id="who-we-are" style="height:72px;"></div>
+
+    <div class="container">
+
+      <div class="row">
+	<div class="col-xl-12">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item">
+	      <a href="http://geneontology.org/page/downloads">Downloads</a>
+	    </li>
+	    <li class="breadcrumb-item active">Download Annotations</li>
+	  </ol>
+	</div>
+      </div>
+
+      <h2 class="page-header">Download Annotations</h2>
+
+      <div class="row">
+
+	<div class="col-xl-12">
+	  <hr />
+	  <h4 class="">Overview</h4>
+
+	  <p>
+	    The gene association files ingested from GO Consortium
+	    members are shown in the table below. Files are in the GO
+	    annotation file format and are compressed using the UNIX
+	    gzip utility. Please see the upstream resource information
+	    for further details on the annotation set. Any errors or
+	    omissions in annotations should be reported by writing to
+	    the <a href="http://helpdesk.geneontology.org">GO
+	    Helpdesk</a>.
+	  </p>
+
+	</div>
+
+	<div class="col-xl-12">
+	  <hr />
+	  <h4 class="">Filtered Files</h4>
+
+	  <p>
+	    These files are taxon-specific and reflect the work of
+	    specific projects, primarily the model organisms database
+	    groups, to provide comprehensive, non-redundant annotation
+	    files for their organism. All the files in this table have
+	    been filtered using the annotation file QC pipeline. A
+	    major component to the filtering is the requirement that
+	    particular taxon IDs can only be included within the
+	    association files provided by specific projects; the
+	    current list of authoritative groups and major model
+	    organisms can be found below.
+	  </p>
+
+	</div>
+
+	<div class="col-xl-12">
+	  <hr />
+	  <h4>Filtered Annotation File Downloads</h4>
+
+	  <table id="sourcestable"
+		 class="table table-sm table-striped rud-compact-table">
+	    <thead>
+	      <tr>
+		<th>Species/Database</th>
+		<th>Entity type</th>
+		<th>Annotations</th>
+		<th>File</th>
+	      </tr>
+	    </thead>
+	    <tfoot>
+	      <tr>
+		<th>Species/Database</th>
+		<th>Entity type</th>
+		<th>Annotations</th>
+		<th>File</th>
+	      </tr>
+	    </tfoot>
+	    <tbody>
+	      {{ #. }}
+	      <tr>
+		<td>
+		  {{ metadata.resource-label }}
+		  (<a href="{{ metadata.resource-project_url }}">{{ metadata.submitter }}</a>, {{ #metadata.species_code }}{{ metadata.species_code }}{{ /metadata.species_code }}{{ ^metadata.species_code }}multi{{ /metadata.species_code }})
+		</td>
+		<td>
+		  {{ #metadata.entity_type }}
+		  {{ metadata.entity_type }}
+		  {{ /metadata.entity_type }}
+		  {{ ^metadata.entity_type }}
+		  n/a
+		  {{ /metadata.entity_type }}
+		</td>
+		<td>
+		  {{ summary.association_count }}
+		</td>
+		<td><a href="{{ metadata.url }}">{{ metadata.id }}</a> ({{ metadata.compression }})</td>
+	      </tr>
+	      {{ /. }}
+	    </tbody>
+	  </table>
+
+	</div>
+
+      </div>
+
+      <div class="row">
+	<div class="col-xl-12">
+	<hr />
+	  <p>
+	    <small>
+	      Copyright ©
+	      1999-2017 <a href="http://www.geneontology.org/"
+			   title="The Gene Ontology project website">the Gene
+		Ontology</a>
+	      (<a href="http://geneontology.org/page/use-and-license">CC-BY
+		4.0</a>)<br /><a href="http://geneontology.org/form/contact-go"
+				 title="Contact the GO helpdesk">Helpdesk</a>
+	      • <a href="http://geneontology.org/page/go-citation-policy"
+		   title="How to cite the GO
+			  project">Citation/attribution</a>
+	      • <a href="http://geneontology.org/page/use-and-license"
+		   title="Terms of use for the GO project">Terms of use</a>
+	      • <a href="http://geneontology.org/rss.xml" title="GO News
+								 RSS feed">RSS</a><br /> Member of
+	      the <a href="http://www.obofoundry.org/" rel="external"
+		     title="Open Biological and Biomedical Ontologies">Open
+		Biological and Biomedical Ontologies</a>
+	    </small>
+	    <br />
+	    <small>
+	      The Gene Ontology Consortium is supported by a P41 grant
+	      from the National Human Genome Research Institute (NHGRI)
+	      [grant <a href="http://projectreporter.nih.gov/project_info_description.cfm?aid=8641714&amp;icde=0"
+			rel="external" title="National Human Genome Research
+					      Institute grant 5U41HG002273-14">5U41HG002273-14</a>]. The
+	      Gene Ontology Consortium would like to acknowledge the
+	      assistance of many more people than can be listed
+	      here. Please visit
+	      the <a href="http://geneontology.org/page/go-acknowledgements">acknowledgements
+		page</a> for the full list.
+	    </small>
+	  </p>
+
+	</div>
+
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+      <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+      <script type="text/javascript">
+	<!-- var global_data = {{{ jsondata }}}; -->
+	jQuery(document).ready(function(){
+	  console.log('Ready...');
+	  if( jQuery("#sourcestable") && jQuery("#sourcestable").length ){
+	    console.log('Running #sourcetable...');
+	    var tbl = jQuery("#sourcestable").DataTable({
+	      //{autoWidth: true, "order": [[3, "desc"], [0, "asc"]]}
+	      lengthMenu: [[-1], ["All"]],
+	      //pageLength: 100,
+	      autoWidth: true
+	    });
+
+	    console.log('...table init...');
+
+	    // Initialize for license commentary popups.
+	    jQuery(function(){
+	      jQuery('[data-toggle="popover"]').popover();
+	    });
+	    // And on paging redraw (they are separate).
+	    tbl.on("draw", function(){
+	      //console.log('DataTable draw event');
+	      jQuery('[data-toggle="popover"]').popover();
+	    });
+
+	    console.log('...done.');
+	  }
+	});
+      </script>
+
+      <!-- <\!-- Global Site Tag (gtag.js) - Google Analytics -\-> -->
+      <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106654450-1"></script> -->
+      <!-- <script> -->
+      <!--   window.dataLayer = window.dataLayer || []; -->
+      <!--   function gtag(){dataLayer.push(arguments)}; -->
+      <!--   gtag('js', new Date()); -->
+
+      <!--   gtag('config', 'UA-106654450-1'); -->
+      <!-- </script> -->
+
+  </body>
+</html>

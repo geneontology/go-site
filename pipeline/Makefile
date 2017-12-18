@@ -1,6 +1,6 @@
 OBO= http://purl.obolibrary.org/obo
 METADATA_DIR=../metadata/datasets
-REPORT=target/combined.report
+REPORT=target/combined.report.md
 RDFOX_MEM ?= 32G
 GAF_OWL = target/go-gaf.owl
 ONT_MERGED = target/go-graphstore-merged.ttl
@@ -56,25 +56,26 @@ $(GAF_OWL):
 CATALOG_DETAILS=
 
 PARSE_ASSOCS = $(PY_BIN)/ontobio-parse-assocs.py
+RDF_GEN = $(PY_BIN)/rdfgen.py
 
-%-gafcheck: %.gaf.gz $(GAF_OWL)
+%-owltools-check.txt: %.gaf.gz $(GAF_OWL)
 	gzip -dcf $< > $*.gaf
 	owltools --log-warning $(CATALOG_DETAILS) $(GAF_OWL) \
 	--gaf $*.gaf \
 	--createReport \
-	--gaf-report-file $@-report.txt \
-	--gaf-report-summary-file $@-summary.txt \
-	--gaf-prediction-file $@-prediction.gaf \
-	--gaf-prediction-report-file $@-prediction-report.txt \
-	--gaf-validation-unsatisfiable-module $@-incoherent.owl \
-	--experimental-gaf-prediction-file $@-prediction-experimental.gaf \
-	--experimental-gaf-prediction-report-file $@-prediction-experimental-report.txt \
-	--gaf-run-checks || echo 'errors found' ; touch $@
+	--gaf-report-file $*-owltools-check.txt \
+	--gaf-report-summary-file $*-summary.txt \
+	--gaf-prediction-file $*-prediction.gaf \
+	--gaf-prediction-report-file $*-prediction-report.txt \
+	--gaf-validation-unsatisfiable-module $*-incoherent.owl \
+	--experimental-gaf-prediction-file $*-prediction-experimental.gaf \
+	--experimental-gaf-prediction-report-file $*-prediction-experimental-report.txt \
+	--gaf-run-checks || echo 'errors found'
 	rm -f $*.gaf
 
 %.gaf.gz: %-src.gaf.gz target/go-ontology.json
 	gzip -dcf $< > $*-src.gaf
-	python3 $(PARSE_ASSOCS) -r target/go-ontology.json --filter-out IEA --filtered-file $*_noiea.gaf -f $*-src.gaf -o $*.gaf -m $*.report validate
+	python3 $(PARSE_ASSOCS) -r target/go-ontology.json --filter-out IEA --filtered-file $*_noiea.gaf -f $*-src.gaf -o $*.gaf --report-md $*.report.md --report-json $*.report.json validate
 	rm $*-src.gaf
 	gzip -f $*_noiea.gaf
 	gzip -f $*.gaf
@@ -93,7 +94,8 @@ PARSE_ASSOCS = $(PY_BIN)/ontobio-parse-assocs.py
 
 %_cam.ttl: %.gaf.gz $(ONT_MERGED)
 	gzip -dcf  $< > $*.gaf
-	MINERVA_CLI_MEMORY=16G minerva-cli.sh --log-error $(ONT_MERGED) --gaf $*.gaf --gaf-lego-individuals --skip-merge --format turtle -o $*_cam.ttl.tmp && mv $*_cam.ttl.tmp $*_cam.ttl
+	python3 $(RDF_GEN) convert -a gaf -r target/go-ontology.json -o $*_cam.ttl $*.gaf
+	gzip -cf $@ > $@.gz
 	rm $*.gaf
 
 %_inferred.ttl: %_cam.ttl
@@ -111,7 +113,7 @@ target/Makefile: ./util/generate-makefile.py
 include target/Makefile
 
 $(REPORT): target/Makefile all_targets
-	cat target/groups/*/*.report > $@
+	cat target/groups/*/*.report.md > $@
 
 target/noctua-models:
 	# If target/noctua-models does not exist, then clone it
@@ -142,20 +144,20 @@ BG = java -server -XX:+UseG1GC -Xmx$(BGMEM) -cp $(BGJAR) com.bigdata.rdf.store.D
 # Load blazegraph
 
 BG_PORT = 8899
-NOCTUA_GO_CAMS = ".*model\\.geneontology\\.org.*"
-CAM_GRAPH_QUERY = 'SELECT ?source_graph WHERE { { SELECT DISTINCT ?source_graph WHERE { GRAPH ?source_graph { ?s ?p ?o . } } } FILTER regex(str(?source_graph), $(NOCTUA_GO_CAMS)) }'
+METAGO = <http://model.geneontology.org/>
+GO_GRAPHSTORE_URI = http://purl.obolibrary.org/obo/go/extensions/go-graphstore.owl
+CAM_GRAPH_QUERY = 'PREFIX metago: $(METAGO) SELECT ?source_graph WHERE { { SELECT DISTINCT ?source_graph WHERE { GRAPH ?source_graph { ?s ?p ?o . } } } FILTER (?source_graph != <$(GO_GRAPHSTORE_URI)>) FILTER NOT EXISTS { ?source_graph metago:graphType metago:gafCam . } }'
 BG_PROPERTIES = conf/blazegraph.properties
 LOAD_TARGETS = $(ONT_MERGED) target/rdf target/noctua-models/models
 
 
 target/blazegraph.jnl: $(BGJAR) target/rdf target/noctua-models
 	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties load --use-ontology-graph $(LOAD_TARGETS)
-	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(ONT_MERGED)
+	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(GO_GRAPHSTORE_URI) --append-graph-name="_inferred"
 
 target/blazegraph-internal.jnl: target/blazegraph.jnl
 	cp $< $@
 	blazegraph-runner --journal=$@ update sparql/insert/insert_inferred_graph_link.sparql
-	blazegraph-runner --journal=$@ update sparql/insert/insert_gaf_metadata.sparql
 	blazegraph-runner --journal=$@ update sparql/insert/insert_noctua_metadata.sparql
 	blazegraph-runner --journal=$@ update sparql/insert/insert_ontology_metadata.sparql
 
