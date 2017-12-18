@@ -9,9 +9,9 @@ contextyaml=$1
 inputyaml=$2 
 outputttl=$3
 tmpfile=`mktemp`
-echo '{"@context": ' >tmpfile
-yaml2json $contextyaml >>tmpfile
-echo ', "@graph": ' >>tmpfile
-yaml2json $inputyaml >>tmpfile
-echo '}' >>tmpfile 
-riot --syntax=jsonld --output=turtle tmpfile >$outputttl
+echo '{"@context": ' >$tmpfile
+yaml2json $contextyaml >>$tmpfile
+echo ', "@graph": ' >>$tmpfile
+yaml2json $inputyaml >>$tmpfile
+echo '}' >>$tmpfile 
+riot --syntax=jsonld --output=turtle $tmpfile >$outputttl
