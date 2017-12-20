@@ -2,6 +2,9 @@
 # WB	WBGene00000018	abl-1		GO:1901075	WB_REF:WBPaper00033098|PMID:19402756	IGI	WB:WBGene00000421	P		M79.1	gene	taxon:6239	20120809	WB
 BEGIN {
     FS="\t"
+    while ("cat target/alltaxons.txt" | getline taxon) {
+        model_organisms[taxon] = "1";
+    }
 }
 {
     if (index($0, "!") == 1) {
@@ -12,43 +15,25 @@ BEGIN {
 
     if (NF != 15 && NF != 17) {
         # Skip if not the correct number of columns
-        # print "skipping, cause bad columns " NF
         next
     }
 
     if ($7 == "IEA") {
         # Skip line if IEA
-        # print "skipping iea"
         next
     }
 
-    taxa = $13
+    taxon = $13
     if(index($13, "|") > 0) {
-        taxa = substr(taxa, 1, index($13, "|")-1)
+        # Just take the first
+        taxon = substr(taxon, 1, index($13, "|")-1)
     }
+    id = substr(taxon, index(taxon, ":") + 1)
+    taxon = "NCBITaxon:" id
 
-    if (taxa in model_org_cache) {
-        # taxon is a model organism, so we skip it
-        # print "cache: is model organism"
-        next
-    } else if (taxa in goa_cache) {
-        # taxon is not a model organism, so we print it
-        # print "cache: is not a model organism"
-        print $0
-        next
-    } else {
-        # print "taxon not in caches, finding it json"
-        command="python util/model_organism.py --silent " taxa " ../metadata/datasets"
-        if (system(command) == "1") {
-            # We found the taxa, so it's a model organism
-            # print "found " taxa " in json, adding model organism and skipping"
-            model_org_cache[taxa] = "1"
-        } else {
-            # Did not find the taxa, so it's not a model organism and so we print
-            # print "did not find model organism, adding 0 to cache"
-            goa_cache[taxa] = "0"
-            print $0
-        }
+    if (taxon in model_organisms) {
+        # We already have it defined, so we skip
         next
     }
+    print $0
 }

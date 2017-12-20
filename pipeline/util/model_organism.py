@@ -4,34 +4,29 @@ import sys
 import yaml
 import re
 
-@click.command()
-@click.argument("taxon")
-@click.argument("dataset_path", type=click.Path(exists=True))
-@click.option("--silent", "-s", is_flag=True)
-def mod(taxon, dataset_path, silent):
+@click.group()
+def cli():
+    pass
 
-    if not re.match("(NCBITaxon|taxon):[0-9]+", taxon):
-        return
+@cli.command()
+@click.argument("dataset_dir", type=click.Path(exists=True))
+@click.option("--out", "-o", type=click.File("w"))
+def taxons(dataset_dir, out):
+    datasets_paths = [os.path.abspath(os.path.join(dataset_dir, dataset)) for dataset in os.listdir(dataset_dir) if dataset.endswith("yaml") and dataset != "goa.yaml"]
+    taxa = set([taxon for path in datasets_paths for taxon in read_taxa_for_path(path)])
+    output = "\n".join(taxa)
+    if not out:
+        click.echo(output)
     else:
-        taxonid = taxon.split(":")[1]
-        taxon = "NCBITaxon:{}".format(taxonid)
+        out.write(output)
 
-    if taxon == "NCBITaxon:1":
-        return
-
-    datasets = [os.path.abspath(os.path.join(dataset_path, dataset)) for dataset in os.listdir(dataset_path) if dataset.endswith("yaml") and dataset != "goa.yaml"]
-    model_organisms = []
-    for group in datasets:
-        with open(group) as group_file:
-            group_data = yaml.load(group_file)
-            gaf_data = [data for data in group_data["datasets"] if data["type"] == "gaf"]
-            for gaf in gaf_data:
-                if gaf["taxa"] and taxon in gaf["taxa"]:
-                    if not silent:
-                        click.echo(gaf["dataset"])
-
-                    sys.exit(1)
+def read_taxa_for_path(dataset_path):
+    with open(dataset_path) as group_file:
+        group_data = yaml.load(group_file)
+        gaf_data = [data for data in group_data["datasets"] if data["type"] == "gaf"]
+        taxa = [ taxon for gaf in gaf_data if gaf["taxa"] for taxon in gaf["taxa"] ]
+        return taxa
 
 
 if __name__ == "__main__":
-    mod()
+    cli()
