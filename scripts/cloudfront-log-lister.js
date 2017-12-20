@@ -11,6 +11,9 @@
 //// Example usage (cloudfront, quiet, filtering out log comments):
 ////  node ./scripts/cloudfront-log-lister.js -f  ~/local/share/secrets/bbop/aws/s3/aws-go-push.json -b go-data-product-usage-logs/snapshot | grep -v "^#" > /tmp/filtered.log.txt
 ////
+//// Further use easily like:
+////  cat /tmp/filtered.log.txt.20171218 | grep 131.243.192.20 | cut -f 11 | sort | uniq -c | sort -n
+////
 
 var AWS = require('aws-sdk');
 var us = require('underscore');
