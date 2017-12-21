@@ -103,8 +103,10 @@ RDF_GEN = $(PY_BIN)/rdfgen.py
 	arachne --ontology=$(ONT_MERGED) --data=$< --export=$@ --inferred-only
 
 # Specific rule for goa_uniprot_all
+# The script goa_filter produces a `noiea` file, which are the annotations w/out IEA evidence.
 target/groups/goa_uniprot_all/goa_uniprot_all.gaf.gz: target/alltaxons.txt target/groups/goa_uniprot_all/goa_uniprot_all-src.gaf.gz
-	gzip -dcf target/groups/goa_uniprot_all/goa_uniprot_all-src.gaf.gz | ./util/goa_filter | gzip -c > $@
+	gzip -dcf target/groups/goa_uniprot_all/goa_uniprot_all-src.gaf.gz | ./util/goa_filter | gzip -c > $@.tmp
+	cat noiea | gzip -cf > target/groups/goa_uniprot_all/goa_uniprot_all_noiea.gaf.gz && rm noiea  && mv $@.tmp $@
 
 target/alltaxons.txt:
 	python3 util/model_organism.py taxons ../metadata/datasets/ --out target/alltaxons.txt

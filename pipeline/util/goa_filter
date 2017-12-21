@@ -1,5 +1,11 @@
 #!/usr/bin/awk -f
-# WB	WBGene00000018	abl-1		GO:1901075	WB_REF:WBPaper00033098|PMID:19402756	IGI	WB:WBGene00000421	P		M79.1	gene	taxon:6239	20120809	WB
+
+# This takes a GAF file and does some basic checking on each line and outputs
+# correct lines back to stdout. Validations include checking column length and
+# lines are also skipped if there is a taxon already included in the model
+# organisms. For lines that do not use evidence code `IEA`, those are appended
+# to a file called 'noiea' as a side affect. 
+
 BEGIN {
     FS="\t"
     while ("cat target/alltaxons.txt" | getline taxon) {
@@ -10,16 +16,12 @@ BEGIN {
     if (index($0, "!") == 1) {
         # Pass through comments
         print $0
+        print $0 > "noiea"
         next
     }
 
     if (NF != 15 && NF != 17) {
         # Skip if not the correct number of columns
-        next
-    }
-
-    if ($7 == "IEA") {
-        # Skip line if IEA
         next
     }
 
@@ -34,6 +36,15 @@ BEGIN {
     if (taxon in model_organisms) {
         # We already have it defined, so we skip
         next
+    } else if ($7 != "IEA") {
+        print $0
+        print $0 > "noiea"
+    } else {
+        print $0
     }
-    print $0
 }
+
+# ! IEA, taxon:skip -> skip
+# ! not IEA, taxon:skip -> skip
+# ! not IEA, taxon:keep -> gaf, noiea
+# ! IEA, taxon:keep -> gaf
