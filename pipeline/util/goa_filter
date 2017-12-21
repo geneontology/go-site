@@ -5,21 +5,21 @@ BEGIN {
     while ("cat target/alltaxons.txt" | getline taxon) {
         model_organisms[taxon] = "1";
     }
+    for (taxon in model_organism) {
+        # print taxon > "alltaxons"
+    }
 }
 {
+    iea = 0
     if (index($0, "!") == 1) {
         # Pass through comments
         print $0
+        print $0 > "noiea"
         next
     }
 
     if (NF != 15 && NF != 17) {
         # Skip if not the correct number of columns
-        next
-    }
-
-    if ($7 == "IEA") {
-        # Skip line if IEA
         next
     }
 
@@ -34,6 +34,15 @@ BEGIN {
     if (taxon in model_organisms) {
         # We already have it defined, so we skip
         next
+    } else if ($7 != "IEA") {
+        print $0
+        print $0 > "noiea"
+    } else {
+        print $0
     }
-    print $0
 }
+
+# ! IEA, taxon:skip -> skip
+# ! not IEA, taxon:skip -> skip
+# ! not IEA, taxon:keep -> gaf, noiea
+# ! IEA, taxon:keep -> gaf
