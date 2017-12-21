@@ -102,6 +102,13 @@ RDF_GEN = $(PY_BIN)/rdfgen.py
 	mkdir -p target/inferred
 	arachne --ontology=$(ONT_MERGED) --data=$< --export=$@ --inferred-only
 
+# Specific rule for goa_uniprot_all
+target/groups/goa_uniprot_all/goa_uniprot_all.gaf.gz: target/alltaxons.txt target/groups/goa_uniprot_all/goa_uniprot_all-src.gaf.gz
+	gzip -dcf target/groups/goa_uniprot_all/goa_uniprot_all-src.gaf.gz | ./util/goa_filter | gzip -c > $@
+
+target/alltaxons.txt:
+	python3 util/model_organism.py taxons ../metadata/datasets/ --out target/alltaxons.txt
+
 # ----------------------------------------
 # Makefile for building GAFs
 # ----------------------------------------

@@ -1,0 +1,39 @@
+#!/usr/bin/awk -f
+# WB	WBGene00000018	abl-1		GO:1901075	WB_REF:WBPaper00033098|PMID:19402756	IGI	WB:WBGene00000421	P		M79.1	gene	taxon:6239	20120809	WB
+BEGIN {
+    FS="\t"
+    while ("cat target/alltaxons.txt" | getline taxon) {
+        model_organisms[taxon] = "1";
+    }
+}
+{
+    if (index($0, "!") == 1) {
+        # Pass through comments
+        print $0
+        next
+    }
+
+    if (NF != 15 && NF != 17) {
+        # Skip if not the correct number of columns
+        next
+    }
+
+    if ($7 == "IEA") {
+        # Skip line if IEA
+        next
+    }
+
+    taxon = $13
+    if(index($13, "|") > 0) {
+        # Just take the first
+        taxon = substr(taxon, 1, index($13, "|")-1)
+    }
+    id = substr(taxon, index(taxon, ":") + 1)
+    taxon = "NCBITaxon:" id
+
+    if (taxon in model_organisms) {
+        # We already have it defined, so we skip
+        next
+    }
+    print $0
+}

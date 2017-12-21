@@ -10,7 +10,7 @@ import argparse
 import yaml
 from json import dumps
 
-SKIP = ["goa_pdb", "goa_uniprot_gcrp", "goa_uniprot_all"]
+SKIP = ["goa_pdb", "goa_uniprot_gcrp"]
 ONLY_GAF = ["goa_uniprot_all"]
 
 def main():
