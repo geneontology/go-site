@@ -1,8 +1,10 @@
 """Give a report on the "sanity" of the pipeline association data."""
 ####
 #### Give a report on the "sanity" of the pipeline association data.
-#### This script assumes access to skyhook, or a flat directory of
-#### pipeline association products.
+#### This script assumes access to skyhook or a flat directory of
+#### pipeline association products and reports. We used to have those
+#### in the same directory, now they are different; they'll need to be
+#### recombined for this script to work right now.
 ####
 #### Example usage to analyze "whatever":
 ####  python3 aggregate-json-reports.py --help
@@ -10,6 +12,7 @@
 ####  mkdir -p /tmp/foo || true
 ####  sshfs -oStrictHostKeyChecking=no -o IdentitiesOnly=true -o IdentityFile=/home/sjcarbon/local/share/secrets/bbop/ssh-keys/foo.skyhook -o idmap=user skyhook@skyhook.berkeleybop.org:/home/skyhook /tmp/mnt/
 ####  cp /tmp/mnt/master/annotations/whatever* /tmp/foo
+####  cp /tmp/mnt/master/reports/whatever* /tmp/foo
 ####  fusermount -u /tmp/mnt
 ####  python3 aggregate-json-reports.py -v --directory /tmp/foo --metadata ~/local/src/git/go-site/metadata/datasets --output /tmp/all_combined.report.json
 ####
@@ -76,7 +79,7 @@ def main():
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('-d', '--directory',
-                        help='The directory to act on')
+                        help='The directory or combined anntations/ and reports/ to act on')
     parser.add_argument('-m', '--metadata',
                         help='The metadata directory')
     parser.add_argument('-o', '--output',
