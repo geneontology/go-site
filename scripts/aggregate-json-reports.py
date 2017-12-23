@@ -1,12 +1,15 @@
-"""Give a report on the "sanity" of the pipeline association data."""
+"""Aggregate all of the report JSON and other metadata into a single blob for downstream use, such as creating webpages."""
 ####
-#### Give a report on the "sanity" of the pipeline association data.
+#### Aggregate all of the report JSON and other metadata into a single blob
+#### for downstream use, such as creating webpages.
+####
 #### This script assumes access to skyhook or a flat directory of
 #### pipeline association products and reports. We used to have those
 #### in the same directory, now they are different; they'll need to be
 #### recombined for this script to work right now.
+#### NOTE: Skip uniprot if identified.
 ####
-#### Example usage to analyze "whatever":
+#### Example usage to aggregate "whatever":
 ####  python3 aggregate-json-reports.py --help
 ####  mkdir -p /tmp/mnt || true
 ####  mkdir -p /tmp/foo || true
@@ -180,6 +183,7 @@ def main():
             LOG.info(src_filename)
 
     ## Get the report file and assemble a data structure for tests.
+    ## NOTE: Skipping anything that smells of uniprot at this point.
     lookup = []
     for fid in ids:
 
@@ -188,6 +192,9 @@ def main():
         ###
 
         LOG.info("fids: " + fid)
+        if fid.lower().find('uniprot'):
+            LOG.info("Smells like uniprot; skipping: " + fid)
+            break
 
         ## Read.
         ## WARNING: Using the markdown version is a holdover from when

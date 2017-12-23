@@ -1,7 +1,12 @@
+"""Give a report on the "sanity" of the pipeline association data from available metadata; skips uniprot."""
 ####
 #### Give a report on the "sanity" of the pipeline association data.
-#### This script assumes access to skyhook, or a flat directory of
-#### pipeline association products.
+####
+#### This script assumes access to skyhook or a flat directory of
+#### pipeline association products and reports. We used to have those
+#### in the same directory, now they are different; they'll need to be
+#### recombined for this script to work right now.
+#### NOTE: Skip uniprot if identified.
 ####
 #### Example usage to analyze "whatever":
 ####  python3 sanity-check-ann-report.py --help
@@ -92,8 +97,9 @@ def main():
     lookup = {}
     for aid in ids:
 
-        # if aid == 'goa_uniprot_all':
-        #     break
+        if aid.lower().find('uniprot'):
+            LOGGER.info("Smells like uniprot; skipping: " + aid)
+            break
 
         ###
         ### Extract information from the report.
