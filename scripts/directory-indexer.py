@@ -1,17 +1,19 @@
-"""*DEPRECATED*. Index the contexts of a directory, creating an Apache HTTPd index-like page dictated by the mustache template provided."""
-####
-#### *DEPRECATED*
+"""Index the contexts of a directory, creating an Apache HTTPd index-like page dictated by the mustache template provided."""
 ####
 #### Example usage (local testing):
 ####  python3 directory-indexer.py --help
 ####  mkdir -p /tmp/foo/bar/bib/bab && mkdir -p /tmp/foo/bar/fish && mkdir -p /tmp/foo/bar/foul && touch /tmp/foo/top.md && touch /tmp/foo/bar/bib/bab/bottom.txt && touch /tmp/foo/bar/fish/trout.f && touch /tmp/foo/bar/fish/bass.f
 ####  python3 ./scripts/directory-indexer.py -v --inject ./scripts/directory-index-template.html --directory /tmp/foo --prefix file:///tmp/foo
+####
 #### Example usage (production-like):
 ####  python3 directory-indexer.py --help
 ####  mkdir -p /tmp/mnt || true
 ####  sshfs -oStrictHostKeyChecking=no -o IdentitiesOnly=true -o IdentityFile=/home/sjcarbon/local/share/secrets/bbop/ssh-keys/foo.skyhook -o idmap=user skyhook@skyhook.berkeleybop.org:/home/skyhook /tmp/mnt/
 ####  python3 directory-indexer.py -v --inject ./scripts/directory-index-template.html --directory /tmp/mnt/annotations --prefix http://foo/bar
 ####  fusermount -u /tmp/mnt
+####
+#### Example usage (production):
+####  python3 ./scripts/directory-indexer.py -v --inject ./scripts/directory-index-template.html --directory $WORKSPACE/mnt --prefix http://experimental.geneontology.io -x'
 ####
 
 ## Standard imports.
