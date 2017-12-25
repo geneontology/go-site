@@ -98,12 +98,12 @@ def main():
         relative_to_start = currdir.rstrip('//')[len(rootdir):]
         one_up = os.path.dirname(currdir).rstrip('//')[len(rootdir):]
         here = prefix + relative_to_start
-        print('rootdir: ' + rootdir)
-        #print('webrootdir: ' + webrootdir)
-        print('currdir: ' + currdir)
-        print('relative_to_start: ' + relative_to_start)
-        print('one_up: ' + one_up)
-        print('here: ' + here)
+        # print('rootdir: ' + rootdir)
+        # #print('webrootdir: ' + webrootdir)
+        # print('currdir: ' + currdir)
+        # print('relative_to_start: ' + relative_to_start)
+        # print('one_up: ' + one_up)
+        # print('here: ' + here)
         if rootdir != currdir.rstrip('//'):
             parent = prefix + one_up + '/index.html'
 
