@@ -1,6 +1,6 @@
-"""Index the contexts of a directory, creating an Apache HTTPd index-like page dictated by the mustache template provided."""
+"""*DEPRECATED*. Index the contexts of a directory, creating an Apache HTTPd index-like page dictated by the mustache template provided."""
 ####
-####
+#### *DEPRECATED*
 ####
 #### Example usage (local testing):
 ####  python3 directory-indexer.py --help
