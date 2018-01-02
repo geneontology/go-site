@@ -11,6 +11,7 @@ contextyaml=$1
 inputyaml=$2 
 outputttl=$3
 tmpfile=`mktemp`.jsonld
+echo "Using temp file: $tmpfile"
 echo '{"@context": ' >$tmpfile
 yaml2json $contextyaml >>$tmpfile
 echo ', "@graph": ' >>$tmpfile
