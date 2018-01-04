@@ -11,6 +11,7 @@ import yaml
 from json import dumps
 
 SKIP = ["goa_pdb", "goa_uniprot_gcrp"]
+ONLY_INCLUDE = ["goa_uniprot_all", "mgi", "sgd", "wb"]
 ONLY_GAF = ["goa_uniprot_all"]
 
 def main():
@@ -56,11 +57,11 @@ def main():
 
     simple_ds_list = [ds for (ds, data) in artifacts_by_dataset.items() if not skip_source(ds, data)]
     simple_targets = [all_files(ds) for ds in simple_ds_list]
-    rule('all_targets_simple', simple_targets, comments='Excludes aggregated (goa_uniprot)')
+    rule('all_targets_simple', simple_targets, comments='')
 
     # for now, do not do ttl on goa_uniprot_all
     ttl_targets = [all_ttl(ds) for ds in simple_ds_list]
-    rule('all_targets_ttl', ttl_targets, comments='RDF targets. Excludes aggregated (goa_uniprot)')
+    rule('all_targets_ttl', ttl_targets, comments='RDF targets')
 
 def generate_targets(ds, alist):
     """
@@ -115,7 +116,8 @@ def generate_targets(ds, alist):
 
 def skip_source(ds, data):
     types = [a['type'] for a in data]
-    return ds in SKIP or ('gaf' not in types and 'gpad' not in types)
+    # Skip if ds in skip, 'gaf' not one of the data formats, ds is not in ONLY_INCLUDE, if there is something in there. 
+    return ds in SKIP or ('gaf' not in types and 'gpad' not in types) or (len(ONLY_INCLUDE) > 0 and ds not in ONLY_INCLUDE)
 
 def create_targetdir(ds):
     return 'create_targetdir_'+ds
