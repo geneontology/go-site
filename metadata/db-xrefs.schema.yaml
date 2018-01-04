@@ -48,10 +48,12 @@ sequence:
                 required: false
               "url_syntax":
                 type: str
+                pattern: /^(http(s?)\:\/\/\w[\/\.\:\[\]\=\?\&\+\-\,\%\(\)\|\;\_\w]+)$/
                 required: false
               "example_id":
                 type: str
                 required: false
               "example_url":
                 type: str
+                pattern: /^(http(s?)\:\/\/\w[\/\.\:\[\]\=\?\&\+\-\,\%\(\)\|\;\_\w]+)$/
                 required: false
