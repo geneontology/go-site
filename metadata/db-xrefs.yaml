@@ -404,7 +404,7 @@
     - type_name: entity
       type_id: BET:0000000
       example_id: CO_125:0000002
-      example_url: url_example
+      example_url: http://www.cropontology.org/ontology/CO_125:0000000
 - database: COG
   name: NCBI Clusters of Orthologous Groups
   generic_urls:
