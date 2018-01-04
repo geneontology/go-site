@@ -399,7 +399,7 @@
 - database: CO_125
   name: Crop Ontology CGIAR Musa Anatomy
   generic_urls:
-    - http://www.cropontology.org/ontology/CO_125/Musa Anatomy
+    - http://www.cropontology.org/ontology/CO_125:0000000/CGIAR_Musa_anatomy
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -481,15 +481,15 @@
       example_id: cosmoss_PpV1.2:Pp1s47_77V2.1
       example_url: https://www.cosmoss.org/annotation/genonaut?accession=Pp1s53_22V2.1&version=V1.2
 - database: cribi_vitis
-  name: database
+  name: Vitis CRIBI database
   generic_urls:
     - http://genomes.cribi.unipd.it
   entity_types:
     - type_name: entity
       type_id: BET:0000000
       url_syntax: http://genomes.cribi.unipd.it/cgi-bin/pqs2/report.pl?gene_name=[example_id]&release=v1
-      example_id: example_id
-      example_url: url_example
+      example_id: VIT_00s0173g00270
+      example_url: http://genomes.cribi.unipd.it/cgi-bin/pqs2/report.pl?gene_name=VIT_00s0173g00270&release=v1
 - database: dbSNP
   name: NCBI dbSNP
   generic_urls:
@@ -1922,7 +1922,7 @@
 - database: OBO_SF2_PO
   name: Source Forge OBO Plant Ontology (PO) term request tracker
   generic_urls:
-    - generic_url
+    - https://sourceforge.net/p/obo/plant-ontology-po-term-requests/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -1932,7 +1932,7 @@
 - database: OBO_SF2_PECO
   name: Source Forge OBO plant-experimental-conditions-ontology (PECO) term request tracker
   generic_urls:
-    - generic_url
+    - https://sourceforge.net/p/obo/plant-environment-ontology-eo/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
