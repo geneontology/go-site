@@ -1593,7 +1593,7 @@
 - database: MACSC_REF
   name: Maize Genetics and Genomics Database
   generic_urls:
-    - http://www.maizegdb.org/cgi-bin/id_search.cgi?id=$acc_no
+    - http://www.maizegdb.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
