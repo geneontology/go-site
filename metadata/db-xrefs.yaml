@@ -2433,9 +2433,9 @@
     - type_name: entity
       type_id: BET:0000000
       id_syntax: R-[A-Z]{3}-[0-9]+(-[0-9]+){0,1}(\.[0-9]+){0,1}
-      url_syntax: www.reactome.org/content/detail/[example_id]
+      url_syntax: http://www.reactome.org/content/detail/[example_id]
       example_id: Reactome:R-HSA-109582
-      example_url: www.reactome.org/content/detail/R-HSA-109582
+      example_url: http://www.reactome.org/content/detail/R-HSA-109582
 - database: REBASE
   name: REBASE restriction enzyme database
   generic_urls:
