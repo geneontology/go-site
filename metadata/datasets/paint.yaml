@@ -135,8 +135,7 @@ datasets:
    entity_type: 
    status: active
    species_code: 
-   taxa:
-   merges_into: other
+   taxa: []
    
  -    
    id: paint_pombase.gaf
