@@ -13,7 +13,7 @@ internal defaults).
 ####  mkdir -p /tmp/mnt || true
 ####  mkdir -p /tmp/foo || true
 ####  sshfs -oStrictHostKeyChecking=no -o IdentitiesOnly=true -o IdentityFile=/home/sjcarbon/local/share/secrets/bbop/ssh-keys/foo.skyhook -o idmap=user skyhook@skyhook.berkeleybop.org:/home/skyhook /tmp/mnt/
-####  cp /tmp/mnt/master/annotations/whatever* /tmp/foo
+####  cp -r /tmp/mnt/master/* /tmp/foo
 ####  fusermount -u /tmp/mnt
 ####  python3 ./scripts/s3-uploader.py -v --credentials ~/local/share/secrets/bbop/aws/s3/aws-go-push.json --directory ~/tmp/elpa/archives --bucket go-data-testing-sandbox --number 7 --pipeline foo-pipe
 ####
