@@ -135,7 +135,7 @@ def main():
     creds = None
     with open(args.credentials) as chandle:
         creds = json.loads(chandle.read())
-    LOG.info(creds)
+    #LOG.info(creds)
 
     s3 = boto3.resource('s3', region_name=args.location,
                           aws_access_key_id = creds['accessKeyId'],
