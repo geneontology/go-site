@@ -11,7 +11,7 @@ import yaml
 from json import dumps
 
 SKIP = ["goa_pdb", "goa_uniprot_gcrp"]
-ONLY_INCLUDE = ["goa_uniprot_all", "mgi", "sgd", "wb"]
+ONLY_INCLUDE = ["goa_uniprot_all", "mgi", "sgd", "wb", "paint_mgi", "paint_sgd", "paint_wb", "goa_chicken_complex"]
 ONLY_GAF = ["goa_uniprot_all"]
 
 def main():
@@ -116,7 +116,7 @@ def generate_targets(ds, alist):
 
 def skip_source(ds, data):
     types = [a['type'] for a in data]
-    # Skip if ds in skip, 'gaf' not one of the data formats, ds is not in ONLY_INCLUDE, if there is something in there. 
+    # Skip if ds in skip, 'gaf' not one of the data formats, ds is not in ONLY_INCLUDE, if there is something in there.
     return ds in SKIP or ('gaf' not in types and 'gpad' not in types) or (len(ONLY_INCLUDE) > 0 and ds not in ONLY_INCLUDE)
 
 def create_targetdir(ds):
