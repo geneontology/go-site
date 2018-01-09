@@ -1063,7 +1063,7 @@ datasets:
    dataset: goa_uniprot_all
    submitter: goa
    compression: gzip
-   source: http://skyhook.berkeleybop.org/snapshot/annotations/goa_uniprot_all-src.gaf.gz
+   source: http://skyhook.berkeleybop.org/goa_uniprot_all-src.gaf.gz
    entity_type: all
    status: active
    aggregates: goa
