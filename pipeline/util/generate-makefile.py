@@ -11,7 +11,7 @@ import yaml
 from json import dumps
 
 SKIP = ["goa_pdb", "goa_uniprot_gcrp"]
-ONLY_INCLUDE = ["goa_uniprot_all", "mgi", "sgd", "wb", "paint_mgi", "paint_sgd", "paint_wb", "goa_chicken_complex"]
+ONLY_INCLUDE = ["goa_uniprot_all", "mgi", "wb", "paint_mgi", "paint_wb", "goa_chicken_complex"]
 ONLY_GAF = []
 
 def main():
