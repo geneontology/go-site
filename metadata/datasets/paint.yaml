@@ -134,11 +134,10 @@ datasets:
    source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_other.gaf.gz
    entity_type:
    status: active
-   species_code:
-   taxa:
-   merges_into: other
-
- -
+   species_code: 
+   taxa: []
+   
+ -    
    id: paint_pombase.gaf
    label: "paint_pombase gaf file"
    description: "gaf file for paint_pombase from PAINT"
