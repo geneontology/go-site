@@ -90,16 +90,16 @@ def main():
         ids.append(potential_id)
 
     ## TODO: Check found resources versus metadata.
-    print('Found ' + str(len(ids)) + ' resource(s).')
-    print('TODO: compare found resources versus metadata.')
+    LOGGER.info('Found ' + str(len(ids)) + ' resource(s).')
+    LOGGER.info('TODO: compare found resources versus metadata.')
 
     ## Get the report file and assemble a data structure for tests.
     lookup = {}
     for aid in ids:
 
-        if aid.lower().find('uniprot'):
+        if aid.lower().find('uniprot') != -1:
             LOGGER.info("Smells like uniprot; skipping: " + aid)
-            break
+            continue
 
         ###
         ### Extract information from the report.
@@ -240,13 +240,13 @@ def main():
         if count_gaf_src < (((lines_in_file - lines_assocs) + lines_skipped) * 0.9):
             die_screaming('Expected associations worryingly reduced: ' + aid)
 
-        print(aid + ' okay...')
+        LOGGER.info(aid + ' okay...')
 
     if DIED_SCREAMING_P:
-        print('Errors happened.')
+        LOGGER.info('Errors happened.')
         sys.exit(1)
     else:
-        print('All passing.')
+        LOGGER.info('All passing.')
 
 
 ## You saw it coming...
