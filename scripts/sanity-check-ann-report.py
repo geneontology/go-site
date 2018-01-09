@@ -97,7 +97,7 @@ def main():
     lookup = {}
     for aid in ids:
 
-        if aid.lower().find('uniprot'):
+        if aid.lower().find('uniprot') != -1:
             LOGGER.info("Smells like uniprot; skipping: " + aid)
             break
 
