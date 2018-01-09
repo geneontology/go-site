@@ -104,13 +104,8 @@ RDF_GEN = $(PY_BIN)/rdfgen.py
 
 # Specific rule for goa_uniprot_all
 # The script goa_filter produces a `noiea` file, which are the annotations w/out IEA evidence.
-<<<<<<< HEAD
-target/groups/goa_uniprot_all/goa_uniprot_all.gaf.gz: target/alltaxons.txt target/groups/goa_uniprot_all/goa_uniprot_all-src.gaf.gz
-	gzip -dcf target/groups/goa_uniprot_all/goa_uniprot_all-src.gaf.gz | head -n 3000000 | ./util/goa_filter | gzip -c > $@.tmp
-=======
 target/groups/goa_uniprot_all/goa_uniprot_all.gaf.gz target/groups/goa_uniprot_all/goa_uniprot_all_noiea.gaf.gz : target/alltaxons.txt target/groups/goa_uniprot_all/goa_uniprot_all-src.gaf.gz
-	gzip -dcf target/groups/goa_uniprot_all/goa_uniprot_all-src.gaf.gz | ./util/goa_filter | gzip -c > $@.tmp
->>>>>>> include_goa_yaml
+	gzip -dcf target/groups/goa_uniprot_all/goa_uniprot_all-src.gaf.gz | head -n 3000000 | ./util/goa_filter | gzip -c > $@.tmp
 	cat noiea | gzip -cf > target/groups/goa_uniprot_all/goa_uniprot_all_noiea.gaf.gz && rm noiea  && mv $@.tmp $@
 
 target/alltaxons.txt:
