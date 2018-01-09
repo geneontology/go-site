@@ -12,7 +12,7 @@ def cli():
 @click.argument("dataset_dir", type=click.Path(exists=True))
 @click.option("--out", "-o", type=click.File("w"))
 def taxons(dataset_dir, out):
-    datasets_paths = [os.path.abspath(os.path.join(dataset_dir, dataset)) for dataset in os.listdir(dataset_dir) if dataset.endswith("yaml") and dataset != "goa.yaml"]
+    datasets_paths = [os.path.abspath(os.path.join(dataset_dir, dataset)) for dataset in os.listdir(dataset_dir) if dataset.endswith("yaml")]
     taxa = set([taxon for path in datasets_paths for taxon in read_taxa_for_path(path)])
     output = "\n".join(taxa)
     if not out:
