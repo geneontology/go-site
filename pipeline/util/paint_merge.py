@@ -14,7 +14,10 @@ def cli():
 def merge(paint_metadata, groups_dir):
     metapaint = yaml.load(paint_metadata)
     merger_groups = metapaint["datasets"]
-    merge_data = { dataset_id_to_path(dataset["id"], groups_dir): merges_into_path(dataset["merges_into"], groups_dir) for dataset in merger_groups if dataset["merges_into"] != "other" }
+    merge_data = {
+        dataset_id_to_path(dataset["id"], groups_dir): merges_into_path(dataset["merges_into"], groups_dir)
+            for dataset in merger_groups if "merges_into" in dataset
+    }
 
     for paint_gaf, mod_gaf in merge_data.items():
         click.echo("merging {} into {}".format(paint_gaf, mod_gaf))
