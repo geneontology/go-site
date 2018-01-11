@@ -92,7 +92,7 @@ RDF_GEN = $(PY_BIN)/rdfgen.py
 	rm $*.gaf
 	gzip -f $*.gpi
 
-%_cam.ttl: %.gaf.gz $(ONT_MERGED)
+%_cam.ttl: %.gaf.gz $(ONT_MERGED) target/go-ontology.json
 	gzip -dcf  $< > $*.gaf
 	python3 $(RDF_GEN) convert -a gaf -r target/go-ontology.json -o $*_cam.ttl $*.gaf
 	gzip -cf $@ > $@.gz
