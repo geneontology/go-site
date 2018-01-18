@@ -8,20 +8,40 @@ import shutil
 def cli():
     pass
 
-@cli.command()
-@click.argument("paint_metadata", type=click.File("r"))
-@click.argument("groups_dir", type=click.Path(exists=True))
-def merge(paint_metadata, groups_dir):
-    metapaint = yaml.load(paint_metadata)
-    merger_groups = metapaint["datasets"]
-    merge_data = {
-        dataset_id_to_path(dataset["id"], groups_dir): merges_into_path(dataset["merges_into"], groups_dir)
-            for dataset in merger_groups if "merges_into" in dataset
-    }
+# @cli.command()
+# @click.argument("paint_metadata", type=click.File("r"))
+# @click.argument("groups_dir", type=click.Path(exists=True))
+# def merge_x(paint_metadata, groups_dir):
+#     metapaint = yaml.load(paint_metadata)
+#     merger_groups = metapaint["datasets"]
+#     merge_data = {
+#         dataset_id_to_path(dataset["id"], groups_dir): merges_into_path(dataset["merges_into"], groups_dir)
+#             for dataset in merger_groups if "merges_into" in dataset
+#     }
+#
+#     for paint_gaf, mod_gaf in merge_data.items():
+#         click.echo("merging {} into {}".format(paint_gaf, mod_gaf))
+#         append_zip_into_zip(paint_gaf, mod_gaf)
 
-    for paint_gaf, mod_gaf in merge_data.items():
-        click.echo("merging {} into {}".format(paint_gaf, mod_gaf))
-        append_zip_into_zip(paint_gaf, mod_gaf)
+@cli.command()
+@click.argument("merger", type=click.Path(exists=True))
+@click.argument("merge_into", type=click.Path(exists=True))
+def merge(merger, merge_into):
+    append_zip_into_zip(merger, merge_into)
+
+@cli.command()
+@click.argument("metadata_dir", type=click.Path(exists=True))
+@click.argument("datasource")
+def paint(metadata_dir, datasource):
+    path = os.path.join(metadata_dir, "datasets", "paint.yaml")
+    metapaint = yaml.load(path)
+    merger_groups = metapoint["datasets"]
+
+    for dataset in merger_groups:
+        if dataset["dataset"] == datasource:
+            if "merges_into" in dataset:
+                click.echo(dataset["merges_into"])
+
 
 def dataset_id_to_path(dataset_id, groups_dir):
     paint_dir = dataset_id.split(".")[0]
