@@ -3063,8 +3063,6 @@
 - database: UniProtKB
   name: Universal Protein Knowledgebase
   description: A central repository of protein sequence and function created by joining the information contained in Swiss-Prot, TrEMBL, and PIR database
-  synonyms:
-    - UniProt
   generic_urls:
     - http://www.uniprot.org
   entity_types:
