@@ -194,7 +194,7 @@ def main():
         LOG.info("fids: " + fid)
         if fid.lower().find('uniprot'):
             LOG.info("Smells like uniprot; skipping: " + fid)
-            break
+            continue
 
         ## Read.
         ## WARNING: Using the markdown version is a holdover from when
