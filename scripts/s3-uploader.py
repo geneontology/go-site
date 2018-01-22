@@ -180,7 +180,8 @@ def main():
             outfile = open(filename, 'rb')
             newobj.put(Body=outfile, \
                            ContentType=mime, \
-                           Metadata=tags) #Tagging=tags_str)
+                           Metadata=tags,
+                           ACL='public-read') #Tagging=tags_str)
 
             # outbod = open(os.path.join(curr_dir, fname), 'rb')
             # .put(Body=outbod, 'rb')

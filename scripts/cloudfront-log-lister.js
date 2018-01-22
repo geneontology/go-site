@@ -79,8 +79,10 @@ if( ! bucket_raw ){
     _die('Option (b|bucket) is required.');
 }else{
     var parts = bucket_raw.split('/');
-    if( ! parts || parts.length !== 2 ){
+    if( ! parts ){
 	_die('Not a good bucket descriptor: ' + bucket_raw);
+    }else if( parts.length === 1 ){
+	bucket = parts[0];
     }else{
 	bucket = parts[0];
 	prefix = parts[1];

@@ -3060,11 +3060,14 @@
       url_syntax: http://www.grenoble.prabi.fr/obiwarehouse/unipathway/upa?upid=[example_id]
       example_id: UniPathway:UPA00155
       example_url: http://www.grenoble.prabi.fr/obiwarehouse/unipathway/upa?upid=UPA00155
+- database: UniProt
+  name: Universal Protein Knowledgebase
+  description: A central repository of protein sequence and function created by joining the information contained in Swiss-Prot, TrEMBL, and PIR database
+  generic_urls:
+    - http://www.uniprot.org
 - database: UniProtKB
   name: Universal Protein Knowledgebase
   description: A central repository of protein sequence and function created by joining the information contained in Swiss-Prot, TrEMBL, and PIR database
-  synonyms:
-    - UniProt
   generic_urls:
     - http://www.uniprot.org
   entity_types:

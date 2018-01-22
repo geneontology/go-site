@@ -136,7 +136,7 @@ def generate_targets(ds, alist):
         url = gaf['source']
         # GAF from source
         rule(src_gaf_zip(ds),[targetdir(ds)],
-             'wget --retry-connrefused --waitretry=10 -t 10 --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
+             'wget --quiet --retry-connrefused --waitretry=10 -t 10 --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
 
         if paint_merger(METADATA, ds) != "":
             rule(merged_gaf(ds), [paint_merger(METADATA, ds), gzip(filtered_gaf(ds))],
