@@ -7,9 +7,9 @@
 //// { "accessKeyId": "XXX", "secretAccessKey": "YYY", "region": "us-west-1" }
 ////
 //// Example usage (cloudfront, process verbose):
-////  node ./scripts/cloudfront-log-lister.js -d -f  ~/local/share/secrets/bbop/aws/s3/aws-go-push.json -b go-data-product-usage-logs/snapshot
+////  node ./scripts/cloudfront-log-lister.js -d -f ~/local/share/secrets/bbop/aws/s3/aws-go-push.json -b go-data-product-usage-logs/snapshot
 //// Example usage (cloudfront, quiet, filtering out log comments):
-////  node ./scripts/cloudfront-log-lister.js -f  ~/local/share/secrets/bbop/aws/s3/aws-go-push.json -b go-data-product-usage-logs/snapshot | grep -v "^#" > /tmp/filtered.log.txt
+////  node ./scripts/cloudfront-log-lister.js -f ~/local/share/secrets/bbop/aws/s3/aws-go-push.json -b go-data-product-usage-logs/snapshot | grep -v "^#" > /tmp/filtered.log.txt
 ////
 //// Further use easily like:
 ////  cat /tmp/filtered.log.txt.20171218 | grep 131.243.192.20 | cut -f 11 | sort | uniq -c | sort -n
