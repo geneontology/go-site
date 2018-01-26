@@ -56,3 +56,6 @@
 -
   label: 'FlyBase'
   id: http://flybase.org
+-
+  label: 'UniProt'
+  id: https://www.uniprot.org
