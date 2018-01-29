@@ -59,3 +59,6 @@
 -
   label: 'UniProt'
   id: https://www.uniprot.org
+-
+  label: 'Xenbase'
+  id: http://www.xenbase.org
