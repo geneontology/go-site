@@ -8,10 +8,12 @@ __author__ = 'cjm'
 
 import argparse
 import yaml
+import os
 from json import dumps
 
+METADATA = "../metadata/"
 SKIP = ["goa_pdb", "goa_uniprot_gcrp"]
-ONLY_GAF = ["goa_uniprot_all"]
+ONLY_GAF = []
 
 def main():
 
@@ -48,7 +50,7 @@ def main():
             artifacts_by_dataset[ds] = []
         artifacts_by_dataset[ds].append(a)
 
-    for (ds,alist) in artifacts_by_dataset.items():
+    for (ds, alist) in artifacts_by_dataset.items():
         generate_targets(ds, alist)
 
     targets = [all_files(ds) for ds in artifacts_by_dataset.keys()]
@@ -92,8 +94,31 @@ def generate_targets(ds, alist):
     if ds not in ONLY_GAF:
         ds_targets += [gzip(filtered_gaf(ds)), gzip(filtered_gpad(ds)), gzip(gpi(ds)), owltools_gafcheck(ds)]
 
+    if paint_merger(METADATA, ds) != "":
+        ds_targets += [merged_gaf(ds)]
+
     if is_ds_aggregated:
         ds_targets = [targetdir(ds), gzip(filtered_gaf(ds))]
+
+    if ds == "goa_uniprot_all":
+        ds_targets = [
+            "target/groups/goa_uniprot_all/goa_uniprot_all.gaf.gz",
+            "target/groups/goa_uniprot_all/goa_uniprot_all_noiea.gpad.gz",
+            "target/groups/goa_uniprot_all/goa_uniprot_all_noiea.gpi.gz",
+            "target/groups/goa_uniprot_all/goa_uniprot_all_noiea-owltools-check.txt",
+        ]
+        rule(all_files(ds), ds_targets)
+
+        ds_all_ttl = ds_targets + ["target/groups/goa_uniprot_all/goa_uniprot_all_noiea_cam.ttl"]
+        rule(all_ttl(ds), ds_all_ttl)
+
+        rule(targetdir(ds),[],
+            'mkdir -p '+targetdir(ds))
+        url = [e for e in alist if e["type"] == "gaf"][0]['source']
+        rule(src_gaf_zip(ds), [targetdir(ds)],
+            'wget --retry-connrefused --waitretry=10 -t 10 --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
+
+        return
 
     rule(all_files(ds), ds_targets)
 
@@ -111,12 +136,29 @@ def generate_targets(ds, alist):
         url = gaf['source']
         # GAF from source
         rule(src_gaf_zip(ds),[targetdir(ds)],
-             'wget --retry-connrefused --waitretry=10 -t 10 --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
+             'wget --quiet --retry-connrefused --waitretry=10 -t 10 --no-check-certificate {url} -O $@.tmp && mv $@.tmp $@ && touch $@'.format(url=url))
+
+        if paint_merger(METADATA, ds) != "":
+            rule(merged_gaf(ds), [paint_merger(METADATA, ds), gzip(filtered_gaf(ds))],
+                "python3 util/paint_merge.py merge {merger} {merged_into}".format(merger=paint_merger(METADATA, ds), merged_into=gzip(filtered_gaf(ds))) +
+                "\ncp -f {merged} {gaf}".format(merged=merged_gaf(ds), gaf=gzip(filtered_gaf(ds))))
 
 def skip_source(ds, data):
     types = [a['type'] for a in data]
     return ds in SKIP or ('gaf' not in types and 'gpad' not in types)
 
+def paint_merger(metadata_dir, datasource):
+    paint_path = os.path.join(metadata_dir, "datasets", "paint.yaml")
+    with open(paint_path) as pf:
+        metapaint = yaml.load(pf)
+        for p in metapaint["datasets"]:
+            if "merges_into" in p and p["merges_into"] == datasource:
+                return os.path.join("target/groups/", "paint_{}".format(p["merges_into"]), "paint_{}.gaf.gz".format(p["merges_into"]))
+
+        return ""
+
+def merged_gaf(ds):
+    return "{dir}{ds}_merged.gaf.gz".format(dir=targetdir(ds), ds=ds)
 def create_targetdir(ds):
     return 'create_targetdir_'+ds
 def targetdir(ds):

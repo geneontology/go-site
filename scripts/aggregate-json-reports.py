@@ -1,15 +1,21 @@
-"""Give a report on the "sanity" of the pipeline association data."""
+"""Aggregate all of the report JSON and other metadata into a single blob for downstream use, such as creating webpages."""
 ####
-#### Give a report on the "sanity" of the pipeline association data.
-#### This script assumes access to skyhook, or a flat directory of
-#### pipeline association products.
+#### Aggregate all of the report JSON and other metadata into a single blob
+#### for downstream use, such as creating webpages.
 ####
-#### Example usage to analyze "whatever":
+#### This script assumes access to skyhook or a flat directory of
+#### pipeline association products and reports. We used to have those
+#### in the same directory, now they are different; they'll need to be
+#### recombined for this script to work right now.
+#### NOTE: Skip uniprot if identified.
+####
+#### Example usage to aggregate "whatever":
 ####  python3 aggregate-json-reports.py --help
 ####  mkdir -p /tmp/mnt || true
 ####  mkdir -p /tmp/foo || true
 ####  sshfs -oStrictHostKeyChecking=no -o IdentitiesOnly=true -o IdentityFile=/home/sjcarbon/local/share/secrets/bbop/ssh-keys/foo.skyhook -o idmap=user skyhook@skyhook.berkeleybop.org:/home/skyhook /tmp/mnt/
 ####  cp /tmp/mnt/master/annotations/whatever* /tmp/foo
+####  cp /tmp/mnt/master/reports/whatever* /tmp/foo
 ####  fusermount -u /tmp/mnt
 ####  python3 aggregate-json-reports.py -v --directory /tmp/foo --metadata ~/local/src/git/go-site/metadata/datasets --output /tmp/all_combined.report.json
 ####
@@ -76,7 +82,7 @@ def main():
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('-d', '--directory',
-                        help='The directory to act on')
+                        help='The directory or combined anntations/ and reports/ to act on')
     parser.add_argument('-m', '--metadata',
                         help='The metadata directory')
     parser.add_argument('-o', '--output',
@@ -177,6 +183,7 @@ def main():
             LOG.info(src_filename)
 
     ## Get the report file and assemble a data structure for tests.
+    ## NOTE: Skipping anything that smells of uniprot at this point.
     lookup = []
     for fid in ids:
 
@@ -185,6 +192,9 @@ def main():
         ###
 
         LOG.info("fids: " + fid)
+        if fid.lower().find('uniprot'):
+            LOG.info("Smells like uniprot; skipping: " + fid)
+            continue
 
         ## Read.
         ## WARNING: Using the markdown version is a holdover from when

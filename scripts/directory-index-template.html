@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+	  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html lang="en">
+  <head profile="http://www.w3.org/1999/xhtml/vocab">
+
+    <meta charset="utf-8">
+
+    <title>Directory index for {{ here }}</title>
+
+  </head>
+
+  <body>
+
+    <h5>Parent-bucket</h5>
+    <ul>
+      {{ #parent }}
+      <li>
+	<a href="{{ parent }}">..</a>
+      </li>
+      {{ /parent }}
+      {{ ^parent }}
+      <li>
+	No parent directory
+      </li>
+      {{ /parent }}
+    </ul>
+
+    <h5>Sub-buckets</h5>
+    <ul>
+      {{ #children }}
+      <li>
+	<a href="{{ url }}">{{ name }}</a>
+      </li>
+      {{ /children }}
+      {{ ^children }}
+      <li>
+	No sub-buckets in this bucket.
+      </li>
+      {{ /children }}
+    </ul>
+
+    <h5>Files</h5>
+    <ul>
+      {{ #current }}
+      <li>
+	<a href="{{ url }}">{{ name }}</a>
+      </li>
+      {{ /current }}
+      {{ ^current }}
+      <li>
+	No files in this bucket.
+      </li>
+      {{ /current }}
+    </ul>
+
+  </body>
+</html>

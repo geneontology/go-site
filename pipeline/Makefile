@@ -92,7 +92,7 @@ RDF_GEN = $(PY_BIN)/rdfgen.py
 	rm $*.gaf
 	gzip -f $*.gpi
 
-%_cam.ttl: %.gaf.gz $(ONT_MERGED)
+%_cam.ttl: %.gaf.gz $(ONT_MERGED) target/go-ontology.json
 	gzip -dcf  $< > $*.gaf
 	python3 $(RDF_GEN) convert -a gaf -r target/go-ontology.json -o $*_cam.ttl $*.gaf
 	gzip -cf $@ > $@.gz
@@ -101,6 +101,19 @@ RDF_GEN = $(PY_BIN)/rdfgen.py
 %_inferred.ttl: %_cam.ttl
 	mkdir -p target/inferred
 	arachne --ontology=$(ONT_MERGED) --data=$< --export=$@ --inferred-only
+
+# Specific rule for goa_uniprot_all
+# The script goa_filter produces a `noiea` file, which are the annotations w/out IEA evidence.
+target/groups/goa_uniprot_all/goa_uniprot_all.gaf.gz target/groups/goa_uniprot_all/goa_uniprot_all_noiea.gaf.gz : target/alltaxons.txt target/groups/goa_uniprot_all/goa_uniprot_all-src.gaf.gz
+	gzip -dcf target/groups/goa_uniprot_all/goa_uniprot_all-src.gaf.gz | ./util/goa_filter | gzip -c > $@.tmp
+	cat noiea | gzip -cf > target/groups/goa_uniprot_all/goa_uniprot_all_noiea.gaf.gz && rm noiea  && mv $@.tmp $@
+
+target/alltaxons.txt:
+	python3 util/model_organism.py taxons ../metadata/datasets/ --out target/alltaxons.txt
+
+target/merged:
+	python3 util/paint_merge.py merge ../metadata/datasets/paint.yaml target/groups/
+	touch target/merged
 
 # ----------------------------------------
 # Makefile for building GAFs

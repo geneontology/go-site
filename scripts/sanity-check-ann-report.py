@@ -1,7 +1,12 @@
+"""Give a report on the "sanity" of the pipeline association data from available metadata; skips uniprot."""
 ####
 #### Give a report on the "sanity" of the pipeline association data.
-#### This script assumes access to skyhook, or a flat directory of
-#### pipeline association products.
+####
+#### This script assumes access to skyhook or a flat directory of
+#### pipeline association products and reports. We used to have those
+#### in the same directory, now they are different; they'll need to be
+#### recombined for this script to work right now.
+#### NOTE: Skip uniprot if identified.
 ####
 #### Example usage to analyze "whatever":
 ####  python3 sanity-check-ann-report.py --help
@@ -85,15 +90,16 @@ def main():
         ids.append(potential_id)
 
     ## TODO: Check found resources versus metadata.
-    print('Found ' + str(len(ids)) + ' resource(s).')
-    print('TODO: compare found resources versus metadata.')
+    LOGGER.info('Found ' + str(len(ids)) + ' resource(s).')
+    LOGGER.info('TODO: compare found resources versus metadata.')
 
     ## Get the report file and assemble a data structure for tests.
     lookup = {}
     for aid in ids:
 
-        # if aid == 'goa_uniprot_all':
-        #     break
+        if aid.lower().find('uniprot') != -1:
+            LOGGER.info("Smells like uniprot; skipping: " + aid)
+            continue
 
         ###
         ### Extract information from the report.
@@ -234,13 +240,13 @@ def main():
         if count_gaf_src < (((lines_in_file - lines_assocs) + lines_skipped) * 0.9):
             die_screaming('Expected associations worryingly reduced: ' + aid)
 
-        print(aid + ' okay...')
+        LOGGER.info(aid + ' okay...')
 
     if DIED_SCREAMING_P:
-        print('Errors happened.')
+        LOGGER.info('Errors happened.')
         sys.exit(1)
     else:
-        print('All passing.')
+        LOGGER.info('All passing.')
 
 
 ## You saw it coming...

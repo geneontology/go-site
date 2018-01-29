@@ -399,12 +399,12 @@
 - database: CO_125
   name: Crop Ontology CGIAR Musa Anatomy
   generic_urls:
-    - http://www.cropontology.org/ontology/CO_125/Musa Anatomy
+    - http://www.cropontology.org/ontology/CO_125:0000000/CGIAR_Musa_anatomy
   entity_types:
     - type_name: entity
       type_id: BET:0000000
       example_id: CO_125:0000002
-      example_url: url_example
+      example_url: http://www.cropontology.org/ontology/CO_125:0000000
 - database: COG
   name: NCBI Clusters of Orthologous Groups
   generic_urls:
@@ -481,15 +481,15 @@
       example_id: cosmoss_PpV1.2:Pp1s47_77V2.1
       example_url: https://www.cosmoss.org/annotation/genonaut?accession=Pp1s53_22V2.1&version=V1.2
 - database: cribi_vitis
-  name: database
+  name: Vitis CRIBI database
   generic_urls:
     - http://genomes.cribi.unipd.it
   entity_types:
     - type_name: entity
       type_id: BET:0000000
       url_syntax: http://genomes.cribi.unipd.it/cgi-bin/pqs2/report.pl?gene_name=[example_id]&release=v1
-      example_id: example_id
-      example_url: url_example
+      example_id: VIT_00s0173g00270
+      example_url: http://genomes.cribi.unipd.it/cgi-bin/pqs2/report.pl?gene_name=VIT_00s0173g00270&release=v1
 - database: dbSNP
   name: NCBI dbSNP
   generic_urls:
@@ -1593,7 +1593,7 @@
 - database: MACSC_REF
   name: Maize Genetics and Genomics Database
   generic_urls:
-    - http://www.maizegdb.org/cgi-bin/id_search.cgi?id=$acc_no
+    - http://www.maizegdb.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -1842,7 +1842,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: '[0-9]{6,}'
+      id_syntax: '[0-9]{5,}'
       url_syntax: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=[example_id]
       example_id: NCBI_gi:113194944
       example_url: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=113194944
@@ -1922,7 +1922,7 @@
 - database: OBO_SF2_PO
   name: Source Forge OBO Plant Ontology (PO) term request tracker
   generic_urls:
-    - generic_url
+    - https://sourceforge.net/p/obo/plant-ontology-po-term-requests/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -1932,7 +1932,7 @@
 - database: OBO_SF2_PECO
   name: Source Forge OBO plant-experimental-conditions-ontology (PECO) term request tracker
   generic_urls:
-    - generic_url
+    - https://sourceforge.net/p/obo/plant-environment-ontology-eo/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -2279,6 +2279,7 @@
   entity_types:
     - type_name: polypeptide region
       type_id: SO:0000839
+      id_syntax: PR[0-9]{5}
       url_syntax: http://www.bioinf.manchester.ac.uk/cgi-bin/dbbrowser/sprint/searchprintss.cgi?display_opts=Prints&category=None&queryform=false&regexpr=off&prints_accn=[example_id]
       example_id: PRINTS:PR00025
       example_url: http://www.bioinf.manchester.ac.uk/cgi-bin/dbbrowser/sprint/searchprintss.cgi?display_opts=Prints&category=None&queryform=false&regexpr=off&prints_accn=PR00025
@@ -2300,6 +2301,7 @@
   entity_types:
     - type_name: polypeptide region
       type_id: SO:0000839
+      id_syntax: PS[0-9]{5}
       url_syntax: http://www.expasy.ch/cgi-bin/prosite-search-ac?[example_id]
       example_id: Prosite:PS00365
       example_url: http://www.expasy.ch/cgi-bin/prosite-search-ac?PS00365
@@ -2431,9 +2433,9 @@
     - type_name: entity
       type_id: BET:0000000
       id_syntax: R-[A-Z]{3}-[0-9]+(-[0-9]+){0,1}(\.[0-9]+){0,1}
-      url_syntax: www.reactome.org/content/detail/[example_id]
+      url_syntax: http://www.reactome.org/content/detail/[example_id]
       example_id: Reactome:R-HSA-109582
-      example_url: www.reactome.org/content/detail/R-HSA-109582
+      example_url: http://www.reactome.org/content/detail/R-HSA-109582
 - database: REBASE
   name: REBASE restriction enzyme database
   generic_urls:
@@ -3058,11 +3060,14 @@
       url_syntax: http://www.grenoble.prabi.fr/obiwarehouse/unipathway/upa?upid=[example_id]
       example_id: UniPathway:UPA00155
       example_url: http://www.grenoble.prabi.fr/obiwarehouse/unipathway/upa?upid=UPA00155
+- database: UniProt
+  name: Universal Protein Knowledgebase
+  description: A central repository of protein sequence and function created by joining the information contained in Swiss-Prot, TrEMBL, and PIR database
+  generic_urls:
+    - http://www.uniprot.org
 - database: UniProtKB
   name: Universal Protein Knowledgebase
   description: A central repository of protein sequence and function created by joining the information contained in Swiss-Prot, TrEMBL, and PIR database
-  synonyms:
-    - UniProt
   generic_urls:
     - http://www.uniprot.org
   entity_types:

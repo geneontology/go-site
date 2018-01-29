@@ -1,0 +1,50 @@
+#!/usr/bin/awk -f
+
+# This takes a GAF file and does some basic checking on each line and outputs
+# correct lines back to stdout. Validations include checking column length and
+# lines are also skipped if there is a taxon already included in the model
+# organisms. For lines that do not use evidence code `IEA`, those are appended
+# to a file called 'noiea' as a side affect. 
+
+BEGIN {
+    FS="\t"
+    while ("cat target/alltaxons.txt" | getline taxon) {
+        model_organisms[taxon] = "1";
+    }
+}
+{
+    if (index($0, "!") == 1) {
+        # Pass through comments
+        print $0
+        print $0 > "noiea"
+        next
+    }
+
+    if (NF != 15 && NF != 17) {
+        # Skip if not the correct number of columns
+        next
+    }
+
+    taxon = $13
+    if(index($13, "|") > 0) {
+        # Just take the first
+        taxon = substr(taxon, 1, index($13, "|")-1)
+    }
+    id = substr(taxon, index(taxon, ":") + 1)
+    taxon = "NCBITaxon:" id
+
+    if (taxon in model_organisms) {
+        # We already have it defined, so we skip
+        next
+    } else if ($7 != "IEA") {
+        print $0
+        print $0 > "noiea"
+    } else {
+        print $0
+    }
+}
+
+# ! IEA, taxon:skip -> skip
+# ! not IEA, taxon:skip -> skip
+# ! not IEA, taxon:keep -> gaf, noiea
+# ! IEA, taxon:keep -> gaf
