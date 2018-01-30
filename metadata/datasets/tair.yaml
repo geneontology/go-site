@@ -4,7 +4,7 @@ description: "GO data for The Arabidopsis Information Resource"
 project_name: "The Arabidopsis Information Resource (TAIR)"
 contact_email: "curator@arabidopsis.org"
 project_url: "http://www.arabidopsis.org"
-funding_source: "NSF grants DBI-9978564 and DBI-0417062"
+funding_source: "The TAIR project is funded by academic institutional, corporate, and individual subscriptions. TAIR is administered by the 501(c)(3) non-profit Phoenix Bioinformatics."
 email_report: "curator@arabidopsis.org"
 datasets:
  -    
