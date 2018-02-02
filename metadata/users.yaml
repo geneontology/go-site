@@ -414,8 +414,12 @@
     - 17d2b31399e746373f3b18f7f65ab7fe
   organization: OHSU
   authorizations:
-    termgenie-go:
-      allow-write: true
+   noctua:
+     go:
+       allow-edit: true
+  groups:
+    - 'http://monarchinitiative.org'
+    - 'https://ncats.nih.gov/translator'
 -
   uri: 'http://orcid.org/0000-0003-3212-6364'
   xref: 'GOC:ha'
