@@ -62,3 +62,9 @@
 -
   label: 'Xenbase'
   id: http://www.xenbase.org
+-
+  label: 'Monarch Initiative'
+  id: http://monarchinitiative.org
+-
+  label: 'NCATS Data Translator'
+  id: https://ncats.nih.gov/translator
