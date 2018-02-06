@@ -35,16 +35,16 @@ function _ll(arg1){
 var debug = false;
 function _debug(arg1){
     if( debug ){
-	console.log(arg1);
+        console.log(arg1);
     }
 }
 
 // Two or one  args.
 function _die(m1, m2){
     if( typeof(m2) !== 'undefined' ){
-	console.error('ERROR:', m1, m2);
+        console.error('ERROR:', m1, m2);
     }else{
-	console.error('ERROR:', m1);
+        console.error('ERROR:', m1);
     }
     process.exit(-1);
 }
@@ -80,12 +80,12 @@ if( ! bucket_raw ){
 }else{
     var parts = bucket_raw.split('/');
     if( ! parts ){
-	_die('Not a good bucket descriptor: ' + bucket_raw);
+        _die('Not a good bucket descriptor: ' + bucket_raw);
     }else if( parts.length === 1 ){
-	bucket = parts[0];
+        bucket = parts[0];
     }else{
-	bucket = parts[0];
-	prefix = parts[1];
+        bucket = parts[0];
+        prefix = parts[1];
     }
 
     _debug('Will use bucket: ' + bucket + ', with prefix: ' + prefix);
@@ -102,30 +102,30 @@ var s3 = new AWS.S3({params: {Bucket: bucket, Prefix: prefix}});
 function get_objects(s3dataobjs){
 
     each(s3dataobjs, function(s3dataobj){
-	var key = s3dataobj.Key;
+        var key = s3dataobj.Key;
 
-	// Get the objects.
-	s3.getObject({Key: key}, function(err, data){
-	    if( err ){
-		_die(err, err.stack);
-	    }else{
-		_debug('In get objects loop.');
+        // Get the objects.
+        s3.getObject({Key: key}, function(err, data){
+            if( err ){
+                _die(err, err.stack);
+            }else{
+                _debug('In get objects loop.');
 
-		// // Works too.
-		// var s = zlib.gunzipSync(data.Body).toString();
-		// console.log(s);
-		zlib.gunzip(data.Body, function(err, buffer){
-		    if( err ){
-			// handle error
-			console.log('ERR', err);
-		    }else{
-			_debug('On data...');
-			var str = buffer.toString();
-			console.log(buffer.toString());
-		    }
-		});
-	    }
-	});
+                // // Works too.
+                // var s = zlib.gunzipSync(data.Body).toString();
+                // console.log(s);
+                zlib.gunzip(data.Body, function(err, buffer){
+                    if( err ){
+                        // handle error
+                        console.log('ERR', err);
+                    }else{
+                        _debug('On data...');
+                        var str = buffer.toString();
+                        console.log(buffer.toString());
+                    }
+                });
+            }
+        });
     });
 }
 
@@ -135,26 +135,26 @@ function get_objects(s3dataobjs){
     var all_keys = [];
     function list_all_keys(token, cb){
 
-	var opts = {};
-	if(token){
-	    opts.ContinuationToken = token;
-	}
+        var opts = {};
+        if(token){
+            opts.ContinuationToken = token;
+        }
 
-	s3.listObjectsV2(opts, function(err, data){
-	    all_keys = all_keys.concat(data.Contents);
+        s3.listObjectsV2(opts, function(err, data){
+            all_keys = all_keys.concat(data.Contents);
 
-	    if(data.IsTruncated){
-		_debug('Got ' + all_keys.length +
-		       ' bucket keys, continuing...');
-		list_all_keys(data.NextContinuationToken, cb);
-	    }else{
-		_debug('Completed collection with ' +
-		       all_keys.length + ' keys.');
-		cb();
-	    }
-	});
+            if(data.IsTruncated){
+                _debug('Got ' + all_keys.length +
+                ' bucket keys, continuing...');
+                list_all_keys(data.NextContinuationToken, cb);
+            }else{
+                _debug('Completed collection with ' +
+                all_keys.length + ' keys.');
+                cb();
+            }
+        });
     }
     list_all_keys(null, function(){
-	get_objects(all_keys);
+        get_objects(all_keys);
     });
 })();
