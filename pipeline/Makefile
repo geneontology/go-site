@@ -159,7 +159,19 @@ BG = java -server -XX:+UseG1GC -Xmx$(BGMEM) -cp $(BGJAR) com.bigdata.rdf.store.D
 BG_PORT = 8899
 METAGO = <http://model.geneontology.org/>
 GO_GRAPHSTORE_URI = http://purl.obolibrary.org/obo/go/extensions/go-graphstore.owl
-CAM_GRAPH_QUERY = 'PREFIX metago: $(METAGO) SELECT ?source_graph WHERE { { SELECT DISTINCT ?source_graph WHERE { GRAPH ?source_graph { ?s ?p ?o . } } } FILTER (?source_graph != <$(GO_GRAPHSTORE_URI)>) FILTER NOT EXISTS { ?source_graph metago:graphType metago:gafCam . } }'
+CAM_GRAPH_QUERY = '\
+PREFIX metago: <http://model.geneontology.org/> \
+SELECT ?source_graph WHERE { \
+	{ \
+		SELECT DISTINCT ?source_graph WHERE { \
+			GRAPH ?source_graph { \
+				?s ?p ?o . \
+			} \
+		} \
+	} \
+	?source_graph <http://geneontology.org/lego/json-model> ?json . \
+}'
+NOCTUA_CAMS = $(shell ls -l target/noctua-models/models | awk '{ print $$9 }' | cut -f 1 -d '.' | awk '{ print "<http://model.geneontology.org/"$$1">" }' | tr '\n' ' ')
 BG_PROPERTIES = conf/blazegraph.properties
 LOAD_TARGETS = $(ONT_MERGED) target/rdf target/noctua-models/models
 
