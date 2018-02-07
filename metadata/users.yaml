@@ -3454,6 +3454,18 @@
     - 'http://geneontology.org'
   accounts:
     github: 'dustine32'
+-
+  nickname: "Paul W. Sternberg"
+  uri: 'http://orcid.org/0000-0002-7699-0173'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  organization: WB
+  groups:
+    - 'http://www.wormbase.org'
+  accounts:
+    github: 'paulwsternberg'
 # -
 #   nickname: ""
 #   uri: ''
