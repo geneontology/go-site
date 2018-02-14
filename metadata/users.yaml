@@ -3021,7 +3021,9 @@
    noctua:
      go:
        allow-edit: true
-  organization: 'E. coli'
+  organization: SGD
+  groups:
+    - 'http://www.yeastgenome.org'
   accounts:
     github: 'suzialeksander'
 -
