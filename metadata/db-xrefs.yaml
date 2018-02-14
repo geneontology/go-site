@@ -449,6 +449,17 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
+- database: ComplexPortal
+  name: Complex Portal database of macromolecular complexes
+  generic_urls:
+    - https://www.ebi.ac.uk/complexportal
+  entity_types:
+    - type_name: macromolecular complex
+      type_id: GO:0032991
+      id_syntax: CP-[0-9]+
+      url_syntax: https://www.ebi.ac.uk/complexportal/complex/[example_id]
+      example_id: ComplexPortal:CPX-2158
+      example_url: https://www.ebi.ac.uk/complexportal/complex/CPX-2158
 - database: CORIELL
   name: Coriell Institute for Medical Research
   description: The Coriell Cell Repositories provide essential research reagents to the scientific community by establishing, verifying, maintaining, and distributing cell cultures and DNA derived from cell cultures. These collections, supported by funds from the National Institutes of Health (NIH) and several foundations, are extensively utilized by research scientists around the world.
