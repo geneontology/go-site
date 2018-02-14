@@ -6,13 +6,13 @@
   label: 'LBL'
   id: http://lbl.gov
 -
-  label: 'GO Central'
+  label: 'GO_Central'
   id: http://geneontology.org
 -
   label: 'Planteome'
   id: http://planteome.org
 -
-  label: 'Berkeley BOP'
+  label: 'BerkeleyBOP'
   id: http://berkeleybop.org
 -
   label: 'ZFIN'
@@ -63,8 +63,8 @@
   label: 'Xenbase'
   id: http://www.xenbase.org
 -
-  label: 'Monarch Initiative'
+  label: 'Monarch_Initiative'
   id: http://monarchinitiative.org
 -
-  label: 'NCATS Data Translator'
+  label: 'NCATS_Data_Translator'
   id: https://ncats.nih.gov/translator
