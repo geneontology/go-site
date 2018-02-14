@@ -51,7 +51,7 @@ proc:
 # ----------------------------------------
 
 $(GAF_OWL):
-	owltools --log-error $(OBO)/go/extensions/go-gaf.owl --merge-imports-closure --remove-annotation-assertions -l -r --add-obo-shorthand-to-properties -o $@
+	owltools --log-error $(OBO)/go/extensions/go-gaf.owl --merge-imports-closure --add-obo-shorthand-to-properties -o $@
 
 CATALOG_DETAILS=
 
