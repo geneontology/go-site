@@ -19,6 +19,10 @@ sequence:
         type: str
         required: true
         unique: true
+      "shorthand":
+        type: str
+        required: false
+        unique: true
       "active-from":
         type: str
         required: false
