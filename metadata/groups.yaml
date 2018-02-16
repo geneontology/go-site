@@ -5,66 +5,88 @@
 -
   label: 'LBL'
   id: http://lbl.gov
+  shorthand: LBL
 -
   label: 'GO Central'
   id: http://geneontology.org
+  shorthand: GO_Central
 -
   label: 'Planteome'
   id: http://planteome.org
+  shorthand: Planteome
 -
   label: 'Berkeley BOP'
   id: http://berkeleybop.org
+  shorthand: BerkeleyBOP
 -
   label: 'ZFIN'
   id: http://zfin.org
+  shorthand: ZFIN
 -
   label: 'MGI'
   id: http://informatics.jax.org
+  shorthand: MGI
 -
   label: 'RGD'
   id: http://rgd.mcw.edu
+  shorthand: RGD
 -
   label: 'ARUK-UCL'
   id: http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl
+  shorthand: ARUK-UCL
 -
   label: 'BHF-UCL'
   id: http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular
+  shorthand: BHF-UCL
 -
   label: 'SynGO-UCL'
   id: https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl
+  shorthand: SynGO-UCL
 -
   label: 'neXtProt'
   id: https://www.nextprot.org
+  shorthand: nextProt
 -
   label: 'SGD'
   id: http://www.yeastgenome.org
+  shorthand: SGD
 -
   label: 'PomBase'
   id: http://www.pombase.org
+  shorthand: PomBase
 -
   label: 'TAIR'
   id: http://www.arabidopsis.org
+  shorthand: TAIR
 -
   label: 'dictyBase'
   id: http://dictybase.org
+  shorthand: dictyBase
 -
   label: 'WB'
   id: http://www.wormbase.org
+  shorthand: WB
 -
   label: 'IntAct'
   id: https://www.ebi.ac.uk/intact
+  shorthand: IntAct
 -
   label: 'FlyBase'
   id: http://flybase.org
+  shorthand: FlyBase
 -
   label: 'UniProt'
   id: https://www.uniprot.org
+  shorthand: UniProt
 -
   label: 'Xenbase'
   id: http://www.xenbase.org
+  shorthand: Xenbase
 -
   label: 'Monarch Initiative'
   id: http://monarchinitiative.org
+  shorthand: Monarch_Initiative
 -
   label: 'NCATS Data Translator'
   id: https://ncats.nih.gov/translator
+  shorthand: NCATS_Data_Translator

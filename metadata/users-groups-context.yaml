@@ -3,6 +3,9 @@ xsd: 'http://www.w3.org/2001/XMLSchema#'
 nickname: 'rdfs:label'
 label: 'rdfs:label'
 comment: 'rdfs:comment'
+shorthand:
+  '@id': 'http://www.geneontology.org/formats/oboInOwl#shorthand'
+  '@type': 'xsd:string'
 xref: 
   '@id': 'http://www.geneontology.org/formats/oboInOwl#hasDbXref'
   '@type': 'xsd:string'
