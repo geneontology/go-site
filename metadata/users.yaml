@@ -21,6 +21,8 @@
     noctua-go:
       allow-edit: true
   xref: 'GOC:amu'
+  groups:
+    - 'http://geneontology.org'
   uri: 'GOC:amu'
 -
   nickname: 'Paul Thomas'
@@ -32,6 +34,8 @@
   accounts:
     github: thomaspd
   xref: 'GOC:pt'
+  groups:
+    - 'http://geneontology.org'
   uri: 'http://orcid.org/0000-0002-9074-3507'
 -
   nickname: 'Huaiyu Mi'
@@ -41,6 +45,8 @@
     noctua-go:
       allow-edit: true
   xref: 'GOC:hm'
+  groups:
+    - 'http://geneontology.org'
   uri: 'http://orcid.org/0000-0001-8721-202X'
   accounts:
     github: huaiyumi
@@ -3420,6 +3426,8 @@
       go:
         allow-edit: true
   organization: USC
+  groups:
+    - 'http://geneontology.org'
   accounts:
     github: 'tmushayahama'
 -
