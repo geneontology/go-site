@@ -113,7 +113,7 @@ function get_objects(s3dataobjs){
 
 		// // Works too.
 		// var s = zlib.gunzipSync(data.Body).toString();
-		// console.log(s);
+                // console.log(s);
 		zlib.gunzip(data.Body, function(err, buffer){
 		    if( err ){
 			// handle error
