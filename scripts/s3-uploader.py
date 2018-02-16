@@ -159,8 +159,11 @@ def main():
             if MIMES.get(fext, False):
                 mime = MIMES.get(fext)
 
-            ## Figure out S3 path/key and final filename.
-            s3path = relative_to_start + '/' + fname
+            ## Figure out S3 path/key and final filename, keeping in
+            ## mind that relative_to_Start can be empty if root.
+            s3path = fname
+            if relative_to_start:
+                s3path = relative_to_start + '/' + fname
             filename = os.path.join(curr_dir, fname)
 
             tags = {}
