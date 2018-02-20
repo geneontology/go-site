@@ -35,7 +35,8 @@ def append_zip_into_zip(merger, merge_into):
     merged_leaf = leaf.split(".gaf.gz")[0] + "_merged.gaf.gz"
     final = os.path.join(base, merged_leaf)
 
-    final_zip = gzip.GzipFile(final, mode="w")
+    final_f = open(final, "wb")
+    final_zip = gzip.GzipFile("", mode="wb", fileobj=final_f)
     merger_zip = gzip.GzipFile(merger)
     merge_into_zip = gzip.GzipFile(merge_into)
 
