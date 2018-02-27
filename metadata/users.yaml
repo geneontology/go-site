@@ -3465,6 +3465,17 @@
   accounts:
     github: 'dustine32'
 -
+  nickname: 'Laurent-Philippe Albou'
+  authorizations:
+    noctua-go:
+      allow-edit: true
+  uri: 'http://orcid.org/0000-0001-5801-1974'
+  organization: USC
+  groups:
+    - 'http://geneontology.org'
+  accounts:
+    github: 'lpalbou'
+-
   nickname: "Paul W. Sternberg"
   uri: 'http://orcid.org/0000-0002-7699-0173'
   authorizations:
