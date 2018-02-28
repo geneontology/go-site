@@ -111,7 +111,7 @@ def main():
     resource_metadata = {}
 
     ## Read in all of the useful data from the metadata data sources.
-    LOG.info('Globbing metadata for sources: ' + args.metadata + '/*.yaml')
+    LOG.info('Globbingmetadata for sources: ' + args.metadata + '/*.yaml')
     metadata_filenames = glob.glob(args.metadata + '/*.yaml')
     #LOG.info(metadata_filenames)
     for metadata_filename in metadata_filenames:
@@ -192,7 +192,7 @@ def main():
         ###
 
         LOG.info("fids: " + fid)
-        if fid.lower().find('uniprot'):
+        if fid.lower().find('uniprot') != -1:
             LOG.info("Smells like uniprot; skipping: " + fid)
             continue
 
