@@ -1,19 +1,20 @@
 """Index the contexts of a directory, creating an Apache HTTPd index-like page dictated by the mustache template provided."""
 ####
 #### Example usage (local testing):
-####  python3 directory-indexer.py --help
+####  python3 ./scripts/directory_indexer.py --help
 ####  mkdir -p /tmp/foo/bar/bib/bab && mkdir -p /tmp/foo/bar/fish && mkdir -p /tmp/foo/bar/foul && touch /tmp/foo/top.md && touch /tmp/foo/bar/bib/bab/bottom.txt && touch /tmp/foo/bar/fish/trout.f && touch /tmp/foo/bar/fish/bass.f
-####  python3 ./scripts/directory-indexer.py -v --inject ./scripts/directory-index-template.html --directory /tmp/foo --prefix file:///tmp/foo
+####  python3 ./scripts/directory_indexer.py -v --inject ./scripts/directory-index-template.html --directory /tmp/foo --prefix file:///tmp/foo -x
+####  python3 ./scripts/directory_indexer.py -v --inject ./scripts/directory-index-template.html --directory /tmp/foo --prefix file:///tmp/foo -x -u
 ####
 #### Example usage (production-like):
-####  python3 directory-indexer.py --help
+####  python3 directory_indexer.py --help
 ####  mkdir -p /tmp/mnt || true
 ####  sshfs -oStrictHostKeyChecking=no -o IdentitiesOnly=true -o IdentityFile=/home/sjcarbon/local/share/secrets/bbop/ssh-keys/foo.skyhook -o idmap=user skyhook@skyhook.berkeleybop.org:/home/skyhook /tmp/mnt/
-####  python3 directory-indexer.py -v --inject ./scripts/directory-index-template.html --directory /tmp/mnt/annotations --prefix http://foo/bar
+####  python3 directory_indexer.py -v --inject ./scripts/directory-index-template.html --directory /tmp/mnt/annotations --prefix http://foo/bar
 ####  fusermount -u /tmp/mnt
 ####
 #### Example usage (production):
-####  python3 ./scripts/directory-indexer.py -v --inject ./scripts/directory-index-template.html --directory $WORKSPACE/mnt --prefix http://experimental.geneontology.io -x'
+####  python3 ./scripts/directory_indexer.py -v --inject ./scripts/directory-index-template.html --directory $WORKSPACE/mnt --prefix http://experimental.geneontology.io -x'
 ####
 
 ## Standard imports.
@@ -55,7 +56,7 @@ def main():
                         help='The prefix to add to all files and links')
     parser.add_argument('-x', '--execute', action='store_true',
                         help='Actually run--not the default dry run')
-    parser.add_argument('-r', '--release', action='store_true',
+    parser.add_argument('-u', '--up', action='store_true',
                         help='Release version, where pages have a link pointing up one level')
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='More verbose output')
@@ -98,7 +99,7 @@ def main():
 
         ## We can navigate up if we are not in the root.
         # print('one_up: ' + one_up)
-        if rootdir != currdir or args.release:
+        if rootdir != currdir or args.up:
             parent = parent_url(rootdir, currdir, prefix)
 
         ## Note files and directories.
