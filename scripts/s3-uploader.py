@@ -26,6 +26,9 @@ import logging
 import os
 import json
 import boto3
+import math
+
+from filechunkio import FileChunkIO
 
 ## Default mimetype metadata--everything that we'll be dealing with,
 ## so controlled.
@@ -179,12 +182,16 @@ def main():
                       '(' + mime + ', ' + tags_str + ')')
 
             ## Create the new object that we want.
-            newobj = s3.Object(args.bucket, s3path)
-            outfile = open(filename, 'rb')
-            newobj.put(Body=outfile, \
-                           ContentType=mime, \
-                           Metadata=tags,
-                           ACL='public-read') #Tagging=tags_str)
+            s3bucket = s3.get_bucket(args.bucket)
+
+            multipart_upload(filename, s3bucket, s3path, content_type=mime, metadata=tags, policy="public-read")
+
+            # newobj = s3.Object(args.bucket, s3path)
+            # outfile = open(filename, 'rb')
+            # newobj.put(Body=outfile, \
+            #                ContentType=mime, \
+            #                Metadata=tags,
+            #                ACL='public-read') #Tagging=tags_str)
 
             # outbod = open(os.path.join(curr_dir, fname), 'rb')
             # .put(Body=outbod, 'rb')
@@ -192,6 +199,25 @@ def main():
         # for dname in dirs:
         #     #LOG.info('dir: ' + os.path.join(curr_dir, dname))
         #     pass
+
+def multipart_upload(source_file_path, s3_bucket, s3_path, content_type=None, metadata=None, policy=None):
+    headers = None
+    if content_type:
+        headers = {"Content-Type": content_type}
+
+    multipart = s3_bucket.initiate_multipart_upload(s3_path, headers=headers, metadata=metadata, policy=policy)
+
+    source_size = os.stat(source_file_path).st_size
+    chunk_size = 200*1024*2024 # 200 Mb
+    number_of_chunks = int(math.ceil(source_size / float(chunk_size)))
+
+    for n in range(number_of_chunks):
+        offset = n * chunk_size
+        bytes_size = min(chunk_size, source_size - offset)
+        with FileChunkIO(source_file_path, 'r', offset=offset, bytes=bytes_size) as part:
+            multipart.upload_part_from_file(part, part_num=i + 1)
+
+    multipart.complete_upload()
 
 ## You saw it coming...
 if __name__ == '__main__':
