@@ -141,8 +141,11 @@ def main():
     #LOG.info(creds)
 
     s3 = boto3.resource('s3', region_name=args.location,
-                          aws_access_key_id = creds['accessKeyId'],
-                          aws_secret_access_key = creds['secretAccessKey'])
+                          aws_access_key_id=creds['accessKeyId'],
+                          aws_secret_access_key=creds['secretAccessKey'])
+
+    # s3 = boto3.resource("s3", creds['accessKeyId'], creds['secretAccessKey'])
+
     #s3.Object('mybucket', 'hello.txt').put(Body=open('/tmp/hello.txt', 'rb'))
 
     ## Walk tree.
@@ -182,8 +185,7 @@ def main():
                       '(' + mime + ', ' + tags_str + ')')
 
             ## Create the new object that we want.
-            s3bucket = s3.get_bucket(args.bucket)
-
+            s3bucket = s3.Bucket(args.bucket)
             multipart_upload(filename, s3bucket, s3path, content_type=mime, metadata=tags, policy="public-read")
 
             # newobj = s3.Object(args.bucket, s3path)
@@ -201,23 +203,18 @@ def main():
         #     pass
 
 def multipart_upload(source_file_path, s3_bucket, s3_path, content_type=None, metadata=None, policy=None):
-    headers = None
+
+    header = {}
     if content_type:
-        headers = {"Content-Type": content_type}
+        header["ContentType"] = content_type
 
-    multipart = s3_bucket.initiate_multipart_upload(s3_path, headers=headers, metadata=metadata, policy=policy)
+    if metadata:
+        header["Metadata"] = metadata
 
-    source_size = os.stat(source_file_path).st_size
-    chunk_size = 200*1024*2024 # 200 Mb
-    number_of_chunks = int(math.ceil(source_size / float(chunk_size)))
+    if policy:
+        header["ACL"] = policy
 
-    for n in range(number_of_chunks):
-        offset = n * chunk_size
-        bytes_size = min(chunk_size, source_size - offset)
-        with FileChunkIO(source_file_path, 'r', offset=offset, bytes=bytes_size) as part:
-            multipart.upload_part_from_file(part, part_num=i + 1)
-
-    multipart.complete_upload()
+    s3_bucket.upload_file(source_file_path, s3_path, ExtraArgs=header)
 
 ## You saw it coming...
 if __name__ == '__main__':
