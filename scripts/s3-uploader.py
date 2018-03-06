@@ -121,7 +121,11 @@ def main():
     ## Ensure bucket.
     if not args.bucket:
         die_screaming('need a bucket argument')
-    LOG.info('Will put to bucket: ' + args.bucket)
+    bucket, slash, toppath = args.bucket.partition('/')
+    if toppath != '':
+        LOG.info('Will put to bucket: ' + bucket + '; with path: ' + toppath)
+    else:
+        LOG.info('Will put to bucket at top level: ' + bucket)
     ## Ensure mimetype metadata.
     if not args.mimetypes:
         LOG.info('Will use internal mimetype defaults')
@@ -181,11 +185,13 @@ def main():
 
             ## Visual check.
             LOG.info('file: ' + filename)
-            LOG.info(' -> [' + args.bucket + '] ' + s3path + \
+            if toppath != '':
+                s3path = toppath + '/' + s3path
+            LOG.info(' -> [' + bucket + '] ' + s3path + \
                       '(' + mime + ', ' + tags_str + ')')
 
             ## Create the new object that we want.
-            s3bucket = s3.Bucket(args.bucket)
+            s3bucket = s3.Bucket(bucket)
             multipart_upload(filename, s3bucket, s3path, content_type=mime, metadata=tags, policy="public-read")
 
             # newobj = s3.Object(args.bucket, s3path)
