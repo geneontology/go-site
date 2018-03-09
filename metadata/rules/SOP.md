@@ -31,3 +31,7 @@ If you wish to have an automated rule, cc @dougli1sqrd. Note that not
 every rule is automatable. We use this system to document standard
 manual QC checks.
 
+Additional note: Even when your PR is merged, it will not show up in
+the README.md summary. Someone needs to run `make` from this folder
+(see [Makefile](Makefile). In future we may have a more automated
+system.
