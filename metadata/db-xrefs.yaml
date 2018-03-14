@@ -1976,8 +1976,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
+      id_syntax: '[0-9]{5}'
       url_syntax: http://www.geneontology.org/gene-associations/submission/paint/[example_id]/[example_id].txt
-      example_id: PAINT_REF:PTHR10046
+      example_id: PAINT_REF:23266
       example_url: http://www.geneontology.org/gene-associations/submission/paint/PTHR10046/PTHR10046.txt
 - database: PAMGO
   name: Plant-Associated Microbe Gene Ontology Interest Group
