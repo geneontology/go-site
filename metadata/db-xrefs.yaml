@@ -1292,8 +1292,8 @@
       url_syntax: http://www.ebi.ac.uk/intact/search/do/search?searchString=[example_id]
       example_id: IntAct:EBI-17086
       example_url: http://www.ebi.ac.uk/intact/search/do/search?searchString=EBI-17086
-    - type_name: protein complex
-      type_id: GO:0043234
+    - type_name: protein-containing complex
+      type_id: GO:0032991
       id_syntax: EBI-[0-9]+
       url_syntax: http://www.ebi.ac.uk/complexportal/complex/[example_id]
       example_id: IntAct:EBI-10205244
