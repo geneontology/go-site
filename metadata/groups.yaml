@@ -90,3 +90,7 @@
   label: 'NCATS Data Translator'
   id: https://ncats.nih.gov/translator
   shorthand: NCATS_Data_Translator
+-
+  label: 'SynGO'
+  id: https://syngo.vu.nl
+  shorthand: SynGO
