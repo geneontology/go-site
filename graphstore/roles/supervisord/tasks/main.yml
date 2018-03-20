@@ -1,0 +1,10 @@
+---
+
+- name: install supervisord
+  apt:
+    name: supervisor
+
+- name: start supervisord
+  service:
+    name: supervisor
+    state: started

@@ -1,0 +1,37 @@
+---
+
+- name: make graphstore user
+  user:
+    name: graphstore
+    shell: /bin/bash
+
+- name: blazegraph start script
+  copy:
+    src: blazegraph_start.sh
+    dest: /home/graphstore/
+    owner: graphstore
+
+- name: blazegraph properties
+  template:
+    src: blazegraph.properties.j2
+    dest: /home/graphstore/blazegraph.properties
+    owner: graphstore
+
+- name: make log directory
+  file:
+    path: /var/log/blazegraph
+    state: directory
+    owner: graphstore
+
+- name: copy supervisor bg conf
+  template:
+    src: graphstore.conf.j2
+    dest: /etc/supervisor/conf.d/graphstore.conf
+    owner: graphstore
+  notify:
+    - restart blazegraph
+
+- name: trigger blazegraph start
+  command: echo "start blazegraph"
+  notify:
+    - start blazegraph

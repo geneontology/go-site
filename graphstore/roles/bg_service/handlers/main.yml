@@ -1,0 +1,12 @@
+---
+
+- name: start blazegraph
+  supervisorctl:
+    name: graphstore
+    state: started
+  register: running
+
+- name: restart blazegraph
+  supervisorctl:
+    name: graphstore
+    state: restarted

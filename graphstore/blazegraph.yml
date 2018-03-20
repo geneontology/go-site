@@ -1,0 +1,27 @@
+---
+
+- hosts: all
+  remote_user: root
+  become: true
+
+  roles:
+    - java8
+    - supervisord
+    - bg_service
+
+  tasks:
+  - name: download blazegraph journal
+    get_url:
+      url: https://build.berkeleybop.org/job/go-gaf-pipeline-NEW/lastSuccessfulBuild/artifact/pipeline/target/blazegraph.jnl
+      dest: /home/graphstore/blazegraph.jnl
+      tmp_dest: /home/graphstore/
+      validate_certs: no
+      owner: graphstore
+    notify:
+      - restart blazegraph
+
+  - name: copy blazegraph jars
+    copy:
+      src: ../pipeline/target/jars
+      dest: /home/graphstore/
+      owner: graphstore
