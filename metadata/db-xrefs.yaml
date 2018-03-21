@@ -456,7 +456,7 @@
   entity_types:
     - type_name: macromolecular complex
       type_id: GO:0032991
-      id_syntax: CP-[0-9]+
+      id_syntax: CPX-[0-9]+
       url_syntax: https://www.ebi.ac.uk/complexportal/complex/[example_id]
       example_id: ComplexPortal:CPX-2158
       example_url: https://www.ebi.ac.uk/complexportal/complex/CPX-2158
