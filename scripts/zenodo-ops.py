@@ -92,14 +92,16 @@ def main():
     def safe_json_report(response, report_list):
 
         if response.status_code == 204:
-            #LOG.info('successful delete')
-            LOG.info(json.dumps(response.json(), indent=4, sort_keys=True))
-        elif response.status_code == 410:
-            #LOG.info('already delete')
-            die_screaming(json.dumps(response.json(), indent=4, sort_keys=True))
+            if not response.text or response.text == "":
+                LOG.info('successful operation (e.g. no body "delete")')
+            else:
+                LOG.info(json.dumps(response.json(), indent=4, sort_keys=True))
         elif response.status_code == 400:
             die_screaming(json.dumps(response.json(), indent=4, sort_keys=True))
-            #LOG.info('already exists')
+        elif response.status_code == 410:
+            die_screaming(json.dumps(response.json(), indent=4, sort_keys=True))
+        elif response.status_code == 500:
+            die_screaming(json.dumps(response.json(), indent=4, sort_keys=True))
         else:
 
             ## Print something for jq.
@@ -209,6 +211,7 @@ def main():
 
         check_args(['deposition', 'file'])
         dep = get_deposition()
+
         ## File data and title from filename.
         files = {'file': open(args.file, 'rb')}
         data = {'filename': os.path.basename(args.file)}
