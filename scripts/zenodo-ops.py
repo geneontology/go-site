@@ -1,6 +1,7 @@
-"""Toolkit for various operations in Zenodo."""
+"""General toolkit for various basic operations in Zenodo using their public REST API."""
 ####
-#### Toolkit for various operations in Zenodo.
+#### General toolkit for various basic operations in Zenodo using
+#### their public REST API.
 #### This toolkit should be safe to use with jq, although suggest
 #### noisy --verbose to see what is going on.
 ####
