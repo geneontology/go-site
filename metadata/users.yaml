@@ -3487,6 +3487,30 @@
     - 'http://www.wormbase.org'
   accounts:
     github: 'paulwsternberg'
+-
+  nickname: "Patrick Ng"
+  uri: 'http://orcid.org/0000-0001-8208-652X'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: SGD
+  groups:
+    - 'http://www.yeastgenome.org'
+  accounts:
+    github: 'patrickcng90'
+-
+  nickname: "Barbara Dunn"
+  uri: 'http://orcid.org/0000-0002-7041-0035'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: SGD
+  groups:
+    - 'http://www.yeastgenome.org'
+  accounts:
+    github: 'barbdunn'
 # -
 #   nickname: ""
 #   uri: ''

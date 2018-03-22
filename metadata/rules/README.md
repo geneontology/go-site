@@ -1,3 +1,13 @@
+# GO Rules
+
+This folder contains the metadata for all annotation and ontology QC
+rules in GO. Each rule has an identifier, metadata and
+descriptions. Some rules are automatable, in which case the metadata
+contains the information required to execute it.
+
+For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
+
+
  * <a href="#gorule0000001">GORULE:0000001 Basic GAF checks</a>
  * <a href="#gorule0000002">GORULE:0000002 No 'NOT' annotations to 'protein binding ; GO:0005515'</a>
  * <a href="#gorule0000003">GORULE:0000003 Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field</a>
@@ -19,6 +29,7 @@
  * <a href="#gorule0000020">GORULE:0000020 Automatic repair of annotations to merged or obsoleted terms</a>
  * <a href="#gorule0000021">GORULE:0000021 Check with/from for sequence similarity evidence for valid database ID</a>
  * <a href="#gorule0000022">GORULE:0000022 Check for, and filter, annotations made to retracted publications</a>
+ * <a href="#gorule0000023">GORULE:0000023 Materialize annotations for inter-branch links in the GO</a>
 
 
 
@@ -37,8 +48,7 @@ conform to the GAF spec, and come from the original GAF check script.
     columns, the cardinality of the columns, leading or trailing
     whitespace
 -   Col 1 and all DB abbreviations must be in
-    [GO.xrf\_abbs](http://www.geneontology.org/cgi-bin/xrefs.cgi) (case
-    may be incorrect)
+    [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml) (see below)
 -   All GO IDs must be extant in current ontology
 -   Qualifier, evidence, aspect and DB object columns must be within the
     list of allowed values
@@ -48,6 +58,13 @@ conform to the GAF spec, and come from the original GAF check script.
 -   Taxa with a 'representative' group (e.g. MGI for Mus musculus,
     FlyBase for Drosophila) must be submitted by that group only
 
+### Additional notes on identifiers
+
+In some contexts an identifier is represented using two fields, for example col1 (prefix) and col2 (local id) of a GAF or GPAD. The global id is formed by concatenating these with `:`. In other contexts such as the "With/fron" field, a global ID is specified, which MUST always be prefixed.
+
+In all cases, the prefix MUST be in [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml). The prefix SHOULD be identical (case-sensitive match) to the `database` field. If it does not match then it MUST be identical (case-sensitive) to one of the synonyms.
+
+When consuming association files, programs SHOULD *repair* by replacing prefix synonyms with the canonical form, in addition to reporting on the mismatch. For example, as part of the association file release the submitted files should swap out legacy uses of 'UniProt' with 'UniProtKB'
 
 <a name="gorule0000002"/>
 
@@ -438,3 +455,23 @@ GO should not include annotations to retracted publications. PubMed
 keeps record of retracted publications in the PublicationTypeList of
 each paper's XML entry. For additional details on this proposed rule,
 please see: https://github.com/geneontology/go-annotation/issues/1479
+
+<a name="gorule0000023"/>
+
+## Materialize annotations for inter-branch links in the GO
+
+ * id: [GORULE:0000023](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000023.md)
+ * status: Pending
+
+
+
+Annotations will be propagated from MF to BP over part_of, or from BP to CC over occurs_in.
+
+## Background
+
+Historically GO treated MF, BP and CC as distinct ontologies. They are now better regarded as branchers or sub-hierarchies within a single ontology,
+cross-linked via a variety of relations. Annotators used to make manual duplicate annotations.
+
+## TBD
+
+Should this pipeline filter annotations based on some redundancy criteria?

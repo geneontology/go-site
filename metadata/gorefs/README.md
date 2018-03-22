@@ -29,7 +29,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000030">GO_REF:0000030 Portable Annotation Rules</a>
  * <a href="#goref0000031">GO_REF:0000031 NIAID Cell Ontology Workshop</a>
  * <a href="#goref0000032">GO_REF:0000032 Inference of Biological Process annotations from inter-ontology links</a>
- * <a href="#goref0000033">GO_REF:0000033 Annotation inferences using phylogenetic trees</a>
+ * <a href="#goref0000033">GO_REF:0000033 (Obsolete) Annotation inferences using phylogenetic trees</a>
  * <a href="#goref0000034">GO_REF:0000034 Phenoscape Skeletal Anatomy Jamboree</a>
  * <a href="#goref0000035">GO_REF:0000035 Automatic transfer of experimentally verified manual GO annotation data to plant orthologs using Ensembl Compara</a>
  * <a href="#goref0000036">GO_REF:0000036 Manual annotations that require more than one source of functional data to support the assignment of the associated GO term</a>
@@ -109,6 +109,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000110">GO_REF:0000110 Gene Ontology annotation of Drosophila melanogaster nuclear genes encoding proteins targeted to the mitochondrion.</a>
  * <a href="#goref0000111">GO_REF:0000111 Gene Ontology annotations Inferred by Curator (IC) using at least one Inferred by Sequence Similarity (ISS) annotation to support the inference</a>
  * <a href="#goref0000112">GO_REF:0000112 Gene Ontology annotation by CACAO biocurators</a>
+ * <a href="#goref0000113">GO_REF:0000113 Gene Ontology annotation of human sequence-specific DNA binding transcription factors (DbTFs) based on the TFClass database</a>
 
 
 
@@ -441,7 +442,7 @@ The NIAID sponsored a Cell Ontology Workshop, May 13-14, 2008, in Bethesda, focu
 We use the GOBO library to propagate annotations from Molecular Function to Biological Process. This results in both increased numbers of annotations, and increased consistency between curators.
 
 <a name="goref0000033"/>
-## Annotation inferences using phylogenetic trees
+## (Obsolete) Annotation inferences using phylogenetic trees
 
  * id: [GO_REF:0000033](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000033.md)
  * year: 2010
@@ -455,6 +456,10 @@ We use the GOBO library to propagate annotations from Molecular Function to Biol
  * ext xref: FB:FBrf0232076
 
 
+
+This GO_REF was originally used to support PAINT annotations. The SOP has changed, and now phylogenetic annotations are supported using the identifier for the family itself.
+
+### Original Documentation Below
 
 The goal of the GO Reference Genome Project, described in PMID 19578431, is to provide accurate, complete and consistent GO annotations for all genes in twelve model organism genomes.To this end, GO curators are annotating evolutionary trees from the PANTHER database with GO terms describing molecular function, biological process and cellular component. GO terms based on experimental data from the scientific literature are used to annotate ancestral genes in the phylogenetic tree by sequence similarity (ISS), and unannotated descendants of these ancestral genes are inferred to have inherited these same GO annotations by descent. The annotations are done using a tool called PAINT (Phylogenetic Annotation and INference Tool).
 
@@ -1245,6 +1250,7 @@ We have created a standard template for classes cellular component organization 
  * id: [GO_REF:0000104](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000104.md)
  * year: 2015
  * authors: UniProt curators
+ * ext xref: ZFIN:ZDB-PUB-170525-1
 
 
 
@@ -1339,3 +1345,14 @@ The Gene Ontology Consortium uses the IC (Inferred by Curator) evidence code whe
 
 
 This GO reference describes the criteria used by biocurators participating in the Community Assessment of Community Annotation with Ontologies (CACAO) to annotate gene products from genomes of interest through the use of computational methods to establish and manually validate function or homology to gene products. In particular, this GO reference describes the criteria used to make annotations based on evidence codes ISS, ISA, ISO, ISM and IGC. To perform ISS-, ISA-, and ISO-based annotations on a gene product, CACAO biocurators use sequence- and structure-based search algorithms (e.g. BLASTP, HHPred) to establish homology, conservation of sequence and structure functional determinants between the target gene product and gene products from other organisms with published GO annotations supported by experimental codes and lacking NOT qualifiers. These gene products are referenced in the WITH field of the annotation using their xref database accession. ISM-based annotations make use of published computational methods (e.g. TMHMM, SignalP) to predict gene product structure, localization or function. IGC-based annotations are made on the basis of suggestive evidence for function based on synteny. Parameters and criteria for use of all computational methods (e.g. e-value) are listed and versioned in the publicly available CACAO documentation (http://gowiki.tamu.edu/). Annotations made by CACAO biocurators are reviewed by CACAO team instructors before their release.
+
+<a name="goref0000113"/>
+## Gene Ontology annotation of human sequence-specific DNA binding transcription factors (DbTFs) based on the TFClass database
+
+ * id: [GO_REF:0000113](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000113.md)
+ * year: 2018
+ * authors: Marcio Luis Acencio (1), George Georghiou (2), Sandra Orchard (2), Liv Thommensen (1), Martin Kuiper (1) and Astrid Lægreid (1). (1) Norwegian University of Science and Technology (NTNU), Trondheim, Norway; (2) European Bioinformatics Institute (EBI), Hinxton, Cambridgeshire, United Kingdom
+
+
+
+TFClass (http://tfclass.bioinf.med.uni-goettingen.de/index.jsf) is a database that provides a comprehensive classification of mammalian DbTFs based on their DNA binding domains (DBDs) (PMID:29087517). This database classifies mammalian DbTFs by a six-level classification in which the four highest levels represent groups defined by structural and sequence similarities (superclass, class, family, subfamily) and the two lower levels summarize physical entities such as genes (genus) and specific gene products (species, or molecular species) (more details at http://www.edgar-wingender.de/TFClass_schema.html). This classification is based on the combination of background knowledge of the molecular structural features of DBDs (PMID:9340487, PMID:23427989) and phylogenetic trees constructed via multiple sequence alignment with hierarchical clustering of manually validated DBDs and/or full-lenght protein sequences retrieved from Uniprot (PMID:23427989, PMID:23180794, PMID:23427989). The NTNU curation team has assigned the molecular function term GO:0000981 (RNA polymerase II transcription factor activity, sequence-specific DNA binding) supported by the evidence code ECO:0005556 (multiple sequence alignment evidence used in manual assertion), which can be mapped back to the GO evidence code "inferred from sequence alignment" (ISA), to all human DbTFs extracted from the current version of TFClass (January 2018). Other proteins belonging to the same family (as defined by TFClass as shown above) associated with at least one GO annotation with GO:0000981 and its children or GO:0043565 and its children supported with any type of GO evidence code were added to the field "With/From".
