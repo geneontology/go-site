@@ -3249,7 +3249,7 @@
       url_syntax: http://en.wikipedia.org/wiki/[example_id]
       example_id: Wikipedia:Endoplasmic_reticulum
       example_url: http://en.wikipedia.org/wiki/Endoplasmic_reticulum
-- database: xenbase
+- database: Xenbase
   name: Xenbase
   generic_urls:
     - http://www.xenbase.org/
