@@ -3,6 +3,7 @@ use strict;
 use YAML::Syck; $YAML::Syck::ImplicitTyping = 1;
 use Data::Dumper;
 # Supremely hacky script, see https://github.com/geneontology/go-site/issues/271
+# we should really rewrite this in python and use yamldown
 
 print "# GO REFs\n\n";
 print "This is a collection of references used by the GO Consortium\n\n";

@@ -456,7 +456,7 @@
   entity_types:
     - type_name: macromolecular complex
       type_id: GO:0032991
-      id_syntax: CP-[0-9]+
+      id_syntax: CPX-[0-9]+
       url_syntax: https://www.ebi.ac.uk/complexportal/complex/[example_id]
       example_id: ComplexPortal:CPX-2158
       example_url: https://www.ebi.ac.uk/complexportal/complex/CPX-2158
@@ -1292,8 +1292,8 @@
       url_syntax: http://www.ebi.ac.uk/intact/search/do/search?searchString=[example_id]
       example_id: IntAct:EBI-17086
       example_url: http://www.ebi.ac.uk/intact/search/do/search?searchString=EBI-17086
-    - type_name: protein complex
-      type_id: GO:0043234
+    - type_name: protein-containing complex
+      type_id: GO:0032991
       id_syntax: EBI-[0-9]+
       url_syntax: http://www.ebi.ac.uk/complexportal/complex/[example_id]
       example_id: IntAct:EBI-10205244
@@ -1831,12 +1831,12 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-- database: NCBI_Gene
+- database: NCBIGene
   name: NCBI Gene
   synonyms:
     - GeneID
     - LocusID
-    - NCBIGene
+    - NCBI_Gene
   generic_urls:
     - http://www.ncbi.nlm.nih.gov/
   entity_types:
@@ -1976,8 +1976,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
+      id_syntax: '[0-9]{5}'
       url_syntax: http://www.geneontology.org/gene-associations/submission/paint/[example_id]/[example_id].txt
-      example_id: PAINT_REF:PTHR10046
+      example_id: PAINT_REF:23266
       example_url: http://www.geneontology.org/gene-associations/submission/paint/PTHR10046/PTHR10046.txt
 - database: PAMGO
   name: Plant-Associated Microbe Gene Ontology Interest Group
@@ -2509,12 +2510,12 @@
   generic_urls:
     - http://rgd.mcw.edu/
   entity_types:
-    - type_name: gene
-      type_id: SO:0000704
+    - type_name: entity
+      type_id: BET:0000000
       id_syntax: '[0-9]{4,7}'
-      url_syntax: http://rgd.mcw.edu/generalSearch/RgdSearch.jsp?quickSearch=1&searchKeyword=[example_id]
+      url_syntax: http://rgd.mcw.edu/rgdweb/search/search.html?term=[example_id]
       example_id: RGD:2004
-      example_url: http://rgd.mcw.edu/generalSearch/RgdSearch.jsp?quickSearch=1&searchKeyword=2004
+      example_url: http://rgd.mcw.edu/rgdweb/search/search.html?term=2004
 - database: RHEA
   name: Rhea, the Annotated Reactions Database
   description: Rhea is a manually annotated database of chemical reactions. All data in Rhea is freely accessible and available for anyone to use.
