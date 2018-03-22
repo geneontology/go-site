@@ -3249,6 +3249,35 @@
       url_syntax: http://en.wikipedia.org/wiki/[example_id]
       example_id: Wikipedia:Endoplasmic_reticulum
       example_url: http://en.wikipedia.org/wiki/Endoplasmic_reticulum
+- database: xenbase
+  name: Xenbase
+  generic_urls:
+    - http://www.xenbase.org/
+  entity_types:
+    - type_name: gene
+      type_id: SO:0000704
+      id_syntax: XB-GENE-[0-9]+
+      url_syntax: http://www.xenbase.org/common/xsearch.do?searchValue=[example_id]
+      example_id: Xenbase:XB-GENE-6255962
+      example_url: http://www.xenbase.org/common/xsearch.do?searchValue=XB-GENE-6255962
+    - type_name: morpholino oligo
+      type_id: SO:0000034
+      id_syntax: XB-MORPHOLINO-[0-9]+
+      url_syntax: http://www.xenbase.org/common/xsearch.do?searchValue=[example_id]
+      example_id: Xenbase:XB-MORPHOLINO-17250301
+      example_url: http://www.xenbase.org/common/xsearch.do?searchValue=XB-MORPHOLINO-17250301
+    - type_name: transgene
+      type_id: SO:0000902
+      id_syntax: XB-TRANSGENE-[0-9]+
+      url_syntax: http://www.xenbase.org/common/xsearch.do?searchValue=[example_id]
+      example_id: Xenbase:XB-TRANSGENE-17326811
+      example_url: http://www.xenbase.org/common/xsearch.do?searchValue=XB-TRANSGENE-17326811
+    - type_name: strain
+      type_id: EFO:0005135
+      id_syntax: XB-LINE-[0-9]+
+      url_syntax: http://www.xenbase.org/common/xsearch.do?searchValue=[example_id]
+      example_id: Xenbase:XB-LINE-1248
+      example_url: http://www.xenbase.org/common/xsearch.do?searchValue=XB-LINE-1248
 - database: YeastFunc
   name: Yeast Function
   generic_urls:
