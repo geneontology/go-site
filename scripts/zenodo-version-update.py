@@ -5,7 +5,7 @@
 ####
 #### Example usage to operate in Zenodo:
 ####  python3 ./scripts/zenodo-version-update.py --help
-####  python3 ./scripts/zenodo-ops.py --verbose --sandbox --key abc --concept 123 --file foo.tgz
+####  python3 ./scripts/zenodo-version-update.py --verbose --sandbox --key abc --concept 123 --file /tmp/foo.tgz
 ####
 
 ## Standard imports.
@@ -21,7 +21,7 @@ logging.basicConfig(level=logging.INFO)
 LOG = logging.getLogger('zenodo-version-update')
 LOG.setLevel(logging.WARNING)
 
-def die_screaming(instr, response):
+def die_screaming(instr, response=None):
     """Make sure we exit in a way that will get Jenkins's attention, giving good response debugging information along the way if available."""
     if response:
         if not response.text or response.text == "":
@@ -69,7 +69,7 @@ def main():
     if not args.concept:
         die_screaming('need a "concept" argument')
     concept_id = int(args.concept)
-    LOG.info('Will use concept ID: ' + concept_id)
+    LOG.info('Will use concept ID: ' + str(concept_id))
 
     ## JSON to STDOUT for 'jq'; write informative reports to the log
     ## when verbose.
@@ -131,14 +131,14 @@ def main():
 
     ## Go from concept id to deposition listing.
     depdoc = None
-    for entity in response:
+    for entity in response.json():
         conceptrecid = entity.get('conceptrecid', None)
-        if conceptrecid and int(conceptrecid) == concept_id:
+        if conceptrecid and str(conceptrecid) == str(concept_id):
             depdoc = entity
 
     ## Test deposition doc search okay.
     if not depdoc:
-        die_screaming('could not find desired concept')
+        die_screaming('could not find desired concept', response)
 
     ## Test that status is published (no open session).
     if depdoc.get('status', None) != 'published':
@@ -156,7 +156,7 @@ def main():
 
     ## Go from filename to file ID.
     file_id = None
-    for filedoc in response:
+    for filedoc in response.json():
         filedoc_fname = filedoc.get('filename', None)
         if filedoc_fname and filedoc_fname == filename:
             file_id = filedoc.get('id', None)
