@@ -140,7 +140,7 @@ def main():
 
         response = requests.get(server_url + '/api/deposit/depositions', params={'access_token': args.key})
 
-        safe_json_report(response, ['conceptrecid', 'id', 'title', 'state'])
+        safe_json_report(response, ['conceptrecid', 'id', 'title', 'state', 'submitted'])
 
     elif args.action == 'list' and args.object == 'file':
 

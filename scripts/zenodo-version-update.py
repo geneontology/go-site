@@ -28,6 +28,7 @@ def die_screaming(instr, response=None):
             LOG.error('no response from server')
         else:
             LOG.error(json.dumps(response.json(), indent=4, sort_keys=True))
+            LOG.error(response.status_code)
     LOG.error(instr)
     sys.exit(1)
 
@@ -141,8 +142,8 @@ def main():
         die_screaming('could not find desired concept', response)
 
     ## Test that status is published (no open session).
-    if depdoc.get('status', None) != 'published':
-        die_screaming('desired concept currently has open status', response)
+    if depdoc.get('state', None) != 'done':
+        die_screaming('desired concept currently has an "open" status', response)
 
     ## Get current deposition id.
     curr_dep = int(depdoc.get('id', None))
@@ -169,7 +170,7 @@ def main():
     response = requests.post(server_url + '/api/deposit/depositions/' + str(curr_dep) + '/actions/newversion', params={'access_token': args.key})
 
     ## Test correct opening.
-    if response.status_code != 200:
+    if response.status_code != 201:
         die_screaming('cannot open new version/session', response)
 
     ## Get the new deposition id for this version.
@@ -190,10 +191,14 @@ def main():
         die_screaming('could not delete file', response)
 
     ## Add the new version of the file.
+    files = {'file': open(args.file, 'rb')}
+    data = {'filename': filename}
     response = requests.post(server_url + '/api/deposit/depositions/' + str(new_dep) + '/files', params={'access_token': args.key}, data=data, files=files)
 
     ## Test correct file add.
-    if response.status_code != 200:
+    if not response:
+        die_screaming('serious error trying to add file', response)
+    elif response.status_code != 200:
         die_screaming('could not add file', response)
 
     response = requests.post(server_url + '/api/deposit/depositions/' + str(new_dep) + '/actions/publish', params={'access_token': args.key})
