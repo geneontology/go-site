@@ -197,5 +197,5 @@ target/sparta-report.json: target/blazegraph-production.jnl
 # load-inferences: target/rdf/rdfox.ttl
 # 	$(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties $<
 
-bg-start:
+bg-start: $(BGJAR)
 	java -server -Xmx32g -Djetty.port=$(BG_PORT) -Djetty.overrideWebXml=conf/readonly_cors.xml -Dbigdata.propertyFile=conf/blazegraph.properties -cp target/jars/blazegraph-jar.jar:target/jars/jetty-servlets.jar com.bigdata.rdf.sail.webapp.StandaloneNanoSparqlServer
