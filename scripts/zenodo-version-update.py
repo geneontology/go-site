@@ -5,7 +5,7 @@
 ####
 #### Example usage to operate in Zenodo:
 ####  python3 ./scripts/zenodo-version-update.py --help
-####  python3 ./scripts/zenodo-version-update.py --verbose --sandbox --key abc --concept 123 --file /tmp/foo.tgz
+####  python3 ./scripts/zenodo-version-update.py --verbose --sandbox --key abc --concept 123 --file /tmp/foo.tgz --output /tmp/release-doi.json
 ####
 
 ## Standard imports.
@@ -23,7 +23,7 @@ LOG.setLevel(logging.WARNING)
 
 def die_screaming(instr, response=None):
     """Make sure we exit in a way that will get Jenkins's attention, giving good response debugging information along the way if available."""
-    if response:
+    if str(type(response)) == "<class 'requests.models.Response'>":
         if not response.text or response.text == "":
             LOG.error('no response from server')
         else:
@@ -49,6 +49,8 @@ def main():
                         help='[optional] The base published concept that we want to work off of.')
     parser.add_argument('-f', '--file',
                         help='[optional] The local file to use in an action.')
+    parser.add_argument('-o', '--output',
+                        help='[optional] The local file to use in an action.')
     args = parser.parse_args()
 
     if args.verbose:
@@ -65,6 +67,10 @@ def main():
     if not args.key:
         die_screaming('need a "key/token" argument')
     LOG.info('Will use key/token: ' + args.key)
+
+    ## Check JSON output file.
+    if args.output:
+        LOG.info('Will output to: ' + args.output)
 
     ## Ensure concept.
     if not args.concept:
@@ -196,26 +202,27 @@ def main():
     response = requests.post(server_url + '/api/deposit/depositions/' + str(new_dep) + '/files', params={'access_token': args.key}, data=data, files=files)
 
     ## Test correct file add.
-    if not response:
-        die_screaming('serious error trying to add file', response)
-    elif response.status_code != 200:
+    if response.status_code != 201:
         die_screaming('could not add file', response)
 
     response = requests.post(server_url + '/api/deposit/depositions/' + str(new_dep) + '/actions/publish', params={'access_token': args.key})
 
     ## Test correct re-publish/version action.
-    if response.status_code != 200:
+    if response.status_code != 202:
         die_screaming('could not re-publish', response)
 
     ## Extract new DOI.
     doi = None
-    if response.get('doi', False):
-        doi = response.get('doi', False)
+    if response.json().get('doi', False):
+        doi = response.json().get('doi', False)
     else:
         die_screaming('could not get DOI', response)
 
     ## Done!
-    print(str(doi))
+    LOG.info(str(doi))
+    if args.output:
+        with open(args.output, 'w+') as fhandle:
+            fhandle.write(json.dumps({'doi': doi}, sort_keys=True, indent=4))
 
 ## You saw it coming...
 if __name__ == '__main__':
