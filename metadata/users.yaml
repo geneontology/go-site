@@ -2649,6 +2649,8 @@
     noctua-go:
       allow-edit: true
   organization: GO
+  groups:
+    - 'http://geneontology.org'
   accounts:
     github: balhoff
 -
@@ -2986,7 +2988,7 @@
   authorizations:
     noctua-go:
       allow-edit: true
-  organization: XenBase
+  organization: Xenbase
   groups:
     - 'http://www.xenbase.org'
   accounts:
