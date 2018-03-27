@@ -1,6 +1,7 @@
-"""Toolkit for various operations in Zenodo."""
+"""General toolkit for various basic operations in Zenodo using their public REST API."""
 ####
-#### Toolkit for various operations in Zenodo.
+#### General toolkit for various basic operations in Zenodo using
+#### their public REST API.
 #### This toolkit should be safe to use with jq, although suggest
 #### noisy --verbose to see what is going on.
 ####
@@ -42,7 +43,7 @@ def main():
     parser.add_argument('-s', '--sandbox', action='store_true',
                         help='If used, will aim at the sandbox server.')
     parser.add_argument('-a', '--action',
-                        help='The action to run: "list", "create" (deposition only), "delete", "add" (file only), "annotate" (deposition only), "publish" (deposition only)')
+                        help='The action to run: "list", "create" (deposition only), "delete", "add" (file only), "annotate" (deposition only), "publish" (deposition only), "discard" (deposition only)')
     parser.add_argument('-o', '--object',
                         help='The repo object (type) to run an action on: "deposition", "file"')
     parser.add_argument('-d', '--deposition',
@@ -139,7 +140,7 @@ def main():
 
         response = requests.get(server_url + '/api/deposit/depositions', params={'access_token': args.key})
 
-        safe_json_report(response, ['id', 'title', 'state'])
+        safe_json_report(response, ['conceptrecid', 'id', 'title', 'state', 'submitted'])
 
     elif args.action == 'list' and args.object == 'file':
 
@@ -204,6 +205,15 @@ def main():
         dep = get_deposition()
 
         response = requests.post(server_url + '/api/deposit/depositions/' + str(dep) + '/actions/newversion', params={'access_token': args.key})
+
+        safe_json_report(response, ['id', 'title'])
+
+    elif args.action == 'discard' and args.object == 'deposition':
+
+        check_args([])
+        dep = get_deposition()
+
+        response = requests.post(server_url + '/api/deposit/depositions/' + str(dep) + '/actions/discard', params={'access_token': args.key})
 
         safe_json_report(response, ['id', 'title'])
 
