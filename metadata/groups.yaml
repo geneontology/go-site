@@ -76,7 +76,7 @@
   shorthand: 'SPOT'
 -
   label: EMBL-EBI
-  id: http://www.ebi.ac.uk/
+  id: http://www.ebi.ac.uk
   shorthand: EBI
 -
   label: 'FB'
@@ -131,10 +131,6 @@
   id: http://www.ebi.ac.uk/GOA
   shorthand: GOA
 -
-  label: EMBL-EBI
-  id: http://www.ebi.ac.uk
-  shorthand: EMBL-EBI
--
   label: OHSU
   id: http://www.ohsu.edu/xd
   shorthand: OHSU
@@ -142,10 +138,6 @@
   label: OSU
   id: http://oregonstate.edu
   shorthand: OSU
--
-  label: Monarch Initiative
-  id: http://monarchinitiative.org
-  shorthand: Monarch
 -
   label: SIB
   id: http://www.sib.swiss
@@ -160,7 +152,7 @@
   shorthand: Reactome
 -
   label: University at Buffalo
-  id: http://www.buffalo.edu/
+  id: http://www.buffalo.edu
   shorthand: UB
 -
   label: UCL-Parkinson's UK Annotation Project
@@ -268,5 +260,5 @@
   shorthand: USDA
 -
   label: E. coli
-  id: http://www.bio.tamu.edu/
+  id: http://www.bio.tamu.edu
   shorthand: E.coli
