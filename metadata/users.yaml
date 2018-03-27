@@ -2,7 +2,7 @@
     noctua-go:
       allow-edit: false
   email-md5:
-  - e10e731bffebbca8fbe2c5f86a02419f
+    - e10e731bffebbca8fbe2c5f86a02419f
   nickname: Jim Knowles
   uri: GOC:jk
   xref: GOC:jk
