@@ -40,11 +40,11 @@
   shorthand: BHF-UCL
 -
   label: 'SynGO-UCL'
-  id: https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl
+  id: http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl
   shorthand: SynGO-UCL
 -
   label: 'neXtProt'
-  id: https://www.nextprot.org
+  id: http://www.nextprot.org
   shorthand: nextProt
 -
   label: 'SGD'
@@ -68,15 +68,23 @@
   shorthand: WB
 -
   label: 'IntAct'
-  id: https://www.ebi.ac.uk/intact
+  id: http://www.ebi.ac.uk/intact
   shorthand: IntAct
 -
-  label: 'FlyBase'
+  label: 'SPOT (EBI)'
+  id: http://www.ebi.ac.uk/spot
+  shorthand: 'SPOT'
+-
+  label: EMBL-EBI
+  id: http://www.ebi.ac.uk
+  shorthand: EBI
+-
+  label: 'FB'
   id: http://flybase.org
   shorthand: FlyBase
 -
   label: 'UniProt'
-  id: https://www.uniprot.org
+  id: http://www.uniprot.org
   shorthand: UniProt
 -
   label: 'Xenbase'
@@ -88,9 +96,169 @@
   shorthand: Monarch_Initiative
 -
   label: 'NCATS Data Translator'
-  id: https://ncats.nih.gov/translator
+  id: http://ncats.nih.gov/translator
   shorthand: NCATS_Data_Translator
 -
   label: 'SynGO'
-  id: https://syngo.vu.nl
+  id: http://syngo.vu.nl
   shorthand: SynGO
+-
+  label: UCSD
+  id: http://ucsd.edu
+  shorthand: UCSD
+-
+  label: AgBase
+  id: http://www.agbase.msstate.edu
+  shorthand: AgBase
+-
+  label: AspGD
+  id: http://www.aspgd.org
+  shorthand: AspGD/CGD
+-
+  label: University of Toronto
+  id: http://www.utoronto.ca
+  shorthand: University of Toronto
+-
+  label: CALIPHO
+  id: http://web.expasy.org/groups/calipho
+  shorthand: CALIPHO
+-
+  label: EcoCyc
+  id: http://ecocyc.org
+  shorthand: EcoCyc
+-
+  label: GOA
+  id: http://www.ebi.ac.uk/GOA
+  shorthand: GOA
+-
+  label: OHSU
+  id: http://www.ohsu.edu/xd
+  shorthand: OHSU
+-
+  label: OSU
+  id: http://oregonstate.edu
+  shorthand: OSU
+-
+  label: SIB
+  id: http://www.sib.swiss
+  shorthand: SIB
+-
+  label: EBI Microme Project
+  id: http://www.microme.eu
+  shorthand: Microme
+-
+  label: Reactome
+  id: http://reactome.org
+  shorthand: Reactome
+-
+  label: University at Buffalo
+  id: http://www.buffalo.edu
+  shorthand: UB
+-
+  label: UCL-Parkinson's UK Annotation Project
+  id: http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/parkinsons
+  shorthand: UCL-Parkinson's
+-
+  label: UC Davis
+  id: http://www.ucdavis.edu
+  shorthand: UCD
+-
+  label: PAMGO
+  id: http://pamgo.vbi.vt.edu
+  shorthand: PAMGO
+-
+  label: MetaCyc
+  id: http://metacyc.org
+  shorthand: MetaCyc
+-
+  label: Eisai
+  id: http://www.eisai.com
+  shorthand: Eisai
+-
+  label: MaizeGDB
+  id: http://www.maizegdb.org
+  shorthand: MaizeGDB
+-
+  label: VBI
+  id: https://www.bi.vt.edu
+  shorthand: VBI
+-
+  label: Ronin Institute
+  id: http://ronininstitute.org
+  shorthand: Ronin_Institute
+-
+  label: PhenotypeRCN
+  id: http://www.phenotypercn.org
+  shorthand: PhenotypeRCN
+-
+  label: USD
+  id: http://www.sandiego.edu
+  shorthand: USD
+-
+  label: EMBO
+  id: http://www.embo.org
+  shorthand: EMBO
+-
+  label: AWI
+  id: https://www.awi.de
+  shorthand: AWI
+-
+  label: Harvard T.H. Chan School of Public Health
+  id: https://www.hsph.harvard.edu
+  shorthand: HSPH
+-
+  label: UALR
+  id: http://ualr.edu
+  shorthand: UALR
+-
+  label: MGH
+  id: http://www.massgeneral.org
+  shorthand: MGH
+-
+  label: Roswell Park Cancer Institute
+  id: https://www.roswellpark.org
+  shorthand: RPCI
+-
+  label: CGIAR
+  id: https://www.cgiar.org
+  shorthand: CGIAR
+-
+  label: NCSU
+  id: https://www.ncsu.edu
+  shorthand: NCSU
+-
+  label: ADM
+  id: https://www.adm.com
+  shorthand: ADM
+-
+  label: US EPA
+  id: https://www.epa.gov
+  shorthand: US_EPA
+-
+  label: Crick
+  id: https://www.crick.ac.uk
+  shorthand: Crick
+-
+  label: NIDASH
+  id: http://nidm.nidash.org
+  shorthand: NIDASH
+-
+  label: IGS
+  id: http://www.igs.umaryland.edu
+  shorthand: IGS
+-
+  label: NTNU
+  id: https://www.ntnu.edu
+  shorthand: NTNU
+-
+  label: Bioversity International
+  id: https://www.bioversityinternational.org
+  shorthand: BioversityInt
+-
+  label: USDA
+  id: https://www.usda.gov
+  shorthand: USDA
+-
+  label: E. coli
+  id: http://www.bio.tamu.edu
+  shorthand: E.coli
