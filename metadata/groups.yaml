@@ -79,7 +79,7 @@
   id: http://www.ebi.ac.uk
   shorthand: EBI
 -
-  label: 'FB'
+  label: 'FlyBase'
   id: http://flybase.org
   shorthand: FlyBase
 -
