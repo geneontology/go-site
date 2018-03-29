@@ -40,11 +40,11 @@
   shorthand: BHF-UCL
 -
   label: 'SynGO-UCL'
-  id: http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl
+  id: https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl
   shorthand: SynGO-UCL
 -
   label: 'neXtProt'
-  id: http://www.nextprot.org
+  id: https://www.nextprot.org
   shorthand: nextProt
 -
   label: 'SGD'
@@ -52,7 +52,7 @@
   shorthand: SGD
 -
   label: 'PomBase'
-  id: http://www.pombase.org
+  id: https://www.pombase.org
   shorthand: PomBase
 -
   label: 'TAIR'
@@ -68,7 +68,7 @@
   shorthand: WB
 -
   label: 'IntAct'
-  id: http://www.ebi.ac.uk/intact
+  id: https://www.ebi.ac.uk/intact
   shorthand: IntAct
 -
   label: 'SPOT (EBI)'
@@ -84,7 +84,7 @@
   shorthand: FlyBase
 -
   label: 'UniProt'
-  id: http://www.uniprot.org
+  id: https://www.uniprot.org
   shorthand: UniProt
 -
   label: 'Xenbase'
@@ -96,11 +96,11 @@
   shorthand: Monarch_Initiative
 -
   label: 'NCATS Data Translator'
-  id: http://ncats.nih.gov/translator
+  id: https://ncats.nih.gov/translator
   shorthand: NCATS_Data_Translator
 -
   label: 'SynGO'
-  id: http://syngo.vu.nl
+  id: https://syngo.vu.nl
   shorthand: SynGO
 -
   label: UCSD
