@@ -52,7 +52,7 @@
   shorthand: SGD
 -
   label: 'PomBase'
-  id: https://www.pombase.org
+  id: http://www.pombase.org
   shorthand: PomBase
 -
   label: 'TAIR'
