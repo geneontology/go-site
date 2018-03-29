@@ -11,6 +11,7 @@ import sys
 import argparse
 import logging
 import yaml
+import json
 
 ## Logger basic setup.
 logging.basicConfig(level=logging.INFO)
@@ -39,6 +40,10 @@ def main():
                         help='The users.yaml file to act on')
     parser.add_argument('-g', '--groups',
                         help='The groups.yaml file to act on')
+    parser.add_argument("-r", "--repair", action="store_true",
+                        help="Attempt to repair groups from users")
+    parser.add_argument("-x", "--revoke", action="store_true",
+                        help="Any users that have no groups and no URI/ORCID lose noctua privileges")
     args = parser.parse_args()
 
     if args.verbose:
@@ -66,8 +71,13 @@ def main():
     for group in groups_linear:
         groups_lookup[group['id']] = group['label']
 
+    violations = {
+        "uri": [],
+        "groups": [],
+    }
+
     ## Cycle through users and see if we find any violations.
-    for user in users:
+    for index, user in enumerate(users):
 
         ## Does the user have noctua perms?
         if user.get('authorizations', False):
@@ -80,30 +90,76 @@ def main():
                 if not user.get('uri', False):
                     # die_screaming(user.get('nickname', '???') +\
                     #               ' has no "uri"')
-                    print(user.get('nickname', '???') +\
-                          ' has no "uri"')
+                    print(user.get('nickname', '???') + ' has no "uri"')
+                    violations["uri"].append(user["nickname"])
+
                 else:
                     ## 2: Is it an ORCID?
                     if user.get('uri', 'NIL').find('orcid') == -1:
                         # die_screaming(user.get('nickname', '???') +\
                         #               ' "uri" is not an ORCID.')
-                        print(user.get('nickname', '???') +\
-                              ' "uri" is not an ORCID.')
+                        print(user.get('nickname', '???') + ' "uri" is not an ORCID.')
+                        violations["uri"].append(user["nickname"])
 
                 ## 3: If so, do they have a populated groups?
-                if not user.get('groups', False):
+                if not user.get('groups', False) or len(user["groups"]) == 0:
                     # die_screaming(user.get('nickname', '???') +\
                     #               ' has no "groups"')
-                    print(user.get('nickname', '???') +\
-                          ' has no "groups"')
+                    print(user.get('nickname', '???') + ' has no "groups"')
+                    if user.get("organization", False):
+                        org = user["organization"]
+                        print(user.get("nickname", "???") + " could try org {}".format(org))
+                        matching_groups = list(filter(lambda g: org == g["label"] or org == g["shorthand"], groups_linear))
+                        if len(matching_groups) > 0:
+                            print("Could use group?: {}".format(matching_groups[0]["id"]))
+                            user["groups"] = [matching_groups[0]["id"]]
+                            users[index] = user
+                        else:
+                            violations["groups"].append(user["nickname"])
+
+
                 else:
                     ## 4: If so, are all entries in groups?
                     for gid in user.get('groups'):
                         if not groups_lookup.get(gid, False):
                             # die_screaming(user.get('nickname', '???') +\
                             #               ' has mistaken group entry: ' + gid)
-                            print(user.get('nickname', '???') +\
-                                  ' has mistaken group entry: ' + gid)
+                            print(user.get('nickname', '???') + ' has mistaken group entry: ' + gid)
+
+    if args.repair:
+        with open(args.users, "w") as users_file:
+            yaml.dump(users, users_file, indent=2, default_flow_style=False)
+
+    violates_both = set(violations["uri"]).intersection(violations["groups"])
+    just_uri = set(violations["uri"]).difference(violates_both)
+    just_groups = set(violations["groups"]).difference(violates_both)
+
+    if args.revoke:
+        print("Revoking Privileges")
+        for index, user in enumerate(users):
+            if user["nickname"] in just_uri or user["nickname"] in just_groups:
+                # If we have an auth with noctua-go with allow-edit set to True
+                if user.get("authorizations", {}).get("noctua-go", {}).get("allow-edit", False):
+                    print("Revoking {} noctua-go edit privileges.".format(user["nickname"]))
+                    user["authorizations"]["noctua-go"]["allow-edit"] = False
+                    users[index] = user
+
+        with open(args.users, "w") as users_file:
+           yaml.dump(users, users_file, indent=2, default_flow_style=False)
+
+    print("\nNo URI, or no ORCID:")
+    print("===================")
+    print("\n".join(just_uri))
+
+    print("\nNo Groups:")
+    print("===================")
+    print("\n".join(just_groups))
+
+    print("\nBoth Bad:")
+    print("===================")
+    print("\n".join(violates_both))
+
+    # print(json.dumps(violations, indent=4))
 
     ## TODO: implement hard checks above later.
     if DIED_SCREAMING_P:
