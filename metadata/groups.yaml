@@ -79,7 +79,7 @@
   id: http://www.ebi.ac.uk
   shorthand: EBI
 -
-  label: 'FB'
+  label: 'FlyBase'
   id: http://flybase.org
   shorthand: FlyBase
 -
@@ -113,11 +113,11 @@
 -
   label: AspGD
   id: http://www.aspgd.org
-  shorthand: AspGD/CGD
+  shorthand: AspGD_CGD
 -
   label: University of Toronto
   id: http://www.utoronto.ca
-  shorthand: University of Toronto
+  shorthand: UoT
 -
   label: CALIPHO
   id: http://web.expasy.org/groups/calipho
@@ -132,7 +132,7 @@
   shorthand: GOA
 -
   label: OHSU
-  id: http://www.ohsu.edu/xd
+  id: http://www.ohsu.edu
   shorthand: OHSU
 -
   label: OSU
@@ -157,7 +157,7 @@
 -
   label: UCL-Parkinson's UK Annotation Project
   id: http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/parkinsons
-  shorthand: UCL-Parkinson's
+  shorthand: UCL-Parkinsons
 -
   label: UC Davis
   id: http://www.ucdavis.edu
@@ -261,4 +261,4 @@
 -
   label: E. coli
   id: http://www.bio.tamu.edu
-  shorthand: E.coli
+  shorthand: E_coli

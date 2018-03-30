@@ -86,7 +86,7 @@ def main():
                (auth.get('noctua', False) and auth['noctua'].get('go', False)):
                 #print('Has perms: ' + user.get('nickname', '???'))
 
-                ## 1: If so, do they have an ORCID?
+                ## 1: If so, do they have a URI?
                 if not user.get('uri', False):
                     # die_screaming(user.get('nickname', '???') +\
                     #               ' has no "uri"')
