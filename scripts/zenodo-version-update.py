@@ -18,6 +18,7 @@ import logging
 import os
 import json
 import requests
+from requests_toolbelt.multipart.encoder import MultipartEncoder
 import datetime
 
 ## Logger basic setup.
@@ -25,14 +26,8 @@ logging.basicConfig(level=logging.INFO)
 LOG = logging.getLogger('zenodo-version-update')
 LOG.setLevel(logging.WARNING)
 
-def die_screaming(instr, response=None):
-    """Make sure we exit in a way that will get Jenkins's attention, giving good response debugging information along the way if available."""
-    if str(type(response)) == "<class 'requests.models.Response'>":
-        if not response.text or response.text == "":
-            LOG.error('no response from server')
-        else:
-            LOG.error(json.dumps(response.json(), indent=4, sort_keys=True))
-            LOG.error(response.status_code)
+def die(instr):
+    """Die a little inside."""
     LOG.error(instr)
     sys.exit(1)
 
@@ -71,7 +66,7 @@ def main():
 
     ## Ensure key/token.
     if not args.key:
-        die_screaming('need a "key/token" argument')
+        die('need a "key/token" argument')
     LOG.info('Will use key/token: ' + args.key)
 
     ## Check JSON output file.
@@ -89,53 +84,29 @@ def main():
 
     ## Ensure concept.
     if not args.concept:
-        die_screaming('need a "concept" argument')
+        die('need a "concept" argument')
     concept_id = int(args.concept)
     LOG.info('Will use concept ID: ' + str(concept_id))
 
-    ## JSON to STDOUT for 'jq'; write informative reports to the log
-    ## when verbose.
-    def safe_json_report(response, report_list):
-
-        if response.status_code == 204:
+    def die_screaming(instr, response=None, deposition_id=None):
+        """Make sure we exit in a way that will get Jenkins's attention, giving good response debugging information along the way if available."""
+        if str(type(response)) == "<class 'requests.models.Response'>":
             if not response.text or response.text == "":
-                LOG.info('successful operation (e.g. no body "delete")')
+                LOG.error('no response from server')
+                LOG.error(instr)
             else:
-                LOG.info(json.dumps(response.json(), indent=4, sort_keys=True))
-        elif response.status_code == 400:
-            die_screaming(json.dumps(response.json(), indent=4, sort_keys=True))
-        elif response.status_code == 410:
-            die_screaming(json.dumps(response.json(), indent=4, sort_keys=True))
-        elif response.status_code == 500:
-            die_screaming(json.dumps(response.json(), indent=4, sort_keys=True))
-        else:
-
-            ## Print something for jq.
-            print(json.dumps(response.json(), indent=4, sort_keys=True))
-
-            ## Listify response.
-            resp = response.json()
-            #LOG.info(type(resp))
-            if type(resp) is not list:
-                resp = [resp]
-
-            LOG.info(" http status code: " + str(response.status_code))
-            for d in resp:
-                open_draft = ""
-                if d.get('links', False) and d['links'].get('latest_draft', False):
-                    open_draft = d['links']['latest_draft'].split('/')[-1]
-                if open_draft == "":
-                    LOG.info(' "'+ '", "'.join(str(d[x]) for x in report_list) +'"')
-                else:
-                    LOG.info(' "'+ '", "'.join(str(d[x]) for x in report_list) +'"; draft: ' + open_draft)
-
-
-    ## Check necessary arguments are present.
-    def check_args(arg_list):
-        safe_args = vars(args)
-        for a in arg_list:
-            if not safe_args.get(a, False):
-                die_screaming('action "'+ args.action +'" requires: "'+ a +'"')
+                LOG.error(json.dumps(response.json(), indent=4, sort_keys=True))
+                LOG.error(response.status_code)
+                LOG.error(instr)
+                if deposition_id:
+                    LOG.error("attempting to discard working deposition: " + str(deposition_id))
+                    response = requests.delete(server_url + '/api/deposit/depositions/' + str(deposition_id), params={'access_token': args.key})
+                    if response.status_code != 204:
+                        LOG.error('failed to discard: manual intervention plz')
+                        LOG.error(response.status_code)
+                    else:
+                        LOG.error('discarded session')
+        sys.exit(1)
 
     ###
     ###
@@ -167,10 +138,11 @@ def main():
         die_screaming('desired concept currently has an "open" status', response)
 
     ## Get current deposition id.
-    curr_dep = int(depdoc.get('id', None))
+    curr_dep_id = int(depdoc.get('id', None))
+    LOG.info('current deposition id: ' + str(curr_dep_id))
 
     ## Get files for the current depositon.
-    response = requests.get(server_url + '/api/deposit/depositions/' + str(curr_dep) + '/files', params={'access_token': args.key})
+    response = requests.get(server_url + '/api/deposit/depositions/' + str(curr_dep_id) + '/files', params={'access_token': args.key})
 
     ## Test file listing okay.
     if response.status_code != 200:
@@ -188,51 +160,105 @@ def main():
         die_screaming('could not find desired filename', response)
 
     ## Open versioned deposition session.
-    response = requests.post(server_url + '/api/deposit/depositions/' + str(curr_dep) + '/actions/newversion', params={'access_token': args.key})
+    response = requests.post(server_url + '/api/deposit/depositions/' + str(curr_dep_id) + '/actions/newversion', params={'access_token': args.key})
 
     ## Test correct opening.
     if response.status_code != 201:
-        die_screaming('cannot open new version/session', response)
+        die_screaming('cannot open new version/session', response, curr_dep_id)
 
     ## Get the new deposition id for this version.
-    new_dep = None
+    new_dep_id = None
     d = response.json()
     if d.get('links', False) and d['links'].get('latest_draft', False):
-        new_dep = int(d['links']['latest_draft'].split('/')[-1])
+        new_dep_id = int(d['links']['latest_draft'].split('/')[-1])
 
     ## Test that there is a new deposition ID.
-    if not new_dep:
-        die_screaming('could not find a new deposition ID', response)
+    if not new_dep_id:
+        die_screaming('could not find a new deposition ID', response, curr_dep_id)
+    LOG.info('new deposition id: ' + str(new_dep_id))
 
     ## Delete the current file (by ID) in the session.
-    response = requests.delete(server_url + '/api/deposit/depositions/' + str(new_dep) + '/files/' + str(file_id), params={'access_token': args.key})
+    #response = requests.delete('%s/%s' % (new_bucket_url, filename), params={'access_token': args.key})
+    response = requests.delete(server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files/' + str(file_id), params={'access_token': args.key})
 
     ## Test correct file delete.
     if response.status_code != 204:
-        die_screaming('could not delete file', response)
+        die_screaming('could not delete file', response, new_dep_id)
 
-    ## Add the new version of the file.
-    files = {'file': open(args.file, 'rb')}
-    data = {'filename': filename}
-    response = requests.post(server_url + '/api/deposit/depositions/' + str(new_dep) + '/files', params={'access_token': args.key}, data=data, files=files)
+    ###
+    ### WARNING: Slipping into the (currently) unpublished v2 API here
+    ### to get around file size issues we ran into.
+    ### I don't quite understand the bucket API--the URLs shift more than
+    ### I'd expect, but the following works.
+    ###
+    ### NOTE: secret upload magic: https://github.com/zenodo/zenodo/issues/833#issuecomment-324760423 and
+    ### https://github.com/zenodo/zenodo/blob/df26b68771f6cffef267c056cf38eb7e6fa67c92/tests/unit/deposit/test_api_buckets.py
+    ###
+
+    ## Get new depositon...as the bucket URLs seem to have changed
+    ## after the delete...
+    response = requests.get(server_url + '/api/deposit/depositions/' + str(new_dep_id), params={'access_token': args.key})
+
+    ## Get the bucket for upload.
+    new_bucket_url = None
+    d = response.json()
+    if d.get('links', False) and d['links'].get('bucket', False):
+        new_bucket_url = d['links'].get('bucket', False)
+
+    ## Test that there are new bucket and publish URLs.
+    if not new_bucket_url:
+        die_screaming('could not find a new bucket URL', response, curr_dep_id)
+    LOG.info('new bucket URL: ' + str(new_bucket_url))
+
+    ## Add the new version of the file. Try and avoid:
+    ## https://github.com/requests/requests/issues/2717 with
+    ## https://toolbelt.readthedocs.io/en/latest/uploading-data.html#streaming-multipart-data-encoder
+    ## Try 1 caused memory overflow issues (I'm trying to upload many GB).
+    ## Try 2 "should" have worked, but zenodo seems incompatible.
+    ## with requests and the request toolbelt, after a fair amount of effort.
+    ## Try 3 appears to work, but uses an unpublished API... :(
+    encoder = MultipartEncoder({
+        'file': (filename, open(args.file, 'rb'))
+    })
+    response = requests.put('%s/%s' % (new_bucket_url, filename),
+                data=encoder,
+                params={'access_token': args.key},
+                headers={
+                    "Accept":"application/json",
+                    "Content-Type":"application/octet-stream"
+                })
+    ## Try 2
+    # encoder = MultipartEncoder({
+    #     #'filename': filename,
+    #     'file': (filename, open(args.file, 'rb'))
+    # })
+    # response = requests.post(server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files', params={'access_token': args.key}, data=encoder)
+    # ## Try 1
+    # data = {'filename': filename}
+    # files = {'file': open(args.file, 'rb')}
+    # response = requests.post(server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files', params={'access_token': args.key}, data=data, files=encoder)
 
     ## Test correct file add.
-    if response.status_code != 201:
-        die_screaming('could not add file', response)
+    if response.status_code != 200:
+        die_screaming('could not add file', response, new_dep_id)
+
+    ###
+    ### NOTE: Leaving v2 area.
+    ###
 
     ## Update metadata version string; first, get old metadata.
-    response = requests.get(server_url + '/api/deposit/depositions/' + str(new_dep), params={'access_token': args.key})
+    response = requests.get(server_url + '/api/deposit/depositions/' + str(new_dep_id), params={'access_token': args.key})
 
     ## Test correct metadata get.
     if response.status_code != 200:
-        die_screaming('could not get access to current metadata', response)
+        die_screaming('could not get access to current metadata', response, new_dep_id)
 
     ## Get metadata or die trying.
     oldmetadata = None
     if response.json().get('metadata', False):
         oldmetadata = response.json().get('metadata', False)
     else:
-        die_screaming('could not get current metadata', response)
+        die_screaming('could not get current metadata', response, new_dep_id)
 
     ## Construct update metadata and send to server.
     oldmetadata['version'] = revision
@@ -240,25 +266,25 @@ def main():
         "metadata": oldmetadata
     }
     headers = {"Content-Type": "application/json"}
-    response = requests.put(server_url + '/api/deposit/depositions/' + str(new_dep), params={'access_token': args.key}, data=json.dumps(newmetadata), headers=headers)
+    response = requests.put(server_url + '/api/deposit/depositions/' + str(new_dep_id), params={'access_token': args.key}, data=json.dumps(newmetadata), headers=headers)
 
     ## Test correct metadata put.
     if response.status_code != 200:
-        die_screaming('could not add optional metadata', response)
+        die_screaming('could not add optional metadata', response, new_dep_id)
 
     ## Publish.
-    response = requests.post(server_url + '/api/deposit/depositions/' + str(new_dep) + '/actions/publish', params={'access_token': args.key})
+    response = requests.post(server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/actions/publish', params={'access_token': args.key})
 
     ## Test correct re-publish/version action.
     if response.status_code != 202:
-        die_screaming('could not re-publish', response)
+        die_screaming('could not re-publish', response, new_dep_id)
 
     ## Extract new DOI.
     doi = None
     if response.json().get('doi', False):
         doi = response.json().get('doi', False)
     else:
-        die_screaming('could not get DOI', response)
+        die_screaming('could not get DOI', response, new_dep_id)
 
     ## Done!
     LOG.info(str(doi))
