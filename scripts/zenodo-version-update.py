@@ -5,7 +5,7 @@
 ####
 #### Example usage to operate in Zenodo:
 ####  python3 ./scripts/zenodo-version-update.py --help
-####  python3 ./scripts/zenodo-version-update.py --verbose --sandbox --key abc --concept 123 --file /tmp/foo.tgz --output /tmp/release-doi.json
+####  python3 ./scripts/zenodo-version-update.py --verbose --sandbox --key abc --concept 199441 --file /tmp/go-release-reference.tgz --output /tmp/release-doi.json
 ####
 
 ## Standard imports.
@@ -15,6 +15,7 @@ import logging
 import os
 import json
 import requests
+import datetime
 
 ## Logger basic setup.
 logging.basicConfig(level=logging.INFO)
@@ -51,6 +52,7 @@ def main():
                         help='[optional] The local file to use in an action.')
     parser.add_argument('-o', '--output',
                         help='[optional] The local file to use in an action.')
+
     args = parser.parse_args()
 
     if args.verbose:
@@ -205,6 +207,35 @@ def main():
     if response.status_code != 201:
         die_screaming('could not add file', response)
 
+    ## Update metadata version string; first, get old metadata.
+    response = requests.get(server_url + '/api/deposit/depositions/' + str(new_dep), params={'access_token': args.key})
+
+    ## Test correct metadata get.
+    if response.status_code != 200:
+        die_screaming('could not get access to current metadata', response)
+
+    ## Get metadata or die trying.
+    oldmetadata = None
+    if response.json().get('metadata', False):
+        oldmetadata = response.json().get('metadata', False)
+    else:
+        die_screaming('could not get current metadata', response)
+
+    ## Construct update metadata.
+    oldmetadata['version'] = datetime.datetime.now().strftime("%Y-%m-%d")
+    newmetadata = {
+        "metadata": oldmetadata
+    }
+
+    ## And send to server.
+    headers = {"Content-Type": "application/json"}
+    response = requests.put(server_url + '/api/deposit/depositions/' + str(new_dep), params={'access_token': args.key}, data=json.dumps(newmetadata), headers=headers)
+
+    ## Test correct metadata put.
+    if response.status_code != 200:
+        die_screaming('could not add optional metadata', response)
+
+    ## Publish.
     response = requests.post(server_url + '/api/deposit/depositions/' + str(new_dep) + '/actions/publish', params={'access_token': args.key})
 
     ## Test correct re-publish/version action.
