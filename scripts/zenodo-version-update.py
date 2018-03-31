@@ -217,16 +217,18 @@ def main():
     ## Try 2 "should" have worked, but zenodo seems incompatible.
     ## with requests and the request toolbelt, after a fair amount of effort.
     ## Try 3 appears to work, but uses an unpublished API... :(
-    encoder = MultipartEncoder({
-        'file': (filename, open(args.file, 'rb'))
-    })
+    # encoder = MultipartEncoder({
+    #     'file': (filename, open(args.file, 'rb'))
+    # })
     response = requests.put('%s/%s' % (new_bucket_url, filename),
-                data=encoder,
-                params={'access_token': args.key},
-                headers={
-                    "Accept":"application/json",
-                    "Content-Type":"application/octet-stream"
-                })
+                            #data=encoder,
+                            data = {'filename': filename},
+                            files = {'file': open(args.file, 'rb')},
+                            params = {'access_token': args.key},
+                            headers={
+                                "Accept":"application/json",
+                                "Content-Type":"application/octet-stream"
+                            })
     ## Try 2
     # encoder = MultipartEncoder({
     #     #'filename': filename,
