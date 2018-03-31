@@ -5,7 +5,10 @@
 ####
 #### Example usage to operate in Zenodo:
 ####  python3 ./scripts/zenodo-version-update.py --help
+#### Implicit new version:
 ####  python3 ./scripts/zenodo-version-update.py --verbose --sandbox --key abc --concept 199441 --file /tmp/go-release-reference.tgz --output /tmp/release-doi.json
+#### Explicit new version:
+####  python3 ./scripts/zenodo-version-update.py --verbose --sandbox --key abc --concept 199441 --file /tmp/go-release-reference.tgz --output /tmp/release-doi.json --revision `date +%Y-%m-%d`
 ####
 
 ## Standard imports.
@@ -52,7 +55,8 @@ def main():
                         help='[optional] The local file to use in an action.')
     parser.add_argument('-o', '--output',
                         help='[optional] The local file to use in an action.')
-
+    parser.add_argument('-r', '--revision',
+                        help='[optional] Add optional revision string to update.')
     args = parser.parse_args()
 
     if args.verbose:
@@ -73,6 +77,15 @@ def main():
     ## Check JSON output file.
     if args.output:
         LOG.info('Will output to: ' + args.output)
+
+    ## Check JSON output file.
+    revision = None
+    if args.revision:
+        revision = args.revision
+        LOG.info('Will add explicit "version" string to revision: ' + revision)
+    else:
+        revision = datetime.datetime.now().strftime("%Y-%m-%d")
+        LOG.info('Will add implicit "version" string to revision: ' + revision)
 
     ## Ensure concept.
     if not args.concept:
@@ -221,13 +234,11 @@ def main():
     else:
         die_screaming('could not get current metadata', response)
 
-    ## Construct update metadata.
-    oldmetadata['version'] = datetime.datetime.now().strftime("%Y-%m-%d")
+    ## Construct update metadata and send to server.
+    oldmetadata['version'] = revision
     newmetadata = {
         "metadata": oldmetadata
     }
-
-    ## And send to server.
     headers = {"Content-Type": "application/json"}
     response = requests.put(server_url + '/api/deposit/depositions/' + str(new_dep), params={'access_token': args.key}, data=json.dumps(newmetadata), headers=headers)
 
