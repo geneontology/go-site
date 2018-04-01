@@ -87,6 +87,15 @@ def main():
 
     LOG.info('Will use prefix: ' + prefix)
 
+    ## WARNING/TODO: should be command line argument.
+    ## Ignore list.
+    ignore_list = [
+        'index.html',
+        'go-release-reference.tgz',
+        'go-release-archive.tgz'
+    ]
+    LOG.info('Will ignore: "' + '", "'.join(ignore_list) + '"')
+
     # Walk tree.
     # First, make a clean path to use in making new pathnames.
     # webrootdir = rootdir.lstrip('.').lstrip('//').rstrip('//')
@@ -105,8 +114,8 @@ def main():
         ## Note files and directories.
         for fname in files:
             #print('fname: ' + fname)
-            ## Naturally, skip index.html.
-            if fname != 'index.html':
+            ## Naturally, skip index.html, and other hidden files.
+            if fname not in ignore_list:
                 current.append(map_file_to_url(rootdir, currdir, fname, prefix))
 
         for dname in dirs:
