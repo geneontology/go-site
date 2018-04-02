@@ -44,6 +44,8 @@ def main():
                         help="Attempt to repair groups from users")
     parser.add_argument("-x", "--revoke", action="store_true",
                         help="Any users that have no groups and no URI/ORCID lose noctua privileges")
+    parser.add_argument("-d", "--dry-run", action="store_true",
+                        help="Don't actually write anything out.")
     args = parser.parse_args()
 
     if args.verbose:
@@ -78,6 +80,16 @@ def main():
 
     ## Cycle through users and see if we find any violations.
     for index, user in enumerate(users):
+
+        ## Fix old autherizations type of authorizations
+        if user.get("authorizations", {}).get("noctua-go", False):
+            auths = user["authorizations"]["noctua-go"]
+            del user["authorizations"]["noctua-go"] # Delete old way
+            user["authorizations"]["noctua"] = {
+                "go": auths
+            }
+            users[index] = user # Save back into list
+
 
         ## Does the user have noctua perms?
         if user.get('authorizations', False):
@@ -128,7 +140,8 @@ def main():
 
     if args.repair:
         with open(args.users, "w") as users_file:
-            yaml.dump(users, users_file, indent=2, default_flow_style=False)
+            if not args.dry_run:
+                yaml.dump(users, users_file, indent=2, default_flow_style=False)
 
     violates_both = set(violations["uri"]).intersection(violations["groups"])
     just_uri = set(violations["uri"]).difference(violates_both)
@@ -139,13 +152,14 @@ def main():
         for index, user in enumerate(users):
             if user["nickname"] in just_uri or user["nickname"] in just_groups:
                 # If we have an auth with noctua-go with allow-edit set to True
-                if user.get("authorizations", {}).get("noctua-go", {}).get("allow-edit", False):
+                if user.get("authorizations", {}).get("noctua", {}).get("go", {}).get("allow-edit", False):
                     print("Revoking {} noctua-go edit privileges.".format(user["nickname"]))
-                    user["authorizations"]["noctua-go"]["allow-edit"] = False
+                    user["authorizations"]["noctua"]["go"]["allow-edit"] = False
                     users[index] = user
 
         with open(args.users, "w") as users_file:
-           yaml.dump(users, users_file, indent=2, default_flow_style=False)
+            if not args.dry_run:
+                yaml.dump(users, users_file, indent=2, default_flow_style=False)
 
     print("\nNo URI, or no ORCID:")
     print("===================")
