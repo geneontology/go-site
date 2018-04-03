@@ -411,7 +411,7 @@
   uri: 'GOC:fb_curators'
   xref: 'GOC:fb_curators'
   nickname: 'Curators at FlyBase'
-  organization: FB
+  organization: FlyBase
 -
   uri: 'GOC:nv'
   xref: 'GOC:nv'
@@ -433,33 +433,33 @@
   email-md5:
     - 82989df351e8628287c7d71227c299cb
     - 8f2851f24e6a524cc10da6bb2a72e7eb
-  organization: FB
+  organization: FlyBase
   authorizations:
     termgenie-go:
       allow-write: true
     noctua-go:
       allow-edit: true
   groups:
-    - 'http://flybase.org'   
+    - 'http://flybase.org'
   accounts:
     github: hattrill
 -
   uri: 'GOC:hb'
   xref: 'GOC:hb'
   nickname: 'Heather Butler'
-  organization: FB
+  organization: FlyBase
 -
   uri: 'http://orcid.org/0000-0001-5948-3092'
   xref: 'GOC:mc'
   nickname: 'Marta Costa'
-  organization: FB
+  organization: FlyBase
   accounts:
     github: mmc46
 -
   uri: 'GOC:ma'
   xref: 'GOC:ma'
   nickname: 'Michael Ashburner'
-  organization: FB
+  organization: FlyBase
 -
   nickname: 'David Osumi-Sutherland'
   email-md5:
@@ -482,7 +482,7 @@
   uri: 'GOC:rc'
   xref: 'GOC:rc'
   nickname: 'Russ Collins'
-  organization: FB
+  organization: FlyBase
 -
   nickname: 'Susan Tweedie'
   email-md5:
@@ -495,7 +495,7 @@
       allow-freeform: false
   xref: 'GOC:sart'
   uri: 'http://orcid.org/0000-0003-1818-8243'
-  organization: FB
+  organization: FlyBase
 -
   uri: 'GOC:mb'
   xref: 'GOC:mb'
@@ -530,7 +530,7 @@
   xref: 'GOC:bf'
   uri: 'http://orcid.org/0000-0001-8682-8754'
   organization: "UCL-Parkinson's UK Annotation Project"
-  comment: 'former affiliations: FB, UniProt, GO'
+  comment: 'former affiliations: FlyBase, UniProt, GO'
 -
   uri: 'GOC:ceb'
   xref: 'GOC:ceb'
@@ -997,7 +997,7 @@
   uri: 'http://orcid.org/0000-0003-1179-5999'
   organization: PomBase
   groups:
-    - 'https://www.pombase.org'
+    - 'http://www.pombase.org'
   accounts:
     github: Antonialock
 -
@@ -1019,7 +1019,7 @@
   uri: 'http://orcid.org/0000-0003-4148-4606'
   organization: PomBase
   groups:
-    - 'https://www.pombase.org'
+    - 'http://www.pombase.org'
   comment: 'former affiliations: GO editorial office; MGI; SGD in distant past'
   accounts:
     github: mah11
@@ -1037,7 +1037,7 @@
   uri: 'http://orcid.org/0000-0001-6330-7526'
   organization: PomBase
   groups:
-    - 'https://www.pombase.org'
+    - 'http://www.pombase.org'
   comment: 'former affiliation: GeneDB_Spombe'
   accounts:
     github: ValWood
@@ -3438,7 +3438,7 @@
   authorizations:
     noctua-go:
       allow-edit: true
-  xref: 'GOC:lnp'  
+  xref: 'GOC:lnp'
   organization: InTact
   groups:
     - 'https://www.ebi.ac.uk/intact'
