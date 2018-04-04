@@ -1328,7 +1328,7 @@
       type_id: BET:0000000
       url_syntax: http://oryzasnp.org/_variety.zul?irisid=[example_id]
       example_id: IRIS_313-8922
-      example_url: http://oryzasnp.org/_variety.zul?irisid=IRIS_313-8922 
+      example_url: http://oryzasnp.org/_variety.zul?irisid=IRIS_313-8922
 - database: IRGC
   name: International Rice Genebank Collection
   generic_urls:
