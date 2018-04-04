@@ -113,7 +113,11 @@
 -
   label: AspGD
   id: http://www.aspgd.org
-  shorthand: AspGD_CGD
+  shorthand: AspGD
+-
+  label: CGD
+  id: http://candidagenome.org
+  shorthand: CGD
 -
   label: University of Toronto
   id: http://www.utoronto.ca
