@@ -22,4 +22,18 @@ datasets:
    species_code: Cele
    taxa:
     - NCBITaxon:6239
-
+ -
+   id: wb.gpi
+   label: "wb gpi file"
+   description: "gpi file for Caenorhabditis elegans from WormBase"   
+   url: http://geneontology.org/gpad-gpi/release/wb.gpi.gz
+   type: gpi
+   dataset: wb
+   submitter: wb
+   compression: gzip
+   source: ftp://ftp.wormbase.org/pub/wormbase/species/c_elegans/PRJNA13758/annotation/gene_product_info/c_elegans.PRJNA13758.current.gene_product_info.gpi.gz
+   entity_type:
+   status: active
+   species_code: Cele
+   taxa:
+    - NCBITaxon:6239
