@@ -1,10 +1,10 @@
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX : <http://geneontology.org/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX : <http://model.geneontology.org/>
 
 SELECT ?nonprod ?production ?allnoctua (?nonprod + ?production as ?computedtotal)
 WHERE {
-
   {
     SELECT (COUNT(?nps) as ?nonprod) WHERE {
       GRAPH ?npg {
@@ -19,7 +19,7 @@ WHERE {
           }
         } UNION {
           GRAPH ?npg {
-            ?npg :inferredFrom ?prod .
+            ?npg prov:wasDerivedFrom ?prod .
             ?nps ?npp ?npo
           }
           GRAPH ?prod {
@@ -32,21 +32,20 @@ WHERE {
   }
   {
     SELECT (COUNT(?ps) as ?production) WHERE {
+
       {
-        {
-          GRAPH ?prodg {
-            ?prodg <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
-            ?ps ?pp ?po .
-          }
-        } UNION {
-          GRAPH ?prodg {
-            ?prodg :inferredFrom ?jprod .
-            ?ps ?pp ?po .
-          }
-          GRAPH ?jprod {
-            ?jprod <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
-            ?ps ?pp ?po .
-          }
+        GRAPH ?prodg {
+          ?prodg <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
+          ?ps ?pp ?po .
+        }
+      } UNION {
+        GRAPH ?prodg {
+          ?prodg prov:wasDerivedFrom ?jprod .
+          ?ps ?pp ?po .
+        }
+        GRAPH ?jprod {
+          ?jprod <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
+          ?ps ?pp ?po .
         }
       }
     }
