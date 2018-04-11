@@ -160,29 +160,23 @@ BG_PORT = 8899
 METAGO = <http://model.geneontology.org/>
 GO_GRAPHSTORE_URI = http://purl.obolibrary.org/obo/go/extensions/go-graphstore.owl
 CAM_GRAPH_QUERY = '\
-PREFIX metago: <http://model.geneontology.org/> \
-SELECT ?source_graph WHERE { \
-	{ \
-		SELECT DISTINCT ?source_graph WHERE { \
-			GRAPH ?source_graph { \
-				?s ?p ?o . \
-			} \
+	PREFIX dc: <http://purl.org/dc/elements/1.1/> \
+	SELECT ?source_graph \
+	WHERE { \
+		GRAPH ?source_graph { \
+			?source_graph dc:title ?title . \
 		} \
-	} \
-	?source_graph <http://geneontology.org/lego/json-model> ?json . \
-}'
-NOCTUA_CAMS = $(shell ls -l target/noctua-models/models | awk '{ print $$9 }' | cut -f 1 -d '.' | awk '{ print "<http://model.geneontology.org/"$$1">" }' | tr '\n' ' ')
+	}'
 BG_PROPERTIES = conf/blazegraph.properties
 LOAD_TARGETS = $(ONT_MERGED) target/rdf target/noctua-models/models
 
 
 target/blazegraph.jnl: $(BGJAR) target/rdf target/noctua-models
 	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties load --use-ontology-graph $(LOAD_TARGETS)
-	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(GO_GRAPHSTORE_URI) --append-graph-name="_inferred"
+	JAVA_OPTS=-Xmx14G blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(GO_GRAPHSTORE_URI) --append-graph-name="_inferred"
 
 target/blazegraph-internal.jnl: target/blazegraph.jnl
 	cp $< $@
-	blazegraph-runner --journal=$@ update sparql/insert/insert_inferred_graph_link.sparql
 	blazegraph-runner --journal=$@ update sparql/insert/insert_noctua_metadata.sparql
 	blazegraph-runner --journal=$@ update sparql/insert/insert_ontology_metadata.sparql
 
