@@ -11,27 +11,34 @@ DELETE {
 WHERE {
 
   # This is all triples from noctua cam graphs, including inferred graphs
+# Total
+
   GRAPH ?g {
     ?g :graphType :noctuaCam .
     ?s ?p ?o .
   }
+
   # We'll subtract out production (cause we want to keep them)
-  MINUS {
+  FILTER NOT EXISTS {
     {
       # Find production graphs
       GRAPH ?g {
+        ?g :graphType :noctuaCam .
         ?g <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
         ?s ?p ?o .
       }
-    } UNION {
+    }
+    UNION {
       # Union with inferred graphs from the found production
       GRAPH ?g {
-        ?g prov:wasDerivedFrom ?prod .
+        ?g :graphType :noctuaCam .
+        ?g prov:wasDerivedFrom ?asserted .
         ?s ?p ?o
       }
-      GRAPH ?prod {
-        ?prod <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
-        ?s ?p ?o
+      GRAPH ?asserted {
+        ?asserted :graphType :noctuaCam .
+        ?asserted <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
+        ?s1 ?p1 ?o1
       }
     }
   }

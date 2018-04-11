@@ -11,7 +11,7 @@ WHERE {
         ?npg :graphType :noctuaCam .
         ?nps ?npp ?npo  .
       }
-      MINUS {
+      FILTER NOT EXISTS {
         {
           GRAPH ?npg {
             ?npg <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
@@ -19,12 +19,12 @@ WHERE {
           }
         } UNION {
           GRAPH ?npg {
-            ?npg prov:wasDerivedFrom ?prod .
+            ?npg prov:wasDerivedFrom ?asserted .
             ?nps ?npp ?npo
           }
-          GRAPH ?prod {
-            ?prod <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
-            ?nps ?npp ?npo
+          GRAPH ?asserted {
+            ?asserted <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
+            ?nps1 ?npp1 ?npo1
           }
         }
       }
@@ -40,12 +40,12 @@ WHERE {
         }
       } UNION {
         GRAPH ?prodg {
-          ?prodg prov:wasDerivedFrom ?jprod .
+          ?prodg prov:wasDerivedFrom ?asserted .
           ?ps ?pp ?po .
         }
-        GRAPH ?jprod {
-          ?jprod <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
-          ?ps ?pp ?po .
+        GRAPH ?asserted {
+          ?asserted <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
+          ?ps1 ?pp1 ?po1 .
         }
       }
     }
