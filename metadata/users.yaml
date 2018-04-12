@@ -807,7 +807,7 @@
   organization: MGI
 -
   nickname: 'Dmitry Sitnikov'
-  uri: 'GOC:dms'
+  uri: 'http://orcid.org/0000-0002-5283-5283'
   xref: 'GOC:dms'
   email-md5:
     - 5ee6809ed1e68d38c7366e9ae14a5b9e
