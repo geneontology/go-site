@@ -173,7 +173,7 @@ LOAD_TARGETS = $(ONT_MERGED) target/rdf target/noctua-models/models
 
 target/blazegraph.jnl: $(BGJAR) target/rdf target/noctua-models
 	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties load --use-ontology-graph $(LOAD_TARGETS)
-	JAVA_OPTS=-Xmx14G blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(GO_GRAPHSTORE_URI) --append-graph-name="_inferred"
+	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(GO_GRAPHSTORE_URI) --append-graph-name="_inferred"
 
 target/blazegraph-internal.jnl: target/blazegraph.jnl
 	cp $< $@
