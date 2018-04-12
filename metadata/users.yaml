@@ -1099,7 +1099,7 @@
   organization: Reactome
 -
   nickname: "Peter D'Eustachio"
-  uri: 'GOC:pde'
+  uri: 'http://orcid.org/0000-0002-5494-626X'
   xref: 'GOC:pde'
   email-md5:
     - ba0ab426088546c5a9acf014a722fdd5
