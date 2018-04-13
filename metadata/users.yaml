@@ -1608,7 +1608,7 @@
       allow-write: true
       allow-freeform: false
   xref: 'GOC:ab'
-  uri: 'GOC:ab'
+  uri: 'http://orcid.org/0000-0003-2148-9135'
   organization: UniProt
 -
   nickname: 'Andre Stutz'
