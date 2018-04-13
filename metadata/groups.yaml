@@ -274,3 +274,11 @@
   label: EuPathDB
   id: http://eupathdb.org
   shorthand: EuPathDB
+-
+  label: CONACYT
+  id: http://www.conacyt.gob.mx/index.php/el-conacyt/desarrollo-cientifico/catedrasconacyt
+  shorthand: CONACYT
+-
+  label: INER
+  id: http://www.iner.salud.gob.mx
+  shorthand: INER
