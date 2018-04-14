@@ -3513,6 +3513,19 @@
     - 'http://www.yeastgenome.org'
   accounts:
     github: 'barbdunn'
+-
+  nickname: "Yalbi Itzel Balderas Martinez"
+  uri: 'http://orcid.org/0000-0001-6400-0526'
+  authorizations:
+   noctua:
+     go:
+       allow-edit: true
+  organization: "CONACYT-INER"
+  groups:
+    - 'http://www.iner.salud.gob.mx'
+    - 'http://www.conacyt.gob.mx/index.php/el-conacyt/desarrollo-cientifico/catedrasconacyt'
+  accounts:
+    github: 'Yalbibalderas'
 # -
 #   nickname: ""
 #   uri: ''
