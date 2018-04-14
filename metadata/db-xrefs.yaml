@@ -1698,15 +1698,18 @@
       example_id: MEROPS_fam:M18
       example_url: http://merops.sanger.ac.uk/cgi-bin/famsum?family=m18
 - database: MeSH
+  synonyms:
+    - MESH
+    - MSH
   name: Medical Subject Headings
   generic_urls:
     - https://www.nlm.nih.gov/mesh/MBrowser.html
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.nlm.nih.gov/cgi/mesh/2015/MB_cgi?view=expanded&field=uid&term=[example_id]
+      url_syntax: http://n2t.net/MESH:[example_id]
       example_id: MeSH:D017209
-      example_url: http://www.nlm.nih.gov/cgi/mesh/2015/MB_cgi?view=expanded&field=uid&term=D017209
+      example_url: http://n2t.net/MESH:D017209
 - database: MetaCyc
   name: Metabolic Encyclopedia of metabolic and other pathways
   synonyms:
