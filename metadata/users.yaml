@@ -279,7 +279,6 @@
   uri: 'http://orcid.org/0000-0002-9791-0064'
   xref: 'GOC:rl'
 -
-  authorizations:
   comment: 'formerly HGNC'
   email-md5:
     - 0a23c8a275ee44e7304d76fe98b7b0b1
@@ -542,7 +541,6 @@
   uri: 'GOC:lmg'
   xref: 'GOC:lmg'
 -
-  authorizations:
   email-md5:
     - 84a9c2d76c17fb92ae022b1b80fe0b27
   nickname: 'Amelia Ireland'

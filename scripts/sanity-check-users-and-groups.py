@@ -86,6 +86,7 @@ def main():
     for index, user in enumerate(users):
 
         nick = user.get('nickname', '???')
+        LOGGER.info('nick: ' + nick)
 
         ## Update old authorizations type.
         if args.repair:
