@@ -4,7 +4,7 @@ rvm: "1.9.3"
 before_install:
    - sudo apt-get update
    - sudo apt-get install -y python3
-   - sudo pip3 install yaml
+   - sudo apt-get install -y python3-yaml
 ## Possible other way.
 install:
   - gem install kwalify
