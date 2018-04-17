@@ -7,7 +7,7 @@ rvm: "1.9.3"
 ## Possible other way.
 install:
   - gem install kwalify
-  - pip install yaml
+  - pip3 install yaml
 script:
   ## Quick user data check.
   - kwalify -E -m metadata/users.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
