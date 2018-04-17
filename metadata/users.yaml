@@ -1,20 +1,10 @@
-#### Metadata on GOC members and contributors
-#### See the README.md in this directory for more details.
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   email-md5:
     - e10e731bffebbca8fbe2c5f86a02419f
   nickname: 'Jim Knowles'
   uri: 'GOC:jk'
   xref: 'GOC:jk'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   email-md5:
     - 2032c0dc70a2aa2c3cadf452302a7e8d
   groups:
@@ -100,20 +90,12 @@
   uri: 'GOC:jnx'
   xref: 'GOC:jnx'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   email-md5:
     - ac1bfce31c215d31cd99e43281811dad
   nickname: 'Anna Melidoni'
   uri: 'GOC:anm'
   xref: 'GOC:anm'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   email-md5:
     - 8e80fce402cd52cb2455d4c6c51720a5
   nickname: 'Mike Livstone'
@@ -126,10 +108,6 @@
   uri: 'http://orcid.org/0000-0003-0234-1688'
   xref: 'GOC:hd'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   email-md5:
     - 1c98b0f0a4b0dc79242cfaaf739f9cc8
   groups:
@@ -156,12 +134,6 @@
 -
   accounts:
     github: michaelerice
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - a9c277d0f6301c4d5c48bb593268536d
   groups:
@@ -173,13 +145,6 @@
 -
   accounts:
     github: dianeoinglis
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   email-md5:
     - 601f7b3e4f8165ba4be5057e65143f76
   groups:
@@ -287,13 +252,6 @@
   uri: 'GOC:vk'
   xref: 'GOC:vk'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   comment: 'status inactive, formerly BHF_UCL'
   email-md5:
     - 724b4f5c03cd807d3977f8ae4c43970a
@@ -309,10 +267,6 @@
   uri: 'GOC:nln'
   xref: 'GOC:nln'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   email-md5:
     - a35c6a73b68acd8ba279d77dad079d8f
   groups:
@@ -398,10 +352,6 @@
   uri: 'http://orcid.org/0000-0002-2757-5950'
   xref: 'GOC:rjd'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://ecocyc.org'
   nickname: 'Amanda Mackie'
@@ -419,13 +369,6 @@
   uri: 'GOC:jh2'
   xref: 'GOC:jh2'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   email-md5:
     - 439abe0f9680c9b6a016f44e23d2e3a4
   groups:
@@ -440,10 +383,6 @@
   uri: 'GOC:fb_curators'
   xref: 'GOC:fb_curators'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   email-md5:
     - 17d2b31399e746373f3b18f7f65ab7fe
   groups:
@@ -744,13 +683,6 @@
   uri: 'GOC:ecd'
   xref: 'GOC:ecd'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   email-md5:
     - c1e6bbfeb859c09c827614d106331252
   groups:
@@ -785,12 +717,6 @@
   uri: 'GOC:vl'
   xref: 'GOC:vl'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - dcec55f1f13d54c59c64f061dbb52797
   groups:
@@ -819,12 +745,6 @@
   uri: 'http://orcid.org/0000-0003-4062-6158'
   xref: 'GOC:bhm'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - af515eed93a426d45d1d01200f4e8399
   groups:
@@ -910,10 +830,6 @@
   uri: 'http://orcid.org/0000-0003-4606-0597'
   xref: 'GOC:smb'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   email-md5:
     - 1108e1579ce5583a35c743cb3a85afa7
   groups:
@@ -986,12 +902,6 @@
   uri: 'http://orcid.org/0000-0001-8522-334X'
   xref: 'GOC:jab'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - 53a33cd048b9032e65454b9672b7fd4f
   groups:
@@ -1031,13 +941,6 @@
   uri: 'GOC:cc'
   xref: 'GOC:cc'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   email-md5:
     - ab543d1ed0770d00f679aa6df6bb4048
   groups:
@@ -1222,12 +1125,6 @@
   uri: 'GOC:jsg'
   xref: 'GOC:jsg'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - f6cb73c2299e72ab430475ba02567e49
   groups:
@@ -1362,12 +1259,6 @@
   uri: 'GOC:jd'
   xref: 'GOC:jd'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - db80b5b690c934af872903cdc4985a22
   groups:
@@ -1693,12 +1584,6 @@
   uri: 'GOC:aa'
   xref: 'GOC:aa'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - b656cb1ab16819a79c770231982988f1
   groups:
@@ -1736,12 +1621,6 @@
   uri: 'http://orcid.org/0000-0003-2148-9135'
   xref: 'GOC:ab'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - 69e41e8a803dd018c7e7073e0b0fd3f3
   groups:
@@ -1776,12 +1655,6 @@
   uri: 'GOC:dl2'
   xref: 'GOC:dl2'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - e76fdf6a52a910f0bdd2c521f964c1d4
   groups:
@@ -1826,12 +1699,6 @@
   uri: 'GOC:gc'
   xref: 'GOC:gc'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - f3c8177c584faab5eae5d6a411a91976
   groups:
@@ -1899,12 +1766,6 @@
   uri: 'GOC:mcb'
   xref: 'GOC:mcb'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - d5ba5a1fe3db79ae75578d3e7783ac94
   groups:
@@ -1919,12 +1780,6 @@
   uri: 'GOC:mt'
   xref: 'GOC:mt'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - 2ae8276bb8b2eb2a2f62ad6361d2af6d
   groups:
@@ -2012,12 +1867,6 @@
   uri: 'http://orcid.org/0000-0001-7299-6685'
   xref: 'GOC:sp'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - 5cf46e6664c70bd80092a55367950f2d
   groups:
@@ -2027,12 +1876,6 @@
   uri: 'GOC:ss'
   xref: 'GOC:ss'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - 8796f95a22eb1783692cb06d8c69d190
   groups:
@@ -2049,12 +1892,6 @@
 -
   accounts:
     github: mlschaeffer
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - 024f54a93edddb9690970c2281f728b7
   groups:
@@ -2064,12 +1901,6 @@
   uri: 'GOC:mls'
   xref: 'GOC:mls'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - 688d5d2cd34ad4eabc188653d120561b
   groups:
@@ -2089,12 +1920,6 @@
   uri: 'GOC:gap'
   xref: 'GOC:gap'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - 8a64baba4e3e7eb11dd41526530cdc30
   groups:
@@ -2314,12 +2139,6 @@
   uri: 'GOC:ejs'
   xref: 'GOC:ejs'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - 3bda03dbc02aa0fb8467c81beb5481b6
   groups:
@@ -2352,13 +2171,6 @@
   uri: 'GOC:mag'
   xref: 'GOC:mag'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   email-md5:
     - b7c9c4fec6813374ff3ffa10b7e0be1b
   groups:
@@ -2375,12 +2187,6 @@
 -
   accounts:
     github: helenp
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - ca849fa17a251946fc841296544f14f1
     - 7da8a4640eb919c6f97581190be625d4
@@ -2739,10 +2545,6 @@
 -
   accounts:
     github: pnrobinson
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   email-md5:
     - c727817e3b98721cf962f69613afd192
   nickname: 'Peter Robinson'
@@ -2790,10 +2592,6 @@
   uri: 'http://orcid.org/0000-0003-0086-5621'
   xref: 'GOC:ga'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   email-md5:
     - b63b38a114f54e74e6b7e22f728fc6a2
   groups:
@@ -3738,10 +3536,6 @@
   organization: WB
   uri: 'http://orcid.org/0000-0003-2273-477X'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   comment: 'Demonstration user for various software.'
   groups:
     - 'http://lbl.gov'
