@@ -286,3 +286,7 @@
   label: YubioLab-GO
   id: http://citgenedb.yubiolab.org
   shorthand: YubioLab-GO
+-
+  label: RNAcentral
+  id: http://rnacentral.org/
+  shorthand: RNAcentral
