@@ -4,10 +4,10 @@ rvm: "1.9.3"
 before_install:
    - sudo apt-get update -qq
    - sudo apt-get install -qq python3
+   - sudo pip3 install yaml
 ## Possible other way.
 install:
   - gem install kwalify
-  - pip3 install yaml
 script:
   ## Quick user data check.
   - kwalify -E -m metadata/users.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
