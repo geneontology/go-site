@@ -3,7 +3,7 @@ rvm: "1.9.3"
 
 before_install:
    - sudo apt-get update -qq
-   - sudo apt-get install -qq python3
+   - sudo apt-get install -y -qq python3
    - sudo pip3 install yaml
 ## Possible other way.
 install:
