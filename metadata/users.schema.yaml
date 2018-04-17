@@ -110,6 +110,13 @@ sequence:
           - type: str
             ## Pattern lookahead to prevent trailing slashes.
             pattern: /^(http(s?)\:\/\/\w[\/\.\-\:\w]+)(?<!\/)$/
+      "previous-groups":
+        type: seq
+        required: false
+        sequence:
+          - type: str
+            ## Pattern lookahead to prevent trailing slashes.
+            pattern: /^(http(s?)\:\/\/\w[\/\.\-\:\w]+)(?<!\/)$/
       "accounts":
         type: map
         required: false
