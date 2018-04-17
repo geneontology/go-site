@@ -174,9 +174,12 @@
       allow-freeform: false
   accounts:
     github: dianeoinglis
+  groups:
+    - http://www.aspgd.org
+    - http://candidagenome.org
   xref: 'GOC:di'
   uri: 'GOC:di'
-  organization: AspGD/CGD
+  organization: AspGD
 -
   uri: 'GOC:cy'
   xref: 'GOC:cy'
@@ -475,7 +478,7 @@
       allow-management: true
   xref: 'GOC:dos'
   uri: 'http://orcid.org/0000-0002-7073-9172'
-  organization: GO
+  organization: GO Central
   accounts:
     github: dosumis
 -
@@ -513,7 +516,7 @@
   authorizations: {  }
   xref: 'GOC:ai'
   uri: 'GOC:ai'
-  organization: GO
+  organization: GO Central
 -
   nickname: 'Rebecca Foulger'
   email-md5:
@@ -535,17 +538,17 @@
   uri: 'GOC:ceb'
   xref: 'GOC:ceb'
   nickname: 'Cath Brooksbank'
-  organization: GO
+  organization: GO Central
 -
   uri: 'GOC:go_curators'
   xref: 'GOC:go_curators'
   nickname: 'Curators at GO editorial office'
-  organization: GO
+  organization: GO Central
 -
   uri: 'GOC:jid'
   xref: 'GOC:jid'
   nickname: 'Jennifer Deegan (nee Clark)'
-  organization: GO
+  organization: GO Central
 -
   nickname: 'Jane Lomax'
   email-md5:
@@ -561,7 +564,7 @@
       allow-management: true
   xref: 'GOC:jl'
   uri: 'http://orcid.org/0000-0001-8865-4321'
-  organization: GO
+  organization: GO Central
 -
   uri: 'http://orcid.org/0000-0002-9551-6370'
   xref: 'GOC:mec'
@@ -569,7 +572,7 @@
   email-md5:
     - 792d70ba0832fd43a97a9d4ec5136c86
     - a1f4be95870984265a3b33604a963b01
-  organization: GO
+  organization: GO Central
   authorizations:
     noctua-go:
       allow-edit: true
@@ -596,14 +599,14 @@
       allow-management: true
   xref: 'GOC:pr'
   uri: 'http://orcid.org/0000-0002-2825-0621'
-  organization: GO
+  organization: GO Central
   accounts:
     github: paolaroncaglia
 -
   uri: 'GOC:curators'
   xref: 'GOC:curators'
   nickname: 'GO curators'
-  organization: GO
+  organization: GO Central
   comment: 'Usually indicates GO editorial office curators plus others, e.g. from MODs'
 -
   uri: 'GOC:devbiol'
@@ -1111,6 +1114,8 @@
       allow-write: true
       allow-freeform: false
   organization: Reactome
+  groups:
+    - http://reactome.org
   accounts:
     github: 'deustp01'
 -
@@ -2648,7 +2653,7 @@
   authorizations:
     noctua-go:
       allow-edit: true
-  organization: GO
+  organization: GO Central
   groups:
     - 'http://geneontology.org'
   accounts:
@@ -3281,6 +3286,8 @@
      go:
        allow-edit: true
   organization: Monarch
+  groups:
+    - http://monarchinitiative.org
   accounts:
     github: 'TomConlin'
 -
@@ -3300,7 +3307,7 @@
    noctua:
      go:
        allow-edit: true
-  organization: GO
+  organization: GO Central
   accounts:
     github: 'dougli1sqrd'
 -
@@ -3388,12 +3395,14 @@
     github: 'mendelje'
 -
   nickname: "Nemo Nobody"
-  comment: "Demonstrastion user for various software."
+  comment: "Demonstration user for various software."
   uri: 'GOC:nemo'
   authorizations:
    noctua:
      go:
        allow-edit: true
+  groups:
+    - 'http://lbl.gov'
   organization: LBL
 -
   nickname: "Hyeongsik Kim"
