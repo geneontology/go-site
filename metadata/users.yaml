@@ -1,3543 +1,3679 @@
-# Metadata on GOC members and contributors
-# See the README.md in this directory for more details.
-#
-# The users.yaml file is updated in TermGenie every six hours.
-# TermGenie restarts at 9 pm (Pacific time Zone), aka 5 am (UK time),
-# which also refreshes the configuration.
 -
-  nickname: 'Jim Knowles'
   email-md5:
     - e10e731bffebbca8fbe2c5f86a02419f
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  xref: 'GOC:jk'
+  nickname: 'Jim Knowles'
   uri: 'GOC:jk'
+  xref: 'GOC:jk'
 -
-  nickname: 'Anushya Muruganujan'
   email-md5:
     - 2032c0dc70a2aa2c3cadf452302a7e8d
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  xref: 'GOC:amu'
   groups:
     - 'http://geneontology.org'
+  nickname: 'Anushya Muruganujan'
   uri: 'GOC:amu'
+  xref: 'GOC:amu'
 -
-  nickname: 'Paul Thomas'
-  email-md5:
-    - 84c8bfa613c72bb30f82839e1ce78a55
-  authorizations:
-    noctua-go:
-      allow-edit: true
   accounts:
     github: thomaspd
-  xref: 'GOC:pt'
-  groups:
-    - 'http://geneontology.org'
-  uri: 'http://orcid.org/0000-0002-9074-3507'
--
-  nickname: 'Huaiyu Mi'
-  email-md5:
-    - 7e66eb2d15fe29c8a051e43000cc681c
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  xref: 'GOC:hm'
-  groups:
-    - 'http://geneontology.org'
-  uri: 'http://orcid.org/0000-0001-8721-202X'
-  accounts:
-    github: huaiyumi
--
-  nickname: 'Nathan Dunn'
-  email-md5:
-    - 9afebd4cf92acca9aa2bdb557f96b504
-  authorizations:
-    termgenie-go:
-      allow-write: true
-      allow-review: true
-      allow-freeform: false
-      allow-management: false
-  uri: 'http://orcid.org/0000-0002-4862-3181'
-  accounts:
-    github: nathandunn
-    orcid: '0000-0002-4862-3181'
-    email-md5:
-     - 7da61ebeb6459e809d61aebf28f2a315
--
-  nickname: 'Seth Carbon'
-  email-md5:
-    - 65d762aea47eaf21e2b19177f448b3c3
   authorizations:
     noctua:
       go:
         allow-edit: true
-        allow-admin: true
+  email-md5:
+    - 84c8bfa613c72bb30f82839e1ce78a55
+  groups:
+    - 'http://geneontology.org'
+  nickname: 'Paul Thomas'
+  uri: 'http://orcid.org/0000-0002-9074-3507'
+  xref: 'GOC:pt'
+-
+  accounts:
+    github: huaiyumi
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 7e66eb2d15fe29c8a051e43000cc681c
+  groups:
+    - 'http://geneontology.org'
+  nickname: 'Huaiyu Mi'
+  uri: 'http://orcid.org/0000-0001-8721-202X'
+  xref: 'GOC:hm'
+-
+  accounts:
+    email-md5:
+      - 7da61ebeb6459e809d61aebf28f2a315
+    github: nathandunn
+    orcid: 0000-0002-4862-3181
+  authorizations:
     termgenie-go:
-      allow-write: true
+      allow-freeform: false
+      allow-management: false
       allow-review: true
+      allow-write: true
+  email-md5:
+    - 9afebd4cf92acca9aa2bdb557f96b504
+  nickname: 'Nathan Dunn'
+  uri: 'http://orcid.org/0000-0002-4862-3181'
+-
+  accounts:
+    email-md5:
+      - 65d762aea47eaf21e2b19177f448b3c3
+    github: kltm
+    google-plus: '112360324542574840929'
+    orcid: 0000-0001-8244-1536
+  authorizations:
+    noctua:
+      go:
+        allow-admin: true
+        allow-edit: true
+    termgenie-go:
       allow-freeform: false
       allow-management: true
-  xref: 'GOC:sjc'
-  uri: 'http://orcid.org/0000-0001-8244-1536'
-  organization: LBL
+      allow-review: true
+      allow-write: true
+  email-md5:
+    - 65d762aea47eaf21e2b19177f448b3c3
   groups:
     - 'http://geneontology.org'
     - 'http://planteome.org'
     - 'http://lbl.gov'
-  accounts:
-    github: kltm
-    google-plus: '112360324542574840929'
-    orcid: '0000-0001-8244-1536'
-    email-md5:
-     - 65d762aea47eaf21e2b19177f448b3c3
+  nickname: 'Seth Carbon'
+  organization: LBL
+  uri: 'http://orcid.org/0000-0001-8244-1536'
+  xref: 'GOC:sjc'
 -
-  nickname: 'Jeremy Nguyen Xuan'
   email-md5:
     - d62320e131b827615ba8da3decafa6f3
-  xref: 'GOC:jnx'
+  nickname: 'Jeremy Nguyen Xuan'
   uri: 'GOC:jnx'
+  xref: 'GOC:jnx'
 -
-  nickname: 'Anna Melidoni'
   email-md5:
     - ac1bfce31c215d31cd99e43281811dad
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  xref: 'GOC:anm'
+  nickname: 'Anna Melidoni'
   uri: 'GOC:anm'
+  xref: 'GOC:anm'
 -
-  nickname: 'Mike Livstone'
   email-md5:
     - 8e80fce402cd52cb2455d4c6c51720a5
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  xref: 'GOC:ml2'
+  nickname: 'Mike Livstone'
   uri: 'GOC:ml2'
+  xref: 'GOC:ml2'
 -
-  nickname: 'Heiko Dietze'
   email-md5:
     - 61ab06ea85d8658a7e17cc30295dafbd
-  xref: 'GOC:hd'
+  nickname: 'Heiko Dietze'
   uri: 'http://orcid.org/0000-0003-0234-1688'
+  xref: 'GOC:hd'
 -
-  nickname: 'Dexter Pratt'
   email-md5:
     - 1c98b0f0a4b0dc79242cfaaf739f9cc8
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  xref: 'GOC:dp'
-  uri: 'GOC:dp'
+  groups:
+    - 'http://ucsd.edu'
+  nickname: 'Dexter Pratt'
   organization: UCSD
+  uri: 'GOC:dp'
+  xref: 'GOC:dp'
 -
-  uri: 'GOC:fmc'
-  xref: 'GOC:fmc'
   nickname: 'Fiona McCarthy'
   organization: AgBase
+  uri: 'GOC:fmc'
+  xref: 'GOC:fmc'
 -
-  uri: 'GOC:jz'
-  xref: 'GOC:jz'
   nickname: 'Jinhui Zhang'
   organization: AgBase
+  uri: 'GOC:jz'
+  xref: 'GOC:jz'
 -
-  uri: 'GOC:lp'
-  xref: 'GOC:lp'
   nickname: 'Lakshmi Pillai'
   organization: AgBase
+  uri: 'GOC:lp'
+  xref: 'GOC:lp'
 -
-  nickname: 'Michael Rice'
-  email-md5:
-    - a9c277d0f6301c4d5c48bb593268536d
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:mr'
-  uri: 'GOC:mr'
-  organization: AgBase
   accounts:
     github: michaelerice
--
-  nickname: 'Diane Inglis'
   email-md5:
-    - 601f7b3e4f8165ba4be5057e65143f76
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
+    - a9c277d0f6301c4d5c48bb593268536d
+  groups:
+    - 'http://www.agbase.msstate.edu'
+  nickname: 'Michael Rice'
+  organization: AgBase
+  uri: 'GOC:mr'
+  xref: 'GOC:mr'
+-
   accounts:
     github: dianeoinglis
-  xref: 'GOC:di'
+  email-md5:
+    - 601f7b3e4f8165ba4be5057e65143f76
+  groups:
+    - 'http://www.aspgd.org'
+    - 'http://candidagenome.org'
+  nickname: 'Diane Inglis'
+  organization: AspGD
   uri: 'GOC:di'
-  organization: AspGD/CGD
+  xref: 'GOC:di'
 -
-  uri: 'GOC:cy'
-  xref: 'GOC:cy'
   nickname: 'Courtland Yockey'
   organization: AstraZeneca
+  uri: 'GOC:cy'
+  xref: 'GOC:cy'
 -
-  uri: 'GOC:ame'
-  xref: 'GOC:ame'
-  nickname: 'Anna Melidoni (formerly BHF-UCL)'
+  authorizations:
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
   email-md5:
     - ac1bfce31c215d31cd99e43281811dad
+  nickname: 'Anna Melidoni (formerly BHF-UCL)'
   organization: IntAct
-  authorizations:
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
+  uri: 'GOC:ame'
+  xref: 'GOC:ame'
 -
-  uri: 'GOC:ebc'
-  xref: 'GOC:ebc'
+  comment: 'status inactive, formerly GOA'
   nickname: 'Evelyn Camon'
   organization: BHF-UCL
-  comment: 'status inactive, formerly GOA'
+  uri: 'GOC:ebc'
+  xref: 'GOC:ebc'
 -
-  uri: 'GOC:gr'
-  xref: 'GOC:gr'
+  comment: 'status inactive, Masters Student working with the BHF group at UCL'
   nickname: 'Greg Rowe'
   organization: BHF-UCL
-  comment: 'status inactive, Masters Student working with the BHF group at UCL'
+  uri: 'GOC:gr'
+  xref: 'GOC:gr'
 -
-  uri: 'GOC:hal'
-  xref: 'GOC:hal'
-  nickname: 'Hadil Alrohaif'
+  authorizations:
+    termgenie-go:
+      allow-write: true
+  comment: 'status inactive, Masters Student working with the BHF group at UCL'
   email-md5:
     - e4a501963ab7181d1e40298d93741e50
+  nickname: 'Hadil Alrohaif'
   organization: BHF-UCL
-  comment: 'status inactive, Masters Student working with the BHF group at UCL'
-  authorizations:
-    termgenie-go:
-      allow-write: true
+  uri: 'GOC:hal'
+  xref: 'GOC:hal'
 -
-  uri: 'http://orcid.org/0000-0002-0918-9335'
-  xref: 'GOC:jbu'
+  comment: 'status inactive, Collaborator with the BHF group at UCL'
   nickname: 'Jessica Buxton'
   organization: BHF-UCL
-  comment: 'status inactive, Collaborator with the BHF group at UCL'
+  uri: 'http://orcid.org/0000-0002-0918-9335'
+  xref: 'GOC:jbu'
 -
-  uri: 'http://orcid.org/0000-0001-9510-5320'
-  xref: 'GOC:kom'
-  nickname: 'Klaus Mitchell'
+  authorizations:
+    termgenie-go:
+      allow-write: true
+  comment: 'status inactive, Masters Student working with the BHF group at UCL'
   email-md5:
     - 59418a02b3237575e70fd9f79da8d244
+  nickname: 'Klaus Mitchell'
   organization: BHF-UCL
-  comment: 'status inactive, Masters Student working with the BHF group at UCL'
-  authorizations:
-    termgenie-go:
-      allow-write: true
+  uri: 'http://orcid.org/0000-0001-9510-5320'
+  xref: 'GOC:kom'
 -
-  uri: 'http://orcid.org/0000-0001-9995-0839'
-  xref: 'GOC:nc'
-  nickname: 'Nancy Campbell'
-  email-md5:
-    - 6c55ad1ed9cdab0b874123a20a0c3905
-  organization: BHF-UCL
-  authorizations:
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
   accounts:
     github: NancyCampbell
--
-  nickname: 'Ruth Lovering'
-  email-md5:
-    - 87b721597d5a997234f5a8f61bde469b
   authorizations:
-    noctua-go:
-      allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
+  email-md5:
+    - 6c55ad1ed9cdab0b874123a20a0c3905
+  nickname: 'Nancy Campbell'
+  organization: BHF-UCL
+  uri: 'http://orcid.org/0000-0001-9995-0839'
+  xref: 'GOC:nc'
+-
+  accounts:
+    github: RLovering
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
-  xref: 'GOC:rl'
-  uri: 'http://orcid.org/0000-0002-9791-0064'
-  organization: BHF-UCL
   comment: 'formerly HGNC'
+  email-md5:
+    - 87b721597d5a997234f5a8f61bde469b
   groups:
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
     - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl'
     - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl'
-  accounts:
-    github: RLovering
+  nickname: 'Ruth Lovering'
+  organization: BHF-UCL
+  uri: 'http://orcid.org/0000-0002-9791-0064'
+  xref: 'GOC:rl'
 -
-  nickname: 'Varsha Khodiyar'
+  comment: 'formerly HGNC'
   email-md5:
     - 0a23c8a275ee44e7304d76fe98b7b0b1
-  authorizations: {  }
-  xref: 'GOC:vk'
-  uri: 'GOC:vk'
+  nickname: 'Varsha Khodiyar'
   organization: BHF-UCL
-  comment: 'formerly HGNC'
+  uri: 'GOC:vk'
+  xref: 'GOC:vk'
 -
-  nickname: 'Sejal Patel'
+  comment: 'status inactive, formerly BHF_UCL'
   email-md5:
     - 724b4f5c03cd807d3977f8ae4c43970a
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  xref: 'GOC:sjp'
-  uri: 'GOC:sjp'
+  groups:
+    - 'http://www.utoronto.ca'
+  nickname: 'Sejal Patel'
   organization: 'University of Toronto'
-  comment: 'status inactive, formerly BHF_UCL'
+  uri: 'GOC:sjp'
+  xref: 'GOC:sjp'
 -
-  uri: 'GOC:nln'
-  xref: 'GOC:nln'
   nickname: 'Nicolas Le Novere'
   organization: BIOMD
+  uri: 'GOC:nln'
+  xref: 'GOC:nln'
 -
-  nickname: 'Isabelle Cusin'
-  uri: 'GOC:ic'
-  xref: 'GOC:ic'
   email-md5:
     - a35c6a73b68acd8ba279d77dad079d8f
-  authorizations:
-    noctua-go:
-      allow-edit: true
+  groups:
+    - 'http://web.expasy.org/groups/calipho'
+  nickname: 'Isabelle Cusin'
   organization: CALIPHO
+  uri: 'GOC:ic'
+  xref: 'GOC:ic'
 -
-  uri: 'GOC:amm'
-  xref: 'GOC:amm'
+  comment: 'not directly affiliated with a database, but collaborates on Cell Ontology development'
   nickname: 'Anna Maria Masci'
   organization: CL
-  comment: 'not directly affiliated with a database, but collaborates on Cell Ontology development'
+  uri: 'GOC:amm'
+  xref: 'GOC:amm'
 -
-  uri: 'GOC:dsd'
-  xref: 'GOC:dsd'
+  comment: "member of Richard Scheuermann's group; not directly affiliated with a database, but collaborates on Cell Ontology development"
   nickname: 'David S. Dougall'
   organization: CL
-  comment: "member of Richard Scheuermann's group; not directly affiliated with a database, but collaborates on Cell Ontology development"
+  uri: 'GOC:dsd'
+  xref: 'GOC:dsd'
 -
-  uri: 'GOC:cl'
-  xref: 'GOC:cl'
   nickname: 'Chris Larsen'
   organization: Cognia
+  uri: 'GOC:cl'
+  xref: 'GOC:cl'
 -
-  uri: 'GOC:kp'
-  xref: 'GOC:kp'
   nickname: 'Karen Pilcher'
   organization: DDB
+  uri: 'GOC:kp'
+  xref: 'GOC:kp'
 -
-  nickname: 'Petra Fey'
-  email-md5:
-    - 816b724b99c13b7fd733a9401f879f4e
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:pf'
-  uri: 'http://orcid.org/0000-0002-4532-2703'
-  organization: DDB
-  groups:
-    - 'http://dictybase.org'
   accounts:
     github: pfey03
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-write: true
+  email-md5:
+    - 816b724b99c13b7fd733a9401f879f4e
+  groups:
+    - 'http://dictybase.org'
+  nickname: 'Petra Fey'
+  organization: DDB
+  uri: 'http://orcid.org/0000-0002-4532-2703'
+  xref: 'GOC:pf'
 -
-  nickname: 'Pascale Gaudet'
+  accounts:
+    github: pgaudet
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
   email-md5:
     - 55e50a7c9ce412fdcbdfbb57caeb0aaa
     - e92521fb31f573641b4bdd6b9b7b088b
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  xref: 'GOC:pg'
-  uri: 'http://orcid.org/0000-0003-1813-6857'
-  organization: GO Central
   groups:
     - 'http://geneontology.org'
     - 'https://www.nextprot.org'
-  accounts:
-    github: pgaudet
+  nickname: 'Pascale Gaudet'
+  organization: 'GO Central'
+  uri: 'http://orcid.org/0000-0003-1813-6857'
+  xref: 'GOC:pg'
 -
-  nickname: 'Robert Dodson'
-  email-md5:
-    - 0187a194e1fe3ce4482be77cdfe32c79
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:rjd'
-  uri: 'http://orcid.org/0000-0002-2757-5950'
-  organization: DDB
-  groups:
-    - 'http://dictybase.org'
   accounts:
     github: rjdodson
--
-  nickname: 'Amanda Mackie'
   authorizations:
-    noctua-go:
-      allow-edit: true
-  xref: 'GOC:am'
-  uri: 'GOC:am'
-  organization: EcoCyc
--
-  uri: 'GOC:atm'
-  xref: 'GOC:atm'
-  nickname: 'Athena Mason'
-  organization: 'E. coli'
--
-  uri: 'GOC:jh2'
-  xref: 'GOC:jh2'
-  nickname: 'Jim Hu'
-  organization: 'E. coli'
--
-  nickname: 'Brenley McIntosh'
-  email-md5:
-    - 439abe0f9680c9b6a016f44e23d2e3a4
-  authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: false
-  xref: 'GOC:bm'
-  uri: 'GOC:bm'
-  organization: 'E. coli'
+  email-md5:
+    - 0187a194e1fe3ce4482be77cdfe32c79
+  groups:
+    - 'http://dictybase.org'
+  nickname: 'Robert Dodson'
+  organization: DDB
+  uri: 'http://orcid.org/0000-0002-2757-5950'
+  xref: 'GOC:rjd'
 -
-  uri: 'GOC:fb_curators'
-  xref: 'GOC:fb_curators'
+  groups:
+    - 'http://ecocyc.org'
+  nickname: 'Amanda Mackie'
+  organization: EcoCyc
+  uri: 'GOC:am'
+  xref: 'GOC:am'
+-
+  nickname: 'Athena Mason'
+  organization: 'E. coli'
+  uri: 'GOC:atm'
+  xref: 'GOC:atm'
+-
+  nickname: 'Jim Hu'
+  organization: 'E. coli'
+  uri: 'GOC:jh2'
+  xref: 'GOC:jh2'
+-
+  email-md5:
+    - 439abe0f9680c9b6a016f44e23d2e3a4
+  groups:
+    - 'http://www.bio.tamu.edu'
+  nickname: 'Brenley McIntosh'
+  organization: 'E. coli'
+  uri: 'GOC:bm'
+  xref: 'GOC:bm'
+-
   nickname: 'Curators at FlyBase'
   organization: FlyBase
+  uri: 'GOC:fb_curators'
+  xref: 'GOC:fb_curators'
 -
-  uri: 'GOC:nv'
-  xref: 'GOC:nv'
-  nickname: 'Nicole Vasilevsky'
   email-md5:
     - 17d2b31399e746373f3b18f7f65ab7fe
-  organization: OHSU
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
   groups:
     - 'http://monarchinitiative.org'
     - 'https://ncats.nih.gov/translator'
+  nickname: 'Nicole Vasilevsky'
+  organization: OHSU
+  uri: 'GOC:nv'
+  xref: 'GOC:nv'
 -
-  uri: 'http://orcid.org/0000-0003-3212-6364'
-  xref: 'GOC:ha'
-  nickname: 'Helen Attrill'
+  accounts:
+    github: hattrill
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-write: true
   email-md5:
     - 82989df351e8628287c7d71227c299cb
     - 8f2851f24e6a524cc10da6bb2a72e7eb
-  organization: FlyBase
-  authorizations:
-    termgenie-go:
-      allow-write: true
-    noctua-go:
-      allow-edit: true
   groups:
     - 'http://flybase.org'
-  accounts:
-    github: hattrill
+  nickname: 'Helen Attrill'
+  organization: FlyBase
+  uri: 'http://orcid.org/0000-0003-3212-6364'
+  xref: 'GOC:ha'
 -
-  uri: 'GOC:hb'
-  xref: 'GOC:hb'
   nickname: 'Heather Butler'
   organization: FlyBase
+  uri: 'GOC:hb'
+  xref: 'GOC:hb'
 -
-  uri: 'http://orcid.org/0000-0001-5948-3092'
-  xref: 'GOC:mc'
-  nickname: 'Marta Costa'
-  organization: FlyBase
   accounts:
     github: mmc46
+  nickname: 'Marta Costa'
+  organization: FlyBase
+  uri: 'http://orcid.org/0000-0001-5948-3092'
+  xref: 'GOC:mc'
 -
-  uri: 'GOC:ma'
-  xref: 'GOC:ma'
   nickname: 'Michael Ashburner'
   organization: FlyBase
+  uri: 'GOC:ma'
+  xref: 'GOC:ma'
 -
-  nickname: 'David Osumi-Sutherland'
-  email-md5:
-    - 3e373dc40c5b80696bed3d0987fea2dc
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-review: true
-      allow-freeform: false
-      allow-freeform-litxref-optional: true
-      allow-management: true
-  xref: 'GOC:dos'
-  uri: 'http://orcid.org/0000-0002-7073-9172'
-  organization: GO
   accounts:
     github: dosumis
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-freeform-litxref-optional: true
+      allow-management: true
+      allow-review: true
+      allow-write: true
+  email-md5:
+    - 3e373dc40c5b80696bed3d0987fea2dc
+  groups:
+    - 'http://geneontology.org'
+  nickname: 'David Osumi-Sutherland'
+  organization: 'GO Central'
+  uri: 'http://orcid.org/0000-0002-7073-9172'
+  xref: 'GOC:dos'
 -
-  uri: 'GOC:rc'
-  xref: 'GOC:rc'
   nickname: 'Russ Collins'
   organization: FlyBase
+  uri: 'GOC:rc'
+  xref: 'GOC:rc'
 -
-  nickname: 'Susan Tweedie'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
   email-md5:
     - b979cd6be9eec5bef6c92a1ff4173306
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  xref: 'GOC:sart'
-  uri: 'http://orcid.org/0000-0003-1818-8243'
+  groups:
+    - 'http://flybase.org'
+  nickname: 'Susan Tweedie'
   organization: FlyBase
+  uri: 'http://orcid.org/0000-0003-1818-8243'
+  xref: 'GOC:sart'
 -
-  uri: 'GOC:mb'
-  xref: 'GOC:mb'
   nickname: 'Matt Berriman'
   organization: GeneDB_Pfalciparum
+  uri: 'GOC:mb'
+  xref: 'GOC:mb'
 -
-  uri: 'GOC:lmg'
-  xref: 'GOC:lmg'
   nickname: 'Linda Groocock'
   organization: GeneDB_Spombe
+  uri: 'GOC:lmg'
+  xref: 'GOC:lmg'
 -
-  nickname: 'Amelia Ireland'
   email-md5:
     - 84a9c2d76c17fb92ae022b1b80fe0b27
-  authorizations: {  }
-  xref: 'GOC:ai'
+  nickname: 'Amelia Ireland'
+  organization: 'GO Central'
   uri: 'GOC:ai'
-  organization: GO
+  xref: 'GOC:ai'
 -
-  nickname: 'Rebecca Foulger'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-freeform-litxref-optional: true
+      allow-management: true
+      allow-review: true
+      allow-write: true
+  comment: 'former affiliations: FlyBase, UniProt, GO'
   email-md5:
     - 67660068792406332d36a17cd886a5e6
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-review: true
-      allow-freeform: false
-      allow-freeform-litxref-optional: true
-      allow-management: true
-  xref: 'GOC:bf'
-  uri: 'http://orcid.org/0000-0001-8682-8754'
+  groups:
+    - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/parkinsons'
+  nickname: 'Rebecca Foulger'
   organization: "UCL-Parkinson's UK Annotation Project"
-  comment: 'former affiliations: FlyBase, UniProt, GO'
+  uri: 'http://orcid.org/0000-0001-8682-8754'
+  xref: 'GOC:bf'
 -
+  nickname: 'Cath Brooksbank'
+  organization: 'GO Central'
   uri: 'GOC:ceb'
   xref: 'GOC:ceb'
-  nickname: 'Cath Brooksbank'
-  organization: GO
 -
+  nickname: 'Curators at GO editorial office'
+  organization: 'GO Central'
   uri: 'GOC:go_curators'
   xref: 'GOC:go_curators'
-  nickname: 'Curators at GO editorial office'
-  organization: GO
 -
+  nickname: 'Jennifer Deegan (nee Clark)'
+  organization: 'GO Central'
   uri: 'GOC:jid'
   xref: 'GOC:jid'
-  nickname: 'Jennifer Deegan (nee Clark)'
-  organization: GO
 -
-  nickname: 'Jane Lomax'
-  email-md5:
-    - dad114c06bf7c24dd3aeeedf79fe8168
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
-      allow-write: true
-      allow-review: true
       allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
-  xref: 'GOC:jl'
+      allow-review: true
+      allow-write: true
+  email-md5:
+    - dad114c06bf7c24dd3aeeedf79fe8168
+  groups:
+    - 'http://geneontology.org'
+  nickname: 'Jane Lomax'
+  organization: 'GO Central'
   uri: 'http://orcid.org/0000-0001-8865-4321'
-  organization: GO
+  xref: 'GOC:jl'
 -
-  uri: 'http://orcid.org/0000-0002-9551-6370'
-  xref: 'GOC:mec'
-  nickname: 'Melanie Courtot'
+  accounts:
+    github: mcourtot
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-freeform-litxref-optional: true
+      allow-management: true
+      allow-review: true
+      allow-write: true
   email-md5:
     - 792d70ba0832fd43a97a9d4ec5136c86
     - a1f4be95870984265a3b33604a963b01
-  organization: GO
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-review: true
-      allow-freeform: false
-      allow-freeform-litxref-optional: true
-      allow-management: true
-  accounts:
-    github: mcourtot
+  groups:
+    - 'http://geneontology.org'
+  nickname: 'Melanie Courtot'
+  organization: 'GO Central'
+  uri: 'http://orcid.org/0000-0002-9551-6370'
+  xref: 'GOC:mec'
 -
-  nickname: 'Paola Roncaglia'
-  email-md5:
-    - 98ca4b42efb7564953508c74394d8634
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-review: true
-      allow-freeform: false
-      allow-freeform-litxref-optional: true
-      allow-management: true
-  xref: 'GOC:pr'
-  uri: 'http://orcid.org/0000-0002-2825-0621'
-  organization: GO
   accounts:
     github: paolaroncaglia
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-freeform-litxref-optional: true
+      allow-management: true
+      allow-review: true
+      allow-write: true
+  email-md5:
+    - 98ca4b42efb7564953508c74394d8634
+  groups:
+    - 'http://geneontology.org'
+  nickname: 'Paola Roncaglia'
+  organization: 'GO Central'
+  uri: 'http://orcid.org/0000-0002-2825-0621'
+  xref: 'GOC:pr'
 -
+  comment: 'Usually indicates GO editorial office curators plus others, e.g. from MODs'
+  nickname: 'GO curators'
+  organization: 'GO Central'
   uri: 'GOC:curators'
   xref: 'GOC:curators'
-  nickname: 'GO curators'
-  organization: GO
-  comment: 'Usually indicates GO editorial office curators plus others, e.g. from MODs'
 -
-  uri: 'GOC:devbiol'
-  xref: 'GOC:devbiol'
   nickname: 'The Developmental Biology Interest Group'
   organization: 'GO Interest Group'
+  uri: 'GOC:devbiol'
+  xref: 'GOC:devbiol'
 -
-  uri: 'GOC:aruk'
-  xref: 'GOC:aruk'
+  comment: "Annotation of proteins associated with dementia, funded by Alzheimer's Research UK"
   nickname: 'Annotation of proteins associated with dementia'
   organization: ARUK-UCL
-  comment: "Annotation of proteins associated with dementia, funded by Alzheimer's Research UK"
+  uri: 'GOC:aruk'
+  xref: 'GOC:aruk'
 -
-  nickname: 'Aleksandra Shypitsyna'
-  email-md5:
-    - 211b318809e38f23520d0bd64f4a2330
+  accounts:
+    github: zebrafishembryo
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
-  xref: 'GOC:als'
-  uri: 'http://orcid.org/0000-0003-3829-1600'
+  email-md5:
+    - 211b318809e38f23520d0bd64f4a2330
+  groups:
+    - 'http://www.ebi.ac.uk/GOA'
+  nickname: 'Aleksandra Shypitsyna'
   organization: GOA
-  accounts:
-    github: 'zebrafishembryo'
+  uri: 'http://orcid.org/0000-0003-3829-1600'
+  xref: 'GOC:als'
 -
-  nickname: 'Elena Speretta'
-  uri: 'http://orcid.org/0000-0003-1506-7438'
-  xref: 'GOC:es'
+  accounts:
+    github: esperetta
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-write: true
   email-md5:
     - e4c08a3f5b380e6103ac2cc3d94d83ff
     - c961c90fe1e38150467f235fe1ba6737
+  groups:
+    - 'http://www.ebi.ac.uk/GOA'
+  nickname: 'Elena Speretta'
   organization: GOA
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  accounts:
-    github: esperetta
+  uri: 'http://orcid.org/0000-0003-1506-7438'
+  xref: 'GOC:es'
 -
-  nickname: 'George Georghiou'
-  uri: 'http://orcid.org/0000-0001-5067-3199'
-  xref: 'GOC:gg'
+  accounts:
+    github: ggeorghiou
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   email-md5:
     - a5d3f603d546cc29f906118a5d9762a4
+  groups:
+    - 'http://www.ebi.ac.uk'
+  nickname: 'George Georghiou'
   organization: EMBL-EBI
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  accounts:
-    github: 'ggeorghiou'
+  uri: 'http://orcid.org/0000-0001-5067-3199'
+  xref: 'GOC:gg'
 -
-  nickname: 'Hema Bye-A-Jee'
-  uri: 'http://orcid.org/0000-0003-2464-7688'
-  xref: 'GOC:hbye'
-  email-md5:
-    - eeaf1be2f013ee3e4fe9204b8e48a1a6
-  organization: UniProt
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
   accounts:
     github: hbye
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-write: true
+  email-md5:
+    - eeaf1be2f013ee3e4fe9204b8e48a1a6
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Hema Bye-A-Jee'
+  organization: UniProt
+  uri: 'http://orcid.org/0000-0003-2464-7688'
+  xref: 'GOC:hbye'
 -
-  uri: 'GOC:ah'
-  xref: 'GOC:ah'
-  nickname: 'Alex Holmes'
+  authorizations:
+    termgenie-go:
+      allow-write: true
   email-md5:
     - b7f33ede546b87737fd185642dbd2bb8
+  nickname: 'Alex Holmes'
   organization: GOA
-  authorizations:
-    termgenie-go:
-      allow-write: true
+  uri: 'GOC:ah'
+  xref: 'GOC:ah'
 -
-  uri: 'GOC:ecd'
-  xref: 'GOC:ecd'
   nickname: 'Emily Dimmer'
   organization: GOA
+  uri: 'GOC:ecd'
+  xref: 'GOC:ecd'
 -
-  nickname: 'Prudence Mutowo'
   email-md5:
     - c1e6bbfeb859c09c827614d106331252
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  xref: 'GOC:pm'
-  uri: 'GOC:pm'
+  groups:
+    - 'http://www.ebi.ac.uk/GOA'
+  nickname: 'Prudence Mutowo'
   organization: GOA
+  uri: 'GOC:pm'
+  xref: 'GOC:pm'
 -
-  nickname: 'Rachael Huntley'
+  accounts:
+    github: rachhuntley
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
+  comment: 'formerly GOA'
   email-md5:
     - 3beee3c95e50a25e13cf834785fb2b21
     - 35a1ee6e08a0eb2d914ca1529f2fd770
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  xref: 'GOC:rph'
-  uri: 'http://orcid.org/0000-0001-6718-3559'
-  organization: BHF-UCL
-  comment: 'formerly GOA'
   groups:
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
-  accounts:
-    github: rachhuntley
+  nickname: 'Rachael Huntley'
+  organization: BHF-UCL
+  uri: 'http://orcid.org/0000-0001-6718-3559'
+  xref: 'GOC:rph'
 -
-  uri: 'GOC:vl'
-  xref: 'GOC:vl'
   nickname: 'Vivian Lee'
   organization: GOA
+  uri: 'GOC:vl'
+  xref: 'GOC:vl'
 -
-  nickname: 'Yasmin Alam-Faruque'
   email-md5:
     - dcec55f1f13d54c59c64f061dbb52797
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:yaf'
-  uri: 'GOC:yaf'
-  organization: GOA
--
-  nickname: 'Birgit Meldal'
-  email-md5:
-    - f8b0b6bba244b89fd625b8994bdd1744
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  xref: 'GOC:bhm'
-  uri: 'http://orcid.org/0000-0003-4062-6158'
-  organization: InTact
-  comment: 'Birgit Meldal'
   groups:
-    - 'https://www.ebi.ac.uk/intact'
+    - 'http://www.ebi.ac.uk/GOA'
+  nickname: 'Yasmin Alam-Faruque'
+  organization: GOA
+  uri: 'GOC:yaf'
+  xref: 'GOC:yaf'
+-
   accounts:
     github: bmeldal
--
-  nickname: 'Ingrid Keseler'
-  email-md5:
-    - af515eed93a426d45d1d01200f4e8399
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:imk'
-  uri: 'GOC:imk'
-  organization: MetaCyc
--
-  uri: 'GOC:mengo_curators'
-  xref: 'GOC:mengo_curators'
-  nickname: 'Curators at MENGO'
-  organization: MENGO
--
-  nickname: 'David Hill'
-  email-md5:
-    - 65769275d47653aced3fae5ab1f805b1
   authorizations:
     noctua:
       go:
         allow-edit: true
     termgenie-go:
+      allow-freeform: false
       allow-write: true
-      allow-review: true
+  comment: 'Birgit Meldal'
+  email-md5:
+    - f8b0b6bba244b89fd625b8994bdd1744
+  groups:
+    - 'https://www.ebi.ac.uk/intact'
+  nickname: 'Birgit Meldal'
+  organization: InTact
+  uri: 'http://orcid.org/0000-0003-4062-6158'
+  xref: 'GOC:bhm'
+-
+  email-md5:
+    - af515eed93a426d45d1d01200f4e8399
+  groups:
+    - 'http://metacyc.org'
+  nickname: 'Ingrid Keseler'
+  organization: MetaCyc
+  uri: 'GOC:imk'
+  xref: 'GOC:imk'
+-
+  nickname: 'Curators at MENGO'
+  organization: MENGO
+  uri: 'GOC:mengo_curators'
+  xref: 'GOC:mengo_curators'
+-
+  accounts:
+    github: ukemi
+    orcid: 0000-0001-7476-6306
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
       allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
-  xref: 'GOC:dph'
-  uri: 'http://orcid.org/0000-0001-7476-6306'
-  organization: MGI
+      allow-review: true
+      allow-write: true
+  email-md5:
+    - 65769275d47653aced3fae5ab1f805b1
   groups:
     - 'http://informatics.jax.org'
     - 'http://geneontology.org'
-  accounts:
-    github: ukemi
-    orcid: '0000-0001-7476-6306'
+  nickname: 'David Hill'
+  organization: MGI
+  uri: 'http://orcid.org/0000-0001-7476-6306'
+  xref: 'GOC:dph'
 -
-  uri: 'GOC:tfm'
-  xref: 'GOC:tfm'
+  comment: 'Cell Ontology'
   nickname: 'Terry Meehan'
   organization: MGI
-  comment: 'Cell Ontology'
+  uri: 'GOC:tfm'
+  xref: 'GOC:tfm'
 -
-  uri: 'GOC:ajp'
-  xref: 'GOC:ajp'
   nickname: 'Tony Planchart'
   organization: MGI
+  uri: 'GOC:ajp'
+  xref: 'GOC:ajp'
 -
-  nickname: 'Dmitry Sitnikov'
-  uri: 'http://orcid.org/0000-0002-5283-5283'
-  xref: 'GOC:dms'
-  email-md5:
-    - 5ee6809ed1e68d38c7366e9ae14a5b9e
-  organization: MGI
-  groups:
-    - 'http://informatics.jax.org'
-  authorizations:
-    noctua-go:
-      allow-edit: true
   accounts:
     github: dms321
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 5ee6809ed1e68d38c7366e9ae14a5b9e
+  groups:
+    - 'http://informatics.jax.org'
+  nickname: 'Dmitry Sitnikov'
+  organization: MGI
+  uri: 'http://orcid.org/0000-0002-5283-5283'
+  xref: 'GOC:dms'
 -
-  uri: 'GOC:cls'
-  xref: 'GOC:cls'
-  nickname: 'Cynthia Smith'
+  authorizations:
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
   email-md5:
     - cb42c1c690ef5723e25000df7e9265fb
+  nickname: 'Cynthia Smith'
   organization: MGI
-  authorizations:
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
+  uri: 'GOC:cls'
+  xref: 'GOC:cls'
 -
-  uri: 'http://orcid.org/0000-0003-4606-0597'
-  xref: 'GOC:smb'
-  nickname: 'Sue Bello'
-  organization: MGI
-  authorizations:
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
   accounts:
     github: sbello
+  authorizations:
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
+  nickname: 'Sue Bello'
+  organization: MGI
+  uri: 'http://orcid.org/0000-0003-4606-0597'
+  xref: 'GOC:smb'
 -
-  nickname: 'Grace Stafford'
   email-md5:
     - 1108e1579ce5583a35c743cb3a85afa7
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  xref: 'GOC:id'
-  uri: 'GOC:id'
+  groups:
+    - 'http://informatics.jax.org'
+  nickname: 'Grace Stafford'
   organization: MGI
+  uri: 'GOC:id'
+  xref: 'GOC:id'
 -
-  nickname: 'Mary Dolan'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   email-md5:
     - d5acbd91b75ea699632b1d569e342a53
-  authorizations:
-    noctua-go:
-      allow-edit: true
+  groups:
+    - 'http://informatics.jax.org'
+    - 'http://geneontology.org'
+  nickname: 'Mary Dolan'
+  organization: MGI
   uri: 'http://orcid.org/0000-0001-7732-3295'
-  organization: MGI
-  groups:
-    - 'http://informatics.jax.org'
-    - 'http://geneontology.org'
 -
-  nickname: 'Harold Drabkin'
-  uri: 'http://orcid.org/0000-0003-2689-5511'
-  email-md5:
-    - 9bac0f35f8afc5a22677fa7c950b681d
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  xref: 'GOC:hjd'
-  organization: MGI
-  groups:
-    - 'http://informatics.jax.org'
-    - 'http://geneontology.org'
   accounts:
     github: hdrabkin
--
-  nickname: 'Li Ni'
-  uri: 'http://orcid.org/0000-0002-9796-7693'
-  xref: 'GOC:ln'
-  email-md5:
-    - e39ac0f072d7278ae76953722298f26f
-  organization: MGI
-  groups:
-    - 'http://informatics.jax.org'
   authorizations:
-    noctua-go:
-      allow-edit: true
-  accounts:
-    github: 'LiNiMGI'
--
-  nickname: 'Judith Blake'
-  uri: 'http://orcid.org/0000-0001-8522-334X'
-  xref: 'GOC:jab'
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
   email-md5:
-    - 6ea952218c0da22097c3cab09fbb5c36
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: MGI
+    - 9bac0f35f8afc5a22677fa7c950b681d
   groups:
     - 'http://informatics.jax.org'
     - 'http://geneontology.org'
-  accounts:
-    github: 'judyblake'
+  nickname: 'Harold Drabkin'
+  organization: MGI
+  uri: 'http://orcid.org/0000-0003-2689-5511'
+  xref: 'GOC:hjd'
 -
-  nickname: 'Claudia Rato da Silva'
+  accounts:
+    github: LiNiMGI
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - e39ac0f072d7278ae76953722298f26f
+  groups:
+    - 'http://informatics.jax.org'
+  nickname: 'Li Ni'
+  organization: MGI
+  uri: 'http://orcid.org/0000-0002-9796-7693'
+  xref: 'GOC:ln'
+-
+  accounts:
+    github: judyblake
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 6ea952218c0da22097c3cab09fbb5c36
+  groups:
+    - 'http://informatics.jax.org'
+    - 'http://geneontology.org'
+  nickname: 'Judith Blake'
+  organization: MGI
+  uri: 'http://orcid.org/0000-0001-8522-334X'
+  xref: 'GOC:jab'
+-
   email-md5:
     - 53a33cd048b9032e65454b9672b7fd4f
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:crds'
-  uri: 'GOC:crds'
+  groups:
+    - 'http://www.microme.eu'
+  nickname: 'Claudia Rato da Silva'
   organization: 'EBI Microme Project'
+  uri: 'GOC:crds'
+  xref: 'GOC:crds'
 -
-  uri: 'GOC:mgi_curators'
-  xref: 'GOC:mgi_curators'
   nickname: 'Curators at MGI'
   organization: MGI
+  uri: 'GOC:mgi_curators'
+  xref: 'GOC:mgi_curators'
 -
-  uri: 'GOC:rs'
-  xref: 'GOC:rs'
   nickname: 'Ralf Stephan'
   organization: MTBbase
+  uri: 'GOC:rs'
+  xref: 'GOC:rs'
 -
-  uri: 'GOC:tw'
-  xref: 'GOC:tw'
-  nickname: 'Trish Whetzel'
+  authorizations:
+    termgenie-go:
+      allow-write: true
   email-md5:
     - 3ee520e060d32cc1fe26951496e40486
+  nickname: 'Trish Whetzel'
   organization: NCBO
-  authorizations:
-    termgenie-go:
-      allow-write: true
+  uri: 'GOC:tw'
+  xref: 'GOC:tw'
 -
-  uri: 'GOC:rv'
-  xref: 'GOC:rv'
   nickname: 'Randi Vita'
   organization: OBI
+  uri: 'GOC:rv'
+  xref: 'GOC:rv'
 -
-  uri: 'GOC:cc'
-  xref: 'GOC:cc'
   nickname: 'Candace Collmer'
   organization: PAMGO
+  uri: 'GOC:cc'
+  xref: 'GOC:cc'
 -
-  nickname: 'Magdalen Lindeberg'
   email-md5:
     - ab543d1ed0770d00f679aa6df6bb4048
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  xref: 'GOC:ml'
-  uri: 'GOC:ml'
+  groups:
+    - 'http://pamgo.vbi.vt.edu'
+  nickname: 'Magdalen Lindeberg'
   organization: PAMGO
+  uri: 'GOC:ml'
+  xref: 'GOC:ml'
 -
-  uri: 'GOC:pamgo_curators'
-  xref: 'GOC:pamgo_curators'
   nickname: 'Curators at Plant-Associated Microbe GO'
   organization: PAMGO
+  uri: 'GOC:pamgo_curators'
+  xref: 'GOC:pamgo_curators'
 -
-  uri: 'GOC:gvg'
-  xref: 'GOC:gvg'
+  comment: 'also spelled Georgios Gkoutos'
   nickname: 'George Gkoutos'
   organization: PATO
-  comment: 'also spelled Georgios Gkoutos'
+  uri: 'GOC:gvg'
+  xref: 'GOC:gvg'
 -
-  uri: 'GOC:pmn_curators'
-  xref: 'GOC:pmn_curators'
   nickname: 'Curators at Plant Metabolic Network'
   organization: PMN
+  uri: 'GOC:pmn_curators'
+  xref: 'GOC:pmn_curators'
 -
-  nickname: 'Antonia Lock'
+  accounts:
+    github: Antonialock
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
   email-md5:
     - e0d33c1c706cdbd74d033961f2f9bb43
     - 7e821339ca29fac9f47d78ce3bed1c11
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  xref: 'GOC:al'
-  uri: 'http://orcid.org/0000-0003-1179-5999'
-  organization: PomBase
   groups:
     - 'http://www.pombase.org'
-  accounts:
-    github: Antonialock
+  nickname: 'Antonia Lock'
+  organization: PomBase
+  uri: 'http://orcid.org/0000-0003-1179-5999'
+  xref: 'GOC:al'
 -
-  uri: 'GOC:jb'
-  xref: 'GOC:jb'
   nickname: 'Jurg Bahler'
   organization: PomBase
+  uri: 'GOC:jb'
+  xref: 'GOC:jb'
 -
-  nickname: 'Midori Harris'
-  email-md5:
-    - f92c1acf7ecd91f8b798d4f4526795dd
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  xref: 'GOC:mah'
-  uri: 'http://orcid.org/0000-0003-4148-4606'
-  organization: PomBase
-  groups:
-    - 'http://www.pombase.org'
-  comment: 'former affiliations: GO editorial office; MGI; SGD in distant past'
   accounts:
     github: mah11
--
-  nickname: 'Val Wood'
-  email-md5:
-    - 945b113a7c06ea578318b77dbc31d990
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
-      allow-write: true
       allow-freeform: false
-  xref: 'GOC:vw'
-  uri: 'http://orcid.org/0000-0001-6330-7526'
-  organization: PomBase
+      allow-write: true
+  comment: 'former affiliations: GO editorial office; MGI; SGD in distant past'
+  email-md5:
+    - f92c1acf7ecd91f8b798d4f4526795dd
   groups:
     - 'http://www.pombase.org'
-  comment: 'former affiliation: GeneDB_Spombe'
+  nickname: 'Midori Harris'
+  organization: PomBase
+  uri: 'http://orcid.org/0000-0003-4148-4606'
+  xref: 'GOC:mah'
+-
   accounts:
     github: ValWood
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
+  comment: 'former affiliation: GeneDB_Spombe'
+  email-md5:
+    - 945b113a7c06ea578318b77dbc31d990
+  groups:
+    - 'http://www.pombase.org'
+  nickname: 'Val Wood'
+  organization: PomBase
+  uri: 'http://orcid.org/0000-0001-6330-7526'
+  xref: 'GOC:vw'
 -
-  uri: 'GOC:fz'
-  xref: 'GOC:fz'
   nickname: 'Felipe Zapata'
   organization: PO
+  uri: 'GOC:fz'
+  xref: 'GOC:fz'
 -
-  nickname: 'Laurel Cooper'
-  email-md5:
-    - f89228b8459a2a5bb6c8b0c25d611e0d
-    - b5c9d1c80d688dbe4766f40d8461d8c0
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:lc'
-  uri: 'http://orcid.org/0000-0002-6379-8932'
-  organization: OSU
   accounts:
     github: cooperl09
--
-  uri: 'GOC:lmo'
-  xref: 'GOC:lmo'
-  nickname: 'Laura Moore'
-  organization: PO
--
-  uri: 'GOC:rw'
-  xref: 'GOC:rw'
-  nickname: 'Ramona Walls'
-  organization: PO
--
-  uri: 'GOC:PO_curators'
-  xref: 'GOC:PO_curators'
-  nickname: 'Curators at PO'
-  organization: PO
--
-  uri: 'GOC:cna'
-  xref: 'GOC:cna'
-  nickname: 'Cecilia Arighi'
-  organization: PRO
-  comment: 'Protein Ontology curator'
--
-  uri: 'GOC:bj'
-  xref: 'GOC:bj'
-  nickname: 'Bijay Jassal'
-  organization: Reactome
--
-  uri: 'GOC:mg2'
-  xref: 'GOC:mg2'
-  nickname: 'Marc Gillespie'
-  organization: Reactome
--
-  uri: 'GOC:mw'
-  xref: 'GOC:mw'
-  nickname: 'Mark Williams'
-  organization: Reactome
--
-  nickname: "Peter D'Eustachio"
-  uri: 'http://orcid.org/0000-0002-5494-626X'
-  xref: 'GOC:pde'
-  email-md5:
-    - ba0ab426088546c5a9acf014a722fdd5
   authorizations:
     noctua:
       go:
         allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: false
-  organization: Reactome
-  accounts:
-    github: 'deustp01'
+  email-md5:
+    - f89228b8459a2a5bb6c8b0c25d611e0d
+    - b5c9d1c80d688dbe4766f40d8461d8c0
+  groups:
+    - 'http://oregonstate.edu'
+  nickname: 'Laurel Cooper'
+  organization: OSU
+  uri: 'http://orcid.org/0000-0002-6379-8932'
+  xref: 'GOC:lc'
 -
-  uri: 'GOC:phg'
-  xref: 'GOC:phg'
+  nickname: 'Laura Moore'
+  organization: PO
+  uri: 'GOC:lmo'
+  xref: 'GOC:lmo'
+-
+  nickname: 'Ramona Walls'
+  organization: PO
+  uri: 'GOC:rw'
+  xref: 'GOC:rw'
+-
+  nickname: 'Curators at PO'
+  organization: PO
+  uri: 'GOC:PO_curators'
+  xref: 'GOC:PO_curators'
+-
+  comment: 'Protein Ontology curator'
+  nickname: 'Cecilia Arighi'
+  organization: PRO
+  uri: 'GOC:cna'
+  xref: 'GOC:cna'
+-
+  nickname: 'Bijay Jassal'
+  organization: Reactome
+  uri: 'GOC:bj'
+  xref: 'GOC:bj'
+-
+  nickname: 'Marc Gillespie'
+  organization: Reactome
+  uri: 'GOC:mg2'
+  xref: 'GOC:mg2'
+-
+  nickname: 'Mark Williams'
+  organization: Reactome
+  uri: 'GOC:mw'
+  xref: 'GOC:mw'
+-
+  accounts:
+    github: deustp01
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
+  email-md5:
+    - ba0ab426088546c5a9acf014a722fdd5
+  groups:
+    - 'http://reactome.org'
+  nickname: "Peter D'Eustachio"
+  organization: Reactome
+  uri: 'http://orcid.org/0000-0002-5494-626X'
+  xref: 'GOC:pde'
+-
   nickname: 'Phani Garapati'
   organization: Reactome
+  uri: 'GOC:phg'
+  xref: 'GOC:phg'
 -
-  uri: 'GOC:sj'
-  xref: 'GOC:sj'
   nickname: 'Steven Jupe'
   organization: Reactome
+  uri: 'GOC:sj'
+  xref: 'GOC:sj'
 -
-  uri: 'GOC:vs'
-  xref: 'GOC:vs'
   nickname: 'Veronica Shamovsky'
   organization: Reactome
+  uri: 'GOC:vs'
+  xref: 'GOC:vs'
 -
-  uri: 'GOC:jsg'
-  xref: 'GOC:jsg'
   nickname: 'John Garavelli'
   organization: RESID
+  uri: 'GOC:jsg'
+  xref: 'GOC:jsg'
 -
-  nickname: 'Shur-Jen Wang'
   email-md5:
     - f6cb73c2299e72ab430475ba02567e49
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:sjw'
+  groups:
+    - 'http://rgd.mcw.edu'
+  nickname: 'Shur-Jen Wang'
+  organization: RGD
   uri: 'GOC:sjw'
-  organization: RGD
+  xref: 'GOC:sjw'
 -
-  nickname: 'Stan Laulederkind'
-  email-md5:
-    - f9d6b79638672cdbba515fb1e60b81e8
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  xref: 'GOC:sl'
-  uri: 'http://orcid.org/0000-0001-5356-4174-4174'
-  organization: RGD
   accounts:
     github: slaulederkind
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
+  email-md5:
+    - f9d6b79638672cdbba515fb1e60b81e8
+  groups:
+    - 'http://rgd.mcw.edu'
+  nickname: 'Stan Laulederkind'
+  organization: RGD
+  uri: 'http://orcid.org/0000-0001-5356-4174-4174'
+  xref: 'GOC:sl'
 -
-  uri: 'GOC:st'
-  xref: 'GOC:st'
   nickname: 'Simon Twigger'
   organization: RGD
+  uri: 'GOC:st'
+  xref: 'GOC:st'
 -
-  uri: 'GOC:vp'
-  xref: 'GOC:vp'
   nickname: 'Victoria Petri'
   organization: RGD
+  uri: 'GOC:vp'
+  xref: 'GOC:vp'
 -
-  uri: 'GOC:cb'
-  xref: 'GOC:cb'
   nickname: 'Colin Batchelor'
   organization: RSC
+  uri: 'GOC:cb'
+  xref: 'GOC:cb'
 -
-  nickname: 'Chris Mungall'
-  email-md5:
-    - 5611a7dfafec2dfcc4c6da9fa5ce7a84
+  accounts:
+    github: cmungall
   authorizations:
-    noctua-go:
-      allow-edit: true
-      allow-admin: true
+    noctua:
+      go:
+        allow-admin: true
+        allow-edit: true
     termgenie-go:
-      allow-write: true
-      allow-review: true
       allow-freeform: true
       allow-freeform-litxref-optional: true
       allow-management: true
-  xref: 'GOC:cjm'
-  uri: 'http://orcid.org/0000-0002-6601-2165'
-  organization: LBL
+      allow-review: true
+      allow-write: true
+  email-md5:
+    - 5611a7dfafec2dfcc4c6da9fa5ce7a84
   groups:
     - 'http://geneontology.org'
     - 'http://planteome.org'
     - 'http://lbl.gov'
-  accounts:
-    github: 'cmungall'
+  nickname: 'Chris Mungall'
+  organization: LBL
+  uri: 'http://orcid.org/0000-0002-6601-2165'
+  xref: 'GOC:cjm'
 -
-  uri: 'GOC:as'
-  xref: 'GOC:as'
   nickname: 'Anand Sethuraman'
   organization: SGD
+  uri: 'GOC:as'
+  xref: 'GOC:as'
 -
-  uri: 'GOC:cab2'
-  xref: 'GOC:cab2'
   nickname: 'Cathy Ball'
   organization: SGD
+  uri: 'GOC:cab2'
+  xref: 'GOC:cab2'
 -
-  uri: 'GOC:cjk'
-  xref: 'GOC:cjk'
   nickname: 'Cindy Krieger'
   organization: SGD
+  uri: 'GOC:cjk'
+  xref: 'GOC:cjk'
 -
-  uri: 'GOC:clt'
-  xref: 'GOC:clt'
   nickname: 'Chandra Theesfeld'
   organization: SGD
+  uri: 'GOC:clt'
+  xref: 'GOC:clt'
 -
-  uri: 'GOC:sgd_curators'
-  xref: 'GOC:sgd_curators'
   nickname: 'Curators at SGD'
   organization: SGD
+  uri: 'GOC:sgd_curators'
+  xref: 'GOC:sgd_curators'
 -
-  nickname: 'Dianna Fisk'
-  email-md5:
-    - ce6b7d80ecad08852a1c06bf24fb7f5a
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
-  xref: 'GOC:dgf'
-  uri: 'http://orcid.org/0000-0003-4929-9472'
+  email-md5:
+    - ce6b7d80ecad08852a1c06bf24fb7f5a
+  groups:
+    - 'http://www.yeastgenome.org'
+  nickname: 'Dianna Fisk'
   organization: SGD
+  uri: 'http://orcid.org/0000-0003-4929-9472'
+  xref: 'GOC:dgf'
 -
-  uri: 'http://orcid.org/0000-0001-9799-5523'
-  xref: 'GOC:ew'
-  nickname: 'Edith Wong'
+  accounts:
+    github: edwong57
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-write: true
   email-md5:
     - ab69ceef7068adeed08e0a38aaa9539c
     - cd939e00b2e9a939e151fcc6d2516ef0
-  organization: SGD
   groups:
     - 'http://www.yeastgenome.org'
+  nickname: 'Edith Wong'
+  organization: SGD
+  uri: 'http://orcid.org/0000-0001-9799-5523'
+  xref: 'GOC:ew'
+-
+  nickname: 'Eurie Hong'
+  organization: SGD
+  uri: 'GOC:elh'
+  xref: 'GOC:elh'
+-
+  nickname: 'Janos Demeter'
+  organization: SGD
+  uri: 'GOC:jd'
+  xref: 'GOC:jd'
+-
+  email-md5:
+    - db80b5b690c934af872903cdc4985a22
+  groups:
+    - 'http://www.yeastgenome.org'
+  nickname: 'Jodi Hirschman'
+  organization: SGD
+  uri: 'GOC:jh'
+  xref: 'GOC:jh'
+-
+  nickname: 'Julie Park'
+  organization: SGD
+  uri: 'GOC:jp'
+  xref: 'GOC:jp'
+-
+  accounts:
+    github: krchristie
   authorizations:
-    termgenie-go:
-      allow-write: true
     noctua:
       go:
         allow-edit: true
-  accounts:
-    github: 'edwong57'
--
-  uri: 'GOC:elh'
-  xref: 'GOC:elh'
-  nickname: 'Eurie Hong'
-  organization: SGD
--
-  uri: 'GOC:jd'
-  xref: 'GOC:jd'
-  nickname: 'Janos Demeter'
-  organization: SGD
--
-  nickname: 'Jodi Hirschman'
-  email-md5:
-    - db80b5b690c934af872903cdc4985a22
-  authorizations:
-    noctua-go:
-      allow-edit: true
     termgenie-go:
+      allow-freeform: false
       allow-write: true
-  xref: 'GOC:jh'
-  uri: 'GOC:jh'
-  organization: SGD
--
-  uri: 'GOC:jp'
-  xref: 'GOC:jp'
-  nickname: 'Julie Park'
-  organization: SGD
--
-  nickname: 'Karen Christie'
-  uri: 'http://orcid.org/0000-0001-5501-853X'
-  xref: 'GOC:krc'
   email-md5:
     - af6c0d66acf0836edf60f3e8b1e6b7c9
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  organization: MGI
   groups:
     - 'http://informatics.jax.org'
     - 'http://geneontology.org'
-  accounts:
-    github: 'krchristie'
+  nickname: 'Karen Christie'
+  organization: MGI
+  uri: 'http://orcid.org/0000-0001-5501-853X'
+  xref: 'GOC:krc'
 -
-  nickname: 'Maria Costanzo'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
   email-md5:
     - 0049fc37c812f45193a4500186dd622a
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  xref: 'GOC:mcc'
-  uri: 'http://orcid.org/0000-0001-9043-693X'
+  groups:
+    - 'http://www.yeastgenome.org'
+  nickname: 'Maria Costanzo'
   organization: SGD
+  uri: 'http://orcid.org/0000-0001-9043-693X'
+  xref: 'GOC:mcc'
 -
-  nickname: 'Rama Balakrishnan'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
   email-md5:
     - a7c69cee7738a961f8bf5c0f9a9ff874
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  xref: 'GOC:rb'
-  uri: 'http://orcid.org/0000-0003-2468-9933'
-  organization: SGD
--
-  uri: 'http://orcid.org/0000-0002-3726-7441'
-  xref: 'GOC:rn'
-  nickname: 'Rob Nash'
-  email-md5:
-    - 0dcb74135234ebffddc3931f28eab539
-  organization: SGD
   groups:
     - 'http://www.yeastgenome.org'
-  authorizations:
-    termgenie-go:
-      allow-write: true
-    noctua:
-      go:
-        allow-edit: true
+  nickname: 'Rama Balakrishnan'
+  organization: SGD
+  uri: 'http://orcid.org/0000-0003-2468-9933'
+  xref: 'GOC:rb'
+-
   accounts:
     github: robnash
--
-  nickname: 'Stacia Engel'
-  email-md5:
-    - 8688146764c94ec2dad5b1a47b047c73
   authorizations:
     noctua:
       go:
         allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: false
-  xref: 'GOC:se'
-  uri: 'http://orcid.org/0000h-0001-5472-917X'
-  organization: SGD
+  email-md5:
+    - 0dcb74135234ebffddc3931f28eab539
   groups:
     - 'http://www.yeastgenome.org'
+  nickname: 'Rob Nash'
+  organization: SGD
+  uri: 'http://orcid.org/0000-0002-3726-7441'
+  xref: 'GOC:rn'
+-
   accounts:
     github: srengel
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
+  email-md5:
+    - 8688146764c94ec2dad5b1a47b047c73
+  groups:
+    - 'http://www.yeastgenome.org'
+  nickname: 'Stacia Engel'
+  organization: SGD
+  uri: 'http://orcid.org/0000h-0001-5472-917X'
+  xref: 'GOC:se'
 -
-  uri: 'GOC:ssd'
-  xref: 'GOC:ssd'
   nickname: 'Selina Dwight'
   organization: SGD
+  uri: 'GOC:ssd'
+  xref: 'GOC:ssd'
 -
-  nickname: 'Dani Welter'
+  accounts:
+    github: daniwelter
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-write: true
   email-md5:
     - 583eaf69b34a4dcbb51d019f7eede0f0
     - 3f4da4804976ac88536a6fe0ef77f817
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:dw'
-  uri: 'http://orcid.org/0000-0003-1058-2668'
+  groups:
+    - 'http://www.ebi.ac.uk/spot'
+  nickname: 'Dani Welter'
   organization: 'SPOT (EBI)'
-  accounts:
-    github: daniwelter
+  uri: 'http://orcid.org/0000-0003-1058-2668'
+  xref: 'GOC:dw'
 -
-  uri: 'GOC:db'
-  xref: 'GOC:db'
   nickname: 'Deepika Brito'
   organization: 'SRI International'
+  uri: 'GOC:db'
+  xref: 'GOC:db'
 -
-  uri: 'GOC:ask'
-  xref: 'GOC:ask'
   nickname: 'A. S. Karthikeyan'
   organization: TAIR
+  uri: 'GOC:ask'
+  xref: 'GOC:ask'
 -
-  uri: 'GOC:ct'
-  xref: 'GOC:ct'
   nickname: 'Christopher Tissier'
   organization: TAIR
+  uri: 'GOC:ct'
+  xref: 'GOC:ct'
 -
-  nickname: 'Donghui Li'
+  accounts:
+    github: dhldhl
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
   email-md5:
     - 956bb66ec7d213352c0d751377cb299a
     - 181e343a68ffb867cd031faafc827b3b
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  xref: 'GOC:dhl'
-  uri: 'http://orcid.org/0000-0003-3335-4537'
-  organization: TAIR
   groups:
     - 'http://www.arabidopsis.org'
-  accounts:
-    github: 'dhldhl'
+  nickname: 'Donghui Li'
+  organization: TAIR
+  uri: 'http://orcid.org/0000-0003-3335-4537'
+  xref: 'GOC:dhl'
 -
-  uri: 'GOC:ds'
-  xref: 'GOC:ds'
   nickname: 'David Swarbreck'
   organization: TAIR
+  uri: 'GOC:ds'
+  xref: 'GOC:ds'
 -
-  uri: 'GOC:hf'
-  xref: 'GOC:hf'
   nickname: 'Hartmut Foerster'
   organization: TAIR
+  uri: 'GOC:hf'
+  xref: 'GOC:hf'
 -
-  uri: 'GOC:jy'
-  xref: 'GOC:jy'
   nickname: 'Jungwon Yoon'
   organization: TAIR
+  uri: 'GOC:jy'
+  xref: 'GOC:jy'
 -
-  uri: 'GOC:kad'
-  xref: 'GOC:kad'
   nickname: 'Kate Dreher'
   organization: TAIR
+  uri: 'GOC:kad'
+  xref: 'GOC:kad'
 -
-  uri: 'GOC:ki'
-  xref: 'GOC:ki'
   nickname: 'Katica Ilic'
   organization: TAIR
+  uri: 'GOC:ki'
+  xref: 'GOC:ki'
 -
-  uri: 'GOC:mg'
-  xref: 'GOC:mg'
   nickname: 'Margarita Garcia'
   organization: TAIR
+  uri: 'GOC:mg'
+  xref: 'GOC:mg'
 -
-  uri: 'GOC:pz'
-  xref: 'GOC:pz'
   nickname: 'Peifer Zhang'
   organization: TAIR
+  uri: 'GOC:pz'
+  xref: 'GOC:pz'
 -
-  uri: 'GOC:sm'
-  xref: 'GOC:sm'
   nickname: 'Suparna Mundodi'
   organization: TAIR
+  uri: 'GOC:sm'
+  xref: 'GOC:sm'
 -
-  uri: 'GOC:syr'
-  xref: 'GOC:syr'
   nickname: 'Sue Rhee'
   organization: TAIR
+  uri: 'GOC:syr'
+  xref: 'GOC:syr'
 -
-  uri: 'GOC:tair_curators'
-  xref: 'GOC:tair_curators'
   nickname: 'Curators at TAIR'
   organization: TAIR
+  uri: 'GOC:tair_curators'
+  xref: 'GOC:tair_curators'
 -
-  nickname: 'Tanya Berardini'
-  email-md5:
-    - 82fc9d312d1ed22725cb4ecd55df6878
+  accounts:
+    github: tberardini
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
-      allow-write: true
-      allow-review: true
       allow-freeform: false
       allow-freeform-litxref-optional: true
       allow-management: true
-  xref: 'GOC:tb'
-  uri: 'http://orcid.org/0000-0002-3837-8864'
-  organization: TAIR
+      allow-review: true
+      allow-write: true
+  email-md5:
+    - 82fc9d312d1ed22725cb4ecd55df6878
   groups:
     - 'http://www.arabidopsis.org'
-  accounts:
-    github: tberardini
+  nickname: 'Tanya Berardini'
+  organization: TAIR
+  uri: 'http://orcid.org/0000-0002-3837-8864'
+  xref: 'GOC:tb'
 -
-  uri: 'GOC:yl'
-  xref: 'GOC:yl'
   nickname: 'Yigong Lou'
   organization: TAIR
+  uri: 'GOC:yl'
+  xref: 'GOC:yl'
 -
-  uri: 'GOC:ns'
-  xref: 'GOC:ns'
   nickname: 'Nick Stover'
   organization: TGD
+  uri: 'GOC:ns'
+  xref: 'GOC:ns'
 -
-  uri: 'GOC:cr'
-  xref: 'GOC:cr'
   nickname: 'Cathy Ronning'
   organization: TIGR
+  uri: 'GOC:cr'
+  xref: 'GOC:cr'
 -
-  uri: 'GOC:dh'
-  xref: 'GOC:dh'
   nickname: 'Dan Haft'
   organization: JCVI
+  uri: 'GOC:dh'
+  xref: 'GOC:dh'
 -
-  uri: 'GOC:js'
-  xref: 'GOC:js'
   nickname: 'Jeremy Selengut'
   organization: JCVI
+  uri: 'GOC:js'
+  xref: 'GOC:js'
 -
-  uri: 'GOC:lh'
-  xref: 'GOC:lh'
   nickname: 'Linda Hannick'
   organization: JCVI
+  uri: 'GOC:lh'
+  xref: 'GOC:lh'
 -
-  uri: 'GOC:mlg'
-  xref: 'GOC:mlg'
   nickname: 'Michelle Gwinn'
   organization: IGS
+  uri: 'GOC:mlg'
+  xref: 'GOC:mlg'
 -
-  uri: 'GOC:sd'
-  xref: 'GOC:sd'
   nickname: 'Scott Durkin'
   organization: JCVI
+  uri: 'GOC:sd'
+  xref: 'GOC:sd'
 -
-  uri: 'GOC:ef'
-  xref: 'GOC:ef'
   nickname: 'Erika Feltrin'
   organization: TRAIT
+  uri: 'GOC:ef'
+  xref: 'GOC:ef'
 -
-  uri: 'GOC:lm'
-  xref: 'GOC:lm'
   nickname: 'Lorenza Mittempergher'
   organization: TRAIT
+  uri: 'GOC:lm'
+  xref: 'GOC:lm'
 -
-  uri: 'GOC:lam'
-  xref: 'GOC:lam'
   nickname: 'Lukas Mueller'
   organization: 'SGN (Solanaceae Genome Network)'
+  uri: 'GOC:lam'
+  xref: 'GOC:lam'
 -
-  uri: 'GOC:ar'
-  xref: 'GOC:ar'
   nickname: 'Alan Ruttenberg'
   organization: INCF
+  uri: 'GOC:ar'
+  xref: 'GOC:ar'
 -
-  uri: 'GOC:hw'
-  xref: 'GOC:hw'
   nickname: 'Heather Wick'
   organization: 'Tufts University'
+  uri: 'GOC:hw'
+  xref: 'GOC:hw'
 -
-  uri: 'GOC:PARL'
-  xref: 'GOC:PARL'
   nickname: "UCL-Parkinson's UK Annotation Project"
   organization: "UCL-Parkinson's UK Annotation Project"
+  uri: 'GOC:PARL'
+  xref: 'GOC:PARL'
 -
-  nickname: 'Paul Denny'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-write: true
+  comment: 'status inactive'
   email-md5:
     - a72a432b85b5f44d05e2e124e5ebfd23
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:pad'
-  uri: 'http://orcid.org/0000-0003-4659-6893'
+  groups:
+    - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/parkinsons'
+  nickname: 'Paul Denny'
   organization: "UCL-Parkinson's UK Annotation Project"
-  comment: 'status inactive'
+  uri: 'http://orcid.org/0000-0003-4659-6893'
+  xref: 'GOC:pad'
 -
-  uri: 'GOC:mat'
-  xref: 'GOC:mat'
+  comment: 'status inactive, Student working with the PARL group at UCL'
   nickname: 'Mathew Tata'
   organization: "UCL-Parkinson's UK Annotation Project"
-  comment: 'status inactive, Student working with the PARL group at UCL'
+  uri: 'GOC:mat'
+  xref: 'GOC:mat'
 -
-  uri: 'GOC:aa'
-  xref: 'GOC:aa'
   nickname: 'Andrea Auchincloss'
   organization: UniProt
+  uri: 'GOC:aa'
+  xref: 'GOC:aa'
 -
-  nickname: 'Anne Estreicher'
   email-md5:
     - b656cb1ab16819a79c770231982988f1
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:ae'
-  uri: 'GOC:ae'
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Anne Estreicher'
   organization: UniProt
+  uri: 'GOC:ae'
+  xref: 'GOC:ae'
 -
-  nickname: 'Mitsuteru Nakao'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   email-md5:
     - 9090e122cba40b90124ea8eb4859bf8e
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  uri: 'http://orcid.org/0000-0002-7734-0826'
+  groups:
+    - 'http://www.eisai.com'
+  nickname: 'Mitsuteru Nakao'
   organization: Eisai
+  uri: 'http://orcid.org/0000-0002-7734-0826'
 -
-  nickname: 'Alan Bridge'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
   email-md5:
     - dc11dd680545ac2aa73044fc222db268
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  xref: 'GOC:ab'
-  uri: 'http://orcid.org/0000-0003-2148-9135'
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Alan Bridge'
   organization: UniProt
+  uri: 'http://orcid.org/0000-0003-2148-9135'
+  xref: 'GOC:ab'
 -
-  nickname: 'Andre Stutz'
   email-md5:
     - 69e41e8a803dd018c7e7073e0b0fd3f3
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:ans'
-  uri: 'GOC:ans'
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Andre Stutz'
   organization: UniProt
+  uri: 'GOC:ans'
+  xref: 'GOC:ans'
 -
-  uri: 'GOC:ag'
-  xref: 'GOC:ag'
   nickname: 'Arnaud Gos'
   organization: UniProt
+  uri: 'GOC:ag'
+  xref: 'GOC:ag'
 -
-  uri: 'GOC:br'
-  xref: 'GOC:br'
   nickname: 'Bernd Roechert'
   organization: UniProt
+  uri: 'GOC:br'
+  xref: 'GOC:br'
 -
-  uri: 'GOC:cr2'
-  xref: 'GOC:cr2'
   nickname: 'Catherine Rivoire'
   organization: UniProt
+  uri: 'GOC:cr2'
+  xref: 'GOC:cr2'
 -
-  uri: 'GOC:ch'
-  xref: 'GOC:ch'
   nickname: 'Chantal Hulo'
   organization: UniProt
+  uri: 'GOC:ch'
+  xref: 'GOC:ch'
 -
-  uri: 'GOC:dl2'
-  xref: 'GOC:dl2'
   nickname: 'Damien Lieberherr'
   organization: UniProt
+  uri: 'GOC:dl2'
+  xref: 'GOC:dl2'
 -
-  nickname: 'Duncan Legge'
   email-md5:
     - e76fdf6a52a910f0bdd2c521f964c1d4
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Duncan Legge'
+  organization: UniProt
+  uri: 'GOC:dl'
+  xref: 'GOC:dl'
+-
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
-  xref: 'GOC:dl'
-  uri: 'GOC:dl'
-  organization: UniProt
--
-  nickname: 'Elena Cibrian-Uhalte'
   email-md5:
     - 1d5e7a8509c6a8bc9d5472b1ff5f570d
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:ecu'
-  uri: 'http://orcid.org/0000-0002-0987-9862'
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Elena Cibrian-Uhalte'
   organization: UniProt
+  uri: 'http://orcid.org/0000-0002-0987-9862'
+  xref: 'GOC:ecu'
 -
-  uri: 'GOC:ec'
-  xref: 'GOC:ec'
   nickname: 'Elizabeth Coudert'
   organization: UniProt
+  uri: 'GOC:ec'
+  xref: 'GOC:ec'
 -
-  uri: 'GOC:emb'
-  xref: 'GOC:emb'
   nickname: 'Emmanuel Boutet (Manu)'
   organization: UniProt
+  uri: 'GOC:emb'
+  xref: 'GOC:emb'
 -
-  uri: 'GOC:fj'
-  xref: 'GOC:fj'
   nickname: 'Florence Jungo'
   organization: UniProt
+  uri: 'GOC:fj'
+  xref: 'GOC:fj'
 -
-  uri: 'GOC:gc'
-  xref: 'GOC:gc'
   nickname: 'Gayatri Chavali'
   organization: UniProt
+  uri: 'GOC:gc'
+  xref: 'GOC:gc'
 -
-  nickname: 'Guillaume Keller'
   email-md5:
     - f3c8177c584faab5eae5d6a411a91976
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:gk'
-  uri: 'GOC:gk'
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Guillaume Keller'
   organization: UniProt
+  uri: 'GOC:gk'
+  xref: 'GOC:gk'
 -
-  uri: 'GOC:ip'
-  xref: 'GOC:ip'
   nickname: 'Ivo Pedruzzi'
   organization: UniProt
+  uri: 'GOC:ip'
+  xref: 'GOC:ip'
 -
-  uri: 'GOC:jj'
-  xref: 'GOC:jj'
   nickname: 'Janet James'
   organization: UniProt
+  uri: 'GOC:jj'
+  xref: 'GOC:jj'
 -
-  uri: 'GOC:kd'
-  xref: 'GOC:kd'
   nickname: 'Kirill Degtyarenko'
   organization: UniProt
+  uri: 'GOC:kd'
+  xref: 'GOC:kd'
 -
-  nickname: 'Klemens Pichler'
-  uri: 'http://orcid.org/0000-0001-6099-8931'
-  xref: 'GOC:klp'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   email-md5:
     - 774e21706bb2937d5cd30edf73c6469d
-  authorizations:
-    noctua-go:
-      allow-edit: true
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Klemens Pichler'
   organization: UniProt
+  uri: 'http://orcid.org/0000-0001-6099-8931'
+  xref: 'GOC:klp'
 -
-  uri: 'GOC:ka'
-  xref: 'GOC:ka'
   nickname: 'Kristian Axelsen'
   organization: UniProt
+  uri: 'GOC:ka'
+  xref: 'GOC:ka'
 -
-  uri: 'GOC:lf'
-  xref: 'GOC:lf'
   nickname: 'Livia Famiglietti'
   organization: UniProt
+  uri: 'GOC:lf'
+  xref: 'GOC:lf'
 -
-  nickname: 'Marc Feuermann'
-  uri: 'http://orcid.org/0000-0002-4187-2863'
-  xref: 'GOC:mf'
-  email-md5:
-    - a70eb53334ef240f607a3ca63272dcaa
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: UniProt
   accounts:
     github: marcfeuermann
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - a70eb53334ef240f607a3ca63272dcaa
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Marc Feuermann'
+  organization: UniProt
+  uri: 'http://orcid.org/0000-0002-4187-2863'
+  xref: 'GOC:mf'
 -
-  uri: 'GOC:mcb'
-  xref: 'GOC:mcb'
   nickname: 'Marie Claude Blatter'
   organization: UniProt
+  uri: 'GOC:mcb'
+  xref: 'GOC:mcb'
 -
-  nickname: 'Michel Schneider'
   email-md5:
     - d5ba5a1fe3db79ae75578d3e7783ac94
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:ms'
-  uri: 'GOC:ms'
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Michel Schneider'
   organization: UniProt
+  uri: 'GOC:ms'
+  xref: 'GOC:ms'
 -
-  uri: 'GOC:mt'
-  xref: 'GOC:mt'
   nickname: 'Michael Tognolli'
   organization: UniProt
+  uri: 'GOC:mt'
+  xref: 'GOC:mt'
 -
-  nickname: 'Michele Magrane'
   email-md5:
     - 2ae8276bb8b2eb2a2f62ad6361d2af6d
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:mm2'
-  uri: 'GOC:mm2'
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Michele Magrane'
   organization: UniProt
+  uri: 'GOC:mm2'
+  xref: 'GOC:mm2'
 -
-  uri: 'GOC:ngg'
-  xref: 'GOC:ngg'
   nickname: 'Nadine Gruaz Gumowski'
   organization: UniProt
+  uri: 'GOC:ngg'
+  xref: 'GOC:ngg'
 -
-  uri: 'GOC:njm'
-  xref: 'GOC:njm'
   nickname: 'Nicky Mulder'
   organization: UniProt
+  uri: 'GOC:njm'
+  xref: 'GOC:njm'
 -
-  nickname: 'Patrick Masson'
-  xref: 'GOC:pm2'
-  uri: 'http://orcid.org/0000-0001-7646-0052'
-  organization: UniProt
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   accounts:
     github: pmasson55
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Patrick Masson'
+  organization: UniProt
+  uri: 'http://orcid.org/0000-0001-7646-0052'
+  xref: 'GOC:pm2'
 -
-  uri: 'GOC:pdr'
-  xref: 'GOC:pdr'
   nickname: 'Paula Duek Roggli'
   organization: UniProt
+  uri: 'GOC:pdr'
+  xref: 'GOC:pdr'
 -
-  nickname: 'Penelope Garmiri'
-  uri: 'http://orcid.org/0000-0002-2283-2575'
-  xref: 'GOC:pga'
-  email-md5:
-    - 66204f7039a6c6d6daeac682221e3773
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  organization: UniProt
   accounts:
     github: pgarmiri
--
-  uri: 'GOC:plm'
-  xref: 'GOC:plm'
-  nickname: 'Philippe Le Mercier'
-  organization: UniProt
--
-  uri: 'GOC:reh'
-  xref: 'GOC:reh'
-  nickname: 'Reija Hieta'
-  organization: UniProt
--
-  uri: 'GOC:so'
-  xref: 'GOC:so'
-  nickname: 'Sandra Orchard'
-  organization: UniProt
--
-  nickname: 'Sylvain Poux'
-  email-md5:
-    - dc9b175604eafb96720c1a6ca7980cd4
   authorizations:
     noctua:
       go:
         allow-edit: true
     termgenie-go:
       allow-write: true
-      allow-freeform: false
-  xref: 'GOC:sp'
-  uri: 'http://orcid.org/0000-0001-7299-6685'
+  email-md5:
+    - 66204f7039a6c6d6daeac682221e3773
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Penelope Garmiri'
   organization: UniProt
-  accounts:
-    github: 'sylvainpoux'
+  uri: 'http://orcid.org/0000-0002-2283-2575'
+  xref: 'GOC:pga'
 -
-  nickname: 'Shyamala Sundaram'
+  nickname: 'Philippe Le Mercier'
+  organization: UniProt
+  uri: 'GOC:plm'
+  xref: 'GOC:plm'
+-
+  nickname: 'Reija Hieta'
+  organization: UniProt
+  uri: 'GOC:reh'
+  xref: 'GOC:reh'
+-
+  nickname: 'Sandra Orchard'
+  organization: UniProt
+  uri: 'GOC:so'
+  xref: 'GOC:so'
+-
+  accounts:
+    github: sylvainpoux
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
+  email-md5:
+    - dc9b175604eafb96720c1a6ca7980cd4
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Sylvain Poux'
+  organization: UniProt
+  uri: 'http://orcid.org/0000-0001-7299-6685'
+  xref: 'GOC:sp'
+-
   email-md5:
     - 5cf46e6664c70bd80092a55367950f2d
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:ss'
-  uri: 'GOC:ss'
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Shyamala Sundaram'
   organization: UniProt
+  uri: 'GOC:ss'
+  xref: 'GOC:ss'
 -
-  nickname: 'Ursula Hinz'
   email-md5:
     - 8796f95a22eb1783692cb06d8c69d190
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:uh'
-  uri: 'GOC:uh'
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Ursula Hinz'
   organization: UniProt
+  uri: 'GOC:uh'
+  xref: 'GOC:uh'
 -
-  uri: 'GOC:wmc'
-  xref: 'GOC:wmc'
   nickname: 'Wei Mun Chan'
   organization: UniProt
+  uri: 'GOC:wmc'
+  xref: 'GOC:wmc'
 -
-  nickname: 'Mary L. Schaeffer'
-  email-md5:
-    - 024f54a93edddb9690970c2281f728b7
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:mls'
-  uri: 'GOC:mls'
-  organization: MaizeGDB
   accounts:
     github: mlschaeffer
+  email-md5:
+    - 024f54a93edddb9690970c2281f728b7
+  groups:
+    - 'http://www.maizegdb.org'
+  nickname: 'Mary L. Schaeffer'
+  organization: MaizeGDB
+  uri: 'GOC:mls'
+  xref: 'GOC:mls'
 -
-  nickname: 'Nevila Hyka-Nouspikel'
   email-md5:
     - 688d5d2cd34ad4eabc188653d120561b
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:nhn'
-  uri: 'GOC:nhn'
+  groups:
+    - 'https://www.nextprot.org'
+  nickname: 'Nevila Hyka-Nouspikel'
   organization: neXtProt
+  uri: 'GOC:nhn'
+  xref: 'GOC:nhn'
 -
-  uri: 'GOC:jc'
-  xref: 'GOC:jc'
   nickname: 'Jonas Cicenas'
   organization: neXtProt
+  uri: 'GOC:jc'
+  xref: 'GOC:jc'
 -
-  uri: 'GOC:gap'
-  xref: 'GOC:gap'
   nickname: 'Ghislaine Argoud-Puy'
   organization: neXtProt
+  uri: 'GOC:gap'
+  xref: 'GOC:gap'
 -
-  nickname: 'Pablo Porras Millan'
   email-md5:
     - 8a64baba4e3e7eb11dd41526530cdc30
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:ppm'
-  uri: 'GOC:ppm'
+  groups:
+    - 'https://www.ebi.ac.uk/intact'
+  nickname: 'Pablo Porras Millan'
   organization: IntAct
+  uri: 'GOC:ppm'
+  xref: 'GOC:ppm'
 -
-  uri: 'GOC:dsz'
-  xref: 'GOC:dsz'
   nickname: 'Dora Szakonyi'
   organization: VIB
+  uri: 'GOC:dsz'
+  xref: 'GOC:dsz'
 -
-  uri: 'GOC:pk'
-  xref: 'GOC:pk'
   nickname: 'Paul Kellam (UCL)'
   organization: VIDA
+  uri: 'GOC:pk'
+  xref: 'GOC:pk'
 -
-  uri: 'GOC:rh1'
-  xref: 'GOC:rh1'
   nickname: 'Ria Holzerlandt'
   organization: VIDA
+  uri: 'GOC:rh1'
+  xref: 'GOC:rh1'
 -
-  uri: 'GOC:cab1'
-  xref: 'GOC:cab1'
   nickname: 'Carol Bastiani'
   organization: WB
+  uri: 'GOC:cab1'
+  xref: 'GOC:cab1'
 -
-  nickname: 'Daniela Raciti'
+  accounts:
+    github: draciti
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.wormbase.org'
+  nickname: 'Daniela Raciti'
+  organization: WB
   uri: 'http://orcid.org/0000-0002-4945-5837'
   xref: 'GOC:dr'
-  organization: WB
-  groups:
-    - 'http://www.wormbase.org'
-  accounts:
-    github: 'draciti'
 -
-  uri: 'GOC:ems'
-  xref: 'GOC:ems'
   nickname: 'Erich Schwarz'
   organization: WB
+  uri: 'GOC:ems'
+  xref: 'GOC:ems'
 -
-  nickname: 'Kimberly Van Auken'
+  accounts:
+    github: vanaukenk
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
+  comment: 'GOC:kva is also used; occasionally MAH goes through and updates to GOC:kmv'
   email-md5:
     - 52a4b1e1f8519d5ad27335e0b920eb7e
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  xref: 'GOC:kmv'
-  uri: 'http://orcid.org/0000-0002-1706-4196'
-  organization: WB
   groups:
     - 'http://www.wormbase.org'
-  accounts:
-    github: 'vanaukenk'
-  comment: 'GOC:kva is also used; occasionally MAH goes through and updates to GOC:kmv'
+  nickname: 'Kimberly Van Auken'
+  organization: WB
+  uri: 'http://orcid.org/0000-0002-1706-4196'
+  xref: 'GOC:kmv'
 -
-  nickname: 'Ranjana Kishore'
+  accounts:
+    github: rankishore
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-write: true
   email-md5:
     - 12e3a61abf80a74384cf251641d48fd0
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:rk'
-  uri: 'http://orcid.org/0000-0002-1478-7671'
-  organization: WB
   groups:
     - 'http://www.wormbase.org'
-  accounts:
-    github: 'rankishore'
+  nickname: 'Ranjana Kishore'
+  organization: WB
+  uri: 'http://orcid.org/0000-0002-1478-7671'
+  xref: 'GOC:rk'
 -
-  nickname: 'Doug Howe'
+  accounts:
+    github: doughowe
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
-      allow-write: true
       allow-freeform: false
+      allow-write: true
   groups:
     - 'http://zfin.org'
     - 'http://geneontology.org'
-  xref: 'GOC:dgh'
+  nickname: 'Doug Howe'
+  organization: ZFIN
   uri: 'http://orcid.org/0000-0001-5831-7439'
-  organization: ZFIN
-  accounts:
-    github: 'doughowe'
+  xref: 'GOC:dgh'
 -
+  accounts:
+    github: SomeCallMeDave
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-write: true
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
   nickname: 'David Fashena'
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  groups:
-    - 'http://zfin.org'
-    - 'http://geneontology.org'
-  xref: 'GOC:dsf'
+  organization: ZFIN
   uri: 'http://orcid.org/0000-0001-9656-0683'
-  organization: ZFIN
-  accounts:
-     github: 'SomeCallMeDave'
+  xref: 'GOC:dsf'
 -
-  nickname: 'Ceri Van Slyke'
-  authorizations:
-    termgenie-go:
-      allow-write: true
-    noctua-go:
-      allow-edit: true
-  uri: 'http://orcid.org/0000-0002-2244-7917'
-  groups:
-    - 'http://zfin.org'
-    - 'http://geneontology.org'
-  xref: 'GOC:cvs'
-  organization: ZFIN
   accounts:
     github: cerivs
--
-  nickname: 'Sridhar Ramachandran'
-  xref: 'GOC:sr'
-  uri: 'http://orcid.org/0000-0002-2246-3722'
   authorizations:
-    noctua-go:
-      allow-edit: true
-  groups:
-    - 'http://zfin.org'
-    - 'http://geneontology.org'
-  organization: ZFIN
-  accounts:
-     github: 'sramachand'
--
-  nickname: 'Yvonne M Bradford'
-  authorizations:
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
-    noctua-go:
-      allow-edit: true
-  uri: 'http://orcid.org/0000-0002-9900-7880'
   groups:
     - 'http://zfin.org'
     - 'http://geneontology.org'
-  xref: 'GOC:ymb'
+  nickname: 'Ceri Van Slyke'
   organization: ZFIN
+  uri: 'http://orcid.org/0000-0002-2244-7917'
+  xref: 'GOC:cvs'
+-
+  accounts:
+    github: sramachand
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
+  nickname: 'Sridhar Ramachandran'
+  organization: ZFIN
+  uri: 'http://orcid.org/0000-0002-2246-3722'
+  xref: 'GOC:sr'
+-
   accounts:
     github: ybradford
--
-  nickname: 'Sabrina Toro'
-  uri: 'http://orcid.org/0000-0002-4142-7153'
-  xref: 'GOC:sat'
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-write: true
   groups:
     - 'http://zfin.org'
     - 'http://geneontology.org'
+  nickname: 'Yvonne M Bradford'
   organization: ZFIN
-  accounts:
-     github: 'sabrinatoro'
+  uri: 'http://orcid.org/0000-0002-9900-7880'
+  xref: 'GOC:ymb'
 -
+  accounts:
+    github: sabrinatoro
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
+  nickname: 'Sabrina Toro'
+  organization: ZFIN
+  uri: 'http://orcid.org/0000-0002-4142-7153'
+  xref: 'GOC:sat'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://zfin.org'
+    - 'http://geneontology.org'
   nickname: 'Ken Frazer'
   uri: 'http://orcid.org/0000-0002-6889-0711'
   xref: 'GOC:ksf'
+-
+  accounts:
+    github: LeylaR
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'http://zfin.org'
     - 'http://geneontology.org'
-  authorizations:
-    noctua-go:
-      allow-edit: true
--
   nickname: 'Leyla Ruzicka'
+  organization: ZFIN
   uri: 'http://orcid.org/0000-0002-1009-339X'
   xref: 'GOC:lrz'
-  accounts:
-     github: 'LeylaR'
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  groups:
-    - 'http://zfin.org'
-    - 'http://geneontology.org'
-  organization: ZFIN
 -
-  nickname: 'Christian Pich'
-  uri: 'http://orcid.org/0000-0001-5334-4542'
+  accounts:
+    github: cmpich
   authorizations:
-   noctua:
-     go:
-       allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'http://zfin.org'
     - 'http://geneontology.org'
+  nickname: 'Christian Pich'
   organization: ZFIN
-  accounts:
-    github: 'cmpich'
+  uri: 'http://orcid.org/0000-0001-5334-4542'
 -
   nickname: 'Erik Segerdell'
+  organization: 'GOC:ejs'
   uri: 'GOC:ejs'
   xref: 'GOC:ejs'
-  organization: 'GOC:ejs'
 -
-  nickname: 'Lionel Breuza'
   email-md5:
     - 3bda03dbc02aa0fb8467c81beb5481b6
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:lb'
-  uri: 'GOC:lb'
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Lionel Breuza'
   organization: UniProt
+  uri: 'GOC:lb'
+  xref: 'GOC:lb'
 -
-  nickname: 'Melissa Haendel'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   email-md5:
     - 6c5e50debb93f1f802ad7256952fc488
-  uri: 'http://orcid.org/0000-0001-9114-8737'
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  xref: 'GOC:mh'
+  groups:
+    - 'http://www.ohsu.edu'
+  nickname: 'Melissa Haendel'
   organization: OHSU
+  uri: 'http://orcid.org/0000-0001-9114-8737'
+  xref: 'GOC:mh'
 -
-  uri: 'GOC:obol'
-  xref: 'GOC:obol'
   nickname: 'Terms created automatically from Obol templates. http://wiki.geneontology.org/index.php/Obol'
   organization: LBL
+  uri: 'GOC:obol'
+  xref: 'GOC:obol'
 -
-  uri: 'GOC:mag'
-  xref: 'GOC:mag'
   nickname: 'Marion Gremse'
   organization: BRENDA
+  uri: 'GOC:mag'
+  xref: 'GOC:mag'
 -
-  nickname: 'Trudy Torto'
   email-md5:
     - b7c9c4fec6813374ff3ffa10b7e0be1b
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-      allow-freeform: false
-  xref: 'GOC:tt'
-  uri: 'GOC:tt'
+  groups:
+    - 'https://www.bi.vt.edu'
+  nickname: 'Trudy Torto'
   organization: VBI
+  uri: 'GOC:tt'
+  xref: 'GOC:tt'
 -
-  uri: 'GOC:maf'
-  xref: 'GOC:maf'
   nickname: 'Maureen Fallon'
   organization: 'Veterinary Medical Informatics, Virginia Tech'
+  uri: 'GOC:maf'
+  xref: 'GOC:maf'
 -
-  nickname: 'Helen Parkinson'
+  accounts:
+    github: helenp
   email-md5:
     - ca849fa17a251946fc841296544f14f1
     - 7da8a4640eb919c6f97581190be625d4
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:hp'
-  uri: 'GOC:hp'
+  groups:
+    - 'http://www.ebi.ac.uk'
+  nickname: 'Helen Parkinson'
   organization: EBI
-  accounts:
-    github: helenp
+  uri: 'GOC:hp'
+  xref: 'GOC:hp'
 -
-  uri: 'GOC:sk'
-  xref: 'GOC:sk'
   nickname: 'Scott Kalberer'
   organization: 'US Agricultural Research Service'
+  uri: 'GOC:sk'
+  xref: 'GOC:sk'
 -
-  uri: 'GOC:md'
-  xref: 'GOC:md'
   nickname: 'Mickael Desvaux'
   organization: 'Institut National de la Recherche Agronomique (INRA)'
+  uri: 'GOC:md'
+  xref: 'GOC:md'
 -
-  uri: 'GOC:mba'
-  xref: 'GOC:mba'
   nickname: 'Mike Bada'
   organization: 'University of Colorado at Denver'
+  uri: 'GOC:mba'
+  xref: 'GOC:mba'
 -
-  uri: 'GOC:expert_db'
-  xref: 'GOC:expert_db'
+  comment: Stanford
   nickname: 'Dominique Bergmann'
   organization: 'Community expert'
-  comment: Stanford
+  uri: 'GOC:expert_db'
+  xref: 'GOC:expert_db'
 -
-  uri: 'GOC:expert_dr'
-  xref: 'GOC:expert_dr'
+  comment: 'U Penn'
   nickname: 'David Roos'
   organization: 'Community expert'
-  comment: 'U Penn'
+  uri: 'GOC:expert_dr'
+  xref: 'GOC:expert_dr'
 -
-  uri: 'GOC:expert_ks'
-  xref: 'GOC:expert_ks'
   nickname: 'Kevin Struhl'
   organization: 'Community expert'
+  uri: 'GOC:expert_ks'
+  xref: 'GOC:expert_ks'
 -
-  uri: 'GOC:expert_jrp'
-  xref: 'GOC:expert_jrp'
   nickname: 'John Pringle'
   organization: 'Community expert'
+  uri: 'GOC:expert_jrp'
+  xref: 'GOC:expert_jrp'
 -
-  uri: 'GOC:expert_jwt'
-  xref: 'GOC:expert_jwt'
   nickname: 'Jeremy Thorner'
   organization: 'Community expert'
+  uri: 'GOC:expert_jwt'
+  xref: 'GOC:expert_jwt'
 -
-  uri: 'GOC:expert_mf'
-  xref: 'GOC:expert_mf'
   nickname: 'Migues Ferreira'
   organization: 'Community expert'
+  uri: 'GOC:expert_mf'
+  xref: 'GOC:expert_mf'
 -
-  uri: 'GOC:expert_mm'
-  xref: 'GOC:expert_mm'
   nickname: 'Michael Melkonian'
   organization: 'Community expert'
+  uri: 'GOC:expert_mm'
+  xref: 'GOC:expert_mm'
 -
-  uri: 'GOC:expert_pt'
-  xref: 'GOC:expert_pt'
   nickname: 'Philippa Talmud'
   organization: 'Community expert'
+  uri: 'GOC:expert_pt'
+  xref: 'GOC:expert_pt'
 -
-  uri: 'GOC:expert_ras'
-  xref: 'GOC:expert_ras'
   nickname: 'Richard A. Singer'
   organization: 'Community expert'
+  uri: 'GOC:expert_ras'
+  xref: 'GOC:expert_ras'
 -
-  uri: 'GOC:expert_rg'
-  xref: 'GOC:expert_rg'
   nickname: '? (spindle assembly)'
   organization: 'Community expert'
+  uri: 'GOC:expert_rg'
+  xref: 'GOC:expert_rg'
 -
-  uri: 'GOC:expert_rsh'
-  xref: 'GOC:expert_rsh'
   nickname: 'R. Scott Hawley'
   organization: 'Community expert'
+  uri: 'GOC:expert_rsh'
+  xref: 'GOC:expert_rsh'
 -
-  uri: 'GOC:expert_tf'
-  xref: 'GOC:expert_tf'
   nickname: 'Tim Formosa'
   organization: 'Community expert'
+  uri: 'GOC:expert_tf'
+  xref: 'GOC:expert_tf'
 -
-  uri: 'GOC:expert_vm'
-  xref: 'GOC:expert_vm'
   nickname: 'Vladimir Mironov'
   organization: 'Community expert'
+  uri: 'GOC:expert_vm'
+  xref: 'GOC:expert_vm'
 -
-  uri: 'GOC:BHF'
-  xref: 'GOC:BHF'
+  comment: 'dbxref created to allow easy counting of terms added for BHF-UCL cardiovascular annotation'
   nickname: curators
   organization: BHF_UCL
-  comment: 'dbxref created to allow easy counting of terms added for BHF-UCL cardiovascular annotation'
+  uri: 'GOC:BHF'
+  xref: 'GOC:BHF'
 -
-  uri: 'GOC:BHF_miRNA'
-  xref: 'GOC:BHF_miRNA'
   nickname: 'dbxref created to allow easy counting of terms added for BHF-UCL miRNA annotation project'
   organization: 'BHF_UCL curators'
+  uri: 'GOC:BHF_miRNA'
+  xref: 'GOC:BHF_miRNA'
 -
-  uri: 'GOC:BHF_telomere'
-  xref: 'GOC:BHF_telomere'
   nickname: 'dbxref created to allow easy counting of terms added for BHF-UCL telomere annotation project (Nancy Campbell et al)'
   organization: 'BHF_UCL curators'
+  uri: 'GOC:BHF_telomere'
+  xref: 'GOC:BHF_telomere'
 -
-  uri: 'GOC:jal'
-  xref: 'GOC:jal'
+  comment: 'different format from most expert dbxrefs; GOC:expert_jal would be synonymous'
   nickname: 'Jamie A. Lee'
   organization: 'Community expert'
-  comment: 'different format from most expert dbxrefs; GOC:expert_jal would be synonymous'
+  uri: 'GOC:jal'
+  xref: 'GOC:jal'
 -
-  uri: 'GOC:isa_complete'
-  xref: 'GOC:isa_complete'
   nickname: 'Is_a complete session, Hinxton, Oct. 2006; also used for post-meeting work on is_a complete biological process'
   organization: 'GO content meeting'
+  uri: 'GOC:isa_complete'
+  xref: 'GOC:isa_complete'
 -
-  uri: 'GOC:mtg_15nov05'
-  xref: 'GOC:mtg_15nov05'
   nickname: 'Immunology, TIGR, November 2005'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_15nov05'
+  xref: 'GOC:mtg_15nov05'
 -
-  uri: 'GOC:mtg_15jun06'
-  xref: 'GOC:mtg_15jun06'
+  comment: 'Community experts present: Bill Bug, Maryann Martone, Kathleen Millen, Francis Szele'
   nickname: 'Neurobiology, June 2006'
   organization: 'GO content meeting'
-  comment: 'Community experts present: Bill Bug, Maryann Martone, Kathleen Millen, Francis Szele'
+  uri: 'GOC:mtg_15jun06'
+  xref: 'GOC:mtg_15jun06'
 -
-  uri: 'GOC:mtg_MIT_16mar07'
-  xref: 'GOC:mtg_MIT_16mar07'
   nickname: 'Collaboration with Harvard-MIT group using information theory to evaluate GO; also used for post-meeting edits motivated by their analysis'
   organization: 'GO-MIT collaboration meeting'
+  uri: 'GOC:mtg_MIT_16mar07'
+  xref: 'GOC:mtg_MIT_16mar07'
 -
-  uri: 'GOC:mtg_cardio'
-  xref: 'GOC:mtg_cardio'
   nickname: 'Cardiovascular physiology, June 2007; participant list at http://wiki.geneontology.org/index.php/Cardiovascular_physiology/development'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_cardio'
+  xref: 'GOC:mtg_cardio'
 -
-  uri: 'GOC:mtg_chebi_dec09'
-  xref: 'GOC:mtg_chebi_dec09'
   nickname: 'December 2009; GO and ChEBI curators'
   organization: 'GO-ChEBI conference call'
+  uri: 'GOC:mtg_chebi_dec09'
+  xref: 'GOC:mtg_chebi_dec09'
 -
-  uri: 'GOC:mtg_pamgo_17jul06'
-  xref: 'GOC:mtg_pamgo_17jul06'
   nickname: 'PAMGO meeting, July 2006; GO and PAMGO curators'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_pamgo_17jul06'
+  xref: 'GOC:mtg_pamgo_17jul06'
 -
-  uri: 'GOC:mtg_pamgo'
-  xref: 'GOC:mtg_pamgo'
   nickname: 'meeting of GO and PAMGO curators; superset of GOC:mtg_pamgo_17jul06'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_pamgo'
+  xref: 'GOC:mtg_pamgo'
 -
-  uri: 'GOC:cardio_2'
-  xref: 'GOC:cardio_2'
   nickname: 'Cardiac contraction; Varsha Khodiyar, with some help from Midori'
   organization: 'working group project'
+  uri: 'GOC:cardio_2'
+  xref: 'GOC:cardio_2'
 -
-  uri: 'GOC:txnOH'
-  xref: 'GOC:txnOH'
   nickname: 'transcription overhaul summer 2010; Karen Christie & David Hill'
   organization: 'working group project'
+  uri: 'GOC:txnOH'
+  xref: 'GOC:txnOH'
 -
-  uri: 'GOC:ascb_2009'
-  xref: 'GOC:ascb_2009'
   nickname: 'ASCB 2009; Tanya Berardini & David Hill'
   organization: 'conference-based GO development'
+  uri: 'GOC:ascb_2009'
+  xref: 'GOC:ascb_2009'
 -
-  uri: 'GOC:mtg_apoptosis'
-  xref: 'GOC:mtg_apoptosis'
   nickname: 'June 1st 2011, EBI: with APO-SYS consortium members.'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_apoptosis'
+  xref: 'GOC:mtg_apoptosis'
 -
-  uri: 'GOC:mtg_cambridge_2009'
-  xref: 'GOC:mtg_cambridge_2009'
   nickname: 'GO content meeting: cambridge 2009'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_cambridge_2009'
+  xref: 'GOC:mtg_cambridge_2009'
 -
-  uri: 'GOC:mtg_cambridge_2013'
-  xref: 'GOC:mtg_cambridge_2013'
   nickname: 'GO content meeting: cambridge 2013'
   organization: 'GOC meeting in Cambridge, April 11-13 2013'
+  uri: 'GOC:mtg_cambridge_2013'
+  xref: 'GOC:mtg_cambridge_2013'
 -
-  uri: 'GOC:mtg_cardiac_conduct_nov11'
-  xref: 'GOC:mtg_cardiac_conduct_nov11'
   nickname: 'Cardiac conduction. November 10th-11th 2011, UCL: http://gocwiki.geneontology.org/index.php/Cardiac_conduction'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_cardiac_conduct_nov11'
+  xref: 'GOC:mtg_cardiac_conduct_nov11'
 -
-  uri: 'GOC:mtg_electron_transport'
-  xref: 'GOC:mtg_electron_transport'
   nickname: 'GO content meeting: electron transport'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_electron_transport'
+  xref: 'GOC:mtg_electron_transport'
 -
-  uri: 'GOC:mtg_far_red'
-  xref: 'GOC:mtg_far_red'
   nickname: 'GO content meeting: far red'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_far_red'
+  xref: 'GOC:mtg_far_red'
 -
-  uri: 'GOC:mtg_heart'
-  xref: 'GOC:mtg_heart'
   nickname: 'GO content meeting: heart'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_heart'
+  xref: 'GOC:mtg_heart'
 -
-  uri: 'GOC:mtg_kidney_jan10'
-  xref: 'GOC:mtg_kidney_jan10'
   nickname: 'GO content meeting: kidney, jan 10'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_kidney_jan10'
+  xref: 'GOC:mtg_kidney_jan10'
 -
-  uri: 'GOC:mtg_lung'
-  xref: 'GOC:mtg_lung'
   nickname: 'GO content meeting: lung'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_lung'
+  xref: 'GOC:mtg_lung'
 -
-  uri: 'GOC:mtg_mpo'
-  xref: 'GOC:mtg_mpo'
   nickname: 'GO content meeting: mpo'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_mpo'
+  xref: 'GOC:mtg_mpo'
 -
-  uri: 'GOC:mtg_muscle'
-  xref: 'GOC:mtg_muscle'
   nickname: 'GO content meeting: muscle'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_muscle'
+  xref: 'GOC:mtg_muscle'
 -
-  uri: 'GOC:mtg_plant'
-  xref: 'GOC:mtg_plant'
   nickname: 'GO content meeting: plant'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_plant'
+  xref: 'GOC:mtg_plant'
 -
-  uri: 'GOC:mtg_sensu'
-  xref: 'GOC:mtg_sensu'
   nickname: 'GO content meeting: sensu'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_sensu'
+  xref: 'GOC:mtg_sensu'
 -
-  uri: 'GOC:mtg_signal'
-  xref: 'GOC:mtg_signal'
   nickname: 'Jen Deegan and signaling working group. Series of web (virtual) meetings and calls to overhaul signaling'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_signal'
+  xref: 'GOC:mtg_signal'
 -
-  uri: 'GOC:mtg_signaling_feb11'
-  xref: 'GOC:mtg_signaling_feb11'
   nickname: 'February 16th-17th 2011, EBI: http://gocwiki.geneontology.org/index.php/Signaling_Workshop_February_2011'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_signaling_feb11'
+  xref: 'GOC:mtg_signaling_feb11'
 -
-  uri: 'GOC:mtg_transport'
-  xref: 'GOC:mtg_transport'
   nickname: 'GO content meeting: transport'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_transport'
+  xref: 'GOC:mtg_transport'
 -
-  uri: 'GOC:sdb_2009'
-  xref: 'GOC:sdb_2009'
   nickname: 'Society for Developmental Biology 2009; Tanya Berardini & David Hill'
   organization: 'conference-based GO development'
+  uri: 'GOC:sdb_2009'
+  xref: 'GOC:sdb_2009'
 -
-  uri: 'GOC:sensu'
-  xref: 'GOC:sensu'
   nickname: 'overhaul of "sensu" terms'
   organization: 'working group project'
+  uri: 'GOC:sensu'
+  xref: 'GOC:sensu'
 -
-  uri: 'GOC:signaling'
-  xref: 'GOC:signaling'
   nickname: 'signaling overhaul (Becky and signaling working group)'
   organization: 'working group project'
+  uri: 'GOC:signaling'
+  xref: 'GOC:signaling'
 -
-  uri: 'GOC:chem_mtg'
-  xref: 'GOC:chem_mtg'
+  comment: 'used in goche.obo file'
   nickname: 'GO/ChEBI alignment meeting (mainly Hinxton Feb. 2010, but can also refer to virtual meetings)'
   organization: 'GO content meeting'
-  comment: 'used in goche.obo file'
+  uri: 'GOC:chem_mtg'
+  xref: 'GOC:chem_mtg'
 -
-  uri: 'GOC:carnegie_chem_mtg'
-  xref: 'GOC:carnegie_chem_mtg'
+  comment: 'used in goche.obo file'
   nickname: 'GO/ChEBI alignment meeting, Carnegie Inst. July 2010'
   organization: 'GO content meeting'
-  comment: 'used in goche.obo file'
+  uri: 'GOC:carnegie_chem_mtg'
+  xref: 'GOC:carnegie_chem_mtg'
 -
-  uri: 'GOC:mtg_OBO2OWL_2013'
-  xref: 'GOC:mtg_OBO2OWL_2013'
   nickname: 'ontology workshop partly focused on adding disjointedness axioms '
   organization: 'ontology workshop'
+  uri: 'GOC:mtg_OBO2OWL_2013'
+  xref: 'GOC:mtg_OBO2OWL_2013'
 -
-  uri: 'GOC:mtg_cell_cycle'
-  xref: 'GOC:mtg_cell_cycle'
   nickname: 'Feb. 28th and Mar. 1st 2013, EBI, with external experts: http://wiki.geneontology.org/index.php/Cell_Cycle_Content_Meeting_Feb_2013'
   organization: 'GO content meeting'
+  uri: 'GOC:mtg_cell_cycle'
+  xref: 'GOC:mtg_cell_cycle'
 -
-  uri: 'GOC:cilia'
-  xref: 'GOC:cilia'
   nickname: 'cilium terms (Paola and the Syscilia consortium)'
   organization: 'working group project'
+  uri: 'GOC:cilia'
+  xref: 'GOC:cilia'
 -
+  nickname: 'dbxref created to allow easy counting of terms added by pomBase curators'
+  organization: PomBase
   uri: 'GOC:PomBase'
   xref: 'GOC:PomBase'
-  nickname: 'dbxref created to allow easy counting of terms added by pomBase curators'
-  organization: 'PomBase'
 -
-  nickname: 'Monica Munoz-Torres'
-  uri: 'http://orcid.org/0000-0001-8430-6039'
-  xref: 'GOC:mmt'
+  accounts:
+    github: monicacecilia
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-write: true
   email-md5:
     - 10c7ac321b4dd7fcca0c2eccc81ff78f
     - 0317fbb65069c545c831431d73e2d0fc
     - 1cf7f1399ec6b4f52fe3e1209b063f5d
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
+  groups:
+    - 'http://lbl.gov'
+  nickname: 'Monica Munoz-Torres'
   organization: LBL
-  accounts:
-    github: monicacecilia
+  uri: 'http://orcid.org/0000-0001-8430-6039'
+  xref: 'GOC:mmt'
 -
-  uri: 'GOC:giardia'
-  xref: 'GOC:giardia'
   nickname: 'Addition of CC terms for Giardia and other unicellular organisms (Paola and field experts)'
   organization: 'working group project'
+  uri: 'GOC:giardia'
+  xref: 'GOC:giardia'
 -
-  nickname: 'Anne Thessen'
-  email-md5:
-    - 50406c097b7cc168e38ca1980f1c4bc2
   authorizations:
-    noctua-go:
-      allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
-  xref: 'GOC:at'
-  uri: 'http://orcid.org/0000-0002-2908-3327'
+  email-md5:
+    - 50406c097b7cc168e38ca1980f1c4bc2
+  groups:
+    - 'http://ronininstitute.org'
+  nickname: 'Anne Thessen'
   organization: 'Ronin Institute'
+  uri: 'http://orcid.org/0000-0002-2908-3327'
+  xref: 'GOC:at'
 -
-  uri: 'GOC:BioGRID'
-  xref: 'GOC:BioGRID'
   nickname: 'BioGRID curators'
   organization: BioGRID
+  uri: 'GOC:BioGRID'
+  xref: 'GOC:BioGRID'
 -
-  uri: 'GOC:nr'
-  xref: 'GOC:nr'
   nickname: 'MGI summer student'
   organization: 'Nikolai Renedo'
+  uri: 'GOC:nr'
+  xref: 'GOC:nr'
 -
-  uri: 'GOC:vesicles'
-  xref: 'GOC:vesicles'
   nickname: 'exRNA-related terms/synonyms (Paola, Jane and field experts, incl. Kei-Hoi Cheung, Louise Laurent, Andrew Su; Extracellular RNA Communication Consortium (ERCC), International Society for Extracellular Vesicles (ISEV), American Society for Exosomes and Microvesicles (ASEMV), plus wider extracellular vesicle (EV) community)'
   organization: 'working group project'
+  uri: 'GOC:vesicles'
+  xref: 'GOC:vesicles'
 -
-  uri: 'GOC:autophagy'
-  xref: 'GOC:autophagy'
   nickname: 'Revision of the autophagy branch (David H, Paola, Paul D, Ruth, Becky, Marc F and field experts)'
   organization: 'working group project'
+  uri: 'GOC:autophagy'
+  xref: 'GOC:autophagy'
 -
+  accounts:
+    github: pnrobinson
+  email-md5:
+    - c727817e3b98721cf962f69613afd192
   nickname: 'Peter Robinson'
   uri: 'GOC:pnr'
   xref: 'GOC:pnr'
-  email-md5:
-    - c727817e3b98721cf962f69613afd192
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  accounts:
-    github: pnrobinson
 -
-  nickname: 'Aurore Britan'
-  uri: 'http://orcid.org/0000-0002-9846-2590'
-  email-md5:
-    - 511024223bef1686c82af8cee07aa5ab
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: SIB
--
-  nickname: 'Valerie Hinard'
-  uri: 'http://orcid.org/0000-0001-5891-169X'
-  email-md5:
-    - f82886a594366a817267e7843aaa94eb
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: SIB
--
-  nickname: 'Giulia Antonazzo'
-  uri: 'http://orcid.org/0000-0003-0086-5621'
-  email-md5:
-    - 7379792826dca5b368ea626350f42fdb
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  xref: 'GOC:ga'
-  organization: FlyBase
-  groups:
-    - 'http://flybase.org'
-  accounts:
-    github: gantonazzo
--
-  nickname: 'Anne Niknejad'
-  uri: 'GOC:ani'
-  xref: 'GOC:ani'
-  email-md5:
-    - b63b38a114f54e74e6b7e22f728fc6a2
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: SIB
--
-  nickname: "Claire O'Donovan"
-  uri: 'http://orcid.org/0000-0001-8051-7429'
-  email-md5:
-    - d4b32aa1fdf6e448fdcac39e1029b29d
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: EMBL-EBI
--
-  nickname: "Amaia Sangrador"
-  uri: 'http://orcid.org/0000-0001-6688-429X'
-  email-md5:
-    - df1dc4e85198a40a3fe2e0ce710e93a6
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: EMBL-EBI
--
-  nickname: "Alex Bateman"
-  uri: 'http://orcid.org/0000-0002-6982-4660'
-  email-md5:
-    - af32cf0251de5801656a01abc87347d8
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: EMBL-EBI
--
-  nickname: "Frank Koopmans"
-  uri: 'http://orcid.org/0000-0002-4973-5732'
-  email-md5:
-    - b1979eaa19640f88f4eae7e968401083
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: SynGO
-  accounts:
-    github: ftwkoopmans
--
-  nickname: "Pim van Nierop"
-  uri: 'http://orcid.org/0000-0003-0593-3443'
-  email-md5:
-    - 8a249393af4561952b7283f8ca183919
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: SynGO
-  accounts:
-    github: Pimmelorus
--
-  nickname: "Jim Balhoff"
-  uri: 'http://orcid.org/0000-0002-8688-6599'
-  email-md5:
-    - f28e1be9fc622bffbecb166378ef2456
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: GO
-  groups:
-    - 'http://geneontology.org'
-  accounts:
-    github: balhoff
--
-  nickname: "Istvan Miko"
-  uri: 'http://orcid.org/0000-0001-9719-0215'
-  email-md5:
-    - 7a113f413bef0385f3f26ea11500697e
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: PhenotypeRCN
--
-  nickname: "Matthew Brush"
-  uri: 'http://orcid.org/0000-0002-1048-5019'
-  email-md5:
-    - 693f54b57c5b0fd811daaa764f0a408a
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: OHSU
--
-  nickname: "Wasila Dahdul"
-  uri: 'http://orcid.org/0000-0003-3162-7490'
-  email-md5:
-    - c4cc79c1a42a3421eede8fd303bce97b
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: USD
--
-  nickname: "Alexander Diehl"
-  uri: 'http://orcid.org/0000-0001-9990-8331'
-  email-md5:
-    - b620974b9361d4b213f40f286b11ae3e
-  xref: 'GOC:add'
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: University at Buffalo
--
-  nickname: "Jean-Philippe Francois Gourdine"
-  uri: 'http://orcid.org/0000-0001-9969-8610'
-  email-md5:
-    - 02f07e64c15efd21bcb53209aa9fdcf0
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: OHSU
--
-  nickname: "Justin Preece"
-  uri: 'http://orcid.org/0000-0001-5406-4905'
-  email-md5:
-    - 0c93d771ecbe7f79da921d148bbc523b
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: Planteome
-  accounts:
-    github: 'preecej'
--
-  nickname: "Pankaj Jaiswal"
-  uri: 'http://orcid.org/0000-0002-1005-8383'
-  email-md5:
-    - 8a9733d55915899470bb4f488cb02d0b
-  xref: 'GOC:pj'
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: OSU
-  groups:
-    - 'http://planteome.org'
-  accounts:
-    github: jaiswalp
--
-  nickname: "Mark Jensen"
-  uri: 'http://orcid.org/0000-0001-9228-8838'
-  email-md5:
-    - f94b258f360ac5e23bdae69665f1abed
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: University at Buffalo
--
-  nickname: "Nancy George"
-  uri: 'http://orcid.org/0000-0002-6470-2429'
-  email-md5:
-    - e9e16245c16495c1939a3f94cfe10014
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: EMBO
--
-  nickname: "Pier Luigi Buttigieg"
-  uri: 'http://orcid.org/0000-0002-4366-3088'
-  email-md5:
-    - 119420f70952561ee251188593af2c22
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: AWI
-  accounts:
-    github: pbuttigieg
--
-  nickname: "Bridget C Hanna"
-  uri: 'http://orcid.org/0000-0001-8798-3326'
-  email-md5:
-    - 615524629ee74d978a22e37e302fb891
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: Harvard T.H. Chan School of Public Health
--
-  nickname: "Daniel Keith"
-  uri: 'http://orcid.org/0000-0002-1643-6242'
-  email-md5:
-    - 1da7b1538b4b21f1cfe7ce462965a549
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: OHSU
--
-  nickname: "Thomas Hahn"
-  uri: 'http://orcid.org/0000-0002-3499-1346'
-  email-md5:
-    - 28b281ff7eb6702879dc492d46640789
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: UALR
--
-  nickname: "Karl Helmer"
-  uri: 'http://orcid.org/0000-0002-5113-6843'
-  email-md5:
-    - ade6fb1b95edb06e29febb863f6df9d0
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: MGH
--
-  nickname: "Justin Elser"
-  uri: 'http://orcid.org/0000-0003-0921-1982'
-  email-md5:
-    - 127b8bf1b1867d4639eb18b126505863
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: OSU
--
-  nickname: "William Duncan"
-  uri: 'http://orcid.org/0000-0001-9625-1899'
-  email-md5:
-    - a674a0c01d206479aa80032570eae279
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: Roswell Park Cancer Institute
--
-  nickname: "Medha Devare"
-  uri: 'http://orcid.org/0000-0003-0041-4812'
-  email-md5:
-    - 996df2555af6fbe9083d4e9a4d92b528
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: CGIAR
--
-  nickname: "Cynthia J Grondin"
-  uri: 'http://orcid.org/0000-0002-4642-1738'
-  email-md5:
-    - 86dadf06302586b8d2667c6e60f0a60c
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: NCSU
--
-  nickname: "Suzanna Lewis"
-  uri: 'http://orcid.org/0000-0002-8343-612X'
-  email-md5:
-    - caad47c5134fca150d4e9ff086c1d7f5
   authorizations:
     noctua:
       go:
         allow-edit: true
-  organization: LBL
+  email-md5:
+    - 511024223bef1686c82af8cee07aa5ab
+  groups:
+    - 'http://www.sib.swiss'
+  nickname: 'Aurore Britan'
+  organization: SIB
+  uri: 'http://orcid.org/0000-0002-9846-2590'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - f82886a594366a817267e7843aaa94eb
+  groups:
+    - 'http://www.sib.swiss'
+  nickname: 'Valerie Hinard'
+  organization: SIB
+  uri: 'http://orcid.org/0000-0001-5891-169X'
+-
+  accounts:
+    github: gantonazzo
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-write: true
+  email-md5:
+    - 7379792826dca5b368ea626350f42fdb
+  groups:
+    - 'http://flybase.org'
+  nickname: 'Giulia Antonazzo'
+  organization: FlyBase
+  uri: 'http://orcid.org/0000-0003-0086-5621'
+  xref: 'GOC:ga'
+-
+  email-md5:
+    - b63b38a114f54e74e6b7e22f728fc6a2
+  groups:
+    - 'http://www.sib.swiss'
+  nickname: 'Anne Niknejad'
+  organization: SIB
+  uri: 'GOC:ani'
+  xref: 'GOC:ani'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - d4b32aa1fdf6e448fdcac39e1029b29d
+  groups:
+    - 'http://www.ebi.ac.uk'
+  nickname: "Claire O'Donovan"
+  organization: EMBL-EBI
+  uri: 'http://orcid.org/0000-0001-8051-7429'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - df1dc4e85198a40a3fe2e0ce710e93a6
+  groups:
+    - 'http://www.ebi.ac.uk'
+  nickname: 'Amaia Sangrador'
+  organization: EMBL-EBI
+  uri: 'http://orcid.org/0000-0001-6688-429X'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - af32cf0251de5801656a01abc87347d8
+  groups:
+    - 'http://www.ebi.ac.uk'
+  nickname: 'Alex Bateman'
+  organization: EMBL-EBI
+  uri: 'http://orcid.org/0000-0002-6982-4660'
+-
+  accounts:
+    github: ftwkoopmans
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - b1979eaa19640f88f4eae7e968401083
+  groups:
+    - 'https://syngo.vu.nl'
+  nickname: 'Frank Koopmans'
+  organization: SynGO
+  uri: 'http://orcid.org/0000-0002-4973-5732'
+-
+  accounts:
+    github: Pimmelorus
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 8a249393af4561952b7283f8ca183919
+  groups:
+    - 'https://syngo.vu.nl'
+  nickname: 'Pim van Nierop'
+  organization: SynGO
+  uri: 'http://orcid.org/0000-0003-0593-3443'
+-
+  accounts:
+    github: balhoff
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - f28e1be9fc622bffbecb166378ef2456
+  groups:
+    - 'http://geneontology.org'
+  nickname: 'Jim Balhoff'
+  organization: 'GO Central'
+  uri: 'http://orcid.org/0000-0002-8688-6599'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 7a113f413bef0385f3f26ea11500697e
+  groups:
+    - 'http://www.phenotypercn.org'
+  nickname: 'Istvan Miko'
+  organization: PhenotypeRCN
+  uri: 'http://orcid.org/0000-0001-9719-0215'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 693f54b57c5b0fd811daaa764f0a408a
+  groups:
+    - 'http://www.ohsu.edu'
+  nickname: 'Matthew Brush'
+  organization: OHSU
+  uri: 'http://orcid.org/0000-0002-1048-5019'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - c4cc79c1a42a3421eede8fd303bce97b
+  groups:
+    - 'http://www.sandiego.edu'
+  nickname: 'Wasila Dahdul'
+  organization: USD
+  uri: 'http://orcid.org/0000-0003-3162-7490'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - b620974b9361d4b213f40f286b11ae3e
+  groups:
+    - 'http://www.buffalo.edu'
+  nickname: 'Alexander Diehl'
+  organization: 'University at Buffalo'
+  uri: 'http://orcid.org/0000-0001-9990-8331'
+  xref: 'GOC:add'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 02f07e64c15efd21bcb53209aa9fdcf0
+  groups:
+    - 'http://www.ohsu.edu'
+  nickname: 'Jean-Philippe Francois Gourdine'
+  organization: OHSU
+  uri: 'http://orcid.org/0000-0001-9969-8610'
+-
+  accounts:
+    github: preecej
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 0c93d771ecbe7f79da921d148bbc523b
+  groups:
+    - 'http://planteome.org'
+  nickname: 'Justin Preece'
+  organization: Planteome
+  uri: 'http://orcid.org/0000-0001-5406-4905'
+-
+  accounts:
+    github: jaiswalp
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 8a9733d55915899470bb4f488cb02d0b
+  groups:
+    - 'http://planteome.org'
+  nickname: 'Pankaj Jaiswal'
+  organization: OSU
+  uri: 'http://orcid.org/0000-0002-1005-8383'
+  xref: 'GOC:pj'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - f94b258f360ac5e23bdae69665f1abed
+  groups:
+    - 'http://www.buffalo.edu'
+  nickname: 'Mark Jensen'
+  organization: 'University at Buffalo'
+  uri: 'http://orcid.org/0000-0001-9228-8838'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - e9e16245c16495c1939a3f94cfe10014
+  groups:
+    - 'http://www.embo.org'
+  nickname: 'Nancy George'
+  organization: EMBO
+  uri: 'http://orcid.org/0000-0002-6470-2429'
+-
+  accounts:
+    github: pbuttigieg
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 119420f70952561ee251188593af2c22
+  groups:
+    - 'https://www.awi.de'
+  nickname: 'Pier Luigi Buttigieg'
+  organization: AWI
+  uri: 'http://orcid.org/0000-0002-4366-3088'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 615524629ee74d978a22e37e302fb891
+  groups:
+    - 'https://www.hsph.harvard.edu'
+  nickname: 'Bridget C Hanna'
+  organization: 'Harvard T.H. Chan School of Public Health'
+  uri: 'http://orcid.org/0000-0001-8798-3326'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 1da7b1538b4b21f1cfe7ce462965a549
+  groups:
+    - 'http://www.ohsu.edu'
+  nickname: 'Daniel Keith'
+  organization: OHSU
+  uri: 'http://orcid.org/0000-0002-1643-6242'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 28b281ff7eb6702879dc492d46640789
+  groups:
+    - 'http://ualr.edu'
+  nickname: 'Thomas Hahn'
+  organization: UALR
+  uri: 'http://orcid.org/0000-0002-3499-1346'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - ade6fb1b95edb06e29febb863f6df9d0
+  groups:
+    - 'http://www.massgeneral.org'
+  nickname: 'Karl Helmer'
+  organization: MGH
+  uri: 'http://orcid.org/0000-0002-5113-6843'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 127b8bf1b1867d4639eb18b126505863
+  groups:
+    - 'http://oregonstate.edu'
+  nickname: 'Justin Elser'
+  organization: OSU
+  uri: 'http://orcid.org/0000-0003-0921-1982'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - a674a0c01d206479aa80032570eae279
+  groups:
+    - 'https://www.roswellpark.org'
+  nickname: 'William Duncan'
+  organization: 'Roswell Park Cancer Institute'
+  uri: 'http://orcid.org/0000-0001-9625-1899'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 996df2555af6fbe9083d4e9a4d92b528
+  groups:
+    - 'https://www.cgiar.org'
+  nickname: 'Medha Devare'
+  organization: CGIAR
+  uri: 'http://orcid.org/0000-0003-0041-4812'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 86dadf06302586b8d2667c6e60f0a60c
+  groups:
+    - 'https://www.ncsu.edu'
+  nickname: 'Cynthia J Grondin'
+  organization: NCSU
+  uri: 'http://orcid.org/0000-0002-4642-1738'
+-
+  accounts:
+    github: selewis
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - caad47c5134fca150d4e9ff086c1d7f5
   groups:
     - 'http://geneontology.org'
     - 'http://lbl.gov'
-  accounts:
-    github: selewis
+  nickname: 'Suzanna Lewis'
+  organization: LBL
+  uri: 'http://orcid.org/0000-0002-8343-612X'
 -
-  nickname: "Jie Liu"
-  uri: 'http://orcid.org/0000-0002-9280-1539'
-  email-md5:
-    - a479c2d87277745766db1dd1a6551a7f
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: ADM
--
-  nickname: "Ronglin Wang"
-  uri: 'http://orcid.org/0000-0002-6537-9758'
-  email-md5:
-    - 6fe3d0f5a77c3f18a4403a2d6db7ab52
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: US EPA
--
-  nickname: "Matthew Lange"
-  uri: 'http://orcid.org/0000-0002-6148-7962'
-  email-md5:
-    - 21fe7d3d1db7e96c7a3221c8d31e136b
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: UC Davis
--
-  nickname: "Daniel Gonzalez"
-  uri: 'http://orcid.org/0000-0002-3919-1380'
-  email-md5:
-    - 634abb3b6437498bec616150ef57270d
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: EMBL-EBI
--
-  nickname: "Emma Hatton-Ellis"
-  uri: 'http://orcid.org/0000-0002-7262-1928'
-  email-md5:
-    - 2d2a5cce07b6ea476ae866ddf83b440d
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: EMBL-EBI
--
-  nickname: "Barbara Palka"
-  uri: 'http://orcid.org/0000-0001-8256-1466'
-  email-md5:
-    - ebaf882a667319fea1abc78811b565e4
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: EMBL-EBI
--
-  nickname: "Ramona Britto"
-  uri: 'http://orcid.org/0000-0003-1011-5410'
-  email-md5:
-    - cb9c22aab5ab96df62098f7407c1069f
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: EMBL-EBI
--
-  nickname: "Alistair MacDougall"
-  uri: 'http://orcid.org/0000-0003-2857-3460'
-  email-md5:
-    - 0dcbbae41504af90fcca94f8f756a961
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: EBI
--
-  nickname: "Mary Ann Tuli"
-  uri: 'http://orcid.org/0000-0002-4667-9528'
-  email-md5:
-    - cefa19821d8dda55a07a755a964e4946
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: WB
-  groups:
-    - 'http://www.wormbase.org'
-  accounts:
-    github: tuli
--
-  nickname: "Jacqueline Hayles"
-  uri: 'http://orcid.org/0000-0002-8599-8206'
-  email-md5:
-    - d0e31b86f6f57470844a06bcc4e49a6d
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: Crick
--
-  nickname: "Nidhi Tyagi"
-  uri: 'http://orcid.org/0000-0002-2065-9051'
-  email-md5:
-    - c3c4847dd8d71c1d667d5bf7895d4a9e
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: EMBL-EBI
--
-  nickname: 'Rossana Zaru'
-  uri: 'http://orcid.org/0000-0002-3358-4423'
-  xref: 'GOC:rz'
-  email-md5:
-    - 0de11318dae17ecd44c3cbc35378622a
-  authorizations:
-    noctua-go:
-      allow-edit: true
-    termgenie-go:
-      allow-write: true
-  organization: EMBL-EBI
-  accounts:
-    github: rozaru
--
-  nickname: "Satrajit Ghosh"
-  uri: 'http://orcid.org/0000-0002-5312-6729'
-  email-md5:
-    - 1c8c8eeba90d924df74f588bc2f1de23
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: NIDASH
--
-  nickname: "Raymond Lee"
-  uri: 'http://orcid.org/0000-0002-8151-7479'
-  email-md5:
-    - 55a339645c9d8022ea8ab3f9316b8459
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: WB
-  groups:
-    - 'http://www.wormbase.org'
-  accounts:
-    github: raymond91125
--
-  nickname: "Malcolm Fisher"
-  uri: 'http://orcid.org/0000-0003-1074-8103'
-  email-md5:
-    - f28ff1081377a5278fd2e9ff01c35215
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  organization: Xenbase
-  groups:
-    - 'http://www.xenbase.org'
-  accounts:
-    google-plus: '117715867093154659921'
-    github: malcolmfisher103
--
-  nickname: "Christian Grove"
-  uri: 'http://orcid.org/0000-0001-9076-6015'
-  email-md5:
-    - f00a4d8dce61e251624a99fed04385f4
   authorizations:
     noctua:
       go:
         allow-edit: true
-  organization: WB
+  email-md5:
+    - a479c2d87277745766db1dd1a6551a7f
+  groups:
+    - 'https://www.adm.com'
+  nickname: 'Jie Liu'
+  organization: ADM
+  uri: 'http://orcid.org/0000-0002-9280-1539'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 6fe3d0f5a77c3f18a4403a2d6db7ab52
+  groups:
+    - 'https://www.epa.gov'
+  nickname: 'Ronglin Wang'
+  organization: 'US EPA'
+  uri: 'http://orcid.org/0000-0002-6537-9758'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 21fe7d3d1db7e96c7a3221c8d31e136b
+  groups:
+    - 'http://www.ucdavis.edu'
+  nickname: 'Matthew Lange'
+  organization: 'UC Davis'
+  uri: 'http://orcid.org/0000-0002-6148-7962'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 634abb3b6437498bec616150ef57270d
+  groups:
+    - 'http://www.ebi.ac.uk'
+  nickname: 'Daniel Gonzalez'
+  organization: EMBL-EBI
+  uri: 'http://orcid.org/0000-0002-3919-1380'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 2d2a5cce07b6ea476ae866ddf83b440d
+  groups:
+    - 'http://www.ebi.ac.uk'
+  nickname: 'Emma Hatton-Ellis'
+  organization: EMBL-EBI
+  uri: 'http://orcid.org/0000-0002-7262-1928'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - ebaf882a667319fea1abc78811b565e4
+  groups:
+    - 'http://www.ebi.ac.uk'
+  nickname: 'Barbara Palka'
+  organization: EMBL-EBI
+  uri: 'http://orcid.org/0000-0001-8256-1466'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - cb9c22aab5ab96df62098f7407c1069f
+  groups:
+    - 'http://www.ebi.ac.uk'
+  nickname: 'Ramona Britto'
+  organization: EMBL-EBI
+  uri: 'http://orcid.org/0000-0003-1011-5410'
+-
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 0dcbbae41504af90fcca94f8f756a961
+  groups:
+    - 'http://www.ebi.ac.uk'
+  nickname: 'Alistair MacDougall'
+  organization: EBI
+  uri: 'http://orcid.org/0000-0003-2857-3460'
+-
+  accounts:
+    github: tuli
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - cefa19821d8dda55a07a755a964e4946
   groups:
     - 'http://www.wormbase.org'
-  accounts:
-    github: 'chris-grove'
+  nickname: 'Mary Ann Tuli'
+  organization: WB
+  uri: 'http://orcid.org/0000-0002-4667-9528'
 -
-  nickname: "Olivia Lang"
-  uri: 'http://orcid.org/0000-0002-5886-363X'
-  email-md5:
-    - 8cb0f722515de37b1d05747738fd86e1
   authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: SGD
-  accounts:
-    github: 'owlang'
--
-  nickname: "Suzi Aleksander"
-  uri: 'http://orcid.org/0000-0001-6787-2901'
+    noctua:
+      go:
+        allow-edit: true
   email-md5:
-    - 4c6434117cef942c05aaeee7e0bec853
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: SGD
+    - d0e31b86f6f57470844a06bcc4e49a6d
   groups:
-    - 'http://www.yeastgenome.org'
-  accounts:
-    github: 'suzialeksander'
+    - 'https://www.crick.ac.uk'
+  nickname: 'Jacqueline Hayles'
+  organization: Crick
+  uri: 'http://orcid.org/0000-0002-8599-8206'
 -
-  nickname: "Leonore Reiser"
-  uri: 'http://orcid.org/0000-0003-0073-0858'
-  xref: 'GOC:lr'
-  email-md5:
-    - 12db676395b362177f57aecbe87fbf50
   authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - c3c4847dd8d71c1d667d5bf7895d4a9e
+  groups:
+    - 'http://www.ebi.ac.uk'
+  nickname: 'Nidhi Tyagi'
+  organization: EMBL-EBI
+  uri: 'http://orcid.org/0000-0002-2065-9051'
+-
+  accounts:
+    github: rozaru
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
     termgenie-go:
       allow-write: true
+  email-md5:
+    - 0de11318dae17ecd44c3cbc35378622a
+  groups:
+    - 'http://www.ebi.ac.uk'
+  nickname: 'Rossana Zaru'
+  organization: EMBL-EBI
+  uri: 'http://orcid.org/0000-0002-3358-4423'
+  xref: 'GOC:rz'
+-
+  authorizations:
     noctua:
-     go:
-       allow-edit: true
-  organization: TAIR
+      go:
+        allow-edit: true
+  email-md5:
+    - 1c8c8eeba90d924df74f588bc2f1de23
+  groups:
+    - 'http://nidm.nidash.org'
+  nickname: 'Satrajit Ghosh'
+  organization: NIDASH
+  uri: 'http://orcid.org/0000-0002-5312-6729'
+-
+  accounts:
+    github: raymond91125
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 55a339645c9d8022ea8ab3f9316b8459
+  groups:
+    - 'http://www.wormbase.org'
+  nickname: 'Raymond Lee'
+  organization: WB
+  uri: 'http://orcid.org/0000-0002-8151-7479'
+-
+  accounts:
+    github: malcolmfisher103
+    google-plus: '117715867093154659921'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - f28ff1081377a5278fd2e9ff01c35215
+  groups:
+    - 'http://www.xenbase.org'
+  nickname: 'Malcolm Fisher'
+  organization: Xenbase
+  uri: 'http://orcid.org/0000-0003-1074-8103'
+-
+  accounts:
+    github: chris-grove
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - f00a4d8dce61e251624a99fed04385f4
+  groups:
+    - 'http://www.wormbase.org'
+  nickname: 'Christian Grove'
+  organization: WB
+  uri: 'http://orcid.org/0000-0001-9076-6015'
+-
+  accounts:
+    github: owlang
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 8cb0f722515de37b1d05747738fd86e1
+  groups:
+    - 'http://www.yeastgenome.org'
+  nickname: 'Olivia Lang'
+  organization: SGD
+  uri: 'http://orcid.org/0000-0002-5886-363X'
+-
+  accounts:
+    github: suzialeksander
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 4c6434117cef942c05aaeee7e0bec853
+  groups:
+    - 'http://www.yeastgenome.org'
+  nickname: 'Suzi Aleksander'
+  organization: SGD
+  uri: 'http://orcid.org/0000-0001-6787-2901'
+-
+  accounts:
+    github: lreiser
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-write: true
+  email-md5:
+    - 12db676395b362177f57aecbe87fbf50
   groups:
     - 'http://www.arabidopsis.org'
-  accounts:
-    github: 'lreiser'
+  nickname: 'Leonore Reiser'
+  organization: TAIR
+  uri: 'http://orcid.org/0000-0003-0073-0858'
+  xref: 'GOC:lr'
 -
-  nickname: "Marcus Chibucos"
-  xref: 'GOC:mcc2'
-  uri: 'http://orcid.org/0000-0001-9586-0780'
+  accounts:
+    github: mchibucos
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   email-md5:
     - c30dfaf88e3a1eca070de8281a049e91
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
+  groups:
+    - 'http://www.igs.umaryland.edu'
+  nickname: 'Marcus Chibucos'
   organization: IGS
-  accounts:
-    github: 'mchibucos'
+  uri: 'http://orcid.org/0000-0001-9586-0780'
+  xref: 'GOC:mcc2'
 -
-  nickname: "Debby Siegele"
-  xref: 'GOC:das'
-  uri: 'http://orcid.org/0000-0001-8935-0696'
+  accounts:
+    github: dsiegele
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   email-md5:
     - 1bdb7f274ade49f24e617eaaf364c344
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
+  groups:
+    - 'http://www.bio.tamu.edu'
+  nickname: 'Debby Siegele'
   organization: 'E. coli'
-  accounts:
-    github: 'dsiegele'
+  uri: 'http://orcid.org/0000-0001-8935-0696'
+  xref: 'GOC:das'
 -
-  nickname: "Barbara Kramarz"
-  uri: 'http://orcid.org/0000-0002-3898-1727'
-  xref: 'GOC:bc'
+  accounts:
+    github: BarbaraCzub
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-write: true
   email-md5:
     - 05856707bf8eca390ae3ddcf689e9011
     - 99b4072c338978afc0a90bc7f217cef8
-  authorizations:
-    termgenie-go:
-      allow-write: true
-    noctua:
-      go:
-        allow-edit: true
-  organization: BHF-UCL
   groups:
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
     - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl'
     - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl'
-  accounts:
-    github: 'BarbaraCzub'
+  nickname: 'Barbara Kramarz'
+  organization: BHF-UCL
+  uri: 'http://orcid.org/0000-0002-3898-1727'
+  xref: 'GOC:bc'
 -
-  nickname: "Hans-Michael Muller"
-  uri: 'http://orcid.org/0000-0003-1036-3051'
+  accounts:
+    github: goldturtle
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   email-md5:
     - f4e3ff656a9a5ace8642819c114f2dcd
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: WB
   groups:
     - 'http://www.wormbase.org'
-  accounts:
-    github: 'goldturtle'
+  nickname: 'Hans-Michael Muller'
+  organization: WB
+  uri: 'http://orcid.org/0000-0003-1036-3051'
 -
-  nickname: "Karen Yook"
+  accounts:
+    github: kyook
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.wormbase.org'
+  nickname: 'Karen Yook'
+  organization: WB
   uri: 'http://orcid.org/0000-0002-4457-6787'
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: WB
-  groups:
-    - 'http://www.wormbase.org'
-  accounts:
-    github: 'kyook'
 -
-  nickname: "Fatima Silva-Franco"
-  uri: 'http://orcid.org/0000-0002-2900-027X'
+  accounts:
+    github: fatimasilva
   authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: University of Liverpool
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'http://eupathdb.org'
     - 'http://www.genedb.org'
-  accounts:
-    github: 'fatimasilva'
+  nickname: 'Fatima Silva-Franco'
+  organization: 'University of Liverpool'
+  uri: 'http://orcid.org/0000-0002-2900-027X'
 -
-  nickname: "Ulrike Bohme"
-  uri: 'http://orcid.org/0000-0002-0248-5924'
+  accounts:
+    github: uliboehme
   authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: The Wellcome Trust Sanger Institute
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'http://www.genedb.org'
-  accounts:
-    github: 'uliboehme'
+  nickname: 'Ulrike Bohme'
+  organization: 'The Wellcome Trust Sanger Institute'
+  uri: 'http://orcid.org/0000-0002-0248-5924'
 -
-  nickname: "Astrid Lægreid"
-  uri: 'http://orcid.org/0000-0002-3941-4257'
+  accounts:
+    github: astridla
   authorizations:
-   noctua:
-     go:
-       allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.ntnu.edu'
+  nickname: 'Astrid Lægreid'
   organization: NTNU
-  accounts:
-    github: 'astridla'
+  uri: 'http://orcid.org/0000-0002-3941-4257'
 -
-  nickname: "George Thomas Hayman"
-  uri: 'http://orcid.org/0000-0002-9553-7227'
+  accounts:
+    github: gthayman
   authorizations:
-   noctua:
-     go:
-       allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://rgd.mcw.edu'
+  nickname: 'George Thomas Hayman'
   organization: RGD
-  accounts:
-    github: 'gthayman'
+  uri: 'http://orcid.org/0000-0002-9553-7227'
 -
-  nickname: "Emily Heald Camozzi"
-  uri: 'http://orcid.org/0000-0003-0855-3059'
+  accounts:
+    github: emilycamozzi
   authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: SGD
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'http://www.yeastgenome.org'
-  accounts:
-    github: 'emilycamozzi'
+  nickname: 'Emily Heald Camozzi'
+  organization: SGD
+  uri: 'http://orcid.org/0000-0003-0855-3059'
 -
-  nickname: "Amy Singer"
-  uri: 'http://orcid.org/0000-0002-9663-3237'
+  accounts:
+    github: asingeror
   authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: ZFIN
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'http://zfin.org'
     - 'http://geneontology.org'
-  accounts:
-    github: 'asingeror'
+  nickname: 'Amy Singer'
+  organization: ZFIN
+  uri: 'http://orcid.org/0000-0002-9663-3237'
 -
-  nickname: "Marie-Angélique Laporte"
+  accounts:
+    github: marieALaporte
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.bioversityinternational.org'
+  nickname: 'Marie-Angélique Laporte'
+  organization: 'Bioversity International'
   uri: 'http://orcid.org/0000-0002-8461-9745'
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: Bioversity International
-  accounts:
-    github: 'marieALaporte'
 -
-  nickname: "Austin"
+  accounts:
+    github: austinmeier
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://planteome.org'
+  nickname: Austin
+  organization: Planteome
   uri: 'http://orcid.org/0000-0001-6996-0040'
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: Planteome
-  accounts:
-    github: 'austinmeier'
 -
-  nickname: "Gerard Lazo"
-  uri: 'http://orcid.org/000-0002-9160-2052'
+  accounts:
+    github: grlazo
   authorizations:
-   noctua:
-     go:
-       allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.usda.gov'
+  nickname: 'Gerard Lazo'
   organization: USDA
-  accounts:
-    github: 'grlazo'
+  uri: 'http://orcid.org/000-0002-9160-2052'
 -
-  nickname: "Priyanka Garg"
+  accounts:
+    github: priya8328
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://planteome.org'
+  nickname: 'Priyanka Garg'
+  organization: Planteome
   uri: 'http://orcid.org/0000-0002-8293-0329'
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: Planteome
-  accounts:
-    github: 'priya8328'
 -
-  nickname: "Matthew Geniza"
+  accounts:
+    github: genizamt
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://oregonstate.edu'
+  nickname: 'Matthew Geniza'
+  organization: OSU
   uri: 'http://orcid.org/0000-0003-4828-7891'
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: OSU
-  accounts:
-    github: 'genizamt'
 -
-  nickname: "Noor Al-Bader"
+  accounts:
+    github: noor-albader
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://oregonstate.edu'
+  nickname: 'Noor Al-Bader'
+  organization: OSU
   uri: 'http://orcid.org/0000-0002-0511-6972'
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: OSU
-  accounts:
-    github: 'noor-albader'
 -
-  nickname: "Sushma Naithani"
+  accounts:
+    github: naithanis
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://oregonstate.edu'
+  nickname: 'Sushma Naithani'
+  organization: OSU
   uri: 'http://orcid.org/0000-0001-7819-4552'
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: OSU
-  accounts:
-    github: 'naithanis'
 -
-  nickname: "Parul Gupta"
+  accounts:
+    github: guptapa
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://oregonstate.edu'
+  nickname: 'Parul Gupta'
+  organization: OSU
   uri: 'http://orcid.org/0000-0002-0190-8753'
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: OSU
-  accounts:
-    github: 'guptapa'
 -
-  nickname: "Tom Conlin"
-  uri: 'http://orcid.org/0000-0003-0355-5581'
+  accounts:
+    github: TomConlin
   authorizations:
-   noctua:
-     go:
-       allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://monarchinitiative.org'
+  nickname: 'Tom Conlin'
   organization: Monarch
-  accounts:
-    github: 'TomConlin'
+  uri: 'http://orcid.org/0000-0003-0355-5581'
 -
-  nickname: "Dhirendra Kumar"
-  uri: 'http://orcid.org/0000-0001-8899-9055'
+  accounts:
+    github: gitkumard
   authorizations:
-   noctua:
-     go:
-       allow-edit: true
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://planteome.org'
+  nickname: 'Dhirendra Kumar'
   organization: Planteome
-  accounts:
-    github: 'gitkumard'
+  uri: 'http://orcid.org/0000-0001-8899-9055'
 -
-  nickname: "Eric Douglass"
+  accounts:
+    github: dougli1sqrd
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://geneontology.org'
+  nickname: 'Eric Douglass'
+  organization: 'GO Central'
   uri: 'http://orcid.org/0000-0001-6946-1807'
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: GO
-  accounts:
-    github: 'dougli1sqrd'
 -
-  nickname: "Kent Shefchek"
+  accounts:
+    github: kshefchek
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.ohsu.edu'
+  nickname: 'Kent Shefchek'
+  organization: OHSU
   uri: 'http://orcid.org/0000-0001-6439-2224'
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: OHSU
-  accounts:
-    github: 'kshefchek'
 -
-  nickname: "Maureen Hoatlin"
-  uri: 'http://orcid.org/0000-0002-6521-9543'
+  accounts:
+    github: dnahotline
   authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: OHSU
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'http://monarchinitiative.org'
     - 'https://ncats.nih.gov/translator'
+  nickname: 'Maureen Hoatlin'
+  organization: OHSU
+  uri: 'http://orcid.org/0000-0002-6521-9543'
+-
   accounts:
-    github: 'dnahotline'
--
-  nickname: "Terry L. Jackson"
-  uri: 'http://orcid.org/0000-0003-2387-6411'
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: SGD
-  groups:
-    - 'http://www.yeastgenome.org'
-  accounts:
-    github: 'Jackson73'
--
-  nickname: "Marek Skrzypek"
-  uri: 'http://orcid.org/0000-0001-6749-615X'
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: SGD
-  groups:
-    - 'http://www.yeastgenome.org'
-  accounts:
-    github: 'marekskrzypek'
--
-  nickname: "Kevin MacPherson"
-  uri: 'http://orcid.org/0000-0002-2657-8762'
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: SGD
-  groups:
-    - 'http://www.yeastgenome.org'
-  accounts:
-    github: 'kmacpher5'
--
-  nickname: "Sage Hellerstedt"
-  uri: 'http://orcid.org/0000-0002-5299-5308'
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: SGD
-  groups:
-    - 'http://www.yeastgenome.org'
-  accounts:
-    github: 'Shellerstedt'
--
-  nickname: "Jane Mendel"
-  uri: 'http://orcid.org/0000-0003-2273-477X'
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: WB
-  groups:
-    - 'http://www.wormbase.org'
-  accounts:
-    github: 'mendelje'
--
-  nickname: "Nemo Nobody"
-  comment: "Demonstrastion user for various software."
-  uri: 'GOC:nemo'
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: LBL
--
-  nickname: "Hyeongsik Kim"
-  uri: 'http://orcid.org/0000-0002-3002-9838'
+    github: Jackson73
   authorizations:
     noctua:
       go:
         allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
+  nickname: 'Terry L. Jackson'
+  organization: SGD
+  uri: 'http://orcid.org/0000-0003-2387-6411'
+-
+  accounts:
+    github: marekskrzypek
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
+  nickname: 'Marek Skrzypek'
+  organization: SGD
+  uri: 'http://orcid.org/0000-0001-6749-615X'
+-
+  accounts:
+    github: kmacpher5
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
+  nickname: 'Kevin MacPherson'
+  organization: SGD
+  uri: 'http://orcid.org/0000-0002-2657-8762'
+-
+  accounts:
+    github: Shellerstedt
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
+  nickname: 'Sage Hellerstedt'
+  organization: SGD
+  uri: 'http://orcid.org/0000-0002-5299-5308'
+-
+  accounts:
+    github: mendelje
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.wormbase.org'
+  nickname: 'Jane Mendel'
+  organization: WB
+  uri: 'http://orcid.org/0000-0003-2273-477X'
+-
+  comment: 'Demonstration user for various software.'
+  groups:
+    - 'http://lbl.gov'
+  nickname: 'Nemo Nobody'
   organization: LBL
+  uri: 'GOC:nemo'
+-
+  accounts:
+    github: yy20716
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'http://lbl.gov'
     - 'http://geneontology.org'
-  accounts:
-    github: 'yy20716'
+  nickname: 'Hyeongsik Kim'
+  organization: LBL
+  uri: 'http://orcid.org/0000-0002-3002-9838'
 -
-  nickname: "Jae Cho"
-  uri: 'http://orcid.org/0000-0002-6534-116X'
+  accounts:
+    github: WBjae
   authorizations:
     noctua:
       go:
         allow-edit: true
-  organization: WB
   groups:
     - 'http://www.wormbase.org'
-  accounts:
-    github: 'WBjae'
+  nickname: 'Jae Cho'
+  organization: WB
+  uri: 'http://orcid.org/0000-0002-6534-116X'
 -
-  nickname: "Tremayne Mushayahama"
-  uri: 'http://orcid.org/0000-0002-2874-6934'
+  accounts:
+    github: tmushayahama
   authorizations:
     noctua:
       go:
         allow-edit: true
-  organization: USC
   groups:
     - 'http://geneontology.org'
-  accounts:
-    github: 'tmushayahama'
+  nickname: 'Tremayne Mushayahama'
+  organization: USC
+  uri: 'http://orcid.org/0000-0002-2874-6934'
 -
-  nickname: "Livia Perfetto"
-  uri: 'http://orcid.org/0000-0003-4392-8725'
+  accounts:
+    github: liviap
   authorizations:
-    noctua-go:
-      allow-edit: true
-  xref: 'GOC:lnp'
-  organization: InTact
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://www.ebi.ac.uk/intact'
-  accounts:
-    github: 'liviap'
+  nickname: 'Livia Perfetto'
+  organization: InTact
+  uri: 'http://orcid.org/0000-0003-4392-8725'
+  xref: 'GOC:lnp'
 -
-  nickname: 'Ben Good'
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  uri: 'http://orcid.org/0000-0002-7334-7852'
-  organization: LBL
-  groups:
-    - 'http://geneontology.org'
   accounts:
-    github: 'goodb'
--
-  nickname: 'Dustin Ebert'
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  uri: 'http://orcid.org/0000-0002-6659-0416'
-  organization: USC
-  groups:
-    - 'http://geneontology.org'
-  accounts:
-    github: 'dustine32'
--
-  nickname: 'Laurent-Philippe Albou'
-  authorizations:
-    noctua-go:
-      allow-edit: true
-  uri: 'http://orcid.org/0000-0001-5801-1974'
-  organization: USC
-  groups:
-    - 'http://geneontology.org'
-  accounts:
-    github: 'lpalbou'
--
-  nickname: "Paul W. Sternberg"
-  uri: 'http://orcid.org/0000-0002-7699-0173'
+    github: goodb
   authorizations:
     noctua:
       go:
         allow-edit: true
-  organization: WB
+  groups:
+    - 'http://geneontology.org'
+  nickname: 'Ben Good'
+  organization: LBL
+  uri: 'http://orcid.org/0000-0002-7334-7852'
+-
+  accounts:
+    github: dustine32
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://geneontology.org'
+  nickname: 'Dustin Ebert'
+  organization: USC
+  uri: 'http://orcid.org/0000-0002-6659-0416'
+-
+  accounts:
+    github: lpalbou
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://geneontology.org'
+  nickname: 'Laurent-Philippe Albou'
+  organization: USC
+  uri: 'http://orcid.org/0000-0001-5801-1974'
+-
+  accounts:
+    github: paulwsternberg
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'http://www.wormbase.org'
-  accounts:
-    github: 'paulwsternberg'
+  nickname: 'Paul W. Sternberg'
+  organization: WB
+  uri: 'http://orcid.org/0000-0002-7699-0173'
 -
-  nickname: "Patrick Ng"
+  accounts:
+    github: patrickcng90
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
+  nickname: 'Patrick Ng'
+  organization: SGD
   uri: 'http://orcid.org/0000-0001-8208-652X'
+-
+  accounts:
+    github: barbdunn
   authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: SGD
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'http://www.yeastgenome.org'
-  accounts:
-    github: 'patrickcng90'
--
-  nickname: "Barbara Dunn"
+  nickname: 'Barbara Dunn'
+  organization: SGD
   uri: 'http://orcid.org/0000-0002-7041-0035'
-  authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: SGD
-  groups:
-    - 'http://www.yeastgenome.org'
-  accounts:
-    github: 'barbdunn'
 -
-  nickname: "Yalbi Itzel Balderas Martinez"
-  uri: 'http://orcid.org/0000-0001-6400-0526'
+  accounts:
+    github: Yalbibalderas
   authorizations:
-   noctua:
-     go:
-       allow-edit: true
-  organization: "CONACYT-INER"
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'http://www.iner.salud.gob.mx'
     - 'http://www.conacyt.gob.mx/index.php/el-conacyt/desarrollo-cientifico/catedrasconacyt'
-  accounts:
-    github: 'Yalbibalderas'
-# -
-#   nickname: ""
-#   uri: ''
-#   email-md5:
-#     -
-#   authorizations:
-#    noctua:
-#      go:
-#        allow-edit:
-#   organization:
-#   groups:
-#     - ''
-#   accounts:
-#     github: ''
-#     google-plus: ''
+  nickname: 'Yalbi Itzel Balderas Martinez'
+  organization: CONACYT-INER
+  uri: 'http://orcid.org/0000-0001-6400-0526'

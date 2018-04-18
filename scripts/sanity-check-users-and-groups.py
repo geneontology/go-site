@@ -156,9 +156,9 @@ def main():
             # If we have an auth with noctua-go with allow-edit set to True
             if user.get("authorizations", {}).get("noctua", {}).get("go", {}).get("allow-edit", False):
                 print("REPAIR?: Revoke {} noctua-go edit privileges.".format(user["nickname"]))
-                # if args.repair:
-                #     del user["authorizations"]["noctua"]["go"]
-                #     users[index] = user
+                if args.repair:
+                    del user["authorizations"]
+                    users[index] = user
 
     print("\nNo URI, or no ORCID:")
     print("===================")
