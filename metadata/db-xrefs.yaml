@@ -2513,8 +2513,8 @@
   generic_urls:
     - http://rgd.mcw.edu/
   entity_types:
-    - type_name: entity
-      type_id: BET:0000000
+    - type_name: gene
+      type_id: SO:0000704
       id_syntax: '[0-9]{4,7}'
       url_syntax: http://rgd.mcw.edu/rgdweb/search/search.html?term=[example_id]
       example_id: RGD:2004
