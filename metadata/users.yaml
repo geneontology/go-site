@@ -3677,3 +3677,16 @@
   nickname: 'Yalbi Itzel Balderas Martinez'
   organization: CONACYT-INER
   uri: 'http://orcid.org/0000-0001-6400-0526'
+-
+  accounts:
+    github: Achchuthan
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.genedb.org'
+    - 'http://eupathdb.org'
+  nickname: 'Achchuthan Shanmugasundram'
+  uri: 'http://orcid.org/0000-0003-2349-6929'
+  xref: 'GOC:ach'
