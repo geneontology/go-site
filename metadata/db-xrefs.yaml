@@ -3233,22 +3233,28 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: (WP:CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
-      url_syntax: http://www.wormbase.org/db/gene/gene?name=[example_id]
+      id_syntax: (WB(Gene|Transgene)[0-9]{8})
+      url_syntax: http://www.wormbase.org/get?name=[example_id]&class=Gene
       example_id: WB:WBGene00003001
-      example_url: http://www.wormbase.org/db/get?class=Gene;name=WBGene00003001
+      example_url: http://www.wormbase.org/get?name=WBGene00003001&class=Gene
+    - type_name: RNAi
+      type_id: SO:0000337
+      id_syntax: (WBRNAi[0-9]{8})
+      url_syntax: http://www.wormbase.org/get?name=[example_id]&class=RNAi
+      example_id: WB:WBRNAi00061231
+      example_url: http://www.wormbase.org/db/get?name=WBRNAi00061231;class=RNAi
     - type_name: variation
       type_id: VariO:0001
-      id_syntax: (WP:CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
-      url_syntax: http://www.wormbase.org/db/gene/gene?name=[example_id]
-      example_id: WB:WBGene00003001
-      example_url: http://www.wormbase.org/db/get?class=Gene;name=WBGene00003001
+      id_syntax: (WBVar[0-9]{8})
+      url_syntax: http://www.wormbase.org/get?name=[example_id]&class=Variation
+      example_id: WB:WBVar00249887
+      example_url: http://www.wormbase.org/get?name=WBVar00249887&class=Variation
     - type_name: protein
       type_id: PR:000000001
-      id_syntax: (WP:CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
-      url_syntax: http://www.wormbase.org/db/gene/gene?name=[example_id]
-      example_id: WB:WBGene00003001
-      example_url: http://www.wormbase.org/db/get?class=Gene;name=WBGene00003001
+      id_syntax: (WP:CE[0-9]{5})
+      url_syntax: http://www.wormbase.org/get?name=[example_id]&class=Protein
+      example_id: WP:CE01843&
+      example_url: http://www.wormbase.org/get?name=WP:CE01843&class=Protein
 - database: WB_REF
   name: WormBase database of nematode biology
   generic_urls:
