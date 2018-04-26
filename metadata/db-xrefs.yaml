@@ -3233,13 +3233,13 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: WBGene[0-9]{8})
+      id_syntax: (WBGene[0-9]{8})
       url_syntax: http://www.wormbase.org/get?name=[example_id]&class=Gene
       example_id: WB:WBGene00003001
       example_url: http://www.wormbase.org/get?name=WBGene00003001&class=Gene
     - type_name: transgene
       type_id: SO:0000902
-      id_syntax: WBTransgene[0-9]{8})
+      id_syntax: (WBTransgene[0-9]{8})
       url_syntax: http://www.wormbase.org/get?name=[example_id]&class=WBTransgene00001056
       example_id: WB:WBTransgene00001056
       example_url: http://www.wormbase.org/get?name=WBTransgene00001056&class=Transgene
@@ -3259,7 +3259,7 @@
       type_id: PR:000000001
       id_syntax: (WP:CE[0-9]{5})
       url_syntax: http://www.wormbase.org/get?name=[example_id]&class=Protein
-      example_id: WP:CE01843&
+      example_id: WP:CE01843
       example_url: http://www.wormbase.org/get?name=WP:CE01843&class=Protein
 - database: WB_REF
   name: WormBase database of nematode biology

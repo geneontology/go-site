@@ -25,4 +25,3 @@ pipeline/*.log
 *.egg-info
 env
 __pycache__
-.idea
