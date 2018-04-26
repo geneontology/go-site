@@ -290,3 +290,7 @@
   label: RNAcentral
   id: http://rnacentral.org
   shorthand: RNAcentral
+-
+  label: Complex Portal
+  id: https://www.ebi.ac.uk/complexportal
+  shorthand: ComplexPortal
