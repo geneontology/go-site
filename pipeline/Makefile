@@ -1,195 +1,52 @@
-OBO= http://purl.obolibrary.org/obo
-METADATA_DIR=../metadata/datasets
-REPORT=target/combined.report.md
-RDFOX_MEM ?= 32G
-GAF_OWL = target/go-gaf.owl
-ONT_MERGED = target/go-graphstore-merged.ttl
-PY_ENV ?= target/env
-PY_BIN ?= $(PY_ENV)/bin
-
-
-all: target/Makefile extra_files $(REPORT)
-
-all_blazegraph: all target/blazegraph.jnl
-
-.PHONY: clean
 clean:
 	rm -rf target/*
 
-# ----------------------------------------
-# Generic conversion
-# ----------------------------------------
-%.gz: %
-	gzip -c $< > $@
+METADATA_DIR=../metadata
 
-# ----------------------------------------
-# Additional metadata files required
-# ----------------------------------------
+GROUPS = $(foreach path,$(shell find $(METADATA_DIR)/datasets -name '*.yaml'),$(basename $(notdir $(path))))
+groups: $(foreach group,$(GROUPS),target/groups/$(group)/$(group)-owltools-check.txt) target/groups/goa/goa_uniprot_all.gaf.gz
 
-.PHONY: extra_files
-extra_files: $(GAF_OWL) target/go.obo target/datasets-metadata.json
-
-# TODO - update
-target/datasets-metadata.json:
-	python3 ../scripts/combine-datasets-metadata.py ../metadata/datasets/*yaml > $@.tmp && mv $@.tmp $@
-
-target/go.obo:
-	wget --no-check-certificate $(OBO)/go.obo -O $@.tmp && mv $@.tmp $@ && touch $@
-
+OBO= http://purl.obolibrary.org/obo
 ONTOLOGY = $(OBO)/go/snapshot/go.json
 target/go-ontology.json:
 	wget --no-check-certificate $(ONTOLOGY) -O $@.tmp && mv $@.tmp $@ && touch $@
 
-# target/GO.xrf_abbs:
-#	node ../scripts/db-xrefs-yaml2legacy.js  -i ../metadata/db-xrefs.yaml  > $@.tmp && mv $@.tmp $@
 
-proc:
-	python3 ./util/dataset-metadata-processor.py $(METADATA_DIR)/*.yaml
-
-# ----------------------------------------
-# OWLTools checks
-# ----------------------------------------
-
+GAF_OWL = target/go-gaf.owl
 $(GAF_OWL):
 	owltools --log-error $(OBO)/go/extensions/go-gaf.owl --merge-imports-closure --add-obo-shorthand-to-properties -o $@
 
-CATALOG_DETAILS=
+PY_ENV ?= target/env
+PY_BIN ?= $(PY_ENV)/bin
+VALIDATE = $(PY_BIN)/validate.py
+EXCLUDES = -x goa_uniprot_all -x goa_uniprot_gcrp -x goa_pdb
 
-PARSE_ASSOCS = $(PY_BIN)/ontobio-parse-assocs.py
-RDF_GEN = $(PY_BIN)/rdfgen.py
 
-%-owltools-check.txt: %.gaf.gz $(GAF_OWL)
-	gzip -dcf $< > $*.gaf
-	owltools --log-warning $(CATALOG_DETAILS) $(GAF_OWL) \
-	--gaf $*.gaf \
+%_valid.gaf.gz %_noiea.gaf.gz %.gaf.gz %-src.gaf.gz %.gpad.gz %.gpi.gz %_cam.ttl.gz %.report.md %.report.json %-owltools-check.txt %-summary.txt %-prediction.gaf %-prediction-report.txt %-incoherent.owl %-prediction-experimental.gaf %-prediction-experimental-report.txt : target/go-ontology.json
+	python3 $(VALIDATE) produce $(notdir $*) --gpi --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(EXCLUDES)
+	rm $(dir $*)*.gpad $(dir $*)*.gpi $(dir $*)*.ttl
+	owltools --log-warning $(GAF_OWL) \
+	--gaf blah.gaf \
 	--createReport \
-	--gaf-report-file $*-owltools-check.txt \
-	--gaf-report-summary-file $*-summary.txt \
-	--gaf-prediction-file $*-prediction.gaf \
-	--gaf-prediction-report-file $*-prediction-report.txt \
-	--gaf-validation-unsatisfiable-module $*-incoherent.owl \
-	--experimental-gaf-prediction-file $*-prediction-experimental.gaf \
-	--experimental-gaf-prediction-report-file $*-prediction-experimental-report.txt \
+	--gaf-report-file $(notdir $*)-owltools-check.txt \
+	--gaf-report-summary-file $(notdir $*)-summary.txt \
+	--gaf-prediction-file $(notdir $*)-prediction.gaf \
+	--gaf-prediction-report-file $(notdir $*)-prediction-report.txt \
+	--gaf-validation-unsatisfiable-module $(notdir $*)-incoherent.owl \
+	--experimental-gaf-prediction-file $(notdir $*)-prediction-experimental.gaf \
+	--experimental-gaf-prediction-report-file $(notdir $*)-prediction-experimental-report.txt \
 	--gaf-run-checks || echo 'errors found'
 	rm -f $*.gaf
 
-%.gaf.gz: %-src.gaf.gz target/go-ontology.json
-	gzip -dcf $< > $*-src.gaf
-	python3 $(PARSE_ASSOCS) -r target/go-ontology.json --filter-out IEA --filtered-file $*_noiea.gaf -f $*-src.gaf -o $*.gaf --report-md $*.report.md --report-json $*.report.json validate
-	rm $*-src.gaf
-	gzip -f $*_noiea.gaf
-	gzip -f $*.gaf
 
-%.gpad.gz: %.gaf.gz
-	gzip -dcf $< > $*.gaf
-	owltools --log-error --gaf $*.gaf --write-gpad -o $*.gpad.tmp && mv $*.gpad.tmp $*.gpad
-	rm $*.gaf
-	gzip -f $*.gpad
+target/groups/goa/goa_uniprot_all.gaf.gz target/groups/goa_uniprot_all/goa_uniprot_all_noiea.gaf.gz : target/alltaxons.txt target/groups/goa/goa_uniprot_all-src.gaf.gz
+	gzip -dcf target/groups/goa/goa_uniprot_all-src.gaf.gz | ./util/goa_filter | gzip -c > $@.tmp
+	cat noiea | gzip -cf > target/groups/goa/goa_uniprot_all_noiea.gaf.gz && rm noiea  && mv $@.tmp $@
 
-%.gpi.gz: %.gaf.gz
-	gzip -dcf $< > $*.gaf
-	owltools --log-error --gaf $*.gaf --write-gpi -o $*.gpi.tmp && mv $*.gpi.tmp $*.gpi
-	rm $*.gaf
-	gzip -f $*.gpi
-
-%_cam.ttl: %.gaf.gz $(ONT_MERGED) target/go-ontology.json
-	gzip -dcf  $< > $*.gaf
-	python3 $(RDF_GEN) convert -a gaf -r target/go-ontology.json -o $*_cam.ttl $*.gaf
-	gzip -cf $@ > $@.gz
-	rm $*.gaf
-
-%_inferred.ttl: %_cam.ttl
-	mkdir -p target/inferred
-	arachne --ontology=$(ONT_MERGED) --data=$< --export=$@ --inferred-only
-
-# Specific rule for goa_uniprot_all
-# The script goa_filter produces a `noiea` file, which are the annotations w/out IEA evidence.
-target/groups/goa_uniprot_all/goa_uniprot_all.gaf.gz target/groups/goa_uniprot_all/goa_uniprot_all_noiea.gaf.gz : target/alltaxons.txt target/groups/goa_uniprot_all/goa_uniprot_all-src.gaf.gz
-	gzip -dcf target/groups/goa_uniprot_all/goa_uniprot_all-src.gaf.gz | ./util/goa_filter | gzip -c > $@.tmp
-	cat noiea | gzip -cf > target/groups/goa_uniprot_all/goa_uniprot_all_noiea.gaf.gz && rm noiea  && mv $@.tmp $@
+GOA_URL := $(shell grep -A 10 "id: goa_uniprot_all.gaf" ../metadata/datasets/goa.yaml | grep source: | awk '{ print $$2 }')
+target/groups/goa/goa_uniprot_all-src.gaf.gz:
+	mkdir -p target/groups/goa
+	wget --retry-connrefused --waitretry=10 -t 10 --no-check-certificate $(GOA_URL) -O $@.tmp && mv $@.tmp $@
 
 target/alltaxons.txt:
 	python3 util/model_organism.py taxons ../metadata/datasets/ --out target/alltaxons.txt
-
-target/merged:
-	python3 util/paint_merge.py merge ../metadata/datasets/paint.yaml target/groups/
-	touch target/merged
-
-# ----------------------------------------
-# Makefile for building GAFs
-# ----------------------------------------
-# this defines 'all_targets'
-target/Makefile: ./util/generate-makefile.py
-	mkdir -p target
-	python3 $< ../metadata/datasets/*.yaml > $@.tmp && mv $@.tmp $@
-
-include target/Makefile
-
-$(REPORT): target/Makefile all_targets
-	cat target/groups/*/*.report.md > $@
-
-target/noctua-models:
-	# If target/noctua-models does not exist, then clone it
-	if [ ! -d target/nocuta-models ]; then git clone https://github.com/geneontology/noctua-models.git target/noctua-models; fi
-
-# ----------------------------------------
-# RDF
-# ----------------------------------------
-
-
-$(ONT_MERGED):
-	OWLTOOLS_MEMORY=12G owltools --log-error go-graphstore.owl --merge-imports-closure -o -f turtle $@
-.PRECIOUS: $(ONT_MERGED)
-
-# $(REPORT)
-target/rdf: $(ONT_MERGED)
-	mkdir -p target/rdf
-	cp target/groups/*/*_cam.ttl target/rdf/
-
-BGJAR = target/jars/blazegraph-jar.jar
-$(BGJAR):
-	mkdir -p target/jars && mvn package
-.PRECIOUS: $(BGJAR)
-
-BGMEM ?= 32G
-BG = java -server -XX:+UseG1GC -Xmx$(BGMEM) -cp $(BGJAR) com.bigdata.rdf.store.DataLoader
-
-# Load blazegraph
-
-BG_PORT = 8899
-METAGO = <http://model.geneontology.org/>
-GO_GRAPHSTORE_URI = http://purl.obolibrary.org/obo/go/extensions/go-graphstore.owl
-CAM_GRAPH_QUERY = '\
-	PREFIX dc: <http://purl.org/dc/elements/1.1/> \
-	SELECT ?source_graph \
-	WHERE { \
-		GRAPH ?source_graph { \
-			?source_graph dc:title ?title . \
-		} \
-	}'
-BG_PROPERTIES = conf/blazegraph.properties
-LOAD_TARGETS = $(ONT_MERGED) target/rdf target/noctua-models/models
-
-
-target/blazegraph.jnl: $(BGJAR) target/rdf target/noctua-models
-	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties load --use-ontology-graph $(LOAD_TARGETS)
-	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(GO_GRAPHSTORE_URI) --append-graph-name="_inferred"
-
-target/blazegraph-internal.jnl: target/blazegraph.jnl
-	cp $< $@
-	blazegraph-runner --journal=$@ update sparql/insert/insert_noctua_metadata.sparql
-	blazegraph-runner --journal=$@ update sparql/insert/insert_ontology_metadata.sparql
-
-target/blazegraph-production.jnl: target/blazegraph-internal.jnl
-	cp $< $@
-	blazegraph-runner --journal=$@ update sparql/delete/delete_non_production.sparql
-
-target/sparta-report.json: target/blazegraph-production.jnl
-	PY_ENV=$(PY_ENV) ./triplestore-rulecheck.sh 8898 $< $@
-
-#
-# load-inferences: target/rdf/rdfox.ttl
-# 	$(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties $<
-
-bg-start:
-	java -server -Xmx32g -Djetty.port=$(BG_PORT) -Djetty.overrideWebXml=conf/readonly_cors.xml -Dbigdata.propertyFile=conf/blazegraph.properties -cp target/jars/blazegraph-jar.jar:target/jars/jetty-servlets.jar com.bigdata.rdf.sail.webapp.StandaloneNanoSparqlServer
