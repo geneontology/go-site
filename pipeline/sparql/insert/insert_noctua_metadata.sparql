@@ -1,23 +1,23 @@
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX : <http://model.geneontology.org/>
 
 INSERT {
   GRAPH ?g {
     ?g :graphType :noctuaCam .
   }
-  GRAPH ?inf {
-    ?inf :graphType :noctuaCam .
-  }
 }
 WHERE {
 
-  GRAPH ?g {
-    ?g a owl:Ontology .
-    ?g <http://purl.org/dc/elements/1.1/title> ?title .
-  }
-
-  GRAPH ?inf {
-    ?inf :inferredFrom ?g .
+  {
+    GRAPH ?g {
+      ?g a owl:Ontology .
+      ?g <http://purl.org/dc/elements/1.1/title> ?title .
+    }
+  } UNION {
+    GRAPH ?g {
+      ?g prov:wasDerivedFrom ?ag .
+    }
   }
 }

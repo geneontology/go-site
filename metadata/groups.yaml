@@ -113,7 +113,11 @@
 -
   label: AspGD
   id: http://www.aspgd.org
-  shorthand: AspGD_CGD
+  shorthand: AspGD
+-
+  label: CGD
+  id: http://candidagenome.org
+  shorthand: CGD
 -
   label: University of Toronto
   id: http://www.utoronto.ca
@@ -155,7 +159,7 @@
   id: http://www.buffalo.edu
   shorthand: UB
 -
-  label: UCL-Parkinson's UK Annotation Project
+  label: "UCL-Parkinson's UK Annotation Project"
   id: http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/parkinsons
   shorthand: UCL-Parkinsons
 -
@@ -262,3 +266,31 @@
   label: E. coli
   id: http://www.bio.tamu.edu
   shorthand: E_coli
+-
+  label: GeneDB
+  id: http://www.genedb.org
+  shorthand: GeneDB
+-
+  label: EuPathDB
+  id: http://eupathdb.org
+  shorthand: EuPathDB
+-
+  label: CONACYT
+  id: http://www.conacyt.gob.mx/index.php/el-conacyt/desarrollo-cientifico/catedrasconacyt
+  shorthand: CONACYT
+-
+  label: INER
+  id: http://www.iner.salud.gob.mx
+  shorthand: INER
+-
+  label: YubioLab-GO
+  id: http://citgenedb.yubiolab.org
+  shorthand: YubioLab-GO
+-
+  label: RNAcentral
+  id: http://rnacentral.org
+  shorthand: RNAcentral
+-
+  label: Complex Portal
+  id: https://www.ebi.ac.uk/complexportal
+  shorthand: ComplexPortal
