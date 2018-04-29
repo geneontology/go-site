@@ -196,7 +196,6 @@
       example_id: BIOSIS:200200247281
 - database: BRENDA
   name: BRENDA, The Comprehensive Enzyme Information System
-  rdf_uri_prefix: http://purl.obolibrary.org/obo/BTO_
   generic_urls:
     - http://www.brenda-enzymes.info
   entity_types:
