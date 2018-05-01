@@ -55,9 +55,37 @@ EXCLUDES = -x goa_uniprot_all -x goa_uniprot_gcrp -x goa_pdb
 	--gaf-run-checks || echo 'errors found'
 	rm -f $*.gaf
 
+# ----------------------------------------------------------------------------------------
+# goa_uniprot_all, I'm so sorry. This has to be special cased basically. This is so sad :(
+# -----------------------------------------------------------------------------------------
+
+GOA_UNIPROT_ALL = target/groups/goa/goa_uniprot_all_noiea-owltools-check.txt target/groups/goa/goa_uniprot_all_noiea.gpi.gz target/groups/goa/goa_uniprot_all_noiea.gpad.gz target/groups/goa/goa_uniprot_all_noiea_cam.ttl
+
 target/groups/goa/goa_uniprot_all.gaf.gz target/groups/goa/goa_uniprot_all_noiea.gaf.gz : target/alltaxons.txt target/groups/goa/goa_uniprot_all-src.gaf.gz
 	gzip -dcf target/groups/goa/goa_uniprot_all-src.gaf.gz | ./util/goa_filter | gzip -c > $@.tmp
 	cat noiea | gzip -cf > target/groups/goa/goa_uniprot_all_noiea.gaf.gz && rm noiea  && mv $@.tmp $@
+
+RDF_GEN = $(PY_BIN)/rdfgen.py
+target/groups/goa/goa_uniprot_all_noiea_cam.ttl: target/groups/goa/goa_uniprot_all_noiea.gaf.gz
+	gzip -dcf  $< > target/groups/goa/goa_uniprot_all_noiea.gaf
+	python3 $(RDF_GEN) convert -a gaf -r target/go-ontology.json -o target/groups/goa/goa_uniprot_all_noiea_cam.ttl target/groups/goa/goa_uniprot_all_noiea.gaf
+	gzip -cf $@ > $@.gz
+	rm target/groups/goa/goa_uniprot_all_noiea.gaf
+
+target/groups/goa/goa_uniprot_all_noiea.gpad.gz: target/groups/goa/goa_uniprot_all_noiea.gaf.gz
+	gzip -dcf $< > target/groups/goa/goa_uniprot_all_noiea.gaf
+	owltools --log-error --gaf target/groups/goa/goa_uniprot_all_noiea.gaf --write-gpad -o target/groups/goa/goa_uniprot_all_noiea.gpad.tmp && mv target/groups/goa/goa_uniprot_all_noiea.gpad.tmp target/groups/goa/goa_uniprot_all_noiea.gpad
+	rm target/groups/goa/goa_uniprot_all_noiea.gaf
+	gzip -f target/groups/goa/goa_uniprot_all_noiea.gpad
+
+target/groups/goa/goa_uniprot_all_noiea.gpi.gz: target/groups/goa/goa_uniprot_all_noiea.gaf.gz
+	gzip -dcf $< > target/groups/goa/goa_uniprot_all_noiea.gaf
+	owltools --log-error --gaf target/groups/goa/goa_uniprot_all_noiea.gaf --write-gpi -o target/groups/goa/goa_uniprot_all_noiea.gpi.tmp && mv target/groups/goa/goa_uniprot_all_noiea.gpi.tmp target/groups/goa/goa_uniprot_all_noiea.gpi
+	rm target/groups/goa/goa_uniprot_all_noiea.gaf
+	gzip -f target/groups/goa/goa_uniprot_all_noiea.gpi
+
+.PHONY: target/groups/goa/goa_uniprot_all-owltools-check.txt
+target/groups/goa/goa_uniprot_all-owltools-check.txt: target/groups/goa/goa_uniprot_all.gaf.gz $(GOA_UNIPROT_ALL)
 
 GOA_URL := $(shell grep -A 10 "id: goa_uniprot_all.gaf" ../metadata/datasets/goa.yaml | grep source: | awk '{ print $$2 }')
 target/groups/goa/goa_uniprot_all-src.gaf.gz:
