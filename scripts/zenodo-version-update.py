@@ -18,7 +18,7 @@ import logging
 import os
 import json
 import requests
-from requests_toolbelt.multipart.encoder import MultipartEncoder
+# from requests_toolbelt.multipart.encoder import MultipartEncoder
 import datetime
 
 ## Logger basic setup.
@@ -233,14 +233,12 @@ def main():
     #                             "Content-Type":encoder.content_type
     #                         })
     ## Try 3
-    response = requests.put('%s/%s' % (new_bucket_url, filename),
-                            data = {'filename': filename},
-                            files = {'file': open(args.file, 'rb')},
-                            params = {'access_token': args.key},
-                            headers={
-                                "Accept":"application/json",
-                                "Content-Type":"application/octet-stream"
-                            })
+
+    with open(args.file, "rb") as fp:
+        response = requests.put("{url}/{fname}".format(url=new_bucket_url, fname=filename),
+                                data=fp,
+                                params={'access_token': args.key}
+                                )
     # ## Try 2
     # encoder = MultipartEncoder({
     #     #'filename': filename,
@@ -253,7 +251,7 @@ def main():
     # response = requests.post(server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files', params={'access_token': args.key}, data=data, files=files)
 
     ## Test correct file add.
-    if response.status_code != 200:
+    if response.status_code > 200:
         die_screaming('could not add file', response, new_dep_id)
 
     ###
