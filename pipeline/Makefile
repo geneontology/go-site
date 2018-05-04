@@ -36,8 +36,8 @@ EXCLUDES = -x goa_uniprot_all -x goa_uniprot_gcrp -x goa_pdb
 	mkdir -p $(dir $*) # Make the group directory
 	# This will split each slash in the path to space separated list, then we pick the last one, the group directory
 	$(eval group := $(lastword $(subst /, ,$(dir $*))))
-	python3 $(VALIDATE) produce $(group) --gpi --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(EXCLUDES)
-	rm $(dir $*)*.gaf $(dir $*)*.gpad $(dir $*)*.gpi
+	python3 $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(EXCLUDES)
+	rm $(dir $*)*.gaf $(dir $*)*.gpad $(dir $*)*.gpi $(dir $*)*.ttl
 
 # %-summary.txt %-prediction.gaf %-prediction-report.txt %-incoherent.owl %-prediction-experimental.gaf %-prediction-experimental-report.txt
 %-owltools-check.txt: %.gaf.gz $(GAF_OWL)
