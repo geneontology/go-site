@@ -4,10 +4,13 @@ clean:
 METADATA_DIR=../metadata
 
 # for each path in the shell `find`, get just the filename, then strip the extension for each group
+# Ex: will end up being just the yaml file names in the datasets directory (aspgd mgi goa fb [etc])
 GROUPS = $(foreach path,$(shell find $(METADATA_DIR)/datasets -name '*.yaml'),$(basename $(notdir $(path))))
 # for each group, get the base target path from each gaf dataset in a group yaml.
+# Ex: fb -> target/groups/fb/fb; goa -> target/groups/goa/goa_uniprot_all target/groups/goa/goa_chicken_complex [etc]
 BASE_GROUP_PATH = $(foreach group,$(GROUPS),$(addprefix target/groups/$(group)/,$(basename $(shell cat ../metadata/datasets/$(group).yaml | grep "id:.*gaf" | awk '{ print $$2 }'))))
 # produces the set of owltools-check.txt targets. One for each in the BASE_GROUP_PATH
+# target/groups/fb/fb -> target/groups/fb/fb-owltools-check.txt, for everything in BASE_GROUP_PATH
 GAFCHECKS = $(addsuffix -owltools-check.txt,$(BASE_GROUP_PATH))
 
 # all owltools check groups
@@ -35,11 +38,12 @@ EXCLUDES = -x goa_uniprot_all -x goa_uniprot_gcrp -x goa_pdb
 %_valid.gaf.gz %_noiea.gaf.gz %.gaf.gz %-src.gaf.gz %.gpad.gz %.gpi.gz %_cam.ttl.gz %.report.md %.report.json: target/go-ontology.json
 	mkdir -p $(dir $*) # Make the group directory
 	# This will split each slash in the path to space separated list, then we pick the last one, the group directory
+	# assigns a make variable called `group` computed from the $* generic target stem.
+	# Ex: target/groups/fb/fb.gaf as a target, the stem ($*) is target/groups/fb/fb, so `group` gets assigned to fb
 	$(eval group := $(lastword $(subst /, ,$(dir $*))))
-	python3 $(VALIDATE) produce $(group) --gpi --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(EXCLUDES)
-	rm $(dir $*)*.gaf $(dir $*)*.gpad $(dir $*)*.gpi
+	python3 $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(EXCLUDES)
+	rm $(dir $*)*.gaf $(dir $*)*.gpad $(dir $*)*.gpi $(dir $*)*.ttl
 
-# %-summary.txt %-prediction.gaf %-prediction-report.txt %-incoherent.owl %-prediction-experimental.gaf %-prediction-experimental-report.txt
 %-owltools-check.txt: %.gaf.gz $(GAF_OWL)
 	gzip -dcf $< > $*.gaf
 	owltools --log-warning $(GAF_OWL) \
@@ -55,9 +59,37 @@ EXCLUDES = -x goa_uniprot_all -x goa_uniprot_gcrp -x goa_pdb
 	--gaf-run-checks || echo 'errors found'
 	rm -f $*.gaf
 
+# ----------------------------------------------------------------------------------------
+# goa_uniprot_all, I'm so sorry. This has to be special cased basically. This is so sad :(
+# -----------------------------------------------------------------------------------------
+
+GOA_UNIPROT_ALL = target/groups/goa/goa_uniprot_all_noiea-owltools-check.txt target/groups/goa/goa_uniprot_all_noiea.gpi.gz target/groups/goa/goa_uniprot_all_noiea.gpad.gz target/groups/goa/goa_uniprot_all_noiea_cam.ttl
+
 target/groups/goa/goa_uniprot_all.gaf.gz target/groups/goa/goa_uniprot_all_noiea.gaf.gz : target/alltaxons.txt target/groups/goa/goa_uniprot_all-src.gaf.gz
 	gzip -dcf target/groups/goa/goa_uniprot_all-src.gaf.gz | ./util/goa_filter | gzip -c > $@.tmp
 	cat noiea | gzip -cf > target/groups/goa/goa_uniprot_all_noiea.gaf.gz && rm noiea  && mv $@.tmp $@
+
+RDF_GEN = $(PY_BIN)/rdfgen.py
+target/groups/goa/goa_uniprot_all_noiea_cam.ttl: target/groups/goa/goa_uniprot_all_noiea.gaf.gz
+	gzip -dcf  $< > target/groups/goa/goa_uniprot_all_noiea.gaf
+	python3 $(RDF_GEN) convert -a gaf -r target/go-ontology.json -o target/groups/goa/goa_uniprot_all_noiea_cam.ttl target/groups/goa/goa_uniprot_all_noiea.gaf
+	gzip -cf $@ > $@.gz
+	rm target/groups/goa/goa_uniprot_all_noiea.gaf
+
+target/groups/goa/goa_uniprot_all_noiea.gpad.gz: target/groups/goa/goa_uniprot_all_noiea.gaf.gz
+	gzip -dcf $< > target/groups/goa/goa_uniprot_all_noiea.gaf
+	owltools --log-error --gaf target/groups/goa/goa_uniprot_all_noiea.gaf --write-gpad -o target/groups/goa/goa_uniprot_all_noiea.gpad.tmp && mv target/groups/goa/goa_uniprot_all_noiea.gpad.tmp target/groups/goa/goa_uniprot_all_noiea.gpad
+	rm target/groups/goa/goa_uniprot_all_noiea.gaf
+	gzip -f target/groups/goa/goa_uniprot_all_noiea.gpad
+
+target/groups/goa/goa_uniprot_all_noiea.gpi.gz: target/groups/goa/goa_uniprot_all_noiea.gaf.gz
+	gzip -dcf $< > target/groups/goa/goa_uniprot_all_noiea.gaf
+	owltools --log-error --gaf target/groups/goa/goa_uniprot_all_noiea.gaf --write-gpi -o target/groups/goa/goa_uniprot_all_noiea.gpi.tmp && mv target/groups/goa/goa_uniprot_all_noiea.gpi.tmp target/groups/goa/goa_uniprot_all_noiea.gpi
+	rm target/groups/goa/goa_uniprot_all_noiea.gaf
+	gzip -f target/groups/goa/goa_uniprot_all_noiea.gpi
+
+.PHONY: target/groups/goa/goa_uniprot_all-owltools-check.txt
+target/groups/goa/goa_uniprot_all-owltools-check.txt: target/groups/goa/goa_uniprot_all.gaf.gz $(GOA_UNIPROT_ALL)
 
 GOA_URL := $(shell grep -A 10 "id: goa_uniprot_all.gaf" ../metadata/datasets/goa.yaml | grep source: | awk '{ print $$2 }')
 target/groups/goa/goa_uniprot_all-src.gaf.gz:
