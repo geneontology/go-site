@@ -117,6 +117,7 @@
       example_url: http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid=ASPL0000067538
 - database: AspGD_LOCUS
   name: Aspergillus Genome Database
+  rdf_uri_prefix: http://identifiers.org/aspgd.locus/
   generic_urls:
     - http://www.aspergillusgenome.org/
   entity_types:
@@ -138,6 +139,7 @@
 - database: BFO
   name: Basic Formal Ontology
   description: An upper ontology used by Open Bio Ontologies (OBO) Foundry. BFO contains upper-level classes as well as core relations such as part_of (BFO_0000050)
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/BFO_
   generic_urls:
     - http://purl.obolibrary.org/obo/bfo
   entity_types:
@@ -252,6 +254,7 @@
 - database: CAS
   name: CAS Chemical Registry
   description: CAS REGISTRY is the most authoritative collection of disclosed chemical substance information, containing more than 54 million organic and inorganic substances and 62 million sequences. CAS REGISTRY covers substances identified from the scientific literature from 1957 to the present, with additional substances going back to the early 1900s.
+  rdf_uri_prefix: http://identifiers.org/cas/
   generic_urls:
     - http://www.cas.org/expertise/cascontent/registry/index.html
   entity_types:
@@ -326,6 +329,7 @@
   name: Candida Genome Database
   synonyms:
     - CGDID
+  rdf_uri_prefix: http://identifiers.org/cgd/
   generic_urls:
     - http://www.candidagenome.org/
   entity_types:
@@ -376,6 +380,7 @@
   name: Chemical Entities of Biological Interest
   synonyms:
     - ChEBI
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/CHEBI_
   generic_urls:
     - http://www.ebi.ac.uk/chebi/
   entity_types:
@@ -387,6 +392,7 @@
       example_url: http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:17234
 - database: CL
   name: Cell Type Ontology
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/CL_
   generic_urls:
     - http://cellontology.org
   entity_types:
@@ -503,6 +509,7 @@
       example_url: http://genomes.cribi.unipd.it/cgi-bin/pqs2/report.pl?gene_name=VIT_00s0173g00270&release=v1
 - database: dbSNP
   name: NCBI dbSNP
+  rdf_uri_prefix: http://identifiers.org/dbsnp/
   generic_urls:
     - http://www.ncbi.nlm.nih.gov/projects/SNP
   entity_types:
@@ -514,6 +521,7 @@
       example_url: http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=rs3131969
 - database: DDANAT
   name: Dictyostelium discoideum anatomy
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/DDANAT_
   generic_urls:
     - http://dictybase.org/Dicty_Info/dicty_anatomy_ontology.html
   entity_types:
@@ -543,6 +551,7 @@
   synonyms:
     - DDB
     - DictyBase
+  rdf_uri_prefix: http://identifiers.org/dictybase/
   generic_urls:
     - http://dictybase.org
   entity_types:
@@ -620,6 +629,7 @@
       example_url: http://www.ecogene.org/geneInfo.php?eck_id=ECK3746
 - database: ECO
   name: Evidence Code ontology
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/ECO_
   generic_urls:
     - http://www.geneontology.org/
   entity_types:
@@ -681,6 +691,7 @@
 - database: EMAPA
   name: Mouse gross anatomy and development, abstract
   description: "A time-independent Mouse Anatomical Dictionary; part of Gene Expression Database"
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/EMAPA_
   generic_urls:
     - http://emouseatlas.org/
   entity_types:
@@ -719,6 +730,7 @@
   synonyms:
     - Ensembl
     - ensembl
+  rdf_uri_prefix: http://identifiers.org/ensembl/
   generic_urls:
     - http://www.ensembl.org/
   entity_types:
@@ -857,6 +869,7 @@
   synonyms:
     - FlyBase
     - FLYBASE
+  rdf_uri_prefix: http://identifiers.org/flybase/
   generic_urls:
     - http://flybase.org/
   entity_types:
@@ -868,6 +881,7 @@
       example_url: http://flybase.org/reports/FBgn0000024.html
 - database: FBbt
   name: Drosophila gross anatomy
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/FBbt_
   generic_urls:
     - http://flybase.org/
   entity_types:
@@ -878,6 +892,7 @@
       example_url: http://flybase.org/cgi-bin/fbcvq.html?query=FBbt:00005177
 - database: FMA
   name: Foundational Model of Anatomy
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/FMA_
   generic_urls:
     - http://sig.biostr.washington.edu/projects/fm/index.html
   entity_types:
@@ -886,6 +901,7 @@
       example_id: FMA:61905
 - database: FYPO
   name: Fission Yeast Phenotype Ontology
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/FYPO_
   generic_urls:
     - http://www.pombase.org/
   entity_types:
@@ -935,6 +951,7 @@
       example_url: http://gene3d.biochem.ucl.ac.uk/search?mode=family&sterm=3.30.390.30
 - database: GeneDB
   name: GeneDB
+  rdf_uri_prefix: http://identifiers.org/genedb/
   generic_urls:
     - http://www.genedb.org/gene/
   entity_types:
@@ -980,6 +997,7 @@
       type_id: BET:0000000
 - database: GO
   name: Gene Ontology Database
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/GO_
   generic_urls:
     - http://amigo.geneontology.org/
   entity_types:
@@ -1084,6 +1102,7 @@
   name: Gramene
   synonyms:
     - GR_gene
+  rdf_uri_prefix: http://identifiers.org/gramene.gene/
   generic_urls:
     - http://www.gramene.org/
   entity_types:
@@ -1106,6 +1125,7 @@
   name: Gramene
   synonyms:
     - GR_protein
+  rdf_uri_prefix: http://identifiers.org/gramene.protein/
   generic_urls:
     - http://www.gramene.org/
   entity_types:
@@ -1117,6 +1137,7 @@
       example_url: http://www.gramene.org/db/protein/protein_search?acc=Q6VSV0
 - database: GR_QTL
   name: Gramene
+  rdf_uri_prefix: http://identifiers.org/gramene.qtl/
   generic_urls:
     - http://www.gramene.org/
   entity_types:
@@ -1208,6 +1229,7 @@
       example_url: http://hamap.expasy.org/unirule/MF_00131
 - database: HGNC
   name: HUGO Gene Nomenclature Committee
+  rdf_uri_prefix: http://identifiers.org/hgnc/
   generic_urls:
     - http://www.genenames.org/
   entity_types:
@@ -1219,6 +1241,7 @@
       example_url: http://www.genenames.org/data/hgnc_data.php?hgnc_id=HGNC:29
 - database: HGNC_gene
   name: HUGO Gene Nomenclature Committee
+  rdf_uri_prefix: http://identifiers.org/hgnc.gene/
   generic_urls:
     - http://www.genenames.org/
   entity_types:
@@ -1283,6 +1306,7 @@
       example_id: IMGT_LIGM:U03895
 - database: IntAct
   name: IntAct protein interaction database
+  rdf_uri_prefix: http://identifiers.org/intact/
   generic_urls:
     - http://www.ebi.ac.uk/intact/
   entity_types:
@@ -1300,6 +1324,7 @@
       example_url: http://www.ebi.ac.uk/complexportal/complex/EBI-10205244
 - database: InterPro
   name: InterPro database of protein domains and motifs
+  rdf_uri_prefix: http://identifiers.org/interpro/
   synonyms:
     - INTERPRO
     - IPR
@@ -1337,9 +1362,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://oryzasnp.org/iric-portal/_variety.zul?irisid=[example_id]
-      example_id: IRIS%20313-11252
-      example_url: http://oryzasnp.org/iric-portal/_variety.zul?irisid=IRIS%20313-11252
+      url_syntax: http://oryzasnp.org/_variety.zul?irisid=[example_id]
+      example_id: IRIS_313-8922
+      example_url: http://oryzasnp.org/_variety.zul?irisid=IRIS_313-8922
 - database: IRGC
   name: International Rice Genebank Collection
   generic_urls:
@@ -1520,6 +1545,7 @@
       type_id: BET:0000000
 - database: KEGG_ENZYME
   name: KEGG Enzyme Database
+  rdf_uri_prefix: http://identifiers.org/kegg.enzyme/
   generic_urls:
     - http://www.genome.jp/dbget-bin/www_bfind?enzyme
   entity_types:
@@ -1542,6 +1568,7 @@
       example_url: http://www.genome.jp/dbget-bin/www_bget?cpd:C00577
 - database: KEGG_PATHWAY
   name: KEGG Pathways Database
+  rdf_uri_prefix: http://identifiers.org/kegg.pathway/
   generic_urls:
     - http://www.genome.jp/kegg/pathway.html
   entity_types:
@@ -1593,6 +1620,7 @@
 - database: MA
   name: Adult Mouse Anatomical Dictionary
   description: Adult Mouse Anatomical Dictionary; part of Gene Expression Database
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/MA_
   generic_urls:
     - http://www.informatics.jax.org/
   entity_types:
@@ -1623,6 +1651,7 @@
       example_url: http://maizegdb.org/gene_center/gene/12098
 - database: MaizeGDB_Locus
   name: MaizeGDB
+  rdf_uri_prefix: http://identifiers.org/maizegdb.locus/
   generic_urls:
     - http://www.maizegdb.org
   entity_types:
@@ -1698,19 +1727,23 @@
       example_id: MEROPS_fam:M18
       example_url: http://merops.sanger.ac.uk/cgi-bin/famsum?family=m18
 - database: MeSH
+  synonyms:
+    - MESH
+    - MSH
   name: Medical Subject Headings
   generic_urls:
     - https://www.nlm.nih.gov/mesh/MBrowser.html
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.nlm.nih.gov/cgi/mesh/2015/MB_cgi?view=expanded&field=uid&term=[example_id]
+      url_syntax: http://n2t.net/MESH:[example_id]
       example_id: MeSH:D017209
-      example_url: http://www.nlm.nih.gov/cgi/mesh/2015/MB_cgi?view=expanded&field=uid&term=D017209
+      example_url: http://n2t.net/MESH:D017209
 - database: MetaCyc
   name: Metabolic Encyclopedia of metabolic and other pathways
   synonyms:
     - METACYC
+  rdf_uri_prefix: http://identifiers.org/metacyc/
   generic_urls:
     - http://metacyc.org/
   entity_types:
@@ -1739,6 +1772,7 @@
       example_id: MGD:Adcy9
 - database: MGI
   name: Mouse Genome Informatics
+  rdf_uri_prefix: http://identifiers.org/mgi/
   generic_urls:
     - http://www.informatics.jax.org/
   entity_types:
@@ -1837,6 +1871,7 @@
     - GeneID
     - LocusID
     - NCBI_Gene
+  rdf_uri_prefix: http://identifiers.org/ncbigene/
   generic_urls:
     - http://www.ncbi.nlm.nih.gov/
   entity_types:
@@ -1977,9 +2012,9 @@
     - type_name: entity
       type_id: BET:0000000
       id_syntax: '[0-9]{5}'
-      url_syntax: http://www.geneontology.org/gene-associations/submission/paint/[example_id]/[example_id].txt
+      url_syntax: http://www.pantherdb.org/panther/lookupId.jsp?id=PTHR[example_id]
       example_id: PAINT_REF:23266
-      example_url: http://www.geneontology.org/gene-associations/submission/paint/PTHR10046/PTHR10046.txt
+      example_url: http://www.pantherdb.org/panther/lookupId.jsp?id=PTHR23266
 - database: PAMGO
   name: Plant-Associated Microbe Gene Ontology Interest Group
   generic_urls:
@@ -2021,6 +2056,7 @@
       example_url: http://vmd.vbi.vt.edu/cgi-bin/browse/go_detail.cgi?gene_id=109198
 - database: PANTHER
   name: Protein ANalysis THrough Evolutionary Relationships Classification System
+  rdf_uri_prefix: http://identifiers.org/panther.family/
   generic_urls:
     - http://www.pantherdb.org/
   entity_types:
@@ -2039,6 +2075,7 @@
       type_id: BET:0000000
 - database: PATO
   name: Phenotypic quality ontology
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/PATO_
   generic_urls:
     - http://www.bioontology.org/wiki/index.php/PATO:Main_Page
   entity_types:
@@ -2203,6 +2240,7 @@
       example_url: http://www.ncbi.nlm.nih.gov/pubmed/4208797
 - database: PO
   name: Plant Ontology
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/PO_
   generic_urls:
     - http://www.planteome.org/
   entity_types:
@@ -2247,6 +2285,7 @@
       type_id: BET:0000000
 - database: PomBase
   name: PomBase
+  rdf_uri_prefix: http://identifiers.org/pombase/
   generic_urls:
     - http://www.pombase.org/
   entity_types:
@@ -2275,6 +2314,7 @@
   name: Protein Ontology
   synonyms:
     - PRO
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/PR_
   generic_urls:
     - http://www.proconsortium.org/pro/pro.shtml
   entity_types:
@@ -2439,6 +2479,7 @@
   synonyms:
     - REACTOME
     - REAC
+  rdf_uri_prefix: http://identifiers.org/reactome/
   generic_urls:
     - http://www.reactome.org/
   entity_types:
@@ -2507,11 +2548,12 @@
   synonyms:
     - RAD
     - RGDID
+  rdf_uri_prefix: http://identifiers.org/rgd/
   generic_urls:
     - http://rgd.mcw.edu/
   entity_types:
-    - type_name: entity
-      type_id: BET:0000000
+    - type_name: gene
+      type_id: SO:0000704
       id_syntax: '[0-9]{4,7}'
       url_syntax: http://rgd.mcw.edu/rgdweb/search/search.html?term=[example_id]
       example_id: RGD:2004
@@ -2564,6 +2606,7 @@
 - database: RO
   name: OBO Relation Ontology Ontology
   description: A collection of relations used across OBO ontologies
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/RO_
   generic_urls:
     - http://purl.obolibrary.org/obo/ro
   entity_types:
@@ -2619,6 +2662,7 @@
   name: Saccharomyces Genome Database
   synonyms:
     - SGDID
+  rdf_uri_prefix: http://identifiers.org/sgd/
   generic_urls:
     - http://www.yeastgenome.org/
   entity_types:
@@ -2652,6 +2696,7 @@
   name: Sol Genomics Network
   synonyms:
     - SGN_gene
+  rdf_uri_prefix: http://identifiers.org/sgn/
   generic_urls:
     - http://www.sgn.cornell.edu/
   entity_types:
@@ -2699,6 +2744,7 @@
       type_id: BET:0000000
 - database: SO
   name: Sequence Ontology
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/SO_
   generic_urls:
     - http://sequenceontology.org/
   entity_types:
@@ -2841,6 +2887,7 @@
       type_id: BET:0000000
 - database: TAIR
   name: The Arabidopsis Information Resource
+  rdf_uri_prefix: http://identifiers.org/tair.locus/
   generic_urls:
     - http://www.arabidopsis.org/
   entity_types:
@@ -2867,6 +2914,7 @@
   synonyms:
     - NCBITaxon
     - ncbi_taxid
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/NCBITaxon_
   generic_urls:
     - http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/
   entity_types:
@@ -2888,6 +2936,7 @@
       example_url: http://www.tcdb.org/tcdb/index.php?tc=9.A.4.1.1
 - database: TGD
   name: Tetrahymena Genome Database
+  rdf_uri_prefix: http://identifiers.org/tgd/
   generic_urls:
     - http://www.ciliate.org/
   entity_types:
@@ -2967,6 +3016,7 @@
 - database: UBERON
   name: Uber-anatomy ontology
   description: A multi-species anatomy ontology
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/UBERON_
   generic_urls:
     - http://uberon.org
   entity_types:
@@ -3080,6 +3130,7 @@
 - database: UniProtKB
   name: Universal Protein Knowledgebase
   description: A central repository of protein sequence and function created by joining the information contained in Swiss-Prot, TrEMBL, and PIR database
+  rdf_uri_prefix: http://identifiers.org/uniprot/
   generic_urls:
     - http://www.uniprot.org
   entity_types:
@@ -3175,6 +3226,7 @@
   name: WormBase database of nematode biology
   synonyms:
     - WormBase
+  rdf_uri_prefix: http://identifiers.org/wormbase/
   generic_urls:
     - http://www.wormbase.org/
   entity_types:
@@ -3221,6 +3273,7 @@
       example_id: WBbt:0005733
 - database: WBls
   name: C. elegans development
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/WBls_
   generic_urls:
     - http://www.wormbase.org/
   entity_types:
@@ -3230,6 +3283,7 @@
       example_id: WBls:0000010
 - database: WBPhenotype
   name: WormBase phenotype ontology
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/WBPhenotype_
   generic_urls:
     - http://www.wormbase.org/
   entity_types:
@@ -3251,6 +3305,7 @@
       example_url: http://en.wikipedia.org/wiki/Endoplasmic_reticulum
 - database: Xenbase
   name: Xenbase
+  rdf_uri_prefix: http://identifiers.org/xenbase/
   generic_urls:
     - http://www.xenbase.org/
   entity_types:
@@ -3287,6 +3342,7 @@
       type_id: BET:0000000
 - database: ZFIN
   name: Zebrafish Information Network
+  rdf_uri_prefix: http://identifiers.org/zfin/
   generic_urls:
     - http://zfin.org/
   entity_types:

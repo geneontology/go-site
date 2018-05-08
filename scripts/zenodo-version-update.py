@@ -18,7 +18,7 @@ import logging
 import os
 import json
 import requests
-from requests_toolbelt.multipart.encoder import MultipartEncoder
+# from requests_toolbelt.multipart.encoder import MultipartEncoder
 import datetime
 
 ## Logger basic setup.
@@ -216,20 +216,30 @@ def main():
     ## Try 1 caused memory overflow issues (I'm trying to upload many GB).
     ## Try 2 "should" have worked, but zenodo seems incompatible.
     ## with requests and the request toolbelt, after a fair amount of effort.
-    ## Try 3 appears to work, but uses an unpublished API... :(
+    ## Try 3 appears to work, but uses an unpublished API and injects the
+    ## multipart information in to the file... :(
+    ##
+    ## Try 4...not working...
     # encoder = MultipartEncoder({
-    #     'file': (filename, open(args.file, 'rb'))
+    #     'file': (filename, open(args.file, 'rb'),'application/octet-stream')
     # })
-    response = requests.put('%s/%s' % (new_bucket_url, filename),
-                            #data=encoder,
-                            data = {'filename': filename},
-                            files = {'file': open(args.file, 'rb')},
-                            params = {'access_token': args.key},
-                            headers={
-                                "Accept":"application/json",
-                                "Content-Type":"application/octet-stream"
-                            })
-    ## Try 2
+    # response = requests.put('%s/%s' % (new_bucket_url, filename),
+    #                         data=encoder,
+    #                         #data = {'filename': filename},
+    #                         #files = {'file': open(args.file, 'rb')},
+    #                         params = {'access_token': args.key},
+    #                         headers={
+    #                             #"Accept":"multipart/related; type=application/octet-stream",
+    #                             "Content-Type":encoder.content_type
+    #                         })
+    ## Try 3
+
+    with open(args.file, "rb") as fp:
+        response = requests.put("{url}/{fname}".format(url=new_bucket_url, fname=filename),
+                                data=fp,
+                                params={'access_token': args.key}
+                                )
+    # ## Try 2
     # encoder = MultipartEncoder({
     #     #'filename': filename,
     #     'file': (filename, open(args.file, 'rb'))
@@ -238,10 +248,10 @@ def main():
     # ## Try 1
     # data = {'filename': filename}
     # files = {'file': open(args.file, 'rb')}
-    # response = requests.post(server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files', params={'access_token': args.key}, data=data, files=encoder)
+    # response = requests.post(server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files', params={'access_token': args.key}, data=data, files=files)
 
     ## Test correct file add.
-    if response.status_code != 200:
+    if response.status_code > 200:
         die_screaming('could not add file', response, new_dep_id)
 
     ###

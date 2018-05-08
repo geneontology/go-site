@@ -26,6 +26,9 @@ sequence:
       "description":
         type: str
         required: false
+      "rdf_uri_prefix":
+        type: str
+        required: false
       "generic_urls":
         type: seq
         required: true
