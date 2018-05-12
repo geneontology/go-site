@@ -8,15 +8,15 @@ funding_source: "unspecified"
 email_report: "goa@ebi.ac.uk"
 datasets:
  -
-   id: goa_chicken.gpi
-   label: "goa_chicken gpi file"
-   description: "gpi file for goa_chicken from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_chicken.gpi.gz
-   type: gpi
+   id: goa_chicken.gaf
+   label: "goa_chicken gaf file"
+   description: "gaf file for goa_chicken from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_chicken.gaf.gz
+   type: gaf
    dataset: goa_chicken
    submitter: goa
    compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken.gpi.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken.gaf.gz
    entity_type: protein
    status: active
    species_code: Ggal
