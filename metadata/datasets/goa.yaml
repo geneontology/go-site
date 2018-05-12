@@ -8,6 +8,25 @@ funding_source: "unspecified"
 email_report: "goa@ebi.ac.uk"
 datasets:
  -
+   id: goa_chicken.gpi
+   label: "goa_chicken gpi file"
+   description: "gpi file for goa_chicken from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gpad-gpi/release/goa_chicken.gpi.gz
+   type: gpi
+   dataset: goa_chicken
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken.gpi.gz
+   entity_type: protein
+   status: active
+   species_code: Ggal
+   taxa:
+    - NCBITaxon:208524
+    - NCBITaxon:208525
+    - NCBITaxon:208526
+    - NCBITaxon:400035
+    - NCBITaxon:9031
+ -
    id: goa_chicken_complex.gaf
    label: "goa_chicken_complex gaf file"
    description: "gaf file for goa_chicken_complex from EBI Gene Ontology Annotation Database"
