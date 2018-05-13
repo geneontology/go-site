@@ -377,7 +377,7 @@
   organization: 'E. coli'
   uri: 'GOC:bm'
   xref: 'GOC:bm'
-  -
+-
   accounts:
     github: sandyl27
   authorizations:
