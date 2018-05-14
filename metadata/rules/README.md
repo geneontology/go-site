@@ -30,6 +30,8 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000021">GORULE:0000021 Check with/from for sequence similarity evidence for valid database ID</a>
  * <a href="#gorule0000022">GORULE:0000022 Check for, and filter, annotations made to retracted publications</a>
  * <a href="#gorule0000023">GORULE:0000023 Materialize annotations for inter-branch links in the GO</a>
+ * <a href="#gorule0000024">GORULE:0000024 prevent propagation of certain terms by orthology</a>
+ * <a href="#gorule0000025">GORULE:0000025 Creating more specific annotations by reasoning over extensions</a>
 
 
 
@@ -41,8 +43,8 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * status: Implemented
 
 
-The following basic checks ensure that submitted gene association files
-conform to the GAF spec, and come from the original GAF check script.
+The following basic checks ensure that submitted and parsed gene association files
+conform to some GO specific specifications, and come from the original GAF check script.
 
 -   Each line of the GAF file is checked for the correct number of
     columns, the cardinality of the columns, leading or trailing
@@ -53,7 +55,6 @@ conform to the GAF spec, and come from the original GAF check script.
 -   Qualifier, evidence, aspect and DB object columns must be within the
     list of allowed values
 -   DB:Reference, Taxon and GO ID columns are checked for minimal form
--   Date must be in YYYYMMDD format
 -   All IEAs over a year old are removed
 -   Taxa with a 'representative' group (e.g. MGI for Mus musculus,
     FlyBase for Drosophila) must be submitted by that group only
@@ -132,9 +133,24 @@ the second annotation that states that protein B binds protein A.
 This will be a soft QC; a script will make these inferences and it is up
 to each MOD to evaluate and include the inferences in their GAF/DB.
 
+## Representation of binding in the GO
+
+We use the term GO:0005515 and its children to represent instances of protein binding. If a gene G is annotated to this term, its function involves binding another protein. The partner protein is represented in the with/from field of the association, i.e. the 'evidence' is the partner protein. Annotation of gene G to a protein binding term requires that the partner protein also be annotated to a protein binding term, resulting in reciprocal protein binding annotations. Note that the specific protein binding term used for annotation does not have to be the same for each partner.
+
+Note that this annotation rule predates the existence of annotation extensions (c16 in the GAF). It is more logical to specify the binding partner in c16, this would also allow cleaner separation of evidence from in-vivo activity, but for historic reasons the with/from field continues to be used.
+
+
+## Application to Noctua models
+
+Discussion is ongoing, refer to: https://github.com/geneontology/molecular_function_refactoring/issues/29
+
+## See Also
+
 For more information, see the [binding
 guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
 on the GO wiki.
+
+
 
 <a name="gorule0000005"/>
 
@@ -421,7 +437,7 @@ reasoner such as HermiT.
 ## Automatic repair of annotations to merged or obsoleted terms
 
  * id: [GORULE:0000020](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000020.md)
- * status: Approved
+ * status: Implemented
 
 
 Ontology operations such as term merges and obsoletions may be out of
@@ -469,9 +485,47 @@ Annotations will be propagated from MF to BP over part_of, or from BP to CC over
 
 ## Background
 
-Historically GO treated MF, BP and CC as distinct ontologies. They are now better regarded as branchers or sub-hierarchies within a single ontology,
-cross-linked via a variety of relations. Annotators used to make manual duplicate annotations.
+Historically GO treated MF, BP and CC as distinct ontologies. They are now better regarded as branchers or sub-hierarchies within a single ontology, cross-linked via a variety of relations. Annotators used to make manual duplicate annotations.
+
+## Procedure
+
+ * Any asserted or inferred annotation to MF, where MF part-of BP, will generate an involved-in to that BP
+ * Any asserted or inferred annotation to BP, where BP occurs-in CC, will generate a part-of annotation to that CC
+ 
+### Evidence and provenance
+
+ * Evidence, references, publications, date are retained
+ * Assigned_by is GOC
 
 ## TBD
 
 Should this pipeline filter annotations based on some redundancy criteria?
+
+<a name="gorule0000024"/>
+
+## prevent propagation of certain terms by orthology
+
+ * id: [GORULE:0000024](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000024.md)
+ * status: Pending
+
+
+
+prevent propagation of certain terms by orthology/similarity. This rule is under discussion
+
+Please see: https://github.com/geneontology/go-annotation/issues/1707
+
+<a name="gorule0000025"/>
+
+## Creating more specific annotations by reasoning over extensions
+
+ * id: [GORULE:0000025](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000025.md)
+ * status: Pending
+
+
+
+Given an annotation to a general term plus annotation extensions we can infer a more specific annotation
+
+Approach is described here: https://github.com/owlcollab/owltools/wiki/Annotation-Extension-Folding
+
+ * Evidence: IC
+ * Assigned-by: GOC-OWL

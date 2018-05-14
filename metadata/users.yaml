@@ -378,6 +378,18 @@
   uri: 'GOC:bm'
   xref: 'GOC:bm'
 -
+  accounts:
+    github: sandyl27
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.bio.tamu.edu'
+  nickname: 'Sandy Labonte'
+  organization: 'E. coli'
+  uri: 'http://orcid.org/0000-0002-9618-3336'
+-
   nickname: 'Curators at FlyBase'
   organization: FlyBase
   uri: 'GOC:fb_curators'
