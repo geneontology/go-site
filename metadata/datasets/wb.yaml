@@ -7,7 +7,7 @@ project_url: "http://www.wormbase.org/"
 funding_source: "US National Institutes of Health, UK Medical Research Council, UK Biotechnology and Biological Sciences Research Council"
 email_report: "ranjana@its.caltech.edu,vanauken@caltech.edu"
 datasets:
- -    
+ -
    id: wb.gaf
    label: "wb gaf file"
    description: "gaf file for wb from WormBase database of nematode biology"
@@ -17,15 +17,27 @@ datasets:
    submitter: wb
    compression: gzip
    source: http://geneontology.org/gene-associations/submission/gene_association.wb.gz
-   entity_type: 
+   entity_type:
    status: active
+   paint:
+      id: paint_wb.gaf
+      label: "paint_wb gaf file"
+      description: "gaf file for paint_wb from PAINT"
+      url: http://geneontology.org/gene-associations/gene_association.paint_wb.gaf.gz
+      type: gaf
+      dataset: paint_wb
+      submitter: paint
+      compression: gzip
+      source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_wb.gaf.gz
+      entity_type:
+      status: active
    species_code: Cele
    taxa:
     - NCBITaxon:6239
  -
    id: wb.gpi
    label: "wb gpi file"
-   description: "gpi file for Caenorhabditis elegans from WormBase"   
+   description: "gpi file for Caenorhabditis elegans from WormBase"
    url: http://geneontology.org/gpad-gpi/release/wb.gpi.gz
    type: gpi
    dataset: wb

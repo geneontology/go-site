@@ -2,35 +2,4 @@ id: paint
 label: PAINT
 description: "GO data for PAINT"
 datasets:
- -
-   id: paint_wb.gaf
-   label: "paint_wb gaf file"
-   description: "gaf file for paint_wb from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_wb.gaf.gz
-   type: gaf
-   dataset: paint_wb
-   submitter: paint
-   compression: gzip
-   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_wb.gaf.gz
-   entity_type:
-   status: active
-   species_code: Cele
-   taxa:
-    - NCBITaxon:6239
-   merges_into: wb
-
- -
-   id: paint_goa_chicken.gaf
-   label: "paint_goa_chicken gaf file"
-   description: "gaf file for paint_goa_chicken from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_goa_chicken.gaf.gz
-   type: gaf
-   dataset: paint_goa_chicken
-   submitter: paint
-   compression: gzip
-   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_chicken.gaf.gz
-   entity_type: chicken
-   status: active
-   species_code:
-   taxa:
-   merges_into: goa_chicken
+- ""

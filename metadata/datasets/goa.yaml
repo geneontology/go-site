@@ -27,7 +27,7 @@ datasets:
     - NCBITaxon:400035
     - NCBITaxon:9031
 
- -    
+ -
    id: goa_chicken.gaf
    label: "goa_chicken gaf file"
    description: "gaf file for goa_chicken from EBI Gene Ontology Annotation Database"
@@ -39,6 +39,18 @@ datasets:
    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken.gaf.gz
    entity_type: protein
    status: active
+   paint:
+       id: paint_goa_chicken.gaf
+       label: "paint_goa_chicken gaf file"
+       description: "gaf file for paint_goa_chicken from PAINT"
+       url: http://geneontology.org/gene-associations/gene_association.paint_goa_chicken.gaf.gz
+       type: gaf
+       dataset: paint_goa_chicken
+       submitter: paint
+       compression: gzip
+       source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_chicken.gaf.gz
+       entity_type: chicken
+       status: active
    species_code: Ggal
    taxa:
     - NCBITaxon:208524
