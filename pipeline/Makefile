@@ -19,9 +19,6 @@ BASE_GROUP_PATH = $(filter-out $(EXCLUSION_PATTERN),$(_ALL_BASE_GROUP_PATHS) )
 # target/groups/fb/fb -> target/groups/fb/fb-owltools-check.txt, for everything in BASE_GROUP_PATH
 GAFCHECKS = $(addsuffix -owltools-check.txt,$(BASE_GROUP_PATH))
 
-foo:
-	$(info $(GAFCHECKS))
-
 # all owltools check groups
 groups: $(GAFCHECKS)
 
