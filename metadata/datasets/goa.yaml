@@ -27,7 +27,7 @@ datasets:
     - NCBITaxon:400035
     - NCBITaxon:9031
 
- -    
+ -
    id: goa_chicken.gaf
    label: "goa_chicken gaf file"
    description: "gaf file for goa_chicken from EBI Gene Ontology Annotation Database"
@@ -62,3 +62,18 @@ datasets:
    aggregates: goa
    taxa:
     - NCBITaxon:1
+   
+ -
+   id: goa_pdb.gaf
+   label: "goa_pdb gaf file"
+   description: "gaf file for goa_pdb from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_pdb.gaf.gz
+   type: gaf
+   dataset: goa_pdb
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PDB/goa_pdb.gaf.gz
+   entity_type: protein
+   status: active
+   species_code:
+   taxa:
