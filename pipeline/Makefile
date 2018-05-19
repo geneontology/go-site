@@ -3,15 +3,24 @@ clean:
 
 METADATA_DIR=../metadata
 
+EXCLUDES = goa_uniprot_gcrp goa_pdb
+
 # for each path in the shell `find`, get just the filename, then strip the extension for each group
 # Ex: will end up being just the yaml file names in the datasets directory (aspgd mgi goa fb [etc])
 GROUPS = $(foreach path,$(shell find $(METADATA_DIR)/datasets -name '*.yaml'),$(basename $(notdir $(path))))
 # for each group, get the base target path from each gaf dataset in a group yaml.
 # Ex: fb -> target/groups/fb/fb; goa -> target/groups/goa/goa_uniprot_all target/groups/goa/goa_chicken_complex [etc]
-BASE_GROUP_PATH = $(foreach group,$(GROUPS),$(addprefix target/groups/$(group)/,$(basename $(shell cat ../metadata/datasets/$(group).yaml | grep "id:.*gaf" | awk '{ print $$2 }'))))
+_ALL_BASE_GROUP_PATHS = $(foreach group,$(GROUPS),$(addprefix target/groups/$(group)/,$(basename $(shell cat ../metadata/datasets/$(group).yaml | grep "id:.*gaf" | awk '{ print $$2 }'))))
+# This turns the excludes into a filter pattern: goa_pdb -> %/goa_pdb
+EXCLUSION_PATTERN = $(foreach excl,$(EXCLUDES),%/$(excl))
+# Filter out any path from _ALL_BASE_GROUP_PATHS that matches the exclusion
+BASE_GROUP_PATH = $(filter-out $(EXCLUSION_PATTERN),$(_ALL_BASE_GROUP_PATHS) )
 # produces the set of owltools-check.txt targets. One for each in the BASE_GROUP_PATH
 # target/groups/fb/fb -> target/groups/fb/fb-owltools-check.txt, for everything in BASE_GROUP_PATH
 GAFCHECKS = $(addsuffix -owltools-check.txt,$(BASE_GROUP_PATH))
+
+foo:
+	$(info $(GAFCHECKS))
 
 # all owltools check groups
 groups: $(GAFCHECKS)
@@ -32,7 +41,7 @@ $(GAF_OWL):
 PY_ENV ?= target/env
 PY_BIN ?= $(PY_ENV)/bin
 VALIDATE = $(PY_BIN)/validate.py
-EXCLUDES = -x goa_uniprot_all -x goa_uniprot_gcrp -x goa_pdb
+DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(EXCLUDES),-x $(exclusion) )
 
 .PRECIOUS: %.gaf.gz
 %_valid.gaf.gz %_noiea.gaf.gz %.gaf.gz %-src.gaf.gz %.gpad.gz %.gpi.gz %_cam.ttl.gz %.report.md %.report.json: target/go-ontology.json
@@ -41,7 +50,7 @@ EXCLUDES = -x goa_uniprot_all -x goa_uniprot_gcrp -x goa_pdb
 	# assigns a make variable called `group` computed from the $* generic target stem.
 	# Ex: target/groups/fb/fb.gaf as a target, the stem ($*) is target/groups/fb/fb, so `group` gets assigned to fb
 	$(eval group := $(lastword $(subst /, ,$(dir $*))))
-	python3 $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(EXCLUDES)
+	python3 $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE)
 	rm $(dir $*)*.gaf $(dir $*)*.gpad $(dir $*)*.gpi $(dir $*)*.ttl
 
 %-owltools-check.txt: %.gaf.gz $(GAF_OWL)
