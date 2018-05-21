@@ -11,7 +11,7 @@ datasets:
         dataset: paint_other
         submitter: paint
         compression: gzip
-        source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_other.gaf.gz
+        source: http://skyhook.berkeleybop.org/gene_association.paint_other_short.gaf.gz
         entity_type:
         status: active
         species_code:
