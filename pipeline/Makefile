@@ -3,6 +3,10 @@ clean:
 
 METADATA_DIR=../metadata
 
+EXCLUDES = goa_uniprot_gcrp goa_pdb
+
+OWLTOOLS_MEMORY ?= 12G
+
 # for each path in the shell `find`, get just the filename, then strip the extension for each group
 # Ex: will end up being just the yaml file names in the datasets directory (aspgd mgi goa fb [etc])
 GROUPS = $(foreach path,$(shell find $(METADATA_DIR)/datasets -name '*.yaml'),$(basename $(notdir $(path))))
@@ -41,12 +45,12 @@ EXCLUDES = -x goa_uniprot_all -x goa_uniprot_gcrp -x goa_pdb
 	# assigns a make variable called `group` computed from the $* generic target stem.
 	# Ex: target/groups/fb/fb.gaf as a target, the stem ($*) is target/groups/fb/fb, so `group` gets assigned to fb
 	$(eval group := $(lastword $(subst /, ,$(dir $*))))
-	python3 $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(EXCLUDES)
+	python3 $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE)
 	rm $(dir $*)*.gaf $(dir $*)*.gpad $(dir $*)*.gpi $(dir $*)*.ttl
 
 %-owltools-check.txt: %.gaf.gz $(GAF_OWL)
 	gzip -dcf $< > $*.gaf
-	owltools --log-warning $(GAF_OWL) \
+	OWLTOOLS_MEMORY=$(OWLTOOLS_MEMORY) owltools --log-warning $(GAF_OWL) \
 	--gaf $*.gaf \
 	--createReport \
 	--gaf-report-file $*-owltools-check.txt \
