@@ -12,7 +12,11 @@ OWLTOOLS_MEMORY ?= 12G
 GROUPS = $(foreach path,$(shell find $(METADATA_DIR)/datasets -name '*.yaml'),$(basename $(notdir $(path))))
 # for each group, get the base target path from each gaf dataset in a group yaml.
 # Ex: fb -> target/groups/fb/fb; goa -> target/groups/goa/goa_uniprot_all target/groups/goa/goa_chicken_complex [etc]
-BASE_GROUP_PATH = $(foreach group,$(GROUPS),$(addprefix target/groups/$(group)/,$(basename $(shell cat ../metadata/datasets/$(group).yaml | grep "id:.*gaf" | awk '{ print $$2 }'))))
+_ALL_BASE_GROUP_PATHS = $(foreach group,$(GROUPS),$(addprefix target/groups/$(group)/,$(basename $(shell cat ../metadata/datasets/$(group).yaml | grep "id:.*gaf" | awk '{ print $$2 }'))))
+# This turns the excludes into a filter pattern: goa_pdb -> %/goa_pdb
+EXCLUSION_PATTERN = $(foreach excl,$(EXCLUDES),%/$(excl))
+# Filter out any path from _ALL_BASE_GROUP_PATHS that matches the exclusion
+BASE_GROUP_PATH = $(filter-out $(EXCLUSION_PATTERN),$(_ALL_BASE_GROUP_PATHS) )
 # produces the set of owltools-check.txt targets. One for each in the BASE_GROUP_PATH
 # target/groups/fb/fb -> target/groups/fb/fb-owltools-check.txt, for everything in BASE_GROUP_PATH
 GAFCHECKS = $(addsuffix -owltools-check.txt,$(BASE_GROUP_PATH))
@@ -36,7 +40,7 @@ $(GAF_OWL):
 PY_ENV ?= target/env
 PY_BIN ?= $(PY_ENV)/bin
 VALIDATE = $(PY_BIN)/validate.py
-EXCLUDES = -x goa_uniprot_all -x goa_uniprot_gcrp -x goa_pdb
+DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(EXCLUDES),-x $(exclusion) )
 
 .PRECIOUS: %.gaf.gz
 %_valid.gaf.gz %_noiea.gaf.gz %.gaf.gz %-src.gaf.gz %.gpad.gz %.gpi.gz %_cam.ttl.gz %.report.md %.report.json: target/go-ontology.json
