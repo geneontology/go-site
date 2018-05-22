@@ -204,6 +204,19 @@
       url_syntax: http://www.brenda-enzymes.info/php/result_flat.php4?ecno=[example_id]
       example_id: BRENDA:4.2.1.3
       example_url: http://www.brenda-enzymes.info/php/result_flat.php4?ecno=4.2.1.3
+- database: BTO
+  name: BRENDA tissue / enzyme source
+  description: A structured controlled vocabulary for the source of an enzyme comprising tissues, cell lines, cell types and cell \
+cultures.
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/BTO_
+  generic_urls:
+    - http://purl.obolibrary.org/obo/bto
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: http://purl.obolibrary.org/obo/BTO_[example_id]
+      example_id: BTO_0002164
+      example_url: http://purl.obolibrary.org/obo/BTO_0002164
 - database: Broad
   name: Broad Institute
   generic_urls:
