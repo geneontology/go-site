@@ -50,11 +50,7 @@ DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(EXCLUDES),-x $(exclusio
 	# assigns a make variable called `group` computed from the $* generic target stem.
 	# Ex: target/groups/fb/fb.gaf as a target, the stem ($*) is target/groups/fb/fb, so `group` gets assigned to fb
 	$(eval group := $(lastword $(subst /, ,$(dir $*))))
-<<<<<<< HEAD
-	python3 $(VALIDATE) produce $(group) --gpad -m $(METADATA_DIR) --target target/ --ontology $< $(EXCLUDES)
-=======
 	python3 $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE)
->>>>>>> 3576eaa5e84fed40e57bb5dfefeae83a2cccd9c9
 	rm $(dir $*)*.gaf $(dir $*)*.gpad $(dir $*)*.gpi $(dir $*)*.ttl
 
 %-owltools-check.txt: %.gaf.gz $(GAF_OWL)
