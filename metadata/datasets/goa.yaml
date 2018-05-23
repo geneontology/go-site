@@ -433,7 +433,7 @@ datasets:
     status: active
     species_code: Cfam
     taxa:
-    - NCBITaxon:9615
+      - NCBITaxon:9615
 
   -
     id: goa_dog_rna.gpi
@@ -529,7 +529,7 @@ datasets:
     status: active
     species_code: Hsap
     taxa:
-    - NCBITaxon:9606
+      - NCBITaxon:9606
 
   -
     id: goa_human_isoform.gpi
@@ -747,7 +747,7 @@ datasets:
       - NCBITaxon:400035
       - NCBITaxon:9031
 
- -
+  -
     id: goa_chicken_isoform.gaf
     label: "goa_chicken_isoform gaf file"
     description: "gaf file for goa_chicken_isoform from EBI Gene Ontology Annotation Database"
@@ -935,6 +935,18 @@ datasets:
     source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human.gaf.gz
     entity_type: protein
     status: active
+    paint:
+      id: paint_goa_human.gaf
+      label: "paint_goa_human gaf file"
+      description: "gaf file for paint_goa_human from PAINT"
+      url: http://geneontology.org/gene-associations/gene_association.paint_goa_human.gaf.gz
+      type: gaf
+      dataset: paint_goa_human
+      submitter: paint
+      compression: gzip
+      source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_human.gaf.gz
+      entity_type: human
+      status: active
     species_code: Hsap
     taxa:
       - NCBITaxon:9606
@@ -1016,7 +1028,7 @@ datasets:
     status: active
     species_code: Sscr
     taxa:
-    - NCBITaxon:9823
+      - NCBITaxon:9823
 
   -
     id: goa_pig_complex.gaf
@@ -1112,259 +1124,259 @@ datasets:
     status: active
     aggregates: goa
     taxa:
-    - NCBITaxon:1
+      - NCBITaxon:1
 
- -
-   id: goa_uniprot_gcrp.gaf
-   label: "goa_uniprot_gcrp gaf file"
-   description: "gaf file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gaf.gz
-   type: gaf
-   dataset: goa_uniprot_gcrp
-   submitter: goa
-   compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gaf.gz
-   entity_type: all
-   status: active
-   aggregates: goa
-   taxa:
-    - NCBITaxon:1
+  -
+    id: goa_uniprot_gcrp.gaf
+    label: "goa_uniprot_gcrp gaf file"
+    description: "gaf file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
+    url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gaf.gz
+    type: gaf
+    dataset: goa_uniprot_gcrp
+    submitter: goa
+    compression: gzip
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gaf.gz
+    entity_type: all
+    status: active
+    aggregates: goa
+    taxa:
+      - NCBITaxon:1
 
- -
-   id: goa_uniprot_gcrp.gpi
-   label: "goa_uniprot_gcrp gpi file"
-   description: "gpi file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gpi.gz
-   type: gpi
-   dataset: goa_uniprot_gcrp
-   submitter: goa
-   compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gpi.gz
-   entity_type: all
-   status: active
-   aggregates: goa
-   taxa:
-    - NCBITaxon:1
+  -
+    id: goa_uniprot_gcrp.gpi
+    label: "goa_uniprot_gcrp gpi file"
+    description: "gpi file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
+    url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gpi.gz
+    type: gpi
+    dataset: goa_uniprot_gcrp
+    submitter: goa
+    compression: gzip
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gpi.gz
+    entity_type: all
+    status: active
+    aggregates: goa
+    taxa:
+      - NCBITaxon:1
 
- -
-   id: goa_uniprot_gcrp.gpad
-   label: "goa_uniprot_gcrp gpad file"
-   description: "gpad file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gpa.gz
-   type: gpad
-   dataset: goa_uniprot_gcrp
-   submitter: goa
-   compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gpa.gz
-   entity_type: all
-   status: active
-   aggregates: goa
-   taxa:
-    - NCBITaxon:1
+  -
+    id: goa_uniprot_gcrp.gpad
+    label: "goa_uniprot_gcrp gpad file"
+    description: "gpad file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
+    url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gpa.gz
+    type: gpad
+    dataset: goa_uniprot_gcrp
+    submitter: goa
+    compression: gzip
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gpa.gz
+    entity_type: all
+    status: active
+    aggregates: goa
+    taxa:
+      - NCBITaxon:1
 
- -
-   id: interpro2go
-   label: "interpro2go mapping file"
-   description: "external2go file to map InterPro entries to GO terms"
-   url: http://geneontology.org/external2go/interpro2go
-   type: external2go
-   dataset: interpro2go
-   submitter: goa
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/interpro2go
-   status: active
+  -
+    id: interpro2go
+    label: "interpro2go mapping file"
+    description: "external2go file to map InterPro entries to GO terms"
+    url: http://geneontology.org/external2go/interpro2go
+    type: external2go
+    dataset: interpro2go
+    submitter: goa
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/interpro2go
+    status: active
 
- -
-   id: pfam2go
-   label: "pfam2go mapping file"
-   description: "external2go file to map Pfam entries to GO terms"
-   url: http://geneontology.org/external2go/pfam2go
-   type: external2go
-   dataset: pfam2go
-   submitter: goa
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/pfam2go
-   status: active
+  -
+    id: pfam2go
+    label: "pfam2go mapping file"
+    description: "external2go file to map Pfam entries to GO terms"
+    url: http://geneontology.org/external2go/pfam2go
+    type: external2go
+    dataset: pfam2go
+    submitter: goa
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/pfam2go
+    status: active
 
- -
-   id: pirsf2go
-   label: "pirsf2go mapping file"
-   description: "external2go file to map PIRSF entries to GO terms"
-   url: http://geneontology.org/external2go/pirsf2go
-   type: external2go
-   dataset: pirsf2go
-   submitter: goa
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/pirsf2go
-   status: active
+  -
+    id: pirsf2go
+    label: "pirsf2go mapping file"
+    description: "external2go file to map PIRSF entries to GO terms"
+    url: http://geneontology.org/external2go/pirsf2go
+    type: external2go
+    dataset: pirsf2go
+    submitter: goa
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/pirsf2go
+    status: active
 
- -
-   id: prints2go
-   label: "prints2go mapping file"
-   description: "external2go file to map PRINTS entries to GO terms"
-   url: http://geneontology.org/external2go/prints2go
-   type: external2go
-   dataset: prints2go
-   submitter: goa
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/prints2go
-   status: active
+  -
+    id: prints2go
+    label: "prints2go mapping file"
+    description: "external2go file to map PRINTS entries to GO terms"
+    url: http://geneontology.org/external2go/prints2go
+    type: external2go
+    dataset: prints2go
+    submitter: goa
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/prints2go
+    status: active
 
- -
-   id: prodom2go
-   label: "prodom2go mapping file"
-   description: "external2go file to map PRODOM entries to GO terms"
-   url: http://geneontology.org/external2go/prodom2go
-   type: external2go
-   dataset: prodom2go
-   submitter: goa
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/prodom2go
-   status: active
+  -
+    id: prodom2go
+    label: "prodom2go mapping file"
+    description: "external2go file to map PRODOM entries to GO terms"
+    url: http://geneontology.org/external2go/prodom2go
+    type: external2go
+    dataset: prodom2go
+    submitter: goa
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/prodom2go
+    status: active
 
- -
-   id: prosite2go
-   label: "prosite2go mapping file"
-   description: "external2go file to map PROSITE entries to GO terms"
-   url: http://geneontology.org/external2go/prosite2go
-   type: external2go
-   dataset: prosite2go
-   submitter: goa
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/prosite2go
-   status: active
+  -
+    id: prosite2go
+    label: "prosite2go mapping file"
+    description: "external2go file to map PROSITE entries to GO terms"
+    url: http://geneontology.org/external2go/prosite2go
+    type: external2go
+    dataset: prosite2go
+    submitter: goa
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/prosite2go
+    status: active
 
- -
-   id: smart2go
-   label: "smart2go mapping file"
-   description: "external2go file to map SMART entries to GO terms"
-   url: http://geneontology.org/external2go/smart2go
-   type: external2go
-   dataset: smart2go
-   submitter: goa
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/smart2go
-   status: active
+  -
+    id: smart2go
+    label: "smart2go mapping file"
+    description: "external2go file to map SMART entries to GO terms"
+    url: http://geneontology.org/external2go/smart2go
+    type: external2go
+    dataset: smart2go
+    submitter: goa
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/smart2go
+    status: active
 
- -
-   id: uniprotkb_kw2go
-   label: "uniprotkb_kw2go mapping file"
-   description: "external2go file to map UniProtKB keywords to GO terms"
-   url: http://geneontology.org/external2go/uniprotkb_kw2go
-   type: external2go
-   dataset: uniprotkb_kw2go
-   submitter: goa
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/uniprotkb_kw2go
-   status: active
+  -
+    id: uniprotkb_kw2go
+    label: "uniprotkb_kw2go mapping file"
+    description: "external2go file to map UniProtKB keywords to GO terms"
+    url: http://geneontology.org/external2go/uniprotkb_kw2go
+    type: external2go
+    dataset: uniprotkb_kw2go
+    submitter: goa
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/uniprotkb_kw2go
+    status: active
 
- -
-   id: uniprotkb_sl2go
-   label: "uniprotkb_sl2go mapping file"
-   description: "external2go file to map UniProtKB Subcellular Location vocabulary to GO terms"
-   url: http://geneontology.org/external2go/uniprotkb_sl2go
-   type: external2go
-   dataset: uniprotkb_sl2go
-   submitter: goa
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/uniprotkb_sl2go
-   status: active
+  -
+    id: uniprotkb_sl2go
+    label: "uniprotkb_sl2go mapping file"
+    description: "external2go file to map UniProtKB Subcellular Location vocabulary to GO terms"
+    url: http://geneontology.org/external2go/uniprotkb_sl2go
+    type: external2go
+    dataset: uniprotkb_sl2go
+    submitter: goa
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/uniprotkb_sl2go
+    status: active
 
- -
-   id: unirule2go
-   label: "unirule2go mapping file"
-   description: "external2go file to map UniRule rules to GO terms"
-   url: http://geneontology.org/external2go/unirule2go
-   type: external2go
-   dataset: unirule2go
-   submitter: goa
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/unirule2go
-   status: active
+  -
+    id: unirule2go
+    label: "unirule2go mapping file"
+    description: "external2go file to map UniRule rules to GO terms"
+    url: http://geneontology.org/external2go/unirule2go
+    type: external2go
+    dataset: unirule2go
+    submitter: goa
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/unirule2go
+    status: active
 
- -
-   id: hamap2go
-   label: "hamap2go mapping file"
-   description: "external2go file to map HAMAP family members to GO terms"
-   url: http://geneontology.org/external2go/hamap2go
-   type: external2go
-   dataset: hamap2go
-   submitter: goa
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/hamap2go
-   status: active
+  -
+    id: hamap2go
+    label: "hamap2go mapping file"
+    description: "external2go file to map HAMAP family members to GO terms"
+    url: http://geneontology.org/external2go/hamap2go
+    type: external2go
+    dataset: hamap2go
+    submitter: goa
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/hamap2go
+    status: active
 
- -
-   id: gp2protein.human
-   label: "human gp2protein file"
-   description: "the set of UniProtKB accessions for proteins in the human proteome"
-   url: http://geneontology.org/gp2protein/gp2protein.human.gz
-   type: gp2protein
-   dataset: gp2protein.human
-   submitter: goa
-   compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/gp2protein/gp2protein.human.gz
-   status: active
-   species_code: Hsap
-   taxa:
-    - NCBITaxon:9606
+  -
+    id: gp2protein.human
+    label: "human gp2protein file"
+    description: "the set of UniProtKB accessions for proteins in the human proteome"
+    url: http://geneontology.org/gp2protein/gp2protein.human.gz
+    type: gp2protein
+    dataset: gp2protein.human
+    submitter: goa
+    compression: gzip
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/gp2protein/gp2protein.human.gz
+    status: active
+    species_code: Hsap
+    taxa:
+      - NCBITaxon:9606
 
- -
-   id: gp2protein.chicken
-   label: "chicken gp2protein file"
-   description: "the set of UniProtKB accessions for proteins in the chicken proteome"
-   url: http://geneontology.org/gp2protein/gp2protein.chicken.gz
-   type: gp2protein
-   dataset: gp2protein.chicken
-   submitter: goa
-   compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/gp2protein/gp2protein.chicken.gz
-   status: active
-   species_code: Ggal
-   taxa:
-    - NCBITaxon:9031
+  -
+    id: gp2protein.chicken
+    label: "chicken gp2protein file"
+    description: "the set of UniProtKB accessions for proteins in the chicken proteome"
+    url: http://geneontology.org/gp2protein/gp2protein.chicken.gz
+    type: gp2protein
+    dataset: gp2protein.chicken
+    submitter: goa
+    compression: gzip
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/gp2protein/gp2protein.chicken.gz
+    status: active
+    species_code: Ggal
+    taxa:
+      - NCBITaxon:9031
 
- -
-   id: gp2protein.uniprot
-   label: "uniprot gp2protein file"
-   description: "the set of all currently valid UniProtKB accessions"
-   url: http://geneontology.org/gp2protein/gp2protein.uniprot.gz
-   type: gp2protein
-   dataset: gp2protein.uniprot
-   submitter: goa
-   compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/gp2protein/gp2protein.uniprot.gz
-   status: active
-   taxa:
-    - NCBITaxon:1
+  -
+    id: gp2protein.uniprot
+    label: "uniprot gp2protein file"
+    description: "the set of all currently valid UniProtKB accessions"
+    url: http://geneontology.org/gp2protein/gp2protein.uniprot.gz
+    type: gp2protein
+    dataset: gp2protein.uniprot
+    submitter: goa
+    compression: gzip
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/gp2protein/gp2protein.uniprot.gz
+    status: active
+    taxa:
+      - NCBITaxon:1
 
- -
-   id: gp2protein.geneid
-   label: "geneid gp2protein file"
-   description: "mapping from GeneID identifiers to UniProtKB accessions"
-   url: http://geneontology.org/gp2protein/gp2protein.geneid.gz
-   type: gp2protein
-   dataset: gp2protein.geneid
-   submitter: goa
-   compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/gp2protein/gp2protein.geneid.gz
-   status: active
-   taxa:
-    - NCBITaxon:1
+  -
+    id: gp2protein.geneid
+    label: "geneid gp2protein file"
+    description: "mapping from GeneID identifiers to UniProtKB accessions"
+    url: http://geneontology.org/gp2protein/gp2protein.geneid.gz
+    type: gp2protein
+    dataset: gp2protein.geneid
+    submitter: goa
+    compression: gzip
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/gp2protein/gp2protein.geneid.gz
+    status: active
+    taxa:
+      - NCBITaxon:1
 
- -
-   id: gp2protein.refseq
-   label: "refseq gp2protein file"
-   description: "mapping from RefSeq identifiers to UniProtKB accessions"
-   url: http://geneontology.org/gp2protein/gp2protein.refseq.gz
-   type: gp2protein
-   dataset: gp2protein.refseq
-   submitter: goa
-   compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/gp2protein/gp2protein.refseq.gz
-   status: active
-   taxa:
-    - NCBITaxon:1
+  -
+    id: gp2protein.refseq
+    label: "refseq gp2protein file"
+    description: "mapping from RefSeq identifiers to UniProtKB accessions"
+    url: http://geneontology.org/gp2protein/gp2protein.refseq.gz
+    type: gp2protein
+    dataset: gp2protein.refseq
+    submitter: goa
+    compression: gzip
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/gp2protein/gp2protein.refseq.gz
+    status: active
+    taxa:
+      - NCBITaxon:1
 
- -
-   id: gp2protein.unigene
-   label: "unigene gp2protein file"
-   description: "mapping from UniGene identifiers to UniProtKB accessions"
-   url: http://geneontology.org/gp2protein/gp2protein.unigene.gz
-   type: gp2protein
-   dataset: gp2protein.unigene
-   submitter: goa
-   compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/gp2protein/gp2protein.unigene.gz
-   status: active
-   taxa:
-    - NCBITaxon:1
+  -
+    id: gp2protein.unigene
+    label: "unigene gp2protein file"
+    description: "mapping from UniGene identifiers to UniProtKB accessions"
+    url: http://geneontology.org/gp2protein/gp2protein.unigene.gz
+    type: gp2protein
+    dataset: gp2protein.unigene
+    submitter: goa
+    compression: gzip
+    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/gp2protein/gp2protein.unigene.gz
+    status: active
+    taxa:
+      - NCBITaxon:1

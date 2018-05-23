@@ -5,8 +5,6 @@ METADATA_DIR=../metadata
 
 EXCLUDES = goa_uniprot_gcrp goa_pdb
 
-OWLTOOLS_MEMORY ?= 12G
-
 # for each path in the shell `find`, get just the filename, then strip the extension for each group
 # Ex: will end up being just the yaml file names in the datasets directory (aspgd mgi goa fb [etc])
 GROUPS = $(foreach path,$(shell find $(METADATA_DIR)/datasets -name '*.yaml'),$(basename $(notdir $(path))))

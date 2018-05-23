@@ -7,33 +7,45 @@ project_url: "https://zfin.org/"
 funding_source: "NIH (P41 HG002659)"
 email_report: "dhowe@zfin.org,sabrina@zfin.org"
 datasets:
- -    
-   id: zfin.gaf
-   label: "zfin gaf file"
-   description: "gaf file for zfin from Zebrafish Information Network"
-   url: http://geneontology.org/gene-associations/gene_association.zfin.gz
-   type: gaf
-   dataset: zfin
-   submitter: zfin
-   compression: gzip
-   source: https://zfin.org/downloads/gene_association.zfin.gz 
-   entity_type: 
-   status: active
-   species_code: Drer
-   taxa:
+  -
+    id: zfin.gaf
+    label: "zfin gaf file"
+    description: "gaf file for zfin from Zebrafish Information Network"
+    url: http://geneontology.org/gene-associations/gene_association.zfin.gz
+    type: gaf
+    dataset: zfin
+    submitter: zfin
+    compression: gzip
+    source: https://zfin.org/downloads/gene_association.zfin.gz
+    entity_type:
+    status: active
+    paint:
+      id: paint_zfin.gaf
+      label: "paint_zfin gaf file"
+      description: "gaf file for paint_zfin from PAINT"
+      url: http://geneontology.org/gene-associations/gene_association.paint_zfin.gaf.gz
+      type: gaf
+      dataset: paint_zfin
+      submitter: paint
+      compression: gzip
+      source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_zfin.gaf.gz
+      entity_type:
+      status: active
+    species_code: Drer
+    taxa:
     - NCBITaxon:7955
- -    
-   id: zfin.gpi
-   label: "zfin gpi file"
-   description: "gpi file for zfin from Zebrafish Information Network"
-   url: http://geneontology.org/gpad-gpi/release/zfin.gpi.gz
-   type: gpi
-   dataset: zfin
-   submitter: zfin
-   compression: gzip
-   source: https://zfin.org/downloads/zfin.gpi.gz 
-   entity_type: 
-   status: active
-   species_code: Drer
-   taxa:
+  -
+    id: zfin.gpi
+    label: "zfin gpi file"
+    description: "gpi file for zfin from Zebrafish Information Network"
+    url: http://geneontology.org/gpad-gpi/release/zfin.gpi.gz
+    type: gpi
+    dataset: zfin
+    submitter: zfin
+    compression: gzip
+    source: https://zfin.org/downloads/zfin.gpi.gz
+    entity_type:
+    status: active
+    species_code: Drer
+    taxa:
     - NCBITaxon:7955
