@@ -551,7 +551,7 @@
   synonyms:
     - DDB
     - DictyBase
-  rdf_uri_prefix: http://identifiers.org/dictybase/
+  rdf_uri_prefix: http://identifiers.org/dictybase.gene/
   generic_urls:
     - http://dictybase.org
   entity_types:
@@ -1241,7 +1241,6 @@
       example_url: http://www.genenames.org/data/hgnc_data.php?hgnc_id=HGNC:29
 - database: HGNC_gene
   name: HUGO Gene Nomenclature Committee
-  rdf_uri_prefix: http://identifiers.org/hgnc.gene/
   generic_urls:
     - http://www.genenames.org/
   entity_types:
@@ -1772,7 +1771,7 @@
       example_id: MGD:Adcy9
 - database: MGI
   name: Mouse Genome Informatics
-  rdf_uri_prefix: http://identifiers.org/mgi/
+  rdf_uri_prefix: http://identifiers.org/mgi/MGI:
   generic_urls:
     - http://www.informatics.jax.org/
   entity_types:

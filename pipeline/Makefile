@@ -35,6 +35,9 @@ GAF_OWL = target/go-gaf.owl
 $(GAF_OWL):
 	owltools --log-error $(OBO)/go/extensions/go-gaf.owl --merge-imports-closure --add-obo-shorthand-to-properties -o $@
 
+## Ensure that we are bringing in the environment we want.
+OWLTOOLS_MEMORY ?= 8G
+
 PY_ENV ?= target/env
 PY_BIN ?= $(PY_ENV)/bin
 VALIDATE = $(PY_BIN)/validate.py
@@ -116,7 +119,7 @@ target/noctua-models:
 
 ONT_MERGED = target/go-graphstore-merged.ttl
 $(ONT_MERGED):
-	OWLTOOLS_MEMORY=12G owltools --log-error go-graphstore.owl --merge-imports-closure -o -f turtle $@
+	owltools --log-error go-graphstore.owl --merge-imports-closure -o -f turtle $@
 .PRECIOUS: $(ONT_MERGED)
 
 target/rdf: $(ONT_MERGED) groups
