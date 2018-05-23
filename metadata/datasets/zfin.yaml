@@ -33,7 +33,7 @@ datasets:
       status: active
     species_code: Drer
     taxa:
-    - NCBITaxon:7955
+      - NCBITaxon:7955
   -
     id: zfin.gpi
     label: "zfin gpi file"
@@ -48,4 +48,4 @@ datasets:
     status: active
     species_code: Drer
     taxa:
-    - NCBITaxon:7955
+      - NCBITaxon:7955
