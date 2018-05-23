@@ -7,19 +7,30 @@ project_url: "http://flybase.org"
 funding_source: "MRC at UK MRC, grant number G1000968 "
 email_report: "gocur@morgan.harvard.edu"
 datasets:
- -    
-   id: fb.gaf
-   label: "fb gaf file"
-   description: "gaf file for fb from FlyBase"
-   url: http://geneontology.org/gene-associations/gene_association.fb.gz
-   type: gaf
-   dataset: fb
-   submitter: fb
-   compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.fb.gz
-   entity_type: 
-   status: active
-   species_code: Dmel
-   taxa:
-    - NCBITaxon:7227
-
+  -
+    id: fb.gaf
+    label: "fb gaf file"
+    description: "gaf file for fb from FlyBase"
+    url: http://geneontology.org/gene-associations/gene_association.fb.gz
+    type: gaf
+    dataset: fb
+    submitter: fb
+    compression: gzip
+    source: http://geneontology.org/gene-associations/submission/gene_association.fb.gz
+    entity_type:
+    status: active
+    paint:
+      id: paint_fb.gaf
+      label: "paint_fb gaf file"
+      description: "gaf file for paint_fb from PAINT"
+      url: http://geneontology.org/gene-associations/gene_association.paint_fb.gaf.gz
+      type: gaf
+      dataset: paint_fb
+      submitter: paint
+      compression: gzip
+      source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_fb.gaf.gz
+      entity_type:
+      status: active
+    species_code: Dmel
+    taxa:
+      - NCBITaxon:7227

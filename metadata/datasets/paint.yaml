@@ -2,92 +2,92 @@ id: paint
 label: PAINT
 description: "GO data for PAINT"
 datasets:
- -
-   id: paint_cgd.gaf
-   label: "paint_cgd gaf file"
-   description: "gaf file for paint_cgd from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_cgd.gaf.gz
-   type: gaf
-   dataset: paint_cgd
-   submitter: paint
-   compression: gzip
-   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_cgd.gaf.gz
-   entity_type:
-   status: active
-   species_code:
-   taxa:
-    - NCBITaxon:5476
-   merges_into: cgd
+ # -
+ #   id: paint_cgd.gaf
+ #   label: "paint_cgd gaf file"
+ #   description: "gaf file for paint_cgd from PAINT"
+ #   url: http://geneontology.org/gene-associations/gene_association.paint_cgd.gaf.gz
+ #   type: gaf
+ #   dataset: paint_cgd
+ #   submitter: paint
+ #   compression: gzip
+ #   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_cgd.gaf.gz
+ #   entity_type:
+ #   status: active
+ #   species_code:
+ #   taxa:
+ #    - NCBITaxon:5476
+ #   merges_into: cgd
+
+ # -
+ #   id: paint_dictybase.gaf
+ #   label: "paint_dictybase gaf file"
+ #   description: "gaf file for paint_dictybase from PAINT"
+ #   url: http://geneontology.org/gene-associations/gene_association.paint_dictyBase.gaf.gz
+ #   type: gaf
+ #   dataset: paint_dictybase
+ #   submitter: paint
+ #   compression: gzip
+ #   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_dictyBase.gaf.gz
+ #   entity_type:
+ #   status: active
+ #   species_code: Ddis
+ #   taxa:
+ #    - NCBITaxon:352472
+ #    - NCBITaxon:366501
+ #    - NCBITaxon:44689
+ #    - NCBITaxon:5782
+ #   merges_into: dictybase
+
+ # -
+ #   id: paint_ecocyc.gaf
+ #   label: "paint_ecocyc gaf file"
+ #   description: "gaf file for paint_ecocyc from PAINT"
+ #   url: http://geneontology.org/gene-associations/gene_association.paint_ecocyc.gaf.gz
+ #   type: gaf
+ #   dataset: paint_ecocyc
+ #   submitter: paint
+ #   compression: gzip
+ #   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_ecocyc.gaf.gz
+ #   entity_type:
+ #   status: active
+ #   species_code:
+ #   taxa:
+ #    - NCBITaxon:83333
+ #   merges_into: ecocyc
 
  -
-   id: paint_dictybase.gaf
-   label: "paint_dictybase gaf file"
-   description: "gaf file for paint_dictybase from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_dictyBase.gaf.gz
-   type: gaf
-   dataset: paint_dictybase
-   submitter: paint
-   compression: gzip
-   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_dictyBase.gaf.gz
-   entity_type:
-   status: active
-   species_code: Ddis
-   taxa:
-    - NCBITaxon:352472
-    - NCBITaxon:366501
-    - NCBITaxon:44689
-    - NCBITaxon:5782
-   merges_into: dictybase
+   # id: paint_fb.gaf
+   # label: "paint_fb gaf file"
+   # description: "gaf file for paint_fb from PAINT"
+   # url: http://geneontology.org/gene-associations/gene_association.paint_fb.gaf.gz
+   # type: gaf
+   # dataset: paint_fb
+   # submitter: paint
+   # compression: gzip
+   # source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_fb.gaf.gz
+   # entity_type:
+   # status: active
+   # species_code: Dmel
+   # taxa:
+   #  - NCBITaxon:7227
+   # merges_into: fb
 
- -
-   id: paint_ecocyc.gaf
-   label: "paint_ecocyc gaf file"
-   description: "gaf file for paint_ecocyc from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_ecocyc.gaf.gz
-   type: gaf
-   dataset: paint_ecocyc
-   submitter: paint
-   compression: gzip
-   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_ecocyc.gaf.gz
-   entity_type:
-   status: active
-   species_code:
-   taxa:
-    - NCBITaxon:83333
-   merges_into: ecocyc
-
- -
-   id: paint_fb.gaf
-   label: "paint_fb gaf file"
-   description: "gaf file for paint_fb from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_fb.gaf.gz
-   type: gaf
-   dataset: paint_fb
-   submitter: paint
-   compression: gzip
-   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_fb.gaf.gz
-   entity_type:
-   status: active
-   species_code: Dmel
-   taxa:
-    - NCBITaxon:7227
-   merges_into: fb
-
- -
-   id: paint_goa_chicken.gaf
-   label: "paint_goa_chicken gaf file"
-   description: "gaf file for paint_goa_chicken from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_goa_chicken.gaf.gz
-   type: gaf
-   dataset: paint_goa_chicken
-   submitter: paint
-   compression: gzip
-   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_chicken.gaf.gz
-   entity_type: chicken
-   status: active
-   species_code:
-   taxa:
-   merges_into: goa_chicken
+ # -
+ #   id: paint_goa_chicken.gaf
+ #   label: "paint_goa_chicken gaf file"
+ #   description: "gaf file for paint_goa_chicken from PAINT"
+ #   url: http://geneontology.org/gene-associations/gene_association.paint_goa_chicken.gaf.gz
+ #   type: gaf
+ #   dataset: paint_goa_chicken
+ #   submitter: paint
+ #   compression: gzip
+ #   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_chicken.gaf.gz
+ #   entity_type: chicken
+ #   status: active
+ #   species_code:
+ #   taxa:
+ #   merges_into: goa_chicken
 
  -
    id: paint_goa_human.gaf
@@ -134,10 +134,10 @@ datasets:
    source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_other.gaf.gz
    entity_type:
    status: active
-   species_code: 
+   species_code:
    taxa: []
-   
- -    
+
+ -
    id: paint_pombase.gaf
    label: "paint_pombase gaf file"
    description: "gaf file for paint_pombase from PAINT"
