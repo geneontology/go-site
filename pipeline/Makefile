@@ -52,7 +52,7 @@ DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(EXCLUDES),-x $(exclusio
 
 %-owltools-check.txt: %.gaf.gz $(GAF_OWL)
 	gzip -dcf $< > $*.gaf
-	OWLTOOLS_MEMORY=$(OWLTOOLS_MEMORY) owltools --log-warning $(GAF_OWL) \
+	owltools --log-warning $(GAF_OWL) \
 	--gaf $*.gaf \
 	--createReport \
 	--gaf-report-file $*-owltools-check.txt \
