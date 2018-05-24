@@ -103,6 +103,66 @@ mapping:
             type: str
             required: false
             unique: false
+          "paint":
+            type: map
+            required: false
+            mapping:
+              "id":
+                type: str
+                required: true
+                unique: true
+              "label":
+                type: str
+                required: true
+                unique: true
+              "description":
+                type: str
+                required: true
+                unique: true
+              "url":
+                type: str
+                required: true
+                unique: true
+              "type":
+                type: str
+                required: true
+                unique: false
+              "dataset":
+                type: str
+                required: true
+                unique: false
+              "submitter":
+                type: str
+                required: true
+                unique: false
+              "compression":
+                type: str
+                required: false
+                unique: false
+              "source":
+                type: str
+                required: false
+                unique: false
+              "species_code":
+                type: str
+                required: false
+                unique: false
+              "merges_into":
+                type: str
+                required: false
+                unique: false
+              "entity_type":
+                type: str
+                required: false
+                unique: false
+              "aggregates":
+                type: str
+                required: false
+                unique: false
+              "status":
+                type: str
+                required: false
+                unique: false
           "taxa":
             type: seq
             required: false
