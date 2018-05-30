@@ -7,19 +7,30 @@ project_url: "http://ecoliwiki.net"
 funding_source: "GM077678, NIGMS U24GM088849"
 email_report: "ecoliwiki@gmail.com"
 datasets:
- -    
-   id: ecocyc.gaf
-   label: "ecocyc gaf file"
-   description: "gaf file for ecocyc from Encyclopedia of E. coli metabolism"
-   url: http://geneontology.org/gene-associations/gene_association.ecocyc.gz
-   type: gaf
-   dataset: ecocyc
-   submitter: ecocyc
-   compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.ecocyc.gz
-   entity_type: 
-   status: active
-   species_code: 
-   taxa:
-    - NCBITaxon:83333
-
+  -
+    id: ecocyc.gaf
+    label: "ecocyc gaf file"
+    description: "gaf file for ecocyc from Encyclopedia of E. coli metabolism"
+    url: http://geneontology.org/gene-associations/gene_association.ecocyc.gz
+    type: gaf
+    dataset: ecocyc
+    submitter: ecocyc
+    compression: gzip
+    source: http://geneontology.org/gene-associations/submission/gene_association.ecocyc.gz
+    entity_type:
+    status: active
+    paint:
+      id: paint_ecocyc.gaf
+      label: "paint_ecocyc gaf file"
+      description: "gaf file for paint_ecocyc from PAINT"
+      url: http://geneontology.org/gene-associations/gene_association.paint_ecocyc.gaf.gz
+      type: gaf
+      dataset: paint_ecocyc
+      submitter: paint
+      compression: gzip
+      source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_ecocyc.gaf.gz
+      entity_type:
+      status: active
+    species_code:
+    taxa:
+      - NCBITaxon:83333

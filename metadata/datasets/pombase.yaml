@@ -7,20 +7,31 @@ project_url: "http://www.pombase.org/"
 funding_source: "Wellcome Trust"
 email_report: "helpdesk@pombase.org"
 datasets:
- -    
-   id: pombase.gaf
-   label: "pombase gaf file"
-   description: "gaf file for pombase from PomBase"
-   url: http://geneontology.org/gene-associations/gene_association.pombase.gz
-   type: gaf
-   dataset: pombase
-   submitter: pombase
-   compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.pombase.gz
-   entity_type: 
-   status: active
-   species_code: Spom
-   taxa:
-    - NCBITaxon:284812
-    - NCBITaxon:4896
-
+  -
+    id: pombase.gaf
+    label: "pombase gaf file"
+    description: "gaf file for pombase from PomBase"
+    url: http://geneontology.org/gene-associations/gene_association.pombase.gz
+    type: gaf
+    dataset: pombase
+    submitter: pombase
+    compression: gzip
+    source: http://geneontology.org/gene-associations/submission/gene_association.pombase.gz
+    entity_type:
+    status: active
+    paint:
+      id: paint_mgi.gaf
+      label: "paint_mgi gaf file"
+      description: "gaf file for paint_mgi from PAINT"
+      url: http://geneontology.org/gene-associations/gene_association.paint_mgi.gaf.gz
+      type: gaf
+      dataset: paint_mgi
+      submitter: paint
+      compression: gzip
+      source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_mgi.gaf.gz
+      entity_type:
+      status: active
+    species_code: Spom
+    taxa:
+      - NCBITaxon:284812
+      - NCBITaxon:4896
