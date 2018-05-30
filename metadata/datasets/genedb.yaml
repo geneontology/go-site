@@ -16,7 +16,7 @@ datasets:
    dataset: genedb_lmajor
    submitter: genedb
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.GeneDB_Lmajor.gz
+   source: ftp://ftp.sanger.ac.uk/pub/project/pathogens/gff3/CURRENT/Lmajor.gaf
    entity_type: 
    status: active
    species_code: 
@@ -48,7 +48,7 @@ datasets:
    dataset: genedb_tbrucei
    submitter: genedb
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.GeneDB_Tbrucei.gz
+   source: ftp://ftp.sanger.ac.uk/pub/project/pathogens/gff3/CURRENT/Tbruceibrucei927.gaf
    entity_type: 
    status: active
    species_code: 
