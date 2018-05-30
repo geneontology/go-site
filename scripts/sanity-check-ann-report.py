@@ -106,6 +106,13 @@ def main():
         if aid.lower().find('uniprot') != -1:
             LOGGER.info("Smells like uniprot; skipping: " + aid)
             continue
+        merge_paint_p = False
+        ## This trigger is expected to be removed as we fix
+        ## https://github.com/geneontology/go-site/issues/642#issuecomment-393349357
+        if aid.lower().find('paint_') != -1 and not aid.lower().find('paint_other') != -1:
+            LOGGER.info("Smells like paint, but not paint_other; changing mode: " + aid)
+            merge_paint_p = True
+            #continue
 
         ###
         ### Extract information from the report.
@@ -157,6 +164,10 @@ def main():
         ###  2 Syntax errors or inaccessible files (even if matches were found).
         ###
 
+        maid = aid
+        if merge_paint_p == True:
+            maid = aid + '_valid'
+
         ## Get source count.
         foo = subprocess.run(
             'zgrep -Ec "$" ' + args.directory + '/' + aid + '-src.gaf.gz',
@@ -169,7 +180,7 @@ def main():
 
         ## Get product count.
         foo = subprocess.run(
-            'zgrep -Ec "$" ' + args.directory + '/' + aid + '.gaf.gz',
+            'zgrep -Ec "$" ' + args.directory + '/' + maid + '.gaf.gz',
             shell=True, check=False, stdout=subprocess.PIPE)
         if type(foo) is not subprocess.CompletedProcess:
             die_screaming('Shell fail on: ' + str(foo))
@@ -179,7 +190,7 @@ def main():
 
         ## Check to see if there is a header/comments.
         foo = subprocess.run(
-            'zgrep -Ec "^!" ' + args.directory + '/' + aid + '.gaf.gz',
+            'zgrep -Ec "^!" ' + args.directory + '/' + maid + '.gaf.gz',
             shell=True, check=False, stdout=subprocess.PIPE)
         if type(foo) is not subprocess.CompletedProcess:
             die_screaming('Shell fail on: ' + str(foo))
