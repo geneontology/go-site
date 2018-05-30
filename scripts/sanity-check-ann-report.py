@@ -246,7 +246,7 @@ def main():
         ## same numbers in the checker.
         if count_gaf_src < (lines_in_file * 0.9):
             die_screaming('Expected associations worryingly reduced (direct): ' + aid)
-        if count_gaf_src < (lines_assocs + lines_skipped) * 0.9):
+        if count_gaf_src < ((lines_assocs + lines_skipped) * 0.9):
             die_screaming('Expected associations worryingly reduced (additive): ' + aid)
 
         LOGGER.info(aid + ' okay...')
