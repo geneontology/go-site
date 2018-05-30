@@ -33,6 +33,10 @@ logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger('sanity')
 LOGGER.setLevel(logging.WARNING)
 
+## Some parameters to play with.
+src_header_size = 8
+small_file_size = 25
+
 ## Make sure we exit in a way that will get Jenkins's attention.
 DIED_SCREAMING_P = False
 
@@ -226,21 +230,24 @@ def main():
         ## There must be a product when something comes in.
         ## Keep in mind that the src files sometimes have header
         ## comments, but no content, so we give a buffer of 8.
-        if count_gaf_prod == 0 and count_gaf_src > 8:
+        if count_gaf_prod == 0 and count_gaf_src > src_header_size:
             LOGGER.warning('count_gaf_src ' + str(count_gaf_src))
             LOGGER.warning('count_gaf_prod ' + str(count_gaf_prod))
             die_screaming('No product found for: ' + aid)
         ## Product must not be a "severe" reduction from source, but
         ## only in cases of larger files.
-        if (count_gaf_prod < (count_gaf_src / 2)) and count_gaf_src > 25:
+        if (count_gaf_prod < (count_gaf_src / 2)) and count_gaf_src > small_file_size:
             die_screaming('Severe reduction of product for: ' + aid)
         ## No fatal remarks should have been made.
         if lines_fatal > 0:
             die_screaming('Fatal error in: ' + aid)
         ## Source count should not be more than 10% off from reported
-        ## count.
-        if count_gaf_src < (((lines_in_file - lines_assocs) + lines_skipped) * 0.9):
-            die_screaming('Expected associations worryingly reduced: ' + aid)
+        ## count--two forms to exercise what should be pretty much the
+        ## same numbers in the checker.
+        if count_gaf_src < (lines_in_file * 0.9):
+            die_screaming('Expected associations worryingly reduced (direct): ' + aid)
+        if count_gaf_src < (lines_assocs + lines_skipped) * 0.9):
+            die_screaming('Expected associations worryingly reduced (additive): ' + aid)
 
         LOGGER.info(aid + ' okay...')
 
