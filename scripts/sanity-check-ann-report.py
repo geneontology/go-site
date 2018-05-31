@@ -14,6 +14,8 @@
 ####  mkdir -p /tmp/foo || true
 ####  sshfs -oStrictHostKeyChecking=no -o IdentitiesOnly=true -o IdentityFile=/home/sjcarbon/local/share/secrets/bbop/ssh-keys/foo.skyhook -o idmap=user skyhook@skyhook.berkeleybop.org:/home/skyhook /tmp/mnt/
 ####  cp /tmp/mnt/master/annotations/whatever* /tmp/foo
+####  cp /tmp/mnt/master/reports/whatever* /tmp/foo
+####  cp /tmp/mnt/master/products/annotations/whatever* /tmp/foo
 ####  fusermount -u /tmp/mnt
 ####  python3 sanity-check-ann-report.py -v -d /tmp/foo
 ####
@@ -30,6 +32,10 @@ import subprocess
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger('sanity')
 LOGGER.setLevel(logging.WARNING)
+
+## Some parameters to play with.
+src_header_size = 8
+small_file_size = 25
 
 ## Make sure we exit in a way that will get Jenkins's attention.
 DIED_SCREAMING_P = False
@@ -100,6 +106,13 @@ def main():
         if aid.lower().find('uniprot') != -1:
             LOGGER.info("Smells like uniprot; skipping: " + aid)
             continue
+        merge_paint_p = False
+        ## This trigger is expected to be removed as we fix
+        ## https://github.com/geneontology/go-site/issues/642#issuecomment-393349357
+        if aid.lower().find('paint_') != -1 and not aid.lower().find('paint_other') != -1:
+            LOGGER.info("Smells like paint, but not paint_other; changing mode: " + aid)
+            merge_paint_p = True
+            #continue
 
         ###
         ### Extract information from the report.
@@ -151,6 +164,10 @@ def main():
         ###  2 Syntax errors or inaccessible files (even if matches were found).
         ###
 
+        maid = aid
+        if merge_paint_p == True:
+            maid = aid + '_valid'
+
         ## Get source count.
         foo = subprocess.run(
             'zgrep -Ec "$" ' + args.directory + '/' + aid + '-src.gaf.gz',
@@ -163,7 +180,7 @@ def main():
 
         ## Get product count.
         foo = subprocess.run(
-            'zgrep -Ec "$" ' + args.directory + '/' + aid + '.gaf.gz',
+            'zgrep -Ec "$" ' + args.directory + '/' + maid + '.gaf.gz',
             shell=True, check=False, stdout=subprocess.PIPE)
         if type(foo) is not subprocess.CompletedProcess:
             die_screaming('Shell fail on: ' + str(foo))
@@ -173,7 +190,7 @@ def main():
 
         ## Check to see if there is a header/comments.
         foo = subprocess.run(
-            'zgrep -Ec "^!" ' + args.directory + '/' + aid + '.gaf.gz',
+            'zgrep -Ec "^!" ' + args.directory + '/' + maid + '.gaf.gz',
             shell=True, check=False, stdout=subprocess.PIPE)
         if type(foo) is not subprocess.CompletedProcess:
             die_screaming('Shell fail on: ' + str(foo))
@@ -224,21 +241,24 @@ def main():
         ## There must be a product when something comes in.
         ## Keep in mind that the src files sometimes have header
         ## comments, but no content, so we give a buffer of 8.
-        if count_gaf_prod == 0 and count_gaf_src > 8:
+        if count_gaf_prod == 0 and count_gaf_src > src_header_size:
             LOGGER.warning('count_gaf_src ' + str(count_gaf_src))
             LOGGER.warning('count_gaf_prod ' + str(count_gaf_prod))
             die_screaming('No product found for: ' + aid)
         ## Product must not be a "severe" reduction from source, but
         ## only in cases of larger files.
-        if (count_gaf_prod < (count_gaf_src / 2)) and count_gaf_src > 25:
+        if (count_gaf_prod < (count_gaf_src / 2)) and count_gaf_src > small_file_size:
             die_screaming('Severe reduction of product for: ' + aid)
         ## No fatal remarks should have been made.
         if lines_fatal > 0:
             die_screaming('Fatal error in: ' + aid)
         ## Source count should not be more than 10% off from reported
-        ## count.
-        if count_gaf_src < (((lines_in_file - lines_assocs) + lines_skipped) * 0.9):
-            die_screaming('Expected associations worryingly reduced: ' + aid)
+        ## count--two forms to exercise what should be pretty much the
+        ## same numbers in the checker.
+        if count_gaf_src < (lines_in_file * 0.9):
+            die_screaming('Expected associations worryingly reduced (direct): ' + aid)
+        if count_gaf_src < ((lines_assocs + lines_skipped) * 0.9):
+            die_screaming('Expected associations worryingly reduced (additive): ' + aid)
 
         LOGGER.info(aid + ' okay...')
 
