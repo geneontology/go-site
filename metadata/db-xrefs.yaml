@@ -206,8 +206,7 @@
       example_url: http://www.brenda-enzymes.info/php/result_flat.php4?ecno=4.2.1.3
 - database: BTO
   name: BRENDA tissue / enzyme ontology
-  description: A structured controlled vocabulary for the source of an enzyme comprising tissues, cell lines, cell types and cell \
-cultures.
+  description: A structured controlled vocabulary for the source of an enzyme comprising tissues, cell lines, cell types and cell cultures.
   rdf_uri_prefix: http://purl.obolibrary.org/obo/BTO_
   generic_urls:
     - http://purl.obolibrary.org/obo/bto
