@@ -16,7 +16,7 @@ datasets:
    dataset: wb
    submitter: wb
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.wb.gz
+   source: ftp://ftp.wormbase.org/pub/wormbase/species/c_elegans/PRJNA13758/annotation/go_annotations/c_elegans.PRJNA13758.current.go_annotations.gaf.gz
    entity_type: 
    status: active
    species_code: Cele
