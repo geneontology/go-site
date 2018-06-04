@@ -6,7 +6,7 @@ This is the source file for the GO prefix registry.
 
 The source file is in YAML and is available here:
 
-[go-dbxrefs.yaml](go-dbxrefs.yaml)
+[https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml](go-dbxrefs.yaml)
 
 ## Browsing
 
