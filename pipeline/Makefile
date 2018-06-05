@@ -37,6 +37,8 @@ $(GAF_OWL):
 
 ## Ensure that we are bringing in the environment we want.
 OWLTOOLS_MEMORY ?= 8G
+# blazegraph-runner memory
+BGMEM ?= 12G
 
 PY_ENV ?= target/env
 PY_BIN ?= $(PY_ENV)/bin
@@ -146,20 +148,18 @@ CAM_GRAPH_QUERY = '\
 BG_PROPERTIES = conf/blazegraph.properties
 LOAD_TARGETS = $(ONT_MERGED) target/rdf target/noctua-models/models
 
-# blazegraph-runner memory
-JAVA_OPTS ?= Xmx12G
 target/blazegraph.jnl: $(BGJAR) target/rdf target/noctua-models
-	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties load --use-ontology-graph $(LOAD_TARGETS)
-	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(GO_GRAPHSTORE_URI) --append-graph-name="_inferred"
+	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties load --use-ontology-graph $(LOAD_TARGETS)
+	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(GO_GRAPHSTORE_URI) --append-graph-name="_inferred"
 
 target/blazegraph-internal.jnl: target/blazegraph.jnl
 	cp $< $@
-	blazegraph-runner --journal=$@ update sparql/insert/insert_noctua_metadata.sparql
-	blazegraph-runner --journal=$@ update sparql/insert/insert_ontology_metadata.sparql
+	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=$@ update sparql/insert/insert_noctua_metadata.sparql
+	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=$@ update sparql/insert/insert_ontology_metadata.sparql
 
 target/blazegraph-production.jnl: target/blazegraph-internal.jnl
 	cp $< $@
-	blazegraph-runner --journal=$@ update sparql/delete/delete_non_production.sparql
+	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=$@ update sparql/delete/delete_non_production.sparql
 
 target/sparta-report.json: target/blazegraph-production.jnl
 	PY_ENV=$(PY_ENV) ./triplestore-rulecheck.sh 8898 $< $@
