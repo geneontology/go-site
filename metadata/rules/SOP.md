@@ -14,11 +14,12 @@ Use an existing rule as a template
 ---
 layout: rule
 id: GORULE:nnnnnn
-type: filter/repair/report
 title: "SHORT DESCRIPTIVE TITLE"
-contact: "go-quality@mailman.stanford.edu" or your GITHUB handle for proposed rules
+type: filter/repair/report
 status: Proposed/Approved/Implemented/Deprecated
 fail_mode: soft/hard
+contact: "go-quality@mailman.stanford.edu" or your GITHUB handle for proposed rules
+implementations:
 ---
 
 DETAILED DESCRIPTION IN MARKDOWN FORMAT HERE
