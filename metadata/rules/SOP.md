@@ -14,14 +14,24 @@ Use an existing rule as a template
 ---
 layout: rule
 id: GORULE:nnnnnn
+type: filter/repair/report
 title: "SHORT DESCRIPTIVE TITLE"
-contact: YOUR GITHUB HANDLE
-status: Proposed
+contact: "go-quality@mailman.stanford.edu" or your GITHUB handle for proposed rules
+status: Proposed/Approved/Implemented/Deprecated
+fail_mode: soft
 ---
 
 DETAILED DESCRIPTION IN MARKDOWN FORMAT HERE
 
 ```
+
+Information about types:
+
+    filter: This rule applies to individual lines in a GAF, and will throw out the line on a failure of the rule.
+    repair: This rule applies also to individual lines in a GAF, and will attempt to map a rule failure into compliance.
+    report: This can apply individually or collectively as a SPARQL query.
+
+
 
 Note: it is OK to create a stub entry and have a godev member help you
 fill out the details. However, stub entries will not be merged until
