@@ -11,6 +11,10 @@ mapping:
   "title":
     type: str
     required: true
+  "type"
+    type: str
+    required: true
+    enum: ["report", "repair", "filter"]
   "contact":
     type: str
     required: true
@@ -18,7 +22,7 @@ mapping:
   "status":
     type: str
     required: true
-    enum: [Implemented, Proposed, Approved]
+    enum: ["implemented", "proposed", "approved"]
   "fail_mode":
     type: str
     required: true
