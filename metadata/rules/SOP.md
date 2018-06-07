@@ -16,8 +16,8 @@ layout: rule
 id: GORULE:nnnnnn
 title: "SHORT DESCRIPTIVE TITLE"
 type: filter/repair/report
-status: Proposed/Approved/Implemented/Deprecated
 fail_mode: soft/hard
+status: proposed/approved/implemented/deprecated
 contact: "go-quality@mailman.stanford.edu" or your GITHUB handle for proposed rules
 implementations:
 ---
