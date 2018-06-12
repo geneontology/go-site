@@ -283,9 +283,9 @@
   id: http://www.iner.salud.gob.mx
   shorthand: INER
 -
-  label: YubioLab-GO
+  label: YuBioLab
   id: http://citgenedb.yubiolab.org
-  shorthand: YubioLab-GO
+  shorthand: YuBioLab
 -
   label: RNAcentral
   id: http://rnacentral.org
