@@ -15,10 +15,14 @@ mapping:
     type: str
     required: true
     pattern: /[^\s]+@[^\s]+\.[^\s]+/
+  "type":
+    type: str
+    required: true
+    enum: [filter, report, repair]
   "status":
     type: str
     required: true
-    enum: [Implemented, Proposed, Approved]
+    enum: [implemented, proposed, approved, deprecated]
   "fail_mode":
     type: str
     required: true
