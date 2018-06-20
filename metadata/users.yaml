@@ -2026,7 +2026,6 @@
       allow-write: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Doug Howe'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0001-5831-7439'
@@ -2042,7 +2041,6 @@
       allow-write: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'David Fashena'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0001-9656-0683'
@@ -2058,7 +2056,6 @@
       allow-write: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Ceri Van Slyke'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0002-2244-7917'
@@ -2072,7 +2069,6 @@
         allow-edit: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Sridhar Ramachandran'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0002-2246-3722'
@@ -2088,7 +2084,6 @@
       allow-write: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Yvonne M Bradford'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0002-9900-7880'
@@ -2102,7 +2097,6 @@
         allow-edit: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Sabrina Toro'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0002-4142-7153'
@@ -2114,7 +2108,6 @@
         allow-edit: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Ken Frazer'
   uri: 'http://orcid.org/0000-0002-6889-0711'
   xref: 'GOC:ksf'
@@ -2127,7 +2120,6 @@
         allow-edit: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Leyla Ruzicka'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0002-1009-339X'
@@ -2141,7 +2133,6 @@
         allow-edit: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Christian Pich'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0001-5334-4542'
@@ -3326,7 +3317,6 @@
         allow-edit: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Amy Singer'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0002-9663-3237'
