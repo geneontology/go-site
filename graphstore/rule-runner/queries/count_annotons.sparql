@@ -1,0 +1,20 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX go: <http://purl.obolibrary.org/obo/go#>
+PREFIX metago: <http://model.geneontology.org/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?gafCam (COUNT(?b) as ?count)
+WHERE {
+
+	?gafCam metago:graphType metago:gafCam .
+  ?g ?R ?o .
+
+  ?b owl:annotatedSource ?g ;
+     owl:annotatedProperty ?R ;
+     owl:annotatedTarget ?o .
+
+}
+GROUP BY ?gafCam
+LIMIT 10
