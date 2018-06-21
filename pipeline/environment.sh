@@ -4,4 +4,4 @@ python3 -m venv target/env
 
 pip3 install -r requirements.txt
 
-pip3 install ../graphstore/rule-runner
+pip3 install --editable ../graphstore/rule-runner

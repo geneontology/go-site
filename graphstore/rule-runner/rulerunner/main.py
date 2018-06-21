@@ -8,6 +8,7 @@ import logging
 import glob
 import yamldown
 import rdflib
+import gzip
 
 from typing import Union, Dict
 
@@ -53,6 +54,20 @@ class RuleParameter(click.Path):
 
     def is_just_id(self, value) -> bool:
         return re.match(r"[\d]:{7}", value)
+
+
+class GlobPath(click.Path):
+    name = "glob"
+
+    def __init__(self):
+        super(GlobPath, self).__init__(exists=True, file_okay=True, dir_okay=False, readable=True, resolve_path=True)
+
+    def convert(self, value: str, param, ctx):
+        paths = glob.glob(value)
+        p = [super(GlobPath, self).convert(path, param, ctx) for path in paths]
+        click.echo("In convert glob!")
+        click.echo(p)
+        return p
 
 
 @click.group()
@@ -118,6 +133,60 @@ def local(turtle, sparql_file):
     g.parse(turtle, format="trig")
     results = g.query(sparql_file.read())
     click.echo(results.serialize(format="txt"))
+
+@cli.command()
+@click.pass_context
+@click.argument("ttl", type=click.Path(exists=True), required=True, nargs=-1)
+def sanity(ctx, ttl):
+    click.echo("Sanity check")
+    failed_sanity_check = False
+
+    click.echo(ttl)
+    # all_ttl_files = []
+    # for files in ttl:
+    #     all_ttl_files.extend(files)
+    #
+    # click.echo(all_ttl_files)
+
+    for ttl_path in ttl:
+        with open(ttl_path, 'rb') as a_ttl:
+            click.echo("Using {}".format(a_ttl.name))
+
+            target_lines = lines_in_file(find_gaf_zip_from_ttl(a_ttl.name))
+            if target_lines == -1:
+                click.echo("No corresponding gaf, skipping...")
+                continue
+
+            click.echo("{} lines in corresponding gaf".format(target_lines))
+
+            click.echo("loading ttl...")
+            graph = rdflib.ConjunctiveGraph()
+            graph.parse(a_ttl, format="turtle")
+
+            with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../queries/count_annotons.sparql")) as qf:
+                results = graph.query(qf.read())
+                json_results = json.loads(results.serialize(format="json"))
+                annoton_count = [int(binding["count"]["value"]) for binding in json_results["results"]["bindings"] if "count" in binding][0]
+                click.echo("{} annotons found".format(annoton_count))
+
+        if annoton_count < target_lines/2:
+            click.echo("Fewer than 50% annotons found from the GAF! Sanity Check Failed!")
+        else:
+            click.echo("Annoton count within reasonable parameters.")
+
+    if failed_sanity_check:
+        ctx.exit(1)
+
+def find_gaf_zip_from_ttl(ttl_path):
+    group = os.path.basename(ttl_path).split(".")[0].split("_")[0]
+    return os.path.join(os.path.dirname(ttl_path), "{group}.gaf.gz".format(group=group))
+
+def lines_in_file(path):
+    try:
+        with gzip.open(path, "rb") as pf:
+            return sum(1 for line in pf if not str(line).startswith("!"))
+    except:
+        return -1
 
 
 def rules_directory(path=None):
