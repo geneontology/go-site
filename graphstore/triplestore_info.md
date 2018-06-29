@@ -127,7 +127,7 @@ upper case letters in boxes.
 ## SPARQL
 
 The data can be queried with SPARQL queries. Here are listed a couple SPARQL
-tutorials and introductions. The next section will outline a simple strategy.
+tutorials and introductions.
 
 1. https://www.slideshare.net/jervenbolleman/rdf-what-and-why-plus-a-sparql-tutorial
 2. https://jena.apache.org/tutorials/sparql_basic_patterns.html
