@@ -22,7 +22,7 @@ organized in the triple store is discussed below.
 
 ### Contents
 
-The Ontolgoy and all imports, all GAFs as GO-CAMs, and all production Noctua
+The Ontology and all imports, all GAFs as GO-CAMs, and all production Noctua
 GO-CAM models. Additionally, the [Arachne](https://github.com/balhoff/arachne)
 reasoner is run on all Noctua GO-CAM models, producing a set of inferred data.
 
