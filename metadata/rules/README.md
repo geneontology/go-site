@@ -8,7 +8,7 @@ contains the information required to execute it.
 For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
 
 
- * <a href="#gorule0000001">GORULE:0000001 Basic GAF checks</a>
+ * <a href="#gorule0000001">GORULE:0000001 GAF lines are parsed as version 2.1</a>
  * <a href="#gorule0000002">GORULE:0000002 No 'NOT' annotations to 'protein binding ; GO:0005515'</a>
  * <a href="#gorule0000003">GORULE:0000003 Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field</a>
  * <a href="#gorule0000004">GORULE:0000004 Reciprocal annotations for 'protein binding ; GO:0005515'</a>
@@ -20,7 +20,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000010">GORULE:0000010 PubMed reference formatting must be correct</a>
  * <a href="#gorule0000011">GORULE:0000011 ND annotations to root nodes only</a>
  * <a href="#gorule0000013">GORULE:0000013 Taxon-appropriate annotation check</a>
- * <a href="#gorule0000014">GORULE:0000014 Valid GO term ID</a>
+ * <a href="#gorule0000014">GORULE:0000014 GO terms in annotations should not be obsolete.</a>
  * <a href="#gorule0000015">GORULE:0000015 Dual species taxon check</a>
  * <a href="#gorule0000016">GORULE:0000016 IC annotations require a With/From GO ID</a>
  * <a href="#gorule0000017">GORULE:0000017 IDA annotations must not have a With/From entry</a>
@@ -32,40 +32,26 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000023">GORULE:0000023 Materialize annotations for inter-branch links in the GO</a>
  * <a href="#gorule0000024">GORULE:0000024 prevent propagation of certain terms by orthology</a>
  * <a href="#gorule0000025">GORULE:0000025 Creating more specific annotations by reasoning over extensions</a>
+ * <a href="#gorule0000026">GORULE:0000026 Annotations with IBA evidence code are filtered out if not coming from PAINT.</a>
+ * <a href="#gorule0000027">GORULE:0000027 Each identifier in GAF is valid</a>
+ * <a href="#gorule0000028">GORULE:0000028 Aspect can only be one of C, P, F and should be repaired using the GO term</a>
+ * <a href="#gorule0000029">GORULE:0000029 All IEAs over a year old are removed</a>
 
 
 
 <a name="gorule0000001"/>
 
-## Basic GAF checks
+## GAF lines are parsed as version 2.1
 
  * id: [GORULE:0000001](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000001.md)
  * status: Implemented
 
 
-The following basic checks ensure that submitted and parsed gene association files
-conform to some GO specific specifications, and come from the original GAF check script.
+Each line of a GAF file is checked that it generally conforms to the GAF 2.1 spec and some
+GO specific specifications. The GAF 2.1 spec is here: http://geneontology.org/page/go-annotation-file-gaf-format-21.
 
--   Each line of the GAF file is checked for the correct number of
-    columns, the cardinality of the columns, leading or trailing
-    whitespace
--   Col 1 and all DB abbreviations must be in
-    [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml) (see below)
--   All GO IDs must be extant in current ontology
--   Qualifier, evidence, aspect and DB object columns must be within the
-    list of allowed values
--   DB:Reference, Taxon and GO ID columns are checked for minimal form
--   All IEAs over a year old are removed
--   Taxa with a 'representative' group (e.g. MGI for Mus musculus,
-    FlyBase for Drosophila) must be submitted by that group only
-
-### Additional notes on identifiers
-
-In some contexts an identifier is represented using two fields, for example col1 (prefix) and col2 (local id) of a GAF or GPAD. The global id is formed by concatenating these with `:`. In other contexts such as the "With/fron" field, a global ID is specified, which MUST always be prefixed.
-
-In all cases, the prefix MUST be in [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml). The prefix SHOULD be identical (case-sensitive match) to the `database` field. If it does not match then it MUST be identical (case-sensitive) to one of the synonyms.
-
-When consuming association files, programs SHOULD *repair* by replacing prefix synonyms with the canonical form, in addition to reporting on the mismatch. For example, as part of the association file release the submitted files should swap out legacy uses of 'UniProt' with 'UniProtKB'
+Qualifier, evidence, aspect and DB object columns must be within the list of allowed values
+(as per the spec).
 
 <a name="gorule0000002"/>
 
@@ -149,8 +135,6 @@ Discussion is ongoing, refer to: https://github.com/geneontology/molecular_funct
 For more information, see the [binding
 guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
 on the GO wiki.
-
-
 
 <a name="gorule0000005"/>
 
@@ -290,8 +274,10 @@ To be added
 ## PubMed reference formatting must be correct
 
  * id: [GORULE:0000010](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000010.md)
- * status: Proposed
+ * status: deprecated
 
+
+DEPRECATED: This has been subsumed by GORULE:0000027
 
 References in the GAF (Column 6) should be of the format
 db\_name:db\_key|PMID:12345678, e.g. SGD\_REF:S000047763|PMID:2676709.
@@ -350,10 +336,10 @@ for more details.
 
 <a name="gorule0000014"/>
 
-## Valid GO term ID
+## GO terms in annotations should not be obsolete.
 
  * id: [GORULE:0000014](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000014.md)
- * status: Proposed
+ * status: proposed
 
 
 This check ensures that the GO IDs used for annotations are valid IDs
@@ -409,9 +395,8 @@ When there is an appropriate ID for the "With/From" column, use IPI.
 
 All IPI annotations should include a nucleotide/protein/chemical
 identifier in the "With/From" column (column 8). From the [description
-of IPI in the GO evidence code
-guide](http://www.geneontology.org/GO.evidence.shtml#ipi): "We strongly
-recommend making an entry in the with/from column when using this
+of IPI in the GO evidence code guide](http://www.geneontology.org/GO.evidence.shtml#ipi):
+"We strongly recommend making an entry in the with/from column when using this
 evidence code to include an identifier for the other protein or other
 macromolecule or other chemical involved in the interaction. When
 multiple entries are placed in the with/from field, they are separated
@@ -424,8 +409,11 @@ this rule will be removed.
 ## Generic Reasoner Validation Check
 
  * id: [GORULE:0000019](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000019.md)
- * status: Implemented
+ * status: deprecated
 
+
+DEPRECATED: This is done outside of the rules system. Ontobio performs
+a GAF -> RDF translation as part of the pipeline.
 
 The entire GAF is converted to OWL, combined with the main GO ontology
 and auxhiliary constraint ontologies. The resulting ontology is checked
@@ -529,3 +517,78 @@ Approach is described here: https://github.com/owlcollab/owltools/wiki/Annotatio
 
  * Evidence: IC
  * Assigned-by: GOC-OWL
+
+<a name="gorule0000026"/>
+
+## Annotations with IBA evidence code are filtered out if not coming from PAINT.
+
+ * id: [GORULE:0000026](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000026.md)
+ * status: Implemented
+
+
+This seeks to filter out paint annotations that have leaked into the main mod GAF
+sources. In this way, we only have these paint annotations coming directly from
+paint.
+
+If the GAF file being validated is not paint, and the line has evidence IBA,
+then throw out that line. 
+
+<a name="gorule0000027"/>
+
+## Each identifier in GAF is valid
+
+ * id: [GORULE:0000027](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000027.md)
+ * status: Implemented
+
+
+-   Col 1 and all DB abbreviations must be in
+    [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml) (see below)
+-   All GO IDs must be extant in current ontology
+
+### Additional notes on identifiers
+
+In some contexts an identifier is represented using two fields, for example col1 (prefix)
+and col2 (local id) of a GAF or GPAD. The global id is formed by concatenating these with `:`.
+In other contexts such as the "With/fron" field, a global ID is specified, which MUST always be prefixed.
+
+In all cases, the prefix MUST be in [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml).
+The prefix SHOULD be identical (case-sensitive match) to the `database` field.
+If it does not match then it MUST be identical (case-sensitive) to one of the synonyms.
+
+When consuming association files, programs SHOULD *repair* by replacing prefix synonyms
+with the canonical form, in addition to reporting on the mismatch. For example, as part
+of the association file release the submitted files should swap out legacy uses of 'UniProt' with 'UniProtKB'
+
+### PubMed reference formatting must be correct
+References in the GAF (Column 6) should be of the format db_name:db_key|PMID:12345678,
+e.g. SGD_REF:S000047763|PMID:2676709. No other format is acceptable for PubMed references;
+the following examples are invalid
+-   PMID:PMID:14561399
+-   PMID:unpublished
+-   PMID:.
+-   PMID:0
+
+<a name="gorule0000028"/>
+
+## Aspect can only be one of C, P, F and should be repaired using the GO term
+
+ * id: [GORULE:0000028](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000028.md)
+ * status: Proposed
+
+
+Aspect (Column 9) can be one either C, P, or F. These correspond to the three main
+branches of the Gene Ontology: C for Cellular Component, P for Biological Process,
+F for Molecular Function. These can be computed from the GO Term in the GAF
+annotation. If the Aspect is incorrect issue a warning and replace with the
+corrected aspect.
+
+<a name="gorule0000029"/>
+
+## All IEAs over a year old are removed
+
+ * id: [GORULE:0000029](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000029.md)
+ * status: Proposed
+
+
+All GAF annotations that have IEA as an evidence code that are also more than a
+year old should be removed.
