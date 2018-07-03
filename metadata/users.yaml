@@ -3924,4 +3924,16 @@
   nickname: "Àlex Bayés"
   organization: 'Molecular Physiology of the Synapse Laboratory, Biomedical Research Institute Sant Pau (IIB Sant Pau), Barcelona, Spain'
   uri: 'http://orcid.org/0000-0002-5265-6306'
-  
+-
+  accounts:
+    github: mcharrison345
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.wormbase.org'
+  nickname: 'Marie-Claire Harrison'
+  organization: WB
+  uri: 'http://orcid.org/0000-0002-3013-9906'
+  xref: 'GOC:mch'
