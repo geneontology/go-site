@@ -11,7 +11,7 @@ before_install:
 ## Possible other way.
 install:
   - gem install kwalify
-  - pip install graphstore/rule-runner
+  - sudo pip install graphstore/rule-runner
 
 script:
   ## Quick user data check.
