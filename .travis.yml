@@ -9,6 +9,7 @@ before_install:
    - sudo apt-get install -y python3 -qq
    - sudo apt-get install -y python3-yaml -qq
    - sudo apt-get install -y python3-pip -qq
+   - sudo pip3 install typing
    - sudo pip3 install graphstore/rule-runner
 
 ## Possible other way.
