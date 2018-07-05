@@ -8,7 +8,7 @@ before_install:
    - sudo apt-get update -qq
    - sudo apt-get install -y python3 -qq
    - sudo apt-get install -y python3-yaml -qq
-   - sudo pip install graphstore/rule-runner
+   - sudo pip3 install graphstore/rule-runner
 
 ## Possible other way.
 install:
