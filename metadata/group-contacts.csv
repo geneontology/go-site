@@ -84,7 +84,7 @@ TAIR,Leonore Reiser,@lreiser,Plant biology
 TBRU,F.Silva-Franco, F.Silva-Franco at liverpool.ac.uk,
 TIGR,Not actively maintainted/GO_Central,@ggeorghiou,
 TIGR,Not actively maintainted/GO_Central,@pgaudet,
-TIGR,Not actively maintainted/GO_Central,@vanaukenk,C.elegans
+TIGR,Not actively maintainted/GO_Central,@vanaukenk,
 UniProt (EBI),Penelope Garmiri,@pgarmiri,
 UniProt (EBI),George Georghiou,@ggeorghiou,
 UniProt (EBI),Alex Ignatchenko,@alexsign,
@@ -97,7 +97,7 @@ UniProt (Swiss-Prot/Geneva),Kristian Axelsen,@kaxelsen,
 UniProt (Swiss-Prot/Geneva),Marc Feuermann, @marcfeuermann,
 UniProt (Swiss-Prot/Geneva),Ivo Pedruzzi,@pedruzzi, 
 UniProt (Swiss-Prot/Geneva),Sylvain Poux,@sylvainpoux,
-WormBase,Kimberly Van Auken,@vanaukenk,
+WormBase,Kimberly Van Auken,@vanaukenk,C.elegans
 Wikidata,Andrew Su,@andrewsu,
 Wikidata,Derek,@djow2019 ,
 ZFIN,Sabrina Toro,@sabrinatoro,
