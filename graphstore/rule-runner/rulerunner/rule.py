@@ -134,6 +134,12 @@ def generate_results_json(rule_results_list: List[RuleResult]) -> Dict:
 
 def sparql_from(gorule: Dict) -> str:
     impls = gorule.get("implementations", [])
+    if impls is None:
+        # This extra if is required because valid files can be interpreted as having
+        # None as an implementations mapping. If we think it's none, there is no sparql
+        # so just escape with empty string
+        return ""
+
     sparql = ""
     for impl in impls:
         if impl["language"] == "sparql":
