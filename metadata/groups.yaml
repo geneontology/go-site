@@ -294,3 +294,7 @@
   label: Complex Portal
   id: https://www.ebi.ac.uk/complexportal
   shorthand: ComplexPortal
+-
+  label: 'SIGNOR'
+  id: 'https://signor.uniroma2.it'
+  shorthand: 'SIGNOR'
