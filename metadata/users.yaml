@@ -3936,6 +3936,7 @@
       go:
         allow-edit: true
   groups:
+    - 'https://signor.uniroma2.it'
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
   nickname: 'Luana Licata'
   organization: 'University of Rome Tor Vergata'
