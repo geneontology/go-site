@@ -298,3 +298,7 @@
   label: 'SIGNOR'
   id: 'https://signor.uniroma2.it'
   shorthand: 'SIGNOR'
+-
+  label: 'GREEKC'
+  id: 'https://greekc.org'
+  shorthand: 'GREEKC'

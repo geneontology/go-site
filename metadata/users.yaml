@@ -3941,3 +3941,27 @@
   nickname: 'Luana Licata'
   organization: 'University of Rome Tor Vergata'
   uri: 'http://orcid.org/0000-0001-5084-9000'
+-
+  accounts:
+    github: jesualdotomasfernandezbreis
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://greekc.org'
+  nickname: 'Jesualdo Tomás Fernández Breis'
+  organization: 'University of Murcia'
+  uri: 'http://orcid.org/0000-0002-7558-2880'
+-
+  accounts:
+    github: belenjc
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://greekc.org'
+  nickname: 'Belén Juanes Cortés'
+  organization: 'University of Murcia'
+  uri: 'http://orcid.org/0000-0003-3641-7548'
