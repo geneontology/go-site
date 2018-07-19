@@ -1783,7 +1783,7 @@
       example_id: MGD:Adcy9
 - database: MGI
   name: Mouse Genome Informatics
-  rdf_uri_prefix: http://identifiers.org/mgi/MGI:
+  rdf_uri_prefix: "http://identifiers.org/mgi/MGI:"
   generic_urls:
     - http://www.informatics.jax.org/
   entity_types:
