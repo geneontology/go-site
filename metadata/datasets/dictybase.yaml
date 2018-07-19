@@ -34,7 +34,7 @@ datasets:
    dataset: dictybase
    submitter: dictybase
    compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/dictyBase.gpa.gz
+   source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/dictyBase.gpi.gz
    entity_type:
    status: active
    species_code: Ddis
