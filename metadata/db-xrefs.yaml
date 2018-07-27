@@ -1389,13 +1389,13 @@
 - database: ISBN
   name: International Standard Book Number
   generic_urls:
-    - http://isbntools.com/
+    - https://catalog.loc.gov
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://openisbn.com/search.php?q=[example_id]&isbn=1/
+      url_syntax: https://catalog.loc.gov/vwebv/search?searchArg=[example_id]&searchCode=CMD&searchType=1&limitTo=none&fromYear=&toYear=&limitTo=LOCA%3Dall&limitTo=PLAC%3Dall&limitTo=TYPE%3Dall&limitTo=LANG%3Dall&recCount=25
       example_id: ISBN:0781702534
-      example_url: http://openisbn.com/search.php?q=0781702534&isbn=1/
+      example_url: https://catalog.loc.gov/vwebv/search?searchArg=0781702534&searchCode=CMD&searchType=1&limitTo=none&fromYear=&toYear=&limitTo=LOCA%3Dall&limitTo=PLAC%3Dall&limitTo=TYPE%3Dall&limitTo=LANG%3Dall&recCount=25
 - database: ISRR
   name: International Society for Root Research
   generic_urls:
