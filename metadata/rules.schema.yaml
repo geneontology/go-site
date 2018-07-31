@@ -22,7 +22,7 @@ mapping:
   "status":
     type: str
     required: true
-    enum: [implemented, proposed, approved, deprecated]
+    enum: [implemented, proposed, approved, deprecated, legacy]
   "fail_mode":
     type: str
     required: true
