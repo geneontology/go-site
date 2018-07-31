@@ -1389,13 +1389,13 @@
 - database: ISBN
   name: International Standard Book Number
   generic_urls:
-    - http://isbntools.com/
+    - https://www.worldcat.org
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://openisbn.com/search.php?q=[example_id]&isbn=1/
+      url_syntax: https://www.worldcat.org/search?q=bn%3A[example_id]
       example_id: ISBN:0781702534
-      example_url: http://openisbn.com/search.php?q=0781702534&isbn=1/
+      example_url: https://www.worldcat.org/search?q=bn%3A0781702534
 - database: ISRR
   name: International Society for Root Research
   generic_urls:
