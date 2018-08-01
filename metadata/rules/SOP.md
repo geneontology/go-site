@@ -47,7 +47,7 @@ Read more about writing new Rules below.
 - implemented: When a rule has an implementation that is actively run in some part of
     a pipeline or other regularly scheduled report. Having an implementation in some script
     that is never run regularly or that is run on old data does not count as `implemented`.
-- legacy: A previous immplementation still exists, but will be replaced by a new implementation matcvhing the new pipeline (ontobio or SPARQL).    
+- legacy: A previous implementation still exists, but will be replaced by a new implementation matching the new pipeline (ontobio or SPARQL).    
 - deprecated: If a rule is no longer needed, is conceptually incorrect, or otherwise should not be used
     it can be `deprecated`. A rule that is deprecated should have no active implementations being
     run on current data.
