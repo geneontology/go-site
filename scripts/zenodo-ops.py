@@ -8,7 +8,7 @@
 #### Example usage to operate in Zenodo:
 ####  python3 ./scripts/zenodo-ops.py --help
 ####  python3 ./scripts/zenodo-ops.py --verbose --sandbox --key abc --action list --object deposition
-####  python3 ./scripts/zenodo-ops.py --verbose --sandbox --key abc --action list --object files --deposition 123
+####  python3 ./scripts/zenodo-ops.py --verbose --sandbox --key abc --action list --object file --deposition 123
 ####
 
 ## Standard imports.
