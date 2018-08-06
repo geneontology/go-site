@@ -674,6 +674,8 @@
       example_url: http://biocyc.org/ECOLI/reference.html?type=CITATION-FRAME&object=COLISALII
 - database: ECOGENE
   name: EcoGene Database of Escherichia coli Sequence and Function
+  synonyms:
+    - EcoGene
   generic_urls:
     - http://www.ecogene.org/
   entity_types:
