@@ -3215,8 +3215,8 @@
     - 05856707bf8eca390ae3ddcf689e9011
     - 99b4072c338978afc0a90bc7f217cef8
   groups:
-    - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
     - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl'
+    - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
     - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl'
   nickname: 'Barbara Kramarz'
   organization: BHF-UCL
