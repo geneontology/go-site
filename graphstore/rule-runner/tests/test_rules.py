@@ -18,14 +18,15 @@ def query(rule_number):
 def check_rule_with_data(rule_path, data_path):
 
     r = load_yamldown(rule_path)
-    schema = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../metadata/rules.schema.yml")
+    schema = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../metadata/rules.schema.yaml")
     validate(r, schema)
     if not rule.sparql_from(r):
         raise Exception("No SPARQL impl for rule {}".format(rule_path))
 
     g = rdflib.graph.ConjunctiveGraph()
     test_data_graph = g.parse(data_path, format="ttl", publicID="http://geneontology.org/rules/test")
-    test_data_graph.add((term.URIRef("http://geneontology.org/rules/test"), term.URIRef("http://geneontology.org/graphType"), term.URIRef("http://geneontology.org/gafCam")))
+    test_data_graph.add((term.URIRef("http://model.geneontology.org/rules/test"), term.URIRef("http://model.geneontology.org/graphType"), term.URIRef("http://model.geneontology.org/gafCam")))
+    test_data_graph.add((term.URIRef("http://model.geneontology.org/rules/test"), term.URIRef("http://www.w3.org/2000/01/rdf-schema#"), term.Literal("test_graph.ttl")))
     results = g.query(rule.sparql_from(r))
     return results
 
