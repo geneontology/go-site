@@ -28,12 +28,11 @@ gafs: $(addsuffix .gaf.gz,$(BASE_GROUP_PATH))
 OBO= http://purl.obolibrary.org/obo
 ONTOLOGY = $(OBO)/go/snapshot/go.json
 target/go-ontology.json:
-	wget --no-check-certificate $(ONTOLOGY) -O $@.tmp && mv $@.tmp $@ && touch $@
-
+	wget --no-check-certificate http://release.geneontology.org/2018-07-02/ontology/go.json -O $@.tmp && mv $@.tmp $@ && touch $@
 
 GAF_OWL = target/go-gaf.owl
 $(GAF_OWL):
-	owltools --log-error $(OBO)/go/extensions/go-gaf.owl --merge-imports-closure --add-obo-shorthand-to-properties -o $@
+	owltools --log-error http://release.geneontology.org/2018-07-02/ontology/extensions/go-gaf.owl --merge-imports-closure --add-obo-shorthand-to-properties -o $@
 
 ## Ensure that we are bringing in the environment we want.
 OWLTOOLS_MEMORY ?= 8G
