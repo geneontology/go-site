@@ -10,7 +10,7 @@ https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml
 
 ## Browsing
 
-The registry can be browsed here: [http://amigo.geneontology.org/xrefs](http://amigo.geneontology.org/xrefs)
+The registry can be browsed here: http://amigo.geneontology.org/xrefs
 
 ## Schema
 
