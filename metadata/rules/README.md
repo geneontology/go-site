@@ -61,7 +61,7 @@ Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt
 ## No 'NOT' annotations to 'protein binding ; GO:0005515'
 
  * id: [GORULE:0000002](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000002.md)
- * status: approved
+ * status: legacy
 
 
 Even if an identifier is available in the 'with' column, a qualifier
@@ -88,7 +88,7 @@ on the GO wiki.
 ## Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field
 
  * id: [GORULE:0000003](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000003.md)
- * status: approved
+ * status: legacy
 
 
 Annotations to binding : GO:0005488 or protein binding ; GO:0005515 with
@@ -145,7 +145,7 @@ on the GO wiki.
 ## No ISS or ISS-related annotations to 'protein binding ; GO:0005515'
 
  * id: [GORULE:0000005](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000005.md)
- * status: approved
+ * status: legacy
 
 
 If we take an example annotation:
@@ -192,7 +192,7 @@ For more information, see the [binding
 guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
 on the GO wiki.
 
-Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt (details).
+Error report (number of errors) in [db_species]-report.html & owltools-check.txt (details).
 
 <a name="gorule0000006"/>
 
@@ -213,6 +213,7 @@ For more information, see the [binding
 guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
 on the GO wiki.
 Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt (details).
+
 <a name="gorule0000007"/>
 
 ## IPI should not be used with catalytic activity molecular function terms
@@ -274,10 +275,12 @@ Error report: <group>.report.md
 ## Annotation Intersection Alerts
 
  * id: [GORULE:0000009](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000009.md)
- * status: proposed
+ * status: implemented
 
 
-To be added
+[Tools](http://github.com/geneontology/shared-annotation-check) and [rules](https://github.com/geneontology/shared-annotation-check/blob/master/rules.txt) for intersections/co-annotation checks in the Gene Ontology.
+
+The report lives here http://snapshot.geneontology.org/reports/shared-annotation-check.html and is updated with each pipeline run.
 
 <a name="gorule0000010"/>
 
@@ -307,7 +310,7 @@ will be removed.
 ## ND annotations to root nodes only
 
  * id: [GORULE:0000011](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000011.md)
- * status: proposed
+ * status: legacy
 
 
 The [No Data (ND) evidence
@@ -331,19 +334,19 @@ GO\_REF:0000015 or one of the alternative internal references listed for
 it in the [GO references
 file](http://www.geneontology.org/cgi-bin/references.cgi).
 
-Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt (details).
+Error report (number of errors) in [db_species]-report.html & owltools-check.txt (details).
 
 <a name="gorule0000013"/>
 
 ## Taxon-appropriate annotation check
 
  * id: [GORULE:0000013](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000013.md)
- * status: approved
+ * status: legacy
 
 
-GO taxon constraints ensure that annotations are not made to
-inappropriate species or sets of species. See
-[http://www.biomedcentral.com/1471-2105/11/530](http://www.biomedcentral.com/1471-2105/11/530)
+GO taxon constraints ensure that annotations are not made to inappropriate species or sets of species. 
+This information is obtained from the only_in_taxon and never_in_taxon tags in the ontology. 
+See [http://www.biomedcentral.com/1471-2105/11/530](http://www.biomedcentral.com/1471-2105/11/530)
 for more details.
 
 Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt (details).
@@ -360,6 +363,10 @@ This check ensures that the GO IDs used for annotations are valid IDs
 and are not obsolete.
 
 Error report: <group>.report.md
+  
+Example: http://release.geneontology.org/2018-07-02/reports/gonuts-report.html
+GO_AR:0000014 Error The id 'GO:0003706' in the annotation is an obsolete class 
+UniProtKB P55055 NR1H2 GO:0003706 PMID:11090131 IDA F protein taxon:9606 20110115 GONUTS 
 
 <a name="gorule0000015"/>
 
@@ -383,27 +390,27 @@ cellular component term 'GO:0044215 : other organism' as an ancestor.
 ## With/From: IC annotations require a With/From GO ID
 
  * id: [GORULE:0000016](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000016.md)
- * status: approved
+ * status: legacy
 
 
 All IC annotations should include a GO ID in the "With/From" column; for
 more information, see the [IC evidence code
-guidelines](http://www.geneontology.org/GO.evidence.shtml#ic).
+guidelines](http://wiki.geneontology.org/index.php/Inferred_by_Curator_(IC)).
 
-Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt (details).
+Error report (number of errors) in [db_species]-report.txt & owltools-check.txt (details).
 
 <a name="gorule0000017"/>
 
 ## IDA annotations must not have a With/From entry
 
  * id: [GORULE:0000017](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000017.md)
- * status: approved
+ * status: legacy
 
 
 Use IDA only when no identifier can be placed in the "With/From" column.
 When there is an appropriate ID for the "With/From" column, use IPI.
 
-Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt (details).
+Error report (number of errors) in [db_species]-report.txt & owltools-check.txt (details).
 
 <a name="gorule0000018"/>
 
@@ -415,15 +422,10 @@ Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt
 
 All IPI annotations should include a nucleotide/protein/chemical
 identifier in the "With/From" column (column 8). From the [description
-of IPI in the GO evidence code guide](http://www.geneontology.org/GO.evidence.shtml#ipi):
-"We strongly recommend making an entry in the with/from column when using this
-evidence code to include an identifier for the other protein or other
-macromolecule or other chemical involved in the interaction. When
-multiple entries are placed in the with/from field, they are separated
-by pipes. Consider using IDA when no identifier can be entered in the
-with/from column." 
+of IPI in the GO evidence code guide](http://wiki.geneontology.org/index.php/Inferred_from_Physical_Interaction_(IPI)):
 
-Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt (details).
+Error report (number of errors) in [db_species]-report.html & owltools-check.txt (details).
+
 <a name="gorule0000019"/>
 
 ## Deprecated - Generic Reasoner Validation Check
@@ -528,12 +530,36 @@ Prevent propagation of certain terms by orthology/similarity. This rule is under
 
 
 
-Given an annotation to a general term plus annotation extensions we can infer a more specific annotation
+Given an annotation to a general term plus annotation extensions we can infer a more specific annotation.
 
-Approach is described here: https://github.com/owlcollab/owltools/wiki/Annotation-Extension-Folding
+For example, given a source annotation:
 
+```
+Gene = geneA
+Annotation_class = GO:0006260 ! DNA replication
+Annotation_extension = {occurs_in GO:0000262 ! mitochondrial chromosome}
+```
+
+This will be inferred:
+
+```
+Gene = geneA
+Annotation_class = GO:0006264 ! mitochondrial DNA replication
+Annotation_extension = {occurs_in GO:0000262 ! mitochondrial chromosome}
+Evidence: IC
+With: GO:0006260
+```
+
+Approach is described in more detail here: https://github.com/owlcollab/owltools/wiki/Annotation-Extension-Folding
+
+Fields:
+
+ * GO ID: new inferred, more specific GO ID
  * Evidence: IC
+ * With: original GO ID
  * Assigned-by: GOC-OWL
+ 
+Other fields remain the same
 
 <a name="gorule0000026"/>
 
@@ -566,7 +592,7 @@ then throw out that line.
 
 In some contexts an identifier is represented using two fields, for example col1 (prefix)
 and col2 (local id) of a GAF or GPAD. The global id is formed by concatenating these with `:`.
-In other contexts such as the "With/fron" field, a global ID is specified, which MUST always be prefixed.
+In other contexts such as the "With/from" field, a global ID is specified, which MUST always be prefixed.
 
 In all cases, the prefix MUST be in [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml).
 The prefix SHOULD be identical (case-sensitive match) to the `database` field.
@@ -604,11 +630,15 @@ corrected aspect.
 ## All IEAs over a year old are removed
 
  * id: [GORULE:0000029](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000029.md)
- * status: approved
+ * status: legacy
 
 
 All GAF annotations that have IEA as an evidence code that are also more than a
 year old should be removed.
+
+Example: http://release.geneontology.org/2018-07-02/reports/gonuts-report.html
+722 GO_AR:0000001 Error IEA evidence code present with a date more than a year old '20110217' 
+UniProtKB P29430 pedA GO:0042742 GO_REF:0000004 IEA SP_KW:KW-0044 P protein taxon:1254 20110217 GONUTS 
 
 <a name="gorule0000030"/>
 
