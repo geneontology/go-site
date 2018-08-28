@@ -176,7 +176,7 @@ def main():
             die_screaming('Shell fail on: ' + str(foo))
         elif foo.returncode == 2:
             die_screaming('Bad file on: ' + str(foo))
-        count_gaf_src = int(foo.returncode)
+        count_gaf_src = int(foo.stdout)
 
         ## Get product count.
         foo = subprocess.run(
@@ -186,7 +186,7 @@ def main():
             die_screaming('Shell fail on: ' + str(foo))
         elif foo.returncode == 2:
             die_screaming('Bad file on: ' + str(foo))
-        count_gaf_prod = int(foo.returncode)
+        count_gaf_prod = int(foo.stdout)
 
         ## Check to see if there is a header/comments.
         foo = subprocess.run(
@@ -196,7 +196,7 @@ def main():
             die_screaming('Shell fail on: ' + str(foo))
         elif foo.returncode == 2:
             die_screaming('Bad file on: ' + str(foo))
-        comments_gaf_prod = int(foo.returncode)
+        comments_gaf_prod = int(foo.stdout)
 
         ## Assemble report object.
         lookup[aid] = {
