@@ -310,29 +310,11 @@ will be removed.
 ## ND annotations to root nodes only
 
  * id: [GORULE:0000011](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000011.md)
- * status: legacy
+ * status: implemented
 
 
-The [No Data (ND) evidence
-code](http://www.geneontology.org/GO.evidence.shtml#nd) should be used
-for annotations to the root nodes only and should be accompanied with
-[GO\_REF:0000015](http://www.geneontology.org/cgi-bin/references.cgi#GO_REF:0000015)
-or an internal reference. PMIDs **cannot** be used for annotations made
-with ND.
-
--   if you are using an internal reference, that reference ID should be
-    listed as an external accession for
-    [GO\_REF:0000015](http://www.geneontology.org/cgi-bin/references.cgi#GO_REF:0000015).
-    Please add (or email) your internal reference ID for
-    GO\_REF:0000015.
--   All ND annotations made with a reference other than GO\_REF:0000015
-    (or an equivalent internal reference that is listed as external
-    accession for GO\_REF:0000015) should be filtered out of the GAF.
-
-The SQL code identifies all ND annotations that do not use
-GO\_REF:0000015 or one of the alternative internal references listed for
-it in the [GO references
-file](http://www.geneontology.org/cgi-bin/references.cgi).
+The [No Data (ND) evidence code](http://www.geneontology.org/GO.evidence.shtml#nd) should be used
+for annotations to the root nodes.
 
 Error report (number of errors) in [db_species]-report.html & owltools-check.txt (details).
 
@@ -363,10 +345,10 @@ This check ensures that the GO IDs used for annotations are valid IDs
 and are not obsolete.
 
 Error report: <group>.report.md
-  
+
 Example: http://release.geneontology.org/2018-07-02/reports/gonuts-report.html
-GO_AR:0000014 Error The id 'GO:0003706' in the annotation is an obsolete class 
-UniProtKB P55055 NR1H2 GO:0003706 PMID:11090131 IDA F protein taxon:9606 20110115 GONUTS 
+GO_AR:0000014 Error The id 'GO:0003706' in the annotation is an obsolete class
+UniProtKB P55055 NR1H2 GO:0003706 PMID:11090131 IDA F protein taxon:9606 20110115 GONUTS
 
 <a name="gorule0000015"/>
 
