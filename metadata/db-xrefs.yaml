@@ -2929,7 +2929,7 @@
       example_url: http://arabidopsis.org/servlets/TairObject?type=communication&id=1345790
     - type_name: primary transcript
       type_id: SO:0000185
-      id_syntax: locus:[0-9]{7}
+      id_syntax: locus:[0-9]{7,12}
       url_syntax: http://arabidopsis.org/servlets/TairObject?accession=[example_id]
       example_id: TAIR:locus:2146653
       example_url: http://arabidopsis.org/servlets/TairObject?accession=locus:2146653
@@ -3364,6 +3364,11 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
+- database: YuBioLab
+  name: CITGeneDB
+  description: CITGeneDB is a comprehensive database of human and mouse genes enhancing or suppressing Cold-Induced Thermogenesis (CIT).
+  generic_urls:
+    - http://citgenedb.yubiolab.org      
 - database: ZFIN
   name: Zebrafish Information Network
   rdf_uri_prefix: http://identifiers.org/zfin/

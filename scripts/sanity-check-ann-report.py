@@ -247,7 +247,12 @@ def main():
             die_screaming('No product found for: ' + aid)
         ## Product must not be a "severe" reduction from source, but
         ## only in cases of larger files.
-        if (count_gaf_prod < (count_gaf_src / 2)) and count_gaf_src > small_file_size:
+        ## This dictionary should be a map of  dataset id `aid` to percent allowable reduction.
+        ## gramene_oryza is allowed to be 40% of
+        reduction_threshold = {
+            "gramene_oryza": 0.4
+        }
+        if severe_line_reduction_test(aid, reduction_threshold, count_gaf_prod, count_gaf_src, small_file_size):
             die_screaming('Severe reduction of product for: ' + aid)
         ## No fatal remarks should have been made.
         if lines_fatal > 0:
@@ -268,6 +273,12 @@ def main():
     else:
         LOGGER.info('All passing.')
 
+def severe_line_reduction_test(aid, thresholds, prod, src, small_file_size):
+    default = 0.5
+    # Get any override in the threshold dictionary, otherwise will return the default amount
+    reduction_amount = thresholds.get(aid, default)
+
+    return prod < reduction_amount * src and src > small_file_size
 
 ## You saw it coming...
 if __name__ == '__main__':
