@@ -134,26 +134,26 @@ def main():
         ## Found associations.
         res = regexp_lines_assocs.findall(read_data)
         if len(res) != 1:
-            die_screaming('Too wrong # matches for associations: ' + len(res))
+            die_screaming('Too wrong # matches for associations: {}'.format(len(res)))
         lines_assocs = int(res[0])
 
         ## Lines skipped.
         res = regexp_lines_skipped.findall(read_data)
         if len(res) != 1:
-            die_screaming('Too wrong # matches for lines skipped: ' + len(res))
+            die_screaming('Too wrong # matches for lines skipped: {}'.format(len(res)))
         lines_skipped = int(res[0])
 
         ## Lines in file.
         res = regexp_lines_in_file.findall(read_data)
         if len(res) != 1:
-            die_screaming('Too wrong # matches for lines in file: ' + len(res))
+            die_screaming('Too wrong # matches for lines in file: {}'.format(len(res)))
         lines_in_file = int(res[0])
 
         ## Lines that are fatal.
         res = regexp_lines_fatal.findall(read_data)
-        if len(res) != 1:
-            die_screaming('Too wrong # matches for lines fatal: ' + len(res))
-        lines_fatal = int(res[0])
+        if len(res) > 0:
+            die_screaming('Too wrong # matches for lines fatal: {}'.format(len(res)))
+        lines_fatal = 0 if len(res) == 0 else int(res[0])
 
         ###
         ### Extract information from actual using grep.
