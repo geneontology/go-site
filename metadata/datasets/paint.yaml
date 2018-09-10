@@ -6,7 +6,6 @@ datasets:
    id: paint_cgd.gaf
    label: "paint_cgd gaf file"
    description: "gaf file for paint_cgd from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_cgd.gaf.gz
    type: gaf
    dataset: paint_cgd
    submitter: paint
@@ -23,7 +22,6 @@ datasets:
    id: paint_dictybase.gaf
    label: "paint_dictybase gaf file"
    description: "gaf file for paint_dictybase from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_dictyBase.gaf.gz
    type: gaf
    dataset: paint_dictybase
    submitter: paint
@@ -43,7 +41,6 @@ datasets:
    id: paint_ecocyc.gaf
    label: "paint_ecocyc gaf file"
    description: "gaf file for paint_ecocyc from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_ecocyc.gaf.gz
    type: gaf
    dataset: paint_ecocyc
    submitter: paint
@@ -60,7 +57,6 @@ datasets:
    id: paint_fb.gaf
    label: "paint_fb gaf file"
    description: "gaf file for paint_fb from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_fb.gaf.gz
    type: gaf
    dataset: paint_fb
    submitter: paint
@@ -77,7 +73,6 @@ datasets:
    id: paint_goa_chicken.gaf
    label: "paint_goa_chicken gaf file"
    description: "gaf file for paint_goa_chicken from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_goa_chicken.gaf.gz
    type: gaf
    dataset: paint_goa_chicken
    submitter: paint
@@ -93,7 +88,6 @@ datasets:
    id: paint_goa_human.gaf
    label: "paint_goa_human gaf file"
    description: "gaf file for paint_goa_human from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_goa_human.gaf.gz
    type: gaf
    dataset: paint_goa_human
    submitter: paint
@@ -109,7 +103,6 @@ datasets:
    id: paint_mgi.gaf
    label: "paint_mgi gaf file"
    description: "gaf file for paint_mgi from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_mgi.gaf.gz
    type: gaf
    dataset: paint_mgi
    submitter: paint
@@ -126,7 +119,6 @@ datasets:
    id: paint_other.gaf
    label: "paint_other gaf file"
    description: "gaf file for paint_other from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_other.gaf.gz
    type: gaf
    dataset: paint_other
    submitter: paint
@@ -141,7 +133,6 @@ datasets:
    id: paint_pombase.gaf
    label: "paint_pombase gaf file"
    description: "gaf file for paint_pombase from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_pombase.gaf.gz
    type: gaf
    dataset: paint_pombase
    submitter: paint
@@ -159,7 +150,6 @@ datasets:
    id: paint_rgd.gaf
    label: "paint_rgd gaf file"
    description: "gaf file for paint_rgd from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_rgd.gaf.gz
    type: gaf
    dataset: paint_rgd
    submitter: paint
@@ -176,7 +166,6 @@ datasets:
    id: paint_sgd.gaf
    label: "paint_sgd gaf file"
    description: "gaf file for paint_sgd from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_sgd.gaf.gz
    type: gaf
    dataset: paint_sgd
    submitter: paint
@@ -197,7 +186,6 @@ datasets:
    id: paint_tair.gaf
    label: "paint_tair gaf file"
    description: "gaf file for paint_tair from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_tair.gaf.gz
    type: gaf
    dataset: paint_tair
    submitter: paint
@@ -214,7 +202,6 @@ datasets:
    id: paint_wb.gaf
    label: "paint_wb gaf file"
    description: "gaf file for paint_wb from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_wb.gaf.gz
    type: gaf
    dataset: paint_wb
    submitter: paint
@@ -231,7 +218,6 @@ datasets:
    id: paint_zfin.gaf
    label: "paint_zfin gaf file"
    description: "gaf file for paint_zfin from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_zfin.gaf.gz
    type: gaf
    dataset: paint_zfin
    submitter: paint
