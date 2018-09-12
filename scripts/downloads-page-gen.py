@@ -4,7 +4,7 @@
 ####
 #### Example usage to analyze "whatever":
 ####  python3 downloads-page-gen.py --help
-####  python3 ./scripts/downloads-page-gen.py -v --report /tmp/all_combined.report.json --inject ./scripts/downloads-page-template.html
+####  python3 ./scripts/downloads-page-gen.py -v --report /tmp/all_combined.report.json --inject ./scripts/downloads-page-template.html --date 2018-08-08
 ####
 
 ## Standard imports.
