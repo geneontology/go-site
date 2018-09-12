@@ -7,17 +7,17 @@ project_url: "http://www.yeastgenome.org/"
 funding_source: "NHGRI of US National Institutes of Health, HG001315"
 email_report: "sgd-go-curator@genome.stanford.edu"
 datasets:
- -    
+ -
    id: sgd.gaf
    label: "sgd gaf file"
    description: "gaf file for sgd from Saccharomyces Genome Database"
-   url: http://geneontology.org/gene-associations/gene_association.sgd.gz
+   url: http://current.geneontology.org/annotations/sgd.gaf.gz
    type: gaf
    dataset: sgd
    submitter: sgd
    compression: gzip
    source: http://geneontology.org/gene-associations/submission/gene_association.sgd.gz
-   entity_type: 
+   entity_type:
    status: active
    species_code: Scer
    taxa:
@@ -26,4 +26,3 @@ datasets:
     - NCBITaxon:41870
     - NCBITaxon:4932
     - NCBITaxon:559292
-

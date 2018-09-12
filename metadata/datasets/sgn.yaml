@@ -7,19 +7,18 @@ project_url: "http://solgenomics.net"
 funding_source: "USDA grant 2007-02777 and BARD grant FI3702005"
 email_report: "nm249@cornell.edu"
 datasets:
- -    
+ -
    id: sgn.gaf
    label: "sgn gaf file"
    description: "gaf file for sgn from Sol Genomics Network"
-   url: http://geneontology.org/gene-associations/gene_association.sgn.gz
+   url: http://current.geneontology.org/annotations/sgn.gaf.gz
    type: gaf
    dataset: sgn
    submitter: sgn
    compression: gzip
    source: http://geneontology.org/gene-associations/submission/gene_association.sgn.gz
-   entity_type: 
+   entity_type:
    status: active
    species_code: Solanaceae
    taxa:
     - NCBITaxon:4081
-

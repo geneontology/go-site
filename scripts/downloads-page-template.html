@@ -202,6 +202,7 @@
 	    </tfoot>
 	    <tbody>
 	      {{ #data }}
+	      {{ #metadata.url }}
 	      <tr>
 		<td>
 		  {{ metadata.resource-label }}
@@ -220,6 +221,7 @@
 		</td>
 		<td><a href="{{ metadata.url }}">{{ metadata.id }}</a> ({{ metadata.compression }})</td>
 	      </tr>
+	      {{ /metadata.url }}
 	      {{ /data }}
 	    </tbody>
 	  </table>
@@ -234,7 +236,7 @@
 	  <p>
 	    <small>
 	      Copyright ©
-	      1999-2017 <a href="http://www.geneontology.org/"
+	      1999-2018 <a href="http://www.geneontology.org/"
 			   title="The Gene Ontology project website">the Gene
 		Ontology</a>
 	      (<a href="http://geneontology.org/page/use-and-license">CC-BY

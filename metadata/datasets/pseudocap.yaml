@@ -7,19 +7,18 @@ project_url: "http://www.pseudomonas.com"
 funding_source: "Cystic Fibrosis Foundation, Therapeutics"
 
 datasets:
- -    
+ -
    id: pseudocap.gaf
    label: "pseudocap gaf file"
    description: "gaf file for pseudocap from Pseudomonas Genome Project"
-   url: http://geneontology.org/gene-associations/gene_association.pseudocap.gz
+   url: http://current.geneontology.org/annotations/pseudocap.gaf.gz
    type: gaf
    dataset: pseudocap
    submitter: pseudocap
    compression: gzip
    source: http://geneontology.org/gene-associations/submission/gene_association.pseudocap.gz
-   entity_type: 
+   entity_type:
    status: active
    species_code: Pseudomonas
    taxa:
     - NCBITaxon:208964
-

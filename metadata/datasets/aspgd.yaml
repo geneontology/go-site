@@ -7,17 +7,17 @@ project_url: "http://aspergillusgenomes.org/"
 funding_source: "NIAID US NIH"
 email_report: "aspergillus-curator@lists.stanford.edu"
 datasets:
- -    
+ -
    id: aspgd.gaf
    label: "aspgd gaf file"
    description: "gaf file for aspgd from Aspergillus Genome Database"
-   url: http://geneontology.org/gene-associations/gene_association.aspgd.gz
+   url: http://current.geneontology.org/annotations/aspgd.gaf.gz
    type: gaf
    dataset: aspgd
    submitter: aspgd
    compression: gzip
    source: http://geneontology.org/gene-associations/submission/gene_association.aspgd.gz
-   entity_type: 
+   entity_type:
    status: active
    species_code: Aspergillus
    taxa:
@@ -43,4 +43,3 @@ datasets:
     - NCBITaxon:767770
     - NCBITaxon:162425
     - NCBITaxon:5085
-
