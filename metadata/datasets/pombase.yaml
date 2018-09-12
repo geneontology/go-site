@@ -23,3 +23,19 @@ datasets:
    taxa:
     - NCBITaxon:284812
     - NCBITaxon:4896
+ -    
+   id: gp2protein.pombase
+   label: "pombase gp2protein file"
+   description: "gp2protein file for pombase from PomBase"
+   url: http://geneontology.org/gene-associations/gene_association.pombase.gz
+   type: gaf
+   dataset: pombase
+   submitter: pombase
+   compression: gzip
+   source: ftp://ftp.pombase.org/pombe/names_and_identifiers/gp2protein.pombase.gz
+   entity_type: 
+   status: active
+   species_code: Spom
+   taxa:
+    - NCBITaxon:284812
+    - NCBITaxon:4896
