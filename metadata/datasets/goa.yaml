@@ -7,11 +7,11 @@ project_url: "http://www.ebi.ac.uk/GOA"
 funding_source: "unspecified"
 email_report: "goa@ebi.ac.uk"
 datasets:
- -    
+ -
    id: goa_chicken.gpad
    label: "goa_chicken gpad file"
    description: "gpad file for goa_chicken from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_chicken.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_chicken.gpad.gz
    type: gpad
    dataset: goa_chicken
    submitter: goa
@@ -26,12 +26,12 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-   
- -    
+
+ -
    id: goa_chicken.gpi
    label: "goa_chicken gpi file"
    description: "gpi file for goa_chicken from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_chicken.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_chicken.gpi.gz
    type: gpi
    dataset: goa_chicken
    submitter: goa
@@ -46,12 +46,12 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-   
- -    
+
+ -
    id: goa_chicken_complex.gpad
    label: "goa_chicken_complex gpad file"
    description: "gpad file for goa_chicken_complex from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_chicken_complex.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_chicken_complex.gpad.gz
    type: gpad
    dataset: goa_chicken_complex
    submitter: goa
@@ -66,12 +66,12 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-   
- -    
+
+ -
    id: goa_chicken_complex.gpi
    label: "goa_chicken_complex gpi file"
    description: "gpi file for goa_chicken_complex from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_chicken_complex.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_chicken_complex.gpi.gz
    type: gpi
    dataset: goa_chicken_complex
    submitter: goa
@@ -86,12 +86,12 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-   
- -    
+
+ -
    id: goa_chicken_isoform.gpad
    label: "goa_chicken_isoform gpad file"
    description: "gpad file for goa_chicken_isoform from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_chicken_isoform.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_chicken_isoform.gpad.gz
    type: gpad
    dataset: goa_chicken_isoform
    submitter: goa
@@ -106,12 +106,12 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-   
- -    
+
+ -
    id: goa_chicken_isoform.gpi
    label: "goa_chicken_isoform gpi file"
    description: "gpi file for goa_chicken_isoform from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_chicken_isoform.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_chicken_isoform.gpi.gz
    type: gpi
    dataset: goa_chicken_isoform
    submitter: goa
@@ -126,12 +126,12 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-   
- -    
+
+ -
    id: goa_chicken_rna.gpad
    label: "goa_chicken_rna gpad file"
    description: "gpad file for goa_chicken_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_chicken_rna.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_chicken_rna.gpad.gz
    type: gpad
    dataset: goa_chicken_rna
    submitter: goa
@@ -146,12 +146,12 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-   
- -    
+
+ -
    id: goa_chicken_rna.gpi
    label: "goa_chicken_rna gpi file"
    description: "gpi file for goa_chicken_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_chicken_rna.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_chicken_rna.gpi.gz
    type: gpi
    dataset: goa_chicken_rna
    submitter: goa
@@ -166,12 +166,12 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-   
- -    
+
+ -
    id: goa_cow.gpad
    label: "goa_cow gpad file"
    description: "gpad file for goa_cow from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_cow.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_cow.gpad.gz
    type: gpad
    dataset: goa_cow
    submitter: goa
@@ -184,12 +184,12 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-   
- -    
+
+ -
    id: goa_cow.gpi
    label: "goa_cow gpi file"
    description: "gpi file for goa_cow from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_cow.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_cow.gpi.gz
    type: gpi
    dataset: goa_cow
    submitter: goa
@@ -202,12 +202,12 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-   
- -    
+
+ -
    id: goa_cow_complex.gpad
    label: "goa_cow_complex gpad file"
    description: "gpad file for goa_cow_complex from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_cow_complex.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_cow_complex.gpad.gz
    type: gpad
    dataset: goa_cow_complex
    submitter: goa
@@ -220,12 +220,12 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-   
- -    
+
+ -
    id: goa_cow_complex.gpi
    label: "goa_cow_complex gpi file"
    description: "gpi file for goa_cow_complex from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_cow_complex.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_cow_complex.gpi.gz
    type: gpi
    dataset: goa_cow_complex
    submitter: goa
@@ -238,12 +238,12 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-   
- -    
+
+ -
    id: goa_cow_isoform.gpad
    label: "goa_cow_isoform gpad file"
    description: "gpad file for goa_cow_isoform from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_cow_isoform.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_cow_isoform.gpad.gz
    type: gpad
    dataset: goa_cow_isoform
    submitter: goa
@@ -256,12 +256,12 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-   
- -    
+
+ -
    id: goa_cow_isoform.gpi
    label: "goa_cow_isoform gpi file"
    description: "gpi file for goa_cow_isoform from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_cow_isoform.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_cow_isoform.gpi.gz
    type: gpi
    dataset: goa_cow_isoform
    submitter: goa
@@ -274,12 +274,12 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-   
- -    
+
+ -
    id: goa_cow_rna.gpad
    label: "goa_cow_rna gpad file"
    description: "gpad file for goa_cow_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_cow_rna.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_cow_rna.gpad.gz
    type: gpad
    dataset: goa_cow_rna
    submitter: goa
@@ -292,12 +292,12 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-   
- -    
+
+ -
    id: goa_cow_rna.gpi
    label: "goa_cow_rna gpi file"
    description: "gpi file for goa_cow_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_cow_rna.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_cow_rna.gpi.gz
    type: gpi
    dataset: goa_cow_rna
    submitter: goa
@@ -310,12 +310,12 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-   
- -    
+
+ -
    id: goa_dog.gpad
    label: "goa_dog gpad file"
    description: "gpad file for goa_dog from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_dog.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_dog.gpad.gz
    type: gpad
    dataset: goa_dog
    submitter: goa
@@ -326,12 +326,12 @@ datasets:
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-   
- -    
+
+ -
    id: goa_dog.gpi
    label: "goa_dog gpi file"
    description: "gpi file for goa_dog from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_dog.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_dog.gpi.gz
    type: gpi
    dataset: goa_dog
    submitter: goa
@@ -342,12 +342,12 @@ datasets:
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-   
- -    
+
+ -
    id: goa_dog_complex.gpad
    label: "goa_dog_complex gpad file"
    description: "gpad file for goa_dog_complex from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_dog_complex.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_dog_complex.gpad.gz
    type: gpad
    dataset: goa_dog_complex
    submitter: goa
@@ -358,12 +358,12 @@ datasets:
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-   
- -    
+
+ -
    id: goa_dog_complex.gpi
    label: "goa_dog_complex gpi file"
    description: "gpi file for goa_dog_complex from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_dog_complex.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_dog_complex.gpi.gz
    type: gpi
    dataset: goa_dog_complex
    submitter: goa
@@ -374,12 +374,12 @@ datasets:
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-   
- -    
+
+ -
    id: goa_dog_isoform.gpad
    label: "goa_dog_isoform gpad file"
    description: "gpad file for goa_dog_isoform from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_dog_isoform.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_dog_isoform.gpad.gz
    type: gpad
    dataset: goa_dog_isoform
    submitter: goa
@@ -390,12 +390,12 @@ datasets:
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-   
- -    
+
+ -
    id: goa_dog_isoform.gpi
    label: "goa_dog_isoform gpi file"
    description: "gpi file for goa_dog_isoform from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_dog_isoform.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_dog_isoform.gpi.gz
    type: gpi
    dataset: goa_dog_isoform
    submitter: goa
@@ -406,12 +406,12 @@ datasets:
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-   
- -    
+
+ -
    id: goa_dog_rna.gpad
    label: "goa_dog_rna gpad file"
    description: "gpad file for goa_dog_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_dog_rna.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_dog_rna.gpad.gz
    type: gpad
    dataset: goa_dog_rna
    submitter: goa
@@ -422,12 +422,12 @@ datasets:
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-   
- -    
+
+ -
    id: goa_dog_rna.gpi
    label: "goa_dog_rna gpi file"
    description: "gpi file for goa_dog_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_dog_rna.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_dog_rna.gpi.gz
    type: gpi
    dataset: goa_dog_rna
    submitter: goa
@@ -438,12 +438,12 @@ datasets:
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-   
- -    
+
+ -
    id: goa_human.gpad
    label: "goa_human gpad file"
    description: "gpad file for goa_human from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_human.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_human.gpad.gz
    type: gpad
    dataset: goa_human
    submitter: goa
@@ -454,12 +454,12 @@ datasets:
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-   
- -    
+
+ -
    id: goa_human.gpi
    label: "goa_human gpi file"
    description: "gpi file for goa_human from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_human.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_human.gpi.gz
    type: gpi
    dataset: goa_human
    submitter: goa
@@ -470,12 +470,12 @@ datasets:
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-   
- -    
+
+ -
    id: goa_human_complex.gpad
    label: "goa_human_complex gpad file"
    description: "gpad file for goa_human_complex from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_human_complex.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_human_complex.gpad.gz
    type: gpad
    dataset: goa_human_complex
    submitter: goa
@@ -486,12 +486,12 @@ datasets:
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-   
- -    
+
+ -
    id: goa_human_complex.gpi
    label: "goa_human_complex gpi file"
    description: "gpi file for goa_human_complex from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_human_complex.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_human_complex.gpi.gz
    type: gpi
    dataset: goa_human_complex
    submitter: goa
@@ -502,12 +502,12 @@ datasets:
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-   
- -    
+
+ -
    id: goa_human_isoform.gpad
    label: "goa_human_isoform gpad file"
    description: "gpad file for goa_human_isoform from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_human_isoform.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_human_isoform.gpad.gz
    type: gpad
    dataset: goa_human_isoform
    submitter: goa
@@ -518,12 +518,12 @@ datasets:
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-   
- -    
+
+ -
    id: goa_human_isoform.gpi
    label: "goa_human_isoform gpi file"
    description: "gpi file for goa_human_isoform from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_human_isoform.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_human_isoform.gpi.gz
    type: gpi
    dataset: goa_human_isoform
    submitter: goa
@@ -534,12 +534,12 @@ datasets:
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-   
- -    
+
+ -
    id: goa_human_rna.gpad
    label: "goa_human_rna gpad file"
    description: "gpad file for goa_human_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_human_rna.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_human_rna.gpad.gz
    type: gpad
    dataset: goa_human_rna
    submitter: goa
@@ -550,12 +550,12 @@ datasets:
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-   
- -    
+
+ -
    id: goa_human_rna.gpi
    label: "goa_human_rna gpi file"
    description: "gpi file for goa_human_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_human_rna.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_human_rna.gpi.gz
    type: gpi
    dataset: goa_human_rna
    submitter: goa
@@ -566,12 +566,12 @@ datasets:
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-   
- -    
+
+ -
    id: goa_pig.gpad
    label: "goa_pig gpad file"
    description: "gpad file for goa_pig from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_pig.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_pig.gpad.gz
    type: gpad
    dataset: goa_pig
    submitter: goa
@@ -582,12 +582,12 @@ datasets:
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-   
- -    
+
+ -
    id: goa_pig.gpi
    label: "goa_pig gpi file"
    description: "gpi file for goa_pig from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_pig.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_pig.gpi.gz
    type: gpi
    dataset: goa_pig
    submitter: goa
@@ -598,12 +598,12 @@ datasets:
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-   
- -    
+
+ -
    id: goa_pig_complex.gpad
    label: "goa_pig_complex gpad file"
    description: "gpad file for goa_pig_complex from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_pig_complex.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_pig_complex.gpad.gz
    type: gpad
    dataset: goa_pig_complex
    submitter: goa
@@ -614,12 +614,12 @@ datasets:
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-   
- -    
+
+ -
    id: goa_pig_complex.gpi
    label: "goa_pig_complex gpi file"
    description: "gpi file for goa_pig_complex from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_pig_complex.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_pig_complex.gpi.gz
    type: gpi
    dataset: goa_pig_complex
    submitter: goa
@@ -630,12 +630,12 @@ datasets:
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-   
- -    
+
+ -
    id: goa_pig_isoform.gpad
    label: "goa_pig_isoform gpad file"
    description: "gpad file for goa_pig_isoform from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_pig_isoform.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_pig_isoform.gpad.gz
    type: gpad
    dataset: goa_pig_isoform
    submitter: goa
@@ -646,12 +646,12 @@ datasets:
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-   
- -    
+
+ -
    id: goa_pig_isoform.gpi
    label: "goa_pig_isoform gpi file"
    description: "gpi file for goa_pig_isoform from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_pig_isoform.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_pig_isoform.gpi.gz
    type: gpi
    dataset: goa_pig_isoform
    submitter: goa
@@ -662,12 +662,12 @@ datasets:
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-   
- -    
+
+ -
    id: goa_pig_rna.gpad
    label: "goa_pig_rna gpad file"
    description: "gpad file for goa_pig_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_pig_rna.gpa.gz
+   url: http://current.geneontology.org/annotations/goa_pig_rna.gpad.gz
    type: gpad
    dataset: goa_pig_rna
    submitter: goa
@@ -678,12 +678,12 @@ datasets:
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-   
- -    
+
+ -
    id: goa_pig_rna.gpi
    label: "goa_pig_rna gpi file"
    description: "gpi file for goa_pig_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gpad-gpi/release/goa_pig_rna.gpi.gz
+   url: http://current.geneontology.org/annotations/goa_pig_rna.gpi.gz
    type: gpi
    dataset: goa_pig_rna
    submitter: goa
@@ -694,8 +694,8 @@ datasets:
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-   
- -    
+
+ -
    id: goa_chicken.gaf
    label: "goa_chicken gaf file"
    description: "gaf file for goa_chicken from EBI Gene Ontology Annotation Database"
@@ -714,8 +714,8 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-   
- -    
+
+ -
    id: goa_chicken_complex.gaf
    label: "goa_chicken_complex gaf file"
    description: "gaf file for goa_chicken_complex from EBI Gene Ontology Annotation Database"
@@ -734,8 +734,8 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-   
- -    
+
+ -
    id: goa_chicken_isoform.gaf
    label: "goa_chicken_isoform gaf file"
    description: "gaf file for goa_chicken_isoform from EBI Gene Ontology Annotation Database"
@@ -754,8 +754,8 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-   
- -    
+
+ -
    id: goa_chicken_rna.gaf
    label: "goa_chicken_rna gaf file"
    description: "gaf file for goa_chicken_rna from EBI Gene Ontology Annotation Database"
@@ -774,8 +774,8 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-   
- -    
+
+ -
    id: goa_cow.gaf
    label: "goa_cow gaf file"
    description: "gaf file for goa_cow from EBI Gene Ontology Annotation Database"
@@ -792,8 +792,8 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-   
- -    
+
+ -
    id: goa_cow_complex.gaf
    label: "goa_cow_complex gaf file"
    description: "gaf file for goa_cow_complex from EBI Gene Ontology Annotation Database"
@@ -810,8 +810,8 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-   
- -    
+
+ -
    id: goa_cow_isoform.gaf
    label: "goa_cow_isoform gaf file"
    description: "gaf file for goa_cow_isoform from EBI Gene Ontology Annotation Database"
@@ -828,8 +828,8 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-   
- -    
+
+ -
    id: goa_cow_rna.gaf
    label: "goa_cow_rna gaf file"
    description: "gaf file for goa_cow_rna from EBI Gene Ontology Annotation Database"
@@ -846,8 +846,8 @@ datasets:
     - NCBITaxon:297284
     - NCBITaxon:30523
     - NCBITaxon:9913
-   
- -    
+
+ -
    id: goa_dog.gaf
    label: "goa_dog gaf file"
    description: "gaf file for goa_dog from EBI Gene Ontology Annotation Database"
@@ -862,8 +862,8 @@ datasets:
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-   
- -    
+
+ -
    id: goa_dog_complex.gaf
    label: "goa_dog_complex gaf file"
    description: "gaf file for goa_dog_complex from EBI Gene Ontology Annotation Database"
@@ -878,8 +878,8 @@ datasets:
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-   
- -    
+
+ -
    id: goa_dog_isoform.gaf
    label: "goa_dog_isoform gaf file"
    description: "gaf file for goa_dog_isoform from EBI Gene Ontology Annotation Database"
@@ -894,8 +894,8 @@ datasets:
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-   
- -    
+
+ -
    id: goa_dog_rna.gaf
    label: "goa_dog_rna gaf file"
    description: "gaf file for goa_dog_rna from EBI Gene Ontology Annotation Database"
@@ -910,8 +910,8 @@ datasets:
    species_code: Cfam
    taxa:
     - NCBITaxon:9615
-   
- -    
+
+ -
    id: goa_human.gaf
    label: "goa_human gaf file"
    description: "gaf file for goa_human from EBI Gene Ontology Annotation Database"
@@ -926,8 +926,8 @@ datasets:
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-   
- -    
+
+ -
    id: goa_human_complex.gaf
    label: "goa_human_complex gaf file"
    description: "gaf file for goa_human_complex from EBI Gene Ontology Annotation Database"
@@ -942,8 +942,8 @@ datasets:
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-   
- -    
+
+ -
    id: goa_human_isoform.gaf
    label: "goa_human_isoform gaf file"
    description: "gaf file for goa_human_isoform from EBI Gene Ontology Annotation Database"
@@ -958,8 +958,8 @@ datasets:
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-   
- -    
+
+ -
    id: goa_human_rna.gaf
    label: "goa_human_rna gaf file"
    description: "gaf file for goa_human_rna from EBI Gene Ontology Annotation Database"
@@ -974,8 +974,8 @@ datasets:
    species_code: Hsap
    taxa:
     - NCBITaxon:9606
-   
- -    
+
+ -
    id: goa_pdb.gaf
    label: "goa_pdb gaf file"
    description: "gaf file for goa_pdb from EBI Gene Ontology Annotation Database"
@@ -987,10 +987,10 @@ datasets:
    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PDB/goa_pdb.gaf.gz
    entity_type: protein
    status: active
-   species_code: 
+   species_code:
    taxa:
-   
- -    
+
+ -
    id: goa_pig.gaf
    label: "goa_pig gaf file"
    description: "gaf file for goa_pig from EBI Gene Ontology Annotation Database"
@@ -1005,8 +1005,8 @@ datasets:
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-   
- -    
+
+ -
    id: goa_pig_complex.gaf
    label: "goa_pig_complex gaf file"
    description: "gaf file for goa_pig_complex from EBI Gene Ontology Annotation Database"
@@ -1021,8 +1021,8 @@ datasets:
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-   
- -    
+
+ -
    id: goa_pig_isoform.gaf
    label: "goa_pig_isoform gaf file"
    description: "gaf file for goa_pig_isoform from EBI Gene Ontology Annotation Database"
@@ -1037,8 +1037,8 @@ datasets:
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-   
- -    
+
+ -
    id: goa_pig_rna.gaf
    label: "goa_pig_rna gaf file"
    description: "gaf file for goa_pig_rna from EBI Gene Ontology Annotation Database"
@@ -1053,8 +1053,8 @@ datasets:
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-   
- -    
+
+ -
    id: goa_uniprot_all.gaf
    label: "goa_uniprot_all gaf file"
    description: "gaf file for goa_uniprot_all from EBI Gene Ontology Annotation Database"
@@ -1070,7 +1070,7 @@ datasets:
    taxa:
     - NCBITaxon:1
 
- -    
+ -
    id: goa_uniprot_all.gpi
    label: "goa_uniprot_all gpi file"
    description: "gpi file for goa_uniprot_all from EBI Gene Ontology Annotation Database"
@@ -1086,11 +1086,11 @@ datasets:
    taxa:
     - NCBITaxon:1
 
- -    
+ -
    id: goa_uniprot_all.gpad
    label: "goa_uniprot_all gpad file"
    description: "gpad file for goa_uniprot_all from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_uniprot_all.gpa.gz
+   url: http://geneontology.org/gene-associations/goa_uniprot_all.gpad.gz
    type: gpad
    dataset: goa_uniprot_all
    submitter: goa
@@ -1102,7 +1102,7 @@ datasets:
    taxa:
     - NCBITaxon:1
 
- -    
+ -
    id: goa_uniprot_gcrp.gaf
    label: "goa_uniprot_gcrp gaf file"
    description: "gaf file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
@@ -1118,7 +1118,7 @@ datasets:
    taxa:
     - NCBITaxon:1
 
- -    
+ -
    id: goa_uniprot_gcrp.gpi
    label: "goa_uniprot_gcrp gpi file"
    description: "gpi file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
@@ -1134,11 +1134,11 @@ datasets:
    taxa:
     - NCBITaxon:1
 
- -    
+ -
    id: goa_uniprot_gcrp.gpad
    label: "goa_uniprot_gcrp gpad file"
    description: "gpad file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gpa.gz
+   url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gpad.gz
    type: gpad
    dataset: goa_uniprot_gcrp
    submitter: goa
@@ -1356,4 +1356,3 @@ datasets:
    status: active
    taxa:
     - NCBITaxon:1
-
