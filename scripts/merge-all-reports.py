@@ -210,7 +210,7 @@ def main():
 
             f.write('<h1>Report</h1>\n')
             f.write('<div id="rmd">\n')
-            f.write(markdown.markdown(rmd_data))
+            f.write(markdown.markdown(rmd_data, extensions=["markdown.extensions.headerid"]))
             #f.write(rmd_data)
             f.write('\n')
             f.write('</div>\n')
