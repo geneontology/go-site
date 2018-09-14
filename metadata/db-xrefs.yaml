@@ -2560,13 +2560,13 @@
 - database: Rfam
   name: Rfam database of RNA families
   generic_urls:
-    - http://rfam.sanger.ac.uk/
+    - http://rfam.org
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://rfam.sanger.ac.uk/family/[example_id]
+      url_syntax: http://rfam.org/family/[example_id]
       example_id: Rfam:RF00012
-      example_url: http://rfam.sanger.ac.uk/family/RF00012
+      example_url: http://rfam.org/family/RF00012
 - database: RGD
   name: Rat Genome Database
   synonyms:
