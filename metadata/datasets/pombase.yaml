@@ -24,11 +24,10 @@ datasets:
     - NCBITaxon:284812
     - NCBITaxon:4896
  -    
-   id: gp2protein.pombase
+   id: pombase.gp2protein
    label: "pombase gp2protein file"
    description: "gp2protein file for pombase from PomBase"
-   url: http://geneontology.org/gene-associations/gene_association.pombase.gz
-   type: gaf
+   type: gp2protein
    dataset: pombase
    submitter: pombase
    compression: gzip
