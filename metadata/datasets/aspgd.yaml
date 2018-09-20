@@ -11,7 +11,7 @@ datasets:
    id: aspgd.gaf
    label: "aspgd gaf file"
    description: "gaf file for aspgd from Aspergillus Genome Database"
-   url: http://geneontology.org/gene-associations/gene_association.aspgd.gz
+   url: http://current.geneontology.org/annotations/aspgd.gaf.gz
    type: gaf
    dataset: aspgd
    submitter: aspgd

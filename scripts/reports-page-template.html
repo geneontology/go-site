@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+	  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html lang="en" dir="ltr"
+      xmlns:content="http://purl.org/rss/1.0/modules/content/"
+      xmlns:dc="http://purl.org/dc/terms/"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:sioc="http://rdfs.org/sioc/ns#"
+      xmlns:sioct="http://rdfs.org/sioc/types#"
+      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <head profile="http://www.w3.org/1999/xhtml/vocab">
+        <meta charset="utf-8"/>
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="shortcut icon" href="http://geneontology.org/sites/default/files/go-logo-favicon_0.ico" type="image/vnd.microsoft.icon" />
+        <link rel="shortcut icon" href="logo-circle.ico">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" crossorigin="anonymous"/>
+        <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.0/vue.js"></script> -->
+        <!-- <script type="text/javascript" src="RUD.bundle.js"></script> -->
+
+        <!-- <link rel="stylesheet" href="style.css"> -->
+
+        <title>Reports</title>
+    </head>
+
+    <body>
+        <table id="sourcestable" class="table table-sm table-striped rud-compact-table">
+        <thead>
+            <tr>
+                <th>Rule</th>
+                {{ #header }}
+                <th><a href="{{ id }}-report.html#rmd">{{ id }}</a></th>
+                {{ /header }}
+            </tr>
+        </thead>
+        <tbody>
+            {{ #rules }}
+            <tr>
+                <td><b>{{ rule }}</b></td>
+                {{ #messages }}
+                <td><a href="{{ dataset }}-report.html#{{ rule }}">{{ amount }}</a></td>
+                {{ /messages }}
+            </tr>
+            {{ /rules }}
+        </tbody>
+
+        </table>
+    </body>
+
+</html>

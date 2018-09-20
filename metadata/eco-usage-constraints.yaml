@@ -47,6 +47,9 @@ entity_types:
   - &rna
       id: CHEBI:33697
       name: ribonucleic acid
+  - &primary_transcript
+      id: SO:0000185
+      name: primary transcript
 
 eco_usage_constraints:
   - eco_id: ECO:0000353
@@ -83,6 +86,7 @@ eco_usage_constraints:
       - entity_type: *protein
       - entity_type: *protein_family
       - entity_type: *rna
+      - entity_type: *primary_transcript
   - eco_id: ECO:0000319
     go_evidence: IBD
     with_presence: mandatory

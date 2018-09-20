@@ -6,7 +6,6 @@ datasets:
    id: paint_wb.gaf
    label: "paint_wb gaf file"
    description: "gaf file for paint_wb from PAINT"
-   url: http://geneontology.org/gene-associations/gene_association.paint_wb.gaf.gz
    type: gaf
    dataset: paint_wb
    submitter: paint

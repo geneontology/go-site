@@ -62,7 +62,7 @@ datasets:
    aggregates: goa
    taxa:
     - NCBITaxon:1
-   
+
  -
    id: goa_pdb.gaf
    label: "goa_pdb gaf file"
