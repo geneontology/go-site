@@ -26,7 +26,6 @@ datasets:
     - NCBITaxon:41870
     - NCBITaxon:4932
     - NCBITaxon:559292
-    
  -
    id: sgd.gpad
    label: "sgd gpad file"
@@ -46,7 +45,6 @@ datasets:
     - NCBITaxon:41870
     - NCBITaxon:4932
     - NCBITaxon:559292
-
  -
    id: sgd.gpi
    label: "sgd gpi file"
