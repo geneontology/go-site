@@ -7,7 +7,8 @@ import datetime
 @click.command()
 @click.option("--report", type=click.File("r"), required=True)
 @click.option("--template", type=click.File("r"), required=True)
-def main(report, template):
+@click.option("--date", default=str(datetime.date.today()))
+def main(report, template, date):
     report_json = json.load(report)
 
     header = sorted([{"id": dataset["id"]} for dataset in report_json], key=lambda h: h["id"])
@@ -92,7 +93,7 @@ def main(report, template):
         }
         cells.append(cell)
 
-    rendered = pystache.render(template.read(), {"header": header, "rules": cells, "date": str(datetime.date.today())})
+    rendered = pystache.render(template.read(), {"header": header, "rules": cells, "date": date})
 
     print(rendered)
     # rendered = Template(template.read()).render({"header": sorted(header, key=lambda n: n["id"]),
