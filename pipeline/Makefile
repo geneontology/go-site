@@ -161,7 +161,8 @@ target/blazegraph-production.jnl: target/blazegraph-internal.jnl
 	cp $< $@
 	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=$@ update sparql/delete/delete_non_production.sparql
 
-port := $(shell echo $$(( ((RANDOM<<15)|RANDOM) % 64000 + 10000 )) )
+# $RANDOM goes from 0 to 32767, so adding to 10000 should generate a good range of ports.
+port := $(shell env bash -c 'echo $$(($$RANDOM + 10000))' )
 target/sparta-report.json: target/blazegraph-production.jnl
 	PY_ENV=$(PY_ENV) ./triplestore-rulecheck.sh $(port) $< $@
 
