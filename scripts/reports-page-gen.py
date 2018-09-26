@@ -92,7 +92,7 @@ def main(report, template):
         }
         cells.append(cell)
 
-    rendered = pystache.render(template.read(), {"header": header, "rules": cells})
+    rendered = pystache.render(template.read(), {"header": header, "rules": cells, "date": str(datetime.date.today())})
 
     print(rendered)
     # rendered = Template(template.read()).render({"header": sorted(header, key=lambda n: n["id"]),
