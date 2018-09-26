@@ -4,7 +4,7 @@
 # correct lines back to stdout. Validations include checking column length and
 # lines are also skipped if there is a taxon already included in the model
 # organisms. For lines that do not use evidence code `IEA`, those are appended
-# to a file called 'noiea' as a side affect. 
+# to a file called 'noiea' as a side affect.
 
 BEGIN {
     FS="\t"
@@ -36,6 +36,9 @@ BEGIN {
     if (taxon in model_organisms) {
         # We already have it defined, so we skip
         next
+    } else if ($7 == "IBA"){
+        # Skip if IBA
+        next
     } else if ($7 != "IEA") {
         print $0
         print $0 > "noiea"
@@ -45,6 +48,7 @@ BEGIN {
 }
 
 # ! IEA, taxon:skip -> skip
+# ! IBA -> skip
 # ! not IEA, taxon:skip -> skip
 # ! not IEA, taxon:keep -> gaf, noiea
 # ! IEA, taxon:keep -> gaf
