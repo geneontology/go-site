@@ -1,4 +1,8 @@
 
+= Notes =
+
+* Due to the enforcement of "no IEAs over a year old" (https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000029.md), the number of IEAs will be reduced when compared to previous releases.
+
 = Errata =
 
 == Primary products ==
