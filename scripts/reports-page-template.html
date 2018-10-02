@@ -18,6 +18,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="shortcut icon" href="http://geneontology.org/sites/default/files/go-logo-favicon_0.ico" type="image/vnd.microsoft.icon" />
         <link rel="shortcut icon" href="logo-circle.ico">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" crossorigin="anonymous"/>
         <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.0/vue.js"></script> -->
@@ -26,32 +29,55 @@
         <!-- <link rel="stylesheet" href="style.css"> -->
 
         <title>Reports</title>
+
+        <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
     </head>
 
     <body>
-        <h2>GO Rule Violations by Group Dataset</h2>
+        <div class="container-fluid">
+        <h2 id="test">GO Rule Violations by Group Dataset</h2>
         Generated on {{ date }}<br/>
-        <table id="sourcestable" class="table table-sm table-striped rud-compact-table">
+        <div class="table-responsive">
+        <table id="sourcestable" class="table table-sm table-striped rud-compact-table table-bordered table-hover">
         <thead>
             <tr>
-                <th>Rule</th>
+                <th scope="col">Rule</th>
                 {{ #header }}
-                <th><a href="{{ id }}-report.html#rmd">{{ id }}</a></th>
+                <th scope="col"><a href="{{ id }}-report.html#rmd">{{ id }}</a></th>
                 {{ /header }}
             </tr>
         </thead>
         <tbody>
             {{ #rules }}
             <tr>
-                <td><b>{{ rule }}</b></td>
+                <th scope="row" style="white-space: nowrap;">
+                {{ #is-other }}
+                Other
+                {{ /is-other }}
+                {{ ^is-other }}
+                <p><u><a href="https://github.com/geneontology/go-site/blob/master/metadata/rules/{{ rule }}.md" data-toggle="tooltip" data-placement="right" title="{{ title }}">{{ rule }}</a></u></p>
+                {{ /is-other }}
+                </th>
                 {{ #messages }}
-                <td><a href="{{ dataset }}-report.html#{{ rule }}">{{ amount }}</a></td>
+                <td class="table-{{ level }}">
+                    {{ #has-zero-messages }}
+                    {{ amount }}
+                    {{ /has-zero-messages }}
+                    {{ ^has-zero-messages }}
+                    <a href="{{ dataset }}-report.html#{{ rule }}" data-toggle="tooltip" data-html="true" data-placement="top" title="{{ dataset }}<br>{{ rule }}: ({{ title }})">{{ amount }}</a>
+                    {{ /has-zero-messages }}
+                </td>
                 {{ /messages }}
             </tr>
             {{ /rules }}
         </tbody>
-
         </table>
+        </div>
+        </div>
     </body>
 
 </html>

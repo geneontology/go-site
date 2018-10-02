@@ -248,9 +248,9 @@ def main():
         ## Product must not be a "severe" reduction from source, but
         ## only in cases of larger files.
         ## This dictionary should be a map of  dataset id `aid` to percent allowable reduction.
-        ## gramene_oryza is allowed to be 40% of
+        ## gramene_oryza is allowed to be 30% of total. This is due to old IEAs (GORULE:0000029)
         reduction_threshold = {
-            "gramene_oryza": 0.4
+            "gramene_oryza": 0.3
         }
         if severe_line_reduction_test(aid, reduction_threshold, count_gaf_prod, count_gaf_src, small_file_size):
             die_screaming('Severe reduction of product for: ' + aid)
