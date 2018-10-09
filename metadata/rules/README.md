@@ -32,12 +32,15 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000023">GORULE:0000023 Materialize annotations for inter-branch links in the GO</a>
  * <a href="#gorule0000024">GORULE:0000024 Prevent propagation of certain terms by orthology</a>
  * <a href="#gorule0000025">GORULE:0000025 Creating more specific annotations by reasoning over extensions</a>
- * <a href="#gorule0000026">GORULE:0000026 Annotations with IBA evidence code are filtered out if not coming from PAINT.</a>
+ * <a href="#gorule0000026">GORULE:0000026 Annotations with IBA evidence code are filtered out if not coming from PAINT</a>
  * <a href="#gorule0000027">GORULE:0000027 Each identifier in GAF is valid</a>
  * <a href="#gorule0000028">GORULE:0000028 Aspect can only be one of C, P, F and should be repaired using the GO term</a>
  * <a href="#gorule0000029">GORULE:0000029 All IEAs over a year old are removed</a>
  * <a href="#gorule0000030">GORULE:0000030 Deprecated GO_REFs are not allowed</a>
+ * <a href="#gorule0000031">GORULE:0000031 Annotation relations are replaced when not provided by source</a>
  * <a href="#gorule0000031">GORULE:0000031 Annotation relations are replaced when not provided by source.</a>
+ * <a href="#gorule0000033">GORULE:0000033 Group specific Reference IDs (column 6) will be replaced by corresponding GO_REF (or other public ID) or filtered.</a>
+ * <a href="#gorule0000035">GORULE:0000035 'Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.</a>
 
 
 
@@ -338,17 +341,10 @@ Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt
 ## GO terms in annotations should not be obsolete.
 
  * id: [GORULE:0000014](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000014.md)
- * status: implemented
+ * status: deprecated
 
 
-This check ensures that the GO IDs used for annotations are valid IDs
-and are not obsolete.
-
-Error report: <group>.report.md
-
-Example: http://release.geneontology.org/2018-07-02/reports/gonuts-report.html
-GO_AR:0000014 Error The id 'GO:0003706' in the annotation is an obsolete class
-UniProtKB P55055 NR1H2 GO:0003706 PMID:11090131 IDA F protein taxon:9606 20110115 GONUTS
+This rule is now merged with GORULE:0000020.
 
 <a name="gorule0000015"/>
 
@@ -372,7 +368,7 @@ cellular component term 'GO:0044215 : other organism' as an ancestor.
 ## With/From: IC annotations require a With/From GO ID
 
  * id: [GORULE:0000016](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000016.md)
- * status: legacy
+ * status: implemented
 
 
 All IC annotations should include a GO ID in the "With/From" column; for
@@ -432,12 +428,11 @@ reasoner such as HermiT.
  * status: implemented
 
 
-Ontology operations such as term merges and obsoletions may be out of
-sync with annotation releases. Each GO entry T in the GAF is checked to
-see if it corresponds to a valid (non-obsolete) term in the ontology. If
-not, metadata for other terms is checked. If the term has been merged
-into a term S (i.e. S has alt\_id of T) then T is replaced by S in the
-GAF line.
+There should be no annotations to obsolete terms or to an alternate ID. Obsolete terms that have a `replace_by` tag and
+terms annotated to one of their alternative IDs (merged terms) will automatically be repaired to the valid term id.
+If no replacement is found, the annotation will be filtered.
+
+Other GO terms present in annotations (with/from column, etc) also should be repaired if possible.
 
 <a name="gorule0000021"/>
 
@@ -545,7 +540,7 @@ Other fields remain the same
 
 <a name="gorule0000026"/>
 
-## Annotations with IBA evidence code are filtered out if not coming from PAINT.
+## Annotations with IBA evidence code are filtered out if not coming from PAINT
 
  * id: [GORULE:0000026](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000026.md)
  * status: implemented
@@ -612,7 +607,7 @@ corrected aspect.
 ## All IEAs over a year old are removed
 
  * id: [GORULE:0000029](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000029.md)
- * status: legacy
+ * status: implemented
 
 
 All GAF annotations that have IEA as an evidence code that are also more than a
@@ -639,7 +634,7 @@ GO_PAINT:nnnnnnn
 
 <a name="gorule0000031"/>
 
-## Annotation relations are replaced when not provided by source.
+## Annotation relations are replaced when not provided by source
 
  * id: [GORULE:0000031](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000031.md)
  * status: implemented
@@ -652,3 +647,34 @@ For Biological Process: relation = 'involved_in'
 For Molecular Function: relation = 'enables'
 
 ##This seems to be only exported in GPAD for now.
+
+<a name="gorule0000031"/>
+
+## Annotation relations are replaced when not provided by source.
+
+ * id: [GORULE:0000031](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000031.md)
+ * status: implemented
+
+
+GO_REF Collection References allowed for each ECO are as follows:
+
+<a name="gorule0000033"/>
+
+## Group specific Reference IDs (column 6) will be replaced by corresponding GO_REF (or other public ID) or filtered.
+
+ * id: [GORULE:0000033](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000033.md)
+ * status: proposed
+
+
+IDs in the Reference (column 6) field will only be accepted if they are from PMID, PMC, doi, or GO_REF. Group specific References will no longer be accepted and will be filtered. For example, FB:FBrf0159398 is a synonym for GO_REF:0000015. So if the FB Reference is found, it will be removed, leaving GO_REF:0000015 instead. If an ID cannot be repaired/replaced then the GAF annotation will be filtered.
+
+The list of GO_REFs are here: https://github.com/geneontology/go-site/tree/master/metadata/gorefs.
+
+<a name="gorule0000035"/>
+
+## 'Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.
+
+ * id: [GORULE:0000035](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000035.md)
+ * status: proposed
+
+
