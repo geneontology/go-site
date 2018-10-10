@@ -365,7 +365,7 @@
   xref: 'GOC:atm'
 -
   nickname: 'Jim Hu'
-  organization: 'E. coli'
+  organization: 'EcoliWiki/CACAO'
   uri: 'GOC:jh2'
   xref: 'GOC:jh2'
 -
@@ -374,7 +374,7 @@
   groups:
     - 'http://www.bio.tamu.edu'
   nickname: 'Brenley McIntosh'
-  organization: 'E. coli'
+  organization: 'EcoliWiki/CACAO'
   uri: 'GOC:bm'
   xref: 'GOC:bm'
 -
@@ -387,7 +387,7 @@
   groups:
     - 'http://www.bio.tamu.edu'
   nickname: 'Sandy Labonte'
-  organization: 'E. coli'
+  organization: 'EcoliWiki/CACAO'
   uri: 'http://orcid.org/0000-0002-9618-3336'
 -
   nickname: 'Curators at FlyBase'
@@ -3199,7 +3199,7 @@
   groups:
     - 'http://www.bio.tamu.edu'
   nickname: 'Debby Siegele'
-  organization: 'E. coli'
+  organization: 'EcoliWiki/CACAO'
   uri: 'http://orcid.org/0000-0001-8935-0696'
   xref: 'GOC:das'
 -
@@ -3951,6 +3951,6 @@
   groups:
     - 'http://www.bio.tamu.edu'
   nickname: 'Jolene Ramsey'
-  organization: 'CACAO/Texas A&M'
+  organization: 'EcoliWiki/CACAO'
   uri: 'http://orcid.org/0000-0002-3774-5896'
   
