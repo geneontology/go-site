@@ -298,3 +298,95 @@
   label: 'SIGNOR'
   id: 'https://signor.uniroma2.it'
   shorthand: 'SIGNOR'
+-
+  label: The EUROFUNG Consortium
+  id: 'http://mikrobiologie.eurofung.tu-berlin.de/'
+  shorthand: Eurofung
+-
+  label: InterPro
+  id: https://www.ebi.ac.uk/interpro/
+  shorthand: InterPro
+-
+  label: CACAO
+  id: http://ecoliwiki.net/colipedia/index.php/CACAO_0.1
+  shorthand: CACAO
+-
+  label: Biofunction Prediction
+  id: https://biofunctionprediction.org/cafa/
+  shorthand: CAFA
+-
+  label: CollecTF
+  id: http://www.collectf.org/browse/home/
+  shorthand: COLLECTF
+-
+  label: EcoliWiki
+  id: http://ecoliwiki.net/colipedia/index.php/Welcome_to_EcoliWiki
+  shorthand: EcoliWiki
+-
+  label: refGenome
+  id: https://cran.r-project.org/web/packages/refGenome/index.html
+  shorthand: REFGENOME
+-
+  label: Ensembl Genome Browser
+  id: https://www.ensembl.org/index.html?redirect=no
+  shorthand: Ensembl
+-
+  label: HUGO Gene Nomenclature Committee
+  id: https://www.genenames.org/
+  shorthand: HGNC
+-
+  label: Alzheimers University_of_Toronto
+  id: https://tanz.med.utoronto.ca/page/alzheimer%E2%80%99s-disease-research
+  shorthand: Alzheimers_University_of_Toronto
+-
+  label: Developmental FunctionaL Annotation at Tufts
+  id: http://dflat.cs.tufts.edu/
+  shorthand: DFLAT
+-
+  label: The Human Protein Atlas
+  id: https://www.proteinatlas.org/
+  shorthand: HPA
+-
+  label: LIFEdb
+  id: https://www.dkfz.de/en/mga/Groups/LIFEdb-Database.html
+  shorthand: LIFEdb
+-
+  label: MTBBASE
+  id: http://www.ark.in-berlin.de/Site/MTBbase.html
+  shorthand: MTBBASE
+-
+  label: Proteome Inc
+  id: https://www.proteomics.com/
+  shorthand: PINC
+-
+  label: GONUTS
+  id: https://gowiki.tamu.edu/wiki/index.php
+  shorthand: GONUTS
+-
+  label: Gramene
+  id: http://www.gramene.org/
+  shorthand: GR
+-
+  label: Rice Genome Annotation Project
+  id: http://rice.plantbiology.msu.edu/
+  shorthand: TIGR
+-
+  label: ASAP
+  id: https://www.genome.wisc.edu/tools/asap.htm
+  shorthand: ASAP
+-
+  label: The Pseudomonas Community Annotation Project
+  id: http://www.pseudomonas.com/pseudocap
+  shorthand: PseudoCAP
+-
+  label: Sol Genomics Network
+  id: https://solgenomics.net/
+  shorthand: SGN
+-
+  label: JCVI_CMR
+  id: http://blast.jcvi.org/cmr-blast/
+  shorthand: JCVI_CMR
+-
+  label: JCVI
+  id: https://www.jcvi.org/
+  shorthand: JCVI
