@@ -14,7 +14,7 @@ sequence:
         required: true
         unique: true
         ## Pattern lookahead to prevent trailing slashes.
-        pattern: /^(http(s?)\:\/\/\w[\/\.\-\:\w]+)(?<!\/)$/
+        pattern: /^((ht|f)tp(s?)\:\/\/\w[\/\.\:\[\]\=\?\&\+\-\,\%\(\)\|\;\_\~\w]+)$/
       "label":
         type: str
         required: true
