@@ -2311,14 +2311,14 @@
   name: PomBase
   rdf_uri_prefix: http://identifiers.org/pombase/
   generic_urls:
-    - http://www.pombase.org/
+    - https://www.pombase.org/
   entity_types:
     - type_name: gene
       type_id: SO:0000704
       id_syntax: S\w+(\.)?\w+(\.)?
-      url_syntax: http://www.pombase.org/spombe/result/[example_id]
+      url_syntax: https://www.pombase.org/gene/[example_id]
       example_id: PomBase:SPBC11B10.09
-      example_url: http://www.pombase.org/spombe/result/SPBC11B10.09
+      example_url: https://www.pombase.org/gene/SPBC11B10.09
 - database: Pompep
   name: Schizosaccharomyces pombe protein data
   generic_urls:
