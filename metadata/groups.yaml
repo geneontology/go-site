@@ -300,11 +300,11 @@
   shorthand: 'SIGNOR'
 -
   label: The EUROFUNG Consortium
-  id: 'http://mikrobiologie.eurofung.tu-berlin.de/'
+  id: 'http://mikrobiologie.eurofung.tu-berlin.de'
   shorthand: Eurofung
 -
   label: InterPro
-  id: https://www.ebi.ac.uk/interpro/
+  id: https://www.ebi.ac.uk/interpro
   shorthand: InterPro
 -
   label: CACAO
@@ -312,11 +312,11 @@
   shorthand: CACAO
 -
   label: Biofunction Prediction
-  id: https://biofunctionprediction.org/cafa/
+  id: https://biofunctionprediction.org/cafa
   shorthand: CAFA
 -
   label: CollecTF
-  id: http://www.collectf.org/browse/home/
+  id: http://www.collectf.org/browse/home
   shorthand: COLLECTF
 -
   label: EcoliWiki
@@ -328,23 +328,23 @@
   shorthand: REFGENOME
 -
   label: Ensembl Genome Browser
-  id: https://www.ensembl.org/index.html?redirect=no
+  id: https://www.ensembl.org/index.html
   shorthand: Ensembl
 -
   label: HUGO Gene Nomenclature Committee
-  id: https://www.genenames.org/
+  id: https://www.genenames.org
   shorthand: HGNC
 -
   label: Alzheimers University_of_Toronto
-  id: https://tanz.med.utoronto.ca/page/alzheimer%E2%80%99s-disease-research
+  id: "https://tanz.med.utoronto.ca/page/alzheimer%E2%80%99s-disease-research"
   shorthand: Alzheimers_University_of_Toronto
 -
   label: Developmental FunctionaL Annotation at Tufts
-  id: http://dflat.cs.tufts.edu/
+  id: http://dflat.cs.tufts.edu
   shorthand: DFLAT
 -
   label: The Human Protein Atlas
-  id: https://www.proteinatlas.org/
+  id: https://www.proteinatlas.org
   shorthand: HPA
 -
   label: LIFEdb
@@ -356,7 +356,7 @@
   shorthand: MTBBASE
 -
   label: Proteome Inc
-  id: https://www.proteomics.com/
+  id: https://www.proteomics.com
   shorthand: PINC
 -
   label: GONUTS
@@ -364,11 +364,11 @@
   shorthand: GONUTS
 -
   label: Gramene
-  id: http://www.gramene.org/
+  id: http://www.gramene.org
   shorthand: GR
 -
   label: Rice Genome Annotation Project
-  id: http://rice.plantbiology.msu.edu/
+  id: http://rice.plantbiology.msu.edu
   shorthand: TIGR
 -
   label: ASAP
@@ -380,13 +380,13 @@
   shorthand: PseudoCAP
 -
   label: Sol Genomics Network
-  id: https://solgenomics.net/
+  id: https://solgenomics.net
   shorthand: SGN
 -
   label: JCVI_CMR
-  id: http://blast.jcvi.org/cmr-blast/
+  id: http://blast.jcvi.org/cmr-blast
   shorthand: JCVI_CMR
 -
   label: JCVI
-  id: https://www.jcvi.org/
+  id: https://www.jcvi.org
   shorthand: JCVI
