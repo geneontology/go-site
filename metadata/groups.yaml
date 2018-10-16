@@ -161,7 +161,7 @@
 -
   label: "UCL-Parkinson's UK Annotation Project"
   id: http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/parkinsons
-  shorthand: UCL-Parkinsons
+  shorthand: ParkinsonsUK-UCL
 -
   label: UC Davis
   id: http://www.ucdavis.edu
@@ -253,7 +253,7 @@
 -
   label: NTNU
   id: https://www.ntnu.edu
-  shorthand: NTNU
+  shorthand: NTNU_SB
 -
   label: Bioversity International
   id: https://www.bioversityinternational.org
