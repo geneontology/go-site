@@ -16,7 +16,7 @@ datasets:
    dataset: sgd
    submitter: sgd
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.sgd.gz
+   source: https://sgd-prod-upload.s3.amazonaws.com/latest/gene_association.sgd.gaf.gz
    entity_type:
    status: active
    species_code: Scer
