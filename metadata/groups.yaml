@@ -32,7 +32,7 @@
   shorthand: RGD
 -
   label: 'ARUK-UCL'
-  id: http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl
+  id: https://www.ucl.ac.uk/functional-gene-annotation/neurological
   shorthand: ARUK-UCL
 -
   label: 'BHF-UCL'
@@ -40,7 +40,7 @@
   shorthand: BHF-UCL
 -
   label: 'SynGO-UCL'
-  id: https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl
+  id: https://www.ucl.ac.uk/functional-gene-annotation/neurological/syngo
   shorthand: SynGO-UCL
 -
   label: 'neXtProt'
