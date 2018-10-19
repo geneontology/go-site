@@ -11,6 +11,10 @@
   id: http://geneontology.org
   shorthand: GO_Central
 -
+  label: 'GOC'
+  id: http://geneontology.org/page/about
+  shorthand: GOC
+-
   label: 'Planteome'
   id: http://planteome.org
   shorthand: Planteome
