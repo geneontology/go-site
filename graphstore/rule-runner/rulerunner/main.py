@@ -164,7 +164,11 @@ def load_yamldown(path):
     """
     try:
         with open(path, "r") as f:
-            return yamldown.load(f)[0]
+            load = yamldown.load(f)[0]
+            if load == None:
+                raise click.ClickException("No rule present at {}".format(path))
+
+            return load
 
     except Exception as e:
         raise click.ClickException(str(e))

@@ -88,41 +88,49 @@ def main():
         LOGGER.info("Processing: " + aid)
 
         ##
-        rmd_data = None
-        with open(args.directory + '/' + aid + '.report.md') as fileh:
-            rmd_data = fileh.read()
-        if not rmd_data:
-            die_screaming('No rmd for:' + aid)
+        rmd_p = False
+        rmd_data = 'No report generated.'
+        rmd_fname = args.directory + '/' + aid + '.report.md'
+        if os.path.isfile(rmd_fname):
+            with open(rmd_fname) as fileh:
+                rmd_data = fileh.read()
+                rmd_p = True
 
         ##
-        otc_data = None
-        with open(args.directory + '/' + aid + '-owltools-check.txt') as fileh:
-            otc_data = fileh.read()
-        if not otc_data:
-            die_screaming('No otc for:' + aid)
+        otc_p = False
+        otc_data = 'No report generated.'
+        otc_fname = args.directory + '/' + aid + '-owltools-check.txt'
+        if os.path.isfile(otc_fname):
+            with open(otc_fname) as fileh:
+                otc_data = fileh.read()
+                otc_p = True
 
         ##
-        sum_data = None
-        with open(args.directory + '/' + aid + '-summary.txt') as fileh:
-            sum_data = fileh.read()
-        if not sum_data:
-            die_screaming('No sum for:' + aid)
+        sum_p = False
+        sum_data = 'No report generated.'
+        sum_fname = args.directory + '/' + aid + '-summary.txt'
+        if os.path.isfile(sum_fname):
+            with open(sum_fname) as fileh:
+                sum_data = fileh.read()
+                sum_p = True
 
         ##
-        pre_data = None
-        with open(args.directory + '/' + aid + '-prediction-report.txt') as fileh:
-            pre_data = fileh.read()
-        ## May be none.
-        if not pre_data:
-            pre_data = 'N/A'
+        pre_p = False
+        pre_data = 'No report generated.'
+        pre_fname = args.directory + '/' + aid + '-prediction-report.txt'
+        if os.path.isfile(pre_fname):
+            with open(pre_fname) as fileh:
+                pre_data = fileh.read()
+                pre_p = True
 
         ##
-        epr_data = None
-        with open(args.directory + '/' + aid + '-prediction-experimental-report.txt') as fileh:
-            epr_data = fileh.read()
-        ## May be none.
-        if not epr_data:
-            epr_data = 'N/A'
+        epr_p = False
+        epr_data = 'No report generated.'
+        epr_fname = args.directory + '/' + aid + '-prediction-experimental-report.txt'
+        if os.path.isfile(epr_fname):
+            with open(epr_fname) as fileh:
+                epr_data = fileh.read()
+                epr_p = True
 
         # ###
         # ### Extract information from actual using grep.
@@ -153,19 +161,39 @@ def main():
             f.write(' <p>\n')
             f.write('  <ul>\n')
             f.write('   <li>\n')
-            f.write('    <a href="#sum">Summary</a> (<a href="'+ aid +'-summary.txt">original</a>)\n')
+            f.write('    <a href="#sum">Summary</a>')
+            if sum_p:
+                f.write('    (<a href="'+ aid +'-summary.txt">original</a>)\n')
+            else:
+                f.write('    \n')
             f.write('   </li>\n')
             f.write('   <li>\n')
-            f.write('    <a href="#rmd">Report</a> (<a href="'+ aid +'.report.md">original</a>)\n')
+            f.write('    <a href="#rmd">Report</a>')
+            if rmd_p:
+                f.write('    (<a href="'+ aid +'.report.md">original</a>)\n')
+            else:
+                f.write('    \n')
             f.write('   </li>\n')
             f.write('   <li>\n')
-            f.write('    <a href="#otc">OWLTools check</a> (<a href="'+ aid +'-owltools-check.txt">original</a>)\n')
+            f.write('    <a href="#otc">OWLTools check</a>')
+            if otc_p:
+                f.write('    (<a href="'+ aid +'-owltools-check.txt">original</a>)\n')
+            else:
+                f.write('    \n')
             f.write('   </li>\n')
             f.write('   <li>\n')
-            f.write('    <a href="#pre">Predictions</a> (<a href="'+ aid +'-prediction-report.txt">original</a>)\n')
+            f.write('    <a href="#pre">Predictions</a>')
+            if pre_p:
+                f.write('    (<a href="'+ aid +'-prediction-report.txt">original</a>)\n')
+            else:
+                f.write('    \n')
             f.write('   </li>\n')
             f.write('   <li>\n')
-            f.write('    <a href="#epr">Predictions (experimental)</a> (<a href="'+ aid +'-prediction-experimental-report.txt">original</a>)\n')
+            f.write('    <a href="#epr">Predictions (experimental)</a>')
+            if epr_p:
+                f.write('    (<a href="'+ aid +'-prediction-experimental-report.txt">original</a>)\n')
+            else:
+                f.write('    \n')
             f.write('   </li>\n')
             f.write('  </ul>\n')
             f.write(' </p>\n')
@@ -182,7 +210,7 @@ def main():
 
             f.write('<h1>Report</h1>\n')
             f.write('<div id="rmd">\n')
-            f.write(markdown.markdown(rmd_data))
+            f.write(markdown.markdown(rmd_data, extensions=["markdown.extensions.headerid"]))
             #f.write(rmd_data)
             f.write('\n')
             f.write('</div>\n')
