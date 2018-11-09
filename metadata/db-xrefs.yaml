@@ -196,7 +196,6 @@
       example_id: BIOSIS:200200247281
 - database: BRENDA
   name: BRENDA, The Comprehensive Enzyme Information System
-  rdf_uri_prefix: http://purl.obolibrary.org/obo/BTO_
   generic_urls:
     - http://www.brenda-enzymes.info
   entity_types:
@@ -205,6 +204,18 @@
       url_syntax: http://www.brenda-enzymes.info/php/result_flat.php4?ecno=[example_id]
       example_id: BRENDA:4.2.1.3
       example_url: http://www.brenda-enzymes.info/php/result_flat.php4?ecno=4.2.1.3
+- database: BTO
+  name: BRENDA tissue / enzyme ontology
+  description: A structured controlled vocabulary for the source of an enzyme comprising tissues, cell lines, cell types and cell cultures.
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/BTO_
+  generic_urls:
+    - http://purl.obolibrary.org/obo/bto
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: http://purl.obolibrary.org/obo/BTO_[example_id]
+      example_id: BTO_0002164
+      example_url: http://purl.obolibrary.org/obo/BTO_0002164
 - database: Broad
   name: Broad Institute
   generic_urls:
@@ -336,10 +347,10 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: (CAL|CAF)[0-9]{7}
+      id_syntax: (CAL|CAF)[0-9]{10}
       url_syntax: http://www.candidagenome.org/cgi-bin/locus.pl?dbid=[example_id]
-      example_id: CGD:CAL0005516
-      example_url: http://www.candidagenome.org/cgi-bin/locus.pl?dbid=CAL0005516
+      example_id: CGD:CAL0000179664
+      example_url: http://www.candidagenome.org/cgi-bin/locus.pl?dbid=CAL0000179664
 - database: CGD_LOCUS
   name: Candida Genome Database
   generic_urls:
@@ -552,7 +563,7 @@
   synonyms:
     - DDB
     - DictyBase
-  rdf_uri_prefix: http://identifiers.org/dbsnp/
+  rdf_uri_prefix: http://identifiers.org/dictybase.gene/
   generic_urls:
     - http://dictybase.org
   entity_types:
@@ -663,6 +674,8 @@
       example_url: http://biocyc.org/ECOLI/reference.html?type=CITATION-FRAME&object=COLISALII
 - database: ECOGENE
   name: EcoGene Database of Escherichia coli Sequence and Function
+  synonyms:
+    - EcoGene
   generic_urls:
     - http://www.ecogene.org/
   entity_types:
@@ -1055,6 +1068,17 @@
       url_syntax: http://purl.obolibrary.org/obo/go/references/[example_id]
       example_id: "0000001"
       example_url: http://purl.obolibrary.org/obo/go/references/0000001
+- database: gomodel
+  name: Gene Ontology Causal Activity Model Database
+  rdf_uri_prefix: http://model.geneontology.org/
+  generic_urls:
+    - http://www.geneontology.org/gocam
+  entity_types:
+    - type_name: model
+      type_id: BET:0000000
+      url_syntax: http://www.geneontology.org/gocam/[example_id]
+      example_id: gomodel:5ae3b0f600001522
+      example_url: http://www.geneontology.org/gocam/gomodel:5ae3b0f600001522
 - database: GOC
   name: Gene Ontology Consortium
   generic_urls:
@@ -1242,7 +1266,6 @@
       example_url: http://www.genenames.org/data/hgnc_data.php?hgnc_id=HGNC:29
 - database: HGNC_gene
   name: HUGO Gene Nomenclature Committee
-  rdf_uri_prefix: http://identifiers.org/hgnc.gene/
   generic_urls:
     - http://www.genenames.org/
   entity_types:
@@ -1379,13 +1402,13 @@
 - database: ISBN
   name: International Standard Book Number
   generic_urls:
-    - http://isbntools.com/
+    - https://www.worldcat.org
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://openisbn.com/search.php?q=[example_id]&isbn=1/
+      url_syntax: https://www.worldcat.org/search?q=bn%3A[example_id]
       example_id: ISBN:0781702534
-      example_url: http://openisbn.com/search.php?q=0781702534&isbn=1/
+      example_url: https://www.worldcat.org/search?q=bn%3A0781702534
 - database: ISRR
   name: International Society for Root Research
   generic_urls:
@@ -1470,6 +1493,10 @@
       url_syntax: http://cmr.jcvi.org/cgi-bin/CMR/shared/GenePage.cgi?locus=[example_id]
       example_id: JCVI_CMR:VCA0557
       example_url: http://cmr.jcvi.org/cgi-bin/CMR/shared/GenePage.cgi?locus=VCA0557
+- database: TIGR_CMR
+  name: CMR Blast
+  generic_urls:
+    - http://blast.jcvi.org/cmr-blast/
 - database: JCVI_EGAD
   name: JCVI CMR Egad
   generic_urls:
@@ -1774,7 +1801,7 @@
 - database: MGI
   name: Mouse Genome Informatics
   ## note: when we implement https://github.com/geneontology/go-site/issues/91, change this to http://identifiers.org/mgi/MGI:
-  rdf_uri_prefix: http://identifiers.org/mgi/
+  rdf_uri_prefix: "http://identifiers.org/mgi/MGI:"
   generic_urls:
     - http://www.informatics.jax.org/
   entity_types:
@@ -1913,6 +1940,10 @@
     - type_name: entity
       type_id: BET:0000000
       example_id: NCBI_locus_tag:CTN_0547
+- database: NCBI_NP
+  name: NCBI Protein
+  generic_urls:
+    - https://www.ncbi.nlm.nih.gov/protein
 - database: NIF_Subcellular
   name: Neuroscience Information Framework standard ontology, subcellular hierarchy
   generic_urls:
@@ -2289,14 +2320,14 @@
   name: PomBase
   rdf_uri_prefix: http://identifiers.org/pombase/
   generic_urls:
-    - http://www.pombase.org/
+    - https://www.pombase.org/
   entity_types:
     - type_name: gene
       type_id: SO:0000704
       id_syntax: S\w+(\.)?\w+(\.)?
-      url_syntax: http://www.pombase.org/spombe/result/[example_id]
+      url_syntax: https://www.pombase.org/gene/[example_id]
       example_id: PomBase:SPBC11B10.09
-      example_url: http://www.pombase.org/spombe/result/SPBC11B10.09
+      example_url: https://www.pombase.org/gene/SPBC11B10.09
 - database: Pompep
   name: Schizosaccharomyces pombe protein data
   generic_urls:
@@ -2538,13 +2569,13 @@
 - database: Rfam
   name: Rfam database of RNA families
   generic_urls:
-    - http://rfam.sanger.ac.uk/
+    - http://rfam.org
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://rfam.sanger.ac.uk/family/[example_id]
+      url_syntax: http://rfam.org/family/[example_id]
       example_id: Rfam:RF00012
-      example_url: http://rfam.sanger.ac.uk/family/RF00012
+      example_url: http://rfam.org/family/RF00012
 - database: RGD
   name: Rat Genome Database
   synonyms:
@@ -2899,18 +2930,18 @@
       url_syntax: http://arabidopsis.org/servlets/TairObject?accession=[example_id]
       example_id: TAIR:gene:2062713
       example_url: http://arabidopsis.org/servlets/TairObject?accession=gene:2062713
-    - type_name: primary transcript
-      type_id: SO:0000185
-      id_syntax: locus:[0-9]{7}
-      url_syntax: http://arabidopsis.org/servlets/TairObject?accession=[example_id]
-      example_id: TAIR:locus:2146653
-      example_url: http://arabidopsis.org/servlets/TairObject?accession=locus:2146653
     - type_name: communication
       type_id: BET:0000000
       id_syntax: Communication:[0-9]{7,12}
       url_syntax: http://arabidopsis.org/servlets/TairObject?type=communication&id=[example_id]
       example_id: TAIR:Communication:1345790
       example_url: http://arabidopsis.org/servlets/TairObject?type=communication&id=1345790
+    - type_name: primary transcript
+      type_id: SO:0000185
+      id_syntax: locus:[0-9]{7,12}
+      url_syntax: http://arabidopsis.org/servlets/TairObject?accession=[example_id]
+      example_id: TAIR:locus:2146653
+      example_url: http://arabidopsis.org/servlets/TairObject?accession=locus:2146653
 - database: taxon
   name: NCBI Taxonomy
   synonyms:
@@ -3342,6 +3373,11 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
+- database: YuBioLab
+  name: CITGeneDB
+  description: CITGeneDB is a comprehensive database of human and mouse genes enhancing or suppressing Cold-Induced Thermogenesis (CIT).
+  generic_urls:
+    - http://citgenedb.yubiolab.org
 - database: ZFIN
   name: Zebrafish Information Network
   rdf_uri_prefix: http://identifiers.org/zfin/

@@ -4,7 +4,7 @@
 ####
 #### Example usage to analyze "whatever":
 ####  python3 downloads-page-gen.py --help
-####  python3 ./scripts/downloads-page-gen.py -v --report /tmp/all_combined.report.json --inject ./scripts/downloads-page-template.html
+####  python3 ./scripts/downloads-page-gen.py -v --report /tmp/all_combined.report.json --inject ./scripts/downloads-page-template.html --date 2018-08-08
 ####
 
 ## Standard imports.
@@ -36,6 +36,8 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('-r', '--report',
                         help='Combined report JSON file')
+    parser.add_argument('-d', '--date',
+                        help='The date to report for release')
     parser.add_argument('-i', '--inject',
                         help='Mustache template file to inject into')
     parser.add_argument('-v', '--verbose', action='store_true',
@@ -46,17 +48,16 @@ def main():
         LOG.setLevel(logging.INFO)
         LOG.info('Verbose: on')
 
-    ## Ensure directory.
+    ## Ensure directory, date, and inject.
     if not args.report:
         die_screaming('need a report argument')
     LOG.info('Will operate on: ' + args.report)
+    if not args.date:
+        die_screaming('need a date argument')
+    LOG.info('Will use date: ' + args.date)
     if not args.inject:
         die_screaming('need an inject argument')
     LOG.info('Will inject into: ' + args.inject)
-    # ## Ensure output file.
-    # if not args.output:
-    #     die_screaming('need an output file argument')
-    # LOG.info('Will output to: ' + args.output)
 
     output_template = None
     with open(args.inject) as fhandle:
@@ -69,8 +70,9 @@ def main():
     # ## Read in all of the useful data from the metadata data sources.
     # for datum in read_data:
     #     LOG.info('current: ' + datum['id'])
+    render_data = {'date': args.date, 'data': read_data}
 
-    output = pystache.render(output_template, read_data)
+    output = pystache.render(output_template, render_data)
 
     ## Final writeout.
     #with open(args.output, 'w+') as fhandle:

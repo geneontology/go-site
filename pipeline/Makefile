@@ -1,66 +1,63 @@
-OBO= http://purl.obolibrary.org/obo
-METADATA_DIR=../metadata/datasets
-REPORT=target/combined.report.md
-RDFOX_MEM ?= 32G
-GAF_OWL = target/go-gaf.owl
-ONT_MERGED = target/go-graphstore-merged.ttl
-PY_ENV ?= target/env
-PY_BIN ?= $(PY_ENV)/bin
-
-
-all: target/Makefile extra_files $(REPORT)
-
-all_blazegraph: all target/blazegraph.jnl
-
-.PHONY: clean
 clean:
 	rm -rf target/*
 
-# ----------------------------------------
-# Generic conversion
-# ----------------------------------------
-%.gz: %
-	gzip -c $< > $@
+METADATA_DIR=../metadata
 
-# ----------------------------------------
-# Additional metadata files required
-# ----------------------------------------
+EXCLUDES ?= goa_uniprot_gcrp goa_pdb
 
-.PHONY: extra_files
-extra_files: $(GAF_OWL) target/go.obo target/datasets-metadata.json
+# for each path in the shell `find`, get just the filename, then strip the extension for each group
+# Ex: will end up being just the yaml file names in the datasets directory (aspgd mgi goa fb [etc])
+GROUPS ?= $(foreach path,$(shell find $(METADATA_DIR)/datasets -name '*.yaml'),$(basename $(notdir $(path))))
+# for each group, get the base target path from each gaf dataset in a group yaml.
+# Ex: fb -> target/groups/fb/fb; goa -> target/groups/goa/goa_uniprot_all target/groups/goa/goa_chicken_complex [etc]
+_ALL_BASE_GROUP_PATHS = $(foreach group,$(GROUPS),$(addprefix target/groups/$(group)/,$(basename $(shell cat ../metadata/datasets/$(group).yaml | grep "id:.*gaf" | awk '{ print $$2 }'))))
+# This turns the excludes into a filter pattern: goa_pdb -> %/goa_pdb
+EXCLUSION_PATTERN = $(foreach excl,$(EXCLUDES),%/$(excl))
+# Filter out any path from _ALL_BASE_GROUP_PATHS that matches the exclusion
+BASE_GROUP_PATH = $(filter-out $(EXCLUSION_PATTERN),$(_ALL_BASE_GROUP_PATHS) )
+# produces the set of owltools-check.txt targets. One for each in the BASE_GROUP_PATH
+# target/groups/fb/fb -> target/groups/fb/fb-owltools-check.txt, for everything in BASE_GROUP_PATH
+GAFCHECKS = $(addsuffix -owltools-check.txt,$(BASE_GROUP_PATH))
 
-# TODO - update
-target/datasets-metadata.json:
-	python3 ../scripts/combine-datasets-metadata.py ../metadata/datasets/*yaml > $@.tmp && mv $@.tmp $@
+# all owltools check groups
+groups: $(GAFCHECKS)
 
-target/go.obo:
-	wget --no-check-certificate $(OBO)/go.obo -O $@.tmp && mv $@.tmp $@ && touch $@
+# produce just the gaf products and ttl, no owltools check
+gafs: $(addsuffix .gaf.gz,$(BASE_GROUP_PATH))
 
+OBO= http://purl.obolibrary.org/obo
 ONTOLOGY = $(OBO)/go/snapshot/go.json
 target/go-ontology.json:
 	wget --no-check-certificate $(ONTOLOGY) -O $@.tmp && mv $@.tmp $@ && touch $@
 
-# target/GO.xrf_abbs:
-#	node ../scripts/db-xrefs-yaml2legacy.js  -i ../metadata/db-xrefs.yaml  > $@.tmp && mv $@.tmp $@
 
-proc:
-	python3 ./util/dataset-metadata-processor.py $(METADATA_DIR)/*.yaml
-
-# ----------------------------------------
-# OWLTools checks
-# ----------------------------------------
-
+GAF_OWL = target/go-gaf.owl
 $(GAF_OWL):
 	owltools --log-error $(OBO)/go/extensions/go-gaf.owl --merge-imports-closure --add-obo-shorthand-to-properties -o $@
 
-CATALOG_DETAILS=
+## Ensure that we are bringing in the environment we want.
+OWLTOOLS_MEMORY ?= 8G
+# blazegraph-runner memory
+BGMEM ?= 12G
 
-PARSE_ASSOCS = $(PY_BIN)/ontobio-parse-assocs.py
-RDF_GEN = $(PY_BIN)/rdfgen.py
+PY_ENV ?= target/env
+PY_BIN ?= $(PY_ENV)/bin
+VALIDATE = $(PY_BIN)/validate.py
+DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(EXCLUDES),-x $(exclusion) )
+
+.PRECIOUS: %.gaf.gz
+%_valid.gaf.gz %_noiea.gaf.gz %.gaf.gz %-src.gaf.gz %.gpad.gz %.gpi.gz %_cam.ttl.gz %.report.md %.report.json: target/go-ontology.json
+	mkdir -p $(dir $*) # Make the group directory
+	# This will split each slash in the path to space separated list, then we pick the last one, the group directory
+	# assigns a make variable called `group` computed from the $* generic target stem.
+	# Ex: target/groups/fb/fb.gaf as a target, the stem ($*) is target/groups/fb/fb, so `group` gets assigned to fb
+	$(eval group := $(lastword $(subst /, ,$(dir $*))))
+	python3 $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE)
+	rm $(dir $*)*.gaf $(dir $*)*.gpad $(dir $*)*.gpi
 
 %-owltools-check.txt: %.gaf.gz $(GAF_OWL)
 	gzip -dcf $< > $*.gaf
-	owltools --log-warning $(CATALOG_DETAILS) $(GAF_OWL) \
+	owltools --log-warning $(GAF_OWL) \
 	--gaf $*.gaf \
 	--createReport \
 	--gaf-report-file $*-owltools-check.txt \
@@ -73,76 +70,61 @@ RDF_GEN = $(PY_BIN)/rdfgen.py
 	--gaf-run-checks || echo 'errors found'
 	rm -f $*.gaf
 
-%.gaf.gz: %-src.gaf.gz target/go-ontology.json
-	gzip -dcf $< > $*-src.gaf
-	python3 $(PARSE_ASSOCS) -r target/go-ontology.json --filter-out IEA --filtered-file $*_noiea.gaf -f $*-src.gaf -o $*.gaf --report-md $*.report.md --report-json $*.report.json validate
-	rm $*-src.gaf
-	gzip -f $*_noiea.gaf
-	gzip -f $*.gaf
+# ----------------------------------------------------------------------------------------
+# goa_uniprot_all, I'm so sorry. This has to be special cased basically. This is so sad :(
+# -----------------------------------------------------------------------------------------
 
-%.gpad.gz: %.gaf.gz
-	gzip -dcf $< > $*.gaf
-	owltools --log-error --gaf $*.gaf --write-gpad -o $*.gpad.tmp && mv $*.gpad.tmp $*.gpad
-	rm $*.gaf
-	gzip -f $*.gpad
+GOA_UNIPROT_ALL = target/groups/goa/goa_uniprot_all_noiea-owltools-check.txt target/groups/goa/goa_uniprot_all_noiea.gpi.gz target/groups/goa/goa_uniprot_all_noiea.gpad.gz target/groups/goa/goa_uniprot_all_noiea_cam.ttl
 
-%.gpi.gz: %.gaf.gz
-	gzip -dcf $< > $*.gaf
-	owltools --log-error --gaf $*.gaf --write-gpi -o $*.gpi.tmp && mv $*.gpi.tmp $*.gpi
-	rm $*.gaf
-	gzip -f $*.gpi
+target/groups/goa/goa_uniprot_all.gaf.gz target/groups/goa/goa_uniprot_all_noiea.gaf.gz : target/alltaxons.txt target/groups/goa/goa_uniprot_all-src.gaf.gz
+	gzip -dcf target/groups/goa/goa_uniprot_all-src.gaf.gz | ./util/goa_filter | gzip -c > $@.tmp
+	cat noiea | gzip -cf > target/groups/goa/goa_uniprot_all_noiea.gaf.gz && rm noiea  && mv $@.tmp $@
 
-%_cam.ttl: %.gaf.gz $(ONT_MERGED) target/go-ontology.json
-	gzip -dcf  $< > $*.gaf
-	python3 $(RDF_GEN) convert -a gaf -r target/go-ontology.json -o $*_cam.ttl $*.gaf
+RDF_GEN = $(PY_BIN)/rdfgen.py
+target/groups/goa/goa_uniprot_all_noiea_cam.ttl: target/groups/goa/goa_uniprot_all_noiea.gaf.gz
+	gzip -dcf  $< > target/groups/goa/goa_uniprot_all_noiea.gaf
+	python3 $(RDF_GEN) convert -a gaf -r target/go-ontology.json -o target/groups/goa/goa_uniprot_all_noiea_cam.ttl target/groups/goa/goa_uniprot_all_noiea.gaf
 	gzip -cf $@ > $@.gz
-	rm $*.gaf
+	rm target/groups/goa/goa_uniprot_all_noiea.gaf
 
-%_inferred.ttl: %_cam.ttl
-	mkdir -p target/inferred
-	arachne --ontology=$(ONT_MERGED) --data=$< --export=$@ --inferred-only
+target/groups/goa/goa_uniprot_all_noiea.gpad.gz: target/groups/goa/goa_uniprot_all_noiea.gaf.gz
+	gzip -dcf $< > target/groups/goa/goa_uniprot_all_noiea.gaf
+	owltools --log-error --gaf target/groups/goa/goa_uniprot_all_noiea.gaf --write-gpad -o target/groups/goa/goa_uniprot_all_noiea.gpad.tmp && mv target/groups/goa/goa_uniprot_all_noiea.gpad.tmp target/groups/goa/goa_uniprot_all_noiea.gpad
+	rm target/groups/goa/goa_uniprot_all_noiea.gaf
+	gzip -f target/groups/goa/goa_uniprot_all_noiea.gpad
 
-# Specific rule for goa_uniprot_all
-# The script goa_filter produces a `noiea` file, which are the annotations w/out IEA evidence.
-target/groups/goa_uniprot_all/goa_uniprot_all.gaf.gz target/groups/goa_uniprot_all/goa_uniprot_all_noiea.gaf.gz : target/alltaxons.txt target/groups/goa_uniprot_all/goa_uniprot_all-src.gaf.gz
-	gzip -dcf target/groups/goa_uniprot_all/goa_uniprot_all-src.gaf.gz | ./util/goa_filter | gzip -c > $@.tmp
-	cat noiea | gzip -cf > target/groups/goa_uniprot_all/goa_uniprot_all_noiea.gaf.gz && rm noiea  && mv $@.tmp $@
+target/groups/goa/goa_uniprot_all_noiea.gpi.gz: target/groups/goa/goa_uniprot_all_noiea.gaf.gz
+	gzip -dcf $< > target/groups/goa/goa_uniprot_all_noiea.gaf
+	owltools --log-error --gaf target/groups/goa/goa_uniprot_all_noiea.gaf --write-gpi -o target/groups/goa/goa_uniprot_all_noiea.gpi.tmp && mv target/groups/goa/goa_uniprot_all_noiea.gpi.tmp target/groups/goa/goa_uniprot_all_noiea.gpi
+	rm target/groups/goa/goa_uniprot_all_noiea.gaf
+	gzip -f target/groups/goa/goa_uniprot_all_noiea.gpi
+
+.PHONY: target/groups/goa/goa_uniprot_all-owltools-check.txt
+target/groups/goa/goa_uniprot_all-owltools-check.txt: target/groups/goa/goa_uniprot_all.gaf.gz $(GOA_UNIPROT_ALL)
+
+GOA_URL := $(shell grep -A 10 "id: goa_uniprot_all.gaf" ../metadata/datasets/goa.yaml | grep source: | awk '{ print $$2 }')
+target/groups/goa/goa_uniprot_all-src.gaf.gz:
+	mkdir -p target/groups/goa
+	wget --retry-connrefused --waitretry=10 -t 10 --no-check-certificate $(GOA_URL) -O $@.tmp && mv $@.tmp $@
 
 target/alltaxons.txt:
 	python3 util/model_organism.py taxons ../metadata/datasets/ --out target/alltaxons.txt
 
-target/merged:
-	python3 util/paint_merge.py merge ../metadata/datasets/paint.yaml target/groups/
-	touch target/merged
 
-# ----------------------------------------
-# Makefile for building GAFs
-# ----------------------------------------
-# this defines 'all_targets'
-target/Makefile: ./util/generate-makefile.py
-	mkdir -p target
-	python3 $< ../metadata/datasets/*.yaml > $@.tmp && mv $@.tmp $@
-
-include target/Makefile
-
-$(REPORT): target/Makefile all_targets
-	cat target/groups/*/*.report.md > $@
-
+# -------------------------------
+# RDF Graphstore
+# -------------------------------
 target/noctua-models:
 	# If target/noctua-models does not exist, then clone it
 	if [ ! -d target/nocuta-models ]; then git clone https://github.com/geneontology/noctua-models.git target/noctua-models; fi
 
-# ----------------------------------------
-# RDF
-# ----------------------------------------
 
-
+ONT_MERGED = target/go-graphstore-merged.ttl
 $(ONT_MERGED):
-	OWLTOOLS_MEMORY=12G owltools --log-error go-graphstore.owl --merge-imports-closure -o -f turtle $@
+	owltools --log-error go-graphstore.owl --merge-imports-closure -o -f turtle $@
 .PRECIOUS: $(ONT_MERGED)
 
-# $(REPORT)
-target/rdf: $(ONT_MERGED)
+target/rdf: $(ONT_MERGED) groups
 	mkdir -p target/rdf
 	cp target/groups/*/*_cam.ttl target/rdf/
 
@@ -151,11 +133,7 @@ $(BGJAR):
 	mkdir -p target/jars && mvn package
 .PRECIOUS: $(BGJAR)
 
-BGMEM ?= 32G
-BG = java -server -XX:+UseG1GC -Xmx$(BGMEM) -cp $(BGJAR) com.bigdata.rdf.store.DataLoader
-
 # Load blazegraph
-
 BG_PORT = 8899
 METAGO = <http://model.geneontology.org/>
 GO_GRAPHSTORE_URI = http://purl.obolibrary.org/obo/go/extensions/go-graphstore.owl
@@ -170,26 +148,23 @@ CAM_GRAPH_QUERY = '\
 BG_PROPERTIES = conf/blazegraph.properties
 LOAD_TARGETS = $(ONT_MERGED) target/rdf target/noctua-models/models
 
-
 target/blazegraph.jnl: $(BGJAR) target/rdf target/noctua-models
-	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties load --use-ontology-graph $(LOAD_TARGETS)
-	blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(GO_GRAPHSTORE_URI) --append-graph-name="_inferred"
+	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties load --use-ontology-graph $(LOAD_TARGETS)
+	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(GO_GRAPHSTORE_URI) --append-graph-name="_inferred"
 
 target/blazegraph-internal.jnl: target/blazegraph.jnl
 	cp $< $@
-	blazegraph-runner --journal=$@ update sparql/insert/insert_noctua_metadata.sparql
-	blazegraph-runner --journal=$@ update sparql/insert/insert_ontology_metadata.sparql
+	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=$@ update sparql/insert/insert_noctua_metadata.sparql
+	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=$@ update sparql/insert/insert_ontology_metadata.sparql
 
 target/blazegraph-production.jnl: target/blazegraph-internal.jnl
 	cp $< $@
-	blazegraph-runner --journal=$@ update sparql/delete/delete_non_production.sparql
+	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=$@ update sparql/delete/delete_non_production.sparql
 
+# $RANDOM goes from 0 to 32767, so adding to 10000 should generate a good range of ports.
+port := $(shell env bash -c 'echo $$(($$RANDOM + 10000))' )
 target/sparta-report.json: target/blazegraph-production.jnl
-	PY_ENV=$(PY_ENV) ./triplestore-rulecheck.sh 8898 $< $@
-
-#
-# load-inferences: target/rdf/rdfox.ttl
-# 	$(BG) -defaultGraph http://geneontology.org/rdf/inferred/ conf/blazegraph.properties $<
+	PY_ENV=$(PY_ENV) ./triplestore-rulecheck.sh $(port) $< $@
 
 bg-start:
 	java -server -Xmx32g -Djetty.port=$(BG_PORT) -Djetty.overrideWebXml=conf/readonly_cors.xml -Dbigdata.propertyFile=conf/blazegraph.properties -cp target/jars/blazegraph-jar.jar:target/jars/jetty-servlets.jar com.bigdata.rdf.sail.webapp.StandaloneNanoSparqlServer

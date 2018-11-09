@@ -8,7 +8,7 @@ contains the information required to execute it.
 For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
 
 
- * <a href="#gorule0000001">GORULE:0000001 Basic GAF checks</a>
+ * <a href="#gorule0000001">GORULE:0000001 GAF lines are parsed according to GAF 2.1 specifications</a>
  * <a href="#gorule0000002">GORULE:0000002 No 'NOT' annotations to 'protein binding ; GO:0005515'</a>
  * <a href="#gorule0000003">GORULE:0000003 Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field</a>
  * <a href="#gorule0000004">GORULE:0000004 Reciprocal annotations for 'protein binding ; GO:0005515'</a>
@@ -17,61 +17,54 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000007">GORULE:0000007 IPI should not be used with catalytic activity molecular function terms</a>
  * <a href="#gorule0000008">GORULE:0000008 No annotations should be made to uninformative high level terms</a>
  * <a href="#gorule0000009">GORULE:0000009 Annotation Intersection Alerts</a>
- * <a href="#gorule0000010">GORULE:0000010 PubMed reference formatting must be correct</a>
+ * <a href="#gorule0000010">GORULE:0000010 Deprecated - PubMed reference formatting must be correct</a>
  * <a href="#gorule0000011">GORULE:0000011 ND annotations to root nodes only</a>
  * <a href="#gorule0000013">GORULE:0000013 Taxon-appropriate annotation check</a>
- * <a href="#gorule0000014">GORULE:0000014 Valid GO term ID</a>
+ * <a href="#gorule0000014">GORULE:0000014 GO terms in annotations should not be obsolete.</a>
  * <a href="#gorule0000015">GORULE:0000015 Dual species taxon check</a>
- * <a href="#gorule0000016">GORULE:0000016 IC annotations require a With/From GO ID</a>
+ * <a href="#gorule0000016">GORULE:0000016 With/From: IC annotations require a With/From GO ID</a>
  * <a href="#gorule0000017">GORULE:0000017 IDA annotations must not have a With/From entry</a>
  * <a href="#gorule0000018">GORULE:0000018 IPI annotations require a With/From entry</a>
- * <a href="#gorule0000019">GORULE:0000019 Generic Reasoner Validation Check</a>
+ * <a href="#gorule0000019">GORULE:0000019 Deprecated - Generic Reasoner Validation Check</a>
  * <a href="#gorule0000020">GORULE:0000020 Automatic repair of annotations to merged or obsoleted terms</a>
  * <a href="#gorule0000021">GORULE:0000021 Check with/from for sequence similarity evidence for valid database ID</a>
  * <a href="#gorule0000022">GORULE:0000022 Check for, and filter, annotations made to retracted publications</a>
  * <a href="#gorule0000023">GORULE:0000023 Materialize annotations for inter-branch links in the GO</a>
+ * <a href="#gorule0000024">GORULE:0000024 Prevent propagation of certain terms by orthology</a>
+ * <a href="#gorule0000025">GORULE:0000025 Creating more specific annotations by reasoning over extensions</a>
+ * <a href="#gorule0000026">GORULE:0000026 Annotations with IBA evidence code are filtered out if not coming from PAINT</a>
+ * <a href="#gorule0000027">GORULE:0000027 Each identifier in GAF is valid</a>
+ * <a href="#gorule0000028">GORULE:0000028 Aspect can only be one of C, P, F and should be repaired using the GO term</a>
+ * <a href="#gorule0000029">GORULE:0000029 All IEAs over a year old are removed</a>
+ * <a href="#gorule0000030">GORULE:0000030 Deprecated GO_REFs are not allowed</a>
+ * <a href="#gorule0000031">GORULE:0000031 Annotation relations are replaced when not provided by source</a>
+ * <a href="#gorule0000031">GORULE:0000031 Annotation relations are replaced when not provided by source.</a>
+ * <a href="#gorule0000033">GORULE:0000033 Group specific Reference IDs (column 6) will be replaced by corresponding GO_REF (or other public ID) or filtered.</a>
+ * <a href="#gorule0000035">GORULE:0000035 'Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.</a>
 
 
 
 <a name="gorule0000001"/>
 
-## Basic GAF checks
+## GAF lines are parsed according to GAF 2.1 specifications
 
  * id: [GORULE:0000001](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000001.md)
- * status: Implemented
+ * status: implemented
 
 
-The following basic checks ensure that submitted gene association files
-conform to the GAF spec, and come from the original GAF check script.
+Each line of a GAF file is checked that it generally conforms to the GAF 2.1 spec and some
+GO specific specifications. The GAF 2.1 spec is here: http://geneontology.org/page/go-annotation-file-gaf-format-21.
 
--   Each line of the GAF file is checked for the correct number of
-    columns, the cardinality of the columns, leading or trailing
-    whitespace
--   Col 1 and all DB abbreviations must be in
-    [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml) (see below)
--   All GO IDs must be extant in current ontology
--   Qualifier, evidence, aspect and DB object columns must be within the
-    list of allowed values
--   DB:Reference, Taxon and GO ID columns are checked for minimal form
--   Date must be in YYYYMMDD format
--   All IEAs over a year old are removed
--   Taxa with a 'representative' group (e.g. MGI for Mus musculus,
-    FlyBase for Drosophila) must be submitted by that group only
+Qualifier, evidence, aspect and DB object columns must be within the list of allowed values
+(as per the spec).
 
-### Additional notes on identifiers
-
-In some contexts an identifier is represented using two fields, for example col1 (prefix) and col2 (local id) of a GAF or GPAD. The global id is formed by concatenating these with `:`. In other contexts such as the "With/fron" field, a global ID is specified, which MUST always be prefixed.
-
-In all cases, the prefix MUST be in [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml). The prefix SHOULD be identical (case-sensitive match) to the `database` field. If it does not match then it MUST be identical (case-sensitive) to one of the synonyms.
-
-When consuming association files, programs SHOULD *repair* by replacing prefix synonyms with the canonical form, in addition to reporting on the mismatch. For example, as part of the association file release the submitted files should swap out legacy uses of 'UniProt' with 'UniProtKB'
-
+Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt (details).
 <a name="gorule0000002"/>
 
 ## No 'NOT' annotations to 'protein binding ; GO:0005515'
 
  * id: [GORULE:0000002](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000002.md)
- * status: Implemented
+ * status: legacy
 
 
 Even if an identifier is available in the 'with' column, a qualifier
@@ -98,7 +91,7 @@ on the GO wiki.
 ## Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field
 
  * id: [GORULE:0000003](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000003.md)
- * status: Implemented
+ * status: legacy
 
 
 Annotations to binding : GO:0005488 or protein binding ; GO:0005515 with
@@ -114,13 +107,14 @@ specification.
 For more information, see the [binding
 guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
 on the GO wiki.
+Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt (details).
 
 <a name="gorule0000004"/>
 
 ## Reciprocal annotations for 'protein binding ; GO:0005515'
 
  * id: [GORULE:0000004](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000004.md)
- * status: Approved
+ * status: approved
 
 
 When annotating to terms that are descendants of protein binding, and
@@ -132,6 +126,19 @@ the second annotation that states that protein B binds protein A.
 This will be a soft QC; a script will make these inferences and it is up
 to each MOD to evaluate and include the inferences in their GAF/DB.
 
+## Representation of binding in the GO
+
+We use the term GO:0005515 and its children to represent instances of protein binding. If a gene G is annotated to this term, its function involves binding another protein. The partner protein is represented in the with/from field of the association, i.e. the 'evidence' is the partner protein. Annotation of gene G to a protein binding term requires that the partner protein also be annotated to a protein binding term, resulting in reciprocal protein binding annotations. Note that the specific protein binding term used for annotation does not have to be the same for each partner.
+
+Note that this annotation rule predates the existence of annotation extensions (c16 in the GAF). It is more logical to specify the binding partner in c16, this would also allow cleaner separation of evidence from in-vivo activity, but for historic reasons the with/from field continues to be used.
+
+
+## Application to Noctua models
+
+Discussion is ongoing, refer to: https://github.com/geneontology/molecular_function_refactoring/issues/29
+
+## See Also
+
 For more information, see the [binding
 guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
 on the GO wiki.
@@ -141,7 +148,7 @@ on the GO wiki.
 ## No ISS or ISS-related annotations to 'protein binding ; GO:0005515'
 
  * id: [GORULE:0000005](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000005.md)
- * status: Approved
+ * status: legacy
 
 
 If we take an example annotation:
@@ -188,12 +195,14 @@ For more information, see the [binding
 guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
 on the GO wiki.
 
+Error report (number of errors) in [db_species]-report.html & owltools-check.txt (details).
+
 <a name="gorule0000006"/>
 
 ## IEP usage is restricted to terms from the Biological Process ontology
 
  * id: [GORULE:0000006](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000006.md)
- * status: Implemented
+ * status: implemented
 
 
 The IEP evidence code is used where process involvement is inferred from
@@ -206,13 +215,14 @@ Biological Process ontology.
 For more information, see the [binding
 guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
 on the GO wiki.
+Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt (details).
 
 <a name="gorule0000007"/>
 
 ## IPI should not be used with catalytic activity molecular function terms
 
  * id: [GORULE:0000007](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000007.md)
- * status: Proposed
+ * status: implemented
 
 
 The [IPI (Inferred from Physical Interaction) evidence
@@ -232,12 +242,14 @@ For more information, see the [catalytic activity annotation
 guide](http://wiki.geneontology.org/index.php/Annotations_to_Catalytic_activity_with_IPI)
 on the GO wiki.
 
+Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt (details).
+
 <a name="gorule0000008"/>
 
 ## No annotations should be made to uninformative high level terms
 
  * id: [GORULE:0000008](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000008.md)
- * status: Proposed
+ * status: implemented
 
 
 Some terms are too high-level to provide useful information when used
@@ -259,23 +271,29 @@ from the gocheck\_do\_not\_manually\_annotate subset. These terms may
 still offer some general information, but a human curator should always
 be able to find a more specific annotation.
 
+Error report: <group>.report.md
+
 <a name="gorule0000009"/>
 
 ## Annotation Intersection Alerts
 
  * id: [GORULE:0000009](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000009.md)
- * status: Proposed
+ * status: implemented
 
 
-To be added
+[Tools](http://github.com/geneontology/shared-annotation-check) and [rules](https://github.com/geneontology/shared-annotation-check/blob/master/rules.txt) for intersections/co-annotation checks in the Gene Ontology.
+
+The report lives here http://snapshot.geneontology.org/reports/shared-annotation-check.html and is updated with each pipeline run.
 
 <a name="gorule0000010"/>
 
-## PubMed reference formatting must be correct
+## Deprecated - PubMed reference formatting must be correct
 
  * id: [GORULE:0000010](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000010.md)
- * status: Proposed
+ * status: deprecated
 
+
+DEPRECATED: This has been subsumed by GORULE:0000027
 
 References in the GAF (Column 6) should be of the format
 db\_name:db\_key|PMID:12345678, e.g. SGD\_REF:S000047763|PMID:2676709.
@@ -295,60 +313,45 @@ will be removed.
 ## ND annotations to root nodes only
 
  * id: [GORULE:0000011](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000011.md)
- * status: Proposed
+ * status: implemented
 
 
-The [No Data (ND) evidence
-code](http://www.geneontology.org/GO.evidence.shtml#nd) should be used
-for annotations to the root nodes only and should be accompanied with
-[GO\_REF:0000015](http://www.geneontology.org/cgi-bin/references.cgi#GO_REF:0000015)
-or an internal reference. PMIDs **cannot** be used for annotations made
-with ND.
+The [No Data (ND) evidence code](http://www.geneontology.org/GO.evidence.shtml#nd) should be used
+for annotations to the root nodes.
 
--   if you are using an internal reference, that reference ID should be
-    listed as an external accession for
-    [GO\_REF:0000015](http://www.geneontology.org/cgi-bin/references.cgi#GO_REF:0000015).
-    Please add (or email) your internal reference ID for
-    GO\_REF:0000015.
--   All ND annotations made with a reference other than GO\_REF:0000015
-    (or an equivalent internal reference that is listed as external
-    accession for GO\_REF:0000015) should be filtered out of the GAF.
-
-The SQL code identifies all ND annotations that do not use
-GO\_REF:0000015 or one of the alternative internal references listed for
-it in the [GO references
-file](http://www.geneontology.org/cgi-bin/references.cgi).
+Error report (number of errors) in [db_species]-report.html & owltools-check.txt (details).
 
 <a name="gorule0000013"/>
 
 ## Taxon-appropriate annotation check
 
  * id: [GORULE:0000013](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000013.md)
- * status: Proposed
+ * status: legacy
 
 
-GO taxon constraints ensure that annotations are not made to
-inappropriate species or sets of species. See
-[http://www.biomedcentral.com/1471-2105/11/530](http://www.biomedcentral.com/1471-2105/11/530)
+GO taxon constraints ensure that annotations are not made to inappropriate species or sets of species. 
+This information is obtained from the only_in_taxon and never_in_taxon tags in the ontology. 
+See [http://www.biomedcentral.com/1471-2105/11/530](http://www.biomedcentral.com/1471-2105/11/530)
 for more details.
+
+Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt (details).
 
 <a name="gorule0000014"/>
 
-## Valid GO term ID
+## GO terms in annotations should not be obsolete.
 
  * id: [GORULE:0000014](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000014.md)
- * status: Proposed
+ * status: deprecated
 
 
-This check ensures that the GO IDs used for annotations are valid IDs
-and are not obsolete.
+This rule is now merged with GORULE:0000020.
 
 <a name="gorule0000015"/>
 
 ## Dual species taxon check
 
  * id: [GORULE:0000015](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000015.md)
- * status: Proposed
+ * status: approved
 
 
 Dual species annotations are used to capture information about
@@ -362,54 +365,55 @@ cellular component term 'GO:0044215 : other organism' as an ancestor.
 
 <a name="gorule0000016"/>
 
-## IC annotations require a With/From GO ID
+## With/From: IC annotations require a With/From GO ID
 
  * id: [GORULE:0000016](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000016.md)
- * status: Approved
+ * status: implemented
 
 
 All IC annotations should include a GO ID in the "With/From" column; for
 more information, see the [IC evidence code
-guidelines](http://www.geneontology.org/GO.evidence.shtml#ic).
+guidelines](http://wiki.geneontology.org/index.php/Inferred_by_Curator_(IC)).
+
+Error report (number of errors) in [db_species]-report.txt & owltools-check.txt (details).
 
 <a name="gorule0000017"/>
 
 ## IDA annotations must not have a With/From entry
 
  * id: [GORULE:0000017](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000017.md)
- * status: Approved
+ * status: legacy
 
 
 Use IDA only when no identifier can be placed in the "With/From" column.
 When there is an appropriate ID for the "With/From" column, use IPI.
+
+Error report (number of errors) in [db_species]-report.txt & owltools-check.txt (details).
 
 <a name="gorule0000018"/>
 
 ## IPI annotations require a With/From entry
 
  * id: [GORULE:0000018](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000018.md)
- * status: Approved
+ * status: approved
 
 
 All IPI annotations should include a nucleotide/protein/chemical
 identifier in the "With/From" column (column 8). From the [description
-of IPI in the GO evidence code
-guide](http://www.geneontology.org/GO.evidence.shtml#ipi): "We strongly
-recommend making an entry in the with/from column when using this
-evidence code to include an identifier for the other protein or other
-macromolecule or other chemical involved in the interaction. When
-multiple entries are placed in the with/from field, they are separated
-by pipes. Consider using IDA when no identifier can be entered in the
-with/from column." All annotations made after January 1 2012 that break
-this rule will be removed.
+of IPI in the GO evidence code guide](http://wiki.geneontology.org/index.php/Inferred_from_Physical_Interaction_(IPI)):
+
+Error report (number of errors) in [db_species]-report.html & owltools-check.txt (details).
 
 <a name="gorule0000019"/>
 
-## Generic Reasoner Validation Check
+## Deprecated - Generic Reasoner Validation Check
 
  * id: [GORULE:0000019](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000019.md)
- * status: Implemented
+ * status: deprecated
 
+
+DEPRECATED: This is done outside of the rules system. Ontobio performs
+a GAF -> RDF translation as part of the pipeline.
 
 The entire GAF is converted to OWL, combined with the main GO ontology
 and auxhiliary constraint ontologies. The resulting ontology is checked
@@ -421,22 +425,21 @@ reasoner such as HermiT.
 ## Automatic repair of annotations to merged or obsoleted terms
 
  * id: [GORULE:0000020](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000020.md)
- * status: Approved
+ * status: implemented
 
 
-Ontology operations such as term merges and obsoletions may be out of
-sync with annotation releases. Each GO entry T in the GAF is checked to
-see if it corresponds to a valid (non-obsolete) term in the ontology. If
-not, metadata for other terms is checked. If the term has been merged
-into a term S (i.e. S has alt\_id of T) then T is replaced by S in the
-GAF line.
+There should be no annotations to obsolete terms or to an alternate ID. Obsolete terms that have a `replace_by` tag and
+terms annotated to one of their alternative IDs (merged terms) will automatically be repaired to the valid term id.
+If no replacement is found, the annotation will be filtered.
+
+Other GO terms present in annotations (with/from column, etc) also should be repaired if possible.
 
 <a name="gorule0000021"/>
 
 ## Check with/from for sequence similarity evidence for valid database ID
 
  * id: [GORULE:0000021](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000021.md)
- * status: Approved
+ * status: approved
 
 
 For ISS and related evidence types, the With/From field should point to
@@ -448,7 +451,7 @@ that is either identical to or a descendant of the main annotation.
 ## Check for, and filter, annotations made to retracted publications
 
  * id: [GORULE:0000022](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000022.md)
- * status: Pending
+ * status: approved
 
 
 GO should not include annotations to retracted publications. PubMed
@@ -461,7 +464,7 @@ please see: https://github.com/geneontology/go-annotation/issues/1479
 ## Materialize annotations for inter-branch links in the GO
 
  * id: [GORULE:0000023](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000023.md)
- * status: Pending
+ * status: proposed
 
 
 
@@ -469,9 +472,209 @@ Annotations will be propagated from MF to BP over part_of, or from BP to CC over
 
 ## Background
 
-Historically GO treated MF, BP and CC as distinct ontologies. They are now better regarded as branchers or sub-hierarchies within a single ontology,
-cross-linked via a variety of relations. Annotators used to make manual duplicate annotations.
+Historically GO treated MF, BP and CC as distinct ontologies. They are now better regarded as branchers or sub-hierarchies within a single ontology, cross-linked via a variety of relations. Annotators used to make manual duplicate annotations.
+
+## Procedure
+
+ * Any asserted or inferred annotation to MF, where MF part-of BP, will generate an involved-in to that BP
+ * Any asserted or inferred annotation to BP, where BP occurs-in CC, will generate a part-of annotation to that CC
+
+### Evidence and provenance
+
+ * Evidence, references, publications, date are retained
+ * Assigned_by is GOC
 
 ## TBD
 
 Should this pipeline filter annotations based on some redundancy criteria?
+
+<a name="gorule0000024"/>
+
+## Prevent propagation of certain terms by orthology
+
+ * id: [GORULE:0000024](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000024.md)
+ * status: proposed
+
+
+Prevent propagation of certain terms by orthology/similarity. This rule is under discussion
+
+<a name="gorule0000025"/>
+
+## Creating more specific annotations by reasoning over extensions
+
+ * id: [GORULE:0000025](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000025.md)
+ * status: proposed
+
+
+
+Given an annotation to a general term plus annotation extensions we can infer a more specific annotation.
+
+For example, given a source annotation:
+
+```
+Gene = geneA
+Annotation_class = GO:0006260 ! DNA replication
+Annotation_extension = {occurs_in GO:0000262 ! mitochondrial chromosome}
+```
+
+This will be inferred:
+
+```
+Gene = geneA
+Annotation_class = GO:0006264 ! mitochondrial DNA replication
+Annotation_extension = {occurs_in GO:0000262 ! mitochondrial chromosome}
+Evidence: IC
+With: GO:0006260
+```
+
+Approach is described in more detail here: https://github.com/owlcollab/owltools/wiki/Annotation-Extension-Folding
+
+Fields:
+
+ * GO ID: new inferred, more specific GO ID
+ * Evidence: IC
+ * With: original GO ID
+ * Assigned-by: GOC-OWL
+ 
+Other fields remain the same
+
+<a name="gorule0000026"/>
+
+## Annotations with IBA evidence code are filtered out if not coming from PAINT
+
+ * id: [GORULE:0000026](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000026.md)
+ * status: implemented
+
+
+This seeks to filter out paint annotations that have leaked into the main mod GAF
+sources. In this way, we only have these paint annotations coming directly from
+paint.
+
+If the GAF file being validated is not paint, and the line has evidence IBA,
+then throw out that line. 
+
+<a name="gorule0000027"/>
+
+## Each identifier in GAF is valid
+
+ * id: [GORULE:0000027](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000027.md)
+ * status: implemented
+
+
+-   Col 1 and all DB abbreviations must be in
+    [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml) (see below)
+-   All GO IDs must be extant in current ontology
+
+### Additional notes on identifiers
+
+In some contexts an identifier is represented using two fields, for example col1 (prefix)
+and col2 (local id) of a GAF or GPAD. The global id is formed by concatenating these with `:`.
+In other contexts such as the "With/from" field, a global ID is specified, which MUST always be prefixed.
+
+In all cases, the prefix MUST be in [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml).
+The prefix SHOULD be identical (case-sensitive match) to the `database` field.
+If it does not match then it MUST be identical (case-sensitive) to one of the synonyms.
+
+When consuming association files, programs SHOULD *repair* by replacing prefix synonyms
+with the canonical form, in addition to reporting on the mismatch. For example, as part
+of the association file release the submitted files should swap out legacy uses of 'UniProt' with 'UniProtKB'
+
+### PubMed reference formatting must be correct
+References in the GAF (Column 6) should be of the format db_name:db_key|PMID:12345678,
+e.g. SGD_REF:S000047763|PMID:2676709. No other format is acceptable for PubMed references;
+the following examples are invalid
+-   PMID:PMID:14561399
+-   PMID:unpublished
+-   PMID:.
+-   PMID:0
+
+<a name="gorule0000028"/>
+
+## Aspect can only be one of C, P, F and should be repaired using the GO term
+
+ * id: [GORULE:0000028](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000028.md)
+ * status: approved
+
+
+Aspect (Column 9) can be one either C, P, or F. These correspond to the three main
+branches of the Gene Ontology: C for Cellular Component, P for Biological Process,
+F for Molecular Function. These can be computed from the GO Term in the GAF
+annotation. If the Aspect is incorrect issue a warning and replace with the
+corrected aspect.
+
+<a name="gorule0000029"/>
+
+## All IEAs over a year old are removed
+
+ * id: [GORULE:0000029](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000029.md)
+ * status: implemented
+
+
+All GAF annotations that have IEA as an evidence code that are also more than a
+year old should be removed.
+
+Example: http://release.geneontology.org/2018-07-02/reports/gonuts-report.html
+722 GO_AR:0000001 Error IEA evidence code present with a date more than a year old '20110217' 
+UniProtKB P29430 pedA GO:0042742 GO_REF:0000004 IEA SP_KW:KW-0044 P protein taxon:1254 20110217 GONUTS 
+
+<a name="gorule0000030"/>
+
+## Deprecated GO_REFs are not allowed
+
+ * id: [GORULE:0000030](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000030.md)
+ * status: proposed
+
+
+GO_REFs are here: https://github.com/geneontology/go-site/tree/master/metadata/gorefs
+The following references are not allowed:
+
+GO_REF:0000033
+GO_PAINT:nnnnnnn
+(where n are digits)
+
+<a name="gorule0000031"/>
+
+## Annotation relations are replaced when not provided by source
+
+ * id: [GORULE:0000031](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000031.md)
+ * status: implemented
+
+
+In GAFs, relation is overloaded into qualifier.
+If no explicit non-NOT qualifier is specified, use a default based on GPI specifications:
+For Cellular Component: relation = 'part_of'
+For Biological Process: relation = 'involved_in'
+For Molecular Function: relation = 'enables'
+
+##This seems to be only exported in GPAD for now.
+
+<a name="gorule0000031"/>
+
+## Annotation relations are replaced when not provided by source.
+
+ * id: [GORULE:0000031](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000031.md)
+ * status: implemented
+
+
+GO_REF Collection References allowed for each ECO are as follows:
+
+<a name="gorule0000033"/>
+
+## Group specific Reference IDs (column 6) will be replaced by corresponding GO_REF (or other public ID) or filtered.
+
+ * id: [GORULE:0000033](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000033.md)
+ * status: proposed
+
+
+IDs in the Reference (column 6) field will only be accepted if they are from PMID, PMC, doi, or GO_REF. Group specific References will no longer be accepted and will be filtered. For example, FB:FBrf0159398 is a synonym for GO_REF:0000015. So if the FB Reference is found, it will be removed, leaving GO_REF:0000015 instead. If an ID cannot be repaired/replaced then the GAF annotation will be filtered.
+
+The list of GO_REFs are here: https://github.com/geneontology/go-site/tree/master/metadata/gorefs.
+
+<a name="gorule0000035"/>
+
+## 'Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.
+
+ * id: [GORULE:0000035](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000035.md)
+ * status: proposed
+
+

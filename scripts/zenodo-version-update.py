@@ -18,7 +18,9 @@ import logging
 import os
 import json
 import requests
-from requests_toolbelt.multipart.encoder import MultipartEncoder
+import pycurl
+from io import BytesIO
+# from requests_toolbelt.multipart.encoder import MultipartEncoder
 import datetime
 
 ## Logger basic setup.
@@ -88,6 +90,7 @@ def main():
     concept_id = int(args.concept)
     LOG.info('Will use concept ID: ' + str(concept_id))
 
+    ## Standard informative death.
     def die_screaming(instr, response=None, deposition_id=None):
         """Make sure we exit in a way that will get Jenkins's attention, giving good response debugging information along the way if available."""
         if str(type(response)) == "<class 'requests.models.Response'>":
@@ -114,6 +117,8 @@ def main():
 
     ## Convert the filename into a referential base for use later on.
     filename = os.path.basename(args.file)
+    LOG.info('Will upload file: ' + args.file)
+    LOG.info('With upload filename: ' + filename)
 
     ## Get listing of all depositions.
     response = requests.get(server_url + '/api/deposit/depositions', params={'access_token': args.key})
@@ -186,13 +191,15 @@ def main():
         die_screaming('could not delete file', response, new_dep_id)
 
     ###
-    ### WARNING: Slipping into the (currently) unpublished v2 API here
-    ### to get around file size issues we ran into.
+    ### WARNING: Slipping into the (currently) unpublished Zenodo v2
+    ### API here to get around file size issues we ran into.
     ### I don't quite understand the bucket API--the URLs shift more than
     ### I'd expect, but the following works.
     ###
     ### NOTE: secret upload magic: https://github.com/zenodo/zenodo/issues/833#issuecomment-324760423 and
     ### https://github.com/zenodo/zenodo/blob/df26b68771f6cffef267c056cf38eb7e6fa67c92/tests/unit/deposit/test_api_buckets.py
+    ###
+    ### ======================================================
     ###
 
     ## Get new depositon...as the bucket URLs seem to have changed
@@ -210,54 +217,73 @@ def main():
         die_screaming('could not find a new bucket URL', response, curr_dep_id)
     LOG.info('new bucket URL: ' + str(new_bucket_url))
 
-    ## Add the new version of the file. Try and avoid:
-    ## https://github.com/requests/requests/issues/2717 with
-    ## https://toolbelt.readthedocs.io/en/latest/uploading-data.html#streaming-multipart-data-encoder
+    ## Upload the file using curl. Previous iterations
+    ## attempted to use the python requests library, but after
+    ## a great many pitfalls and false starts, it turns out
+    ## to not really work with very large file uploads, like we need.
+    ## Things that were variously tried:
+    ##
     ## Try 1 caused memory overflow issues (I'm trying to upload many GB).
     ## Try 2 "should" have worked, but zenodo seems incompatible.
-    ## with requests and the request toolbelt, after a fair amount of effort.
     ## Try 3 appears to work, but uses an unpublished API and injects the
-    ## multipart information in to the file... :(
+    ## multipart information in to the file... :( does not work for very
+    ## large files.
+    ## Try 4...not working... encoder = MultipartEncoder({
+    ## with requests and the request toolbelt, after a fair amount of effort: no
+    ## https://github.com/requests/requests/issues/2717 with
+    ## https://toolbelt.readthedocs.io/en/latest/uploading-data.html#streaming-multipart-data-encoder
     ##
-    ## Try 4...not working...
-    # encoder = MultipartEncoder({
-    #     'file': (filename, open(args.file, 'rb'),'application/octet-stream')
-    # })
-    # response = requests.put('%s/%s' % (new_bucket_url, filename),
-    #                         data=encoder,
-    #                         #data = {'filename': filename},
-    #                         #files = {'file': open(args.file, 'rb')},
-    #                         params = {'access_token': args.key},
-    #                         headers={
-    #                             #"Accept":"multipart/related; type=application/octet-stream",
-    #                             "Content-Type":encoder.content_type
-    #                         })
-    ## Try 3
-    response = requests.put('%s/%s' % (new_bucket_url, filename),
-                            data = {'filename': filename},
-                            files = {'file': open(args.file, 'rb')},
-                            params = {'access_token': args.key},
-                            headers={
-                                "Accept":"application/json",
-                                "Content-Type":"application/octet-stream"
-                            })
-    # ## Try 2
-    # encoder = MultipartEncoder({
-    #     #'filename': filename,
-    #     'file': (filename, open(args.file, 'rb'))
-    # })
-    # response = requests.post(server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files', params={'access_token': args.key}, data=encoder)
-    # ## Try 1
-    # data = {'filename': filename}
-    # files = {'file': open(args.file, 'rb')}
-    # response = requests.post(server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files', params={'access_token': args.key}, data=data, files=files)
+    ## This time, use libcurl, instead of apparently broken requests.
+    ## Try an mimick the known working:
+    ##  curl -X PUT -H "Accept: application/json" -H "Content-Type: application/octet-stream" -H "Authorization: Bearer T890" -T ./go-release-archive.tgz https://www.zenodo.org/api/files/B456/go-release-archive.tgz
+    upload_url = "{url}/{fname}".format(url=new_bucket_url, fname=filename)
+    LOG.info("Large upload to: " + upload_url)
+    buffer = BytesIO()
+    curl = pycurl.Curl()
+    #curl.setopt(curl.VERBOSE, True)
+    curl.setopt(curl.WRITEDATA, buffer)
+    curl.setopt(curl.URL, upload_url)
+    curl.setopt(curl.UPLOAD, 1)
+    curl.setopt(pycurl.PUT, 1)
+    curl.setopt(curl.HTTPHEADER, ['Accept: application/json',
+                                  'Content-Type: application/octet-stream',
+                                  'Authorization: Bearer ' + args.key])
+    file = open(args.file, "rb")
+    curl.setopt(curl.READDATA, file)
+    ## File size calculation is apparently needed.
+    filesize = os.path.getsize(args.file)
+    curl.setopt(pycurl.INFILESIZE, filesize)
 
-    ## Test correct file add.
-    if response.status_code != 200:
-        die_screaming('could not add file', response, new_dep_id)
+    ## Monitor for exceptions during execution.
+    try:
+        curl.perform()
+    except pycurl.error as e:
+        if e.args[0] == pycurl.E_COULDNT_CONNECT and curl.exception:
+            die(curl.exception)
+        else:
+            die(e)
+
+    ## Decode and examine result.
+    body = buffer.getvalue()
+    decoded_body = body.decode('iso-8859-1')
+    retpay = json.loads(decoded_body)
+    curl_response_status_code = int(curl.getinfo(curl.RESPONSE_CODE))
+    if curl_response_status_code > 200:
+        fail_reason = 'unknown failure'
+        if retpay['message']:
+            fail_reason = retpay['message']
+        die('curl upload failure against API (' + str(curl_response_status_code) + '): ' + fail_reason)
+    else:
+        LOG.info('Apparent successful large upload.')
+
+    ## Finish up.
+    curl.close()
+    file.close()
 
     ###
-    ### NOTE: Leaving v2 area.
+    ### ======================================================
+    ###
+    ### NOTE: Leaving Zenodo v2 API area.
     ###
 
     ## Update metadata version string; first, get old metadata.

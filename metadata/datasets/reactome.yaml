@@ -7,18 +7,17 @@ project_url: "http://www.reactome.org/"
 funding_source: "US National Institutes of Health (P41 HG003751); European Union Sixth Framework Programme (LSHG-CT-2003-503269)"
 email_report: "joel.weiser@oicr.on.ca,robin.haw@oicr.on.ca"
 datasets:
- -    
+ -
    id: reactome.gaf
    label: "reactome gaf file"
    description: "gaf file for reactome from Reactome - a curated knowledgebase of biological pathways"
-   url: http://geneontology.org/gene-associations/gene_association.reactome.gz
+   url: http://current.geneontology.org/annotations/reactome.gaf.gz
    type: gaf
    dataset: reactome
    submitter: reactome
    compression: gzip
    source: http://geneontology.org/gene-associations/submission/gene_association.reactome.gz
-   entity_type: 
+   entity_type:
    status: inactive
-   species_code: 
+   species_code:
    taxa:
-

@@ -61,7 +61,7 @@ mapping:
             unique: true
           "url":
             type: str
-            required: true
+            required: false
             unique: true
           "type":
             type: str
