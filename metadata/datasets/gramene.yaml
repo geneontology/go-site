@@ -7,17 +7,17 @@ project_url: "http://www.gramene.org"
 funding_source: "unspecified"
 email_report: "jaiswalp@science.oregonstate.edu"
 datasets:
- -    
+ -
    id: gramene_oryza.gaf
    label: "gramene_oryza gaf file"
    description: "gaf file for gramene_oryza from gramene_oryza"
-   url: http://geneontology.org/gene-associations/gene_association.gramene_oryza.gz
+   url: http://current.geneontology.org/annotations/gramene_oryza.gaf.gz
    type: gaf
    dataset: gramene_oryza
    submitter: gramene
    compression: gzip
    source: http://geneontology.org/gene-associations/submission/gene_association.gramene_oryza.gz
-   entity_type: 
+   entity_type:
    status: active
    species_code: Oryz
    taxa:
@@ -50,4 +50,3 @@ datasets:
     - NCBITaxon:83307
     - NCBITaxon:83308
     - NCBITaxon:83309
-

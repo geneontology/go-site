@@ -7,19 +7,19 @@ project_url: "http://cmr.jcvi.org/"
 funding_source: "unspecified"
 email_report: "sdurkin@jcvi.org, rmadupu@jcvi.org"
 datasets:
- -    
+ -
    id: jcvi.gaf
    label: "jcvi gaf file"
    description: "gaf file for jcvi from J. Craig Venter Institute"
-   url: http://geneontology.org/gene-associations/gene_association.jcvi.gz
+   url: http://current.geneontology.org/annotations/jcvi.gaf.gz
    type: gaf
    dataset: jcvi
    submitter: jcvi
    compression: gzip
    source: http://geneontology.org/gene-associations/submission/gene_association.jcvi.gz
-   entity_type: 
+   entity_type:
    status: active
-   species_code: 
+   species_code:
    taxa:
     - NCBITaxon:167879
     - NCBITaxon:195099
@@ -41,4 +41,3 @@ datasets:
     - NCBITaxon:264730
     - NCBITaxon:265669
     - NCBITaxon:686
-

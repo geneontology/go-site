@@ -3,11 +3,11 @@ clean:
 
 METADATA_DIR=../metadata
 
-EXCLUDES = goa_uniprot_gcrp goa_pdb
+EXCLUDES ?= goa_uniprot_gcrp goa_pdb
 
 # for each path in the shell `find`, get just the filename, then strip the extension for each group
 # Ex: will end up being just the yaml file names in the datasets directory (aspgd mgi goa fb [etc])
-GROUPS = $(foreach path,$(shell find $(METADATA_DIR)/datasets -name '*.yaml'),$(basename $(notdir $(path))))
+GROUPS ?= $(foreach path,$(shell find $(METADATA_DIR)/datasets -name '*.yaml'),$(basename $(notdir $(path))))
 # for each group, get the base target path from each gaf dataset in a group yaml.
 # Ex: fb -> target/groups/fb/fb; goa -> target/groups/goa/goa_uniprot_all target/groups/goa/goa_chicken_complex [etc]
 _ALL_BASE_GROUP_PATHS = $(foreach group,$(GROUPS),$(addprefix target/groups/$(group)/,$(basename $(shell cat ../metadata/datasets/$(group).yaml | grep "id:.*gaf" | awk '{ print $$2 }'))))
@@ -161,8 +161,10 @@ target/blazegraph-production.jnl: target/blazegraph-internal.jnl
 	cp $< $@
 	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=$@ update sparql/delete/delete_non_production.sparql
 
+# $RANDOM goes from 0 to 32767, so adding to 10000 should generate a good range of ports.
+port := $(shell env bash -c 'echo $$(($$RANDOM + 10000))' )
 target/sparta-report.json: target/blazegraph-production.jnl
-	PY_ENV=$(PY_ENV) ./triplestore-rulecheck.sh 8898 $< $@
+	PY_ENV=$(PY_ENV) ./triplestore-rulecheck.sh $(port) $< $@
 
 bg-start:
 	java -server -Xmx32g -Djetty.port=$(BG_PORT) -Djetty.overrideWebXml=conf/readonly_cors.xml -Dbigdata.propertyFile=conf/blazegraph.properties -cp target/jars/blazegraph-jar.jar:target/jars/jetty-servlets.jar com.bigdata.rdf.sail.webapp.StandaloneNanoSparqlServer

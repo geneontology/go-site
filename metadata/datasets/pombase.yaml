@@ -7,20 +7,34 @@ project_url: "http://www.pombase.org/"
 funding_source: "Wellcome Trust"
 email_report: "helpdesk@pombase.org"
 datasets:
- -    
+ -
    id: pombase.gaf
    label: "pombase gaf file"
    description: "gaf file for pombase from PomBase"
-   url: http://geneontology.org/gene-associations/gene_association.pombase.gz
+   url: http://current.geneontology.org/annotations/pombase.gaf.gz
    type: gaf
    dataset: pombase
    submitter: pombase
    compression: gzip
    source: ftp://ftp.pombase.org/pombe/annotations/Gene_ontology/gene_association.pombase.gz
+   entity_type:
+   status: active
+   species_code: Spom
+   taxa:
+    - NCBITaxon:284812
+    - NCBITaxon:4896
+ -    
+   id: pombase.gp2protein
+   label: "pombase gp2protein file"
+   description: "gp2protein file for pombase from PomBase"
+   type: gp2protein
+   dataset: pombase
+   submitter: pombase
+   compression: gzip
+   source: ftp://ftp.pombase.org/pombe/names_and_identifiers/gp2protein.pombase.gz
    entity_type: 
    status: active
    species_code: Spom
    taxa:
     - NCBITaxon:284812
     - NCBITaxon:4896
-

@@ -6,17 +6,17 @@ This is the source file for the GO prefix registry.
 
 The source file is in YAML and is available here:
 
-[https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml](go-dbxrefs.yaml)
+https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml
 
 ## Browsing
 
-The registry can be browsed here: [http://amigo.geneontology.org/xrefs](http://amigo.geneontology.org/xrefs)
+The registry can be browsed here: http://amigo.geneontology.org/xrefs
 
 ## Schema
 
 The schema is defined using kwalify, and is available here:
 
-[go-dbxrefs.schema.yaml](go-dbxrefs.schema.yaml)
+db-xrefs.schema.yaml
 
 ## Relationship to legacy format
 

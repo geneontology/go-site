@@ -365,7 +365,7 @@
   xref: 'GOC:atm'
 -
   nickname: 'Jim Hu'
-  organization: 'E. coli'
+  organization: 'EcoliWiki/CACAO'
   uri: 'GOC:jh2'
   xref: 'GOC:jh2'
 -
@@ -374,7 +374,7 @@
   groups:
     - 'http://www.bio.tamu.edu'
   nickname: 'Brenley McIntosh'
-  organization: 'E. coli'
+  organization: 'EcoliWiki/CACAO'
   uri: 'GOC:bm'
   xref: 'GOC:bm'
 -
@@ -387,7 +387,7 @@
   groups:
     - 'http://www.bio.tamu.edu'
   nickname: 'Sandy Labonte'
-  organization: 'E. coli'
+  organization: 'EcoliWiki/CACAO'
   uri: 'http://orcid.org/0000-0002-9618-3336'
 -
   nickname: 'Curators at FlyBase'
@@ -3199,7 +3199,7 @@
   groups:
     - 'http://www.bio.tamu.edu'
   nickname: 'Debby Siegele'
-  organization: 'E. coli'
+  organization: 'EcoliWiki/CACAO'
   uri: 'http://orcid.org/0000-0001-8935-0696'
   xref: 'GOC:das'
 -
@@ -3215,8 +3215,8 @@
     - 05856707bf8eca390ae3ddcf689e9011
     - 99b4072c338978afc0a90bc7f217cef8
   groups:
-    - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
     - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl'
+    - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
     - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl'
   nickname: 'Barbara Kramarz'
   organization: BHF-UCL
@@ -3941,3 +3941,16 @@
   nickname: 'Luana Licata'
   organization: 'University of Rome Tor Vergata'
   uri: 'http://orcid.org/0000-0001-5084-9000'
+-
+  accounts:
+    github: jrr-cpt
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.bio.tamu.edu'
+  nickname: 'Jolene Ramsey'
+  organization: 'EcoliWiki/CACAO'
+  uri: 'http://orcid.org/0000-0002-3774-5896'
+  
