@@ -93,6 +93,7 @@ def main():
     ## Standard informative death.
     def die_screaming(instr, response=None, deposition_id=None):
         """Make sure we exit in a way that will get Jenkins's attention, giving good response debugging information along the way if available."""
+        LOG.error('die sequence: start')
         if str(type(response)) == "<class 'requests.models.Response'>":
             if not response.text or response.text == "":
                 LOG.error('no response from server')
@@ -102,13 +103,16 @@ def main():
                 LOG.error(response.status_code)
                 LOG.error(instr)
                 if deposition_id:
-                    LOG.error("attempting to discard working deposition: " + str(deposition_id))
-                    response = requests.delete(server_url + '/api/deposit/depositions/' + str(deposition_id), params={'access_token': args.key})
+                    discard_url = server_url + '/api/deposit/depositions/' + str(deposition_id)
+                    LOG.error("attempting to discard working deposition: " + discard_url)
+
+                    response = requests.delete(discard_url, params={'access_token': args.key})
                     if response.status_code != 204:
                         LOG.error('failed to discard: manual intervention plz')
                         LOG.error(response.status_code)
                     else:
                         LOG.error('discarded session')
+        LOG.error('die sequence: end')
         sys.exit(1)
 
     ###
@@ -146,24 +150,6 @@ def main():
     curr_dep_id = int(depdoc.get('id', None))
     LOG.info('current deposition id: ' + str(curr_dep_id))
 
-    ## Get files for the current depositon.
-    response = requests.get(server_url + '/api/deposit/depositions/' + str(curr_dep_id) + '/files', params={'access_token': args.key})
-
-    ## Test file listing okay.
-    if response.status_code != 200:
-        die_screaming('cannot get file listing', response)
-
-    ## Go from filename to file ID.
-    file_id = None
-    for filedoc in response.json():
-        filedoc_fname = filedoc.get('filename', None)
-        if filedoc_fname and filedoc_fname == filename:
-            file_id = filedoc.get('id', None)
-
-    ## Test file ID search okay.
-    if not file_id:
-        die_screaming('could not find desired filename', response)
-
     ## Open versioned deposition session.
     response = requests.post(server_url + '/api/deposit/depositions/' + str(curr_dep_id) + '/actions/newversion', params={'access_token': args.key})
 
@@ -179,14 +165,48 @@ def main():
 
     ## Test that there is a new deposition ID.
     if not new_dep_id:
-        die_screaming('could not find a new deposition ID', response, curr_dep_id)
+        die_screaming('could not find new deposition ID', response, curr_dep_id)
     LOG.info('new deposition id: ' + str(new_dep_id))
 
+    ## Get files for the current depositon.
+    response = requests.get(server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files', params={'access_token': args.key})
+
+    ## Test file listing okay.
+    if response.status_code != 200:
+        die_screaming('cannot get file listing', response)
+
+    ## Go from filename to file ID.
+    file_id = None
+    for filedoc in response.json():
+        filedoc_fname = filedoc.get('filename', None)
+        if filedoc_fname and filedoc_fname == filename:
+            file_id = filedoc.get('id', None)
+
+    ## Test file ID search okay.
+    if not file_id:
+        die_screaming('could not find desired filename', response)
+    LOG.info('decode file name to id: ' + str(file_id))
+
+    ## Re-get new depositon...
+    response = requests.get(server_url + '/api/deposit/depositions/' + str(new_dep_id), params={'access_token': args.key})
+
+    ## Get the bucket for upload.
+    new_bucket_url = None
+    d = response.json()
+    if d.get('links', False) and d['links'].get('bucket', False):
+        new_bucket_url = d['links'].get('bucket', False)
+
+    ## Test that there is indded a new bucket and publish URLs.
+    if not new_bucket_url:
+        die_screaming('could not find a new bucket URL', response, new_dep_id)
+    LOG.info('new bucket URL: ' + str(new_bucket_url))
+
     ## Delete the current file (by ID) in the session.
-    #response = requests.delete('%s/%s' % (new_bucket_url, filename), params={'access_token': args.key})
-    response = requests.delete(server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files/' + str(file_id), params={'access_token': args.key})
+    delete_loc = server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files/' + str(file_id)
+    response = requests.delete(delete_loc, params={'access_token': args.key})
 
     ## Test correct file delete.
+    LOG.info('deleted at: ' + delete_loc)
     if response.status_code != 204:
         die_screaming('could not delete file', response, new_dep_id)
 
@@ -202,20 +222,15 @@ def main():
     ### ======================================================
     ###
 
-    ## Get new depositon...as the bucket URLs seem to have changed
-    ## after the delete...
-    response = requests.get(server_url + '/api/deposit/depositions/' + str(new_dep_id), params={'access_token': args.key})
+    # ## Get new depositon...as the bucket URLs seem to have changed
+    # ## after the delete...
+    # response = requests.get(server_url + '/api/deposit/depositions/' + str(new_dep_id), params={'access_token': args.key})
 
-    ## Get the bucket for upload.
-    new_bucket_url = None
-    d = response.json()
-    if d.get('links', False) and d['links'].get('bucket', False):
-        new_bucket_url = d['links'].get('bucket', False)
-
-    ## Test that there are new bucket and publish URLs.
-    if not new_bucket_url:
-        die_screaming('could not find a new bucket URL', response, curr_dep_id)
-    LOG.info('new bucket URL: ' + str(new_bucket_url))
+    # ## Get the bucket for upload.
+    # new_bucket_url = None
+    # d = response.json()
+    # if d.get('links', False) and d['links'].get('bucket', False):
+    #     new_bucket_url = d['links'].get('bucket', False)
 
     ## Upload the file using curl. Previous iterations
     ## attempted to use the python requests library, but after
