@@ -16,7 +16,7 @@ datasets:
    dataset: wb
    submitter: wb
    compression: gzip
-   source: http://release.geneontology.org/2018-07-02/products/annotations/wb-src.gaf.gz
+   source: http://release.geneontology.org/2018-08-09/products/annotations/wb-src.gaf.gz
    entity_type:
    status: active
    species_code: Cele
