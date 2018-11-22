@@ -28,10 +28,12 @@ logging.basicConfig(level=logging.INFO)
 LOG = logging.getLogger('zenodo-version-update')
 LOG.setLevel(logging.WARNING)
 
+
 def die(instr):
     """Die a little inside."""
     LOG.error(instr)
     sys.exit(1)
+
 
 def main():
     """The main runner for our script."""
@@ -99,7 +101,10 @@ def main():
                 LOG.error('no response from server')
                 LOG.error(instr)
             else:
-                LOG.error(json.dumps(response.json(), indent=4, sort_keys=True))
+                if not response.json():
+                    LOG.error('no json response')
+                else:
+                    LOG.error(json.dumps(response.json(), indent=4, sort_keys=True))
                 LOG.error(response.status_code)
                 LOG.error(instr)
                 if deposition_id:
