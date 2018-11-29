@@ -3174,6 +3174,20 @@
   xref: 'GOC:lr'
 -
   accounts:
+    github: ebakker2
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 6543248f6b6f9e104c0afbd5a18b59c6
+  groups:
+    - 'http://www.arabidopsis.org'
+  nickname: 'Erica Bakker'
+  organization: TAIR
+  uri: 'https://orcid.org/0000-0001-7933-3817'
+-
+  accounts:
     github: mchibucos
   authorizations:
     noctua:
