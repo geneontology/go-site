@@ -44,6 +44,8 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='More verbose output')
+    parser.add_argument('-w', '--wait', action='store_true',
+                        help='Wait for keyboard event for testing')
     parser.add_argument('-k', '--key',
                         help='The access key (token) to use for commands.')
     parser.add_argument('-s', '--sandbox', action='store_true',
@@ -62,16 +64,16 @@ def main():
         LOG.setLevel(logging.INFO)
         LOG.info('Verbose: on')
 
+    pause_p = False
+    if args.wait:
+        LOG.info('Wait: on')
+        pause_p = True
+
     ## Ensure server URL.
     server_url = 'https://zenodo.org'
     if args.sandbox :
         server_url = 'https://sandbox.zenodo.org'
     LOG.info('Will use: ' + server_url)
-
-    ## Ensure key/token.
-    if not args.key:
-        die('need a "key/token" argument')
-    LOG.info('Will use key/token: ' + args.key)
 
     ## Check JSON output file.
     if args.output:
@@ -119,6 +121,22 @@ def main():
                         LOG.error('discarded session')
         LOG.error('die sequence: end')
         sys.exit(1)
+
+    def pause(instr):
+        """With flag, pause temporarily for input."""
+        if pause_p:
+            LOG.info('(HIT ANY KEY TO CONTINUE) pausing for ' + str(instr))
+            input()
+
+    pause('WARNING wait on--this may leak confidential info')
+
+    ## Ensure key/token.
+    if not args.key:
+        die('need a "key/token" argument')
+    if pause_p:
+        LOG.info('Will use key/token: ' + args.key)
+    else:
+        LOG.info('Will use key/token: <XYZ>')
 
     ###
     ###
@@ -208,6 +226,7 @@ def main():
 
     ## Delete the current file (by ID) in the session.
     delete_loc = server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files/' + str(file_id)
+    pause('next--delete action')
     response = requests.delete(delete_loc, params={'access_token': args.key})
 
     ## Test correct file delete.
@@ -274,7 +293,12 @@ def main():
     filesize = os.path.getsize(args.file)
     curl.setopt(pycurl.INFILESIZE, filesize)
 
+    ## WARNING: In CLI mode, go ahead and leak secret information
+    if pause_p:
+        LOG.info('if curl: ' + 'curl -X PUT -H "Accept: application/json" -H "Content-Type: application/octet-stream" -H "Authorization: Bearer ' + args.key + '" -T '+ args.file + ' ' + upload_url + '')
+
     ## Monitor for exceptions during execution.
+    pause('next--upload action')
     try:
         curl.perform()
     except pycurl.error as e:
@@ -326,28 +350,32 @@ def main():
         "metadata": oldmetadata
     }
     headers = {"Content-Type": "application/json"}
+
     response = requests.put(server_url + '/api/deposit/depositions/' + str(new_dep_id), params={'access_token': args.key}, data=json.dumps(newmetadata), headers=headers)
 
     ## Test correct metadata put.
     if response.status_code != 200:
         die_screaming('could not add optional metadata', response, new_dep_id)
+    LOG.info('metadata updated:' + json.dumps(newmetadata))
 
     ## Publish.
-    response = requests.post(server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/actions/publish', params={'access_token': args.key})
+    publish_url = server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/actions/publish'
+    response = requests.post(publish_url, params={'access_token': args.key})
 
     ## Test correct re-publish/version action.
     if response.status_code != 202:
         die_screaming('could not re-publish', response, new_dep_id)
+    LOG.info('republished to ' + publish_url)
 
     ## Extract new DOI.
     doi = None
     if response.json().get('doi', False):
         doi = response.json().get('doi', False)
+        LOG.info('got DOI: ' + str(doi))
     else:
         die_screaming('could not get DOI', response, new_dep_id)
 
     ## Done!
-    LOG.info(str(doi))
     if args.output:
         with open(args.output, 'w+') as fhandle:
             fhandle.write(json.dumps({'doi': doi}, sort_keys=True, indent=4))
