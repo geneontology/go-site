@@ -250,7 +250,8 @@ def main():
             ## Assemble report object.
             read_data['id'] = fid
             read_data['metadata'] = resource_metadata[fid + '.gaf']
-            LOG.info(read_data)
+            #LOG.info(read_data)
+            LOG.info('Report found for: ' + fid)
             lookup.append(read_data)
 
     #LOG.info(lookup)
