@@ -210,6 +210,16 @@ def main():
         die_screaming('could not find desired filename', response)
     LOG.info('decode file name to id: ' + str(file_id))
 
+    ## Delete the current file (by ID) in the session.
+    delete_loc = server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files/' + str(file_id)
+    pause('next--delete action')
+    response = requests.delete(delete_loc, params={'access_token': args.key})
+
+    ## Test correct file delete.
+    LOG.info('deleted at: ' + delete_loc)
+    if response.status_code != 204:
+        die_screaming('could not delete file', response, new_dep_id)
+
     ## Re-get new depositon...
     response = requests.get(server_url + '/api/deposit/depositions/' + str(new_dep_id), params={'access_token': args.key})
 
@@ -223,16 +233,6 @@ def main():
     if not new_bucket_url:
         die_screaming('could not find a new bucket URL', response, new_dep_id)
     LOG.info('new bucket URL: ' + str(new_bucket_url))
-
-    ## Delete the current file (by ID) in the session.
-    delete_loc = server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files/' + str(file_id)
-    pause('next--delete action')
-    response = requests.delete(delete_loc, params={'access_token': args.key})
-
-    ## Test correct file delete.
-    LOG.info('deleted at: ' + delete_loc)
-    if response.status_code != 204:
-        die_screaming('could not delete file', response, new_dep_id)
 
     ###
     ### WARNING: Slipping into the (currently) unpublished Zenodo v2
