@@ -10,6 +10,10 @@
 #### Explicit new version:
 ####  python3 ./scripts/zenodo-version-update.py --verbose --sandbox --key abc --concept 199441 --file /tmp/go-release-reference.tgz --output /tmp/release-doi.json --revision `date +%Y-%m-%d`
 ####
+#### Fun command if you need to run multiple tests into a fake sandbox
+#### (as uploads must be different); also, using the semi-manual command:
+####  reset && mkdir -p /tmp/foo || true && echo `date` > /tmp/foo/date.txt && find /tmp/foo -print0 | tar --null -czf /tmp/go-release-archive.tgz --files-from - && python3 ./scripts/zenodo-version-update.py --verbose --wait --sandbox --key K123 --concept C456 --file /tmp/go-release-archive.tgz --output /tmp/release-doi.json --revision `date +%Y-%m-%d`
+####
 
 ## Standard imports.
 import sys
@@ -34,6 +38,46 @@ def die(instr):
     LOG.error(instr)
     sys.exit(1)
 
+## Stolen from: https://stackoverflow.com/questions/3041986/apt-command-line-interface-like-yes-no-input
+def yes_or_die(question, default="yes"):
+    """Ask a yes/no question via raw_input() and return their answer.
+
+    "question" is a string that is presented to the user.
+    "default" is the presumed answer if the user just hits <Enter>.
+        It must be "yes" (the default), "no" or None (meaning
+        an answer is required of the user).
+
+    The "answer" return value is True for "yes" or False for "no".
+    """
+    valid = {"yes": True, "y": True, "ye": True,
+             "no": False, "n": False}
+    if default is None:
+        prompt = " [y/n] "
+    elif default == "yes":
+        prompt = " [Y/n] "
+    elif default == "no":
+        prompt = " [y/N] "
+    else:
+        raise ValueError("invalid default answer: '%s'" % default)
+
+    selection = False
+    while True:
+        sys.stdout.write(question + prompt)
+        choice = input().lower()
+        if default is not None and choice == '':
+            selection = valid[default]
+            break
+        elif choice in valid:
+            selection = valid[choice]
+            break
+        else:
+            sys.stdout.write("Please respond with 'yes' or 'no' "
+                             "(or 'y' or 'n').\n")
+
+    if selection is False:
+        sys.exit(1)
+    else:
+        return selection
 
 def main():
     """The main runner for our script."""
@@ -122,13 +166,8 @@ def main():
         LOG.error('die sequence: end')
         sys.exit(1)
 
-    def pause(instr):
-        """With flag, pause temporarily for input."""
-        if pause_p:
-            LOG.info('(HIT ANY KEY TO CONTINUE) pausing for ' + str(instr))
-            input()
-
-    pause('WARNING wait on--this may leak confidential info')
+    if pause_p:
+        yes_or_die('Using "--wait" may leak confidential info; sill use?')
 
     ## Ensure key/token.
     if not args.key:
@@ -148,7 +187,11 @@ def main():
     LOG.info('With upload filename: ' + filename)
 
     ## Get listing of all depositions.
-    response = requests.get(server_url + '/api/deposit/depositions', params={'access_token': args.key})
+    init_dep_check_url = server_url + '/api/deposit/depositions'
+    LOG.info('next command as curl: ' + 'curl -X GET -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer ' + args.key + '" ' + init_dep_check_url)
+    if pause_p:
+        yes_or_die('Check initial depositions using script?')
+    response = requests.get(init_dep_check_url, params={'access_token': args.key})
 
     ## Test file listing okay.
     if response.status_code != 200:
@@ -173,8 +216,12 @@ def main():
     curr_dep_id = int(depdoc.get('id', None))
     LOG.info('current deposition id: ' + str(curr_dep_id))
 
-    ## Open versioned deposition session.
-    response = requests.post(server_url + '/api/deposit/depositions/' + str(curr_dep_id) + '/actions/newversion', params={'access_token': args.key})
+    ## Open new versioned deposition session.
+    new_ver_url = server_url + '/api/deposit/depositions/' + str(curr_dep_id) + '/actions/newversion'
+    LOG.info('next command as curl: ' + 'curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer ' + args.key + '" ' + new_ver_url)
+    if pause_p:
+        yes_or_die('New deposition session using script?')
+    response = requests.post(new_ver_url, params={'access_token': args.key})
 
     ## Test correct opening.
     if response.status_code != 201:
@@ -192,7 +239,11 @@ def main():
     LOG.info('new deposition id: ' + str(new_dep_id))
 
     ## Get files for the current depositon.
-    response = requests.get(server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files', params={'access_token': args.key})
+    get_files_url = server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files'
+    LOG.info('next command as curl: ' + 'curl -X GET -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer ' + args.key + '" ' + get_files_url)
+    if pause_p:
+        yes_or_die('Get files listing using script?')
+    response = requests.get(get_files_url, params={'access_token': args.key})
 
     ## Test file listing okay.
     if response.status_code != 200:
@@ -212,7 +263,9 @@ def main():
 
     ## Delete the current file (by ID) in the session.
     delete_loc = server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files/' + str(file_id)
-    pause('next--delete action')
+    LOG.info('next command as curl: ' + 'curl -X DELETE -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer ' + args.key + '" ' + delete_loc)
+    if pause_p:
+        yes_or_die('Delete file using script?')
     response = requests.delete(delete_loc, params={'access_token': args.key})
 
     ## Test correct file delete.
@@ -221,7 +274,11 @@ def main():
         die_screaming('could not delete file', response, new_dep_id)
 
     ## Re-get new depositon...
-    response = requests.get(server_url + '/api/deposit/depositions/' + str(new_dep_id), params={'access_token': args.key})
+    re_get_url = server_url + '/api/deposit/depositions/' + str(new_dep_id)
+    LOG.info('next command as curl: ' + 'curl -X GET -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer ' + args.key + '" ' + re_get_url)
+    if pause_p:
+        yes_or_die('Re-get our needed upload bucket info using script?')
+    response = requests.get(re_get_url, params={'access_token': args.key})
 
     ## Get the bucket for upload.
     new_bucket_url = None
@@ -294,11 +351,11 @@ def main():
     curl.setopt(pycurl.INFILESIZE, filesize)
 
     ## WARNING: In CLI mode, go ahead and leak secret information
+    LOG.info('next command as curl: ' + 'curl -X PUT -H "Accept: application/json" -H "Content-Type: application/octet-stream" -H "Authorization: Bearer ' + args.key + '" -T '+ args.file + ' ' + upload_url + '')
     if pause_p:
-        LOG.info('if curl: ' + 'curl -X PUT -H "Accept: application/json" -H "Content-Type: application/octet-stream" -H "Authorization: Bearer ' + args.key + '" -T '+ args.file + ' ' + upload_url + '')
+        yes_or_die('Upload file using script?')
 
     ## Monitor for exceptions during execution.
-    pause('next--upload action')
     try:
         curl.perform()
     except pycurl.error as e:
