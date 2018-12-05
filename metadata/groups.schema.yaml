@@ -31,6 +31,9 @@ sequence:
         type: str
         required: false
         pattern: /^\d\d\d\d\-\d\d\-\d\d$/
+      "synonyms":
+        type: seq
+        required: false
 #      "contacts":
 #        type: seq
 #        required: false
