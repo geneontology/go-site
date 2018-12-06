@@ -238,34 +238,51 @@ def main():
         die_screaming('could not find new deposition ID', response, curr_dep_id)
     LOG.info('new deposition id: ' + str(new_dep_id))
 
-    ## Get files for the current depositon.
-    get_files_url = server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files'
-    LOG.info('next command as curl: ' + 'curl -X GET -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer ' + args.key + '" ' + get_files_url)
+    ## Get information on the new deposition.
+    get_dep_info_url = server_url + '/api/deposit/depositions/' + str(new_dep_id)
+    LOG.info('next command as curl: ' + 'curl -X GET -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer ' + args.key + '" ' + get_dep_info_url)
     if pause_p:
-        yes_or_die('Get files listing using script?')
-    response = requests.get(get_files_url, params={'access_token': args.key})
+        yes_or_die('Get new deposition info using script?')
+    response = requests.get(get_dep_info_url, params={'access_token': args.key})
 
-    ## Test file listing okay.
+    ## Test info is okay.
     if response.status_code != 200:
-        die_screaming('cannot get file listing', response)
+        die_screaming('cannot get new deposition info', response)
+
+    ## Get the bucket id for this deposition.
+    bucket_url = None
+    d = response.json()
+    if d.get('links', False) and d['links'].get('bucket', False):
+        bucket_url = d['links']['bucket']
+
+    ## Test that we have the bucket information.
+    if not bucket_url:
+        die_screaming('could not find bucket URL', response, curr_dep_id)
+    LOG.info('new bucket url: ' + bucket_url)
+
+    ## Extract bucket file and version info.
+    LOG.info('next command as curl: ' + 'curl -X GET -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer ' + args.key + '" ' + bucket_url)
+    if pause_p:
+        yes_or_die('Get bucket info using script?')
+    response = requests.get(bucket_url, params={'access_token': args.key})
 
     ## Go from filename to file ID.
-    hidden_url = None
-    for filedoc in response.json():
-        filedoc_fname = filedoc.get('filename', None)
+    delete_url = None
+    for filedoc in response.json()['contents']:
+        filedoc_fname = filedoc.get('key', None)
         if filedoc_fname and filedoc_fname == filename:
             links = filedoc.get('links', None)
             if links:
-                hidden_url = links.get('download', None)
+                delete_url = links.get('version', None)
 
     ## Test file ID search okay.
-    if not hidden_url:
-        die_screaming('could not find desired filename url', response)
-    LOG.info('decode file name to id: ' + str(hidden_url))
+    if not delete_url:
+        die_screaming('could not find desired deletion url in bucket', response)
+    LOG.info('have versioned delete url: ' + delete_url)
 
     ## Delete the current file (by ID) in the session.
     #delete_loc = server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files/' + str(file_id)
-    delete_loc = hidden_url
+    delete_loc = delete_url
     LOG.info('next command as curl: ' + 'curl -X DELETE -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer ' + args.key + '" ' + delete_loc)
     if pause_p:
         yes_or_die('Delete file using script?')
