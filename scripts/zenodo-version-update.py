@@ -250,19 +250,22 @@ def main():
         die_screaming('cannot get file listing', response)
 
     ## Go from filename to file ID.
-    file_id = None
+    hidden_url = None
     for filedoc in response.json():
         filedoc_fname = filedoc.get('filename', None)
         if filedoc_fname and filedoc_fname == filename:
-            file_id = filedoc.get('id', None)
+            links = filedoc.get('links', None)
+            if links:
+                hidden_url = links.get('download', None)
 
     ## Test file ID search okay.
-    if not file_id:
-        die_screaming('could not find desired filename', response)
-    LOG.info('decode file name to id: ' + str(file_id))
+    if not hidden_url:
+        die_screaming('could not find desired filename url', response)
+    LOG.info('decode file name to id: ' + str(hidden_url))
 
     ## Delete the current file (by ID) in the session.
-    delete_loc = server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files/' + str(file_id)
+    #delete_loc = server_url + '/api/deposit/depositions/' + str(new_dep_id) + '/files/' + str(file_id)
+    delete_loc = hidden_url
     LOG.info('next command as curl: ' + 'curl -X DELETE -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer ' + args.key + '" ' + delete_loc)
     if pause_p:
         yes_or_die('Delete file using script?')
