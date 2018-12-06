@@ -34,7 +34,6 @@ sequence:
       "synonyms":
         type: seq
         required: false
-        nullable: true
         sequence:
           - type: str
 #      "contacts":
