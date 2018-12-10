@@ -441,7 +441,7 @@ def main():
 
     ## Test correct re-publish/version action.
     if response.status_code != 202:
-        die_screaming('could not re-publish', response, new_dep_id)
+        die_screaming('could not re-publish (w/code ' + str(response.status_code) + ')', response, new_dep_id)
     LOG.info('republished to ' + publish_url)
 
     ## Extract new DOI.
