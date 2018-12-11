@@ -1800,6 +1800,7 @@
       example_id: MGD:Adcy9
 - database: MGI
   name: Mouse Genome Informatics
+  ## note: when we implement https://github.com/geneontology/go-site/issues/91, change this to http://identifiers.org/mgi/MGI:
   rdf_uri_prefix: "http://identifiers.org/mgi/MGI:"
   generic_urls:
     - http://www.informatics.jax.org/
