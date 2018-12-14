@@ -79,6 +79,17 @@ def yes_or_die(question, default="yes"):
     else:
         return selection
 
+def successful_response_code(respc, expected=None):
+    """See if it is a response code we might count as a success."""
+    ret = False
+    as_int = int(respc)
+    if as_int >= 200 and as_int < 300:
+        ret = True
+    if expected and as_int != expected:
+        LOG.info('Expected ' + str(expected) + ' but got ' + str(as_int))
+    return ret
+
+
 def main():
     """The main runner for our script."""
 
@@ -158,7 +169,7 @@ def main():
                     LOG.error("attempting to discard working deposition: " + discard_url)
 
                     response = requests.delete(discard_url, params={'access_token': args.key})
-                    if response.status_code != 204:
+                    if not successful_response_code(response.status_code, 204):
                         LOG.error('failed to discard: manual intervention plz')
                         LOG.error(response.status_code)
                     else:
@@ -194,7 +205,7 @@ def main():
     response = requests.get(init_dep_check_url, params={'access_token': args.key})
 
     ## Test file listing okay.
-    if response.status_code != 200:
+    if not successful_response_code(response.status_code, 200):
         die_screaming('cannot get deposition listing', response)
 
     ## Go from concept id to deposition listing.
@@ -224,7 +235,7 @@ def main():
     response = requests.post(new_ver_url, params={'access_token': args.key})
 
     ## Test correct opening.
-    if response.status_code != 201:
+    if not successful_response_code(response.status_code, 201):
         die_screaming('cannot open new version/session', response, curr_dep_id)
 
     ## Get the new deposition id for this version.
@@ -246,7 +257,7 @@ def main():
     response = requests.get(get_dep_info_url, params={'access_token': args.key})
 
     ## Test info is okay.
-    if response.status_code != 200:
+    if not successful_response_code(response.status_code, 200):
         die_screaming('cannot get new deposition info', response)
 
     ## Get the bucket id for this deposition.
@@ -290,7 +301,7 @@ def main():
 
     ## Test correct file delete.
     LOG.info('deleted at: ' + delete_loc)
-    if response.status_code != 204:
+    if not successful_response_code(response.status_code, 204):
         die_screaming('could not delete file', response, new_dep_id)
 
     ## Re-get new depositon...
@@ -389,7 +400,7 @@ def main():
     decoded_body = body.decode('iso-8859-1')
     retpay = json.loads(decoded_body)
     curl_response_status_code = int(curl.getinfo(curl.RESPONSE_CODE))
-    if curl_response_status_code > 200:
+    if not successful_response_code(curl_response_status_code, 200):
         fail_reason = 'unknown failure'
         if retpay['message']:
             fail_reason = retpay['message']
@@ -411,7 +422,7 @@ def main():
     response = requests.get(server_url + '/api/deposit/depositions/' + str(new_dep_id), params={'access_token': args.key})
 
     ## Test correct metadata get.
-    if response.status_code != 200:
+    if not successful_response_code(response.status_code, 200):
         die_screaming('could not get access to current metadata', response, new_dep_id)
 
     ## Get metadata or die trying.
@@ -431,7 +442,7 @@ def main():
     response = requests.put(server_url + '/api/deposit/depositions/' + str(new_dep_id), params={'access_token': args.key}, data=json.dumps(newmetadata), headers=headers)
 
     ## Test correct metadata put.
-    if response.status_code != 200:
+    if not successful_response_code(response.status_code, 200):
         die_screaming('could not add optional metadata', response, new_dep_id)
     LOG.info('metadata updated:' + json.dumps(newmetadata))
 
@@ -440,7 +451,7 @@ def main():
     response = requests.post(publish_url, params={'access_token': args.key})
 
     ## Test correct re-publish/version action.
-    if response.status_code != 202:
+    if not successful_response_code(response.status_code, 202):
         die_screaming('could not re-publish (w/code ' + str(response.status_code) + ')', response, new_dep_id)
     LOG.info('republished to ' + publish_url)
 
