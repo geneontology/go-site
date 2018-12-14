@@ -3967,4 +3967,15 @@
   nickname: 'Jolene Ramsey'
   organization: 'EcoliWiki/CACAO'
   uri: 'http://orcid.org/0000-0002-3774-5896'
-  
+-
+  accounts:
+    github: erbolton
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://rgd.mcw.edu'
+  nickname: 'Liz Bolton'
+  organization: 'RGD'
+  uri: 'http://orcid.org/0000-0002-5657-2732'
