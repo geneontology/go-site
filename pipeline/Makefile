@@ -1,5 +1,8 @@
 clean:
-	rm -rf target/*
+	rm -rf target/groups || true
+	rm target/*.touch || true
+	rm -rf target/noctua-models || true
+
 
 METADATA_DIR=../metadata
 
@@ -19,11 +22,13 @@ BASE_GROUP_PATH = $(filter-out $(EXCLUSION_PATTERN),$(_ALL_BASE_GROUP_PATHS) )
 # target/groups/fb/fb -> target/groups/fb/fb-owltools-check.txt, for everything in BASE_GROUP_PATH
 GAFCHECKS = $(addsuffix -owltools-check.txt,$(BASE_GROUP_PATH))
 
-# all owltools check groups
-groups: $(GAFCHECKS)
+# all owltools check groups. Will create the file to indicate we've done all groups before moving on.
+target/groups.touch: $(GAFCHECKS)
+	touch target/groups.touch
 
 # produce just the gaf products and ttl, no owltools check
-gafs: $(addsuffix .gaf.gz,$(BASE_GROUP_PATH))
+target/gafs.gafs: $(addsuffix .gaf.gz,$(BASE_GROUP_PATH))
+	touch target/gafs.touch
 
 OBO= http://purl.obolibrary.org/obo
 ONTOLOGY = $(OBO)/go/snapshot/go.json
@@ -124,7 +129,7 @@ $(ONT_MERGED):
 	owltools --log-error go-graphstore.owl --merge-imports-closure -o -f turtle $@
 .PRECIOUS: $(ONT_MERGED)
 
-target/rdf: $(ONT_MERGED) groups
+target/rdf: $(ONT_MERGED) target/groups.touch
 	mkdir -p target/rdf
 	cp target/groups/*/*_cam.ttl target/rdf/
 
