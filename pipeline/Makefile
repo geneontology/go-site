@@ -10,25 +10,25 @@ EXCLUDES ?= goa_uniprot_gcrp goa_pdb
 
 # for each path in the shell `find`, get just the filename, then strip the extension for each group
 # Ex: will end up being just the yaml file names in the datasets directory (aspgd mgi goa fb [etc])
-GROUPS ?= fb zfin goa
-# GROUPS ?= $(foreach path,$(shell find $(METADATA_DIR)/datasets -name '*.yaml'),$(basename $(notdir $(path))))
+# GROUPS ?= fb zfin
+GROUPS ?= $(foreach path,$(shell find $(METADATA_DIR)/datasets -name '*.yaml'),$(basename $(notdir $(path))))
 # for each group, get the base target path from each gaf dataset in a group yaml.
 # Ex: fb -> target/groups/fb/fb; goa -> target/groups/goa/goa_uniprot_all target/groups/goa/goa_chicken_complex [etc]
-_ALL_BASE_GROUP_PATHS = $(foreach group,$(GROUPS),$(addprefix target/groups/$(group)/,$(basename $(shell cat ../metadata/datasets/$(group).yaml | grep "id:.*gaf" | awk '{ print $$2 }'))))
+_ALL_BASE_DATASET_PATHS = $(foreach group,$(GROUPS),$(addprefix target/groups/$(group)/,$(basename $(shell cat ../metadata/datasets/$(group).yaml | grep "id:.*gaf" | awk '{ print $$2 }'))))
 # This turns the excludes into a filter pattern: goa_pdb -> %/goa_pdb
 EXCLUSION_PATTERN = $(foreach excl,$(EXCLUDES),%/$(excl))
 # Filter out any path from _ALL_BASE_GROUP_PATHS that matches the exclusion
-BASE_GROUP_PATH = $(filter-out $(EXCLUSION_PATTERN),$(_ALL_BASE_GROUP_PATHS) )
+BASE_DATASET_PATH = $(filter-out $(EXCLUSION_PATTERN),$(_ALL_BASE_DATASET_PATHS) )
 # produces the set of owltools-check.txt targets. One for each in the BASE_GROUP_PATH
 # target/groups/fb/fb -> target/groups/fb/fb-owltools-check.txt, for everything in BASE_GROUP_PATH
-GAFCHECKS = $(addsuffix -owltools-check.txt,$(BASE_GROUP_PATH))
+OWLTOOLS_CHECKS = $(addsuffix -owltools-check.txt,$(BASE_DATASET_PATH))
 
 # all owltools check groups. Will create the file to indicate we've done all groups before moving on.
-target/groups.touch: $(GAFCHECKS)
+target/groups.touch: $(OWLTOOLS_CHECKS)
 	touch target/groups.touch
 
 # produce just the gaf products and ttl, no owltools check
-target/gafs.gafs: $(addsuffix .gaf.gz,$(BASE_GROUP_PATH))
+target/gafs.touch: $(foreach group,$(GROUPS),target/groups/$(group)/$(group).group)
 	touch target/gafs.touch
 
 OBO= http://purl.obolibrary.org/obo
@@ -51,17 +51,18 @@ PY_BIN ?= $(PY_ENV)/bin
 VALIDATE = $(PY_BIN)/validate.py
 DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(EXCLUDES),-x $(exclusion) )
 
+# Should be something like target/groups/<group>/<group>.group
 .PRECIOUS: %.gaf.gz
 %.group: target/go-ontology.json
 	mkdir -p $(dir $*) # Make the group directory
 	# This will split each slash in the path to space separated list, then we pick the last one, the group directory
 	# assigns a make variable called `group` computed from the $* generic target stem.
 	# Ex: target/groups/fb/fb.gaf as a target, the stem ($*) is target/groups/fb/fb, so `group` gets assigned to fb
-	$(eval group := $(lastword $(subst /, ,$(dir $*))))
+	$(eval group := $(lastword $(subst /, ,$*)))
 	python3 $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE)
-	touch $*.group
+	touch $@
 
-%-owltools-check.txt: %.group $(GAF_OWL)
+%-owltools-check.txt: target/gafs.touch $(GAF_OWL)
 	owltools --log-warning $(GAF_OWL) \
 	--gaf $*.gaf \
 	--createReport \
