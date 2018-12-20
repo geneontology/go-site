@@ -94,6 +94,9 @@ mapping:
                 type: str
                 required: true
                 enum: ["rdf", "gaf", "gpad"]
-              "instance":
+              "input":
+                type: str
+                required: true
+              "output":
                 type: str
                 required: true
