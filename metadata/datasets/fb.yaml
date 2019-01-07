@@ -24,7 +24,7 @@ datasets:
     - NCBITaxon:7227
  -
    id: fb.gp2protein
-   label: "fb gaf file"
+   label: "fb gp2protein file"
    description: "gp2protein file for fb from FlyBase"
    type: gp2protein
    dataset: fb
