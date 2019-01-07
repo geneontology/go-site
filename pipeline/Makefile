@@ -115,7 +115,7 @@ target/groups/goa/goa_uniprot_all_noiea-owltools-check.txt: target/groups/goa/go
 .PHONY: target/groups/goa/goa_uniprot_all-owltools-check.txt
 target/groups/goa/goa_uniprot_all-owltools-check.txt: target/groups/goa/goa_uniprot_all_noiea-owltools-check.txt
 
-GOA_URL := $(shell grep -A 10 "id: goa_uniprot_all.gaf" ../metadata/datasets/goa.yaml | grep source: | awk '{ print $$2 }')
+GOA_URL ?= $(shell grep -A 10 "id: goa_uniprot_all.gaf" ../metadata/datasets/goa.yaml | grep source: | awk '{ print $$2 }')
 target/groups/goa/goa_uniprot_all-src.gaf.gz:
 	mkdir -p target/groups/goa
 	wget --retry-connrefused --waitretry=10 -t 10 --no-check-certificate $(GOA_URL) -O $@.tmp && mv $@.tmp $@
