@@ -4,7 +4,7 @@ description: "GO data for FlyBase"
 project_name: "FlyBase"
 contact_email: "gocur@morgan.harvard.edu"
 project_url: "http://flybase.org"
-funding_source: "MRC at UK MRC, grant number G1000968 "
+funding_source: "MRC at UK MRC, grant number MR/N030117/1 "
 email_report: "gocur@morgan.harvard.edu"
 datasets:
  -
@@ -16,7 +16,21 @@ datasets:
    dataset: fb
    submitter: fb
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.fb.gz
+   source: ftp://ftp.flybase.net/releases/current/precomputed_files/go/gene_association.fb.gz
+   entity_type:
+   status: active
+   species_code: Dmel
+   taxa:
+    - NCBITaxon:7227
+
+id: fb.gp2protein
+   label: "fb gaf file"
+   description: "gp2protein file for fb from FlyBase"
+   type: gp2protein
+   dataset: fb
+   submitter: fb
+   compression: gzip
+   source: ftp://ftp.flybase.net/releases/current/precomputed_files/go/gp2protein.fb.gz
    entity_type:
    status: active
    species_code: Dmel
