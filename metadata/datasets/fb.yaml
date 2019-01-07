@@ -22,8 +22,8 @@ datasets:
    species_code: Dmel
    taxa:
     - NCBITaxon:7227
-
-id: fb.gp2protein
+ -
+   id: fb.gp2protein
    label: "fb gaf file"
    description: "gp2protein file for fb from FlyBase"
    type: gp2protein
