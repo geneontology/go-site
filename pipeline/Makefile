@@ -138,12 +138,16 @@ BG_PORT = 8899
 METAGO = <http://model.geneontology.org/>
 GO_GRAPHSTORE_URI = http://purl.obolibrary.org/obo/go/extensions/go-graphstore.owl
 CAM_GRAPH_QUERY = '\
-	PREFIX dc: <http://purl.org/dc/elements/1.1/> \
-	SELECT ?source_graph \
-	WHERE { \
-		GRAPH ?source_graph { \
-			?source_graph dc:title ?title . \
+	SELECT DISTINCT ?g { \
+		{ \
+			SELECT DISTINCT ?source_graph \
+			WHERE { \
+			GRAPH ?source_graph { \
+				?s ?p ?o . \
+			} \
+			} \
 		} \
+		FILTER(STRSTARTS(STR(?g), "http://model.geneontology.org/")) \
 	}'
 BG_PROPERTIES = conf/blazegraph.properties
 LOAD_TARGETS = $(ONT_MERGED) target/rdf target/noctua-models/models
