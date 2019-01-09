@@ -1,0 +1,16 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+INSERT {
+  GRAPH <http://purl.obolibrary.org/obo/go/extensions/go-graphstore.owl#subclass_closure> {
+    ?sub rdfs:subClassOf ?super .
+  }
+}
+WHERE {
+  GRAPH <http://purl.obolibrary.org/obo/go/extensions/go-graphstore.owl> {
+    ?sub rdfs:subClassOf* ?super .
+    FILTER(isIRI(?sub))
+    FILTER(isIRI(?super))
+  }
+}
