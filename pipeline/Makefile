@@ -6,17 +6,17 @@ clean:
 
 METADATA_DIR=../metadata
 
-EXCLUDES ?= goa_uniprot_gcrp goa_pdb
+DATASET_EXCLUDES ?= goa_uniprot_gcrp goa_pdb
 
 # for each path in the shell `find`, get just the filename, then strip the extension for each group
 # Ex: will end up being just the yaml file names in the datasets directory (aspgd mgi goa fb [etc])
-# GROUPS ?= fb zfin
-GROUPS ?= $(foreach path,$(shell find $(METADATA_DIR)/datasets -name '*.yaml'),$(basename $(notdir $(path))))
+# RESOURCE_GROUPS ?= goa aspgd wb
+RESOURCE_GROUPS ?= $(foreach path,$(shell find $(METADATA_DIR)/datasets -name '*.yaml'),$(basename $(notdir $(path))))
 # for each group, get the base target path from each gaf dataset in a group yaml.
 # Ex: fb -> target/groups/fb/fb; goa -> target/groups/goa/goa_uniprot_all target/groups/goa/goa_chicken_complex [etc]
-_ALL_BASE_DATASET_PATHS = $(foreach group,$(GROUPS),$(addprefix target/groups/$(group)/,$(basename $(shell cat ../metadata/datasets/$(group).yaml | grep "id:.*gaf" | awk '{ print $$2 }'))))
+_ALL_BASE_DATASET_PATHS = $(foreach group,$(RESOURCE_GROUPS),$(addprefix target/groups/$(group)/,$(basename $(shell cat ../metadata/datasets/$(group).yaml | grep "id:.*gaf" | awk '{ print $$2 }'))))
 # This turns the excludes into a filter pattern: goa_pdb -> %/goa_pdb
-EXCLUSION_PATTERN = $(foreach excl,$(EXCLUDES),%/$(excl))
+EXCLUSION_PATTERN = $(foreach excl,$(DATASET_EXCLUDES),%/$(excl))
 # Filter out any path from _ALL_BASE_GROUP_PATHS that matches the exclusion
 BASE_DATASET_PATH = $(filter-out $(EXCLUSION_PATTERN),$(_ALL_BASE_DATASET_PATHS) )
 # produces the set of owltools-check.txt targets. One for each in the BASE_GROUP_PATH
@@ -28,7 +28,7 @@ target/groups.touch: $(OWLTOOLS_CHECKS)
 	touch target/groups.touch
 
 # produce just the gaf products and ttl, no owltools check
-target/gafs.touch: $(foreach group,$(GROUPS),target/groups/$(group)/$(group).group)
+target/gafs.touch: $(foreach group,$(RESOURCE_GROUPS),target/groups/$(group)/$(group).group)
 	touch target/gafs.touch
 
 OBO= http://purl.obolibrary.org/obo
@@ -49,7 +49,7 @@ BGMEM ?= 12G
 PY_ENV ?= target/env
 PY_BIN ?= $(PY_ENV)/bin
 VALIDATE = $(PY_BIN)/validate.py
-DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(EXCLUDES),-x $(exclusion) )
+DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(DATASET_EXCLUDES),-x $(exclusion) )
 
 # Should be something like target/groups/<group>/<group>.group
 .PRECIOUS: %.gaf.gz
@@ -62,6 +62,7 @@ DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(EXCLUDES),-x $(exclusio
 	python3 $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE)
 	touch $@
 
+# dataset
 %-owltools-check.txt: target/gafs.touch $(GAF_OWL)
 	owltools --log-warning $(GAF_OWL) \
 	--gaf $*.gaf \
@@ -115,10 +116,10 @@ target/groups/goa/goa_uniprot_all_noiea-owltools-check.txt: target/groups/goa/go
 .PHONY: target/groups/goa/goa_uniprot_all-owltools-check.txt
 target/groups/goa/goa_uniprot_all-owltools-check.txt: target/groups/goa/goa_uniprot_all_noiea-owltools-check.txt
 
-GOA_URL ?= $(shell grep -A 10 "id: goa_uniprot_all.gaf" ../metadata/datasets/goa.yaml | grep source: | awk '{ print $$2 }')
+GOA_UNIPROT_ALL_URL ?= $(shell grep -A 10 "id: goa_uniprot_all.gaf" ../metadata/datasets/goa.yaml | grep source: | awk '{ print $$2 }')
 target/groups/goa/goa_uniprot_all-src.gaf.gz:
 	mkdir -p target/groups/goa
-	wget --retry-connrefused --waitretry=10 -t 10 --no-check-certificate $(GOA_URL) -O $@.tmp && mv $@.tmp $@
+	wget --retry-connrefused --waitretry=10 -t 10 --no-check-certificate $(GOA_UNIPROT_ALL_URL) -O $@.tmp && mv $@.tmp $@
 
 target/alltaxons.txt:
 	python3 util/model_organism.py taxons ../metadata/datasets/ --out target/alltaxons.txt
