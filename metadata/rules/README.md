@@ -13,14 +13,14 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000003">GORULE:0000003 Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field</a>
  * <a href="#gorule0000004">GORULE:0000004 Reciprocal annotations for 'protein binding ; GO:0005515'</a>
  * <a href="#gorule0000005">GORULE:0000005 No ISS or ISS-related annotations to 'protein binding ; GO:0005515'</a>
- * <a href="#gorule0000006">GORULE:0000006 IEP usage is restricted to terms from the Biological Process ontology</a>
+ * <a href="#gorule0000006">GORULE:0000006 IEP and HEP usage is restricted to terms from the Biological Process ontology</a>
  * <a href="#gorule0000007">GORULE:0000007 IPI should not be used with catalytic activity molecular function terms</a>
  * <a href="#gorule0000008">GORULE:0000008 No annotations should be made to uninformative high level terms</a>
  * <a href="#gorule0000009">GORULE:0000009 Annotation Intersection Alerts</a>
  * <a href="#gorule0000010">GORULE:0000010 Deprecated - PubMed reference formatting must be correct</a>
- * <a href="#gorule0000011">GORULE:0000011 ND annotations to root nodes only</a>
+ * <a href="#gorule0000011">GORULE:0000011 ND annotations to root nodes only; and only root nodes can have the evidence code ND.</a>
  * <a href="#gorule0000013">GORULE:0000013 Taxon-appropriate annotation check</a>
- * <a href="#gorule0000014">GORULE:0000014 GO terms in annotations should not be obsolete.</a>
+ * <a href="#gorule0000014">GORULE:0000014 Deprecated. GO terms in annotations should not be obsolete.</a>
  * <a href="#gorule0000015">GORULE:0000015 Dual species taxon check</a>
  * <a href="#gorule0000016">GORULE:0000016 With/From: IC annotations require a With/From GO ID</a>
  * <a href="#gorule0000017">GORULE:0000017 IDA annotations must not have a With/From entry</a>
@@ -32,15 +32,27 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000023">GORULE:0000023 Materialize annotations for inter-branch links in the GO</a>
  * <a href="#gorule0000024">GORULE:0000024 Prevent propagation of certain terms by orthology</a>
  * <a href="#gorule0000025">GORULE:0000025 Creating more specific annotations by reasoning over extensions</a>
- * <a href="#gorule0000026">GORULE:0000026 Annotations with IBA evidence code are filtered out if not coming from PAINT</a>
+ * <a href="#gorule0000026">GORULE:0000026 IBA annotations must have been sourced from the PAINT inference pipeline</a>
  * <a href="#gorule0000027">GORULE:0000027 Each identifier in GAF is valid</a>
  * <a href="#gorule0000028">GORULE:0000028 Aspect can only be one of C, P, F and should be repaired using the GO term</a>
  * <a href="#gorule0000029">GORULE:0000029 All IEAs over a year old are removed</a>
  * <a href="#gorule0000030">GORULE:0000030 Deprecated GO_REFs are not allowed</a>
  * <a href="#gorule0000031">GORULE:0000031 Annotation relations are replaced when not provided by source</a>
- * <a href="#gorule0000031">GORULE:0000031 Annotation relations are replaced when not provided by source.</a>
+ * <a href="#gorule0000032">GORULE:0000032 Allowed References for each ECO.</a>
  * <a href="#gorule0000033">GORULE:0000033 Group specific Reference IDs (column 6) will be replaced by corresponding GO_REF (or other public ID) or filtered.</a>
  * <a href="#gorule0000035">GORULE:0000035 'Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.</a>
+ * <a href="#gorule0000036">GORULE:0000036 Report annotations that involve gene products where the gene product is annotated to a term 'x' and 'regulation of X' (multiple annotations involved)</a>
+ * <a href="#gorule0000038">GORULE:0000038 Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column) where there exists another annotation with the same or a more granular term using experimental evidence</a>
+ * <a href="#gorule0000039">GORULE:0000039 Protein complexes can not be annotated to GO:0032991 (protein-containing complex) or its descendants</a>
+ * <a href="#gorule0000042">GORULE:0000042 Qualifier: IKR evidence code requires a NOT qualifier</a>
+ * <a href="#gorule0000043">GORULE:0000043 Check for valid combination of evidence code and GO_REF</a>
+ * <a href="#gorule0000044">GORULE:0000044 Reference: check for invalid use of GO_REF:0000057 can only be used with terms that are descendants of GO:0006915 (apoptotic process)</a>
+ * <a href="#gorule0000045">GORULE:0000045 With/from: Verify that the combination of evidence (ECO) code and with/from conform to the rules in eco-usage-constraints.yaml</a>
+ * <a href="#gorule0000046">GORULE:0000046 The ‘with’ field (GAF column 8) must be the same as the gene product (GAF colummn 2) when annotating to ‘self-binding’ terms.</a>
+ * <a href="#gorule0000047">GORULE:0000047 With/from: ChEBI IDs in With/from can only be used with terms that are descendants of GO:0005488 (binding)</a>
+ * <a href="#gorule0000048">GORULE:0000048 Gene products having ND annotations and other annotations in the same aspect should be reviewed</a>
+ * <a href="#gorule0000049">GORULE:0000049 If the annotation has 'contributes_to' as its qualifier, verify that at least one annotation to GO:0043234 (protein complex), or one of its child terms exists</a>
+ * <a href="#gorule0000051">GORULE:0000051 Annotations to ISS, ISA and ISO should not be self-referential</a>
 
 
 
@@ -132,6 +144,11 @@ We use the term GO:0005515 and its children to represent instances of protein bi
 
 Note that this annotation rule predates the existence of annotation extensions (c16 in the GAF). It is more logical to specify the binding partner in c16, this would also allow cleaner separation of evidence from in-vivo activity, but for historic reasons the with/from field continues to be used.
 
+This excludes 
+GO:0042803 protein homodimerization activity
+GO:0051260 protein homooligomerization
+GO:0043621 protein self-association
+
 
 ## Application to Noctua models
 
@@ -199,14 +216,14 @@ Error report (number of errors) in [db_species]-report.html & owltools-check.txt
 
 <a name="gorule0000006"/>
 
-## IEP usage is restricted to terms from the Biological Process ontology
+## IEP and HEP usage is restricted to terms from the Biological Process ontology
 
  * id: [GORULE:0000006](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000006.md)
- * status: implemented
+ * status: approved
 
 
-The IEP evidence code is used where process involvement is inferred from
-the timing or location of expression of a gene, particularly when
+The IEP and its high thoughput equivalent, HEP, evidence codes are used where process involvement is inferred from
+the timing or location of expression of a gene, particularly when 
 comparing a gene that is not yet characterized with the timing or
 location of expression of genes known to be involved in a particular
 process. This type of annotation is only suitable with terms from the
@@ -310,14 +327,16 @@ will be removed.
 
 <a name="gorule0000011"/>
 
-## ND annotations to root nodes only
+## ND annotations to root nodes only; and only root nodes can have the evidence code ND.
 
  * id: [GORULE:0000011](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000011.md)
- * status: implemented
+ * status: approved
 
 
-The [No Data (ND) evidence code](http://www.geneontology.org/GO.evidence.shtml#nd) should be used
-for annotations to the root nodes.
+The [No Data (ND) evidence code](http://www.geneontology.org/GO.evidence.shtml#nd) should be only used
+for annotations to the root nodes: GO:0008150 biological_process, GO:0003674 molecular_function and GO:0005575 cellular_component. 
+
+The root nodes: GO:0008150 biological_process, GO:0003674 molecular_function and GO:0005575 cellular_component can only be annotated with the [No Data (ND) evidence code](http://www.geneontology.org/GO.evidence.shtml#nd).  
 
 Error report (number of errors) in [db_species]-report.html & owltools-check.txt (details).
 
@@ -338,7 +357,7 @@ Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt
 
 <a name="gorule0000014"/>
 
-## GO terms in annotations should not be obsolete.
+## Deprecated. GO terms in annotations should not be obsolete.
 
  * id: [GORULE:0000014](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000014.md)
  * status: deprecated
@@ -360,7 +379,7 @@ species encoding the gene product, and the second should be the taxon of
 the other species in the interaction. Where the interaction is between
 organisms of the same species, both taxon IDs should be the same. These
 annotations should be used only in conjunction with terms that have the
-biological process term 'GO:0051704 : multi-organism process' or the
+biological process term 'GO:0044419 : interspecies interaction between organisms' or the
 cellular component term 'GO:0044215 : other organism' as an ancestor.
 
 <a name="gorule0000016"/>
@@ -540,7 +559,7 @@ Other fields remain the same
 
 <a name="gorule0000026"/>
 
-## Annotations with IBA evidence code are filtered out if not coming from PAINT
+## IBA annotations must have been sourced from the PAINT inference pipeline
 
  * id: [GORULE:0000026](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000026.md)
  * status: implemented
@@ -552,6 +571,8 @@ paint.
 
 If the GAF file being validated is not paint, and the line has evidence IBA,
 then throw out that line. 
+
+See also GORULE:0000037
 
 <a name="gorule0000027"/>
 
@@ -648,15 +669,16 @@ For Molecular Function: relation = 'enables'
 
 ##This seems to be only exported in GPAD for now.
 
-<a name="gorule0000031"/>
+<a name="gorule0000032"/>
 
-## Annotation relations are replaced when not provided by source.
+## Allowed References for each ECO.
 
- * id: [GORULE:0000031](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000031.md)
- * status: implemented
+ * id: [GORULE:0000032](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000032.md)
+ * status: proposed
 
 
 GO_REF Collection References allowed for each ECO are as follows:
+(to be completed)
 
 <a name="gorule0000033"/>
 
@@ -678,3 +700,155 @@ The list of GO_REFs are here: https://github.com/geneontology/go-site/tree/maste
  * status: proposed
 
 
+
+<a name="gorule0000036"/>
+
+## Report annotations that involve gene products where the gene product is annotated to a term 'x' and 'regulation of X' (multiple annotations involved)
+
+ * id: [GORULE:0000036](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000036.md)
+ * status: proposed
+
+
+
+Few proteins are part of a process as well as regulate that process. We need to review the list of proteins having annotations to a term x and to regulation of that term. This report would look globally at all annotations from any source and look for co-annotation of a term 'x' and its regulation ('regulation of X').
+As a second step we may create exception lists for cases known to be correct. 
+
+<a name="gorule0000038"/>
+
+## Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column) where there exists another annotation with the same or a more granular term using experimental evidence
+
+ * id: [GORULE:0000038](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000038.md)
+ * status: proposed
+
+
+For annotations by ISO, ISA or ISS, the annotations of the gene product (col 8 info in the GAF) should be checked to ensure that an annotation exists to the same or a more granular term. For instance:
+
+Gene Product 1 | GO:1233456 |  ISS/ISO/ISA | with: Gene Product 2
+Gene Product 2 | GO:1233456 (or a descentant) | EXP (or a descendant)
+
+Allowed evidence codes for the primary annotations: EXP, IMP, IDA, IPI, IEP, IGI, HTP, HMP, HDA, HEP, HGI.
+
+<a name="gorule0000039"/>
+
+## Protein complexes can not be annotated to GO:0032991 (protein-containing complex) or its descendants
+
+ * id: [GORULE:0000039](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000039.md)
+ * status: proposed
+
+
+
+Annotations to GO:0032991 (protein-containing complex) or its descendants cannot refer to an identifer from ComplexPortal (Column 1). Example identifier:ComplexPortal:CPX-2158. 
+
+<a name="gorule0000042"/>
+
+## Qualifier: IKR evidence code requires a NOT qualifier
+
+ * id: [GORULE:0000042](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000042.md)
+ * status: proposed
+
+
+IKR evidence code requires a NOT qualifier. 
+
+<a name="gorule0000043"/>
+
+## Check for valid combination of evidence code and GO_REF
+
+ * id: [GORULE:0000043](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000043.md)
+ * status: proposed
+
+
+
+Specific forbidden combinations: 
+- ND (ECO:0000307): GO_REF:0000015
+- ISS (ECO:0000250): GO_REF:0000024
+- ISA (ECO:0000247): GO_REF:0000030, GO_REF:0000113
+- ISM (ECO:0000255): GO_REF:0000030, GO_REF:0000050
+- ISO (ECO:0000266): GO_REF:0000024
+- IC (ECO:0000305): GO_REF:0000036, GO_REF:0000057, GO_REF:0000111
+- IKR (ECO:0000320): GO_REF:0000047
+- IDA (ECO:0000314): GO_REF:0000052, GO_REF:0000054
+This list may not be exhaustive.
+
+TODO: include above list in appropriate metadata file.
+
+<a name="gorule0000044"/>
+
+## Reference: check for invalid use of GO_REF:0000057 can only be used with terms that are descendants of GO:0006915 (apoptotic process)
+
+ * id: [GORULE:0000044](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000044.md)
+ * status: proposed
+
+
+
+Reference: check for invalid use of GO_REF:0000057 can only be used with terms that are descendants of GO:0006915 (apoptotic process).
+
+<a name="gorule0000045"/>
+
+## With/from: Verify that the combination of evidence (ECO) code and with/from conform to the rules in eco-usage-constraints.yaml
+
+ * id: [GORULE:0000045](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000045.md)
+ * status: proposed
+
+
+With/from: Verify that the combination of evidence (ECO) code and with/from conform to the rules in eco-usage-constraints.yaml
+
+<a name="gorule0000046"/>
+
+## The ‘with’ field (GAF column 8) must be the same as the gene product (GAF colummn 2) when annotating to ‘self-binding’ terms.
+
+ * id: [GORULE:0000046](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000046.md)
+ * status: proposed
+
+
+
+Annotations representing self-binding mean that the gene product annotated interacts with itself. Therefore, the entity in the 'with/from' column (colomn 8) should be the same as the gene product (column 2). 
+
+Self-binding terms include GO:0042803 protein homodimerization activity, GO:0051260 protein homooligomerization, 
+GO:0051289 protein homotetramerization, GO:0070207 protein homotrimerization, GO:0043621 protein self-association, and GO:0032840 intramolecular proline-rich ligand binding (and their 'is_a' descendants). 
+
+
+
+
+<a name="gorule0000047"/>
+
+## With/from: ChEBI IDs in With/from can only be used with terms that are descendants of GO:0005488 (binding)
+
+ * id: [GORULE:0000047](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000047.md)
+ * status: proposed
+
+
+
+Annotations using a ChEBI ID in the with/from (col 8 of GAF) column should only be annotated with GO terms that are descendants of GO:0005488 (binding) (Col 5 of GAF)"
+
+<a name="gorule0000048"/>
+
+## Gene products having ND annotations and other annotations in the same aspect should be reviewed
+
+ * id: [GORULE:0000048](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000048.md)
+ * status: proposed
+
+
+
+If a gene product has an annotation by the ND evidence code, this rule checks whether any manual annotations in the same GO aspect exists for this gene product.
+
+<a name="gorule0000049"/>
+
+## If the annotation has 'contributes_to' as its qualifier, verify that at least one annotation to GO:0043234 (protein complex), or one of its child terms exists
+
+ * id: [GORULE:0000049](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000049.md)
+ * status: proposed
+
+
+
+The 'contributes to' qualifier can only be applied to proteins belonging to complexes, so any gene product with a MF annotation using the 'contributes to' should also be annotated to a child of protein complex. 
+
+<a name="gorule0000051"/>
+
+## Annotations to ISS, ISA and ISO should not be self-referential
+
+ * id: [GORULE:0000051](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000051.md)
+ * status: proposed
+
+
+
+Annotations to ISS, ISA and ISO should not have the same identifier in the 'gene product column' (column 2) and in the 'with/from' column (column 8).

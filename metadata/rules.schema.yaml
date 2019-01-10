@@ -45,3 +45,58 @@ mapping:
           "code":
             type: str
             required: false
+  "examples":
+    type: map
+    required: false
+    mapping:
+      "pass":
+        type: seq
+        required: false
+        sequence:
+          - type: map
+            mapping:
+              "comment":
+                type: str
+                required: true
+              "format":
+                type: str
+                required: true
+                enum: ["rdf", "gaf", "gpad"]
+              "instance":
+                type: str
+                required: true
+      "fail":
+        type: seq
+        required: false
+        sequence:
+          - type: map
+            mapping:
+              "comment":
+                type: str
+                required: true
+              "format":
+                type: str
+                required: true
+                enum: ["rdf", "gaf", "gpad"]
+              "instance":
+                type: str
+                required: true
+      "repair":
+        type: seq
+        required: false
+        sequence:
+          - type: map
+            mapping:
+              "comment":
+                type: str
+                required: true
+              "format":
+                type: str
+                required: true
+                enum: ["rdf", "gaf", "gpad"]
+              "input":
+                type: str
+                required: true
+              "output":
+                type: str
+                required: true
