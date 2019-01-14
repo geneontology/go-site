@@ -99,7 +99,8 @@ target/groups/goa/goa_uniprot_all_noiea.gpi: target/groups/goa/goa_uniprot_all_n
 	owltools --log-error --gaf target/groups/goa/goa_uniprot_all_noiea.gaf --write-gpi -o target/groups/goa/goa_uniprot_all_noiea.gpi.tmp && mv target/groups/goa/goa_uniprot_all_noiea.gpi.tmp target/groups/goa/goa_uniprot_all_noiea.gpi
 
 target/groups/goa/goa_uniprot_all_noiea-owltools-check.txt: target/groups/goa/goa_uniprot_all_noiea.gaf $(GOA_UNIPROT_ALL) $(GAF_OWL)
-	gzip -dcf target/groups/goa/goa_uniprot_all_noiea.gaf.gz > target/groups/goa/goa_uniprot_all_noiea.gaf
+	ls -l target/groups/goa/
+	# gzip -dcf target/groups/goa/goa_uniprot_all_noiea.gaf.gz > target/groups/goa/goa_uniprot_all_noiea.gaf
 	owltools --log-warning $(GAF_OWL) \
 	--gaf target/groups/goa/goa_uniprot_all_noiea.gaf \
 	--createReport \
