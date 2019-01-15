@@ -65,6 +65,7 @@ DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(DATASET_EXCLUDES),-x $(
 # dataset
 %-owltools-check.txt: target/gafs.touch $(GAF_OWL)
 	ls -l $(dir $*)
+	gzip -dcf $*.gaf.gz > $*.gaf
 	owltools --log-warning $(GAF_OWL) \
 	--gaf $*.gaf \
 	--createReport \
