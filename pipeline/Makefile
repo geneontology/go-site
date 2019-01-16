@@ -94,7 +94,7 @@ target/groups/goa/goa_uniprot_all_noiea.gaf: target/alltaxons.txt target/groups/
 RDF_GEN = $(PY_BIN)/rdfgen.py
 target/groups/goa/goa_uniprot_all_noiea_cam.ttl: target/groups/goa/goa_uniprot_all_noiea.gaf
 	python3 $(RDF_GEN) convert -a gaf -r target/go-ontology.json -o target/groups/goa/goa_uniprot_all_noiea_cam.ttl target/groups/goa/goa_uniprot_all_noiea.gaf
-	gzip -cf target/groups/goa/goa_uniprot_all_noiea.ttl > target/groups/goa/goa_uniprot_all_noiea.ttl.gz
+	gzip -cf target/groups/goa/goa_uniprot_all_noiea_cam.ttl > target/groups/goa/goa_uniprot_all_noiea_cam.ttl.gz
 
 target/groups/goa/goa_uniprot_all_noiea.gpad: target/groups/goa/goa_uniprot_all_noiea.gaf
 	owltools --log-error --gaf target/groups/goa/goa_uniprot_all_noiea.gaf --write-gpad -o target/groups/goa/goa_uniprot_all_noiea.gpad.tmp && mv target/groups/goa/goa_uniprot_all_noiea.gpad.tmp target/groups/goa/goa_uniprot_all_noiea.gpad
