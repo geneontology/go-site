@@ -205,8 +205,10 @@
 	      {{ #metadata.url }}
 	      <tr>
 		<td>
+		  <b>{{ #metadata.species_label }}{{ metadata.species_label }}{{ /metadata.species_label }}{{ ^metadata.species_label }}{{ #metadata.species_code }}{{ metadata.species_code }}{{ /metadata.species_code }}{{ ^metadata.species_code }}Multi-species{{ /metadata.species_code }}{{ /metadata.species_label }}</b>
+		  <br />
 		  {{ metadata.resource-label }}
-		  (<a href="{{ metadata.resource-project_url }}">{{ metadata.submitter }}</a>, {{ #metadata.species_code }}{{ metadata.species_code }}{{ /metadata.species_code }}{{ ^metadata.species_code }}multi{{ /metadata.species_code }})
+		  (<a href="{{ metadata.resource-project_url }}">{{ metadata.submitter }}</a>)
 		</td>
 		<td>
 		  {{ #metadata.entity_type }}

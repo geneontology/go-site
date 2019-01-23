@@ -3979,3 +3979,27 @@
   nickname: 'Liz Bolton'
   organization: 'RGD'
   uri: 'http://orcid.org/0000-0002-5657-2732'
+-
+  accounts:
+    github: nsuvarnaiari
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.igs.umaryland.edu'
+  nickname: 'Suvarna Nadendla'
+  organization: 'IGS'
+  uri: 'http://orcid.org/0000-0003-3643-281X'
+-
+  accounts:
+    github: mgiglio99
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.igs.umaryland.edu'
+  nickname: 'Michelle Giglio'
+  organization: 'IGS'
+  uri: 'http://orcid.org/0000-0001-7628-5565'

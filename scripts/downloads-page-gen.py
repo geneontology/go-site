@@ -22,6 +22,28 @@ logging.basicConfig(level=logging.INFO)
 LOG = logging.getLogger('downloads-page')
 LOG.setLevel(logging.WARNING)
 
+## Abbr -> species label map.
+smap = {
+    "Aspergillus": "Aspergillus nidulans",
+    "Atal": "Arabidopsis thaliana",
+    "Btau": "Bos taurus",
+    "Cele": "Caenorhabditis elegans",
+    "Cfam": "Canis lupus familiaris",
+    "Ddis": "Dictyostelium discoideum",
+    "Dmel": "Drosophila melanogaster",
+    "Drer": "Danio rerio",
+    "Ggal": "Gallus gallus",
+    "Hsap": "Homo sapiens",
+    "Mmus": "Mus musculus",
+    "Oryz": "Oryza sativa",
+    "Pseudomonas": "Pseudomonas aeruginosa",
+    "Rnor": "Rattus norvegicus",
+    "Scer": "Saccharomyces cerevisiae",
+    "Solanaceae": "Solanaceae",
+    "Spom": "Schizosaccharomyces pombe",
+    "Sscr": "Sus scrofa"
+}
+
 def die_screaming(instr):
     """Make sure we exit in a way that will get Jenkins's attention."""
     LOG.error(instr)
@@ -66,6 +88,13 @@ def main():
     read_data = None
     with open(args.report) as fhandle:
         read_data = json.loads(fhandle.read())
+
+    ## Inject "species_label" next to "species_code".
+    for entry in read_data:
+        if entry["metadata"] and entry["metadata"]["species_code"]:
+            scode = entry["metadata"]["species_code"]
+            if smap[scode]:
+                entry["metadata"]["species_label"] = smap[scode]
 
     # ## Read in all of the useful data from the metadata data sources.
     # for datum in read_data:
