@@ -4003,3 +4003,8 @@
   nickname: 'Michelle Giglio'
   organization: 'IGS'
   uri: 'http://orcid.org/0000-0001-7628-5565'
+-
+  nickname: 'Josh Jaffery'
+  organization: WB
+  uri: 'GOC:jja'
+  xref: 'GOC:jja'
