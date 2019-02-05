@@ -1,0 +1,19 @@
+id: gocam
+label: GO-CAM
+description: "GO data from Noctua"
+datasets:
+ -
+   id: noctua_mgi.gpad
+   label: "noctua_mgi gpad file"
+   description: "gpad file for noctua from Noctua"
+   type: gpad
+   dataset: noctua_mgi
+   submitter: GOC
+   compression: gzip
+   source: ./products/annotations/noctua_mgi.gpad.gz
+   entity_type:
+   status: active
+   species_code:
+   taxa:
+    - NCBITaxon:5476
+   merges_into: mgi
