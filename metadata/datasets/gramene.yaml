@@ -16,7 +16,7 @@ datasets:
    dataset: gramene_oryza
    submitter: gramene
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.gramene_oryza.gz
+   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.gramene_oryza.gz
    entity_type:
    status: active
    species_code: Oryz
