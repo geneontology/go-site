@@ -16,7 +16,7 @@ datasets:
    dataset: sgn
    submitter: sgn
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.sgn.gz
+   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.sgn.gz
    entity_type:
    status: active
    species_code: Solanaceae

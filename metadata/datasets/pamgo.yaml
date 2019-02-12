@@ -16,7 +16,7 @@ datasets:
    dataset: pamgo_atumefaciens
    submitter: pamgo
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Atumefaciens.gz
+   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.PAMGO_Atumefaciens.gz
    entity_type:
    status: active
    species_code:
@@ -32,7 +32,7 @@ datasets:
    dataset: pamgo_ddadantii
    submitter: pamgo
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Ddadantii.gz
+   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.PAMGO_Ddadantii.gz
    entity_type:
    status: active
    species_code:
@@ -48,7 +48,7 @@ datasets:
    dataset: pamgo_mgrisea
    submitter: pamgo
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Mgrisea.gz
+   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.PAMGO_Mgrisea.gz
    entity_type:
    status: active
    species_code:
@@ -64,7 +64,7 @@ datasets:
    dataset: pamgo_oomycetes
    submitter: pamgo
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Oomycetes.gz
+   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.PAMGO_Oomycetes.gz
    entity_type:
    status: active
    species_code:

@@ -16,7 +16,7 @@ datasets:
    dataset: reactome
    submitter: reactome
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.reactome.gz
+   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.reactome.gz
    entity_type:
    status: inactive
    species_code:

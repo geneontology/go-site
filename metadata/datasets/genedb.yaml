@@ -32,7 +32,7 @@ datasets:
    dataset: genedb_pfalciparum
    submitter: genedb
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.GeneDB_Pfalciparum.gz
+   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.GeneDB_Pfalciparum.gz
    entity_type:
    status: active
    species_code:
