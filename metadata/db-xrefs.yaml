@@ -186,6 +186,19 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
+- database: bioRxiv
+  name: bioRxiv
+  synonyms:
+    - BIORXIV
+  generic_urls:
+    - https://www.biorxiv.org/
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      id_syntax: '[0-9]+'
+      url_syntax: https://www.biorxiv.org/content/[example_id]
+      example_id: bioRxiv:10.1101/530881v2
+      example_url: https://www.biorxiv.org/content/10.1101/530881v2
 - database: BIOSIS
   name: BIOSIS previews
   generic_urls:
