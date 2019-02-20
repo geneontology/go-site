@@ -802,7 +802,7 @@
 -
   nickname: 'Tony Planchart'
   organization: MGI
-  uri: 'GOC:ajp'
+  uri: 'uri: 'https://orcid.org/0000-0001-8691-8856'
   xref: 'GOC:ajp'
 -
   accounts:
@@ -4008,3 +4008,13 @@
   organization: WB
   uri: 'GOC:jja'
   xref: 'GOC:jja'
+-
+  nickname: 'Teresa Chu'
+  organization: MGI
+  uri: 'GOC:tc'
+  xref 'GOC:tc'
+ -
+ nicknames: 'Allan P Davis' 
+ organization: MGI
+ uri: 'GOC:apd'
+ xref: 'GOC:apd'
