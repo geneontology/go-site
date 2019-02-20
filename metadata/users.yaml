@@ -4012,7 +4012,7 @@
   nickname: 'Teresa Chu'
   organization: MGI
   uri: 'GOC:tc'
-  xref 'GOC:tc'
+  xref: 'GOC:tc'
  -
  nicknames: 'Allan P Davis' 
  organization: MGI
