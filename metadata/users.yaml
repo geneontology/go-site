@@ -4014,7 +4014,7 @@
   uri: 'GOC:tc'
   xref: 'GOC:tc'
 -
- nicknames: 'Allan P Davis' 
+ nickname: 'Allan P Davis' 
  organization: MGI
  uri: 'GOC:apd'
  xref: 'GOC:apd'
