@@ -4,6 +4,9 @@ Alzheimers_University_of_Toronto,Ruth Lovering,@RLovering,
 ARUK-UCL,Barbara Kramarz,@BarbaraCzub,
 ARUK-UCL,Ruth Lovering,@RLovering,
 ASPGD,Marek Skrzypek,@marekskrzypek,
+BBOP,Seth Carbon,@kltm,Data pipeline,AmiGO,Website
+BBOP,Chris Mungall,@cmungall,Most things technical and ontology-related
+BBOP,Eric Douglass,@dougli1sqrd,GO Rules - ROBOT
 BHF-UCL,Rachael Huntley,@rachhuntley,
 BHF-UCL,Barbara Kramarz,@BarbaraCzub,
 BHF-UCL,Ruth Lovering,@RLovering,
@@ -65,13 +68,13 @@ PAINT,Pascale Gaudet,@pgaudet,
 PAINT,Marc Feurmann,@marcfeuermann,
 PAINT,Michael Kesling,@keslingmj,
 PAINT,Huaiyu Mi,@huaiyumi,
+PAINT Software, Anushya Muruganujan,@mugitty,PAINT software developer
 PAMGO_GAT,Not actively maintainted/GO_Central,@pgaudet,
 PAMGO_GAT,Not actively maintainted/GO_Central,@ggeorghiou,
 PAMGO_GAT,Not actively maintainted/GO_Central,@vanaukenk,
 PAMGO_MGG,Not actively maintainted/GO_Central,@pgaudet,
 PAMGO_MGG,Not actively maintainted/GO_Central,@ggeorghiou,
 PAMGO_MGG,Not actively maintainted/GO_Central,@vanaukenk,
-PantherDB,Anushya Muruganujan,@mugitty,PAINT software developer
 ParkinsonsUK-UCL,Barbara Kramarz,@BarbaraCzub,
 ParkinsonsUK-UCL,Ruth Lovering,@RLovering,
 PINC,Not actively maintainted/GO_Central,@ggeorghiou,
@@ -119,11 +122,11 @@ UniProt (Swiss-Prot/Geneva),Kristian Axelsen,@kaxelsen,
 UniProt (Swiss-Prot/Geneva),Marc Feuermann, @marcfeuermann,
 UniProt (Swiss-Prot/Geneva),Ivo Pedruzzi,@pedruzzi, 
 UniProt (Swiss-Prot/Geneva),Sylvain Poux,@sylvainpoux,
-USC,Dustin Ebert,@dustine32,
+USC,Dustin Ebert,@dustine32,PAINT pipeline
 WormBase,Kimberly Van Auken,@vanaukenk,C.elegans
 Wikidata,Andrew Su,@andrewsu,
 Wikidata,Derek,@djow2019 ,
-ZFIN,Sabrina Toro,@sabrinatoro,
-ZFIN,Doug Howe,@doughowe,
+ZFIN,Sabrina Toro,@sabrinatoro,Zebra fish
+ZFIN,Doug Howe,@doughowe,Zebra fish
 Domain expert,,@khybiske,Chlamydia
 Domain expert,,@putmantime,Chlamydia
