@@ -143,7 +143,15 @@ def main():
             abstract = 'n/a'
             comments = 'n/a'
             next_block_type = None
-            for block in mdj['blocks']:
+            ## A workaround for the change in JSON format in pandoc in
+            ## 1.18; Ubuntu 16.04 uses 1.16.0.2 and 18.04 uses
+            ## 1.19.2.4.
+            blocks = None
+            if type(mdj) == list:
+                blocks = mdj[1]
+            else:
+                blocks = mdj['blocks']
+            for block in blocks:
                 ## If is a header and has something there in the
                 ## header.
                 #LOG.info(json.dumps(block))
