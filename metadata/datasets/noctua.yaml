@@ -1,10 +1,10 @@
 id: noctua
-label: NOCTUA
-description: "GO data for NOCTUA"
+label: Noctua
+description: "GO data for Noctua"
 datasets:
   - id: noctua_mgi.gpad
     label: "noctua_mgi gpad file"
-    description: "gpad file for mgi from Noctua"
+    description: "GPAD file for MGI from Noctua"
     type: gpad
     dataset: noctua_mgi
     submitter: GOC
@@ -19,7 +19,7 @@ datasets:
 
   - id: noctua_fb.gpad
     label: "noctua_fb gpad file"
-    description: "gpad file for fb from Noctua"
+    description: "GPAD file for FB from Noctua"
     type: gpad
     dataset: noctua_fb
     submitter: GOC
@@ -34,7 +34,7 @@ datasets:
 
   - id: noctua_rgd.gpad
     label: "noctua_rgd gpad file"
-    description: "gpad file for rgd from Noctua"
+    description: "GPAD file for RGD from Noctua"
     type: gpad
     dataset: noctua_rgd
     submitter: GOC
@@ -49,7 +49,7 @@ datasets:
 
   - id: noctua_sgd.gpad
     label: "noctua_sgd gpad file"
-    description: "gpad file for sgd from Noctua"
+    description: "GPAD file for SGD from Noctua"
     type: gpad
     dataset: noctua_sgd
     submitter: GOC
@@ -68,7 +68,7 @@ datasets:
 
   - id: noctua_wb.gpad
     label: "noctua_wb gpad file"
-    description: "gpad file for wb from Noctua"
+    description: "GPAD file for WB from Noctua"
     type: gpad
     dataset: noctua_wb
     submitter: GOC
@@ -83,7 +83,7 @@ datasets:
 
   - id: noctua_xenbase.gpad
     label: "noctua_xenbase gpad file"
-    description: "gpad file for xenbase from Noctua"
+    description: "GPAD file for Xenbase from Noctua"
     type: gpad
     dataset: noctua_xenbase
     submitter: GOC
@@ -99,7 +99,7 @@ datasets:
 
   - id: noctua_zfin.gpad
     label: "noctua_zfin gpad file"
-    description: "gpad file for zfin from Noctua"
+    description: "GPAD file for ZFIN from Noctua"
     type: gpad
     dataset: noctua_zfin
     submitter: GOC
