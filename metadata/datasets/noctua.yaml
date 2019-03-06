@@ -67,7 +67,7 @@ datasets:
       - NCBITaxon:559292
 
   - id: noctua_wb.gpad
-    label: "noctua_mgi gpad file"
+    label: "noctua_wb gpad file"
     description: "gpad file for wb from Noctua"
     type: gpad
     dataset: noctua_wb
