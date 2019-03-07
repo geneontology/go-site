@@ -1,6 +1,6 @@
 id: noctua
 label: Noctua
-description: "GO data for Noctua"
+description: "GO-CAM data from Noctua"
 datasets:
   - id: noctua_mgi.gpad
     label: "noctua_mgi gpad file"
