@@ -15,8 +15,8 @@ datasets:
    type: gaf
    dataset: reactome
    submitter: reactome
-   compression: gzip
-   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.reactome.gz
+   compression:
+   source: https://reactome.org/download/current/gene_association.reactome
    entity_type:
    status: inactive
    species_code:
