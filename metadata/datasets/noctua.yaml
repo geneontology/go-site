@@ -11,7 +11,7 @@ datasets:
     compression: gzip
     source: ./products/annotations/noctua_mgi.gpad.gz
     entity_type:
-    status: active
+    status: inactive
     species_code:
     merges_into: mgi
     taxa:
@@ -26,7 +26,7 @@ datasets:
     compression: gzip
     source: ./products/annotations/noctua_fb.gpad.gz
     entity_type:
-    status: active
+    status: inactive
     species_code:
     merges_into: fb
     taxa:
@@ -41,7 +41,7 @@ datasets:
     compression: gzip
     source: ./products/annotations/noctua_rgd.gpad.gz
     entity_type:
-    status: active
+    status: inactive
     species_code:
     merges_into: rgd
     taxa:
@@ -56,7 +56,7 @@ datasets:
     compression: gzip
     source: ./products/annotations/noctua_sgd.gpad.gz
     entity_type:
-    status: active
+    status: inactive
     species_code:
     merges_into: sgd
     taxa:
@@ -75,7 +75,7 @@ datasets:
     compression: gzip
     source: ./products/annotations/noctua_wb.gpad.gz
     entity_type:
-    status: active
+    status: inactive
     species_code:
     merges_into: wb
     taxa:
@@ -90,7 +90,7 @@ datasets:
     compression: gzip
     source: ./products/annotations/noctua_xenbase.gpad.gz
     entity_type:
-    status: active
+    status: inactive
     species_code:
     merges_into: xenbase
     taxa:
@@ -106,7 +106,7 @@ datasets:
     compression: gzip
     source: ./products/annotations/noctua_zfin.gpad.gz
     entity_type:
-    status: active
+    status: inactive
     species_code:
     merges_into: zfin
     taxa:
