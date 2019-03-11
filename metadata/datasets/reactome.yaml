@@ -18,6 +18,6 @@ datasets:
    compression:
    source: https://reactome.org/download/current/gene_association.reactome
    entity_type:
-   status: inactive
+   status: active
    species_code:
    taxa:
