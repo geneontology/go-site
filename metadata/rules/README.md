@@ -42,6 +42,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000033">GORULE:0000033 Group specific Reference IDs (column 6) will be replaced by corresponding GO_REF (or other public ID) or filtered.</a>
  * <a href="#gorule0000035">GORULE:0000035 'Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.</a>
  * <a href="#gorule0000036">GORULE:0000036 Report annotations that involve gene products where the gene product is annotated to a term 'x' and 'regulation of X' (multiple annotations involved)</a>
+ * <a href="#gorule0000037">GORULE:0000037 IBA annotations should ONLY be assigned_by GO_Central and have PMID:21873635 as a reference</a>
  * <a href="#gorule0000038">GORULE:0000038 Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column) where there exists another annotation with the same or a more granular term using experimental evidence</a>
  * <a href="#gorule0000039">GORULE:0000039 Protein complexes can not be annotated to GO:0032991 (protein-containing complex) or its descendants</a>
  * <a href="#gorule0000042">GORULE:0000042 Qualifier: IKR evidence code requires a NOT qualifier</a>
@@ -53,6 +54,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000048">GORULE:0000048 Gene products having ND annotations and other annotations in the same aspect should be reviewed</a>
  * <a href="#gorule0000049">GORULE:0000049 If the annotation has 'contributes_to' as its qualifier, verify that at least one annotation to GO:0043234 (protein complex), or one of its child terms exists</a>
  * <a href="#gorule0000051">GORULE:0000051 Annotations to ISS, ISA and ISO should not be self-referential</a>
+ * <a href="#gorule0000051">GORULE:0000051 Direct annotations to 'GO:0008283 cell population proliferation' require a value in the Annotation Extension field</a>
 
 
 
@@ -713,6 +715,23 @@ The list of GO_REFs are here: https://github.com/geneontology/go-site/tree/maste
 Few proteins are part of a process as well as regulate that process. We need to review the list of proteins having annotations to a term x and to regulation of that term. This report would look globally at all annotations from any source and look for co-annotation of a term 'x' and its regulation ('regulation of X').
 As a second step we may create exception lists for cases known to be correct. 
 
+<a name="gorule0000037"/>
+
+## IBA annotations should ONLY be assigned_by GO_Central and have PMID:21873635 as a reference
+
+ * id: [GORULE:0000037](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000037.md)
+ * status: proposed
+
+
+
+Only files coming from the https://github.com/geneontology/go-site/blob/master/metadata/datasets/paint.yaml can use the IBA evidence code. 
+
+If the evidence code is IBA, then (1) the assigned_by field must be GO_Central and (2) the reference field must be PMID:21873635.
+
+Implementation: the GO Central pipeline should filter out IBAs from any submission source that is not a PAINT submission source, i.e. one registered in paint.yaml and having a name paint_X. Note that IBAs from PAINT will be injected in to the final release file for that organism.
+
+Also see GORULE:0000026.
+
 <a name="gorule0000038"/>
 
 ## Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column) where there exists another annotation with the same or a more granular term using experimental evidence
@@ -852,3 +871,13 @@ The 'contributes to' qualifier can only be applied to proteins belonging to comp
 
 
 Annotations to ISS, ISA and ISO should not have the same identifier in the 'gene product column' (column 2) and in the 'with/from' column (column 8).
+
+<a name="gorule0000051"/>
+
+## Direct annotations to 'GO:0008283 cell population proliferation' require a value in the Annotation Extension field
+
+ * id: [GORULE:0000051](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000051.md)
+ * status: implemented
+
+
+Direct annotations to 'GO:0008283 cell population proliferation' require a value in the Annotation Extension field
