@@ -394,3 +394,8 @@
   label: JCVI
   id: https://www.jcvi.org
   shorthand: JCVI
+  -   
+  label: Roslin Institute
+  id: https://www.ed.ac.uk/roslin
+  shorthand: RI
+-
