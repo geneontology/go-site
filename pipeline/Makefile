@@ -129,7 +129,7 @@ target/groups/goa/goa_uniprot_all-owltools-check.txt: target/groups/goa/goa_unip
 GOA_UNIPROT_ALL_URL ?= $(shell grep -A 10 "id: goa_uniprot_all.gaf" ../metadata/datasets/goa.yaml | grep source: | awk '{ print $$2 }')
 target/groups/goa/goa_uniprot_all-src.gaf.gz:
 	mkdir -p target/groups/goa
-	wget --retry-connrefused --waitretry=10 -t 10 --no-check-certificate $(GOA_UNIPROT_ALL_URL) -O $@.tmp && mv $@.tmp $@
+	wget -nv --retry-connrefused --waitretry=10 -t 10 --no-check-certificate $(GOA_UNIPROT_ALL_URL) -O $@.tmp && mv $@.tmp $@
 
 target/alltaxons.txt:
 	python3 util/model_organism.py taxons ../metadata/datasets/ --out target/alltaxons.txt
