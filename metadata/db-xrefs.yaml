@@ -2660,15 +2660,6 @@
       url_syntax: http://purl.obolibrary.org/obo/RO_[example_id]
       example_id: RO:0002211
       example_url: http://purl.obolibrary.org/obo/RO_0002211
-- database: Roslin_Institute
-  name: Roslin Institute
-  synonyms:
-    - RI
-  generic_urls:
-    - http://www.roslin.ac.uk/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
 - database: SABIO-RK
   name: SABIO Reaction Kinetics
   description: The SABIO-RK (System for the Analysis of Biochemical Pathways - Reaction Kinetics) is a web-based application based on the SABIO relational database that contains information about biochemical reactions, their kinetic equations with their parameters, and the experimental conditions under which these parameters were measured.
