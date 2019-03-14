@@ -17,12 +17,13 @@ CACAO,Debbie Siegle,@dsiegele,
 CACAO,Jolene Ramsey,@jrr-cpt,
 CGD,Marek Skrzypek,@marekskrzypek,
 CollectTF,Ivan Erill,@ivanerill,
-DFLAT,Not actively maintainted/GO_Central,@ggeorghiou,
-DFLAT,Not actively maintainted/GO_Central,@pgaudet,
-DFLAT,Not actively maintainted/GO_Central,@vanaukenk,
+DFLAT,Not actively maintainted/GO_Central,@ggeorghiou,no contact person
+DFLAT,Not actively maintainted/GO_Central,@pgaudet,no contact person
+DFLAT,Not actively maintainted/GO_Central,@vanaukenk,no contact person
 dictyBase,Petra Fey,@pfey03,
 dictyBase,Robert Dodson,@rjdodson,
 EcoCyc,Ingrid Keseler,@keseler,
+EcoCyc,Amanda Mackie,@amandamackie,
 ECO - Evidence and Conclusion Ontology,Michelle Giglio,@mgiglio99,
 ECO - Evidence and Conclusion Ontology,Suvvi Nadendla,@nsuvarnaiari,
 ECO - Evidence and Conclusion Ontology,James Munro,@jbmunro,
@@ -49,13 +50,13 @@ InterPro,Alex Mitchell,@almitchell,
 InterPro,Lorna Richardson,@happy-lorna,
 InterPro,Neil Rawlings,@ndrawlings,
 InterPro,Hsin-Yu Chang,@EBI-Hsinyu,
-JCVI,Not actively maintainted/GO_Central,@pgaudet,
-JCVI,Not actively maintainted/GO_Central,@ggeorghiou,
-JCVI,Not actively maintainted/GO_Central,@vanaukenk,
+JCVI,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
+JCVI,Not actively maintainted/GO_Central,@ggeorghiou,contact @mgiglio99 for queries
+JCVI,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
 LIFEdb,Stefan Wiemann,s.wiemann AT dkfz-heidelberg.de,
-MENGO,Not actively maintainted/GO_Central,@pgaudet,
-MENGO,Not actively maintainted/GO_Central,@ggeorghiou,
-MENGO,Not actively maintainted/GO_Central,@vanaukenk,
+MENGO,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
+MENGO,Not actively maintainted/GO_Central,@ggeorghiou,contact @mgiglio99 for queries
+MENGO,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
 MGI,Judy Blake,@judyblake,
 MGI,Karen Christie,@krchristie,
 MGI,Harold Drabkin,@hdrabkin,
@@ -69,17 +70,17 @@ PAINT,Marc Feurmann,@marcfeuermann,
 PAINT,Michael Kesling,@keslingmj,
 PAINT,Huaiyu Mi,@huaiyumi,
 PAINT Software, Anushya Muruganujan,@mugitty,PAINT software developer
-PAMGO_GAT,Not actively maintainted/GO_Central,@pgaudet,
-PAMGO_GAT,Not actively maintainted/GO_Central,@ggeorghiou,
-PAMGO_GAT,Not actively maintainted/GO_Central,@vanaukenk,
-PAMGO_MGG,Not actively maintainted/GO_Central,@pgaudet,
-PAMGO_MGG,Not actively maintainted/GO_Central,@ggeorghiou,
-PAMGO_MGG,Not actively maintainted/GO_Central,@vanaukenk,
+PAMGO_GAT,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
+PAMGO_GAT,Not actively maintainted/GO_Central,@ggeorghiou,contact @mgiglio99 for queries
+PAMGO_GAT,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
+PAMGO_MGG,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
+PAMGO_MGG,Not actively maintainted/GO_Central,@ggeorghiou,contact @mgiglio99 for queries
+PAMGO_MGG,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
 ParkinsonsUK-UCL,Barbara Kramarz,@BarbaraCzub,
 ParkinsonsUK-UCL,Ruth Lovering,@RLovering,
-PINC,Not actively maintainted/GO_Central,@ggeorghiou,
-PINC,Not actively maintainted/GO_Central,@pgaudet,
-PINC,Not actively maintainted/GO_Central,@vanaukenk,
+PINC,Not actively maintainted/GO_Central,@ggeorghiou,no contact person
+PINC,Not actively maintainted/GO_Central,@pgaudet,no contact person
+PINC,Not actively maintainted/GO_Central,@vanaukenk,no contact person
 PomBase,ValWood,@valwood,
 PomBase,Midori Harris,@mah11,
 PomBase,Antonia Lock,@antonialock,
@@ -94,7 +95,7 @@ Rfam,Anton Petrov,@AntonPetrov,
 Rfam,Ioanna Kalvari,@kalvari,
 Rfam,Joanna Arganiska,@JoannaArgasinska,
 RGD,Stan Laulederkind,@slaulederkind,
-Roslin_Institute,Not actively maintainted/GO_Central,@pgaudet,
+Roslin_Institute,Not actively maintainted/GO_Central,@pgaudet,no contact person
 SGD,Stacia Engel,@srengel,
 SGD,Suzi Aleksander,@suzialeksander,
 SGN,Lukas Mueller,@lukasmueller,
