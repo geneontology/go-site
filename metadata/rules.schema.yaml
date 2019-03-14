@@ -27,6 +27,13 @@ mapping:
     type: str
     required: true
     enum: ["hard", "soft"]
+  "tags":
+    type: seq
+    required: false
+    sequence:
+      - type: str
+        pattern: /[a-zA-Z_][\w]*/
+        unique: true
   "issues":
     required: false
     type: any
