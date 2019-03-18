@@ -94,13 +94,13 @@
 - database: ASAP
   name: A Systematic Annotation Package for Community Analysis of Genomes
   generic_urls:
-    - https://asap.ahabs.wisc.edu/annotation/php/ASAP1.htm
+    - https://asap.genetics.wisc.edu/asap/ASAP1.htm
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      url_syntax: https://asap.ahabs.wisc.edu/annotation/php/feature_info.php?FeatureID=[example_id]
-      example_id: ASAP:ABE-0000008
-      example_url: https://asap.ahabs.wisc.edu/annotation/php/feature_info.php?FeatureID=ABE-0000008
+      url_syntax: https://asap.genetics.wisc.edu/asap/feature_info.php?FeatureID=[example_id]
+      example_id: ASAP:ABF-0014586
+      example_url: https://asap.genetics.wisc.edu/asap/feature_info.php?FeatureID=ABF-0014586
 - database: AspGD
   name: Aspergillus Genome Database
   synonyms:
