@@ -28,6 +28,12 @@ mapping:
       - type: str
         required: false
         pattern: /GO_REF:[0-9]{7}/
+  "evidence_codes":
+    type: seq
+    required: false
+    sequence:
+      - type: str
+        pattern: /ECO:[0-9]{7}/
   # "alt_id":
   #   type: str
   #   required: false
