@@ -3427,4 +3427,4 @@
       type_id: BET:0000000
       url_syntax: http://tfclass.bioinf.med.uni-goettingen.de/?tfclass=[example_id]
       example_id: TFCLASS_FAMILY:2.1.1
-      url_example: http://tfclass.bioinf.med.uni-goettingen.de/?tfclass=2.1.1
+      example_url: http://tfclass.bioinf.med.uni-goettingen.de/?tfclass=2.1.1
