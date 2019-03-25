@@ -61,7 +61,7 @@ DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(DATASET_EXCLUDES),-x $(
 	# assigns a make variable called `group` computed from the $* generic target stem.
 	# Ex: target/groups/fb/fb.gaf as a target, the stem ($*) is target/groups/fb/fb, so `group` gets assigned to fb
 	$(eval group := $(lastword $(subst /, ,$*)))
-	python3 $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE)
+	python3 $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE) --suppress-rule-reporting-tag silent
 	touch $@
 
 # dataset
