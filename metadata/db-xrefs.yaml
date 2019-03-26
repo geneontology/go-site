@@ -276,7 +276,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-   - database: CARO
+- database: CARO
   name: Common Anatomy Reference Ontology
   description: An upper ontology for anatomy used by OBO Foundry ontologies. Used to facilitate interoperability between existing anatomy ontologies for different species 
   rdf_uri_prefix: http://purl.obolibrary.org/obo/CARO_
