@@ -1,3 +1,5 @@
+# python3 ./scripts/reports-page-gen.py --report ./combined.report.json --template ./scripts/reports-page-template.html --date 2019-03-26 > gorule-report.html
+
 import click
 import pystache
 import json
@@ -13,7 +15,8 @@ this_script = os.path.abspath(__file__)
 @click.option("--report", type=click.File("r"), required=True)
 @click.option("--template", type=click.File("r"), required=True)
 @click.option("--date", default=str(datetime.date.today()))
-def main(report, template, date):
+@click.option("--suppress-rule-tag", multiple=True)
+def main(report, template, date, suppress_rule_tag):
     report_json = json.load(report)
 
     header = sorted([{"id": dataset["id"]} for dataset in report_json], key=lambda h: h["id"])
@@ -22,11 +25,15 @@ def main(report, template, date):
     rules_directory = os.path.normpath(os.path.join(os.path.dirname(this_script), "../metadata/rules"))
 
     rules_descriptions = dict()
+    # Rule Descriptions is a map of rule ID to a {"title": rule title, "tags": list of possible rule tags}
     for rule_path in glob.glob(os.path.join(rules_directory, "gorule*.md")):
         with open(rule_path) as rule_file:
             rule = yamldown.load(rule_file)[0]
             rule_id = rule["id"].lower().replace(":", "-")
-            rules_descriptions[rule_id] = rule["title"]
+            rules_descriptions[rule_id] = {
+                "title": rule["title"],
+                "tags": rule.get("tags", [])
+            }
 
 
     rule_by_dataset = dict()
@@ -77,6 +84,10 @@ def main(report, template, date):
 
     for dataset in report_json:
         for rule, messages in dataset["messages"].items():
+            if any([tag in rules_descriptions.get(rule, {}).get("tags", []) for tag in suppress_rule_tag ]):
+                # For any that is passed in to be suppressed, if it is a tag in the rule, then skip the rule.
+                continue
+
             if rule not in rule_by_dataset:
                 level = messages[0]["level"].lower() if len(messages) > 0 else "info"
                 rule_by_dataset[rule] = {
@@ -120,7 +131,7 @@ def main(report, template, date):
         contents = sorted(contents, key=lambda d: d["dataset"])
         cell = {
             "rule": row["rule"],
-            "title": rules_descriptions.get(row["rule"], ""),
+            "title": rules_descriptions.get(row["rule"], {}).get("title", ""),
             "messages": contents,
             "is-other": row["rule"] == "other"
         }
