@@ -16,7 +16,7 @@ datasets:
    dataset: cgd
    submitter: cgd
    compression: gzip
-   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.cgd.gz
+   source: http://www.candidagenome.org/download/go/gene_association.cgd.gz
    entity_type:
    status: active
    species_code:
