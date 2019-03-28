@@ -3114,7 +3114,7 @@
   organization: Xenbase
   uri: 'http://orcid.org/0000-0003-1074-8103'
 - 
-   accounts:
+  accounts:
     github: Xenbase2
   authorizations:
     noctua:
