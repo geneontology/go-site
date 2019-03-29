@@ -3411,15 +3411,15 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: ZDB-(GENE|GENO|MRPHLNO)-[0-9]{6}-[0-9]+
-      url_syntax: http://zfin.org/cgi-bin/ZFIN_jump?record=[example_id]
-      example_id: ZFIN:ZDB-GENE-990415-103
-      example_url: http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-GENE-990415-103
+      url_syntax: http://zfin.org/[example_id]
+      example_id: ZDB-GENE-990415-103
+      example_url: http://zfin.org/ZDB-GENE-990415-103
     - type_name: variation
       type_id: VariO:0001
       id_syntax: ZDB-(GENE|GENO|MRPHLNO)-[0-9]{6}-[0-9]+
-      url_syntax: http://zfin.org/cgi-bin/ZFIN_jump?record=[example_id]
-      example_id: ZFIN:ZDB-GENE-990415-103
-      example_url: http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-GENE-990415-103
+      url_syntax: http://zfin.org/[example_id]
+      example_id: ZDB-GENE-990415-103
+      example_url: http://zfin.org/ZDB-GENE-990415-103
 - database: PLANA_REF
   name: Planaria Ontology Database References
   generic_urls:
