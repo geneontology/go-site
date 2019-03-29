@@ -276,6 +276,18 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
+- database: CARO
+  name: Common Anatomy Reference Ontology
+  description: An upper ontology for anatomy used by OBO Foundry ontologies. Used to facilitate interoperability between existing anatomy ontologies for different species 
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/CARO_
+  generic_urls:
+    - http://purl.obolibrary.org/obo/caro
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: http://purl.obolibrary.org/obo/CARO_[example_id]
+      example_id: CARO:0020003
+      example_url: http://purl.obolibrary.org/obo/CARO_0020003
 - database: CAS
   name: CAS Chemical Registry
   description: CAS REGISTRY is the most authoritative collection of disclosed chemical substance information, containing more than 54 million organic and inorganic substances and 62 million sequences. CAS REGISTRY covers substances identified from the scientific literature from 1957 to the present, with additional substances going back to the early 1900s.
