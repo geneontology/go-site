@@ -9,7 +9,7 @@ METADATA_DIR=../metadata
 DATASET_EXCLUDES ?= goa_uniprot_gcrp goa_pdb
 
 # The gorule tags used to identify which rules to suppress reports from
-GORULE_TAGS_TO_SUPPRESS ?= silent
+GORULE_TAGS_TO_SUPPRESS ?=
 
 # for each path in the shell `find`, get just the filename, then strip the extension for each group
 # Ex: will end up being just the yaml file names in the datasets directory (aspgd mgi goa fb [etc])
