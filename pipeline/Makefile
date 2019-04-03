@@ -8,8 +8,8 @@ METADATA_DIR=../metadata
 
 DATASET_EXCLUDES ?= goa_uniprot_gcrp goa_pdb
 
-# The gorule tag used to identify which rules to suppress reports from
-GORULE_TAG_TO_SUPPRESS ?= silent
+# The gorule tags used to identify which rules to suppress reports from
+GORULE_TAGS_TO_SUPPRESS ?= silent
 
 # for each path in the shell `find`, get just the filename, then strip the extension for each group
 # Ex: will end up being just the yaml file names in the datasets directory (aspgd mgi goa fb [etc])
@@ -55,6 +55,7 @@ PY_ENV ?= target/env
 PY_BIN ?= $(PY_ENV)/bin
 VALIDATE = $(PY_BIN)/validate.py
 DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(DATASET_EXCLUDES),-x $(exclusion) )
+SUPPRESS_THESE_TAGS = $(foreach tag,$(GORULE_TAGS_TO_SUPPRESS),--suppress-rule-reporting-tag $(tag) )
 
 # Should be something like target/groups/<group>/<group>.group
 .PRECIOUS: %.gaf.gz
@@ -64,7 +65,7 @@ DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(DATASET_EXCLUDES),-x $(
 	# assigns a make variable called `group` computed from the $* generic target stem.
 	# Ex: target/groups/fb/fb.gaf as a target, the stem ($*) is target/groups/fb/fb, so `group` gets assigned to fb
 	$(eval group := $(lastword $(subst /, ,$*)))
-	python3 $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE) --suppress-rule-reporting-tag $(GORULE_TAG_TO_SUPPRESS)
+	python3 $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE) $(SUPPRESS_THESE_TAGS)
 	touch $@
 
 # dataset
