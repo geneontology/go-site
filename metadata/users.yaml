@@ -3113,6 +3113,20 @@
   nickname: 'Malcolm Fisher'
   organization: Xenbase
   uri: 'http://orcid.org/0000-0003-1074-8103'
+- 
+  accounts:
+    github: Xenbase2
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 
+  groups:
+    - 'http://www.xenbase.org'
+  nickname: 'Christina James-Zorn'
+  organization: Xenbase
+  uri: 'http://orcid.org/0000-0001-5495-4588'
 -
   accounts:
     github: chris-grove
