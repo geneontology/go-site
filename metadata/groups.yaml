@@ -394,7 +394,11 @@
   label: JCVI
   id: https://www.jcvi.org
   shorthand: JCVI
--   
+-
   label: Roslin Institute
   id: https://www.ed.ac.uk/roslin
   shorthand: Roslin_Institute
+-
+  label: GREEKC
+  id: http://greekc.org
+  shorthand: GREEKC

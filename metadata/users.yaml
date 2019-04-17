@@ -237,8 +237,8 @@
     - 87b721597d5a997234f5a8f61bde469b
   groups:
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
-    - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl'
-    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl'
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological'
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/syngo'
   nickname: 'Ruth Lovering'
   organization: BHF-UCL
   uri: 'http://orcid.org/0000-0002-9791-0064'
@@ -3113,7 +3113,7 @@
   nickname: 'Malcolm Fisher'
   organization: Xenbase
   uri: 'http://orcid.org/0000-0003-1074-8103'
-- 
+-
   accounts:
     github: Xenbase2
   authorizations:
@@ -3121,7 +3121,7 @@
       go:
         allow-edit: true
   email-md5:
-    - 
+    -
   groups:
     - 'http://www.xenbase.org'
   nickname: 'Christina James-Zorn'
@@ -3243,9 +3243,9 @@
     - 05856707bf8eca390ae3ddcf689e9011
     - 99b4072c338978afc0a90bc7f217cef8
   groups:
-    - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl'
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological'
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
-    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl'
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/syngo'
   nickname: 'Barbara Kramarz'
   organization: BHF-UCL
   uri: 'http://orcid.org/0000-0002-3898-1727'
@@ -4028,7 +4028,7 @@
   uri: 'GOC:tc'
   xref: 'GOC:tc'
 -
- nickname: 'Allan P Davis' 
+ nickname: 'Allan P Davis'
  organization: MGI
  uri: 'GOC:apd'
  xref: 'GOC:apd'
@@ -4040,7 +4040,7 @@
       go:
         allow-edit: true
   groups:
-    - 'https://greekc.org'
+    - 'http://greekc.org'
   nickname: 'Jesualdo Tomás Fernández Breis'
   organization: 'University of Murcia'
   uri: 'http://orcid.org/0000-0002-7558-2880'
@@ -4052,7 +4052,7 @@
       go:
         allow-edit: true
   groups:
-    - 'https://greekc.org'
+    - 'http://greekc.org'
   nickname: 'Belén Juanes Cortés'
   organization: 'University of Murcia'
   uri: 'http://orcid.org/0000-0003-3641-7548'
