@@ -2585,11 +2585,14 @@
 - database: RESID
   name: RESID Database of Protein Modifications
   generic_urls:
-    - ftp://ftp.ncifcrf.gov/pub/users/residues/
+    - https://proteininformationresource.org/resid/resid.shtml
   entity_types:
     - type_name: entity
       type_id: BET:0000000
+      id_syntax: AA[0-9]{4}
+      url_syntax: https://proteininformationresource.org/cgi-bin/resid?id=[example_id]
       example_id: RESID:AA0062
+      example_url: https://proteininformationresource.org/cgi-bin/resid?id=AA0062
 - database: Rfam
   name: Rfam database of RNA families
   generic_urls:
