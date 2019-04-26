@@ -43,3 +43,7 @@ datasets:
     - NCBITaxon:767770
     - NCBITaxon:162425
     - NCBITaxon:5085
+    - NCBITaxon:330879
+    - NCBITaxon:510516
+    - NCBITaxon:227321
+    - NCBITaxon:425011
