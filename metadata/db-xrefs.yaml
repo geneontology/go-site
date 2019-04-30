@@ -3421,7 +3421,8 @@
       example_url: http://purl.obolibrary.org/obo/plana/references/0000001
 - database: TFClass
   name: TFClass is a resource for the classification of eukaryotic transcription factors based on the characteristics of their DNA-binding domains
-  generic_urls: http://tfclass.bioinf.med.uni-goettingen.de/
+  generic_urls: 
+    - http://tfclass.bioinf.med.uni-goettingen.de/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
