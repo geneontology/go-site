@@ -183,6 +183,7 @@ target/blazegraph-internal.jnl: target/blazegraph.jnl
 	cp $< $@
 	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=$@ update sparql/insert/insert_noctua_metadata.sparql
 	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=$@ update sparql/insert/insert_ontology_metadata.sparql
+	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=$@ update sparql/insert/insert_reflexive_subclass_closure.sparql
 
 target/blazegraph-production.jnl: target/blazegraph-internal.jnl
 	cp $< $@
