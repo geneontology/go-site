@@ -92,8 +92,7 @@ GOA_UNIPROT_ALL = target/groups/goa/goa_uniprot_all_noiea.gpi target/groups/goa/
 
 # target/groups/goa/goa_uniprot_all.gaf.gz
 target/groups/goa/goa_uniprot_all_noiea.gaf: target/alltaxons.txt target/groups/goa/goa_uniprot_all-src.gaf.gz
-	gzip -dcf target/groups/goa/goa_uniprot_all-src.gaf.gz | ./util/goa_filter > target/groups/goa/goa_uniprot_all.gaf.tmp
-	cat noiea > target/groups/goa/goa_uniprot_all_noiea.gaf && rm noiea && mv target/groups/goa/goa_uniprot_all.gaf.tmp target/groups/goa/goa_uniprot_all.gaf
+	gzip -dcf target/groups/goa/goa_uniprot_all-src.gaf.gz | ./util/goa_filter -v report=target/groups/goa/goa_uniprot_all_skipped.report -v noiea=target/groups/goa/goa_uniprot_all_noiea.gaf > target/groups/goa/goa_uniprot_all.gaf.tmp
 	gzip -cf target/groups/goa/goa_uniprot_all.gaf > target/groups/goa/goa_uniprot_all.gaf.gz
 	gzip -cf target/groups/goa/goa_uniprot_all_noiea.gaf > target/groups/goa/goa_uniprot_all_noiea.gaf.gz
 
