@@ -44,7 +44,7 @@ target/go-ontology.json:
 
 GAF_OWL = target/go-gaf.owl
 $(GAF_OWL):
-	owltools --log-error $(OBO)/go/extensions/go-gaf.owl --merge-imports-closure --add-obo-shorthand-to-properties -o $@
+	wget --no-check-certificate $(OBO)/go/extensions/go-gaf.owl -O $@.tmp && mv $@.tmp $@ && touch $@
 
 ## Ensure that we are bringing in the environment we want.
 OWLTOOLS_MEMORY ?= 8G
