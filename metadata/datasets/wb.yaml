@@ -9,7 +9,7 @@ email_report: "ranjana@its.caltech.edu,vanauken@caltech.edu"
 datasets:
  -
    id: wb.gaf
-   label: "wb gaf file"
+   label: "wb le"
    description: "gaf file for wb from WormBase database of nematode biology"
    url: http://current.geneontology.org/annotations/wb.gaf.gz
    type: gaf
