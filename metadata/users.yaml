@@ -364,9 +364,11 @@
   uri: 'GOC:atm'
   xref: 'GOC:atm'
 -
+  accounts: 
+    github: jimhu-tamu
   nickname: 'Jim Hu'
-  organization: 'EcoliWiki/CACAO'
-  uri: 'GOC:jh2'
+  organization: 'E. coli'
+  uri: 'https://orcid.org/0000-0001-9016-2684'
   xref: 'GOC:jh2'
 -
   email-md5:
