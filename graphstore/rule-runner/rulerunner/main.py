@@ -15,7 +15,7 @@ from pykwalify.core import Core
 
 from rulerunner import rule
 
-SCHEMA = os.path.join(os.getcwd(), "../metadata/rules.schema.yml")
+SCHEMA = os.path.join(os.getcwd(), "../metadata/rules.schema.yaml")
 
 class RuleParameter(click.Path):
     name = "rule"
@@ -119,6 +119,38 @@ def local(turtle, sparql_file):
     results = g.query(sparql_file.read())
     click.echo(results.serialize(format="txt"))
 
+@cli.command()
+@click.option("rules_dir", "--rules", type=click.Path(exists=True, readable=True, resolve_path=True, dir_okay=True, file_okay=False))
+@click.option("--schema", type=click.Path(exists=True, readable=True, dir_okay=False))
+def valid(rules_dir, schema):
+    validation_failed = False
+    gorules_paths = glob.glob(os.path.join(rules_directory(path=rules_dir), "gorule-*.md"))
+    validations = {}
+    for path in gorules_paths:
+        try:
+            validations[path] = load_yamldown(path)
+        except:
+            validations[path] = "Invalid YAML"
+            validation_failed = True
+
+    # click.echo(json.dumps(validations, indent=4))
+    s = schema if schema else SCHEMA
+    click.echo(SCHEMA)
+    for (p, r) in validations.items():
+        # click.echo("{}: {}".format(p, r))
+        if isinstance(r, dict):
+            try:
+                validate(r, s)
+                validations[p] = "Valid"
+            except click.ClickException as e:
+                validations[p] = e.message
+                validation_failed = True
+
+    for (p, r) in validations.items():
+        click.echo("{path}: {status}".format(path=p, status=r))
+
+    if validation_failed:
+        raise click.ClickException("Failed Validation")
 
 def rules_directory(path=None):
     if path is None:
@@ -132,7 +164,11 @@ def load_yamldown(path):
     """
     try:
         with open(path, "r") as f:
-            return yamldown.load(f)[0]
+            load = yamldown.load(f)[0]
+            if load == None:
+                raise click.ClickException("No rule present at {}".format(path))
+
+            return load
 
     except Exception as e:
         raise click.ClickException(str(e))

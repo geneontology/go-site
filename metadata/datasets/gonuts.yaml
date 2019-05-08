@@ -7,18 +7,17 @@ project_url: "http://gowiki.tamu.edu"
 funding_source: "NIGMS U24GM088849"
 email_report: "ecoliwiki@gmail.com"
 datasets:
- -    
+ -
    id: gonuts.gaf
    label: "gonuts gaf file"
    description: "gaf file for gonuts from Gene Ontology Normal Usage Tracking System (GONUTS)"
-   url: http://geneontology.org/gene-associations/gene_association.gonuts.gz
+   url: http://current.geneontology.org/annotations/gonuts.gaf.gz
    type: gaf
    dataset: gonuts
    submitter: gonuts
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.gonuts.gz
-   entity_type: 
+   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.gonuts.gz
+   entity_type:
    status: active
-   species_code: 
+   species_code:
    taxa:
-

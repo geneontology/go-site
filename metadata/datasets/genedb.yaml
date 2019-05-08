@@ -5,52 +5,52 @@ project_name: "Leishmania major GeneDB"
 contact_email: "mb4@sanger.ac.uk"
 project_url: "http://www.genedb.org/leish"
 funding_source: "unspecified"
-email_report: "mb4@sanger.ac.uk,maa@sanger.ac.uk"
+email_report: "mb4@sanger.ac.uk,maa@sanger.ac.uk,achchu@liverpool.ac.uk,ucb@sanger.ac.uk"
 datasets:
- -    
+ -
    id: genedb_lmajor.gaf
    label: "genedb_lmajor gaf file"
    description: "gaf file for genedb_lmajor from GeneDB"
-   url: http://geneontology.org/gene-associations/gene_association.GeneDB_Lmajor.gz
+   url: http://current.geneontology.org/annotations/genedb_lmajor.gaf.gz
    type: gaf
    dataset: genedb_lmajor
    submitter: genedb
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.GeneDB_Lmajor.gz
-   entity_type: 
+   source: ftp://ftp.sanger.ac.uk/pub/project/pathogens/as44/Lmajor.gaf.gz
+   entity_type:
    status: active
-   species_code: 
+   species_code:
    taxa:
     - NCBITaxon:5664
 
- -    
+ -
    id: genedb_pfalciparum.gaf
    label: "genedb_pfalciparum gaf file"
    description: "gaf file for genedb_pfalciparum from GeneDB"
-   url: http://geneontology.org/gene-associations/gene_association.GeneDB_Pfalciparum.gz
+   url: http://current.geneontology.org/annotations/genedb_pfalciparum.gaf.gz
    type: gaf
    dataset: genedb_pfalciparum
    submitter: genedb
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.GeneDB_Pfalciparum.gz
-   entity_type: 
+   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.GeneDB_Pfalciparum.gz
+   entity_type:
    status: active
-   species_code: 
+   species_code:
    taxa:
     - NCBITaxon:5833
 
- -    
+ -
    id: genedb_tbrucei.gaf
    label: "genedb_tbrucei gaf file"
    description: "gaf file for genedb_tbrucei from GeneDB"
-   url: http://geneontology.org/gene-associations/gene_association.GeneDB_Tbrucei.gz
+   url: http://current.geneontology.org/annotations/genedb_tbrucei.gaf.gz
    type: gaf
    dataset: genedb_tbrucei
    submitter: genedb
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.GeneDB_Tbrucei.gz
-   entity_type: 
+   source: ftp://ftp.sanger.ac.uk/pub/project/pathogens/as44/Tbruceibrucei927.gaf.gz
+   entity_type:
    status: active
-   species_code: 
+   species_code:
    taxa:
     - NCBITaxon:185431

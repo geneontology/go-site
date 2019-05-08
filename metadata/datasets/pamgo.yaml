@@ -7,67 +7,67 @@ project_url: "http://www.agrobacterium.org/"
 funding_source: "NSF/NRI-CSREES"
 email_report: "setubal@vbi.vt.edu"
 datasets:
- -    
+ -
    id: pamgo_atumefaciens.gaf
    label: "pamgo_atumefaciens gaf file"
    description: "gaf file for pamgo_atumefaciens from Plant-Associated Microbe Gene Ontology Interest Group"
-   url: http://geneontology.org/gene-associations/gene_association.PAMGO_Atumefaciens.gz
+   url: http://current.geneontology.org/annotations/pamgo_atumefaciens.gaf.gz
    type: gaf
    dataset: pamgo_atumefaciens
    submitter: pamgo
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Atumefaciens.gz
-   entity_type: 
+   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.PAMGO_Atumefaciens.gz
+   entity_type:
    status: active
-   species_code: 
+   species_code:
    taxa:
     - NCBITaxon:176299
 
- -    
+ -
    id: pamgo_ddadantii.gaf
    label: "pamgo_ddadantii gaf file"
    description: "gaf file for pamgo_ddadantii from Plant-Associated Microbe Gene Ontology Interest Group"
-   url: http://geneontology.org/gene-associations/gene_association.PAMGO_Ddadantii.gz
+   url: http://current.geneontology.org/annotations/pamgo_ddadantii.gaf.gz
    type: gaf
    dataset: pamgo_ddadantii
    submitter: pamgo
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Ddadantii.gz
-   entity_type: 
+   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.PAMGO_Ddadantii.gz
+   entity_type:
    status: active
-   species_code: 
+   species_code:
    taxa:
     - NCBITaxon:198628
 
- -    
+ -
    id: pamgo_mgrisea.gaf
    label: "pamgo_mgrisea gaf file"
    description: "gaf file for pamgo_mgrisea from Plant-Associated Microbe Gene Ontology Interest Group"
-   url: http://geneontology.org/gene-associations/gene_association.PAMGO_Mgrisea.gz
+   url: http://current.geneontology.org/annotations/pamgo_mgrisea.gaf.gz
    type: gaf
    dataset: pamgo_mgrisea
    submitter: pamgo
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Mgrisea.gz
-   entity_type: 
+   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.PAMGO_Mgrisea.gz
+   entity_type:
    status: active
-   species_code: 
+   species_code:
    taxa:
     - NCBITaxon:148305
 
- -    
+ -
    id: pamgo_oomycetes.gaf
    label: "pamgo_oomycetes gaf file"
    description: "gaf file for pamgo_oomycetes from Plant-Associated Microbe Gene Ontology Interest Group"
-   url: http://geneontology.org/gene-associations/gene_association.PAMGO_Oomycetes.gz
+   url: http://current.geneontology.org/annotations/pamgo_oomycetes.gaf.gz
    type: gaf
    dataset: pamgo_oomycetes
    submitter: pamgo
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.PAMGO_Oomycetes.gz
-   entity_type: 
+   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.PAMGO_Oomycetes.gz
+   entity_type:
    status: active
-   species_code: 
+   species_code:
    taxa:
     - NCBITaxon:123356
     - NCBITaxon:4784
@@ -77,4 +77,3 @@ datasets:
     - NCBITaxon:4792
     - NCBITaxon:65070
     - NCBITaxon:67593
-

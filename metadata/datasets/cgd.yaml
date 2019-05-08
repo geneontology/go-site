@@ -7,19 +7,19 @@ project_url: "http://www.candidagenome.org/"
 funding_source: "NIDCR at US NIH, grant number 1-R01-DE015873-01"
 email_report: "candida-curator@lists.stanford.edu"
 datasets:
- -    
+ -
    id: cgd.gaf
    label: "cgd gaf file"
    description: "gaf file for cgd from Candida Genome Database"
-   url: http://geneontology.org/gene-associations/gene_association.cgd.gz
+   url: http://current.geneontology.org/annotations/cgd.gaf.gz
    type: gaf
    dataset: cgd
    submitter: cgd
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.cgd.gz
-   entity_type: 
+   source: http://www.candidagenome.org/download/go/gene_association.cgd.gz
+   entity_type:
    status: active
-   species_code: 
+   species_code:
    taxa:
     - NCBITaxon:5476
     - NCBITaxon:5478
@@ -32,4 +32,7 @@ datasets:
     - NCBITaxon:306902
     - NCBITaxon:379508
     - NCBITaxon:42374
-    
+    - NCBITaxon:573826
+    - NCBITaxon:284593
+    - NCBITaxon:578454
+    - NCBITaxon:237561

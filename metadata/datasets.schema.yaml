@@ -61,7 +61,7 @@ mapping:
             unique: true
           "url":
             type: str
-            required: true
+            required: false
             unique: true
           "type":
             type: str
@@ -79,6 +79,7 @@ mapping:
             type: str
             required: false
             unique: false
+            enum: ['', gzip]
           "source":
             type: str
             required: false
