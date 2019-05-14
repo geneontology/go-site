@@ -21,4 +21,3 @@ datasets:
    status: active
    species_code: Solanaceae
    taxa:
-    - NCBITaxon:4081
