@@ -39,7 +39,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000030">GORULE:0000030 Deprecated GO_REFs are not allowed</a>
  * <a href="#gorule0000031">GORULE:0000031 Annotation relations are replaced when not provided by source</a>
  * <a href="#gorule0000032">GORULE:0000032 Allowed References for each ECO.</a>
- * <a href="#gorule0000033">GORULE:0000033 Group specific Reference IDs (column 6) will be replaced by corresponding GO_REF (or other public ID) or filtered.</a>
+ * <a href="#gorule0000033">GORULE:0000033 Public Reference IDs (PMID, PMC, doi, or GO_REF) should be preferred over group specific Reference IDs</a>
  * <a href="#gorule0000035">GORULE:0000035 'Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.</a>
  * <a href="#gorule0000036">GORULE:0000036 Report annotations that involve gene products where the gene product is annotated to a term 'x' and 'regulation of X' (multiple annotations involved)</a>
  * <a href="#gorule0000037">GORULE:0000037 IBA annotations should ONLY be assigned_by GO_Central and have PMID:21873635 as a reference</a>
@@ -54,7 +54,8 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000048">GORULE:0000048 Gene products having ND annotations and other annotations in the same aspect should be reviewed</a>
  * <a href="#gorule0000049">GORULE:0000049 If the annotation has 'contributes_to' as its qualifier, verify that at least one annotation to GO:0043234 (protein complex), or one of its child terms exists</a>
  * <a href="#gorule0000051">GORULE:0000051 Annotations to ISS, ISA and ISO should not be self-referential</a>
- * <a href="#gorule0000051">GORULE:0000051 Direct annotations to 'GO:0008283 cell population proliferation' require a value in the Annotation Extension field</a>
+ * <a href="#gorule0000051">GORULE:0000051 Some GO terms require a value in the Annotation Extension field</a>
+ * <a href="#gorule0000054">GORULE:0000054 Genes annotated with ND should have no other annotations for that aspect</a>
 
 
 
@@ -224,8 +225,8 @@ Error report (number of errors) in [db_species]-report.html & owltools-check.txt
  * status: approved
 
 
-The IEP and its high thoughput equivalent, HEP, evidence codes are used where process involvement is inferred from
-the timing or location of expression of a gene, particularly when 
+The IEP and its high throughput equivalent, HEP, evidence codes are used where process involvement is inferred from
+the timing or location of expression of a gene, particularly when
 comparing a gene that is not yet characterized with the timing or
 location of expression of genes known to be involved in a particular
 process. This type of annotation is only suitable with terms from the
@@ -241,7 +242,7 @@ Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt
 ## IPI should not be used with catalytic activity molecular function terms
 
  * id: [GORULE:0000007](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000007.md)
- * status: implemented
+ * status: approved
 
 
 The [IPI (Inferred from Physical Interaction) evidence
@@ -332,7 +333,7 @@ will be removed.
 ## ND annotations to root nodes only; and only root nodes can have the evidence code ND.
 
  * id: [GORULE:0000011](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000011.md)
- * status: approved
+ * status: implemented
 
 
 The [No Data (ND) evidence code](http://www.geneontology.org/GO.evidence.shtml#nd) should be only used
@@ -416,7 +417,7 @@ Error report (number of errors) in [db_species]-report.txt & owltools-check.txt 
 ## IPI annotations require a With/From entry
 
  * id: [GORULE:0000018](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000018.md)
- * status: approved
+ * status: implemented
 
 
 All IPI annotations should include a nucleotide/protein/chemical
@@ -572,7 +573,7 @@ sources. In this way, we only have these paint annotations coming directly from
 paint.
 
 If the GAF file being validated is not paint, and the line has evidence IBA,
-then throw out that line. 
+then throw out that line.
 
 See also GORULE:0000037
 
@@ -586,6 +587,7 @@ See also GORULE:0000037
 
 -   Col 1 and all DB abbreviations must be in
     [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml) (see below)
+-   The `assigned_by` field is checked against [groups.yaml](https://github.com/geneontology/go-site/blob/master/metadata/groups.yaml)  
 -   All GO IDs must be extant in current ontology
 
 ### Additional notes on identifiers
@@ -645,7 +647,7 @@ UniProtKB P29430 pedA GO:0042742 GO_REF:0000004 IEA SP_KW:KW-0044 P protein taxo
 ## Deprecated GO_REFs are not allowed
 
  * id: [GORULE:0000030](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000030.md)
- * status: proposed
+ * status: implemented
 
 
 GO_REFs are here: https://github.com/geneontology/go-site/tree/master/metadata/gorefs
@@ -684,13 +686,13 @@ GO_REF Collection References allowed for each ECO are as follows:
 
 <a name="gorule0000033"/>
 
-## Group specific Reference IDs (column 6) will be replaced by corresponding GO_REF (or other public ID) or filtered.
+## Public Reference IDs (PMID, PMC, doi, or GO_REF) should be preferred over group specific Reference IDs
 
  * id: [GORULE:0000033](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000033.md)
- * status: proposed
+ * status: implemented
 
 
-IDs in the Reference (column 6) field will only be accepted if they are from PMID, PMC, doi, or GO_REF. Group specific References will no longer be accepted and will be filtered. For example, FB:FBrf0159398 is a synonym for GO_REF:0000015. So if the FB Reference is found, it will be removed, leaving GO_REF:0000015 instead. If an ID cannot be repaired/replaced then the GAF annotation will be filtered.
+IDs in the Reference field should only be only from PMID, PMC, doi, or GO_REF. Group specific References will be filtered if there is also an accepted public ID. For example, if FB:FBrf0159398 and GO_REF:0000015 are both found, the FB ID will be removed. If only the group ID exists, a warning will be issued.
 
 The list of GO_REFs are here: https://github.com/geneontology/go-site/tree/master/metadata/gorefs.
 
@@ -699,7 +701,7 @@ The list of GO_REFs are here: https://github.com/geneontology/go-site/tree/maste
 ## 'Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.
 
  * id: [GORULE:0000035](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000035.md)
- * status: proposed
+ * status: approved
 
 
 
@@ -789,6 +791,10 @@ Specific forbidden combinations:
 This list may not be exhaustive.
 
 TODO: include above list in appropriate metadata file.
+see http://wiki.geneontology.org/index.php/Evidence_Code_Ontology_(ECO)
+
+See also http://wiki.geneontology.org/index.php/Mappings_of_GO_Evidence_Code_%2B_GOREF_combinations_to_ECO
+
 
 <a name="gorule0000044"/>
 
@@ -874,10 +880,24 @@ Annotations to ISS, ISA and ISO should not have the same identifier in the 'gene
 
 <a name="gorule0000051"/>
 
-## Direct annotations to 'GO:0008283 cell population proliferation' require a value in the Annotation Extension field
+## Some GO terms require a value in the Annotation Extension field
 
  * id: [GORULE:0000051](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000051.md)
- * status: implemented
+ * status: approved
 
 
-Direct annotations to 'GO:0008283 cell population proliferation' require a value in the Annotation Extension field
+Direct annotations to these terms require a value in the Annotation Extension field: 
+
+ * 'GO:0008283 cell population proliferation' 
+
+<a name="gorule0000054"/>
+
+## Genes annotated with ND should have no other annotations for that aspect
+
+ * id: [GORULE:0000054](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000054.md)
+ * status: approved
+
+
+Use of the ND evidence code specifically indicates that a curator has looked but not been able to find information that supports making an annotation to any term from the Molecular Function, Biological Process, or Cellular Component as of the annotation date indicated.
+
+Note that use of the ND evidence code with an annotation to one of the root nodes to indicate lack of knowledge in that aspect makes a statement about the lack of knowledge only with respect to that particular aspect of the ontology. Use of the ND evidence code to indicate lack of knowledge in one particular aspect does not make any statement about the availability of knowledge or evidence in the other GO aspects.
