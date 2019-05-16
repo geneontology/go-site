@@ -4058,3 +4058,15 @@
   nickname: 'Belén Juanes Cortés'
   organization: 'University of Murcia'
   uri: 'http://orcid.org/0000-0003-3641-7548'
+-
+  accounts:
+    github: jpa29
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
+  nickname: 'Joanna Argasinska'
+  organization: SGD
+  uri: 'https://orcid.org/0000-0003-2678-2824'
