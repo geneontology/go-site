@@ -14,7 +14,7 @@ datasets:
    url: http://current.geneontology.org/annotations/dictybase.gpad.gz
    type: gpad
    dataset: dictybase
-   submitter: dictybase
+   submitter: dictyBase
    compression: gzip
    source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/dictyBase.gpa.gz
    entity_type:
@@ -32,7 +32,7 @@ datasets:
    url: http://current.geneontology.org/annotations/dictybase.gpi.gz
    type: gpi
    dataset: dictybase
-   submitter: dictybase
+   submitter: dictyBase
    compression: gzip
    source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/dictyBase.gpi.gz
    entity_type:
@@ -50,7 +50,7 @@ datasets:
    url: http://current.geneontology.org/annotations/dictybase.gaf.gz
    type: gaf
    dataset: dictybase
-   submitter: dictybase
+   submitter: dictyBase
    compression: gzip
    source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/dictyBase.gaf.gz
    entity_type:
