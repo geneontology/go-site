@@ -3442,7 +3442,7 @@
     - TFCLASS_FAMILY
     - tfclass
   entity_types:
-    - type_name: entity
+    - type_name: protein
       type_id: BET:0000000
       url_syntax: http://tfclass.bioinf.med.uni-goettingen.de/?tfclass=[example_id]
       id_syntax: \d+\.\d+\.\d+
