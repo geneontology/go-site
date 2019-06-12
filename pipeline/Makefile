@@ -54,7 +54,7 @@ BGMEM ?= 12G
 PY_ENV ?= target/env
 PY_BIN ?= $(PY_ENV)/bin
 VALIDATE = $(PY_BIN)/validate.py
-DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(DATASET_EXCLUDES),-x $(exclusion) )
+DONT_VALIDATE = $(foreach exclusion,$(DATASET_EXCLUDES),-x $(exclusion) )
 SUPPRESS_THESE_TAGS = $(foreach tag,$(GORULE_TAGS_TO_SUPPRESS),--suppress-rule-reporting-tag $(tag) )
 
 # Should be something like target/groups/<group>/<group>.group
@@ -88,55 +88,55 @@ SUPPRESS_THESE_TAGS = $(foreach tag,$(GORULE_TAGS_TO_SUPPRESS),--suppress-rule-r
 # goa_uniprot_all, I'm so sorry. This has to be special cased basically. This is so sad :(
 # -----------------------------------------------------------------------------------------
 
-GOA_UNIPROT_ALL = target/groups/goa/goa_uniprot_all_noiea.gpi target/groups/goa/goa_uniprot_all_noiea.gpad target/groups/goa/goa_uniprot_all_noiea_cam.ttl
-
-# target/groups/goa/goa_uniprot_all.gaf.gz
-target/groups/goa/goa_uniprot_all_noiea.gaf: target/alltaxons.txt target/groups/goa/goa_uniprot_all-src.gaf.gz
-	gzip -dcf target/groups/goa/goa_uniprot_all-src.gaf.gz | ./util/goa_filter -v report=target/groups/goa/goa_uniprot_all_skipped.report -v noiea=target/groups/goa/goa_uniprot_all_noiea.gaf > target/groups/goa/goa_uniprot_all.gaf.tmp
-	mv target/groups/goa/goa_uniprot_all.gaf.tmp target/groups/goa/goa_uniprot_all.gaf
-	gzip -cf target/groups/goa/goa_uniprot_all.gaf > target/groups/goa/goa_uniprot_all.gaf.gz
-	gzip -cf target/groups/goa/goa_uniprot_all_noiea.gaf > target/groups/goa/goa_uniprot_all_noiea.gaf.gz
-
-RDF_GEN = $(PY_BIN)/rdfgen.py
-target/groups/goa/goa_uniprot_all_noiea_cam.ttl: target/groups/goa/goa_uniprot_all_noiea.gaf
-	python3 $(RDF_GEN) convert -a gaf -r target/go-ontology.json -o target/groups/goa/goa_uniprot_all_noiea_cam.ttl target/groups/goa/goa_uniprot_all_noiea.gaf
-	gzip -cf target/groups/goa/goa_uniprot_all_noiea_cam.ttl > target/groups/goa/goa_uniprot_all_noiea_cam.ttl.gz
-
-target/groups/goa/goa_uniprot_all_noiea.gpad: target/groups/goa/goa_uniprot_all_noiea.gaf
-	owltools --log-error --gaf target/groups/goa/goa_uniprot_all_noiea.gaf --write-gpad -o target/groups/goa/goa_uniprot_all_noiea.gpad.tmp && mv target/groups/goa/goa_uniprot_all_noiea.gpad.tmp target/groups/goa/goa_uniprot_all_noiea.gpad
-	gzip -cf target/groups/goa/goa_uniprot_all_noiea.gpad > target/groups/goa/goa_uniprot_all_noiea.gpad.gz
-
-target/groups/goa/goa_uniprot_all_noiea.gpi: target/groups/goa/goa_uniprot_all_noiea.gaf
-	owltools --log-error --gaf target/groups/goa/goa_uniprot_all_noiea.gaf --write-gpi -o target/groups/goa/goa_uniprot_all_noiea.gpi.tmp && mv target/groups/goa/goa_uniprot_all_noiea.gpi.tmp target/groups/goa/goa_uniprot_all_noiea.gpi
-	gzip -cf target/groups/goa/goa_uniprot_all_noiea.gpi > target/groups/goa/goa_uniprot_all_noiea.gpi.gz
-
-target/groups/goa/goa_uniprot_all_noiea-owltools-check.txt: target/groups/goa/goa_uniprot_all_noiea.gaf $(GOA_UNIPROT_ALL) $(GAF_OWL)
-	ls -l target/groups/goa/
-	# gzip -dcf target/groups/goa/goa_uniprot_all_noiea.gaf.gz > target/groups/goa/goa_uniprot_all_noiea.gaf
-	owltools --log-warning $(GAF_OWL) \
-	--gaf target/groups/goa/goa_uniprot_all_noiea.gaf \
-	--createReport \
-	--gaf-report-file $*-owltools-check.txt \
-	--gaf-report-summary-file $*-summary.txt \
-	--gaf-prediction-file $*-prediction.gaf \
-	--gaf-prediction-report-file $*-prediction-report.txt \
-	--gaf-validation-unsatisfiable-module $*-incoherent.owl \
-	--experimental-gaf-prediction-file $*-prediction-experimental.gaf \
-	--experimental-gaf-prediction-report-file $*-prediction-experimental-report.txt \
-	--gaf-run-checks || echo 'errors found'
-
-# This comes from the groups target above, read directly from the metadata.
-# This just converts to _noiea version of owltools
-.PHONY: target/groups/goa/goa_uniprot_all-owltools-check.txt
-target/groups/goa/goa_uniprot_all-owltools-check.txt: target/groups/goa/goa_uniprot_all_noiea-owltools-check.txt
-
-GOA_UNIPROT_ALL_URL ?= $(shell grep -A 10 "id: goa_uniprot_all.gaf" ../metadata/datasets/goa.yaml | grep source: | awk '{ print $$2 }')
-target/groups/goa/goa_uniprot_all-src.gaf.gz:
-	mkdir -p target/groups/goa
-	wget -nv --retry-connrefused --waitretry=10 -t 10 --no-check-certificate $(GOA_UNIPROT_ALL_URL) -O $@.tmp && mv $@.tmp $@
-
-target/alltaxons.txt:
-	python3 util/model_organism.py taxons ../metadata/datasets/ --out target/alltaxons.txt
+# GOA_UNIPROT_ALL = target/groups/goa/goa_uniprot_all_noiea.gpi target/groups/goa/goa_uniprot_all_noiea.gpad target/groups/goa/goa_uniprot_all_noiea_cam.ttl
+#
+# # target/groups/goa/goa_uniprot_all.gaf.gz
+# target/groups/goa/goa_uniprot_all_noiea.gaf: target/alltaxons.txt target/groups/goa/goa_uniprot_all-src.gaf.gz
+# 	gzip -dcf target/groups/goa/goa_uniprot_all-src.gaf.gz | ./util/goa_filter -v report=target/groups/goa/goa_uniprot_all_skipped.report -v noiea=target/groups/goa/goa_uniprot_all_noiea.gaf > target/groups/goa/goa_uniprot_all.gaf.tmp
+# 	mv target/groups/goa/goa_uniprot_all.gaf.tmp target/groups/goa/goa_uniprot_all.gaf
+# 	gzip -cf target/groups/goa/goa_uniprot_all.gaf > target/groups/goa/goa_uniprot_all.gaf.gz
+# 	gzip -cf target/groups/goa/goa_uniprot_all_noiea.gaf > target/groups/goa/goa_uniprot_all_noiea.gaf.gz
+#
+# RDF_GEN = $(PY_BIN)/rdfgen.py
+# target/groups/goa/goa_uniprot_all_noiea_cam.ttl: target/groups/goa/goa_uniprot_all_noiea.gaf
+# 	python3 $(RDF_GEN) convert -a gaf -r target/go-ontology.json -o target/groups/goa/goa_uniprot_all_noiea_cam.ttl target/groups/goa/goa_uniprot_all_noiea.gaf
+# 	gzip -cf target/groups/goa/goa_uniprot_all_noiea_cam.ttl > target/groups/goa/goa_uniprot_all_noiea_cam.ttl.gz
+#
+# target/groups/goa/goa_uniprot_all_noiea.gpad: target/groups/goa/goa_uniprot_all_noiea.gaf
+# 	owltools --log-error --gaf target/groups/goa/goa_uniprot_all_noiea.gaf --write-gpad -o target/groups/goa/goa_uniprot_all_noiea.gpad.tmp && mv target/groups/goa/goa_uniprot_all_noiea.gpad.tmp target/groups/goa/goa_uniprot_all_noiea.gpad
+# 	gzip -cf target/groups/goa/goa_uniprot_all_noiea.gpad > target/groups/goa/goa_uniprot_all_noiea.gpad.gz
+#
+# target/groups/goa/goa_uniprot_all_noiea.gpi: target/groups/goa/goa_uniprot_all_noiea.gaf
+# 	owltools --log-error --gaf target/groups/goa/goa_uniprot_all_noiea.gaf --write-gpi -o target/groups/goa/goa_uniprot_all_noiea.gpi.tmp && mv target/groups/goa/goa_uniprot_all_noiea.gpi.tmp target/groups/goa/goa_uniprot_all_noiea.gpi
+# 	gzip -cf target/groups/goa/goa_uniprot_all_noiea.gpi > target/groups/goa/goa_uniprot_all_noiea.gpi.gz
+#
+# target/groups/goa/goa_uniprot_all_noiea-owltools-check.txt: target/groups/goa/goa_uniprot_all_noiea.gaf $(GOA_UNIPROT_ALL) $(GAF_OWL)
+# 	ls -l target/groups/goa/
+# 	# gzip -dcf target/groups/goa/goa_uniprot_all_noiea.gaf.gz > target/groups/goa/goa_uniprot_all_noiea.gaf
+# 	owltools --log-warning $(GAF_OWL) \
+# 	--gaf target/groups/goa/goa_uniprot_all_noiea.gaf \
+# 	--createReport \
+# 	--gaf-report-file $*-owltools-check.txt \
+# 	--gaf-report-summary-file $*-summary.txt \
+# 	--gaf-prediction-file $*-prediction.gaf \
+# 	--gaf-prediction-report-file $*-prediction-report.txt \
+# 	--gaf-validation-unsatisfiable-module $*-incoherent.owl \
+# 	--experimental-gaf-prediction-file $*-prediction-experimental.gaf \
+# 	--experimental-gaf-prediction-report-file $*-prediction-experimental-report.txt \
+# 	--gaf-run-checks || echo 'errors found'
+#
+# # This comes from the groups target above, read directly from the metadata.
+# # This just converts to _noiea version of owltools
+# .PHONY: target/groups/goa/goa_uniprot_all-owltools-check.txt
+# target/groups/goa/goa_uniprot_all-owltools-check.txt: target/groups/goa/goa_uniprot_all_noiea-owltools-check.txt
+#
+# GOA_UNIPROT_ALL_URL ?= $(shell grep -A 10 "id: goa_uniprot_all.gaf" ../metadata/datasets/goa.yaml | grep source: | awk '{ print $$2 }')
+# target/groups/goa/goa_uniprot_all-src.gaf.gz:
+# 	mkdir -p target/groups/goa
+# 	wget -nv --retry-connrefused --waitretry=10 -t 10 --no-check-certificate $(GOA_UNIPROT_ALL_URL) -O $@.tmp && mv $@.tmp $@
+#
+# target/alltaxons.txt:
+# 	python3 util/model_organism.py taxons ../metadata/datasets/ --out target/alltaxons.txt
 
 # -------------------------------
 # RDF Graphstore
