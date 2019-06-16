@@ -7,17 +7,17 @@ project_url: "http://dictybase.org"
 funding_source: "NIH (NIGMS and NHGRI)"
 email_report: "dictybase@northwestern.edu"
 datasets:
- -    
-   id: dictybase.gaf
-   label: "dictybase gaf file"
-   description: "gaf file for dictybase from dictyBase"
-   url: http://geneontology.org/gene-associations/gene_association.dictyBase.gz
-   type: gaf
+ -
+   id: dictybase.gpa
+   label: "dictybase gpad file"
+   description: "gpad file for dictyBase from dictyBase"
+   url: http://current.geneontology.org/annotations/dictybase.gpad.gz
+   type: gpad
    dataset: dictybase
    submitter: dictybase
    compression: gzip
-   source: http://geneontology.org/gene-associations/submission/gene_association.dictyBase.gz
-   entity_type: 
+   source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/dictyBase.gpa.gz
+   entity_type:
    status: active
    species_code: Ddis
    taxa:
@@ -25,4 +25,39 @@ datasets:
     - NCBITaxon:366501
     - NCBITaxon:44689
     - NCBITaxon:5782
-
+ -
+   id: dictybase.gpi
+   label: "dictybase gpi file"
+   description: "gpi file for dictyBase from dictyBase"
+   url: http://current.geneontology.org/annotations/dictybase.gpi.gz
+   type: gpi
+   dataset: dictybase
+   submitter: dictybase
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/dictyBase.gpi.gz
+   entity_type:
+   status: active
+   species_code: Ddis
+   taxa:
+    - NCBITaxon:352472
+    - NCBITaxon:366501
+    - NCBITaxon:44689
+    - NCBITaxon:5782
+ -
+   id: dictybase.gaf
+   label: "dictybase gaf file"
+   description: "gaf file for dictybase from dictyBase"
+   url: http://current.geneontology.org/annotations/dictybase.gaf.gz
+   type: gaf
+   dataset: dictybase
+   submitter: dictybase
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/dictyBase.gaf.gz
+   entity_type:
+   status: active
+   species_code: Ddis
+   taxa:
+    - NCBITaxon:352472
+    - NCBITaxon:366501
+    - NCBITaxon:44689
+    - NCBITaxon:5782

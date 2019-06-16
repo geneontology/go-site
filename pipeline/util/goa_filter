@@ -4,12 +4,18 @@
 # correct lines back to stdout. Validations include checking column length and
 # lines are also skipped if there is a taxon already included in the model
 # organisms. For lines that do not use evidence code `IEA`, those are appended
-# to a file called 'noiea' as a side affect. 
+# to a file called 'noiea' as a side affect.
 
 BEGIN {
     FS="\t"
     while ("cat target/alltaxons.txt" | getline taxon) {
         model_organisms[taxon] = "1";
+    }
+    if (! report) {
+        report = "skipped.report"
+    }
+    if (! noiea) {
+        noiea = "noiea"
     }
 }
 {
@@ -22,6 +28,7 @@ BEGIN {
 
     if (NF != 15 && NF != 17) {
         # Skip if not the correct number of columns
+        print ("Wrong number of columns: ", $0) > report
         next
     }
 
@@ -35,16 +42,20 @@ BEGIN {
 
     if (taxon in model_organisms) {
         # We already have it defined, so we skip
-        next
+        print ("Skipping since we found", taxon, $0) > report
+    } else if ($7 == "IBA"){
+        # Skip if IBA
+        print ("Skipping IBA", $0) > report
     } else if ($7 != "IEA") {
         print $0
-        print $0 > "noiea"
+        print $0 > noiea
     } else {
         print $0
     }
 }
 
 # ! IEA, taxon:skip -> skip
+# ! IBA -> skip
 # ! not IEA, taxon:skip -> skip
 # ! not IEA, taxon:keep -> gaf, noiea
 # ! IEA, taxon:keep -> gaf

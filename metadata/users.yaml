@@ -237,8 +237,8 @@
     - 87b721597d5a997234f5a8f61bde469b
   groups:
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
-    - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl'
-    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl'
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological'
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/syngo'
   nickname: 'Ruth Lovering'
   organization: BHF-UCL
   uri: 'http://orcid.org/0000-0002-9791-0064'
@@ -364,7 +364,7 @@
   uri: 'GOC:atm'
   xref: 'GOC:atm'
 -
-  accounts: 
+accounts: 
     github: jimhu-tamu
   nickname: 'Jim Hu'
   organization: 'E. coli'
@@ -376,7 +376,7 @@
   groups:
     - 'http://www.bio.tamu.edu'
   nickname: 'Brenley McIntosh'
-  organization: 'E. coli'
+  organization: 'EcoliWiki/CACAO'
   uri: 'GOC:bm'
   xref: 'GOC:bm'
 -
@@ -389,7 +389,7 @@
   groups:
     - 'http://www.bio.tamu.edu'
   nickname: 'Sandy Labonte'
-  organization: 'E. coli'
+  organization: 'EcoliWiki/CACAO'
   uri: 'http://orcid.org/0000-0002-9618-3336'
 -
   nickname: 'Curators at FlyBase'
@@ -804,7 +804,7 @@
 -
   nickname: 'Tony Planchart'
   organization: MGI
-  uri: 'GOC:ajp'
+  uri: 'https://orcid.org/0000-0001-8691-8856'
   xref: 'GOC:ajp'
 -
   accounts:
@@ -2028,7 +2028,6 @@
       allow-write: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Doug Howe'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0001-5831-7439'
@@ -2044,7 +2043,6 @@
       allow-write: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'David Fashena'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0001-9656-0683'
@@ -2060,7 +2058,6 @@
       allow-write: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Ceri Van Slyke'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0002-2244-7917'
@@ -2074,7 +2071,6 @@
         allow-edit: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Sridhar Ramachandran'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0002-2246-3722'
@@ -2090,7 +2086,6 @@
       allow-write: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Yvonne M Bradford'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0002-9900-7880'
@@ -2104,7 +2099,6 @@
         allow-edit: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Sabrina Toro'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0002-4142-7153'
@@ -2116,7 +2110,6 @@
         allow-edit: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Ken Frazer'
   uri: 'http://orcid.org/0000-0002-6889-0711'
   xref: 'GOC:ksf'
@@ -2129,7 +2122,6 @@
         allow-edit: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Leyla Ruzicka'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0002-1009-339X'
@@ -2143,7 +2135,6 @@
         allow-edit: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Christian Pich'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0001-5334-4542'
@@ -2678,6 +2669,7 @@
   nickname: 'Pim van Nierop'
   organization: SynGO
   uri: 'http://orcid.org/0000-0003-0593-3443'
+  xref: 'GOC:pvn'
 -
   accounts:
     github: balhoff
@@ -3125,6 +3117,20 @@
   uri: 'http://orcid.org/0000-0003-1074-8103'
 -
   accounts:
+    github: Xenbase2
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    -
+  groups:
+    - 'http://www.xenbase.org'
+  nickname: 'Christina James-Zorn'
+  organization: Xenbase
+  uri: 'http://orcid.org/0000-0001-5495-4588'
+-
+  accounts:
     github: chris-grove
   authorizations:
     noctua:
@@ -3184,6 +3190,20 @@
   xref: 'GOC:lr'
 -
   accounts:
+    github: ebakker2
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 6543248f6b6f9e104c0afbd5a18b59c6
+  groups:
+    - 'http://www.arabidopsis.org'
+  nickname: 'Erica Bakker'
+  organization: TAIR
+  uri: 'https://orcid.org/0000-0001-7933-3817'
+-
+  accounts:
     github: mchibucos
   authorizations:
     noctua:
@@ -3209,7 +3229,7 @@
   groups:
     - 'http://www.bio.tamu.edu'
   nickname: 'Debby Siegele'
-  organization: 'E. coli'
+  organization: 'EcoliWiki/CACAO'
   uri: 'http://orcid.org/0000-0001-8935-0696'
   xref: 'GOC:das'
 -
@@ -3225,9 +3245,9 @@
     - 05856707bf8eca390ae3ddcf689e9011
     - 99b4072c338978afc0a90bc7f217cef8
   groups:
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological'
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
-    - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl'
-    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl'
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/syngo'
   nickname: 'Barbara Kramarz'
   organization: BHF-UCL
   uri: 'http://orcid.org/0000-0002-3898-1727'
@@ -3328,7 +3348,6 @@
         allow-edit: true
   groups:
     - 'http://zfin.org'
-    - 'http://geneontology.org'
   nickname: 'Amy Singer'
   organization: ZFIN
   uri: 'http://orcid.org/0000-0002-9663-3237'
@@ -3926,4 +3945,116 @@
   nickname: "Àlex Bayés"
   organization: 'Molecular Physiology of the Synapse Laboratory, Biomedical Research Institute Sant Pau (IIB Sant Pau), Barcelona, Spain'
   uri: 'http://orcid.org/0000-0002-5265-6306'
-  
+-
+  accounts:
+    github: mcharrison345
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.wormbase.org'
+  nickname: 'Marie-Claire Harrison'
+  organization: WB
+  uri: 'http://orcid.org/0000-0002-3013-9906'
+  xref: 'GOC:mch'
+-
+  accounts:
+    github: luanalicata
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://signor.uniroma2.it'
+    - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
+  nickname: 'Luana Licata'
+  organization: 'University of Rome Tor Vergata'
+  uri: 'http://orcid.org/0000-0001-5084-9000'
+-
+  accounts:
+    github: jrr-cpt
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.bio.tamu.edu'
+  nickname: 'Jolene Ramsey'
+  organization: 'EcoliWiki/CACAO'
+  uri: 'http://orcid.org/0000-0002-3774-5896'
+-
+  accounts:
+    github: erbolton
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://rgd.mcw.edu'
+  nickname: 'Liz Bolton'
+  organization: 'RGD'
+  uri: 'http://orcid.org/0000-0002-5657-2732'
+-
+  accounts:
+    github: nsuvarnaiari
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.igs.umaryland.edu'
+  nickname: 'Suvarna Nadendla'
+  organization: 'IGS'
+  uri: 'http://orcid.org/0000-0003-3643-281X'
+-
+  accounts:
+    github: mgiglio99
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.igs.umaryland.edu'
+  nickname: 'Michelle Giglio'
+  organization: 'IGS'
+  uri: 'http://orcid.org/0000-0001-7628-5565'
+-
+  nickname: 'Josh Jaffery'
+  organization: WB
+  uri: 'GOC:jja'
+  xref: 'GOC:jja'
+-
+  nickname: 'Teresa Chu'
+  organization: MGI
+  uri: 'GOC:tc'
+  xref: 'GOC:tc'
+-
+ nickname: 'Allan P Davis'
+ organization: MGI
+ uri: 'GOC:apd'
+ xref: 'GOC:apd'
+-
+  accounts:
+    github: jesualdotomasfernandezbreis
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://greekc.org'
+  nickname: 'Jesualdo Tomás Fernández Breis'
+  organization: 'University of Murcia'
+  uri: 'http://orcid.org/0000-0002-7558-2880'
+-
+  accounts:
+    github: belenjc
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://greekc.org'
+  nickname: 'Belén Juanes Cortés'
+  organization: 'University of Murcia'
+  uri: 'http://orcid.org/0000-0003-3641-7548'
