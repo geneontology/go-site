@@ -79,7 +79,7 @@ Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt
 ## No 'NOT' annotations to 'protein binding ; GO:0005515'
 
  * id: [GORULE:0000002](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000002.md)
- * status: legacy
+ * status: implemented
 
 
 Even if an identifier is available in the 'with' column, a qualifier
@@ -222,7 +222,7 @@ Error report (number of errors) in [db_species]-report.html & owltools-check.txt
 ## IEP and HEP usage is restricted to terms from the Biological Process ontology
 
  * id: [GORULE:0000006](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000006.md)
- * status: approved
+ * status: implemented
 
 
 The IEP and its high throughput equivalent, HEP, evidence codes are used where process involvement is inferred from
@@ -397,20 +397,16 @@ All IC annotations should include a GO ID in the "With/From" column; for
 more information, see the [IC evidence code
 guidelines](http://wiki.geneontology.org/index.php/Inferred_by_Curator_(IC)).
 
-Error report (number of errors) in [db_species]-report.txt & owltools-check.txt (details).
-
 <a name="gorule0000017"/>
 
 ## IDA annotations must not have a With/From entry
 
  * id: [GORULE:0000017](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000017.md)
- * status: legacy
+ * status: implemented
 
 
 Use IDA only when no identifier can be placed in the "With/From" column.
 When there is an appropriate ID for the "With/From" column, use IPI.
-
-Error report (number of errors) in [db_species]-report.txt & owltools-check.txt (details).
 
 <a name="gorule0000018"/>
 
@@ -618,7 +614,7 @@ the following examples are invalid
 ## Aspect can only be one of C, P, F and should be repaired using the GO term
 
  * id: [GORULE:0000028](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000028.md)
- * status: approved
+ * status: implemented
 
 
 Aspect (Column 9) can be one either C, P, or F. These correspond to the three main
@@ -637,10 +633,6 @@ corrected aspect.
 
 All GAF annotations that have IEA as an evidence code that are also more than a
 year old should be removed.
-
-Example: http://release.geneontology.org/2018-07-02/reports/gonuts-report.html
-722 GO_AR:0000001 Error IEA evidence code present with a date more than a year old '20110217' 
-UniProtKB P29430 pedA GO:0042742 GO_REF:0000004 IEA SP_KW:KW-0044 P protein taxon:1254 20110217 GONUTS 
 
 <a name="gorule0000030"/>
 
