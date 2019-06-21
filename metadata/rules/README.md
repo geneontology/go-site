@@ -53,7 +53,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000047">GORULE:0000047 With/from: ChEBI IDs in With/from can only be used with terms that are descendants of GO:0005488 (binding)</a>
  * <a href="#gorule0000048">GORULE:0000048 Gene products having ND annotations and other annotations in the same aspect should be reviewed</a>
  * <a href="#gorule0000049">GORULE:0000049 If the annotation has 'contributes_to' as its qualifier, verify that at least one annotation to GO:0043234 (protein complex), or one of its child terms exists</a>
- * <a href="#gorule0000051">GORULE:0000051 Annotations to ISS, ISA and ISO should not be self-referential</a>
+ * <a href="#gorule0000050">GORULE:0000050 Annotations to ISS, ISA and ISO should not be self-referential</a>
  * <a href="#gorule0000051">GORULE:0000051 Some GO terms require a value in the Annotation Extension field</a>
  * <a href="#gorule0000054">GORULE:0000054 Genes annotated with ND should have no other annotations for that aspect</a>
 
@@ -859,11 +859,11 @@ If a gene product has an annotation by the ND evidence code, this rule checks wh
 
 The 'contributes to' qualifier can only be applied to proteins belonging to complexes, so any gene product with a MF annotation using the 'contributes to' should also be annotated to a child of protein complex. 
 
-<a name="gorule0000051"/>
+<a name="gorule0000050"/>
 
 ## Annotations to ISS, ISA and ISO should not be self-referential
 
- * id: [GORULE:0000051](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000051.md)
+ * id: [GORULE:0000050](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000050.md)
  * status: proposed
 
 
@@ -881,6 +881,8 @@ Annotations to ISS, ISA and ISO should not have the same identifier in the 'gene
 Direct annotations to these terms require a value in the Annotation Extension field: 
 
  * 'GO:0008283 cell population proliferation' 
+ * 'GO:0005515 protein binding' 
+ * 'GO:0005488 binding'
 
 <a name="gorule0000054"/>
 
