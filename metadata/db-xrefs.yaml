@@ -640,7 +640,7 @@
       type_id: GO:0003824
       url_syntax: http://www.expasy.org/EC/[example_id]
       example_id: EC:1.4.3.6
-      example_url: http://www.expasy.org/enzyme/1.4.3.6
+      example_url: http://www.expasy.org/EC/1.4.3.6
 - database: EchoBASE
   name: EchoBASE post-genomic database for Escherichia coli
   generic_urls:
