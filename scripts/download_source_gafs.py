@@ -7,6 +7,7 @@ import collections
 import shlex
 import multiprocessing
 import time
+import shutil
 
 from typing import List, Dict
 
@@ -25,20 +26,18 @@ def cli():
 @click.option("--exclude", "-x", multiple=True, help="dataset name we want to not download")
 @click.option("--parallel", "-p", default=5, help="Number of processes to use to download files")
 @click.option("--dry-run", is_flag=True, help="Do everything but download if  flag is set")
-def all(datasets, target, type, exclude, parallel, dry_run):
+@click.option("--retries", "-r", default=3, help="Max number of times to download a single source before giving up on everyone")
+def all(datasets, target, type, exclude, parallel, dry_run, retries):
     os.makedirs(os.path.abspath(target), exist_ok=True)
     
     click.echo("Using {} for datasets".format(datasets))
     resource_metadata = load_resource_metadata(datasets)
     click.echo("Found {} dataset files".format(len(resource_metadata)))
-    # Create group directories
-    for resource in resource_metadata:
-        os.makedirs(os.path.abspath(target), exist_ok=True)
         
     dataset_targets = transform_download_targets(resource_metadata, types=type)
     # Filter out datasets that we want excluded
     dataset_targets = list(filter(lambda t: t.dataset not in exclude, dataset_targets))
-    multi_download(dataset_targets, target, parallel=parallel, dryrun=dry_run)
+    multi_download(dataset_targets, target, parallel=parallel, dryrun=dry_run, retries=retries)
 
 
 @cli.command()
@@ -56,14 +55,38 @@ def group(group, datasets, target, type, exclude, dry_run):
     # Filter out resource metadatas that are not the one group we specified
     resource_metadata = list(filter(lambda r: r["id"] == group, resource_metadata))
     click.echo("Found {} dataset files".format(len(resource_metadata)))
-    # Create group directories
-    for resource in resource_metadata:
-        os.makedirs(os.path.abspath(target), exist_ok=True)
     
     dataset_targets = transform_download_targets(resource_metadata, types=type)
     # Filter out datasets that we want excluded
     dataset_targets = list(filter(lambda t: t.dataset not in exclude, dataset_targets))
     multi_download(dataset_targets, target, dryrun=dry_run)
+
+
+@cli.command()
+@click.option("--datasets", "-d", type=click.Path(exists=True), required=True, help="Path to directory with all the dataset yamls")
+@click.option("--target", "-T", type=click.Path(exists=False), required=True, help="Path to directory where files will be stored")
+@click.option("--source", "-S", type=click.Path(exists=False), required=True, help="Path to directory where files will be copied from")
+def organize(datasets, target, source):
+    
+    absolute_target = os.path.abspath(target)
+    absolute_source = os.path.abspath(source)
+    os.makedirs(absolute_target, exist_ok=True)
+    resource_metadata = load_resource_metadata(datasets)
+    
+    # The types don't really matter here, we're just going to move all sources anyway
+    datasets = transform_download_targets(resource_metadata)
+    # Key by dataset name
+    datasets_dict = { d.dataset: d for d in datasets }
+    
+    # Grab all the existing files in source
+    for f in glob.glob(os.path.join(absolute_source, "*")):
+        name = os.path.basename(f)
+        dataset_name = name.split(".", maxsplit=1)[0]
+        # path -> dataset_name -> find Dataset in dict -> build target path
+        found_dataset = datasets_dict[dataset_name]
+        target_path = construct_grouped_path(found_dataset, name, absolute_target)
+        os.makedirs(os.path.dirname(target_path), exist_ok=True)
+        shutil.copyfile(f, target_path)
 
 
 def load_resource_metadata(datasets_dir) -> List[Dict]:
@@ -173,7 +196,7 @@ def construct_download_path(dataset_target: Dataset, target) -> str:
     """
     Builds the path where the given dataset will be downloaded to.
 
-    The path is: target/<group>/<dataset>.<extension>
+    The path is: target/<dataset>.<extension>
     """
     absolute_target = os.path.abspath(target)
     name = "{dataset}.{type}".format(dataset=dataset_target.dataset, type=dataset_target.type)
@@ -181,6 +204,15 @@ def construct_download_path(dataset_target: Dataset, target) -> str:
         name += ".{}".format(extension_map(dataset_target.compression))
 
     path = os.path.join(absolute_target, name)
+    return path
+    
+def construct_grouped_path(dataset: Dataset, filename, target):
+    """
+    Builds the file path for a Dataset, grouped by `group`
+    """
+    absolute_target = os.path.abspath(target)
+    
+    path = os.path.join(absolute_target, dataset.group, filename)
     return path
     
 def extension_map(compression):
