@@ -81,7 +81,7 @@ def organize(datasets, target, source):
     # Grab all the existing files in source
     for f in glob.glob(os.path.join(absolute_source, "*")):
         name = os.path.basename(f)
-        dataset_name = name.split(".", maxsplit=1)[0]
+        dataset_name = name.split("-src", maxsplit=1)[0]
         # path -> dataset_name -> find Dataset in dict -> build target path
         found_dataset = datasets_dict[dataset_name]
         target_path = construct_grouped_path(found_dataset, name, absolute_target)
@@ -199,7 +199,7 @@ def construct_download_path(dataset_target: Dataset, target) -> str:
     The path is: target/<dataset>.<extension>
     """
     absolute_target = os.path.abspath(target)
-    name = "{dataset}.{type}".format(dataset=dataset_target.dataset, type=dataset_target.type)
+    name = "{dataset}-src.{type}".format(dataset=dataset_target.dataset, type=dataset_target.type)
     if dataset_target.compression is not None:
         name += ".{}".format(extension_map(dataset_target.compression))
 
