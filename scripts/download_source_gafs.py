@@ -97,7 +97,13 @@ def load_resource_metadata(datasets_dir) -> List[Dict]:
     loaded_yamls = []
     for path in dataset_paths:
         with open(path) as dataset_file:
-            dataset = yaml.load(dataset_file, Loader=yaml.FullLoader)
+            dataset = dict()
+            if getattr(yaml, "FullLoader", None) == None:
+                # We're in PyYaml < 5.1
+                dataset = yaml.load(dataset_file)
+            else:
+                dataset = yaml.load(dataset_file, Loader=yaml.FullLoader)
+                
             loaded_yamls.append(dataset)
 
     return loaded_yamls
