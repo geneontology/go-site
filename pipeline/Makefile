@@ -40,6 +40,12 @@ OBO= http://purl.obolibrary.org/obo
 ONTOLOGY = $(OBO)/go/snapshot/go.json
 target/go-ontology.json:
 	wget --no-check-certificate $(ONTOLOGY) -O $@.tmp && mv $@.tmp $@ && touch $@
+	
+target/go_context.jsonld:
+	wget --no-check-certificate https://raw.githubusercontent.com/prefixcommons/biocontext/master/registry/go_context.jsonld -O $@.tmp && mv $@.tmp $@ && touch $@
+	
+target/obo_context.jsonld:
+	wget --no-check-certificate https://raw.githubusercontent.com/prefixcommons/biocontext/master/registry/obo_context.jsonld -O $@.tmp && mv $@.tmp $@ && touch $@
 
 
 GAF_OWL = target/go-gaf.owl
@@ -57,15 +63,25 @@ VALIDATE = $(PY_BIN)/validate.py
 DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(DATASET_EXCLUDES),-x $(exclusion) )
 SUPPRESS_THESE_TAGS = $(foreach tag,$(GORULE_TAGS_TO_SUPPRESS),--suppress-rule-reporting-tag $(tag) )
 
+SOURCE_URL ?= http://snapshot.geneontology.org/products/annotations
+
+%-src.gaf.gz:
+	curl -o $*-src.gaf.gz $(SOURCE_URL)/$(notdir $*-src.gaf.gz)
+
+%.gaferences.json: $(GAF_OWL) target/go_context.jsonld target/obo_context.jsonld %-src.gaf.gz
+	gzip -dcf $*-src.gaf.gz > $*-src.gaf # unzip source gaf
+	gaferencer gaf --ontfile true --contexts target/go_context.jsonld,target/obo_context.jsonld $(GAF_OWL) $*-src.gaf $*.gaferences.json
+
+# In this target, in the pipeline, %-src.gaf.gz should already exist due to an earlier pipeline step
 # Should be something like target/groups/<group>/<group>.group
 .PRECIOUS: %.gaf.gz
-%.group: target/go-ontology.json
+%.group: target/go-ontology.json %.gaferences.json
 	mkdir -p $(dir $*) # Make the group directory
 	# This will split each slash in the path to space separated list, then we pick the last one, the group directory
 	# assigns a make variable called `group` computed from the $* generic target stem.
 	# Ex: target/groups/fb/fb.gaf as a target, the stem ($*) is target/groups/fb/fb, so `group` gets assigned to fb
 	$(eval group := $(lastword $(subst /, ,$*)))
-	python3 $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE) $(SUPPRESS_THESE_TAGS)
+	python3 $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE) $(SUPPRESS_THESE_TAGS) --skip-existing-files --gaferencer-file $*.gaferences.json
 	touch $@
 
 # dataset
