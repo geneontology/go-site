@@ -79,11 +79,14 @@ def organize(datasets, target, source):
     datasets_dict = { d.dataset: d for d in datasets }
     
     # Grab all the existing files in source
-    for f in glob.glob(os.path.join(absolute_source, "*")):
+    for f in glob.glob(os.path.join(absolute_source, "*-src*")):
         name = os.path.basename(f)
         dataset_name = name.split("-src", maxsplit=1)[0]
         # path -> dataset_name -> find Dataset in dict -> build target path
-        found_dataset = datasets_dict[dataset_name]
+        found_dataset = datasets_dict.get(dataset_name, None)
+        if not found_dataset:
+            continue
+            
         target_path = construct_grouped_path(found_dataset, name, absolute_target)
         os.makedirs(os.path.dirname(target_path), exist_ok=True)
         shutil.copyfile(f, target_path)
