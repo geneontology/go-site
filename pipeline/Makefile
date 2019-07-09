@@ -63,16 +63,17 @@ VALIDATE = $(PY_BIN)/validate.py
 DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(DATASET_EXCLUDES),-x $(exclusion) )
 SUPPRESS_THESE_TAGS = $(foreach tag,$(GORULE_TAGS_TO_SUPPRESS),--suppress-rule-reporting-tag $(tag) )
 
-SOURCE_URL ?= http://snapshot.geneontology.org/products/annotations
+GAF_SOURCE_BASE_URL ?= http://snapshot.geneontology.org/products/annotations
 
 %-src.gaf.gz:
-	curl -o $*-src.gaf.gz $(SOURCE_URL)/$(notdir $*-src.gaf.gz)
+	mkdir -p $(dir $@)
+	curl -o $@.tmp $(GAF_SOURCE_BASE_URL)/$(notdir $*-src.gaf.gz) && mv $@.tmp $@ && touch $@
 
+.PRECIOUS: %.gaferences.json
 %.gaferences.json: $(GAF_OWL) target/go_context.jsonld target/obo_context.jsonld %-src.gaf.gz
 	gzip -dcf $*-src.gaf.gz > $*-src.gaf # unzip source gaf
 	gaferencer gaf --ontfile true --contexts target/go_context.jsonld,target/obo_context.jsonld $(GAF_OWL) $*-src.gaf $*.gaferences.json
 
-# In this target, in the pipeline, %-src.gaf.gz should already exist due to an earlier pipeline step
 # Should be something like target/groups/<group>/<group>.group
 .PRECIOUS: %.gaf.gz
 %.group: target/go-ontology.json %.gaferences.json
