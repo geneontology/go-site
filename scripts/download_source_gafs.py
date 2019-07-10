@@ -24,19 +24,30 @@ def cli():
 @click.option("--target", "-T", type=click.Path(exists=False), required=True, help="Path to directory where files will be stored")
 @click.option("--type", multiple=True, default=["gaf"], help="The source type (gaf, gpad, etc) to download")
 @click.option("--exclude", "-x", multiple=True, help="dataset name we want to not download")
+@click.option("--only-group", "-g", multiple=True, default=None, 
+    help="Ignores resource groups that are not specified by this option. Datasets within can the group can still be excluded with --exclude")
 @click.option("--parallel", "-p", default=5, help="Number of processes to use to download files")
 @click.option("--dry-run", is_flag=True, help="Do everything but download if  flag is set")
 @click.option("--retries", "-r", default=3, help="Max number of times to download a single source before giving up on everyone")
-def all(datasets, target, type, exclude, parallel, dry_run, retries):
+@click.option("--map-dataset-url", "-m", multiple=True, type=(str, str, str), default=dict(), help="Replacement url mapping for a dataset: `DATASET TYPE URL`")
+def all(datasets, target, type, exclude, only_group, parallel, dry_run, retries, map_dataset_url):
     os.makedirs(os.path.abspath(target), exist_ok=True)
+    
+    dataset_mappings = { (dataset, t): url for (dataset, t, url) in map_dataset_url }
     
     click.echo("Using {} for datasets".format(datasets))
     resource_metadata = load_resource_metadata(datasets)
+    if only_group is not None:
+        resource_metadata = list(filter(lambda r: r["id"] in only_group, resource_metadata))
     click.echo("Found {} dataset files".format(len(resource_metadata)))
         
     dataset_targets = transform_download_targets(resource_metadata, types=type)
     # Filter out datasets that we want excluded
     dataset_targets = list(filter(lambda t: t.dataset not in exclude, dataset_targets))
+    # apply dataset URL mapping
+    dataset_targets = [ Dataset(group=ds.group, dataset=ds.dataset, url=dataset_mappings.get((ds.dataset, ds.type), ds.url), type=ds.type, compression=ds.compression) 
+        for ds in dataset_targets ]
+
     multi_download(dataset_targets, target, parallel=parallel, dryrun=dry_run, retries=retries)
 
 
@@ -79,11 +90,14 @@ def organize(datasets, target, source):
     datasets_dict = { d.dataset: d for d in datasets }
     
     # Grab all the existing files in source
-    for f in glob.glob(os.path.join(absolute_source, "*")):
+    for f in glob.glob(os.path.join(absolute_source, "*-src*")):
         name = os.path.basename(f)
         dataset_name = name.split("-src", maxsplit=1)[0]
         # path -> dataset_name -> find Dataset in dict -> build target path
-        found_dataset = datasets_dict[dataset_name]
+        found_dataset = datasets_dict.get(dataset_name, None)
+        if not found_dataset:
+            continue
+            
         target_path = construct_grouped_path(found_dataset, name, absolute_target)
         os.makedirs(os.path.dirname(target_path), exist_ok=True)
         shutil.copyfile(f, target_path)
