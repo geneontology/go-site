@@ -29,11 +29,11 @@ def cli():
 @click.option("--parallel", "-p", default=5, help="Number of processes to use to download files")
 @click.option("--dry-run", is_flag=True, help="Do everything but download if  flag is set")
 @click.option("--retries", "-r", default=3, help="Max number of times to download a single source before giving up on everyone")
-@click.option("--map-dataset-url", "-m", multiple=True, type=(str, str), default=dict(), help="Replacement url mapping for a dataset")
+@click.option("--map-dataset-url", "-m", multiple=True, type=(str, str, str), default=dict(), help="Replacement url mapping for a dataset: `DATASET TYPE URL`")
 def all(datasets, target, type, exclude, only_group, parallel, dry_run, retries, map_dataset_url):
     os.makedirs(os.path.abspath(target), exist_ok=True)
     
-    dataset_mappings = dict(map_dataset_url)
+    dataset_mappings = { (dataset, t): url for (dataset, t, url) in map_dataset_url }
     
     click.echo("Using {} for datasets".format(datasets))
     resource_metadata = load_resource_metadata(datasets)
@@ -45,7 +45,7 @@ def all(datasets, target, type, exclude, only_group, parallel, dry_run, retries,
     # Filter out datasets that we want excluded
     dataset_targets = list(filter(lambda t: t.dataset not in exclude, dataset_targets))
     # apply dataset URL mapping
-    dataset_targets = [ Dataset(group=ds.group, dataset=ds.dataset, url=dataset_mappings.get(ds.dataset, ds.url), type=ds.type, compression=ds.compression) 
+    dataset_targets = [ Dataset(group=ds.group, dataset=ds.dataset, url=dataset_mappings.get((ds.dataset, ds.type), ds.url), type=ds.type, compression=ds.compression) 
         for ds in dataset_targets ]
 
     multi_download(dataset_targets, target, parallel=parallel, dryrun=dry_run, retries=retries)
