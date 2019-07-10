@@ -63,11 +63,10 @@ VALIDATE = $(PY_BIN)/validate.py
 DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(DATASET_EXCLUDES),-x $(exclusion) )
 SUPPRESS_THESE_TAGS = $(foreach tag,$(GORULE_TAGS_TO_SUPPRESS),--suppress-rule-reporting-tag $(tag) )
 
-GAF_SOURCE_BASE_URL ?= http://snapshot.geneontology.org/products/annotations
-
 %-src.gaf.gz:
-	mkdir -p $(dir $@)
-	curl -o $@.tmp $(GAF_SOURCE_BASE_URL)/$(notdir $*-src.gaf.gz) && mv $@.tmp $@ && touch $@
+	# See comment in %.groups on this construct
+	$(eval group := $(lastword $(subst /, ,$*)))
+	python3 ../scripts/download_source_gafs.py group $(group) -d $(METADATA_DIR)/datasets --target target/groups/$(group) --type gaf --type gpi $(DONT_VALIDATE)
 
 .PRECIOUS: %.gaferences.json
 %.gaferences.json: $(GAF_OWL) target/go_context.jsonld target/obo_context.jsonld %-src.gaf.gz
