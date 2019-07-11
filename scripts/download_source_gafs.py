@@ -37,7 +37,7 @@ def all(datasets, target, type, exclude, only_group, parallel, dry_run, retries,
     
     click.echo("Using {} for datasets".format(datasets))
     resource_metadata = load_resource_metadata(datasets)
-    if only_group is not None:
+    if len(only_group) > 0:
         resource_metadata = list(filter(lambda r: r["id"] in only_group, resource_metadata))
     click.echo("Found {} dataset files".format(len(resource_metadata)))
         
