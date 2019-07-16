@@ -22,15 +22,16 @@ def cli():
 @cli.command()
 @click.option("--datasets", "-d", type=click.Path(exists=True), required=True, help="Path to directory with all the dataset yamls")
 @click.option("--target", "-T", type=click.Path(exists=False), required=True, help="Path to directory where files will be stored")
-@click.option("--type", multiple=True, default=["gaf"], help="The source type (gaf, gpad, etc) to download")
+@click.option("--type", multiple=True, default=["gaf"], help="The source type (gaf, gpad, etc) to download", show_default=True)
 @click.option("--exclude", "-x", multiple=True, help="dataset name we want to not download")
 @click.option("--only-group", "-g", multiple=True, default=None, 
     help="Ignores resource groups that are not specified by this option. Datasets within can the group can still be excluded with --exclude")
-@click.option("--parallel", "-p", default=5, help="Number of processes to use to download files")
+@click.option("--parallel", "-p", default=5, help="Number of processes to use to download files", show_default=True)
 @click.option("--dry-run", is_flag=True, help="Do everything but download if  flag is set")
-@click.option("--retries", "-r", default=3, help="Max number of times to download a single source before giving up on everyone")
+@click.option("--retries", "-r", default=3, help="Max number of times to download a single source before giving up on everyone", show_default=True)
+@click.option("--retry-time", "-t", default=15, help="Number of seconds between retry attempts", show_default=True)
 @click.option("--map-dataset-url", "-m", multiple=True, type=(str, str, str), default=dict(), help="Replacement url mapping for a dataset: `DATASET TYPE URL`")
-def all(datasets, target, type, exclude, only_group, parallel, dry_run, retries, map_dataset_url):
+def all(datasets, target, type, exclude, only_group, parallel, dry_run, retries, retry_time, map_dataset_url):
     os.makedirs(os.path.abspath(target), exist_ok=True)
     
     dataset_mappings = { (dataset, t): url for (dataset, t, url) in map_dataset_url }
@@ -48,7 +49,9 @@ def all(datasets, target, type, exclude, only_group, parallel, dry_run, retries,
     dataset_targets = [ Dataset(group=ds.group, dataset=ds.dataset, url=dataset_mappings.get((ds.dataset, ds.type), ds.url), type=ds.type, compression=ds.compression) 
         for ds in dataset_targets ]
 
-    multi_download(dataset_targets, target, parallel=parallel, dryrun=dry_run, retries=retries)
+    success = multi_download(dataset_targets, target, parallel=parallel, dryrun=dry_run, retries=retries, retry_time=retry_time)
+    if not success:
+        raise click.ClickException("Failed Download")
 
 
 @cli.command()
@@ -122,9 +125,10 @@ def load_resource_metadata(datasets_dir) -> List[Dict]:
 
     return loaded_yamls
     
-def multi_download(dataset_targets: List[Dataset], target, parallel=5, retries=3, dryrun=False):
-
+def multi_download(dataset_targets: List[Dataset], target, parallel=5, retries=3, retry_time=20, dryrun=False):
+    
     pool = multiprocessing.Pool(processes=parallel)
+    
     def _simple_callback(download_result_tuple):
         # 
         success, result = download_result_tuple
@@ -133,13 +137,15 @@ def multi_download(dataset_targets: List[Dataset], target, parallel=5, retries=3
         else:
             click.echo("Download failed! *{}*".format(result), err=True)
             click.echo("Aborting!")
+            
             pool.terminate()
             
-    async_results = [ pool.apply_async(robust_download, (dataset, target), {"retries": retries, "dryrun": dryrun}, _simple_callback ) 
+    async_results = [ pool.apply_async(robust_download, (dataset, target), {"retries": retries, "dryrun": dryrun, "retry_time": retry_time}, _simple_callback ) 
         for dataset in dataset_targets ] # List[AsyncResult]
-        
-    pool.close()
-    pool.join()
+
+    results = [ result.get() for result in async_results ] 
+    just_successes = [r[0] for r in results] 
+    return False not in just_successes
 
 
 def transform_download_targets(resource_metadata, types=None) -> List[Dataset]:
@@ -167,7 +173,7 @@ def transform_download_targets(resource_metadata, types=None) -> List[Dataset]:
 
     return transformed_dataset_targets
 
-def robust_download(dataset_target: Dataset, target, retries=3, dryrun=False) -> str:
+def robust_download(dataset_target: Dataset, target, retries=3, retry_time=20, dryrun=False) -> str:
     """
     Robustly downloads the url of the `dataset_target` to a path. The path is:
     target/<group>/<dataset>.extension.gz
@@ -182,7 +188,7 @@ def robust_download(dataset_target: Dataset, target, retries=3, dryrun=False) ->
             break
         else:
             click.echo("Download of {url} failed: {error}{trying}".format(url=dataset_target.url, error=result, trying=" - Trying again" if tries < retries else ""), err=True)
-            time.sleep(.5)
+            time.sleep(retry_time)
             
             
     return (success, path)
