@@ -2,7 +2,7 @@
 
 import requests
 import json
-import sys, getopt
+import sys, getopt, os
 
 # S3 specific imports
 # import boto3
@@ -257,16 +257,16 @@ def create_stats(all_terms, all_annotations, all_entities):
         else:
             terms += 1
 
-        # some obsoleted annotations don't have a source
-        if 'source' not in doc:
-            continue
+            # some obsoleted annotations don't have a source
+            if 'source' not in doc:
+                continue
 
-        if "biological_process" in doc['source']:
-            terms_by_aspect["P"] += 1
-        if "molecular_function" in doc['source']:
-            terms_by_aspect["F"] += 1
-        if "cellular_component" in doc['source']:
-            terms_by_aspect["C"] += 1
+            if "biological_process" in doc['source']:
+                terms_by_aspect["P"] += 1
+            if "molecular_function" in doc['source']:
+                terms_by_aspect["F"] += 1
+            if "cellular_component" in doc['source']:
+                terms_by_aspect["C"] += 1
             
     terms = { 
         "total" : all_terms['response']['numFound'],
@@ -342,7 +342,7 @@ def create_stats(all_terms, all_annotations, all_entities):
         },
 
         "taxons" : {
-            "all" : int(len(all_annotations['facet_counts']['facet_fields']['taxon']) / 2),
+            "total" : int(len(all_annotations['facet_counts']['facet_fields']['taxon']) / 2),
             "filtered" : len(usable_taxons),
         },
 
@@ -381,6 +381,122 @@ def create_stats(all_terms, all_annotations, all_entities):
     stats["annotations"] = annotations
 
     return stats
+
+
+def create_text_report(stats_json):
+    text_report = ""
+
+    text_report = "GENE ONTOLOGY STATISTICS"
+    text_report += "\nrelease_date\t" + stats_json["release_date"]    
+
+    text_report += "\n\nTERMS\n"
+    text_report += "total\t" + str(stats_json["terms"]["total"]) + "\nobsoleted\t" + str(stats_json["terms"]["obsoleted"]) + "\nvalid total\t" + str(stats_json["terms"]["valid"])
+    text_report += "\nvalid P\t" + str(stats_json["terms"]["by_aspect"]["P"]) + "\nvalid F\t" + str(stats_json["terms"]["by_aspect"]["F"]) + "\nvalid C\t" + str(stats_json["terms"]["by_aspect"]["C"])
+
+
+    text_report += "\n\nBIOENTITIES\n"
+    text_report += "total\t" + str(stats_json["annotations"]["bioentities"]["total"])
+
+    text_report += "\n\nBIOENTITIES BY TYPE (CLUSTER)"
+    for key, val in stats_json["annotations"]["bioentities"]["by_type"]["cluster"].items():
+        text_report += "\n" + key + "\t" + str(val)
+
+    text_report += "\n\nBIOENTITIES BY TYPE (ALL)"
+    for key, val in stats_json["annotations"]["bioentities"]["by_type"]["all"].items():
+        text_report += "\n" + key + "\t" + str(val)
+
+    text_report += "\n\nBIOENTITIES BY FILTERED TAXON AND BY TYPE (CLUSTER)"
+    text_report += "\ntaxon"
+    for type, nb in stats_json["annotations"]["bioentities"]["by_type"]["cluster"].items():
+        text_report += "\t" + type
+    for key, val in stats_json["annotations"]["bioentities"]["by_taxon"]["cluster"].items():
+        text_report += "\n" + key
+        for type, nb in stats_json["annotations"]["bioentities"]["by_type"]["cluster"].items():
+            text_report += "\t" + str(val[type]["A"]) if type in val else "\t0"
+
+    text_report += "\n\nBIOENTITIES BY FILTERED TAXON AND BY TYPE (ALL)"
+    text_report += "\ntaxon"
+    for type, nb in stats_json["annotations"]["bioentities"]["by_type"]["all"].items():
+        text_report += "\t" + type
+    for key, val in stats_json["annotations"]["bioentities"]["by_taxon"]["all"].items():
+        text_report += "\n" + key
+        for type, nb in stats_json["annotations"]["bioentities"]["by_type"]["all"].items():
+            text_report += "\t" + str(val[type]["A"]) if type in val else "\t0"
+
+
+    text_report += "\n\nTAXONS\n"
+    text_report += "total\t" + str(stats_json["annotations"]["taxons"]["total"]) + "\nfiltered\t" + str(stats_json["annotations"]["taxons"]["filtered"])
+
+
+    text_report += "\n\nANNOTATIONS\n"
+    text_report += "total\t" + str(stats_json["annotations"]["total"])
+    for key, val in stats_json["annotations"]["by_aspect"].items():
+        text_report += "\n" + key + "\t" + str(val)
+        
+    text_report += "\n\nANNOTATIONS BY BIOENTITY TYPE (CLUSTER)"
+    for key, val in stats_json["annotations"]["by_bioentity_type"]["cluster"].items():
+        text_report += "\n" + key + "\t" + str(val)
+    
+    text_report += "\n\nANNOTATIONS BY BIOENTITY TYPE (ALL)"
+    for key, val in stats_json["annotations"]["by_bioentity_type"]["all"].items():
+        text_report += "\n" + key + "\t" + str(val)
+    
+    text_report += "\n\nANNOTATIONS BY EVIDENCE (CLUSTER)"
+    for key, val in stats_json["annotations"]["by_evidence"]["cluster"].items():
+        text_report += "\n" + key + "\t" + str(val)
+    
+    text_report += "\n\nANNOTATIONS BY EVIDENCE (ALL)"
+    for key, val in stats_json["annotations"]["by_evidence"]["all"].items():
+        text_report += "\n" + key + "\t" + str(val)
+    
+    text_report += "\n\nANNOTATIONS BY GROUP"
+    for key, val in stats_json["annotations"]["by_group"].items():
+        text_report += "\n" + key + "\t" + str(val)
+    
+    text_report += "\n\nANNOTATIONS BY TAXON"
+    for key, val in stats_json["annotations"]["by_taxon"].items():
+        text_report += "\n" + key + "\t" + str(val)
+
+
+    text_report += "\n\nREFERENCES AND PMIDS\n"
+    text_report += "total\t" + str(stats_json["annotations"]["references"]["total"]) + "\t" + str(stats_json["annotations"]["pmids"]["total"])
+
+    text_report += "\n\nREFERENCES AND PMIDS BY GROUP"
+    text_report += "\ngroup\treferences\tpmids"
+    for key, val in stats_json["annotations"]["references"]["by_group"].items():
+        text_report += "\n" + key + "\t" + str(val) + "\t" + str(stats_json["annotations"]["pmids"]["by_group"][key])
+
+    text_report += "\n\nREFERENCES AND PMIDS BY TAXON"
+    text_report += "\ntaxon\treferences\tpmids"
+    for key, val in stats_json["annotations"]["references"]["by_taxon"].items():
+        pmid_val = stats_json["annotations"]["pmids"]["by_taxon"][key] if key in stats_json["annotations"]["pmids"]["by_taxon"] else 0
+        text_report += "\n" + key + "\t" + str(val) + "\t" + str(pmid_val)
+
+    return text_report
+
+def create_meta(json_stats):
+    meta = {
+        "release_date": json_stats["release_date"],
+        "terms": {
+            "total" : json_stats["terms"]["valid"],
+            "by_aspect" : json_stats["terms"]["by_aspect"]
+        },
+        "annotations" : {
+            "total" : json_stats["annotations"]["total"],
+            "experimental" : json_stats["annotations"]["by_evidence"]["cluster"]["EXP"]
+        },
+        "taxons": {
+            "total" : json_stats["annotations"]["taxons"]["total"],
+            "filtered" : json_stats["annotations"]["taxons"]["filtered"]
+        },
+        "bioentities" : {
+            "total" : json_stats["annotations"]["bioentities"]["total"],
+            "by_type" :json_stats["annotations"]["bioentities"]["by_type"]["cluster"]
+        },
+        "references": json_stats["annotations"]["references"]["total"],
+        "pmids": json_stats["annotations"]["pmids"]["total"]
+    }
+    return meta
     
 # def save_terms_mapping(all_terms):
 #     for doc in all_terms['response']['docs']:
@@ -432,17 +548,19 @@ def write_json(key, content):
     with open(key, 'w') as outfile:
         json.dump(content, outfile, indent=2)
  
-
+def write_text(key, content):
+    with open(key, 'w') as outfile:
+        outfile.write(content)
 
 
 
 def print_help():
-    print('Usage: python go-stats.py -g <golr_url> -o <output_file>\n')
+    print('Usage: python go_stats.py -g <golr_url> -o <output_rep>\n')
 
 
 def main(argv):
     golr_url = ''
-    output_file = ''
+    output_rep = ''
 
     if len(argv) < 3:
         print_help()
@@ -461,20 +579,43 @@ def main(argv):
         elif opt in ("-g", "--gurl"):
             golr_url = arg
         elif opt in ("-o", "--ofile"):
-            output_file = arg
-
-    if not output_file.endswith(".json"):
-        output_file += ".json"        
+            output_rep = arg
         
-    print("Will write stats to " , output_file)
+    if not output_rep.endswith("/"):
+        output_rep += "/"
 
-    stats = compute_stats(golr_url)
+    if not os.path.exists(output_rep):
+        os.mkdir(output_rep)
 
-    print("Saving Stats to <" + output_file + "> ...")    
-    write_json(output_file, stats)
+    output_meta = output_rep + "go-meta.json"
+    output_json =  output_rep + "go-stats.json"
+    output_tsv =  output_rep + "go-stats.tsv"
+
+    print("Will write stats to " + output_json + " and " + output_tsv)
+
+    json_stats = compute_stats(golr_url)
+
+    print("Saving Stats to <" + output_json + "> ...")    
+    write_json(output_json, json_stats)
     print("Done.")
 
+
+    # output_tsv =  "mystats.tsv"
+    # with open('mystats.json') as json_file:  
+    #     json_stats = json.load(json_file)
+
+    print("Saving Stats to <" + output_tsv + "> ...")    
+    tsv_stats = create_text_report(json_stats)
+    write_text(output_tsv, tsv_stats)
+    print("Done.")
+
+    json_meta = create_meta(json_stats)
+    print("Saving META to <" + output_meta + "> ...")    
+    write_json(output_meta, json_meta)
+    print("Done.")
+    
 
 
 if __name__ == "__main__":
    main(sys.argv[1:])
+   
