@@ -103,7 +103,7 @@ target/groups/goa/goa_uniprot_all_noiea_cam.ttl: target/groups/goa/goa_uniprot_a
 	gzip -cf target/groups/goa/goa_uniprot_all_noiea_cam.ttl > target/groups/goa/goa_uniprot_all_noiea_cam.ttl.gz
 
 target/groups/goa/goa_uniprot_all_noiea.gpad: target/groups/goa/goa_uniprot_all_noiea.gaf
-	owltools --log-error --gaf target/groups/goa/goa_uniprot_all_noiea.gaf --write-gpad -o target/groups/goa/goa_uniprot_all_noiea.gpad.tmp && mv target/groups/goa/goa_uniprot_all_noiea.gpad.tmp target/groups/goa/goa_uniprot_all_noiea.gpad
+	python3 $(PY_BIN)/ontobio-parse-assocs.py -f target/groups/goa/goa_uniprot_all_noiea.gaf -o target/groups/goa/goa_uniprot_all_noiea.gpad.tmp --report-md rep.md convert --to gpad && mv target/groups/goa/goa_uniprot_all_noiea.gpad.tmp target/groups/goa/goa_uniprot_all_noiea.gpad
 	gzip -cf target/groups/goa/goa_uniprot_all_noiea.gpad > target/groups/goa/goa_uniprot_all_noiea.gpad.gz
 
 target/groups/goa/goa_uniprot_all_noiea.gpi: target/groups/goa/goa_uniprot_all_noiea.gaf
