@@ -40,10 +40,10 @@ OBO= http://purl.obolibrary.org/obo
 ONTOLOGY = $(OBO)/go/snapshot/go.json
 target/go-ontology.json:
 	wget --no-check-certificate $(ONTOLOGY) -O $@.tmp && mv $@.tmp $@ && touch $@
-	
+
 target/go_context.jsonld:
 	wget --no-check-certificate https://raw.githubusercontent.com/prefixcommons/biocontext/master/registry/go_context.jsonld -O $@.tmp && mv $@.tmp $@ && touch $@
-	
+
 target/obo_context.jsonld:
 	wget --no-check-certificate https://raw.githubusercontent.com/prefixcommons/biocontext/master/registry/obo_context.jsonld -O $@.tmp && mv $@.tmp $@ && touch $@
 
@@ -64,15 +64,17 @@ DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(DATASET_EXCLUDES),-x $(
 SUPPRESS_THESE_TAGS = $(foreach tag,$(GORULE_TAGS_TO_SUPPRESS),--suppress-rule-reporting-tag $(tag) )
 PYTHON_CMD ?= python3
 
-%-src.gaf.gz:
+.PRECIOUS: %.sources
+%.sources:
 	# See comment in %.groups on this construct
 	$(eval group := $(lastword $(subst /, ,$*)))
-	$(PYTHON_CMD) ../scripts/download_source_gafs.py group $(group) -d $(METADATA_DIR)/datasets --target target/groups/$(group) --type gaf --type gpi $(DONT_VALIDATE)
+	$(PYTHON_CMD) ../scripts/download_source_gafs.py group $(group) -d $(METADATA_DIR)/datasets --target target/groups/$(group) --type gaf --type gpi $(DONT_VALIDATE) --replace false
+	touch $*.sources
 
 .PRECIOUS: %.gaferences.json
-%.gaferences.json: $(GAF_OWL) target/go_context.jsonld target/obo_context.jsonld %-src.gaf.gz
-	gzip -dcf $*-src.gaf.gz > $*-src.gaf # unzip source gaf
-	gaferencer gaf --ontfile true --contexts target/go_context.jsonld,target/obo_context.jsonld $(GAF_OWL) $*-src.gaf $*.gaferences.json
+%.gaferences.json: $(GAF_OWL) target/go_context.jsonld target/obo_context.jsonld %.sources
+	$(eval group := $(lastword $(subst /, ,$*)))
+	$(PYTHON_CMD) ../scripts/gaferencer_by_metadata.py group $(group) -d $(METADATA_DIR)/datasets --target target/groups/$(group) -c target/go_context.jsonld -c target/obo_context.jsonld --ontology $(GAF_OWL) --gafs target/groups/$(group)
 
 # Should be something like target/groups/<group>/<group>.group
 .PRECIOUS: %.gaf.gz
