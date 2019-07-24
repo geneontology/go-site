@@ -111,7 +111,7 @@ def main():
     resource_metadata = {}
 
     ## Read in all of the useful data from the metadata data sources.
-    LOG.info('Globbing metadata for sources: ' + args.metadata + '/*.yaml')
+    LOG.info('Globbingmetadata for sources: ' + args.metadata + '/*.yaml')
     metadata_filenames = glob.glob(args.metadata + '/*.yaml')
     #LOG.info(metadata_filenames)
     for metadata_filename in metadata_filenames:
@@ -166,6 +166,9 @@ def main():
         elif "_noiea.gaf.gz" in src_filename:
             pass
 
+        elif "_valid.gaf.gz" in src_filename:
+            pass # why not continue?
+
         else:
 
             ## Generate a usable "id".
@@ -192,7 +195,7 @@ def main():
         ###
 
         LOG.info("fids: " + fid)
-        if fid.lower().find('uniprot'):
+        if fid.lower().find('uniprot') != -1:
             LOG.info("Smells like uniprot; skipping: " + fid)
             continue
 
@@ -201,9 +204,42 @@ def main():
         ## the markdown version was the only version.
         read_data = None
         with open(args.directory + '/' + fid + '.report.json') as fhandle:
+            # Data looks like:
+            # {
+            #     "group": "wb",
+            #     "dataset": "wb",
+            #     "lines": 111003,
+            #     "skipped_lines": 16880,
+            #     "associations": 94123,
+            #     "messages": {
+            #         "other": [
+            #             {
+            #                 "level": "ERROR",
+            #                 "line": "WB\tWBGene00000001\taap-1\t\tGO:0043551\tGO_REF:0000033\tIBA\tPANTHER:PTN000016388\tP\t\tY110A7A.10\tgene\ttaxon:6239\t20150227\tGO_Central\t\t\n",
+            #                 "type": "Invalid identifier",
+            #                 "message": "Disallowing GO_REF:0000033 in reference field as of 03/13/2018",
+            #                 "obj": "GO_REF:0000033",
+            #                 "taxon": ""
+            #             },
+            #             {
+            #                 "level": "ERROR",
+            #                 "line": "WB\tWBGene00000001\taap-1\t\tGO:0046854\tGO_REF:0000033\tIBA\tPANTHER:PTN000806614\tP\t\tY110A7A.10\tgene\ttaxon:6239\t20150227\tGO_Central\t\t\n",
+            #                 "type": "Invalid identifier",
+            #                 "message": "Disallowing GO_REF:0000033 in reference field as of 03/13/2018",
+            #                 "obj": "GO_REF:0000033",
+            #                 "taxon": ""
+            #             },
+            #         ],
+            #         "gorule-0000001": [
+            #             { ... }
+            #             ...
+            #         ]
+            #     }
+            # }
             read_data = json.loads(fhandle.read())
             ## For the sake of sanity, get rid of some extra stuff.
-            read_data.pop("groups", None)
+            ## NOTE: removed due to groups no longer being in structure.
+            # read_data.pop("groups", None)
 
         ## Better be something in there.
         if not read_data:
@@ -214,7 +250,8 @@ def main():
             ## Assemble report object.
             read_data['id'] = fid
             read_data['metadata'] = resource_metadata[fid + '.gaf']
-            LOG.info(read_data)
+            #LOG.info(read_data)
+            LOG.info('Report found for: ' + fid)
             lookup.append(read_data)
 
     #LOG.info(lookup)

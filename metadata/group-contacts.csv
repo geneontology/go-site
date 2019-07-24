@@ -1,78 +1,137 @@
-Group,Contact name,Contact GitHub ID, Expertise
+Group,Contact name,Contact GitHub ID,Expertise
 AgBase,Jinhui Zhang,@jinhuiz, 
-Alzheimers_University_of_Toronto,Barbara Kramarz,@BarbaraCzub,
-Alzheimers_University_of_Toronto,Ruth Lovering,@RLovering,
+Alzheimers_University_of_Toronto,Ruth Lovering,@RLovering, 
+ARUK-UCL,Barbara Kramarz,@BarbaraCzub,
+ARUK-UCL,Ruth Lovering,@RLovering,
 ASPGD,Marek Skrzypek,@marekskrzypek,
+BBOP,Seth Carbon,@kltm,Data pipeline - AmiGO - Website
+BBOP,Chris Mungall,@cmungall,All things technical and ontology-related
+BBOP,Eric Douglass,@dougli1sqrd,GO Rules - ROBOT
 BHF-UCL,Rachael Huntley,@rachhuntley,
 BHF-UCL,Barbara Kramarz,@BarbaraCzub,
 BHF-UCL,Ruth Lovering,@RLovering,
-BHF-UCL,Nancy Campbell,@NancyCampbell,
 Buffalo University,Alex Diehl,@addiehl,
-CACAO,Suzy Alexander,@suzialeksander,
-CACAO,Jim Hu,@jimhu-tamu, 
+CACAO,Sandy Labonte,@sandyl27,
+CACAO,Jim Hu,@jimhu-tamu,
+CACAO,Debbie Siegle,@dsiegele,
+CACAO,Jolene Ramsey,@jrr-cpt,
 CGD,Marek Skrzypek,@marekskrzypek,
-DFLAT,GOC,Not actively maintainted- GO_Central,@pgaudet @ggeorghiou @vanaukenk,
+CollectTF,Ivan Erill,@ivanerill,
+Complex Portal,Birgit Meldal,@bmeldal,
+DFLAT,Not actively maintainted/GO_Central,@ggeorghiou,
+DFLAT,Not actively maintainted/GO_Central,@pgaudet,
+DFLAT,Not actively maintainted/GO_Central,@vanaukenk,
 dictyBase,Petra Fey,@pfey03,
 dictyBase,Robert Dodson,@rjdodson,
+EAWAG (ETH Zurich),Emanuel Schmid,@emanuel-schmid,biodegradation | databases | webservices
 EcoCyc,Ingrid Keseler,@keseler,
+EcoCyc,Amanda Mackie,@amandamackie,
+ECO - Evidence and Conclusion Ontology,Michelle Giglio,@mgiglio99,
+ECO - Evidence and Conclusion Ontology,Suvvi Nadendla,@nsuvarnaiari,
+ECO - Evidence and Conclusion Ontology,James Munro,@jbmunro,
+ECO - Evidence and Conclusion Ontology,Becky Tauber,@rctauber,
 EcoliWiki,Jim Hu,@jimhu-tamu,
 EcoliWiki,Debbie Siegele,@dsiegele,
-Ensembl,,,
-EnsemblFungi,,,
-EnsemblPlants,,,
+Ensembl,EBI,@tonysawfordebi,
+EnsemblFungi,EBI,@tonysawfordebi,
+EnsemblPlants,EBI,@tonysawfordebi,
 FlyBase,Helen Attrill,@hattrill,
 FlyBase,Giulia Antonazzo,@gantonazzo,
 GDB,EBI/GOC,@ggeorghiou,
-GeneDB,Fatima Silva Franco,@fatimasilva,
-GeneDB,Uli,uliboehme,
+GDB,EBI/GOC,@pgaudet,
+GeneDB,Ulrike Boehme,@uliboehme,Plasmodium curator
+GeneDB,Achchuthan Shanmugasundram,@Achchuthan,
 GOC,Pascale Gaudet,@pgaudet,
 GO_Central,Pascale Gaudet,@pgaudet,
-GR,Pankaj Jaiswal,,
+GO_Central,Chris Mungall,@cmungall,Ontology|Anatomy
+GR,Pankaj Jaiswal,@jaiswalp,Plant biology
+GREEKC,Colin Logie,@colinlog,Transcription
 HGNC,Ruth Lovering,@RLovering,
 HPA,Emma Lundberg, emma.lundberg AT scilifelab.se,
-IntAct,Birgit Meldal,@bmeldal,
-InterPro,Amaia Sangrador,@asangrador,
 InterPro,Alex Mitchell,@almitchell,
 InterPro,Lorna Richardson,@happy-lorna,
-InterPro,Neil Rawlings,@ndrawlings,
 InterPro,Hsin-Yu Chang,@EBI-Hsinyu,
-JCVI,,,
+JCVI,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
+JCVI,Not actively maintainted/GO_Central,@ggeorghiou,contact @mgiglio99 for queries
+JCVI,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
 LIFEdb,Stefan Wiemann,s.wiemann AT dkfz-heidelberg.de,
-MENGO,,,
+MENGO,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
+MENGO,Not actively maintainted/GO_Central,@ggeorghiou,contact @mgiglio99 for queries
+MENGO,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
 MGI,Judy Blake,@judyblake,
 MGI,Karen Christie,@krchristie,
 MGI,Harold Drabkin,@hdrabkin,
 MGI,David Hill,@ukemi,
-MTBBASE,,,
-NTNU_SB,Astrid Lægreid,,
-PAMGO_GAT,Not actively maintainted,,
-PAMGO_MGG,Not actively maintainted,,
+MGI,Mary Dolan,@mdolanme,
+MTBBASE,GOC,@ggeorghiou,
+NTNU_SB,Astrid Lægreid,,Transcription
+NTNU_SB,Marcio Acencio,@mlacencio,Transcription
+PAINT,Pascale Gaudet,@pgaudet,
+PAINT,Marc Feurmann,@marcfeuermann,
+PAINT,Michael Kesling,@keslingmj,
+PAINT,Huaiyu Mi,@huaiyumi,
+PAINT Software, Anushya Muruganujan,@mugitty,PAINT software developer
+PAMGO_GAT,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
+PAMGO_GAT,Not actively maintainted/GO_Central,@ggeorghiou,contact @mgiglio99 for queries
+PAMGO_GAT,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
+PAMGO_MGG,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
+PAMGO_MGG,Not actively maintainted/GO_Central,@ggeorghiou,contact @mgiglio99 for queries
+PAMGO_MGG,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
 ParkinsonsUK-UCL,Barbara Kramarz,@BarbaraCzub,
-ParkinsonsUK-UCL,Paul Denny,@Pauldenny,
 ParkinsonsUK-UCL,Ruth Lovering,@RLovering,
-PINC,Not actively maintainted- GO_Central,@pgaudet @ggeorghiou @vanaukenk,
+PINC,Not actively maintainted/GO_Central,@ggeorghiou,no contact person
+PINC,Not actively maintainted/GO_Central,@pgaudet,no contact person
+PINC,Not actively maintainted/GO_Central,@vanaukenk,no contact person
+PIR,Kati Laiho,laihokati,
 PomBase,ValWood,@valwood,
 PomBase,Midori Harris,@mah11,
 PomBase,Antonia Lock,@antonialock,
+Protein Ontology, Darren Natale,@nataled,
 PseudoCAP,Fiona Brinkman,@fionabrinkman,
-PseudoCAP,General Group,brinkmanlab,
+PseudoCAP,General Group,@brinkmanlab,
+PseudoCAP,Geoff Winsor,@glwinsor,
+Rhea,Ane Morgat,@amorgat,
 Reactome,Peter D'Eustachio,@deustp01,
+Reactome,Antonio Fabregat,@fabregat,
+Rfam,Anton Petrov,@AntonPetrov,
+Rfam,Ioanna Kalvari,@kalvari,
+Rfam,Joanna Arganiska,@JoannaArgasinska,
 RGD,Stan Laulederkind,@slaulederkind,
-Roslin_Institute,Not actively maintainted,,
+RGD,Tom Hayman,@gthayman,
+Roslin_Institute,Not actively maintainted/GO_Central,@pgaudet,no contact person
 SGD,Stacia Engel,@srengel,
-SGD,Suzy Alexander,@suzialeksander,
+SGD,Suzi Aleksander,@suzialeksander,
+SGN,Lukas Mueller,@lukasmueller,
+SynGO,Barbara Kramarz,@BarbaraCzub,
+SynGO,Pim van Nierop,@Pimmelorus,
+SynGO,Frank Koopmans,@ftwkoopmans,
 SYSCILIA_CCNET,Karen Christie,@krchristie,
-TAIR,Tanya Berardini,@tberardini,
-TAIR,Leonore Reiser,@lreiser,
-TIGR,Not actively maintainted,,
-UniProt (EBI),Penelope Garmiri,@pgarmiri,
+TAIR,Tanya Berardini,@tberardini,Plant biology
+TAIR,Leonore Reiser,@lreiser,Plant biology
+TAIR,Erica Bakker,@ebakker2,Plant biology
+TBRU,F.Silva-Franco, F.Silva-Franco at liverpool.ac.uk,
+TIGR,Not actively maintainted/GO_Central,@ggeorghiou,
+TIGR,Not actively maintainted/GO_Central,@pgaudet,
+TIGR,Not actively maintainted/GO_Central,@vanaukenk,
+UniProt (EBI),Penelope Garmiri,@pgarmiri,on leave from Dec 2018-Sept 2019
 UniProt (EBI),George Georghiou,@ggeorghiou,
+UniProt (EBI),Alex Ignatchenko,@alexsign,
 UniProt (EBI),Michelle Magrane,@magrane,
 UniProt (EBI),Sandra Orchard,@sandraorchard,
-UniProt (Swiss-Prot/Geneva),Kristian Axelsen,@kaxelsen, 
+UniProt (EBI),Mila Rodriguez-Lopez,@milarolo,
+UniProt (EBI),Tony Sawford,@tonysawfordebi,
+UniProt (Swiss-Prot/Geneva),Andrea Auchincloss,@AndreaAuchincloss,Bacteria
+UniProt (Swiss-Prot/Geneva),Florence Jungo,@FJungo, Venoms
+UniProt (Swiss-Prot/Geneva),Kristian Axelsen,@kaxelsen,
 UniProt (Swiss-Prot/Geneva),Marc Feuermann, @marcfeuermann,
 UniProt (Swiss-Prot/Geneva),Ivo Pedruzzi,@pedruzzi, 
-UniProt (Swiss-Prot/Geneva),Sylvain Poux,@sylvainpoux, 
-WormBase,Kimberly Van Auken,@vanaukenk,
-ZFIN,Sabrina Toro,@sabrinatoro,
-ZFIN,Doug Howe,@doughowe,
+UniProt (Swiss-Prot/Geneva),Sylvain Poux,@sylvainpoux,
+USC,Dustin Ebert,@dustine32,PAINT pipeline
+WormBase,Kimberly Van Auken,@vanaukenk,C.elegans
+Wikidata,Andrew Su,@andrewsu,
+Wikidata,Derek,@djow2019 ,
+Xenbase,Malcolm Fisher,@malcolmfisher103,Xenopus
+ZFIN,Sabrina Toro,@sabrinatoro,Zebra fish
+ZFIN,Doug Howe,@doughowe,Zebra fish
+Domain expert,,@khybiske,Chlamydia
+Domain expert,,@putmantime,Chlamydia

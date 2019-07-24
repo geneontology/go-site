@@ -94,13 +94,13 @@
 - database: ASAP
   name: A Systematic Annotation Package for Community Analysis of Genomes
   generic_urls:
-    - https://asap.ahabs.wisc.edu/annotation/php/ASAP1.htm
+    - https://asap.genetics.wisc.edu/asap/ASAP1.htm
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      url_syntax: https://asap.ahabs.wisc.edu/annotation/php/feature_info.php?FeatureID=[example_id]
-      example_id: ASAP:ABE-0000008
-      example_url: https://asap.ahabs.wisc.edu/annotation/php/feature_info.php?FeatureID=ABE-0000008
+      url_syntax: https://asap.genetics.wisc.edu/asap/feature_info.php?FeatureID=[example_id]
+      example_id: ASAP:ABF-0014586
+      example_url: https://asap.genetics.wisc.edu/asap/feature_info.php?FeatureID=ABF-0014586
 - database: AspGD
   name: Aspergillus Genome Database
   synonyms:
@@ -117,6 +117,7 @@
       example_url: http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid=ASPL0000067538
 - database: AspGD_LOCUS
   name: Aspergillus Genome Database
+  rdf_uri_prefix: http://identifiers.org/aspgd.locus/
   generic_urls:
     - http://www.aspergillusgenome.org/
   entity_types:
@@ -138,6 +139,7 @@
 - database: BFO
   name: Basic Formal Ontology
   description: An upper ontology used by Open Bio Ontologies (OBO) Foundry. BFO contains upper-level classes as well as core relations such as part_of (BFO_0000050)
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/BFO_
   generic_urls:
     - http://purl.obolibrary.org/obo/bfo
   entity_types:
@@ -184,6 +186,19 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
+- database: bioRxiv
+  name: bioRxiv
+  synonyms:
+    - BIORXIV
+  generic_urls:
+    - https://www.biorxiv.org/
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      id_syntax: '[0-9]+'
+      url_syntax: https://www.biorxiv.org/content/[example_id]
+      example_id: bioRxiv:10.1101/530881v2
+      example_url: https://www.biorxiv.org/content/10.1101/530881v2
 - database: BIOSIS
   name: BIOSIS previews
   generic_urls:
@@ -202,6 +217,18 @@
       url_syntax: http://www.brenda-enzymes.info/php/result_flat.php4?ecno=[example_id]
       example_id: BRENDA:4.2.1.3
       example_url: http://www.brenda-enzymes.info/php/result_flat.php4?ecno=4.2.1.3
+- database: BTO
+  name: BRENDA tissue / enzyme ontology
+  description: A structured controlled vocabulary for the source of an enzyme comprising tissues, cell lines, cell types and cell cultures.
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/BTO_
+  generic_urls:
+    - http://purl.obolibrary.org/obo/bto
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: http://purl.obolibrary.org/obo/BTO_[example_id]
+      example_id: BTO_0002164
+      example_url: http://purl.obolibrary.org/obo/BTO_0002164
 - database: Broad
   name: Broad Institute
   generic_urls:
@@ -249,9 +276,22 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
+- database: CARO
+  name: Common Anatomy Reference Ontology
+  description: An upper ontology for anatomy used by OBO Foundry ontologies. Used to facilitate interoperability between existing anatomy ontologies for different species 
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/CARO_
+  generic_urls:
+    - http://purl.obolibrary.org/obo/caro
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: http://purl.obolibrary.org/obo/CARO_[example_id]
+      example_id: CARO:0020003
+      example_url: http://purl.obolibrary.org/obo/CARO_0020003
 - database: CAS
   name: CAS Chemical Registry
   description: CAS REGISTRY is the most authoritative collection of disclosed chemical substance information, containing more than 54 million organic and inorganic substances and 62 million sequences. CAS REGISTRY covers substances identified from the scientific literature from 1957 to the present, with additional substances going back to the early 1900s.
+  rdf_uri_prefix: http://identifiers.org/cas/
   generic_urls:
     - http://www.cas.org/expertise/cascontent/registry/index.html
   entity_types:
@@ -326,15 +366,16 @@
   name: Candida Genome Database
   synonyms:
     - CGDID
+  rdf_uri_prefix: http://identifiers.org/cgd/
   generic_urls:
     - http://www.candidagenome.org/
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: (CAL|CAF)[0-9]{7}
+      id_syntax: (CAL|CAF)[0-9]{10}
       url_syntax: http://www.candidagenome.org/cgi-bin/locus.pl?dbid=[example_id]
-      example_id: CGD:CAL0005516
-      example_url: http://www.candidagenome.org/cgi-bin/locus.pl?dbid=CAL0005516
+      example_id: CGD:CAL0000179664
+      example_url: http://www.candidagenome.org/cgi-bin/locus.pl?dbid=CAL0000179664
 - database: CGD_LOCUS
   name: Candida Genome Database
   generic_urls:
@@ -376,6 +417,7 @@
   name: Chemical Entities of Biological Interest
   synonyms:
     - ChEBI
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/CHEBI_
   generic_urls:
     - http://www.ebi.ac.uk/chebi/
   entity_types:
@@ -387,6 +429,7 @@
       example_url: http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:17234
 - database: CL
   name: Cell Type Ontology
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/CL_
   generic_urls:
     - http://cellontology.org
   entity_types:
@@ -456,7 +499,7 @@
   entity_types:
     - type_name: macromolecular complex
       type_id: GO:0032991
-      id_syntax: CP-[0-9]+
+      id_syntax: CPX-[0-9]+
       url_syntax: https://www.ebi.ac.uk/complexportal/complex/[example_id]
       example_id: ComplexPortal:CPX-2158
       example_url: https://www.ebi.ac.uk/complexportal/complex/CPX-2158
@@ -503,6 +546,7 @@
       example_url: http://genomes.cribi.unipd.it/cgi-bin/pqs2/report.pl?gene_name=VIT_00s0173g00270&release=v1
 - database: dbSNP
   name: NCBI dbSNP
+  rdf_uri_prefix: http://identifiers.org/dbsnp/
   generic_urls:
     - http://www.ncbi.nlm.nih.gov/projects/SNP
   entity_types:
@@ -514,6 +558,7 @@
       example_url: http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=rs3131969
 - database: DDANAT
   name: Dictyostelium discoideum anatomy
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/DDANAT_
   generic_urls:
     - http://dictybase.org/Dicty_Info/dicty_anatomy_ontology.html
   entity_types:
@@ -543,6 +588,7 @@
   synonyms:
     - DDB
     - DictyBase
+  rdf_uri_prefix: http://identifiers.org/dictybase.gene/
   generic_urls:
     - http://dictybase.org
   entity_types:
@@ -589,13 +635,12 @@
   name: Enzyme Commission
   generic_urls:
     - http://enzyme.expasy.org/
-    - http://www.chem.qmul.ac.uk/iubmb/enzyme/
   entity_types:
     - type_name: catalytic activity
       type_id: GO:0003824
-      url_syntax: http://www.expasy.org/enzyme/[example_id]
-      example_id: EC:1.4.3.6
-      example_url: http://www.expasy.org/enzyme/1.4.3.6
+      url_syntax: https://enzyme.expasy.org/EC/[example_id]
+      example_id: EC:1.1.1.1
+      example_url: https://enzyme.expasy.org/EC/1.1.1.1
 - database: EchoBASE
   name: EchoBASE post-genomic database for Escherichia coli
   generic_urls:
@@ -620,6 +665,7 @@
       example_url: http://www.ecogene.org/geneInfo.php?eck_id=ECK3746
 - database: ECO
   name: Evidence Code ontology
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/ECO_
   generic_urls:
     - http://www.geneontology.org/
   entity_types:
@@ -652,6 +698,8 @@
       example_url: http://biocyc.org/ECOLI/reference.html?type=CITATION-FRAME&object=COLISALII
 - database: ECOGENE
   name: EcoGene Database of Escherichia coli Sequence and Function
+  synonyms:
+    - EcoGene
   generic_urls:
     - http://www.ecogene.org/
   entity_types:
@@ -681,6 +729,7 @@
 - database: EMAPA
   name: Mouse gross anatomy and development, abstract
   description: "A time-independent Mouse Anatomical Dictionary; part of Gene Expression Database"
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/EMAPA_
   generic_urls:
     - http://emouseatlas.org/
   entity_types:
@@ -719,6 +768,7 @@
   synonyms:
     - Ensembl
     - ensembl
+  rdf_uri_prefix: http://identifiers.org/ensembl/
   generic_urls:
     - http://www.ensembl.org/
   entity_types:
@@ -857,6 +907,7 @@
   synonyms:
     - FlyBase
     - FLYBASE
+  rdf_uri_prefix: http://identifiers.org/flybase/
   generic_urls:
     - http://flybase.org/
   entity_types:
@@ -868,6 +919,7 @@
       example_url: http://flybase.org/reports/FBgn0000024.html
 - database: FBbt
   name: Drosophila gross anatomy
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/FBbt_
   generic_urls:
     - http://flybase.org/
   entity_types:
@@ -878,6 +930,7 @@
       example_url: http://flybase.org/cgi-bin/fbcvq.html?query=FBbt:00005177
 - database: FMA
   name: Foundational Model of Anatomy
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/FMA_
   generic_urls:
     - http://sig.biostr.washington.edu/projects/fm/index.html
   entity_types:
@@ -886,6 +939,7 @@
       example_id: FMA:61905
 - database: FYPO
   name: Fission Yeast Phenotype Ontology
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/FYPO_
   generic_urls:
     - http://www.pombase.org/
   entity_types:
@@ -935,6 +989,7 @@
       example_url: http://gene3d.biochem.ucl.ac.uk/search?mode=family&sterm=3.30.390.30
 - database: GeneDB
   name: GeneDB
+  rdf_uri_prefix: http://identifiers.org/genedb/
   generic_urls:
     - http://www.genedb.org/gene/
   entity_types:
@@ -980,6 +1035,7 @@
       type_id: BET:0000000
 - database: GO
   name: Gene Ontology Database
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/GO_
   generic_urls:
     - http://amigo.geneontology.org/
   entity_types:
@@ -1036,6 +1092,17 @@
       url_syntax: http://purl.obolibrary.org/obo/go/references/[example_id]
       example_id: "0000001"
       example_url: http://purl.obolibrary.org/obo/go/references/0000001
+- database: gomodel
+  name: Gene Ontology Causal Activity Model Database
+  rdf_uri_prefix: http://model.geneontology.org/
+  generic_urls:
+    - http://www.geneontology.org/gocam
+  entity_types:
+    - type_name: model
+      type_id: BET:0000000
+      url_syntax: http://www.geneontology.org/gocam/[example_id]
+      example_id: gomodel:5ae3b0f600001522
+      example_url: http://www.geneontology.org/gocam/gomodel:5ae3b0f600001522
 - database: GOC
   name: Gene Ontology Consortium
   generic_urls:
@@ -1084,6 +1151,7 @@
   name: Gramene
   synonyms:
     - GR_gene
+  rdf_uri_prefix: http://identifiers.org/gramene.gene/
   generic_urls:
     - http://www.gramene.org/
   entity_types:
@@ -1106,6 +1174,7 @@
   name: Gramene
   synonyms:
     - GR_protein
+  rdf_uri_prefix: http://identifiers.org/gramene.protein/
   generic_urls:
     - http://www.gramene.org/
   entity_types:
@@ -1117,6 +1186,7 @@
       example_url: http://www.gramene.org/db/protein/protein_search?acc=Q6VSV0
 - database: GR_QTL
   name: Gramene
+  rdf_uri_prefix: http://identifiers.org/gramene.qtl/
   generic_urls:
     - http://www.gramene.org/
   entity_types:
@@ -1208,6 +1278,7 @@
       example_url: http://hamap.expasy.org/unirule/MF_00131
 - database: HGNC
   name: HUGO Gene Nomenclature Committee
+  rdf_uri_prefix: http://identifiers.org/hgnc/
   generic_urls:
     - http://www.genenames.org/
   entity_types:
@@ -1283,6 +1354,7 @@
       example_id: IMGT_LIGM:U03895
 - database: IntAct
   name: IntAct protein interaction database
+  rdf_uri_prefix: http://identifiers.org/intact/
   generic_urls:
     - http://www.ebi.ac.uk/intact/
   entity_types:
@@ -1292,14 +1364,15 @@
       url_syntax: http://www.ebi.ac.uk/intact/search/do/search?searchString=[example_id]
       example_id: IntAct:EBI-17086
       example_url: http://www.ebi.ac.uk/intact/search/do/search?searchString=EBI-17086
-    - type_name: protein complex
-      type_id: GO:0043234
+    - type_name: protein-containing complex
+      type_id: GO:0032991
       id_syntax: EBI-[0-9]+
       url_syntax: http://www.ebi.ac.uk/complexportal/complex/[example_id]
       example_id: IntAct:EBI-10205244
       example_url: http://www.ebi.ac.uk/complexportal/complex/EBI-10205244
 - database: InterPro
   name: InterPro database of protein domains and motifs
+  rdf_uri_prefix: http://identifiers.org/interpro/
   synonyms:
     - INTERPRO
     - IPR
@@ -1323,13 +1396,13 @@
 - database: iPTMnet
   name: iPTMnet protein post-translational modification database
   generic_urls:
-    - http://annotation.dbi.udel.edu/iptmnet/
+    - https://research.bioinformatics.udel.edu/iptmnet/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://annotation.dbi.udel.edu/iptmnet/entry/[example_id]/
+      url_syntax: https://research.bioinformatics.udel.edu/iptmnet/entry/[example_id]/
       example_id: iPTM:P06493
-      example_url: http://annotation.dbi.udel.edu/iptmnet/entry/P06493/
+      example_url: https://research.bioinformatics.udel.edu/iptmnet/entry/P06493/
 - database: IRIC
   name: International Rice Research Institute
   generic_urls:
@@ -1337,9 +1410,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://oryzasnp.org/iric-portal/_variety.zul?irisid=[example_id]
-      example_id: IRIS%20313-11252
-      example_url: http://oryzasnp.org/iric-portal/_variety.zul?irisid=IRIS%20313-11252
+      url_syntax: http://oryzasnp.org/_variety.zul?irisid=[example_id]
+      example_id: IRIS_313-8922
+      example_url: http://oryzasnp.org/_variety.zul?irisid=IRIS_313-8922
 - database: IRGC
   name: International Rice Genebank Collection
   generic_urls:
@@ -1353,13 +1426,13 @@
 - database: ISBN
   name: International Standard Book Number
   generic_urls:
-    - http://isbntools.com/
+    - https://www.worldcat.org
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://openisbn.com/search.php?q=[example_id]&isbn=1/
+      url_syntax: https://www.worldcat.org/search?q=bn%3A[example_id]
       example_id: ISBN:0781702534
-      example_url: http://openisbn.com/search.php?q=0781702534&isbn=1/
+      example_url: https://www.worldcat.org/search?q=bn%3A0781702534
 - database: ISRR
   name: International Society for Root Research
   generic_urls:
@@ -1444,6 +1517,10 @@
       url_syntax: http://cmr.jcvi.org/cgi-bin/CMR/shared/GenePage.cgi?locus=[example_id]
       example_id: JCVI_CMR:VCA0557
       example_url: http://cmr.jcvi.org/cgi-bin/CMR/shared/GenePage.cgi?locus=VCA0557
+- database: TIGR_CMR
+  name: CMR Blast
+  generic_urls:
+    - http://blast.jcvi.org/cmr-blast/
 - database: JCVI_EGAD
   name: JCVI CMR Egad
   generic_urls:
@@ -1520,6 +1597,7 @@
       type_id: BET:0000000
 - database: KEGG_ENZYME
   name: KEGG Enzyme Database
+  rdf_uri_prefix: http://identifiers.org/kegg.enzyme/
   generic_urls:
     - http://www.genome.jp/dbget-bin/www_bfind?enzyme
   entity_types:
@@ -1542,6 +1620,7 @@
       example_url: http://www.genome.jp/dbget-bin/www_bget?cpd:C00577
 - database: KEGG_PATHWAY
   name: KEGG Pathways Database
+  rdf_uri_prefix: http://identifiers.org/kegg.pathway/
   generic_urls:
     - http://www.genome.jp/kegg/pathway.html
   entity_types:
@@ -1593,6 +1672,7 @@
 - database: MA
   name: Adult Mouse Anatomical Dictionary
   description: Adult Mouse Anatomical Dictionary; part of Gene Expression Database
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/MA_
   generic_urls:
     - http://www.informatics.jax.org/
   entity_types:
@@ -1623,6 +1703,7 @@
       example_url: http://maizegdb.org/gene_center/gene/12098
 - database: MaizeGDB_Locus
   name: MaizeGDB
+  rdf_uri_prefix: http://identifiers.org/maizegdb.locus/
   generic_urls:
     - http://www.maizegdb.org
   entity_types:
@@ -1698,19 +1779,23 @@
       example_id: MEROPS_fam:M18
       example_url: http://merops.sanger.ac.uk/cgi-bin/famsum?family=m18
 - database: MeSH
+  synonyms:
+    - MESH
+    - MSH
   name: Medical Subject Headings
   generic_urls:
     - https://www.nlm.nih.gov/mesh/MBrowser.html
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.nlm.nih.gov/cgi/mesh/2015/MB_cgi?view=expanded&field=uid&term=[example_id]
+      url_syntax: http://n2t.net/MESH:[example_id]
       example_id: MeSH:D017209
-      example_url: http://www.nlm.nih.gov/cgi/mesh/2015/MB_cgi?view=expanded&field=uid&term=D017209
+      example_url: http://n2t.net/MESH:D017209
 - database: MetaCyc
   name: Metabolic Encyclopedia of metabolic and other pathways
   synonyms:
     - METACYC
+  rdf_uri_prefix: http://identifiers.org/metacyc/
   generic_urls:
     - http://metacyc.org/
   entity_types:
@@ -1739,6 +1824,7 @@
       example_id: MGD:Adcy9
 - database: MGI
   name: Mouse Genome Informatics
+  rdf_uri_prefix: "http://identifiers.org/mgi/MGI:"
   generic_urls:
     - http://www.informatics.jax.org/
   entity_types:
@@ -1831,12 +1917,13 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-- database: NCBI_Gene
+- database: NCBIGene
   name: NCBI Gene
   synonyms:
     - GeneID
     - LocusID
-    - NCBIGene
+    - NCBI_Gene
+  rdf_uri_prefix: http://identifiers.org/ncbigene/
   generic_urls:
     - http://www.ncbi.nlm.nih.gov/
   entity_types:
@@ -1876,6 +1963,10 @@
     - type_name: entity
       type_id: BET:0000000
       example_id: NCBI_locus_tag:CTN_0547
+- database: NCBI_NP
+  name: NCBI Protein
+  generic_urls:
+    - https://www.ncbi.nlm.nih.gov/protein
 - database: NIF_Subcellular
   name: Neuroscience Information Framework standard ontology, subcellular hierarchy
   generic_urls:
@@ -1976,9 +2067,10 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.geneontology.org/gene-associations/submission/paint/[example_id]/[example_id].txt
-      example_id: PAINT_REF:PTHR10046
-      example_url: http://www.geneontology.org/gene-associations/submission/paint/PTHR10046/PTHR10046.txt
+      id_syntax: '[0-9]{5}'
+      url_syntax: http://www.pantherdb.org/panther/lookupId.jsp?id=PTHR[example_id]
+      example_id: PAINT_REF:23266
+      example_url: http://www.pantherdb.org/panther/lookupId.jsp?id=PTHR23266
 - database: PAMGO
   name: Plant-Associated Microbe Gene Ontology Interest Group
   generic_urls:
@@ -2020,6 +2112,7 @@
       example_url: http://vmd.vbi.vt.edu/cgi-bin/browse/go_detail.cgi?gene_id=109198
 - database: PANTHER
   name: Protein ANalysis THrough Evolutionary Relationships Classification System
+  rdf_uri_prefix: http://identifiers.org/panther.family/
   generic_urls:
     - http://www.pantherdb.org/
   entity_types:
@@ -2038,6 +2131,7 @@
       type_id: BET:0000000
 - database: PATO
   name: Phenotypic quality ontology
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/PATO_
   generic_urls:
     - http://www.bioontology.org/wiki/index.php/PATO:Main_Page
   entity_types:
@@ -2202,6 +2296,7 @@
       example_url: http://www.ncbi.nlm.nih.gov/pubmed/4208797
 - database: PO
   name: Plant Ontology
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/PO_
   generic_urls:
     - http://www.planteome.org/
   entity_types:
@@ -2246,15 +2341,16 @@
       type_id: BET:0000000
 - database: PomBase
   name: PomBase
+  rdf_uri_prefix: http://identifiers.org/pombase/
   generic_urls:
-    - http://www.pombase.org/
+    - https://www.pombase.org/
   entity_types:
     - type_name: gene
       type_id: SO:0000704
       id_syntax: S\w+(\.)?\w+(\.)?
-      url_syntax: http://www.pombase.org/spombe/result/[example_id]
+      url_syntax: https://www.pombase.org/gene/[example_id]
       example_id: PomBase:SPBC11B10.09
-      example_url: http://www.pombase.org/spombe/result/SPBC11B10.09
+      example_url: https://www.pombase.org/gene/SPBC11B10.09
 - database: Pompep
   name: Schizosaccharomyces pombe protein data
   generic_urls:
@@ -2274,6 +2370,7 @@
   name: Protein Ontology
   synonyms:
     - PRO
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/PR_
   generic_urls:
     - http://www.proconsortium.org/pro/pro.shtml
   entity_types:
@@ -2438,6 +2535,7 @@
   synonyms:
     - REACTOME
     - REAC
+  rdf_uri_prefix: http://identifiers.org/reactome/
   generic_urls:
     - http://www.reactome.org/
   entity_types:
@@ -2486,35 +2584,39 @@
 - database: RESID
   name: RESID Database of Protein Modifications
   generic_urls:
-    - ftp://ftp.ncifcrf.gov/pub/users/residues/
+    - https://proteininformationresource.org/resid/resid.shtml
   entity_types:
     - type_name: entity
       type_id: BET:0000000
+      id_syntax: AA[0-9]{4}
+      url_syntax: https://proteininformationresource.org/cgi-bin/resid?id=[example_id]
       example_id: RESID:AA0062
+      example_url: https://proteininformationresource.org/cgi-bin/resid?id=AA0062
 - database: Rfam
   name: Rfam database of RNA families
   generic_urls:
-    - http://rfam.sanger.ac.uk/
+    - http://rfam.org
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://rfam.sanger.ac.uk/family/[example_id]
+      url_syntax: http://rfam.org/family/[example_id]
       example_id: Rfam:RF00012
-      example_url: http://rfam.sanger.ac.uk/family/RF00012
+      example_url: http://rfam.org/family/RF00012
 - database: RGD
   name: Rat Genome Database
   synonyms:
     - RAD
     - RGDID
+  rdf_uri_prefix: http://identifiers.org/rgd/
   generic_urls:
     - http://rgd.mcw.edu/
   entity_types:
     - type_name: gene
       type_id: SO:0000704
       id_syntax: '[0-9]{4,7}'
-      url_syntax: http://rgd.mcw.edu/generalSearch/RgdSearch.jsp?quickSearch=1&searchKeyword=[example_id]
+      url_syntax: http://rgd.mcw.edu/rgdweb/search/search.html?term=[example_id]
       example_id: RGD:2004
-      example_url: http://rgd.mcw.edu/generalSearch/RgdSearch.jsp?quickSearch=1&searchKeyword=2004
+      example_url: http://rgd.mcw.edu/rgdweb/search/search.html?term=2004
 - database: RHEA
   name: Rhea, the Annotated Reactions Database
   description: Rhea is a manually annotated database of chemical reactions. All data in Rhea is freely accessible and available for anyone to use.
@@ -2563,6 +2665,7 @@
 - database: RO
   name: OBO Relation Ontology Ontology
   description: A collection of relations used across OBO ontologies
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/RO_
   generic_urls:
     - http://purl.obolibrary.org/obo/ro
   entity_types:
@@ -2618,6 +2721,7 @@
   name: Saccharomyces Genome Database
   synonyms:
     - SGDID
+  rdf_uri_prefix: http://identifiers.org/sgd/
   generic_urls:
     - http://www.yeastgenome.org/
   entity_types:
@@ -2651,6 +2755,7 @@
   name: Sol Genomics Network
   synonyms:
     - SGN_gene
+  rdf_uri_prefix: http://identifiers.org/sgn/
   generic_urls:
     - http://www.sgn.cornell.edu/
   entity_types:
@@ -2698,6 +2803,7 @@
       type_id: BET:0000000
 - database: SO
   name: Sequence Ontology
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/SO_
   generic_urls:
     - http://sequenceontology.org/
   entity_types:
@@ -2840,6 +2946,7 @@
       type_id: BET:0000000
 - database: TAIR
   name: The Arabidopsis Information Resource
+  rdf_uri_prefix: http://identifiers.org/tair.locus/
   generic_urls:
     - http://www.arabidopsis.org/
   entity_types:
@@ -2849,23 +2956,24 @@
       url_syntax: http://arabidopsis.org/servlets/TairObject?accession=[example_id]
       example_id: TAIR:gene:2062713
       example_url: http://arabidopsis.org/servlets/TairObject?accession=gene:2062713
-    - type_name: primary transcript
-      type_id: SO:0000185
-      id_syntax: locus:[0-9]{7}
-      url_syntax: http://arabidopsis.org/servlets/TairObject?accession=[example_id]
-      example_id: TAIR:locus:2146653
-      example_url: http://arabidopsis.org/servlets/TairObject?accession=locus:2146653
     - type_name: communication
       type_id: BET:0000000
       id_syntax: Communication:[0-9]{7,12}
       url_syntax: http://arabidopsis.org/servlets/TairObject?type=communication&id=[example_id]
       example_id: TAIR:Communication:1345790
       example_url: http://arabidopsis.org/servlets/TairObject?type=communication&id=1345790
+    - type_name: primary transcript
+      type_id: SO:0000185
+      id_syntax: locus:[0-9]{7,12}
+      url_syntax: http://arabidopsis.org/servlets/TairObject?accession=[example_id]
+      example_id: TAIR:locus:2146653
+      example_url: http://arabidopsis.org/servlets/TairObject?accession=locus:2146653
 - database: taxon
   name: NCBI Taxonomy
   synonyms:
     - NCBITaxon
     - ncbi_taxid
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/NCBITaxon_
   generic_urls:
     - http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/
   entity_types:
@@ -2887,6 +2995,7 @@
       example_url: http://www.tcdb.org/tcdb/index.php?tc=9.A.4.1.1
 - database: TGD
   name: Tetrahymena Genome Database
+  rdf_uri_prefix: http://identifiers.org/tgd/
   generic_urls:
     - http://www.ciliate.org/
   entity_types:
@@ -2966,6 +3075,7 @@
 - database: UBERON
   name: Uber-anatomy ontology
   description: A multi-species anatomy ontology
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/UBERON_
   generic_urls:
     - http://uberon.org
   entity_types:
@@ -3079,6 +3189,7 @@
 - database: UniProtKB
   name: Universal Protein Knowledgebase
   description: A central repository of protein sequence and function created by joining the information contained in Swiss-Prot, TrEMBL, and PIR database
+  rdf_uri_prefix: http://identifiers.org/uniprot/
   generic_urls:
     - http://www.uniprot.org
   entity_types:
@@ -3174,6 +3285,7 @@
   name: WormBase database of nematode biology
   synonyms:
     - WormBase
+  rdf_uri_prefix: http://identifiers.org/wormbase/
   generic_urls:
     - http://www.wormbase.org/
   entity_types:
@@ -3220,6 +3332,7 @@
       example_id: WBbt:0005733
 - database: WBls
   name: C. elegans development
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/WBls_
   generic_urls:
     - http://www.wormbase.org/
   entity_types:
@@ -3229,6 +3342,7 @@
       example_id: WBls:0000010
 - database: WBPhenotype
   name: WormBase phenotype ontology
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/WBPhenotype_
   generic_urls:
     - http://www.wormbase.org/
   entity_types:
@@ -3248,6 +3362,36 @@
       url_syntax: http://en.wikipedia.org/wiki/[example_id]
       example_id: Wikipedia:Endoplasmic_reticulum
       example_url: http://en.wikipedia.org/wiki/Endoplasmic_reticulum
+- database: Xenbase
+  name: Xenbase
+  rdf_uri_prefix: http://identifiers.org/xenbase/
+  generic_urls:
+    - http://www.xenbase.org/
+  entity_types:
+    - type_name: gene
+      type_id: SO:0000704
+      id_syntax: XB-GENE-[0-9]+
+      url_syntax: http://www.xenbase.org/common/xsearch.do?searchValue=[example_id]
+      example_id: Xenbase:XB-GENE-6255962
+      example_url: http://www.xenbase.org/common/xsearch.do?searchValue=XB-GENE-6255962
+    - type_name: morpholino oligo
+      type_id: SO:0000034
+      id_syntax: XB-MORPHOLINO-[0-9]+
+      url_syntax: http://www.xenbase.org/common/xsearch.do?searchValue=[example_id]
+      example_id: Xenbase:XB-MORPHOLINO-17250301
+      example_url: http://www.xenbase.org/common/xsearch.do?searchValue=XB-MORPHOLINO-17250301
+    - type_name: transgene
+      type_id: SO:0000902
+      id_syntax: XB-TRANSGENE-[0-9]+
+      url_syntax: http://www.xenbase.org/common/xsearch.do?searchValue=[example_id]
+      example_id: Xenbase:XB-TRANSGENE-17326811
+      example_url: http://www.xenbase.org/common/xsearch.do?searchValue=XB-TRANSGENE-17326811
+    - type_name: strain
+      type_id: EFO:0005135
+      id_syntax: XB-LINE-[0-9]+
+      url_syntax: http://www.xenbase.org/common/xsearch.do?searchValue=[example_id]
+      example_id: Xenbase:XB-LINE-1248
+      example_url: http://www.xenbase.org/common/xsearch.do?searchValue=XB-LINE-1248
 - database: YeastFunc
   name: Yeast Function
   generic_urls:
@@ -3255,23 +3399,29 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
+- database: YuBioLab
+  name: CITGeneDB
+  description: CITGeneDB is a comprehensive database of human and mouse genes enhancing or suppressing Cold-Induced Thermogenesis (CIT).
+  generic_urls:
+    - http://citgenedb.yubiolab.org
 - database: ZFIN
   name: Zebrafish Information Network
+  rdf_uri_prefix: http://identifiers.org/zfin/
   generic_urls:
     - http://zfin.org/
   entity_types:
     - type_name: gene
       type_id: SO:0000704
       id_syntax: ZDB-(GENE|GENO|MRPHLNO)-[0-9]{6}-[0-9]+
-      url_syntax: http://zfin.org/cgi-bin/ZFIN_jump?record=[example_id]
-      example_id: ZFIN:ZDB-GENE-990415-103
-      example_url: http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-GENE-990415-103
+      url_syntax: http://zfin.org/[example_id]
+      example_id: ZDB-GENE-990415-103
+      example_url: http://zfin.org/ZDB-GENE-990415-103
     - type_name: variation
       type_id: VariO:0001
       id_syntax: ZDB-(GENE|GENO|MRPHLNO)-[0-9]{6}-[0-9]+
-      url_syntax: http://zfin.org/cgi-bin/ZFIN_jump?record=[example_id]
-      example_id: ZFIN:ZDB-GENE-990415-103
-      example_url: http://zfin.org/cgi-bin/ZFIN_jump?record=ZDB-GENE-990415-103
+      url_syntax: http://zfin.org/[example_id]
+      example_id: ZDB-GENE-990415-103
+      example_url: http://zfin.org/ZDB-GENE-990415-103
 - database: PLANA_REF
   name: Planaria Ontology Database References
   generic_urls:
@@ -3283,3 +3433,17 @@
       url_syntax: http://purl.obolibrary.org/obo/plana/references/[example_id]
       example_id: "0000001"
       example_url: http://purl.obolibrary.org/obo/plana/references/0000001
+- database: TFClass
+  name: TFClass is a resource for the classification of eukaryotic transcription factors based on the characteristics of their DNA-binding domains
+  generic_urls: 
+    - http://tfclass.bioinf.med.uni-goettingen.de/
+  synonyms:
+    - TFCLASS_FAMILY
+    - tfclass
+  entity_types:
+    - type_name: protein
+      type_id: PR:000000001
+      url_syntax: http://tfclass.bioinf.med.uni-goettingen.de/?tfclass=[example_id]
+      id_syntax: \d+(\.\d+){2,3}
+      example_id: TFCLASS_FAMILY:2.1.1
+      example_url: http://tfclass.bioinf.med.uni-goettingen.de/?tfclass=2.1.1

@@ -26,6 +26,9 @@ import logging
 import os
 import json
 import boto3
+import math
+
+from filechunkio import FileChunkIO
 
 ## Default mimetype metadata--everything that we'll be dealing with,
 ## so controlled.
@@ -118,7 +121,11 @@ def main():
     ## Ensure bucket.
     if not args.bucket:
         die_screaming('need a bucket argument')
-    LOG.info('Will put to bucket: ' + args.bucket)
+    bucket, slash, toppath = args.bucket.partition('/')
+    if toppath != '':
+        LOG.info('Will put to bucket: ' + bucket + '; with path: ' + toppath)
+    else:
+        LOG.info('Will put to bucket at top level: ' + bucket)
     ## Ensure mimetype metadata.
     if not args.mimetypes:
         LOG.info('Will use internal mimetype defaults')
@@ -138,8 +145,11 @@ def main():
     #LOG.info(creds)
 
     s3 = boto3.resource('s3', region_name=args.location,
-                          aws_access_key_id = creds['accessKeyId'],
-                          aws_secret_access_key = creds['secretAccessKey'])
+                          aws_access_key_id=creds['accessKeyId'],
+                          aws_secret_access_key=creds['secretAccessKey'])
+
+    # s3 = boto3.resource("s3", creds['accessKeyId'], creds['secretAccessKey'])
+
     #s3.Object('mybucket', 'hello.txt').put(Body=open('/tmp/hello.txt', 'rb'))
 
     ## Walk tree.
@@ -175,16 +185,21 @@ def main():
 
             ## Visual check.
             LOG.info('file: ' + filename)
-            LOG.info(' -> [' + args.bucket + '] ' + s3path + \
+            if toppath != '':
+                s3path = toppath + '/' + s3path
+            LOG.info(' -> [' + bucket + '] ' + s3path + \
                       '(' + mime + ', ' + tags_str + ')')
 
             ## Create the new object that we want.
-            newobj = s3.Object(args.bucket, s3path)
-            outfile = open(filename, 'rb')
-            newobj.put(Body=outfile, \
-                           ContentType=mime, \
-                           Metadata=tags,
-                           ACL='public-read') #Tagging=tags_str)
+            s3bucket = s3.Bucket(bucket)
+            multipart_upload(filename, s3bucket, s3path, content_type=mime, metadata=tags, policy="public-read")
+
+            # newobj = s3.Object(args.bucket, s3path)
+            # outfile = open(filename, 'rb')
+            # newobj.put(Body=outfile, \
+            #                ContentType=mime, \
+            #                Metadata=tags,
+            #                ACL='public-read') #Tagging=tags_str)
 
             # outbod = open(os.path.join(curr_dir, fname), 'rb')
             # .put(Body=outbod, 'rb')
@@ -192,6 +207,20 @@ def main():
         # for dname in dirs:
         #     #LOG.info('dir: ' + os.path.join(curr_dir, dname))
         #     pass
+
+def multipart_upload(source_file_path, s3_bucket, s3_path, content_type=None, metadata=None, policy=None):
+
+    header = {}
+    if content_type:
+        header["ContentType"] = content_type
+
+    if metadata:
+        header["Metadata"] = metadata
+
+    if policy:
+        header["ACL"] = policy
+
+    s3_bucket.upload_file(source_file_path, s3_path, ExtraArgs=header)
 
 ## You saw it coming...
 if __name__ == '__main__':

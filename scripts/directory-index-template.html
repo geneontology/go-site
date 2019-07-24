@@ -5,13 +5,13 @@
 
     <meta charset="utf-8">
 
-    <title>Directory index for {{ here }}</title>
+    <title>Directory index for {{ location }}</title>
 
   </head>
 
   <body>
 
-    <h5>Parent-bucket</h5>
+    <h5>Parent</h5>
     <ul>
       {{ #parent }}
       <li>
@@ -25,7 +25,7 @@
       {{ /parent }}
     </ul>
 
-    <h5>Sub-buckets</h5>
+    <h5>Directories</h5>
     <ul>
       {{ #children }}
       <li>
@@ -34,7 +34,7 @@
       {{ /children }}
       {{ ^children }}
       <li>
-	No sub-buckets in this bucket.
+	No sub-directories in this directory.
       </li>
       {{ /children }}
     </ul>
@@ -48,7 +48,7 @@
       {{ /current }}
       {{ ^current }}
       <li>
-	No files in this bucket.
+	No files in this directory.
       </li>
       {{ /current }}
     </ul>
