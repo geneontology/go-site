@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 
 RUN apt-get update -y
 
-RUN apt-get install -y git curl make wget python3.6 python3-pip python3-venv openjdk-11-jdk ca-certificates-java maven
+RUN apt-get install -y git curl rsync make wget python3.6 python3-pip python3-venv openjdk-11-jdk ca-certificates-java maven
 RUN update-ca-certificates -f
 
 RUN java --version
