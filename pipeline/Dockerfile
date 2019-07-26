@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 
 RUN apt-get update -y
 
-RUN apt-get install -y git curl make wget python3.6 python3-pip openjdk-11-jdk ca-certificates-java maven
+RUN apt-get install -y git curl make wget python3.6 python3-pip python3-venv openjdk-11-jdk ca-certificates-java maven
 RUN update-ca-certificates -f
 
 RUN java --version
@@ -48,11 +48,22 @@ RUN cp bin/* /pipeline/bin/
 
 ENV PATH "/pipeline/bin:/pipeline/lib:$PATH"
 
-RUN which pip3
-RUN pip3 --version
-
 WORKDIR /pipeline
+
 ADD pipeline/requirements.txt .
 ADD graphstore/rule-runner/ rule-runner/
+# Global pip installs
 RUN pip3 install -r requirements.txt
-RUN pip3 install ./rule-runner/
+
+# setup an env for the makefile
+RUN python3 -m venv env
+RUN env/bin/pip3 install -r requirements.txt
+RUN env/bin/pip3 install ./rule-runner/
+ENV PY_ENV=/pipeline/env/
+ENV PY_BIN=$PY_ENV/bin
+
+
+ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8
+
+WORKDIR /newplace/pipeline
