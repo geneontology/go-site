@@ -15,6 +15,7 @@ bg_start $1
 export BG_PID=$!
 echo "Wait for blazegraph to start..."
 sleep 3
-$PY_ENV/bin/python3 $PY_ENV/bin/sparta group $ENDPOINT --out $OUT
+echo "skip sparta for now..."
+# $PY_ENV/bin/python3 $PY_ENV/bin/sparta group $ENDPOINT --out $OUT
 echo "Killing blazegraph on $BG_PID"
 kill $BG_PID
