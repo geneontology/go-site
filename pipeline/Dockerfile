@@ -61,7 +61,8 @@ RUN env/bin/pip3 install -r requirements.txt
 RUN env/bin/pip3 install ./rule-runner/
 ENV PY_ENV=/pipeline/env/
 ENV PY_BIN=$PY_ENV/bin
-
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+ENV PATH "$JAVA_HOME/bin:$PATH"
 
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
