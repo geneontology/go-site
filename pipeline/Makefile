@@ -62,12 +62,11 @@ PY_BIN ?= $(PY_ENV)/bin
 VALIDATE = $(PY_BIN)/validate.py
 DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(DATASET_EXCLUDES),-x $(exclusion) )
 SUPPRESS_THESE_TAGS = $(foreach tag,$(GORULE_TAGS_TO_SUPPRESS),--suppress-rule-reporting-tag $(tag) )
-PYTHON_CMD ?= python3
 
 %-src.gaf.gz:
 	# See comment in %.groups on this construct
 	$(eval group := $(lastword $(subst /, ,$*)))
-	$(PYTHON_CMD) ../scripts/download_source_gafs.py group $(group) -d $(METADATA_DIR)/datasets --target target/groups/$(group) --type gaf --type gpi $(DONT_VALIDATE)
+	python3 ../scripts/download_source_gafs.py group $(group) -d $(METADATA_DIR)/datasets --target target/groups/$(group) --type gaf --type gpi $(DONT_VALIDATE)
 
 # .PRECIOUS: %.gaferences.json
 # %.gaferences.json: $(GAF_OWL) target/go_context.jsonld target/obo_context.jsonld %-src.gaf.gz
@@ -82,7 +81,7 @@ PYTHON_CMD ?= python3
 	# assigns a make variable called `group` computed from the $* generic target stem.
 	# Ex: target/groups/fb/fb.gaf as a target, the stem ($*) is target/groups/fb/fb, so `group` gets assigned to fb
 	$(eval group := $(lastword $(subst /, ,$*)))
-	$(PYTHON_CMD) $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE) $(SUPPRESS_THESE_TAGS) --skip-existing-files # --gaferencer-file $*.gaferences.json
+	python3 $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE) $(SUPPRESS_THESE_TAGS) --skip-existing-files # --gaferencer-file $*.gaferences.json
 	touch $@
 
 # dataset
@@ -116,7 +115,7 @@ target/groups/goa/goa_uniprot_all_noiea.gaf: target/alltaxons.txt target/groups/
 
 RDF_GEN = $(PY_BIN)/rdfgen.py
 target/groups/goa/goa_uniprot_all_noiea_cam.ttl: target/groups/goa/goa_uniprot_all_noiea.gaf
-	$(PYTHON_CMD) $(RDF_GEN) convert -a gaf -r target/go-ontology.json -o target/groups/goa/goa_uniprot_all_noiea_cam.ttl target/groups/goa/goa_uniprot_all_noiea.gaf
+	python3 $(RDF_GEN) convert -a gaf -r target/go-ontology.json -o target/groups/goa/goa_uniprot_all_noiea_cam.ttl target/groups/goa/goa_uniprot_all_noiea.gaf
 	gzip -cf target/groups/goa/goa_uniprot_all_noiea_cam.ttl > target/groups/goa/goa_uniprot_all_noiea_cam.ttl.gz
 
 target/groups/goa/goa_uniprot_all_noiea.gpad: target/groups/goa/goa_uniprot_all_noiea.gaf
@@ -153,7 +152,7 @@ target/groups/goa/goa_uniprot_all-src.gaf.gz:
 	wget -nv --retry-connrefused --waitretry=10 -t 10 --no-check-certificate $(GOA_UNIPROT_ALL_URL) -O $@.tmp && mv $@.tmp $@
 
 target/alltaxons.txt:
-	$(PYTHON_CMD) util/model_organism.py taxons ../metadata/datasets/ --out target/alltaxons.txt
+	python3 util/model_organism.py taxons ../metadata/datasets/ --out target/alltaxons.txt
 
 # -------------------------------
 # RDF Graphstore
