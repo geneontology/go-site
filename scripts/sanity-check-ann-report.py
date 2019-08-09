@@ -17,6 +17,9 @@
 ####  cp /tmp/mnt/master/reports/whatever* /tmp/foo
 ####  cp /tmp/mnt/master/products/annotations/whatever* /tmp/foo
 ####  fusermount -u /tmp/mnt
+####  ## With checks.
+####  python3 sanity-check-ann-report.py -v -d /tmp/foo -c go-site/metadata/qc-checks.yaml
+####  ## Without checks.
 ####  python3 sanity-check-ann-report.py -v -d /tmp/foo
 ####
 
@@ -27,6 +30,7 @@ import glob
 import os
 import re
 import subprocess
+import yaml
 
 ## Logger basic setup.
 logging.basicConfig(level=logging.INFO)
@@ -53,6 +57,8 @@ def main():
     parser = argparse.ArgumentParser(
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument('-c', '--config',
+                        help='The (optional) YAML configuration file to use')
     parser.add_argument('-d', '--directory',
                         help='The directory to act on')
     parser.add_argument('-v', '--verbose', action='store_true',
@@ -75,6 +81,14 @@ def main():
     if not args.directory:
         die_screaming('need a directory argument')
     LOGGER.info('Will operate in: ' + args.directory)
+
+    ## Ensure config.
+    have_yaml_config_p = False
+    if args.config:
+        have_yaml_config_p = True
+        LOGGER.info('Will operate with YAML: ' + args.config)
+    else:
+        LOGGER.info('Will operate w/o YAML checks')
 
     ids = []
 
@@ -216,7 +230,7 @@ def main():
     LOGGER.info(lookup)
 
     ###
-    ### Final QC crunching.
+    ### Internal QC crunching.
     ###
 
     for aid, obj in lookup.items():
@@ -245,6 +259,7 @@ def main():
             LOGGER.warning('count_gaf_src ' + str(count_gaf_src))
             LOGGER.warning('count_gaf_prod ' + str(count_gaf_prod))
             die_screaming('No product found for: ' + aid)
+
         ## Product must not be a "severe" reduction from source, but
         ## only in cases of larger files.
         ## This dictionary should be a map of  dataset id `aid` to percent allowable reduction.
@@ -268,6 +283,51 @@ def main():
             die_screaming('Expected associations worryingly reduced (additive): ' + aid)
 
         LOGGER.info(aid + ' okay...')
+
+    ###
+    ### YAML-driven QC crunching.
+    ###
+
+    if have_yaml_config_p:
+
+        ## Need to detect the PyYaml version (stolen without thought
+        ## to verity from download_source_gafs.py).
+        qc_checks = None
+        with open(args.config, 'r') as stream:
+            try:
+                if getattr(yaml, "FullLoader", None) == None:
+                    # We're in PyYaml < 5.1
+                    qc_checks = yaml.load(stream)
+                else:
+                    qc_checks = yaml.load(stream, Loader=yaml.FullLoader)
+            except yaml.YAMLError as exc:
+                print(exc)
+
+        for check in qc_checks:
+
+            ## We know that ".gaf" should be there, so off with that.
+            LOGGER.info('PING: ' + check["filename"])
+            resource_name = (check["filename"])[:-4]
+            gaf_lines = lookup[resource_name]['lines']['total']
+
+            ##
+            variance = int(check["expected-lines"]) * float(check["acceptable-variation"])
+            high_lines = int(check["expected-lines"]) + variance
+            low_lines = int(check["expected-lines"]) - variance
+            if gaf_lines >= high_lines:
+                LOGGER.info('Getting ready to fail, lines: ' + str(gaf_lines))
+                LOGGER.info('Getting ready to fail, high: ' + str(high_lines))
+                die_screaming('Worrying increase of product for: ' + check["filename"])
+            elif gaf_lines <= low_lines:
+                LOGGER.info('Getting ready to fail, lines: ' + str(gaf_lines))
+                LOGGER.info('Getting ready to fail, low: ' + str(low_lines))
+                die_screaming('Worrying decrease of product for: ' + check["filename"])
+            else:
+                LOGGER.info('Passed YAML check: ' + check["filename"])
+
+    ###
+    ### Pay the butcher.
+    ###
 
     if DIED_SCREAMING_P:
         LOGGER.info('Errors happened.')
