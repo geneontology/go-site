@@ -4,6 +4,8 @@ import requests
 import json
 import sys, getopt, os
 
+from xml.etree import ElementTree
+
 # S3 specific imports
 # import boto3
 # from gzip import GzipFile
@@ -31,9 +33,10 @@ CC = "GO:0005575"
 # GOLR prepared queries
 golr_select_ontology =  'select?wt=json&fq=document_category:"ontology_class"&fq=id:GO\:*&fq=idspace:"GO"&fl=source,annotation_class,is_obsolete&rows=2000000&q=*:*&facet=true&facet.field=source&facet.limit=1000000&facet.mincount=1'
 golr_select_annotations = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&facet=true&facet.field=taxon&facet.field=aspect&facet.field=evidence_type&facet.field=assigned_by&facet.field=reference&facet.field=type&facet.limit=1000000&facet.mincount=1&rows=0'
-golr_select_annotations_no_pbinding = golr_select_annotations + "&fq=!isa_partof_closure:\"GO:0005515\""
+# golr_select_annotations_no_pbinding = golr_select_annotations + "&fq=!isa_partof_closure:\"GO:0005515\"" # if we want to remove all derivates
+golr_select_annotations_no_pbinding = golr_select_annotations + "&fq=!annotation_class:\"GO:0005515\"" # to remove only DIRECT annotations to protein binding
 golr_select_bioentities = 'select?fq=document_category:%22bioentity%22&q=*:*&wt=json&facet=true&facet.field=type&facet.field=taxon&facet.limit=1000000&facet.mincount=1&rows=0'
-
+golr_select_bioentities_pb = 'select?fq=document_category:"bioentity"&q=*:*&wt=json&rows=100000&fq=annotation_class_list:"GO:0005515"&fl=annotation_class_list,type,taxon'
 
 def golr_fetch(select_query):
     # print("trying: " + golr_base_url + select_query)
@@ -112,9 +115,9 @@ def extract_map(map, key_str):
 
 # useful grouping of evidences as discussed with Pascale
 evidence_groups = {
-    "EXP": ["EXP", "IDA", "IEP", "IGC", "IGI", "IKR", "IMP", "IPI"],
+    "EXP": ["EXP", "IDA", "IEP", "IGC", "IGI", "IMP", "IPI"],
     "HTP": ["HDA", "HEP", "HGI", "HMP", "HTP"],
-    "IBA": ["IBA"],
+    "PHYLO": ["IBA", "IRD", "IKR", "IMR"],
     "IEA": ["IEA"],
     "ND": ["ND"],
     "OTHER": ["IC", "ISA", "ISM", "ISO", "ISS", "NAS", "RCA", "TAS"]
@@ -128,6 +131,10 @@ for key, value in evidence_groups.items():
 
 # auto computed set of ~ 200 species with > 1000 annotations
 usable_taxons = [ ]
+
+# fetch at startup from eutils.ncbi.nlm and parse into a map
+taxon_base_url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy'
+taxon_map = { }
 
 # auto computed set of groups doing annotations (assigned_by)
 groups = [ ]
@@ -158,7 +165,10 @@ def lambda_handler(event, context):
     stats = compute_stats(golr_base_url)
     return stats
 
-def compute_stats(golr_url):
+def compute_stats(golr_url, exclude_pb_only = False):
+    """
+    compute stats on GO annotations - can specify if we include or exclude annotations to protein binding only
+    """
     global golr_base_url
     golr_base_url = golr_url
 
@@ -172,16 +182,61 @@ def compute_stats(golr_url):
     print("Done.")
     
     print("2 / 4 - Fetching GO annotations...")
-    all_annotations = golr_fetch(golr_select_annotations)
-    # all_annotations_no_pbinding = golr_fetch(golr_select_annotations_no_pbinding)
+    if exclude_pb_only:
+        all_annotations = golr_fetch(golr_select_annotations_no_pbinding)
+    else:
+        all_annotations = golr_fetch(golr_select_annotations)
     print("Done.")
     
     print("3 / 4 - Fetching GO bioentities...")
     all_entities = golr_fetch(golr_select_bioentities)
+
+    # we have to manually update the facts of the first query if we want to remove the bioentities annotated only to protein binding
+    if exclude_pb_only:
+        all_entities_no_pb = golr_fetch(golr_select_bioentities_pb)
+        # print(all_entities_no_pb)
+        entities_type_no_pb = { }
+        entities_taxon_no_pb = { }
+
+        count = 0
+
+        for doc in all_entities_no_pb['response']['docs']:
+            if len(doc['annotation_class_list']) > 1:
+                continue
+            count += 1
+            if doc['type'] in entities_type_no_pb:
+                entities_type_no_pb[doc['type']] += 1
+            else:
+                entities_type_no_pb[doc['type']] = 1
+
+            if doc['taxon'] in entities_type_no_pb:
+                entities_taxon_no_pb[doc['taxon']] += 1
+            else:
+                entities_taxon_no_pb[doc['taxon']] = 1
+
+        # finally update the type facet field
+        types = all_entities['facet_counts']['facet_fields']['type']
+        for i in range(0, len(types), 2):
+            ctype = types[i]
+            retr_value = entities_type_no_pb[ctype] if ctype in entities_type_no_pb else 0
+            types[i + 1] = types[i + 1] - retr_value
+        all_entities['facet_counts']['facet_fields']['type'] = types
+
+        all_entities['response']['numFound'] = all_entities['response']['numFound'] - count
+       
+        # and update the taxon facet field
+        taxons = all_entities['facet_counts']['facet_fields']['taxon']
+        for i in range(0, len(taxons), 2):
+            ctaxon = taxons[i]
+            retr_value = entities_taxon_no_pb[ctaxon] if ctaxon in entities_taxon_no_pb else 0
+            taxons[i + 1] = taxons[i + 1] - retr_value
+        all_entities['facet_counts']['facet_fields']['taxon'] = taxons
+    
     print("Done.")
 
     print("4 / 4 - Creating Stats...")    
     prepare_globals(all_annotations)
+    print("\t4a - globals prepared")
     stats = create_stats(all_terms, all_annotations, all_entities)
     print("Done.")
     
@@ -189,16 +244,36 @@ def compute_stats(golr_url):
 
 def prepare_globals(all_annotations):
     global usable_taxons
+    global taxon_map
     global groups
     global bioentity_types
     global bioentity_type_cluster
-    global reverse_bioentity_type_cluster
+    global reverse_bioentity_type_cluster    
 
     temp = all_annotations['facet_counts']['facet_fields']['assigned_by']
     groups = build_list(temp)
 
     temp = all_annotations['facet_counts']['facet_fields']['taxon']
     usable_taxons = build_list(temp, 1000)
+    all_taxons = build_list(temp, None)
+
+    # this step will create the global taxon_map to get any name from an id
+    temp_taxons = []
+    for taxon in all_taxons:
+        temp_taxons.append(taxon[taxon.index(":")+1:])
+
+    params = { "id" : ",".join(temp_taxons) }
+    data = requests.post(taxon_base_url, data = params)
+
+    tree = ElementTree.fromstring(data.content)
+    elts = tree.findall("Taxon")
+    for i in range(0,len(elts)):
+        key = elts[i].findtext("TaxId")
+        val = elts[i].findtext("ScientificName")
+        taxon_map[key] = val
+
+    # print(taxon_map)
+    print("Note: taxon map of ", len(taxon_map), " taxons loaded from " , taxon_base_url + " - in case of issue could use https://www.ebi.ac.uk/ena/data/taxonomy/v1/taxon/tax-id/xxx")
 
     bioentity_type_cluster = { }
     temp = all_annotations['facet_counts']['facet_fields']['type']
@@ -243,7 +318,26 @@ def golr_fetch_references_group(group):
     url = "select?fq=document_category:%22annotation%22&q=*:*&wt=json&rows=0&facet.limit=10000000&facet.mincount=1&facet=true&facet.field=reference&fq=assigned_by:\"" + group + "\""
     response = golr_fetch(url)
     return response
-    
+
+
+def add_taxon_label(map):
+    new_map = { }
+    for key, val in map.items():
+        if "NCBITaxon" in key:
+            taxon_id = key[key.index(":")+1:]
+            taxon_name = taxon_map[taxon_id] if taxon_id in taxon_map else "UNK" 
+            # print("mapping ", taxon_id)
+            if type(val) == dict:
+                new_map[key + "|" + taxon_name] = add_taxon_label(val)
+            else:
+                new_map[key + "|" + taxon_name] = val
+        else:
+            if type(val) == dict:
+                new_map[key] = add_taxon_label(val)
+            else:
+                new_map[key] = val
+    return new_map
+
 def create_stats(all_terms, all_annotations, all_entities):
     stats = { }
 
@@ -274,6 +368,7 @@ def create_stats(all_terms, all_annotations, all_entities):
         "obsoleted" : obsoleted,
         "by_aspect" : terms_by_aspect
     }
+    print("\t4b - terms computed")
 
     all_bioentities_by_taxon = { }
     cluster_bioentities_by_taxon = { }
@@ -293,6 +388,7 @@ def create_stats(all_terms, all_annotations, all_entities):
         
         # all_bioentities_by_taxon[taxon] = build_map(res['facet_counts']['facet_fields']['type'])
         # cluster_bioentities_by_taxon[taxon] =  cluster_map(all_bioentities_by_taxon[taxon], bioentity_type_cluster)
+    print("\t4c - bioentities computed")
 
     references_by_taxon = { }
     pmids_by_taxon = { }
@@ -304,6 +400,7 @@ def create_stats(all_terms, all_annotations, all_entities):
         pmids_by_taxon[taxon] = pmid_map
     references_by_taxon = ordered_map(references_by_taxon)
     pmids_by_taxon = ordered_map(pmids_by_taxon)
+    print("\t4d - taxons computed")
 
     references_by_group = { }
     pmids_by_group = { }
@@ -315,8 +412,12 @@ def create_stats(all_terms, all_annotations, all_entities):
         pmids_by_group[group] = pmid_map
     references_by_group = ordered_map(references_by_group)
     pmids_by_group = ordered_map(pmids_by_group)
+    print("4 - references computed")
 
-    
+    # print("CHECK (by evidence):\n" , all_annotations['facet_counts']['facet_fields']['evidence_type'])
+    # print("CHECK (buildmap(by_evidence):\n", build_map(all_annotations['facet_counts']['facet_fields']['evidence_type']))
+    # print("CHECK (reverse_evidence_group:\n", reverse_evidence_groups)
+    # print("CHECK (cluster(buildmap, reverse_evidence_group):\n", cluster_map(build_map(all_annotations['facet_counts']['facet_fields']['evidence_type']), reverse_evidence_groups))
 
     annotations = { 
         "total" : all_annotations['response']['numFound'],
@@ -375,6 +476,8 @@ def create_stats(all_terms, all_annotations, all_entities):
         "by_group": build_map(all_annotations['facet_counts']['facet_fields']['assigned_by'])
         
     }
+
+    annotations = add_taxon_label(annotations)
 
     stats["release_date"] = release_date
     stats["terms"] = terms
@@ -558,7 +661,6 @@ def print_help():
     print('Usage: python go_stats.py -g <golr_url> -o <output_rep>\n')
 
 
-
 def main(argv):
     golr_url = ''
     output_rep = ''
@@ -568,7 +670,7 @@ def main(argv):
         sys.exit(2)
 
     try:
-        opts, argv = getopt.getopt(argv,"g:o:",["gurl=","orep="])
+        opts, argv = getopt.getopt(argv,"g:b:o:",["golrurl=","orep="])
     except getopt.GetoptError:
         print_help()
         sys.exit(2)
@@ -577,11 +679,11 @@ def main(argv):
         if opt == '-h':
             print_help()
             sys.exit()
-        elif opt in ("-g", "--gurl"):
+        elif opt in ("-g", "--golrurl"):
             golr_url = arg
         elif opt in ("-o", "--orep"):
             output_rep = arg
-        
+
     if not output_rep.endswith("/"):
         output_rep += "/"
 
@@ -589,30 +691,46 @@ def main(argv):
         os.mkdir(output_rep)
 
     output_meta = output_rep + "go-meta.json"
+    output_meta_no_pb = output_rep + "go-meta-no-pb.json"
     output_json =  output_rep + "go-stats.json"
+    output_no_pb_json =  output_rep + "go-stats-no-pb.json"
     output_tsv =  output_rep + "go-stats.tsv"
+    output_no_pb_tsv =  output_rep + "go-stats-no-pb.tsv"
+
 
     print("Will write stats to " + output_json + " and " + output_tsv)
-
-    json_stats = compute_stats(golr_url)
-
+    json_stats = compute_stats(golr_url, False)
     print("Saving Stats to <" + output_json + "> ...")    
     write_json(output_json, json_stats)
     print("Done.")
-
-
-    # output_tsv =  "mystats.tsv"
-    # with open('mystats.json') as json_file:  
-    #     json_stats = json.load(json_file)
 
     print("Saving Stats to <" + output_tsv + "> ...")    
     tsv_stats = create_text_report(json_stats)
     write_text(output_tsv, tsv_stats)
     print("Done.")
 
+
+    print("Will write stats (excluding protein binding) to " + output_no_pb_json + " and " + output_no_pb_tsv)
+    json_stats_no_pb = compute_stats(golr_url, True)
+    print("Saving Stats to <" + output_no_pb_json + "> ...")    
+    write_json(output_no_pb_json, json_stats_no_pb)
+    print("Done.")
+
+    print("Saving Stats (excluding protein binding) to <" + output_no_pb_tsv + "> ...")    
+    tsv_stats_no_pb = create_text_report(json_stats_no_pb)
+    write_text(output_no_pb_tsv, tsv_stats_no_pb)
+    print("Done.")
+
+
     json_meta = create_meta(json_stats)
     print("Saving META to <" + output_meta + "> ...")    
     write_json(output_meta, json_meta)
+    print("Done.")
+
+
+    json_meta_no_pb = create_meta(json_stats_no_pb)
+    print("Saving META to <" + output_meta_no_pb + "> ...")    
+    write_json(output_meta_no_pb, json_meta_no_pb)
     print("Done.")
     
 

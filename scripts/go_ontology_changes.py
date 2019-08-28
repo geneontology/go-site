@@ -1,522 +1,165 @@
-# GO Store Changes
-# sudo yum install python34-setuptools
-# sudo yum install python34-devel
-# pip3 install pyyaml -t .
-# sudo python3 -m pip install pyyaml
-
-from obo_parser import OBO_Parser, TermState
 import sys, getopt, os
 
 import requests
 import json
 
-# import boto3
-# import botocore
-# go_s3_bucket_name = "geneontology"
-# go_obo_key = "go.obo"
-# s3_resource = boto3.resource('s3')
-# go_s3_bucket = s3_resource.Bucket(name=go_s3_bucket_name)
-# from gzip import GzipFile
-# from io import BytesIO
 
 
-#go_doi_url = "https://zenodo.org/api/records/1205166"
-
-go_pipeline_release_url = "http://current.geneontology.org/metadata/release-date.json"
-go_obo_url = "http://purl.obolibrary.org/obo/go.obo"
-
-release_date = "N/A"
-last_obo = None
-last_date = None
-
-# def lambda_handlerLIST(event, context):
-#     global release_date
-#     release_date = get_release_date()
-    
-#     global last_obo
-#     last_obo = get_last_obo()
-
-
-#     static_list = [
-#         "2018-07-02",
-#         "2018-08-09",
-#         "2018-09-05",
-#         "2018-10-08",
-#         "2018-11-15",
-#         "2018-12-01",
-#         "2019-01-01",
-#         "2019-02-01",
-#         "2019-03-18",
-#         "2019-04-17",
-#         "2019-05-09",
-#         "2019-06-09"
-#     ]
-    
-#     global last_date
-    
-#     for i in range(1, len(static_list)):
-#         print(i , static_list[i] , " vs " , static_list[i-1])
-#         last_date = static_list[i-1]
-#         old_obo_url = "https://s3.amazonaws.com/" + go_s3_bucket_name +"/archive/" + last_date + "_go.obo"
-        
-#         release_date = static_list[i]
-#         new_obo_url = "https://s3.amazonaws.com/" + go_s3_bucket_name +"/archive/" + release_date + "_go.obo"
-
-#         try:
-#             save_changes(new_obo_url, old_obo_url)
-#         except:
-#             print("ERROR while generating diff (" + new_obo_url + ", " + old_obo_url + ")")
-    
-#     return 'success'
-    
-# def lambda_handler(event, context):
-#     global release_date
-#     release_date = get_release_date()
-    
-#     global last_obo
-#     last_obo = get_last_obo()
-
-#     new_obo_url = "http://purl.obolibrary.org/obo/go.obo"
-#     old_obo_url = "https://s3.amazonaws.com/" + go_s3_bucket_name + "/archive/" + last_obo
-
-#     store_current_go_obo()
-#     save_changes(new_obo_url, old_obo_url)
-#     return 'success'    
-    
-def compute_changes(current_obo_url, previous_obo_url):
-    # The new published OBO archive
-    print("Loading current GO ontology (" + current_obo_url + ")...")
-    currentgo = OBO_Parser(requests.get(current_obo_url).text)
-
-    # A previously published OBO archive
-    print("Loading previous GO ontology (" + previous_obo_url + ")...")
-    oldgo = OBO_Parser(requests.get(previous_obo_url).text)
-
-    # New GO Terms
-    created = { }
-    created_count = 0
-    for id, newterm in currentgo.get_terms().items():                                                                                                                                                                                
-        if not oldgo.has_term(id):
-            if newterm.namespace not in created:
-                created[newterm.namespace] = []
-            created[newterm.namespace].append({ "id": id, "name": newterm.name})
-            created_count += 1
-    print(str(created_count) + " terms created since last revision")
-
-    # Merged GO Terms    
-    merged = { }
-    merged_list = []
-    merged_count = 0
-    for id, oldterm in oldgo.get_terms().items():                                                                                                                                                                                  
-        if not currentgo.has_term(id):
-            if oldterm.namespace not in merged:
-                merged[oldterm.namespace] = []
-            alts = currentgo.get_alternate_terms(id)
-            if len(alts) > 0:
-                merged[oldterm.namespace].append( { "current": alts[0], "previous": { "id": id, "name": oldterm.name } } )
-                merged_count += 1
-                merged_list.append(oldterm.id)
-    print(str(merged_count) + " terms merged since last revision")
-    
-    # Obsoleted GO Terms
-    obsoleted = { }
-    obsoleted_count = 0
-    new_terms = currentgo.get_terms()
-    for id, oldterm in oldgo.get_terms().items():                                                                                                                                                                                  
-        if id not in new_terms:
-            if oldterm.namespace not in obsoleted:
-                obsoleted[oldterm.namespace] = []
-            if oldterm.id not in merged_list:
-                obsoleted[oldterm.namespace].append({ "id": id, "name": oldterm.name})
-                obsoleted_count += 1
-    print(str(obsoleted_count) + " terms obsoleted since last revision")
-    
-    # Existing GO Terms with structural changes (is_a, part_of, has_part etc)
-    structural_changes = { }
-    structural_count = 0
-    structural_total_count = 0
-    for id, newterm in currentgo.get_terms().items():
-        if oldgo.has_term(id):                                                                                                                                                                            
-            oldterm = oldgo.get_term(id)
-            if not newterm.structural_equals(oldterm):
-                if newterm.namespace not in structural_changes:
-                    structural_changes[newterm.namespace] = []
-                    
-                reasons = {}
-                for key, reason in newterm.explain_structural_differences(oldterm).items():
-                    reasons[key] = { "current" : reason['current'], "previous" : reason['previous'] }
-                structural_changes[newterm.namespace].append({ "id" : id, "name": newterm.name , "changes": reasons })
-                structural_count += 1
-                structural_total_count += len(reasons)
-    print(str(structural_count) + " terms structural changes since last revision")
-    
-    
-    # Existing GO Terms with meta changes (synonyms, xrefs, definition, etc)
-    meta_changes = { }
-    meta_count = 0
-    meta_total_count = 0
-    for id, newterm in currentgo.get_terms().items():
-        if oldgo.has_term(id):                                                                                                                                                                            
-            oldterm = oldgo.get_term(id)
-            if not newterm.meta_equals(oldterm):
-                if newterm.namespace not in meta_changes:
-                    meta_changes[newterm.namespace] = []
-                    
-                reasons = {}
-                for key, reason in newterm.explain_meta_differences(oldterm).items():
-                    reasons[key] = { "current" : reason['current'], "previous" : reason['previous'] }
-                meta_changes[newterm.namespace].append({ "id" : id, "name": newterm.name , "changes": reasons })
-                meta_count += 1
-                meta_total_count += len(reasons)
-    print(str(meta_count) + " terms meta changes since last revision")
-
-    # Existing GO Terms with meta changes (synonyms, NO XREFS, definition, etc)
-    meta_noxrefs_changes = { }
-    meta_noxrefs_count = 0
-    meta_noxrefs_total_count = 0
-    for id, newterm in currentgo.get_terms().items():
-        if oldgo.has_term(id):                                                                                                                                                                            
-            oldterm = oldgo.get_term(id)
-            if not newterm.meta_equals(oldterm, False):
-                if newterm.namespace not in meta_noxrefs_changes:
-                    meta_noxrefs_changes[newterm.namespace] = []
-                    
-                reasons = {}
-                for key, reason in newterm.explain_meta_differences(oldterm, False).items():
-                    reasons[key] = { "current" : reason['current'], "previous" : reason['previous'] }
-                meta_noxrefs_changes[newterm.namespace].append({ "id" : id, "name": newterm.name , "changes": reasons })
-                meta_noxrefs_count += 1                
-                meta_noxrefs_total_count += len(reasons)
-    print(str(meta_noxrefs_count) + " terms meta (NO XREFS) changes since last revision")
- 
-
-    print("Creating JSON report...")
-    report = { }
-    report["releases"] = {
-                "current" : { "date": release_date, "version" : currentgo.header['data-version'], "format" : currentgo.header['format-version'] },
-                "previous" : { "date" : last_date, "version" : oldgo.header['data-version'], "format" : oldgo.header['format-version'] }
-            }
-    report["summary"] = {
-        "current": {
-            "release_date" : report["releases"]["current"]["version"],
-            "valid_terms" : len(currentgo.get_terms(TermState.VALID)),
-            "obsoleted_terms" : len(currentgo.get_terms(TermState.OBSOLETED)),
-            "merged_terms" : len(currentgo.get_merged_terms(TermState.ANY)),
-            "biological_processes" : len(currentgo.get_terms_in("biological_process")),
-            "molecular_functions" : len(currentgo.get_terms_in("molecular_function")),
-            "cellular_components" : len(currentgo.get_terms_in("cellular_component")),
-            "meta_statements" : currentgo.count_all_metas(),
-            "meta_noxrefs_statements" : currentgo.count_all_metas(TermState.VALID, False),
-            "structural_statements" : currentgo.count_all_structurals()
-        },
-        "previous": {
-            "release_date" : report["releases"]["previous"]["version"],
-            "valid_terms" : len(oldgo.get_terms(TermState.VALID)),
-            "obsoleted_terms" : len(oldgo.get_terms(TermState.OBSOLETED)),
-            "merged_terms" : len(oldgo.get_merged_terms(TermState.ANY)),
-            "biological_processes" : len(oldgo.get_terms_in("biological_process")),
-            "molecular_functions" : len(oldgo.get_terms_in("molecular_function")),
-            "cellular_components" : len(oldgo.get_terms_in("cellular_component")),
-            "meta_statements" : oldgo.count_all_metas(),
-            "meta_noxrefs_statements" : oldgo.count_all_metas(TermState.VALID, False),
-            "structural_statements" : oldgo.count_all_structurals()
-        },
-        "created_terms" : created_count,
-        "obsoleted_terms" : obsoleted_count,
-        "merged_terms" : merged_count,
-        "terms_structural_changes" : structural_count,
-        "terms_meta_changes" : meta_count,
-        "terms_meta_noxrefs_changes" : meta_noxrefs_count,
-        "total_structural_changes" : structural_total_count,
-        "total_meta_changes" : meta_total_count,
-        "total_meta_noxrefs_changes" : meta_noxrefs_total_count
+def compute_changes(current_stats, previous_stats):
+    stats_changes = {
+        "release_compared": {
+            "current" : current_stats['release_date'],
+            "previous" : previous_stats['release_date']            
+        }
     }
-    report["created_terms"] = created
-    report["obsoleted_terms"] = obsoleted
-    report["merged_terms"] = merged
-    report["structural_changes"] = structural_changes
-    report["meta_changes"] = meta_changes
-    report["meta_noxrefs_changes"] = meta_noxrefs_changes
 
-    print("JSON report created.")
+    for key, val in current_stats.items():
+        if "release_date" in key:
+            continue
+        print("compute: ", key)
+        stats_changes[key] = nested_changes(current_stats[key], previous_stats[key])
 
-    return report
+    return stats_changes
 
 
-def flattern(A):
-    rt = []
-    for i in A:
-        if isinstance(i,list): rt.extend(flattern(i))
-        else: rt.append(i)
-    return rt
+def nested_changes(current_json, previous_json):
+    """
+    Compute nested changes of numbers (ignore string).
+    Assume both json have the exact same structure
+    """
 
-# def save_changes(new_obo_url, old_obo_url):
+    changes = { }
 
-#     # The new published OBO archive
-#     print("Loading current GO ontology (" + new_obo_url + ")...")
-#     newgo = OBO_Parser(requests.get(new_obo_url).text)
+    for key, val in current_json.items():
+        tp = type(val)
+        if tp == str:
+            continue
+        elif tp == int or tp == float:
+            previous_value = previous_json[key] if previous_json is not None and key in previous_json else 0
+            # if current_json[key] != previous_value:
+            changes[key] = current_json[key] - previous_value
+        elif tp == dict:
+            previous_value = previous_json[key] if previous_json is not None and key in previous_json else { }
+            changes[key] = nested_changes(current_json[key], previous_value)
 
-#     # A previously published OBO archive
-#     print("Loading previous GO ontology (" + old_obo_url + ")...")
-#     oldgo = OBO_Parser(requests.get(old_obo_url).text)
-    
-    
-#     # New GO Terms
-#     created = { }
-#     created_count = 0
-#     for id, newterm in newgo.get_terms().items():                                                                                                                                                                                
-#         if not oldgo.has_term(id):
-#             if newterm.namespace not in created:
-#                 created[newterm.namespace] = []
-#             created[newterm.namespace].append({ "id": id, "name": newterm.name})
-#             created_count += 1
-#     print(str(created_count) + " terms created since last revision")
+    missing = missing_fields(current_json, previous_json)
+    for key, val in missing.items():
+        changes[key] = val
 
-#     # Merged GO Terms    
-#     merged = { }
-#     merged_list = []
-#     merged_count = 0
-#     for id, oldterm in oldgo.get_terms().items():                                                                                                                                                                                  
-#         if not newgo.has_term(id):
-#             if oldterm.namespace not in merged:
-#                 merged[oldterm.namespace] = []
-#             alts = newgo.get_alternate_terms(id)
-#             if len(alts) > 0:
-#                 merged[oldterm.namespace].append( { "current": alts[0], "previous": { "id": id, "name": oldterm.name } } )
-#                 merged_count += 1
-#                 merged_list.append(oldterm.id)
-#     print(str(merged_count) + " terms merged since last revision")
-    
-#     # Obsoleted GO Terms
-#     obsoleted = { }
-#     obsoleted_count = 0
-#     new_terms = newgo.get_terms()
-#     for id, oldterm in oldgo.get_terms().items():                                                                                                                                                                                  
-#         if id not in new_terms:
-#             if oldterm.namespace not in obsoleted:
-#                 obsoleted[oldterm.namespace] = []
-#             if oldterm.id not in merged_list:
-#                 obsoleted[oldterm.namespace].append({ "id": id, "name": oldterm.name})
-#                 obsoleted_count += 1
-#     print(str(obsoleted_count) + " terms obsoleted since last revision")
-    
-#     # Existing GO Terms with structural changes (is_a, part_of, has_part etc)
-#     structural_changes = { }
-#     structural_count = 0
-#     structural_total_count = 0
-#     for id, newterm in newgo.get_terms().items():
-#         if oldgo.has_term(id):                                                                                                                                                                            
-#             oldterm = oldgo.get_term(id)
-#             if not newterm.structural_equals(oldterm):
-#                 if newterm.namespace not in structural_changes:
-#                     structural_changes[newterm.namespace] = []
-                    
-#                 reasons = {}
-#                 for key, reason in newterm.explain_structural_differences(oldterm).items():
-#                     reasons[key] = { "current" : reason['current'], "previous" : reason['previous'] }
-#                 structural_changes[newterm.namespace].append({ "id" : id, "name": newterm.name , "changes": reasons })
-#                 structural_count += 1
-#                 structural_total_count += len(reasons)
-#     print(str(structural_count) + " terms structural changes since last revision")
-    
-    
-#     # Existing GO Terms with meta changes (synonyms, xrefs, definition, etc)
-#     meta_changes = { }
-#     meta_count = 0
-#     meta_total_count = 0
-#     for id, newterm in newgo.get_terms().items():
-#         if oldgo.has_term(id):                                                                                                                                                                            
-#             oldterm = oldgo.get_term(id)
-#             if not newterm.meta_equals(oldterm):
-#                 if newterm.namespace not in meta_changes:
-#                     meta_changes[newterm.namespace] = []
-                    
-#                 reasons = {}
-#                 for key, reason in newterm.explain_meta_differences(oldterm).items():
-#                     reasons[key] = { "current" : reason['current'], "previous" : reason['previous'] }
-#                 meta_changes[newterm.namespace].append({ "id" : id, "name": newterm.name , "changes": reasons })
-#                 meta_count += 1
-#                 meta_total_count += len(reasons)
-#     print(str(meta_count) + " terms meta changes since last revision")
+    return changes
 
-#     # Existing GO Terms with meta changes (synonyms, NO XREFS, definition, etc)
-#     meta_noxrefs_changes = { }
-#     meta_noxrefs_count = 0
-#     meta_noxrefs_total_count = 0
-#     for id, newterm in newgo.get_terms().items():
-#         if oldgo.has_term(id):                                                                                                                                                                            
-#             oldterm = oldgo.get_term(id)
-#             if not newterm.meta_equals(oldterm, False):
-#                 if newterm.namespace not in meta_noxrefs_changes:
-#                     meta_noxrefs_changes[newterm.namespace] = []
-                    
-#                 reasons = {}
-#                 for key, reason in newterm.explain_meta_differences(oldterm, False).items():
-#                     reasons[key] = { "current" : reason['current'], "previous" : reason['previous'] }
-#                 meta_noxrefs_changes[newterm.namespace].append({ "id" : id, "name": newterm.name , "changes": reasons })
-#                 meta_noxrefs_count += 1                
-#                 meta_noxrefs_total_count += len(reasons)
-#     print(str(meta_noxrefs_count) + " terms meta (NO XREFS) changes since last revision")
- 
-#     report = { }
-#     report["releases"] = {
-#                 "current" : { "date": release_date, "version" : newgo.header['data-version'], "format" : newgo.header['format-version'] },
-#                 "previous" : { "date" : last_date, "version" : oldgo.header['data-version'], "format" : oldgo.header['format-version'] }
-#             }
-#     report["summary"] = {
-#         "current": {
-#             "release_date" : report["releases"]["current"]["version"],
-#             "valid_terms" : len(newgo.get_terms(TermState.VALID)),
-#             "obsoleted_terms" : len(newgo.get_terms(TermState.OBSOLETED)),
-#             "merged_terms" : len(newgo.get_merged_terms(TermState.ANY)),
-#             "biological_processes" : len(newgo.get_terms_in("biological_process")),
-#             "molecular_functions" : len(newgo.get_terms_in("molecular_function")),
-#             "cellular_components" : len(newgo.get_terms_in("cellular_component")),
-#             "meta_statements" : newgo.count_all_metas(),
-#             "meta_noxrefs_statements" : newgo.count_all_metas(TermState.VALID, False),
-#             "structural_statements" : newgo.count_all_structurals()
-#         },
-#         "previous": {
-#             "release_date" : report["releases"]["previous"]["version"],
-#             "valid_terms" : len(oldgo.get_terms(TermState.VALID)),
-#             "obsoleted_terms" : len(oldgo.get_terms(TermState.OBSOLETED)),
-#             "merged_terms" : len(oldgo.get_merged_terms(TermState.ANY)),
-#             "biological_processes" : len(oldgo.get_terms_in("biological_process")),
-#             "molecular_functions" : len(oldgo.get_terms_in("molecular_function")),
-#             "cellular_components" : len(oldgo.get_terms_in("cellular_component")),
-#             "meta_statements" : oldgo.count_all_metas(),
-#             "meta_noxrefs_statements" : oldgo.count_all_metas(TermState.VALID, False),
-#             "structural_statements" : oldgo.count_all_structurals()
-#         },
-#         "created_terms" : created_count,
-#         "obsoleted_terms" : obsoleted_count,
-#         "merged_terms" : merged_count,
-#         "terms_structural_changes" : structural_count,
-#         "terms_meta_changes" : meta_count,
-#         "terms_meta_noxrefs_changes" : meta_noxrefs_count,
-#         "total_structural_changes" : structural_total_count,
-#         "total_meta_changes" : meta_total_count,
-#         "total_meta_noxrefs_changes" : meta_noxrefs_total_count
-#     }
-#     report["created_terms"] = created
-#     report["obsoleted_terms"] = obsoleted
-#     report["merged_terms"] = merged
-#     report["structural_changes"] = structural_changes
-#     report["meta_changes"] = meta_changes
-#     report["meta_noxrefs_changes"] = meta_noxrefs_changes
-    
-#     # TO READD    
-#     store_json("go-last-changes.json", report)
-#     store_json("go-last-changes-summary.json", report["summary"])
-#     store_json("archive/" + release_date + "_go-last-changes.json", report)
-#     store_json("archive/" + release_date + "_go-last-changes-summary.json", report["summary"])
+def missing_fields(current_json, previous_json):
+    """ 
+    Adding fields that were in previous but are not in current stats
+    """
+    missing = { }
+    for key, val in previous_json.items():
+        if current_json is not None and key in current_json:
+            continue
 
-    
-
- 
-#     # Creating TSV version of the JSON report
-#     txtreport = "CHANGES IN GO ONTOLOGY BETWEEN\ncurrent\t" + report["releases"]["current"]["version"] + " (" + release_date + ")\nprevious\t" + report["releases"]["previous"]["version"] + " (" + last_date + ")\n"
-
-#     txtreport += "\nSUMMARY\n"
-#     txtreport += "current_valid_terms\t" + str(report["summary"]["current"]["valid_terms"]) + "\n"
-#     txtreport += "current_obsoleted_terms\t" + str(report["summary"]["current"]["obsoleted_terms"]) + "\n"
-#     txtreport += "current_merged_terms\t" + str(report["summary"]["current"]["merged_terms"]) + "\n"
-#     txtreport += "current_biological_processes\t" + str(report["summary"]["current"]["biological_processes"]) + "\n"
-#     txtreport += "current_molecular_functions\t" + str(report["summary"]["current"]["molecular_functions"]) + "\n"
-#     txtreport += "current_cellular_components\t" + str(report["summary"]["current"]["cellular_components"]) + "\n"
-#     txtreport += "current_meta_statements\t" + str(report["summary"]["current"]["meta_statements"]) + "\n"
-#     txtreport += "current_meta_noxrefs_statements\t" + str(report["summary"]["current"]["meta_noxrefs_statements"]) + "\n"
-#     txtreport += "current_structural_statements\t" + str(report["summary"]["current"]["structural_statements"]) + "\n"
-
-#     txtreport += "previous_valid_terms\t" + str(report["summary"]["previous"]["valid_terms"]) + "\n"
-#     txtreport += "previous_obsoleted_terms\t" + str(report["summary"]["previous"]["obsoleted_terms"]) + "\n"
-#     txtreport += "previous_merged_terms\t" + str(report["summary"]["previous"]["merged_terms"]) + "\n"
-#     txtreport += "previous_biological_processes\t" + str(report["summary"]["previous"]["biological_processes"]) + "\n"
-#     txtreport += "previous_molecular_functions\t" + str(report["summary"]["previous"]["molecular_functions"]) + "\n"
-#     txtreport += "previous_cellular_components\t" + str(report["summary"]["previous"]["cellular_components"]) + "\n"
-#     txtreport += "previous_meta_statements\t" + str(report["summary"]["previous"]["meta_statements"]) + "\n"
-#     txtreport += "previous_meta_noxrefs_statements\t" + str(report["summary"]["previous"]["meta_noxrefs_statements"]) + "\n"
-#     txtreport += "previous_structural_statements\t" + str(report["summary"]["previous"]["structural_statements"]) + "\n"
-
-#     txtreport += "created_terms\t" + str(report["summary"]["created_terms"]) + "\n"
-#     txtreport += "obsoleted_terms\t" + str(report["summary"]["obsoleted_terms"]) + "\n"
-#     txtreport += "merged_terms\t" + str(report["summary"]["merged_terms"]) + "\n"
-#     txtreport += "terms_structural_changes\t" + str(report["summary"]["terms_structural_changes"]) + "\n"
-#     txtreport += "terms_meta_changes\t" + str(report["summary"]["terms_meta_changes"]) + "\n"
-#     txtreport += "terms_meta_noxrefs_changes\t" + str(report["summary"]["terms_meta_noxrefs_changes"]) + "\n"
-#     txtreport += "total_structural_changes\t" + str(report["summary"]["total_structural_changes"]) + "\n"
-#     txtreport += "total_meta_changes\t" + str(report["summary"]["total_meta_changes"]) + "\n"
-#     txtreport += "total_meta_noxrefs_changes\t" + str(report["summary"]["total_meta_noxrefs_changes"]) + "\n"
-
-#     txtreport += "\nTERMS CREATED\t" + str(created_count) + "\n"
-#     for aspect in report["created_terms"]:
-#         for term in report["created_terms"][aspect]:
-#             txtreport += aspect + "\t" + term["id"] + "\t" + term["name"] + "\n"
-                    
-#     txtreport += "\nTERMS OBSOLETED\t" + str(obsoleted_count) + "\n"
-#     for aspect in report["obsoleted_terms"]:
-#         for term in report["obsoleted_terms"][aspect]:
-#             txtreport += aspect + "\t" + term["id"] + "\t" + term["name"] + "\n"
-
-#     txtreport += "\nTERMS MERGED\t" + str(merged_count) + "\n"
-#     for aspect in report["merged_terms"]:
-#         for term in report["merged_terms"][aspect]:
-#             txtreport += aspect + "\t" + term["current"]["id"] + "\t" + term["current"]["name"] + "\t" + term["previous"]["id"] + "\t" + term["previous"]["name"] + "\n"
-
-#     txtreport += "\nTERMS STRUCTURAL CHANGES\t" + str(structural_count) + "\n"
-#     for aspect in report["structural_changes"]:
-#         for term in report["structural_changes"][aspect]:
-#             txtreport += aspect + "\t" + term["id"] + "\t" + term["name"]
-#             for change in term["changes"]:
-#                 curr = term["changes"][change]["current"]
-#                 if not isinstance(curr, str):
-#                     curr = ", ".join(map(str, curr))
-                
-#                 prev = term["changes"][change]["previous"]
-#                 if not isinstance(prev, str):
-#                     prev = ", ".join(map(str, prev))
-#                 txtreport += "\t" + change + " (current: " + curr + " previous: " + prev + ")"
-#             txtreport += "\n"
-        
-#     txtreport += "\nTERMS META CHANGES\t" + str(meta_count) + "\n"
-#     for aspect in report["meta_changes"]:
-#         for term in report["meta_changes"][aspect]:
-#             txtreport += aspect + "\t" + term["id"] + "\t" + term["name"]
-#             for change in term["changes"]:
-#                 curr = term["changes"][change]["current"]
-#                 if not isinstance(curr, str):
-#                     curr = ", ".join(map(str, curr))
-                
-#                 prev = term["changes"][change]["previous"]
-#                 if not isinstance(prev, str):
-#                     prev = ", ".join(map(str, prev))
-#                 txtreport += "\t" + change + " (current: " + curr + " previous: " + prev + ")"
-#             txtreport += "\n"
-
-#     txtreport += "\nTERMS META CHANGES (NO XREFS)\t" + str(meta_noxrefs_count) + "\n"
-#     for aspect in report["meta_noxrefs_changes"]:
-#         for term in report["meta_noxrefs_changes"][aspect]:
-#             txtreport += aspect + "\t" + term["id"] + "\t" + term["name"]
-#             for change in term["changes"]:
-#                 curr = term["changes"][change]["current"]
-#                 if not isinstance(curr, str):
-#                     curr = ", ".join(map(str, curr))
-                
-#                 prev = term["changes"][change]["previous"]
-#                 if not isinstance(prev, str):
-#                     prev = ", ".join(map(str, prev))
-#                 txtreport += "\t" + change + " (current: " + curr + " previous: " + prev + ")"
-#             txtreport += "\n"
+        tp = type(val)
+        if tp == str:
+            continue
+        elif tp == int or tp == float:
+            missing[key] = - val
+        elif tp == dict:
+            missing[key] = missing_fields(None, previous_json[key])
             
-#     store_text("go-last-changes.tsv", txtreport)
-#     store_text("archive/" + release_date + "_go-last-changes.tsv", txtreport)
-
-
+    return missing
 
 def create_text_report(json_changes):
-    return ""
+    text_report = ""
+
+    text_report = "CHANGES IN GENE ONTOLOGY STATISTICS"
+    text_report += "\ncurrent_release_date\t" + json_changes["release_compared"]["current"]    
+    text_report += "\nprevious_release_date\t" + json_changes["release_compared"]["previous"]
+
+    text_report += "\n\nCHANGES IN TERMS\n"
+    text_report += "total\t" + str(json_changes["terms"]["total"]) + "\nobsoleted\t" + str(json_changes["terms"]["obsoleted"]) + "\nvalid total\t" + str(json_changes["terms"]["valid"])
+    text_report += "\nvalid P\t" + str(json_changes["terms"]["by_aspect"]["P"]) + "\nvalid F\t" + str(json_changes["terms"]["by_aspect"]["F"]) + "\nvalid C\t" + str(json_changes["terms"]["by_aspect"]["C"])
 
 
+    text_report += "\n\nCHANGES IN BIOENTITIES\n"
+    text_report += "total\t" + str(json_changes["annotations"]["bioentities"]["total"])
+
+    text_report += "\n\nCHANGES IN BIOENTITIES BY TYPE (CLUSTER)"
+    for key, val in json_changes["annotations"]["bioentities"]["by_type"]["cluster"].items():
+        text_report += "\n" + key + "\t" + str(val)
+
+    text_report += "\n\nCHANGES IN BIOENTITIES BY TYPE (ALL)"
+    for key, val in json_changes["annotations"]["bioentities"]["by_type"]["all"].items():
+        text_report += "\n" + key + "\t" + str(val)
+
+    text_report += "\n\nCHANGES IN BIOENTITIES BY FILTERED TAXON AND BY TYPE (CLUSTER)"
+    text_report += "\ntaxon"
+    for type, nb in json_changes["annotations"]["bioentities"]["by_type"]["cluster"].items():
+        text_report += "\t" + type
+    for key, val in json_changes["annotations"]["bioentities"]["by_taxon"]["cluster"].items():
+        text_report += "\n" + key
+        for type, nb in json_changes["annotations"]["bioentities"]["by_type"]["cluster"].items():
+            text_report += "\t" + str(val[type]["A"]) if type in val else "\t0"
+
+    text_report += "\n\nCHANGES IN BIOENTITIES BY FILTERED TAXON AND BY TYPE (ALL)"
+    text_report += "\ntaxon"
+    for type, nb in json_changes["annotations"]["bioentities"]["by_type"]["all"].items():
+        text_report += "\t" + type
+    for key, val in json_changes["annotations"]["bioentities"]["by_taxon"]["all"].items():
+        text_report += "\n" + key
+        for type, nb in json_changes["annotations"]["bioentities"]["by_type"]["all"].items():
+            text_report += "\t" + str(val[type]["A"]) if type in val else "\t0"
+
+
+    text_report += "\n\nCHANGES IN TAXONS\n"
+    text_report += "total\t" + str(json_changes["annotations"]["taxons"]["total"])
+    text_report += "\nfiltered\t" + str(json_changes["annotations"]["taxons"]["filtered"])
+
+
+    text_report += "\n\nCHANGES IN ANNOTATIONS\n"
+    text_report += "total\t" + str(json_changes["annotations"]["total"])
+    for key, val in json_changes["annotations"]["by_aspect"].items():
+        text_report += "\n" + key + "\t" + str(val)
+        
+    text_report += "\n\nCHANGES IN ANNOTATIONS BY BIOENTITY TYPE (CLUSTER)"
+    for key, val in json_changes["annotations"]["by_bioentity_type"]["cluster"].items():
+        text_report += "\n" + key + "\t" + str(val)
+    
+    text_report += "\n\nCHANGES IN ANNOTATIONS BY BIOENTITY TYPE (ALL)"
+    for key, val in json_changes["annotations"]["by_bioentity_type"]["all"].items():
+        text_report += "\n" + key + "\t" + str(val)
+    
+    text_report += "\n\nCHANGES IN ANNOTATIONS BY EVIDENCE (CLUSTER)"
+    for key, val in json_changes["annotations"]["by_evidence"]["cluster"].items():
+        text_report += "\n" + key + "\t" + str(val)
+    
+    text_report += "\n\nCHANGES IN ANNOTATIONS BY EVIDENCE (ALL)"
+    for key, val in json_changes["annotations"]["by_evidence"]["all"].items():
+        text_report += "\n" + key + "\t" + str(val)
+    
+    text_report += "\n\nCHANGES IN ANNOTATIONS BY GROUP"
+    for key, val in json_changes["annotations"]["by_group"].items():
+        text_report += "\n" + key + "\t" + str(val)
+    
+    text_report += "\n\nCHANGES IN ANNOTATIONS BY TAXON"
+    for key, val in json_changes["annotations"]["by_taxon"].items():
+        text_report += "\n" + key + "\t" + str(val)
+
+
+    text_report += "\n\nCHANGES IN REFERENCES AND PMIDS\n"
+    text_report += "total\t" + str(json_changes["annotations"]["references"]["total"])
+    text_report += "\t" + str(json_changes["annotations"]["pmids"]["total"])
+ 
+    text_report += "\n\nCHANGES IN REFERENCES AND PMIDS BY GROUP"
+    text_report += "\ngroup\treferences\tpmids"
+    for key, val in json_changes["annotations"]["references"]["by_group"].items():
+        text_report += "\n" + key + "\t" + str(val) + "\t" + str(json_changes["annotations"]["pmids"]["by_group"][key])
+
+    text_report += "\n\nCHANGES IN REFERENCES AND PMIDS BY TAXON"
+    text_report += "\ntaxon\treferences\tpmids"
+    for key, val in json_changes["annotations"]["references"]["by_taxon"].items():
+        pmid_val = json_changes["annotations"]["pmids"]["by_taxon"][key] if key in json_changes["annotations"]["pmids"]["by_taxon"] else 0
+        text_report += "\n" + key + "\t" + str(val) + "\t" + str(pmid_val)
+
+    return text_report
 
 
 def write_json(key, content):
@@ -528,14 +171,13 @@ def write_text(key, content):
         outfile.write(content)
 
 
-
 def print_help():
-    print('Usage: python go_ontology_changes.py -c <current_obo_url> -p <previous_obo_url> -o <output_rep>\n')
+    print('Usage: python go_annotation_changes.py -c <current_stats_url> -p <previous_stats_url> -o <output_rep>\n')
 
 
 def main(argv):
-    current_obo_url = ''
-    previous_obo_url = ''
+    current_stats_url = ''
+    previous_stats_url = ''
     output_rep = ''
 
     if len(argv) < 3:
@@ -543,7 +185,7 @@ def main(argv):
         sys.exit(2)
 
     try:
-        opts, argv = getopt.getopt(argv,"c:p:o:",["cobo=","pobo=","orep="])
+        opts, argv = getopt.getopt(argv,"c:p:o:",["current=","previous=","orep="])
     except getopt.GetoptError:
         print_help()
         sys.exit(2)
@@ -552,10 +194,10 @@ def main(argv):
         if opt == '-h':
             print_help()
             sys.exit()
-        elif opt in ("-c", "--cobo"):
-            current_obo_url = arg
-        elif opt in ("-p", "--pobo"):
-            previous_obo_url = arg
+        elif opt in ("-c", "--current"):
+            current_stats_url = arg
+        elif opt in ("-p", "--previous"):
+            previous_stats_url = arg
         elif opt in ("-o", "-orep"):
             output_rep = arg
         
@@ -565,21 +207,24 @@ def main(argv):
     if not os.path.exists(output_rep):
         os.mkdir(output_rep)
 
-    output_json =  output_rep + "go-ontology-changes.json"
-    output_tsv =  output_rep + "go-ontology-changes.tsv"
+    output_json =  output_rep + "go-stats-changes.json"
+    output_tsv =  output_rep + "go-stats-changes.tsv"
 
-    print("Will write ontology changes to " + output_json + " and " + output_tsv)
+    print("Will write stats changes to " + output_json + " and " + output_tsv)
 
-    json_changes = compute_changes(current_obo_url, previous_obo_url)
+
+    current_stats = requests.get(current_stats_url).json()
+    previous_stats = requests.get(previous_stats_url).json()
+    json_changes = compute_changes(current_stats, previous_stats)
 
     print("Saving Stats to <" + output_json + "> ...")    
     write_json(output_json, json_changes)
     print("Done.")
 
-    # print("Saving Stats to <" + output_tsv + "> ...")    
-    # tsv_changes = create_text_report(json_changes)
-    # write_text(output_tsv, tsv_changes)
-    # print("Done.")
+    print("Saving Stats to <" + output_tsv + "> ...")    
+    tsv_changes = create_text_report(json_changes)
+    write_text(output_tsv, tsv_changes)
+    print("Done.")
     
 
 

@@ -16,6 +16,7 @@ def compute_changes(current_stats, previous_stats):
     for key, val in current_stats.items():
         if "release_date" in key:
             continue
+        print("compute: ", key)
         stats_changes[key] = nested_changes(current_stats[key], previous_stats[key])
 
     return stats_changes
@@ -34,11 +35,12 @@ def nested_changes(current_json, previous_json):
         if tp == str:
             continue
         elif tp == int or tp == float:
-            previous_value = previous_json[key] if key in previous_json else 0
+            previous_value = previous_json[key] if previous_json is not None and key in previous_json else 0
             # if current_json[key] != previous_value:
             changes[key] = current_json[key] - previous_value
         elif tp == dict:
-            changes[key] = nested_changes(current_json[key], previous_json[key])
+            previous_value = previous_json[key] if previous_json is not None and key in previous_json else { }
+            changes[key] = nested_changes(current_json[key], previous_value)
 
     missing = missing_fields(current_json, previous_json)
     for key, val in missing.items():
@@ -47,9 +49,12 @@ def nested_changes(current_json, previous_json):
     return changes
 
 def missing_fields(current_json, previous_json):
+    """ 
+    Adding fields that were in previous but are not in current stats
+    """
     missing = { }
     for key, val in previous_json.items():
-        if key in current_json:
+        if current_json is not None and key in current_json:
             continue
 
         tp = type(val)
@@ -57,9 +62,8 @@ def missing_fields(current_json, previous_json):
             continue
         elif tp == int or tp == float:
             missing[key] = - val
-            print("added missing (" , key , " , " , val , ")")
         elif tp == dict:
-            missing[key] = missing_fields(current_json[key], previous_json[key])
+            missing[key] = missing_fields(None, previous_json[key])
             
     return missing
 
