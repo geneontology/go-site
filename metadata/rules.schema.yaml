@@ -32,7 +32,7 @@ mapping:
     required: false
     sequence:
       - type: str
-        pattern: /[a-zA-Z_][\w]*/
+        enum: [ "silent" ]
         unique: true
   "issues":
     required: false
