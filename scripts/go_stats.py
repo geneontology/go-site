@@ -29,6 +29,21 @@ MF = "GO:0003674"
 CC = "GO:0005575"
 
 
+# SET OF REFERENCE GENOMES (used to compute number of annotations by evidence code for each species)
+reference_genomes_ids = [
+    "NCBITaxon:9606",
+    "NCBITaxon:10116",
+    "NCBITaxon:10090",
+    "NCBITaxon:3702",
+    "NCBITaxon:7955",
+    "NCBITaxon:6239",
+    "NCBITaxon:559292",
+    "NCBITaxon:7227",
+    "NCBITaxon:44689",
+    "NCBITaxon:4896",
+    "NCBITaxon:83333"
+]
+
 
 # GOLR prepared queries
 golr_select_ontology =  'select?wt=json&fq=document_category:"ontology_class"&fq=id:GO\:*&fq=idspace:"GO"&fl=source,annotation_class,is_obsolete&rows=2000000&q=*:*&facet=true&facet.field=source&facet.limit=1000000&facet.mincount=1'
@@ -37,6 +52,7 @@ golr_select_annotations = 'select?fq=document_category:%22annotation%22&q=*:*&wt
 golr_select_annotations_no_pbinding = golr_select_annotations + "&fq=!annotation_class:\"GO:0005515\"" # to remove only DIRECT annotations to protein binding
 golr_select_bioentities = 'select?fq=document_category:%22bioentity%22&q=*:*&wt=json&facet=true&facet.field=type&facet.field=taxon&facet.limit=1000000&facet.mincount=1&rows=0'
 golr_select_bioentities_pb = 'select?fq=document_category:"bioentity"&q=*:*&wt=json&rows=100000&fq=annotation_class_list:"GO:0005515"&fl=annotation_class_list,type,taxon'
+
 
 def golr_fetch(select_query):
     # print("trying: " + golr_base_url + select_query)
@@ -273,7 +289,7 @@ def prepare_globals(all_annotations):
         taxon_map[key] = val
 
     # print(taxon_map)
-    print("Note: taxon map of ", len(taxon_map), " taxons loaded from " , taxon_base_url + " - in case of issue could use https://www.ebi.ac.uk/ena/data/taxonomy/v1/taxon/tax-id/xxx")
+    print("Note: taxon map of ", len(taxon_map), " taxa loaded from " , taxon_base_url + " - in case of issue could use https://www.ebi.ac.uk/ena/data/taxonomy/v1/taxon/tax-id/xxx")
 
     bioentity_type_cluster = { }
     temp = all_annotations['facet_counts']['facet_fields']['type']
@@ -298,13 +314,13 @@ def golr_fetch_bioentities_taxon(taxon):
     # multiple queries: a bit complicated but necessary due to solr 3.6 unable to do composite faceting and for speed considerations
     # * can indicate the is_a closure to find the stats on that specific aspect
     # * if evidence code was present, we could use a similar strategy
-    url_bp = "select?fq=document_category:%22bioentity%22&q=*:*&wt=json&facet=true&facet.field=type&facet.field=taxon&facet.limit=1000000&facet.mincount=1&rows=0&fq=taxon:%22NCBITaxon:9606%22&fq=isa_partof_closure:\"" + BP + "\""
+    url_bp = "select?fq=document_category:%22bioentity%22&q=*:*&wt=json&facet=true&facet.field=type&facet.field=taxon&facet.limit=1000000&facet.mincount=1&rows=0&fq=taxon:\"" + taxon + "\"&fq=isa_partof_closure:\"" + BP + "\""
     response_bp = golr_fetch(url_bp)
 
-    url_mf = "select?fq=document_category:%22bioentity%22&q=*:*&wt=json&facet=true&facet.field=type&facet.field=taxon&facet.limit=1000000&facet.mincount=1&rows=0&fq=taxon:%22NCBITaxon:9606%22&fq=isa_partof_closure:\"" + MF + "\""
+    url_mf = "select?fq=document_category:%22bioentity%22&q=*:*&wt=json&facet=true&facet.field=type&facet.field=taxon&facet.limit=1000000&facet.mincount=1&rows=0&fq=taxon:\"" + taxon + "\"&fq=isa_partof_closure:\"" + MF + "\""
     response_mf = golr_fetch(url_mf)
 
-    url_cc = "select?fq=document_category:%22bioentity%22&q=*:*&wt=json&facet=true&facet.field=type&facet.field=taxon&facet.limit=1000000&facet.mincount=1&rows=0&fq=taxon:%22NCBITaxon:9606%22&fq=isa_partof_closure:\"" + CC + "\""
+    url_cc = "select?fq=document_category:%22bioentity%22&q=*:*&wt=json&facet=true&facet.field=type&facet.field=taxon&facet.limit=1000000&facet.mincount=1&rows=0&fq=taxon:\"" + taxon + "\"&fq=isa_partof_closure:\"" + CC + "\""
     response_cc = golr_fetch(url_cc)
 
     return { ALL : response, BP : response_bp, MF : response_mf, CC : response_cc }
@@ -319,6 +335,35 @@ def golr_fetch_references_group(group):
     response = golr_fetch(url)
     return response
 
+# def golr_fetch_evidence_by_species(taxon_id):
+#     url = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&fq=taxon:%22' + taxon_id + '%22&facet=true&facet.field=evidence_type&facet.limit=10000&rows=0'
+#     response = golr_fetch(url)
+#     return response    
+
+
+def golr_fetch_evidence_by_species(taxon):
+    url = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&fq=taxon:%22' + taxon + '%22&facet=true&facet.field=evidence_type&facet.limit=10000&rows=0'
+    response = golr_fetch(url)
+
+    url_bp = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&fq=taxon:%22' + taxon + '%22&facet=true&facet.field=evidence_type&facet.limit=10000&rows=0&fq=isa_partof_closure:\"' + BP + '\"'
+    response_bp = golr_fetch(url_bp)
+
+    url_mf = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&fq=taxon:%22' + taxon + '%22&facet=true&facet.field=evidence_type&facet.limit=10000&rows=0&fq=isa_partof_closure:\"' + MF + '\"'
+    response_mf = golr_fetch(url_mf)
+
+    url_cc = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&fq=taxon:%22' + taxon + '%22&facet=true&facet.field=evidence_type&facet.limit=10000&rows=0&fq=isa_partof_closure:\"' + CC + '\"'
+    response_cc = golr_fetch(url_cc)
+
+    return { ALL : response, BP : response_bp, MF : response_mf, CC : response_cc }
+    
+
+
+def taxon_label(taxon):
+    if "NCBITaxon" in taxon:
+        taxon_id = taxon[taxon.index(":")+1:]
+        taxon_name = taxon_map[taxon_id] if taxon_id in taxon_map else "UNK"
+        return taxon + "|" + taxon_name
+    return taxon
 
 def add_taxon_label(map):
     new_map = { }
@@ -400,7 +445,7 @@ def create_stats(all_terms, all_annotations, all_entities):
         pmids_by_taxon[taxon] = pmid_map
     references_by_taxon = ordered_map(references_by_taxon)
     pmids_by_taxon = ordered_map(pmids_by_taxon)
-    print("\t4d - taxons computed")
+    print("\t4d - taxa computed")
 
     references_by_group = { }
     pmids_by_group = { }
@@ -412,12 +457,33 @@ def create_stats(all_terms, all_annotations, all_entities):
         pmids_by_group[group] = pmid_map
     references_by_group = ordered_map(references_by_group)
     pmids_by_group = ordered_map(pmids_by_group)
-    print("4 - references computed")
+    print("\t4e - references computed")
 
     # print("CHECK (by evidence):\n" , all_annotations['facet_counts']['facet_fields']['evidence_type'])
     # print("CHECK (buildmap(by_evidence):\n", build_map(all_annotations['facet_counts']['facet_fields']['evidence_type']))
     # print("CHECK (reverse_evidence_group:\n", reverse_evidence_groups)
     # print("CHECK (cluster(buildmap, reverse_evidence_group):\n", cluster_map(build_map(all_annotations['facet_counts']['facet_fields']['evidence_type']), reverse_evidence_groups))
+
+
+
+
+    ref_genome_evidences = { }
+    for taxon in reference_genomes_ids:
+        responses = golr_fetch_evidence_by_species(taxon)
+        all_map = build_map(responses[ALL]['facet_counts']['facet_fields']['evidence_type'])
+        bp_map = build_map(responses[BP]['facet_counts']['facet_fields']['evidence_type'])
+        mf_map = build_map(responses[MF]['facet_counts']['facet_fields']['evidence_type'])
+        cc_map = build_map(responses[CC]['facet_counts']['facet_fields']['evidence_type'])
+
+        merged_map = {}
+        for key, value in all_map.items():
+            merged_map[key] = { "A" : value , "P" : bp_map[key] if key in bp_map else 0 , "F" : mf_map[key] if key in mf_map else 0 , "C" : cc_map[key] if key in cc_map else 0 }
+
+        ref_genome_evidences[taxon] = {
+            "by_evidence" : merged_map
+        }
+        ref_genome_evidences[taxon]["by_evidence_cluster"] = cluster_complex_map(ref_genome_evidences[taxon]["by_evidence"], reverse_evidence_groups)
+        
 
     annotations = { 
         "total" : all_annotations['response']['numFound'],
@@ -442,22 +508,24 @@ def create_stats(all_terms, all_annotations, all_entities):
             # }
         },
 
-        "taxons" : {
+        "taxa" : {
             "total" : int(len(all_annotations['facet_counts']['facet_fields']['taxon']) / 2),
             "filtered" : len(usable_taxons),
         },
 
         "references" : {
-            "total" : int(len(all_annotations['facet_counts']['facet_fields']['reference']) / 2),
-            "by_taxon" : references_by_taxon,
-            "by_group" : references_by_group
+            "all" : {
+                "total" : int(len(all_annotations['facet_counts']['facet_fields']['reference']) / 2),
+                "by_taxon" : references_by_taxon,
+                "by_group" : references_by_group
+            },
+            "pmids" : {
+                "total" : len(extract_map(build_map(all_annotations['facet_counts']['facet_fields']['reference']), "PMID:")),
+                "by_taxon" : pmids_by_taxon,
+                "by_group" : pmids_by_group
+            }
         },
 
-        "pmids" : {
-           "total" : len(extract_map(build_map(all_annotations['facet_counts']['facet_fields']['reference']), "PMID:")),
-            "by_taxon" : pmids_by_taxon,
-            "by_group" : pmids_by_group
-        },
 
         "by_aspect" : build_map(all_annotations['facet_counts']['facet_fields']['aspect']),
 
@@ -472,6 +540,8 @@ def create_stats(all_terms, all_annotations, all_entities):
             "all" : build_map(all_annotations['facet_counts']['facet_fields']['evidence_type']),
             "cluster" : cluster_map(build_map(all_annotations['facet_counts']['facet_fields']['evidence_type']), reverse_evidence_groups)
         },
+
+        "by_reference_genome" : ref_genome_evidences,
 
         "by_group": build_map(all_annotations['facet_counts']['facet_fields']['assigned_by'])
         
@@ -527,8 +597,8 @@ def create_text_report(stats_json):
             text_report += "\t" + str(val[type]["A"]) if type in val else "\t0"
 
 
-    text_report += "\n\nTAXONS\n"
-    text_report += "total\t" + str(stats_json["annotations"]["taxons"]["total"]) + "\nfiltered\t" + str(stats_json["annotations"]["taxons"]["filtered"])
+    text_report += "\n\nTAXA\n"
+    text_report += "total\t" + str(stats_json["annotations"]["taxa"]["total"]) + "\nfiltered\t" + str(stats_json["annotations"]["taxa"]["filtered"])
 
 
     text_report += "\n\nANNOTATIONS\n"
@@ -562,17 +632,17 @@ def create_text_report(stats_json):
 
 
     text_report += "\n\nREFERENCES AND PMIDS\n"
-    text_report += "total\t" + str(stats_json["annotations"]["references"]["total"]) + "\t" + str(stats_json["annotations"]["pmids"]["total"])
+    text_report += "total\t" + str(stats_json["annotations"]["references"]["all"]["total"]) + "\t" + str(stats_json["annotations"]["references"]["pmids"]["total"])
 
     text_report += "\n\nREFERENCES AND PMIDS BY GROUP"
     text_report += "\ngroup\treferences\tpmids"
-    for key, val in stats_json["annotations"]["references"]["by_group"].items():
-        text_report += "\n" + key + "\t" + str(val) + "\t" + str(stats_json["annotations"]["pmids"]["by_group"][key])
+    for key, val in stats_json["annotations"]["references"]["all"]["by_group"].items():
+        text_report += "\n" + key + "\t" + str(val) + "\t" + str(stats_json["annotations"]["references"]["pmids"]["by_group"][key])
 
     text_report += "\n\nREFERENCES AND PMIDS BY TAXON"
     text_report += "\ntaxon\treferences\tpmids"
-    for key, val in stats_json["annotations"]["references"]["by_taxon"].items():
-        pmid_val = stats_json["annotations"]["pmids"]["by_taxon"][key] if key in stats_json["annotations"]["pmids"]["by_taxon"] else 0
+    for key, val in stats_json["annotations"]["references"]["all"]["by_taxon"].items():
+        pmid_val = stats_json["annotations"]["references"]["pmids"]["by_taxon"][key] if key in stats_json["annotations"]["references"]["pmids"]["by_taxon"] else 0
         text_report += "\n" + key + "\t" + str(val) + "\t" + str(pmid_val)
 
     return text_report
@@ -588,16 +658,18 @@ def create_meta(json_stats):
             "total" : json_stats["annotations"]["total"],
             "experimental" : json_stats["annotations"]["by_evidence"]["cluster"]["EXP"]
         },
-        "taxons": {
-            "total" : json_stats["annotations"]["taxons"]["total"],
-            "filtered" : json_stats["annotations"]["taxons"]["filtered"]
+        "taxa": {
+            "total" : json_stats["annotations"]["taxa"]["total"],
+            "filtered" : json_stats["annotations"]["taxa"]["filtered"]
         },
         "bioentities" : {
             "total" : json_stats["annotations"]["bioentities"]["total"],
-            "by_type" :json_stats["annotations"]["bioentities"]["by_type"]["cluster"]
+            "by_type_cluster" :json_stats["annotations"]["bioentities"]["by_type"]["cluster"]
         },
-        "references": json_stats["annotations"]["references"]["total"],
-        "pmids": json_stats["annotations"]["pmids"]["total"]
+        "references": {
+            "all" : json_stats["annotations"]["references"]["all"]["total"],
+            "pmids": json_stats["annotations"]["references"]["pmids"]["total"]
+        }
     }
     return meta
     

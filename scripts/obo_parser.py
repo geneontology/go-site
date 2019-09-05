@@ -3,6 +3,9 @@ import re
 
 from enum import Enum
 
+import requests
+import sys
+
 class TermState:
     ANY = 1
     VALID = 2
@@ -51,8 +54,8 @@ class Term:
             count += 1
         if self.alt_ids:
             count += len(self.alt_ids)
-        if self.is_obsolete:
-            count += 1
+        # if self.is_obsolete:
+        #     count += 1
         if self.namespace:
             count += 1
         if self.name:
@@ -442,3 +445,50 @@ class OBO_Parser:
             if term_state == TermState.ANY or (term_state == TermState.OBSOLETED and data['object'].is_obsolete) or (term_state == TermState.VALID and not data['object'].is_obsolete):
                 count += data['object'].count_structurals()
         return count
+
+    def get_children(self, root):
+        children = set()
+        for id, data in self.obo_graph.nodes(data=True):
+            current = data['object']
+            if current.is_obsolete:
+                continue
+            if current.is_a is None:
+                continue
+            if root.id in current.is_a:
+                children.add(current)
+                # locals = self.get_children(current)
+                # for local in locals:
+                #     children.add(local)
+        return children
+
+
+def main(argv):
+    go_obo_url = "https://geneontology-public.s3.amazonaws.com/archive/2019-06-09_go.obo"
+    req = requests.get(go_obo_url)
+    print("obo downloaded")
+
+    obo = OBO_Parser(req.text)
+    term_id = "GO:0005515"
+    term = obo.get_term(term_id)
+
+    print("using term: ", term.id , term.name)
+    derived_terms = obo.get_children(term)
+    print(len(derived_terms) , " derived terms")
+
+    derived_ids = []
+    for dterm in derived_terms:
+        derived_ids.append(dterm.id)
+
+    not_derived_terms = " AND NOT \"" + "\" AND NOT \"".join(derived_ids)
+
+
+    url = "http://golr-aux.geneontology.io/solr/" + "select?fq=document_category:\"bioentity\"&q=*:*&wt=json&facet=true&facet.field=type&facet.field=taxon&facet.limit=1000000&facet.mincount=1&rows=10&fq=!annotation_class_list:(\"GO:0005515\"" + not_derived_terms + "\")"
+    print(url)
+
+    req = requests.get(url)
+    print(req.text)
+
+
+if __name__ == "__main__":
+   main(sys.argv[1:])
+
