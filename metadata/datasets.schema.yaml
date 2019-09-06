@@ -109,3 +109,6 @@ mapping:
             required: false
             sequence:
               - type: str
+          "exclude":
+            type: bool
+            required: false

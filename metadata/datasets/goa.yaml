@@ -989,6 +989,7 @@ datasets:
    status: active
    species_code:
    taxa:
+   exclude: true
 
  -
    id: goa_pig.gaf
@@ -1117,6 +1118,7 @@ datasets:
    aggregates: goa
    taxa:
     - NCBITaxon:1
+   exclude: true
 
  -
    id: goa_uniprot_gcrp.gpi
@@ -1133,6 +1135,7 @@ datasets:
    aggregates: goa
    taxa:
     - NCBITaxon:1
+   exclude: true
 
  -
    id: goa_uniprot_gcrp.gpad
@@ -1149,6 +1152,7 @@ datasets:
    aggregates: goa
    taxa:
     - NCBITaxon:1
+   exclude: true
 
  -
    id: interpro2go
