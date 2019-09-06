@@ -42,6 +42,54 @@ def minus_dict(dict1, dict2):
     return new_dict    
 
 
+def alter_annotation_changes(current_stats, previous_stats, json_annot_changes):
+    altered_json_annot_changes = {
+        "releases_compared" : {
+            "current" : current_stats["release_date"],
+            "previous" : previous_stats["release_date"]
+        },
+        "summary" : {
+            "current" : {
+                "annotations" : {
+                    "total" : current_stats["annotations"]["total"],
+                    "by_aspect" : current_stats["annotations"]["by_aspect"],
+                    "by_evidence_cluster" : current_stats["annotations"]["by_evidence"]["cluster"],
+                },
+                "bioentities" : current_stats["annotations"]["bioentities"]["total"],
+                "taxa" : current_stats["annotations"]["taxa"]["total"],
+                "taxa_filtered" : current_stats["annotations"]["taxa"]["filtered"],
+                "references" : current_stats["annotations"]["references"]["all"]["total"],
+                "pmids" : current_stats["annotations"]["references"]["pmids"]["total"]
+            },
+            "previous" : {
+                "annotations" : {
+                    "total" : previous_stats["annotations"]["total"],
+                    "by_aspect" : previous_stats["annotations"]["by_aspect"],
+                    "by_evidence_cluster" : previous_stats["annotations"]["by_evidence"]["cluster"],
+                },
+                "bioentities" : previous_stats["annotations"]["bioentities"]["total"],
+                "taxa" : previous_stats["annotations"]["taxa"]["total"],
+                "taxa_filtered" : previous_stats["annotations"]["taxa"]["filtered"],
+                "references" : previous_stats["annotations"]["references"]["all"]["total"],
+                "pmids" : previous_stats["annotations"]["references"]["pmids"]["total"]
+            },
+            "changes" : {
+                "annotations" : {
+                    "total" : current_stats["annotations"]["total"] - previous_stats["annotations"]["total"],
+                    "by_aspect" : minus_dict(current_stats["annotations"]["by_aspect"], previous_stats["annotations"]["by_aspect"]),
+                    "by_evidence_cluster" : minus_dict(current_stats["annotations"]["by_evidence"]["cluster"], previous_stats["annotations"]["by_evidence"]["cluster"]),
+                },
+                "bioentities" : current_stats["annotations"]["bioentities"]["total"] - previous_stats["annotations"]["bioentities"]["total"],
+                "taxa" : current_stats["annotations"]["taxa"]["total"] - previous_stats["annotations"]["taxa"]["total"],
+                "taxa_filtered" : current_stats["annotations"]["taxa"]["filtered"] - previous_stats["annotations"]["taxa"]["filtered"],
+                "references" : current_stats["annotations"]["references"]["all"]["total"] - previous_stats["annotations"]["references"]["all"]["total"],
+                "pmids" : current_stats["annotations"]["references"]["pmids"]["total"] - previous_stats["annotations"]["references"]["pmids"]["total"]
+            },
+        },
+        "detailed_changes" : json_annot_changes["annotations"] 
+    }
+    return altered_json_annot_changes  
+
 def print_help():
     print('Usage: python go_reports.py -g <golr_url> -s <previous_stats_url> -n <previous_stats_no_pb_url> -c <current_obo_url> -p <previous_obo_url> -o <output_rep>\n')
 
@@ -132,39 +180,8 @@ def main(argv):
 
     # 4 - Refining go-stats with ontology stats
     print("\n\n4 - EXECUTING GO_REFINE_STATS SCRIPT...\n")
-
-    # print("JSON STATS: ", json_stats)
-    # print("JSON_ANNOT_CHANGES: ", json_annot_changes)
     merged_annotations_diff = merge_dict(json_stats, json_annot_changes)
-    go_stats.write_json(output_rep + "go-merged-annotations-diff.json", merged_annotations_diff)
     json_annot_changes = merged_annotations_diff
-
-
-
-#     json_stats["ontology"] = json_onto_changes["summary"]["current"]
-#     del json_stats["ontology"]["release_date"]
-#     del json_stats["terms"]
-#     go_stats.write_json(output_rep + "go-stats.json", json_stats)
-
-#     json_stats_no_pb["ontology"] = json_onto_changes["summary"]["current"]
-#     del json_stats_no_pb["ontology"]["release_date"]
-#     del json_stats_no_pb["terms"]
-#     go_stats.write_json(output_rep + "go-stats-no-pb.json", json_stats_no_pb)
-
-# #    tsv_stats = go_stats.create_text_report(json_stats)
-# #    go_stats.write_text(output_rep + "go-stats.tsv", tsv_stats)
-
-#     json_meta["ontology"] = json_onto_changes["summary"]["current"]
-#     del json_meta["ontology"]["release_date"]
-#     del json_meta["terms"]
-
-#     json_meta["annotations"]["total_no_pb"] = json_stats_no_pb["annotations"]["total"]
-#     json_meta["annotations"]["experimental_no_pb"] = json_stats_no_pb["annotations"]["experimental"]
-#     json_meta["bioentities"]["total_no_pb"] = json_stats_no_pb["bioentities"]["total"]
-#     json_meta["bioentities"]["by_type_no_pb"] = json_stats_no_pb["bioentities"]["by_type"]
-#     json_meta["references_no_pb"] = json_stats_no_pb["references"]
-#     json_meta["pmids_no_pb"] = json_stats_no_pb["pmids"]
-#     go_stats.write_json(output_rep + "go-stats-summary.json", json_meta)
 
 
     ontology = json_onto_changes["summary"]["current"].copy()
@@ -240,108 +257,20 @@ def main(argv):
             }
         },
     }
+
+    # removing by_reference_genome.by_evidence
+    for gen in json_stats_summary["annotations"]["by_reference_genome"]:
+        del json_stats_summary["annotations"]["by_reference_genome"][gen]["by_evidence"]
     go_stats.write_json(output_rep + "go-stats-summary.json", json_stats_summary)
 
 
-
-
-
-
-    json_annot_changes = {
-        "releases_compared" : {
-            "current" : json_stats["release_date"],
-            "previous" : previous_stats["release_date"]
-        },
-        "summary" : {
-            "current" : {
-                "annotations" : {
-                    "total" : json_stats["annotations"]["total"],
-                    "by_aspect" : json_stats["annotations"]["by_aspect"],
-                    "by_evidence_cluster" : json_stats["annotations"]["by_evidence"]["cluster"],
-                },
-                "bioentities" : json_stats["annotations"]["bioentities"]["total"],
-                "taxa" : json_stats["annotations"]["taxa"]["total"],
-                "taxa_filtered" : json_stats["annotations"]["taxa"]["filtered"],
-                "references" : json_stats["annotations"]["references"]["all"]["total"],
-                "pmids" : json_stats["annotations"]["references"]["pmids"]["total"]
-            },
-            "previous" : {
-                "annotations" : {
-                    "total" : previous_stats["annotations"]["total"],
-                    "by_aspect" : previous_stats["annotations"]["by_aspect"],
-                    "by_evidence_cluster" : previous_stats["annotations"]["by_evidence"]["cluster"],
-                },
-                "bioentities" : previous_stats["annotations"]["bioentities"]["total"],
-                "taxa" : previous_stats["annotations"]["taxa"]["total"],
-                "taxa_filtered" : previous_stats["annotations"]["taxa"]["filtered"],
-                "references" : previous_stats["annotations"]["references"]["all"]["total"],
-                "pmids" : previous_stats["annotations"]["references"]["pmids"]["total"]
-            },
-            "changes" : {
-                "annotations" : {
-                    "total" : json_stats["annotations"]["total"] - previous_stats["annotations"]["total"],
-                    "by_aspect" : minus_dict(json_stats["annotations"]["by_aspect"], previous_stats["annotations"]["by_aspect"]),
-                    "by_evidence_cluster" : minus_dict(json_stats["annotations"]["by_evidence"]["cluster"], previous_stats["annotations"]["by_evidence"]["cluster"]),
-                },
-                "bioentities" : json_stats["annotations"]["bioentities"]["total"] - previous_stats["annotations"]["bioentities"]["total"],
-                "taxa" : json_stats["annotations"]["taxa"]["total"] - previous_stats["annotations"]["taxa"]["total"],
-                "taxa_filtered" : json_stats["annotations"]["taxa"]["filtered"] - previous_stats["annotations"]["taxa"]["filtered"],
-                "references" : json_stats["annotations"]["references"]["all"]["total"] - previous_stats["annotations"]["references"]["all"]["total"],
-                "pmids" : json_stats["annotations"]["references"]["pmids"]["total"] - previous_stats["annotations"]["references"]["pmids"]["total"]
-            },
-        },
-        "detailed_changes" : json_annot_changes["annotations"] 
-    }
+    # This is to modify the structure of the annotation changes based on recent requests
+    json_annot_changes = alter_annotation_changes(json_stats, previous_stats, json_annot_changes)
     go_annotation_changes.write_json(output_rep + "go-annotation-changes.json", json_annot_changes)
     tsv_annot_changes = go_annotation_changes.create_text_report(json_annot_changes)
     go_annotation_changes.write_text(output_rep + "go-annotation-changes.tsv", tsv_annot_changes)
 
-
-    json_annot_no_pb_changes = {
-        "releases_compared" : {
-            "current" : json_stats_no_pb["release_date"],
-            "previous" : previous_stats_no_pb["release_date"]
-        },
-        "summary" : {
-            "current" : {
-                "annotations" : {
-                    "total" : json_stats_no_pb["annotations"]["total"],
-                    "by_aspect" : json_stats_no_pb["annotations"]["by_aspect"],
-                    "by_evidence_cluster" : json_stats_no_pb["annotations"]["by_evidence"]["cluster"],
-                },                
-                "bioentities" : json_stats_no_pb["annotations"]["bioentities"]["total"],
-                "taxa" : json_stats_no_pb["annotations"]["taxa"]["total"],
-                "taxa_filtered" : json_stats_no_pb["annotations"]["taxa"]["filtered"],
-                "references" : json_stats_no_pb["annotations"]["references"]["all"]["total"],
-                "pmids" : json_stats_no_pb["annotations"]["references"]["pmids"]["total"]
-            },
-            "previous" : {
-                "annotations" : {
-                    "total" : previous_stats_no_pb["annotations"]["total"],
-                    "by_aspect" : previous_stats_no_pb["annotations"]["by_aspect"],
-                    "by_evidence_cluster" : previous_stats_no_pb["annotations"]["by_evidence"]["cluster"],
-                },
-                "bioentities" : previous_stats_no_pb["annotations"]["bioentities"]["total"],
-                "taxa" : previous_stats_no_pb["annotations"]["taxa"]["total"],
-                "taxa_filtered" : previous_stats_no_pb["annotations"]["taxa"]["filtered"],
-                "references" : previous_stats_no_pb["annotations"]["references"]["all"]["total"],
-                "pmids" : previous_stats_no_pb["annotations"]["references"]["pmids"]["total"]
-            },
-            "changes" : {
-                "annotations" : {
-                    "total" : json_stats_no_pb["annotations"]["total"] - previous_stats_no_pb["annotations"]["total"],
-                    "by_aspect" : minus_dict(json_stats_no_pb["annotations"]["by_aspect"], previous_stats_no_pb["annotations"]["by_aspect"]),
-                    "by_evidence_cluster" : minus_dict(json_stats_no_pb["annotations"]["by_evidence"]["cluster"], previous_stats_no_pb["annotations"]["by_evidence"]["cluster"]),
-                },
-                "bioentities" : json_stats_no_pb["annotations"]["bioentities"]["total"] - previous_stats_no_pb["annotations"]["bioentities"]["total"],
-                "taxa" : json_stats_no_pb["annotations"]["taxa"]["total"] - previous_stats_no_pb["annotations"]["taxa"]["total"],
-                "taxa_filtered" : json_stats_no_pb["annotations"]["taxa"]["filtered"] - previous_stats_no_pb["annotations"]["taxa"]["filtered"],
-                "references" : json_stats_no_pb["annotations"]["references"]["all"]["total"] - previous_stats_no_pb["annotations"]["references"]["all"]["total"],
-                "pmids" : json_stats_no_pb["annotations"]["references"]["pmids"]["total"] - previous_stats_no_pb["annotations"]["references"]["pmids"]["total"]
-            }
-        },
-        "detailed_changes" : json_annot_no_pb_changes["annotations"] 
-    }
+    json_annot_no_pb_changes = alter_annotation_changes(json_stats_no_pb, previous_stats_no_pb, json_annot_no_pb_changes)
     go_annotation_changes.write_json(output_rep + "go-annotation-changes_no_pb.json", json_annot_no_pb_changes)
     tsv_annot_changes_no_pb = go_annotation_changes.create_text_report(json_annot_no_pb_changes)
     go_annotation_changes.write_text(output_rep + "go-annotation-changes_no_pb.tsv", tsv_annot_changes_no_pb)

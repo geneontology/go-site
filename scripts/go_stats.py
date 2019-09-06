@@ -150,6 +150,7 @@ usable_taxons = [ ]
 
 # fetch at startup from eutils.ncbi.nlm and parse into a map
 taxon_base_url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=taxonomy'
+taxon_map_fallback_url = 'https://geneontology.s3.amazonaws.com/taxon_map.json'
 taxon_map = { }
 
 # auto computed set of groups doing annotations (assigned_by)
@@ -258,6 +259,18 @@ def compute_stats(golr_url, exclude_pb_only = False):
     
     return stats
 
+def load_taxon_map():
+    global taxon_map
+    print("Using ", taxon_map_fallback_url , " (created from ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdmp.zip) as a fallback to get taxon { id, label }")
+    data = requests.get(taxon_map_fallback_url)
+
+    if data.status_code != 200:
+        return False
+
+    taxon_map = json.loads(data.content)
+    check = taxon_map['9606'] == 'Homo sapiens'
+    return check
+
 def prepare_globals(all_annotations):
     global usable_taxons
     global taxon_map
@@ -281,15 +294,25 @@ def prepare_globals(all_annotations):
     params = { "id" : ",".join(temp_taxons) }
     data = requests.post(taxon_base_url, data = params)
 
-    tree = ElementTree.fromstring(data.content)
-    elts = tree.findall("Taxon")
-    for i in range(0,len(elts)):
-        key = elts[i].findtext("TaxId")
-        val = elts[i].findtext("ScientificName")
-        taxon_map[key] = val
+    if data.status_code == 200:
+        tree = ElementTree.fromstring(data.content)
+        elts = tree.findall("Taxon")
+        for i in range(0,len(elts)):
+            key = elts[i].findtext("TaxId")
+            val = elts[i].findtext("ScientificName")
+            taxon_map[key] = val
+        print("Note: taxon map of ", len(taxon_map), " taxa loaded from " , taxon_base_url + " - in case of issue could use https://www.ebi.ac.uk/ena/data/taxonomy/v1/taxon/tax-id/xxx")
+    else:
+        print("WARNING: could not get taxon labels from ", taxon_base_url , " (status code: " , str(data.status_code) + ")")
+        load_taxon_map()
 
-    # print(taxon_map)
-    print("Note: taxon map of ", len(taxon_map), " taxa loaded from " , taxon_base_url + " - in case of issue could use https://www.ebi.ac.uk/ena/data/taxonomy/v1/taxon/tax-id/xxx")
+    # verbose check on taxon label mapping
+    check = taxon_map['9606'] == 'Homo sapiens'
+    if check:
+        print("Successfully pass taxon label mapping test (taxon_map['9606'] == 'Homo sapiens'): ", taxon_map['9606'] == 'Homo sapiens')
+    else:
+        print("Taxon map could not be created, will show taxon labels as UNK")
+        
 
     bioentity_type_cluster = { }
     temp = all_annotations['facet_counts']['facet_fields']['type']
