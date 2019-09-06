@@ -25,7 +25,7 @@ def cli():
 @click.option("--type", multiple=True, default=["gaf"], help="The source type (gaf, gpad, etc) to download", show_default=True)
 @click.option("--exclude", "-x", multiple=True, help="dataset name we want to not download")
 @click.option("--only-group", "-g", multiple=True, default=None, 
-    help="Ignores resource groups that are not specified by this option. Datasets within can the group can still be excluded with --exclude")
+    help="Ignores resource groups that are not specified by this option. Datasets within the group can still be excluded with --exclude")
 @click.option("--parallel", "-p", default=5, help="Number of processes to use to download files", show_default=True)
 @click.option("--dry-run", is_flag=True, help="Do everything but download if  flag is set")
 @click.option("--retries", "-r", default=3, help="Max number of times to download a single source before giving up on everyone", show_default=True)
@@ -39,6 +39,7 @@ def all(datasets, target, type, exclude, only_group, parallel, dry_run, retries,
     click.echo("Using {} for datasets".format(datasets))
     resource_metadata = load_resource_metadata(datasets)
     if len(only_group) > 0:
+        # Filter the groups for only ones specified in only-group (if any)
         resource_metadata = list(filter(lambda r: r["id"] in only_group, resource_metadata))
     click.echo("Found {} dataset files".format(len(resource_metadata)))
         
@@ -164,6 +165,10 @@ def transform_download_targets(resource_metadata, types=None) -> List[Dataset]:
             t = d["type"]
             if types != None and t not in types:
                 # Skip if the type of this dataset is not one we want specified above
+                continue
+                
+            if d["exclude"]:
+                # Skip if the dataset is excluded by default in the metadata
                 continue
             
             dataset = d["dataset"]
