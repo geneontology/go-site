@@ -203,7 +203,7 @@ def write_text(key, content):
 
 
 def print_help():
-    print('Usage: python go_annotation_changes.py -c <current_stats_url> -p <previous_stats_url> -o <output_rep>\n')
+    print('\nUsage: python go_annotation_changes.py -c <current_stats_url> -p <previous_stats_url> -o <output_rep>\n')
 
 
 def main(argv):

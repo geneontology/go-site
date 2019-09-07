@@ -615,7 +615,7 @@ def write_text(key, content):
 
 
 def print_help():
-    print('Usage: python go_ontology_changes.py -c <current_obo_url> -p <previous_obo_url> -o <output_rep>\n')
+    print('\nUsage: python go_ontology_changes.py -c <current_obo_url> -p <previous_obo_url> -o <output_rep>\n')
 
 
 def main(argv):
@@ -623,7 +623,7 @@ def main(argv):
     previous_obo_url = ''
     output_rep = ''
 
-    if len(argv) < 3:
+    if len(argv) < 6:
         print_help()
         sys.exit(2)
 

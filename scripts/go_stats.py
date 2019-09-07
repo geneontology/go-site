@@ -166,23 +166,23 @@ bioentity_type_cluster = { }
 reverse_bioentity_type_cluster = { }
 
 # will contain the last release date from following url
-release_date = "N/A"
-go_pipeline_release_url = "http://current.geneontology.org/metadata/release-date.json"
+# release_date = "N/A"
+# go_pipeline_release_url = "http://current.geneontology.org/metadata/release-date.json"
 
-def get_release_date():
-    r = requests.get(go_pipeline_release_url)
-    return r.json()['date']
-
-
+# def get_release_date():
+    # r = requests.get(go_pipeline_release_url)
+    # return r.json()['date']
 
 
 
 
-def lambda_handler(event, context):
-    stats = compute_stats(golr_base_url)
-    return stats
 
-def compute_stats(golr_url, exclude_pb_only = False):
+
+# def lambda_handler(event, context):
+    # stats = compute_stats(golr_base_url)
+    # return stats
+
+def compute_stats(golr_url, release_date, exclude_pb_only = False):
     """
     compute stats on GO annotations - can specify if we include or exclude annotations to protein binding only
     """
@@ -191,8 +191,8 @@ def compute_stats(golr_url, exclude_pb_only = False):
 
     print("Will use golr url: " , golr_base_url)
 
-    global release_date
-    release_date = get_release_date()
+    # global release_date
+    # release_date = get_release_date()
 
     print("1 / 4 - Fetching GO terms...")
     all_terms = golr_fetch(golr_select_ontology)
@@ -254,7 +254,7 @@ def compute_stats(golr_url, exclude_pb_only = False):
     print("4 / 4 - Creating Stats...")    
     prepare_globals(all_annotations)
     print("\t4a - globals prepared")
-    stats = create_stats(all_terms, all_annotations, all_entities)
+    stats = create_stats(all_terms, all_annotations, all_entities, release_date)
     print("Done.")
     
     return stats
@@ -406,7 +406,7 @@ def add_taxon_label(map):
                 new_map[key] = val
     return new_map
 
-def create_stats(all_terms, all_annotations, all_entities):
+def create_stats(all_terms, all_annotations, all_entities, release_date):
     stats = { }
 
     terms = 0
@@ -753,19 +753,20 @@ def write_text(key, content):
 
 
 def print_help():
-    print('Usage: python go_stats.py -g <golr_url> -o <output_rep>\n')
+    print('\nUsage: python go_stats.py -g <golr_url> -d <release_date> -o <output_rep>\n')
 
 
 def main(argv):
     golr_url = ''
     output_rep = ''
+    release_date = ''
 
-    if len(argv) < 3:
+    if len(argv) < 6:
         print_help()
         sys.exit(2)
 
     try:
-        opts, argv = getopt.getopt(argv,"g:b:o:",["golrurl=","orep="])
+        opts, argv = getopt.getopt(argv,"g:b:o:d:",["golrurl=","orep=","date="])
     except getopt.GetoptError:
         print_help()
         sys.exit(2)
@@ -778,6 +779,8 @@ def main(argv):
             golr_url = arg
         elif opt in ("-o", "--orep"):
             output_rep = arg
+        elif opt in ("-d", "--date"):
+            release_date = arg
 
     if not output_rep.endswith("/"):
         output_rep += "/"
@@ -794,7 +797,7 @@ def main(argv):
 
 
     print("Will write stats to " + output_json + " and " + output_tsv)
-    json_stats = compute_stats(golr_url, False)
+    json_stats = compute_stats(golr_url, release_date, False)
     print("Saving Stats to <" + output_json + "> ...")    
     write_json(output_json, json_stats)
     print("Done.")
@@ -806,7 +809,7 @@ def main(argv):
 
 
     print("Will write stats (excluding protein binding) to " + output_no_pb_json + " and " + output_no_pb_tsv)
-    json_stats_no_pb = compute_stats(golr_url, True)
+    json_stats_no_pb = compute_stats(golr_url, release_date, True)
     print("Saving Stats to <" + output_no_pb_json + "> ...")    
     write_json(output_no_pb_json, json_stats_no_pb)
     print("Done.")

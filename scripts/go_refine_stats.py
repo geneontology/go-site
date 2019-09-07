@@ -9,7 +9,7 @@ import go_annotation_changes
 
 
 def print_help():
-    print('Usage: python go_reports.py -g <golr_url> -c <current_obo_url> -p <previous_obo_url> -o <output_rep>\n')
+    print('\nUsage: python go_refine.py -g <golr_url> -d <release_date> -c <current_obo_url> -p <previous_obo_url> -o <output_rep>\n')
 
 
 def main(argv):
@@ -17,13 +17,14 @@ def main(argv):
     current_obo_url = ''
     previous_obo_url = ''    
     output_rep = ''
+    release_date = ''
 
-    if len(argv) < 3:
+    if len(argv) < 10:
         print_help()
         sys.exit(2)
 
     try:
-        opts, argv = getopt.getopt(argv,"g:c:p:o:",["golrurl=", "cobo=", "pobo=", "orep="])
+        opts, argv = getopt.getopt(argv,"g:c:p:o:d:",["golrurl=", "cobo=", "pobo=", "orep=", "date="])
     except getopt.GetoptError:
         print_help()
         sys.exit(2)
@@ -40,6 +41,8 @@ def main(argv):
             previous_obo_url = arg
         elif opt in ("-o", "--orep"):
             output_rep = arg
+        elif opt in ("-d", "--date"):
+            release_date = arg
 
     if not output_rep.endswith("/"):
         output_rep += "/"
@@ -50,7 +53,7 @@ def main(argv):
 
     # 1 - Executing go_stats script
     print("\n\n1a - EXECUTING GO_STATS SCRIPT (INCLUDING PROTEIN BINDING)...\n")
-    json_stats = go_stats.compute_stats(golr_url)
+    json_stats = go_stats.compute_stats(golr_url, release_date)
     # data = None
     # with open('newtest/go-stats.json', 'r') as myfile:
     #     data=myfile.read()
@@ -60,7 +63,7 @@ def main(argv):
     print("DONE.")
 
     print("\n\n1b - EXECUTING GO_STATS SCRIPT (EXCLUDING PROTEIN BINDING)...\n")
-    json_stats_no_pb = go_stats.compute_stats(golr_url, True)
+    json_stats_no_pb = go_stats.compute_stats(golr_url, release_date, True)
     # with open('newtest/go-stats-no-pb.json', 'r') as myfile:
     #     data=myfile.read()
     # json_stats_no_pb = json.loads(data)    
