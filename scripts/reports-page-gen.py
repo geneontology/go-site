@@ -19,6 +19,12 @@ this_script = os.path.abspath(__file__)
 def main(report, template, date, suppress_rule_tag):
     report_json = json.load(report)
 
+    # header:
+    # [
+    #     {"id": "mgi"},
+    #     {"id": "goa_chicken"}
+    #     ...
+    # ]
     header = sorted([{"id": dataset["id"]} for dataset in report_json], key=lambda h: h["id"])
     # click.echo(json.dumps(header, indent=4))
 
@@ -83,11 +89,13 @@ def main(report, template, date, suppress_rule_tag):
     }
 
     for dataset in report_json:
+        # Rule: rule ID, messages: List of each message from parsing
         for rule, messages in dataset["messages"].items():
             if any([tag in rules_descriptions.get(rule, {}).get("tags", []) for tag in suppress_rule_tag ]):
                 # For any that is passed in to be suppressed, if it is a tag in the rule, then skip the rule.
                 continue
 
+            # If we haven't added the rule, then add the messages, level, and rule ID to the value (keyed to the rule ID)
             if rule not in rule_by_dataset:
                 level = messages[0]["level"].lower() if len(messages) > 0 else "info"
                 rule_by_dataset[rule] = {
@@ -101,14 +109,18 @@ def main(report, template, date, suppress_rule_tag):
 
     # Add empty cells in as 0s
     for h in header:
+        # h: {"id": "mgi"}
         for rule, amounts in rule_by_dataset.items():
+            # rule: "gorule-0000006", amounts: {"mgi": 20, "sgd": 11, ...}
+            # If the header name (the dataset name) is not accounted in the amounts dict, add it as 0
             if h["id"] not in amounts:
                 amounts[h["id"]] = 0
 
-    # click.echo(json.dumps(rule_by_dataset, indent=4))
+    # Sort the list of rules -> {set of dataset:number of messages} by rule title (alphabet)
     rows = sorted(rule_by_dataset.values(), key=lambda n: n["rule"])
-    # print(json.dumps(rows[0:4], indent=4))
 
+    # Each "cell" is actually a row in the table.
+    # Each `v` below is a cell contents along the row
     cells = []
     for row in rows:
         contents = []
