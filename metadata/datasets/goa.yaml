@@ -899,7 +899,7 @@ datasets:
    id: goa_dog_rna_noiea.gaf
    label: "goa_dog_rna_noiea gaf file"
    description: "gaf file for goa_dog_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_dog_rna_goa_dog_rna_noiea.gaf.gz
+   url: http://geneontology.org/gene-associations/goa_dog_rna_noiea.gaf.gz
    type: gaf
    dataset: goa_dog_rna_noiea
    submitter: goa
