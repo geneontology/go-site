@@ -3302,7 +3302,7 @@
       example_id: WB:WBVar00089843
       example_url: http://www.wormbase.org/get?name=WBVar00089843
     - type_name: RNAi
-      type_id: 
+      type_id: topic:3523 
       id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
       url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WB:WBRNAi00110325
