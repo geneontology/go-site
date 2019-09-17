@@ -167,7 +167,9 @@ target/noctua-models:
 
 ONT_MERGED = target/go-graphstore-merged.ttl
 $(ONT_MERGED):
+	ls -u -n
 	owltools --log-error go-graphstore.owl --merge-imports-closure -o -f turtle $@
+	
 .PRECIOUS: $(ONT_MERGED)
 
 target/rdf: $(ONT_MERGED) target/groups.touch
