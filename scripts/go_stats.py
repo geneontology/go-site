@@ -6,18 +6,6 @@ import sys, getopt, os
 
 from xml.etree import ElementTree
 
-# S3 specific imports
-# import boto3
-# from gzip import GzipFile
-# from io import BytesIO
-
-# s3_resource = boto3.resource('s3')
-# go_s3_bucket = s3_resource.Bucket(name="geneontology-public")
-# go_all_terms_key = "go-terms-aspect.json"
-# go_stats_key= "go-stats"
-# go_meta_key = "go-meta.json"
-# go_most_annotated_gps_key= "go-annotated-gps.json"
-
 
 
 # INPUT PARAMETERS
@@ -48,7 +36,6 @@ reference_genomes_ids = [
 # GOLR prepared queries
 golr_select_ontology =  'select?wt=json&fq=document_category:"ontology_class"&fq=id:GO\:*&fq=idspace:"GO"&fl=source,annotation_class,is_obsolete&rows=2000000&q=*:*&facet=true&facet.field=source&facet.limit=1000000&facet.mincount=1'
 golr_select_annotations = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&facet=true&facet.field=taxon&facet.field=aspect&facet.field=evidence_type&facet.field=assigned_by&facet.field=reference&facet.field=type&facet.limit=1000000&facet.mincount=1&rows=0'
-# golr_select_annotations_no_pbinding = golr_select_annotations + "&fq=!isa_partof_closure:\"GO:0005515\"" # if we want to remove all derivates
 golr_select_annotations_no_pbinding = golr_select_annotations + "&fq=!annotation_class:\"GO:0005515\"" # to remove only DIRECT annotations to protein binding
 golr_select_bioentities = 'select?fq=document_category:%22bioentity%22&q=*:*&wt=json&facet=true&facet.field=type&facet.field=taxon&facet.limit=1000000&facet.mincount=1&rows=0'
 golr_select_bioentities_pb = 'select?fq=document_category:"bioentity"&q=*:*&wt=json&rows=100000&fq=annotation_class_list:"GO:0005515"&fl=annotation_class_list,type,taxon'
@@ -268,7 +255,7 @@ def load_taxon_map():
         return False
 
     taxon_map = json.loads(data.content)
-    check = taxon_map['9606'] == 'Homo sapiens'
+    check = '9606' in taxon_map and taxon_map['9606'] == 'Homo sapiens'
     return check
 
 def prepare_globals(all_annotations):
@@ -306,8 +293,9 @@ def prepare_globals(all_annotations):
         print("WARNING: could not get taxon labels from ", taxon_base_url , " (status code: " , str(data.status_code) + ")")
         load_taxon_map()
 
+
     # verbose check on taxon label mapping
-    check = taxon_map['9606'] == 'Homo sapiens'
+    check = '9606' in taxon_map and taxon_map['9606'] == 'Homo sapiens'
     if check:
         print("Successfully pass taxon label mapping test (taxon_map['9606'] == 'Homo sapiens'): ", taxon_map['9606'] == 'Homo sapiens')
     else:
@@ -475,11 +463,6 @@ def create_stats(all_terms, all_annotations, all_entities, release_date):
     references_by_group = ordered_map(references_by_group)
     pmids_by_group = ordered_map(pmids_by_group)
     print("\t4e - references computed")
-
-    # print("CHECK (by evidence):\n" , all_annotations['facet_counts']['facet_fields']['evidence_type'])
-    # print("CHECK (buildmap(by_evidence):\n", build_map(all_annotations['facet_counts']['facet_fields']['evidence_type']))
-    # print("CHECK (reverse_evidence_group:\n", reverse_evidence_groups)
-    # print("CHECK (cluster(buildmap, reverse_evidence_group):\n", cluster_map(build_map(all_annotations['facet_counts']['facet_fields']['evidence_type']), reverse_evidence_groups))
 
 
 
@@ -689,51 +672,6 @@ def create_meta(json_stats):
     }
     return meta
     
-# def save_terms_mapping(all_terms):
-#     for doc in all_terms['response']['docs']:
-#         doc.pop('is_obsolete', None)
-
-#     # creating the results divided by aspect        
-#     mapping = { }
-#     for term in all_terms['response']['docs']:
-#         if 'source' not in term: # often, obsoleted terms have no source
-#             print("Term " , term , " has no source !")
-#             continue
-#         if term['source'] not in mapping:
-#             mapping[term['source']] = []
-#         mapping[term['source']].append(term['annotation_class'])
-    
-#     store_json(go_all_terms_key, mapping)
-#     store_json("archive/" + release_date + "_" + go_all_terms_key, mapping)
- 
-
-# def store_text(key, content):
-#     # Storing a compressed version of the text file
-#     gz_body = BytesIO()
-#     gz = GzipFile(None, 'wb', 9, gz_body)
-#     gz.write(content.encode('utf-8'))
-#     gz.close()    
-
-#     go_s3_bucket.put_object(
-#         Key=key,  
-#         ContentType='text/plain', 
-#         ContentEncoding='gzip', 
-#         Body=gz_body.getvalue()
-#     )    
-    
-# def store_json(key, content):
-#     # Storing a compressed version of the json file
-#     gz_body = BytesIO()
-#     gz = GzipFile(None, 'wb', 9, gz_body)
-#     gz.write(json.dumps(content).encode('utf-8'))
-#     gz.close()    
-
-#     go_s3_bucket.put_object(
-#         Key=key,  
-#         ContentType='application/json', 
-#         ContentEncoding='gzip', 
-#         Body=gz_body.getvalue()
-#     )    
 
 def write_json(key, content):
     with open(key, 'w') as outfile:

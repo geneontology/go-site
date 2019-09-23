@@ -214,23 +214,24 @@ def main(argv):
     annotations_by_reference_genome = { }
     for taxon in go_stats.reference_genomes_ids:
         key = go_stats.taxon_label(taxon)
-        annotations_by_reference_genome[key] = json_stats["annotations"]["by_taxon"][key]
+        annotations_by_reference_genome[key] = json_stats["annotations"]["by_taxon"][key] if key in json_stats["annotations"]["by_taxon"] else { }
 
     bioentities_by_reference_genome = { }
     for taxon in go_stats.reference_genomes_ids:
         key = go_stats.taxon_label(taxon)
-        bioentities_by_reference_genome[key] = json_stats["annotations"]["bioentities"]["by_taxon"]["cluster"][key]
+        bioentities_by_reference_genome[key] = json_stats["annotations"]["bioentities"]["by_taxon"]["cluster"][key] if key in json_stats["annotations"]["bioentities"]["by_taxon"]["cluster"] else { }
 
     references_by_reference_genome = { }
     for taxon in go_stats.reference_genomes_ids:
         key = go_stats.taxon_label(taxon)
-        references_by_reference_genome[key] = json_stats["annotations"]["references"]["all"]["by_taxon"][key]
+        references_by_reference_genome[key] = json_stats["annotations"]["references"]["all"]["by_taxon"][key] if key in json_stats["annotations"]["references"]["all"]["by_taxon"] else { }
 
     pmids_by_reference_genome = { }
     for taxon in go_stats.reference_genomes_ids:
         key = go_stats.taxon_label(taxon)
-        pmids_by_reference_genome[key] = json_stats["annotations"]["references"]["pmids"]["by_taxon"][key]
-        
+        pmids_by_reference_genome[key] = json_stats["annotations"]["references"]["pmids"]["by_taxon"][key] if key in json_stats["annotations"]["references"]["pmids"]["by_taxon"] else { }
+
+
     json_stats_summary = {
         "release_date" : json_stats["release_date"],
         "ontology" : ontology,
