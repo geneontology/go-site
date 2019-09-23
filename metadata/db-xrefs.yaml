@@ -3447,3 +3447,11 @@
       id_syntax: \d+(\.\d+){2,3}
       example_id: TFCLASS_FAMILY:2.1.1
       example_url: http://tfclass.bioinf.med.uni-goettingen.de/?tfclass=2.1.1
+- database: HGNC-UCL
+  name: UCL-based HGNC
+  description: While based at UCL, HGNC provided GO annotations for proteins during the process of assigning approved gene names and symbols
+  generic_urls:
+    - https://www.ucl.ac.uk/cardiovascular/hgnc-gene-annotation
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
