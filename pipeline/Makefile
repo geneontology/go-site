@@ -214,7 +214,7 @@ target/blazegraph-production.jnl: target/blazegraph-internal.jnl
 port := $(shell env bash -c 'echo $$(($$RANDOM + 10000))' )
 target/sparta-report.json: # target/blazegraph-production.jnl
 	pwd
-	PY_ENV=$(PY_ENV) ./triplestore-rulecheck.sh $(port) foo $@
+	PY_ENV=$(PY_ENV) ./triplestore-rulecheck.sh $(port) #foo $@
 
 bg-start:
 	java -server -Xmx32g -Djetty.port=$(BG_PORT) -Djetty.overrideWebXml=conf/readonly_cors.xml -Dbigdata.propertyFile=conf/blazegraph.properties -cp target/jars/blazegraph-jar.jar:target/jars/jetty-servlets.jar com.bigdata.rdf.sail.webapp.StandaloneNanoSparqlServer
