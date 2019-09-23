@@ -213,6 +213,7 @@ target/blazegraph-production.jnl: target/blazegraph-internal.jnl
 # $RANDOM goes from 0 to 32767, so adding to 10000 should generate a good range of ports.
 port := $(shell env bash -c 'echo $$(($$RANDOM + 10000))' )
 target/sparta-report.json: target/blazegraph-production.jnl
+	pwd
 	PY_ENV=$(PY_ENV) ./triplestore-rulecheck.sh $(port) $< $@
 
 bg-start:
