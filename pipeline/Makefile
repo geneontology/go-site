@@ -57,9 +57,6 @@ OWLTOOLS_MEMORY ?= 8G
 # blazegraph-runner memory
 BGMEM ?= 12G
 
-PY_ENV ?= target/env
-PY_BIN ?= $(PY_ENV)/bin
-VALIDATE = $(PY_BIN)/validate.py
 DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(DATASET_EXCLUDES),-x $(exclusion) )
 SUPPRESS_THESE_TAGS = $(foreach tag,$(GORULE_TAGS_TO_SUPPRESS),--suppress-rule-reporting-tag $(tag) )
 PYTHON_CMD ?= python3
@@ -68,13 +65,13 @@ PYTHON_CMD ?= python3
 %.sources:
 	# See comment in %.groups on this construct
 	$(eval group := $(lastword $(subst /, ,$*)))
-	$(PYTHON_CMD) ../scripts/download_source_gafs.py group $(group) -d $(METADATA_DIR)/datasets --target target/groups/$(group) --type gaf --type gpi $(DONT_VALIDATE) --replace false
+	python3 ../scripts/download_source_gafs.py group $(group) -d $(METADATA_DIR)/datasets --target target/groups/$(group) --type gaf --type gpi $(DONT_VALIDATE) --replace false
 	touch $*.sources
 
 .PRECIOUS: %.gaferences.json
 %.gaferences.json: $(GAF_OWL) target/go_context.jsonld target/obo_context.jsonld %.sources
 	$(eval group := $(lastword $(subst /, ,$*)))
-	$(PYTHON_CMD) ../scripts/gaferencer_by_metadata.py group $(group) -d $(METADATA_DIR)/datasets --target target/groups/$(group) -c target/go_context.jsonld -c target/obo_context.jsonld --ontology $(GAF_OWL) --gafs target/groups/$(group)
+	python3 ../scripts/gaferencer_by_metadata.py group $(group) -d $(METADATA_DIR)/datasets --target target/groups/$(group) -c target/go_context.jsonld -c target/obo_context.jsonld --ontology $(GAF_OWL) --gafs target/groups/$(group)
 
 # Should be something like target/groups/<group>/<group>.group
 .PRECIOUS: %.gaf.gz
@@ -84,7 +81,7 @@ PYTHON_CMD ?= python3
 	# assigns a make variable called `group` computed from the $* generic target stem.
 	# Ex: target/groups/fb/fb.gaf as a target, the stem ($*) is target/groups/fb/fb, so `group` gets assigned to fb
 	$(eval group := $(lastword $(subst /, ,$*)))
-	$(PYTHON_CMD) $(VALIDATE) produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE) $(SUPPRESS_THESE_TAGS) --skip-existing-files --gaferencer-file $*.gaferences.json
+	validate.py produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE) $(SUPPRESS_THESE_TAGS) --skip-existing-files --gaferencer-file $*.gaferences.json
 	touch $@
 
 # dataset
@@ -116,13 +113,13 @@ target/groups/goa/goa_uniprot_all_noiea.gaf: target/alltaxons.txt target/groups/
 	gzip -cf target/groups/goa/goa_uniprot_all.gaf > target/groups/goa/goa_uniprot_all.gaf.gz
 	gzip -cf target/groups/goa/goa_uniprot_all_noiea.gaf > target/groups/goa/goa_uniprot_all_noiea.gaf.gz
 
-RDF_GEN = $(PY_BIN)/rdfgen.py
+RDF_GEN = rdfgen.py
 target/groups/goa/goa_uniprot_all_noiea_cam.ttl: target/groups/goa/goa_uniprot_all_noiea.gaf
-	$(PYTHON_CMD) $(RDF_GEN) convert -a gaf -r target/go-ontology.json -o target/groups/goa/goa_uniprot_all_noiea_cam.ttl target/groups/goa/goa_uniprot_all_noiea.gaf
+	$(RDF_GEN) convert -a gaf -r target/go-ontology.json -o target/groups/goa/goa_uniprot_all_noiea_cam.ttl target/groups/goa/goa_uniprot_all_noiea.gaf
 	gzip -cf target/groups/goa/goa_uniprot_all_noiea_cam.ttl > target/groups/goa/goa_uniprot_all_noiea_cam.ttl.gz
 
 target/groups/goa/goa_uniprot_all_noiea.gpad: target/groups/goa/goa_uniprot_all_noiea.gaf
-	python3 $(PY_BIN)/ontobio-parse-assocs.py -f target/groups/goa/goa_uniprot_all_noiea.gaf -o target/groups/goa/goa_uniprot_all_noiea.gpad.tmp --report-md rep.md convert --to gpad && mv target/groups/goa/goa_uniprot_all_noiea.gpad.tmp target/groups/goa/goa_uniprot_all_noiea.gpad
+	ontobio-parse-assocs.py -f target/groups/goa/goa_uniprot_all_noiea.gaf -o target/groups/goa/goa_uniprot_all_noiea.gpad.tmp --report-md rep.md convert --to gpad && mv target/groups/goa/goa_uniprot_all_noiea.gpad.tmp target/groups/goa/goa_uniprot_all_noiea.gpad
 	gzip -cf target/groups/goa/goa_uniprot_all_noiea.gpad > target/groups/goa/goa_uniprot_all_noiea.gpad.gz
 
 target/groups/goa/goa_uniprot_all_noiea.gpi: target/groups/goa/goa_uniprot_all_noiea.gaf
@@ -212,9 +209,8 @@ target/blazegraph-production.jnl: target/blazegraph-internal.jnl
 
 # $RANDOM goes from 0 to 32767, so adding to 10000 should generate a good range of ports.
 port := $(shell env bash -c 'echo $$(($$RANDOM + 10000))' )
-target/sparta-report.json: # target/blazegraph-production.jnl
-	pwd
-	PY_ENV=$(PY_ENV) ./triplestore-rulecheck.sh $(port) #foo $@
+target/sparta-report.json: target/blazegraph-production.jnl
+	./triplestore-rulecheck.sh $(port) $< $@
 
 bg-start:
 	java -server -Xmx32g -Djetty.port=$(BG_PORT) -Djetty.overrideWebXml=conf/readonly_cors.xml -Dbigdata.propertyFile=conf/blazegraph.properties -cp target/jars/blazegraph-jar.jar:target/jars/jetty-servlets.jar com.bigdata.rdf.sail.webapp.StandaloneNanoSparqlServer
