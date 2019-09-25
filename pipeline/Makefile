@@ -11,6 +11,8 @@ DATASET_EXCLUDES ?= goa_uniprot_gcrp goa_pdb
 # The gorule tags used to identify which rules to suppress reports from
 GORULE_TAGS_TO_SUPPRESS ?=
 
+NOCTUA_MODELS_BRANCH ?= master
+
 # for each path in the shell `find`, get just the filename, then strip the extension for each group
 # Ex: will end up being just the yaml file names in the datasets directory (aspgd mgi goa fb [etc])
 
@@ -159,7 +161,7 @@ target/alltaxons.txt:
 # -------------------------------
 target/noctua-models:
 	# If target/noctua-models does not exist, then clone it
-	if [ ! -d target/nocuta-models ]; then git clone https://github.com/geneontology/noctua-models.git target/noctua-models; fi
+	if [ ! -d target/nocuta-models ]; then git clone --branch $(NOCTUA_MODELS_BRANCH) https://github.com/geneontology/noctua-models.git target/noctua-models; fi
 
 
 ONT_MERGED = target/go-graphstore-merged.ttl
