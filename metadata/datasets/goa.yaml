@@ -761,7 +761,7 @@ datasets:
    description: "gaf file for goa_chicken_rna_noiea from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gene-associations/goa_chicken_rna_noiea.gaf.gz
    type: gaf
-   dataset: goa_chicken_rna
+   dataset: goa_chicken_rna_noiea
    submitter: goa
    compression: gzip
    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_rna_noiea.gaf.gz
@@ -1044,7 +1044,7 @@ datasets:
    description: "gaf file for goa_pig_rna from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gene-associations/goa_pig_rna_noiea.gaf.gz
    type: gaf
-   dataset: goa_pig_rna
+   dataset: goa_pig_rna_noiea
    submitter: goa
    compression: gzip
    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_rna_noiea.gaf.gz
