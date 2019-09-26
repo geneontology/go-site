@@ -756,12 +756,12 @@ datasets:
     - NCBITaxon:9031
 
  -
-   id: goa_chicken_rna_noiea.gaf
-   label: "goa_chicken_rna_noiea gaf file"
-   description: "gaf file for goa_chicken_rna_noiea from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_chicken_rna_noiea.gaf.gz
+   id: goa_chicken_rna.gaf
+   label: "goa_chicken_rna gaf file"
+   description: "gaf file for goa_chicken_rna from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_chicken_rna.gaf.gz
    type: gaf
-   dataset: goa_chicken_rna_noiea
+   dataset: goa_chicken_rna
    submitter: goa
    compression: gzip
    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_rna_noiea.gaf.gz
@@ -830,12 +830,12 @@ datasets:
     - NCBITaxon:9913
 
  -
-   id: goa_cow_rna_noiea.gaf
-   label: "goa_cow_rna_noiea gaf file"
-   description: "gaf file for goa_cow_rna_noiea from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_cow_rna_noiea.gaf.gz
+   id: goa_cow_rna.gaf
+   label: "goa_cow_rna gaf file"
+   description: "gaf file for goa_cow_rna from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_cow_rna.gaf.gz
    type: gaf
-   dataset: goa_cow_rna_noiea
+   dataset: goa_cow_rna
    submitter: goa
    compression: gzip
    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_rna_noiea.gaf.gz
@@ -896,12 +896,12 @@ datasets:
     - NCBITaxon:9615
 
  -
-   id: goa_dog_rna_noiea.gaf
-   label: "goa_dog_rna_noiea gaf file"
+   id: goa_dog_rna.gaf
+   label: "goa_dog_rna gaf file"
    description: "gaf file for goa_dog_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_dog_rna_noiea.gaf.gz
+   url: http://geneontology.org/gene-associations/goa_dog_rna.gaf.gz
    type: gaf
-   dataset: goa_dog_rna_noiea
+   dataset: goa_dog_rna
    submitter: goa
    compression: gzip
    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_rna_noiea.gaf.gz
@@ -960,12 +960,12 @@ datasets:
     - NCBITaxon:9606
 
  -
-   id: goa_human_rna_noiea.gaf
-   label: "goa_human_rna_noiea gaf file"
+   id: goa_human_rna.gaf
+   label: "goa_human_rna gaf file"
    description: "gaf file for goa_human_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_human_rna_noiea.gaf.gz
+   url: http://geneontology.org/gene-associations/goa_human_rna.gaf.gz
    type: gaf
-   dataset: goa_human_rna_noiea
+   dataset: goa_human_rna
    submitter: goa
    compression: gzip
    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_rna_noiea.gaf.gz
@@ -1039,12 +1039,12 @@ datasets:
     - NCBITaxon:9823
 
  -
-   id: goa_pig_rna_noiea.gaf
-   label: "goa_pig_rna_noiea gaf file"
+   id: goa_pig_rna.gaf
+   label: "goa_pig_rna gaf file"
    description: "gaf file for goa_pig_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_pig_rna_noiea.gaf.gz
+   url: http://geneontology.org/gene-associations/goa_pig_rna.gaf.gz
    type: gaf
-   dataset: goa_pig_rna_noiea
+   dataset: goa_pig_rna
    submitter: goa
    compression: gzip
    source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_rna_noiea.gaf.gz
