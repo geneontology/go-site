@@ -25,7 +25,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000016">GORULE:0000016 With/From: IC annotations require a With/From GO ID</a>
  * <a href="#gorule0000017">GORULE:0000017 IDA annotations must not have a With/From entry</a>
  * <a href="#gorule0000018">GORULE:0000018 IPI annotations require a With/From entry</a>
- * <a href="#gorule0000019">GORULE:0000019 Deprecated - Generic Reasoner Validation Check</a>
+ * <a href="#gorule0000019">GORULE:0000019 Generic Reasoner Validation Check</a>
  * <a href="#gorule0000020">GORULE:0000020 Automatic repair of annotations to merged or obsoleted terms</a>
  * <a href="#gorule0000021">GORULE:0000021 Check with/from for sequence similarity evidence for valid database ID</a>
  * <a href="#gorule0000022">GORULE:0000022 Check for, and filter, annotations made to retracted publications</a>
@@ -38,9 +38,9 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000029">GORULE:0000029 All IEAs over a year old are removed</a>
  * <a href="#gorule0000030">GORULE:0000030 Deprecated GO_REFs are not allowed</a>
  * <a href="#gorule0000031">GORULE:0000031 Annotation relations are replaced when not provided by source</a>
- * <a href="#gorule0000032">GORULE:0000032 Allowed References for each ECO.</a>
+ * <a href="#gorule0000032">GORULE:0000032 DEPRECATED Allowed References for each ECO.</a>
  * <a href="#gorule0000033">GORULE:0000033 Public Reference IDs (PMID, PMC, doi, or GO_REF) should be preferred over group specific Reference IDs</a>
- * <a href="#gorule0000035">GORULE:0000035 'Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.</a>
+ * <a href="#gorule0000035">GORULE:0000035 'Deprecated - Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.</a>
  * <a href="#gorule0000036">GORULE:0000036 Report annotations that involve gene products where the gene product is annotated to a term 'x' and 'regulation of X' (multiple annotations involved)</a>
  * <a href="#gorule0000037">GORULE:0000037 IBA annotations should ONLY be assigned_by GO_Central and have PMID:21873635 as a reference</a>
  * <a href="#gorule0000038">GORULE:0000038 Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column) where there exists another annotation with the same or a more granular term using experimental evidence</a>
@@ -424,14 +424,12 @@ Error report (number of errors) in [db_species]-report.html & owltools-check.txt
 
 <a name="gorule0000019"/>
 
-## Deprecated - Generic Reasoner Validation Check
+## Generic Reasoner Validation Check
 
  * id: [GORULE:0000019](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000019.md)
- * status: deprecated
+ * status: implemented
 
 
-DEPRECATED: This is done outside of the rules system. Ontobio performs
-a GAF -> RDF translation as part of the pipeline.
 
 The entire GAF is converted to OWL, combined with the main GO ontology
 and auxhiliary constraint ontologies. The resulting ontology is checked
@@ -667,14 +665,13 @@ For Molecular Function: relation = 'enables'
 
 <a name="gorule0000032"/>
 
-## Allowed References for each ECO.
+## DEPRECATED Allowed References for each ECO.
 
  * id: [GORULE:0000032](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000032.md)
- * status: proposed
+ * status: deprecated
 
 
-GO_REF Collection References allowed for each ECO are as follows:
-(to be completed)
+DEPRECATED. See GORULE:0000043
 
 <a name="gorule0000033"/>
 
@@ -684,16 +681,16 @@ GO_REF Collection References allowed for each ECO are as follows:
  * status: implemented
 
 
-IDs in the Reference field should only be only from PMID, PMC, doi, or GO_REF. Group specific References will be filtered if there is also an accepted public ID. For example, if FB:FBrf0159398 and GO_REF:0000015 are both found, the FB ID will be removed. If only the group ID exists, a warning will be issued.
+IDs in the Reference field should only be only from PMID, PMC, doi, or GO_REF. Group specific References will be reported on if there is also an accepted public ID. For example, if FB:FBrf0159398 and GO_REF:0000015 are both found, the FB ID will be reported. Similarly, if only the group ID exists, a warning will be issued.
 
 The list of GO_REFs are here: https://github.com/geneontology/go-site/tree/master/metadata/gorefs.
 
 <a name="gorule0000035"/>
 
-## 'Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.
+## 'Deprecated - Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.
 
  * id: [GORULE:0000035](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000035.md)
- * status: approved
+ * status: deprecated
 
 
 
@@ -714,7 +711,7 @@ As a second step we may create exception lists for cases known to be correct.
 ## IBA annotations should ONLY be assigned_by GO_Central and have PMID:21873635 as a reference
 
  * id: [GORULE:0000037](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000037.md)
- * status: proposed
+ * status: implemented
 
 
 
@@ -757,7 +754,7 @@ Annotations to GO:0032991 (protein-containing complex) or its descendants cannot
 ## Qualifier: IKR evidence code requires a NOT qualifier
 
  * id: [GORULE:0000042](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000042.md)
- * status: proposed
+ * status: implemented
 
 
 IKR evidence code requires a NOT qualifier. 
@@ -771,7 +768,7 @@ IKR evidence code requires a NOT qualifier.
 
 
 
-Specific forbidden combinations: 
+Specific allowed combinations: 
 - ND (ECO:0000307): GO_REF:0000015
 - ISS (ECO:0000250): GO_REF:0000024
 - ISA (ECO:0000247): GO_REF:0000030, GO_REF:0000113
@@ -814,7 +811,7 @@ With/from: Verify that the combination of evidence (ECO) code and with/from conf
 ## The ‘with’ field (GAF column 8) must be the same as the gene product (GAF colummn 2) when annotating to ‘self-binding’ terms.
 
  * id: [GORULE:0000046](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000046.md)
- * status: proposed
+ * status: implemented
 
 
 
@@ -864,7 +861,7 @@ The 'contributes to' qualifier can only be applied to proteins belonging to comp
 ## Annotations to ISS, ISA and ISO should not be self-referential
 
  * id: [GORULE:0000050](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000050.md)
- * status: proposed
+ * status: implemented
 
 
 
