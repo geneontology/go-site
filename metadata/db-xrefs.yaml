@@ -3291,22 +3291,34 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: (WP:CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
-      url_syntax: http://www.wormbase.org/db/gene/gene?name=[example_id]
+      id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WB:WBGene00003001
-      example_url: http://www.wormbase.org/db/get?class=Gene;name=WBGene00003001
+      example_url: http://www.wormbase.org/get?name=WBGene00003001
     - type_name: variation
       type_id: VariO:0001
-      id_syntax: (WP:CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
-      url_syntax: http://www.wormbase.org/db/gene/gene?name=[example_id]
-      example_id: WB:WBGene00003001
-      example_url: http://www.wormbase.org/db/get?class=Gene;name=WBGene00003001
+      id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
+      example_id: WB:WBVar00089843
+      example_url: http://www.wormbase.org/get?name=WBVar00089843
+    - type_name: RNAi
+      type_id: topic:3523 
+      id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
+      example_id: WB:WBRNAi00110325
+      example_url: http://www.wormbase.org/get?name=WBRNAi00110325
+    - type_name: Transgene
+      type_id: SO:0000902
+      id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
+      example_id: WB:WBTransgene00000059
+      example_url: http://www.wormbase.org/get?name=WBTransgene00000059
     - type_name: protein
       type_id: PR:000000001
-      id_syntax: (WP:CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
-      url_syntax: http://www.wormbase.org/db/gene/gene?name=[example_id]
-      example_id: WB:WBGene00003001
-      example_url: http://www.wormbase.org/db/get?class=Gene;name=WBGene00003001
+      id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
+      example_id: WB:CE00274
+      example_url: http://www.wormbase.org/get?name=CE00274
 - database: WB_REF
   name: WormBase database of nematode biology
   generic_urls:
@@ -3447,3 +3459,11 @@
       id_syntax: \d+(\.\d+){2,3}
       example_id: TFCLASS_FAMILY:2.1.1
       example_url: http://tfclass.bioinf.med.uni-goettingen.de/?tfclass=2.1.1
+- database: HGNC-UCL
+  name: UCL-based HGNC
+  description: While based at UCL, HGNC provided GO annotations for proteins during the process of assigning approved gene names and symbols
+  generic_urls:
+    - https://www.ucl.ac.uk/cardiovascular/hgnc-gene-annotation
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
