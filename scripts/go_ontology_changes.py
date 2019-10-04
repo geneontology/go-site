@@ -96,7 +96,7 @@ def compute_changes(current_obo_url, previous_obo_url):
                     reasons[key] = { "current" : reason['current'], "previous" : reason['previous'] }
                 xrefs_changes[newterm.namespace].append({ "id" : id, "name": newterm.name , "changes": reasons })
                 xrefs_count += 1
-                xrefs_total_count += len(reasons)
+                xrefs_total_count += newterm.count_xrefs_differences(oldterm)
     print(str(xrefs_count) + " terms xrefs changes since last revision")
 
     # Existing GO Terms with meta changes (synonyms, NO XREFS, definition, etc)
@@ -154,23 +154,27 @@ def compute_changes(current_obo_url, previous_obo_url):
         },
         "changes" : {
             "created_terms" : created_count,
-            "obsolete_terms_changes" : obsoleted_count,
-            "merged_terms_changes" : merged_count,
-            "relations_changes_by_term" : structural_count,
-            "meta_statements_changes_by_term" : meta_noxrefs_count,
-            "cross_references_changes_by_term" : xrefs_count,
-            "relations_changes" : structural_total_count,
-            "meta_statements_changes" : meta_noxrefs_total_count,
-            "cross_references_changes" : xrefs_total_count
+            "valid_terms" : len(currentgo.get_terms(TermState.VALID)) - len(oldgo.get_terms(TermState.VALID)),
+            "obsolete_terms" : obsoleted_count,
+            "merged_terms" : merged_count,
+            "biological_process_terms" : len(currentgo.get_terms_in("biological_process")) - len(oldgo.get_terms_in("biological_process")),
+            "molecular_function_terms" : len(currentgo.get_terms_in("molecular_function")) - len(oldgo.get_terms_in("molecular_function")),
+            "cellular_component_terms" : len(currentgo.get_terms_in("cellular_component")) - len(oldgo.get_terms_in("cellular_component")),
+            "meta_statements" : meta_noxrefs_total_count,
+            "meta_statements_by_term" : meta_noxrefs_count,
+            "cross_references" : xrefs_total_count,
+            "cross_references_by_term" : xrefs_count,
+            "relations" : structural_total_count,
+            "relations_by_term" : structural_count
         }
     }
     report["detailed_changes"] = {
         "created_terms" : created,
         "obsolete_terms" : obsoleted,
         "merged_terms" : merged,
-        "relations_changes" : relations_changes,
-        "meta_statements_changes" : meta_noxrefs_changes,
-        "cross_references_changes" : xrefs_changes
+        "meta_statements" : meta_noxrefs_changes,
+        "cross_references" : xrefs_changes,
+        "relations" : relations_changes
     }
 
     print("JSON report created.")
@@ -201,7 +205,7 @@ def create_text_report(json_changes):
 
     text_report += "\n\nSUMMARY: DIFF BETWEEN RELEASES"
     for key, val in json_changes["summary"]["changes"].items():
-        text_report += "\n" + key + "\t" + str(val)
+        text_report += "\nchanges_" + key + "\t" + str(val)
 
 
     text_report += "\n\nDETAILED CHANGES"
@@ -211,34 +215,34 @@ def create_text_report(json_changes):
         for item in val:
             text_report += "\n" + key + "\t" + item["id"] + "\t" + item["name"]
 
-    text_report += "\n\n" + count(json_changes["detailed_changes"]["obsolete_terms"]) + " OBSOLETED TERMS"
+    text_report += "\n\n" + count(json_changes["detailed_changes"]["obsolete_terms"]) + " OBSOLETED TERMS CHANGES"
     for key, val in json_changes["detailed_changes"]["obsolete_terms"].items():
         for item in val:
             text_report += "\n" + key + "\t" + item["id"] + "\t" + item["name"]
 
-    text_report += "\n\n" + count(json_changes["detailed_changes"]["merged_terms"]) + " MERGED TERMS"
+    text_report += "\n\n" + count(json_changes["detailed_changes"]["merged_terms"]) + " MERGED TERMS CHANGES"
     for key, val in json_changes["detailed_changes"]["merged_terms"].items():
         for item in val:
             text_report += "\n" + key + "\t" + item["current"]["id"] + "\t" + item["current"]["name"] + "\tWAS\t" + "\t" + item["previous"]["id"] + "\t" + item["previous"]["name"]
 
-    text_report += "\n\n" + count(json_changes["detailed_changes"]["relations_changes"]) + " RELATION CHANGES"
-    for key, val in json_changes["detailed_changes"]["relations_changes"].items():
+    text_report += "\n\n" + count(json_changes["detailed_changes"]["meta_statements"]) + " META CHANGES"
+    for key, val in json_changes["detailed_changes"]["meta_statements"].items():
         for item in val:
             text_report += "\n" + key + "\t" + item["id"] + "\t" + item["name"]
             data = item["changes"]
             for field in data:
                 text_report += "\n\t" + field + "\t" + format(data[field]["current"]) + "\tWAS\t" +format(data[field]["previous"])
 
-    text_report += "\n\n" + count(json_changes["detailed_changes"]["meta_statements_changes"]) + " META CHANGES"
-    for key, val in json_changes["detailed_changes"]["meta_statements_changes"].items():
+    text_report += "\n\n" + count(json_changes["detailed_changes"]["cross_references"]) + " CROSS REFERENCES CHANGES"
+    for key, val in json_changes["detailed_changes"]["cross_references"].items():
         for item in val:
             text_report += "\n" + key + "\t" + item["id"] + "\t" + item["name"]
             data = item["changes"]
             for field in data:
                 text_report += "\n\t" + field + "\t" + format(data[field]["current"]) + "\tWAS\t" +format(data[field]["previous"])
 
-    text_report += "\n\n" + count(json_changes["detailed_changes"]["cross_references_changes"]) + " CROSS REFERENCES CHANGES"
-    for key, val in json_changes["detailed_changes"]["cross_references_changes"].items():
+    text_report += "\n\n" + count(json_changes["detailed_changes"]["relations"]) + " RELATION CHANGES"
+    for key, val in json_changes["detailed_changes"]["relations"].items():
         for item in val:
             text_report += "\n" + key + "\t" + item["id"] + "\t" + item["name"]
             data = item["changes"]

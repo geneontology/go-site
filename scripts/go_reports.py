@@ -42,36 +42,67 @@ def minus_dict(dict1, dict2):
     return new_dict    
 
 
+def has_taxon(stats, taxon_id):
+    for taxon in stats["annotations"]["by_taxon"]:
+        if taxon_id in taxon:
+            return True
+    return False
+
+def added_removed_species(current_stats, previous_stats):
+    results = {
+        "added" : { },
+        "removed" : { }
+    }
+
+    for taxon in current_stats["annotations"]["by_taxon"]:
+        taxon_id = taxon.split("|")[0]
+        if not has_taxon(previous_stats, taxon_id):
+            results["added"][taxon] = current_stats["annotations"]["by_taxon"][taxon]
+
+    for taxon in previous_stats["annotations"]["by_taxon"]:
+        taxon_id = taxon.split("|")[0]
+        if not has_taxon(current_stats, taxon_id):
+            results["removed"][taxon] = previous_stats["annotations"]["by_taxon"][taxon]
+        
+    return results
+
+
 def alter_annotation_changes(current_stats, previous_stats, json_annot_changes):
+    addrem_species = added_removed_species(current_stats, previous_stats)
+    # print("INITIAL: ", json_annot_changes)
+    # print("DEBUG: ", addrem_species)
+
     altered_json_annot_changes = {
-        "releases_compared" : {
-            "current" : current_stats["release_date"],
-            "previous" : previous_stats["release_date"]
-        },
+        # "releases_compared" : {
+        #     "current" : current_stats["release_date"],
+        #     "previous" : previous_stats["release_date"]
+        # },
         "summary" : {
             "current" : {
+                "release_date" : current_stats["release_date"],
                 "annotations" : {
                     "total" : current_stats["annotations"]["total"],
                     "by_aspect" : current_stats["annotations"]["by_aspect"],
                     "by_evidence_cluster" : current_stats["annotations"]["by_evidence"]["cluster"],
                 },
-                "bioentities" : current_stats["annotations"]["bioentities"]["total"],
-                "taxa" : current_stats["annotations"]["taxa"]["total"],
-                "taxa_filtered" : current_stats["annotations"]["taxa"]["filtered"],
-                "references" : current_stats["annotations"]["references"]["all"]["total"],
-                "pmids" : current_stats["annotations"]["references"]["pmids"]["total"]
+                "bioentities" : current_stats["bioentities"]["total"],
+                "taxa" : current_stats["taxa"]["total"],
+                "taxa_filtered" : current_stats["taxa"]["filtered"],
+                "references" : current_stats["references"]["all"]["total"],
+                "pmids" : current_stats["references"]["pmids"]["total"]
             },
             "previous" : {
+                "release_date" : previous_stats["release_date"],
                 "annotations" : {
                     "total" : previous_stats["annotations"]["total"],
                     "by_aspect" : previous_stats["annotations"]["by_aspect"],
                     "by_evidence_cluster" : previous_stats["annotations"]["by_evidence"]["cluster"],
                 },
-                "bioentities" : previous_stats["annotations"]["bioentities"]["total"],
-                "taxa" : previous_stats["annotations"]["taxa"]["total"],
-                "taxa_filtered" : previous_stats["annotations"]["taxa"]["filtered"],
-                "references" : previous_stats["annotations"]["references"]["all"]["total"],
-                "pmids" : previous_stats["annotations"]["references"]["pmids"]["total"]
+                "bioentities" : previous_stats["bioentities"]["total"],
+                "taxa" : previous_stats["taxa"]["total"],
+                "taxa_filtered" : previous_stats["taxa"]["filtered"],
+                "references" : previous_stats["references"]["all"]["total"],
+                "pmids" : previous_stats["references"]["pmids"]["total"]
             },
             "changes" : {
                 "annotations" : {
@@ -79,14 +110,31 @@ def alter_annotation_changes(current_stats, previous_stats, json_annot_changes):
                     "by_aspect" : minus_dict(current_stats["annotations"]["by_aspect"], previous_stats["annotations"]["by_aspect"]),
                     "by_evidence_cluster" : minus_dict(current_stats["annotations"]["by_evidence"]["cluster"], previous_stats["annotations"]["by_evidence"]["cluster"]),
                 },
-                "bioentities" : current_stats["annotations"]["bioentities"]["total"] - previous_stats["annotations"]["bioentities"]["total"],
-                "taxa" : current_stats["annotations"]["taxa"]["total"] - previous_stats["annotations"]["taxa"]["total"],
-                "taxa_filtered" : current_stats["annotations"]["taxa"]["filtered"] - previous_stats["annotations"]["taxa"]["filtered"],
-                "references" : current_stats["annotations"]["references"]["all"]["total"] - previous_stats["annotations"]["references"]["all"]["total"],
-                "pmids" : current_stats["annotations"]["references"]["pmids"]["total"] - previous_stats["annotations"]["references"]["pmids"]["total"]
+                "bioentities" : current_stats["bioentities"]["total"] - previous_stats["bioentities"]["total"],
+                "taxa" : {
+                    "total" : current_stats["taxa"]["total"] - previous_stats["taxa"]["total"],
+                    "filtered" : current_stats["taxa"]["filtered"] - previous_stats["taxa"]["filtered"],
+                    "added" : len(addrem_species["added"]),
+                    "removed" : len(addrem_species["removed"])
+                },
+                "references" : {
+                    "total" : current_stats["references"]["all"]["total"] - previous_stats["references"]["all"]["total"],
+                    "added" : 0,
+                    "removed" : 0
+                },
+                "pmids" : {
+                    "total" : current_stats["references"]["pmids"]["total"] - previous_stats["references"]["pmids"]["total"],
+                    "added" : 0,
+                    "removed" : 0
+                }
             },
         },
-        "detailed_changes" : json_annot_changes["annotations"] 
+        "detailed_changes" : {
+            "annotations" : json_annot_changes["annotations"],
+            "taxa" : addrem_species,
+            "bioentities" : json_annot_changes["bioentities"],
+            "references" : json_annot_changes["references"]
+        }
     }
     return altered_json_annot_changes  
 
@@ -191,14 +239,18 @@ def main(argv):
 
     ontology = json_onto_changes["summary"]["current"].copy()
     del ontology["release_date"]
-    ontology["created_terms"] = json_onto_changes["summary"]["changes"]["created_terms_changes"]
-    ontology["obsolete_terms_changes"] = json_onto_changes["summary"]["changes"]["obsolete_terms_changes"]
-    ontology["merged_terms_changes"] = json_onto_changes["summary"]["changes"]["merged_terms_changes"]
+    ontology["changes_created_terms"] = json_onto_changes["summary"]["changes"]["created_terms"]
+    ontology["changes_valid_terms"] = json_onto_changes["summary"]["changes"]["valid_terms"]
+    ontology["changes_obsolete_terms"] = json_onto_changes["summary"]["changes"]["obsolete_terms"]
+    ontology["changes_merged_terms"] = json_onto_changes["summary"]["changes"]["merged_terms"]
 
     json_stats = {
         "release_date" : json_stats["release_date"],
         "ontology" : ontology,
-        "annotations" : json_stats["annotations"]
+        "annotations" : json_stats["annotations"],
+        "taxa" : json_stats["taxa"],
+        "bioentities" : json_stats["bioentities"],
+        "references" : json_stats["references"]
     }
     go_stats.write_json(output_rep + "go-stats.json", json_stats)
 
@@ -206,64 +258,78 @@ def main(argv):
     json_stats_no_pb = {
         "release_date" : json_stats_no_pb["release_date"],
         "ontology" : ontology,
-        "annotations" : json_stats_no_pb["annotations"]
+        "annotations" : json_stats_no_pb["annotations"],
+        "taxa" : json_stats_no_pb["taxa"],
+        "bioentities" : json_stats_no_pb["bioentities"],
+        "references" : json_stats_no_pb["references"]
     }
     go_stats.write_json(output_rep + "go-stats-no-pb.json", json_stats_no_pb)
 
 
-    annotations_by_reference_genome = { }
-    for taxon in go_stats.reference_genomes_ids:
-        key = go_stats.taxon_label(taxon)
-        annotations_by_reference_genome[key] = json_stats["annotations"]["by_taxon"][key] if key in json_stats["annotations"]["by_taxon"] else { }
+    annotations_by_reference_genome = json_stats["annotations"]["by_model_organism"]
+    for taxon in annotations_by_reference_genome:
+        for ecode in annotations_by_reference_genome[taxon]["by_evidence"]:
+            annotations_by_reference_genome[taxon]["by_evidence"][ecode]["B"] = json_stats["annotations"]["by_model_organism"][taxon]["by_evidence"][ecode]["F"] - json_stats_no_pb["annotations"]["by_model_organism"][taxon]["by_evidence"][ecode]["F"]
+        for ecode in annotations_by_reference_genome[taxon]["by_evidence_cluster"]:
+            annotations_by_reference_genome[taxon]["by_evidence_cluster"][ecode]["B"] = json_stats["annotations"]["by_model_organism"][taxon]["by_evidence_cluster"][ecode]["F"] - json_stats_no_pb["annotations"]["by_model_organism"][taxon]["by_evidence_cluster"][ecode]["F"]
 
     bioentities_by_reference_genome = { }
     for taxon in go_stats.reference_genomes_ids:
         key = go_stats.taxon_label(taxon)
-        bioentities_by_reference_genome[key] = json_stats["annotations"]["bioentities"]["by_taxon"]["cluster"][key] if key in json_stats["annotations"]["bioentities"]["by_taxon"]["cluster"] else { }
+        bioentities_by_reference_genome[key] = json_stats["bioentities"]["by_filtered_taxon"]["cluster"][key] if key in json_stats["bioentities"]["by_filtered_taxon"]["cluster"] else { }
+        # TODO: we don't have a way to filter on bioentity documents without direct annotations to PB ?
+        # for btype in bioentities_by_reference_genome[key]:
+        #     val = json_stats_no_pb["bioentities"]["by_filtered_taxon"]["cluster"][key]["F"] if (key in json_stats_no_pb["bioentities"]["by_filtered_taxon"]["cluster"] and "F" in json_stats_no_pb["bioentities"]["by_filtered_taxon"]["cluster"][key]) else 0
+        #     bioentities_by_reference_genome[key][btype]["B"] = bioentities_by_reference_genome[key][btype]["F"] - val
 
     references_by_reference_genome = { }
     for taxon in go_stats.reference_genomes_ids:
         key = go_stats.taxon_label(taxon)
-        references_by_reference_genome[key] = json_stats["annotations"]["references"]["all"]["by_taxon"][key] if key in json_stats["annotations"]["references"]["all"]["by_taxon"] else { }
+        references_by_reference_genome[key] = json_stats["references"]["all"]["by_filtered_taxon"][key] if key in json_stats["references"]["all"]["by_filtered_taxon"] else { }
 
     pmids_by_reference_genome = { }
     for taxon in go_stats.reference_genomes_ids:
         key = go_stats.taxon_label(taxon)
-        pmids_by_reference_genome[key] = json_stats["annotations"]["references"]["pmids"]["by_taxon"][key] if key in json_stats["annotations"]["references"]["pmids"]["by_taxon"] else { }
-
-
+        pmids_by_reference_genome[key] = json_stats["references"]["pmids"]["by_filtered_taxon"][key] if key in json_stats["references"]["pmids"]["by_filtered_taxon"] else { }
+        
     json_stats_summary = {
         "release_date" : json_stats["release_date"],
         "ontology" : ontology,
         "annotations" : {
             "total" : json_stats["annotations"]["total"],
             "total_no_pb" : json_stats_no_pb["annotations"]["total"],
-            "by_aspect" : json_stats["annotations"]["by_aspect"],
-            "by_bioentity_type_cluster" : json_stats["annotations"]["bioentities"]["by_type"]["cluster"],
+            "by_aspect" : {
+                "P" : json_stats["annotations"]["by_aspect"]["P"],
+                "F" : json_stats["annotations"]["by_aspect"]["F"],
+                "C" : json_stats["annotations"]["by_aspect"]["C"],
+                "B" : json_stats["annotations"]["by_aspect"]["F"] - json_stats_no_pb["annotations"]["by_aspect"]["F"]
+            },
+            "by_bioentity_type_cluster" : json_stats["annotations"]["by_bioentity_type"]["cluster"],
+            "by_bioentity_type_cluster_no_pb" : json_stats_no_pb["annotations"]["by_bioentity_type"]["cluster"],
             "by_evidence_cluster" : json_stats["annotations"]["by_evidence"]["cluster"],
             "by_evidence_cluster_no_pb" : json_stats_no_pb["annotations"]["by_evidence"]["cluster"],
-            "by_model_organism" : json_stats["annotations"]["by_model_organism"]
+            "by_model_organism" : annotations_by_reference_genome
         },
         "taxa" : {
-            "total" : json_stats["annotations"]["taxa"]["total"],
-            "filtered" : json_stats["annotations"]["taxa"]["filtered"],
+            "total" : json_stats["taxa"]["total"],
+            "filtered" : json_stats["taxa"]["filtered"],
         },
         "bioentities" : {
-            "total" : json_stats["annotations"]["bioentities"]["total"],
-            "total_no_pb" : json_stats_no_pb["annotations"]["bioentities"]["total"],
-            "by_type_cluster" : json_stats["annotations"]["bioentities"]["by_type"]["cluster"],
-            "by_type_cluster_no_pb" : json_stats_no_pb["annotations"]["bioentities"]["by_type"]["cluster"],
+            "total" : json_stats["bioentities"]["total"],
+            "total_no_pb" : json_stats_no_pb["bioentities"]["total"],
+            "by_type_cluster" : json_stats["bioentities"]["by_type"]["cluster"],
+            "by_type_cluster_no_pb" : json_stats_no_pb["bioentities"]["by_type"]["cluster"],
             "by_model_organism" : bioentities_by_reference_genome
         },
         "references" : {
             "all" : {
-                "total" : json_stats["annotations"]["references"]["all"]["total"],
-                "total_no_pb" : json_stats_no_pb["annotations"]["references"]["all"]["total"],
+                "total" : json_stats["references"]["all"]["total"],
+                "total_no_pb" : json_stats_no_pb["references"]["all"]["total"],
                 "by_model_organism" : references_by_reference_genome
-            }, 
+            },
             "pmids" : {
-                "total" : json_stats["annotations"]["references"]["pmids"]["total"],
-                "total_no_pb" : json_stats_no_pb["annotations"]["references"]["pmids"]["total"],
+                "total" : json_stats["references"]["pmids"]["total"],
+                "total_no_pb" : json_stats_no_pb["references"]["pmids"]["total"],
                 "by_model_organism" : pmids_by_reference_genome
             }
         },

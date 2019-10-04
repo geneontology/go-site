@@ -89,14 +89,18 @@ def main(argv):
 
     ontology = json_onto_changes["summary"]["current"].copy()
     del ontology["release_date"]
-    ontology["created_terms"] = json_onto_changes["summary"]["changes"]["created_terms"]
-    ontology["obsolete_terms"] = json_onto_changes["summary"]["changes"]["obsolete_terms"]
-    ontology["merged_terms"] = json_onto_changes["summary"]["changes"]["merged_terms"]
+    ontology["changes_created_terms"] = json_onto_changes["summary"]["changes"]["created_terms"]
+    ontology["changes_valid_terms"] = json_onto_changes["summary"]["changes"]["valid_terms"]
+    ontology["changes_obsolete_terms"] = json_onto_changes["summary"]["changes"]["obsolete_terms"]
+    ontology["changes_merged_terms"] = json_onto_changes["summary"]["changes"]["merged_terms"]
 
     json_stats = {
         "release_date" : json_stats["release_date"],
         "ontology" : ontology,
-        "annotations" : json_stats["annotations"]
+        "annotations" : json_stats["annotations"],
+        "taxa" : json_stats["taxa"],
+        "bioentities" : json_stats["bioentities"],
+        "references" : json_stats["references"]
     }
     go_stats.write_json(output_rep + "go-stats.json", json_stats)
 
@@ -104,30 +108,39 @@ def main(argv):
     json_stats_no_pb = {
         "release_date" : json_stats_no_pb["release_date"],
         "ontology" : ontology,
-        "annotations" : json_stats_no_pb["annotations"]
+        "annotations" : json_stats_no_pb["annotations"],
+        "taxa" : json_stats_no_pb["taxa"],
+        "bioentities" : json_stats_no_pb["bioentities"],
+        "references" : json_stats_no_pb["references"]
     }
     go_stats.write_json(output_rep + "go-stats-no-pb.json", json_stats_no_pb)
 
 
-    annotations_by_reference_genome = { }
-    for taxon in go_stats.reference_genomes_ids:
-        key = go_stats.taxon_label(taxon)
-        annotations_by_reference_genome[key] = json_stats["annotations"]["by_taxon"][key] if key in json_stats["annotations"]["by_taxon"] else { }
+    annotations_by_reference_genome = json_stats["annotations"]["by_model_organism"]
+    for taxon in annotations_by_reference_genome:
+        for ecode in annotations_by_reference_genome[taxon]["by_evidence"]:
+            annotations_by_reference_genome[taxon]["by_evidence"][ecode]["B"] = json_stats["annotations"]["by_model_organism"][taxon]["by_evidence"][ecode]["F"] - json_stats_no_pb["annotations"]["by_model_organism"][taxon]["by_evidence"][ecode]["F"]
+        for ecode in annotations_by_reference_genome[taxon]["by_evidence_cluster"]:
+            annotations_by_reference_genome[taxon]["by_evidence_cluster"][ecode]["B"] = json_stats["annotations"]["by_model_organism"][taxon]["by_evidence_cluster"][ecode]["F"] - json_stats_no_pb["annotations"]["by_model_organism"][taxon]["by_evidence_cluster"][ecode]["F"]
 
     bioentities_by_reference_genome = { }
     for taxon in go_stats.reference_genomes_ids:
         key = go_stats.taxon_label(taxon)
-        bioentities_by_reference_genome[key] = json_stats["annotations"]["bioentities"]["by_taxon"]["cluster"][key] if key in json_stats["annotations"]["bioentities"]["by_taxon"]["cluster"] else { }
+        bioentities_by_reference_genome[key] = json_stats["bioentities"]["by_filtered_taxon"]["cluster"][key] if key in json_stats["bioentities"]["by_filtered_taxon"]["cluster"] else { }
+        # TODO: we don't have a way to filter on bioentity documents without direct annotations to PB ?
+        # for btype in bioentities_by_reference_genome[key]:
+        #     val = json_stats_no_pb["bioentities"]["by_filtered_taxon"]["cluster"][key]["F"] if (key in json_stats_no_pb["bioentities"]["by_filtered_taxon"]["cluster"] and "F" in json_stats_no_pb["bioentities"]["by_filtered_taxon"]["cluster"][key]) else 0
+        #     bioentities_by_reference_genome[key][btype]["B"] = bioentities_by_reference_genome[key][btype]["F"] - val
 
     references_by_reference_genome = { }
     for taxon in go_stats.reference_genomes_ids:
         key = go_stats.taxon_label(taxon)
-        references_by_reference_genome[key] = json_stats["annotations"]["references"]["all"]["by_taxon"][key] if key in json_stats["annotations"]["references"]["all"]["by_taxon"] else { }
+        references_by_reference_genome[key] = json_stats["references"]["all"]["by_filtered_taxon"][key] if key in json_stats["references"]["all"]["by_filtered_taxon"] else { }
 
     pmids_by_reference_genome = { }
     for taxon in go_stats.reference_genomes_ids:
         key = go_stats.taxon_label(taxon)
-        pmids_by_reference_genome[key] = json_stats["annotations"]["references"]["pmids"]["by_taxon"][key] if key in json_stats["annotations"]["references"]["pmids"]["by_taxon"] else { }
+        pmids_by_reference_genome[key] = json_stats["references"]["pmids"]["by_filtered_taxon"][key] if key in json_stats["references"]["pmids"]["by_filtered_taxon"] else { }
         
     json_stats_summary = {
         "release_date" : json_stats["release_date"],
@@ -135,31 +148,38 @@ def main(argv):
         "annotations" : {
             "total" : json_stats["annotations"]["total"],
             "total_no_pb" : json_stats_no_pb["annotations"]["total"],
-            "by_bioentity_type_cluster" : json_stats["annotations"]["bioentities"]["by_type"]["cluster"],
+            "by_aspect" : {
+                "P" : json_stats["annotations"]["by_aspect"]["P"],
+                "F" : json_stats["annotations"]["by_aspect"]["F"],
+                "C" : json_stats["annotations"]["by_aspect"]["C"],
+                "B" : json_stats["annotations"]["by_aspect"]["F"] - json_stats_no_pb["annotations"]["by_aspect"]["F"]
+            },
+            "by_bioentity_type_cluster" : json_stats["annotations"]["by_bioentity_type"]["cluster"],
+            "by_bioentity_type_cluster_no_pb" : json_stats_no_pb["annotations"]["by_bioentity_type"]["cluster"],
             "by_evidence_cluster" : json_stats["annotations"]["by_evidence"]["cluster"],
             "by_evidence_cluster_no_pb" : json_stats_no_pb["annotations"]["by_evidence"]["cluster"],
-            "by_model_organism" : json_stats["annotations"]["by_model_organism"]
+            "by_model_organism" : annotations_by_reference_genome
         },
         "taxa" : {
-            "total" : json_stats["annotations"]["taxa"]["total"],
-            "filtered" : json_stats["annotations"]["taxa"]["filtered"],
+            "total" : json_stats["taxa"]["total"],
+            "filtered" : json_stats["taxa"]["filtered"],
         },
         "bioentities" : {
-            "total" : json_stats["annotations"]["bioentities"]["total"],
-            "total_no_pb" : json_stats_no_pb["annotations"]["bioentities"]["total"],
-            "by_type_cluster" : json_stats["annotations"]["bioentities"]["by_type"]["cluster"],
-            "by_type_cluster_no_pb" : json_stats_no_pb["annotations"]["bioentities"]["by_type"]["cluster"],
+            "total" : json_stats["bioentities"]["total"],
+            "total_no_pb" : json_stats_no_pb["bioentities"]["total"],
+            "by_type_cluster" : json_stats["bioentities"]["by_type"]["cluster"],
+            "by_type_cluster_no_pb" : json_stats_no_pb["bioentities"]["by_type"]["cluster"],
             "by_model_organism" : bioentities_by_reference_genome
         },
         "references" : {
             "all" : {
-                "total" : json_stats["annotations"]["references"]["all"]["total"],
-                "total_no_pb" : json_stats_no_pb["annotations"]["references"]["all"]["total"],
+                "total" : json_stats["references"]["all"]["total"],
+                "total_no_pb" : json_stats_no_pb["references"]["all"]["total"],
                 "by_model_organism" : references_by_reference_genome
             },
             "pmids" : {
-                "total" : json_stats["annotations"]["references"]["pmids"]["total"],
-                "total_no_pb" : json_stats_no_pb["annotations"]["references"]["pmids"]["total"],
+                "total" : json_stats["references"]["pmids"]["total"],
+                "total_no_pb" : json_stats_no_pb["references"]["pmids"]["total"],
                 "by_model_organism" : pmids_by_reference_genome
             }
         },

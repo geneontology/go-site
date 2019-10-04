@@ -241,7 +241,7 @@ def compute_stats(golr_url, release_date, exclude_pb_only = False):
     print("4 / 4 - Creating Stats...")    
     prepare_globals(all_annotations)
     print("\t4a - globals prepared")
-    stats = create_stats(all_terms, all_annotations, all_entities, release_date)
+    stats = create_stats(all_terms, all_annotations, all_entities, release_date, exclude_pb_only)
     print("Done.")
     
     return stats
@@ -315,7 +315,7 @@ def bioentity_type(str_type):
     In a nutshell, collapse all RNA related types into RNA
     """
     if "RNA" in str_type or "ribozyme" in str_type or "transcript" in str_type:
-        return "RNA"
+        return "RNA_cluster"
     return str_type
     
 def golr_fetch_bioentities_taxon(taxon):
@@ -346,17 +346,21 @@ def golr_fetch_references_group(group):
     response = golr_fetch(url)
     return response
 
-def golr_fetch_annotation_by_evidence_by_species(taxon):
-    url = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&fq=taxon:%22' + taxon + '%22&facet=true&facet.field=evidence_type&facet.limit=10000&rows=0'
+def golr_fetch_annotation_by_evidence_by_species(taxon, exclude_pb_only):
+    options = ""
+    if exclude_pb_only:
+        options = "&fq=!annotation_class:\"GO:0005515\""
+
+    url = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&fq=taxon:%22' + taxon + '%22&facet=true&facet.field=evidence_type&facet.limit=10000&rows=0' + options
     response = golr_fetch(url)
 
-    url_bp = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&fq=taxon:%22' + taxon + '%22&facet=true&facet.field=evidence_type&facet.limit=10000&rows=0&fq=isa_partof_closure:\"' + BP + '\"'
+    url_bp = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&fq=taxon:%22' + taxon + '%22&facet=true&facet.field=evidence_type&facet.limit=10000&rows=0&fq=isa_partof_closure:\"' + BP + '\"' + options
     response_bp = golr_fetch(url_bp)
 
-    url_mf = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&fq=taxon:%22' + taxon + '%22&facet=true&facet.field=evidence_type&facet.limit=10000&rows=0&fq=isa_partof_closure:\"' + MF + '\"'
+    url_mf = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&fq=taxon:%22' + taxon + '%22&facet=true&facet.field=evidence_type&facet.limit=10000&rows=0&fq=isa_partof_closure:\"' + MF + '\"' + options
     response_mf = golr_fetch(url_mf)
 
-    url_cc = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&fq=taxon:%22' + taxon + '%22&facet=true&facet.field=evidence_type&facet.limit=10000&rows=0&fq=isa_partof_closure:\"' + CC + '\"'
+    url_cc = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&fq=taxon:%22' + taxon + '%22&facet=true&facet.field=evidence_type&facet.limit=10000&rows=0&fq=isa_partof_closure:\"' + CC + '\"' + options
     response_cc = golr_fetch(url_cc)
 
     return { ALL : response, BP : response_bp, MF : response_mf, CC : response_cc }
@@ -388,7 +392,7 @@ def add_taxon_label(map):
                 new_map[key] = val
     return new_map
 
-def create_stats(all_terms, all_annotations, all_entities, release_date):
+def create_stats(all_terms, all_annotations, all_entities, release_date, exclude_pb_only = False):
     stats = { }
 
     terms = 0
@@ -468,7 +472,7 @@ def create_stats(all_terms, all_annotations, all_entities, release_date):
 
     ref_genome_annotation_evidences = { }
     for taxon in reference_genomes_ids:
-        responses = golr_fetch_annotation_by_evidence_by_species(taxon)
+        responses = golr_fetch_annotation_by_evidence_by_species(taxon, exclude_pb_only)
         all_map = build_map(responses[ALL]['facet_counts']['facet_fields']['evidence_type'])
         bp_map = build_map(responses[BP]['facet_counts']['facet_fields']['evidence_type'])
         mf_map = build_map(responses[MF]['facet_counts']['facet_fields']['evidence_type'])
@@ -486,45 +490,6 @@ def create_stats(all_terms, all_annotations, all_entities, release_date):
 
     annotations = { 
         "total" : all_annotations['response']['numFound'],
-
-        "bioentities" : {
-            "total" : all_entities['response']['numFound'],
-
-            "by_type" : {
-                "all" : build_map(all_entities['facet_counts']['facet_fields']['type']),
-                "cluster" : cluster_map(build_map(all_entities['facet_counts']['facet_fields']['type']), bioentity_type_cluster)
-            },
-
-            "by_taxon" : {
-                "all" : all_bioentities_by_taxon,
-                "cluster" : cluster_bioentities_by_taxon
-            }
-
-            # This can not work and would require an evidence fields in the GOLR bioentity docs
-            # "by_taxon" : {
-            #     "all" : all_bioentities_by_taxon,
-            #     "experimental" : experimental_bioentities_by_taxon
-            # }
-        },
-
-        "taxa" : {
-            "total" : int(len(all_annotations['facet_counts']['facet_fields']['taxon']) / 2),
-            "filtered" : len(usable_taxons),
-        },
-
-        "references" : {
-            "all" : {
-                "total" : int(len(all_annotations['facet_counts']['facet_fields']['reference']) / 2),
-                "by_taxon" : references_by_taxon,
-                "by_group" : references_by_group
-            },
-            "pmids" : {
-                "total" : len(extract_map(build_map(all_annotations['facet_counts']['facet_fields']['reference']), "PMID:")),
-                "by_taxon" : pmids_by_taxon,
-                "by_group" : pmids_by_group
-            }
-        },
-
 
         "by_aspect" : build_map(all_annotations['facet_counts']['facet_fields']['aspect']),
 
@@ -545,12 +510,54 @@ def create_stats(all_terms, all_annotations, all_entities, release_date):
         "by_group": build_map(all_annotations['facet_counts']['facet_fields']['assigned_by'])
         
     }
-
     annotations = add_taxon_label(annotations)
 
+    taxa =  {
+        "total" : int(len(all_annotations['facet_counts']['facet_fields']['taxon']) / 2),
+        "filtered" : len(usable_taxons),
+    }
+
+    bioentities = {
+        "total" : all_entities['response']['numFound'],
+
+        "by_type" : {
+            "all" : build_map(all_entities['facet_counts']['facet_fields']['type']),
+            "cluster" : cluster_map(build_map(all_entities['facet_counts']['facet_fields']['type']), bioentity_type_cluster)
+        },
+
+        "by_filtered_taxon" : {
+            "all" : all_bioentities_by_taxon,
+            "cluster" : cluster_bioentities_by_taxon
+        }
+
+        # This can not work and would require an evidence fields in the GOLR bioentity docs
+        # "by_taxon" : {
+        #     "all" : all_bioentities_by_taxon,
+        #     "experimental" : experimental_bioentities_by_taxon
+        # }
+    }
+    bioentities = add_taxon_label(bioentities)
+
+    references = {
+        "all" : {
+            "total" : int(len(all_annotations['facet_counts']['facet_fields']['reference']) / 2),
+            "by_filtered_taxon" : references_by_taxon,
+            "by_group" : references_by_group
+        },
+        "pmids" : {
+            "total" : len(extract_map(build_map(all_annotations['facet_counts']['facet_fields']['reference']), "PMID:")),
+            "by_filtered_taxon" : pmids_by_taxon,
+            "by_group" : pmids_by_group
+        }
+    }
+    references = add_taxon_label(references)
+    
     stats["release_date"] = release_date
     stats["terms"] = terms
     stats["annotations"] = annotations
+    stats["taxa"] = taxa
+    stats["bioentities"] = bioentities
+    stats["references"] = references
 
     return stats
 
