@@ -71,7 +71,13 @@ class Term:
         if self.xrefs and includeXRefs:
             count += len(self.xrefs)
         return count
-        
+
+    def count_xrefs(self):
+        count = 0
+        if self.xrefs:
+            count += len(self.xrefs)
+        return count
+                
     def count_structurals(self):
         count = 0
         if self.is_a:
@@ -179,6 +185,9 @@ class Term:
             return self.id == other.id and self.is_obsolete == other.is_obsolete and self.alt_ids == other.alt_ids and self.name == other.name and self.namespace == other.namespace and self.definition == other.definition and self.comment == other.comment and self.synonyms == other.synonyms and self.subsets == other.subsets and self.xrefs == other.xrefs
         return self.id == other.id and self.is_obsolete == other.is_obsolete and self.alt_ids == other.alt_ids and self.name == other.name and self.namespace == other.namespace and self.definition == other.definition and self.comment == other.comment and self.synonyms == other.synonyms and self.subsets == other.subsets
 
+    def xrefs_equals(self, other):
+        return self.xrefs == other.xrefs
+
     def explain_structural_differences(self, other):
         reasons = {}
         if self.is_a != other.is_a:
@@ -187,6 +196,12 @@ class Term:
             reasons["relationship"] = {"current": value(self.relationship), "previous": value(other.relationship) }
         if self.intersection_of != other.intersection_of:
             reasons["intersection_of"] = {"current": value(self.intersection_of), "previous": value(other.intersection_of) }
+        return reasons
+
+    def explain_xrefs_differences(self, other):
+        reasons = {}
+        if self.xrefs != other.xrefs:
+            reasons["xrefs"] = {"current": value(self.xrefs), "previous": value(other.xrefs) }
         return reasons
 
     def explain_meta_differences(self, other, includeXRefs = True):
@@ -437,7 +452,13 @@ class OBO_Parser:
             if term_state == TermState.ANY or (term_state == TermState.OBSOLETED and data['object'].is_obsolete) or (term_state == TermState.VALID and not data['object'].is_obsolete):
                 count += data['object'].count_metas(includeXRefs)
         return count
-        
+                
+    def count_all_xrefs(self, term_state = TermState.VALID):
+        count = 0
+        for id, data in self.obo_graph.nodes(data=True):
+            if term_state == TermState.ANY or (term_state == TermState.OBSOLETED and data['object'].is_obsolete) or (term_state == TermState.VALID and not data['object'].is_obsolete):
+                count += data['object'].count_xrefs()
+        return count
         
     def count_all_structurals(self, term_state = TermState.VALID):
         count = 0

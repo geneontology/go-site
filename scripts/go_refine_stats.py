@@ -90,7 +90,7 @@ def main(argv):
     ontology = json_onto_changes["summary"]["current"].copy()
     del ontology["release_date"]
     ontology["created_terms"] = json_onto_changes["summary"]["changes"]["created_terms"]
-    ontology["obsoleted_terms"] = json_onto_changes["summary"]["changes"]["obsoleted_terms"]
+    ontology["obsolete_terms"] = json_onto_changes["summary"]["changes"]["obsolete_terms"]
     ontology["merged_terms"] = json_onto_changes["summary"]["changes"]["merged_terms"]
 
     json_stats = {
@@ -138,7 +138,7 @@ def main(argv):
             "by_bioentity_type_cluster" : json_stats["annotations"]["bioentities"]["by_type"]["cluster"],
             "by_evidence_cluster" : json_stats["annotations"]["by_evidence"]["cluster"],
             "by_evidence_cluster_no_pb" : json_stats_no_pb["annotations"]["by_evidence"]["cluster"],
-            "by_reference_genome" : json_stats["annotations"]["by_reference_genome"]
+            "by_model_organism" : json_stats["annotations"]["by_model_organism"]
         },
         "taxa" : {
             "total" : json_stats["annotations"]["taxa"]["total"],
@@ -149,18 +149,18 @@ def main(argv):
             "total_no_pb" : json_stats_no_pb["annotations"]["bioentities"]["total"],
             "by_type_cluster" : json_stats["annotations"]["bioentities"]["by_type"]["cluster"],
             "by_type_cluster_no_pb" : json_stats_no_pb["annotations"]["bioentities"]["by_type"]["cluster"],
-            "by_reference_genome" : bioentities_by_reference_genome
+            "by_model_organism" : bioentities_by_reference_genome
         },
         "references" : {
             "all" : {
                 "total" : json_stats["annotations"]["references"]["all"]["total"],
                 "total_no_pb" : json_stats_no_pb["annotations"]["references"]["all"]["total"],
-                "by_reference_genome" : references_by_reference_genome
+                "by_model_organism" : references_by_reference_genome
             },
             "pmids" : {
                 "total" : json_stats["annotations"]["references"]["pmids"]["total"],
                 "total_no_pb" : json_stats_no_pb["annotations"]["references"]["pmids"]["total"],
-                "by_reference_genome" : pmids_by_reference_genome
+                "by_model_organism" : pmids_by_reference_genome
             }
         },
     }

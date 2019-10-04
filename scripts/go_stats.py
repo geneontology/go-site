@@ -415,7 +415,7 @@ def create_stats(all_terms, all_annotations, all_entities, release_date):
     terms = { 
         "total" : all_terms['response']['numFound'],
         "valid" : terms,
-        "obsoleted" : obsoleted,
+        "obsolete" : obsoleted,
         "by_aspect" : terms_by_aspect
     }
     print("\t4b - terms computed")
@@ -540,7 +540,7 @@ def create_stats(all_terms, all_annotations, all_entities, release_date):
             "cluster" : cluster_map(build_map(all_annotations['facet_counts']['facet_fields']['evidence_type']), reverse_evidence_groups)
         },
 
-        "by_reference_genome" : ref_genome_annotation_evidences,
+        "by_model_organism" : ref_genome_annotation_evidences,
 
         "by_group": build_map(all_annotations['facet_counts']['facet_fields']['assigned_by'])
         
@@ -562,7 +562,7 @@ def create_text_report(stats_json):
     text_report += "\nrelease_date\t" + stats_json["release_date"]    
 
     text_report += "\n\nTERMS\n"
-    text_report += "total\t" + str(stats_json["terms"]["total"]) + "\nobsoleted\t" + str(stats_json["terms"]["obsoleted"]) + "\nvalid total\t" + str(stats_json["terms"]["valid"])
+    text_report += "total\t" + str(stats_json["terms"]["total"]) + "\nobsolete\t" + str(stats_json["terms"]["obsolete"]) + "\nvalid total\t" + str(stats_json["terms"]["valid"])
     text_report += "\nvalid P\t" + str(stats_json["terms"]["by_aspect"]["P"]) + "\nvalid F\t" + str(stats_json["terms"]["by_aspect"]["F"]) + "\nvalid C\t" + str(stats_json["terms"]["by_aspect"]["C"])
 
 
