@@ -31,26 +31,27 @@ def cli():
 @click.option("--retries", "-r", default=3, help="Max number of times to download a single source before giving up on everyone", show_default=True)
 @click.option("--retry-time", "-t", default=15, help="Number of seconds between retry attempts", show_default=True)
 @click.option("--map-dataset-url", "-m", multiple=True, type=(str, str, str), default=dict(), help="Replacement url mapping for a dataset: `DATASET TYPE URL`")
-def all(datasets, target, type, exclude, only_group, parallel, dry_run, retries, retry_time, map_dataset_url):
+@click.option("--replace", type=bool, default=True, help="Set to False if the download should not replace existing files")
+def all(datasets, target, type, exclude, only_group, parallel, dry_run, retries, retry_time, map_dataset_url, replace):
     os.makedirs(os.path.abspath(target), exist_ok=True)
-    
+
     dataset_mappings = { (dataset, t): url for (dataset, t, url) in map_dataset_url }
-    
+
     click.echo("Using {} for datasets".format(datasets))
     resource_metadata = load_resource_metadata(datasets)
     if len(only_group) > 0:
         # Filter the groups for only ones specified in only-group (if any)
         resource_metadata = list(filter(lambda r: r["id"] in only_group, resource_metadata))
     click.echo("Found {} dataset files".format(len(resource_metadata)))
-        
+
     dataset_targets = transform_download_targets(resource_metadata, types=type)
     # Filter out datasets that we want excluded
     dataset_targets = list(filter(lambda t: t.dataset not in exclude, dataset_targets))
     # apply dataset URL mapping
-    dataset_targets = [ Dataset(group=ds.group, dataset=ds.dataset, url=dataset_mappings.get((ds.dataset, ds.type), ds.url), type=ds.type, compression=ds.compression) 
+    dataset_targets = [ Dataset(group=ds.group, dataset=ds.dataset, url=dataset_mappings.get((ds.dataset, ds.type), ds.url), type=ds.type, compression=ds.compression)
         for ds in dataset_targets ]
 
-    success = multi_download(dataset_targets, target, parallel=parallel, dryrun=dry_run, retries=retries, retry_time=retry_time)
+    success = multi_download(dataset_targets, target, parallel=parallel, dryrun=dry_run, retries=retries, retry_time=retry_time, replace=replace)
     if not success:
         raise click.ClickException("Failed Download")
 
@@ -62,37 +63,42 @@ def all(datasets, target, type, exclude, only_group, parallel, dry_run, retries,
 @click.option("--type", multiple=True, default=["gaf"], help="The source type (gaf, gpad, etc) to download")
 @click.option("--exclude", "-x", multiple=True, help="dataset name we want to not download")
 @click.option("--dry-run", is_flag=True, help="Do everything but download if flag is set")
-def group(group, datasets, target, type, exclude, dry_run):
+@click.option("--parallel", "-p", default=5, help="Number of processes to use to download files", show_default=True)
+@click.option("--retries", "-r", default=3, help="Max number of times to download a single source before giving up on everyone", show_default=True)
+@click.option("--retry-time", "-t", default=15, help="Number of seconds between retry attempts", show_default=True)
+@click.option("--replace", type=bool, default=True, help="Set to False if the download should not replace existing files")
+def group(group, datasets, target, type, exclude, dry_run, parallel, retries, retry_time, replace):
     os.makedirs(os.path.abspath(target), exist_ok=True)
-    
+
     click.echo("Using {} for datasets".format(datasets))
     resource_metadata = load_resource_metadata(datasets)
     # Filter out resource metadatas that are not the one group we specified
     resource_metadata = list(filter(lambda r: r["id"] == group, resource_metadata))
     click.echo("Found {} dataset files".format(len(resource_metadata)))
-    
+
     dataset_targets = transform_download_targets(resource_metadata, types=type)
     # Filter out datasets that we want excluded
     dataset_targets = list(filter(lambda t: t.dataset not in exclude, dataset_targets))
-    multi_download(dataset_targets, target, dryrun=dry_run)
-
+    success = multi_download(dataset_targets, target, parallel=parallel, dryrun=dry_run, retries=retries, retry_time=retry_time, replace=replace)
+    if not success:
+        raise click.ClickException("Failed Download!")
 
 @cli.command()
 @click.option("--datasets", "-d", type=click.Path(exists=True), required=True, help="Path to directory with all the dataset yamls")
 @click.option("--target", "-T", type=click.Path(exists=False), required=True, help="Path to directory where files will be stored")
 @click.option("--source", "-S", type=click.Path(exists=False), required=True, help="Path to directory where files will be copied from")
 def organize(datasets, target, source):
-    
+
     absolute_target = os.path.abspath(target)
     absolute_source = os.path.abspath(source)
     os.makedirs(absolute_target, exist_ok=True)
     resource_metadata = load_resource_metadata(datasets)
-    
+
     # The types don't really matter here, we're just going to move all sources anyway
     datasets = transform_download_targets(resource_metadata)
     # Key by dataset name
     datasets_dict = { d.dataset: d for d in datasets }
-    
+
     # Grab all the existing files in source
     for f in glob.glob(os.path.join(absolute_source, "*-src*")):
         name = os.path.basename(f)
@@ -101,7 +107,7 @@ def organize(datasets, target, source):
         found_dataset = datasets_dict.get(dataset_name, None)
         if not found_dataset:
             continue
-            
+
         target_path = construct_grouped_path(found_dataset, name, absolute_target)
         os.makedirs(os.path.dirname(target_path), exist_ok=True)
         shutil.copyfile(f, target_path)
@@ -121,31 +127,31 @@ def load_resource_metadata(datasets_dir) -> List[Dict]:
                 dataset = yaml.load(dataset_file)
             else:
                 dataset = yaml.load(dataset_file, Loader=yaml.FullLoader)
-                
+
             loaded_yamls.append(dataset)
 
     return loaded_yamls
-    
-def multi_download(dataset_targets: List[Dataset], target, parallel=5, retries=3, retry_time=20, dryrun=False):
-    
+
+def multi_download(dataset_targets: List[Dataset], target, parallel=5, retries=3, retry_time=20, dryrun=False, replace=True):
+
     pool = multiprocessing.Pool(processes=parallel)
-    
+
     def _simple_callback(download_result_tuple):
-        # 
+        #
         success, result = download_result_tuple
         if success:
             click.echo("Downloaded successfully to {}".format(result))
         else:
             click.echo("Download failed! *{}*".format(result), err=True)
             click.echo("Aborting!")
-            
+
             pool.terminate()
-            
-    async_results = [ pool.apply_async(robust_download, (dataset, target), {"retries": retries, "dryrun": dryrun, "retry_time": retry_time}, _simple_callback ) 
+
+    async_results = [ pool.apply_async(robust_download, (dataset, target), {"retries": retries, "dryrun": dryrun, "retry_time": retry_time, "replace": replace}, _simple_callback )
         for dataset in dataset_targets ] # List[AsyncResult]
 
-    results = [ result.get() for result in async_results ] 
-    just_successes = [r[0] for r in results] 
+    results = [ result.get() for result in async_results ]
+    just_successes = [r[0] for r in results]
     return False not in just_successes
 
 
@@ -178,7 +184,7 @@ def transform_download_targets(resource_metadata, types=None) -> List[Dataset]:
 
     return transformed_dataset_targets
 
-def robust_download(dataset_target: Dataset, target, retries=3, retry_time=20, dryrun=False) -> str:
+def robust_download(dataset_target: Dataset, target, retries=3, retry_time=20, dryrun=False, replace=True) -> str:
     """
     Robustly downloads the url of the `dataset_target` to a path. The path is:
     target/<group>/<dataset>.extension.gz
@@ -187,6 +193,10 @@ def robust_download(dataset_target: Dataset, target, retries=3, retry_time=20, d
     success = True
     for tries in range(0, retries):
         path = construct_download_path(dataset_target, target)
+        if os.path.exists(path) and not replace:
+            click.echo("{} already exists, and we are not replacing existing files".format(path))
+            return (True, path)
+
         success, result = download_the_file(dataset_target.url, path, dryrun=dryrun)
         if success:
             # We succeeded, so we can move on.
@@ -194,22 +204,22 @@ def robust_download(dataset_target: Dataset, target, retries=3, retry_time=20, d
         else:
             click.echo("Download of {url} failed: {error}{trying}".format(url=dataset_target.url, error=result, trying=" - Trying again" if tries < retries else ""), err=True)
             time.sleep(retry_time)
-            
-            
+
+
     return (success, path)
 
-    
+
 def download_the_file(url, out_path, dryrun=False) -> str:
     """
     Does the download with wget in a subprocess
-    Result is a tuple of (bool, path OR error message). The first element is 
+    Result is a tuple of (bool, path OR error message). The first element is
     a bool indicating succcessful completion of the process with True, and False
     if not. If successful, the secend element is the path downloaded. Otherwise
     it's whatever standard error was from wget.
     """
     click.echo("Downloading {}".format(url))
     wget_command = "wget -nv --retry-connrefused --waitretry=10 -t 10 --no-check-certificate {} -O {}".format(url, out_path)
-    
+
     # click.echo("wget used: `{}`".format(wget_command))
     result = (True, out_path)
     if not dryrun:
@@ -236,16 +246,16 @@ def construct_download_path(dataset_target: Dataset, target) -> str:
 
     path = os.path.join(absolute_target, name)
     return path
-    
+
 def construct_grouped_path(dataset: Dataset, filename, target):
     """
     Builds the file path for a Dataset, grouped by `group`
     """
     absolute_target = os.path.abspath(target)
-    
+
     path = os.path.join(absolute_target, dataset.group, filename)
     return path
-    
+
 def extension_map(compression):
     exts = {
         "gzip": "gz"
