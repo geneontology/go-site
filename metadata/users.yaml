@@ -3965,7 +3965,7 @@
   nickname: 'Belén Juanes Cortés'
   organization: 'University of Murcia'
   uri: 'http://orcid.org/0000-0003-3641-7548'
-  -
+-
   accounts:
     github: nsuvarnaiari
   authorizations:
@@ -3988,7 +3988,7 @@
     - 'http://www.igs.umaryland.edu'
   nickname: 'Michelle Giglio'
   organization: 'IGS'
-uri: 'http://orcid.org/0000-0001-7628-5565'
+  uri: 'http://orcid.org/0000-0001-7628-5565'
 -
   accounts:
     github: jpa29
@@ -4000,4 +4000,4 @@ uri: 'http://orcid.org/0000-0001-7628-5565'
     - 'http://www.yeastgenome.org'
   nickname: 'Joanna Argasinska'
   organization: SGD
-uri: 'http://orcid.org/0000-0003-2678-2824'
+  uri: 'http://orcid.org/0000-0003-2678-2824'
