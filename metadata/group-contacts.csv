@@ -4,7 +4,7 @@ Alzheimers_University_of_Toronto,Ruth Lovering,@RLovering,
 ARUK-UCL,Barbara Kramarz,@BarbaraCzub,
 ARUK-UCL,Ruth Lovering,@RLovering,
 ASPGD,Marek Skrzypek,@marekskrzypek,
-BBOP,Seth Carbon,@kltm,Data pipeline - AmiGO - Website
+BBOP,Seth Carbon,@kltm,Noctua|Data pipeline|AmiGO|Website
 BBOP,Chris Mungall,@cmungall,All things technical and ontology-related
 BBOP,Eric Douglass,@dougli1sqrd,GO Rules - ROBOT
 BHF-UCL,Barbara Kramarz,@BarbaraCzub,
@@ -79,9 +79,9 @@ PAMGO_MGG,Not actively maintainted/GO_Central,@ggeorghiou,contact @mgiglio99 for
 PAMGO_MGG,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
 ParkinsonsUK-UCL,Barbara Kramarz,@BarbaraCzub,
 ParkinsonsUK-UCL,Ruth Lovering,@RLovering,
-PINC,Not actively maintainted/GO_Central,@ggeorghiou,no contact person
-PINC,Not actively maintainted/GO_Central,@pgaudet,no contact person
-PINC,Not actively maintainted/GO_Central,@vanaukenk,no contact person
+PINC (ProtInc),Not actively maintainted/GO_Central,@ggeorghiou,no contact person
+PINC (ProtInc),Not actively maintainted/GO_Central,@pgaudet,no contact person
+PINC (ProtInc),Not actively maintainted/GO_Central,@vanaukenk,no contact person
 PIR,Kati Laiho,laihokati,
 PomBase,ValWood,@valwood,
 PomBase,Midori Harris,@mah11,
@@ -98,6 +98,8 @@ Rfam,Ioanna Kalvari,@kalvari,
 Rfam,Joanna Arganiska,@JoannaArgasinska,
 RGD,Stan Laulederkind,@slaulederkind,
 RGD,Tom Hayman,@gthayman,
+RGD,Jennifer Smith,@jrsjrs,pipeline and data
+RGD,Marek Tuta,@tutajm,import and export pipelines
 Roslin_Institute,Not actively maintainted/GO_Central,@pgaudet,no contact person
 SGD,Stacia Engel,@srengel,
 SGD,Suzi Aleksander,@suzialeksander,
