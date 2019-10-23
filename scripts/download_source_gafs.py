@@ -177,6 +177,7 @@ def transform_download_targets(resource_metadata, types=None) -> List[Dataset]:
                 # Skip if the dataset is excluded by default in the metadata
                 continue
             
+
             dataset = d["dataset"]
             url = d["source"]
             comp = d.get("compression", None)
