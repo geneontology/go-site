@@ -173,7 +173,7 @@ def transform_download_targets(resource_metadata, types=None) -> List[Dataset]:
                 # Skip if the type of this dataset is not one we want specified above
                 continue
                 
-            if d["exclude"]:
+            if d.get("exclude", False):
                 # Skip if the dataset is excluded by default in the metadata
                 continue
             
