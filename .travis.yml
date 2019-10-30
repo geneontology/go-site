@@ -16,8 +16,6 @@ before_install:
    - sudo pip3 install typing
    - sudo pip3 install graphstore/rule-runner
    - docker pull geneontology/dev-base:latest
-   - sudo pip3 install -r pipeline/requirements.txt
-
 ## Possible other way.
 install:
   - gem install kwalify
