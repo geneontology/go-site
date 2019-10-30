@@ -12,6 +12,7 @@ before_install:
    - sudo pip3 install pyyaml
    - sudo pip3 install typing
    - sudo pip3 install graphstore/rule-runner
+   - sudo pip3 install -r pipeline/requirements.txt
 
 ## Possible other way.
 install:
@@ -32,6 +33,7 @@ script:
   ## Somewhat awkwardly reuse sparta to check non-go-rules files that
   ## are still structured yamldown/frontmatter.
   - mkdir -p /tmp/foo && mcp 'metadata/gorefs/goref-0000*' '/tmp/foo/gorule-0000#1' && sparta valid --rules /tmp/foo/ --schema metadata/gorefs.schema.yaml
+  - ./scripts/rule-example-validation.sh
 notifications:
   email:
     - sjcarbon@lbl.gov
