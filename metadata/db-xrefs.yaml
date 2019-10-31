@@ -3326,9 +3326,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.wormbase.org/db/misc/paper?name=[example_id]
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WB_REF:WBPaper00004823
-      example_url: http://www.wormbase.org/db/misc/paper?name=WBPaper00004823
+      example_url: http://www.wormbase.org/get?name=WBPaper00004823
 - database: WBbt
   name: C. elegans gross anatomy
   generic_urls:
@@ -3337,11 +3337,15 @@
     - type_name: cell
       type_id: GO:0005623
       id_syntax: '[0-9]{7}'
-      example_id: WBbt:0005733
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
+      example_id: WBbt:0005792
+      example_url: http://www.wormbase.org/get?name=WBbt:0005792
     - type_name: metazoan anatomical entity
       type_id: UBERON:0001062
       id_syntax: '[0-9]{7}'
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WBbt:0005733
+      example_url: http://www.wormbase.org/get?name=WBbt:0005733
 - database: WBls
   name: C. elegans development
   rdf_uri_prefix: http://purl.obolibrary.org/obo/WBls_
@@ -3351,7 +3355,9 @@
     - type_name: nematoda life stage
       type_id: WBls:0000075
       id_syntax: '[0-9]{7}'
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WBls:0000010
+      example_url: http://www.wormbase.org/get?name=WBls:0000010
 - database: WBPhenotype
   name: WormBase phenotype ontology
   rdf_uri_prefix: http://purl.obolibrary.org/obo/WBPhenotype_
@@ -3361,9 +3367,9 @@
     - type_name: quality
       type_id: PATO:0000001
       id_syntax: '[0-9]{7}'
-      url_syntax: http://www.wormbase.org/species/c_elegans/phenotype/WBPhenotype:[example_id]
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WBPhenotype:0002117
-      example_url: http://www.wormbase.org/species/c_elegans/phenotype/WBPhenotype:0000154
+      example_url: http://www.wormbase.org/get?name=WBPhenotype:0002117
 - database: Wikipedia
   name: Wikipedia
   generic_urls:
