@@ -278,7 +278,7 @@
       type_id: BET:0000000
 - database: CARO
   name: Common Anatomy Reference Ontology
-  description: An upper ontology for anatomy used by OBO Foundry ontologies. Used to facilitate interoperability between existing anatomy ontologies for different species 
+  description: An upper ontology for anatomy used by OBO Foundry ontologies. Used to facilitate interoperability between existing anatomy ontologies for different species
   rdf_uri_prefix: http://purl.obolibrary.org/obo/CARO_
   generic_urls:
     - http://purl.obolibrary.org/obo/caro
@@ -3302,7 +3302,7 @@
       example_id: WB:WBVar00089843
       example_url: http://www.wormbase.org/get?name=WBVar00089843
     - type_name: RNAi
-      type_id: topic:3523 
+      type_id: topic:3523
       id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
       url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WB:WBRNAi00110325
@@ -3389,9 +3389,9 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: XB-GENE-[0-9]+
-      url_syntax: http://www.xenbase.org/common/xsearch.do?searchValue=[example_id]
+      url_syntax: http://www.xenbase.org/common/xsearch.do?exactSearch=true&searchIn=7&searchValue=[example_id]
       example_id: Xenbase:XB-GENE-6255962
-      example_url: http://www.xenbase.org/common/xsearch.do?searchValue=XB-GENE-6255962
+      example_url: http://www.xenbase.org/common/xsearch.do?exactSearch=true&searchIn=7&searchValue=XB-GENE-6255962
     - type_name: morpholino oligo
       type_id: SO:0000034
       id_syntax: XB-MORPHOLINO-[0-9]+
@@ -3453,7 +3453,7 @@
       example_url: http://purl.obolibrary.org/obo/plana/references/0000001
 - database: TFClass
   name: TFClass is a resource for the classification of eukaryotic transcription factors based on the characteristics of their DNA-binding domains
-  generic_urls: 
+  generic_urls:
     - http://tfclass.bioinf.med.uni-goettingen.de/
   synonyms:
     - TFCLASS_FAMILY
