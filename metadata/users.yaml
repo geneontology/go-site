@@ -1531,11 +1531,6 @@
   uri: 'GOC:lh'
   xref: 'GOC:lh'
 -
-  nickname: 'Michelle Gwinn'
-  organization: IGS
-  uri: 'GOC:mlg'
-  xref: 'GOC:mlg'
--
   nickname: 'Scott Durkin'
   organization: JCVI
   uri: 'GOC:sd'
@@ -4019,6 +4014,7 @@
   nickname: 'Michelle Giglio'
   organization: 'IGS'
   uri: 'http://orcid.org/0000-0001-7628-5565'
+  xref: 'GOC:mlg'
 -
   nickname: 'Josh Jaffery'
   organization: WB
