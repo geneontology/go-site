@@ -664,15 +664,17 @@
       example_id: ECK:ECK3746
       example_url: http://www.ecogene.org/geneInfo.php?eck_id=ECK3746
 - database: ECO
-  name: Evidence Code ontology
+  name: Evidence Code Ontology
   rdf_uri_prefix: http://purl.obolibrary.org/obo/ECO_
   generic_urls:
-    - http://www.geneontology.org/
+    - http://www.evidenceontology.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
       id_syntax: \d{7}
-      example_id: ECO:0000002
+      url_syntax: http://www.evidenceontology.org/browse/#ECO_[example_id]
+      example_id: ECO:0000315
+      example_url: http://www.evidenceontology.org/browse/#ECO_0000315
 - database: EcoCyc
   name: Encyclopedia of E. coli metabolism
   generic_urls:
