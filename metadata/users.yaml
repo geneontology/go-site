@@ -1990,6 +1990,7 @@
     - 52a4b1e1f8519d5ad27335e0b920eb7e
   groups:
     - 'http://www.wormbase.org'
+    - 'http://geneontology.org'
   nickname: 'Kimberly Van Auken'
   organization: WB
   uri: 'http://orcid.org/0000-0002-1706-4196'
