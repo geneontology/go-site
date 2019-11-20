@@ -4,6 +4,9 @@ rvm: "1.9.3"
 dist: trusty
 sudo: required
 
+services:
+  - docker
+
 before_install:
    - sudo apt-get update -qq
    - sudo apt-get install -y python3 -qq
@@ -12,7 +15,7 @@ before_install:
    - sudo pip3 install pyyaml
    - sudo pip3 install typing
    - sudo pip3 install graphstore/rule-runner
-
+   - docker pull geneontology/dev-base:latest
 ## Possible other way.
 install:
   - gem install kwalify
@@ -32,6 +35,8 @@ script:
   ## Somewhat awkwardly reuse sparta to check non-go-rules files that
   ## are still structured yamldown/frontmatter.
   - mkdir -p /tmp/foo && mcp 'metadata/gorefs/goref-0000*' '/tmp/foo/gorule-0000#1' && sparta valid --rules /tmp/foo/ --schema metadata/gorefs.schema.yaml
+  - docker run -it -v $(pwd):/tmp/go-site -w /tmp/go-site geneontology/dev-base:latest /bin/bash -c "pip3 install -r pipeline/requirements.txt && ./scripts/rule-example-validation.sh"
+
 notifications:
   email:
     - sjcarbon@lbl.gov

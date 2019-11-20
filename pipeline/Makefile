@@ -117,8 +117,8 @@ target/groups/goa/goa_uniprot_all_noiea_cam.ttl: target/go-ontology.json target/
 	$(RDF_GEN) convert -a gaf -r target/go-ontology.json -o target/groups/goa/goa_uniprot_all_noiea_cam.ttl target/groups/goa/goa_uniprot_all_noiea.gaf
 	gzip -cf target/groups/goa/goa_uniprot_all_noiea_cam.ttl > target/groups/goa/goa_uniprot_all_noiea_cam.ttl.gz
 
-target/groups/goa/goa_uniprot_all_noiea.gpad: target/groups/goa/goa_uniprot_all_noiea.gaf
-	ontobio-parse-assocs.py -f target/groups/goa/goa_uniprot_all_noiea.gaf -o target/groups/goa/goa_uniprot_all_noiea.gpad.tmp --report-md rep.md convert --to gpad && mv target/groups/goa/goa_uniprot_all_noiea.gpad.tmp target/groups/goa/goa_uniprot_all_noiea.gpad
+target/groups/goa/goa_uniprot_all_noiea.gpad: target/go-ontology.json target/groups/goa/goa_uniprot_all_noiea.gaf
+	ontobio-parse-assocs.py -r target/go-ontology.json -f target/groups/goa/goa_uniprot_all_noiea.gaf -o target/groups/goa/goa_uniprot_all_noiea.gpad.tmp --report-md rep.md convert --to gpad && mv target/groups/goa/goa_uniprot_all_noiea.gpad.tmp target/groups/goa/goa_uniprot_all_noiea.gpad
 	gzip -cf target/groups/goa/goa_uniprot_all_noiea.gpad > target/groups/goa/goa_uniprot_all_noiea.gpad.gz
 
 target/groups/goa/goa_uniprot_all_noiea.gpi: target/groups/goa/goa_uniprot_all_noiea.gaf

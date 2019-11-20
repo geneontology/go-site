@@ -819,7 +819,7 @@
     - 'http://informatics.jax.org'
   nickname: 'Dmitry Sitnikov'
   organization: MGI
-  uri: 'http://orcid.org/0000-0002-5283-5283'
+  uri: 'http://orcid.org/0000-0003-3394-9805'
   xref: 'GOC:dms'
 -
   authorizations:
@@ -1531,11 +1531,6 @@
   uri: 'GOC:lh'
   xref: 'GOC:lh'
 -
-  nickname: 'Michelle Gwinn'
-  organization: IGS
-  uri: 'GOC:mlg'
-  xref: 'GOC:mlg'
--
   nickname: 'Scott Durkin'
   organization: JCVI
   uri: 'GOC:sd'
@@ -1995,6 +1990,7 @@
     - 52a4b1e1f8519d5ad27335e0b920eb7e
   groups:
     - 'http://www.wormbase.org'
+    - 'http://geneontology.org'
   nickname: 'Kimberly Van Auken'
   organization: WB
   uri: 'http://orcid.org/0000-0002-1706-4196'
@@ -4016,9 +4012,10 @@
         allow-edit: true
   groups:
     - 'http://www.igs.umaryland.edu'
-  nickname: 'Michelle Giglio'
+  nickname: 'Michelle Gwinn Giglio'
   organization: 'IGS'
   uri: 'http://orcid.org/0000-0001-7628-5565'
+  xref: 'GOC:mlg'
 -
   nickname: 'Josh Jaffery'
   organization: WB
