@@ -16,8 +16,9 @@ datasets:
    dataset: sgn
    submitter: sgn
    compression: gzip
-   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.sgn.gz
+   source: ftp://ftp.solgenomics.net/ontology/GO/gene_association.sgn
    entity_type:
    status: active
    species_code: Solanaceae
-   taxa:
+   taxa: 
+    - NCBITaxon:4081
