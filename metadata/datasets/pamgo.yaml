@@ -38,23 +38,7 @@ datasets:
    species_code:
    taxa:
     - NCBITaxon:198628
-
- -
-   id: pamgo_mgrisea.gaf
-   label: "pamgo_mgrisea gaf file"
-   description: "gaf file for pamgo_mgrisea from Plant-Associated Microbe Gene Ontology Interest Group"
-   url: http://current.geneontology.org/annotations/pamgo_mgrisea.gaf.gz
-   type: gaf
-   dataset: pamgo_mgrisea
-   submitter: pamgo
-   compression: gzip
-   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.PAMGO_Mgrisea.gz
-   entity_type:
-   status: active
-   species_code:
-   taxa:
-    - NCBITaxon:148305
-
+    
  -
    id: pamgo_oomycetes.gaf
    label: "pamgo_oomycetes gaf file"
