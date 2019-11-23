@@ -70,7 +70,7 @@ SUPPRESS_THESE_TAGS = $(foreach tag,$(GORULE_TAGS_TO_SUPPRESS),--suppress-rule-r
 .PRECIOUS: %.gaferences.json
 %.gaferences.json: $(GAF_OWL) target/go_context.jsonld target/obo_context.jsonld %.sources
 	$(eval group := $(lastword $(subst /, ,$*)))
-	python3 ../scripts/gaferencer-by-metadata.py group $(group) -d $(METADATA_DIR)/datasets --target target/groups/$(group) -c target/go_context.jsonld -c target/obo_context.jsonld --ontology $(GAF_OWL) --gafs target/groups/$(group) $(DONT_VALIDATE) --dryrun
+	python3 ../scripts/gaferencer-by-metadata.py group $(group) -d $(METADATA_DIR)/datasets --target target/groups/$(group) -c target/go_context.jsonld -c target/obo_context.jsonld --ontology $(GAF_OWL) --gafs target/groups/$(group) $(DONT_VALIDATE)
 
 # Should be something like target/groups/<group>/<group>.group
 .PRECIOUS: %.gaf.gz
