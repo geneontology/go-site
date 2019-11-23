@@ -27,21 +27,23 @@ def cli():
 @click.option("--ontology", "-o", type=click.Path(exists=True), required=True)
 @click.option("--gafs", "-g", type=click.Path(exists=True, file_okay=False), help="Directory where to find dataset gafs")
 @click.option("--gaferencer", type=click.Path(exists=True, dir_okay=False), help="Path to gaferencer if not in local path.")
-def group(group, datasets, target, contexts, ontology, gafs, gaferencer):
+@click.option("--excludes", "-x", multiple=True, help="Any dataset to exclude from processing in the group")
+@click.option("--dryrun", default=False, is_flag=True)
+def group(group, datasets, target, contexts, ontology, gafs, gaferencer, excludes, dryrun):
     group_dataset = list(filter(lambda r: r["id"]==group, load_resource_metadata(datasets)))
     if len(group_dataset) == 0:
         raise click.ClickException("No Resource group with the name {}".format(group))
 
     joined_contexts = ",".join(contexts)
 
-    possible_paths = construct_gaf_paths(gafs, group_dataset[0])
+    possible_paths = construct_gaf_paths(gafs, group_dataset[0], excludes)
 
     out_paths = []
     all_gaferences = []
     for path in possible_paths:
         zipped = "{path}.gz".format(path=path)
         if not os.path.exists(zipped) and not os.path.exists(path):
-            # Then that dataset is not present for whatever reason. Just skip.
+            # Then that dataset is not present for whatever reason. resultJust skip.
             click.echo("WARNING: skipping gaferencer on {}: GAF does not exist.".format(path))
             continue
 
@@ -53,19 +55,21 @@ def group(group, datasets, target, contexts, ontology, gafs, gaferencer):
         out = os.path.join(target, "{}.gaferences.json".format(name))
 
         # At this point we have an unzipped gaf
-        success, result = run_gaferencer(joined_contexts, ontology, path, out)
+        success, result = run_gaferencer(joined_contexts, ontology, path, out, dryrun=dryrun)
         if not success:
             raise click.ClickException("Gaferencer Failed: {}".format(result))
 
         out_paths.append(result)
 
-    for path in out_paths:
-        with open(path) as out_file:
-            outjson = json.load(out_file)
-            all_gaferences.extend(outjson)
+    if not dryrun:
+        for path in out_paths:
+            with open(path) as out_file:
+                outjson = json.load(out_file)
+                all_gaferences.extend(outjson)
 
-    with open(os.path.join(target, "{}.gaferences.json".format(group)), "w") as group_gaference:
-        group_gaference.write(json.dumps(all_gaferences, indent=4))
+
+        with open(os.path.join(target, "{}.gaferences.json".format(group)), "w") as group_gaference:
+            group_gaference.write(json.dumps(all_gaferences, indent=4))
 
 
 def unzip(path, target):
@@ -83,9 +87,9 @@ def unzip(path, target):
             for chunk in chunks:
                 tf.write(chunk)
 
-def construct_gaf_paths(gaf_dir, group_dataset):
+def construct_gaf_paths(gaf_dir, group_dataset, excludes):
     gaf_paths = []
-    datasets = [dataset for dataset in group_dataset["datasets"] if dataset["type"] == "gaf" and not dataset.get("exclude", False)]
+    datasets = [dataset for dataset in group_dataset["datasets"] if dataset["type"] == "gaf" and not dataset.get("exclude", False) and dataset["dataset"] not in excludes]
     for dataset in datasets:
         path = os.path.join(gaf_dir, "{dataset}-src.gaf".format(dataset=dataset["dataset"]))
         gaf_paths.append(path)
