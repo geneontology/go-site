@@ -105,7 +105,13 @@ def main(report, template, date, suppress_rule_tag):
                 }
             else:
                 rule_by_dataset[rule][dataset["id"]] = len(messages)
-                rule_by_dataset[rule]["level"] = messages[0]["level"].lower() if len(messages) > 0 else "info"
+                # We can only increase `level`. If level is info, but messages are warn or error, than we reset.
+                # If level is warning, then only error will replace, since it's "higher".
+                if rule_by_dataset[rule]["level"] == "info" and len(messages) > 0 and messages[0]["level"].lower() in ["error", "warning"]:
+                    rule_by_dataset[rule]["level"] = messages[0]["level"].lower()
+                elif rule_by_dataset[rule]["level"] == "warning" and len(messages) > 0 and messages[0]["level"].lower() == "error":
+                    rule_by_dataset[rule]["level"] = "error"
+
 
     # Add empty cells in as 0s
     for h in header:
