@@ -1,0 +1,13 @@
+---
+layout: rule
+id: GORULE:0000056
+title: "Annotations should validate against GO shape expressions"
+type: report
+fail_mode: soft
+status: proposed
+contact: "go-quality@mailman.stanford.edu"
+---
+Annotation data can be checked using Shex Shapes as GO-CAM models. GO has a collection of shape
+expressions that are used for this purpose at https://github.com/geneontology/go-shapes/tree/master/shapes.
+
+Annotations as GO-CAMs should successfully validate against this set of Shex Shapes.
