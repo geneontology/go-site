@@ -60,25 +60,27 @@ BGMEM ?= 12G
 DONT_VALIDATE = -x goa_uniprot_all $(foreach exclusion,$(DATASET_EXCLUDES),-x $(exclusion) )
 SUPPRESS_THESE_TAGS = $(foreach tag,$(GORULE_TAGS_TO_SUPPRESS),--suppress-rule-reporting-tag $(tag) )
 
-%-src.gaf.gz:
+.PRECIOUS: %.sources
+%.sources:
 	# See comment in %.groups on this construct
 	$(eval group := $(lastword $(subst /, ,$*)))
-	python3 ../scripts/download_source_gafs.py group $(group) -d $(METADATA_DIR)/datasets --target target/groups/$(group) --type gaf --type gpi $(DONT_VALIDATE)
+	python3 ../scripts/download_source_gafs.py group $(group) -d $(METADATA_DIR)/datasets --target target/groups/$(group) --type gaf $(DONT_VALIDATE) --replace false
+	touch $*.sources
 
-# .PRECIOUS: %.gaferences.json
-# %.gaferences.json: $(GAF_OWL) target/go_context.jsonld target/obo_context.jsonld %-src.gaf.gz
-# 	gzip -dcf $*-src.gaf.gz > $*-src.gaf # unzip source gaf
-# 	gaferencer gaf --ontfile true --contexts target/go_context.jsonld,target/obo_context.jsonld $(GAF_OWL) $*-src.gaf $*.gaferences.json
+.PRECIOUS: %.gaferences.json
+%.gaferences.json: $(GAF_OWL) target/go_context.jsonld target/obo_context.jsonld %.sources
+	$(eval group := $(lastword $(subst /, ,$*)))
+	python3 ../scripts/gaferencer-by-metadata.py group $(group) -d $(METADATA_DIR)/datasets --target target/groups/$(group) -c target/go_context.jsonld -c target/obo_context.jsonld --ontology $(GAF_OWL) --gafs target/groups/$(group) $(DONT_VALIDATE)
 
 # Should be something like target/groups/<group>/<group>.group
 .PRECIOUS: %.gaf.gz
-%.group: target/go-ontology.json # %.gaferences.json
+%.group: target/go-ontology.json %.gaferences.json
 	mkdir -p $(dir $*) # Make the group directory
 	# This will split each slash in the path to space separated list, then we pick the last one, the group directory
 	# assigns a make variable called `group` computed from the $* generic target stem.
 	# Ex: target/groups/fb/fb.gaf as a target, the stem ($*) is target/groups/fb/fb, so `group` gets assigned to fb
 	$(eval group := $(lastword $(subst /, ,$*)))
-	validate.py produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE) $(SUPPRESS_THESE_TAGS) # --skip-existing-files # --gaferencer-file $*.gaferences.json
+	validate.py produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE) $(SUPPRESS_THESE_TAGS) --skip-existing-files --gaferencer-file $*.gaferences.json
 	touch $@
 
 # dataset
