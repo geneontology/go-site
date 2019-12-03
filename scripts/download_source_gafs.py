@@ -8,6 +8,7 @@ import shlex
 import multiprocessing
 import time
 import shutil
+import gzip
 
 from typing import List, Dict
 
@@ -32,7 +33,8 @@ def cli():
 @click.option("--retry-time", "-t", default=15, help="Number of seconds between retry attempts", show_default=True)
 @click.option("--map-dataset-url", "-m", multiple=True, type=(str, str, str), default=dict(), help="Replacement url mapping for a dataset: `DATASET TYPE URL`")
 @click.option("--replace", type=bool, default=True, help="Set to False if the download should not replace existing files")
-def all(datasets, target, type, exclude, only_group, parallel, dry_run, retries, retry_time, map_dataset_url, replace):
+@click.option("--zip-unzip", is_flag=True, default=False, help="Ensure all sources are both zipped and unzipped up after downloaded")
+def all(datasets, target, type, exclude, only_group, parallel, dry_run, retries, retry_time, map_dataset_url, replace, zip_unzip):
     os.makedirs(os.path.abspath(target), exist_ok=True)
 
     dataset_mappings = { (dataset, t): url for (dataset, t, url) in map_dataset_url }
@@ -51,9 +53,24 @@ def all(datasets, target, type, exclude, only_group, parallel, dry_run, retries,
     dataset_targets = [ Dataset(group=ds.group, dataset=ds.dataset, url=dataset_mappings.get((ds.dataset, ds.type), ds.url), type=ds.type, compression=ds.compression)
         for ds in dataset_targets ]
 
-    success = multi_download(dataset_targets, target, parallel=parallel, dryrun=dry_run, retries=retries, retry_time=retry_time, replace=replace)
-    if not success:
+    results = multi_download(dataset_targets, target, parallel=parallel, dryrun=dry_run, retries=retries, retry_time=retry_time, replace=replace) # list of (success, path)
+    just_successes = [r[0] for r in results]
+    if False in just_successes:
         raise click.ClickException("Failed Download")
+
+    if zip_unzip:
+        for t in results:
+            # We rely here on the file extension. We can do this because we construct
+            # the path based on the `compression` field in the metadata yaml, and so
+            # paths with .gz should be zipped, and paths without should not be. Here
+            # We zip all files with paths that end in gz
+            if os.path.splitext(t[1])[1].endswith(".gz"):
+                # If we end in gz, then unzip
+                unzip(t[1], os.path.splitext(t[1])[0])
+            else:
+                # We are not zipped, so let's zip up
+                zipup(t[1])
+
 
 
 @cli.command()
@@ -67,7 +84,8 @@ def all(datasets, target, type, exclude, only_group, parallel, dry_run, retries,
 @click.option("--retries", "-r", default=3, help="Max number of times to download a single source before giving up on everyone", show_default=True)
 @click.option("--retry-time", "-t", default=15, help="Number of seconds between retry attempts", show_default=True)
 @click.option("--replace", type=bool, default=True, help="Set to False if the download should not replace existing files")
-def group(group, datasets, target, type, exclude, dry_run, parallel, retries, retry_time, replace):
+@click.option("--zip-unzip", is_flag=True, default=False, help="Ensure all sources are both zipped and unzipped up after downloaded")
+def group(group, datasets, target, type, exclude, dry_run, parallel, retries, retry_time, replace, zip_unzip):
     os.makedirs(os.path.abspath(target), exist_ok=True)
 
     click.echo("Using {} for datasets".format(datasets))
@@ -79,9 +97,26 @@ def group(group, datasets, target, type, exclude, dry_run, parallel, retries, re
     dataset_targets = transform_download_targets(resource_metadata, types=type)
     # Filter out datasets that we want excluded
     dataset_targets = list(filter(lambda t: t.dataset not in exclude, dataset_targets))
-    success = multi_download(dataset_targets, target, parallel=parallel, dryrun=dry_run, retries=retries, retry_time=retry_time, replace=replace)
-    if not success:
-        raise click.ClickException("Failed Download!")
+    results = multi_download(dataset_targets, target, parallel=parallel, dryrun=dry_run, retries=retries, retry_time=retry_time, replace=replace)
+
+    just_successes = [r[0] for r in results]
+    if False in just_successes:
+        raise click.ClickException("Failed Download")
+
+    if zip_unzip:
+        for t in results:
+            # We rely here on the file extension. We can do this because we construct
+            # the path based on the `compression` field in the metadata yaml, and so
+            # paths with .gz should be zipped, and paths without should not be. Here
+            # We zip all files with paths that end in gz
+            click.echo(t[1])
+            if os.path.splitext(t[1])[1].endswith(".gz"):
+                # If we end in gz, then unzip
+                click.echo("{} to {}".format(t[1], os.path.splitext(t[1])[0]))
+                unzip(t[1], os.path.splitext(t[1])[0])
+            else:
+                # We are not zipped, so let's zip up
+                zipup(t[1])
 
 @cli.command()
 @click.option("--datasets", "-d", type=click.Path(exists=True), required=True, help="Path to directory with all the dataset yamls")
@@ -151,8 +186,8 @@ def multi_download(dataset_targets: List[Dataset], target, parallel=5, retries=3
         for dataset in dataset_targets ] # List[AsyncResult]
 
     results = [ result.get() for result in async_results ]
-    just_successes = [r[0] for r in results]
-    return False not in just_successes
+    return results
+
 
 
 def transform_download_targets(resource_metadata, types=None) -> List[Dataset]:
@@ -172,11 +207,11 @@ def transform_download_targets(resource_metadata, types=None) -> List[Dataset]:
             if types != None and t not in types:
                 # Skip if the type of this dataset is not one we want specified above
                 continue
-                
+
             if d.get("exclude", False):
                 # Skip if the dataset is excluded by default in the metadata
                 continue
-            
+
 
             dataset = d["dataset"]
             url = d["source"]
@@ -229,6 +264,9 @@ def download_the_file(url, out_path, dryrun=False) -> str:
         exit_code = p.wait() # This is probably redundant, but will return the exit code
         if exit_code != 0:
             result = (False, err.decode("utf-8"))
+            if os.path.exists(out_path):
+                # Must be done because wget -O leaves an empty file if it fails
+                os.remove(out_path)
         else:
             result = (True, out_path)
             # Somehow actually verify the the file is correct?
@@ -262,6 +300,31 @@ def extension_map(compression):
         "gzip": "gz"
     }
     return exts.get(compression, compression)
+
+def zipup(file_path):
+    click.echo("Zipping {}".format(file_path))
+    path, filename = os.path.split(file_path)
+    zipname = "{}.gz".format(filename)
+    target = os.path.join(path, zipname)
+
+    with open(file_path, "rb") as p:
+        with gzip.open(target, "wb") as tf:
+            tf.write(p.read())
+
+def unzip(path, target):
+    click.echo("Unzipping {}".format(path))
+    def chunk_gen():
+        with gzip.open(path, "rb") as p:
+            while True:
+                chunk = p.read(size=512 * 1024)
+                if not chunk:
+                    break
+                yield chunk
+
+    with open(target, "wb") as tf:
+        with click.progressbar(iterable=chunk_gen()) as chunks:
+            for chunk in chunks:
+                tf.write(chunk)
 
 if __name__ == "__main__":
     cli()

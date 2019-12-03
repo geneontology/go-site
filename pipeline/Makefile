@@ -64,7 +64,7 @@ SUPPRESS_THESE_TAGS = $(foreach tag,$(GORULE_TAGS_TO_SUPPRESS),--suppress-rule-r
 %.sources:
 	# See comment in %.groups on this construct
 	$(eval group := $(lastword $(subst /, ,$*)))
-	python3 ../scripts/download_source_gafs.py group $(group) -d $(METADATA_DIR)/datasets --target target/groups/$(group) --type gaf $(DONT_VALIDATE) --replace false
+	python3 ../scripts/download_source_gafs.py group $(group) -d $(METADATA_DIR)/datasets --target target/groups/$(group) --type gaf $(DONT_VALIDATE) --replace false --zip-unzip
 	touch $*.sources
 
 .PRECIOUS: %.gaferences.json
