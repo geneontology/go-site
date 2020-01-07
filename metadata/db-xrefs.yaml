@@ -1954,9 +1954,9 @@
     - type_name: protein
       type_id: PR:000000001
       id_syntax: '[A-Z]{3}[0-9]{5}(\.[0-9]+)?'
-      url_syntax: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=[example_id]
+      url_syntax: https://www.ncbi.nlm.nih.gov/protein/[example_id]
       example_id: NCBI_GP:EAL72968
-      example_url: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein&val=EAL72968
+      example_url: https://www.ncbi.nlm.nih.gov/protein/EAL72968
 - database: NCBI_locus_tag
   name: NCBI locus tag
   generic_urls:
@@ -2519,9 +2519,9 @@
     - type_name: chemical entity
       type_id: CHEBI:24431
       id_syntax: '[0-9]{4,}'
-      url_syntax: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&DB=pcsubstance&term=[example_id]
+      url_syntax: https://pubchem.ncbi.nlm.nih.gov/substance/[example_id]
       example_id: PubChem_Substance:4594
-      example_url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&DB=pcsubstance&term=4594
+      example_url: https://pubchem.ncbi.nlm.nih.gov/substance/4594
 - database: RAP-DB
   name: Rice annotation Project database
   generic_urls:
