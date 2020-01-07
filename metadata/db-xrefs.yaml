@@ -2508,9 +2508,9 @@
     - type_name: chemical entity
       type_id: CHEBI:24431
       id_syntax: '[0-9]+'
-      url_syntax: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&DB=pccompound&term=[example_id]
-      example_id: PubChem_Compound:2244
-      example_url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&DB=pccompound&term=2244
+      url_syntax: https://pubchem.ncbi.nlm.nih.gov/compound/[example_id]
+      example_id: PubChem_Compound:159296
+      example_url: https://pubchem.ncbi.nlm.nih.gov/compound/159296
 - database: PubChem_Substance
   name: NCBI PubChem database of chemical substances
   generic_urls:
