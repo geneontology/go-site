@@ -1590,13 +1590,6 @@
       url_syntax: http://www.jstor.org/stable/[example_id]
       example_id: JSTOR:3093870
       example_url: http://www.jstor.org/stable/3093870
-- database: KEGG
-  name: Kyoto Encyclopedia of Genes and Genomes
-  generic_urls:
-    - http://www.genome.ad.jp/kegg/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
 - database: KEGG_ENZYME
   name: KEGG Enzyme Database
   rdf_uri_prefix: http://identifiers.org/kegg.enzyme/
