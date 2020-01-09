@@ -53,7 +53,7 @@
       type_id: BET:0000000
       url_syntax: http://www.plasmodb.org/gene/[example_id]
       example_id: ApiDB_PlasmoDB:PF11_0344
-      example_url: http://www.plasmodb.org/gene/PF11_0344
+      example_url: https://plasmodb.org/plasmo/app/record/gene/PF11_0344
 - database: APSNET
   name: APSNET Common Names of Plant Diseases
   generic_urls:
