@@ -8,6 +8,7 @@
 ####    ./node_modules/yamljs/bin/yaml2json -p ./metadata/db-xrefs.yaml > ./metadata/db-xrefs.json
 ####
 type: seq
+is_obsolete: boolean
 sequence:
   - type: map
     mapping:
