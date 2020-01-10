@@ -1813,14 +1813,14 @@
       type_id: SO:0000704
       id_syntax: MGI:[0-9]{5,}
       url_syntax: http://www.informatics.jax.org/accession/[example_id]
-      example_id: MGI:MGI:80863
-      example_url: http://www.informatics.jax.org/accession/MGI:80863
-    - type_name: variation
+      example_id: MGI:MGI:1345277
+      example_url: http://www.informatics.jax.org/accession/MGI:1345277
+    - type_name: allele
       type_id: VariO:0001
       id_syntax: MGI:[0-9]{5,}
       url_syntax: http://www.informatics.jax.org/accession/[example_id]
-      example_id: MGI:MGI:80863
-      example_url: http://www.informatics.jax.org/accession/MGI:80863
+      example_id: MGI:MGI:5008734
+      example_url: http://www.informatics.jax.org/accession/MGI:5008734
 - database: MIPS_funcat
   name: MIPS Functional Catalogue
   generic_urls:
