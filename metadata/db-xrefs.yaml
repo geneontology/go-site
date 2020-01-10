@@ -206,9 +206,9 @@
   entity_types:
     - type_name: catalytic activity
       type_id: GO:0003824
-      url_syntax: http://www.brenda-enzymes.info/php/result_flat.php4?ecno=[example_id]
+      url_syntax: https://www.brenda-enzymes.info/enzyme.php?ecno=[example_id]
       example_id: BRENDA:4.2.1.3
-      example_url: http://www.brenda-enzymes.info/php/result_flat.php4?ecno=4.2.1.3
+      example_url: https://www.brenda-enzymes.info/enzyme.php?ecno=4.2.1.3
 - database: BTO
   name: BRENDA tissue / enzyme ontology
   description: A structured controlled vocabulary for the source of an enzyme comprising tissues, cell lines, cell types and cell cultures.
@@ -224,7 +224,7 @@
 - database: Broad
   name: Broad Institute
   generic_urls:
-    - http://www.broad.mit.edu/
+    - https://www.broadinstitute.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
