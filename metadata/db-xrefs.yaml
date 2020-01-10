@@ -1279,19 +1279,9 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: '[0-9]+'
-      url_syntax: http://www.genenames.org/data/hgnc_data.php?hgnc_id=HGNC:[example_id]
+      url_syntax: https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:[example_id]
       example_id: HGNC:29
-      example_url: http://www.genenames.org/data/hgnc_data.php?hgnc_id=HGNC:29
-- database: HGNC_gene
-  name: HUGO Gene Nomenclature Committee
-  generic_urls:
-    - http://www.genenames.org/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      url_syntax: http://www.genenames.org/data/hgnc_data.php?app_sym=[example_id]
-      example_id: HGNC_gene:ABCA1
-      example_url: http://www.genenames.org/data/hgnc_data.php?app_sym=ABCA1
+      example_url: https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:29
 - database: HPA
   name: Human Protein Atlas tissue profile information
   generic_urls:
@@ -1341,7 +1331,7 @@
   name: ImMunoGeneTics database covering immunoglobulins and T-cell receptors
   description: Database of immunoglobulins and T cell receptors from human and other vertebrates, with translation for fully annotated sequences.
   generic_urls:
-    - http://imgt.cines.fr
+    - http://www.imgt.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -1711,9 +1701,9 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: '[A-Za-z][A-Za-z0-9]*'
-      url_syntax: http://www.maizegdb.org/cgi-bin/displaylocusresults.cgi?term=[example_id]
-      example_id: MaizeGDB_Locus:ZmPK1
-      example_url: http://www.maizegdb.org/cgi-bin/displaylocusresults.cgi?term=ZmPK1
+      url_syntax: http://www.maizegdb.org/cgi-bin/displaylocusrecord.cgi?id=[example_id]
+      example_id: MaizeGDB_Locus:25011
+      example_url: http://www.maizegdb.org/cgi-bin/displaylocusrecord.cgi?id=25011
 - database: MaizeGDB_QTL
   name: Maize Genetics and Genomics Database
   generic_urls:
@@ -1796,7 +1786,7 @@
   name: Metabolic Encyclopedia of metabolic and other pathways
   synonyms:
     - METACYC
-  rdf_uri_prefix: http://identifiers.org/metacyc/
+  rdf_uri_prefix: https://registry.identifiers.org/registry/metacyc.reaction
   generic_urls:
     - http://metacyc.org/
   entity_types:
@@ -1825,7 +1815,7 @@
       example_id: MGD:Adcy9
 - database: MGI
   name: Mouse Genome Informatics
-  rdf_uri_prefix: "http://identifiers.org/mgi/MGI:"
+  rdf_uri_prefix: https://registry.identifiers.org/registry/mgi
   generic_urls:
     - http://www.informatics.jax.org/
   entity_types:
@@ -1924,7 +1914,7 @@
     - GeneID
     - LocusID
     - NCBI_Gene
-  rdf_uri_prefix: http://identifiers.org/ncbigene/
+  rdf_uri_prefix: https://registry.identifiers.org/registry/ncbigene
   generic_urls:
     - http://www.ncbi.nlm.nih.gov/
   entity_types:
@@ -2113,7 +2103,7 @@
       example_url: http://vmd.vbi.vt.edu/cgi-bin/browse/go_detail.cgi?gene_id=109198
 - database: PANTHER
   name: Protein ANalysis THrough Evolutionary Relationships Classification System
-  rdf_uri_prefix: http://identifiers.org/panther.family/
+  rdf_uri_prefix: https://registry.identifiers.org/registry/panther.family
   generic_urls:
     - http://www.pantherdb.org/
   entity_types:
@@ -2342,7 +2332,7 @@
       type_id: BET:0000000
 - database: PomBase
   name: PomBase
-  rdf_uri_prefix: http://identifiers.org/pombase/
+  rdf_uri_prefix: https://registry.identifiers.org/registry/pombase
   generic_urls:
     - https://www.pombase.org/
   entity_types:
@@ -2536,7 +2526,7 @@
   synonyms:
     - REACTOME
     - REAC
-  rdf_uri_prefix: http://identifiers.org/reactome/
+  rdf_uri_prefix: https://registry.identifiers.org/registry/reactome
   generic_urls:
     - http://www.reactome.org/
   entity_types:
@@ -2608,7 +2598,7 @@
   synonyms:
     - RAD
     - RGDID
-  rdf_uri_prefix: http://identifiers.org/rgd/
+  rdf_uri_prefix: https://registry.identifiers.org/registry/rgd
   generic_urls:
     - http://rgd.mcw.edu/
   entity_types:
@@ -2722,7 +2712,7 @@
   name: Saccharomyces Genome Database
   synonyms:
     - SGDID
-  rdf_uri_prefix: http://identifiers.org/sgd/
+  rdf_uri_prefix: https://registry.identifiers.org/registry/sgd
   generic_urls:
     - http://www.yeastgenome.org/
   entity_types:
@@ -2756,7 +2746,7 @@
   name: Sol Genomics Network
   synonyms:
     - SGN_gene
-  rdf_uri_prefix: http://identifiers.org/sgn/
+  rdf_uri_prefix: https://registry.identifiers.org/registry/sgn
   generic_urls:
     - http://www.sgn.cornell.edu/
   entity_types:
@@ -2947,7 +2937,7 @@
       type_id: BET:0000000
 - database: TAIR
   name: The Arabidopsis Information Resource
-  rdf_uri_prefix: http://identifiers.org/tair.locus/
+  rdf_uri_prefix: https://registry.identifiers.org/registry/tair.locus
   generic_urls:
     - http://www.arabidopsis.org/
   entity_types:
@@ -2996,7 +2986,7 @@
       example_url: http://www.tcdb.org/tcdb/index.php?tc=9.A.4.1.1
 - database: TGD
   name: Tetrahymena Genome Database
-  rdf_uri_prefix: http://identifiers.org/tgd/
+  rdf_uri_prefix: https://registry.identifiers.org/registry/tgd
   generic_urls:
     - http://www.ciliate.org/
   entity_types:
@@ -3190,7 +3180,7 @@
 - database: UniProtKB
   name: Universal Protein Knowledgebase
   description: A central repository of protein sequence and function created by joining the information contained in Swiss-Prot, TrEMBL, and PIR database
-  rdf_uri_prefix: http://identifiers.org/uniprot/
+  rdf_uri_prefix: https://registry.identifiers.org/registry/uniprot
   generic_urls:
     - http://www.uniprot.org
   entity_types:
@@ -3286,7 +3276,7 @@
   name: WormBase database of nematode biology
   synonyms:
     - WormBase
-  rdf_uri_prefix: http://identifiers.org/wormbase/
+  rdf_uri_prefix: https://registry.identifiers.org/registry/wb
   generic_urls:
     - http://www.wormbase.org/
   entity_types:
@@ -3383,7 +3373,7 @@
       example_url: http://en.wikipedia.org/wiki/Endoplasmic_reticulum
 - database: Xenbase
   name: Xenbase
-  rdf_uri_prefix: http://identifiers.org/xenbase/
+  rdf_uri_prefix: https://registry.identifiers.org/registry/xenbase
   generic_urls:
     - http://www.xenbase.org/
   entity_types:
@@ -3425,7 +3415,7 @@
     - http://citgenedb.yubiolab.org
 - database: ZFIN
   name: Zebrafish Information Network
-  rdf_uri_prefix: http://identifiers.org/zfin/
+  rdf_uri_prefix: https://registry.identifiers.org/registry/zfin
   generic_urls:
     - http://zfin.org/
   entity_types:
