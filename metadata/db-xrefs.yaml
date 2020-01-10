@@ -2595,9 +2595,9 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: '[0-9]{4,7}'
-      url_syntax: http://rgd.mcw.edu/rgdweb/report/gene/main.html?id=[example_id]
+      url_syntax: https://rgd.mcw.edu/rgdweb/search/search.html?[example_id]
       example_id: RGD:2004
-      example_url: http://rgd.mcw.edu/rgdweb/report/gene/main.html?id=2004           
+      example_url: https://rgd.mcw.edu/rgdweb/search/search.html?term=2004          
 - database: RHEA
   name: Rhea, the Annotated Reactions Database
   description: Rhea is a manually annotated database of chemical reactions. All data in Rhea is freely accessible and available for anyone to use.
