@@ -1786,7 +1786,7 @@
   name: Metabolic Encyclopedia of metabolic and other pathways
   synonyms:
     - METACYC
-  rdf_uri_prefix:https://registry.identifiers.org/registry/metacyc.reaction
+  rdf_uri_prefix: https://registry.identifiers.org/registry/metacyc.reaction
   generic_urls:
     - http://metacyc.org/
   entity_types:
