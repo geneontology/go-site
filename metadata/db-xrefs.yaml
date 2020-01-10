@@ -1701,9 +1701,9 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: '[A-Za-z][A-Za-z0-9]*'
-      url_syntax: 	http://www.maizegdb.org/cgi-bin/displaylocusrecord.cgi?id=[example_id]
+      url_syntax: http://www.maizegdb.org/cgi-bin/displaylocusrecord.cgi?id=[example_id]
       example_id: MaizeGDB_Locus:25011
-      example_url: 	http://www.maizegdb.org/cgi-bin/displaylocusrecord.cgi?id=25011
+      example_url: http://www.maizegdb.org/cgi-bin/displaylocusrecord.cgi?id=25011
 - database: MaizeGDB_QTL
   name: Maize Genetics and Genomics Database
   generic_urls:
