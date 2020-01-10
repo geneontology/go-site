@@ -2335,7 +2335,7 @@
 - database: Pompep
   name: Schizosaccharomyces pombe protein data
   generic_urls:
-    - ftp://ftp.sanger.ac.uk/pub/yeast/pombe/Protein_data/
+    - https://www.pombase.org/downloads/protein-datasets
   entity_types:
     - type_name: entity
       type_id: BET:0000000
