@@ -87,7 +87,7 @@
 - database: ARUK-UCL
   name: Alzheimers Research Gene Ontology Initiative
   generic_urls:
-    - http://www.ucl.ac.uk/functional-gene-annotation/neurological
+    - https://www.ucl.ac.uk/cardiovascular/research/pre-clinical-and-fundamental-science/functional-gene-annotation/neurological-gene-0
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -152,7 +152,7 @@
   name: Cardiovascular Gene Ontology Annotation Initiative
   description: The Cardiovascular Gene Ontology Annotation Initiative is supported by the British Heart Foundation (BHF) and located at University College London (UCL).
   generic_urls:
-    - http://www.ucl.ac.uk/cardiovasculargeneontology/
+    - https://www.ucl.ac.uk/cardiovascular/research/pre-clinical-and-fundamental-science/functional-gene-annotation/cardiovascular-gene
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -2116,7 +2116,7 @@
 - database: ParkinsonsUK-UCL
   name: Parkinsons Disease Gene Ontology Initiative
   generic_urls:
-    - http://www.ucl.ac.uk/functional-gene-annotation/neurological
+    - https://www.ucl.ac.uk/cardiovascular/research/pre-clinical-and-fundamental-science/functional-gene-annotation/neurological-gene
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -2916,7 +2916,7 @@
 - database: SynGO
   name: The Synapse Gene Ontology and Annotation Initiative
   generic_urls:
-    - http://geneontology.org/page/syngo-synapse-biology
+    - https://www.syngoportal.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
