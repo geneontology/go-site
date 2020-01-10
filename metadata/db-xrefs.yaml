@@ -1387,7 +1387,7 @@
 - database: IRIC
   name: International Rice Research Institute
   generic_urls:
-    - https://oryzasnp.org/
+    - https://oryzasnp.org
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -1742,7 +1742,7 @@
 - database: MEROPS
   name: MEROPS peptidase database
   generic_urls:
-    - https://www.ebi.ac.uk/merops/
+    - https://www.ebi.ac.uk/merops
   entity_types:
     - type_name: protein
       type_id: PR:000000001
@@ -1752,7 +1752,7 @@
 - database: MEROPS_fam
   name: MEROPS peptidase database
   generic_urls:
-    - https://www.ebi.ac.uk/merops/
+    - https://www.ebi.ac.uk/merops
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -1765,7 +1765,7 @@
     - MSH
   name: Medical Subject Headings
   generic_urls:
-    - https://meshb.nlm.nih.gov/search
+    - https://meshb.nlm.nih.gov
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -2123,7 +2123,7 @@
   name: PathoSystems Resource Integration Center
   description: PathoSystems Resource Integration Center at the Virginia Bioinformatics Institute
   generic_urls:
-    - https://www.patricbrc.org/
+    - https://www.patricbrc.org
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -2472,7 +2472,7 @@
 - database: PubChem_BioAssay
   name: NCBI PubChem database of bioassay records
   generic_urls:
-    - https://pubchem.ncbi.nlm.nih.gov/
+    - https://pubchem.ncbi.nlm.nih.gov
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -2482,7 +2482,7 @@
 - database: PubChem_Compound
   name: NCBI PubChem database of chemical structures
   generic_urls:
-    - https://pubchem.ncbi.nlm.nih.gov/
+    - https://pubchem.ncbi.nlm.nih.gov
   entity_types:
     - type_name: chemical entity
       type_id: CHEBI:24431
@@ -2493,7 +2493,7 @@
 - database: PubChem_Substance
   name: NCBI PubChem database of chemical substances
   generic_urls:
-    - https://pubchem.ncbi.nlm.nih.gov/
+    - https://pubchem.ncbi.nlm.nih.gov
   entity_types:
     - type_name: chemical entity
       type_id: CHEBI:24431
@@ -2504,7 +2504,7 @@
 - database: RAP-DB
   name: Rice annotation Project database
   generic_urls:
-    - https://rapdb.dna.affrc.go.jp/
+    - https://rapdb.dna.affrc.go.jp
   entity_types:
     - type_name: entity
       type_id: BET:0000000
