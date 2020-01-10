@@ -3268,65 +3268,65 @@
     - WormBase
   rdf_uri_prefix: https://registry.identifiers.org/registry/wb
   generic_urls:
-    - https://wormbase.org
+    - http://www.wormbase.org/
   entity_types:
     - type_name: gene
       type_id: SO:0000704
       id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
-      url_syntax: https://wormbase.org/species/c_elegans/gene/[example_id]
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WB:WBGene00003001
-      example_url: https://wormbase.org/species/c_elegans/gene/WBGene00003001
+      example_url: http://www.wormbase.org/get?name=WBGene00003001
     - type_name: variation
       type_id: VariO:0001
       id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
-      url_syntax: https://wormbase.org/species/c_elegans/variation/[example_id]
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WB:WBVar00089843
-      example_url: https://wormbase.org/species/c_elegans/variation/WBVar00089843
+      example_url: http://www.wormbase.org/get?name=WBVar00089843
     - type_name: RNAi
       type_id: topic:3523
       id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
-      url_syntax: https://wormbase.org/species/c_elegans/rnai/[example_id]
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WB:WBRNAi00110325
-      example_url: https://wormbase.org/species/c_elegans/rnai/WBRNAi00110325
+      example_url: http://www.wormbase.org/get?name=WBRNAi00110325
     - type_name: Transgene
       type_id: SO:0000902
       id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
-      url_syntax: https://wormbase.org/species/all/transgene/[example_id]
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WB:WBTransgene00000059
-      example_url: https://wormbase.org/species/all/transgene/BTransgene00000059
+      example_url: http://www.wormbase.org/get?name=WBTransgene00000059
     - type_name: protein
       type_id: PR:000000001
       id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
-      url_syntax: https://wormbase.org/species/c_elegans/protein/[example_id]
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WB:CE00274
-      example_url: https://wormbase.org/species/c_elegans/protein/CE00274
+      example_url: http://www.wormbase.org/get?name=CE00274
 - database: WB_REF
   name: WormBase database of nematode biology
   generic_urls:
-    - https://www.wormbase.org/
+    - http://www.wormbase.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: https://wormbase.org/resources/paper/[example_id]
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WB_REF:WBPaper00004823
-      example_url: https://wormbase.org/resources/paper/WBPaper00004823
+      example_url: http://www.wormbase.org/get?name=WBPaper00004823
 - database: WBbt
   name: C. elegans gross anatomy
   generic_urls:
-    - https://www.wormbase.org/
+    - http://www.wormbase.org/
   entity_types:
     - type_name: cell
       type_id: GO:0005623
       id_syntax: '[0-9]{7}'
-      url_syntax: https://wormbase.org/species/all/anatomy_term/[example_id]
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WBbt:0005792
-      example_url: https://wormbase.org/species/all/anatomy_term/WBbt:0005792
+      example_url: http://www.wormbase.org/get?name=WBbt:0005792
     - type_name: metazoan anatomical entity
       type_id: UBERON:0001062
       id_syntax: '[0-9]{7}'
-      url_syntax: https://wormbase.org/species/all/anatomy_term/[example_id]
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WBbt:0005733
-      example_url: https://wormbase.org/species/all/anatomy_term/WBbt:0005733
+      example_url: http://www.wormbase.org/get?name=WBbt:0005733
 - database: WBls
   name: C. elegans development
   rdf_uri_prefix: http://purl.obolibrary.org/obo/WBls_
@@ -3336,9 +3336,9 @@
     - type_name: nematoda life stage
       type_id: WBls:0000075
       id_syntax: '[0-9]{7}'
-      url_syntax: https://wormbase.org/species/all/life_stage/[example_id]
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WBls:0000010
-      example_url: https://wormbase.org/species/all/life_stage/WBls:0000010
+      example_url: http://www.wormbase.org/get?name=WBls:0000010
 - database: WBPhenotype
   name: WormBase phenotype ontology
   rdf_uri_prefix: http://purl.obolibrary.org/obo/WBPhenotype_
@@ -3348,9 +3348,9 @@
     - type_name: quality
       type_id: PATO:0000001
       id_syntax: '[0-9]{7}'
-      url_syntax: https://wormbase.org/species/all/phenotype/[example_id]
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WBPhenotype:0002117
-      example_url: https://wormbase.org/species/all/phenotype/WBPhenotype:0002117
+      example_url: http://www.wormbase.org/get?name=WBPhenotype:0002117
 - database: Wikipedia
   name: Wikipedia
   generic_urls:
