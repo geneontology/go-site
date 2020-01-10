@@ -20,7 +20,7 @@
       id_syntax: A[Tt][MmCc0-5][Gg][0-9]{5}(\.[0-9]{1})?
       url_syntax: http://arabidopsis.org/servlets/TairObject?type=locus&name=[example_id]
       example_id: AGI_LocusCode:At2g17950
-      example_url: http://arabidopsis.org/servlets/TairObject?type=locus&name=At2g17950
+      example_url: https://www.arabidopsis.org/servlets/TairObject?type=locus&name=At2g17950
 - database: AGRICOLA_ID
   name: AGRICultural OnLine Access
   generic_urls:
@@ -258,9 +258,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://gowiki.tamu.edu/wiki/index.php/[example_id]
+      url_syntax: https://gowiki.tamu.edu/wiki/index.php/[example_id]
       example_id: MYCS2:A0QNF5
-      example_url: http://gowiki.tamu.edu/wiki/index.php/MYCS2:A0QNF5
+      example_url: https://gowiki.tamu.edu/wiki/index.php/MYCS2:A0QNF5
 - database: CAFA
   name: Critical Assessment of Protein Function Annotation
   generic_urls:
@@ -561,13 +561,13 @@
 - database: DDBJ
   name: DNA Databank of Japan
   generic_urls:
-    - http://www.ddbj.nig.ac.jp/
+    - https://www.ddbj.nig.ac.jp
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://arsa.ddbj.nig.ac.jp/arsa/ddbjSplSearch?KeyWord=[example_id]
+      url_syntax: http://getentry.ddbj.nig.ac.jp/getentry/na/[example_id]
       example_id: DDBJ:AA816246
-      example_url: http://arsa.ddbj.nig.ac.jp/arsa/ddbjSplSearch?KeyWord=AA816246
+      example_url: http://getentry.ddbj.nig.ac.jp/getentry/na/AA816246
 - database: DFLAT
   name: Developmental FunctionaL Annotation at Tufts
   generic_urls:
@@ -609,9 +609,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=[example_id]
+      url_syntax: http://dictybase.org/publication/[example_id]
       example_id: dictyBase_REF:10157
-      example_url: http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=10157
+      example_url: http://dictybase.org/publication/10157
 - database: DOI
   name: Digital Object Identifier
   generic_urls:
@@ -732,7 +732,7 @@
       id_syntax: '[0-9]{5}'
       url_syntax: "http://www.informatics.jax.org/vocab/gxd/anatomy/EMAPA:[example_id]"
       example_id: EMAPA:16032
-      example_url: "http://www.informatics.jax.org/vocab/gxd/anatomy/EMAPA:16894"
+      example_url: http://www.informatics.jax.org/vocab/gxd/anatomy/EMAPA:16894
 - database: EMBL
   name: EMBL Nucleotide Sequence Database
   description: International nucleotide sequence database collaboration, comprising EMBL-EBI nucleotide sequence data library (EMBL-Bank), DNA DataBank of Japan (DDBJ), and NCBI GenBank
@@ -1109,9 +1109,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://gowiki.tamu.edu/wiki/index.php/[example_id]
+      url_syntax: https://gowiki.tamu.edu/wiki/index.php/[example_id]
       example_id: GONUTS:MOUSE:CD28
-      example_url: http://gowiki.tamu.edu/wiki/index.php/MOUSE:CD28
+      example_url: https://gowiki.tamu.edu/wiki/index.php/MOUSE:CD28
 - database: GOREL
   name: GO Extensions to OBO Relation Ontology Ontology
   description: Additional relations pending addition into RO
@@ -1679,9 +1679,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://maizegdb.org/gene_center/gene/[example_id]
+      url_syntax: https://maizegdb.org/gene_center/gene/[example_id]
       example_id: MaizeGDB:12098
-      example_url: http://maizegdb.org/gene_center/gene/12098
+      example_url: https://maizegdb.org/gene_center/gene/12098
 - database: MaizeGDB_Locus
   name: MaizeGDB
   rdf_uri_prefix: http://identifiers.org/maizegdb.locus/
@@ -1721,9 +1721,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://maizegdb.org/data_center/stock?id=[example_id]
-      example_id: MaizeGDB_stock:12098
-      example_url: http://maizegdb.org/data_center/stock?id=12098
+      url_syntax: https://maizegdb.org/data_center/stock?id=[example_id]
+      example_id: MaizeGDB_stock:282110
+      example_url: https://maizegdb.org/data_center/stock?id=282110
 - database: MEDLINE
   name: Medline literature database
   generic_urls:
@@ -2711,7 +2711,7 @@
       id_syntax: S[0-9]{9}
       url_syntax:  https://www.yeastgenome.org/locus/[example_id]
       example_id: SGD:S000006169
-      example_url:  https://www.yeastgenome.org/locus/S000006169
+      example_url: https://www.yeastgenome.org/locus/S000006169
 - database: SGD_LOCUS
   name: Saccharomyces Genome Database
   generic_urls:
@@ -2731,7 +2731,7 @@
       type_id: BET:0000000
       url_syntax:  http://www.yeastgenome.org/reference/[example_id]/overview
       example_id: SGD_REF:S000049602
-      example_url:  http://www.yeastgenome.org/reference/S000049602/overview
+      example_url: http://www.yeastgenome.org/reference/S000049602/overview
 - database: SGN
   name: Sol Genomics Network
   synonyms:
