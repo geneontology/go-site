@@ -1911,9 +1911,9 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: \d+
-      url_syntax: http://www.ncbi.nlm.nih.gov/gene/[example_id]
+      url_syntax: https://www.ncbi.nlm.nih.gov/gene[example_id]
       example_id: NCBI_Gene:4771
-      example_url: http://www.ncbi.nlm.nih.gov/gene/4771
+      example_url: https://www.ncbi.nlm.nih.gov/gene/4771
 - database: NCBI_gi
   name: NCBI databases
   generic_urls:
@@ -2595,9 +2595,9 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: '[0-9]{4,7}'
-      url_syntax: http://rgd.mcw.edu/rgdweb/search/search.html?term=[example_id]
+      url_syntax: http://rgd.mcw.edu/rgdweb/report/gene/main.html?id=[example_id]
       example_id: RGD:2004
-      example_url: http://rgd.mcw.edu/rgdweb/search/search.html?term=2004
+      example_url: http://rgd.mcw.edu/rgdweb/report/gene/main.html?id=2004           
 - database: RHEA
   name: Rhea, the Annotated Reactions Database
   description: Rhea is a manually annotated database of chemical reactions. All data in Rhea is freely accessible and available for anyone to use.
@@ -2709,9 +2709,9 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: S[0-9]{9}
-      url_syntax:  http://www.yeastgenome.org/locus/[example_id]/overview
+      url_syntax:  https://www.yeastgenome.org/locus/[example_id]
       example_id: SGD:S000006169
-      example_url:  http://www.yeastgenome.org/locus/S000006169/overview
+      example_url:  https://www.yeastgenome.org/locus/S000006169
 - database: SGD_LOCUS
   name: Saccharomyces Genome Database
   generic_urls:
@@ -2738,23 +2738,23 @@
     - SGN_gene
   rdf_uri_prefix: https://registry.identifiers.org/registry/sgn
   generic_urls:
-    - http://www.sgn.cornell.edu/
+    - https://www.sgn.cornell.edu/
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      url_syntax: http://www.sgn.cornell.edu/phenome/locus_display.pl?locus_id=[example_id]
+      url_syntax: http://solgenomics.net/phenome/locus_display.pl?locus_id=[example_id]
       example_id: SGN_gene:7740
       example_url: http://solgenomics.net/phenome/locus_display.pl?locus_id=7740
 - database: SGN_ref
   name: Sol Genomics Network
   generic_urls:
-    - http://www.sgn.cornell.edu/
+    - https://www.sgn.cornell.edu/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.sgn.cornell.edu/chado/publication.pl?pub_id=[example_id]
+      url_syntax: https://sgn.cornell.edu/chado/publication.pl?pub_id=[example_id]
       example_id: SGN_ref:861
-      example_url: http://www.sgn.cornell.edu/chado/publication.pl?pub_id=861
+      example_url: https://sgn.cornell.edu/chado/publication.pl?pub_id=861
 - database: SGN_germplasm
   name: Sol Genomics Network
   generic_urls:
@@ -3177,9 +3177,9 @@
     - type_name: protein
       type_id: PR:000000001
       id_syntax: ([OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z]([0-9][A-Z][A-Z0-9]{2}){1,2}[0-9])((-[0-9]+)|:PRO_[0-9]{10}|:VAR_[0-9]{6}){0,1}
-      url_syntax: http://www.uniprot.org/uniprot/[example_id]
+      url_syntax: https://www.uniprot.org/uniprot/[example_id]
       example_id: UniProtKB:P51587
-      example_url: http://www.uniprot.org/uniprot/P51587
+      example_url: https://www.uniprot.org/uniprot/
 - database: UniProtKB-KW
   name: UniProt Knowledgebase keywords
   synonyms:
@@ -3189,15 +3189,15 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.uniprot.org/keywords/[example_id]
+      url_syntax: https://www.uniprot.org/keywords/[example_id]
       example_id: UniProtKB-KW:KW-0812
-      example_url: http://www.uniprot.org/keywords/KW-0812
+      example_url: https://www.uniprot.org/keywords/KW-0812
 - database: UniProtKB-SubCell
   name: UniProt Knowledgebase Subcellular Location vocabulary
   synonyms:
     - SP_SL
   generic_urls:
-    - http://www.uniprot.org/locations/
+    - https://www.uniprot.org/locations/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -3207,14 +3207,14 @@
 - database: UniRule
   name: Manually curated rules for automatic annotation of UniProtKB unreviewed entries
   generic_urls:
-    - http://www.uniprot.org/unirule
+    - https://www.uniprot.org/unirule/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.uniprot.org/unirule/[example_id]
+      url_syntax: https://www.uniprot.org/unirule/[example_id]
       id_syntax: UR[0-9]{9}|MF_[0-9]{5}|PIRNR[0-9]{6}|PRU[0-9]{5}|RU[0-9]{6}
       example_id: UniRule:UR000107224
-      example_url: http://www.uniprot.org/unirule/UR000107224
+      example_url: https://www.uniprot.org/unirule/UR000107224
 - database: VBRC
   name: Viral Bioinformatics Resource Center
   generic_urls:
