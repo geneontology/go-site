@@ -1562,13 +1562,13 @@
 - database: JSTOR
   name: Digital archive of scholarly articles
   generic_urls:
-    - http://www.jstor.org/
+    - https://www.jstor.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.jstor.org/stable/[example_id]
+      url_syntax: https://www.jstor.org/stable/[example_id]
       example_id: JSTOR:3093870
-      example_url: http://www.jstor.org/stable/3093870
+      example_url: https://www.jstor.org/stable/3093870
 - database: KEGG
   name: Kyoto Encyclopedia of Genes and Genomes
   generic_urls:
@@ -2876,13 +2876,13 @@
   name: SUPERFAMILY protein annotation database
   description: A database of structural and functional protein annotations for completely sequenced genomes
   generic_urls:
-    - http://supfam.cs.bris.ac.uk/SUPERFAMILY/index.html
+    - http://supfam.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://supfam.cs.bris.ac.uk/SUPERFAMILY/cgi-bin/scop.cgi?ipid=SSF[example_id]
-      example_id: SUPERFAMILY:51905
-      example_url: http://supfam.cs.bris.ac.uk/SUPERFAMILY/cgi-bin/scop.cgi?ipid=SSF51905
+      url_syntax: http://supfam.org/scop/[example_id]
+      example_id: SUPERFAMILY:56994
+      example_url: http://supfam.org/scop/56994
 - database: SWALL
   name: ExPASY Bioinformatics Resource Portal
   generic_urls:
@@ -3227,13 +3227,14 @@
       example_url: http://vbrc.org/query.asp?web_id=VBRC:F35742
 - database: VEGA
   name: Vertebrate Genome Annotation database
+  description: The final update of Vega, version 68, was released in February 2017 and is now archived at vega.archive.ensembl.org. This resource will be maintained until Feb 2020.
   generic_urls:
-    - http://vega.sanger.ac.uk/index.html
+    - http://vega.archive.ensembl.org/index.html
   entity_types:
     - type_name: entity
       type_id: BET:0000000
       url_syntax: http://vega.sanger.ac.uk/id/[example_id]
-      example_id: VEGA:OTTHUMP00000000661
+      example_id: VEGA:OTTHUMT00000001467.1
       example_url: http://vega.sanger.ac.uk/id/OTTHUMP00000000661
 - database: VIDA
   name: Virus Database at University College London
