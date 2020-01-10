@@ -258,7 +258,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: https://gowiki.tamu.edu/wiki/index.php/MYCS2:A0QNF5[example_id]
+      url_syntax: https://gowiki.tamu.edu/wiki/index.php/[example_id]
       example_id: MYCS2:A0QNF5
       example_url: https://gowiki.tamu.edu/wiki/index.php/MYCS2:A0QNF5
 - database: CAFA
