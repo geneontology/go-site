@@ -1033,20 +1033,20 @@
       type_id: GO:0008150
       id_syntax: \d{7}
       url_syntax: http://amigo.geneontology.org/amigo/term/GO:[example_id]
-      example_id: GO:0004352
-      example_url: http://amigo.geneontology.org/amigo/term/GO:0004352
+      example_id: GO:0044767
+      example_url: http://amigo.geneontology.org/amigo/term/GO:0044767
     - type_name: cellular_component
       type_id: GO:0005575
       id_syntax: \d{7}
       url_syntax: http://amigo.geneontology.org/amigo/term/GO:[example_id]
-      example_id: GO:0004352
-      example_url: http://amigo.geneontology.org/amigo/term/GO:0004352
+      example_id: GO:0005634
+      example_url: http://amigo.geneontology.org/amigo/term/GO:0005634
     - type_name: macromolecular complex
       type_id: GO:0032991
       id_syntax: \d{7}
       url_syntax: http://amigo.geneontology.org/amigo/term/GO:[example_id]
-      example_id: GO:0004352
-      example_url: http://amigo.geneontology.org/amigo/term/GO:0004352
+      example_id: GO:0044776
+      example_url: http://amigo.geneontology.org/amigo/term/GO:0044776
 - database: GO_Central
   name: GO Central
   synonyms:
