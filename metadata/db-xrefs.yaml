@@ -509,13 +509,13 @@
 - database: CORUM
   name: CORUM - the Comprehensive Resource of Mammalian protein complexes
   generic_urls:
-    - http://mips.gsf.de/genre/proj/corum/
+    - https://mips.helmholtz-muenchen.de/corum/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://mips.gsf.de/genre/proj/corum/complexdetails.html?id=[example_id]
+      url_syntax: https://mips.helmholtz-muenchen.de/corum/?id=[example_id]
       example_id: CORUM:837
-      example_url: http://mips.gsf.de/genre/proj/corum/complexdetails.html?id=837
+      example_url: https://mips.helmholtz-muenchen.de/corum/?id=837
 - database: cosmoss_PpV1.2
   name: plantco.de|cosmoss.org
   generic_urls:
@@ -1387,13 +1387,13 @@
 - database: IRIC
   name: International Rice Research Institute
   generic_urls:
-    - http://oryzasnp.org
+    - https://oryzasnp.org
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://oryzasnp.org/_variety.zul?irisid=[example_id]
+      url_syntax: https://oryzasnp.org/_variety.zul?irisid=[example_id]
       example_id: IRIS_313-8922
-      example_url: http://oryzasnp.org/_variety.zul?irisid=IRIS_313-8922
+      example_url: https://oryzasnp.org/_variety.zul?irisid=IRIS_313-8922
 - database: IRGC
   name: International Rice Genebank Collection
   generic_urls:
@@ -1742,7 +1742,7 @@
 - database: MEROPS
   name: MEROPS peptidase database
   generic_urls:
-    - http://merops.sanger.ac.uk/
+    - https://www.ebi.ac.uk/merops
   entity_types:
     - type_name: protein
       type_id: PR:000000001
@@ -1752,7 +1752,7 @@
 - database: MEROPS_fam
   name: MEROPS peptidase database
   generic_urls:
-    - http://merops.sanger.ac.uk/
+    - https://www.ebi.ac.uk/merops
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -1765,13 +1765,13 @@
     - MSH
   name: Medical Subject Headings
   generic_urls:
-    - https://www.nlm.nih.gov/mesh/MBrowser.html
+    - https://meshb.nlm.nih.gov
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://n2t.net/MESH:[example_id]
+      url_syntax: http://id.nlm.nih.gov/mesh/[example_id]
       example_id: MeSH:D017209
-      example_url: http://n2t.net/MESH:D017209
+      example_url: http://id.nlm.nih.gov/mesh/D017209
 - database: MetaCyc
   name: Metabolic Encyclopedia of metabolic and other pathways
   synonyms:
@@ -2027,13 +2027,13 @@
   synonyms:
     - MIM
   generic_urls:
-    - http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=OMIM
+    - https://omim.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://omim.org/entry/[example_id]
+      url_syntax:  https://omim.org/entry/[example_id]
       example_id: OMIM:190198
-      example_url: http://omim.org/entry/190198
+      example_url: https://omim.org/entry/190198
 - database: OMSSA
   name: Open Mass Spectrometry Search Algorithm
   generic_urls:
@@ -2123,7 +2123,7 @@
   name: PathoSystems Resource Integration Center
   description: PathoSystems Resource Integration Center at the Virginia Bioinformatics Institute
   generic_urls:
-    - http://patric.vbi.vt.edu
+    - https://www.patricbrc.org
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -2472,17 +2472,17 @@
 - database: PubChem_BioAssay
   name: NCBI PubChem database of bioassay records
   generic_urls:
-    - http://pubchem.ncbi.nlm.nih.gov/
+    - https://pubchem.ncbi.nlm.nih.gov
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://pubchem.ncbi.nlm.nih.gov/assay/assay.cgi?aid=[example_id]
+      url_syntax: https://pubchem.ncbi.nlm.nih.gov/bioassay/[example_id]
       example_id: PubChem_BioAssay:177
-      example_url: http://pubchem.ncbi.nlm.nih.gov/assay/assay.cgi?aid=177
+      example_url: https://pubchem.ncbi.nlm.nih.gov/bioassay/177
 - database: PubChem_Compound
   name: NCBI PubChem database of chemical structures
   generic_urls:
-    - http://pubchem.ncbi.nlm.nih.gov/
+    - https://pubchem.ncbi.nlm.nih.gov
   entity_types:
     - type_name: chemical entity
       type_id: CHEBI:24431
@@ -2493,7 +2493,7 @@
 - database: PubChem_Substance
   name: NCBI PubChem database of chemical substances
   generic_urls:
-    - http://pubchem.ncbi.nlm.nih.gov/
+    - https://pubchem.ncbi.nlm.nih.gov
   entity_types:
     - type_name: chemical entity
       type_id: CHEBI:24431
@@ -2504,13 +2504,13 @@
 - database: RAP-DB
   name: Rice annotation Project database
   generic_urls:
-    - http://rapdb.dna.affrc.go.jp
+    - https://rapdb.dna.affrc.go.jp
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://rapdb.dna.affrc.go.jp/tools/search/run?id=on&attr=desc&attr=cgs&attr=cgn&attr=cgss&attr=cgns&attr=rgss&attr=rgns&keyword=[example_id]
-      example_id: RAP-DB:OS01T0100600-01
-      example_url: http://rapdb.dna.affrc.go.jp/tools/search/run?id=on&attr=desc&attr=cgs&attr=cgn&attr=cgss&attr=cgns&attr=rgss&attr=rgns&keyword=Os01g0100200
+      url_syntax: https://rapdb.dna.affrc.go.jp/viewer/gene_detail/irgsp1?name=[example_id]
+      example_id: RAP-DB:Os01t0100600-01
+      example_url: https://rapdb.dna.affrc.go.jp/viewer/gene_detail/irgsp1?name=Os01t0100600-01
 - database: Reactome
   name: Reactome - a curated knowledgebase of biological pathways
   synonyms:
