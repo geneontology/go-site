@@ -2923,7 +2923,7 @@
 - database: SynGO-UCL
   name: The Synapse Gene Ontology and Annotation Initiative at UCL
   generic_urls:
-    - http://geneontology.org/page/syngo-synapse-biology
+    - https://www.ucl.ac.uk/cardiovascular/research/pre-clinical-and-fundamental-science/functional-gene-annotation/neurological-gene-2
   entity_types:
     - type_name: entity
       type_id: BET:0000000
