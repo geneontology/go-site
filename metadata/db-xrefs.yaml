@@ -1596,13 +1596,6 @@
     - type_name: entity
       type_id: BET:0000000
       example_id: MEDLINE:20572430
-- database: MENGO
-  name: Microbial ENergy processes Gene Ontology Project
-  generic_urls:
-    - http://mengo.vbi.vt.edu/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
 - database: MEROPS
   name: MEROPS peptidase database
   generic_urls:
