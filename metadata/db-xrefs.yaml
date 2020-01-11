@@ -2487,11 +2487,6 @@
       url_syntax: http://www.theseed.org/linkin.cgi?id=[example_id]
       example_id: SEED:fig|83331.1.peg.1
       example_url: http://www.theseed.org/linkin.cgi?id=fig|83331.1.peg.1
-- database: SFLD
-  name: Structure-Function Linkage Database
-  description: A hierarchical classification of enzymes that relates specific sequence-structure features to specific chemical capabilities. SFLD is offline, please visit http://sfld.rbvi.ucsf.edu for the static archive version.
-  generic_urls:
-    - http://sfld.rbvi.ucsf.edu/django/
 - database: SGD
   name: Saccharomyces Genome Database
   synonyms:
