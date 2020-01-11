@@ -1715,13 +1715,6 @@
       url_syntax: http://salilab.org/modbase/searchbyid?databaseID=[example_id]
       example_id: ModBase:P10815
       example_url: http://salilab.org/modbase/searchbyid?databaseID=P04848
-- database: MTBBASE
-  name: Collection and Refinement of Physiological Data on Mycobacterium tuberculosis
-  generic_urls:
-    - http://www.ark.in-berlin.de/Site/MTBbase.html
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
 - database: MultiFun
   name: MultiFun cell function assignment schema
   generic_urls:
@@ -2465,15 +2458,6 @@
       url_syntax: http://purl.obolibrary.org/obo/RO_[example_id]
       example_id: RO:0002211
       example_url: http://purl.obolibrary.org/obo/RO_0002211
-- database: Roslin_Institute
-  name: Roslin Institute
-  synonyms:
-    - RI
-  generic_urls:
-    - http://www.roslin.ac.uk/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
 - database: SABIO-RK
   name: SABIO Reaction Kinetics
   description: The SABIO-RK (System for the Analysis of Biochemical Pathways - Reaction Kinetics) is a web-based application based on the SABIO relational database that contains information about biochemical reactions, their kinetic equations with their parameters, and the experimental conditions under which these parameters were measured.
@@ -2505,7 +2489,7 @@
       example_url: http://www.theseed.org/linkin.cgi?id=fig|83331.1.peg.1
 - database: SFLD
   name: Structure-Function Linkage Database
-  description: A hierarchical classification of enzymes that relates specific sequence-structure features to specific chemical capabilities
+  description: A hierarchical classification of enzymes that relates specific sequence-structure features to specific chemical capabilities. SFLD is offline, please visit http://sfld.rbvi.ucsf.edu for the static archive version.
   generic_urls:
     - http://sfld.rbvi.ucsf.edu/django/
 - database: SGD
