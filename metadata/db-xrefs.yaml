@@ -2641,16 +2641,6 @@
       url_syntax: http://supfam.org/scop/[example_id]
       example_id: SUPERFAMILY:56994
       example_url: http://supfam.org/scop/56994
-- database: Swiss-Prot
-  name: Swiss-Prot protein database.
-  generic_urls:
-    - http://ca.expasy.org/sprot/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      url_syntax: http://www.ebi.uniprot.org/uniprot-srv/uniProtView.do?proteinac=[example_id]
-      example_id: Swiss-Prot:P45867
-      example_url: http://www.ebi.uniprot.org/uniprot-srv/uniProtView.do?proteinac=P45867
 - database: SynGO
   name: The Synapse Gene Ontology and Annotation Initiative
   generic_urls:
@@ -2887,6 +2877,7 @@
       example_url: http://www.grenoble.prabi.fr/obiwarehouse/unipathway/upa?upid=UPA00155
 - database: UniProt
   synonyms:
+    - Swiss-Prot
     - SwissProt
     - TrEMBL
     - TR
