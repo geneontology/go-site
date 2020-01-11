@@ -653,27 +653,6 @@
       url_syntax: http://biocyc.org/ECOLI/reference.html?type=CITATION-FRAME&object=[example_id]
       example_id: EcoCyc_REF:COLISALII
       example_url: http://biocyc.org/ECOLI/reference.html?type=CITATION-FRAME&object=COLISALII
-- database: ECOGENE
-  name: EcoGene Database of Escherichia coli Sequence and Function
-  synonyms:
-    - EcoGene
-  generic_urls:
-    - http://www.ecogene.org/
-  entity_types:
-    - type_name: gene
-      type_id: SO:0000704
-      id_syntax: EG[0-9]{5}
-      url_syntax: http://www.ecogene.org/geneInfo.php?eg_id=[example_id]
-      example_id: ECOGENE:EG10818
-      example_url: http://www.ecogene.org/geneInfo.php?eg_id=EG10818
-- database: ECOGENE_G
-  name: EcoGene Database of Escherichia coli Sequence and Function
-  generic_urls:
-    - http://www.ecogene.org/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      example_id: ECOGENE_G:deoC
 - database: EcoliWiki
   name: EcoliWiki from EcoliHub
   description: EcoliHub\'s subsystem for community annotation of E. coli K-12
@@ -1808,16 +1787,6 @@
       url_syntax: http://www.neurolex.org/wiki/[example_id]
       example_id: NIF_Subcellular:sao1186862860
       example_url: http://www.neurolex.org/wiki/sao1770195789
-- database: NMPDR
-  name: National Microbial Pathogen Data Resource
-  generic_urls:
-    - http://www.nmpdr.org
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      url_syntax: http://www.nmpdr.org/linkin.cgi?id=[example_id]
-      example_id: NMPDR:fig|306254.1.peg.183
-      example_url: http://www.nmpdr.org/linkin.cgi?id=fig|306254.1.peg.183
 - database: NTNU_SB
   name: Norwegian University of Science and Technology, Systems Biology team
   generic_urls:
