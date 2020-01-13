@@ -16,7 +16,7 @@ The registry can be browsed here: http://amigo.geneontology.org/xrefs
 
 The schema is defined using kwalify, and is available here:
 
-db-xrefs.schema.yaml
+https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.schema.yaml
 
 ## Relationship to legacy format
 
