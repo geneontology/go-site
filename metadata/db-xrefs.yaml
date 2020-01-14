@@ -1985,7 +1985,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: hhttps://www.ncbi.nlm.nih.gov/pmc/articles/[example_id]
+      url_syntax: https://www.ncbi.nlm.nih.gov/pmc/articles/[example_id]
       example_id: PMCID:PMC201377
       example_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC201377/
 - database: PMID
