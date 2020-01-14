@@ -1316,10 +1316,10 @@
     - type_name: entity
       type_id: BET:0000000
       example_id: ISSN:1234-1231
-- database: IUPHAR
-  name: International Union of Pharmacology
+- database: IUPHAR/BPS
+  name: IUPHAR/BPS Guide to Pharmacology
   generic_urls:
-    - http://www.iuphar.org/
+    - https://www.guidetopharmacology.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -1330,9 +1330,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.iuphar-db.org/DATABASE/FamilyMenuForward?familyId=[example_id]
-      example_id: IUPHAR_GPCR:1279
-      example_url: http://www.iuphar-db.org/DATABASE/FamilyMenuForward?familyId=13
+      url_syntax: https://www.guidetopharmacology.org/GRAC/FamilyDisplayForward?familyId=[example_id]
+      example_id: IUPHAR_GPCR:13
+      example_url: https://www.guidetopharmacology.org/GRAC/FamilyDisplayForward?familyId=13
 - database: IUPHAR_RECEPTOR
   name: International Union of Pharmacology
   generic_urls:
@@ -1340,9 +1340,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.iuphar-db.org/DATABASE/ObjectDisplayForward?objectId=[example_id]
-      example_id: IUPHAR_RECEPTOR:2205
-      example_url: http://www.iuphar-db.org/DATABASE/ObjectDisplayForward?objectId=56
+      url_syntax: https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId=[example_id]
+      example_id: IUPHAR_RECEPTOR:56
+      example_url: https://www.guidetopharmacology.org/GRAC/ObjectDisplayForward?objectId=56
 - database: Jaiswal_Lab
   name: Jaiswal_Lab
   generic_urls:
