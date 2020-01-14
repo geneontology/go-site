@@ -289,15 +289,16 @@
       url_syntax: http://www.cazy.org/[example_id].html
       example_id: CAZY:PL11
       example_url: http://www.cazy.org/PL11.html
-- database: CBS
-  name: Center for Biological Sequence Analysis
+- database: DTU
+  name:  DTU Health Tech Services
+  desription: Formerly CBS (Center for Biological Sequence Analysis)
   generic_urls:
-    - http://www.cbs.dtu.dk/
+    - http://www.cbs.dtu.dk/services
   entity_types:
     - type_name: entity
       type_id: BET:0000000
       example_id: CBS:TMHMM
-      example_url: http://www.cbs.dtu.dk/services/[example_id]/
+      example_url: http://www.cbs.dtu.dk/services/TMHMM/
 - database: CDD
   name: Conserved Domain Database at NCBI
   generic_urls:
