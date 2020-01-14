@@ -591,14 +591,14 @@
 - database: EchoBASE
   name: EchoBASE post-genomic database for Escherichia coli
   generic_urls:
-    - http://www.ecoli-york.org/
+    - https://www.york.ac.uk/res/thomas/
   entity_types:
     - type_name: gene
       type_id: SO:0000704
       id_syntax: EB[0-9]{4}
-      url_syntax: http://www.biolws1.york.ac.uk/echobase/Gene.cfm?recordID=[example_id]
+      url_syntax: https://www.york.ac.uk/res/thomas/Gene.cfm?&recordID=[example_id]
       example_id: EchoBASE:EB0231
-      example_url: http://www.biolws1.york.ac.uk/echobase/Gene.cfm?recordID=EB0231
+      example_url: https://www.york.ac.uk/res/thomas/Gene.cfm?&recordID=EB0231
 - database: ECO
   name: Evidence Code Ontology
   rdf_uri_prefix: http://purl.obolibrary.org/obo/ECO_
