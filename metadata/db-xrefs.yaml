@@ -513,13 +513,6 @@
       url_syntax: http://getentry.ddbj.nig.ac.jp/getentry/na/[example_id]
       example_id: DDBJ:AA816246
       example_url: http://getentry.ddbj.nig.ac.jp/getentry/na/AA816246
-- database: DFLAT
-  name: Developmental FunctionaL Annotation at Tufts
-  generic_urls:
-    - http://bcb.cs.tufts.edu/dflat/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
 - database: dictyBase
   name: dictyBase
   synonyms:
