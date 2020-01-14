@@ -2369,13 +2369,13 @@
   synonyms:
     - RNAMDB
   generic_urls:
-    - http://s59.cas.albany.edu/RNAmods/
+    - https://mods.rna.albany.edu/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://s59.cas.albany.edu/RNAmods/cgi-bin/rnashow.cgi?[example_id]
-      example_id: RNAmods:037
-      example_url: http://s59.cas.albany.edu/RNAmods/cgi-bin/rnashow.cgi?091
+      url_syntax: https://mods.rna.albany.edu/mods/modifications/view/[example_id]
+      example_id: RNAmods:20
+      example_url: https://mods.rna.albany.edu/mods/modifications/view/20
 - database: RO
   name: OBO Relation Ontology Ontology
   description: A collection of relations used across OBO ontologies
