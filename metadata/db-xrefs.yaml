@@ -471,16 +471,6 @@
       url_syntax: https://mips.helmholtz-muenchen.de/corum/?id=[example_id]
       example_id: CORUM:837
       example_url: https://mips.helmholtz-muenchen.de/corum/?id=837
-- database: cosmoss_PpV1.2
-  name: plantco.de|cosmoss.org
-  generic_urls:
-    - https://www.cosmoss.org/annotation/genonaut
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      url_syntax: https://www.cosmoss.org/annotation/genonaut?accession=[example_id]&version=V1.2
-      example_id: cosmoss_PpV1.2:Pp1s47_77V2.1
-      example_url: https://www.cosmoss.org/annotation/genonaut?accession=Pp1s53_22V2.1&version=V1.2
 - database: cribi_vitis
   name: Vitis CRIBI database
   generic_urls:
