@@ -1799,9 +1799,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://patric.vbi.vt.edu/gene/overview.php?fid=[example_id]
-      example_id: PATRIC:cds.000002.436951
-      example_url: http://patric.vbi.vt.edu/gene/overview.php?fid=cds.000002.436951
+      url_syntax: https://www.patricbrc.org/view/Feature/[example_id]
+      example_id: PATRIC:fig%7C83332.12.peg.11
+      example_url: https://www.patricbrc.org/view/Feature/fig%7C83332.12.peg.1
 - database: PDB
   name: Protein Data Bank
   generic_urls:
