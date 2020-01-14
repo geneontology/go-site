@@ -65,16 +65,6 @@
       url_syntax: http://www.mobot.org/mobot/research/apweb/top/glossarya_h.html
       example_id: APweb:Glossary
       example_url: http://www.mobot.org/mobot/research/apweb/top/glossarya_h.html
-- database: AraCyc
-  name: AraCyc metabolic pathway database for Arabidopsis thaliana
-  generic_urls:
-    - http://www.arabidopsis.org/biocyc/index.jsp
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      url_syntax: http://www.arabidopsis.org:1555/ARA/NEW-IMAGE?type=NIL&object=[example_id]
-      example_id: AraCyc:PWYQT-62
-      example_url: http://www.arabidopsis.org:1555/ARA/NEW-IMAGE?type=NIL&object=PWYQT-62
 - database: ARUK-UCL
   name: Alzheimers Research Gene Ontology Initiative
   generic_urls:
@@ -343,14 +333,6 @@
       url_syntax: http://www.candidagenome.org/cgi-bin/reference/reference.pl?dbid=[example_id]
       example_id: CGD_REF:1490
       example_url: http://www.candidagenome.org/cgi-bin/reference/reference.pl?dbid=1490
-- database: CGEN
-  name: Compugen Gene Ontology Gene Association Data
-  generic_urls:
-    - http://www.cgen.com/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      example_id: CGEN:PrID131022
 - database: CGSC
   name: CGSC
   generic_urls:
@@ -1260,14 +1242,6 @@
       url_syntax: http://www.ebi.ac.uk/interpro/entry/[example_id]
       example_id: InterPro:IPR000001
       example_url: http://www.ebi.ac.uk/interpro/entry/IPR015421
-- database: IPI
-  name: International Protein Index
-  generic_urls:
-    - http://www.ebi.ac.uk/IPI/IPIhelp.html
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      example_id: IPI:IPI00000005.1
 - database: iPTMnet
   name: iPTMnet protein post-translational modification database
   generic_urls:
@@ -1439,14 +1413,6 @@
       url_syntax: https://www.dkfz.de/en/mga/Groups/LIFEdb-Database.html?ID=[example_id]
       example_id: LIFEdb:DKFZp564O1716
       example_url: https://www.dkfz.de/en/mga/Groups/LIFEdb-Database.html?ID=DKFZp564O1716
-- database: LOCSVMpsi
-  name: LOCSVMPSI
-  description: Subcellular localization for eukayotic proteins based on SVM and PSI-BLAST
-  generic_urls:
-    - http://bioinformatics.ustc.edu.cn/locsvmpsi/locsvmpsi.php
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
 - database: MA
   name: Adult Mouse Anatomical Dictionary
   description: Adult Mouse Anatomical Dictionary; part of Gene Expression Database
@@ -1628,16 +1594,6 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-- database: MO
-  name: MGED Ontology
-  generic_urls:
-    - http://mged.sourceforge.net/ontologies/MGEDontology.php
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      url_syntax: http://mged.sourceforge.net/ontologies/MGEDontology.php#[example_id]
-      example_id: MO:Action
-      example_url: http://mged.sourceforge.net/ontologies/MGEDontology.php#Action
 - database: ModBase
   name: ModBase comprehensive Database of Comparative Protein Structure Models
   generic_urls:
@@ -1648,13 +1604,6 @@
       url_syntax: http://salilab.org/modbase/searchbyid?databaseID=[example_id]
       example_id: ModBase:P10815
       example_url: http://salilab.org/modbase/searchbyid?databaseID=P04848
-- database: MultiFun
-  name: MultiFun cell function assignment schema
-  generic_urls:
-    - http://genprotec.mbl.edu/files/MultiFun.html
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
 - database: NASC_code
   name: Nottingham Arabidopsis Stock Centre Seeds Database
   synonyms:
@@ -1814,17 +1763,6 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-- database: PAINT_REF
-  name: Phylogenetic Annotation INference Tool References
-  generic_urls:
-    - http://www.pantherdb.org/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      id_syntax: '[0-9]{5}'
-      url_syntax: http://www.pantherdb.org/panther/lookupId.jsp?id=PTHR[example_id]
-      example_id: PAINT_REF:23266
-      example_url: http://www.pantherdb.org/panther/lookupId.jsp?id=PTHR23266
 - database: PANTHER
   name: Protein ANalysis THrough Evolutionary Relationships Classification System
   rdf_uri_prefix: https://registry.identifiers.org/registry/panther.family
@@ -1903,14 +1841,6 @@
       url_syntax: http://pfam.xfam.org/family/[example_id]
       example_id: Pfam:PF00046
       example_url: http://pfam.xfam.org/family/PF00069
-- database: PfamB
-  name: Pfam-B supplement to Pfam
-  generic_urls:
-    - http://www.sanger.ac.uk/Software/Pfam/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      example_id: PfamB:PB014624
 - database: PharmGKB
   name: Pharmacogenetics and Pharmacogenomics Knowledge Base
   generic_urls:
@@ -1957,16 +1887,6 @@
       url_syntax: http://pir.georgetown.edu/cgi-bin/ipcSF?id=[example_id]
       example_id: PIRSF:SF002327
       example_url: http://pir.georgetown.edu/cgi-bin/ipcSF?id=SF002327
-- database: Planteome_gene
-  name: Generic planteome genes without homes
-  generic_urls:
-    - http://www.google.com
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      url_syntax: https://www.google.com/search?q=[example_id]
-      example_id: Planteome_gene:AC148152.3_FGT008
-      example_url: https://www.google.com/search?q=AC148152.3_FGT008
 - database: PlantSystematics_image_archive
   name: PlantSystematics.org
   generic_urls:
@@ -2070,7 +1990,7 @@
 - database: PPI
   name: Pseudomonas syringae community annotation project
   generic_urls:
-    - http://genome.pseudomonas-syringae.org/
+    - http://www.pseudomonas-syringae.org/    
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -2099,17 +2019,6 @@
       url_syntax: http://www.bioinf.manchester.ac.uk/cgi-bin/dbbrowser/sprint/searchprintss.cgi?display_opts=Prints&category=None&queryform=false&regexpr=off&prints_accn=[example_id]
       example_id: PRINTS:PR00025
       example_url: http://www.bioinf.manchester.ac.uk/cgi-bin/dbbrowser/sprint/searchprintss.cgi?display_opts=Prints&category=None&queryform=false&regexpr=off&prints_accn=PR00025
-- database: ProDom
-  name: ProDom protein domain families
-  description: ProDom protein domain families automatically generated from UniProtKB
-  generic_urls:
-    - http://prodom.prabi.fr/prodom/current/html/home.php
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      url_syntax: http://prodom.prabi.fr/prodom/current/cgi-bin/request.pl?question=DBEN&query=[example_id]
-      example_id: ProDom:PD000001
-      example_url: http://prodom.prabi.fr/prodom/current/cgi-bin/request.pl?question=DBEN&query=PD000001
 - database: Prosite
   name: Prosite database of protein families and domains
   generic_urls:
@@ -2133,13 +2042,6 @@
       type_id: PR:000000001
       id_syntax: '[A-Z]{3}[0-9]{5}(\.[0-9]+)?'
       example_id: protein_id:CAA71991
-- database: PROW
-  name: Protein Reviews on the Web
-  generic_urls:
-    - http://www.ncbi.nlm.nih.gov/prow/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
 - database: PseudoCAP
   name: Pseudomonas Genome Project
   generic_urls:
@@ -2186,13 +2088,6 @@
   name: PSORT protein subcellular localization databases and prediction tools for bacteria
   generic_urls:
     - http://www.psort.org/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-- database: pTARGET
-  name: pTARGET Prediction server for protein subcellular localization
-  generic_urls:
-    - http://bioinformatics.albany.edu/~ptarget/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -2488,13 +2383,6 @@
       url_syntax: http://smart.embl-heidelberg.de/smart/do_annotation.pl?BLAST=DUMMY&DOMAIN=[example_id]
       example_id: SMART:SM00005
       example_url: http://smart.embl-heidelberg.de/smart/do_annotation.pl?BLAST=DUMMY&DOMAIN=SM00005
-- database: SMD
-  name: Stanford Microarray Database
-  generic_urls:
-    - http://genome-www.stanford.edu/microarray
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
 - database: SO
   name: Sequence Ontology
   rdf_uri_prefix: http://purl.obolibrary.org/obo/SO_
@@ -2543,17 +2431,6 @@
       url_syntax: http://www.soybase.org/sbt/search/search_results.php?category=Soybase_ID&search_term=[example_id]
       example_id: SOY ref:SoyBase6597900
       example_url: http://www.soybase.org/sbt/search/search_results.php?category=Soybase_ID&search_term=SoyBase3142000126
-- database: SPD
-  name: Schizosaccharomyces pombe Postgenome Database at RIKEN; includes Orfeome Localisation data
-  generic_urls:
-    - http://www.riken.jp/SPD/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      id_syntax: '[0-9]{2}/[0-9]{2}[A-Z][0-9]{2}'
-      url_syntax: http://www.riken.jp/SPD/[example_id].html
-      example_id: SPD:05/05F01
-      example_url: http://www.riken.jp/SPD/05/05F01.html
 - database: SUPERFAMILY
   name: SUPERFAMILY protein annotation database
   description: A database of structural and functional protein annotations for completely sequenced genomes
@@ -2857,23 +2734,6 @@
       id_syntax: UR[0-9]{9}|MF_[0-9]{5}|PIRNR[0-9]{6}|PRU[0-9]{5}|RU[0-9]{6}
       example_id: UniRule:UR000107224
       example_url: https://www.uniprot.org/unirule/UR000107224
-- database: VIDA
-  name: Virus Database at University College London
-  generic_urls:
-    - http://www.biochem.ucl.ac.uk/bsm/virus_database/VIDA.html
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-- database: VMD
-  name: Virginia Bioinformatics Institute Microbial Database
-  generic_urls:
-    - http://phytophthora.vbi.vt.edu
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      url_syntax: http://vmd.vbi.vt.edu/cgi-bin/browse/browserDetail_new.cgi?gene_id=[example_id]
-      example_id: VMD:109198
-      example_url: http://vmd.vbi.vt.edu/cgi-bin/browse/browserDetail_new.cgi?gene_id=109198
 - database: VZ
   name: ViralZone
   generic_urls:
