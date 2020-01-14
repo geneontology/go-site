@@ -1979,7 +1979,8 @@
       example_url: http://www.plantsystematics.org/imagebyid_37658.html
 - database: PMCID
   name: Pubmed Central
-  synonyms: PMC
+  synonyms: 
+    - PMC
   generic_urls:
     - http://www.pubmedcentral.nih.gov/
   entity_types:
