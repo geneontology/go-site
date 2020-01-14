@@ -881,13 +881,6 @@
       url_syntax: https://www.genesys-pgr.org/acn/search?q=[example_id]
       example_id: Genesys-pgr:CM1015-16
       example_url: https://www.genesys-pgr.org/acn/search?q=CM1015-16
-- database: GenProtEC
-  name: GenProtEC E. coli genome and proteome database
-  generic_urls:
-    - http://genprotec.mbl.edu/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
 - database: GEO
   name: NCBI Gene Expression Omnibus
   generic_urls:
@@ -898,13 +891,6 @@
       url_syntax: http://www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc=[example_id]
       example_id: GEO:GDS2223
       example_url: http://www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc=GDS2223
-- database: GermOnline
-  name: GermOnline
-  generic_urls:
-    - http://www.germonline.org/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
 - database: GO
   name: Gene Ontology Database
   rdf_uri_prefix: http://purl.obolibrary.org/obo/GO_
@@ -1858,14 +1844,6 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-- database: PHI
-  name: MeGO (Phage and Mobile Element Ontology)
-  generic_urls:
-    - http://aclame.ulb.ac.be/Classification/mego.html
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      example_id: PHI:0000055
 - database: PIR
   name: Protein Information Resource
   generic_urls:
