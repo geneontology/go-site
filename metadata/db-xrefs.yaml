@@ -8,7 +8,8 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.agbase.msstate.edu/cgi-bin/getEntry.pl?db_pick=[ChickGO/MaizeGO]&uid=[example_id]
+      example_id: P02264
+      url_syntax: https://agbase.arizona.edu/cgi-bin/getEntry.pl?db_pick=all&database=Swiss-Prot&gb_acc=[example_id]
 - database: AGI_LocusCode
   name: Arabidopsis Genome Initiative
   description: Comprises TAIR, TIGR and MIPS
