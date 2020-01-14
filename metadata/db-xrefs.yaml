@@ -1946,14 +1946,14 @@
 - database: PIR
   name: Protein Information Resource
   generic_urls:
-    - http://pir.georgetown.edu/
+    - https://proteininformationresource.org/
   entity_types:
     - type_name: protein
       type_id: PR:000000001
       id_syntax: '[A-Z]{1}[0-9]{5}'
-      url_syntax: http://pir.georgetown.edu/cgi-bin/pirwww/nbrfget?uid=[example_id]
+      url_syntax: https://proteininformationresource.org/cgi-bin/nbrfget?uid=[example_id]
       example_id: PIR:I49499
-      example_url: http://pir.georgetown.edu/cgi-bin/pirwww/nbrfget?uid=I49499
+      example_url: https://proteininformationresource.org/cgi-bin/nbrfget?uid=I49499
 - database: PIRSF
   name: PIR Superfamily Classification System
   generic_urls:
