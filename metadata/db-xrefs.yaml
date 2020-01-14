@@ -2279,10 +2279,10 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: [0-9]
+      id_syntax: (NC|AC|NG|NT|NW|NZ|NM|NR|XM|XR|NP|AP|XP|YP|ZP)_[0-9]+(\.[0-9]+){0,1}
       url_syntax: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=[example_id]
-      example_id: nuccore:223468685
-      example_url: https://www.ncbi.nlm.nih.gov/nuccore/223468685
+      example_id: RefSeq:XP_001068954
+      example_url: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=XP_001068954
     - type_name: protein
       type_id: PR:000000001
       id_syntax: (NC|AC|NG|NT|NW|NZ|NM|NR|XM|XR|NP|AP|XP|YP|ZP)_[0-9]+(\.[0-9]+){0,1}
