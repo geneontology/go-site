@@ -1475,16 +1475,6 @@
       url_syntax: http://www.dkfz.de/LIFEdb/LIFEdb.aspx?ID=[example_id]
       example_id: LIFEdb:DKFZp564O1716
       example_url: http://www.dkfz.de/LIFEdb/LIFEdb.aspx?ID=DKFZp564O1716
-- database: LIS
-  name: Legume Information System
-  generic_urls:
-    - http://legumeinfo.org/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      url_syntax: http://legumeinfo.org/feature/Medicago/truncatula/gene/[example_id].JCVIMt4.0v1
-      example_id: LIS:Medtr5g030920
-      example_url: http://legumeinfo.org/feature/Medicago/truncatula/gene/Medtr5g030920.JCVIMt4.0v1
 - database: LOCSVMpsi
   name: LOCSVMPSI
   description: Subcellular localization for eukayotic proteins based on SVM and PSI-BLAST
