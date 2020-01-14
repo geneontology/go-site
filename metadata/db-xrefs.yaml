@@ -2045,13 +2045,13 @@
 - database: PseudoCAP
   name: Pseudomonas Genome Project
   generic_urls:
-    - http://v2.pseudomonas.com/
+    - http://www.pseudomonas.com
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://v2.pseudomonas.com/getAnnotation.do?locusID=[example_id]
+      url_syntax: http://www.pseudomonas.com/feature/show?locus_tag=[example_id]
       example_id: PseudoCAP:PA4756
-      example_url: http://v2.pseudomonas.com/getAnnotation.do?locusID=PA4756
+      example_url: http://www.pseudomonas.com/feature/show?locus_tag=PA4756
 - database: PSO_GIT
   name: GitHub Issue Tracker for PSO
   generic_urls:
