@@ -291,7 +291,7 @@
       example_url: http://www.cazy.org/PL11.html
 - database: DTU
   name:  DTU Health Tech Services
-  desription: Formerly CBS (Center for Biological Sequence Analysis)
+  description: Formerly CBS (Center for Biological Sequence Analysis)
   generic_urls:
     - http://www.cbs.dtu.dk/services
   entity_types:
