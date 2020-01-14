@@ -599,17 +599,6 @@
       url_syntax: http://www.biolws1.york.ac.uk/echobase/Gene.cfm?recordID=[example_id]
       example_id: EchoBASE:EB0231
       example_url: http://www.biolws1.york.ac.uk/echobase/Gene.cfm?recordID=EB0231
-- database: ECK
-  name: EcoGene Database of Escherichia coli Sequence and Function
-  generic_urls:
-    - http://www.ecogene.org/
-  entity_types:
-    - type_name: gene
-      type_id: SO:0000704
-      id_syntax: ECK[0-9]{4}
-      url_syntax: http://www.ecogene.org/geneInfo.php?eck_id=[example_id]
-      example_id: ECK:ECK3746
-      example_url: http://www.ecogene.org/geneInfo.php?eck_id=ECK3746
 - database: ECO
   name: Evidence Code Ontology
   rdf_uri_prefix: http://purl.obolibrary.org/obo/ECO_
