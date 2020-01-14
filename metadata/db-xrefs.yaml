@@ -1231,14 +1231,14 @@
   name: IntAct protein interaction database
   rdf_uri_prefix: http://identifiers.org/intact/
   generic_urls:
-    - http://www.ebi.ac.uk/intact/
+    - https://www.ebi.ac.uk/intact/
   entity_types:
     - type_name: molecular interaction
       type_id: BET:0000013
       id_syntax: EBI-[0-9]+
-      url_syntax: http://www.ebi.ac.uk/intact/search/do/search?searchString=[example_id]
+      url_syntax: https://www.ebi.ac.uk/intact/pages/interactions/interactions.xhtml?query=[example_id]
       example_id: IntAct:EBI-17086
-      example_url: http://www.ebi.ac.uk/intact/search/do/search?searchString=EBI-17086
+      example_url: https://www.ebi.ac.uk/intact/pages/interactions/interactions.xhtml?query=EBI-17086      
     - type_name: protein-containing complex
       type_id: GO:0032991
       id_syntax: EBI-[0-9]+
@@ -1247,7 +1247,7 @@
       example_url: http://www.ebi.ac.uk/complexportal/complex/EBI-10205244
 - database: InterPro
   name: InterPro database of protein domains and motifs
-  rdf_uri_prefix: http://identifiers.org/interpro/
+  rdf_uri_prefix: https://registry.identifiers.org/registry/interpro
   synonyms:
     - INTERPRO
     - IPR
@@ -1436,9 +1436,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.dkfz.de/LIFEdb/LIFEdb.aspx?ID=[example_id]
+      url_syntax: https://www.dkfz.de/en/mga/Groups/LIFEdb-Database.html?ID=[example_id]
       example_id: LIFEdb:DKFZp564O1716
-      example_url: http://www.dkfz.de/LIFEdb/LIFEdb.aspx?ID=DKFZp564O1716
+      example_url: https://www.dkfz.de/en/mga/Groups/LIFEdb-Database.html?ID=DKFZp564O1716
 - database: LOCSVMpsi
   name: LOCSVMPSI
   description: Subcellular localization for eukayotic proteins based on SVM and PSI-BLAST
@@ -1472,7 +1472,7 @@
 - database: MaizeGDB
   name: MaizeGDB
   generic_urls:
-    - http://www.maizegdb.org
+    - https://www.maizegdb.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -1481,30 +1481,30 @@
       example_url: https://maizegdb.org/gene_center/gene/12098
 - database: MaizeGDB_Locus
   name: MaizeGDB
-  rdf_uri_prefix: http://identifiers.org/maizegdb.locus/
+  rdf_uri_prefix: https://registry.identifiers.org/registry/maizegdb.locus
   generic_urls:
-    - http://www.maizegdb.org
+    - https://www.maizegdb.org/
   entity_types:
     - type_name: gene
       type_id: SO:0000704
       id_syntax: '[A-Za-z][A-Za-z0-9]*'
-      url_syntax: http://www.maizegdb.org/cgi-bin/displaylocusrecord.cgi?id=[example_id]
+      url_syntax: https://www.maizegdb.org/gene_center/gene/[example_id]
       example_id: MaizeGDB_Locus:25011
-      example_url: http://www.maizegdb.org/cgi-bin/displaylocusrecord.cgi?id=25011
+      example_url: https://www.maizegdb.org/gene_center/gene/25011
 - database: MaizeGDB_QTL
   name: Maize Genetics and Genomics Database
   generic_urls:
-    - http://www.maizegdb.org/
+    - https://www.maizegdb.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.maizegdb.org/data_center/trait?id=[example_id]
+      url_syntax: https://www.maizegdb.org/data_center/trait?id=[example_id]
       example_id: MaizeGDB_QTL:78112
-      example_url: http://www.maizegdb.org/data_center/trait?id=78112
+      example_url: https://www.maizegdb.org/data_center/trait?id=78112
 - database: MaizeGDB_REF
   name: Maize Genetics and Genomics Database
   generic_urls:
-    - http://www.maizegdb.org/
+    - https://www.maizegdb.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -1514,7 +1514,7 @@
 - database: MaizeGDB_stock
   name: Maize Genetics and Genomics Database
   generic_urls:
-    - http://www.maizegdb.org/
+    - https://www.maizegdb.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -1979,28 +1979,28 @@
       example_url: http://www.plantsystematics.org/imagebyid_37658.html
 - database: PMCID
   name: Pubmed Central
+  synonyms: PMC
   generic_urls:
     - http://www.pubmedcentral.nih.gov/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.ncbi.nlm.nih.gov/sites/entrez?db=pmc&cmd=search&term=[example_id]
+      url_syntax: hhttps://www.ncbi.nlm.nih.gov/pmc/articles/[example_id]
       example_id: PMCID:PMC201377
-      example_url: http://www.ncbi.nlm.nih.gov/sites/entrez?db=pmc&cmd=search&term=PMC201377
+      example_url: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC201377/
 - database: PMID
   name: PubMed
   synonyms:
     - PUBMED
-    - PubMed
   generic_urls:
-    - http://www.ncbi.nlm.nih.gov/PubMed/
+    - https://www.ncbi.nlm.nih.gov/pubmed
   entity_types:
     - type_name: entity
       type_id: BET:0000000
       id_syntax: '[0-9]+'
       url_syntax: http://www.ncbi.nlm.nih.gov/pubmed/[example_id]
-      example_id: PMID:4208797
-      example_url: http://www.ncbi.nlm.nih.gov/pubmed/4208797
+      example_id: PMID:31931324
+      example_url: https://www.ncbi.nlm.nih.gov/pubmed/31931324
 - database: PO
   name: Plant Ontology
   rdf_uri_prefix: http://purl.obolibrary.org/obo/PO_
@@ -2278,16 +2278,16 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: (NC|AC|NG|NT|NW|NZ|NM|NR|XM|XR|NP|AP|XP|YP|ZP)_[0-9]+(\.[0-9]+){0,1}
+      id_syntax: [0-9]
       url_syntax: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=[example_id]
-      example_id: RefSeq:XP_001068954
-      example_url: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=XP_001068954
+      example_id: nuccore:223468685
+      example_url: https://www.ncbi.nlm.nih.gov/nuccore/223468685
     - type_name: protein
       type_id: PR:000000001
       id_syntax: (NC|AC|NG|NT|NW|NZ|NM|NR|XM|XR|NP|AP|XP|YP|ZP)_[0-9]+(\.[0-9]+){0,1}
-      url_syntax: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=[example_id]
+      url_syntax: https://www.ncbi.nlm.nih.gov/protein/[example_id]
       example_id: RefSeq:XP_001068954
-      example_url: http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=XP_001068954
+      example_url: https://www.ncbi.nlm.nih.gov/protein/NP_001121125
 - database: RESID
   name: RESID Database of Protein Modifications
   generic_urls:
