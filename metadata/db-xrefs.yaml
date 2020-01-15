@@ -2526,16 +2526,6 @@
       url_syntax: https://github.com/Planteome/plant-trait-ontology/issues/[example_id]
       example_id: TO_GIT:381
       example_url: https://github.com/Planteome/plant-trait-ontology/issues/381
-- database: TRAIT
-  name: TRAnscript Integrated Table
-  description: an integrated database of transcripts expressed in human skeletal muscle
-  synonyms:
-    - MuscleTRAIT
-  generic_urls:
-    - http://muscle.cribi.unipd.it/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
 - database: TRANSFAC
   name: TRANSFAC database of eukaryotic transcription factors
   generic_urls:
