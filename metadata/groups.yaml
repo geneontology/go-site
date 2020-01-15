@@ -328,7 +328,7 @@
   shorthand: EcoliWiki
 -
   label: refGenome
-  id: https://cran.r-project.org/web/packages/refGenome/index.html
+  id: http://wiki.geneontology.org/index.php/Phylogenetic_Annotation_Project
   shorthand: REFGENOME
 -
   label: Ensembl Genome Browser
