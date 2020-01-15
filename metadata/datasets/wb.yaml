@@ -6,6 +6,13 @@ contact_email: "help@wormbase.org"
 project_url: "http://www.wormbase.org/"
 funding_source: "US National Institutes of Health, UK Medical Research Council, UK Biotechnology and Biological Sciences Research Council"
 email_report: "ranjana@its.caltech.edu,vanauken@caltech.edu"
+filter_out:
+  evidence:
+  - ECO:0000501
+  - ECO:0000318
+  evidence_reference:
+  - evidence: ECO:0000320
+    reference: PMID:21873635
 datasets:
  -
    id: wb.gaf

@@ -6,6 +6,16 @@ contact_email: "mgi-help@jax.org"
 project_url: "http://www.informatics.jax.org/"
 funding_source: "NHGRI of US National Institutes of Health"
 email_report: "harold.drabkin@jax.org"
+filter_out:
+  evidence:
+  - ECO:0000501
+  - ECO:0000318
+  - ECO:0000266
+  evidence_reference:
+  - evidence: ECO:0000320
+    reference: PMID:21873635
+  annotation_properties:
+  - noctua-model-id
 datasets:
  -
    id: mgi.gaf
