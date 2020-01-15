@@ -750,13 +750,13 @@
 - database: ENZYME
   name: Swiss Institute of Bioinformatics enzyme database
   generic_urls:
-    - http://www.expasy.ch/
+    - https://enzyme.expasy.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.expasy.ch/cgi-bin/nicezyme.pl?[example_id]
-      example_id: ENZYME:EC 1.1.1.1
-      example_url: http://www.expasy.ch/cgi-bin/nicezyme.pl?1.1.1.1
+      url_syntax: https://enzyme.expasy.org/EC/[example_id]
+      example_id: 1.1.1.1
+      example_url: https://enzyme.expasy.org/EC/1.1.1.1
 - database: EO_GIT
   name: GitHub Issue Tracker for EO
   generic_urls:
@@ -1068,7 +1068,7 @@
   synonyms:
     - grin
   generic_urls:
-    - http://www.ars-grin.gov/
+    - https://www.ars-grin.gov/
   entity_types:
     - type_name: germplasm
       type_id: BET:0000000
@@ -1078,7 +1078,7 @@
 - database: GRINDesc
   name: Germplasm Resources Information Network
   generic_urls:
-    - http://www.ars-grin.gov/
+    - https://www.ars-grin.gov/
   entity_types:
     - type_name: germplasm descriptors
       type_id: BET:0000000
@@ -1995,14 +1995,14 @@
 - database: Prosite
   name: Prosite database of protein families and domains
   generic_urls:
-    - http://www.expasy.ch/prosite/
+    - https://prosite.expasy.org/
   entity_types:
     - type_name: polypeptide region
       type_id: SO:0000839
-      id_syntax: PS[0-9]{5}
-      url_syntax: http://www.expasy.ch/cgi-bin/prosite-search-ac?[example_id]
-      example_id: Prosite:PS00365
-      example_url: http://www.expasy.ch/cgi-bin/prosite-search-ac?PS00365
+      id_syntax: PDOC[0-9]{5}
+      url_syntax: https://prosite.expasy.org/[example_id]
+      example_id: PDOC00314
+      example_url: https://prosite.expasy.org/PDOC00314
 - database: protein_id
   name: DDBJ / ENA / GenBank
   description: protein identifier shared by DDBJ/EMBL-bank/GenBank nucleotide sequence databases
