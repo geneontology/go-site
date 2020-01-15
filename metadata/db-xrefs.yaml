@@ -1786,14 +1786,14 @@
 - database: PDB
   name: Protein Data Bank
   generic_urls:
-    - http://www.rcsb.org/pdb/
+    - https://www.rcsb.org/pdb/
   entity_types:
     - type_name: protein
       type_id: PR:000000001
       id_syntax: '[A-Za-z0-9]{4}'
-      url_syntax: http://www.rcsb.org/pdb/cgi/explore.cgi?pdbId=[example_id]
+      url_syntax: https://www.rcsb.org/structure/[example_id]
       example_id: PDB:1A4U
-      example_url: http://www.rcsb.org/pdb/cgi/explore.cgi?pdbId=1A4U
+      example_url: https://www.rcsb.org/structure/1A4U
 - database: PECO_GIT
   name: GitHub Issue Tracker for PECO
   generic_urls:
@@ -1825,13 +1825,13 @@
 - database: PharmGKB
   name: Pharmacogenetics and Pharmacogenomics Knowledge Base
   generic_urls:
-    - http://www.pharmgkb.org
+    - https://www.pharmgkb.org
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.pharmgkb.org/do/serve?objId=[example_id]
+      url_syntax: https://www.pharmgkb.org/do/serve?objId=[example_id]
       example_id: PharmGKB:PA267
-      example_url: http://www.pharmgkb.org/do/serve?objId=PA267
+      example_url: https://www.pharmgkb.org/do/serve?objId=PA267
 - database: PhenoScape
   name: PhenoScape Knowledgebase
   generic_urls:
@@ -1875,7 +1875,7 @@
   synonyms: 
     - PMC
   generic_urls:
-    - http://www.pubmedcentral.nih.gov/
+    - https://www.ncbi.nlm.nih.gov/pmc/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -1973,14 +1973,14 @@
     - PRO
   rdf_uri_prefix: http://purl.obolibrary.org/obo/PR_
   generic_urls:
-    - http://www.proconsortium.org/pro/pro.shtml
+    - https://proconsortium.org/
   entity_types:
     - type_name: protein
       type_id: PR:000000001
       id_syntax: ([OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z][0-9]([A-Z][A-Z0-9]{2}[0-9]){1,2}){1}(-[0-9]+){0,1}|[0-9]{9}
-      url_syntax: http://purl.obolibrary.org/obo/PR_[example_id]
-      example_id: PR:000025380
-      example_url: http://purl.obolibrary.org/obo/PR_000025380
+      url_syntax: https://proconsortium.org/app/entry/[example_id]
+      example_id: PR:Q64445
+      example_url: https://proconsortium.org/app/entry/PR_Q64445
 - database: PRINTS
   name: PRINTS compendium of protein fingerprints
   generic_urls:
@@ -2062,7 +2062,7 @@
 - database: PSORT
   name: PSORT protein subcellular localization databases and prediction tools for bacteria
   generic_urls:
-    - http://www.psort.org/
+    - https://www.psort.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -2115,14 +2115,14 @@
     - REAC
   rdf_uri_prefix: https://registry.identifiers.org/registry/reactome
   generic_urls:
-    - http://www.reactome.org/
+    - https://www.reactome.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
       id_syntax: R-[A-Z]{3}-[0-9]+(-[0-9]+){0,1}(\.[0-9]+){0,1}
-      url_syntax: http://www.reactome.org/content/detail/[example_id]
+      url_syntax: https://www.reactome.org/content/detail/[example_id]
       example_id: Reactome:R-HSA-109582
-      example_url: http://www.reactome.org/content/detail/R-HSA-109582
+      example_url: https://www.reactome.org/content/detail/R-HSA-109582
 - database: REBASE
   name: REBASE restriction enzyme database
   generic_urls:
@@ -2173,13 +2173,13 @@
 - database: Rfam
   name: Rfam database of RNA families
   generic_urls:
-    - http://rfam.org
+    - https://rfam.org
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://rfam.org/family/[example_id]
+      url_syntax: https://rfam.org/family/[example_id]
       example_id: Rfam:RF00012
-      example_url: http://rfam.org/family/RF00012
+      example_url: https://rfam.org/family/RF00012
 - database: RGD
   name: Rat Genome Database
   synonyms:
@@ -2187,7 +2187,7 @@
     - RGDID
   rdf_uri_prefix: https://registry.identifiers.org/registry/rgd
   generic_urls:
-    - http://rgd.mcw.edu/
+    - https://rgd.mcw.edu/
   entity_types:
     - type_name: gene
       type_id: SO:0000704
@@ -2220,14 +2220,14 @@
   name: RNAcentral
   description: An international database of ncRNA sequences
   generic_urls:
-    - http://rnacentral.org
+    - https://rnacentral.org
   entity_types:
     - type_name: ribonucleic acid
       type_id: CHEBI:33697
       id_syntax: URS[0-9A-F]{10}([_\/][0-9]+){0,1}
-      url_syntax: http://rnacentral.org/rna/[example_id]
+      url_syntax: https://rnacentral.org/rna/[example_id]
       example_id: RNAcentral:URS000047C79B_9606
-      example_url: http://rnacentral.org/rna/URS000047C79B_9606
+      example_url: https://rnacentral.org/rna/URS000047C79B/9606
 - database: RNAmods
   name: RNA Modification Database
   synonyms:
@@ -2341,7 +2341,7 @@
 - database: SGN_germplasm
   name: Sol Genomics Network
   generic_urls:
-    - http://www.ncbi.nlm.nih.gov/PubMed/
+    - https://solgenomics.net/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -2362,7 +2362,7 @@
   name: Sequence Ontology
   rdf_uri_prefix: http://purl.obolibrary.org/obo/SO_
   generic_urls:
-    - http://sequenceontology.org/
+    - http://www.sequenceontology.org/
   entity_types:
     - type_name: sequence attribute
       type_id: SO:0000400
@@ -2379,33 +2379,33 @@
 - database: Soy_gene
   name: SoyBase
   generic_urls:
-    - http://soybase.org/
+    - https://soybase.org/
   entity_types:
     - type_name: gene
       type_id: BET:0000000
-      url_syntax: http://www.soybase.org/sbt/search/search_results.php?category=FeatureName&search_term=[example_id]
+      url_syntax: https://www.soybase.org/sbt/search/search_results.php?category=FeatureName&search_term=[example_id]
       example_id: Glyma18g02210
-      example_url: http://www.soybase.org/sbt/search/search_results.php?category=FeatureName&search_term=Glyma18g02210
+      example_url: https://www.soybase.org/sbt/search/search_results.php?category=FeatureName&search_term=Glyma18g02210
 - database: SOY_QTL
   name: SoyBase
   generic_urls:
-    - http://soybase.org/
+    - https://soybase.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://soybase.org/sbt/search/search_results.php?category=QTLName&search_term=[example_id]
+      url_syntax: https://www.soybase.org/sbt/search/search_results.php?category=QTLName&search_term=[example_id]
       example_id: Seedling, abnormal+1-1
-      example_url: http://www.soybase.org/sbt/search/search_results.php?category=QTLName&search_term=Seedling,+abnormal+1-1
+      example_url: https://www.soybase.org/sbt/search/search_results.php?category=QTLName&search_term=Seedling,+abnormal+1-1
 - database: SOY_ref
   name: SoyBase
   generic_urls:
-    - http://soybase.org/
+    - https://soybase.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.soybase.org/sbt/search/search_results.php?category=Soybase_ID&search_term=[example_id]
+      url_syntax: https://www.soybase.org/sbt/search/search_results.php?category=Soybase_ID&search_term=[example_id]
       example_id: SOY ref:SoyBase6597900
-      example_url: http://www.soybase.org/sbt/search/search_results.php?category=Soybase_ID&search_term=SoyBase3142000126
+      example_url: https://www.soybase.org/sbt/search/search_results.php?category=Soybase_ID&search_term=SoyBase3142000126
 - database: SUPERFAMILY
   name: SUPERFAMILY protein annotation database
   description: A database of structural and functional protein annotations for completely sequenced genomes
