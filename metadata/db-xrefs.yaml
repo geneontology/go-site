@@ -1686,14 +1686,6 @@
       id_syntax: \d{7}
       example_id: OBI:0000038
       example_url: http://purl.obolibrary.org/obo/OBI_0000038
-- database: OBO_REL
-  name: OBO relation ontology
-  generic_urls:
-    - http://www.obofoundry.org/ro/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      example_id: OBO_REL:part_of
 - database: OBO_SF_PO
   name: Source Forge OBO Plant Ontology (PO) term request tracker
   generic_urls:
@@ -2608,17 +2600,6 @@
       url_syntax: http://eawag-bbd.ethz.ch/servlets/rule.jsp?rule=[example_id]
       example_id: UM-BBD_ruleID:bt0330
       example_url: http://eawag-bbd.ethz.ch/servlets/rule.jsp?rule=bt0330
-- database: UniMod
-  name: UniMod
-  description: protein modifications for mass spectrometry
-  generic_urls:
-    - http://www.unimod.org/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      url_syntax: http://www.unimod.org/modifications_view.php?editid1=[example_id]
-      example_id: UniMod:1287
-      example_url: http://www.unimod.org/modifications_view.php?editid1=1287
 - database: UniParc
   name: UniProt Archive
   description: A non-redundant archive of protein sequences extracted from Swiss-Prot, TrEMBL, PIR-PSD, EMBL, Ensembl, IPI, PDB, RefSeq, FlyBase, WormBase, European Patent Office, United States Patent and Trademark Office, and Japanese Patent Office
