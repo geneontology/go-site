@@ -942,7 +942,7 @@
 - database: GO_REF
   name: Gene Ontology Database references
   generic_urls:
-    - http://purl.obolibrary.org/obo/go/references/
+    - http://current.geneontology.org/metadata/gorefs/index.html
   entity_types:
     - type_name: entity
       type_id: BET:0000000
@@ -1679,12 +1679,13 @@
 - database: OBI
   name: Ontology for Biomedical Investigations
   generic_urls:
-    - http://obi-ontology.org/page/Main_Page
+    - http://obi-ontology.org/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
       id_syntax: \d{7}
       example_id: OBI:0000038
+      example_url: http://purl.obolibrary.org/obo/OBI_0000038
 - database: OBO_REL
   name: OBO relation ontology
   generic_urls:
@@ -1765,11 +1766,12 @@
   name: Phenotypic quality ontology
   rdf_uri_prefix: http://purl.obolibrary.org/obo/PATO_
   generic_urls:
-    - http://www.bioontology.org/wiki/index.php/PATO:Main_Page
+    - http://www.obofoundry.org/ontology/pato.html
   entity_types:
     - type_name: entity
       type_id: BET:0000000
       example_id: PATO:0001420
+      example_url: http://purl.obolibrary.org/obo/PATO_0001420
 - database: PATRIC
   name: PathoSystems Resource Integration Center
   description: PathoSystems Resource Integration Center at the Virginia Bioinformatics Institute
@@ -2038,23 +2040,25 @@
   synonyms:
     - MI
   generic_urls:
-    - http://psidev.sourceforge.net/mi/xml/doc/user/index.html
+    - http://www.psidev.info/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      example_id: MI:0018
+      url_syntax: http://purl.obolibrary.org/obo/
+      example_id: MI_0018
+      example_url: http://purl.obolibrary.org/obo/MI_0018
 - database: PSI-MOD
   name: Proteomics Standards Initiative protein modification ontology
   synonyms:
     - MOD
   generic_urls:
-    - http://psidev.sourceforge.net/mod/
+    - http://www.psidev.info/groups/protein-modifications
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.ebi.ac.uk/ontology-lookup/?termId=MOD:[example_id]
-      example_id: MOD:00219
-      example_url: http://www.ebi.ac.uk/ontology-lookup/?termId=MOD:00219
+      url_syntax: http://purl.obolibrary.org/obo/[example_id]
+      example_id: MOD_00219
+      example_url: http://purl.obolibrary.org/obo/MOD_00219
 - database: PSORT
   name: PSORT protein subcellular localization databases and prediction tools for bacteria
   generic_urls:
