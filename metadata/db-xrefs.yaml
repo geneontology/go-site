@@ -1188,13 +1188,6 @@
     - type_name: entity
       type_id: BET:0000000
       example_id: IMGT_LIGM:U03895
-- database: IMP
-  name: Integrative Multi-species Prediction
-  generic_urls:
-    - http://imp.princeton.edu/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
 - database: IntAct
   name: IntAct protein interaction database
   rdf_uri_prefix: http://identifiers.org/intact/
