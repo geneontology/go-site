@@ -30,6 +30,8 @@ script:
   - kwalify -E -f metadata/db-xrefs.schema.yaml metadata/db-xrefs.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
   - kwalify -E -m metadata/datasets.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
   - kwalify -E -f metadata/datasets.schema.yaml metadata/datasets/*.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
+  - kwalify -E -m metadata/extensions-constraints.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
+  - kwalify -E -f metadata/extensions-constraints.schema.yaml metadata/extensions-constraints.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
   - sparta valid --rules metadata/rules/ --schema metadata/rules.schema.yaml
   - python3 ./scripts/sanity-check-users-and-groups.py --verbose --users metadata/users.yaml --groups metadata/groups.yaml; test $? -eq 0
   ## Somewhat awkwardly reuse sparta to check non-go-rules files that
