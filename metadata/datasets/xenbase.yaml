@@ -22,3 +22,35 @@ datasets:
    taxa:
     - NCBITaxon:8364
     - NCBITaxon:8355
+-
+   id: xenbase.gpad
+   label: "Xenbase gpad file"
+   description: "gpad file for Xenopus from Xenbase"
+   url: http://current.geneontology.org/annotations/xenbase.gpad.gz
+   type: gpad
+   dataset: xenbase
+   submitter: xenbase
+   compression: gzip
+   source: ftp://ftp.xenbase.org/pub/DataExchange/GO/xenbase.gpad.gz
+   entity_type:
+   status: active
+   species_code: Xenopus
+   taxa:
+    - NCBITaxon:8364
+    - NCBITaxon:8355
+-
+   id: xenbase.gaf
+   label: "Xenbase gaf file"
+   description: "gaf file for Xenopus from Xenbase"
+   url: http://current.geneontology.org/annotations/xenbase.gaf.gz
+   type: gaf
+   dataset: xenbase
+   submitter: xenbase
+   compression: gzip
+   source: ftp://ftp.xenbase.org/pub/DataExchange/GO/xenbase.gaf.gz
+   entity_type:
+   status: active
+   species_code: Xenopus
+   taxa:
+    - NCBITaxon:8364
+    - NCBITaxon:8355
