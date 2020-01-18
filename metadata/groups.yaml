@@ -402,3 +402,8 @@
   label: GREEKC
   id: http://greekc.org
   shorthand: GREEKC
+-  
+  label: TRAIT
+  id: http://wiki.geneontology.org/index.php/Muscle_biology-_Muscle_Development_Implementation_plan
+  active-from: 2007-01-01
+  active-to: 2010-01-01
