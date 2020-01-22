@@ -402,3 +402,7 @@
   label: GREEKC
   id: http://greekc.org
   shorthand: GREEKC
+-
+  label: Rfam
+  id: https://rfam.org/
+  shorthand: Rfam
