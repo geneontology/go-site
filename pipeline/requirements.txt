@@ -1,3 +1,3 @@
 PyYAML
-ontobio==1.15.5
+ontobio==1.15.6
 click
