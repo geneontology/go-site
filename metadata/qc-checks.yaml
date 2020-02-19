@@ -1,0 +1,8 @@
+####
+#### QC/QA metadata and bounds checking data.
+#### See the README.md in this directory for more details.
+####
+-
+  filename: rgd.gaf
+  expected-lines: 424986
+  acceptable-variation: 0.05

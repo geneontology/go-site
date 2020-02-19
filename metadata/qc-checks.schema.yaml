@@ -1,0 +1,22 @@
+####
+#### Use kwalify and this schema to validate the QC/QA config files.
+####
+#### Examples:
+####    kwalify -f ./metadata/qc-checks.schema.yaml ./metadata/qc-checks.yaml
+####    kwalify -f ./metadata/qc-checks.schema.yaml ./metadata/qc-checks.yaml | grep INVALID; test $? -ne 0
+####
+type: seq
+sequence:
+  - type: map
+    mapping:
+      "filename":
+        type: str
+        required: true
+        unique: true
+        pattern: /^*.gaf$/
+      "expected-lines":
+        type: int
+        required: true
+      "acceptable-variation":
+        type: number
+        required: true
