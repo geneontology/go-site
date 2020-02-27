@@ -97,22 +97,22 @@ def main():
                 rmd_p = True
 
         ##
-        otc_p = False
-        otc_data = 'No report generated.'
-        otc_fname = args.directory + '/' + aid + '-owltools-check.txt'
-        if os.path.isfile(otc_fname):
-            with open(otc_fname) as fileh:
-                otc_data = fileh.read()
-                otc_p = True
+        # otc_p = False
+        # otc_data = 'No report generated.'
+        # otc_fname = args.directory + '/' + aid + '-owltools-check.txt'
+        # if os.path.isfile(otc_fname):
+        #     with open(otc_fname) as fileh:
+        #         otc_data = fileh.read()
+        #         otc_p = True
 
         ##
-        sum_p = False
-        sum_data = 'No report generated.'
-        sum_fname = args.directory + '/' + aid + '-summary.txt'
-        if os.path.isfile(sum_fname):
-            with open(sum_fname) as fileh:
-                sum_data = fileh.read()
-                sum_p = True
+        # sum_p = False
+        # sum_data = 'No report generated.'
+        # sum_fname = args.directory + '/' + aid + '-summary.txt'
+        # if os.path.isfile(sum_fname):
+        #     with open(sum_fname) as fileh:
+        #         sum_data = fileh.read()
+        #         sum_p = True
 
         ##
         pre_p = False
@@ -161,23 +161,9 @@ def main():
             f.write(' <p>\n')
             f.write('  <ul>\n')
             f.write('   <li>\n')
-            f.write('    <a href="#sum">Summary</a>')
-            if sum_p:
-                f.write('    (<a href="'+ aid +'-summary.txt">original</a>)\n')
-            else:
-                f.write('    \n')
-            f.write('   </li>\n')
-            f.write('   <li>\n')
             f.write('    <a href="#rmd">Report</a>')
             if rmd_p:
                 f.write('    (<a href="'+ aid +'.report.md">original</a>)\n')
-            else:
-                f.write('    \n')
-            f.write('   </li>\n')
-            f.write('   <li>\n')
-            f.write('    <a href="#otc">OWLTools check</a>')
-            if otc_p:
-                f.write('    (<a href="'+ aid +'-owltools-check.txt">original</a>)\n')
             else:
                 f.write('    \n')
             f.write('   </li>\n')
@@ -199,29 +185,10 @@ def main():
             f.write(' </p>\n')
             f.write('</div>\n')
 
-            f.write('<h1>Summary</h1>\n')
-            f.write('<div id="sum">\n')
-            #f.write(' <blockquote>\n')
-            f.write(markdown.markdown(sum_data))
-            #f.write(sum_data)
-            #f.write(' </blockquote>\n')
-            f.write('\n')
-            f.write('</div>\n')
-
             f.write('<h1>Report</h1>\n')
             f.write('<div id="rmd">\n')
             f.write(markdown.markdown(rmd_data, extensions=["markdown.extensions.headerid"]))
             #f.write(rmd_data)
-            f.write('\n')
-            f.write('</div>\n')
-
-            f.write('<h1>OWLTools check</h1>\n')
-            f.write('<div id="otc">\n')
-            #f.write(' <blockquote>\n')
-            #f.write(markdown.markdown(otc_data))
-            #f.write(otc_data)
-            f.write(otc_data.replace("\n","<br />\n"))
-            #f.write(' </blockquote>\n')
             f.write('\n')
             f.write('</div>\n')
 
