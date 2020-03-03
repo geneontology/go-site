@@ -4081,3 +4081,17 @@
   nickname: 'Shirin Saverimuttu'
   organization: BHF-UCL
   uri: 'http://orcid.org/0000-0003-1191-2681'
+-
+  accounts:
+    github: MariosMakris
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological'
+    - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/syngo'
+  nickname: 'Marios Makris'
+  organization: BHF-UCL
+  uri: 'http://orcid.org/0000-0002-6176-1677'
