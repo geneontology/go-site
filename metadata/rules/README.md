@@ -14,11 +14,11 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000004">GORULE:0000004 Reciprocal annotations for 'protein binding ; GO:0005515'</a>
  * <a href="#gorule0000005">GORULE:0000005 No ISS or ISS-related annotations to 'protein binding ; GO:0005515'</a>
  * <a href="#gorule0000006">GORULE:0000006 IEP and HEP usage is restricted to terms from the Biological Process ontology</a>
- * <a href="#gorule0000007">GORULE:0000007 IPI should not be used with catalytic activity molecular function terms</a>
+ * <a href="#gorule0000007">GORULE:0000007 IPI should not be used with GO:0003824 catalytic activity or descendents</a>
  * <a href="#gorule0000008">GORULE:0000008 No annotations should be made to uninformative high level terms</a>
  * <a href="#gorule0000009">GORULE:0000009 Annotation Intersection Alerts</a>
  * <a href="#gorule0000010">GORULE:0000010 Deprecated - PubMed reference formatting must be correct</a>
- * <a href="#gorule0000011">GORULE:0000011 ND annotations to root nodes only; and only root nodes can have the evidence code ND.</a>
+ * <a href="#gorule0000011">GORULE:0000011 ND evidence code should be to root nodes only, and no terms other than root nodes can have the evidence code ND</a>
  * <a href="#gorule0000013">GORULE:0000013 Taxon-appropriate annotation check</a>
  * <a href="#gorule0000014">GORULE:0000014 Deprecated. GO terms in annotations should not be obsolete.</a>
  * <a href="#gorule0000015">GORULE:0000015 Dual species taxon check</a>
@@ -39,7 +39,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000030">GORULE:0000030 Deprecated GO_REFs are not allowed</a>
  * <a href="#gorule0000031">GORULE:0000031 Annotation relations are replaced when not provided by source</a>
  * <a href="#gorule0000032">GORULE:0000032 DEPRECATED Allowed References for each ECO.</a>
- * <a href="#gorule0000033">GORULE:0000033 Public Reference IDs (PMID, PMC, doi, or GO_REF) should be preferred over group specific Reference IDs</a>
+ * <a href="#gorule0000033">GORULE:0000033 DEPRECATED. Public Reference IDs (PMID, PMC, doi, or GO_REF) should be preferred over group specific Reference IDs</a>
  * <a href="#gorule0000035">GORULE:0000035 'Deprecated - Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.</a>
  * <a href="#gorule0000036">GORULE:0000036 Report annotations that involve gene products where the gene product is annotated to a term 'x' and 'regulation of X' (multiple annotations involved)</a>
  * <a href="#gorule0000037">GORULE:0000037 IBA annotations should ONLY be assigned_by GO_Central and have PMID:21873635 as a reference</a>
@@ -48,14 +48,17 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000042">GORULE:0000042 Qualifier: IKR evidence code requires a NOT qualifier</a>
  * <a href="#gorule0000043">GORULE:0000043 Check for valid combination of evidence code and GO_REF</a>
  * <a href="#gorule0000044">GORULE:0000044 Deprecated - Reference: check for invalid use of GO_REF:0000057 can only be used with terms that are descendants of GO:0006915 (apoptotic process)</a>
- * <a href="#gorule0000045">GORULE:0000045 With/from: Verify that the combination of evidence (ECO) code and with/from conform to the rules in eco-usage-constraints.yaml</a>
+ * <a href="#gorule0000045">GORULE:0000045 With/from: Verify that the combination of evidence (ECO) codes conform to the rules in eco-usage-constraints.yaml</a>
  * <a href="#gorule0000046">GORULE:0000046 The ‘with’ field (GAF column 8) must be the same as the gene product (GAF colummn 2) when annotating to ‘self-binding’ terms.</a>
  * <a href="#gorule0000047">GORULE:0000047 With/from: ChEBI IDs in With/from can only be used with terms that are descendants of GO:0005488 (binding)</a>
  * <a href="#gorule0000048">GORULE:0000048 Gene products having ND annotations and other annotations in the same aspect should be reviewed</a>
  * <a href="#gorule0000049">GORULE:0000049 If the annotation has 'contributes_to' as its qualifier, verify that at least one annotation to GO:0043234 (protein complex), or one of its child terms exists</a>
  * <a href="#gorule0000050">GORULE:0000050 Annotations to ISS, ISA and ISO should not be self-referential</a>
  * <a href="#gorule0000051">GORULE:0000051 Some GO terms require a value in the Annotation Extension field</a>
+ * <a href="#gorule0000053">GORULE:0000053 'NOT' annotation should not have extension</a>
  * <a href="#gorule0000054">GORULE:0000054 Genes annotated with ND should have no other annotations for that aspect</a>
+ * <a href="#gorule0000055">GORULE:0000055 References should have only one ID per ID space</a>
+ * <a href="#gorule0000056">GORULE:0000056 Annotations should validate against GO shape expressions</a>
 
 
 
@@ -239,7 +242,7 @@ Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt
 
 <a name="gorule0000007"/>
 
-## IPI should not be used with catalytic activity molecular function terms
+## IPI should not be used with GO:0003824 catalytic activity or descendents
 
  * id: [GORULE:0000007](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000007.md)
  * status: approved
@@ -330,7 +333,7 @@ will be removed.
 
 <a name="gorule0000011"/>
 
-## ND annotations to root nodes only; and only root nodes can have the evidence code ND.
+## ND evidence code should be to root nodes only, and no terms other than root nodes can have the evidence code ND
 
  * id: [GORULE:0000011](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000011.md)
  * status: implemented
@@ -373,17 +376,19 @@ This rule is now merged with GORULE:0000020.
 ## Dual species taxon check
 
  * id: [GORULE:0000015](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000015.md)
- * status: approved
+ * status: implemented
 
 
-Dual species annotations are used to capture information about
+For background: dual species annotations are used to capture information about
 multi-organism interactions. The first taxon ID should be that of the
 species encoding the gene product, and the second should be the taxon of
 the other species in the interaction. Where the interaction is between
-organisms of the same species, both taxon IDs should be the same. These
-annotations should be used only in conjunction with terms that have the
-biological process term 'GO:0044419 : interspecies interaction between organisms' or the
-cellular component term 'GO:0044215 : other organism' as an ancestor.
+organisms of the same species, both taxon IDs should be the same.
+
+This rule should check that these annotations should be used only in conjunction with
+terms that have the biological process term 'GO:0044419 : interspecies interaction
+between organisms' or the cellular component term 'GO:0044215 : other organism' 
+as an ancestor.
 
 <a name="gorule0000016"/>
 
@@ -675,13 +680,23 @@ DEPRECATED. See GORULE:0000043
 
 <a name="gorule0000033"/>
 
-## Public Reference IDs (PMID, PMC, doi, or GO_REF) should be preferred over group specific Reference IDs
+## DEPRECATED. Public Reference IDs (PMID, PMC, doi, or GO_REF) should be preferred over group specific Reference IDs
 
  * id: [GORULE:0000033](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000033.md)
- * status: implemented
+ * status: deprecated
 
 
-IDs in the Reference field should only be only from PMID, PMC, doi, or GO_REF. Group specific References will be reported on if there is also an accepted public ID. For example, if FB:FBrf0159398 and GO_REF:0000015 are both found, the FB ID will be reported. Similarly, if only the group ID exists, a warning will be issued.
+
+# DEPRECATED
+
+References for an annotation should prefer sources from PMID, PMC, doi, or GO_REF over group specific references. 
+
+Group references that are part of an "external accession" in a GO_REF will be replaced by the GO_REF. 
+
+For example, `FB:FBrf0159398` is an external accession for `GO_REF:0000015`, so the FB ID will be repaired to the GO_REF.
+If the group reference is the only one present, it will be reported as a warning, but not removed. 
+
+Already existing References from PMID, PMC, doi, or GO_REF will not be reported on as these are all correct.
 
 The list of GO_REFs are here: https://github.com/geneontology/go-site/tree/master/metadata/gorefs.
 
@@ -743,7 +758,7 @@ Allowed evidence codes for the primary annotations: EXP, IMP, IDA, IPI, IEP, IGI
 ## Protein complexes can not be annotated to GO:0032991 (protein-containing complex) or its descendants
 
  * id: [GORULE:0000039](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000039.md)
- * status: proposed
+ * status: implemented
 
 
 
@@ -798,13 +813,13 @@ Reference: check for invalid use of GO_REF:0000057 can only be used with terms t
 
 <a name="gorule0000045"/>
 
-## With/from: Verify that the combination of evidence (ECO) code and with/from conform to the rules in eco-usage-constraints.yaml
+## With/from: Verify that the combination of evidence (ECO) codes conform to the rules in eco-usage-constraints.yaml
 
  * id: [GORULE:0000045](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000045.md)
  * status: proposed
 
 
-With/from: Verify that the combination of evidence (ECO) code and with/from conform to the rules in eco-usage-constraints.yaml
+With/from: Verify that the combination of evidence (ECO) codes conform to the rules in eco-usage-constraints.yaml
 
 <a name="gorule0000046"/>
 
@@ -881,6 +896,16 @@ Direct annotations to these terms require a value in the Annotation Extension fi
  * 'GO:0005515 protein binding' 
  * 'GO:0005488 binding'
 
+<a name="gorule0000053"/>
+
+## 'NOT' annotation should not have extension
+
+ * id: [GORULE:0000053](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000053.md)
+ * status: deprecated
+
+
+This rule will not be implemented, because extensions are additions to terms, so if we allow NOT annotations, we need to allow negating annotations with extensions.  
+
 <a name="gorule0000054"/>
 
 ## Genes annotated with ND should have no other annotations for that aspect
@@ -892,3 +917,29 @@ Direct annotations to these terms require a value in the Annotation Extension fi
 Use of the ND evidence code specifically indicates that a curator has looked but not been able to find information that supports making an annotation to any term from the Molecular Function, Biological Process, or Cellular Component as of the annotation date indicated.
 
 Note that use of the ND evidence code with an annotation to one of the root nodes to indicate lack of knowledge in that aspect makes a statement about the lack of knowledge only with respect to that particular aspect of the ontology. Use of the ND evidence code to indicate lack of knowledge in one particular aspect does not make any statement about the availability of knowledge or evidence in the other GO aspects.
+
+<a name="gorule0000055"/>
+
+## References should have only one ID per ID space
+
+ * id: [GORULE:0000055](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000055.md)
+ * status: proposed
+
+
+Since references should only refer to single publications, multiple IDs indicate
+alternate IDs for the same publication. So different reference IDs should be in
+different ID spaces. More than one ID in the same space implies distinct publications
+are being referenced, which is not allowed.
+
+<a name="gorule0000056"/>
+
+## Annotations should validate against GO shape expressions
+
+ * id: [GORULE:0000056](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000056.md)
+ * status: proposed
+
+
+Annotation data can be checked using Shex Shapes as GO-CAM models. GO has a collection of shape
+expressions that are used for this purpose at https://github.com/geneontology/go-shapes/tree/master/shapes.
+
+Annotations as GO-CAMs should successfully validate against this set of Shex Shapes.
