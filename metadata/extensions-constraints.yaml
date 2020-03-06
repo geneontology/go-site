@@ -11,7 +11,10 @@
   cardinality: 1
 - relation: has_input
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - CHEBI
     - PR
     - SO
@@ -23,7 +26,10 @@
     - GO:0008150
 - relation: has_direct_input
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - CHEBI
     - PR
     - SO
@@ -43,13 +49,19 @@
   cardinality: 1
 - relation: has_part
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:0032991
 - relation: has_regulation_target
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:0003674
@@ -97,7 +109,10 @@
   namespaces:
     - CL
     - WBbt
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:0008150
@@ -117,7 +132,10 @@
     - GO:0048468
 - relation: has_regulation_target
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
     - SO
   primary_root_terms:
@@ -142,7 +160,10 @@
     - GO:0050789
 - relation: regulates_o_transports_or_maintains_localization_of
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:0050789
@@ -203,7 +224,10 @@
     - EMAPA
     - UBERON
     - WBbt
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - CL
     - CHEBI
     - PR
@@ -224,7 +248,10 @@
     - GO:0008150
 - relation: regulates_o_has_agent
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:0060284
@@ -252,13 +279,19 @@
     - GO:0040011
 - relation: results_in_movement_of
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:0008150
 - relation: transports_or_maintains_localization_of
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - CHEBI
     - GO
     - PR
@@ -273,7 +306,10 @@
     - GO:0050789
 - relation: regulates_o_results_in_movement_of
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - EMAPA
     - UBERON
     - WBbt
@@ -308,7 +344,10 @@
     - GO:0060284
 - relation: regulates_o_has_output
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - GO
     - CHEBI
     - PR
@@ -356,13 +395,19 @@
     - GO:0045165
 - relation: regulates_transcription_of
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:1903506
 - relation: regulates_o_has_input
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:0008150
@@ -383,7 +428,10 @@
     - GO:0008150
 - relation: part_of
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - GO
     - PR
   primary_root_terms:
@@ -410,7 +458,10 @@
     - GO:0001708
 - relation: negatively_regulates
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:0008150
@@ -461,7 +512,10 @@
     - WBbt
     - GO
     - CL
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:0008150
@@ -478,13 +532,19 @@
     - GO:0008150
 - relation: gene_product_of
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:0008150
 - relation: has_output_o_product_of
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:0008150
@@ -505,7 +565,10 @@
     - GO:0008150
 - relation: has_output
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:0008150
@@ -530,7 +593,10 @@
     - GO:0010453
 - relation: occurs_in
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - EMAPA
     - UBERON
     - WBbt
@@ -539,28 +605,40 @@
     - GO:0008150
 - relation: regulates_activity_of
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:0003674
     - GO:0065009
 - relation: enabled_by
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:0008150
     - GO:0003674
 - relation: has_target_end_location
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - GO
     - PR
   primary_root_terms:
     - GO:0008150
 - relation: positively_regulates
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:0008150
@@ -577,7 +655,10 @@
     - GO:0005488
 - relation: regulates_level_of
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:0008150
@@ -588,7 +669,10 @@
     - GO:0048878
 - relation: in_presence_of
   namespaces:
-    - geneID
+    - MGI
+    - WB
+    - PR
+    - UniProtKB
     - PR
   primary_root_terms:
     - GO:0008150
