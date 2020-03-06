@@ -32,7 +32,7 @@ mapping:
     required: false
     sequence:
       - type: str
-        enum: [ "silent" ]
+        enum: [ "silent", "context-import" ]
         unique: true
   "issues":
     required: false
