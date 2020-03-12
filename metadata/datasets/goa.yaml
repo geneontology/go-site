@@ -764,7 +764,7 @@ datasets:
    dataset: goa_chicken_rna
    submitter: goa
    compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_rna_noiea.gaf.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_rna.gaf.gz
    entity_type: rna
    status: active
    species_code: Ggal
@@ -838,7 +838,7 @@ datasets:
    dataset: goa_cow_rna
    submitter: goa
    compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_rna_noiea.gaf.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_rna.gaf.gz
    entity_type: rna
    status: active
    species_code: Btau
@@ -904,7 +904,7 @@ datasets:
    dataset: goa_dog_rna
    submitter: goa
    compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_rna_noiea.gaf.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_rna.gaf.gz
    entity_type: rna
    status: active
    species_code: Cfam
@@ -968,7 +968,7 @@ datasets:
    dataset: goa_human_rna
    submitter: goa
    compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_rna_noiea.gaf.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_rna.gaf.gz
    entity_type: rna
    status: active
    species_code: Hsap
@@ -1048,7 +1048,7 @@ datasets:
    dataset: goa_pig_rna
    submitter: goa
    compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_rna_noiea.gaf.gz
+   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_rna.gaf.gz
    entity_type: rna
    status: active
    species_code: Sscr
