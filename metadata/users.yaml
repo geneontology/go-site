@@ -4095,3 +4095,15 @@
   nickname: 'Marios Makris'
   organization: BHF-UCL
   uri: 'http://orcid.org/0000-0002-6176-1677'
+-
+  accounts:
+    github: Gschindelman
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.wormbase.org'
+  nickname: 'Gary Schindelman'
+  organization: WB
+  uri: 'http://orcid.org/0000-0001-7883-4388'
