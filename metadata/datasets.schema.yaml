@@ -120,6 +120,9 @@ mapping:
             type: str
             required: false
             unique: false
+          "import":
+            type: bool
+            required: false
           "entity_type":
             type: str
             required: false
