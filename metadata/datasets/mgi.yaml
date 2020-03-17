@@ -6,7 +6,6 @@ contact_email: "mgi-help@jax.org"
 project_url: "http://www.informatics.jax.org/"
 funding_source: "NHGRI of US National Institutes of Health"
 email_report: "harold.drabkin@jax.org"
-import: True
 filter_out:
   evidence:
     - ECO:0000501
@@ -24,6 +23,7 @@ datasets:
    description: "gaf file for mgi from Mouse Genome Informatics"
    url: http://current.geneontology.org/annotations/mgi.gaf.gz
    type: gaf
+   import: True
    dataset: mgi
    submitter: mgi
    compression: gzip
