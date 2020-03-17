@@ -59,6 +59,8 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000054">GORULE:0000054 Genes annotated with ND should have no other annotations for that aspect</a>
  * <a href="#gorule0000055">GORULE:0000055 References should have only one ID per ID space</a>
  * <a href="#gorule0000056">GORULE:0000056 Annotations should validate against GO shape expressions</a>
+ * <a href="#gorule0000057">GORULE:0000057 Group specific filter rules should be applied to annotations</a>
+ * <a href="#gorule0000058">GORULE:0000058 Object extensions should conform to the extensions-patterns.yaml file in metadata</a>
 
 
 
@@ -351,15 +353,18 @@ Error report (number of errors) in [db_species]-report.html & owltools-check.txt
 ## Taxon-appropriate annotation check
 
  * id: [GORULE:0000013](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000013.md)
- * status: legacy
+ * status: approved
 
 
-GO taxon constraints ensure that annotations are not made to inappropriate species or sets of species. 
-This information is obtained from the only_in_taxon and never_in_taxon tags in the ontology. 
+- GO taxon constraints ensure that annotations are not made to inappropriate species or sets of species. 
+This information is obtained from the only_in_taxon and never_in_taxon tags in the ontology (maintained in go-ontology/tree/master/src/taxon_constraints). 
+- Experimental annotations (1) failing the taxon constraints are reported in the error reports but unchanged; non-experimental annotations (2) are filtered out of the pipeline products.
+(1) EXP evidence codes: EXP, IDA, IEP, IGC, IGI, IMP, IPI, HDA, HEP, HGI, HMP, HTP.
+(2) non EXP annotations: IBA, IKR, IRD, IC, ISA, ISM, ISO, ISS, NAS, RCA, TAS.
+- Taxon constraints DO NOT apply to negated (`NOT` qualifier in GPAD/GAF) annotations.
+
 See [http://www.biomedcentral.com/1471-2105/11/530](http://www.biomedcentral.com/1471-2105/11/530)
 for more details.
-
-Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt (details).
 
 <a name="gorule0000014"/>
 
@@ -387,7 +392,7 @@ organisms of the same species, both taxon IDs should be the same.
 
 This rule should check that these annotations should be used only in conjunction with
 terms that have the biological process term 'GO:0044419 : interspecies interaction
-between organisms' or the cellular component term 'GO:0044215 : other organism' 
+between organisms' or the cellular component term 'GO:0018995 : host cellular component' 
 as an ancestor.
 
 <a name="gorule0000016"/>
@@ -943,3 +948,33 @@ Annotation data can be checked using Shex Shapes as GO-CAM models. GO has a coll
 expressions that are used for this purpose at https://github.com/geneontology/go-shapes/tree/master/shapes.
 
 Annotations as GO-CAMs should successfully validate against this set of Shex Shapes.
+
+<a name="gorule0000057"/>
+
+## Group specific filter rules should be applied to annotations
+
+ * id: [GORULE:0000057](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000057.md)
+ * status: proposed
+
+
+
+Certain groups may have specific Annotation filter rules for importing.
+
+These will be expressed in the datasets group YAML files in go-site/metadata/datasets/.
+
+<a name="gorule0000058"/>
+
+## Object extensions should conform to the extensions-patterns.yaml file in metadata
+
+ * id: [GORULE:0000058](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000058.md)
+ * status: proposed
+
+
+In the go-site/metadata directory there is a file `extensions-constraints.yaml`. This is
+a list of allowed extension Relation, Filler (the ID inside the parentheses), and
+the acceptable GO Term roots used with this relation. A cardinality constraint may also be
+applied.
+
+Extensions in annotations should conform to these constraints. If an element of a
+disjunction in the extensions does not follow one of the constraints as listed in
+the above file, that element should be dropped from the extensions.
