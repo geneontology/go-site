@@ -6,6 +6,7 @@ contact_email: "mgi-help@jax.org"
 project_url: "http://www.informatics.jax.org/"
 funding_source: "NHGRI of US National Institutes of Health"
 email_report: "harold.drabkin@jax.org"
+import: True
 filter_out:
   evidence:
     - ECO:0000501
