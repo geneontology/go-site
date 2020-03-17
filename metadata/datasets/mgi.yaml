@@ -23,7 +23,6 @@ datasets:
    description: "gaf file for mgi from Mouse Genome Informatics"
    url: http://current.geneontology.org/annotations/mgi.gaf.gz
    type: gaf
-   import: true
    dataset: mgi
    submitter: mgi
    compression: gzip
