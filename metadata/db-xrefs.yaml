@@ -2225,7 +2225,7 @@
       id_syntax: URS[0-9A-F]{10}([_\/][0-9]+){0,1}
       url_syntax: https://rnacentral.org/rna/[example_id]
       example_id: RNAcentral:URS000047C79B_9606
-      example_url: https://rnacentral.org/rna/URS000047C79B/9606
+      example_url: https://rnacentral.org/rna/URS000047C79B_9606
 - database: RNAmods
   name: RNA Modification Database
   synonyms:
