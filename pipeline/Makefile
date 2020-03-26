@@ -18,12 +18,13 @@ GORULE_TAGS_TO_SUPPRESS ?=
 RESOURCE_GROUPS ?= $(foreach path,$(shell find $(METADATA_DIR)/datasets -name '*.yaml'),$(basename $(notdir $(path))))
 # for each group, get the base target path from each gaf dataset in a group yaml.
 # Ex: fb -> target/groups/fb/fb; goa -> target/groups/goa/goa_uniprot_all target/groups/goa/goa_chicken_complex [etc]
-_ALL_BASE_DATASET_PATHS = $(foreach group,$(RESOURCE_GROUPS),$(addprefix target/groups/$(group)/,$(basename $(shell cat ../metadata/datasets/$(group).yaml | grep "id:.*gaf" | awk '{ print $$2 }'))))
+# _ALL_BASE_DATASET_PATHS = $(foreach group,$(RESOURCE_GROUPS),$(addprefix target/groups/$(group)/,$(basename $(shell cat ../metadata/datasets/$(group).yaml | grep "id:.*gaf" | awk '{ print $$2 }'))))
 
 # This turns the excludes into a filter pattern: goa_pdb -> %/goa_pdb
-EXCLUSION_PATTERN = $(foreach excl,$(DATASET_EXCLUDES),%/$(excl))
+# EXCLUSION_PATTERN = $(foreach excl,$(DATASET_EXCLUDES),%/$(excl))
 # Filter out any path from _ALL_BASE_GROUP_PATHS that matches the exclusion
-BASE_DATASET_PATH = $(filter-out $(EXCLUSION_PATTERN),$(_ALL_BASE_DATASET_PATHS) )
+# datasets.py will read the metadata directory and compute the base paths to use based on exclusions and resource groups
+BASE_DATASET_PATH = $(shell ../scripts/datasets.py paths -d $(METADATA_DIR)/datasets -g '$(RESOURCE_GROUPS)' -x '$(DATASET_EXCLUDES)')
 # produces the set of owltools-check.txt targets. One for each in the BASE_GROUP_PATH
 # target/groups/fb/fb -> target/groups/fb/fb-owltools-check.txt, for everything in BASE_GROUP_PATH
 OWLTOOLS_CHECKS = $(addsuffix -owltools-check.txt,$(BASE_DATASET_PATH))
@@ -80,7 +81,7 @@ SUPPRESS_THESE_TAGS = $(foreach tag,$(GORULE_TAGS_TO_SUPPRESS),--suppress-rule-r
 	# assigns a make variable called `group` computed from the $* generic target stem.
 	# Ex: target/groups/fb/fb.gaf as a target, the stem ($*) is target/groups/fb/fb, so `group` gets assigned to fb
 	$(eval group := $(lastword $(subst /, ,$*)))
-	validate.py -v produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE) $(SUPPRESS_THESE_TAGS) --skip-existing-files --gaferencer-file $*.gaferences.json
+	validate.py -v produce $(group) --gpad -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE) $(SUPPRESS_THESE_TAGS) --skip-existing-files --gaferencer-file $*.gaferences.json
 	touch $@
 
 # dataset
