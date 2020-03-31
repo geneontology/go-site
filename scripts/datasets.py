@@ -19,7 +19,8 @@ def cli():
 @click.option("--datasets", "-d", "datasets_dir", type=click.Path(exists=True), required=True, help="Path to directory with all the dataset group yamls")
 @click.option("--groups", "-g", required=True, help="Space separated list of groups. This filters the full set of groups to only these groups")
 @click.option("--excludes", "-x", default=None, help="Space separated list of datasets to exclude, to be subtracted from the set of datasets in the given groups")
-def paths(datasets_dir, groups, excludes):
+@click.option("--type", multiple=True, default=["gaf"], help="The source type (gaf, gpad, etc) to use")
+def paths(datasets_dir, groups, excludes, type):
 
     # click.echo("Using {} for datasets".format(datasets_dir))
     resource_metadata = load_resource_metadata(datasets_dir)
@@ -29,7 +30,7 @@ def paths(datasets_dir, groups, excludes):
 
     # click.echo("Found {} dataset files".format(len(resource_metadata)))
 
-    dataset_targets = transform_download_targets(resource_metadata)
+    dataset_targets = transform_download_targets(resource_metadata, types=type)
     # Filter excludes
     if excludes is not None:
         excludes_list = excludes.split()

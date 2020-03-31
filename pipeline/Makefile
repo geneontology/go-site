@@ -24,13 +24,15 @@ RESOURCE_GROUPS ?= $(foreach path,$(shell find $(METADATA_DIR)/datasets -name '*
 # EXCLUSION_PATTERN = $(foreach excl,$(DATASET_EXCLUDES),%/$(excl))
 # Filter out any path from _ALL_BASE_GROUP_PATHS that matches the exclusion
 # datasets.py will read the metadata directory and compute the base paths to use based on exclusions and resource groups
-BASE_DATASET_PATH = $(shell ../scripts/datasets.py paths -d $(METADATA_DIR)/datasets -g '$(RESOURCE_GROUPS)' -x '$(DATASET_EXCLUDES)')
+BASE_DATASET_PATH = $(shell ../scripts/datasets.py paths --type gaf -d $(METADATA_DIR)/datasets -g '$(RESOURCE_GROUPS)' -x '$(DATASET_EXCLUDES)')
 # produces the set of owltools-check.txt targets. One for each in the BASE_GROUP_PATH
 # target/groups/fb/fb -> target/groups/fb/fb-owltools-check.txt, for everything in BASE_GROUP_PATH
 OWLTOOLS_CHECKS = $(addsuffix -owltools-check.txt,$(BASE_DATASET_PATH))
 
 # all owltools check groups. Will create the file to indicate we've done all groups before moving on.
 target/groups.touch: $(OWLTOOLS_CHECKS)
+	echo 'BASE_DATSET_PATH is $(BASE_DATASET_PATH)'
+	echo $<
 	touch target/groups.touch
 
 # produce just the gaf products and ttl, no owltools check
