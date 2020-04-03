@@ -1981,6 +1981,7 @@
   authorizations:
     noctua:
       go:
+        allow-admin: true
         allow-edit: true
     termgenie-go:
       allow-freeform: false
