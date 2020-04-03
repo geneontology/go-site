@@ -1370,7 +1370,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Stacia Engel'
   organization: SGD
-  uri: 'http://orcid.org/0000h-0001-5472-917X'
+  uri: 'http://orcid.org/0000-0001-5472-917X'
   xref: 'GOC:se'
 -
   nickname: 'Selina Dwight'
@@ -1981,6 +1981,7 @@
   authorizations:
     noctua:
       go:
+        allow-admin: true
         allow-edit: true
     termgenie-go:
       allow-freeform: false
@@ -3125,6 +3126,20 @@
   nickname: 'Christina James-Zorn'
   organization: Xenbase
   uri: 'http://orcid.org/0000-0001-5495-4588'
+-
+  accounts:
+    github: MardiNenni
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    -
+  groups:
+    - 'http://www.xenbase.org'
+  nickname: 'Mardi Nenni'
+  organization: Xenbase
+  uri: 'http://orcid.org/0000-0002-6238-1932'
 -
   accounts:
     github: chris-grove

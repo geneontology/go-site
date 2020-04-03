@@ -18,18 +18,21 @@ GORULE_TAGS_TO_SUPPRESS ?=
 RESOURCE_GROUPS ?= $(foreach path,$(shell find $(METADATA_DIR)/datasets -name '*.yaml'),$(basename $(notdir $(path))))
 # for each group, get the base target path from each gaf dataset in a group yaml.
 # Ex: fb -> target/groups/fb/fb; goa -> target/groups/goa/goa_uniprot_all target/groups/goa/goa_chicken_complex [etc]
-_ALL_BASE_DATASET_PATHS = $(foreach group,$(RESOURCE_GROUPS),$(addprefix target/groups/$(group)/,$(basename $(shell cat ../metadata/datasets/$(group).yaml | grep "id:.*gaf" | awk '{ print $$2 }'))))
+# _ALL_BASE_DATASET_PATHS = $(foreach group,$(RESOURCE_GROUPS),$(addprefix target/groups/$(group)/,$(basename $(shell cat ../metadata/datasets/$(group).yaml | grep "id:.*gaf" | awk '{ print $$2 }'))))
 
 # This turns the excludes into a filter pattern: goa_pdb -> %/goa_pdb
-EXCLUSION_PATTERN = $(foreach excl,$(DATASET_EXCLUDES),%/$(excl))
+# EXCLUSION_PATTERN = $(foreach excl,$(DATASET_EXCLUDES),%/$(excl))
 # Filter out any path from _ALL_BASE_GROUP_PATHS that matches the exclusion
-BASE_DATASET_PATH = $(filter-out $(EXCLUSION_PATTERN),$(_ALL_BASE_DATASET_PATHS) )
+# datasets.py will read the metadata directory and compute the base paths to use based on exclusions and resource groups
+BASE_DATASET_PATH = $(shell ../scripts/datasets.py paths --type gaf -d $(METADATA_DIR)/datasets -g '$(RESOURCE_GROUPS)' -x '$(DATASET_EXCLUDES)')
 # produces the set of owltools-check.txt targets. One for each in the BASE_GROUP_PATH
 # target/groups/fb/fb -> target/groups/fb/fb-owltools-check.txt, for everything in BASE_GROUP_PATH
 OWLTOOLS_CHECKS = $(addsuffix -owltools-check.txt,$(BASE_DATASET_PATH))
 
 # all owltools check groups. Will create the file to indicate we've done all groups before moving on.
 target/groups.touch: $(OWLTOOLS_CHECKS)
+	echo 'BASE_DATSET_PATH is $(BASE_DATASET_PATH)'
+	echo $<
 	touch target/groups.touch
 
 # produce just the gaf products and ttl, no owltools check
