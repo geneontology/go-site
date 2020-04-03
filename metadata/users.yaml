@@ -4122,3 +4122,18 @@
   nickname: 'Gary Schindelman'
   organization: WB
   uri: 'http://orcid.org/0000-0001-7883-4388'
+-
+  nickname: 'Robert Sinclair'
+  organization: MGI
+  uri: 'GOC:bobs'
+  xref: 'GOC:bobs'
+ -
+  nickname: 'Louise McKenzie'
+  organization: MGI
+  uri: 'GOC:lmm'
+  xref: 'GOC:lmm'
+ -
+  nickname: 'TBK Reddy'
+  organization: MGI
+  uri: 'http://orcid.org/0000-0002-0871-5567'
+  xref: 'GOC:tc'
