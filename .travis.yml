@@ -33,6 +33,7 @@ script:
   - kwalify -E -m metadata/extensions-constraints.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
   - kwalify -E -f metadata/extensions-constraints.schema.yaml metadata/extensions-constraints.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
   - sparta valid --rules metadata/rules/ --schema metadata/rules.schema.yaml
+  - python3 ./scripts/sanity-check-datasets.py --datasets metadata/datasets/
   - python3 ./scripts/sanity-check-users-and-groups.py --verbose --users metadata/users.yaml --groups metadata/groups.yaml; test $? -eq 0
   ## Somewhat awkwardly reuse sparta to check non-go-rules files that
   ## are still structured yamldown/frontmatter.

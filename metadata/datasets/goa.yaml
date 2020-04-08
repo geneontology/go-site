@@ -13,6 +13,7 @@ datasets:
    description: "gpad file for goa_chicken from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_chicken.gpad.gz
    type: gpad
+   gpi: [ goa_chicken.gpi ]
    dataset: goa_chicken
    submitter: goa
    compression: gzip
@@ -53,6 +54,7 @@ datasets:
    description: "gpad file for goa_chicken_complex from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_chicken_complex.gpad.gz
    type: gpad
+   gpi: [ goa_chicken_complex.gpi ]
    dataset: goa_chicken_complex
    submitter: goa
    compression: gzip
@@ -93,6 +95,7 @@ datasets:
    description: "gpad file for goa_chicken_isoform from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_chicken_isoform.gpad.gz
    type: gpad
+   gpi: [ goa_chicken_isoform.gpi ]
    dataset: goa_chicken_isoform
    submitter: goa
    compression: gzip
@@ -133,6 +136,7 @@ datasets:
    description: "gpad file for goa_chicken_rna from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_chicken_rna.gpad.gz
    type: gpad
+   gpi: [ goa_chicken_rna.gpi ]
    dataset: goa_chicken_rna
    submitter: goa
    compression: gzip
@@ -173,6 +177,7 @@ datasets:
    description: "gpad file for goa_cow from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_cow.gpad.gz
    type: gpad
+   gpi: [ goa_cow.gpi ]
    dataset: goa_cow
    submitter: goa
    compression: gzip
@@ -209,6 +214,7 @@ datasets:
    description: "gpad file for goa_cow_complex from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_cow_complex.gpad.gz
    type: gpad
+   gpi: [ goa_cow_complex.gpi ]
    dataset: goa_cow_complex
    submitter: goa
    compression: gzip
@@ -245,6 +251,7 @@ datasets:
    description: "gpad file for goa_cow_isoform from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_cow_isoform.gpad.gz
    type: gpad
+   gpi: [ goa_cow_isoform.gpi ]
    dataset: goa_cow_isoform
    submitter: goa
    compression: gzip
@@ -281,6 +288,7 @@ datasets:
    description: "gpad file for goa_cow_rna from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_cow_rna.gpad.gz
    type: gpad
+   gpi: [ goa_cow_rna.gpi ]
    dataset: goa_cow_rna
    submitter: goa
    compression: gzip
@@ -317,6 +325,7 @@ datasets:
    description: "gpad file for goa_dog from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_dog.gpad.gz
    type: gpad
+   gpi: [ goa_dog.gpi ]
    dataset: goa_dog
    submitter: goa
    compression: gzip
@@ -349,6 +358,7 @@ datasets:
    description: "gpad file for goa_dog_complex from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_dog_complex.gpad.gz
    type: gpad
+   gpi: [ goa_dog_complex.gpi ]
    dataset: goa_dog_complex
    submitter: goa
    compression: gzip
@@ -381,6 +391,7 @@ datasets:
    description: "gpad file for goa_dog_isoform from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_dog_isoform.gpad.gz
    type: gpad
+   gpi: [ goa_dog_isoform.gpi ]
    dataset: goa_dog_isoform
    submitter: goa
    compression: gzip
@@ -413,6 +424,7 @@ datasets:
    description: "gpad file for goa_dog_rna from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_dog_rna.gpad.gz
    type: gpad
+   gpi: [ goa_dog_rna.gpi ]
    dataset: goa_dog_rna
    submitter: goa
    compression: gzip
@@ -445,6 +457,7 @@ datasets:
    description: "gpad file for goa_human from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_human.gpad.gz
    type: gpad
+   gpi: [ goa_human.gpi ]
    dataset: goa_human
    submitter: goa
    compression: gzip
@@ -477,6 +490,7 @@ datasets:
    description: "gpad file for goa_human_complex from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_human_complex.gpad.gz
    type: gpad
+   gpi: [ goa_human_complex.gpi ]
    dataset: goa_human_complex
    submitter: goa
    compression: gzip
@@ -509,6 +523,7 @@ datasets:
    description: "gpad file for goa_human_isoform from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_human_isoform.gpad.gz
    type: gpad
+   gpi: [ goa_human_isoform.gpi ]
    dataset: goa_human_isoform
    submitter: goa
    compression: gzip
@@ -541,6 +556,7 @@ datasets:
    description: "gpad file for goa_human_rna from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_human_rna.gpad.gz
    type: gpad
+   gpi: [ goa_human_rna.gpi ]
    dataset: goa_human_rna
    submitter: goa
    compression: gzip
@@ -573,6 +589,7 @@ datasets:
    description: "gpad file for goa_pig from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_pig.gpad.gz
    type: gpad
+   gpi: [ goa_pig.gpi ]
    dataset: goa_pig
    submitter: goa
    compression: gzip
@@ -605,6 +622,7 @@ datasets:
    description: "gpad file for goa_pig_complex from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_pig_complex.gpad.gz
    type: gpad
+   gpi: [ goa_pig_complex.gpi ]
    dataset: goa_pig_complex
    submitter: goa
    compression: gzip
@@ -637,6 +655,7 @@ datasets:
    description: "gpad file for goa_pig_isoform from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_pig_isoform.gpad.gz
    type: gpad
+   gpi: [ goa_pig_isoform.gpi ]
    dataset: goa_pig_isoform
    submitter: goa
    compression: gzip
@@ -669,6 +688,7 @@ datasets:
    description: "gpad file for goa_pig_rna from EBI Gene Ontology Annotation Database"
    url: http://current.geneontology.org/annotations/goa_pig_rna.gpad.gz
    type: gpad
+   gpi: [ goa_pig_rna.gpi ]
    dataset: goa_pig_rna
    submitter: goa
    compression: gzip
@@ -1093,6 +1113,7 @@ datasets:
    description: "gpad file for goa_uniprot_all from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gene-associations/goa_uniprot_all.gpad.gz
    type: gpad
+   gpi: [ goa_uniprot_all.gpi ]
    dataset: goa_uniprot_all
    submitter: goa
    compression: gzip
@@ -1143,6 +1164,7 @@ datasets:
    description: "gpad file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
    url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gpad.gz
    type: gpad
+   gpi: [ goa_uniprot_gcrp.gpi ]
    dataset: goa_uniprot_gcrp
    submitter: goa
    compression: gzip

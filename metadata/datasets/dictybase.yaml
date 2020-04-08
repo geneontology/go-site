@@ -13,6 +13,7 @@ datasets:
    description: "gpad file for dictyBase from dictyBase"
    url: http://current.geneontology.org/annotations/dictybase.gpad.gz
    type: gpad
+   gpi: [ dictybase.gpi ]
    dataset: dictybase
    submitter: dictyBase
    compression: gzip
