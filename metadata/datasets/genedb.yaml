@@ -38,6 +38,7 @@ datasets:
    species_code:
    taxa:
     - NCBITaxon:5833
+    - NCBITaxon:36329
 
  -
    id: genedb_tbrucei.gaf
