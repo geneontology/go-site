@@ -4130,3 +4130,12 @@
   nickname: 'Richard Baldarelli'
   organization: MGI
   uri: 'http://orcid.org/0000-0002-5819-0228'
+-
+  nickname: 'Louise McKenzie'
+  organization: MGI
+  uri: 'GOC:lmm'
+- 
+  nickname: 'Robert Sinclair'
+  organization: MGI
+  uri: 'GOC:bobs'
+
