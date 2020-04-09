@@ -1056,6 +1056,22 @@ datasets:
     - NCBITaxon:9823
 
  -
+   id: goa_sars-cov-2.gaf
+   label: "goa_sars-cov-2 gaf file"
+   description: "gaf file for goa_sars-cov-2 from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_sars-cov-2.gaf.gz
+   type: gaf
+   dataset: goa_sars-cov-2
+   submitter: goa
+   compression: gzip
+   source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/uniprot_sars-cov-2.gaf.gz
+   entity_type: rna
+   status: active
+   species_code: Scov2
+   taxa:
+    - NCBITaxon:694009
+
+ -
    id: goa_uniprot_all.gaf
    label: "goa_uniprot_all gaf file"
    description: "gaf file for goa_uniprot_all from EBI Gene Ontology Annotation Database"
