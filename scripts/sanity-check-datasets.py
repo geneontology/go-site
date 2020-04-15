@@ -11,7 +11,7 @@ def validate(datasets):
 
     dataset_paths = glob.glob(os.path.join(datasets, "*.yaml"))
 
-    rules = [gpad_must_have_gpi_from_this_dataset]
+    rules = [gpad_must_have_gpi_from_this_dataset, only_one_type_for_dataset_active]
     found_an_error = False
 
     for dataset_yaml in dataset_paths:
@@ -33,7 +33,7 @@ def gpad_must_have_gpi_from_this_dataset(dataset) -> str:
     found_gpi = []
     for ds in dataset["datasets"]:
         if ds["type"] == "gpad":
-            # Must be gpi:
+            # Must be gpi field defined for gpad sources:
             if "gpi" in ds:
                 found_gpi.append(ds["gpi"])
                 # print("gpi is {}".format(ds["gpi"]))
@@ -46,6 +46,27 @@ def gpad_must_have_gpi_from_this_dataset(dataset) -> str:
         for gpi in found:
             if gpi not in ids:
                 errors.append("* Could not find '{}' as an id from in the list of datasets in '{}': {}".format(gpi, dataset["id"], ", ".join(ids)))
+
+    return "\n".join(["    {}".format(e) for e in errors])
+
+def only_one_type_for_dataset_active(dataset) -> str:
+
+    errors = []
+    active_ds_to_type = dict()
+
+    # Build the map of dataset name to list of types. These are all "active"
+    for ds in dataset["datasets"]:
+        if ds["status"] == "active":
+            key = ds["dataset"]
+            if key not in active_ds_to_type:
+                active_ds_to_type[key] = [ds["type"]]
+            else:
+                active_ds_to_type[key].append(ds["type"])
+
+    disallowed = set(("gaf", "gpad"))
+    for (ds, types) in active_ds_to_type.items():
+        if disallowed.issubset(set(types)):
+            errors.append("* For '{dataset}' cannot have a GAF and GPAD status 'active' for the same dataset".format(dataset=ds))
 
     return "\n".join(["    {}".format(e) for e in errors])
 
