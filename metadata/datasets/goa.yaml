@@ -1063,8 +1063,10 @@ datasets:
    type: gaf
    dataset: goa_sars-cov-2
    submitter: goa
-   compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/uniprot_sars-cov-2.gaf.gz
+   #compression: gzip
+   compression:
+   #source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/uniprot_sars-cov-2.gaf.gz
+   source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/uniprot_sars-cov-2.gaf
    entity_type: protein
    status: active
    species_code: SARS-CoV-2
