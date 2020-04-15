@@ -1064,7 +1064,7 @@ datasets:
    dataset: goa_sars-cov-2
    submitter: goa
    #compression: gzip
-   compression:
+   compression: ""
    #source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/uniprot_sars-cov-2.gaf.gz
    source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/uniprot_sars-cov-2.gaf
    entity_type: protein
