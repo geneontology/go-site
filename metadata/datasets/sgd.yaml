@@ -46,22 +46,22 @@ datasets:
     - NCBITaxon:41870
     - NCBITaxon:4932
     - NCBITaxon:559292
- -
-  id: sgd.gpi
-  label: "sgd gpi file"
-  description: "gpi file for sgd from Saccharomyces Genome Database"
-  url: http://current.geneontology.org/annotations/sgd.gpi.gz
-  type: gpi
-  dataset: sgd
-  submitter: sgd
-  compression: gzip
-  source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/gp_information.559292_sgd.gz
-  entity_type:
-  status: active
-  species_code: Scer
-  taxa:
-   - NCBITaxon:285006
-   - NCBITaxon:307796
-   - NCBITaxon:41870
-   - NCBITaxon:4932
-   - NCBITaxon:559292
+ # -
+ #  id: sgd.gpi
+ #  label: "sgd gpi file"
+ #  description: "gpi file for sgd from Saccharomyces Genome Database"
+ #  url: http://current.geneontology.org/annotations/sgd.gpi.gz
+ #  type: gpi
+ #  dataset: sgd
+ #  submitter: sgd
+ #  compression: gzip
+ #  source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/gp_information.559292_sgd.gz
+ #  entity_type:
+ #  status: active
+ #  species_code: Scer
+ #  taxa:
+ #   - NCBITaxon:285006
+ #   - NCBITaxon:307796
+ #   - NCBITaxon:41870
+ #   - NCBITaxon:4932
+ #   - NCBITaxon:559292
