@@ -8,28 +8,28 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000002">GO_REF:0000002 Gene Ontology annotation through association of InterPro records with GO terms.</a>
  * <a href="#goref0000003">GO_REF:0000003 Gene Ontology annotation based on Enzyme Commission mapping.</a>
  * <a href="#goref0000004">GO_REF:0000004 Gene Ontology annotation based on UniProtKB keyword mapping.</a>
- * <a href="#goref0000006">GO_REF:0000006 Gene Ontology annotation by the MGI curatorial staff, Mouse Locus Catalog</a>
+ * <a href="#goref0000006">GO_REF:0000006 OBSOLETE Gene Ontology annotation by the MGI curatorial staff, Mouse Locus Catalog</a>
  * <a href="#goref0000008">GO_REF:0000008 Gene Ontology annotation by the MGI curatorial staff, curated orthology</a>
- * <a href="#goref0000010">GO_REF:0000010 Gene Ontology annotation by the MGI curatorial staff, mouse gene nomenclature</a>
+ * <a href="#goref0000010">GO_REF:0000010 OBSOLETE Gene Ontology annotation by the MGI curatorial staff, mouse gene nomenclature</a>
  * <a href="#goref0000011">GO_REF:0000011 Hidden Markov Models (TIGR)</a>
  * <a href="#goref0000012">GO_REF:0000012 Pairwise alignment (TIGR)</a>
  * <a href="#goref0000015">GO_REF:0000015 Use of the ND evidence code for Gene Ontology (GO) terms.</a>
- * <a href="#goref0000018">GO_REF:0000018 dictyBase 'Inferred from Electronic Annotation (BLAST method)'</a>
- * <a href="#goref0000019">GO_REF:0000019 Automatic transfer of experimentally verified manual GO annotation data to orthologs using Ensembl Compara</a>
+ * <a href="#goref0000018">GO_REF:0000018 OBSOLETE dictyBase 'Inferred from Electronic Annotation (BLAST method)'</a>
+ * <a href="#goref0000019">GO_REF:0000019 OBSOLETE Automatic transfer of experimentally verified manual GO annotation data to orthologs using Ensembl Compara</a>
  * <a href="#goref0000020">GO_REF:0000020 Electronic Gene Ontology annotations created by transferring manual GO annotations between orthologous microbial proteins</a>
  * <a href="#goref0000021">GO_REF:0000021 Improving the representation of central nervous system development in the biological process ontology</a>
  * <a href="#goref0000022">GO_REF:0000022 Improving the representation of immunology in the biological process Ontology</a>
- * <a href="#goref0000023">GO_REF:0000023 Gene Ontology annotation based on UniProtKB Subcellular Location vocabulary mapping.</a>
+ * <a href="#goref0000023">GO_REF:0000023 OBSOLETE Gene Ontology annotation based on UniProtKB Subcellular Location vocabulary mapping.</a>
  * <a href="#goref0000024">GO_REF:0000024 Manual transfer of experimentally-verified manual GO annotation data to orthologs by curator judgment of sequence similarity.</a>
  * <a href="#goref0000025">GO_REF:0000025 Operon structure as IGC evidence</a>
- * <a href="#goref0000026">GO_REF:0000026 Improving the representation of muscle biology in the biological process and cellular component ontologies.</a>
+ * <a href="#goref0000026">GO_REF:0000026 OBSOLETE Improving the representation of muscle biology in the biological process and cellular component ontologies.</a>
  * <a href="#goref0000027">GO_REF:0000027 BLAST search criteria for ISS assignment in PAMGO_GAT</a>
  * <a href="#goref0000028">GO_REF:0000028 Criteria for IDA, IEP, ISS, IGC, RCA, ND, and IEA assignment in PAMGO_MGG</a>
- * <a href="#goref0000029">GO_REF:0000029 Gene Ontology annotation based on information extracted from curated UniProtKB entries</a>
- * <a href="#goref0000030">GO_REF:0000030 Portable Annotation Rules</a>
- * <a href="#goref0000031">GO_REF:0000031 NIAID Cell Ontology Workshop</a>
- * <a href="#goref0000032">GO_REF:0000032 Inference of Biological Process annotations from inter-ontology links</a>
- * <a href="#goref0000033">GO_REF:0000033 (Obsolete) Annotation inferences using phylogenetic trees</a>
+ * <a href="#goref0000029">GO_REF:0000029 OBSOLETE Gene Ontology annotation based on information extracted from curated UniProtKB entries</a>
+ * <a href="#goref0000030">GO_REF:0000030 OBSOLETE Portable Annotation Rules</a>
+ * <a href="#goref0000031">GO_REF:0000031 OBSOLETE NIAID Cell Ontology Workshop</a>
+ * <a href="#goref0000032">GO_REF:0000032 OBSOLETE Inference of Biological Process annotations from inter-ontology links</a>
+ * <a href="#goref0000033">GO_REF:0000033 OBSOLETE Annotation inferences using phylogenetic trees</a>
  * <a href="#goref0000034">GO_REF:0000034 Phenoscape Skeletal Anatomy Jamboree</a>
  * <a href="#goref0000035">GO_REF:0000035 Automatic transfer of experimentally verified manual GO annotation data to plant orthologs using Ensembl Compara</a>
  * <a href="#goref0000036">GO_REF:0000036 Manual annotations that require more than one source of functional data to support the assignment of the associated GO term</a>
@@ -38,22 +38,21 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000039">GO_REF:0000039 Gene Ontology annotation based on the manual assignment of UniProtKB Subcellular Location terms in UniProtKB/Swiss-Prot entries.</a>
  * <a href="#goref0000040">GO_REF:0000040 Gene Ontology annotation based on the automatic assignment of UniProtKB Subcellular Location terms in UniProtKB/TrEMBL entries.</a>
  * <a href="#goref0000041">GO_REF:0000041 Gene Ontology annotation based on UniPathway vocabulary mapping. </a>
- * <a href="#goref0000042">GO_REF:0000042 Gene Ontology annotation through association of InterPro records with GO terms, accompanied by conservative changes to GO terms applied by UniProt. </a>
+ * <a href="#goref0000042">GO_REF:0000042 OBSOLETE Gene Ontology annotation through association of InterPro records with GO terms, accompanied by conservative changes to GO terms applied by UniProt. </a>
  * <a href="#goref0000043">GO_REF:0000043 Gene Ontology annotation based on UniProtKB/Swiss-Prot keyword mapping, accompanied by conservative changes to GO terms applied by UniProt.</a>
  * <a href="#goref0000044">GO_REF:0000044 Gene Ontology annotation based on UniProtKB/Swiss-Prot Subcellular Location vocabulary mapping, accompanied by conservative changes to GO terms applied by UniProt. </a>
- * <a href="#goref0000045">GO_REF:0000045 Gene Ontology annotation based on UniProtKB/TrEMBL entries keyword mapping, accompanied by conservative changes to GO terms applied by UniProt.</a>
- * <a href="#goref0000046">GO_REF:0000046 Gene Ontology annotation based on UniProtKB/TrEMBL Subcellular Location vocabulary mapping, accompanied by conservative changes to GO terms applied by UniProt.</a>
+ * <a href="#goref0000045">GO_REF:0000045 OBSOLETE Gene Ontology annotation based on UniProtKB/TrEMBL entries keyword mapping, accompanied by conservative changes to GO terms applied by UniProt.</a>
+ * <a href="#goref0000046">GO_REF:0000046 OBSOLETE Gene Ontology annotation based on UniProtKB/TrEMBL Subcellular Location vocabulary mapping, accompanied by conservative changes to GO terms applied by UniProt.</a>
  * <a href="#goref0000047">GO_REF:0000047 Gene Ontology annotation based on absence of key sequence residues.</a>
- * <a href="#goref0000048">GO_REF:0000048 TIGR's Eukaryotic Manual Gene Ontology Assignment Method</a>
- * <a href="#goref0000049">GO_REF:0000049 Automatic transfer of experimentally verified manual GO annotation data to fungal orthologs using Ensembl Compara</a>
+ * <a href="#goref0000048">GO_REF:0000048 OBSOLETE TIGR's Eukaryotic Manual Gene Ontology Assignment Method</a>
+ * <a href="#goref0000049">GO_REF:0000049 OBSOLETE Automatic transfer of experimentally verified manual GO annotation data to fungal orthologs using Ensembl Compara</a>
  * <a href="#goref0000050">GO_REF:0000050 Manual transfer of GO annotation data to genes by curator judgment of sequence model</a>
  * <a href="#goref0000051">GO_REF:0000051 S. pombe keyword mapping</a>
  * <a href="#goref0000052">GO_REF:0000052 Gene Ontology annotation based on curation of immunofluorescence data</a>
- * <a href="#goref0000053">GO_REF:0000053 Automatic classification of GO using the ELK reasoner</a>
+ * <a href="#goref0000053">GO_REF:0000053 OBSOLETE Automatic classification of GO using the ELK reasoner</a>
  * <a href="#goref0000054">GO_REF:0000054 Gene Ontology annotation based on curation of intracellular localizations of expressed fusion proteins in living cells.</a>
- * <a href="#goref0000055">GO_REF:0000055 Gene Ontology Cellular Component annotation based on cellular fractionation.</a>
- * <a href="#goref0000056">GO_REF:0000056 Taxon constraints to detect inconsistencies in annotation and ontology structure.</a>
- * <a href="#goref0000057">GO_REF:0000057 Gene Ontology annotations inferred by curators' judgment using experimental data and prior knowledge of apoptotic mechanisms.</a>
+ * <a href="#goref0000055">GO_REF:0000055 OBSOLETE Gene Ontology Cellular Component annotation based on cellular fractionation.</a>
+ * <a href="#goref0000056">GO_REF:0000056 OBSOLETE Taxon constraints to detect inconsistencies in annotation and ontology structure.</a>
  * <a href="#goref0000058">GO_REF:0000058 Representation of regulation in the Gene Ontology (biological process) </a>
  * <a href="#goref0000059">GO_REF:0000059 Representation of regulation in the Gene Ontology (molecular function) </a>
  * <a href="#goref0000060">GO_REF:0000060 Representation of processes involved in other process in the Gene Ontology</a>
@@ -73,12 +72,12 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000074">GO_REF:0000074 Representation of export of a chemical as biological process in the Gene Ontology</a>
  * <a href="#goref0000075">GO_REF:0000075 Representation of transport of a chemical into a cellular component as biological process in the Gene Ontology</a>
  * <a href="#goref0000076">GO_REF:0000076 Representation of transport or vesicle-mediated transport from cell component to cell component as biological process in the Gene Ontology</a>
- * <a href="#goref0000077">GO_REF:0000077 Representation of transport of a cellular component as biological process in the Gene Ontology</a>
+ * <a href="#goref0000077">GO_REF:0000077 OSBOLETE Representation of transport of a cellular component as biological process in the Gene Ontology</a>
  * <a href="#goref0000078">GO_REF:0000078 Representation for the transport or vesicle-mediated transport of a chemical from and/or to a cell component as biological process in the Gene Ontology</a>
  * <a href="#goref0000079">GO_REF:0000079 Representation of assembly or disassembly of a cell component as biological process in the Gene Ontology</a>
  * <a href="#goref0000080">GO_REF:0000080 Representation of plant development as biological process in the Gene Ontology</a>
  * <a href="#goref0000081">GO_REF:0000081 Representation of plant formation as biological process in the Gene Ontology</a>
- * <a href="#goref0000082">GO_REF:0000082 Representation of plant maturation as biological process in the Gene Ontology</a>
+ * <a href="#goref0000082">GO_REF:0000082 OBSOLETE Representation of plant maturation as biological process in the Gene Ontology</a>
  * <a href="#goref0000083">GO_REF:0000083 Representation of plant morphogenesis as biological process in the Gene Ontology</a>
  * <a href="#goref0000084">GO_REF:0000084 Representation of plant structural organization as biological process in the Gene Ontology</a>
  * <a href="#goref0000085">GO_REF:0000085 Representation of cell apoptotic process as biological process in the Gene Ontology</a>
@@ -94,22 +93,24 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000095">GO_REF:0000095 Literature reference not indexed by PubMed</a>
  * <a href="#goref0000096">GO_REF:0000096 Automated transfer of experimentally-verified manual GO annotation data to close orthologs.</a>
  * <a href="#goref0000097">GO_REF:0000097 Gene Ontology annotation based on personal communication to FlyBase</a>
- * <a href="#goref0000098">GO_REF:0000098 Gene Ontology annotation based on research conference abstracts</a>
- * <a href="#goref0000099">GO_REF:0000099 Gene Ontology annotation based on DNA/RNA sequence records</a>
- * <a href="#goref0000100">GO_REF:0000100 Gene Ontology annotation by SEA-PHAGE biocurators</a>
+ * <a href="#goref0000098">GO_REF:0000098 OBSOLETE Gene Ontology annotation based on research conference abstracts</a>
+ * <a href="#goref0000099">GO_REF:0000099 OBSOLETE Gene Ontology annotation based on DNA/RNA sequence records</a>
+ * <a href="#goref0000100">GO_REF:0000100 OBSOLETE Gene Ontology annotation by SEA-PHAGE biocurators</a>
  * <a href="#goref0000101">GO_REF:0000101 Automated transfer of experimentally-verified GO annotation data to close orthologs</a>
- * <a href="#goref0000102">GO_REF:0000102 Representation of cellular component binding as molecular functions in the Gene Ontology</a>
- * <a href="#goref0000103">GO_REF:0000103 Representation of cellular component organization as biological process in the Gene Ontology</a>
+ * <a href="#goref0000102">GO_REF:0000102 OBSOLETE Representation of cellular component binding as molecular functions in the Gene Ontology</a>
+ * <a href="#goref0000103">GO_REF:0000103 OBSOLETE Representation of cellular component organization as biological process in the Gene Ontology</a>
  * <a href="#goref0000104">GO_REF:0000104 Electronic Gene Ontology annotations created by transferring manual GO annotations between related proteins based on shared sequence features.</a>
  * <a href="#goref0000105">GO_REF:0000105 Gene Ontology annotation of transfer RNAs based on tRNAscan-SE analysis of the Drosophila melanogaster genome (2002).</a>
- * <a href="#goref0000106">GO_REF:0000106 Gene Ontology annotation based on protein sequence records.</a>
+ * <a href="#goref0000106">GO_REF:0000106 OBSOLETE Gene Ontology annotation based on protein sequence records.</a>
  * <a href="#goref0000107">GO_REF:0000107 Automatic transfer of experimentally verified manual GO annotation data to orthologs using Ensembl.</a>
  * <a href="#goref0000108">GO_REF:0000108 Automatic assignment of GO terms using logical inference, based on on inter-ontology links.</a>
  * <a href="#goref0000109">GO_REF:0000109 Gene Ontology annotation based on curation of genome-wide subcellular localisation of proteins using fluorescent protein tagging in Trypanosoma brucei.</a>
  * <a href="#goref0000110">GO_REF:0000110 Gene Ontology annotation of Drosophila melanogaster nuclear genes encoding proteins targeted to the mitochondrion.</a>
  * <a href="#goref0000111">GO_REF:0000111 Gene Ontology annotations Inferred by Curator (IC) using at least one Inferred by Sequence Similarity (ISS) annotation to support the inference</a>
- * <a href="#goref0000112">GO_REF:0000112 Gene Ontology annotation by CACAO biocurators</a>
+ * <a href="#goref0000112">GO_REF:0000112 OBSOLETE Gene Ontology annotation by CACAO biocurators</a>
  * <a href="#goref0000113">GO_REF:0000113 Gene Ontology annotation of human sequence-specific DNA binding transcription factors (DbTFs) based on the TFClass database</a>
+ * <a href="#goref0000114">GO_REF:0000114 Manual transfer of experimentally-verified manual GO annotation data to homologous complexes by curator judgment of sequence, composition and function similarity.</a>
+ * <a href="#goref0000115">GO_REF:0000115 Automatic Gene Ontology annotation of non-coding RNA sequences through association of Rfam records with GO terms.</a>
 
 
 
@@ -127,6 +128,7 @@ No abstract available.
 ## Comments
 
 This reference will normally be replaced upon publication of the data supporting the annotation. Formerly GOC:unpublished.
+
 <a name="goref0000002"/>
 ## Gene Ontology annotation through association of InterPro records with GO terms.
 
@@ -147,6 +149,7 @@ Transitive assignment of GO terms based on InterPro classification. For any data
 ## Comments
 
 Formerly GOA:interpro. Note that GO annotations based on InterPro-to-GO transitive assignment may undergo subsequent filtering, e.g. to remove annotations redundant with manual curation; consult documentation from the annotation providers for further information.
+
 <a name="goref0000003"/>
 ## Gene Ontology annotation based on Enzyme Commission mapping.
 
@@ -166,6 +169,7 @@ Transitive assignment using Enzyme Commission identifiers. This method is used f
 ## Comments
 
 Formerly GOA:spec.
+
 <a name="goref0000004"/>
 ## Gene Ontology annotation based on UniProtKB keyword mapping.
 
@@ -184,8 +188,9 @@ Transitive assignments using UniProtKB keywords. The UniProtKB keyword controlle
 ## Comments
 
 Formerly GOA:spkw.
+
 <a name="goref0000006"/>
-## Gene Ontology annotation by the MGI curatorial staff, Mouse Locus Catalog
+## OBSOLETE Gene Ontology annotation by the MGI curatorial staff, Mouse Locus Catalog
 
  * id: [GO_REF:0000006](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000006.md)
  * year: 2001
@@ -212,7 +217,7 @@ For annotations documented via this citation, curators used the information in t
 The sequence conservation that permits the establishment of orthology between mouse and rat or mouse and human genes is a strong predictor of the conservation of function for the gene product across these species. Therefore, in instances where a mouse gene product has not been functionally characterized, but its human or rat orthologs have, Mouse Genome Informatics (MGI) curators append the GO terms associated with the orthologous gene(s) to the mouse gene. Only those GO terms assigned by experimental determination to the ortholog of the mouse gene will be adopted by MGI. GO terms that are assigned to the ortholog of the mouse gene computationally (i.e. IEA), will not be transferred to the mouse ortholog. The evidence code represented by this citation is Inferred by Sequence Orthology (ISO).
 
 <a name="goref0000010"/>
-## Gene Ontology annotation by the MGI curatorial staff, mouse gene nomenclature
+## OBSOLETE Gene Ontology annotation by the MGI curatorial staff, mouse gene nomenclature
 
  * id: [GO_REF:0000010](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000010.md)
  * year: 1999
@@ -270,7 +275,7 @@ Pairwise alignments are generated by taking two sequences and aligning them so t
 The Gene Ontology (GO) Consortium created the evidence code "ND" to indicate "no biological data available". This code is used for annotations to any of the three terms 'molecular function; GO:0003674', 'biological process; GO:0008150' or 'cellular component; GO:0005575'. In GO member databases, the use of any of these three GO terms, attributed to this reference and supported by the ND evidence code, signifies that a curator has examined the available literature and/or sequence for this gene or protein and that as of the date of the annotation to the root term, there is no information supporting an annotation to any GO term in that ontology. (Note that ND can be used with any one (or two) of the 'root' terms, even if there is data available to support annotation to a term from one or both of the other ontologies; e.g., ND can be used with GO:0008372 if the function and process are known but component is not).
 
 <a name="goref0000018"/>
-## dictyBase 'Inferred from Electronic Annotation (BLAST method)'
+## OBSOLETE dictyBase 'Inferred from Electronic Annotation (BLAST method)'
 
  * id: [GO_REF:0000018](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000018.md)
  * year: 2005
@@ -282,7 +287,7 @@ The Gene Ontology (GO) Consortium created the evidence code "ND" to indicate "no
 Gene Ontology (GO) annotations with the evidence code 'Inferred from Electronic Annotation' (IEA) are assigned automatically to gene products in dictyBase. All Dictyostelium protein sequences are analyzed by BLAST against GO gene association sequence files, identifying proteins in other organisms that align with Dictyostelium proteins with an E value less than or equal to e-50. GO annotations that have been manually assigned to these proteins from other species are then imported and attached to the corresponding gene product in dictyBase. The proteins from which the annotations are derived are displayed in the 'Evidence' column on the Gene Ontology evidence and references page.
 
 <a name="goref0000019"/>
-## Automatic transfer of experimentally verified manual GO annotation data to orthologs using Ensembl Compara
+## OBSOLETE Automatic transfer of experimentally verified manual GO annotation data to orthologs using Ensembl Compara
 
  * id: [GO_REF:0000019](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000019.md)
  * year: 2006
@@ -326,7 +331,7 @@ Current genetic and molecular studies in many model organisms are aimed at under
 GO terms describing processes, functions, and cellular components related to the immune system have existed in the GO from its beginning and been used extensively in the annotation of gene products. However, particularly in the biological process ontology, the initial set of terms relating to immunology failed to cover the breadth of known immunological processes, and in many cases diverged from current usage and understanding in their names, definitions, and ontological placement. As part of a larger effort to improve the representation of immunology in the GO, a GO Content Meeting was held November 15-16, 2005, at The Institute for Genomic Research, to discuss improvements to representation of immunology in the biological process ontology of the GO. As a result of the meeting, a number of high level terms for immunological processes were created, an overall structure for immunologically related terms was established, and certain existing terms were renamed or redefined as well to bring them in line with current usage.
 
 <a name="goref0000023"/>
-## Gene Ontology annotation based on UniProtKB Subcellular Location vocabulary mapping.
+## OBSOLETE Gene Ontology annotation based on UniProtKB Subcellular Location vocabulary mapping.
 
  * id: [GO_REF:0000023](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000023.md)
  * year: 2007
@@ -336,6 +341,8 @@ GO terms describing processes, functions, and cellular components related to the
 
 
 Transitive assignment of GO terms based on the UniProtKB Subcellular Location vocabulary. UniProtKB Subcellular Location is a controlled vocabulary used to supply subcellular location information to UniProtKB entries in the SUBCELLULAR LOCATION lines. Terms from this vocabulary are annotated manually to UniProtKB/Swiss-Prot entries but  are automatically assigned to UniProtKB/TrEMBL entries from the underlying nucleic acid databases and/or by the UniProt automatic annotation program.<br>Further information on these two different annotation methods is available at http://www.uniprot.org/faq/45 and http://www.uniprot.org/program/automatic_annotation .<br>When a UniProtKB Subcellular Location term describes a concept that is within the scope of the Gene Ontology, it is investigated to determine whether it is appropriate to map the term to an equivalent term in GO. The mapping between UniProtKB Subcellular Location terms and GO terms is carried out manually. Definitions and hierarchies of the terms in the two resources are compared and the mapping generated will reflect the most correct correspondence. The translation table between GO terms and UniProtKB Subcellular Location term is maintained by the UniProt-GOA team and available at http://www.geneontology.org/external2go/spsl2go .
+
+Duplicate of GO_REF:0000039.
 
 <a name="goref0000024"/>
 ## Manual transfer of experimentally-verified manual GO annotation data to orthologs by curator judgment of sequence similarity.
@@ -348,6 +355,8 @@ Transitive assignment of GO terms based on the UniProtKB Subcellular Location vo
  * ext xref: J:104715
  * ext xref: FB:FBrf0202953
  * ext xref: FB:FBrf0212479
+ * ext xref: FB:FBrf0232278
+ * ext xref: FB:FBrf0232279
 
 
 
@@ -365,7 +374,7 @@ Method for transferring manual annotations to an entry based on a curator's judg
 Genes in prokaryotic organisms are often arranged in operons. Genes in an operon are all transcribed into one mRNA. Generally the genes in the operons code for proteins that all have related functions. For example, they may be the steps in a biochemical pathway, or they may be the subunits of a protein complex. Often the genes in operons shared between organisms are syntenic; that is, the same genes are in the same order in the operon in different species. When assessing sequence-comparison-based evidence during the process of manual annotation of a genome, it is often the case that some of the genes in the operon will have strong sequence-based evidence while others will have weak evidence. If seen alone, not in the presence of an operon, the weak evidence in question may not be sufficient to make a functional annotation. However, in the presence of an operon in which there is strong evidence for some of the genes, the very presence of the gene in the operon is a strong indication that the gene shares in the process carried out by the operon. If the putative function is one expected to exist for the process in question and particularly if that function has been observed in the same operon in another species, then the annotation should be made. This type of evidence is inferred from the context of the gene in an operon, and therefore the evidence code is IGC "inferred from genomic context."
 
 <a name="goref0000026"/>
-## Improving the representation of muscle biology in the biological process and cellular component ontologies.
+## OBSOLETE Improving the representation of muscle biology in the biological process and cellular component ontologies.
 
  * id: [GO_REF:0000026](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000026.md)
  * year: 2007
@@ -399,18 +408,20 @@ This GO reference describes the criteria used in assigning the evidence code of 
 This GO reference describes the criteria used in assigning the evidence codes of IDA, IEP, ISS, IGC, RCA, ND and IEA to annotate gene products from PAMGO_MGG. Standard BLASTP from NCBI was used (http://www.ncbi.nih.gov/blast) to iteratively search reciprocal best hits and thus identify orthologs between predicted proteins of Magnaporthe grisea and GO proteins from multiple organisms with published association to GO terms (http://www.geneontology.org/GO.downloads.database.shtml). The alignments were manually reviewed for those hits with e-value equal to zero and with 80% or better coverage of both query and subject sequences, and for those hits with e<=10^-20, pid >=35 and sequence coverage >=80%. Furthermore, experimental or reviewed data from literature and other sources were incorporated into the GO annotation. IDA was assigned to an annotation if normal function of its gene was determined through transfections into a cell line and overexpression. IEP was assigned to an annotation if according to microarray experiments, its gene was upregulated in a biological process and the fold change was equal to or bigger than 10, or if according to Massively Parallel Signature Sequencing (MPSS), its gene was upregulated only in a certain biological process and the fold change was equal to or bigger than 10. ISS was assigned to an annotation if the entry at the With_column was experimentally characterized and the pairwise alignments were manually reviewed. IGC was assigned to an annotation if it based on comparison and analysis of gene location and structure, clustering of genes, and phylogenetic reconstruction of these genes. RCA was assigned to an annotation if it based on integrated computational analysis of whole genome microarray data, and matches to InterPro, pfam, and COG etc. When no knowledge (experimental/computational) was available about a gene product in any one of the GO aspects, the gene product was annotated to the root term (GO:0005575 for Cellular Component, GO:0003674 for Molecular Function, and GO:0008150 for Biological Process), and was assigned an ND evidence code. IEA was assigned to an annotation if its function assignment based on computational work, and no manual review was done.
 
 <a name="goref0000029"/>
-## Gene Ontology annotation based on information extracted from curated UniProtKB entries
+## OBSOLETE Gene Ontology annotation based on information extracted from curated UniProtKB entries
 
  * id: [GO_REF:0000029](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000029.md)
- * year: 2001-2007
+ * year: 2007
  * authors: GOA-UniProt curators
 
 
 
+Active 2001-2007.
+
 Method by which GO terms were manually assigned to UniProt KnowledgeBase accessions, using either a NAS or TAS evidence code, by applying information extracted from the corresponding publicly-available, manually curated UniProtKB entry. Such GO annotations were submitted by the GOA-UniProt group from 2001, but this annotation practice was discontinued in 2007.
 
 <a name="goref0000030"/>
-## Portable Annotation Rules
+## OBSOLETE Portable Annotation Rules
 
  * id: [GO_REF:0000030](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000030.md)
  * year: 2008
@@ -421,7 +432,7 @@ Method by which GO terms were manually assigned to UniProt KnowledgeBase accessi
 The JCVI is developing a collection of mixed-evidence annotation rules, under the working name BrainGrab/RuleBase (BGRB). A rule has two parts. The first is the set of conditions that must be met for the rule to fire. The second is the set actions to be taken for rules that have fired. BGRB rules are designed to serve as proxies for the annotators that create them. They have very high fidelity but may have low coverage. Types of evidence used in combination include HMM hits and BLAST matches, hits to neighboring genes, pathway reconstruction reports from the Genome Properties system, and species taxonomy. BLAST matches are described by a number of separate parameters for raw score, percent sequence identity, and coverage of total sequence length by the match region. These parameters are customized for each protein family in order to achieve high fidelity in automated annotation systems. The flexible syntax makes it possible to use existing protein family classifiers, such as Pfam and TIGRFAMs HMMs, in new ways. It is especially useful in assigning GO terms to proteins such as SelD (selenide, water dikinase) that have different roles in different contexts.
 
 <a name="goref0000031"/>
-## NIAID Cell Ontology Workshop
+## OBSOLETE NIAID Cell Ontology Workshop
 
  * id: [GO_REF:0000031](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000031.md)
  * year: 2008
@@ -432,7 +443,7 @@ The JCVI is developing a collection of mixed-evidence annotation rules, under th
 The NIAID sponsored a Cell Ontology Workshop, May 13-14, 2008, in Bethesda, focusing on improving representation of immune cell types in the Cell Ontology. The participants in the workshop worked together to extend the current ontology in the area of immune cell types and to provide the necessary information for the upcoming restructuring of the Cell Ontology in single-inheritance form with genus-differentia definitions.
 
 <a name="goref0000032"/>
-## Inference of Biological Process annotations from inter-ontology links
+## OBSOLETE Inference of Biological Process annotations from inter-ontology links
 
  * id: [GO_REF:0000032](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000032.md)
  * authors: Christopher J. Mungall, Tanya Z. Berardini, David P. Hill
@@ -441,8 +452,10 @@ The NIAID sponsored a Cell Ontology Workshop, May 13-14, 2008, in Bethesda, focu
 
 We use the GOBO library to propagate annotations from Molecular Function to Biological Process. This results in both increased numbers of annotations, and increased consistency between curators.
 
+Duplicate of GO_REF:0000108.
+
 <a name="goref0000033"/>
-## (Obsolete) Annotation inferences using phylogenetic trees
+## OBSOLETE Annotation inferences using phylogenetic trees
 
  * id: [GO_REF:0000033](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000033.md)
  * year: 2010
@@ -451,7 +464,6 @@ We use the GOBO library to propagate annotations from Molecular Function to Biol
  * ext xref: TAIR:Communication:501741973
  * ext xref: MGI:MGI:4459044
  * ext xref: J:161428 
- * ext xref: PAINT_REF:[0-9]{7}
  * ext xref: ZFIN:ZDB-PUB-110330-1
  * ext xref: FB:FBrf0232076
 
@@ -484,6 +496,8 @@ Skeletal cell terms and relationships were added and revised at the Skeletal Ana
 
 
 GO terms from a source species are projected onto one or more target species based on gene orthology obtained from the Ensembl Compara system. One to one, one to many and many to many orthologies are used but annotations are only projected between orthologs that have at least a 40% peptide identity to each other. Only GO annotations with an evidence type of IDA, IEP, IGI, IMP or IPI are projected, no annotations with a 'NOT' qualifier are projected and annotations to the GO:0005515 protein binding term are not projected. Projected GO annotations using this technique will receive the evidence code Inferred from Electronic Annotation (IEA). The model organism database identifier of the annotation source will be indicated in the 'With' column of the GOA association file.
+
+Duplicate of GO_REF:0000107.
 
 <a name="goref0000036"/>
 ## Manual annotations that require more than one source of functional data to support the assignment of the associated GO term
@@ -559,7 +573,7 @@ Transitive assignment of GO terms based on the UniProtKB Subcellular Location vo
 Transitive assignment of GO terms based on the UniPathway pathway vocabulary. UniPathway is a manually curated resource of enzyme-catalyzed and spontaneous chemical reactions. It provides a hierarchical representation of metabolic pathways. Descriptions of the pathway(s) that a particular protein is involved in are included in UniProtKB records.<br>UniPathway data are cross-linked to existing pathway resources such as KEGG and MetaCyc. Further information on the UniPathway resource is available at http://www.unipathway.org/obiwarehouse/unipathway.<br>When a UniPathway pathway describes a concept that is within the scope of the Gene Ontology, it is investigated to determine whether it is appropriate to map the term to an equivalent term in GO. The mapping between UniPathway terms and GO terms is carried out manually. Definitions and hierarchies of the terms in the two resources are compared and the mapping generated will reflect the most correct correspondence. The translation table between GO terms and UniPathway pathways is maintained by the UniPathway team and is available at http://www.grenoble.prabi.fr/dev/obiwarehouse/download/unipathway/public/unipathway2go.tsv.
 
 <a name="goref0000042"/>
-## Gene Ontology annotation through association of InterPro records with GO terms, accompanied by conservative changes to GO terms applied by UniProt. 
+## OBSOLETE Gene Ontology annotation through association of InterPro records with GO terms, accompanied by conservative changes to GO terms applied by UniProt. 
 
  * id: [GO_REF:0000042](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000042.md)
  * year: 2012
@@ -568,6 +582,8 @@ Transitive assignment of GO terms based on the UniPathway pathway vocabulary. Un
 
 
 Transitive assignment of GO terms based on InterPro classification. For any database entry (representing a protein or protein-coding gene) that has been annotated with one or more InterPro domains, The corresponding GO terms are obtained from a translation table of InterPro entries to GO terms (interpro2go) generated manually by the InterPro team at EBI. The mapping file is available at http://www.geneontology.org/external2go/interpro2go.<br>Please note that the GO term in the annotation assigned with this GO reference has been changed from that originally applied by the InterPro2GO mapping. This change has been carried out by the UniProt group to ensure the GO annotation obeys the GO Consortium’s ontology structure and taxonomic constraints. Further information on the rules used by UniProt to transform specific incorrect IEA annotations is available at http://www.ebi.ac.uk/QuickGO/AnnotationPostProcessing.html.
+
+Duplicate of GO_REF:0000002.
 
 <a name="goref0000043"/>
 ## Gene Ontology annotation based on UniProtKB/Swiss-Prot keyword mapping, accompanied by conservative changes to GO terms applied by UniProt.
@@ -592,7 +608,7 @@ Transitive assignments using UniProtKB/Swiss-Prot keywords. The UniProtKB keywor
 Transitive assignment of GO terms based on the UniProtKB/Swiss-Prot Subcellular Location vocabulary. UniProtKB Subcellular Location is a controlled vocabulary used to supply subcellular location information to UniProtKB entries in the SUBCELLULAR LOCATION lines. Terms from this vocabulary are annotated manually to UniProtKB/Swiss-Prot entries but are automatically assigned to UniProtKB/TrEMBL entries from the underlying nucleic acid databases and/or by the UniProt automatic annotation program.<br>Further information on these two different annotation methods is available at http://www.uniprot.org/faq/45 and http://www.uniprot.org/program/automatic_annotation.<br>When a UniProtKB Subcellular Location term describes a concept that is within the scope of the Gene Ontology, it is investigated to determine whether it is appropriate to map the term to an equivalent term in GO. The mapping between UniProtKB Subcellular Location terms and GO terms is carried out manually. Definitions and hierarchies of the terms in the two resources are compared and the mapping generated will reflect the most correct correspondence. The translation table between GO terms and UniProtKB Subcellular Location term is maintained by the UniProt-GOA team and available at http://www.geneontology.org/external2go/spsl2go.<br>Please note that the GO term in the annotation assigned with this GO reference has been changed from that originally applied by the UniProtKB Subcellular Location2GO mapping. This change has been carried out by the UniProt group to ensure the GO annotation obeys the GO Consortium’s ontology structure and taxonomic constraints. Further information on the rules used by UniProt to transform specific incorrect IEA annotations is available at http://www.ebi.ac.uk/QuickGO/AnnotationPostProcessing.html.
 
 <a name="goref0000045"/>
-## Gene Ontology annotation based on UniProtKB/TrEMBL entries keyword mapping, accompanied by conservative changes to GO terms applied by UniProt.
+## OBSOLETE Gene Ontology annotation based on UniProtKB/TrEMBL entries keyword mapping, accompanied by conservative changes to GO terms applied by UniProt.
 
  * id: [GO_REF:0000045](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000045.md)
  * year: 2012
@@ -602,8 +618,10 @@ Transitive assignment of GO terms based on the UniProtKB/Swiss-Prot Subcellular 
 
 Transitive assignments using UniProtKB/TrEMBL keywords. The UniProtKB keyword controlled vocabulary has been created and used by the UniProt Knowledgebase (UniProtKB) to supply 10 different categories of information to UniProtKB/TrEMBL entries entries. Further information on the UniProtKB keyword resource can be found at http://www.uniprot.org/docs/keywlist.<br>UniProtKB keywords are assigned to UniProtKB/UniProtKB entries by UniProt curators as part of the UniProtKB manual curation process. In contrast however, UniProtKB keywords are automatically assigned to UniProtKB/TrEMBL entries from the underlying nucleic acid databases and/or by the UniProt automatic annotation program.<br>Further information on the two different UniProt annotation methods is available at http://www.uniprot.org/faq/45 and http://www.uniprot.org/program/automatic_annotation.<br>When a UniProtKB keyword describes a concept that is within the scope of the Gene Ontology, it is investigated to determine whether it is appropriate to map the keyword to an equivalent term in GO. The translation table between GO terms and UniProtKB keywords is maintained by the UniProt-GOA team and available at http://www.geneontology.org/external2go/uniprotkb_kw2go.<br>Please note that the GO term in the annotation assigned with this GO reference has been changed from that originally applied by the UniProtKB keywords 2GO mapping. This change has been carried out by the UniProt group to ensure the GO annotation obeys the GO Consortium’s ontology structure and taxonomic constraints. Further information on the rules used by UniProt to transform specific incorrect IEA annotations is available at http://www.ebi.ac.uk/QuickGO/AnnotationPostProcessing.html.
 
+Duplicate of GO_REF:0000004.
+
 <a name="goref0000046"/>
-## Gene Ontology annotation based on UniProtKB/TrEMBL Subcellular Location vocabulary mapping, accompanied by conservative changes to GO terms applied by UniProt.
+## OBSOLETE Gene Ontology annotation based on UniProtKB/TrEMBL Subcellular Location vocabulary mapping, accompanied by conservative changes to GO terms applied by UniProt.
 
  * id: [GO_REF:0000046](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000046.md)
  * year: 2012
@@ -612,6 +630,8 @@ Transitive assignments using UniProtKB/TrEMBL keywords. The UniProtKB keyword co
 
 
 Transitive assignment of GO terms based on the UniProtKB/TrEMBL Subcellular Location vocabulary. UniProtKB Subcellular Location is a controlled vocabulary used to supply subcellular location information to UniProtKB entries in the SUBCELLULAR LOCATION lines. Terms from this vocabulary are annotated manually to UniProtKB/Swiss-Prot entries but are automatically assigned to UniProtKB/TrEMBL entries from the underlying nucleic acid databases and/or by the UniProt automatic annotation program.<br>Further information on these two different annotation methods is available at http://www.uniprot.org/faq/45 and http://www.uniprot.org/program/automatic_annotation.<br> The translation table between GO terms and UniProtKB Subcellular Location term is maintained by the UniProt-GOA team and available at http://www.geneontology.org/external2go/spsl2go.<br>Please note that the GO term in the annotation assigned with this GO reference has been changed from that originally applied by the UniProtKB Subcellular Location2GO mapping. This change has been carried out by the UniProt group to ensure the GO annotation obeys the GO Consortium’s ontology structure and taxonomic constraints. Further information on the rules used by UniProt to transform specific incorrect IEA annotations is available at http://www.ebi.ac.uk/QuickGO/AnnotationPostProcessing.html.
+
+Duplicate of GO_REF:0000023.
 
 <a name="goref0000047"/>
 ## Gene Ontology annotation based on absence of key sequence residues.
@@ -625,7 +645,7 @@ Transitive assignment of GO terms based on the UniProtKB/TrEMBL Subcellular Loca
 This describes a method for supplying a NOT-qualified, IKR-evidenced GO annotation to a gene product, when general sequence homology considerations would suggest a function or location, or a role in a biological process, but where a curator has determined that the absence of key sequence residues, known to be required for an expected activity or location, indicating the gene product is unlikely to be able to carry out the implied activity, involvement in a process or cellular component location. This reference should only be used used when an IKR-evidenced annotation is made based on curator judgement from manually reviewing the sequence of the gene product and where no publication can be found to support the curators conclusion. It is preferable to cite a peer-reviewed publication (such as a PubMed identifier) for IKR-evidenced annotations whenever possible. Curators will have carefully reviewed the sequence of the annotated protein, and established that the key residues known to be required for an expected activity or location are not present. Inclusion of an identifier in the 'with/from' field, that highlights to the user the lacking residues(e.g. an alignment, domain or rule identifier) is absolutely required when annotating to IKR with this GO_REF. Documentation on the GOC website provides more details on the <a href = "http://www.geneontology.org/GO.evidence.shtml#ikr">correct use of the IKR evidence code</a>.
 
 <a name="goref0000048"/>
-## TIGR's Eukaryotic Manual Gene Ontology Assignment Method
+## OBSOLETE TIGR's Eukaryotic Manual Gene Ontology Assignment Method
 
  * id: [GO_REF:0000048](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000048.md)
  * year: 2005
@@ -637,7 +657,7 @@ This describes a method for supplying a NOT-qualified, IKR-evidenced GO annotati
 This describes TIGR curators' interpretation of a combination of evidence. Our internal software tools present us with a great deal of evidence based on domains, sequence similarities, signal sequences, paralogous proteins, etc. The curator interprets the body of evidence to make a decision about a GO assignment when an external reference is not available. The curator places one or more accessions that informed the decision in the "with" field.
 
 <a name="goref0000049"/>
-## Automatic transfer of experimentally verified manual GO annotation data to fungal orthologs using Ensembl Compara
+## OBSOLETE Automatic transfer of experimentally verified manual GO annotation data to fungal orthologs using Ensembl Compara
 
  * id: [GO_REF:0000049](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000049.md)
  * year: 2012
@@ -646,6 +666,8 @@ This describes TIGR curators' interpretation of a combination of evidence. Our i
 
 
 GO terms from a source species are projected onto one or more target species based on gene orthology obtained from the Ensembl Compara system. One to one, one to many and many to many orthologies are used but annotations are only projected between orthologs that have at least a 40% peptide identity to each other. Only GO annotations with an evidence type of IDA, IEP, IGI, IMP or IPI are projected, no annotations with a 'NOT' qualifier are projected and annotations to the GO:0005515 protein binding term are not projected. Projected GO annotations using this technique will receive the evidence code Inferred from Electronic Annotation (IEA). The model organism database identifier of the annotation source will be indicated in the 'With' column of the GOA association file.
+
+Duplicate of GO_REF:0000107.
 
 <a name="goref0000050"/>
 ## Manual transfer of GO annotation data to genes by curator judgment of sequence model
@@ -663,10 +685,12 @@ Transitive assignment of GO terms to a gene based on a curator's judgment of its
 ## S. pombe keyword mapping
 
  * id: [GO_REF:0000051](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000051.md)
- * year: 2006-2012
+ * year: 2012
  * authors: PomBase curators
 
 
+
+Active 2006-2012.
 
 Keywords derived from manually curated primary annotation, e.g. gene product descriptions, are mapped to GO terms. Annotations made by this method have the evidence code Non-traceable Author Statement (NAS), and are filtered from the PomBase annotation files wherever another annotation exists that is equally or more specific, and supported by experimental or manually evaluated comparative evidence (such as ISS and its subtypes). Formerly GOC:pombekw2GO.
 
@@ -682,7 +706,7 @@ Keywords derived from manually curated primary annotation, e.g. gene product des
 GO Cellular Component terms are manually assigned by curators studying high resolution confocal microscopy images of immunohistochemically stained tissue. The methodology uses antibody-based proteomics which combines high-throughput generation of affinity-purified antibodies with protein profiling in a variety of cells and tissues. Further information on the annotation methods can be found at http://www.proteinatlas.org/about/assays+annotation <br>Annotations are only exported to the GO Consortium if the localizations are supported by literature, according to the following validation grading:<br>Supportive - Subcellular localization supported by literature.<br>1) One/multiple localizations supported by literature.<br>2) Multiple localizations partly supported (at least one) by literature.<br>3) One/multiple localizations in cytoplasm (i.e. Golgi, mitochondria, ER etc) with literature supporting cytoplasmic localization. <br>Prior to February 2013, all Human Protein Atlas annotations were referenced by PMID:18029348 (Barbe et al. 2008 Mol. Cell Proteomics. 7:499-508), a paper describing the protein localization pilot study and methodology used by the Human Protein Atlas. However, it has been decided that these annotations are more correctly described by a GO reference.<br>Resource URL: http://www.proteinatlas.org <br>Protein subcellular localization images can be viewed on the Human Protein Atlas website, e.g. http://www.proteinatlas.org/ENSG00000175899/summary#ifcelline
 
 <a name="goref0000053"/>
-## Automatic classification of GO using the ELK reasoner
+## OBSOLETE Automatic classification of GO using the ELK reasoner
 
  * id: [GO_REF:0000053](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000053.md)
  * year: 2013
@@ -704,7 +728,7 @@ We use the <a href="http://code.google.com/p/elk-reasoner/">ELK reasoner</a> as 
 LIFEdb is a database that was created to manage the experimental data produced by the German Cancer Research Institute (DKFZ) and its collaborators, from work on cDNAs contained in the German cDNA Consortium collection. <br>A novel cloning technology was used to rapidly generate N- and C-terminal green fluorescent protein fusions of cDNAs to examine the intracellular localizations of expressed fusion proteins in living cells. GO Cellular Component terms are manually assigned by curators studying fluorescence microscope images of cells labelled with GFP-fused cDNAs. Protein coding regions of novel full length cDNAs are tagged with the coding sequence of the green fluorescent protein, the fusion proteins are then expressed and analyzed for their subcellular localization. <br>Prior to February 2013, all LIFEdb annotations were referenced by PMID: 11256614 (Simpson et al. 2000 EMBO Rep. 1:287-292), a paper describing the protein subcellular localization pilot study and methodology used by LIFEdb. However, it has been decided that these annotations are more correctly described by a GO reference. <br>Resource URL: http://www.dkfz.de/en/mga/Groups/LIFEdb-Database.html <br>Protein subcellular localization images can be viewed on the LIFEdb website, http://www.dkfz.de/gpcf/lifedb.php
 
 <a name="goref0000055"/>
-## Gene Ontology Cellular Component annotation based on cellular fractionation.
+## OBSOLETE Gene Ontology Cellular Component annotation based on cellular fractionation.
 
  * id: [GO_REF:0000055](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000055.md)
  * year: 2013
@@ -715,7 +739,7 @@ LIFEdb is a database that was created to manage the experimental data produced b
 Assignment of GO Cellular Component terms based on experimental evidence of cellular localization from Differential Detergent Fractionation (DDF). Cellular proteins are differentially fractionated and detected using mass spectrometry. Subcellular localization is based upon identification of proteins in different fractions and analysis of their predicted transmembrane domains. Proteins are assigned GO CC based upon a manually reviewed DDF2GO mapping file.
 
 <a name="goref0000056"/>
-## Taxon constraints to detect inconsistencies in annotation and ontology structure.
+## OBSOLETE Taxon constraints to detect inconsistencies in annotation and ontology structure.
 
  * id: [GO_REF:0000056](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000056.md)
  * year: 2013
@@ -724,17 +748,6 @@ Assignment of GO Cellular Component terms based on experimental evidence of cell
 
 
 GO is intended to cover the full range of species, therefore GO terms are defined to be taxon neutral, avoiding reliance on taxon information for full definition of the given process, function, or component. For certain terms, however, there is obvious implicit taxon specificity, such that the term should only be used to categorize gene products from particular species. Taxon specificity of GO terms is captured using relationships such as "only_in_taxon" and "never_in_taxon". All taxon constraints are inherited by sub-types and parts of the GO term they are applied to. Taxon constraints are used to prevent inappropriate annotations from being made by curators as well as to identify pre-existing annotations that violate the taxon constraints. Errors in annotations are automatically detected by looking for inconsistencies between the taxonomic origin of the annotated gene products and the implicit taxon specificity of the GO terms. The inconsistencies are passed on to curators for correction, in some cases the constraints need to be tightened or relaxed or the structure of the ontology needs to be adjusted. The taxon constraints are further described in this publication: Deegan, Dimmer and Mungall. BMC Bionformatics (2010) Formalization of taxon-based constraints to detect inconsistencies in annotaiton and ontology development. (PMID:20973947). 
-
-<a name="goref0000057"/>
-## Gene Ontology annotations inferred by curators' judgment using experimental data and prior knowledge of apoptotic mechanisms.
-
- * id: [GO_REF:0000057](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000057.md)
- * year: 2013
- * authors: GO Apoptosis Working Group
-
-
-
-This GO_REF is meant as a subtype of GO_REF:0000036, and its use is limited to annotation of gene products involved in apoptotic cell death. The Gene Ontology Consortium uses the IC (Inferred by Curator) evidence code when an annotation cannot be supported by any direct evidence, but can be inferred by GO annotations that have been annotated to the same gene/gene product identifier in conjunction with the curator's knowledge of biology (supporting GO annotations must not be IC-evidenced). In many cases an IC-evidenced annotation simply applies the same reference that was used in the supporting GO annotation. The use of IC evidence code in an annotation with reference GO_REF:0000057 signifies a curator inferred the GO term based on evidence from multiple sources of evidence/GO annotations. The 'with/from' field in these annotations will therefore supply more than one GO identifier, obtained from the set of supporting GO annotations assigned to the same gene/gene product identifier which cite publicly-available references. In inferring a specific apoptotic mechanism, the curator may refer to the following publications: PMID:21760595, PMID:19373242, PMID:21415859.
 
 <a name="goref0000058"/>
 ## Representation of regulation in the Gene Ontology (biological process) 
@@ -946,7 +959,7 @@ We have created a standard template for classes describing the transport of a ch
 We have created a standard template for classes describing the transport or vesicle-mediated transport from cellular component to cellular component as a biological process. The underlying equivalence axiom templates are "GO:0006810 and 'has_target_start_location' some F and 'has_target_end_location' some T" (transport) and "GO:0016192 and 'has_target_start_location' some F and 'has_target_end_location' some T" (vesicle-mediated transport), where F and T are a cellular components.
 
 <a name="goref0000077"/>
-## Representation of transport of a cellular component as biological process in the Gene Ontology
+## OSBOLETE Representation of transport of a cellular component as biological process in the Gene Ontology
 
  * id: [GO_REF:0000077](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000077.md)
  * year: 2013
@@ -1001,7 +1014,7 @@ We have created a standard template for classes describing the development of a 
 We have created a standard template for classes describing the formation of a plant structure as a biological process. The underlying equivalence axiom template is "'anatomical structure formation involved in morphogenesis' and 'results in formation of' some P", where P is a plant anatomical entity (PO:0025131).
 
 <a name="goref0000082"/>
-## Representation of plant maturation as biological process in the Gene Ontology
+## OBSOLETE Representation of plant maturation as biological process in the Gene Ontology
 
  * id: [GO_REF:0000082](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000082.md)
  * year: 2013
@@ -1179,7 +1192,7 @@ Mouse Genome Database (MGD),  The HUGO Gene  Nomenclature Committee (HGNC), and 
 FlyBase occasionally makes GO annotations based on information that has been sent to us directly by researchers as a personal communication to FlyBase. In each case, the full details of the communication including any associated data and analyses are recorded in a FlyBase publication (FBrf) available from our website (http://flybase.org).
 
 <a name="goref0000098"/>
-## Gene Ontology annotation based on research conference abstracts
+## OBSOLETE Gene Ontology annotation based on research conference abstracts
 
  * id: [GO_REF:0000098](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000098.md)
  * year: 2014
@@ -1190,7 +1203,7 @@ FlyBase occasionally makes GO annotations based on information that has been sen
 Prior to 2008, FlyBase made GO annotations based on information in abstracts for research conferences, primarily the Annual Drosophila Research Conference and the European Drosophila Research Conference. We no longer curate conference abstracts and we are gradually replacing all abstract-based GO annotation with annotation based on experimental data in primary research papers.
 
 <a name="goref0000099"/>
-## Gene Ontology annotation based on DNA/RNA sequence records
+## OBSOLETE Gene Ontology annotation based on DNA/RNA sequence records
 
  * id: [GO_REF:0000099](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000099.md)
  * year: 2014
@@ -1201,7 +1214,7 @@ Prior to 2008, FlyBase made GO annotations based on information in abstracts for
 Prior to 2005, FlyBase made GO annotations based on information in DNA/RNA sequence records in GenBank/EMBL/DDBJ. We no longer add GO annotations based on sequence records and gradually replacing these GO annotations as other sources of evidence become available.
 
 <a name="goref0000100"/>
-## Gene Ontology annotation by SEA-PHAGE biocurators
+## OBSOLETE Gene Ontology annotation by SEA-PHAGE biocurators
 
  * id: [GO_REF:0000100](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000100.md)
  * year: 2014
@@ -1223,7 +1236,7 @@ This GO reference describes the criteria used by biocurators of the SEA-PHAGE co
 This reference is used to describe functional annotations transferred from one or more reference ("source") organisms to a newly annotated ("target") organism on the basis of ortholog cluster membership. In detail, predicted (e.g. by AUGUSTUS, see doi:10.1186/1471-2105-7-62) or transferred (e.g. via RATT, see doi:10:1093/nar/gkg1268) gene models in the target genome are translated and processed by OrthoMCL 1.4 together with reference protein sequences to produce clusters of gene products derived from orthologous genes. For each cluster, GO terms are automatically transferred from source products to the target gene products if they are experimentally verified (IDA, IMP IPI, IGI, EXP). They are tagged with the ISO evidence code and the "with/from" is populated with the source feature references (e.g. "GeneDB:LmjF.28.0960"). OrthoMCL runs are done using the parameterization suggested in the OrthoMCL algorithm document (blastall -F 'm S' -e 1e-5).
 
 <a name="goref0000102"/>
-## Representation of cellular component binding as molecular functions in the Gene Ontology
+## OBSOLETE Representation of cellular component binding as molecular functions in the Gene Ontology
 
  * id: [GO_REF:0000102](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000102.md)
  * year: 2015
@@ -1234,7 +1247,7 @@ This reference is used to describe functional annotations transferred from one o
 We have created a standard template for classes cellular component binding as a molecular function. The underlying equivalence axiom template is "'binding' and 'has input' some C", where C is a cellular component (GO:0005575).
 
 <a name="goref0000103"/>
-## Representation of cellular component organization as biological process in the Gene Ontology
+## OBSOLETE Representation of cellular component organization as biological process in the Gene Ontology
 
  * id: [GO_REF:0000103](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000103.md)
  * year: 2015
@@ -1269,7 +1282,7 @@ GO terms are manually assigned to each rule in UniRule. These rules are prepared
 Gene Ontology annotation based on predicted cytoplasmic tRNAs using tRNAscan-SE analysis (doi: 10.1093/nar/25.5.0955) of the Drosophila melanogaster genome (2002). Annotations have been reviewed by FlyBase (2015) and found to be consistent when compared with the most recent tRNAscan-SE analysis of the genome (http://gtrnadb.ucsc.edu/genomes/eukaryota/Dmela6/).
 
 <a name="goref0000106"/>
-## Gene Ontology annotation based on protein sequence records.
+## OBSOLETE Gene Ontology annotation based on protein sequence records.
 
  * id: [GO_REF:0000106](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000106.md)
  * year: 2016
@@ -1329,14 +1342,15 @@ Gene Ontology annotation of Drosophila melanogaster nuclear genes encoding prote
 
  * id: [GO_REF:0000111](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000111.md)
  * year: 2016
+ * authors: TBD
  * ext xref: FB:FBrf0233689
 
 
 
-The Gene Ontology Consortium uses the IC (Inferred by Curator) evidence code when assignment of a GO term cannot be supported by direct experimental or sequence-based evidence, but can, based on a curator’s biological knowledge, be reasonably inferred from existing GO annotations to the same gene/gene product.  Use of the IC evidence code with GO_REF:0000109 indicates that a curator inferred the GO term based on at least one supporting annotation with an ‘Inferred from Sequence Similarity’ (ISS) evidence code.  Note that additional supporting annotations may be experimentally evidenced. When using GO_REF:0000109, the 'with/from' field must contain all GO identifiers used as supporting annotations.
+The Gene Ontology Consortium uses the IC (Inferred by Curator) evidence code when assignment of a GO term cannot be supported by direct experimental or sequence-based evidence, but can, based on a curator’s biological knowledge, be reasonably inferred from existing GO annotations to the same gene/gene product.  Use of the IC evidence code with GO_REF:0000109 indicates that a curator inferred the GO term based on at least one supporting annotation with an 'Inferred from Sequence Similarity' (ISS) evidence code.  Note that additional supporting annotations may be experimentally evidenced. When using GO_REF:0000111, the 'with/from' field must contain all GO identifiers used as supporting annotations.
 
 <a name="goref0000112"/>
-## Gene Ontology annotation by CACAO biocurators
+## OBSOLETE Gene Ontology annotation by CACAO biocurators
 
  * id: [GO_REF:0000112](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000112.md)
  * year: 2017
@@ -1355,4 +1369,38 @@ This GO reference describes the criteria used by biocurators participating in th
 
 
 
-TFClass (http://tfclass.bioinf.med.uni-goettingen.de/index.jsf) is a database that provides a comprehensive classification of mammalian DbTFs based on their DNA binding domains (DBDs) (PMID:29087517). This database classifies mammalian DbTFs by a six-level classification in which the four highest levels represent groups defined by structural and sequence similarities (superclass, class, family, subfamily) and the two lower levels summarize physical entities such as genes (genus) and specific gene products (species, or molecular species) (more details at http://www.edgar-wingender.de/TFClass_schema.html). This classification is based on the combination of background knowledge of the molecular structural features of DBDs (PMID:9340487, PMID:23427989) and phylogenetic trees constructed via multiple sequence alignment with hierarchical clustering of manually validated DBDs and/or full-lenght protein sequences retrieved from Uniprot (PMID:23427989, PMID:23180794, PMID:23427989). The NTNU curation team has assigned the molecular function term GO:0000981 (RNA polymerase II transcription factor activity, sequence-specific DNA binding) supported by the evidence code ECO:0005556 (multiple sequence alignment evidence used in manual assertion), which can be mapped back to the GO evidence code "inferred from sequence alignment" (ISA), to all human DbTFs extracted from the current version of TFClass (January 2018). Other proteins belonging to the same family (as defined by TFClass as shown above) associated with at least one GO annotation with GO:0000981 and its children or GO:0043565 and its children supported with any type of GO evidence code were added to the field "With/From".
+The TFClass (http://tfclass.bioinf.med.uni-goettingen.de/index.jsf) database provides a comprehensive classification of mammalian DNA binding transcription factors (DbTFs) based on their DNA binding domains (DBDs) (PMID:29087517). TFClass classifies mammalian DbTFs by a five-level classification in which the four highest levels represent groups defined by structural and sequence similarities (superclass, class, family, subfamily, and genera) (more details at http://www.edgar-wingender.de/TFClass_schema.html). This classification is based on the combination of background knowledge of the molecular structural features of DBDs (PMID:9340487, PMID:23427989) and phylogenetic trees constructed via multiple sequence alignment with hierarchical clustering of manually validated DBDs and/or full-length protein sequences retrieved from UniProt (PMID:23427989, PMID:23180794, PMID:23427989). 
+
+The NTNU curation team has evaluated each family and assigned a molecular function annotation, GO:0000981 (DNA-binding transcription factor activity, RNA polymerase II-specific), and a cellular component annotation GO:0000790 (nuclear chromatin), as appropriate. The superclass/class/family or subfamily ID is specified in the "With/From" field. The annotations are supported by the evidence code ECO:0005556 (multiple sequence alignment evidence used in manual assertion). 
+
+<a name="goref0000114"/>
+## Manual transfer of experimentally-verified manual GO annotation data to homologous complexes by curator judgment of sequence, composition and function similarity.
+
+ * id: [GO_REF:0000114](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000114.md)
+ * year: 2018
+ * authors: Birgit Meldal and Sandra Orchard (1). (1) European Bioinformatics Institute (EBI), Hinxton, Cambridgeshire, United Kingdom
+
+
+
+Method for transferring manual annotations to an entry based on a curator's judgment of its similarity to a putative homolog that has annotations that are supported with experimental evidence. Annotations are created when a curator judges that the sequence, composition and function of a complex shows high similarity to another complex that has annotation(s) supported by experimental evidence (and therefore display one of the evidence codes ECO:0000353 [IPI] or ECO:0005543). Annotations resulting from the transfer of GO terms display the ECO:0005610, ECO:0005544 or ECO:0005546 evidence codes and include an accession for the complex from which the annotation was projected in the 'with/from' field (column 8). This field MUST contain a Complex Portal accession identifier. Putative homologs are chosen using information combined from a variety of complementary sources. Potential homologs are initially identified using sequence similarity search programs such as BLAST. Homologous relationships are then verified manually using a combination of resources including sequence analysis tools, phylogenetic and comparative genomics databases such as Ensembl Compara, INPARANOID and OrthoMCL, as well as other specialised databases such as species-specific collections (e.g. HGNC's HCOP). In all cases curators check the alignments for each complex component and use their experience to assess whether similarity is considered to be strong enough to infer that the two proteins have a common function so that they can confidently project an annotation. While there is no fixed cut-off point in percentage sequence similarity, generally proteins which have greater than 70% identity that covers greater than 90% of the length of both proteins are examined further. Whilst we expect subunit composition to be conserved between closely related species, this is not an absolute rule and orthologous complexes may differ if a subunit cannot be traced in one species or is experimentally shown not to be present. When there is evidence of multiple paralogs for a single species, multiple variants of the complex can be inferred.
+
+<a name="goref0000115"/>
+## Automatic Gene Ontology annotation of non-coding RNA sequences through association of Rfam records with GO terms.
+
+ * id: [GO_REF:0000115](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000115.md)
+ * year: 2018
+ * authors: RNAcentral (1). (1) European Bioinformatics Institute (EMBL-EBI), Hinxton, Cambridgeshire, United Kingdom
+
+
+
+Rfam (http://rfam.org, PMID:29112718) is a database of non-coding RNA families which are manually
+annotated with GO terms by Rfam curators. RNAcentral (http://rnacentral.org, PMID:27794554) maintains
+a comprehensive collection of non-coding RNA sequences that are regularly annotated with Rfam families
+using the Infernal software (PMID:24008419). When a non-coding RNA sequence is matched to one or more Rfam families
+by sequence similarity, the GO terms associated with the Rfam family are transitively assigned to the non-coding RNA sequence.
+Annotations resulting from the transfer of GO terms are assigned the ECO:0000256 evidence code
+(match to sequence model evidence used in automatic assertion) and include RNAcentral and Rfam accessions. 
+The annotations are available on the GOA and EMBL-EBI FTP sites. 
+The mapping between Rfam families and GO terms is available at http://www.geneontology.org/external2go/rfam2go, 
+and the Infernal software can be downloaded at http://eddylab.org/infernal. To report an annotation error or inconsistency, 
+or for further information, please visit the RNAcentral website at http://rnacentral.org.

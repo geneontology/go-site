@@ -17,7 +17,7 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="shortcut icon" href="http://geneontology.org/sites/default/files/go-logo-favicon_0.ico" type="image/vnd.microsoft.icon" />
+    <link rel="shortcut icon" href="http://geneontology.org/assets/go-logo-favicon.ico" type="image/vnd.microsoft.icon" />
     <link rel="shortcut icon" href="logo-circle.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" crossorigin="anonymous">
@@ -38,7 +38,7 @@
       </button>
 
       <a class="navbar-brand" href="index.html#home">
-    	<img src="http://geneontology.org/sites/default/files/go-logo-icon.mini__0.png" height="30" class="d-inline-block align-top" alt="">
+    	<img src="http://geneontology.org/assets/go-logo-icon.mini.png" height="30" class="d-inline-block align-top" alt="">
     	Gene Ontology Consortium
       </a>
 
@@ -153,7 +153,7 @@
 	    gzip utility. Please see the upstream resource information
 	    for further details on the annotation set. Any errors or
 	    omissions in annotations should be reported by writing to
-	    the <a href="http://helpdesk.geneontology.org">GO
+	    the <a href="http://help.geneontology.org">GO
 	    Helpdesk</a>.
 	  </p>
 
@@ -202,10 +202,13 @@
 	    </tfoot>
 	    <tbody>
 	      {{ #data }}
+	      {{ #metadata.url }}
 	      <tr>
 		<td>
+		  <b>{{ #metadata.species_label }}{{ metadata.species_label }}{{ /metadata.species_label }}{{ ^metadata.species_label }}{{ #metadata.species_code }}{{ metadata.species_code }}{{ /metadata.species_code }}{{ ^metadata.species_code }}Multi-species{{ /metadata.species_code }}{{ /metadata.species_label }}</b>
+		  <br />
 		  {{ metadata.resource-label }}
-		  (<a href="{{ metadata.resource-project_url }}">{{ metadata.submitter }}</a>, {{ #metadata.species_code }}{{ metadata.species_code }}{{ /metadata.species_code }}{{ ^metadata.species_code }}multi{{ /metadata.species_code }})
+		  (<a href="{{ metadata.resource-project_url }}">{{ metadata.submitter }}</a>)
 		</td>
 		<td>
 		  {{ #metadata.entity_type }}
@@ -216,10 +219,11 @@
 		  {{ /metadata.entity_type }}
 		</td>
 		<td>
-		  {{ summary.association_count }}
+		  {{ associations }}
 		</td>
 		<td><a href="{{ metadata.url }}">{{ metadata.id }}</a> ({{ metadata.compression }})</td>
 	      </tr>
+	      {{ /metadata.url }}
 	      {{ /data }}
 	    </tbody>
 	  </table>
@@ -234,19 +238,16 @@
 	  <p>
 	    <small>
 	      Copyright ©
-	      1999-2017 <a href="http://www.geneontology.org/"
+	      1999-2020 <a href="http://www.geneontology.org/"
 			   title="The Gene Ontology project website">the Gene
 		Ontology</a>
 	      (<a href="http://geneontology.org/page/use-and-license">CC-BY
-		4.0</a>)<br /><a href="http://geneontology.org/form/contact-go"
+		4.0</a>)<br /><a href="http://help.geneontology.org/"
 				 title="Contact the GO helpdesk">Helpdesk</a>
 	      • <a href="http://geneontology.org/page/go-citation-policy"
-		   title="How to cite the GO
-			  project">Citation/attribution</a>
+		   title="How to cite the GO project">Citation/attribution</a>
 	      • <a href="http://geneontology.org/page/use-and-license"
-		   title="Terms of use for the GO project">Terms of use</a>
-	      • <a href="http://geneontology.org/rss.xml" title="GO News
-								 RSS feed">RSS</a><br /> Member of
+		   title="Terms of use for the GO project">Terms of use</a><br /> Member of
 	      the <a href="http://www.obofoundry.org/" rel="external"
 		     title="Open Biological and Biomedical Ontologies">Open
 		Biological and Biomedical Ontologies</a>
@@ -256,13 +257,11 @@
 	      The Gene Ontology Consortium is supported by a P41 grant
 	      from the National Human Genome Research Institute (NHGRI)
 	      [grant <a href="http://projectreporter.nih.gov/project_info_description.cfm?aid=8641714&amp;icde=0"
-			rel="external" title="National Human Genome Research
-					      Institute grant 5U41HG002273-14">5U41HG002273-14</a>]. The
+			rel="external" title="National Human Genome Research Institute grant 5U41HG002273-14">5U41HG002273-14</a>]. The
 	      Gene Ontology Consortium would like to acknowledge the
 	      assistance of many more people than can be listed
 	      here. Please visit
-	      the <a href="http://geneontology.org/page/go-acknowledgements">acknowledgements
-		page</a> for the full list.
+	      the <a href="http://geneontology.org/docs/annotation-contributors/">annotation contributors page</a> for the full list.
 	    </small>
 	  </p>
 

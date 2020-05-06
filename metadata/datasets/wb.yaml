@@ -6,18 +6,25 @@ contact_email: "help@wormbase.org"
 project_url: "http://www.wormbase.org/"
 funding_source: "US National Institutes of Health, UK Medical Research Council, UK Biotechnology and Biological Sciences Research Council"
 email_report: "ranjana@its.caltech.edu,vanauken@caltech.edu"
+filter_out:
+  evidence:
+    - ECO:0000501
+    - ECO:0000318
+  evidence_reference:
+    - evidence: ECO:0000320
+      reference: PMID:21873635
 datasets:
- -    
+ -
    id: wb.gaf
    label: "wb gaf file"
    description: "gaf file for wb from WormBase database of nematode biology"
-   url: http://geneontology.org/gene-associations/gene_association.wb.gz
+   url: http://current.geneontology.org/annotations/wb.gaf.gz
    type: gaf
    dataset: wb
    submitter: wb
    compression: gzip
    source: ftp://ftp.wormbase.org/pub/wormbase/species/c_elegans/PRJNA13758/annotation/go_annotations/c_elegans.PRJNA13758.current.go_annotations.gaf.gz
-   entity_type: 
+   entity_type:
    status: active
    species_code: Cele
    taxa:
@@ -25,8 +32,8 @@ datasets:
  -
    id: wb.gpi
    label: "wb gpi file"
-   description: "gpi file for Caenorhabditis elegans from WormBase"   
-   url: http://geneontology.org/gpad-gpi/release/wb.gpi.gz
+   description: "gpi file for Caenorhabditis elegans from WormBase"
+   url: http://current.geneontology.org/annotations/wb.gpi.gz
    type: gpi
    dataset: wb
    submitter: wb

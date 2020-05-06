@@ -47,6 +47,7 @@ Read more about writing new Rules below.
 - implemented: When a rule has an implementation that is actively run in some part of
     a pipeline or other regularly scheduled report. Having an implementation in some script
     that is never run regularly or that is run on old data does not count as `implemented`.
+- legacy: A previous implementation still exists, but will be replaced by a new implementation matching the new pipeline (ontobio or SPARQL).    
 - deprecated: If a rule is no longer needed, is conceptually incorrect, or otherwise should not be used
     it can be `deprecated`. A rule that is deprecated should have no active implementations being
     run on current data.
@@ -59,6 +60,25 @@ Read more about writing new Rules below.
     should mean that either the GAF line is removed (in the case of filter) or the offending data is removed
     in favor of computed correct data (in the case of repair). The main takeaway though is that the data will
     have been _changed_ by filter or repair rules.
+
+## `tags` description:
+Tags are a general mechanism for hinting to rule implementers about extra behavior implementations for the rule
+should have beyond the formal description. If an implementer ignores a tag then the implementation isn't strictly
+wrong data but its behavior may be unexpected or undesired. Conversely tags should not have an affect on how GO data
+is processed directly. For example, if a tag would change what is considered valid, then that formulation should go
+in the description of the rule itself. Tags also group similar behaviors across potentially many Rules.  This is a
+controlled vocabulary, and only certain tags are allowed to be used and understood. Tag definitions will be listed here.
+
+To specify a tag, add one of the listed tags below to the rule's `tags` field in a yaml list. More than one tag may be
+used if they are each different from each other tag in the list for a rule.
+
+- `silent`: The reporting output for this rule should not appear in standard readable locations. The full report including
+the results of a silenced rule should still be accessible and written somewhere, even if not displayed for standard
+consumption. For example, `GORULE:0000026` is `silent`. In Ontobio, errors from this rule are put in a JSON report but
+not rendered into markdown and not included in the main reports normally read by consumers.
+- `context-import`: Rule runners and implementers should _only_ run this rule in the context of a MOD import to Noctua. This is
+considered a specialized, non-standard rule that should not be included in a standard rule processing run. Rules with
+this tag should be run along with all other standard rules.
 
 ## New Rules
 New rules should have an ID that is incrementally increased. We do not reuse old IDs that

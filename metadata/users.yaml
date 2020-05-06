@@ -237,8 +237,8 @@
     - 87b721597d5a997234f5a8f61bde469b
   groups:
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
-    - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl'
-    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl'
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological'
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/syngo'
   nickname: 'Ruth Lovering'
   organization: BHF-UCL
   uri: 'http://orcid.org/0000-0002-9791-0064'
@@ -364,9 +364,11 @@
   uri: 'GOC:atm'
   xref: 'GOC:atm'
 -
+  accounts: 
+    github: jimhu-tamu
   nickname: 'Jim Hu'
   organization: 'E. coli'
-  uri: 'GOC:jh2'
+  uri: 'https://orcid.org/0000-0001-9016-2684'
   xref: 'GOC:jh2'
 -
   email-md5:
@@ -374,7 +376,7 @@
   groups:
     - 'http://www.bio.tamu.edu'
   nickname: 'Brenley McIntosh'
-  organization: 'E. coli'
+  organization: 'EcoliWiki/CACAO'
   uri: 'GOC:bm'
   xref: 'GOC:bm'
 -
@@ -387,7 +389,7 @@
   groups:
     - 'http://www.bio.tamu.edu'
   nickname: 'Sandy Labonte'
-  organization: 'E. coli'
+  organization: 'EcoliWiki/CACAO'
   uri: 'http://orcid.org/0000-0002-9618-3336'
 -
   nickname: 'Curators at FlyBase'
@@ -802,7 +804,7 @@
 -
   nickname: 'Tony Planchart'
   organization: MGI
-  uri: 'GOC:ajp'
+  uri: 'https://orcid.org/0000-0001-8691-8856'
   xref: 'GOC:ajp'
 -
   accounts:
@@ -817,7 +819,7 @@
     - 'http://informatics.jax.org'
   nickname: 'Dmitry Sitnikov'
   organization: MGI
-  uri: 'http://orcid.org/0000-0002-5283-5283'
+  uri: 'http://orcid.org/0000-0003-3394-9805'
   xref: 'GOC:dms'
 -
   authorizations:
@@ -1368,7 +1370,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Stacia Engel'
   organization: SGD
-  uri: 'http://orcid.org/0000h-0001-5472-917X'
+  uri: 'http://orcid.org/0000-0001-5472-917X'
   xref: 'GOC:se'
 -
   nickname: 'Selina Dwight'
@@ -1528,11 +1530,6 @@
   organization: JCVI
   uri: 'GOC:lh'
   xref: 'GOC:lh'
--
-  nickname: 'Michelle Gwinn'
-  organization: IGS
-  uri: 'GOC:mlg'
-  xref: 'GOC:mlg'
 -
   nickname: 'Scott Durkin'
   organization: JCVI
@@ -1984,6 +1981,7 @@
   authorizations:
     noctua:
       go:
+        allow-admin: true
         allow-edit: true
     termgenie-go:
       allow-freeform: false
@@ -1993,6 +1991,7 @@
     - 52a4b1e1f8519d5ad27335e0b920eb7e
   groups:
     - 'http://www.wormbase.org'
+    - 'http://geneontology.org'
   nickname: 'Kimberly Van Auken'
   organization: WB
   uri: 'http://orcid.org/0000-0002-1706-4196'
@@ -3115,6 +3114,34 @@
   uri: 'http://orcid.org/0000-0003-1074-8103'
 -
   accounts:
+    github: Xenbase2
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    -
+  groups:
+    - 'http://www.xenbase.org'
+  nickname: 'Christina James-Zorn'
+  organization: Xenbase
+  uri: 'http://orcid.org/0000-0001-5495-4588'
+-
+  accounts:
+    github: MardiNenni
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    -
+  groups:
+    - 'http://www.xenbase.org'
+  nickname: 'Mardi Nenni'
+  organization: Xenbase
+  uri: 'http://orcid.org/0000-0002-6238-1932'
+-
+  accounts:
     github: chris-grove
   authorizations:
     noctua:
@@ -3174,6 +3201,20 @@
   xref: 'GOC:lr'
 -
   accounts:
+    github: ebakker2
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    - 6543248f6b6f9e104c0afbd5a18b59c6
+  groups:
+    - 'http://www.arabidopsis.org'
+  nickname: 'Erica Bakker'
+  organization: TAIR
+  uri: 'https://orcid.org/0000-0001-7933-3817'
+-
+  accounts:
     github: mchibucos
   authorizations:
     noctua:
@@ -3199,7 +3240,7 @@
   groups:
     - 'http://www.bio.tamu.edu'
   nickname: 'Debby Siegele'
-  organization: 'E. coli'
+  organization: 'EcoliWiki/CACAO'
   uri: 'http://orcid.org/0000-0001-8935-0696'
   xref: 'GOC:das'
 -
@@ -3215,9 +3256,9 @@
     - 05856707bf8eca390ae3ddcf689e9011
     - 99b4072c338978afc0a90bc7f217cef8
   groups:
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological'
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
-    - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/aruk-ucl'
-    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/tabs/syngo-ucl'
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/syngo'
   nickname: 'Barbara Kramarz'
   organization: BHF-UCL
   uri: 'http://orcid.org/0000-0002-3898-1727'
@@ -3943,28 +3984,28 @@
   uri: 'http://orcid.org/0000-0001-5084-9000'
 -
   accounts:
-    github: jesualdotomasfernandezbreis
+    github: jrr-cpt
   authorizations:
     noctua:
       go:
         allow-edit: true
   groups:
-    - 'https://greekc.org'
-  nickname: 'Jesualdo Tomás Fernández Breis'
-  organization: 'University of Murcia'
-  uri: 'http://orcid.org/0000-0002-7558-2880'
+    - 'http://www.bio.tamu.edu'
+  nickname: 'Jolene Ramsey'
+  organization: 'EcoliWiki/CACAO'
+  uri: 'http://orcid.org/0000-0002-3774-5896'
 -
   accounts:
-    github: belenjc
+    github: erbolton
   authorizations:
     noctua:
       go:
         allow-edit: true
   groups:
-    - 'https://greekc.org'
-  nickname: 'Belén Juanes Cortés'
-  organization: 'University of Murcia'
-  uri: 'http://orcid.org/0000-0003-3641-7548'
+    - 'http://rgd.mcw.edu'
+  nickname: 'Liz Bolton'
+  organization: 'RGD'
+  uri: 'http://orcid.org/0000-0002-5657-2732'
 -
   accounts:
     github: nsuvarnaiari
@@ -3986,9 +4027,49 @@
         allow-edit: true
   groups:
     - 'http://www.igs.umaryland.edu'
-  nickname: 'Michelle Giglio'
+  nickname: 'Michelle Gwinn Giglio'
   organization: 'IGS'
   uri: 'http://orcid.org/0000-0001-7628-5565'
+  xref: 'GOC:mlg'
+-
+  nickname: 'Josh Jaffery'
+  organization: WB
+  uri: 'GOC:jja'
+  xref: 'GOC:jja'
+-
+  nickname: 'Teresa Chu'
+  organization: MGI
+  uri: 'GOC:tc'
+  xref: 'GOC:tc'
+-
+ nickname: 'Allan P Davis'
+ organization: MGI
+ uri: 'GOC:apd'
+ xref: 'GOC:apd'
+-
+  accounts:
+    github: jesualdotomasfernandezbreis
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://greekc.org'
+  nickname: 'Jesualdo Tomás Fernández Breis'
+  organization: 'University of Murcia'
+  uri: 'http://orcid.org/0000-0002-7558-2880'
+-
+  accounts:
+    github: belenjc
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://greekc.org'
+  nickname: 'Belén Juanes Cortés'
+  organization: 'University of Murcia'
+  uri: 'http://orcid.org/0000-0003-3641-7548'
 -
   accounts:
     github: jpa29
@@ -4001,3 +4082,71 @@
   nickname: 'Joanna Argasinska'
   organization: SGD
   uri: 'http://orcid.org/0000-0003-2678-2824'
+-
+  accounts:
+    github: ShirinSaverimuttu
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological'
+    - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/syngo'
+  nickname: 'Shirin Saverimuttu'
+  organization: BHF-UCL
+  uri: 'http://orcid.org/0000-0003-1191-2681'
+-
+  accounts:
+    github: MariosMakris
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological'
+    - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
+    - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/syngo'
+  nickname: 'Marios Makris'
+  organization: BHF-UCL
+  uri: 'http://orcid.org/0000-0002-6176-1677'
+-
+  accounts:
+    github: Gschindelman
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.wormbase.org'
+  nickname: 'Gary Schindelman'
+  organization: WB
+  uri: 'http://orcid.org/0000-0001-7883-4388'
+-
+  nickname: 'TBK Reddy'
+  organization: MGI
+  uri: 'http://orcid.org/0000-0002-0871-5567'
+-
+  nickname: 'Richard Baldarelli'
+  organization: MGI
+  uri: 'http://orcid.org/0000-0002-5819-0228'
+-
+  nickname: 'Louise McKenzie'
+  organization: MGI
+  uri: 'GOC:lmm'
+- 
+  nickname: 'Robert Sinclair'
+  organization: MGI
+  uri: 'GOC:bobs'
+-
+  accounts:
+    github: sahasrasawaal
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://syngo.vu.nl'
+  nickname: 'Dnyanada Sahasrabudhe'
+  organization: SynGO
+  uri: 'https://orcid.org/0000-0003-2916-7616'

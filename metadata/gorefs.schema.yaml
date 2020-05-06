@@ -1,0 +1,49 @@
+type: map
+mapping:
+  "layout":
+    type: str
+    required: true
+    enum: [goref]
+  "id":
+    type: str
+    required: true
+    pattern: /GO_REF:[0-9]{7}/
+  "authors":
+    type: str
+    required: true
+  "year":
+    type: number
+    required: false
+  "external_accession":
+    type: seq
+    required: false
+    sequence:
+      - type: str
+        required: false
+        pattern: /[a-zA-Z\_]+:[0-9a-zA-Z\_]+/
+  "alt_id":
+    type: seq
+    required: false
+    sequence:
+      - type: str
+        required: false
+        pattern: /GO_REF:[0-9]{7}/
+  "evidence_codes":
+    type: seq
+    required: false
+    sequence:
+      - type: str
+        pattern: /ECO:[0-9]{7}/
+  # "alt_id":
+  #   type: str
+  #   required: false
+  #   pattern: /GO_REF:[0-9]{7}/
+  "url":
+    type: str
+    required: false
+  "citation":
+    type: str
+    required: false
+  "is_obsolete":
+    type: bool
+    required: false

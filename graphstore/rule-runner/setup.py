@@ -6,12 +6,12 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        "click==6.7",
-        "requests==2.13.0",
-        "pyYaml==3.12",
+        "click",
+        "requests",
+        "pyYaml",
         "pykwalify==1.6.0",
         "SPARQLWrapper==1.8.0",
-        "yamldown==0.1.3",
+        "yamldown",
         "rdflib==4.2.2"
     ],
     entry_points='''

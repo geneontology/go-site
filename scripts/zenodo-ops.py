@@ -5,10 +5,18 @@
 #### This toolkit should be safe to use with jq, although suggest
 #### noisy --verbose to see what is going on.
 ####
+#### WARNING: This script does *not* use the Zenodo "secret" large
+#### file API mentioned here:
+#### https://github.com/zenodo/zenodo/issues/833 . For large file
+#### uploads, we'd suggest using the curl commands as given
+#### there--they seem to work for us. For a working python3
+#### implementation of that API, please see our
+#### zenodo-version-update.py script.
+####
 #### Example usage to operate in Zenodo:
 ####  python3 ./scripts/zenodo-ops.py --help
 ####  python3 ./scripts/zenodo-ops.py --verbose --sandbox --key abc --action list --object deposition
-####  python3 ./scripts/zenodo-ops.py --verbose --sandbox --key abc --action list --object files --deposition 123
+####  python3 ./scripts/zenodo-ops.py --verbose --sandbox --key abc --action list --object file --deposition 123
 ####
 
 ## Standard imports.

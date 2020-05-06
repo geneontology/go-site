@@ -41,6 +41,34 @@ mapping:
     type: str
     required: false
     unique: false
+  "filter_out":
+    type: map
+    required: false
+    mapping:
+      "evidence":
+        type: seq
+        required: false
+        sequence:
+          - type: str
+            pattern: /ECO:[0-9]{7}/
+      "evidence_reference":
+        type: seq
+        required: false
+        sequence:
+          - type: map
+            mapping:
+              "evidence":
+                type: str
+                required: true
+                pattern: /ECO:[0-9]{7}/
+              "reference":
+                type: str
+                required: true
+      "annotation_properties":
+        type: seq
+        required: false
+        sequence:
+          - type: str
   "datasets":
     type: seq
     required: true
@@ -61,7 +89,7 @@ mapping:
             unique: true
           "url":
             type: str
-            required: true
+            required: false
             unique: true
           "type":
             type: str
@@ -79,6 +107,7 @@ mapping:
             type: str
             required: false
             unique: false
+            enum: ['', gzip]
           "source":
             type: str
             required: false
@@ -91,6 +120,9 @@ mapping:
             type: str
             required: false
             unique: false
+          "import":
+            type: bool
+            required: false
           "entity_type":
             type: str
             required: false
@@ -108,3 +140,6 @@ mapping:
             required: false
             sequence:
               - type: str
+          "exclude":
+            type: bool
+            required: false

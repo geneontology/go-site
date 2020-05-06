@@ -1,17 +1,11 @@
 # GO Dataset Metadata
 
-Metadata on gene association datasets available from the GOC, organized by contributor. This drives the new GO association file publishing pipeline:
+Metadata on gene association datasets available from the GOC, organized by contributor. This drives the new GO association file publishing pipeline.
 
- * https://build.berkeleybop.org/job/go-gaf-pipeline-NEW/
+For GO Consortium Internal Docs, see http://wiki.geneontology.org/index.php/Release_Pipeline
 
-Soon the contents of this page will be driven by this job
-
- * http://geneontology.org/page/download-annotations
-
- See [GO Infrastructure Plan USC 2016](https://drive.google.com/open?id=0B8kRPmmvPJU3S1Fwck9CTzNEUVE) for details
+## Technical Docs
  
-See also https://github.com/geneontology/go-site/issues/207 
-
 Pipeline configuration: https://github.com/geneontology/go-site/tree/master/pipeline
 
 ## Editing the metadata

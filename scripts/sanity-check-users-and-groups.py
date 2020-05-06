@@ -107,25 +107,25 @@ def main():
 
                 ## 1: If so, do they have a URI?
                 if not user.get('uri', False):
-                    # die_screaming(user.get('nickname', '???') +\
-                    #               ' has no "uri"')
-                    print(nick + ' has no "uri"')
+                    die_screaming(user.get('nickname', '???') +\
+                                  ' has no "uri"')
+                    #print(nick + ' has no "uri"')
                     violations["uri"].append(nick)
 
                 else:
                     ## 2: Is it an ORCID?
                     if user.get('uri', 'NIL').find('orcid') == -1:
-                        # die_screaming(user.get('nickname', '???') +\
-                        #               ' "uri" is not an ORCID.')
-                        print(nick + ' "uri" is not an ORCID.')
+                        die_screaming(user.get('nickname', '???') +\
+                                      ' "uri" is not an ORCID.')
+                        #print(nick + ' "uri" is not an ORCID.')
                         violations["uri"].append(nick)
 
                 ## 3: If so, do they have a populated groups?
                 if not user.get('groups', False) or len(user["groups"]) == 0:
 
-                    # die_screaming(user.get('nickname', '???') +\
-                    #               ' has no "groups"')
-                    print(nick + ' has no "groups"')
+                    die_screaming(user.get('nickname', '???') +\
+                                  ' has no "groups"')
+                    #print(nick + ' has no "groups"')
                     if user.get("organization", False):
                         org = user["organization"]
                         print(nick + " could try org {}".format(org))
@@ -142,9 +142,9 @@ def main():
                     ## 4: If so, are all entries in groups?
                     for gid in user.get('groups'):
                         if not groups_lookup.get(gid, False):
-                            # die_screaming(user.get('nickname', '???') +\
-                            #               ' has mistaken group entry: ' + gid)
-                            print(nick + ' has mistaken group entry: ' + gid)
+                            die_screaming(user.get('nickname', '???') +\
+                                          ' has mistaken group entry: ' + gid)
+                            #print(nick + ' has mistaken group entry: ' + gid)
 
     violates_both = set(violations["uri"]).intersection(violations["groups"])
     just_uri = set(violations["uri"]).difference(violates_both)
