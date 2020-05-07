@@ -46,6 +46,13 @@ def gpad_must_have_gpi_from_this_dataset(dataset) -> str:
         for gpi in found:
             if gpi not in ids:
                 errors.append("* Could not find '{}' as an id from in the list of datasets in '{}': {}".format(gpi, dataset["id"], ", ".join(ids)))
+            else:
+                # If linked gpi is not active then we also fail
+                gpi_datasets = [ds for ds in dataset["datasets"] if ds["id"] == gpi]
+                for gds in gpi_datasets:
+                    # If the gpi dataset is not active
+                    if gds.get("status", "inactive") != "active":
+                        errors.append("* {} dataset does not have an 'active' `status` and it should be.".format(gds["id"]))
 
     return "\n".join(["    {}".format(e) for e in errors])
 
