@@ -1005,6 +1005,16 @@
       url_syntax: http://www.gramene.org/db/searches/browser?search_type=All&RGN=on&query=[example_id]
       example_id: GR:sd1
       example_url: http://www.gramene.org/db/searches/browser?search_type=All&RGN=on&query=sd1
+- database: GR_Ensembl
+  name: Gramene
+  generic_urls:
+    - http://www.gramene.org/
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: http://gramene.org/idList=[example_id]
+      example_id: GR_Ensembl:At1g10040
+      example_url: http://gramene.org/idList=At1g10040
 - database: GR_GENE
   name: Gramene
   synonyms:
