@@ -36,7 +36,7 @@ GDB,EBI/GOC,@pgaudet,
 GeneDB,Achchuthan Shanmugasundram,@Achchuthan,
 GeneDB,Ulrike Boehme,@uliboehme,Plasmodium curator
 GeneDB,F.Silva-Franco, F.Silva-Franco at liverpool.ac.uk,TBRU curator
-GO_Central,Pascale Gaudet,@pgaudet,PAINT, transcription|multiorganism processes|cellular biology
+GO_Central,Pascale Gaudet,@pgaudet,PAINT|transcription|multiorganism processes|cellular biology
 GO_Central,Chris Mungall,@cmungall,Ontology|Anatomy
 GR,Pankaj Jaiswal,@jaiswalp,Plant biology
 GR,Not actively maintainted/GO_Central,@vanaukenk,contact @jaiswalp for queries
