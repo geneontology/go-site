@@ -48,7 +48,7 @@
   shorthand: SynGO-UCL
 -
   label: 'HGNC-UCL'
-  id: http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular
+  id: http://www.ucl.ac.uk/functional-gene-annotation
   shorthand: HGNC-UCL
 -
   label: 'neXtProt'
