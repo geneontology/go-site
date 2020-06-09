@@ -1,4 +1,4 @@
-BASE_NAMES = $(notdir $(wildcard /opt/go-site/annotations/*))
+BASE_NAMES = $(notdir $(wildcard /opt/go-site/annotations/*.gaf))
 
 all: $(foreach name,$(BASE_NAMES),/opt/go-site/annotations_new/$(name))
 
