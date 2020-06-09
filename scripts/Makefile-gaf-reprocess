@@ -3,4 +3,4 @@ BASE_NAMES = $(notdir $(wildcard /opt/go-site/annotations/*))
 all: $(foreach name,$(BASE_NAMES),/opt/go-site/annotations_new/$(name))
 
 /opt/go-site/annotations_new/%.gaf: /opt/go-site/annotations/%.gaf
-    ontobio-parse-assocs.py -f $< -F gaf -o $@ -I /opt/go-site/gaferencer-products/all.gaferences.json --report-md /tmp/report.md --report-json /tmp/report.json validate
+	ontobio-parse-assocs.py -f $< -F gaf -o $@ -I /opt/go-site/gaferencer-products/all.gaferences.json --report-md /tmp/report.md --report-json /tmp/report.json validate
