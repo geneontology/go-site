@@ -1,4 +1,4 @@
-#!/bin/ba
+#!/bin/bash
 
 # Extract gaferences tarball
 tar -xvf /opt/go-site/gaferencer-products/gaferences.json.tgz -C /opt/go-site/gaferencer-products
