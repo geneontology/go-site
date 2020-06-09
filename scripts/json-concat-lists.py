@@ -11,7 +11,10 @@ if __name__ == "__main__":
     list_all = []
     for jf in args.json_file:
         with open(jf) as in_f:
-            list_all += json.load(in_f)
+            file_jsons = json.load(in_f)
+            for fj in file_jsons:
+                if fj not in list_all:
+                    list_all.append(fj)
 
     with open(args.output_file, 'w') as out_f:
         json.dump(list_all, out_f)
