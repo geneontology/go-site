@@ -1,6 +1,11 @@
-BASE_NAMES = $(notdir $(filter-out /opt/go-site/annotations/%.gpi.gz,$(wildcard /opt/go-site/annotations/*)))
+# Basic Dependency Tree for a single gaf.
+# annotations_new/mgi.gaf.gz <- annotations_new/mgi.gaf <- annotations/mgi.gaf, all.gaferences.json
+# <- all.gaferences.json.gz
+# <- annotations/mgi.gaf.gz
 
-all: $(foreach name,$(BASE_NAMES),/opt/go-site/annotations_new/$(name)) /opt/go-site/gaferencer-products/all.gaferences.json.gz
+BASE_NAMES = $(filter-out %.gpi.gz $(notdir ,$(wildcard /opt/go-site/annotations/*)))
+
+all: $(foreach name,$(BASE_NAMES),/opt/go-site/annotations_new/$(name))
 
 %.gz: %
 	pigz $<
@@ -14,6 +19,6 @@ all: $(foreach name,$(BASE_NAMES),/opt/go-site/annotations_new/$(name)) /opt/go-
 %: %.gz
 	unpigz $<
 
-/opt/go-site/gaferencer-products/all.gaferences.json:
-	tar -xvf /opt/go-site/gaferencer-products/gaferences.json.tgz -C /opt/go-site/gaferencer-products
+/opt/go-site/gaferencer-products/all.gaferences.json: /opt/go-site/gaferencer-products/gaferences.json.tgz
+	tar -xvf $< -C /opt/go-site/gaferencer-products
 	python3 /opt/go-site/scripts/json-concat-lists.py /opt/go-site/gaferencer-products/*.gaferences.json /opt/go-site/gaferencer-products/all.gaferences.json
