@@ -7,7 +7,7 @@ BASE_NAMES = $(filter-out %.gpi.gz, $(notdir ,$(wildcard /opt/go-site/annotation
 
 all: $(foreach name,$(BASE_NAMES),/opt/go-site/annotations_new/$(name))
 
-%.gz: %
+/opt/go-site/%.gz: /opt/go-site/%
 	pigz $<
 
 /opt/go-site/annotations_new/%.gaf: /opt/go-site/annotations/%.gaf /opt/go-site/gaferencer-products/all.gaferences.json
@@ -16,5 +16,5 @@ all: $(foreach name,$(BASE_NAMES),/opt/go-site/annotations_new/$(name))
 /opt/go-site/annotations_new/%.gpad: /opt/go-site/annotations/%.gpad /opt/go-site/gaferencer-products/all.gaferences.json
 	ontobio-parse-assocs.py -f $< -F gpad -o $@ -I /opt/go-site/gaferencer-products/all.gaferences.json --report-md /tmp/report.md --report-json /tmp/report.json convert -to gpad
 
-%: %.gz
+/opt/go-site/%: /opt/go-site/%.gz
 	unpigz $<
