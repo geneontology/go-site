@@ -1,4 +1,4 @@
-BASE_NAMES = $(notdir $(wildcard /opt/go-site/annotations/*))
+BASE_NAMES = $(notdir $(filter-out /opt/go-site/annotations/%.gpi.gz,$(wildcard /opt/go-site/annotations/*)))
 
 all: $(foreach name,$(BASE_NAMES),/opt/go-site/annotations_new/$(name)) /opt/go-site/gaferencer-products/all.gaferences.json.gz
 
