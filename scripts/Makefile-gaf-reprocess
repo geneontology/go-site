@@ -3,7 +3,7 @@
 # <- all.gaferences.json.gz
 # <- annotations/mgi.gaf.gz
 
-BASE_NAMES = $(filter-out %.gpi.gz $(notdir ,$(wildcard /opt/go-site/annotations/*)))
+BASE_NAMES = $(filter-out %.gpi.gz, $(notdir ,$(wildcard /opt/go-site/annotations/*)))
 
 all: $(foreach name,$(BASE_NAMES),/opt/go-site/annotations_new/$(name))
 
