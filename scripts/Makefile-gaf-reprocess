@@ -1,9 +1,22 @@
 BASE_NAMES = $(notdir $(wildcard /opt/go-site/annotations/*))
 
-all: $(foreach name,$(BASE_NAMES),/opt/go-site/annotations_new/$(name))
+all: $(foreach name,$(BASE_NAMES),/opt/go-site/annotations_new/$(name)) /opt/go-site/gaferencer-products/all.gaferences.json.gz
 
-/opt/go-site/annotations_new/%.gaf: /opt/go-site/annotations/%.gaf
+/opt/go-site/annotations_new/%.gz: /opt/go-site/annotations_new/%
+	pigz /opt/go-site/annotations_new/$*
+
+/opt/go-site/annotations_new/%.gaf: /opt/go-site/annotations/%.gaf /opt/go-site/gaferencer-products/all.gaferences.json
 	ontobio-parse-assocs.py -f $< -F gaf -o $@ -I /opt/go-site/gaferencer-products/all.gaferences.json --report-md /tmp/report.md --report-json /tmp/report.json convert -to gaf
 
-/opt/go-site/annotations_new/%.gpad: /opt/go-site/annotations/%.gpad
+/opt/go-site/annotations_new/%.gpad: /opt/go-site/annotations/%.gpad /opt/go-site/gaferencer-products/all.gaferences.json
 	ontobio-parse-assocs.py -f $< -F gpad -o $@ -I /opt/go-site/gaferencer-products/all.gaferences.json --report-md /tmp/report.md --report-json /tmp/report.json convert -to gpad
+
+/opt/go-site/annotations/%:
+	unpigz /opt/go-site/annotations/$*.gz
+
+/opt/go-site/gaferencer-products/all.gaferences.json.gz: /opt/go-site/gaferencer-products/all.gaferences.json
+	pigz /opt/go-site/gaferencer-products/all.gaferences.json
+
+/opt/go-site/gaferencer-products/all.gaferences.json:
+	tar -xvf /opt/go-site/gaferencer-products/gaferences.json.tgz -C /opt/go-site/gaferencer-products
+	python3 /opt/go-site/scripts/json-concat-lists.py /opt/go-site/gaferencer-products/*.gaferences.json /opt/go-site/gaferencer-products/all.gaferences.json
