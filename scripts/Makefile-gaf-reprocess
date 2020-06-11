@@ -4,13 +4,10 @@
 # <- annotations/mgi.gaf.gz
 # Run locally with `make -f scripts/Makefile-gaf-reprocess ROOT_PATH=$(pwd) all`
 
-ROOT_PATH ?= "/opt/go-site"
-BASE_NAMES = $(filter-out %.gpi.gz, $(notdir ,$(wildcard $(ROOT_PATH)/annotations/*)))
+ROOT_PATH ?= /opt/go-site
+BASE_TARGET_NAMES = $(filter-out %.gpi.gz,$(notdir $(wildcard $(ROOT_PATH)/annotations/*)))
 
-all: $(foreach name,$(BASE_NAMES),$(ROOT_PATH)/annotations_new/$(name))
-
-# go-site/annotations_new/goa_pig_complex.gpad.gz
-#
+all: $(foreach name,$(BASE_TARGET_NAMES),$(ROOT_PATH)/annotations_new/$(name))
 
 # Only zip from annotations_new
 $(ROOT_PATH)/annotations_new/%.gz: $(ROOT_PATH)/annotations_new/%
@@ -20,6 +17,7 @@ $(ROOT_PATH)/annotations_new/%.gz: $(ROOT_PATH)/annotations_new/%
 $(ROOT_PATH)/annotations/%: $(ROOT_PATH)/annotations/%.gz
 	unpigz $<
 
+.PRECIOUS: $(ROOT_PATH)/gaferencer-products/%.json.gz
 $(ROOT_PATH)/gaferencer-products/%: $(ROOT_PATH)/gaferencer-products/%.gz
 	unpigz $<
 
