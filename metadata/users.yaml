@@ -3142,6 +3142,20 @@
   uri: 'http://orcid.org/0000-0002-6238-1932'
 -
   accounts:
+    github: vponferrada
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    -
+  groups:
+    - 'http://www.xenbase.org'
+  nickname: 'Virgilio Ponferrada'
+  organization: Xenbase
+  uri: 'http://orcid.org/0000-0002-8590-7183'
+-
+  accounts:
     github: chris-grove
   authorizations:
     noctua:
