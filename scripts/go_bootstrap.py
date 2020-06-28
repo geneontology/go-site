@@ -1,5 +1,5 @@
-# This script is the one to launch at every release to compute the full set of stats and changes between this and the previous release
-# The script can also be used to compute the changes between any two releases by selecting older go-stats and OBO files
+# This script can be used to create the initial go-stats/go-stats-summary/go-ontology-changes for a release
+# It does not create the annotation-changes as it require a previously computed go-stats
 
 import requests
 import json
@@ -13,26 +13,23 @@ import go_stats_utils as utils
 
 
 def print_help():
-    print('\nUsage: python go_reports.py -g <current_golr_url> -d <release_date> -s <previous_stats_url> -n <previous_stats_no_pb_url> -c <current_obo_url> -p <previous_obo_url> -r <previous_references_url> -o <output_rep>\n')
+    print('\nUsage: python go_bootstrap.py -g <current_golr_url> -d <release_date> -c <current_obo_url> -p <previous_obo_url> -o <output_rep>\n')
 
 
 def main(argv):
     golr_url = ''
-    previous_stats_url = ''
-    previous_stats_no_pb_url = ''
     current_obo_url = ''
     previous_obo_url = ''    
-    previous_references_url = ''
     output_rep = ''
     release_date = ''
 
     print(len(argv))
-    if len(argv) < 16:
+    if len(argv) < 10:
         print_help()
         sys.exit(2)
 
     try:
-        opts, argv = getopt.getopt(argv,"g:s:n:c:p:o:d:r:",["golrurl=", "pstats=", "pnstats=", "cobo=", "pobo=", "orep=", "date=", "ref="])
+        opts, argv = getopt.getopt(argv,"g:c:p:o:d:",["golrurl=", "cobo=", "pobo=", "orep=", "date="])
     except getopt.GetoptError:
         print_help()
         sys.exit(2)
@@ -45,16 +42,10 @@ def main(argv):
             golr_url = arg
             if not golr_url.endswith("/"):
                 golr_url = golr_url + "/"
-        elif opt in ("-s", "--pstats"):
-            previous_stats_url = arg
-        elif opt in ("-n", "--pnstats"):
-            previous_stats_no_pb_url = arg
         elif opt in ("-c", "--cobo"):
             current_obo_url = arg
         elif opt in ("-p", "--pobo"):
             previous_obo_url = arg
-        elif opt in ("-r", "--ref"):
-            previous_references_url = arg
         elif opt in ("-o", "--orep"):
             output_rep = arg
         elif opt in ("-d", "--date"):
@@ -76,40 +67,15 @@ def main(argv):
     output_ontology_changes = output_rep + "go-ontology-changes.json"
     output_ontology_changes_tsv = output_rep + "go-ontology-changes.tsv"
     output_stats_summary = output_rep + "go-stats-summary.json"
-    output_annotation_changes = output_rep + "go-annotation-changes.json"
-    output_annotation_changes_tsv = output_rep + "go-annotation-changes.tsv"
-    output_annotation_changes_no_pb = output_rep + "go-annotation-changes_no_pb.json"
-    output_annotation_changes_no_pb_tsv = output_rep + "go-annotation-changes_no_pb.tsv"
 
 
     # 1 - Executing go_stats script
     print("\n\n1a - EXECUTING GO_STATS SCRIPT (INCLUDING PROTEIN BINDING)...\n")
-    json_stats = go_stats.compute_stats(golr_url, release_date)
+    json_stats = go_stats.compute_stats(golr_url, release_date)    
     print("DONE.")
 
     print("\n\n1b - EXECUTING GO_STATS SCRIPT (EXCLUDING PROTEIN BINDING)...\n")
     json_stats_no_pb = go_stats.compute_stats(golr_url, release_date, True)
-    print("DONE.")
-
-    print("\n\n1c - EXECUTING GO_STATS SCRIPT (RETRIEVING PREVIOUS REFERENCES LIST)...\n")
-    previous_references_ids = requests.get(previous_references_url).text
-    previous_references_ids = previous_references_ids.split("\n")
-    previous_references_ids = list(map(lambda x: x.split("\t")[0], previous_references_ids))
-    print("DONE.")
-
-    print("\n\n1d - EXECUTING GO_STATS SCRIPT (CREATING CURRENT REFERENCES LIST)...\n")
-    references = go_stats.get_references()
-    references_lines = []
-    for k,v in references.items():
-        references_lines.append(k + "\t" + str(v))
-    current_references_ids = list(map(lambda x: x.split("\t")[0], references_lines))
-
-    pmids_lines = list(filter(lambda x: "PMID:" in x, references_lines))
-    pmids_ids = list(map(lambda x: x.split("\t")[0].split(":")[1], pmids_lines))
-
-    utils.write_text(output_references, "\n".join(references_lines))
-    utils.write_text(output_pmids, "\n".join(pmids_lines))
-    utils.write_text(output_pubmed_pmids, "\n".join(pmids_ids))
     print("DONE.")
 
 
@@ -123,24 +89,8 @@ def main(argv):
     print("DONE.")
 
 
-    # 3 - Executing go_annotation_changes script
-    print("\n\n3a - EXECUTING GO_ANNOTATION_CHANGES SCRIPT (INCLUDING PROTEIN BINDING)...\n")
-    previous_stats = requests.get(previous_stats_url).json()    
-    json_annot_changes = go_annotation_changes.compute_changes(json_stats, previous_stats)
-    print("DONE.")
-    
-    print("\n\n3b - EXECUTING GO_ANNOTATION_CHANGES SCRIPT (EXCLUDING PROTEIN BINDING)...\n")
-    previous_stats_no_pb = requests.get(previous_stats_no_pb_url).json()    # WE STILL NEED TO CORRECT THAT: 1 FILE OR SEVERAL FILE ? IF SEVERAL, ONE MORE PARAMETER
-    json_annot_no_pb_changes = go_annotation_changes.compute_changes(json_stats_no_pb, previous_stats_no_pb)
-    print("DONE.")
-
-
-    # 4 - Refining go-stats with ontology stats
-    print("\n\n4 - EXECUTING GO_REFINE_STATS SCRIPT...\n")
-    merged_annotations_diff = utils.merge_dict(json_stats, json_annot_changes)
-    json_annot_changes = merged_annotations_diff
-
-
+    # 3 - Refining go-stats with ontology stats
+    print("\n\n3 - EXECUTING GO_REFINE_STATS SCRIPT...\n")
     ontology = json_onto_changes["summary"]["current"].copy()
     del ontology["release_date"]
     ontology["changes_created_terms"] = json_onto_changes["summary"]["changes"]["created_terms"]
@@ -160,9 +110,7 @@ def main(argv):
         "bioentities" : json_stats["bioentities"],
         "references" : json_stats["references"]
     }
-    print("\n4a - SAVING GO-STATS...\n")
     utils.write_json(output_stats, json_stats)
-    print("DONE.")
 
 
     json_stats_no_pb = {
@@ -173,9 +121,7 @@ def main(argv):
         "bioentities" : json_stats_no_pb["bioentities"],
         "references" : json_stats_no_pb["references"]
     }
-    print("\n4b - SAVING GO-STATS-NO-PB...\n")
     utils.write_json(output_stats_no_pb, json_stats_no_pb)
-    print("DONE.")
 
 
     annotations_by_reference_genome = json_stats["annotations"]["by_model_organism"]
@@ -219,7 +165,6 @@ def main(argv):
             },
             "by_bioentity_type_cluster" : json_stats["annotations"]["by_bioentity_type"]["cluster"],
             "by_bioentity_type_cluster_no_pb" : json_stats_no_pb["annotations"]["by_bioentity_type"]["cluster"],
-            "by_qualifier" : json_stats["annotations"]["by_qualifier"],
             "by_evidence_cluster" : json_stats["annotations"]["by_evidence"]["cluster"],
             "by_evidence_cluster_no_pb" : json_stats_no_pb["annotations"]["by_evidence"]["cluster"],
             "by_model_organism" : annotations_by_reference_genome
@@ -249,33 +194,27 @@ def main(argv):
         },
     }
 
-
     # removing by_reference_genome.by_evidence
     for gen in json_stats_summary["annotations"]["by_model_organism"]:
         del json_stats_summary["annotations"]["by_model_organism"][gen]["by_evidence"]
-    print("\n4c - SAVING GO-STATS-SUMMARY...\n")
     utils.write_json(output_stats_summary, json_stats_summary)
-    print("DONE.")
 
 
-    # This is to modify the structure of the annotation changes based on recent requests
-    print("\n4d - SAVING GO-ANNOTATION-CHANGES...\n")
-    json_annot_changes = go_annotation_changes.alter_annotation_changes(json_stats, previous_stats, current_references_ids, previous_references_ids, json_annot_changes)
-    utils.write_json(output_annotation_changes, json_annot_changes)
-    tsv_annot_changes = go_annotation_changes.create_text_report(json_annot_changes)
-    utils.write_text(output_annotation_changes_tsv, tsv_annot_changes)
-    print("DONE.")
+    print("Saving references file to <" + output_pmids + "> and PubMed PMID file to <" + output_pubmed_pmids + ">")
+    references = go_stats.get_references()
+    references_lines = []
+    for k,v in references.items():
+        references_lines.append(k + "\t" + str(v))
+
+    pmids_lines = list(filter(lambda x: "PMID:" in x, references_lines))
+    pmids_ids = list(map(lambda x: x.split("\t")[0].split(":")[1], pmids_lines))
+
+    utils.write_text(output_references, "\n".join(references_lines))
+    utils.write_text(output_pmids, "\n".join(pmids_lines))
+    utils.write_text(output_pubmed_pmids, "\n".join(pmids_ids))
+    print("Done.")
 
 
-    print("\n4e - SAVING GO-ANNOTATION-NO-PB-CHANGES...\n")
-    json_annot_no_pb_changes = go_annotation_changes.alter_annotation_changes(json_stats_no_pb, previous_stats_no_pb, current_references_ids, previous_references_ids, json_annot_no_pb_changes)
-    utils.write_json(output_annotation_changes_no_pb, json_annot_no_pb_changes)
-    tsv_annot_changes_no_pb = go_annotation_changes.create_text_report(json_annot_no_pb_changes)
-    utils.write_text(output_annotation_changes_no_pb_tsv, tsv_annot_changes_no_pb)
-    print("DONE.")
-
-
-    # Indicate all processes finished
     print("SUCCESS.")
 
 

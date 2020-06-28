@@ -6,6 +6,7 @@ import sys, getopt, os
 
 from xml.etree import ElementTree
 
+import go_stats_utils as utils
 
 
 # INPUT PARAMETERS
@@ -39,82 +40,17 @@ golr_select_annotations = 'select?fq=document_category:%22annotation%22&q=*:*&wt
 golr_select_annotations_no_pbinding = golr_select_annotations + "&fq=!annotation_class:\"GO:0005515\"" # to remove only DIRECT annotations to protein binding
 golr_select_bioentities = 'select?fq=document_category:%22bioentity%22&q=*:*&wt=json&facet=true&facet.field=type&facet.field=taxon&facet.limit=1000000&facet.mincount=1&rows=0'
 golr_select_bioentities_pb = 'select?fq=document_category:"bioentity"&q=*:*&wt=json&rows=100000&fq=annotation_class_list:"GO:0005515"&fl=annotation_class_list,type,taxon'
-
+golr_select_qualifiers = 'select?fq=document_category:%22annotation%22&q=*:*&rows=0&wt=json&facet=true&facet.field=qualifier&facet.limit=1000000'
+golr_select_references = 'select?fq=document_category:%22annotation%22&q=*:*&rows=0&wt=json&facet=true&facet.field=reference&facet.limit=10000000'
 
 def golr_fetch(select_query):
-    # print("trying: " + golr_base_url + select_query)
     r = requests.get(golr_base_url + select_query)
     response = r.json()
     return response
 
-def build_list(items_list, min_size = None):
-    ls = []
-    for i in range(0, len(items_list), 2):
-        if min_size is None or items_list[i + 1] > min_size:
-            ls.append(items_list[i])
-    return ls
+def golr_fetch_by_taxon(select_query, taxon):
+    return golr_fetch(select_query + "&fq=taxon:\"" + taxon + "\"")
 
-# utility function to transform a list [A, 1, B, 2] into a map {A: 1, B: 2}
-def build_map(items_list, min_size = None):
-    map = {}
-    for i in range(0, len(items_list), 2):
-        if min_size is None or items_list[i + 1] > min_size:
-            map[items_list[i]] = items_list[i + 1]
-    return map
-
-# utility function to build a reverse map: { "a": 1, "b": 1, "c": 2 } -> {1: ["a", "b"], 2: ["c"]}
-def build_reverse_map(map):
-    reverse_map = { }
-    for key, val in map.items():
-        ls = []
-        if val in reverse_map:
-            ls = reverse_map[val]
-        else:
-            reverse_map[val] = ls
-        ls.append(key)
-    return reverse_map
-
-# utility function to cluster elements of an input map based on another map of synonyms
-def cluster_map(input_map, synonyms):
-    cluster = { }
-    for key, val in input_map.items():
-        temp = synonyms[key]
-        if temp in cluster:
-            val_cluster = cluster[temp]
-            cluster[temp] = val_cluster + val
-        else:
-            cluster[temp] = val
-    return cluster
-
-# similar as above but the value of each key is also a map
-def cluster_complex_map(input_map, synonyms):
-    cluster = { }
-    for key, val in input_map.items():
-        temp = synonyms[key]
-        # print("working on : " , key , val)
-        if temp in cluster:
-            temp_cluster = cluster[temp]
-            # print("cluster already found : ", temp , temp_cluster)
-            for key_cluster, val_cluster in temp_cluster.items():
-                temp_cluster[key_cluster] = val_cluster + val[key_cluster]
-        else:
-            cluster[temp] = val
-    return cluster
-
-
-# reorder map (python 3.6 keeps order in which items are inserted in map: https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value)
-def ordered_map(map):
-    ordered_map = { }
-    for w in sorted(map, key=map.get, reverse=True):
-        ordered_map[w] = map[w]
-    return ordered_map
-    
-def extract_map(map, key_str):
-    extracted = { }
-    for key, val in map.items():
-        if key_str in key:
-            extracted[key] = val
-    return extracted
 
 # useful grouping of evidences as discussed with Pascale
 evidence_groups = {
@@ -152,22 +88,6 @@ bioentity_type_cluster = { }
 # convenience reverse map of bioentity_type_cluster
 reverse_bioentity_type_cluster = { }
 
-# will contain the last release date from following url
-# release_date = "N/A"
-# go_pipeline_release_url = "http://current.geneontology.org/metadata/release-date.json"
-
-# def get_release_date():
-    # r = requests.get(go_pipeline_release_url)
-    # return r.json()['date']
-
-
-
-
-
-
-# def lambda_handler(event, context):
-    # stats = compute_stats(golr_base_url)
-    # return stats
 
 def compute_stats(golr_url, release_date, exclude_pb_only = False):
     """
@@ -177,9 +97,6 @@ def compute_stats(golr_url, release_date, exclude_pb_only = False):
     golr_base_url = golr_url
 
     print("Will use golr url: " , golr_base_url)
-
-    # global release_date
-    # release_date = get_release_date()
 
     print("1 / 4 - Fetching GO terms...")
     all_terms = golr_fetch(golr_select_ontology)
@@ -238,10 +155,15 @@ def compute_stats(golr_url, release_date, exclude_pb_only = False):
     
     print("Done.")
 
+    qualifiers = golr_fetch(golr_select_qualifiers)
+    qualifiers = utils.build_map(qualifiers['facet_counts']['facet_fields']['qualifier'])
+
+
+
     print("4 / 4 - Creating Stats...")    
     prepare_globals(all_annotations)
     print("\t4a - globals prepared")
-    stats = create_stats(all_terms, all_annotations, all_entities, release_date, exclude_pb_only)
+    stats = create_stats(all_terms, all_annotations, all_entities, release_date, qualifiers, exclude_pb_only)
     print("Done.")
     
     return stats
@@ -267,11 +189,11 @@ def prepare_globals(all_annotations):
     global reverse_bioentity_type_cluster    
 
     temp = all_annotations['facet_counts']['facet_fields']['assigned_by']
-    groups = build_list(temp)
+    groups = utils.build_list(temp)
 
     temp = all_annotations['facet_counts']['facet_fields']['taxon']
-    usable_taxons = build_list(temp, 1000)
-    all_taxons = build_list(temp, None)
+    usable_taxons = utils.build_list(temp, 1000)
+    all_taxons = utils.build_list(temp, None)
 
     # this step will create the global taxon_map to get any name from an id
     temp_taxons = []
@@ -306,17 +228,10 @@ def prepare_globals(all_annotations):
     temp = all_annotations['facet_counts']['facet_fields']['type']
     for i in range(0, len(temp), 2):
         bioentity_types.append(temp[i])
-        bioentity_type_cluster[temp[i]] = bioentity_type(temp[i])
+        bioentity_type_cluster[temp[i]] = utils.bioentity_type(temp[i])
 
-    reverse_bioentity_type_cluster = build_reverse_map(bioentity_type_cluster)
+    reverse_bioentity_type_cluster = utils.build_reverse_map(bioentity_type_cluster)
 
-def bioentity_type(str_type):
-    """
-    In a nutshell, collapse all RNA related types into RNA
-    """
-    if "RNA" in str_type or "ribozyme" in str_type or "transcript" in str_type:
-        return "RNA_cluster"
-    return str_type
     
 def golr_fetch_bioentities_taxon(taxon):
     url = "select?fq=document_category:%22bioentity%22&q=*:*&wt=json&rows=0&facet=true&facet.field=type&facet.field=taxon&facet.limit=1000000&facet.mincount=1&fq=taxon:\"" + taxon + "\""
@@ -392,7 +307,7 @@ def add_taxon_label(map):
                 new_map[key] = val
     return new_map
 
-def create_stats(all_terms, all_annotations, all_entities, release_date, exclude_pb_only = False):
+def create_stats(all_terms, all_annotations, all_entities, release_date, qualifiers, exclude_pb_only = False):
     stats = { }
 
     terms = 0
@@ -428,17 +343,17 @@ def create_stats(all_terms, all_annotations, all_entities, release_date, exclude
     cluster_bioentities_by_taxon = { }
     for taxon in usable_taxons:
         responses = golr_fetch_bioentities_taxon(taxon)
-        all_map = build_map(responses[ALL]['facet_counts']['facet_fields']['type'])
-        bp_map = build_map(responses[BP]['facet_counts']['facet_fields']['type'])
-        mf_map = build_map(responses[MF]['facet_counts']['facet_fields']['type'])
-        cc_map = build_map(responses[CC]['facet_counts']['facet_fields']['type'])
+        all_map = utils.build_map(responses[ALL]['facet_counts']['facet_fields']['type'])
+        bp_map = utils.build_map(responses[BP]['facet_counts']['facet_fields']['type'])
+        mf_map = utils.build_map(responses[MF]['facet_counts']['facet_fields']['type'])
+        cc_map = utils.build_map(responses[CC]['facet_counts']['facet_fields']['type'])
 
         merged_map = {}
         for key, value in all_map.items():
             merged_map[key] = { "A" : value , "P" : bp_map[key] if key in bp_map else 0 , "F" : mf_map[key] if key in mf_map else 0 , "C" : cc_map[key] if key in cc_map else 0 }
 
         all_bioentities_by_taxon[taxon] = merged_map
-        cluster_bioentities_by_taxon[taxon] =  cluster_complex_map(all_bioentities_by_taxon[taxon], bioentity_type_cluster)
+        cluster_bioentities_by_taxon[taxon] =  utils.cluster_complex_map(all_bioentities_by_taxon[taxon], bioentity_type_cluster)
         
         # all_bioentities_by_taxon[taxon] = build_map(res['facet_counts']['facet_fields']['type'])
         # cluster_bioentities_by_taxon[taxon] =  cluster_map(all_bioentities_by_taxon[taxon], bioentity_type_cluster)
@@ -449,11 +364,11 @@ def create_stats(all_terms, all_annotations, all_entities, release_date, exclude
     for taxon in usable_taxons:
         res = golr_fetch_references_taxon(taxon)
         references_by_taxon[taxon] = int(len(res['facet_counts']['facet_fields']['reference']) / 2)
-        pmid_map = build_map(res['facet_counts']['facet_fields']['reference'])
-        pmid_map = len(extract_map(pmid_map, "PMID:"))
+        pmid_map = utils.build_map(res['facet_counts']['facet_fields']['reference'])
+        pmid_map = len(utils.extract_map(pmid_map, "PMID:"))
         pmids_by_taxon[taxon] = pmid_map
-    references_by_taxon = ordered_map(references_by_taxon)
-    pmids_by_taxon = ordered_map(pmids_by_taxon)
+    references_by_taxon = utils.ordered_map(references_by_taxon)
+    pmids_by_taxon = utils.ordered_map(pmids_by_taxon)
     print("\t4d - taxa computed")
 
     references_by_group = { }
@@ -461,11 +376,11 @@ def create_stats(all_terms, all_annotations, all_entities, release_date, exclude
     for group in groups:
         res = golr_fetch_references_group(group)
         references_by_group[group] = int(len(res['facet_counts']['facet_fields']['reference']) / 2)
-        pmid_map = build_map(res['facet_counts']['facet_fields']['reference'])
-        pmid_map = len(extract_map(pmid_map, "PMID:"))
+        pmid_map = utils.build_map(res['facet_counts']['facet_fields']['reference'])
+        pmid_map = len(utils.extract_map(pmid_map, "PMID:"))
         pmids_by_group[group] = pmid_map
-    references_by_group = ordered_map(references_by_group)
-    pmids_by_group = ordered_map(pmids_by_group)
+    references_by_group = utils.ordered_map(references_by_group)
+    pmids_by_group = utils.ordered_map(pmids_by_group)
     print("\t4e - references computed")
 
 
@@ -473,10 +388,10 @@ def create_stats(all_terms, all_annotations, all_entities, release_date, exclude
     ref_genome_annotation_evidences = { }
     for taxon in reference_genomes_ids:
         responses = golr_fetch_annotation_by_evidence_by_species(taxon, exclude_pb_only)
-        all_map = build_map(responses[ALL]['facet_counts']['facet_fields']['evidence_type'])
-        bp_map = build_map(responses[BP]['facet_counts']['facet_fields']['evidence_type'])
-        mf_map = build_map(responses[MF]['facet_counts']['facet_fields']['evidence_type'])
-        cc_map = build_map(responses[CC]['facet_counts']['facet_fields']['evidence_type'])
+        all_map = utils.build_map(responses[ALL]['facet_counts']['facet_fields']['evidence_type'])
+        bp_map = utils.build_map(responses[BP]['facet_counts']['facet_fields']['evidence_type'])
+        mf_map = utils.build_map(responses[MF]['facet_counts']['facet_fields']['evidence_type'])
+        cc_map = utils.build_map(responses[CC]['facet_counts']['facet_fields']['evidence_type'])
 
         merged_map = {}
         for key, value in all_map.items():
@@ -485,29 +400,36 @@ def create_stats(all_terms, all_annotations, all_entities, release_date, exclude
         ref_genome_annotation_evidences[taxon] = {
             "by_evidence" : merged_map
         }
-        ref_genome_annotation_evidences[taxon]["by_evidence_cluster"] = cluster_complex_map(ref_genome_annotation_evidences[taxon]["by_evidence"], reverse_evidence_groups)
+        ref_genome_annotation_evidences[taxon]["by_evidence_cluster"] = utils.cluster_complex_map(ref_genome_annotation_evidences[taxon]["by_evidence"], reverse_evidence_groups)
+
+        # adding qualifiers for each model organism
+        response_qualifiers = golr_fetch_by_taxon(golr_select_qualifiers, taxon)
+        response_qualifiers = response_qualifiers['facet_counts']['facet_fields']['qualifier']
+        ref_genome_annotation_evidences[taxon]["by_qualifier"] = utils.build_map(response_qualifiers)
         
 
     annotations = { 
         "total" : all_annotations['response']['numFound'],
 
-        "by_aspect" : build_map(all_annotations['facet_counts']['facet_fields']['aspect']),
+        "by_aspect" : utils.build_map(all_annotations['facet_counts']['facet_fields']['aspect']),
 
         "by_bioentity_type" : {
-            "all" : build_map(all_annotations['facet_counts']['facet_fields']['type']),
-            "cluster" : cluster_map(build_map(all_annotations['facet_counts']['facet_fields']['type']), bioentity_type_cluster)
+            "all" : utils.build_map(all_annotations['facet_counts']['facet_fields']['type']),
+            "cluster" : utils.cluster_map(utils.build_map(all_annotations['facet_counts']['facet_fields']['type']), bioentity_type_cluster)
         },
 
-        "by_taxon": build_map(all_annotations['facet_counts']['facet_fields']['taxon']),
+        "by_qualifier" : qualifiers,
+        
+        "by_taxon": utils.build_map(all_annotations['facet_counts']['facet_fields']['taxon']),
 
         "by_evidence": {
-            "all" : build_map(all_annotations['facet_counts']['facet_fields']['evidence_type']),
-            "cluster" : cluster_map(build_map(all_annotations['facet_counts']['facet_fields']['evidence_type']), reverse_evidence_groups)
+            "all" : utils.build_map(all_annotations['facet_counts']['facet_fields']['evidence_type']),
+            "cluster" : utils.cluster_map(utils.build_map(all_annotations['facet_counts']['facet_fields']['evidence_type']), reverse_evidence_groups)
         },
 
         "by_model_organism" : ref_genome_annotation_evidences,
 
-        "by_group": build_map(all_annotations['facet_counts']['facet_fields']['assigned_by'])
+        "by_group": utils.build_map(all_annotations['facet_counts']['facet_fields']['assigned_by'])
         
     }
     annotations = add_taxon_label(annotations)
@@ -521,8 +443,8 @@ def create_stats(all_terms, all_annotations, all_entities, release_date, exclude
         "total" : all_entities['response']['numFound'],
 
         "by_type" : {
-            "all" : build_map(all_entities['facet_counts']['facet_fields']['type']),
-            "cluster" : cluster_map(build_map(all_entities['facet_counts']['facet_fields']['type']), bioentity_type_cluster)
+            "all" : utils.build_map(all_entities['facet_counts']['facet_fields']['type']),
+            "cluster" : utils.cluster_map(utils.build_map(all_entities['facet_counts']['facet_fields']['type']), bioentity_type_cluster)
         },
 
         "by_filtered_taxon" : {
@@ -545,7 +467,7 @@ def create_stats(all_terms, all_annotations, all_entities, release_date, exclude
             "by_group" : references_by_group
         },
         "pmids" : {
-            "total" : len(extract_map(build_map(all_annotations['facet_counts']['facet_fields']['reference']), "PMID:")),
+            "total" : len(utils.extract_map(utils.build_map(all_annotations['facet_counts']['facet_fields']['reference']), "PMID:")),
             "by_filtered_taxon" : pmids_by_taxon,
             "by_group" : pmids_by_group
         }
@@ -574,37 +496,37 @@ def create_text_report(stats_json):
 
 
     text_report += "\n\nBIOENTITIES\n"
-    text_report += "total\t" + str(stats_json["annotations"]["bioentities"]["total"])
+    text_report += "total\t" + str(stats_json["bioentities"]["total"])
 
     text_report += "\n\nBIOENTITIES BY TYPE (CLUSTER)"
-    for key, val in stats_json["annotations"]["bioentities"]["by_type"]["cluster"].items():
+    for key, val in stats_json["bioentities"]["by_type"]["cluster"].items():
         text_report += "\n" + key + "\t" + str(val)
 
     text_report += "\n\nBIOENTITIES BY TYPE (ALL)"
-    for key, val in stats_json["annotations"]["bioentities"]["by_type"]["all"].items():
+    for key, val in stats_json["bioentities"]["by_type"]["all"].items():
         text_report += "\n" + key + "\t" + str(val)
 
     text_report += "\n\nBIOENTITIES BY FILTERED TAXON AND BY TYPE (CLUSTER)"
     text_report += "\ntaxon"
-    for type, nb in stats_json["annotations"]["bioentities"]["by_type"]["cluster"].items():
+    for type, nb in stats_json["bioentities"]["by_type"]["cluster"].items():
         text_report += "\t" + type
-    for key, val in stats_json["annotations"]["bioentities"]["by_taxon"]["cluster"].items():
+    for key, val in stats_json["bioentities"]["by_filtered_taxon"]["cluster"].items():
         text_report += "\n" + key
-        for type, nb in stats_json["annotations"]["bioentities"]["by_type"]["cluster"].items():
+        for type, nb in stats_json["bioentities"]["by_type"]["cluster"].items():
             text_report += "\t" + str(val[type]["A"]) if type in val else "\t0"
 
     text_report += "\n\nBIOENTITIES BY FILTERED TAXON AND BY TYPE (ALL)"
     text_report += "\ntaxon"
-    for type, nb in stats_json["annotations"]["bioentities"]["by_type"]["all"].items():
+    for type, nb in stats_json["bioentities"]["by_type"]["all"].items():
         text_report += "\t" + type
-    for key, val in stats_json["annotations"]["bioentities"]["by_taxon"]["all"].items():
+    for key, val in stats_json["bioentities"]["by_filtered_taxon"]["all"].items():
         text_report += "\n" + key
-        for type, nb in stats_json["annotations"]["bioentities"]["by_type"]["all"].items():
+        for type, nb in stats_json["bioentities"]["by_type"]["all"].items():
             text_report += "\t" + str(val[type]["A"]) if type in val else "\t0"
 
 
     text_report += "\n\nTAXA\n"
-    text_report += "total\t" + str(stats_json["annotations"]["taxa"]["total"]) + "\nfiltered\t" + str(stats_json["annotations"]["taxa"]["filtered"])
+    text_report += "total\t" + str(stats_json["taxa"]["total"]) + "\nfiltered\t" + str(stats_json["taxa"]["filtered"])
 
 
     text_report += "\n\nANNOTATIONS\n"
@@ -618,6 +540,10 @@ def create_text_report(stats_json):
     
     text_report += "\n\nANNOTATIONS BY BIOENTITY TYPE (ALL)"
     for key, val in stats_json["annotations"]["by_bioentity_type"]["all"].items():
+        text_report += "\n" + key + "\t" + str(val)
+    
+    text_report += "\n\nANNOTATIONS BY QUALIFIER"
+    for key, val in stats_json["annotations"]["by_qualifier"].items():
         text_report += "\n" + key + "\t" + str(val)
     
     text_report += "\n\nANNOTATIONS BY EVIDENCE (CLUSTER)"
@@ -637,18 +563,36 @@ def create_text_report(stats_json):
         text_report += "\n" + key + "\t" + str(val)
 
 
+
+    text_report += "\n\nANNOTATIONS BY MODEL ORGANISM AND EVIDENCE CODE THEN QUALIFIER"
+    text_report += "\nTAXON"
+    for evidence in utils.ev_all:
+        text_report += "\t" + evidence
+    qualifiers = list(stats_json["annotations"]["by_qualifier"].keys())
+    qualifiers.sort()
+    for qualifier in qualifiers:
+        text_report += "\t" + qualifier
+
+    for taxon, val in stats_json["annotations"]["by_model_organism"].items():
+        text_report += "\n" + taxon
+        for evidence in utils.ev_all:
+            text_report += "\t" + str(stats_json["annotations"]["by_model_organism"][taxon]["by_evidence"][evidence]["A"])
+        for qualifier in qualifiers:
+            text_report += "\t" + str(stats_json["annotations"]["by_model_organism"][taxon]["by_qualifier"][qualifier])
+
+
     text_report += "\n\nREFERENCES AND PMIDS\n"
-    text_report += "total\t" + str(stats_json["annotations"]["references"]["all"]["total"]) + "\t" + str(stats_json["annotations"]["references"]["pmids"]["total"])
+    text_report += "total\t" + str(stats_json["references"]["all"]["total"]) + "\t" + str(stats_json["references"]["pmids"]["total"])
 
     text_report += "\n\nREFERENCES AND PMIDS BY GROUP"
     text_report += "\ngroup\treferences\tpmids"
-    for key, val in stats_json["annotations"]["references"]["all"]["by_group"].items():
-        text_report += "\n" + key + "\t" + str(val) + "\t" + str(stats_json["annotations"]["references"]["pmids"]["by_group"][key])
+    for key, val in stats_json["references"]["all"]["by_group"].items():
+        text_report += "\n" + key + "\t" + str(val) + "\t" + str(stats_json["references"]["pmids"]["by_group"][key])
 
     text_report += "\n\nREFERENCES AND PMIDS BY TAXON"
     text_report += "\ntaxon\treferences\tpmids"
-    for key, val in stats_json["annotations"]["references"]["all"]["by_taxon"].items():
-        pmid_val = stats_json["annotations"]["references"]["pmids"]["by_taxon"][key] if key in stats_json["annotations"]["references"]["pmids"]["by_taxon"] else 0
+    for key, val in stats_json["references"]["all"]["by_filtered_taxon"].items():
+        pmid_val = stats_json["references"]["pmids"]["by_filtered_taxon"][key] if key in stats_json["references"]["pmids"]["by_filtered_taxon"] else 0
         text_report += "\n" + key + "\t" + str(val) + "\t" + str(pmid_val)
 
     return text_report
@@ -665,30 +609,20 @@ def create_meta(json_stats):
             "experimental" : json_stats["annotations"]["by_evidence"]["cluster"]["EXP"]
         },
         "taxa": {
-            "total" : json_stats["annotations"]["taxa"]["total"],
-            "filtered" : json_stats["annotations"]["taxa"]["filtered"]
+            "total" : json_stats["taxa"]["total"],
+            "filtered" : json_stats["taxa"]["filtered"]
         },
         "bioentities" : {
-            "total" : json_stats["annotations"]["bioentities"]["total"],
-            "by_type_cluster" :json_stats["annotations"]["bioentities"]["by_type"]["cluster"]
+            "total" : json_stats["bioentities"]["total"],
+            "by_type_cluster" :json_stats["bioentities"]["by_type"]["cluster"]
         },
         "references": {
-            "all" : json_stats["annotations"]["references"]["all"]["total"],
-            "pmids": json_stats["annotations"]["references"]["pmids"]["total"]
+            "all" : json_stats["references"]["all"]["total"],
+            "pmids": json_stats["references"]["pmids"]["total"]
         }
     }
     return meta
     
-
-def write_json(key, content):
-    with open(key, 'w') as outfile:
-        json.dump(content, outfile, indent=2)
- 
-def write_text(key, content):
-    with open(key, 'w') as outfile:
-        outfile.write(content)
-
-
 
 def print_help():
     print('\nUsage: python go_stats.py -g <golr_url> -d <release_date> -o <output_rep>\n')
@@ -715,6 +649,8 @@ def main(argv):
             sys.exit()
         elif opt in ("-g", "--golrurl"):
             golr_url = arg
+            if not golr_url.endswith("/"):
+                golr_url = golr_url + "/"
         elif opt in ("-o", "--orep"):
             output_rep = arg
         elif opt in ("-d", "--date"):
@@ -726,49 +662,78 @@ def main(argv):
     if not os.path.exists(output_rep):
         os.mkdir(output_rep)
 
+
+    # actual names of the files to be generated - can change here if needed
     output_meta = output_rep + "go-meta.json"
     output_meta_no_pb = output_rep + "go-meta-no-pb.json"
-    output_json =  output_rep + "go-stats.json"
-    output_no_pb_json =  output_rep + "go-stats-no-pb.json"
-    output_tsv =  output_rep + "go-stats.tsv"
-    output_no_pb_tsv =  output_rep + "go-stats-no-pb.tsv"
+    output_stats =  output_rep + "go-stats.json"
+    output_stats_no_pb =  output_rep + "go-stats-no-pb.json"
+    output_stats_tsv =  output_rep + "go-stats.tsv"
+    output_stats_no_pb_tsv =  output_rep + "go-stats-no-pb.tsv"
+    output_references = output_rep + "go-references.tsv"
+    output_pmids = output_rep + "go-pmids.tsv"
+    output_pubmed_pmids = output_rep + "GO.uid"
 
 
-    print("Will write stats to " + output_json + " and " + output_tsv)
+    print("Will write stats to " + output_stats + " and " + output_stats_tsv)
     json_stats = compute_stats(golr_url, release_date, False)
-    print("Saving Stats to <" + output_json + "> ...")    
-    write_json(output_json, json_stats)
+    print("Saving Stats to <" + output_stats + "> ...")    
+    utils.write_json(output_stats, json_stats)
     print("Done.")
 
-    print("Saving Stats to <" + output_tsv + "> ...")    
+    print("Saving Stats to <" + output_stats_tsv + "> ...")    
     tsv_stats = create_text_report(json_stats)
-    write_text(output_tsv, tsv_stats)
+    utils.write_text(output_stats_tsv, tsv_stats)
     print("Done.")
 
 
-    print("Will write stats (excluding protein binding) to " + output_no_pb_json + " and " + output_no_pb_tsv)
+    print("Will write stats (excluding protein binding) to " + output_stats_no_pb + " and " + output_stats_no_pb_tsv)
     json_stats_no_pb = compute_stats(golr_url, release_date, True)
-    print("Saving Stats to <" + output_no_pb_json + "> ...")    
-    write_json(output_no_pb_json, json_stats_no_pb)
+    print("Saving Stats to <" + output_stats_no_pb + "> ...")    
+    utils.write_json(output_stats_no_pb, json_stats_no_pb)
     print("Done.")
 
-    print("Saving Stats (excluding protein binding) to <" + output_no_pb_tsv + "> ...")    
+    print("Saving Stats (excluding protein binding) to <" + output_stats_no_pb_tsv + "> ...")    
     tsv_stats_no_pb = create_text_report(json_stats_no_pb)
-    write_text(output_no_pb_tsv, tsv_stats_no_pb)
+    utils.write_text(output_stats_no_pb_tsv, tsv_stats_no_pb)
     print("Done.")
 
 
     json_meta = create_meta(json_stats)
     print("Saving META to <" + output_meta + "> ...")    
-    write_json(output_meta, json_meta)
+    utils.write_json(output_meta, json_meta)
     print("Done.")
 
 
     json_meta_no_pb = create_meta(json_stats_no_pb)
     print("Saving META to <" + output_meta_no_pb + "> ...")    
-    write_json(output_meta_no_pb, json_meta_no_pb)
+    utils.write_json(output_meta_no_pb, json_meta_no_pb)
     print("Done.")
+
+
+    print("Saving PMID file to <" + output_pmids + "> and PubMed PMID file to <" + output_pubmed_pmids + ">")
+    references = get_references()
+    pmids = {k:v for k,v in references.items() if "PMID:" in k}
+    pmids_ids = map(lambda x : x.split(":")[1], pmids)
+
+    pmids_lines = []
+    for k,v in pmids.items():
+        pmids_lines.append(k + "\t" + str(v))
+
+    utils.write_text(output_pmids, "\n".join(pmids_lines))
+    utils.write_text(output_pubmed_pmids, "\n".join(pmids_ids))
+    print("Done.")
+
     
+
+
+
+def get_references():
+    refs = golr_fetch(golr_select_references)
+    refs = utils.build_map(refs['facet_counts']['facet_fields']['reference'])
+    return refs
+
+
 
 
 if __name__ == "__main__":

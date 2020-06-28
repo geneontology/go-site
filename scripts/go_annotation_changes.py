@@ -3,7 +3,7 @@ import sys, getopt, os
 import requests
 import json
 
-
+import go_stats_utils as utils
 
 def compute_changes(current_stats, previous_stats):
     stats_changes = {
@@ -68,6 +68,115 @@ def missing_fields(current_json, previous_json):
             
     return missing
 
+
+def alter_annotation_changes(current_stats, previous_stats, current_references, previous_references, json_annot_changes):
+    addrem_species = utils.added_removed_species(current_stats, previous_stats)
+
+    altered_json_annot_changes = {
+        # "releases_compared" : {
+        #     "current" : current_stats["release_date"],
+        #     "previous" : previous_stats["release_date"]
+        # },
+        "summary" : {
+            "current" : {
+                "release_date" : current_stats["release_date"],
+                "annotations" : {
+                    "total" : current_stats["annotations"]["total"],
+                    "by_aspect" : current_stats["annotations"]["by_aspect"],
+                    "by_evidence_cluster" : current_stats["annotations"]["by_evidence"]["cluster"],
+                    "by_qualifier" : current_stats["annotations"]["by_qualifier"]
+                },
+                "bioentities" : current_stats["bioentities"]["total"],
+                "taxa" : current_stats["taxa"]["total"],
+                "taxa_filtered" : current_stats["taxa"]["filtered"],
+                "references" : current_stats["references"]["all"]["total"],
+                "pmids" : current_stats["references"]["pmids"]["total"]
+            },
+            "previous" : {
+                "release_date" : previous_stats["release_date"],
+                "annotations" : {
+                    "total" : previous_stats["annotations"]["total"],
+                    "by_aspect" : previous_stats["annotations"]["by_aspect"],
+                    "by_evidence_cluster" : previous_stats["annotations"]["by_evidence"]["cluster"],
+                    "by_qualifier" : previous_stats["annotations"]["by_qualifier"]
+                },
+                "bioentities" : previous_stats["bioentities"]["total"],
+                "taxa" : previous_stats["taxa"]["total"],
+                "taxa_filtered" : previous_stats["taxa"]["filtered"],
+                "references" : previous_stats["references"]["all"]["total"],
+                "pmids" : previous_stats["references"]["pmids"]["total"]
+            },
+            "changes" : {
+                "annotations" : {
+                    "total" : current_stats["annotations"]["total"] - previous_stats["annotations"]["total"],
+                    "by_aspect" : utils.minus_dict(current_stats["annotations"]["by_aspect"], previous_stats["annotations"]["by_aspect"]),
+                    "by_evidence_cluster" : utils.minus_dict(current_stats["annotations"]["by_evidence"]["cluster"], previous_stats["annotations"]["by_evidence"]["cluster"]),
+                    "by_qualifier" : utils.minus_dict(current_stats["annotations"]["by_qualifier"], previous_stats["annotations"]["by_qualifier"]),
+                },
+                "bioentities" : current_stats["bioentities"]["total"] - previous_stats["bioentities"]["total"],
+                "taxa" : {
+                    "total" : current_stats["taxa"]["total"] - previous_stats["taxa"]["total"],
+                    "filtered" : current_stats["taxa"]["filtered"] - previous_stats["taxa"]["filtered"],
+                    "added" : len(addrem_species["added"]),
+                    "removed" : len(addrem_species["removed"])
+                },
+                "references" : {
+                    "total" : current_stats["references"]["all"]["total"] - previous_stats["references"]["all"]["total"],
+                    "added" : 0,
+                    "removed" : 0
+                },
+                "pmids" : {
+                    "total" : current_stats["references"]["pmids"]["total"] - previous_stats["references"]["pmids"]["total"],
+                    "added" : 0,
+                    "removed" : 0
+                }
+            },
+        },
+        "detailed_changes" : {
+            "annotations" : json_annot_changes["annotations"],
+            "taxa" : addrem_species,
+            "bioentities" : json_annot_changes["bioentities"],
+            "references" : json_annot_changes["references"]
+        }
+    }
+
+    altered_json_annot_changes["detailed_changes"]["references"]["all"]["added"] = []
+    altered_json_annot_changes["detailed_changes"]["references"]["all"]["removed"] = []
+    altered_json_annot_changes["detailed_changes"]["references"]["pmids"]["added"] = []
+    altered_json_annot_changes["detailed_changes"]["references"]["pmids"]["removed"] = []
+
+    # if pmid lists are provided, add the information to the stats
+    if current_references and previous_references:
+        # creating sets to accelerate the diff
+        set_cur = set(current_references)
+        set_prev = set(previous_references)
+
+        added_references = list(filter(lambda x: x not in set_prev, set_cur))
+        removed_references = list(filter(lambda x: x not in set_cur, set_prev))
+
+        added_pmids = list(filter(lambda x: "PMID:" in x, added_references))
+        removed_pmids = list(filter(lambda x: "PMID:" in x, removed_references))
+
+        print("added references:   \t", len(added_references))
+        print("removed references: \t", len(removed_references))
+        print("added pmids:        \t", len(added_pmids))
+        print("removed pmids:      \t", len(removed_pmids))
+
+        altered_json_annot_changes["summary"]["changes"]["references"]["added"] = len(added_references)
+        altered_json_annot_changes["summary"]["changes"]["references"]["removed"] = len(removed_references)
+
+        altered_json_annot_changes["summary"]["changes"]["pmids"]["added"] = len(added_pmids)
+        altered_json_annot_changes["summary"]["changes"]["pmids"]["removed"] = len(removed_pmids)
+
+        altered_json_annot_changes["detailed_changes"]["references"]["all"]["added"] = added_references
+        altered_json_annot_changes["detailed_changes"]["references"]["all"]["removed"] = removed_references
+
+        altered_json_annot_changes["detailed_changes"]["references"]["pmids"]["added"] = added_pmids
+        altered_json_annot_changes["detailed_changes"]["references"]["pmids"]["removed"] = removed_pmids
+
+    return altered_json_annot_changes  
+
+
 def create_text_report(json_changes):
     text_report = ""
 
@@ -76,46 +185,50 @@ def create_text_report(json_changes):
     text_report += "\n\nSUMMARY: CURRENT RELEASE (" + json_changes["summary"]["current"]["release_date"] + ")"
     text_report += "\nannotated bioentities:\t" + str(json_changes["summary"]["current"]["bioentities"])
     text_report += "\ntaxa:\t" + str(json_changes["summary"]["current"]["taxa"])
-    text_report += "\nfiltered taxa:\t" + str(json_changes["summary"]["current"]["taxa_filtered"]) + " (with more than 1000 annotations)"
+    text_report += "\nfiltered taxa (> 1000 annotations):\t" + str(json_changes["summary"]["current"]["taxa_filtered"])
     text_report += "\nannotations:\t" + str(json_changes["summary"]["current"]["annotations"]["total"])
     for key, val in json_changes["summary"]["current"]["annotations"]["by_aspect"].items():
         text_report += "\nannotations by aspect " + key + ":\t" + str(val)
     for key, val in json_changes["summary"]["current"]["annotations"]["by_evidence_cluster"].items():
         text_report += "\nannotations by evidence cluster " + key + ":\t" + str(val)
+    for key, val in json_changes["summary"]["current"]["annotations"]["by_qualifier"].items():
+        text_report += "\nannotations by qualifier " + key + ":\t" + str(val)
     text_report += "\nreferences:\t" + str(json_changes["summary"]["current"]["references"])
     text_report += "\npmids:\t" + str(json_changes["summary"]["current"]["pmids"])
 
     text_report += "\n\nSUMMARY: PREVIOUS RELEASE (" + json_changes["summary"]["previous"]["release_date"] + ")"
     text_report += "\nannotated bioentities:\t" + str(json_changes["summary"]["previous"]["bioentities"])
     text_report += "\ntaxa:\t" + str(json_changes["summary"]["previous"]["taxa"])
-    text_report += "\nfiltered taxa:\t" + str(json_changes["summary"]["previous"]["taxa_filtered"]) + " (with more than 1000 annotations)"
+    text_report += "\nfiltered taxa (> 1000 annotations):\t" + str(json_changes["summary"]["previous"]["taxa_filtered"])
     text_report += "\nannotations:\t" + str(json_changes["summary"]["previous"]["annotations"]["total"])
     for key, val in json_changes["summary"]["previous"]["annotations"]["by_aspect"].items():
         text_report += "\nannotations by aspect " + key + ":\t" + str(val)
     for key, val in json_changes["summary"]["previous"]["annotations"]["by_evidence_cluster"].items():
         text_report += "\nannotations by evidence cluster " + key + ":\t" + str(val)
+    for key, val in json_changes["summary"]["previous"]["annotations"]["by_qualifier"].items():
+        text_report += "\nannotations by qualifier " + key + ":\t" + str(val)
     text_report += "\nreferences:\t" + str(json_changes["summary"]["previous"]["references"])
     text_report += "\npmids:\t" + str(json_changes["summary"]["previous"]["pmids"])
 
     text_report += "\n\nSUMMARY: DIFF BETWEEN RELEASES"
     text_report += "\nannotated bioentities:\t" + str(json_changes["summary"]["current"]["bioentities"] - json_changes["summary"]["previous"]["bioentities"])
     text_report += "\ntaxa:\t" + str(json_changes["summary"]["current"]["taxa"] - json_changes["summary"]["previous"]["taxa"]) + "\t"
-    text_report += "\nfiltered taxa:\t" + str(json_changes["summary"]["current"]["taxa_filtered"] - json_changes["summary"]["previous"]["taxa_filtered"]) + " (with more than 1000 annotations)"
+    text_report += "\nfiltered taxa (> 1000 annotations):\t" + str(json_changes["summary"]["current"]["taxa_filtered"] - json_changes["summary"]["previous"]["taxa_filtered"])
     text_report += "\nadded taxa\t" + str(json_changes["summary"]["changes"]["taxa"]["added"])
     text_report += "\nremoved taxa\t" + str(json_changes["summary"]["changes"]["taxa"]["removed"])
     text_report += "\nannotations:\t" + str(json_changes["summary"]["current"]["annotations"]["total"] - json_changes["summary"]["previous"]["annotations"]["total"])
     for key, val in json_changes["summary"]["current"]["annotations"]["by_aspect"].items():
         text_report += "\nannotations by aspect " + key + ":\t" + str(val - json_changes["summary"]["previous"]["annotations"]["by_aspect"][key])
-    # for key, val in json_changes["summary"]["current"]["annotations"]["by_evidence_cluster"].items():
-    #     text_report += "\nannotations by evidence cluster " + key + ":\t" + str(val - json_changes["summary"]["current"]["annotations"]["by_evidence_cluster"][key])
     for key, val in json_changes["summary"]["changes"]["annotations"]["by_evidence_cluster"].items():
         text_report += "\nannotations by evidence cluster " + key + ":\t" + str(json_changes["summary"]["changes"]["annotations"]["by_evidence_cluster"][key])
+    for key, val in json_changes["summary"]["changes"]["annotations"]["by_qualifier"].items():
+        text_report += "\nannotations by qualifier " + key + ":\t" + str(json_changes["summary"]["changes"]["annotations"]["by_qualifier"][key])
 
     for key, val in json_changes["summary"]["changes"]["references"].items():
         text_report += "\nreferences " + key + ":\t" + str(json_changes["summary"]["changes"]["references"][key])
     
     for key, val in json_changes["summary"]["changes"]["pmids"].items():
-        text_report += "\pmids " + key + ":\t" + str(json_changes["summary"]["changes"]["pmids"][key])
+        text_report += "\npmids " + key + ":\t" + str(json_changes["summary"]["changes"]["pmids"][key])
 
 
 
@@ -125,31 +238,13 @@ def create_text_report(json_changes):
     text_report += "\n\nCHANGES IN ANNOTATED BIOENTITIES\n"
     text_report += "total\t" + str(json_changes["detailed_changes"]["bioentities"]["total"])
 
-    text_report += "\n\nCHANGES IN ANNOTATED BIOENTITIES BY TYPE (CLUSTER)"
-    for key, val in json_changes["detailed_changes"]["bioentities"]["by_type"]["cluster"].items():
-        text_report += "\n" + key + "\t" + str(val)
+    # text_report += "\n\nCHANGES IN ANNOTATED BIOENTITIES BY TYPE (CLUSTER)"
+    # for key, val in json_changes["detailed_changes"]["bioentities"]["by_type"]["cluster"].items():
+    #     text_report += "\n" + key + "\t" + str(val)
 
     text_report += "\n\nCHANGES IN ANNOTATED BIOENTITIES BY TYPE (ALL)"
     for key, val in json_changes["detailed_changes"]["bioentities"]["by_type"]["all"].items():
         text_report += "\n" + key + "\t" + str(val)
-
-    text_report += "\n\nCHANGES IN ANNOTATED BIOENTITIES BY FILTERED TAXON AND BY BIOENTITY TYPE (CLUSTER)"
-    text_report += "\ntaxon"
-    for type, nb in json_changes["detailed_changes"]["bioentities"]["by_type"]["cluster"].items():
-        text_report += "\t" + type
-    for key, val in json_changes["detailed_changes"]["bioentities"]["by_filtered_taxon"]["cluster"].items():
-        text_report += "\n" + key
-        for type, nb in json_changes["detailed_changes"]["bioentities"]["by_type"]["cluster"].items():
-            text_report += "\t" + str(val[type]["A"]) if type in val else "\t0"
-
-    text_report += "\n\nCHANGES IN ANNOTATED BIOENTITIES BY FILTERED TAXON AND BY BIOENTITY TYPE (ALL)"
-    text_report += "\ntaxon"
-    for type, nb in json_changes["detailed_changes"]["bioentities"]["by_type"]["all"].items():
-        text_report += "\t" + type
-    for key, val in json_changes["detailed_changes"]["bioentities"]["by_filtered_taxon"]["all"].items():
-        text_report += "\n" + key
-        for type, nb in json_changes["detailed_changes"]["bioentities"]["by_type"]["all"].items():
-            text_report += "\t" + str(val[type]["A"]) if type in val else "\t0"
 
 
 
@@ -158,37 +253,93 @@ def create_text_report(json_changes):
     text_report += "total\t" + str(json_changes["detailed_changes"]["annotations"]["total"])
     for key, val in json_changes["detailed_changes"]["annotations"]["by_aspect"].items():
         text_report += "\n" + key + "\t" + str(val)
-        
-    text_report += "\n\nCHANGES IN ANNOTATIONS BY BIOENTITY TYPE (CLUSTER)"
-    for key, val in json_changes["detailed_changes"]["annotations"]["by_bioentity_type"]["cluster"].items():
-        text_report += "\n" + key + "\t" + str(val)
+
+
+    # text_report += "\n\nCHANGES IN ANNOTATIONS BY BIOENTITY TYPE (CLUSTER)"
+    # for key, val in json_changes["detailed_changes"]["annotations"]["by_bioentity_type"]["cluster"].items():
+    #     text_report += "\n" + key + "\t" + str(val)
     
     text_report += "\n\nCHANGES IN ANNOTATIONS BY BIOENTITY TYPE (ALL)"
     for key, val in json_changes["detailed_changes"]["annotations"]["by_bioentity_type"]["all"].items():
         text_report += "\n" + key + "\t" + str(val)
-    
-    text_report += "\n\nCHANGES IN ANNOTATIONS BY EVIDENCE (CLUSTER)"
-    for key, val in json_changes["detailed_changes"]["annotations"]["by_evidence"]["cluster"].items():
+            
+    text_report += "\n\nCHANGES IN ANNOTATIONS BY QUALIFIER"
+    for key, val in json_changes["detailed_changes"]["annotations"]["by_qualifier"].items():
         text_report += "\n" + key + "\t" + str(val)
+
+    # text_report += "\n\nCHANGES IN ANNOTATIONS BY EVIDENCE (CLUSTER)"
+    # for key, val in json_changes["detailed_changes"]["annotations"]["by_evidence"]["cluster"].items():
+    #     text_report += "\n" + key + "\t" + str(val)
     
     text_report += "\n\nCHANGES IN ANNOTATIONS BY EVIDENCE (ALL)"
     for key, val in json_changes["detailed_changes"]["annotations"]["by_evidence"]["all"].items():
         text_report += "\n" + key + "\t" + str(val)
     
+
+    ev_all = []
+    ev_cluster = []
+    for taxon, val in json_changes["detailed_changes"]["annotations"]["by_model_organism"].items():
+            for evidence, evival in val["by_evidence_cluster"].items():            
+                if evidence not in ev_cluster:
+                    ev_cluster.append(evidence)    
+    for taxon, val in json_changes["detailed_changes"]["annotations"]["by_model_organism"].items():
+            for evidence, evival in val["by_evidence"].items():            
+                if evidence not in ev_all:
+                    ev_all.append(evidence)    
+    ev_all.sort()
+    ev_cluster.sort()
+
+    # using a hard coded evidence list
+    ev_all = utils.ev_all
+
+    text_report += "\n\nCHANGES IN ANNOTATIONS BY MODEL ORGANISM AND EVIDENCE (ALL) THEN QUALIFIER"
+    text_report += "\nTAXON\tALL"
+    for evidence in utils.ev_all:
+        text_report += "\t" + evidence
+
+    qualifiers = list(json_changes["summary"]["current"]["annotations"]["by_qualifier"].keys())
+    qualifiers.sort()
+    for qualifier in qualifiers:
+        text_report += "\t" + qualifier
+
+    text_report + "\n"
+
+    for taxon, val in json_changes["detailed_changes"]["annotations"]["by_model_organism"].items():
+        taxon_all_annotations = 0
+        line = ""
+        for evidence in ev_all:
+            evival = json_changes["detailed_changes"]["annotations"]["by_model_organism"][taxon]["by_evidence"][evidence]
+            if evival:
+                te = evival["A"]
+                if isinstance(te, str):
+                    te = int(te.split(" ")[0])
+                else:
+                    te = evival["A"]
+
+                line += "\t" + str(te)
+                taxon_all_annotations += te                
+            else:
+                line += "\t0"
+        text_report += "\n" + taxon + "\t" + str(taxon_all_annotations) + line
+        for qualifier in qualifiers:
+            quaval = json_changes["detailed_changes"]["annotations"]["by_model_organism"][taxon]["by_qualifier"][qualifier]
+            if isinstance(quaval, str):
+                quaval = int(quaval.split(" ")[0])
+            text_report += "\t" + str(quaval)
+
+
     text_report += "\n\nCHANGES IN ANNOTATIONS BY GROUP"
     for key, val in json_changes["detailed_changes"]["annotations"]["by_group"].items():
         text_report += "\n" + key + "\t" + str(val)
-    
-    text_report += "\n\nCHANGES IN ANNOTATIONS BY TAXON"
-    for key, val in json_changes["detailed_changes"]["annotations"]["by_taxon"].items():
-        text_report += "\n" + key + "\t" + str(val)
+
+
 
     
-    text_report += "\n\n" + str(len(json_changes["detailed_changes"]["taxa"]["added"])) + " ADDED TAXA"
+    text_report += "\n\nADDED TAXA\t" + str(len(json_changes["detailed_changes"]["taxa"]["added"]))
     for key, val in json_changes["detailed_changes"]["taxa"]["added"].items():
         text_report += "\n" + key + "\t" + str(val)
     
-    text_report += "\n\n" + str(len(json_changes["detailed_changes"]["taxa"]["removed"])) + " REMOVED TAXA"
+    text_report += "\n\nREMOVED TAXA\t" + str(len(json_changes["detailed_changes"]["taxa"]["removed"]))
     for key, val in json_changes["detailed_changes"]["taxa"]["removed"].items():
         text_report += "\n" + key + "\t" + str(val)
 
@@ -198,26 +349,53 @@ def create_text_report(json_changes):
     text_report += "\t" + str(json_changes["detailed_changes"]["references"]["pmids"]["total"])
  
     text_report += "\n\nCHANGES IN REFERENCES AND PMIDS BY GROUP"
-    text_report += "\ngroup\treferences\tpmids"
+    text_report += "\ngroup\treferences\t% references\tpmids\t% pmids"
     for key, val in json_changes["detailed_changes"]["references"]["all"]["by_group"].items():
         text_report += "\n" + key + "\t" + str(val) + "\t" + str(json_changes["detailed_changes"]["references"]["pmids"]["by_group"][key])
 
     text_report += "\n\nCHANGES IN REFERENCES AND PMIDS BY TAXON"
-    text_report += "\ntaxon\treferences\tpmids"
+    text_report += "\ntaxon\treferences\t% references\tpmids\t% pmids"
     for key, val in json_changes["detailed_changes"]["references"]["all"]["by_filtered_taxon"].items():
         pmid_val = json_changes["detailed_changes"]["references"]["pmids"]["by_filtered_taxon"][key] if key in json_changes["detailed_changes"]["references"]["pmids"]["by_filtered_taxon"] else 0
         text_report += "\n" + key + "\t" + str(val) + "\t" + str(pmid_val)
 
+
+    # text_report += "\n\nCHANGES IN ANNOTATED BIOENTITIES BY FILTERED TAXON AND BY BIOENTITY TYPE (CLUSTER)"
+    # text_report += "\ntaxon"
+    # for type, nb in json_changes["detailed_changes"]["bioentities"]["by_type"]["cluster"].items():
+    #     text_report += "\t" + type
+    # for key, val in json_changes["detailed_changes"]["bioentities"]["by_filtered_taxon"]["cluster"].items():
+    #     text_report += "\n" + key
+    #     for type, nb in json_changes["detailed_changes"]["bioentities"]["by_type"]["cluster"].items():
+    #         text_report += "\t" + str(val[type]["A"]) if type in val else "\t0"
+
+    text_report += "\n\nCHANGES IN ANNOTATED BIOENTITIES BY FILTERED TAXON AND BY BIOENTITY TYPE (ALL)"
+    text_report += "\ntaxon"
+    for type, nb in json_changes["detailed_changes"]["bioentities"]["by_type"]["all"].items():
+        text_report += "\t" + type + "\t% " + type
+    for key, val in json_changes["detailed_changes"]["bioentities"]["by_filtered_taxon"]["all"].items():
+        text_report += "\n" + key
+        for type, nb in json_changes["detailed_changes"]["bioentities"]["by_type"]["all"].items():
+            text_report += "\t" + str(val[type]["A"]) if type in val else "\t0\t0"
+
+    text_report += "\n\nCHANGES IN ANNOTATIONS BY TAXON"
+    for key, val in json_changes["detailed_changes"]["annotations"]["by_taxon"].items():
+        text_report += "\n" + key + "\t" + str(val)
+
+    text_report += "\n\nADDED REFERENCES\n"
+    text_report += "\n".join(json_changes["detailed_changes"]["references"]["all"]["added"])
+
+    text_report += "\n\nREMOVED REFERENCES\n"
+    text_report += "\n".join(json_changes["detailed_changes"]["references"]["all"]["removed"])
+
+    text_report += "\n\nADDED PMIDS\n"
+    text_report += "\n".join(json_changes["detailed_changes"]["references"]["pmids"]["added"])
+
+    text_report += "\n\nREMOVED PMIDS\n"
+    text_report += "\n".join(json_changes["detailed_changes"]["references"]["pmids"]["removed"])
+
     return text_report
 
-
-def write_json(key, content):
-    with open(key, 'w') as outfile:
-        json.dump(content, outfile, indent=2)
- 
-def write_text(key, content):
-    with open(key, 'w') as outfile:
-        outfile.write(content)
 
 
 def print_help():
@@ -266,13 +444,15 @@ def main(argv):
     previous_stats = requests.get(previous_stats_url).json()
     json_changes = compute_changes(current_stats, previous_stats)
 
+    json_changes = alter_annotation_changes(current_stats, previous_stats, None, None, json_changes)
+
     print("Saving Stats to <" + output_json + "> ...")    
-    write_json(output_json, json_changes)
+    utils.write_json(output_json, json_changes)
     print("Done.")
 
     print("Saving Stats to <" + output_tsv + "> ...")    
     tsv_changes = create_text_report(json_changes)
-    write_text(output_tsv, tsv_changes)
+    utils.write_text(output_tsv, tsv_changes)
     print("Done.")
     
 

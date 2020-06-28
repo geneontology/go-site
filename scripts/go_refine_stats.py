@@ -6,6 +6,7 @@ import go_stats
 import go_ontology_changes
 import go_annotation_changes
 
+import go_stats_utils as utils
 
 
 def print_help():
@@ -77,10 +78,10 @@ def main(argv):
     # json_onto_changes = json.loads(data)
     
     json_onto_changes = go_ontology_changes.compute_changes(current_obo_url, previous_obo_url)
-    go_annotation_changes.write_json(output_rep + "go-ontology-changes.json", json_onto_changes)
+    utils.write_json(output_rep + "go-ontology-changes.json", json_onto_changes)
 
     tsv_onto_changes = go_ontology_changes.create_text_report(json_onto_changes) 
-    go_annotation_changes.write_text(output_rep + "go-ontology-changes.tsv", tsv_onto_changes)
+    utils.write_text(output_rep + "go-ontology-changes.tsv", tsv_onto_changes)
     print("DONE.")
 
 
@@ -94,6 +95,11 @@ def main(argv):
     ontology["changes_obsolete_terms"] = json_onto_changes["summary"]["changes"]["obsolete_terms"]
     ontology["changes_merged_terms"] = json_onto_changes["summary"]["changes"]["merged_terms"]
 
+    ontology["changes_biological_process_terms"] = json_onto_changes["summary"]["changes"]["biological_process_terms"]
+    ontology["changes_molecular_function_terms"] = json_onto_changes["summary"]["changes"]["molecular_function_terms"]
+    ontology["changes_cellular_component_terms"] = json_onto_changes["summary"]["changes"]["cellular_component_terms"]
+
+
     json_stats = {
         "release_date" : json_stats["release_date"],
         "ontology" : ontology,
@@ -102,7 +108,7 @@ def main(argv):
         "bioentities" : json_stats["bioentities"],
         "references" : json_stats["references"]
     }
-    go_stats.write_json(output_rep + "go-stats.json", json_stats)
+    utils.write_json(output_rep + "go-stats.json", json_stats)
 
 
     json_stats_no_pb = {
@@ -113,7 +119,7 @@ def main(argv):
         "bioentities" : json_stats_no_pb["bioentities"],
         "references" : json_stats_no_pb["references"]
     }
-    go_stats.write_json(output_rep + "go-stats-no-pb.json", json_stats_no_pb)
+    utils.write_json(output_rep + "go-stats-no-pb.json", json_stats_no_pb)
 
 
     annotations_by_reference_genome = json_stats["annotations"]["by_model_organism"]
@@ -148,6 +154,7 @@ def main(argv):
         "annotations" : {
             "total" : json_stats["annotations"]["total"],
             "total_no_pb" : json_stats_no_pb["annotations"]["total"],
+            "total_pb" : json_stats["annotations"]["total"] - json_stats_no_pb["annotations"]["total"],
             "by_aspect" : {
                 "P" : json_stats["annotations"]["by_aspect"]["P"],
                 "F" : json_stats["annotations"]["by_aspect"]["F"],
@@ -184,7 +191,7 @@ def main(argv):
             }
         },
     }
-    go_stats.write_json(output_rep + "go-stats-summary.json", json_stats_summary)
+    utils.write_json(output_rep + "go-stats-summary.json", json_stats_summary)
 
     print("DONE.")
 
