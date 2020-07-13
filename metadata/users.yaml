@@ -4164,3 +4164,15 @@
   nickname: 'Dnyanada Sahasrabudhe'
   organization: SynGO
   uri: 'https://orcid.org/0000-0003-2916-7616'
+-
+  accounts:
+    github: Fbolio
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.wormbase.org'
+  nickname: 'Fernando Bolio'
+  organization: WB
+  uri: 'https://orcid.org/0000-0003-2506-9234'
