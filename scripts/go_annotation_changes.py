@@ -1,9 +1,9 @@
 import sys, getopt, os
 
-import requests
 import json
 
 import go_stats_utils as utils
+
 
 def compute_changes(current_stats, previous_stats):
     stats_changes = {
@@ -440,8 +440,8 @@ def main(argv):
     print("Will write stats changes to " + output_json + " and " + output_tsv)
 
 
-    current_stats = requests.get(current_stats_url).json()
-    previous_stats = requests.get(previous_stats_url).json()
+    current_stats = utils.fetch(current_stats_url).json()
+    previous_stats = utils.fetch(previous_stats_url).json()
     json_changes = compute_changes(current_stats, previous_stats)
 
     json_changes = alter_annotation_changes(current_stats, previous_stats, None, None, json_changes)

@@ -1,15 +1,67 @@
 import json
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 # This is a hard coded list of evidence, better organized for readability
 ev_all = ['EXP', 'IDA', 'IMP', 'IGI',  'IPI', 'IEP', 'IGC', 'RCA', 'IBA', 'IKR', 'IC', 'NAS', 'ND', 'TAS', 'HDA', 'HEP', 'HGI', 'HMP', 'ISA', 'ISM', 'ISO', 'ISS', 'IEA']
 
 
+global_session = None
+
+def requests_retry(retries = 3, backoff = 0.3, session = None):
+    session = session or requests.Session()
+    retry = Retry(
+        total = retries,
+        read = retries,
+        connect = retries,
+        backoff_factor = backoff,
+        status_forcelist = (429, 500, 502, 503, 504)
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount("http://", adapter)
+    session.mount("https://", adapter)
+    return session
+
+
+def fetch(url):
+    """
+    Error proof method to get data from HTTP request
+    If an error occured, return None
+    """
+    global global_session
+    global_session = requests_retry(global_session)
+    try:
+        r = global_session.get(url)
+        return r
+    except Exception as x:
+        print("Query GET " , url , " failed: ", x)
+        return None
+
+def post(url, params):
+    global global_session
+    global_session = requests_retry(global_session)
+    try:
+        r = global_session.post(url, data = params)
+        return r  
+    except Exception as x:
+        print("Query POST " , url , " failed: ", x)
+        return None
+    
+
 def golr_fetch(golr_base_url, select_query):
-    r = requests.get(golr_base_url + select_query)
+    """
+    Error proof method to get data from GOLr
+    If an HTTP error occurs, return None, otherwise return the json object
+    """
+    r = fetch(golr_base_url + select_query)
+    if r is None:
+        return None
     response = r.json()
     return response
 
+def golr_fetch_by_taxon(golr_base_url, select_query, taxon):
+    return golr_fetch(golr_base_url, select_query + "&fq=taxon:\"" + taxon + "\"")
 
 # utility function to build a list from a solr/golr facet array
 def build_list(items_list, min_size = None):

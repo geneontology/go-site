@@ -1,8 +1,5 @@
 from obo_parser import OBO_Parser, TermState
-import sys, getopt, os
-
-import requests
-import json
+import sys, getopt, os, json
 
 import go_stats_utils as utils
 
@@ -17,11 +14,11 @@ last_date = None
 def compute_changes(current_obo_url, previous_obo_url):
     # The new published OBO archive
     print("Loading current GO ontology (" + current_obo_url + ")...")
-    currentgo = OBO_Parser(requests.get(current_obo_url).text)
+    currentgo = OBO_Parser(utils.fetch(current_obo_url).text)
 
     # A previously published OBO archive
     print("Loading previous GO ontology (" + previous_obo_url + ")...")
-    oldgo = OBO_Parser(requests.get(previous_obo_url).text)
+    oldgo = OBO_Parser(utils.fetch(previous_obo_url).text)
 
     # New GO Terms
     created = { }

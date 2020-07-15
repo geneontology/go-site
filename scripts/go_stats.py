@@ -1,6 +1,5 @@
 # GO Update Statistics
 
-import requests
 import json
 import sys, getopt, os
 
@@ -43,13 +42,6 @@ golr_select_bioentities_pb = 'select?fq=document_category:"bioentity"&q=*:*&wt=j
 golr_select_qualifiers = 'select?fq=document_category:%22annotation%22&q=*:*&rows=0&wt=json&facet=true&facet.field=qualifier&facet.limit=1000000'
 golr_select_references = 'select?fq=document_category:%22annotation%22&q=*:*&rows=0&wt=json&facet=true&facet.field=reference&facet.limit=10000000'
 
-def golr_fetch(select_query):
-    r = requests.get(golr_base_url + select_query)
-    response = r.json()
-    return response
-
-def golr_fetch_by_taxon(select_query, taxon):
-    return golr_fetch(select_query + "&fq=taxon:\"" + taxon + "\"")
 
 
 # useful grouping of evidences as discussed with Pascale
@@ -99,22 +91,22 @@ def compute_stats(golr_url, release_date, exclude_pb_only = False):
     print("Will use golr url: " , golr_base_url)
 
     print("1 / 4 - Fetching GO terms...")
-    all_terms = golr_fetch(golr_select_ontology)
+    all_terms = utils.golr_fetch(golr_base_url, golr_select_ontology)
     print("Done.")
     
     print("2 / 4 - Fetching GO annotations...")
     if exclude_pb_only:
-        all_annotations = golr_fetch(golr_select_annotations_no_pbinding)
+        all_annotations = utils.golr_fetch(golr_base_url, golr_select_annotations_no_pbinding)
     else:
-        all_annotations = golr_fetch(golr_select_annotations)
+        all_annotations = utils.golr_fetch(golr_base_url, golr_select_annotations)
     print("Done.")
     
     print("3 / 4 - Fetching GO bioentities...")
-    all_entities = golr_fetch(golr_select_bioentities)
+    all_entities = utils.golr_fetch(golr_base_url, golr_select_bioentities)
 
     # we have to manually update the facts of the first query if we want to remove the bioentities annotated only to protein binding
     if exclude_pb_only:
-        all_entities_no_pb = golr_fetch(golr_select_bioentities_pb)
+        all_entities_no_pb = utils.golr_fetch(golr_base_url, golr_select_bioentities_pb)
         # print(all_entities_no_pb)
         entities_type_no_pb = { }
         entities_taxon_no_pb = { }
@@ -155,7 +147,7 @@ def compute_stats(golr_url, release_date, exclude_pb_only = False):
     
     print("Done.")
 
-    qualifiers = golr_fetch(golr_select_qualifiers)
+    qualifiers = utils.golr_fetch(golr_base_url, golr_select_qualifiers)
     qualifiers = utils.build_map(qualifiers['facet_counts']['facet_fields']['qualifier'])
 
 
@@ -171,9 +163,9 @@ def compute_stats(golr_url, release_date, exclude_pb_only = False):
 def load_taxon_map():
     global taxon_map
     print("Using ", taxon_map_fallback_url , " (created from ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdmp.zip) as a fallback to get taxon { id, label }")
-    data = requests.get(taxon_map_fallback_url)
+    data = utils.fetch(taxon_map_fallback_url)
 
-    if data.status_code != 200:
+    if data is None or data.status_code != 200:
         return False
 
     taxon_map = json.loads(data.content)
@@ -201,18 +193,22 @@ def prepare_globals(all_annotations):
         temp_taxons.append(taxon[taxon.index(":")+1:])
 
     params = { "id" : ",".join(temp_taxons) }
-    data = requests.post(taxon_base_url, data = params)
+    data = utils.post(taxon_base_url, params)
 
-    if data.status_code == 200:
-        tree = ElementTree.fromstring(data.content)
-        elts = tree.findall("Taxon")
-        for i in range(0,len(elts)):
-            key = elts[i].findtext("TaxId")
-            val = elts[i].findtext("ScientificName")
-            taxon_map[key] = val
-        print("Note: taxon map of ", len(taxon_map), " taxa loaded from " , taxon_base_url + " - in case of issue could use https://www.ebi.ac.uk/ena/data/taxonomy/v1/taxon/tax-id/xxx")
-    else:
-        print("WARNING: could not get taxon labels from ", taxon_base_url , " (status code: " , str(data.status_code) + ")")
+    try :
+        if data and data.status_code == 200:
+            tree = ElementTree.fromstring(data.content)
+            elts = tree.findall("Taxon")
+            for i in range(0,len(elts)):
+                key = elts[i].findtext("TaxId")
+                val = elts[i].findtext("ScientificName")
+                taxon_map[key] = val
+            print("Note: taxon map of ", len(taxon_map), " taxa loaded from " , taxon_base_url + " - in case of issue could use https://www.ebi.ac.uk/ena/data/taxonomy/v1/taxon/tax-id/xxx")
+        else:
+            print("WARNING: could not get taxon labels from ", taxon_base_url , " (status code: " , str(data.status_code) + ")")
+            load_taxon_map()
+    except Exception as x:
+        print("Should never happened but life is full of mysteries - API call + retries + check on None still crashed" , x)
         load_taxon_map()
 
 
@@ -235,30 +231,30 @@ def prepare_globals(all_annotations):
     
 def golr_fetch_bioentities_taxon(taxon):
     url = "select?fq=document_category:%22bioentity%22&q=*:*&wt=json&rows=0&facet=true&facet.field=type&facet.field=taxon&facet.limit=1000000&facet.mincount=1&fq=taxon:\"" + taxon + "\""
-    response = golr_fetch(url)
+    response = utils.golr_fetch(golr_base_url, url)
 
     # multiple queries: a bit complicated but necessary due to solr 3.6 unable to do composite faceting and for speed considerations
     # * can indicate the is_a closure to find the stats on that specific aspect
     # * if evidence code was present, we could use a similar strategy
     url_bp = "select?fq=document_category:%22bioentity%22&q=*:*&wt=json&facet=true&facet.field=type&facet.field=taxon&facet.limit=1000000&facet.mincount=1&rows=0&fq=taxon:\"" + taxon + "\"&fq=isa_partof_closure:\"" + BP + "\""
-    response_bp = golr_fetch(url_bp)
+    response_bp = utils.golr_fetch(golr_base_url, url_bp)
 
     url_mf = "select?fq=document_category:%22bioentity%22&q=*:*&wt=json&facet=true&facet.field=type&facet.field=taxon&facet.limit=1000000&facet.mincount=1&rows=0&fq=taxon:\"" + taxon + "\"&fq=isa_partof_closure:\"" + MF + "\""
-    response_mf = golr_fetch(url_mf)
+    response_mf = utils.golr_fetch(golr_base_url, url_mf)
 
     url_cc = "select?fq=document_category:%22bioentity%22&q=*:*&wt=json&facet=true&facet.field=type&facet.field=taxon&facet.limit=1000000&facet.mincount=1&rows=0&fq=taxon:\"" + taxon + "\"&fq=isa_partof_closure:\"" + CC + "\""
-    response_cc = golr_fetch(url_cc)
+    response_cc = utils.golr_fetch(golr_base_url, url_cc)
 
     return { ALL : response, BP : response_bp, MF : response_mf, CC : response_cc }
     
 def golr_fetch_references_taxon(taxon):
     url = "select?fq=document_category:%22annotation%22&q=*:*&wt=json&rows=0&facet.limit=10000000&facet.mincount=1&facet=true&facet.field=reference&fq=taxon:\"" + taxon + "\""
-    response = golr_fetch(url)
+    response = utils.golr_fetch(golr_base_url, url)
     return response
 
 def golr_fetch_references_group(group):
     url = "select?fq=document_category:%22annotation%22&q=*:*&wt=json&rows=0&facet.limit=10000000&facet.mincount=1&facet=true&facet.field=reference&fq=assigned_by:\"" + group + "\""
-    response = golr_fetch(url)
+    response = utils.golr_fetch(golr_base_url, url)
     return response
 
 def golr_fetch_annotation_by_evidence_by_species(taxon, exclude_pb_only):
@@ -267,16 +263,16 @@ def golr_fetch_annotation_by_evidence_by_species(taxon, exclude_pb_only):
         options = "&fq=!annotation_class:\"GO:0005515\""
 
     url = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&fq=taxon:%22' + taxon + '%22&facet=true&facet.field=evidence_type&facet.limit=10000&rows=0' + options
-    response = golr_fetch(url)
+    response = utils.golr_fetch(golr_base_url, url)
 
     url_bp = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&fq=taxon:%22' + taxon + '%22&facet=true&facet.field=evidence_type&facet.limit=10000&rows=0&fq=isa_partof_closure:\"' + BP + '\"' + options
-    response_bp = golr_fetch(url_bp)
+    response_bp = utils.golr_fetch(golr_base_url, url_bp)
 
     url_mf = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&fq=taxon:%22' + taxon + '%22&facet=true&facet.field=evidence_type&facet.limit=10000&rows=0&fq=isa_partof_closure:\"' + MF + '\"' + options
-    response_mf = golr_fetch(url_mf)
+    response_mf = utils.golr_fetch(golr_base_url, url_mf)
 
     url_cc = 'select?fq=document_category:%22annotation%22&q=*:*&wt=json&fq=taxon:%22' + taxon + '%22&facet=true&facet.field=evidence_type&facet.limit=10000&rows=0&fq=isa_partof_closure:\"' + CC + '\"' + options
-    response_cc = golr_fetch(url_cc)
+    response_cc = utils.golr_fetch(golr_base_url, url_cc)
 
     return { ALL : response, BP : response_bp, MF : response_mf, CC : response_cc }
     
@@ -403,7 +399,7 @@ def create_stats(all_terms, all_annotations, all_entities, release_date, qualifi
         ref_genome_annotation_evidences[taxon]["by_evidence_cluster"] = utils.cluster_complex_map(ref_genome_annotation_evidences[taxon]["by_evidence"], reverse_evidence_groups)
 
         # adding qualifiers for each model organism
-        response_qualifiers = golr_fetch_by_taxon(golr_select_qualifiers, taxon)
+        response_qualifiers = utils.golr_fetch_by_taxon(golr_base_url, golr_select_qualifiers, taxon)
         response_qualifiers = response_qualifiers['facet_counts']['facet_fields']['qualifier']
         ref_genome_annotation_evidences[taxon]["by_qualifier"] = utils.build_map(response_qualifiers)
         
@@ -729,7 +725,7 @@ def main(argv):
 
 
 def get_references():
-    refs = golr_fetch(golr_select_references)
+    refs = utils.golr_fetch(golr_base_url, golr_select_references)
     refs = utils.build_map(refs['facet_counts']['facet_fields']['reference'])
     return refs
 

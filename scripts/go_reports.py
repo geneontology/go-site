@@ -1,7 +1,6 @@
 # This script is the one to launch at every release to compute the full set of stats and changes between this and the previous release
 # The script can also be used to compute the changes between any two releases by selecting older go-stats and OBO files
 
-import requests
 import json
 import sys, getopt, os
 
@@ -92,7 +91,7 @@ def main(argv):
     print("DONE.")
 
     print("\n\n1c - EXECUTING GO_STATS SCRIPT (RETRIEVING PREVIOUS REFERENCES LIST)...\n")
-    previous_references_ids = requests.get(previous_references_url).text
+    previous_references_ids = utils.fetch(previous_references_url).text
     previous_references_ids = previous_references_ids.split("\n")
     previous_references_ids = list(map(lambda x: x.split("\t")[0], previous_references_ids))
     print("DONE.")
@@ -125,12 +124,12 @@ def main(argv):
 
     # 3 - Executing go_annotation_changes script
     print("\n\n3a - EXECUTING GO_ANNOTATION_CHANGES SCRIPT (INCLUDING PROTEIN BINDING)...\n")
-    previous_stats = requests.get(previous_stats_url).json()    
+    previous_stats = utils.fetch(previous_stats_url).json()    
     json_annot_changes = go_annotation_changes.compute_changes(json_stats, previous_stats)
     print("DONE.")
     
     print("\n\n3b - EXECUTING GO_ANNOTATION_CHANGES SCRIPT (EXCLUDING PROTEIN BINDING)...\n")
-    previous_stats_no_pb = requests.get(previous_stats_no_pb_url).json()    # WE STILL NEED TO CORRECT THAT: 1 FILE OR SEVERAL FILE ? IF SEVERAL, ONE MORE PARAMETER
+    previous_stats_no_pb = utils.fetch(previous_stats_no_pb_url).json()    # WE STILL NEED TO CORRECT THAT: 1 FILE OR SEVERAL FILE ? IF SEVERAL, ONE MORE PARAMETER
     json_annot_no_pb_changes = go_annotation_changes.compute_changes(json_stats_no_pb, previous_stats_no_pb)
     print("DONE.")
 

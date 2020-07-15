@@ -1,7 +1,6 @@
 # This script can be used to create the initial go-stats/go-stats-summary/go-ontology-changes for a release
 # It does not create the annotation-changes as it require a previously computed go-stats
 
-import requests
 import json
 import sys, getopt, os
 
