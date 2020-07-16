@@ -302,12 +302,20 @@ def create_text_report(json_changes):
     for qualifier in qualifiers:
         text_report += "\t" + qualifier
 
-    text_report + "\n"
+    text_report += "\n"
+
+    warnings = ""
 
     for taxon, val in json_changes["detailed_changes"]["annotations"]["by_model_organism"].items():
         taxon_all_annotations = 0
         line = ""
+
         for evidence in ev_all:
+            if evidence not in json_changes["detailed_changes"]["annotations"]["by_model_organism"][taxon]["by_evidence"]:
+                print("WARNING: evidence " + evidence + " for taxon " + taxon + " is no longer present - QC should check before release")
+                warnings += "- evidence " + evidence + " for taxon " + taxon + " is no longer present\n"
+                continue
+
             evival = json_changes["detailed_changes"]["annotations"]["by_model_organism"][taxon]["by_evidence"][evidence]
             if evival:
                 te = evival["A"]
@@ -321,7 +329,13 @@ def create_text_report(json_changes):
             else:
                 line += "\t0"
         text_report += "\n" + taxon + "\t" + str(taxon_all_annotations) + line
+
         for qualifier in qualifiers:
+            if qualifier not in json_changes["detailed_changes"]["annotations"]["by_model_organism"][taxon]["by_qualifier"]:
+                print("WARNING: qualifier " + qualifier + " for taxon " + taxon + " is no longer present - QC should check before release")
+                warnings += "- qualifier " + qualifier + " for taxon " + taxon + " is no longer present\n"
+                continue
+                
             quaval = json_changes["detailed_changes"]["annotations"]["by_model_organism"][taxon]["by_qualifier"][qualifier]
             if isinstance(quaval, str):
                 quaval = int(quaval.split(" ")[0])
@@ -394,7 +408,12 @@ def create_text_report(json_changes):
     text_report += "\n\nREMOVED PMIDS\n"
     text_report += "\n".join(json_changes["detailed_changes"]["references"]["pmids"]["removed"])
 
-    return text_report
+
+    if len(warnings) == 0:
+        return text_report
+    else:
+        return "WARNINGS:\n" + warnings + "\n" + text_report
+    
 
 
 
