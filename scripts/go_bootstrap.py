@@ -1,3 +1,6 @@
+# This script can be used to create the initial go-stats/go-stats-summary/go-ontology-changes for a release
+# It does not create the annotation-changes as it require a previously computed go-stats
+
 import json
 import sys, getopt, os
 
@@ -9,7 +12,7 @@ import go_stats_utils as utils
 
 
 def print_help():
-    print('\nUsage: python go_refine.py -g <golr_url> -d <release_date> -c <current_obo_url> -p <previous_obo_url> -o <output_rep>\n')
+    print('\nUsage: python go_bootstrap.py -g <current_golr_url> -d <release_date> -c <current_obo_url> -p <previous_obo_url> -o <output_rep>\n')
 
 
 def main(argv):
@@ -19,6 +22,7 @@ def main(argv):
     output_rep = ''
     release_date = ''
 
+    print(len(argv))
     if len(argv) < 10:
         print_help()
         sys.exit(2)
@@ -35,6 +39,8 @@ def main(argv):
             sys.exit()
         elif opt in ("-g", "--golrurl"):
             golr_url = arg
+            if not golr_url.endswith("/"):
+                golr_url = golr_url + "/"
         elif opt in ("-c", "--cobo"):
             current_obo_url = arg
         elif opt in ("-p", "--pobo"):
@@ -51,42 +57,39 @@ def main(argv):
         os.mkdir(output_rep)
 
 
+    # actual names of the files to be generated - can change here if needed
+    output_stats =  output_rep + "go-stats.json"
+    output_stats_no_pb =  output_rep + "go-stats-no-pb.json"
+    output_references = output_rep + "go-references.tsv"
+    output_pmids = output_rep + "go-pmids.tsv"
+    output_pubmed_pmids = output_rep + "GO.uid"
+    output_ontology_changes = output_rep + "go-ontology-changes.json"
+    output_ontology_changes_tsv = output_rep + "go-ontology-changes.tsv"
+    output_stats_summary = output_rep + "go-stats-summary.json"
+
+
     # 1 - Executing go_stats script
     print("\n\n1a - EXECUTING GO_STATS SCRIPT (INCLUDING PROTEIN BINDING)...\n")
-    json_stats = go_stats.compute_stats(golr_url, release_date)
-    # data = None
-    # with open('newtest/go-stats.json', 'r') as myfile:
-    #     data=myfile.read()
-    # json_stats = json.loads(data)
-
-
+    json_stats = go_stats.compute_stats(golr_url, release_date)    
     print("DONE.")
 
     print("\n\n1b - EXECUTING GO_STATS SCRIPT (EXCLUDING PROTEIN BINDING)...\n")
     json_stats_no_pb = go_stats.compute_stats(golr_url, release_date, True)
-    # with open('newtest/go-stats-no-pb.json', 'r') as myfile:
-    #     data=myfile.read()
-    # json_stats_no_pb = json.loads(data)    
     print("DONE.")
 
 
     # 2 - Executing go_ontology_changes script
     print("\n\n2 - EXECUTING GO_ONTOLOGY_CHANGES SCRIPT...\n")
-    # with open('newtest/go-ontology-changes.json', 'r') as myfile:
-    #     data=myfile.read()
-    # json_onto_changes = json.loads(data)
-    
     json_onto_changes = go_ontology_changes.compute_changes(current_obo_url, previous_obo_url)
-    utils.write_json(output_rep + "go-ontology-changes.json", json_onto_changes)
+    utils.write_json(output_ontology_changes, json_onto_changes)
 
     tsv_onto_changes = go_ontology_changes.create_text_report(json_onto_changes) 
-    utils.write_text(output_rep + "go-ontology-changes.tsv", tsv_onto_changes)
+    utils.write_text(output_ontology_changes_tsv, tsv_onto_changes)
     print("DONE.")
 
 
-    # 4 - Refining go-stats with ontology stats
-    print("\n\n4 - EXECUTING GO_REFINE_STATS SCRIPT...\n")
-
+    # 3 - Refining go-stats with ontology stats
+    print("\n\n3 - EXECUTING GO_REFINE_STATS SCRIPT...\n")
     ontology = json_onto_changes["summary"]["current"].copy()
     del ontology["release_date"]
     ontology["changes_created_terms"] = json_onto_changes["summary"]["changes"]["created_terms"]
@@ -98,7 +101,6 @@ def main(argv):
     ontology["changes_molecular_function_terms"] = json_onto_changes["summary"]["changes"]["molecular_function_terms"]
     ontology["changes_cellular_component_terms"] = json_onto_changes["summary"]["changes"]["cellular_component_terms"]
 
-
     json_stats = {
         "release_date" : json_stats["release_date"],
         "ontology" : ontology,
@@ -107,7 +109,7 @@ def main(argv):
         "bioentities" : json_stats["bioentities"],
         "references" : json_stats["references"]
     }
-    utils.write_json(output_rep + "go-stats.json", json_stats)
+    utils.write_json(output_stats, json_stats)
 
 
     json_stats_no_pb = {
@@ -118,7 +120,7 @@ def main(argv):
         "bioentities" : json_stats_no_pb["bioentities"],
         "references" : json_stats_no_pb["references"]
     }
-    utils.write_json(output_rep + "go-stats-no-pb.json", json_stats_no_pb)
+    utils.write_json(output_stats_no_pb, json_stats_no_pb)
 
 
     annotations_by_reference_genome = json_stats["annotations"]["by_model_organism"]
@@ -190,10 +192,29 @@ def main(argv):
             }
         },
     }
-    utils.write_json(output_rep + "go-stats-summary.json", json_stats_summary)
 
-    print("DONE.")
+    # removing by_reference_genome.by_evidence
+    for gen in json_stats_summary["annotations"]["by_model_organism"]:
+        del json_stats_summary["annotations"]["by_model_organism"][gen]["by_evidence"]
+    utils.write_json(output_stats_summary, json_stats_summary)
 
+
+    print("Saving references file to <" + output_pmids + "> and PubMed PMID file to <" + output_pubmed_pmids + ">")
+    references = go_stats.get_references()
+    references_lines = []
+    for k,v in references.items():
+        references_lines.append(k + "\t" + str(v))
+
+    pmids_lines = list(filter(lambda x: "PMID:" in x, references_lines))
+    pmids_ids = list(map(lambda x: x.split("\t")[0].split(":")[1], pmids_lines))
+
+    utils.write_text(output_references, "\n".join(references_lines))
+    utils.write_text(output_pmids, "\n".join(pmids_lines))
+    utils.write_text(output_pubmed_pmids, "\n".join(pmids_ids))
+    print("Done.")
+
+
+    print("SUCCESS.")
 
 
 

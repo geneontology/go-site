@@ -52,8 +52,8 @@ class Term:
         count = 0
         if self.id:
             count += 1
-        if self.alt_ids:
-            count += len(self.alt_ids)
+        # if self.alt_ids:
+        #     count += len(self.alt_ids)
         # if self.is_obsolete:
         #     count += 1
         if self.namespace:
@@ -239,8 +239,8 @@ class Term:
             reasons["id"] = {"current": value(self.id), "previous": value(other.id) }
         if self.is_obsolete != other.is_obsolete:
             reasons["is_obsolete"] = {"current": value(self.is_obsolete), "previous": value(other.is_obsolete) }
-        if self.alt_ids != other.alt_ids:
-            reasons["alt_ids"] = {"current": value(self.alt_ids), "previous": value(other.alt_ids) }
+        # if self.alt_ids != other.alt_ids:
+        #     reasons["alt_ids"] = {"current": value(self.alt_ids), "previous": value(other.alt_ids) }
         if self.name != other.name:
             reasons["name"] = {"current": value(self.name), "previous": value(other.name) }
         if self.namespace != other.namespace:
