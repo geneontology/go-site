@@ -364,7 +364,7 @@
   uri: 'GOC:atm'
   xref: 'GOC:atm'
 -
-  accounts: 
+accounts: 
     github: jimhu-tamu
   nickname: 'Jim Hu'
   organization: 'E. coli'
