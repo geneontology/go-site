@@ -39,8 +39,9 @@ target/groups.touch: $(OWLTOOLS_CHECKS)
 target/gafs.touch: $(foreach group,$(RESOURCE_GROUPS),target/groups/$(group)/$(group).group)
 	touch target/gafs.touch
 
-OBO= http://purl.obolibrary.org/obo
-ONTOLOGY = $(OBO)/go/snapshot/go.json
+OBO = http://purl.obolibrary.org/obo
+# By default, get the snapshot version of the go-ontology json.
+ONTOLOGY ?= $(OBO)/go/snapshot/go.json
 target/go-ontology.json:
 	wget --no-check-certificate $(ONTOLOGY) -O $@.tmp && mv $@.tmp $@ && touch $@
 
