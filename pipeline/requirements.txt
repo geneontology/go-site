@@ -1,3 +1,3 @@
 PyYAML
-ontobio==2.0.0-pre0
+ontobio==2.0.0-pre1
 click
