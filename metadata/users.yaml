@@ -4176,3 +4176,19 @@
   nickname: 'Fernando Bolio'
   organization: WB
   uri: 'https://orcid.org/0000-0003-2506-9234'
+-
+  accounts:
+    github: cuzicka
+  groups:
+    - 'http://www.phi-base.org'
+  nickname: 'Alayne Cuzick'
+  organization: PHI-base
+  uri: 'https://orcid.org/0000-0001-8941-3984'
+-
+  accounts:
+    github: jseager7
+  groups:
+    - 'http://www.phi-base.org'
+  nickname: 'James Seager'
+  organization: PHI-base
+  uri: 'https://orcid.org/0000-0001-7487-610X'

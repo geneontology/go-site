@@ -410,3 +410,7 @@
   label: DiBest-Unical
   id: https://www.unical.it/portale/strutture/dipartimenti_240/dibest
   shorthand: DIBU
+-
+  label: PHI-base
+  id: http://www.phi-base.org
+  shorthand: PHI-base

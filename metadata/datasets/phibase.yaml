@@ -1,0 +1,20 @@
+id: phibase
+label: PHI-base
+description: 'GO data for PHI-base'
+project_name: 'PHI-base'
+contact_email: 'contact@phi-base.org'
+project_url: 'http://www.phi-base.org/'
+funding_source: 'BBSRC'
+email_report: 'contact@phi-base.org'
+datasets:
+ -
+   id: phibase.gaf
+   label: 'PHI-base gaf file'
+   description: 'gaf file for phibase from PHI-base'
+   url: http://current.geneontology.org/annotations/phibase.gaf.gz
+   type: gaf
+   dataset: phibase
+   submitter: phibase
+   source: https://raw.githubusercontent.com/PHI-base/data/master/phibase.gaf
+   entity_type:
+   status: active
