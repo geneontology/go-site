@@ -36,19 +36,19 @@
   shorthand: RGD
 -
   label: 'ARUK-UCL'
-  id: https://www.ucl.ac.uk/functional-gene-annotation/neurological
+  id: https://www.ucl.ac.uk/cardiovascular/gene-alzheimers
   shorthand: ARUK-UCL
 -
   label: 'BHF-UCL'
-  id: http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular
+  id: https://www.ucl.ac.uk/cardiovascular/gene
   shorthand: BHF-UCL
 -
   label: 'SynGO-UCL'
-  id: https://www.ucl.ac.uk/functional-gene-annotation/neurological/syngo
+  id: https://www.ucl.ac.uk/cardiovascular/gene-syngo
   shorthand: SynGO-UCL
 -
   label: 'HGNC-UCL'
-  id: http://www.ucl.ac.uk/functional-gene-annotation
+  id: https://www.ucl.ac.uk/cardiovascular/gene-hgnc
   shorthand: HGNC-UCL
 -
   label: 'neXtProt'
@@ -168,7 +168,7 @@
   shorthand: UB
 -
   label: ParkinsonsUK-UCL
-  id: http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/parkinsons
+  id: https://www.ucl.ac.uk/cardiovascular/gene-parkinsons
   shorthand: ParkinsonsUK-UCL
 -
   label: UC Davis
