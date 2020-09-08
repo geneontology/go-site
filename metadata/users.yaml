@@ -4176,3 +4176,16 @@
   nickname: 'Fernando Bolio'
   organization: WB
   uri: 'https://orcid.org/0000-0003-2506-9234'
+  -
+  accounts:
+    github: ccasalsc
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.sib.swiss'
+  nickname: 'Cristina Casals'
+  organization: SIB
+  uri: 'http://orcid.org/0000-0001-8769-177X'
+-
