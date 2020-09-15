@@ -93,7 +93,7 @@
   email-md5:
     - ac1bfce31c215d31cd99e43281811dad
   nickname: 'Anna Melidoni'
-  uri: 'GOC:anm'
+  uri: 'http://orcid.org/0000-0002-2535-883X'
   xref: 'GOC:anm'
 -
   email-md5:
@@ -168,7 +168,7 @@
     - ac1bfce31c215d31cd99e43281811dad
   nickname: 'Anna Melidoni (formerly BHF-UCL)'
   organization: IntAct
-  uri: 'GOC:ame'
+  uri: 'http://orcid.org/0000-0002-2535-883X'
   xref: 'GOC:ame'
 -
   comment: 'status inactive, formerly GOA'
@@ -191,7 +191,7 @@
     - e4a501963ab7181d1e40298d93741e50
   nickname: 'Hadil Alrohaif'
   organization: BHF-UCL
-  uri: 'GOC:hal'
+  uri: 'https://orcid.org/0000-0002-6980-6972'
   xref: 'GOC:hal'
 -
   comment: 'status inactive, Collaborator with the BHF group at UCL'
@@ -249,7 +249,7 @@
     - 0a23c8a275ee44e7304d76fe98b7b0b1
   nickname: 'Varsha Khodiyar'
   organization: BHF-UCL
-  uri: 'GOC:vk'
+  uri: 'https://orcid.org/0000-0002-2743-6918'
   xref: 'GOC:vk'
 -
   comment: 'status inactive, formerly BHF_UCL'
@@ -2253,7 +2253,7 @@
 -
   nickname: 'Philippa Talmud'
   organization: 'Community expert'
-  uri: 'GOC:expert_pt'
+  uri: 'http://orcid.org/0000-0002-5560-1933'
   xref: 'GOC:expert_pt'
 -
   nickname: 'Richard A. Singer'
@@ -4176,3 +4176,4 @@
   nickname: 'Fernando Bolio'
   organization: WB
   uri: 'https://orcid.org/0000-0003-2506-9234'
+ 
