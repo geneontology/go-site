@@ -69,6 +69,15 @@ mapping:
         required: false
         sequence:
           - type: str
+  "filter_for":
+    type: map
+    required: false
+    mapping:
+      "provided_by":
+        type: seq
+        required: false
+        sequence:
+          - type: str
   "datasets":
     type: seq
     required: true

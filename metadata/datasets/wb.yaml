@@ -13,6 +13,9 @@ filter_out:
   evidence_reference:
     - evidence: ECO:0000320
       reference: PMID:21873635
+filter_for:
+  provided_by:
+    - WB
 datasets:
  -
    id: wb.gaf
