@@ -41,6 +41,8 @@ mapping:
     type: str
     required: false
     unique: false
+  # 'filter_out' is used in GO rule 57 to filter out annotation lines matching specified criteria
+  # This filter is only active in the import context when a dataset has its import flag set to True
   "filter_out":
     type: map
     required: false
@@ -69,6 +71,8 @@ mapping:
         required: false
         sequence:
           - type: str
+  # 'filter_for' is used in GO rule 57 to filter annotation lines, keeping only the lines matching specified criteria
+  # This filter is only active in the import context when a dataset has its import flag set to True
   "filter_for":
     type: map
     required: false
