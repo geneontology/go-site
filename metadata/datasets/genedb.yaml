@@ -22,24 +22,6 @@ datasets:
    species_code:
    taxa:
     - NCBITaxon:5664
-
- -
-   id: genedb_pfalciparum.gaf
-   label: "genedb_pfalciparum gaf file"
-   description: "gaf file for genedb_pfalciparum from GeneDB"
-   url: http://current.geneontology.org/annotations/genedb_pfalciparum.gaf.gz
-   type: gaf
-   dataset: genedb_pfalciparum
-   submitter: genedb
-   compression: gzip
-   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.GeneDB_Pfalciparum.gz
-   entity_type:
-   status: active
-   species_code:
-   taxa:
-    - NCBITaxon:5833
-    - NCBITaxon:36329
-
  -
    id: genedb_tbrucei.gaf
    label: "genedb_tbrucei gaf file"
