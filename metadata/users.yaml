@@ -4176,3 +4176,15 @@
   nickname: 'Fernando Bolio'
   organization: WB
   uri: 'https://orcid.org/0000-0003-2506-9234'
+-  
+  accounts:
+    github: ccasalsc
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Cristina Casals'
+  organization: UniProt
+  uri: 'https://orcid.org/0000-0001-8769-177X'
