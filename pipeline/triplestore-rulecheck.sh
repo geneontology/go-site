@@ -4,7 +4,7 @@ JOURNAL=${2:-"target/blazegraph-internal.jnl"}
 OUT=${3:-"target/rules.json"}
 
 function bg_start() {
-    java -server -Xmx32g -Djetty.port=$1 \
+    java -server -Xmx96g -Djetty.port=$1 \
         -Djetty.overrideWebXml=conf/readonly_cors.xml \
         -Dbigdata.propertyFile=conf/blazegraph.properties \
         -Dcom.bigdata.journal.AbstractJournal.file=$JOURNAL \
