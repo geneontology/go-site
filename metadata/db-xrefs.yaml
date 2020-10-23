@@ -2211,7 +2211,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http:/www.rhea-db.org/rhea/[example_id]
+      url_syntax: http://www.rhea-db.org/rhea/[example_id]
       example_id: RHEA:25811
       example_url: http://www.rhea-db.org/rhea/25811
 - database: RiceSES
