@@ -4188,3 +4188,15 @@
   nickname: 'Cristina Casals'
   organization: UniProt
   uri: 'https://orcid.org/0000-0001-8769-177X'
+-
+  accounts:
+    github: colinlog
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://greekc.org'
+  nickname: 'Colin Logie'
+  organization: Radboud University
+  uri: 'https://orcid.org/0000-0002-8534-6582'
