@@ -1,5 +1,5 @@
 #### PANTHER_VERSION=15.0
-- common_name: bacteria
+- common_name: streptomyces
   organism: Streptomyces coelicolor
   reference_proteome_short_name: STRCO
   taxon_id: NCBITaxon:100226
@@ -11,11 +11,11 @@
   organism: Rattus norvegicus
   reference_proteome_short_name: RAT
   taxon_id: NCBITaxon:10116
-- common_name: placozoan
+- common_name: trichoplax
   organism: Trichoplax adhaerens
   reference_proteome_short_name: TRIAD
   taxon_id: NCBITaxon:10228
-- common_name: cyanobacteria
+- common_name: synechocystis
   organism: Synechocystis
   reference_proteome_short_name: SYNY3
   taxon_id: NCBITaxon:1111708
@@ -39,7 +39,7 @@
   organism: Brachypodium distachyon
   reference_proteome_short_name: BRADI
   taxon_id: NCBITaxon:15368
-- common_name: oomycete
+- common_name: phytophthora
   organism: Phytophthora ramorum
   reference_proteome_short_name: PHYRM
   taxon_id: NCBITaxon:164328
@@ -51,27 +51,27 @@
   organism: Streptococcus pneumoniae
   reference_proteome_short_name: STRR6
   taxon_id: NCBITaxon:171101
-- common_name: archaea
+- common_name: pyrobaculum
   organism: Pyrobaculum aerophilum
   reference_proteome_short_name: PYRAE
   taxon_id: NCBITaxon:178306
-- common_name: protist
+- common_name: giardia
   organism: Giardia intestinalis
   reference_proteome_short_name: GIAIC
   taxon_id: NCBITaxon:184922
-- common_name: excavate
+- common_name: t brucei
   organism: Trypanosoma brucei
   reference_proteome_short_name: TRYB2
   taxon_id: NCBITaxon:185431
-- common_name: archaea
+- common_name: methanosarcina
   organism: Methanosarcina acetivorans
   reference_proteome_short_name: METAC
   taxon_id: NCBITaxon:188937
-- common_name: bacteria
+- common_name: leptospira
   organism: Leptospira interrogans
   reference_proteome_short_name: LEPIN
   taxon_id: NCBITaxon:189518
-- common_name: bacteria
+- common_name: fusobacterium
   organism: Fusobacterium nucleatum
   reference_proteome_short_name: FUSNN
   taxon_id: NCBITaxon:190304
@@ -79,7 +79,7 @@
   organism: Xanthomonas campestris
   reference_proteome_short_name: XANCP
   taxon_id: NCBITaxon:190485
-- common_name: bacteria
+- common_name: pseudomonas
   organism: Pseudomonas aeruginosa
   reference_proteome_short_name: PSEAE
   taxon_id: NCBITaxon:208964
@@ -87,7 +87,7 @@
   organism: Shewanella oneidensis
   reference_proteome_short_name: SHEON
   taxon_id: NCBITaxon:211586
-- common_name: fungi
+- common_name: cryptococcus
   organism: Cryptococcus neoformans
   reference_proteome_short_name: CRYNJ
   taxon_id: NCBITaxon:214684
@@ -95,19 +95,19 @@
   organism: Musa acuminata subsp. malaccensis
   reference_proteome_short_name: MUSAM
   taxon_id: NCBITaxon:214687
-- common_name: bacteria
+- common_name: bacillus subtilis
   organism: Bacillus subtilis
   reference_proteome_short_name: BACSU
   taxon_id: NCBITaxon:224308
-- common_name: bacteria
+- common_name: aquifex
   organism: Aquifex aeolicus
   reference_proteome_short_name: AQUAE
   taxon_id: NCBITaxon:224324
-- common_name: proteobacteria
+- common_name: bradyrhizobium
   organism: Bradyrhizobium diazoefficiens
   reference_proteome_short_name: BRADU
   taxon_id: NCBITaxon:224911
-- common_name: bacteria
+- common_name: bacteroidetes
   organism: Bacteroides thetaiotaomicron
   reference_proteome_short_name: BACTN
   taxon_id: NCBITaxon:226186
@@ -115,7 +115,7 @@
   organism: Bacillus cereus
   reference_proteome_short_name: BACCR
   taxon_id: NCBITaxon:226900
-- common_name: fungi
+- common_name: aspergillus
   organism: Emericella nidulans
   reference_proteome_short_name: EMENI
   taxon_id: NCBITaxon:227321
@@ -123,35 +123,35 @@
   organism: Coxiella burnetii
   reference_proteome_short_name: COXBU
   taxon_id: NCBITaxon:227377
-- common_name: fungi
+- common_name: candida
   organism: Candida albicans
   reference_proteome_short_name: CANAL
   taxon_id: NCBITaxon:237561
-- common_name: fungi
+- common_name: ustilago
   organism: Ustilago maydis
   reference_proteome_short_name: USTMA
   taxon_id: NCBITaxon:237631
-- common_name: bacteria
+- common_name: rhodopirellula
   organism: Rhodopirellula baltica
   reference_proteome_short_name: RHOBA
   taxon_id: NCBITaxon:243090
-- common_name: bacteria
+- common_name: deinococcus
   organism: Deinococcus radiodurans
   reference_proteome_short_name: DEIRA
   taxon_id: NCBITaxon:243230
-- common_name: bacteria
+- common_name: geobacter
   organism: Geobacter sulfurreducens
   reference_proteome_short_name: GEOSL
   taxon_id: NCBITaxon:243231
-- common_name: archaea
+- common_name: methanocaldococcus
   organism: Methanocaldococcus jannaschii
   reference_proteome_short_name: METJA
   taxon_id: NCBITaxon:243232
-- common_name: bacteria
+- common_name: m genitalium
   organism: mycoplasma genitalium
   reference_proteome_short_name: MYCGE
   taxon_id: NCBITaxon:243273
-- common_name: bacteria
+- common_name: thermotoga
   organism: Thermotoga maritima
   reference_proteome_short_name: THEMA
   taxon_id: NCBITaxon:243274
@@ -159,7 +159,7 @@
   organism: Vibrio cholerae
   reference_proteome_short_name: VIBCH
   taxon_id: NCBITaxon:243277
-- common_name: bacteria
+- common_name: gloeobacter
   organism: Gloeobacter violaceus
   reference_proteome_short_name: GLOVI
   taxon_id: NCBITaxon:251221
@@ -167,11 +167,11 @@
   organism: Citrus sinensis
   reference_proteome_short_name: CITSI
   taxon_id: NCBITaxon:2711
-- common_name: bacteria
+- common_name: chlamydia
   organism: Chlamydia trachomatis
   reference_proteome_short_name: CHLTR
   taxon_id: NCBITaxon:272561
-- common_name: archaea
+- common_name: sulfolobus
   organism: Sulfolobus solfataricus
   reference_proteome_short_name: SACS2
   taxon_id: NCBITaxon:273057
@@ -179,11 +179,11 @@
   organism: Anolis carolinensis
   reference_proteome_short_name: ANOCA
   taxon_id: NCBITaxon:28377
-- common_name: fungi
+- common_name: yarrowia
   organism: Yarrowia lipolytica
   reference_proteome_short_name: YARLI
   taxon_id: NCBITaxon:284591
-- common_name: fungi
+- common_name: ashbya
   organism: Ashbya gossypii
   reference_proteome_short_name: ASHGO
   taxon_id: NCBITaxon:284811
@@ -191,7 +191,7 @@
   organism: Schizosaccharomyces pombe
   reference_proteome_short_name: SCHPO
   taxon_id: NCBITaxon:284812
-- common_name: bacteria
+- common_name: thermodesulfovibrio
   organism: Thermodesulfovibrio yellowstonii
   reference_proteome_short_name: THEYD
   taxon_id: NCBITaxon:289376
@@ -207,7 +207,7 @@
   organism: Chlamydomonas reinhardtii
   reference_proteome_short_name: CHLRE
   taxon_id: NCBITaxon:3055
-- common_name: fungi
+- common_name: phaeosphaeria
   organism: Phaeosphaeria nodorum
   reference_proteome_short_name: PHANO
   taxon_id: NCBITaxon:321614
@@ -215,15 +215,15 @@
   organism: Physcomitrella patens
   reference_proteome_short_name: PHYPA
   taxon_id: NCBITaxon:3218
-- common_name: bacteria
+- common_name: chloroflexus
   organism: Chloroflexus aurantiacus
   reference_proteome_short_name: CHLAA
   taxon_id: NCBITaxon:324602
-- common_name: fungi
+- common_name: aspergillus
   organism: Neosartorya fumigata
   reference_proteome_short_name: ASPFU
   taxon_id: NCBITaxon:330879
-- common_name: diatom
+- common_name: thalassiosira
   organism: Thalassiosira pseudonana
   reference_proteome_short_name: THAPS
   taxon_id: NCBITaxon:35128
@@ -231,15 +231,15 @@
   organism: Spinacia oleracea
   reference_proteome_short_name: SPIOL
   taxon_id: NCBITaxon:3562
-- common_name: apicomplexan
+- common_name: plasmodium
   organism: Plasmodium falciparum
   reference_proteome_short_name: PLAF7
   taxon_id: NCBITaxon:36329
-- common_name: upland cotton
+- common_name: cotton
   organism: Gossypium hirsutum
   reference_proteome_short_name: GOSHI
   taxon_id: NCBITaxon:3635
-- common_name: cocoa
+- common_name: cacao
   organism: Theobroma cacao
   reference_proteome_short_name: THECC
   taxon_id: NCBITaxon:3641
@@ -247,7 +247,7 @@
   organism: Cucumis sativus
   reference_proteome_short_name: CUCSA
   taxon_id: NCBITaxon:3659
-- common_name: fungi
+- common_name: neurospora
   organism: Neurospora crassa
   reference_proteome_short_name: NEUCR
   taxon_id: NCBITaxon:367110
@@ -255,7 +255,7 @@
   organism: Populus trichocarpa
   reference_proteome_short_name: POPTR
   taxon_id: NCBITaxon:3694
-- common_name: dicot plant
+- common_name: arabidopsis
   organism: Arabidopsis thaliana
   reference_proteome_short_name: ARATH
   taxon_id: NCBITaxon:3702
@@ -263,7 +263,7 @@
   organism: Brassica napus
   reference_proteome_short_name: BRANA
   taxon_id: NCBITaxon:3708
-- common_name: archaea
+- common_name: korarchaeum
   organism: Korarchaeum cryptofilum
   reference_proteome_short_name: KORCO
   taxon_id: NCBITaxon:374847
@@ -283,7 +283,7 @@
   organism: Manihot esculenta
   reference_proteome_short_name: MANES
   taxon_id: NCBITaxon:3983
-- common_name: castor bean
+- common_name: bean
   organism: Ricinus communis
   reference_proteome_short_name: RICCO
   taxon_id: NCBITaxon:3988
@@ -311,11 +311,11 @@
   organism: Erythranthe guttata
   reference_proteome_short_name: ERYGU
   taxon_id: NCBITaxon:4155
-- common_name: fungi
+- common_name: puccinia
   organism: Puccinia graminis
   reference_proteome_short_name: PUCGT
   taxon_id: NCBITaxon:418459
-- common_name: common sunflower
+- common_name: sunflower
   organism: Helianthus annuus
   reference_proteome_short_name: HELAN
   taxon_id: NCBITaxon:4232
@@ -327,7 +327,7 @@
   organism: Lactuca sativa
   reference_proteome_short_name: LACSA
   taxon_id: NCBITaxon:4236
-- common_name: archaea
+- common_name: nitrosopumilu
   organism: Nitrosopumilus maritimus
   reference_proteome_short_name: NITMS
   taxon_id: NCBITaxon:436308
@@ -339,11 +339,11 @@
   organism: Nelumbo nucifera
   reference_proteome_short_name: NELNU
   taxon_id: NCBITaxon:4432
-- common_name: slime mold
+- common_name: dictyostelium
   organism: Dictyostelium discoideum
   reference_proteome_short_name: DICDI
   taxon_id: NCBITaxon:44689
-- common_name: anemone
+- common_name: nematostella
   organism: Nematostella vectensis
   reference_proteome_short_name: NEMVE
   taxon_id: NCBITaxon:45351
@@ -359,7 +359,7 @@
   organism: Triticum aestivum
   reference_proteome_short_name: WHEAT
   taxon_id: NCBITaxon:4565
-- common_name: corn
+- common_name: maize
   organism: Zea mays
   reference_proteome_short_name: MAIZE
   taxon_id: NCBITaxon:4577
@@ -367,35 +367,35 @@
   organism: Juglans regia
   reference_proteome_short_name: JUGRE
   taxon_id: NCBITaxon:51240
-- common_name: Chinese cabbage
+- common_name: cabbage
   organism: Brassica rapa subsp. pekinensis
   reference_proteome_short_name: BRARP
   taxon_id: NCBITaxon:51351
-- common_name: bacteria
+- common_name: dictyoglomus
   organism: Dictyoglomus turgidum
   reference_proteome_short_name: DICTD
   taxon_id: NCBITaxon:515635
-- common_name: nematode worm
+- common_name: pristionchus
   organism: Pristionchus pacificus
   reference_proteome_short_name: PRIPA
   taxon_id: NCBITaxon:54126
-- common_name: Brewer's yeast
+- common_name: budding yeast
   organism: Saccharomyces cerevisiae
   reference_proteome_short_name: YEAST
   taxon_id: NCBITaxon:559292
-- common_name: protozoa
+- common_name: leishmania
   organism: Leishmania major
   reference_proteome_short_name: LEIMA
   taxon_id: NCBITaxon:5664
-- common_name: protist
+- common_name: trichomonas
   organism: Trichomonas vaginalis
   reference_proteome_short_name: TRIVA
   taxon_id: NCBITaxon:5722
-- common_name: amoeba
+- common_name: entamoeba
   organism: Entamoeba histolytica
   reference_proteome_short_name: ENTHI
   taxon_id: NCBITaxon:5759
-- common_name: slime mold
+- common_name: d purpureum
   organism: Dictyostelium purpureum
   reference_proteome_short_name: DICPU
   taxon_id: NCBITaxon:5786
@@ -403,7 +403,7 @@
   organism: Paramecium tetraurelia
   reference_proteome_short_name: PARTE
   taxon_id: NCBITaxon:5888
-- common_name: nematode worm
+- common_name: c briggsae
   organism: Caenorhabditis briggsae
   reference_proteome_short_name: CAEBR
   taxon_id: NCBITaxon:6238
@@ -415,27 +415,27 @@
   organism: Yersinia pestis
   reference_proteome_short_name: YERPE
   taxon_id: NCBITaxon:632
-- common_name: bacteria
+- common_name: halobacterium
   organism: Halobacterium salinarum
   reference_proteome_short_name: HALSA
   taxon_id: NCBITaxon:64091
-- common_name: leech
+- common_name: helobdella
   organism: helobdella robusta
   reference_proteome_short_name: HELRO
   taxon_id: NCBITaxon:6412
-- common_name: fungi
+- common_name: sclerotinia
   organism: Sclerotinia sclerotiorum
   reference_proteome_short_name: SCLS1
   taxon_id: NCBITaxon:665079
-- common_name: water_flea
+- common_name: water flea
   organism: Daphnia pulex
   reference_proteome_short_name: DAPPU
   taxon_id: NCBITaxon:6669
-- common_name: fungi
+- common_name: chytrid
   organism: Batrachochytrium dendrobatidis
   reference_proteome_short_name: BATDJ
   taxon_id: NCBITaxon:684364
-- common_name: archaea
+- common_name: thermococcus
   organism: Thermococcus kodakaraensis
   reference_proteome_short_name: THEKO
   taxon_id: NCBITaxon:69014
@@ -443,11 +443,11 @@
   organism: Ixodes scapularis
   reference_proteome_short_name: IXOSC
   taxon_id: NCBITaxon:6945
-- common_name: green algee
+- common_name: Ostreococcus
   organism: Ostreococcus tauri
   reference_proteome_short_name: OSTTA
   taxon_id: NCBITaxon:70448
-- common_name: red flour beetle
+- common_name: tribolium
   organism: Tribolium castaneum
   reference_proteome_short_name: TRICA
   taxon_id: NCBITaxon:7070
@@ -455,7 +455,7 @@
   organism: Eucalyptus grandis
   reference_proteome_short_name: EUCGR
   taxon_id: NCBITaxon:71139
-- common_name: influenza
+- common_name: h flu
   organism: Haemophilus influenzae
   reference_proteome_short_name: HAEIN
   taxon_id: NCBITaxon:71421
@@ -471,15 +471,15 @@
   organism: Strongylocentrotus purpuratus
   reference_proteome_short_name: STRPU
   taxon_id: NCBITaxon:7668
-- common_name: sea squirt
+- common_name: ciona
   organism: Ciona intestinalis
   reference_proteome_short_name: CIOIN
   taxon_id: NCBITaxon:7719
-- common_name: chordate
+- common_name: branchiostoma
   organism: Branchiostoma floridae
   reference_proteome_short_name: BRAFL
   taxon_id: NCBITaxon:7739
-- common_name: spotted gar
+- common_name: lepisosteudae
   organism: lepisosteus oculatus
   reference_proteome_short_name: LEPOC
   taxon_id: NCBITaxon:7918
@@ -487,19 +487,19 @@
   organism: Danio rerio
   reference_proteome_short_name: DANRE
   taxon_id: NCBITaxon:7955
-- common_name: Japanese rice fish
+- common_name: oryzias
   organism: Oryzias latipes
   reference_proteome_short_name: ORYLA
   taxon_id: NCBITaxon:8090
-- common_name: sponge
+- common_name: monosiga
   organism: Monosiga brevicollis
   reference_proteome_short_name: MONBE
   taxon_id: NCBITaxon:81824
-- common_name: bacteria
+- common_name: mycobacterium
   organism: Mycobacterium tuberculosis
   reference_proteome_short_name: MYCTU
   taxon_id: NCBITaxon:83332
-- common_name: E. coli
+- common_name: e coli
   organism: Escherichia coli
   reference_proteome_short_name: ECOLI
   taxon_id: NCBITaxon:83333
@@ -507,7 +507,7 @@
   organism: Xenopus tropicalis
   reference_proteome_short_name: XENTR
   taxon_id: NCBITaxon:8364
-- common_name: H.pylori
+- common_name: h pylori
   organism: Helicobacter pylori
   reference_proteome_short_name: HELPY
   taxon_id: NCBITaxon:85962
@@ -527,7 +527,7 @@
   organism: Staphylococcus aureus
   reference_proteome_short_name: STAA8
   taxon_id: NCBITaxon:93061
-- common_name: macacque monkey
+- common_name: macacque
   organism: Macaca mulatta
   reference_proteome_short_name: MACMU
   taxon_id: NCBITaxon:9544
