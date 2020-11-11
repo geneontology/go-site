@@ -2207,13 +2207,13 @@
   name: Rhea, the Annotated Reactions Database
   description: Rhea is a manually annotated database of chemical reactions. All data in Rhea is freely accessible and available for anyone to use.
   generic_urls:
-    - http://www.rhea-db.org
+    - https://www.rhea-db.org
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://www.rhea-db.org/rhea/[example_id]
+      url_syntax: https://www.rhea-db.org/rhea/[example_id]
       example_id: RHEA:25811
-      example_url: http://www.rhea-db.org/rhea/25811
+      example_url: https://www.rhea-db.org/rhea/25811
 - database: RiceSES
   name: Rice Knowledge Bank
   generic_urls:
