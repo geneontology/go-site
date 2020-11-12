@@ -1,0 +1,2 @@
+click
+-e ../../../biolink/ontobio
