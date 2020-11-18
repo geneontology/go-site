@@ -35,3 +35,35 @@ For example, our existing message could be templated as:
 ```
 "{level} - {type}: {message} -- {line}"
 ```
+
+But this could be more sophisticated too.
+
+## Reporting Process
+
+Given:
+1. A collection of report JSON files
+2. Path to GO Rules specs
+3. Mapping of `{grouping-key} -> (group-URL, group-rule-URL)` where `group-URL` is a URL that points to the messages in that group key, and `group-rule-URL` is a URL that points to a the collection of messages in that group corresponding to that GO Rule.
+    * (The above URLs could be in the report itself, in `report-url`)
+    * The URL could be templated. Use `{base}` at the beginning of a URL to make a relative path
+    * Use `{group}` for substituting the value of the `{grouping-key}`
+    * Use `{ruleid}` for substituting the value of the GO Rule ID
+    * Should conform to [RFC6570](https://tools.ietf.org/html/rfc6570), and variables are assumed to be in the level 2 template.
+    * Examples:
+        * `https://example.com/reports/{group}`
+        * `https://example.com/reports/{group}#{ruleid}`
+        * `{base}/reports/{group}#{ruleid}`
+
+
+### Process
+
+1. Normalize all given messages by Rule
+    * The normalize occurs by placing keys and their values that occur in the top level of the report that are beyond the required keys into each Message seen for the given report.
+    * For example, the existing reports have `group` and `dataset` and keys. For `"group": "mgi"`, we would place `"group": "mgi"` in each Message object, along with `group`, or any other key.
+    * The `rule` value will be replaced with the full ID it appears in.
+    * Messages from other reports have their messages normalized in this way, and then messages within each rule can be added from multiple files.
+2. We can now easily merge all given report JSON together.
+3. Produce the grid data with the total Merged data that will be placed into the HTML template.
+    * We could also produce an HTML template for each `grouping-key` item.
+4. *Do we produce a templated HTML for each `entity-type`?*
+5. For the more expanded, advanced proposal, we can generate a `{grouping-key}.report.md` file as a human-readable report using the `message-template` in the report. The produced templated HTML can now link to those produced report files.

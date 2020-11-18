@@ -91,8 +91,28 @@
                     }
                 }
             }
+        },
+        "entity-type": {
+            "type": "string"
+        },
+        "message-template": {
+            "type": "string"
+        },
+        "report-group-urls": {
+            "type": "object",
+            "properties": {
+                "group-url": {
+                    "type": "string",
+                    "format": "uri-template"
+                },
+                "group-rule-url": {
+                    "$comment": "Can use like: `{base}/reports/{group}#{ruleid}`",
+                    "type": "string",
+                    "format": "uri-template"
+                }
+            }
         }
     },
 
-    "required": ["messages", "entities", "errors", "valid-entities", "groupable-keys"]
+    "required": ["messages", "entities", "errors", "valid-entities", "groupable-keys", "entity-type"]
 }
