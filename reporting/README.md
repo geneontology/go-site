@@ -2,6 +2,22 @@
 
 Reports from Rules will use the JSON schema at [go-site/metadata/report.schema.json](../metadata/report.schema.json).
 
+For the interoperability of all GO related groups who would like to make and display reports, we provide a standard report JSON schema and tools.
+
+## Current Usage
+
+Currently as a product of annotation validation in the GO pipeline we produce report JSON files for each dataset of annotations. These reports are focused on GO Rule violations. The validation process also produces markdown files with the same data as the JSON reports but intended for more human consumption. Markdown reports are fed through an HTML renderer and joined with other reports producing a static HTML page with human readable reports, featuring GO Rules.
+
+To make it easy for people to see a broader view of the rules we provide a GO Rules "grid" report, where we join all JSON reports, and make a table mapping (Rule, Dataset) to number of violations that dataset has for that rule. Links to the rule, the report page for the dataset, and the specific reports for the rule are all provided on the Rule Id, Dataset name header, and the cell with the number of violations respectively.
+
+## Generalizing Reports for Other GO report sources
+
+### Report JSON format
+
+The report JSON should have a corresponding schema that allows for a variety of sources and uses of reports. But if it's a GO report, it should all be in the same format, allowing for interoperability. A JSON schema should validate multiple types of reports.
+
+### HEllo
+
 ## Generating Rule Report Grid Page
 
 To generate a reports page like at http://snapshot.geneontology.org/reports/gorule-report.html we need:
@@ -37,6 +53,8 @@ For example, our existing message could be templated as:
 ```
 
 But this could be more sophisticated too.
+
+*Make more of the docs based on use cases*
 
 ## Reporting Process
 
