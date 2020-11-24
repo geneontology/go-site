@@ -13,6 +13,7 @@
             "default": "unknown"
         }
     ],
+    "group": "rebels",
     "messages": {
         "gorule-0000001": [
             {
@@ -20,7 +21,8 @@
                 "entity": "I'm\ta\tGAF\tline",
                 "type": "Violates GO Rule",
                 "message": "This is an error message",
-                "rule": 3
+                "rule": 1,
+                "taxon": "taxon:12345"
             }
         ]
     }
