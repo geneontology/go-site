@@ -1,13 +1,3 @@
-# GO Rules
-
-This folder contains the metadata for all annotation and ontology QC
-rules in GO. Each rule has an identifier, metadata and
-descriptions. Some rules are automatable, in which case the metadata
-contains the information required to execute it.
-
-For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
-
-
  * <a href="#gorule0000001">GORULE:0000001 GAF lines are parsed according to GAF 2.1 specifications</a>
  * <a href="#gorule0000002">GORULE:0000002 No 'NOT' annotations to 'protein binding ; GO:0005515'</a>
  * <a href="#gorule0000003">GORULE:0000003 Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field</a>

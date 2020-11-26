@@ -33,13 +33,13 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000034">GO_REF:0000034 Phenoscape Skeletal Anatomy Jamboree</a>
  * <a href="#goref0000035">GO_REF:0000035 Automatic transfer of experimentally verified manual GO annotation data to plant orthologs using Ensembl Compara</a>
  * <a href="#goref0000036">GO_REF:0000036 Manual annotations that require more than one source of functional data to support the assignment of the associated GO term</a>
- * <a href="#goref0000037">GO_REF:0000037 Gene Ontology annotation based on manual assignment of UniProtKB keywords in UniProtKB/Swiss-Prot entries.</a>
- * <a href="#goref0000038">GO_REF:0000038 Gene Ontology annotation based on automatic assignment of UniProtKB keywords in UniProtKB/TrEMBL entries.</a>
- * <a href="#goref0000039">GO_REF:0000039 Gene Ontology annotation based on the manual assignment of UniProtKB Subcellular Location terms in UniProtKB/Swiss-Prot entries.</a>
- * <a href="#goref0000040">GO_REF:0000040 Gene Ontology annotation based on the automatic assignment of UniProtKB Subcellular Location terms in UniProtKB/TrEMBL entries.</a>
+ * <a href="#goref0000037">GO_REF:0000037 OBSOLETE Gene Ontology annotation based on manual assignment of UniProtKB keywords in UniProtKB/Swiss-Prot entries.</a>
+ * <a href="#goref0000038">GO_REF:0000038 OBSOLETE Gene Ontology annotation based on automatic assignment of UniProtKB keywords in UniProtKB/TrEMBL entries.</a>
+ * <a href="#goref0000039">GO_REF:0000039 OBSOLETE Gene Ontology annotation based on the manual assignment of UniProtKB Subcellular Location terms in UniProtKB/Swiss-Prot entries.</a>
+ * <a href="#goref0000040">GO_REF:0000040 OBSOLETE Gene Ontology annotation based on the automatic assignment of UniProtKB Subcellular Location terms in UniProtKB/TrEMBL entries.</a>
  * <a href="#goref0000041">GO_REF:0000041 Gene Ontology annotation based on UniPathway vocabulary mapping. </a>
  * <a href="#goref0000042">GO_REF:0000042 OBSOLETE Gene Ontology annotation through association of InterPro records with GO terms, accompanied by conservative changes to GO terms applied by UniProt. </a>
- * <a href="#goref0000043">GO_REF:0000043 Gene Ontology annotation based on UniProtKB/Swiss-Prot keyword mapping, accompanied by conservative changes to GO terms applied by UniProt.</a>
+ * <a href="#goref0000043">GO_REF:0000043 Gene Ontology annotation based on UniProtKB/Swiss-Prot keyword mapping</a>
  * <a href="#goref0000044">GO_REF:0000044 Gene Ontology annotation based on UniProtKB/Swiss-Prot Subcellular Location vocabulary mapping, accompanied by conservative changes to GO terms applied by UniProt. </a>
  * <a href="#goref0000045">GO_REF:0000045 OBSOLETE Gene Ontology annotation based on UniProtKB/TrEMBL entries keyword mapping, accompanied by conservative changes to GO terms applied by UniProt.</a>
  * <a href="#goref0000046">GO_REF:0000046 OBSOLETE Gene Ontology annotation based on UniProtKB/TrEMBL Subcellular Location vocabulary mapping, accompanied by conservative changes to GO terms applied by UniProt.</a>
@@ -183,7 +183,8 @@ Formerly GOA:spec.
 
 
 
-Transitive assignments using UniProtKB keywords. The UniProtKB keyword controlled vocabulary has been created and used by the UniProt Knowledgebase (UniProtKB) to supply 10 different categories of information to UniProtKB entries. Further information on the UniProtKB keyword resource can be found at http://www.uniprot.org/docs/keywlist<br>UniProtKB keywords are assigned to UniProtKB/UniProtKB entries by UniProt curators as part of the UniProtKB manual curation process. In contrast however, UniProtKB keywords are automatically assigned to UniProtKB/TrEMBL entries from the underlying nucleic acid databases and/or by the UniProt automatic annotation program.<br>Further information on the two different UniProt annotation methods is available at http://www.uniprot.org/faq/45 and http://www.uniprot.org/program/automatic_annotation .<br>When a UniProtKB keyword describes a concept that is within the scope of the Gene Ontology, it is investigated to determine whether it is appropriate to map the keyword to an equivalent term in GO. The mapping between UniProtKB keywords and GO terms is carried out manually. Definitions and hierarchies of the terms in the two resources are compared and the mapping generated will reflect the most correct correspondence. The translation table between GO terms and UniProtKB keywords is maintained by the UniProt-GOA team and available at http://www.geneontology.org/external2go/uniprotkb_kw2go .
+Transitive assignments using UniProtKB keywords. The UniProtKB keyword controlled vocabulary has been created and used by the UniProt Knowledgebase (UniProtKB) to supply 10 different categories of information to UniProtKB entries. Further information on the UniProtKB keyword resource can be found at http://www.uniprot.org/docs/keywlist. <br>Further information on the UniProt annotation methods is available at  https://www.uniprot.org/help/manual_curation and https://www.uniprot.org/help/automatic_annotation.
+<br>When a UniProtKB keyword describes a concept that is within the scope of the Gene Ontology, it is investigated to determine whether it is appropriate to map the keyword to an equivalent term in GO. The mapping between UniProtKB keywords and GO terms is carried out manually. Definitions and hierarchies of the terms in the two resources are compared and the mapping generated will reflect the most correct correspondence. The translation table between GO terms and UniProtKB keywords is maintained by the UniProt-GOA team and available at http://www.geneontology.org/external2go/uniprotkb_kw2go.
 
 ## Comments
 
@@ -512,49 +513,48 @@ Duplicate of GO_REF:0000107.
 The Gene Ontology Consortium uses the IC (Inferred by Curator) evidence code when an annotation cannot be supported by any direct evidence, but can be inferred by GO annotations that have been annotated to the same gene/gene product identifier in conjunction with the curator's knowledge of biology (supporting GO annotations must not be IC-evidenced). In many cases an IC-evidenced annotation simply applies the same reference that was used in the supporting GO annotation.  The use of IC evidence code in an annotation with reference GO_REF:0000036 signifies a curator inferred the GO term based on evidence from multiple sources of evidence/GO annotations. The 'with/from' field in these annotations will therefore supply more than one GO identifier, obtained from the set of supporting GO annotations assigned to the same gene/gene product identifier which cite publicly-available references.
 
 <a name="goref0000037"/>
-## Gene Ontology annotation based on manual assignment of UniProtKB keywords in UniProtKB/Swiss-Prot entries.
+## OBSOLETE Gene Ontology annotation based on manual assignment of UniProtKB keywords in UniProtKB/Swiss-Prot entries.
 
  * id: [GO_REF:0000037](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000037.md)
  * year: 2011
  * authors: UniProt-GOA
- * ext xref: SGD_REF:S000148669
- * ext xref: J:60000 
 
 
 
 Transitive assignments using UniProtKB keywords. The UniProtKB keyword controlled vocabulary has been created and used by the UniProt Knowledgebase (UniProtKB) to supply 10 different categories of information to UniProtKB entries. Further information on the UniProtKB keyword resource can be found at http://www.uniprot.org/docs/keywlist. UniProtKB keywords are manually applied to UniProtKB/Swiss-Prot entries by UniProt curators. Further information on the UniProtKB manual annotation process is available at http://www.uniprot.org/faq/45.<br>When a UniProtKB keyword describes a concept that is within the scope of the Gene Ontology, it is investigated to determine whether it is appropriate to map the keyword to an equivalent term in GO. The mapping between UniProtKB keywords and GO terms is carried out manually. Definitions and hierarchies of the terms in the two resources are compared and the mapping generated will reflect the most correct correspondence. The translation table between GO terms and UniProtKB keywords is maintained by the UniProt-GOA team and available at http://www.geneontology.org/external2go/uniprotkb_kw2go.
 
+Duplicate of GO_REF:0000043.
+
 <a name="goref0000038"/>
-## Gene Ontology annotation based on automatic assignment of UniProtKB keywords in UniProtKB/TrEMBL entries.
+## OBSOLETE Gene Ontology annotation based on automatic assignment of UniProtKB keywords in UniProtKB/TrEMBL entries.
 
  * id: [GO_REF:0000038](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000038.md)
  * year: 2011
  * authors: UniProt-GOA
- * ext xref: SGD_REF:S000148670
 
 
 
 Transitive assignments using UniProtKB keywords. The UniProtKB keyword controlled vocabulary has been created and used by the UniProt Knowledgebase (UniProtKB) to supply 10 different categories of information to UniProtKB entries. Further information on the UniProtKB keyword resource can be found at http://www.uniprot.org/docs/keywlist. UniProtKB keywords are automatically assigned to UniProtKB/TrEMBL entries from the underlying nucleic acid databases and/or by the UniProt automatic annotation program. Further information on the prediction systems applied by UniProt is available here: http://www.uniprot.org/program/automatic_annotation.<br>When a UniProtKB keyword describes a concept that is within the scope of the Gene Ontology, it is investigated to determine whether it is appropriate to map the keyword to an equivalent term in GO. The mapping between UniProtKB keywords and GO terms is carried out manually. Definitions and hierarchies of the terms in the two resources are compared and the mapping generated will reflect the most correct correspondence. The translation table between GO terms and UniProtKB keywords is maintained by the UniProt-GOA team and available at http://www.geneontology.org/external2go/uniprotkb_kw2go.
 
+Duplicate of GO_REF:0000043.
+
 <a name="goref0000039"/>
-## Gene Ontology annotation based on the manual assignment of UniProtKB Subcellular Location terms in UniProtKB/Swiss-Prot entries.
+## OBSOLETE Gene Ontology annotation based on the manual assignment of UniProtKB Subcellular Location terms in UniProtKB/Swiss-Prot entries.
 
  * id: [GO_REF:0000039](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000039.md)
  * year: 2011
  * authors: UniProt-GOA
- * ext xref: SGD_REF:S000148671 
 
 
 
 Transitive assignment of GO terms based on the UniProtKB Subcellular Location vocabulary. UniProtKB Subcellular Location is a controlled vocabulary used to supply subcellular location information to UniProtKB entries in the SUBCELLULAR LOCATION lines. Terms from this vocabulary are annotated manually to UniProtKB/Swiss-Prot entries. Further information on the UniProtKB manual annotation method is available at http://www.uniprot.org/faq/45.<br>When a UniProtKB Subcellular Location term describes a concept that is within the scope of the Gene Ontology, it is investigated to determine whether it is appropriate to map the term to an equivalent term in GO. The mapping between UniProtKB Subcellular Location terms and GO terms is carried out manually. Definitions and hierarchies of the terms in the two resources are compared and the mapping generated will reflect the most correct correspondence. The translation table between GO terms and UniProtKB Subcellular Location terms is maintained by the UniProt-GOA team and available at http://www.geneontology.org/external2go/spsl2go.
 
 <a name="goref0000040"/>
-## Gene Ontology annotation based on the automatic assignment of UniProtKB Subcellular Location terms in UniProtKB/TrEMBL entries.
+## OBSOLETE Gene Ontology annotation based on the automatic assignment of UniProtKB Subcellular Location terms in UniProtKB/TrEMBL entries.
 
  * id: [GO_REF:0000040](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000040.md)
  * year: 2011
  * authors: UniProt-GOA
- * ext xref: SGD_REF:S000148672
 
 
 
@@ -586,15 +586,22 @@ Transitive assignment of GO terms based on InterPro classification. For any data
 Duplicate of GO_REF:0000002.
 
 <a name="goref0000043"/>
-## Gene Ontology annotation based on UniProtKB/Swiss-Prot keyword mapping, accompanied by conservative changes to GO terms applied by UniProt.
+## Gene Ontology annotation based on UniProtKB/Swiss-Prot keyword mapping
 
  * id: [GO_REF:0000043](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000043.md)
  * year: 2012
  * authors: UniProt-GOA
+ * ext xref: SGD_REF:S000148669
+ * ext xref: J:60000
+ * ext xref: TAIR:AnalysisReference:501756968
+ * ext xref: TAIR:AnalysisReference:501756970
 
 
 
-Transitive assignments using UniProtKB/Swiss-Prot keywords. The UniProtKB keyword controlled vocabulary has been created and used by the UniProt Knowledgebase (UniProtKB) to supply 10 different categories of information to UniProtKB entries. Further information on the UniProtKB keyword resource can be found at http://www.uniprot.org/docs/keywlist.<br>UniProtKB keywords are assigned to UniProtKB/UniProtKB entries by UniProt curators as part of the UniProtKB manual curation process. In contrast however, UniProtKB keywords are automatically assigned to UniProtKB/TrEMBL entries from the underlying nucleic acid databases and/or by the UniProt automatic annotation program.<br>Further information on the two different UniProt annotation methods is available at http://www.uniprot.org/faq/45 and http://www.uniprot.org/program/automatic_annotation.<br>When a UniProtKB keyword describes a concept that is within the scope of the Gene Ontology, it is investigated to determine whether it is appropriate to map the keyword to an equivalent term in GO. The mapping between UniProtKB keywords and GO terms is carried out manually. Definitions and hierarchies of the terms in the two resources are compared and the mapping generated will reflect the most correct correspondence. The translation table between GO terms and UniProtKB keywords is maintained by the UniProt-GOA team and available at http://www.geneontology.org/external2go/uniprotkb_kw2go.<br>Please note that the GO term in the annotation assigned with this GO reference has been changed from that originally applied by the UniProtKB keywords 2GO mapping. This change has been carried out by the UniProt group to ensure the GO annotation obeys the GO Consortium’s ontology structure and taxonomic constraints. Further information on the rules used by UniProt to transform specific incorrect IEA annotations is available at http://www.ebi.ac.uk/QuickGO/AnnotationPostProcessing.html.
+Transitive assignments using UniProtKB/Swiss-Prot keywords. The UniProtKB keyword controlled vocabulary contains 10 different categories of information to UniProtKB entries. Further information on the UniProtKB keyword resource can be found at https://www.uniprot.org/keywords/.
+UniProtKB keywords are assigned to UniProtKB/Swiss-Prot entries by UniProt curators as part of the UniProtKB manual curation process. UniProtKB keywords are also automatically assigned to UniProtKB/TrEMBL entries from the underlying nucleic acid databases and/or by the UniProt automatic annotation program.
+Further information on the two different UniProt annotation methods is available at https://www.uniprot.org/help/keywords..
+When a UniProtKB keyword describes a concept that is within the scope of the Gene Ontology, a mapping is manually made to the corresponding GO term.The translation table between GO terms and UniProtKB keywords is maintained by the EBI GOA team and available at http://www.geneontology.org/external2go/uniprotkb_kw2go.
 
 <a name="goref0000044"/>
 ## Gene Ontology annotation based on UniProtKB/Swiss-Prot Subcellular Location vocabulary mapping, accompanied by conservative changes to GO terms applied by UniProt. 
@@ -602,10 +609,14 @@ Transitive assignments using UniProtKB/Swiss-Prot keywords. The UniProtKB keywor
  * id: [GO_REF:0000044](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000044.md)
  * year: 2012
  * authors: UniProt-GOA
+ * ext xref: TAIR:AnalysisReference:501756971
+ * ext xref: TAIR:AnalysisReference:50175724
 
 
 
-Transitive assignment of GO terms based on the UniProtKB/Swiss-Prot Subcellular Location vocabulary. UniProtKB Subcellular Location is a controlled vocabulary used to supply subcellular location information to UniProtKB entries in the SUBCELLULAR LOCATION lines. Terms from this vocabulary are annotated manually to UniProtKB/Swiss-Prot entries but are automatically assigned to UniProtKB/TrEMBL entries from the underlying nucleic acid databases and/or by the UniProt automatic annotation program.<br>Further information on these two different annotation methods is available at http://www.uniprot.org/faq/45 and http://www.uniprot.org/program/automatic_annotation.<br>When a UniProtKB Subcellular Location term describes a concept that is within the scope of the Gene Ontology, it is investigated to determine whether it is appropriate to map the term to an equivalent term in GO. The mapping between UniProtKB Subcellular Location terms and GO terms is carried out manually. Definitions and hierarchies of the terms in the two resources are compared and the mapping generated will reflect the most correct correspondence. The translation table between GO terms and UniProtKB Subcellular Location term is maintained by the UniProt-GOA team and available at http://www.geneontology.org/external2go/spsl2go.<br>Please note that the GO term in the annotation assigned with this GO reference has been changed from that originally applied by the UniProtKB Subcellular Location2GO mapping. This change has been carried out by the UniProt group to ensure the GO annotation obeys the GO Consortium’s ontology structure and taxonomic constraints. Further information on the rules used by UniProt to transform specific incorrect IEA annotations is available at http://www.ebi.ac.uk/QuickGO/AnnotationPostProcessing.html.
+Transitive assignment of GO terms based on the UniProtKB/Swiss-Prot Subcellular Location vocabulary. UniProtKB Subcellular Location is a controlled vocabulary used to supply subcellular location information to UniProtKB entries in the SUBCELLULAR LOCATION lines. Terms from this vocabulary are annotated manually to UniProtKB/Swiss-Prot entries but are automatically assigned to UniProtKB/TrEMBL entries from the underlying nucleic acid databases and/or by the UniProt automatic annotation program.
+Further information on these two different annotation methods is available https://www.uniprot.org/help/keywords. 
+When a UniProtKB Subcellular Location term describes a concept that is within the scope of the Gene Ontology, a mapping is manually made to the corresponding GO term. The translation table between GO terms and UniProtKB Subcellular Location term is maintained by the EBI GOA team and available at http://www.geneontology.org/external2go/spsl2go.
 
 <a name="goref0000045"/>
 ## OBSOLETE Gene Ontology annotation based on UniProtKB/TrEMBL entries keyword mapping, accompanied by conservative changes to GO terms applied by UniProt.
@@ -1175,10 +1186,11 @@ This article is not referenced in PubMed. Please see contributing data resource 
  * authors: Mouse Genome Informatics scientific curators
  * ext xref: J:164563
  * ext xref: J:155856
+ * ext xref: RGD:1624291
 
 
 
-Mouse Genome Database (MGD),  The HUGO Gene  Nomenclature Committee (HGNC), and Rat Genome Database (RGD )have extensive procedures in place, overseen by expert curation, to establish orthology relationships between their genes.  MGI, RGD, and GO Annotation at EBI (UniProtKB-GOA) engage in curated Gene Ontology (GO) annotation using the experimental literature available for each organism and adhering rigorously to the guidelines set forth by the GOC. Therefore, Experimentally based   annotations (IDA, IMP IPI, IGI, and EXP) for orthologous Rat and Human genes are downloaded and assigned to mouse genes based on orthology, and given the ISO evidence code and an entry in the inferred_from field to indicate the orthologous object. 
+Mouse Genome Database (MGD), The HUGO Gene Nomenclature Committee (HGNC), and Rat Genome Database (RGD) have extensive procedures in place, overseen by expert curation, to establish orthology relationships between their genes. The Experimentally based annotations annotated by each group (IDA, IMP IPI, IGI, and EXP) are used to provide annotations  to the respective mouse and rat orthologs, and given the ISO evidence code and an entry in the inferred_from field to indicate the orthologous entity. 
 
 <a name="goref0000097"/>
 ## Gene Ontology annotation based on personal communication to FlyBase
