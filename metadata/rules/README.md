@@ -453,8 +453,8 @@ reasoner such as HermiT.
  * status: implemented
 
 
-There should be no annotations to obsolete terms or to an alternate ID. Obsolete terms that have a `replace_by` tag and
-terms annotated to one of their alternative IDs (merged terms) will automatically be repaired to the valid term id.
+There should be no annotations to obsolete terms or to an alternate ID. Obsolete terms that have a `replaced_by` tag and
+terms annotated to one of their alternative IDs (merged terms; `alt_id` in the .obo files) will automatically be repaired to the valid term id.
 If no replacement is found, the annotation will be filtered.
 
 Other GO terms present in annotations (with/from column, etc) also should be repaired if possible.
