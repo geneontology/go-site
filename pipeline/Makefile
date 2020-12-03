@@ -40,7 +40,7 @@ target/gafs.touch: $(foreach group,$(RESOURCE_GROUPS),target/groups/$(group)/$(g
 	touch target/gafs.touch
 
 OBO= http://purl.obolibrary.org/obo
-ONTOLOGY = $(OBO)/go/snapshot/go.json
+ONTOLOGY ?= $(OBO)/go/snapshot/go.json
 target/go-ontology.json:
 	wget --no-check-certificate $(ONTOLOGY) -O $@.tmp && mv $@.tmp $@ && touch $@
 
