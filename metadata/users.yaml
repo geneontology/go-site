@@ -4224,4 +4224,15 @@
   nickname: 'David W. Sant'
   organization: University of Utah
   uri: 'https://orcid.org/0000-0001-7372-9896'
-  
+  -
+  accounts:
+    github: danielhhaft
+  authorizations:
+    noctua:
+      go:
+        allow-edit: 
+  groups:
+    - 'www.ncbi.nlm.nih.gov'
+  nickname: 'Daniel H Haft'
+  organization: NCBI
+  uri: 'http://orcid.org/0000-0001-8101-4938'
