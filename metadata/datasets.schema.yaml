@@ -95,6 +95,11 @@ mapping:
             type: str
             required: true
             unique: false
+          "gpi":
+            type: seq
+            required: false
+            sequence:
+              - type: str
           "dataset":
             type: str
             required: true

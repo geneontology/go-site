@@ -39,6 +39,7 @@ datasets:
    description: "gpad file for mgi from Mouse Genome Informatics"
    url: http://current.geneontology.org/annotations/mgi.gpad.gz
    type: gpad
+   gpi: [ mgi.gpi ]
    dataset: mgi
    submitter: mgi
    compression: gzip
