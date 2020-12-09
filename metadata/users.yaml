@@ -4227,12 +4227,6 @@
   -
   accounts:
     github: danielhhaft
-  authorizations:
-    noctua:
-      go:
-        allow-edit: 
-  groups:
-    - 'www.ncbi.nlm.nih.gov'
   nickname: 'Daniel H Haft'
   organization: NCBI
   uri: 'http://orcid.org/0000-0001-8101-4938'
