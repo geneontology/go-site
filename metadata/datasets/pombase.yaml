@@ -23,4 +23,36 @@ datasets:
    taxa:
     - NCBITaxon:284812
     - NCBITaxon:4896
+ -
+   id: pombase.gpi
+   label: "pombase gpi file"
+   description: "gpi file for pombase from PomBase"
+   url: http://current.geneontology.org/annotations/pombase.gpi.gz
+   type: gaf
+   dataset: pombase
+   submitter: pombase
+   source: https://www.pombase.org/data/annotations/Gene_ontology/pombase.gpi
+   entity_type:
+   status: active
+   species_code: Spom
+   taxa:
+    - NCBITaxon:284812
+    - NCBITaxon:4896
+ -
+   id: pombase.gpad
+   label: "pombase gpad file"
+   description: "gpad file for pombase from PomBase"
+   url: http://current.geneontology.org/annotations/pombase.gpad.gz
+   type: gaf
+   dataset: pombase
+   submitter: pombase
+   source: https://www.pombase.org/data/annotations/Gene_ontology/pombase.gpad
+   entity_type:
+   status: active
+   species_code: Spom
+   taxa:
+    - NCBITaxon:284812
+    - NCBITaxon:4896
+
+
 
