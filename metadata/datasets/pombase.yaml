@@ -31,6 +31,7 @@ datasets:
    type: gaf
    dataset: pombase
    submitter: pombase
+   compression:
    source: https://www.pombase.org/data/annotations/Gene_ontology/pombase.gpi
    entity_type:
    status: active
@@ -46,6 +47,7 @@ datasets:
    type: gaf
    dataset: pombase
    submitter: pombase
+   compression:
    source: https://www.pombase.org/data/annotations/Gene_ontology/pombase.gpad
    entity_type:
    status: active
