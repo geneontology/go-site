@@ -28,7 +28,7 @@ datasets:
    label: "pombase gpi file"
    description: "gpi file for pombase from PomBase"
    url: http://current.geneontology.org/annotations/pombase.gpi.gz
-   type: gaf
+   type: gpi
    dataset: pombase
    submitter: pombase
    compression:
@@ -44,7 +44,7 @@ datasets:
    label: "pombase gpad file"
    description: "gpad file for pombase from PomBase"
    url: http://current.geneontology.org/annotations/pombase.gpad.gz
-   type: gaf
+   type: gpad
    dataset: pombase
    submitter: pombase
    compression:
