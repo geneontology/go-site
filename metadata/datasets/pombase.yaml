@@ -31,7 +31,7 @@ datasets:
    type: gpi
    dataset: pombase
    submitter: pombase
-   compression:
+   compression: ''
    source: https://www.pombase.org/data/annotations/Gene_ontology/pombase.gpi
    entity_type:
    status: active
@@ -47,7 +47,7 @@ datasets:
    type: gpad
    dataset: pombase
    submitter: pombase
-   compression:
+   compression: ''
    source: https://www.pombase.org/data/annotations/Gene_ontology/pombase.gpad
    entity_type:
    status: active
@@ -55,6 +55,3 @@ datasets:
    taxa:
     - NCBITaxon:284812
     - NCBITaxon:4896
-
-
-
