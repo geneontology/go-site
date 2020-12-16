@@ -57,6 +57,8 @@ $(GAF_OWL):
 
 ## Ensure that we are bringing in the environment we want.
 OWLTOOLS_MEMORY ?= 8G
+ROBOT_ENV = ROBOT_JAVA_ARGS=-Xmx32G
+ROBOT = $(ROBOT_ENV) robot
 # blazegraph-runner memory
 BGMEM ?= 12G
 
@@ -166,7 +168,7 @@ target/noctua-models:
 
 ONT_MERGED = target/go-graphstore-merged.ttl
 $(ONT_MERGED):
-	owltools --log-error go-graphstore.owl --merge-imports-closure -o -f turtle $@
+	$(ROBOT) merge -i go-graphstore.owl --collapse-import-closure true reason -r ELK --remove-redundant-subclass-axioms true --axiom-generators "SubClass EquivalentClass" --exclude-tautologies structural -o $@
 .PRECIOUS: $(ONT_MERGED)
 
 target/rdf: $(ONT_MERGED) target/groups.touch
