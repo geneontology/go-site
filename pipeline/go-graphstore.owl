@@ -6,6 +6,6 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<http://purl.obolibrary.org/obo/go/extensions/go-graphstore.owl>
-Import(<http://purl.obolibrary.org/obo/go/extensions/go-lego.owl>)
-Import(<http://purl.obolibrary.org/obo/ro.owl>)
+Import(<http://purl.obolibrary.org/obo/go/extensions/go-lego-reacto.owl>)
+Import(<http://purl.obolibrary.org/obo/noctua/neo.owl>)
 )
