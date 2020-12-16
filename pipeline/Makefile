@@ -57,7 +57,7 @@ $(GAF_OWL):
 
 ## Ensure that we are bringing in the environment we want.
 OWLTOOLS_MEMORY ?= 8G
-ROBOT_ENV = ROBOT_JAVA_ARGS=-Xmx32G
+ROBOT_ENV = ROBOT_JAVA_ARGS=-Xmx48G
 ROBOT = $(ROBOT_ENV) robot
 # blazegraph-runner memory
 BGMEM ?= 12G
