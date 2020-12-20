@@ -410,3 +410,8 @@
   label: DiBest-Unical
   id: https://www.unical.it/portale/strutture/dipartimenti_240/dibest
   shorthand: DIBU
+-
+  label: Karadeniz Teknik Universitesi
+  id: https://www.ktu.edu.tr/bmi-cancermodelingresearchgroup
+  shorthand: KTU
+ 
