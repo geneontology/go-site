@@ -26,9 +26,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      - name: Run ontology QC checks
-        run: cd src/ontology; make -j 4 ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' travis_test
+      # - name: Run ontology QC checks
+      #   run: cd src/ontology; make -j 4 ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' travis_test
       - name: Prep 1
         run: mkdir -p /tmp/foo && mcp 'metadata/gorefs/goref-0000*' '/tmp/foo/gorule-0000#1' &&
       - name: Run SPARTA
