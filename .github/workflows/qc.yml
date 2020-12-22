@@ -30,8 +30,10 @@ jobs:
       #   run: cd src/ontology; make -j 4 ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' travis_test
       - name: Info
         run: whoami
+      - name: Prep 0
+        run: apt-get -u install mcp
       - name: Prep 1
-        run: apt-get -u install mcp && mkdir -p /tmp/foo && mcp 'metadata/gorefs/goref-0000*' '/tmp/foo/gorule-0000#1' &&
+        run: mkdir -p /tmp/foo && mcp 'metadata/gorefs/goref-0000*' '/tmp/foo/gorule-0000#1'
       - name: Run SPARTA
         run: sparta valid --rules /tmp/foo/ --schema metadata/gorefs.schema.yaml
       - name: Prep 2
