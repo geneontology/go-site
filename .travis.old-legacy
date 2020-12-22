@@ -43,10 +43,9 @@ script:
   ## SPARTA.
   - sparta valid --rules metadata/rules/ --schema metadata/rules.schema.yaml
   - python3 ./scripts/sanity-check-users-and-groups.py --verbose --users metadata/users.yaml --groups metadata/groups.yaml; test $? -eq 0
-  ## Somewhat awkwardly reuse sparta to check non-go-rules files that
-  ## are still structured yamldown/frontmatter.
-  - mkdir -p /tmp/foo && mcp 'metadata/gorefs/goref-0000*' '/tmp/foo/gorule-0000#1' && sparta valid --rules /tmp/foo/ --schema metadata/gorefs.schema.yaml
-  - docker run -it -v $(pwd):/tmp/go-site -w /tmp/go-site geneontology/dev-base:latest /bin/bash -c "pip3 install -r pipeline/requirements.txt && ./scripts/rule-example-validation.sh"
+  # ## Somewhat awkwardly
+  # - mkdir -p /tmp/foo && mcp 'metadata/gorefs/goref-0000*' '/tmp/foo/gorule-0000#1' && sparta valid --rules /tmp/foo/ --schema metadata/gorefs.schema.yaml
+  # - docker run -it -v $(pwd):/tmp/go-site -w /tmp/go-site geneontology/dev-base:latest /bin/bash -c "pip3 install -r pipeline/requirements.txt && ./scripts/rule-example-validation.sh"
 
 notifications:
   email:
