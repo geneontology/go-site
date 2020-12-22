@@ -31,7 +31,7 @@ jobs:
       - name: Info
         run: whoami
       - name: Prep 0
-        run: apt-get -u install mcp
+        run: apt-get -u install mmv
       - name: Prep 1
         run: mkdir -p /tmp/foo && mcp 'metadata/gorefs/goref-0000*' '/tmp/foo/gorule-0000#1'
       - name: Run SPARTA
