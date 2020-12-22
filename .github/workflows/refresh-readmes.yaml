@@ -1,27 +1,27 @@
 name: refresh-readmes
 on: [push]
 jobs:
-  run-make:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
-      - uses: perl-actions/install-with-cpanm@v1
-        name: install perl YAML
-        with:
-          install: |
-            YAML::Syck
-      - name: run make on rules
-        working-directory: ./metadata/rules/
-        run: make -B README.md
-      - name: run make on gorefs
-        working-directory: ./metadata/gorefs
-        run: make -B README.md
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        name: commit READMEs
-        with:
-          commit_message: refreshing goref and rules README.md files
-          commit_user_email: edouglass@lbl.gov
-          # Please do the dirty check, don't skip
-          skip_dirty_check: false
+  # run-make:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #       with:
+  #         ref: ${{ github.head_ref }}
+  #     - uses: perl-actions/install-with-cpanm@v1
+  #       name: install perl YAML
+  #       with:
+  #         install: |
+  #           YAML::Syck
+  #     - name: run make on rules
+  #       working-directory: ./metadata/rules/
+  #       run: make -B README.md
+  #     - name: run make on gorefs
+  #       working-directory: ./metadata/gorefs
+  #       run: make -B README.md
+  #     - uses: stefanzweifel/git-auto-commit-action@v4
+  #       name: commit READMEs
+  #       with:
+  #         commit_message: refreshing goref and rules README.md files
+  #         commit_user_email: edouglass@lbl.gov
+  #         # Please do the dirty check, don't skip
+  #         skip_dirty_check: false
