@@ -17,6 +17,7 @@ on:
 jobs:
   validate_yaml:
     runs-on: ubuntu-latest
+    container: geneontology/dev-base:latest
     steps:
     - uses: actions/checkout@v2
     # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
