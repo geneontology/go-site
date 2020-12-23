@@ -22,28 +22,7 @@ install:
 
 script:
   ### Quick data checks.
-  ## User.
-  - kwalify -E -m metadata/users.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  - kwalify -E -f metadata/users.schema.yaml metadata/users.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  ## Groups.
-  - kwalify -E -m metadata/groups.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  - kwalify -E -f metadata/groups.schema.yaml metadata/groups.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  ## DB Xrefs.
-  - kwalify -E -m metadata/db-xrefs.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  - kwalify -E -f metadata/db-xrefs.schema.yaml metadata/db-xrefs.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  ## Datasets.
-  - kwalify -E -m metadata/datasets.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  - kwalify -E -f metadata/datasets.schema.yaml metadata/datasets/*.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  ## Extension constraints.
-  - kwalify -E -m metadata/extensions-constraints.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  - kwalify -E -f metadata/extensions-constraints.schema.yaml metadata/extensions-constraints.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  ## GO reference species set.
-  - kwalify -E -m metadata/go-reference-species.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
-  - kwalify -E -f metadata/go-reference-species.schema.yaml metadata/go-reference-species.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
   ## SPARTA.
-  - sparta valid --rules metadata/rules/ --schema metadata/rules.schema.yaml
-  - python3 ./scripts/sanity-check-users-and-groups.py --verbose --users metadata/users.yaml --groups metadata/groups.yaml; test $? -eq 0
-  # ## Somewhat awkwardly
   # - mkdir -p /tmp/foo && mcp 'metadata/gorefs/goref-0000*' '/tmp/foo/gorule-0000#1' && sparta valid --rules /tmp/foo/ --schema metadata/gorefs.schema.yaml
   # - docker run -it -v $(pwd):/tmp/go-site -w /tmp/go-site geneontology/dev-base:latest /bin/bash -c "pip3 install -r pipeline/requirements.txt && ./scripts/rule-example-validation.sh"
 

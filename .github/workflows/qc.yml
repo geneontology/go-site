@@ -66,27 +66,13 @@ jobs:
       run: python3 ./scripts/sanity-check-users-and-groups.py --verbose --users metadata/users.yaml --groups metadata/groups.yaml
     - name: Info
       run: which sparta
-
-  # ## Reuse sparta to check non-go-rules files that are still
-  # ## structured yamldown/frontmatter.
-  # validation_other:
-  #   # The type of runner that the job will run on
-  #   runs-on: ubuntu-latest
-  #   container: geneontology/dev-base:latest
-
-  #   # Steps represent a sequence of tasks that will be executed as part of the job
-  #   steps:
-  #     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-  #     - uses: actions/checkout@v2
-  #     - name: Info 0
-  #       run: whoami
-  #     - name: Prep 0
-  #       run: apt-get -u install mmv
-  #     - name: Prep 1
-  #       run: mkdir -p /tmp/foo && mcp 'metadata/gorefs/goref-0000*' '/tmp/foo/gorule-0000#1'
-  #     - name: Info 0
-  #       run: ls -AlF; pwd
-  #     - name: Run SPARTA
-  #       run: sparta valid --rules /tmp/foo/ --schema metadata/gorefs.schema.yaml
-  #     - name: Prep 2
-  #       run: pip3 install -r pipeline/requirements.txt && ./scripts/rule-example-validation.sh
+    ## SPARTA
+    - name: SPARTA.
+      run: sparta valid --rules metadata/rules/ --schema metadata/rules.schema.yaml
+    ## Reuse sparta to check non-go-rules files that are still
+    ## structured yamldown/frontmatter.
+    - name: SPARTA (other)
+      run: mkdir -p /tmp/foo && mcp 'metadata/gorefs/goref-0000*' '/tmp/foo/gorule-0000#1' && sparta valid --rules /tmp/foo/ --schema metadata/gorefs.schema.yaml
+    ##
+    #     - name: Prep and run
+    #       run: pip3 install -r pipeline/requirements.txt && ./scripts/rule-example-validation.sh
