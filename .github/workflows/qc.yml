@@ -15,6 +15,22 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  validate_yaml:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
+    # change this to (see https://github.com/ruby/setup-ruby#versioning):
+    # uses: ruby/setup-ruby@v1
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
+      with:
+        ruby-version: 1.9.3
+    - name: Install dependencies
+      run: gem install kwalify
+    - name: Run tests
+      run: kwalify -E -m metadata/users.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
+
   ## Reuse sparta to check non-go-rules files that are still
   ## structured yamldown/frontmatter.
   validation_other:
