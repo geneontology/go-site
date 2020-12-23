@@ -28,7 +28,7 @@ jobs:
     #   with:
     #     ruby-version: 2.2.10
     - name: Install dependencies
-      run: apt-get -u install kwalify
+      run: apt-get install -y kwalify
     - name: Run tests
       run: kwalify -E -m metadata/users.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
 
