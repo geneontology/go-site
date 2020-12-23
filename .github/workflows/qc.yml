@@ -15,7 +15,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  validate_yaml:
+  validate_yaml_and_metadata:
     runs-on: ubuntu-latest
     container: geneontology/dev-base:latest
     steps:
@@ -27,8 +27,10 @@ jobs:
     #   uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
     #   with:
     #     ruby-version: 2.2.10
-    - name: Install dependencies
-      run: apt-get update -qq && apt-get install -y kwalify -qq
+    - name: Install packages
+      run: apt-get update -qq && apt-get install -y kwalify python3 python3-pip mmv -qq
+    - name: Install python stuff
+      run: pip install pyyaml typing graphstore/rule-runner
     ## Users.
     - name: Test users schema.
       run: kwalify -E -m metadata/users.schema.yaml
@@ -59,6 +61,11 @@ jobs:
       run: kwalify -E -m metadata/go-reference-species.schema.yaml
     - name: Test reference species set metadata.
       run: kwalify -E -f metadata/go-reference-species.schema.yaml metadata/go-reference-species.yaml
+    ## Cross-test metadata
+    - name: Cross-test users and groups.
+      run: python3 ./scripts/sanity-check-users-and-groups.py --verbose --users metadata/users.yaml --groups metadata/groups.yaml
+    - name: Info
+      run: which sparta
 
   # ## Reuse sparta to check non-go-rules files that are still
   # ## structured yamldown/frontmatter.
