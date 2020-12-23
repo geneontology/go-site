@@ -29,8 +29,36 @@ jobs:
     #     ruby-version: 2.2.10
     - name: Install dependencies
       run: apt-get update -qq && apt-get install -y kwalify -qq
-    - name: Run tests
-      run: kwalify -E -m metadata/users.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
+    ## Users.
+    - name: Test users schema.
+      run: kwalify -E -m metadata/users.schema.yaml
+    - name: Test users metadata.
+      run: kwalify -E -f metadata/users.schema.yaml metadata/users.yaml
+    ## Groups.
+    - name: Test groups schema.
+      run: kwalify -E -m metadata/groups.schema.yaml
+    - name: Test groups metadata.
+      run: kwalify -E -f metadata/groups.schema.yaml metadata/groups.yaml
+    ## DB Xrefs.
+    - name: Test dbxrefs schema.
+      run: kwalify -E -m metadata/db-xrefs.schema.yaml
+    - name: Test dbxrefs metadata.
+      run: kwalify -E -f metadata/db-xrefs.schema.yaml metadata/db-xrefs.yaml
+    ## Datasets.
+    - name: Test datasets schema.
+      run: kwalify -E -m metadata/datasets.schema.yaml
+    - name: Test datasets metadata.
+      run: kwalify -E -f metadata/datasets.schema.yaml metadata/datasets/*.yaml
+    ## Extension constraints.
+    - name: Test extension constraints schema.
+      run: kwalify -E -m metadata/extensions-constraints.schema.yaml
+    - name: Test extension constraints metadata.
+      run: kwalify -E -f metadata/extensions-constraints.schema.yaml metadata/extensions-constraints.yaml
+    ## GO reference species set.
+    - name: Test reference species set schema.
+      run: kwalify -E -m metadata/go-reference-species.schema.yaml
+    - name: Test reference species set metadata.
+      run: kwalify -E -f metadata/go-reference-species.schema.yaml metadata/go-reference-species.yaml
 
   # ## Reuse sparta to check non-go-rules files that are still
   # ## structured yamldown/frontmatter.
