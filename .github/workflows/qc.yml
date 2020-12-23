@@ -28,30 +28,30 @@ jobs:
     #   with:
     #     ruby-version: 2.2.10
     - name: Install dependencies
-      run: apt-get install -y kwalify
+      run: apt-get update -qq && apt-get install -y kwalify -qq
     - name: Run tests
       run: kwalify -E -m metadata/users.schema.yaml 2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
 
-  ## Reuse sparta to check non-go-rules files that are still
-  ## structured yamldown/frontmatter.
-  validation_other:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-    container: geneontology/dev-base:latest
+  # ## Reuse sparta to check non-go-rules files that are still
+  # ## structured yamldown/frontmatter.
+  # validation_other:
+  #   # The type of runner that the job will run on
+  #   runs-on: ubuntu-latest
+  #   container: geneontology/dev-base:latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - name: Info 0
-        run: whoami
-      - name: Prep 0
-        run: apt-get -u install mmv
-      - name: Prep 1
-        run: mkdir -p /tmp/foo && mcp 'metadata/gorefs/goref-0000*' '/tmp/foo/gorule-0000#1'
-      - name: Info 0
-        run: ls -AlF; pwd
-      - name: Run SPARTA
-        run: sparta valid --rules /tmp/foo/ --schema metadata/gorefs.schema.yaml
-      - name: Prep 2
-        run: pip3 install -r pipeline/requirements.txt && ./scripts/rule-example-validation.sh
+  #   # Steps represent a sequence of tasks that will be executed as part of the job
+  #   steps:
+  #     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+  #     - uses: actions/checkout@v2
+  #     - name: Info 0
+  #       run: whoami
+  #     - name: Prep 0
+  #       run: apt-get -u install mmv
+  #     - name: Prep 1
+  #       run: mkdir -p /tmp/foo && mcp 'metadata/gorefs/goref-0000*' '/tmp/foo/gorule-0000#1'
+  #     - name: Info 0
+  #       run: ls -AlF; pwd
+  #     - name: Run SPARTA
+  #       run: sparta valid --rules /tmp/foo/ --schema metadata/gorefs.schema.yaml
+  #     - name: Prep 2
+  #       run: pip3 install -r pipeline/requirements.txt && ./scripts/rule-example-validation.sh
