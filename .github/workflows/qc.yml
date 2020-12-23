@@ -25,7 +25,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
       with:
-        ruby-version: 1.9.3
+        ruby-version: 2.2.10
     - name: Install dependencies
       run: gem install kwalify
     - name: Run tests
