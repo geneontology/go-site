@@ -2887,23 +2887,25 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-- database: [Animal_QTLdb]
+- database: Animal_QTLdb
   name: QTLdb
-  generic_urls: https://www.animalgenome.org/QTLdb
+  generic_urls:
+    - https://www.animalgenome.org/QTLdb
   description: A database with curated publicly available trait mapping data (QTL and SNP associations) in livestock animal species. The link ID is called QTL_ID on QTLdb data dpownloads.
   entity_types: 
-    - type_name: entity
+    - type_name: QTL
     - type_id: QTL_ID:0000000
     - url_syntax: https://www.animalgenome.org/QTLdb/q?id=[example_id]
     - id_syntax: QTL_ID:\d+
     - example_id: QTL_ID:23155
     - example_url: https://www.animalgenome.org/QTLdb/q?id=QTL_ID:23155
-- database: [Animal_CorrDB]
+- database: Animal_CorrDB
   name: CorrDB
-  generic_urls: https://www.animalgenome.org/CorrDB
+  generic_urls:
+    - https://www.animalgenome.org/CorrDB
   description: A database with curated publicly available trait correlation and inheritability data in livestock animal species. The link ID is called  The link ID is called Corr_ID on CorrDB data downloads.
   entity_types: 
-    - type_name: entity
+    - type_name: Correlation
     - type_id: CorrID:000000
     - url_syntax: https://www.animalgenome.org/CorrDB/q/?id=[example_id]
     - id_syntax: CorrID:\d+
