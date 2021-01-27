@@ -10,7 +10,7 @@ Taking an input annotation file, output a valid gpad version 2, report md, json,
 @click.group()
 def cli():
     """
-    Welcome to GOAT, the Gene Ontology Association Transit, where we safely and quickly
+    Welcome to GOAT, the Gene Ontology Association Transportation, where we safely and quickly
     move your associations from downloaded, to validated, to GO-CAM, and other stations
     along the way.
 
