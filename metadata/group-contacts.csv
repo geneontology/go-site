@@ -13,6 +13,7 @@ CACAO,Jolene Ramsey,@jrr-cpt,
 CAFA,EBI,@pgarmiri,
 CGD,Marek Skrzypek,@marekskrzypek,
 CollectTF,Ivan Erill,@ivanerill,
+CollectTF,General email,collectf@umbc.edu,
 Complex Portal,Birgit Meldal,@bmeldal,
 DFLAT,Not actively maintainted/GO_Central,@pgarmiri,
 DFLAT,Not actively maintainted/GO_Central,@pgaudet,
@@ -92,7 +93,8 @@ Protein Ontology, Darren Natale,@nataled,
 PseudoCAP,Fiona Brinkman,@fionabrinkman,
 PseudoCAP,General Group,@brinkmanlab,
 PseudoCAP,Geoff Winsor,@glwinsor,
-Rhea,Ane Morgat,@amorgat,
+Rhea,Anne Morgat,@amorgat,
+Rhea,Arnaud Kerhornou,@arnaudxk,Swiss-Prot & Rhea developer
 Reactome,Peter D'Eustachio,@deustp01,
 Reactome,Antonio Fabregat,@fabregat,
 Rfam,Anton Petrov,@AntonPetrov,
@@ -123,9 +125,9 @@ UniProt (EBI),Sandra Orchard,@sandraorchard,
 UniProt (EBI),Mila Rodriguez-Lopez,@milarolo,
 UniProt (EBI),Rizwan Ishtiaq,@rizwan-ishtiaq,QuickGO java backend
 UniProt (Swiss-Prot/Geneva),Andrea Auchincloss,@AndreaAuchincloss,Bacteria
-UniProt (Swiss-Prot/Geneva),Florence Jungo,@FJungo, Venoms
-UniProt (Swiss-Prot/Geneva),Kristian Axelsen,@kaxelsen,
-UniProt (Swiss-Prot/Geneva),Marc Feuermann, @marcfeuermann,
+UniProt (Swiss-Prot/Geneva),Florence Jungo,@FJungo,Venoms
+UniProt (Swiss-Prot/Geneva),Kristian Axelsen,@kaxelsen,enzymes
+UniProt (Swiss-Prot/Geneva),Marc Feuermann,@marcfeuermann,fungi|enzymes
 UniProt (Swiss-Prot/Geneva),Ivo Pedruzzi,@pedruzzi, 
 UniProt (Swiss-Prot/Geneva),Sylvain Poux,@sylvainpoux,
 USC,Dustin Ebert,@dustine32,PAINT pipeline

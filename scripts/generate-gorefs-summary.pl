@@ -64,7 +64,7 @@ sub print_block {
     my $obj = Load($block);
     my $id = $obj->{id};
     $id =~ s@GO_REF:@@;
-    $out.= "\n<a name=\"goref$id\"/>\n";
+    $out.= "\n<a name=\"goref$id\"/>\n\n";
     my $title = $obj->{title};
     $out .= "## $title\n\n";
     

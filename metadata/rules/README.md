@@ -35,7 +35,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000026">GORULE:0000026 IBA annotations must have been sourced from the PAINT inference pipeline</a>
  * <a href="#gorule0000027">GORULE:0000027 Each identifier in GAF is valid</a>
  * <a href="#gorule0000028">GORULE:0000028 Aspect can only be one of C, P, F and should be repaired using the GO term</a>
- * <a href="#gorule0000029">GORULE:0000029 All IEAs over a year old are removed</a>
+ * <a href="#gorule0000029">GORULE:0000029 IEAs should be less than one year old.</a>
  * <a href="#gorule0000030">GORULE:0000030 Deprecated GO_REFs are not allowed</a>
  * <a href="#gorule0000031">GORULE:0000031 Annotation relations are replaced when not provided by source</a>
  * <a href="#gorule0000032">GORULE:0000032 DEPRECATED Allowed References for each ECO.</a>
@@ -360,7 +360,7 @@ Error report (number of errors) in [db_species]-report.html & owltools-check.txt
 This information is obtained from the only_in_taxon and never_in_taxon tags in the ontology (maintained in go-ontology/tree/master/src/taxon_constraints). 
 - Experimental annotations (1) failing the taxon constraints are reported in the error reports but unchanged; non-experimental annotations (2) are filtered out of the pipeline products.
 (1) EXP evidence codes: EXP, IDA, IEP, IGC, IGI, IMP, IPI, HDA, HEP, HGI, HMP, HTP.
-(2) non EXP annotations: IBA, IKR, IRD, IC, ISA, ISM, ISO, ISS, NAS, RCA, TAS.
+(2) non EXP annotations: IBA, IKR, IRD, IC, ISA, ISM, ISO, ISS, NAS, RCA, TAS, IEA.
 - Taxon constraints DO NOT apply to negated (`NOT` qualifier in GPAD/GAF) annotations.
 
 See [http://www.biomedcentral.com/1471-2105/11/530](http://www.biomedcentral.com/1471-2105/11/530)
@@ -392,8 +392,7 @@ organisms of the same species, both taxon IDs should be the same.
 
 This rule should check that these annotations should be used only in conjunction with
 terms that have the biological process term 'GO:0044419 : interspecies interaction
-between organisms' or the cellular component term 'GO:0018995 : host cellular component' 
-as an ancestor.
+between organisms', the process GO:0043903 regulation of interspecies interactions between organisms, or the cellular component term 'GO:0018995 : host cellular component' as an ancestor.
 
 <a name="gorule0000016"/>
 
@@ -454,8 +453,8 @@ reasoner such as HermiT.
  * status: implemented
 
 
-There should be no annotations to obsolete terms or to an alternate ID. Obsolete terms that have a `replace_by` tag and
-terms annotated to one of their alternative IDs (merged terms) will automatically be repaired to the valid term id.
+There should be no annotations to obsolete terms or to an alternate ID. Obsolete terms that have a `replaced_by` tag and
+terms annotated to one of their alternative IDs (merged terms; `alt_id` in the .obo files) will automatically be repaired to the valid term id.
 If no replacement is found, the annotation will be filtered.
 
 Other GO terms present in annotations (with/from column, etc) also should be repaired if possible.
@@ -633,14 +632,16 @@ corrected aspect.
 
 <a name="gorule0000029"/>
 
-## All IEAs over a year old are removed
+## IEAs should be less than one year old.
 
  * id: [GORULE:0000029](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000029.md)
  * status: implemented
 
 
-All GAF annotations that have IEA as an evidence code that are also more than a
-year old should be removed.
+All IEA annotations with a date more than two years old should be filered.
+IEAs between 1 and 2 years old trigger a WARNING.
+IEAs less than one year old are valid. 
+
 
 <a name="gorule0000030"/>
 

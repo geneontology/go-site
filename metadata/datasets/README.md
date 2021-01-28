@@ -20,9 +20,7 @@ Any edit is checked against this schema
 
 ## Jenkins Jobs
 
- *  https://build.berkeleybop.org/job/go-gaf-pipeline-NEW/ (not active yet)
- * https://build.berkeleybop.org/job/publish-go-site-datasets-json/
-
+ *  https://build.geneontology.org/job/geneontology/job/pipeline
 
 ## NEO
 
