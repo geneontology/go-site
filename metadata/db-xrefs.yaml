@@ -1638,7 +1638,7 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: \d+
-      url_syntax: https://www.ncbi.nlm.nih.gov/gene[example_id]
+      url_syntax: https://www.ncbi.nlm.nih.gov/gene/[example_id]
       example_id: NCBI_Gene:4771
       example_url: https://www.ncbi.nlm.nih.gov/gene/4771
 - database: NCBI_gi
