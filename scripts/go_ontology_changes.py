@@ -253,6 +253,8 @@ def create_text_report(json_changes):
 def format(item):
     if type(item) == str:
         return item.strip()
+    if type(item) == bool or int or float:
+        return str(item)
     if type(item) == list:
         return ";".join(item)
     return item
