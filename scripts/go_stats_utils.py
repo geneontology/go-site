@@ -2,9 +2,71 @@ import json
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+from enum import Enum
 
 # This is a hard coded list of evidence, better organized for readability
 ev_all = ['EXP', 'IDA', 'IMP', 'IGI',  'IPI', 'IEP', 'IGC', 'RCA', 'IBA', 'IKR', 'IC', 'NAS', 'ND', 'TAS', 'HDA', 'HEP', 'HGI', 'HMP', 'ISA', 'ISM', 'ISO', 'ISS', 'IEA']
+
+
+class CLOSURE_LABELS(Enum):
+   ISA = "isa_closure"
+   ISA_PARTOF = "isa_partof_closure"
+   REGULATES = "regulates_closure"
+
+# This is a hard coded list of reference genomes that should always be present in a GO release
+REFERENCE_GENOME_IDS = [
+    "NCBITaxon:9606",
+    "NCBITaxon:10116",
+    "NCBITaxon:10090",
+    "NCBITaxon:3702",
+    "NCBITaxon:7955",
+    "NCBITaxon:6239",
+    "NCBITaxon:559292",
+    "NCBITaxon:7227",
+    "NCBITaxon:44689",
+    "NCBITaxon:4896",
+    "NCBITaxon:83333"
+]
+
+BP_TERM_ID = "GO:0008150"
+MF_TERM_ID = "GO:0003674"
+CC_TERM_ID = "GO:0005575"
+
+# useful grouping of evidences as discussed with Pascale
+EVIDENCE_GROUPS = {
+    "EXP": ["EXP", "IDA", "IEP", "IGI", "IMP", "IPI"],
+    "HTP": ["HDA", "HEP", "HGI", "HMP", "HTP"],
+    "PHYLO": ["IBA", "IRD", "IKR", "IMR"],
+    "IEA": ["IEA"],
+    "ND": ["ND"],
+    "OTHER": ["IC", "IGC", "ISA", "ISM", "ISO", "ISS", "NAS", "RCA", "TAS"]
+}
+
+EVIDENCE_MIN_GROUPS = {
+    "EXPERIMENTAL" : EVIDENCE_GROUPS["EXP"] + EVIDENCE_GROUPS["HTP"],
+    "COMPUTATIONAL" : EVIDENCE_GROUPS["PHYLO"] + EVIDENCE_GROUPS["IEA"] + EVIDENCE_GROUPS["OTHER"]
+}
+
+def is_experimental(evidence_type):
+    return evidence_type in EVIDENCE_MIN_GROUPS["EXPERIMENTAL"]
+
+def is_computational(evidence_type):
+    return evidence_type in EVIDENCE_MIN_GROUPS["COMPUTATIONAL"]
+
+def get_evidence_min_group(evidence_type):
+    for group, codes in EVIDENCE_MIN_GROUPS.items():
+        if evidence_type in codes:
+            return group
+    return "ND"
+
+def aspect_from_source(source):
+    if source == "molecular_function":
+        return "MF"
+    elif source == "biological_process":
+        return "BP"
+    elif source == "cellular_component":
+        return "CC"
+    return "UNK"
 
 
 global_session = None
@@ -30,7 +92,11 @@ def fetch(url):
     If an error occured, return None
     """
     global global_session
-    global_session = requests_retry(global_session)
+
+    # Ensure we are using the same session - creating too many sessions could crash this script
+    if global_session is None:
+        global_session = requests_retry(global_session)
+    
     try:
         r = global_session.get(url)
         return r
@@ -62,6 +128,15 @@ def golr_fetch(golr_base_url, select_query):
 
 def golr_fetch_by_taxon(golr_base_url, select_query, taxon):
     return golr_fetch(golr_base_url, select_query + "&fq=taxon:\"" + taxon + "\"")
+
+def golr_fetch_by_taxa(golr_base_url, select_query, taxa):
+    tmp = ""
+    if isinstance(taxa, list):
+        tmp = "&fq=taxon:(\"" + taxa.join("\" ") + "\")"
+    else:
+        tmp = "&fq=taxon:\"" + taxa + "\""
+    print("*** ", golr_base_url + select_query + tmp)
+    return golr_fetch(golr_base_url, select_query + tmp)
 
 # utility function to build a list from a solr/golr facet array
 def build_list(items_list, min_size = None):

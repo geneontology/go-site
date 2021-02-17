@@ -1,8 +1,6 @@
 # GO Update Statistics
 
-import json
-import sys, getopt, os
-
+import sys, getopt, os, json
 from xml.etree import ElementTree
 
 import go_stats_utils as utils
@@ -12,25 +10,13 @@ import go_stats_utils as utils
 golr_base_url = 'http://golr-aux.geneontology.io/solr/'
 
 ALL = "All"
-BP = "GO:0008150"
-MF = "GO:0003674"
-CC = "GO:0005575"
+BP = utils.BP_TERM_ID
+MF = utils.MF_TERM_ID
+CC = utils.CC_TERM_ID
 
 
 # SET OF REFERENCE GENOMES (used to compute number of annotations by evidence code for each species)
-reference_genomes_ids = [
-    "NCBITaxon:9606",
-    "NCBITaxon:10116",
-    "NCBITaxon:10090",
-    "NCBITaxon:3702",
-    "NCBITaxon:7955",
-    "NCBITaxon:6239",
-    "NCBITaxon:559292",
-    "NCBITaxon:7227",
-    "NCBITaxon:44689",
-    "NCBITaxon:4896",
-    "NCBITaxon:83333"
-]
+reference_genomes_ids = utils.REFERENCE_GENOME_IDS
 
 
 # GOLR prepared queries
@@ -45,14 +31,7 @@ golr_select_references = 'select?fq=document_category:%22annotation%22&q=*:*&row
 
 
 # useful grouping of evidences as discussed with Pascale
-evidence_groups = {
-    "EXP": ["EXP", "IDA", "IEP", "IGC", "IGI", "IMP", "IPI"],
-    "HTP": ["HDA", "HEP", "HGI", "HMP", "HTP"],
-    "PHYLO": ["IBA", "IRD", "IKR", "IMR"],
-    "IEA": ["IEA"],
-    "ND": ["ND"],
-    "OTHER": ["IC", "ISA", "ISM", "ISO", "ISS", "NAS", "RCA", "TAS"]
-}
+evidence_groups = utils.EVIDENCE_GROUPS
 
 # convenience reverse map of evidence groups
 reverse_evidence_groups = { }
