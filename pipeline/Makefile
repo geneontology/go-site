@@ -194,8 +194,23 @@ BG_PROPERTIES = conf/blazegraph.properties
 LOAD_TARGETS = $(ONT_MERGED) target/rdf target/noctua-models/models
 
 target/blazegraph.jnl: $(BGJAR) target/rdf target/noctua-models
+	du -sh target
+	du -sh target/*
+	di
+	free -h
+	ls -AlF /tmp
 	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties load --use-ontology-graph $(LOAD_TARGETS)
+	du -sh target
+	du -sh target/*
+	di
+	free -h
+	ls -AlF /tmp
 	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(GO_GRAPHSTORE_URI) --append-graph-name="_inferred"
+	du -sh target
+	du -sh target/*
+	di
+	free -h
+	ls -AlF /tmp
 
 target/blazegraph-internal.jnl: target/blazegraph.jnl
 	cp $< $@
