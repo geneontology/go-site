@@ -114,7 +114,7 @@ target/groups/goa/goa_uniprot_all_noiea.gaf: target/alltaxons.txt target/groups/
 	mv target/groups/goa/goa_uniprot_all.gaf.tmp target/groups/goa/goa_uniprot_all.gaf
 	gzip -cf target/groups/goa/goa_uniprot_all.gaf > target/groups/goa/goa_uniprot_all.gaf.gz
 	gzip -cf target/groups/goa/goa_uniprot_all_noiea.gaf > target/groups/goa/goa_uniprot_all_noiea.gaf.gz
-	rm -f target/groups/goa/goa_uniprot_all-src.gaf target/groups/goa/goa_uniprot_all.gaf
+	rm -f target/groups/goa/goa_uniprot_all-src.gaf target/groups/goa/goa_uniprot_all.gaf || true
 
 RDF_GEN = rdfgen.py
 target/groups/goa/goa_uniprot_all_noiea_cam.ttl: target/go-ontology.json target/groups/goa/goa_uniprot_all_noiea.gaf
