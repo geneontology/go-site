@@ -4249,7 +4249,7 @@
       go:
         allow-edit: true
   groups:
-    - 'https://veupathdb.org/veupathdb/app/'
+    - 'http://eupathdb.org'
   nickname: 'Beatric Amos'
   organization: University of Liverpool
   uri: 'https://orcid.org/0000-0003-2347-712X'
