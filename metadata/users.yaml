@@ -4241,4 +4241,15 @@
   organization: ZFIN
   uri: 'GOC:zfin_curators'
   xref: 'GOC:zfin_curators'
-  
+_  
+  accounts:
+    github: bea-liv
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://veupathdb.org/veupathdb/app/'
+  nickname: 'Beatric Amos'
+  organization: University of Liverpool
+  uri: 'https://orcid.org/0000-0003-2347-712X'
