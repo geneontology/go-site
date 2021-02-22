@@ -33,8 +33,7 @@ def cli():
 @click.option("--inferences", "-I", default=[], multiple=True, required=False, type=click.Path(exists=True, readable=True, resolve_path=True))
 @click.option("--target", "-t", required=True, type=click.Path(exists=False, resolve_path=True))
 def pristine(source, ontology, inferences, target):
-    # parse_into_gpad.process_single_file()
-    click.echo("hello")
+    click.echo("Next stop, Pristine GPADs at {}".format(target))
     os.makedirs(target, exist_ok=True)
 
     loaded_inferences = gaference.load_gaferencer_inferences_from_files(inferences)
