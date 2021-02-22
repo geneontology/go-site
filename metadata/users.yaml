@@ -4241,7 +4241,7 @@
   organization: ZFIN
   uri: 'GOC:zfin_curators'
   xref: 'GOC:zfin_curators'
-_  
+- 
   accounts:
     github: bea-liv
   authorizations:
