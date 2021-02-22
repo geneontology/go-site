@@ -4263,4 +4263,15 @@
     - 'http://eupathdb.org'
   nickname: 'Paul Wilkinson'
   uri: 'http://orcid.org/0000-0002-8836-5439'
+-
+  accounts:
+    github: obsidian83
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://eupathdb.org'
+  nickname: 'David Starns'
+  uri: 'http://orcid.org/0000-0001-6583-9067'
   
