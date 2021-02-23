@@ -14,7 +14,7 @@ New GO pipeline. For context, see:
     * GPAD, GAF and GPI
     * RDF for direct loading into blazegraph
 
-## Prudcts
+## Products
 
 * Snapshot: Run every day and results go to http://snapshot.geneontology.org
 * Release: Run on the 1st of each month, and goes to http://release.geneontology.org with each release in it's own directory

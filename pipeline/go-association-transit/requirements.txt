@@ -1,2 +1,2 @@
 click
--e ../../../../biolink/ontobio
+ontobio==2.5.0
