@@ -61,7 +61,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000056">GORULE:0000056 Annotations should validate against GO shape expressions</a>
  * <a href="#gorule0000057">GORULE:0000057 Group specific filter rules should be applied to annotations</a>
  * <a href="#gorule0000058">GORULE:0000058 Object extensions should conform to the extensions-patterns.yaml file in metadata</a>
- * <a href="#gorule0000059">GORULE:0000059 GAF Version 2.0 and 2.1 is converted into GAF Version 2.2</a>
+ * <a href="#gorule0000059">GORULE:0000059 GAF Version 2.0 and 2.1 are converted into GAF Version 2.2</a>
 
 
 
@@ -983,7 +983,7 @@ the above file, that element should be dropped from the extensions.
 
 <a name="gorule0000059"/>
 
-## GAF Version 2.0 and 2.1 is converted into GAF Version 2.2
+## GAF Version 2.0 and 2.1 are converted into GAF Version 2.2
 
  * id: [GORULE:0000059](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000059.md)
  * status: proposed
@@ -991,15 +991,15 @@ the above file, that element should be dropped from the extensions.
 
 GAF2.2 uses a wider set of relations (column 4). This rule processes older versions of GAF files to provide basic compatibility with the current GAF2.2 format.
 GAF versions 2.0 or 2.1 may already have qualifiers: 
-* If an annotation has a `NOT` qualifier, it is kept as a pipe-separated value. 
-* If an annotation has a `contributes_to` or `colocalizes_with` qualifier, it is kept unchanged. 
-* If both a `NOT` and another qualifier are present, both are kept, pipe-separated. `NOT` qualifiers are also kept, pipe-separated, when other relations are added as described after.
-For annotations with no qualifier, or only a `NOT` qualifier, a relation is computed based on the following rule:
-* For `molecular function` If the annotation is to `molecular function` or a subclass descendant, then relation is changed to `RO:0002327 "enables"`. 
-* For `biological process`:
-    * If the annotation is to the root term `biological process` then the relation should be `RO:0002331 "involved_in"`
-    * If the annotation is to is a subclass descendant of `biological process` then the relation should be `RO:0002264 "acts upstream or within"`
-* For `cellular component` 
-    * If the GO Term is a subclass descendant of `"GO:0032991 "protein-containing complex"` then the relation should be `"BFO:0000050 "part of"`
-    * If the annotation is to the root term `cellular_component` then the relation should be `RO:0002432 "is_active_in"`
-    * Otherwise the relation should be `RO:0001025 "located in"`
+* If an annotation has a `RO_0002326 "contributes_to"` or `RO_0002325 "colocalizes_with"` qualifier, these are kept. 
+* If both a `NOT` and another qualifier (`contributes_to` or `colocalizes_with`) are present, both are kept, pipe-separated. 
+* If an annotation only has a `NOT` qualifier, it will added as a pipe-separated value, to the gene product to term (gp2term) relation assigned based on the following rule: 
+* For `GO:0005554 molecular function` and subclass descendants: 
+    * the relation is `RO:0002327 "enables"`. 
+* For `GO:0008150 biological process`:
+    * If the annotation is to the root term `biological process`, then the relation is `RO:0002331 "involved_in"`.
+    * If the annotation is to is a subclass descendant of `GO:0008150 biological process` then the relation is `RO:0002264 "acts upstream or within"`.
+* For `GO:0008372 cellular component` 
+    * If the annotation is to the root term `cellular_component`, then the relation is `RO:0002432 "is_active_in"`.
+    * If the annotation is to `"GO:0032991 "protein-containing complex"` or a subclass descendant of, then the relation is `"BFO:0000050 "part of"`
+    * Else, the relation is `RO:0001025 "located in"`.
