@@ -62,6 +62,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000057">GORULE:0000057 Group specific filter rules should be applied to annotations</a>
  * <a href="#gorule0000058">GORULE:0000058 Object extensions should conform to the extensions-patterns.yaml file in metadata</a>
  * <a href="#gorule0000059">GORULE:0000059 GAF Version 2.0 and 2.1 are converted into GAF Version 2.2</a>
+ * <a href="#gorule0000059">GORULE:0000059 Allowed gene product to term relations (gp2term)</a>
 
 
 
@@ -1003,3 +1004,23 @@ GAF versions 2.0 or 2.1 may already have qualifiers:
     * If the annotation is to the root term `cellular_component`, then the relation is `RO:0002432 "is_active_in"`.
     * If the annotation is to `"GO:0032991 "protein-containing complex"` or a subclass descendant of, then the relation is `"BFO:0000050 "part of"`
     * Else, the relation is `RO:0001025 "located in"`.
+
+<a name="gorule0000059"/>
+
+## Allowed gene product to term relations (gp2term)
+
+ * id: [GORULE:0000059](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000059.md)
+ * status: proposed
+
+
+
+GAF2.2 files require a gene product to term relation in Column 4. Allowed relations:  
+* For ´GO:0005554 "molecular function"´ and subclass descendants:
+    * The relation is ´RO:0002327 "enables"´.
+* For ´GO:0008150 biological process´: 
+    * If the annotation is to the root term biological process, then the relation is ´RO:0002331 "involved_in"´.
+    * If the annotation is to is a subclass descendant of GO:0008150 biological process then the allowed relations are ´RO:0002331 "involved_in"´, ´RO:0002264 "acts upstream or within"´, ´RO:0004032 acts upstream of or within, positive effect´, ´RO:0004033 acts upstream of or within, negative effect´, ´RO:0002263 acts upstream of´, ´RO:0004034 acts upstream of, positive effect´, ´RO:0004035 acts upstream of, negative effect´ 
+* For ´GO:0008372 cellular component´
+    * If the annotation is to the root term cellular_component, then the allowed relation is ´RO:0002432 "is_active_in"´.
+    * If the annotation is to ´"GO:0032991 "protein-containing complex"´ or a subclass descendant of, then the allowed relation is ´"BFO:0000050 "part of"´.
+    * Else, the allowed relations are ´RO:0001025 "located in"´ and ´RO:0002432 "is_active_in"´, and ´RO_0002325 "colocalizes_with"´.
