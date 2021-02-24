@@ -617,12 +617,6 @@
 -
   accounts:
     github: zebrafishembryo
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - 211b318809e38f23520d0bd64f4a2330
   previous-groups:
