@@ -252,6 +252,7 @@ def main():
         ## goa_chicken_complex is temporarily being reduced by bad evidence codes
         ## ecocyc is temporarily being reduced by bad evidence codes
         reduction_threshold = {
+            "zfin": 0.75,
             "gramene_oryza": 0.3,
             "goa_chicken_complex": 0.3,
             "ecocyc": 0.3
