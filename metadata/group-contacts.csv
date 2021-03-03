@@ -2,6 +2,7 @@ Group,Contact name,Contact GitHub ID,Expertise/Domains of interest
 AgBase,Jinhui Zhang,@jinhuiz, 
 Alzheimers_University_of_Toronto,Ruth Lovering,@RLovering, 
 ARUK-UCL,Ruth Lovering,@RLovering,
+ASAP,,,
 ASPGD,Marek Skrzypek,@marekskrzypek,
 BBOP,Seth Carbon,@kltm,Noctua|Data pipeline|AmiGO|Website
 BBOP,Chris Mungall,@cmungall,All things technical and ontology-related
@@ -18,7 +19,7 @@ Complex Portal,Birgit Meldal,@bmeldal,
 DFLAT,Not actively maintainted/GO_Central,@pgarmiri,
 DFLAT,Not actively maintainted/GO_Central,@pgaudet,
 DFLAT,Not actively maintainted/GO_Central,@vanaukenk,
-DiBest-Unical,Simona Panni,@simonapanni,
+DIBU - DiBest-Unical,Simona Panni,@simonapanni,
 dictyBase,Petra Fey,@pfey03,
 dictyBase,Robert Dodson,@rjdodson,
 EAWAG (ETH Zurich),Emanuel Schmid,@emanuel-schmid,biodegradation | databases | webservices
@@ -30,6 +31,7 @@ ECO - Evidence and Conclusion Ontology,James Munro,@jbmunro,
 ECO - Evidence and Conclusion Ontology,Becky Tauber,@rctauber,
 EcoliWiki,Debbie Siegele,@dsiegele,
 Ensembl,Kevin Howe (EBI),@khowe,
+Eurofung,,,
 FlyBase,Helen Attrill,@hattrill,
 FlyBase,Giulia Antonazzo,@gantonazzo,
 GDB,EBI/GOC,@pgarmiri,
@@ -39,6 +41,9 @@ GeneDB,Ulrike Boehme,@uliboehme,Plasmodium curator
 GeneDB,F.Silva-Franco, F.Silva-Franco at liverpool.ac.uk,TBRU curator
 GO_Central,Pascale Gaudet,@pgaudet,PAINT|transcription|multiorganism processes|cellular biology
 GO_Central,Chris Mungall,@cmungall,Ontology|Anatomy
+GO_Noctua,,,
+GOC,,,
+GOC-OWL,,,
 GR,Pankaj Jaiswal,@jaiswalp,Plant biology
 GR,Not actively maintainted/GO_Central,@vanaukenk,contact @jaiswalp for queries
 GR,Not actively maintainted/GO_Central,@pgaudet,contact @jaiswalp for queries
@@ -47,6 +52,7 @@ GREEKC,Colin Logie,@colinlog,Transcription
 HGNC,Susan Tweedie,@sartweedie,
 HGNC-UCL,Ruth Lovering,@RLovering,
 HPA,Emma Lundberg, emma.lundberg AT scilifelab.se,
+IntAct,,,
 InterPro,Lowri Williams,lsw26,
 InterPro,Sara Chuguransky,@sarach06,
 InterPro,Lorna Richardson,@happy-lorna,
@@ -80,8 +86,9 @@ PAMGO_GAT,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for 
 PAMGO_MGG,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
 PAMGO_MGG,Not actively maintainted/GO_Central,@pgarmiri,contact @mgiglio99 for queries
 PAMGO_MGG,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
-ParkinsonsUK-UCL,Barbara Kramarz,@BarbaraCzub,
+PAMGO_VMD,,,
 ParkinsonsUK-UCL,Ruth Lovering,@RLovering,
+PHI-base,,,
 PINC (ProtInc),Not actively maintainted/GO_Central,@pgarmiri,no contact person
 PINC (ProtInc),Not actively maintainted/GO_Central,@pgaudet,no contact person
 PINC (ProtInc),Not actively maintainted/GO_Central,@vanaukenk,no contact person
@@ -104,6 +111,8 @@ RGD,Tom Hayman,@gthayman,
 RGD,Mary Kaldunski,@mlkaldunski,curation | annotation | physiology
 RGD,Jennifer Smith,@jrsjrs,pipeline and data
 RGD,Marek Tuta,@tutajm,import and export pipelines
+RHEA,,,
+RNAcentral,,,
 Roslin_Institute,Not actively maintainted/GO_Central,@pgaudet,no contact person
 Roslin_Institute,Not actively maintainted/GO_Central,@vanaukenk,no contact person
 Roslin_Institute,Not actively maintainted/EBI,@pgarmiri,no contact person
@@ -111,6 +120,7 @@ SGD,Stacia Engel,@srengel,
 SGD,Suzi Aleksander,@suzialeksander,
 SGN,Lukas Mueller,@lukasmueller,
 SynGO,Frank Koopmans,@ftwkoopmans,
+SynGO-UCL,,,
 SYSCILIA_CCNET,Karen Christie,@krchristie,
 TAIR,Tanya Berardini,@tberardini,Plant biology
 TAIR,Leonore Reiser,@lreiser,Plant biology
@@ -131,10 +141,11 @@ UniProt (Swiss-Prot/Geneva),Marc Feuermann,@marcfeuermann,fungi|enzymes
 UniProt (Swiss-Prot/Geneva),Ivo Pedruzzi,@pedruzzi, 
 UniProt (Swiss-Prot/Geneva),Sylvain Poux,@sylvainpoux,
 USC,Dustin Ebert,@dustine32,PAINT pipeline
-WormBase,Kimberly Van Auken,@vanaukenk,C.elegans|Noctua|GO-CAM
+WB - WormBase,Kimberly Van Auken,@vanaukenk,C.elegans|Noctua|GO-CAM
 Wikidata,Andrew Su,@andrewsu,
 Wikidata,Derek,@djow2019 ,
 Xenbase,Malcolm Fisher,@malcolmfisher103,Xenopus
+YuBioLab,,,
 ZFIN,Sabrina Toro,@sabrinatoro,Zebra fish
 ZFIN,Doug Howe,@doughowe,Zebra fish
 Domain expert,,@khybiske,Chlamydia
