@@ -1018,7 +1018,7 @@ This rule processes older versions of GAF files to provide basic compatibility w
 
 
 GAF2.2 files require a gene product to term (gp2term) relation in Column 4. Allowed gp2term relations:  
-* For `GO:0005554 "molecular function"` and subclass descendants:
+* For `GO:0003674 "molecular function"` and subclass descendants:
     * If the annotation is to the root term `"molecular function"`, then the allowed gp2term relation is `RO:0002327 "enables"`. If the gp2term relation is different, it is repaired to `RO:0002327 "enables"`.
     * If the annotation is to is a subclass descendant of `"molecular function"`, then the allowed gp2term relations are `RO:0002327 "enables"` and `RO_0002326 "contributes_to"`.
 * For `GO:0008150 "biological process"`: 
