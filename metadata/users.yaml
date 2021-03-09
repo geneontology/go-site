@@ -617,8 +617,14 @@
 -
   accounts:
     github: zebrafishembryo
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   email-md5:
     - 211b318809e38f23520d0bd64f4a2330
+  groups:
+    - 'http://geneontology.org'
   previous-groups:
     - 'http://www.ebi.ac.uk/GOA'
   nickname: 'Alice Dashow'
