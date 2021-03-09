@@ -365,6 +365,35 @@ This information is obtained from the only_in_taxon and never_in_taxon tags in t
 (2) non EXP annotations: IBA, IKR, IRD, IC, ISA, ISM, ISO, ISS, NAS, RCA, TAS, IEA.
 - Taxon constraints DO NOT apply to negated (`NOT` qualifier in GPAD/GAF) annotations.
 
+
+### Implementation Notes
+
+The current implementation of this in GO makes use of the Elk reasoner, wrapped by the [gaferencer](https://github.com/geneontology/gaferencer) tool. This tool produces a gaferences.json file (see [this example file](http://release.geneontology.org/2021-02-01/reports/mgi.gaferences.json)), which includes all OWL inferences over the GAF. A subset of these are taxon violations. 
+
+An example:
+
+```json
+{
+"annotation": {
+"annotation": {
+"relation": "http://purl.obolibrary.org/obo/RO_0002331",
+"term": "http://purl.obolibrary.org/obo/GO_0098706"
+},
+"taxon": "http://purl.obolibrary.org/obo/NCBITaxon_10090",
+"extension": []
+},
+"inferences": [],
+"satisfiable": false,
+"taxonProblem": true
+}
+```
+
+This particular class is not valid for Mouse (NCBITaxon:10090)
+
+The gaferences files is processed in the pipeline via ontobio and includes alongside other GO rules reports.
+
+### Publications
+
 See [http://www.biomedcentral.com/1471-2105/11/530](http://www.biomedcentral.com/1471-2105/11/530)
 for more details.
 
