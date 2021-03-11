@@ -61,7 +61,8 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000056">GORULE:0000056 Annotations should validate against GO shape expressions</a>
  * <a href="#gorule0000057">GORULE:0000057 Group specific filter rules should be applied to annotations</a>
  * <a href="#gorule0000058">GORULE:0000058 Object extensions should conform to the extensions-patterns.yaml file in metadata</a>
- * <a href="#gorule0000059">GORULE:0000059 GAF Version 2.1 should have Qualifiers upgraded based on the GO Term</a>
+ * <a href="#gorule0000059">GORULE:0000059 GAF Version 2.0 and 2.1 are converted into GAF Version 2.2</a>
+ * <a href="#gorule0000061">GORULE:0000061 Allowed gene product to term relations (gp2term)</a>
 
 
 
@@ -983,20 +984,53 @@ the above file, that element should be dropped from the extensions.
 
 <a name="gorule0000059"/>
 
-## GAF Version 2.1 should have Qualifiers upgraded based on the GO Term
+## GAF Version 2.0 and 2.1 are converted into GAF Version 2.2
 
  * id: [GORULE:0000059](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000059.md)
  * status: proposed
 
 
+In GAF2.2, a gp2term relation (column 4) is mandatory for every annotation.
+This rule processes older versions of GAF files to provide basic compatibility with the current GAF2.2 format.
+* To convert a GAF Version 2.0 or 2.1 file to a GAF Version 2.2, gp2term relations are assigned as follows: 
+    * For annotations that already have a gp2term relation: 
+          * If an annotation has a `RO_0002326 "contributes_to"` or `RO_0002325 "colocalizes_with"` gp2term relation, it is kept. 
+          * If both a negation (`NOT`) and a gp2term relation (`contributes_to` or `colocalizes_with`) are present, both are kept, pipe-separated. 
+          * If an annotation only has a negation (`NOT`), it is kept as a pipe-separated value with the gp2term relation. 
+    * For annotations that don't have a gp2term relation: 
+          * For `GO:0005554 molecular function` and subclass descendants: 
+             * The relation is `RO:0002327 "enables"`. 
+          * For `GO:0008150 biological process`:
+             * If the annotation is to the root term `biological process`, then the relation is `RO:0002331 "involved_in"`.
+             * If the annotation is to is a subclass descendant of `GO:0008150 biological process` then the relation is `RO:0002264 "acts upstream or within"`.
+          * For `GO:0008372 cellular component` 
+             * If the annotation is to the root term `cellular_component`, then the relation is `RO:0002432 "is_active_in"`.
+             * If the annotation is to `"GO:0032991 "protein-containing complex"` or a subclass descendant of, then the relation is `"BFO:0000050 "part of"`
+             * Else, the relation is `RO:0001025 "located in"`.
 
-When processing GAF version 2.1, if the qualifier field (column 4) does not have a relation
-a relation should be computed based on the following rule:
-* If the annotation GO Term is in `molecular function` then the relation should be `RO:0002327 "enables"`
-* If the annotation GO Term is in `biological process` then the relation should be `RO:0002264 "acts upstream or within"`
-* If the annotation GO Term is in `cellular component` then
-    * If the GO Term is a subclass of `"GO:0032991 "protein-containing complex"` then the relation should be `"BFO:0000050 "part of"`
-    * Otherwise the relation should be `RO:0001025 "located in"`
+<a name="gorule0000061"/>
 
-This is due to the other annotation formats having a richer set of Relations available to them. In order to interoperate between GAF 2.1
-and other formats as other formats have a richer set of allowed relations, this will be a process to provide basic compatibility.
+## Allowed gene product to term relations (gp2term)
+
+ * id: [GORULE:0000061](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000061.md)
+ * status: proposed
+
+
+
+GAF2.2 files require a gene product to term (gp2term) relation in Column 4. Allowed gp2term relations:  
+* For `GO:0005554 "molecular function"` and subclass descendants:
+    * If the annotation is to the root term `"molecular function"`, then the allowed gp2term relation is `RO:0002327 "enables"`. If the gp2term relation is different, it is repaired to `RO:0002327 "enables"`.
+    * If the annotation is to is a subclass descendant of `"molecular function"`, then the allowed gp2term relations are `RO:0002327 "enables"` and `RO_0002326 "contributes_to"`.
+* For `GO:0008150 "biological process"`: 
+    * If the annotation is to the root term `"biological process"`, then the allowed gp2term relation is `RO:0002331 "involved_in"`. If the gp2term relation is different, it is repaired to `RO:0002331 "involved_in"`.
+    * If the annotation is to is a subclass descendant of `"biological process"` then the allowed gp2term relations are `RO:0002331 "involved_in"`, `RO:0002264 "acts upstream or within"`, `RO:0004032 "acts upstream of or within, positive effect"`, `RO:0004033 "acts upstream of or within, negative effect"`, `RO:0002263 "acts upstream of"`, `RO:0004034 "acts upstream of, positive effect"`, `RO:0004035 "acts upstream of, negative effect"`. 
+* For `GO:0008372 "cellular component"`
+    * If the annotation is to the root term `"cellular_component"`, then the allowed gp2term relation is `RO:0002432 "is_active_in"`. If the gp2term relation is different, it is repaired to `RO:0002432 "is_active_in"`.
+    * The gp2term relation `RO_0002325 "colocalizes_with"` for `"GO:0032991 "protein-containing complex"` is not allowed and is filtered.
+    * If the annotation is to `"GO:0032991 "protein-containing complex"` or a subclass descendant of, then the allowed gp2term relation is `"BFO:0000050 "part of"`. If the gp2term relation is different, is repaired to `"BFO:0000050 "part of"`.
+    * Else, the allowed gp2term relations are `RO:0001025 "located in"` and `RO:0002432 "is_active_in"`, and `RO_0002325 "colocalizes_with"`.
+    * If the annotation is to is a subclass descendant other than `"GO:0032991 "protein-containing complex"` or the root term `"cellular_component"` and the gp2term relation used is not one of the above, it should be repaired to `RO:0001025 "located in"`.
+    
+* If an annotation does not use one of the allowed gp2term relations, then it's filtered.
+* If an annotation has a negation (`NOT`), is is kept as a pipe-separated value with the gp2term relation.
+
