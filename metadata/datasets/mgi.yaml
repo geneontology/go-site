@@ -42,7 +42,7 @@ datasets:
    dataset: mgi
    submitter: mgi
    compression: gzip
-   source: http://www.informatics.jax.org/downloads/reports/mgi.gpa.gz
+   source: http://www.informatics.jax.org/downloads/reports/mgi.gpad.gz
    entity_type:
    status: active
    species_code: Mmus
