@@ -43,8 +43,8 @@ $(ROOT_PATH)/annotations_new/%.gpad: $(ROOT_PATH)/annotations/%.gpad $(ROOT_PATH
 
 # noctua_target/noctua_*_valid.gpad.gz -> noctua_target/noctua_*_valid.gpad -> noctua_sources/noctua_*.gpad -> noctua_sources/noctua_*.gpad.gz
 
-BASE_SOURCE_NOCTUA_GPAD_NAMES = $(wildcard $(ROOT_PATH)/noctua_sources/*) # noctua_mgi.gpad.gz
-BASE_VALID_NOCTUA_GPAD_NAME = $(addsuffix _valid.gpad.gz,$(basename $(BASE_SOURCE_NOCTUA_GPAD_NAMES))) 	# noctua_mgi + _valid.gpad.gz
+BASE_SOURCE_NOCTUA_GPAD_NAMES = $(notdir $(wildcard $(ROOT_PATH)/noctua_sources/*)) # noctua_mgi.gpad.gz
+BASE_VALID_NOCTUA_GPAD_NAME = $(addsuffix _valid.gpad.gz,$(basename $(basename $(BASE_SOURCE_NOCTUA_GPAD_NAMES)))) 	# noctua_mgi + _valid.gpad.gz
 
 noctua_gpad: $(foreach name,$(BASE_VALID_NOCTUA_GPAD_NAME),$(ROOT_PATH)/noctua_target/$(name))
 
