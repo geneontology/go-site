@@ -621,14 +621,13 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - 211b318809e38f23520d0bd64f4a2330
   groups:
+    - 'http://geneontology.org'
+  previous-groups:
     - 'http://www.ebi.ac.uk/GOA'
-  nickname: 'Aleksandra Shypitsyna'
-  organization: GOA
+  nickname: 'Alice Dashow'
   uri: 'http://orcid.org/0000-0003-3829-1600'
   xref: 'GOC:als'
 -
