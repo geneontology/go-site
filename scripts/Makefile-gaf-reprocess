@@ -28,3 +28,37 @@ $(ROOT_PATH)/annotations_new/%.gaf: $(ROOT_PATH)/annotations/%.gaf $(ROOT_PATH)/
 $(ROOT_PATH)/annotations_new/%.gpad: $(ROOT_PATH)/annotations/%.gpad $(ROOT_PATH)/gaferencer-products/all.gaferences.json
 	mkdir -p $(ROOT_PATH)/annotations_new
 	ontobio-parse-assocs.py -f $< -F gpad -o $@ -I $(ROOT_PATH)/gaferencer-products/all.gaferences.json --report-md /tmp/report.md --report-json /tmp/report.json --allow_paint convert --to gpad
+
+####################################################################################################
+### Noctua GPAD
+####################################################################################################
+
+# This will assume that there are noctua gpads in the $(ROOT_PATH)/noctua_sources directory: $(ROOT_PATH)/noctua_sources/noctua_[resource].gpad.gz
+# 1. Files will be unzipped
+# 2. ontobio will parse them and save files as $(ROOT_PATH)/noctua_target/noctua_[resource]_valid.gpad, 
+#	along with reports: noctua_[resource].json and noctua_[resource].md
+# 3. noctua_[resource]_valid.gpad files will be zipped
+# 4. noctua_[resrouce]_valid.gpad.gz files will be uploaded back into skyhook at http://skyhook.berkeleybop.org/[branch]/products/annotations/noctua_[resource]_valid.gpad.gz
+# 5. reports will be uploaded to skyhook at http://skyhook.berkeleybop.org/[branch]/reports/
+
+# noctua_target/noctua_*_valid.gpad.gz -> noctua_target/noctua_*_valid.gpad -> noctua_sources/noctua_*.gpad -> noctua_sources/noctua_*.gpad.gz
+
+BASE_SOURCE_NOCTUA_GPAD_NAMES = $(wildcard $(ROOT_PATH)/noctua_sources/*) # noctua_mgi.gpad.gz
+BASE_VALID_NOCTUA_GPAD_NAME = $(addsuffix _valid.gpad.gz,$(basename $(BASE_SOURCE_NOCTUA_GPAD_NAMES))) 	# noctua_mgi + _valid.gpad.gz
+
+noctua_gpad: $(foreach name,$(BASE_VALID_NOCTUA_GPAD_NAME),$(ROOT_PATH)/noctua_target/$(name))
+
+$(ROOT_PATH)/noctua_sources/noctua_%.gpad: $(ROOT_PATH)/noctua_sources/noctua_%.gpad.gz
+	unpigz $<
+
+$(ROOT_PATH)/noctua_target/noctua_%_valid.gpad: $(ROOT_PATH)/noctua_sources/noctua_%.gpad $(ROOT_PATH)/go-ontology.json
+	mkdir -p $(ROOT_PATH)/noctua_target
+	ontobio-parse-assocs.py -f $< -F gpad -o $@ -r $(ROOT_PATH)/go-ontology.json --report-md $(ROOT_PATH)/noctua_target/noctua_$*.report.md --report-json $(ROOT_PATH)/noctua_target/noctua_$*.report.json convert --to gpad -n 1.2
+
+$(ROOT_PATH)/noctua_target/noctua_%_valid.gpad.gz: $(ROOT_PATH)/noctua_target/noctua_%_valid.gpad
+	pigz $<
+
+OBO=http://purl.obolibrary.org/obo
+ONTOLOGY ?= $(OBO)/go/snapshot/go.json
+$(ROOT_PATH)/go-ontology.json:
+	wget --no-check-certificate $(ONTOLOGY) -O $@.tmp && mv $@.tmp $@ && touch $@	
