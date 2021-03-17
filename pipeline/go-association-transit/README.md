@@ -30,3 +30,13 @@ The new way of thinking for the next phase of the Pipeline is that a collection 
     * Headers also properly joined
 5. nquad
     * Using Dustin's gocamgen code, produce nquad files for each GPAD to be loaded into a blazegraph journal.
+
+
+## Makefile
+
+### TODO, open questions
+
+* Download is currently hardcoded to MGI since the downloader script needs to be updated with new functionality, and it's not immediately clear how we may want to express what we want downloaded at this time.
+  * (not that it's complicated, just we gotta do a bit of a think)
+* Specifying `datasets` or groups. This is related to the download problem, but affects what files are available in `target/sources`, and how that should interact with `DATASET_EXCLUDES`
+

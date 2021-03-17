@@ -1,2 +1,2 @@
 click
-ontobio==2.5.0
+ontobio
