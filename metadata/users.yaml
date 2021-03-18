@@ -364,7 +364,7 @@
   uri: 'GOC:atm'
   xref: 'GOC:atm'
 -
-  accounts: 
+  accounts:
     github: jimhu-tamu
   nickname: 'Jim Hu'
   organization: 'E. coli'
@@ -4147,7 +4147,7 @@
   nickname: 'Louise McKenzie'
   organization: MGI
   uri: 'GOC:lmm'
-- 
+-
   nickname: 'Robert Sinclair'
   organization: MGI
   uri: 'GOC:bobs'
@@ -4175,7 +4175,7 @@
   nickname: 'Fernando Bolio'
   organization: WB
   uri: 'https://orcid.org/0000-0003-2506-9234'
--  
+-
   accounts:
     github: ccasalsc
   authorizations:
@@ -4240,7 +4240,7 @@
   organization: ZFIN
   uri: 'GOC:zfin_curators'
   xref: 'GOC:zfin_curators'
--  
+-
   accounts:
     github: bea-liv
   authorizations:
@@ -4273,7 +4273,7 @@
     - 'http://eupathdb.org'
   nickname: 'David Starns'
   uri: 'http://orcid.org/0000-0001-6583-9067'
-  -
+-
   accounts:
     github: turbomam
   authorizations:
