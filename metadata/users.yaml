@@ -4276,10 +4276,6 @@
 -
   accounts:
     github: turbomam
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://geneontology.org'
   nickname: 'Mark A. Miller'
