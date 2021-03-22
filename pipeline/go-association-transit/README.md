@@ -36,7 +36,7 @@ The new way of thinking for the next phase of the Pipeline is that a collection 
 
 ### TODO, open questions
 
-* Download is currently hardcoded to MGI since the downloader script needs to be updated with new functionality, and it's not immediately clear how we may want to express what we want downloaded at this time.
+* Download is currently hardcoded to MGI since the downloader script needs to be updated with new functionality, and it's not immediately clear how we may want to express what we want downloaded at this time. This will be clearer as we develop the downloader functionality for this new use.
   * (not that it's complicated, just we gotta do a bit of a think)
 * Specifying `datasets` or groups. This is related to the download problem, but affects what files are available in `target/sources`, and how that should interact with `DATASET_EXCLUDES`
 
