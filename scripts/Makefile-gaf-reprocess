@@ -43,8 +43,12 @@ $(ROOT_PATH)/annotations_new/%.gpad: $(ROOT_PATH)/annotations/%.gpad $(ROOT_PATH
 
 # noctua_target/noctua_*.gpad.gz -> noctua_target/noctua_*.gpad -> noctua_sources/noctua_*-src.gpad -> noctua_sources/noctua_*-src.gpad.gz
 
-BASE_SOURCE_NOCTUA_GPAD_NAMES = $(notdir $(wildcard $(ROOT_PATH)/noctua_sources/*)) # noctua_mgi.gpad.gz
-BASE_VALID_NOCTUA_GPAD_NAME = $(addsuffix _valid.gpad.gz,$(basename $(basename $(BASE_SOURCE_NOCTUA_GPAD_NAMES)))) 	# noctua_mgi + _valid.gpad.gz
+BASE_SOURCE_NOCTUA_GPAD_NAMES = $(notdir $(wildcard $(ROOT_PATH)/noctua_sources/*)) # noctua_mgi-src.gpad.gz
+# This needs to bring noctua_mgi-src.[fmt].gz -> noctua_mgi.gpad.gz
+# basename basename brings us to noctua_mgi-src
+# subst -src,,_basenames_ brings us to noctua_mgi (the empty string between the commas says to replace -src with empty string)
+# addsuffix brings us to noctua_mgi.gpad.gz
+BASE_VALID_NOCTUA_GPAD_NAME = $(addsuffix .gpad.gz,$(subst -src,,$(basename $(basename $(BASE_SOURCE_NOCTUA_GPAD_NAMES))))) # noctua_mgi + .gpad.gz
 
 noctua_gpad: $(foreach name,$(BASE_VALID_NOCTUA_GPAD_NAME),$(ROOT_PATH)/noctua_target/$(name))
 
