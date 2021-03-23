@@ -9,7 +9,7 @@ import os
 import json
 import pathlib
 
-this_go_site_path = pathlib.Path(__file__).parent.parent.parent.absolute()
+this_go_site_path = pathlib.Path(__file__).parent.parent.parent.parent.absolute()
 metadata_dir = os.path.join(this_go_site_path, "metadata")
 
 def process_single_file(source_file, gpis, ontology, out_dir, annotation_inferences=None):
