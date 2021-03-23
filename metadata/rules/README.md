@@ -374,17 +374,21 @@ An example:
 
 ```json
 {
-"annotation": {
-"annotation": {
-"relation": "http://purl.obolibrary.org/obo/RO_0002331",
-"term": "http://purl.obolibrary.org/obo/GO_0098706"
-},
-"taxon": "http://purl.obolibrary.org/obo/NCBITaxon_10090",
-"extension": []
-},
-"inferences": [],
-"satisfiable": false,
-"taxonProblem": true
+    "annotation":{
+        "annotation":{
+            "relation":"http://purl.obolibrary.org/obo/RO_0002331",
+            "term":"http://purl.obolibrary.org/obo/GO_0098706"
+        },
+        "taxon":"http://purl.obolibrary.org/obo/NCBITaxon_10090",
+        "extension":[
+            
+        ]
+    },
+    "inferences":[
+        
+    ],
+    "satisfiable":false,
+    "taxonProblem":true
 }
 ```
 
