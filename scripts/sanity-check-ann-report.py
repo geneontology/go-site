@@ -55,6 +55,8 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('-d', '--directory',
                         help='The directory to act on')
+    parser.add_argument('-n', '--ignore_noctua', action='store_const', const=True,
+                        help='Ignore noctua files in sanity checks')
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='More verbose output')
     args = parser.parse_args()
@@ -91,6 +93,9 @@ def main():
             potential_id = os.path.splitext(potential_id)[0]
         ## Trim off the path.
         potential_id = os.path.basename(potential_id)
+        ## If we don't want to check noctua annotation files for some reason.
+        if args.ignore_noctua and "noctua" in potential_id:
+            continue
         ## We know that "-src" should be there, so off with that.
         potential_id = potential_id[:-4]
         ids.append(potential_id)
