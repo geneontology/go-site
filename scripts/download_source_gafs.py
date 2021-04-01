@@ -9,6 +9,8 @@ import multiprocessing
 import time
 import shutil
 import gzip
+import functools
+import json
 
 from typing import List, Dict
 
@@ -118,6 +120,91 @@ def group(group, datasets, target, type, exclude, dry_run, parallel, retries, re
                 # We are not zipped, so let's zip up
                 zipup(t[1])
 
+
+@cli.command()
+@click.option("--datasets", "-d", type=click.Path(exists=True), required=True, help="Path to directory with all the dataset yamls")
+@click.option("--target", "-T", type=click.Path(exists=False), required=True, help="Path to directory where files will be stored")
+@click.option("--exclude", "-x", multiple=True, default=None, help="dataset name we do not want to download")
+@click.option("--only-group", "-g", multiple=True, default=None,
+    help="Ignores resource groups that are not specified by this option. Datasets within the group can still be excluded with --exclude")
+@click.option("--parallel", "-p", default=5, help="Number of processes to use to download files", show_default=True)
+@click.option("--dry-run", is_flag=True, help="Do everything but download if  flag is set")
+@click.option("--retries", "-r", default=3, help="Max number of times to download a single source before giving up on everyone", show_default=True)
+@click.option("--retry-time", "-t", default=15, help="Number of seconds between retry attempts", show_default=True)
+@click.option("--map-dataset-url", "-m", multiple=True, type=(str, str, str), default=dict(), help="Replacement url mapping for a dataset: `DATASET TYPE URL`")
+@click.option("--replace", type=bool, default=True, help="Set to False if the download should not replace existing files")
+@click.option("--zip-unzip", is_flag=True, default=False, help="Ensure all sources are both zipped and unzipped up after downloaded")
+def annotations(datasets, target, exclude, only_group, parallel, dry_run, retries, retry_time, map_dataset_url, replace, zip_unzip):
+    """
+    Smart downloader for use in new Pipeline Reorientation. (See ticket https://github.com/geneontology/pipeline/issues/206)
+
+    In the dataset YAML files defining the upstream data resources, a group may have multiple datasets.
+    Datasets are named and come in many formats, of which we only are concerned with gaf, gpad, and gpi.
+    So the pair (dataset, format) constitutes a unique file to download. There are two segments of formats,
+    partitioned by gaf on one side, and gpad+gpi on the other. So if downloading a dataset as gaf, then only
+    the gaf file is necessary. If downloading a dataset as gpad+gpi, then both the gpad file and the gpi file
+    must be downloaded.
+
+    By convention the gpi file that matches the gpad will have the same dataset name, but format gpi.
+
+    The downloader by default will look for gpad+gpi for a given dataset, and fallback to gaf if either gpad
+    or gpi aren't there.
+
+    If the downloader is to act sctrictly when reading the dataset YAML files, then it will look for the 
+    `status: active` key/value pair for a dataset and attempt to find a completed dataset. There should be
+    only one `active` dataset. If an active dataset is gpad or gpi, then there should be a corresponding
+    gpad or gpi (whichever was not found) with the same dataset name. If gaf is the active dataset, then 
+    that one should be downloaded. If there is more than one "complete" dataset (both gaf and gpad) then
+    the downloader may select any one partition.
+
+    The downloader will download by group. By default all groups will be downloaded, where each dataset
+    within the group will be downloaded. An option `--excludes` can be used to filter out datasets.
+
+    Specifying which only which groups specifically to turn is also possible with `--only`.
+    """
+    os.makedirs(os.path.abspath(target), exist_ok=True)
+
+    dataset_mappings = { (dataset, t): url for (dataset, t, url) in map_dataset_url }
+
+    click.echo("Using {} for datasets".format(datasets))
+    resource_metadata = load_resource_metadata(datasets)
+    to_download = annotation_datasets_to_download(resource_metadata)
+
+    # Filter to select any Datasets that are in the `only_group` list
+    if only_group is not None:
+        to_download = [ds for ds in to_download if ds.group in only_group]
+
+    # Filter out any excluded dataset names
+    if exclude is not None:
+        to_download = [ds for ds in to_download if ds.dataset not in exclude]
+    
+    # Apply dataset, type alternate URL mapping
+    to_download = [
+        Dataset(ds.group, ds.dataset, dataset_mappings.get((ds.dataset, ds.type), ds.url), ds.type, ds.compression)
+            for ds in to_download
+    ]
+
+    # Do the download
+    results = multi_download(to_download, target, parallel=parallel, retries=retries, retry_time=retry_time, dryrun=dry_run, replace=replace)
+
+    just_successes = [r[0] for r in results]
+    if False in just_successes:
+        raise click.ClickException("Failed Download")
+
+    if zip_unzip:
+        for t in results:
+            # We rely here on the file extension. We can do this because we construct
+            # the path based on the `compression` field in the metadata yaml, and so
+            # paths with .gz should be zipped, and paths without should not be. Here
+            # We zip all files with paths that end in gz
+            if os.path.splitext(t[1])[1].endswith(".gz"):
+                # If we end in gz, then unzip
+                unzip(t[1], os.path.splitext(t[1])[0])
+            else:
+                # We are not zipped, so let's zip up
+                zipup(t[1])
+    
+
 @cli.command()
 @click.option("--datasets", "-d", type=click.Path(exists=True), required=True, help="Path to directory with all the dataset yamls")
 @click.option("--target", "-T", type=click.Path(exists=False), required=True, help="Path to directory where files will be stored")
@@ -147,7 +234,6 @@ def organize(datasets, target, source):
         os.makedirs(os.path.dirname(target_path), exist_ok=True)
         shutil.copyfile(f, target_path)
 
-
 def load_resource_metadata(datasets_dir) -> List[Dict]:
     """
     Loads all the YAML files in `datasets_dir` as dicts in a list.
@@ -166,6 +252,99 @@ def load_resource_metadata(datasets_dir) -> List[Dict]:
             loaded_yamls.append(dataset)
 
     return loaded_yamls
+
+
+def annotation_datasets_to_download(groups_metadata: List[Dict]) -> List[Dataset]:
+    """
+    This takes a list of group metadata JSON dicts, and outputs a list of Datasets 
+    that should end up being downloaded.
+
+    This works by first transforming the incoming metadata into a Map of the dataset name
+    to a dictionary holding what type of dataset (gaf, gpad+gpi, or other) is present for
+    that dataset as well as a list of Dataset items.
+    
+    Like so:
+    {
+        "goa_chicken": {
+            type_val: int,
+            datasets: [Dataset("goa", "goa_chicken", ...)]
+        },
+    }
+
+    The type_val represents the broad type, and is an integer to be comparable. gaf is 1, gpad/gpi is 2,
+    and anything else is 0. If we have gaf already in our `to_download_map` for a dataset, and we come
+    across a gpad or gpi of the same dataset name, we know that we should use that instead by 
+    comparing the value of the incoming type (gpad is 2) to the existing Dataset (gaf is 1). Thus the 
+    gpad version of the dataset replaces the items in the "datasets" key, and type_val is set to 2.
+
+    Then if we come across another dataset with the same name, also gpad or gpi, that dataset is *added*
+    to the list (since the type value is equal). For example, if we have a mgi gpad in the map, and we
+    come across an mgi gpi, we can add it the list.
+
+    Datasets with less value then already exist will be ignored.
+    """
+    to_download_map = dict() # type: Dict[str, Dataset]
+    # dataset name -> Dataset
+    """
+    {
+        "goa_chicken": {
+            type_val: int,
+            datasets: [Dataset("goa", "goa_chicken", ...)]
+        },
+    }
+    """
+    type_vals = {
+        "gaf": 1,
+        "gpad": 2,
+        "gpi": 2
+    }
+    for group in groups_metadata:
+        for dataset in group["datasets"]:
+            if dataset.get("status", None) == "active":
+                # Only interact with "active" datasets
+                if dataset["dataset"] not in to_download_map:
+                    # Add it if it doesn't exist
+                    to_download_map[dataset["dataset"]] = {
+                        "type_val": type_vals.get(dataset["type"], 0),
+                        "datasets": [Dataset(
+                                        group=group["id"],
+                                        dataset=dataset["dataset"],
+                                        url=dataset["source"],
+                                        type=dataset["type"],
+                                        compression=dataset.get("compression", "")
+                        )]
+                    }
+                else:
+                    dataset_to_download = to_download_map[dataset["dataset"]]
+                    # add this dataset to the list if we have the same "type value",
+                    # or replace altogether if we have a larger value (so gpad/gpi replaces gaf)
+                    if type_vals.get(dataset["type"], 0) == dataset_to_download["type_val"]:
+                        dataset_to_download["datasets"].append(Dataset(
+                                                                group=group["id"],
+                                                                dataset=dataset["dataset"],
+                                                                url=dataset["source"],
+                                                                type=dataset["type"],
+                                                                compression=dataset.get("compression", "")
+                        ))
+                    elif type_vals.get(dataset["type"], 0) > dataset_to_download["type_val"]:
+                        # If the dataset value is "bigger" (more important) than what exists, replace it completely
+                        dataset_to_download["type_val"] = type_vals.get(dataset["type"], 0)
+                        dataset_to_download["datasets"] = [Dataset(
+                                                            group=group["id"],
+                                                            dataset=dataset["dataset"],
+                                                            url=dataset["source"],
+                                                            type=dataset["type"],
+                                                            compression=dataset.get("compression", "")
+                                                        )]
+    
+    return functools.reduce(
+        lambda accum, element: accum + element["datasets"], 
+        [ds for ds in to_download_map.values() if ds["type_val"] >= 1], [])
+
+
+
+
+# def active_datasets()
 
 def multi_download(dataset_targets: List[Dataset], target, parallel=5, retries=3, retry_time=20, dryrun=False, replace=True):
 
