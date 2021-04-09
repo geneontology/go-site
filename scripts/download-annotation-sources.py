@@ -149,7 +149,7 @@ def annotations(datasets, target, exclude, only_group, parallel, dry_run, retrie
     The downloader by default will look for gpad+gpi for a given dataset, and fallback to gaf if either gpad
     or gpi aren't there.
 
-    If the downloader is to act sctrictly when reading the dataset YAML files, then it will look for the 
+    If the downloader is to act strictly when reading the dataset YAML files, then it will look for the 
     `status: active` key/value pair for a dataset and attempt to find a completed dataset. There should be
     only one `active` dataset. If an active dataset is gpad or gpi, then there should be a corresponding
     gpad or gpi (whichever was not found) with the same dataset name. If gaf is the active dataset, then 

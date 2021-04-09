@@ -16,6 +16,19 @@ Additionally, this will only download "active" datasets - datasets whose YAML ha
 
 As a note, the `all` command differs in that it will download all files of a certain type, and so will either repeat data by downloading both gpad and gaf (if both are provided)
 
+#### Examples
+
+To download all annotations except `goa_uniprot_all` to a directory called "sources". All sources are zipped if unzipped, and unzipped if zipped with the `--zip-unzip` option:
+```
+python download-annotation-sources.py annotations --datasets path/to/go-site/datasets --target sources/ -x goa_uniprot_all --zip-unzip
+```
+
+To download only MGI, FB, and GOA groups, but excluding `goa_unprot_all`:
+
+```
+python download-annotation-sources.py annotations --datasets path/to/go-site/datasets --target sources/ -g mgi -g fb -g goa -x goa_uniprot_all --zip-unzip
+```
+
 ### all
 
 Using the datasets metadata YAML files, `all` will download all files referred to in the metadata. File types may be specified, in which case only those files that match the specified type will be downloaded.
