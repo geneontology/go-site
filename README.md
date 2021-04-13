@@ -1,5 +1,4 @@
-[![Stories in Ready](https://badge.waffle.io/geneontology/go-site.png?label=ready&title=Ready)](https://waffle.io/geneontology/go-site)
-[![Build Status](https://travis-ci.org/geneontology/go-site.svg?branch=master)](https://travis-ci.org/geneontology/go-site?branch=master)
+[![Build Status](https://github.com/geneontology/go-site/workflows/CI/badge.svg)](https://github.com/geneontology/go-site/actions?query=workflow%3ACI)
 
 A collection of metadata, files, and tools associated with the GO public
 website and geneontology.org web presence.
@@ -39,6 +38,3 @@ See the [metadata/README.md](metadata/README.md) for more details
   This files an scripts that we want to preserve from the old GO site.
   Ideally, any critical functionality can be rewritten in a simpler
   and more reusable way than the original.
-
-
-
