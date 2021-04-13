@@ -10,7 +10,6 @@ import time
 import shutil
 import gzip
 import functools
-import json
 
 from typing import List, Dict
 
@@ -150,7 +149,7 @@ def annotations(datasets, target, exclude, only_group, parallel, dry_run, retrie
     The downloader by default will look for gpad+gpi for a given dataset, and fallback to gaf if either gpad
     or gpi aren't there.
 
-    If the downloader is to act sctrictly when reading the dataset YAML files, then it will look for the 
+    If the downloader is to act strictly when reading the dataset YAML files, then it will look for the 
     `status: active` key/value pair for a dataset and attempt to find a completed dataset. There should be
     only one `active` dataset. If an active dataset is gpad or gpi, then there should be a corresponding
     gpad or gpi (whichever was not found) with the same dataset name. If gaf is the active dataset, then 
@@ -205,6 +204,7 @@ def annotations(datasets, target, exclude, only_group, parallel, dry_run, retrie
                 zipup(t[1])
     
 
+
 @cli.command()
 @click.option("--datasets", "-d", type=click.Path(exists=True), required=True, help="Path to directory with all the dataset yamls")
 @click.option("--target", "-T", type=click.Path(exists=False), required=True, help="Path to directory where files will be stored")
@@ -233,6 +233,7 @@ def organize(datasets, target, source):
         target_path = construct_grouped_path(found_dataset, name, absolute_target)
         os.makedirs(os.path.dirname(target_path), exist_ok=True)
         shutil.copyfile(f, target_path)
+
 
 def load_resource_metadata(datasets_dir) -> List[Dict]:
     """
@@ -341,10 +342,6 @@ def annotation_datasets_to_download(groups_metadata: List[Dict]) -> List[Dataset
         lambda accum, element: accum + element["datasets"], 
         [ds for ds in to_download_map.values() if ds["type_val"] >= 1], [])
 
-
-
-
-# def active_datasets()
 
 def multi_download(dataset_targets: List[Dataset], target, parallel=5, retries=3, retry_time=20, dryrun=False, replace=True):
 
@@ -459,7 +456,7 @@ def construct_download_path(dataset_target: Dataset, target) -> str:
     """
     absolute_target = os.path.abspath(target)
     name = "{dataset}-src.{type}".format(dataset=dataset_target.dataset, type=dataset_target.type)
-    if dataset_target.compression is not None and dataset_target.compression != "":
+    if dataset_target.compression is not None:
         name += ".{}".format(extension_map(dataset_target.compression))
 
     path = os.path.join(absolute_target, name)
