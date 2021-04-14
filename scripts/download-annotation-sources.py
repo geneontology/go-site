@@ -456,7 +456,7 @@ def construct_download_path(dataset_target: Dataset, target) -> str:
     """
     absolute_target = os.path.abspath(target)
     name = "{dataset}-src.{type}".format(dataset=dataset_target.dataset, type=dataset_target.type)
-    if dataset_target.compression is not None:
+    if dataset_target.compression:
         name += ".{}".format(extension_map(dataset_target.compression))
 
     path = os.path.join(absolute_target, name)

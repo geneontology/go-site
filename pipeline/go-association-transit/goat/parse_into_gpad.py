@@ -23,7 +23,8 @@ def process_single_file(source_file, gpis, ontology, out_dir, annotation_inferen
         suppress_rule_reporting_tags=[],
         entity_idspaces=metadata.database_entities(metadata_dir),
         group_idspace=metadata.groups(metadata_dir),
-        annotation_inferences=annotation_inferences
+        annotation_inferences=annotation_inferences,
+        rule_set=assocparser.RuleSet.ALL
         # group_metadata=metadata.dataset_metadata_file(metadata_dir, group)
     )
     source_file_base_name = os.path.splitext(os.path.basename(source_file))[0].split("-")[0]

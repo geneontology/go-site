@@ -9,6 +9,9 @@
 DATASET_EXCLUDES ?= goa_uniprot_gcrp goa_pdb goa_uniprot_all
 DATASET_EXCLUDES_PARAMETERS = $(foreach exclusion,$(DATASET_EXCLUDES),-x $(exclusion))
 
+GROUPS ?= mgi fb pombase
+GROUPS_PARAMETERS = $(foreach group,$(GROUPS),-g $(group))
+
 GO_SITE_ROOT = ../..
 METADATA = $(GO_SITE_ROOT)/metadata
 
@@ -22,7 +25,7 @@ target/go-ontology.json:
 	wget --no-check-certificate $(ONTOLOGY) -O $@.tmp && mv $@.tmp $@ && touch $@
 
 target/sources:
-	python3 $(GO_SITE_ROOT)/scripts/download_source_gafs.py group mgi --datasets $(METADATA)/datasets -T $@ --type gaf --type gpi --type gpad --zip-unzip
+	python3 $(GO_SITE_ROOT)/scripts/download-annotation-sources.py annotations --datasets $(METADATA)/datasets -T $@ $(DATASET_EXCLUDES_PARAMETERS) $(GROUPS_PARAMETERS) --zip-unzip
 
 # All gpad and gaf source files
 # This will be used to compute the target "pristine" paths we want
