@@ -57,5 +57,10 @@ def pristine(source, ontology, inferences, target):
             parse_into_gpad.process_single_file(str(s.annotation), gpi_list, ontology, target, annotation_inferences=loaded_inferences)
 
 
+@cli.command()
+def assemble():
+    click.echo("Next stop, Assembling headers and annotations")
+    
+
 if __name__ == "__main__":
     cli()

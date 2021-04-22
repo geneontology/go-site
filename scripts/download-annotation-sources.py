@@ -14,7 +14,7 @@ import functools
 from typing import List, Dict
 
 
-Dataset = collections.namedtuple("Dataset", ["group", "dataset", "url", "type", "compression"])
+Dataset = collections.namedtuple("Dataset", ["group", "dataset", "url", "type", "compression", "merges_into"])
 
 
 @click.group()
@@ -179,12 +179,12 @@ def annotations(datasets, target, exclude, only_group, parallel, dry_run, retrie
     
     # Apply dataset, type alternate URL mapping
     to_download = [
-        Dataset(ds.group, ds.dataset, dataset_mappings.get((ds.dataset, ds.type), ds.url), ds.type, ds.compression)
+        Dataset(ds.group, ds.dataset, dataset_mappings.get((ds.dataset, ds.type), ds.url), ds.type, ds.compression, ds.merges_into)
             for ds in to_download
     ]
 
     # Do the download
-    results = multi_download(to_download, target, parallel=parallel, retries=retries, retry_time=retry_time, dryrun=dry_run, replace=replace)
+    results = multi_download(to_download, target, parallel=parallel, retries=retries, retry_time=retry_time, dryrun=dry_run, replace=replace, tag_mixin=True)
 
     just_successes = [r[0] for r in results]
     if False in just_successes:
@@ -312,7 +312,8 @@ def annotation_datasets_to_download(groups_metadata: List[Dict]) -> List[Dataset
                                         dataset=dataset["dataset"],
                                         url=dataset["source"],
                                         type=dataset["type"],
-                                        compression=dataset.get("compression", "")
+                                        compression=dataset.get("compression", ""),
+                                        merges_into=dataset.get("merges_into", None)
                         )]
                     }
                 else:
@@ -325,8 +326,9 @@ def annotation_datasets_to_download(groups_metadata: List[Dict]) -> List[Dataset
                                                                 dataset=dataset["dataset"],
                                                                 url=dataset["source"],
                                                                 type=dataset["type"],
-                                                                compression=dataset.get("compression", "")
-                        ))
+                                                                compression=dataset.get("compression", ""),
+                                                                merges_into=dataset.get("merges_into", None)
+                                                            ))
                     elif type_vals.get(dataset["type"], 0) > dataset_to_download["type_val"]:
                         # If the dataset value is "bigger" (more important) than what exists, replace it completely
                         dataset_to_download["type_val"] = type_vals.get(dataset["type"], 0)
@@ -335,7 +337,8 @@ def annotation_datasets_to_download(groups_metadata: List[Dict]) -> List[Dataset
                                                             dataset=dataset["dataset"],
                                                             url=dataset["source"],
                                                             type=dataset["type"],
-                                                            compression=dataset.get("compression", "")
+                                                            compression=dataset.get("compression", ""),
+                                                            merges_into=dataset.get("merges_into", None)
                                                         )]
     
     return functools.reduce(
@@ -343,7 +346,7 @@ def annotation_datasets_to_download(groups_metadata: List[Dict]) -> List[Dataset
         [ds for ds in to_download_map.values() if ds["type_val"] >= 1], [])
 
 
-def multi_download(dataset_targets: List[Dataset], target, parallel=5, retries=3, retry_time=20, dryrun=False, replace=True):
+def multi_download(dataset_targets: List[Dataset], target, parallel=5, retries=3, retry_time=20, dryrun=False, replace=True, tag_mixin=False):
 
     pool = multiprocessing.Pool(processes=parallel)
 
@@ -358,7 +361,7 @@ def multi_download(dataset_targets: List[Dataset], target, parallel=5, retries=3
 
             pool.terminate()
 
-    async_results = [ pool.apply_async(robust_download, (dataset, target), {"retries": retries, "dryrun": dryrun, "retry_time": retry_time, "replace": replace}, _simple_callback )
+    async_results = [ pool.apply_async(robust_download, (dataset, target), {"retries": retries, "dryrun": dryrun, "retry_time": retry_time, "replace": replace, "tag_mixin": tag_mixin}, _simple_callback )
         for dataset in dataset_targets ] # List[AsyncResult]
 
     results = [ result.get() for result in async_results ]
@@ -396,7 +399,7 @@ def transform_download_targets(resource_metadata, types=None) -> List[Dataset]:
 
     return transformed_dataset_targets
 
-def robust_download(dataset_target: Dataset, target, retries=3, retry_time=20, dryrun=False, replace=True) -> str:
+def robust_download(dataset_target: Dataset, target, retries=3, retry_time=20, dryrun=False, replace=True, tag_mixin=False) -> str:
     """
     Robustly downloads the url of the `dataset_target` to a path. The path is:
     target/<group>/<dataset>.extension.gz
@@ -404,7 +407,7 @@ def robust_download(dataset_target: Dataset, target, retries=3, retry_time=20, d
     result = ""
     success = True
     for tries in range(0, retries):
-        path = construct_download_path(dataset_target, target)
+        path = construct_download_path(dataset_target, target, tag_mixin=tag_mixin)
         if os.path.exists(path) and not replace:
             click.echo("{} already exists, and we are not replacing existing files".format(path))
             return (True, path)
@@ -448,16 +451,23 @@ def download_the_file(url, out_path, dryrun=False) -> str:
             # Somehow actually verify the the file is correct?
     return result
 
-def construct_download_path(dataset_target: Dataset, target) -> str:
+def construct_download_path(dataset_target: Dataset, target, tag_mixin=False) -> str:
     """
     Builds the path where the given dataset will be downloaded to.
 
     The path is: target/<dataset>.<extension>
+
+    Set tag_mixin to True to tag any mixin datasets (datasets with the "merges_into" key in the metadata YAML). This will save the filename as <dataset>__<merge_into> where <merge_into> is the dataset that this will be mixed into, separated by two underscores.
+    
+    For example: paint_mgi is a mixin for mgi ("merges_into": "mgi"). So the filename if `tag_mixin` is True would be: paint_mgi__mgi.
     """
     absolute_target = os.path.abspath(target)
     name = "{dataset}-src.{type}".format(dataset=dataset_target.dataset, type=dataset_target.type)
+    if tag_mixin and dataset_target.merges_into is not None:
+        name = "{dataset}__{merges}-src.{type}".format(dataset=dataset_target.dataset, merges=dataset_target.merges_into, type=dataset_target.type)
     if dataset_target.compression:
         name += ".{}".format(extension_map(dataset_target.compression))
+
 
     path = os.path.join(absolute_target, name)
     return path

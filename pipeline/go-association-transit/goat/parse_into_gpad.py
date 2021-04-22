@@ -4,6 +4,7 @@ from ontobio.io import assocparser, assocwriter
 from ontobio.validation import metadata, rules, tools
 
 from goat import cached_ontology
+# from goat import sources
 
 import os
 import json
@@ -28,6 +29,7 @@ def process_single_file(source_file, gpis, ontology, out_dir, annotation_inferen
         # group_metadata=metadata.dataset_metadata_file(metadata_dir, group)
     )
     source_file_base_name = os.path.splitext(os.path.basename(source_file))[0].split("-")[0]
+    # dataset_name = sources.dataset_name_from_src(os.path.basename(source_file))
 
     collected = collections.construct_collection(source_file, gpis, config)
 
