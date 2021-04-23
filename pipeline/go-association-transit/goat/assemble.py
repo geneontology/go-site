@@ -36,8 +36,7 @@ def pristine_name(filename: str) -> str:
     return filename.split("__", maxsplit=1)[0]
 
 def pristine_filename_from_dataset(dataset: str) -> str:
-    return "{dataset}_valid.gpad".format(dataset=dataset)
-
+    return "{dataset}_valid".format(dataset=dataset)
 
 
 def mixin_name_from_valid(filename: str) -> Optional[Tuple[str, str]]:
@@ -54,10 +53,10 @@ def mixin_name_from_valid(filename: str) -> Optional[Tuple[str, str]]:
         # Just one item means we do not have a mixin
         return None
     
-    return tuple(filename, name_split[1])
+    return tuple((filename, name_split[1]))
 
 
-def confirm_mixin_candidate(pristine_files: str, candidate_mixin: Tuple[str, str]) -> bool:
+def confirm_mixin_candidate(pristine_files: List[str], candidate_mixin: Tuple[str, str]) -> bool:
     """
     Confirms if a given candidate mixin should really be mixed in by checking that the file to mix into is present
     Args:
@@ -67,11 +66,11 @@ def confirm_mixin_candidate(pristine_files: str, candidate_mixin: Tuple[str, str
     Returns:
         bool: True if the file is found, False otherwise
     """
-    mix_into = pristine_filename_from_dataset(candidate_mixin[1])
+    mix_into = "{}_valid".format(candidate_mixin[1])
     return mix_into in pristine_files
 
 
-def find_all_mixin(pristine_files: List[str]):
+def find_all_mixin(pristine_files: List[str]) -> Dict[str, List[str]]:
     """
     Args:
         pristine_files (List[str]): List of all files in the pristine directory
@@ -83,14 +82,16 @@ def find_all_mixin(pristine_files: List[str]):
             mixin_candidates.append(candidate)
     
     confirmed_mixins = [c for c in mixin_candidates if confirm_mixin_candidate(pristine_files, c)]
-    
+
     # Last, let's make a map from every dataset d -> Mix
     # mixins are: [mix, d]
     # Reminder that the mix name is the full mixin filename, like: paint_mgi__mgi_valid
     dataset_mixins = collections.defaultdict(list) # type: Dict[str, List[str]]
+    
     for p in pristine_files:
+        dataset_mixins[p] = []
         for (mix, d) in confirmed_mixins:
-            if pristine_name(p) == d:
+            if p == pristine_filename_from_dataset(d):
                 # If dataset name for p == d, then mix is a mixin for p
                 dataset_mixins[p].append(mix)
 

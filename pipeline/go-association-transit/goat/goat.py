@@ -3,10 +3,12 @@ import click
 import os
 import json
 import pathlib
+import glob
 
 from typing import List, Dict
 
 from goat import sources
+from goat import assemble as assembly
 from goat import parse_into_gpad
 
 from ontobio.io import gaference
@@ -58,8 +60,14 @@ def pristine(source, ontology, inferences, target):
 
 
 @cli.command()
-def assemble():
+@click.argument("pristine", type=click.Path(exists=True, readable=True, file_okay=False, resolve_path=True))
+def assemble(pristine):
     click.echo("Next stop, Assembling headers and annotations")
+    pristine = pathlib.Path(pristine)
+    pristine_files = [f.stem for f in pristine.glob("*.gpad")]
+    datasets_with_mixins = assembly.find_all_mixin(pristine_files)
+    click.echo(datasets_with_mixins)
+    # `datasets_with_mixins` is a dictionary from filenames -> list of mixins
     
 
 if __name__ == "__main__":
