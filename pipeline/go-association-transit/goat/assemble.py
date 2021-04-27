@@ -19,8 +19,38 @@
 """
 
 import collections
+from dataclasses import dataclass
 
 from typing import DefaultDict, Dict, List, Optional, Tuple
+
+@dataclass
+class AssembleCollection():
+    headers: List[str]
+    associations: List[str]
+
+    @classmethod
+    def initial(cls):  # type AssembleCollection
+        return AssembleCollection([], [])
+
+    @classmethod
+    def with_path(primary_filepath):
+        assemble_collection = AssembleCollection.initial()
+        return assemble_collection
+
+    def add_mixin(self, filepath):
+        # First append to headers. Include separator to differentiate between mixin.
+        """
+        ! header_primary
+        ! how do differentiate between mixin
+        ! Mix_in header
+        ! Separate another mixin
+        ! Mixin2 header
+        """
+        pass
+
+    def write(self, outpath):
+        pass
+
 
 def pristine_name(filename: str) -> str:
     """

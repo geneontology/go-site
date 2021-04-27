@@ -69,6 +69,11 @@ def assemble(pristine):
     click.echo(datasets_with_mixins)
     # `datasets_with_mixins` is a dictionary from filenames -> list of mixins
     
+    for primary in datasets_with_mixins.keys():
+        collection_thing = assembly.AssembleCollection.with_path(primary) # .headers, .annotations
+        for mixin in datasets_with_mixins[primary]:
+            collection_thing.add_mixin(mixin)
+        collection_thing.write(primary.replace("_valid", ""))
 
 if __name__ == "__main__":
     cli()
