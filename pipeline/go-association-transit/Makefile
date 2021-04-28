@@ -54,3 +54,10 @@ target/pristine/gpad/%_valid.gpad: target/sources/%-src.gpad target/go-ontology.
 	goat pristine -o target/go-ontology.json -t target/pristine/gpad $<
 
 
+ASSEMBLED_GPAD = $(addprefix target/assembled/gpad/,$(subst _valid.gpad,,$(basename $(notdir $(PRISTINE_GPAD)))))
+
+assemble: $(ASSEMBLED_GPAD)
+	cp target/assembled/*/* target/assembled || true
+
+target/assembled/gpad/%.gpad: target/pristine/gpad/%_valid.gpad
+	goat assemble -t target/assembled/gpad $<

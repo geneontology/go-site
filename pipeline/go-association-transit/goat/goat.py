@@ -61,8 +61,11 @@ def pristine(source, ontology, inferences, target):
 
 @cli.command()
 @click.argument("pristine", type=click.Path(exists=True, readable=True, file_okay=False, resolve_path=True))
-def assemble(pristine):
+@click.option("--target", "-t", required=True, type=click.Path(exists=False, resolve_path=True))
+def assemble(pristine, target):
     click.echo("Next stop, Assembling headers and annotations")
+    os.makedirs(target, exist_ok=True)
+
     pristine = pathlib.Path(pristine)
     pristine_files = [f.stem for f in pristine.glob("*.gpad")]
     datasets_with_mixins = assembly.find_all_mixin(pristine_files)
@@ -73,7 +76,8 @@ def assemble(pristine):
         collection_thing = assembly.AssembleCollection.with_path(primary) # .headers, .annotations
         for mixin in datasets_with_mixins[primary]:
             collection_thing.add_mixin(mixin)
-        collection_thing.write(primary.replace("_valid", ""))
+        outpath = os.path.join(target, primary.replace("_valid", ""))
+        collection_thing.write(outpath)
 
 if __name__ == "__main__":
     cli()

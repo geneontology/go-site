@@ -41,6 +41,9 @@ def process_single_file(source_file, gpis, ontology, out_dir, annotation_inferen
     with open(os.path.join(out_dir, "{}-report.json".format(source_file_base_name)), "w") as report_json_f:
         report_json_f.write(json.dumps(report_json_contents, indent=4))
 
+    with open(os.path.join(out_dir, "{}.header".format(source_file_base_name)), "w") as header_f:
+        header_f.write("\n".join(collected.headers))
+
     with open(os.path.join(out_dir, "{}_valid.gpad".format(source_file_base_name)), "w") as gpad_valid_f:
         gpad_writer = assocwriter.GpadWriter(gpad_valid_f, version=assocwriter.GPAD_2_0)
         gpad_writer.write(collected.associations.associations)
