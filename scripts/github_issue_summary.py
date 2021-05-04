@@ -63,7 +63,10 @@ if __name__ == "__main__":
     new_issues = get_issues(args.repo_name, "created", yesterday)
     updated_issues = get_issues(args.repo_name, "updated", yesterday)
 
-    print("<h2>Summary for tickets in {} from {} to {}</h2>".format(args.repo_name, yesterday, today))
+    repo_name = args.repo_name
+    if "/" in repo_name:
+        repo_name = repo_name.rsplit("/", maxsplit=1)[-1]
+    print("<h2>Summary for tickets in {} from {} to {}</h2>".format(repo_name, yesterday, today))
     ids = set()
     print_issues(new_issues, "New", ids)
     print_issues(updated_issues, "Updated", ids)
