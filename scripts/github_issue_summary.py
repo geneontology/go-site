@@ -3,6 +3,7 @@ import requests
 import json
 import datetime
 import argparse
+from pytz import timezone
 
 parser = argparse.ArgumentParser()
 parser.add_argument('repo_name')
@@ -57,11 +58,16 @@ if __name__ == "__main__":
     # repo = "geneontology/go-ontology"
     # repo = "geneontology/amigo"
     args = parser.parse_args()
-    today = datetime.date.today()
-    yesterday = today - datetime.timedelta(int(args.duration_in_days))
+    today_time = datetime.datetime.now(tz=timezone('US/Pacific'))
+    yesterday_time = today_time - datetime.timedelta(int(args.duration_in_days))
+    yesterday_time_str = yesterday_time.isoformat()
 
-    new_issues = get_issues(args.repo_name, "created", yesterday)
-    updated_issues = get_issues(args.repo_name, "updated", yesterday)
+    # For display
+    today = today_time.strftime("%Y-%m-%d")
+    yesterday = yesterday_time.strftime("%Y-%m-%d")
+
+    new_issues = get_issues(args.repo_name, "created", yesterday_time_str)
+    updated_issues = get_issues(args.repo_name, "updated", yesterday_time_str)
 
     repo_name = args.repo_name
     if "/" in repo_name:
