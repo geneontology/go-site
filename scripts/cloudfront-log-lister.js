@@ -1,4 +1,14 @@
 ////
+//// WARNING:
+////   Given log volume at this point, it would be useful to maybe skip this
+//// script and do something like:
+////    : aws s3 sync s3://go-data-product-usage-logs/current/ . --exclude "*" --include "*2020-10-*"
+////    : pigz -d *.gz
+////    : cat ERTRETYERTY.2020-10-* > log-current-10.txt
+////    : cat log-current-10.txt | grep -v "^#" > filtered.log.txt
+////   See https://github.com/geneontology/geneontology.github.io/issues/268#issuecomment-763249662 .
+//// ////
+////
 //// Dump the contents of a CloudFront S3 log directory's GZIPed
 //// objects from AWS S3 to STDOUT.
 ////
@@ -39,7 +49,7 @@ function _debug(arg1){
     }
 }
 
-// Two or one  args.
+// Two or one args.
 function _die(m1, m2){
     if( typeof(m2) !== 'undefined' ){
 	console.error('ERROR:', m1, m2);
@@ -154,6 +164,7 @@ function get_objects(s3dataobjs){
 	    }
 	});
     }
+    // After we have all the objects, operate on them.
     list_all_keys(null, function(){
 	get_objects(all_keys);
     });

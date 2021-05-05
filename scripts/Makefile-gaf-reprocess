@@ -1,0 +1,68 @@
+# Basic Dependency Tree for a single gaf.
+# annotations_new/mgi.gaf.gz <- annotations_new/mgi.gaf <- annotations/mgi.gaf, all.gaferences.json
+# <- all.gaferences.json.gz
+# <- annotations/mgi.gaf.gz
+# Run locally with `make -f scripts/Makefile-gaf-reprocess ROOT_PATH=$(pwd) all`
+
+ROOT_PATH ?= /opt/go-site
+BASE_TARGET_NAMES = $(filter-out %.gpi.gz,$(notdir $(wildcard $(ROOT_PATH)/annotations/*)))
+
+all: $(foreach name,$(BASE_TARGET_NAMES),$(ROOT_PATH)/annotations_new/$(name))
+
+# Only zip from annotations_new
+$(ROOT_PATH)/annotations_new/%.gz: $(ROOT_PATH)/annotations_new/%
+	pigz $<
+
+# Only unzip from annotations
+$(ROOT_PATH)/annotations/%: $(ROOT_PATH)/annotations/%.gz
+	unpigz $<
+
+.PRECIOUS: $(ROOT_PATH)/gaferencer-products/%.json.gz
+$(ROOT_PATH)/gaferencer-products/%: $(ROOT_PATH)/gaferencer-products/%.gz
+	unpigz $<
+
+$(ROOT_PATH)/annotations_new/%.gaf: $(ROOT_PATH)/annotations/%.gaf $(ROOT_PATH)/gaferencer-products/all.gaferences.json
+	mkdir -p $(ROOT_PATH)/annotations_new
+	ontobio-parse-assocs.py -f $< -F gaf -o $@ -I $(ROOT_PATH)/gaferencer-products/all.gaferences.json --report-md /tmp/report.md --report-json /tmp/report.json --allow_paint convert --to gaf -n 2.2
+
+$(ROOT_PATH)/annotations_new/%.gpad: $(ROOT_PATH)/annotations/%.gpad $(ROOT_PATH)/gaferencer-products/all.gaferences.json
+	mkdir -p $(ROOT_PATH)/annotations_new
+	ontobio-parse-assocs.py -f $< -F gpad -o $@ -I $(ROOT_PATH)/gaferencer-products/all.gaferences.json --report-md /tmp/report.md --report-json /tmp/report.json --allow_paint convert --to gpad
+
+####################################################################################################
+### Noctua GPAD
+####################################################################################################
+
+# This will assume that there are noctua gpads in the $(ROOT_PATH)/noctua_sources directory: $(ROOT_PATH)/noctua_sources/noctua_[resource].gpad.gz
+# 1. Files will be unzipped
+# 2. ontobio will parse them and save files as $(ROOT_PATH)/noctua_target/noctua_[resource].gpad, 
+#	along with reports: noctua_[resource].json and noctua_[resource].md
+# 3. noctua_[resource].gpad files will be zipped
+# 4. noctua_[resrouce].gpad.gz files will be uploaded back into skyhook at http://skyhook.berkeleybop.org/[branch]/products/annotations/noctua_[resource].gpad.gz
+# 5. reports will be uploaded to skyhook at http://skyhook.berkeleybop.org/[branch]/reports/
+
+# noctua_target/noctua_*.gpad.gz -> noctua_target/noctua_*.gpad -> noctua_sources/noctua_*-src.gpad -> noctua_sources/noctua_*-src.gpad.gz
+
+BASE_SOURCE_NOCTUA_GPAD_NAMES = $(notdir $(wildcard $(ROOT_PATH)/noctua_sources/*)) # noctua_mgi-src.gpad.gz
+# This needs to bring noctua_mgi-src.[fmt].gz -> noctua_mgi.gpad.gz
+# basename basename brings us to noctua_mgi-src
+# subst -src,,_basenames_ brings us to noctua_mgi (the empty string between the commas says to replace -src with empty string)
+# addsuffix brings us to noctua_mgi.gpad.gz
+BASE_VALID_NOCTUA_GPAD_NAME = $(addsuffix .gpad.gz,$(subst -src,,$(basename $(basename $(BASE_SOURCE_NOCTUA_GPAD_NAMES))))) # noctua_mgi + .gpad.gz
+
+noctua_gpad: $(foreach name,$(BASE_VALID_NOCTUA_GPAD_NAME),$(ROOT_PATH)/noctua_target/$(name))
+
+$(ROOT_PATH)/noctua_sources/noctua_%-src.gpad: $(ROOT_PATH)/noctua_sources/noctua_%-src.gpad.gz
+	unpigz $<
+
+$(ROOT_PATH)/noctua_target/noctua_%.gpad: $(ROOT_PATH)/noctua_sources/noctua_%-src.gpad $(ROOT_PATH)/go-ontology.json
+	mkdir -p $(ROOT_PATH)/noctua_target
+	ontobio-parse-assocs.py -f $< -F gpad -o $@ -r $(ROOT_PATH)/go-ontology.json --report-md $(ROOT_PATH)/noctua_target/noctua_$*.report.md --report-json $(ROOT_PATH)/noctua_target/noctua_$*.report.json convert --to gpad -n 1.2
+
+$(ROOT_PATH)/noctua_target/noctua_%.gpad.gz: $(ROOT_PATH)/noctua_target/noctua_%.gpad
+	pigz $<
+
+OBO=http://purl.obolibrary.org/obo
+ONTOLOGY ?= $(OBO)/go/snapshot/go.json
+$(ROOT_PATH)/go-ontology.json:
+	wget --no-check-certificate $(ONTOLOGY) -O $@.tmp && mv $@.tmp $@ && touch $@	

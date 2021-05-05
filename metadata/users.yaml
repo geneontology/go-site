@@ -364,7 +364,7 @@
   uri: 'GOC:atm'
   xref: 'GOC:atm'
 -
-  accounts: 
+  accounts:
     github: jimhu-tamu
   nickname: 'Jim Hu'
   organization: 'E. coli'
@@ -621,14 +621,13 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   email-md5:
     - 211b318809e38f23520d0bd64f4a2330
   groups:
+    - 'http://geneontology.org'
+  previous-groups:
     - 'http://www.ebi.ac.uk/GOA'
-  nickname: 'Aleksandra Shypitsyna'
-  organization: GOA
+  nickname: 'Alice Dashow'
   uri: 'http://orcid.org/0000-0003-3829-1600'
   xref: 'GOC:als'
 -
@@ -1119,9 +1118,19 @@
   uri: 'http://orcid.org/0000-0002-5494-626X'
   xref: 'GOC:pde'
 -
+  accounts:
+    github: phanivg
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://flybase.org'
+  previous-groups:
+    - 'http://reactome.org'
   nickname: 'Phani Garapati'
-  organization: Reactome
-  uri: 'GOC:phg'
+  organization: FlyBase
+  uri: 'http://orcid.org/0000-0003-0941-2207'
   xref: 'GOC:phg'
 -
   nickname: 'Steven Jupe'
@@ -1460,7 +1469,7 @@
   uri: 'GOC:mg'
   xref: 'GOC:mg'
 -
-  nickname: 'Peifer Zhang'
+  nickname: 'Peifen Zhang'
   organization: TAIR
   uri: 'GOC:pz'
   xref: 'GOC:pz'
@@ -3142,6 +3151,20 @@
   uri: 'http://orcid.org/0000-0002-6238-1932'
 -
   accounts:
+    github: vponferrada
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  email-md5:
+    -
+  groups:
+    - 'http://www.xenbase.org'
+  nickname: 'Virgilio Ponferrada'
+  organization: Xenbase
+  uri: 'http://orcid.org/0000-0002-8590-7183'
+-
+  accounts:
     github: chris-grove
   authorizations:
     noctua:
@@ -4134,7 +4157,7 @@
   nickname: 'Louise McKenzie'
   organization: MGI
   uri: 'GOC:lmm'
-- 
+-
   nickname: 'Robert Sinclair'
   organization: MGI
   uri: 'GOC:bobs'
@@ -4150,3 +4173,121 @@
   nickname: 'Dnyanada Sahasrabudhe'
   organization: SynGO
   uri: 'https://orcid.org/0000-0003-2916-7616'
+-
+  accounts:
+    github: Fbolio
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.wormbase.org'
+  nickname: 'Fernando Bolio'
+  organization: WB
+  uri: 'https://orcid.org/0000-0003-2506-9234'
+-
+  accounts:
+    github: ccasalsc
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Cristina Casals'
+  organization: UniProt
+  uri: 'https://orcid.org/0000-0001-8769-177X'
+-
+  accounts:
+    github: colinlog
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://greekc.org'
+  nickname: 'Colin Logie'
+  organization: Radboud University
+  uri: 'https://orcid.org/0000-0002-8534-6582'
+-
+  accounts:
+    github: mlkaldunski
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://rgd.mcw.edu'
+  nickname: 'Mary Kaldunski'
+  organization: RGD
+  uri: 'https://orcid.org/0000-0003-3645-6803'
+-
+  accounts:
+    github: davidwsant
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://greekc.org'
+  nickname: 'David W. Sant'
+  organization: University of Utah
+  uri: 'https://orcid.org/0000-0001-7372-9896'
+-
+  accounts:
+    github: yazeyen
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.ktu.edu.tr/bmi-cancermodelingresearchgroup'
+  nickname: 'Yasemin Zeynep Avci'
+  organization: Karadeniz Teknik Universitesi
+  uri: 'https://orcid.org/0000-0003-1297-6708'
+-
+  nickname: 'Curators at ZFIN'
+  organization: ZFIN
+  uri: 'GOC:zfin_curators'
+  xref: 'GOC:zfin_curators'
+-
+  accounts:
+    github: bea-liv
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://eupathdb.org'
+  nickname: 'Beatrice Amos'
+  uri: 'http://orcid.org/0000-0003-2347-712X'
+-
+  accounts:
+    github: pwilx666
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://eupathdb.org'
+  nickname: 'Paul Wilkinson'
+  uri: 'http://orcid.org/0000-0002-8836-5439'
+-
+  accounts:
+    github: obsidian83
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://eupathdb.org'
+  nickname: 'David Starns'
+  uri: 'http://orcid.org/0000-0001-6583-9067'
+-
+  accounts:
+    github: turbomam
+  groups:
+    - 'http://geneontology.org'
+  nickname: 'Mark A. Miller'
+  organization: 'GO Central'
+  uri: 'http://orcid.org/0000-0001-9076-6066'

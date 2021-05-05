@@ -6,7 +6,7 @@ In general we follow the pattern:
  * schema for each file also specified in YAML
  * metadata can be edited via github web interface, followed by Pull Request
  * Travis-CI checks file against schema - see the [../.travis.yml](../.travis.yml), if passes can be merged
- * Jenkins jobs publish metadata files on go-public S3 bucket (TODO: permanent URL)
+ * Jenkins jobs publish metadata files (e.g. http://current.geneontology.org/metadata)
 
 # users.yaml
 

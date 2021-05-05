@@ -40,7 +40,7 @@ target/gafs.touch: $(foreach group,$(RESOURCE_GROUPS),target/groups/$(group)/$(g
 	touch target/gafs.touch
 
 OBO= http://purl.obolibrary.org/obo
-ONTOLOGY = $(OBO)/go/snapshot/go.json
+ONTOLOGY ?= $(OBO)/go/snapshot/go.json
 target/go-ontology.json:
 	wget --no-check-certificate $(ONTOLOGY) -O $@.tmp && mv $@.tmp $@ && touch $@
 
@@ -114,6 +114,7 @@ target/groups/goa/goa_uniprot_all_noiea.gaf: target/alltaxons.txt target/groups/
 	mv target/groups/goa/goa_uniprot_all.gaf.tmp target/groups/goa/goa_uniprot_all.gaf
 	gzip -cf target/groups/goa/goa_uniprot_all.gaf > target/groups/goa/goa_uniprot_all.gaf.gz
 	gzip -cf target/groups/goa/goa_uniprot_all_noiea.gaf > target/groups/goa/goa_uniprot_all_noiea.gaf.gz
+	rm -f target/groups/goa/goa_uniprot_all-src.gaf target/groups/goa/goa_uniprot_all.gaf || true
 
 RDF_GEN = rdfgen.py
 target/groups/goa/goa_uniprot_all_noiea_cam.ttl: target/go-ontology.json target/groups/goa/goa_uniprot_all_noiea.gaf
@@ -194,8 +195,20 @@ BG_PROPERTIES = conf/blazegraph.properties
 LOAD_TARGETS = $(ONT_MERGED) target/rdf target/noctua-models/models
 
 target/blazegraph.jnl: $(BGJAR) target/rdf target/noctua-models
+	du -sh target
+	du -sh target/*
+	free -h
+	ls -AlF /tmp
 	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties load --use-ontology-graph $(LOAD_TARGETS)
+	du -sh target
+	du -sh target/*
+	free -h
+	ls -AlF /tmp
 	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=target/blazegraph.jnl --properties=conf/blazegraph.properties reason --source-graphs-query=$(CAM_GRAPH_QUERY) --ontology=$(GO_GRAPHSTORE_URI) --append-graph-name="_inferred"
+	du -sh target
+	du -sh target/*
+	free -h
+	ls -AlF /tmp
 
 target/blazegraph-internal.jnl: target/blazegraph.jnl
 	cp $< $@

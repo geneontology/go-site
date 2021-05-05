@@ -1,8 +1,7 @@
 from obo_parser import OBO_Parser, TermState
-import sys, getopt, os
+import sys, getopt, os, json
 
-import requests
-import json
+import go_stats_utils as utils
 
 go_pipeline_release_url = "http://current.geneontology.org/metadata/release-date.json"
 go_obo_url = "http://purl.obolibrary.org/obo/go.obo"
@@ -15,11 +14,11 @@ last_date = None
 def compute_changes(current_obo_url, previous_obo_url):
     # The new published OBO archive
     print("Loading current GO ontology (" + current_obo_url + ")...")
-    currentgo = OBO_Parser(requests.get(current_obo_url).text)
+    currentgo = OBO_Parser(utils.fetch(current_obo_url).text)
 
     # A previously published OBO archive
     print("Loading previous GO ontology (" + previous_obo_url + ")...")
-    oldgo = OBO_Parser(requests.get(previous_obo_url).text)
+    oldgo = OBO_Parser(utils.fetch(previous_obo_url).text)
 
     # New GO Terms
     created = { }
@@ -254,6 +253,8 @@ def create_text_report(json_changes):
 def format(item):
     if type(item) == str:
         return item.strip()
+    if type(item) == bool or int or float:
+        return str(item)
     if type(item) == list:
         return ";".join(item)
     return item
@@ -263,17 +264,6 @@ def count(map):
     for key in map:
         count += len(map[key])
     return str(count)
-
-
-
-def write_json(key, content):
-    with open(key, 'w') as outfile:
-        json.dump(content, outfile, indent=2)
- 
-def write_text(key, content):
-    with open(key, 'w') as outfile:
-        outfile.write(content)
-
 
 
 def print_help():
@@ -321,13 +311,13 @@ def main(argv):
     json_changes = compute_changes(current_obo_url, previous_obo_url)
 
     print("Saving Stats to <" + output_json + "> ...")    
-    write_json(output_json, json_changes)
-    write_json(output_stats_json, json_changes["summary"]["current"])
+    utils.write_json(output_json, json_changes)
+    utils.write_json(output_stats_json, json_changes["summary"]["current"])
     print("Done.")
 
     print("Saving Stats to <" + output_tsv + "> ...")    
     tsv_changes = create_text_report(json_changes)
-    write_text(output_tsv, tsv_changes)
+    utils.write_text(output_tsv, tsv_changes)
     print("Done.")
     
 

@@ -47,6 +47,10 @@
   id: https://www.ucl.ac.uk/functional-gene-annotation/neurological/syngo
   shorthand: SynGO-UCL
 -
+  label: 'HGNC-UCL'
+  id: http://www.ucl.ac.uk/functional-gene-annotation
+  shorthand: HGNC-UCL
+-
   label: 'neXtProt'
   id: https://www.nextprot.org
   shorthand: nextProt
@@ -406,3 +410,8 @@
   label: DiBest-Unical
   id: https://www.unical.it/portale/strutture/dipartimenti_240/dibest
   shorthand: DIBU
+-
+  label: Karadeniz Teknik Universitesi
+  id: https://www.ktu.edu.tr/bmi-cancermodelingresearchgroup
+  shorthand: KTU
+ 

@@ -35,7 +35,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000026">GORULE:0000026 IBA annotations must have been sourced from the PAINT inference pipeline</a>
  * <a href="#gorule0000027">GORULE:0000027 Each identifier in GAF is valid</a>
  * <a href="#gorule0000028">GORULE:0000028 Aspect can only be one of C, P, F and should be repaired using the GO term</a>
- * <a href="#gorule0000029">GORULE:0000029 All IEAs over a year old are removed</a>
+ * <a href="#gorule0000029">GORULE:0000029 IEAs should be less than one year old.</a>
  * <a href="#gorule0000030">GORULE:0000030 Deprecated GO_REFs are not allowed</a>
  * <a href="#gorule0000031">GORULE:0000031 Annotation relations are replaced when not provided by source</a>
  * <a href="#gorule0000032">GORULE:0000032 DEPRECATED Allowed References for each ECO.</a>
@@ -61,6 +61,8 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000056">GORULE:0000056 Annotations should validate against GO shape expressions</a>
  * <a href="#gorule0000057">GORULE:0000057 Group specific filter rules should be applied to annotations</a>
  * <a href="#gorule0000058">GORULE:0000058 Object extensions should conform to the extensions-patterns.yaml file in metadata</a>
+ * <a href="#gorule0000059">GORULE:0000059 GAF Version 2.0 and 2.1 are converted into GAF Version 2.2</a>
+ * <a href="#gorule0000061">GORULE:0000061 Allowed gene product to term relations (gp2term)</a>
 
 
 
@@ -360,8 +362,41 @@ Error report (number of errors) in [db_species]-report.html & owltools-check.txt
 This information is obtained from the only_in_taxon and never_in_taxon tags in the ontology (maintained in go-ontology/tree/master/src/taxon_constraints). 
 - Experimental annotations (1) failing the taxon constraints are reported in the error reports but unchanged; non-experimental annotations (2) are filtered out of the pipeline products.
 (1) EXP evidence codes: EXP, IDA, IEP, IGC, IGI, IMP, IPI, HDA, HEP, HGI, HMP, HTP.
-(2) non EXP annotations: IBA, IKR, IRD, IC, ISA, ISM, ISO, ISS, NAS, RCA, TAS.
+(2) non EXP annotations: IBA, IKR, IRD, IC, ISA, ISM, ISO, ISS, NAS, RCA, TAS, IEA.
 - Taxon constraints DO NOT apply to negated (`NOT` qualifier in GPAD/GAF) annotations.
+
+
+### Implementation Notes
+
+The current implementation of this in GO makes use of the Elk reasoner, wrapped by the [gaferencer](https://github.com/geneontology/gaferencer) tool. This tool produces a gaferences.json file (see [this example file](http://release.geneontology.org/2021-02-01/reports/mgi.gaferences.json)), which includes all OWL inferences over the GAF. A subset of these are taxon violations. 
+
+An example:
+
+```json
+{
+    "annotation":{
+        "annotation":{
+            "relation":"http://purl.obolibrary.org/obo/RO_0002331",
+            "term":"http://purl.obolibrary.org/obo/GO_0098706"
+        },
+        "taxon":"http://purl.obolibrary.org/obo/NCBITaxon_10090",
+        "extension":[
+            
+        ]
+    },
+    "inferences":[
+        
+    ],
+    "satisfiable":false,
+    "taxonProblem":true
+}
+```
+
+This particular class is not valid for Mouse (NCBITaxon:10090)
+
+The gaferences files is processed in the pipeline via ontobio and includes alongside other GO rules reports.
+
+### Publications
 
 See [http://www.biomedcentral.com/1471-2105/11/530](http://www.biomedcentral.com/1471-2105/11/530)
 for more details.
@@ -392,8 +427,7 @@ organisms of the same species, both taxon IDs should be the same.
 
 This rule should check that these annotations should be used only in conjunction with
 terms that have the biological process term 'GO:0044419 : interspecies interaction
-between organisms' or the cellular component term 'GO:0018995 : host cellular component' 
-as an ancestor.
+between organisms', the process GO:0043903 regulation of interspecies interactions between organisms, or the cellular component term 'GO:0018995 : host cellular component' as an ancestor.
 
 <a name="gorule0000016"/>
 
@@ -454,8 +488,8 @@ reasoner such as HermiT.
  * status: implemented
 
 
-There should be no annotations to obsolete terms or to an alternate ID. Obsolete terms that have a `replace_by` tag and
-terms annotated to one of their alternative IDs (merged terms) will automatically be repaired to the valid term id.
+There should be no annotations to obsolete terms or to an alternate ID. Obsolete terms that have a `replaced_by` tag and
+terms annotated to one of their alternative IDs (merged terms; `alt_id` in the .obo files) will automatically be repaired to the valid term id.
 If no replacement is found, the annotation will be filtered.
 
 Other GO terms present in annotations (with/from column, etc) also should be repaired if possible.
@@ -633,14 +667,16 @@ corrected aspect.
 
 <a name="gorule0000029"/>
 
-## All IEAs over a year old are removed
+## IEAs should be less than one year old.
 
  * id: [GORULE:0000029](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000029.md)
  * status: implemented
 
 
-All GAF annotations that have IEA as an evidence code that are also more than a
-year old should be removed.
+All IEA annotations with a date more than two years old should be filered.
+IEAs between 1 and 2 years old trigger a WARNING.
+IEAs less than one year old are valid. 
+
 
 <a name="gorule0000030"/>
 
@@ -978,3 +1014,58 @@ applied.
 Extensions in annotations should conform to these constraints. If an element of a
 disjunction in the extensions does not follow one of the constraints as listed in
 the above file, that element should be dropped from the extensions.
+
+<a name="gorule0000059"/>
+
+## GAF Version 2.0 and 2.1 are converted into GAF Version 2.2
+
+ * id: [GORULE:0000059](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000059.md)
+ * status: proposed
+
+
+In GAF2.2, a gp2term relation (column 4) is mandatory for every annotation.
+This rule processes older versions of GAF files to provide basic compatibility with the current GAF2.2 format. To convert a GAF Version 2.0 or 2.1 file to a GAF Version 2.2, gp2term relations are assigned as follows: 
+
+For annotations that already have a gp2term relation: 
+* If an annotation has a `RO_0002326 "contributes_to"` or `RO_0002325 "colocalizes_with"` gp2term relation, it is kept. 
+* If both a negation (`NOT`) and a gp2term relation (`contributes_to` or `colocalizes_with`) are present, both are kept, pipe-separated. 
+* If an annotation only has a negation (`NOT`), it is kept as a pipe-separated value with the gp2term relation. 
+
+For annotations that don't have a gp2term relation: 
+* For `GO:0005554 molecular function` and subclass descendants: 
+    * The relation is `RO:0002327 "enables"`. 
+* For `GO:0008150 biological process`:
+    * If the annotation is to the root term `biological process`, then the relation is `RO:0002331 "involved_in"`.
+    * If the annotation is to is a subclass descendant of `GO:0008150 biological process` then the relation is `RO:0002264 "acts upstream or within"`.
+* For `GO:0008372 cellular component` 
+    * If the annotation is to the root term `cellular_component`, then the relation is `RO:0002432 "is_active_in"`.
+    * If the annotation is to `"GO:0032991 "protein-containing complex"` or a subclass descendant of, then the relation is `"BFO:0000050 "part of"`
+    * Else, the relation is `RO:0001025 "located in"`.
+
+<a name="gorule0000061"/>
+
+## Allowed gene product to term relations (gp2term)
+
+ * id: [GORULE:0000061](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000061.md)
+ * status: proposed
+
+
+
+GAF2.2 files require a gene product to term (gp2term) relation in Column 4. Allowed gp2term relations:  
+* For `GO:0003674 "molecular function"` and subclass descendants:
+    * If the annotation is to the root term `"molecular function"`, then the allowed gp2term relation is `RO:0002327 "enables"`. If the gp2term relation is different, it is repaired to `RO:0002327 "enables"`.
+    * If the annotation is to is a subclass descendant of `"molecular function"`, then the allowed gp2term relations are `RO:0002327 "enables"` and `RO_0002326 "contributes_to"`.
+    * If the annotation is to a subclass descendant other than `"molecular function"` and the gp2term relation used is not one of the above (`RO:0002327 "enables"` and `RO_0002326 "contributes_to"`), it should be repaired to `RO:0002327 "enables"`.
+* For `GO:0008150 "biological process"`: 
+    * If the annotation is to the root term `"biological process"`, then the allowed gp2term relation is `RO:0002331 "involved_in"`. If the gp2term relation is different, it is repaired to `RO:0002331 "involved_in"`.
+    * If the annotation is to is a subclass descendant of `"biological process"` then the allowed gp2term relations are `RO:0002331 "involved_in"`, `RO:0002264 "acts upstream or within"`, `RO:0004032 "acts upstream of or within, positive effect"`, `RO:0004033 "acts upstream of or within, negative effect"`, `RO:0002263 "acts upstream of"`, `RO:0004034 "acts upstream of, positive effect"`, `RO:0004035 "acts upstream of, negative effect"`. 
+    * If the annotation is to a subclass descendant other than `"biological process"` and the gp2term relation used is not one of the above , it should be repaired to `RO:0002264 "acts upstream of or within"`.
+* For `GO:0005575 "cellular component"`
+    * If the annotation is to the root term `"cellular_component"`, then the allowed gp2term relation is `RO:0002432 "is_active_in"`. If the gp2term relation is different, it is repaired to `RO:0002432 "is_active_in"`.
+    * The gp2term relation `RO_0002325 "colocalizes_with"` for `"GO:0032991 "protein-containing complex"` is not allowed and is filtered.
+    * If the annotation is to `"GO:0032991 "protein-containing complex"` or a subclass descendant of, then the allowed gp2term relation is `"BFO:0000050 "part of"`. If the gp2term relation is different, is repaired to `"BFO:0000050 "part of"`.
+    * Else, the allowed gp2term relations are `RO:0001025 "located in"` and `RO:0002432 "is_active_in"`, and `RO_0002325 "colocalizes_with"`.
+    * If the annotation is to is a subclass descendant other than `"GO:0032991 "protein-containing complex"` or the root term `"cellular_component"` and the gp2term relation used is not one of the above, it should be repaired to `RO:0001025 "located in"`.
+    
+* If an annotation has a negation (`NOT`), is is kept as a pipe-separated value with the gp2term relation.
+
