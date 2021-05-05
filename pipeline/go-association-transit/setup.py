@@ -7,7 +7,8 @@ setup(
     include_package_data=True,
     install_requires=[
         "ontobio",
-        "click"
+        "click",
+        "pytest"
     ],
     entry_points="""
         [console_scripts]

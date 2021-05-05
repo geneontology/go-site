@@ -9,7 +9,7 @@
 DATASET_EXCLUDES ?= goa_uniprot_gcrp goa_pdb goa_uniprot_all paint_cgd paint_dictybase paint_ecocyc paint_goa_chicken paint_goa_human paint_other paint_rgd paint_sgd paint_tair paint_wb paint_zfin
 DATASET_EXCLUDES_PARAMETERS = $(foreach exclusion,$(DATASET_EXCLUDES),-x $(exclusion))
 
-GROUPS ?= mgi fb pombase paint
+GROUPS ?= mgi
 GROUPS_PARAMETERS = $(foreach group,$(GROUPS),-g $(group))
 
 GO_SITE_ROOT = ../..

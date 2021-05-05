@@ -38,7 +38,8 @@ def pristine(source, ontology, inferences, target):
     click.echo("Next stop, Pristine GPADs at {}".format(target))
     os.makedirs(target, exist_ok=True)
 
-    loaded_inferences = gaference.load_gaferencer_inferences_from_files(inferences)
+    loaded_inferences = gaference.load_gaferencer_inferences_from_file(inferences)
+    # load_gaferencer_inferences_from_files(inferences)
 
     source = pathlib.Path(source)
     aligned_sources = [] # type: List[sources.PairedSource]
@@ -72,12 +73,13 @@ def assemble(pristine, target):
     click.echo(datasets_with_mixins)
     # `datasets_with_mixins` is a dictionary from filenames -> list of mixins
     
-    for primary in datasets_with_mixins.keys():
-        collection_thing = assembly.AssembleCollection.with_path(primary) # .headers, .annotations
+    for (primary, mixins) in datasets_with_mixins.items():
+        assembled = assembly.AnnotationsWithHeaders.from_dataset_name(str(pristine), primary) # .headers, .annotations
         for mixin in datasets_with_mixins[primary]:
-            collection_thing.add_mixin(mixin)
+            assembled.add_dataset(str(pristine), mixin)
+
         outpath = os.path.join(target, primary.replace("_valid", ""))
-        collection_thing.write(outpath)
+        assembled.write(outpath)
 
 if __name__ == "__main__":
     cli()
