@@ -70,15 +70,13 @@ def assemble(pristine, target):
     pristine = pathlib.Path(pristine)
     pristine_files = [f.stem for f in pristine.glob("*.gpad")]
     datasets_with_mixins = assembly.find_all_mixin(pristine_files)
-    click.echo(datasets_with_mixins)
-    # `datasets_with_mixins` is a dictionary from filenames -> list of mixins
     
     for (primary, mixins) in datasets_with_mixins.items():
         assembled = assembly.AnnotationsWithHeaders.from_dataset_name(str(pristine), primary) # .headers, .annotations
         for mixin in datasets_with_mixins[primary]:
             assembled.add_dataset(str(pristine), mixin)
 
-        outpath = os.path.join(target, primary.replace("_valid", ""))
+        outpath = os.path.join(target, "{}.gpad".format(primary.replace("_valid", "")))
         assembled.write(outpath)
 
 if __name__ == "__main__":

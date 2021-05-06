@@ -9,7 +9,7 @@
 DATASET_EXCLUDES ?= goa_uniprot_gcrp goa_pdb goa_uniprot_all paint_cgd paint_dictybase paint_ecocyc paint_goa_chicken paint_goa_human paint_other paint_rgd paint_sgd paint_tair paint_wb paint_zfin
 DATASET_EXCLUDES_PARAMETERS = $(foreach exclusion,$(DATASET_EXCLUDES),-x $(exclusion))
 
-GROUPS ?= mgi
+GROUPS ?= mgi fb paint
 GROUPS_PARAMETERS = $(foreach group,$(GROUPS),-g $(group))
 
 GO_SITE_ROOT = ../..
@@ -54,10 +54,8 @@ target/pristine/gpad/%_valid.gpad: target/sources/%-src.gpad target/go-ontology.
 	goat pristine -o target/go-ontology.json -t target/pristine/gpad $<
 
 
-ASSEMBLED_GPAD = $(addprefix target/assembled/gpad/,$(subst _valid.gpad,,$(basename $(notdir $(PRISTINE_GPAD)))))
+# ASSEMBLED_GPAD = $(addprefix target/assembled/gpad/,$(subst _valid.gpad,,$(basename $(notdir $(PRISTINE_GPAD)))))
 
-assemble: $(ASSEMBLED_GPAD)
-	cp target/assembled/*/* target/assembled || true
+assemble: pristine
+	goat assemble target/pristine -t target/assembled
 
-target/assembled/gpad/%.gpad: target/pristine/gpad/%_valid.gpad
-	goat assemble -t target/assembled/gpad $<

@@ -15,6 +15,8 @@ metadata_dir = os.path.join(this_go_site_path, "metadata")
 
 def process_single_file(source_file, gpis, ontology, out_dir, annotation_inferences=None):
 
+    rules_without_26 = [r for r in range(1, 62) if r != 26]
+    
     ontology = cached_ontology.from_file(ontology)
     config = assocparser.AssocParserConfig(
         ontology=ontology,
@@ -25,7 +27,7 @@ def process_single_file(source_file, gpis, ontology, out_dir, annotation_inferen
         entity_idspaces=metadata.database_entities(metadata_dir),
         group_idspace=metadata.groups(metadata_dir),
         annotation_inferences=annotation_inferences,
-        rule_set=assocparser.RuleSet.ALL
+        rule_set=rules_without_26
         # group_metadata=metadata.dataset_metadata_file(metadata_dir, group)
     )
     source_file_base_name = os.path.splitext(os.path.basename(source_file))[0].split("-")[0]
@@ -41,7 +43,7 @@ def process_single_file(source_file, gpis, ontology, out_dir, annotation_inferen
     with open(os.path.join(out_dir, "{}-report.json".format(source_file_base_name)), "w") as report_json_f:
         report_json_f.write(json.dumps(report_json_contents, indent=4))
 
-    with open(os.path.join(out_dir, "{}.header".format(source_file_base_name)), "w") as header_f:
+    with open(os.path.join(out_dir, "{}_valid.header".format(source_file_base_name)), "w") as header_f:
         header_f.write("\n".join(collected.headers))
 
     with open(os.path.join(out_dir, "{}_valid.gpad".format(source_file_base_name)), "w") as gpad_valid_f:

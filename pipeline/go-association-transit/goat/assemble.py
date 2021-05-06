@@ -144,7 +144,7 @@ class AnnotationsWithHeaders:
 
     def write(self, path: str):
         with open(path, "w") as outfile:
-            outfile.writelines(["! " + header for header in self.header()])
+            outfile.writelines(["! " + header + "\n" for header in self.header()])
             outfile.writelines(self.annotations())
 
 
@@ -156,7 +156,7 @@ def annotation_and_header_file_from_base_path(pristine_dir: pathlib.Path, base_n
         pristine_dir (pathlib.Path): Path to the pristine directory
         base_path (str): something like: "mgi_valid"
     """
-    annotation_path = pristine_dir.joinpath("{}_valid".format(base_name)).with_suffix(".gpad")
+    annotation_path = pristine_dir.joinpath(base_name).with_suffix(".gpad")
     header_path = pristine_dir.joinpath(base_name).with_suffix(".header")
     return (annotation_path, header_path)
 
