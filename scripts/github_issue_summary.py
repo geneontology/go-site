@@ -44,7 +44,7 @@ def print_issues(issues, event_type: str, printed_ids: set):
 
 
 def get_issues(repo: str, event_type: str, start_date: str):
-    url = "https://api.github.com/search/issues?q=repo:{}+{}:=>{}&type=Issues&per_page=100".format(repo, event_type, start_date)
+    url = "https://api.github.com/search/issues?q=repo:{}+{}:=>{}+is:issue&type=Issues&per_page=100".format(repo, event_type, start_date)
     resp = requests.get(url)
     if resp.status_code == 200:
         resp_objs = json.loads(resp.content)
