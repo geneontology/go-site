@@ -47,9 +47,10 @@ import collections
 import pathlib
 import datetime
 import functools
+import re
 
 from dataclasses import dataclass, field
-from typing import DefaultDict, Dict, List, Optional, Tuple
+from typing import ClassVar, DefaultDict, Dict, List, Optional, Pattern, Tuple
 
 class OrderEntryDict(collections.OrderedDict):
     """
@@ -60,6 +61,61 @@ class OrderEntryDict(collections.OrderedDict):
     def __setitem__(self, key, value):
         super().__setitem__(key, value)
         self.move_to_end(key)
+
+@dataclass(frozen=True)
+class Dataset:
+    group: str
+    dataset: str
+    mixin: Optional[str]
+    file_type: str
+
+    source_regex: ClassVar[Pattern] = re.compile(r"((?P<group>\w+?)__)?(?P<dataset>\w+?)(__(?P<mixin>\w+?))?-src")
+    pristine_regex: ClassVar[Pattern] = re.compile(r"((?P<group>\w+?)__)?(?P<dataset>\w+?)(__(?P<mixin>\w+?))?_valid")
+    # Python specific note: we can name capturing groups with ?P<name> immediately inside a group
+
+    @classmethod
+    def from_source(cls, path: pathlib.Path):
+        """
+        source path: [{group}__]{dataset}__{mixin}-src.{type}
+        """
+        ftype = path.suffix.replace(".", "")
+        path_name = path.with_suffix("").name
+        match_groups = cls.source_regex.match(path_name).groupdict()
+        group = match_groups["group"] if match_groups["group"] is not None else "unknown"
+        
+        return Dataset(group, match_groups["dataset"], match_groups["mixin"], ftype)
+
+    
+    @classmethod
+    def from_pristine(cls, path: pathlib.Path):
+        ftype = path.suffix.replace(".", "")
+        path_name = path.with_suffix("").name
+        match_groups = cls.pristine_regex.match(path_name).groupdict()
+        group = match_groups["group"] if match_groups["group"] is not None else "unknown"
+        
+        return Dataset(group, match_groups["dataset"], match_groups["mixin"], ftype)
+
+    def source_path(self, source: str) -> pathlib.Path:
+        if self.mixin is not None:
+            return pathlib.Path(source).joinpath("{group}__{dataset}__{mixin}-src.{type}".format(group=self.group, dataset=self.dataset, mixin=self.mixin, type=self.file_type))
+        else:
+            return pathlib.Path(source).joinpath("{group}__{dataset}-src.{type}".format(group=self.group, dataset=self.dataset, type=self.file_type))
+    
+    def pristine_path(self, pristine: str) -> pathlib.Path:
+        if self.mixin is not None:
+            return pathlib.Path(pristine).joinpath("{group}__{dataset}__{mixin}_valid.{type}".format(group=self.group, dataset=self.dataset, mixin=self.mixin, type=self.file_type))
+        else:
+            return pathlib.Path(pristine).joinpath("{group}__{dataset}_valid.{type}".format(group=self.group, dataset=self.dataset, type=self.file_type))
+
+    def header_path(self, pristine: str) -> pathlib.Path:
+        if self.mixin is not None:
+            return pathlib.Path(pristine).joinpath("{group}__{dataset}__{mixin}_valid.header".format(group=self.group, dataset=self.dataset, mixin=self.mixin))
+        else:
+            return pathlib.Path(pristine).joinpath("{group}__{dataset}_valid.header".format(group=self.group, dataset=self.dataset))
+
+    def assemble_path(self, assemble: str) -> pathlib.Path:
+        return pathlib.Path(assemble).joinpath("{dataset}.{type}".format(dataset=self.dataset, type=self.file_type))
+
 
 @dataclass
 class AnnotationsWithHeaders:
@@ -77,8 +133,10 @@ class AnnotationsWithHeaders:
     ])
 
     @classmethod
-    def from_dataset_name(cls, directory: str, dataset_name: str):
-        annotation_path, header_path = annotation_and_header_file_from_base_path(pathlib.Path(directory), dataset_name)
+    def from_dataset(cls, directory: str, dataset: Dataset):
+        annotation_path = dataset.pristine_path(directory)
+        header_path = dataset.header_path(directory)
+
         annotations = []
         headers = []
         with open(annotation_path) as ann:
@@ -88,11 +146,13 @@ class AnnotationsWithHeaders:
             headers = [line.strip().replace("!", "") for line in head.readlines()]
 
         datasets = OrderEntryDict()
-        datasets[dataset_name] = (annotations, headers)
+        datasets[dataset.dataset] = (annotations, headers)
         return AnnotationsWithHeaders(datasets)
 
-    def add_dataset(self, directory: str, dataset_name: str):
-        annotation_path, header_path = annotation_and_header_file_from_base_path(pathlib.Path(directory), dataset_name)
+    def add_dataset(self, directory: str, dataset: Dataset):
+        annotation_path = dataset.pristine_path(directory)
+        header_path = dataset.header_path(directory)
+
         annotations = []
         headers = []
         with open(annotation_path) as ann:
@@ -101,7 +161,7 @@ class AnnotationsWithHeaders:
         with open(header_path) as head:
             headers = [line.strip().replace("!", "") for line in head.readlines()]
 
-        self.dataset_headers_and_annotations[dataset_name] = (annotations, headers)
+        self.dataset_headers_and_annotations[dataset.dataset] = (annotations, headers)
 
     def header(self, group: str = "unknown") -> List[str]:
         """
@@ -130,7 +190,7 @@ class AnnotationsWithHeaders:
                     self.dataset_headers_and_annotations.items()], []))
 
         return base_formatted + header_file_list + [""] + subheader_message + subheaders
-    
+
     def annotations(self) -> List[str]:
         all_annotations = []
         for (_, (annotations, _)) in self.dataset_headers_and_annotations.items():
@@ -142,23 +202,11 @@ class AnnotationsWithHeaders:
     def name(self) -> str:
         return list(self.dataset_headers_and_annotations.keys())[0]
 
-    def write(self, path: str):
+    def write(self, path: str, group: str):
         with open(path, "w") as outfile:
-            outfile.writelines(["! " + header + "\n" for header in self.header()])
+            outfile.writelines(["! " + header + "\n" for header in self.header(group)])
             outfile.writelines(self.annotations())
 
-
-def annotation_and_header_file_from_base_path(pristine_dir: pathlib.Path, base_name: str) -> Tuple[pathlib.Path, pathlib.Path]:
-    """
-    Computes the header and annotation path for the given dataset name path.
-
-    Args:
-        pristine_dir (pathlib.Path): Path to the pristine directory
-        base_path (str): something like: "mgi_valid"
-    """
-    annotation_path = pristine_dir.joinpath(base_name).with_suffix(".gpad")
-    header_path = pristine_dir.joinpath(base_name).with_suffix(".header")
-    return (annotation_path, header_path)
 
 def sub_header_entry(dataset: str, header: List[str]) -> List[str]:
     """
@@ -170,18 +218,6 @@ def sub_header_entry(dataset: str, header: List[str]) -> List[str]:
     hr = "  " + "-" * len(dataset_source_file)
     return [""] + ["  " + dataset_source_file, hr] + ["  " + h for h in header] + [""]
 
-def pristine_name(filename: str) -> str:
-    """
-    Given a filename of a "pristine" annotation file, figure out the dataset name.
-
-    Pristine filenames take the form of `{name}_valid` or `{name}__{mixin}_valid`. The name of the dataset is the `{name}` portion.
-    This should be flexible and lack of underscore should just mean the whole filename is the dataset name.
-
-    Args:
-        filename (str): Name of the pristine file without preceeding directories and with extension removed.
-    """
-
-    return filename.split("__", maxsplit=1)[0]
 
 def pristine_filename_from_dataset(dataset: str) -> str:
     return "{dataset}_valid".format(dataset=dataset)
@@ -190,61 +226,27 @@ def source_filename(source_dir: str, dataset: str) -> str:
     return "{}.gaf".format(dataset)
 
 
-def mixin_name_from_valid(filename: str) -> Optional[Tuple[str, str]]:
+def find_all_mixin(pristine_files: List[str]) -> Dict[Dataset, List[Dataset]]:
     """
-    Mixin dataset names look like `{mixin}__{dataset}_valid` so `dataset` may be a mixin if it could have that form.
+    For a list of filenames, produce a dictionary of filename to set of mixins
 
-    Datasets that have no underscore separated name are definitely not mixins.
-
-    Once we have a possible mixin candidate (the results of this function) we can check the pristine directory for the candidate dataset filename.
-    If it exists, then the given dataset is a mixin.
-    """
-    name_split = filename.replace("_valid", "").split("__", maxsplit=1)
-    if len(name_split) == 1:
-        # Just one item means we do not have a mixin
-        return None
-    
-    return tuple((filename, name_split[1]))
-
-
-def confirm_mixin_candidate(pristine_files: List[str], candidate_mixin: Tuple[str, str]) -> bool:
-    """
-    Confirms if a given candidate mixin should really be mixed in by checking that the file to mix into is present
-    Args:
-        pristine_files (str): list of file names in the pristine directory
-        candidate_mixin (Tuple[str, str]): candidate mixin from `mixin_name_from_valid` where the 1st element is the mixin, and 2nd is what dataset to mix into
-
-    Returns:
-        bool: True if the file is found, False otherwise
-    """
-    mix_into = "{}_valid".format(candidate_mixin[1])
-    return mix_into in pristine_files
-
-
-def find_all_mixin(pristine_files: List[str]) -> Dict[str, List[str]]:
-    """
     Args:
         pristine_files (List[str]): List of all files in the pristine directory
     """
-    mixin_candidates = [] # type: List[Tuple[str, str]]
-    for p in pristine_files:
-        candidate = mixin_name_from_valid(p)
-        if candidate is not None:
-            mixin_candidates.append(candidate)
-    
-    confirmed_mixins = [c for c in mixin_candidates if confirm_mixin_candidate(pristine_files, c)]
+    dataset_mixins = collections.defaultdict(list)
+    datasets = [Dataset.from_pristine(pathlib.Path(path)) for path in pristine_files]
 
-    # Last, let's make a map from every dataset d -> Mix
-    # mixins are: [mix, d]
-    # Reminder that the mix name is the full mixin filename, like: paint_mgi__mgi_valid
-    dataset_mixins = collections.defaultdict(list) # type: Dict[str, List[str]]
-    
-    for p in pristine_files:
-        dataset_mixins[p] = []
-        for (mix, d) in confirmed_mixins:
-            if p == pristine_filename_from_dataset(d):
-                # If dataset name for p == d, then mix is a mixin for p
-                dataset_mixins[p].append(mix)
+    for d in datasets:
+        dataset_mixins[d] = []
+
+    for dataset in datasets:
+        if dataset.mixin is not None:
+            # this is the file that this dataset should be merged into
+            # If this "mix into" file exists in the `pristine_files` then we've confirmed the mixin
+            for ds in datasets:
+                if ds.dataset == dataset.mixin:
+                    # If there is a ds that matches the mixin target, then we know dataset is a mixin of ds
+                    dataset_mixins[ds].append(dataset)
 
     return dataset_mixins
 

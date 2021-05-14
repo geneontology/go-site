@@ -68,16 +68,16 @@ def assemble(pristine, target):
     os.makedirs(target, exist_ok=True)
 
     pristine = pathlib.Path(pristine)
-    pristine_files = [f.stem for f in pristine.glob("*.gpad")]
+    pristine_files = list(pristine.glob("*_valid.gpad"))
     datasets_with_mixins = assembly.find_all_mixin(pristine_files)
     
-    for (primary, mixins) in datasets_with_mixins.items():
-        assembled = assembly.AnnotationsWithHeaders.from_dataset_name(str(pristine), primary) # .headers, .annotations
+    for primary in datasets_with_mixins.keys():
+        assembled = assembly.AnnotationsWithHeaders.from_dataset(str(pristine), primary) # .headers, .annotations
         for mixin in datasets_with_mixins[primary]:
             assembled.add_dataset(str(pristine), mixin)
 
-        outpath = os.path.join(target, "{}.gpad".format(primary.replace("_valid", "")))
-        assembled.write(outpath)
+        outpath = primary.assemble_path(target)
+        assembled.write(outpath, primary.group)
 
 if __name__ == "__main__":
     cli()

@@ -184,7 +184,7 @@ def annotations(datasets, target, exclude, only_group, parallel, dry_run, retrie
     ]
 
     # Do the download
-    results = multi_download(to_download, target, parallel=parallel, retries=retries, retry_time=retry_time, dryrun=dry_run, replace=replace, tag_mixin=True)
+    results = multi_download(to_download, target, parallel=parallel, retries=retries, retry_time=retry_time, dryrun=dry_run, replace=replace, tag_mixin=True, tag_group=True)
 
     just_successes = [r[0] for r in results]
     if False in just_successes:
@@ -346,7 +346,7 @@ def annotation_datasets_to_download(groups_metadata: List[Dict]) -> List[Dataset
         [ds for ds in to_download_map.values() if ds["type_val"] >= 1], [])
 
 
-def multi_download(dataset_targets: List[Dataset], target, parallel=5, retries=3, retry_time=20, dryrun=False, replace=True, tag_mixin=False):
+def multi_download(dataset_targets: List[Dataset], target, parallel=5, retries=3, retry_time=20, dryrun=False, replace=True, tag_mixin=False, tag_group=False):
 
     pool = multiprocessing.Pool(processes=parallel)
 
@@ -361,7 +361,7 @@ def multi_download(dataset_targets: List[Dataset], target, parallel=5, retries=3
 
             pool.terminate()
 
-    async_results = [ pool.apply_async(robust_download, (dataset, target), {"retries": retries, "dryrun": dryrun, "retry_time": retry_time, "replace": replace, "tag_mixin": tag_mixin}, _simple_callback )
+    async_results = [ pool.apply_async(robust_download, (dataset, target), {"retries": retries, "dryrun": dryrun, "retry_time": retry_time, "replace": replace, "tag_mixin": tag_mixin, "tag_group": tag_group}, _simple_callback )
         for dataset in dataset_targets ] # List[AsyncResult]
 
     results = [ result.get() for result in async_results ]
@@ -399,7 +399,7 @@ def transform_download_targets(resource_metadata, types=None) -> List[Dataset]:
 
     return transformed_dataset_targets
 
-def robust_download(dataset_target: Dataset, target, retries=3, retry_time=20, dryrun=False, replace=True, tag_mixin=False) -> str:
+def robust_download(dataset_target: Dataset, target, retries=3, retry_time=20, dryrun=False, replace=True, tag_mixin=False, tag_group=False) -> str:
     """
     Robustly downloads the url of the `dataset_target` to a path. The path is:
     target/<group>/<dataset>.extension.gz
@@ -407,7 +407,7 @@ def robust_download(dataset_target: Dataset, target, retries=3, retry_time=20, d
     result = ""
     success = True
     for tries in range(0, retries):
-        path = construct_download_path(dataset_target, target, tag_mixin=tag_mixin)
+        path = construct_download_path(dataset_target, target, tag_mixin=tag_mixin, tag_group=tag_group)
         if os.path.exists(path) and not replace:
             click.echo("{} already exists, and we are not replacing existing files".format(path))
             return (True, path)
@@ -451,7 +451,7 @@ def download_the_file(url, out_path, dryrun=False) -> str:
             # Somehow actually verify the the file is correct?
     return result
 
-def construct_download_path(dataset_target: Dataset, target, tag_mixin=False) -> str:
+def construct_download_path(dataset_target: Dataset, target, tag_mixin=False, tag_group=False) -> str:
     """
     Builds the path where the given dataset will be downloaded to.
 
@@ -465,6 +465,8 @@ def construct_download_path(dataset_target: Dataset, target, tag_mixin=False) ->
     name = "{dataset}-src.{type}".format(dataset=dataset_target.dataset, type=dataset_target.type)
     if tag_mixin and dataset_target.merges_into is not None:
         name = "{dataset}__{merges}-src.{type}".format(dataset=dataset_target.dataset, merges=dataset_target.merges_into, type=dataset_target.type)
+    if tag_group:
+        name = "{group}__{rest}".format(group=dataset_target.group, rest=name)
     if dataset_target.compression:
         name += ".{}".format(extension_map(dataset_target.compression))
 
