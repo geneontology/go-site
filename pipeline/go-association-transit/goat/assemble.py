@@ -146,7 +146,7 @@ class AnnotationsWithHeaders:
             headers = [line.strip().replace("!", "") for line in head.readlines()]
 
         datasets = OrderEntryDict()
-        datasets[dataset.dataset] = (annotations, headers)
+        datasets[dataset] = (annotations, headers)
         return AnnotationsWithHeaders(datasets)
 
     def add_dataset(self, directory: str, dataset: Dataset):
@@ -161,7 +161,7 @@ class AnnotationsWithHeaders:
         with open(header_path) as head:
             headers = [line.strip().replace("!", "") for line in head.readlines()]
 
-        self.dataset_headers_and_annotations[dataset.dataset] = (annotations, headers)
+        self.dataset_headers_and_annotations[dataset] = (annotations, headers)
 
     def header(self, group: str = "unknown") -> List[str]:
         """
@@ -177,7 +177,7 @@ class AnnotationsWithHeaders:
         manifest_message = "Following are the headers from the above source files used to generate this file:"
         
         base_formatted = [b.format(group=group) for b in self.base_header]
-        header_file_list = ["  * {ds}".format(ds=source_filename("blah", ds)) for ds in self.dataset_headers_and_annotations.keys()]
+        header_file_list = ["  * {ds}".format(ds=str(ds.dataset)) for ds in self.dataset_headers_and_annotations.keys()]
         subheader_message = [
             manifest_message,
             "=" * len(manifest_message)
@@ -200,7 +200,7 @@ class AnnotationsWithHeaders:
 
 
     def name(self) -> str:
-        return list(self.dataset_headers_and_annotations.keys())[0]
+        return list(self.dataset_headers_and_annotations.keys())[0].dataset
 
     def write(self, path: str, group: str):
         with open(path, "w") as outfile:
@@ -208,22 +208,15 @@ class AnnotationsWithHeaders:
             outfile.writelines(self.annotations())
 
 
-def sub_header_entry(dataset: str, header: List[str]) -> List[str]:
+def sub_header_entry(dataset: Dataset, header: List[str]) -> List[str]:
     """
     !   mgi.gpad
     !   --------
     !   <contents of mgi header, with version annotation skipped>
     """
-    dataset_source_file = source_filename("blah", dataset)
+    dataset_source_file = str(dataset.dataset)
     hr = "  " + "-" * len(dataset_source_file)
     return [""] + ["  " + dataset_source_file, hr] + ["  " + h for h in header] + [""]
-
-
-def pristine_filename_from_dataset(dataset: str) -> str:
-    return "{dataset}_valid".format(dataset=dataset)
-
-def source_filename(source_dir: str, dataset: str) -> str:
-    return "{}.gaf".format(dataset)
 
 
 def find_all_mixin(pristine_files: List[str]) -> Dict[Dataset, List[Dataset]]:
