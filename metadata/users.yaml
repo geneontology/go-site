@@ -1118,9 +1118,19 @@
   uri: 'http://orcid.org/0000-0002-5494-626X'
   xref: 'GOC:pde'
 -
+  accounts:
+    github: phanivg
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://flybase.org'
+  previous-groups:
+    - 'http://reactome.org'
   nickname: 'Phani Garapati'
-  organization: Reactome
-  uri: 'GOC:phg'
+  organization: FlyBase
+  uri: 'http://orcid.org/0000-0003-0941-2207'
   xref: 'GOC:phg'
 -
   nickname: 'Steven Jupe'

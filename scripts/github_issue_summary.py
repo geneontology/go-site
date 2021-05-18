@@ -3,6 +3,7 @@ import requests
 import json
 import datetime
 import argparse
+from pytz import timezone
 
 parser = argparse.ArgumentParser()
 parser.add_argument('repo_name')
@@ -20,7 +21,7 @@ def make_html_safe(s):
 
 
 def print_single_issue(issue):
-    line = f"<li><a href=\"{issue['html_url']}\">{issue['number']}</a> {make_html_safe(issue['title'])}</li>"
+    line = "<li><a href=\"{}\">{}</a> {}</li>".format(issue['html_url'], issue['number'], make_html_safe(issue['title']))
     print(line)
 
 
@@ -32,38 +33,46 @@ def print_issues(issues, event_type: str, printed_ids: set):
             to_prints.append(issue)
             printed_count += 1
             printed_ids.add(issue["number"])
-    print(f"<h3>{event_type} Tickets</h3>")
+    print("<h3>{} Tickets</h3>".format(event_type))
     if printed_count > 0:
-        print(f"There are {printed_count} {event_type.lower()} tickets.")
+        print("There are {} {} tickets.".format(printed_count, event_type.lower()))
         print("<ul>")
         [print_single_issue(i) for i in to_prints]
         print("</ul>")
     else:
-        print(f"<p>There have been no {event_type.lower()} tickets.</p>")
+        print("<p>There have been no {} tickets.</p>".format(event_type.lower()))
 
 
 def get_issues(repo: str, event_type: str, start_date: str):
-    url = f"https://api.github.com/search/issues?q=repo:{repo}+{event_type}:=>{start_date}&type=Issues&per_page=100"
+    url = "https://api.github.com/search/issues?q=repo:{}+{}:=>{}+is:issue&type=Issues&per_page=100".format(repo, event_type, start_date)
     resp = requests.get(url)
     if resp.status_code == 200:
         resp_objs = json.loads(resp.content)
         issues = resp_objs.get("items", [])
         return issues
     else:
-        raise Exception(f"HTTP error status code: {resp.status_code} for url: {url}")
+        raise Exception("HTTP error status code: {} for url: {}".format(resp.status_code, url))
 
 
 if __name__ == "__main__":
     # repo = "geneontology/go-ontology"
     # repo = "geneontology/amigo"
     args = parser.parse_args()
-    today = datetime.date.today()
-    yesterday = today - datetime.timedelta(int(args.duration_in_days))
+    today_time = datetime.datetime.now(tz=timezone('US/Pacific'))
+    yesterday_time = today_time - datetime.timedelta(int(args.duration_in_days))
+    yesterday_time_str = yesterday_time.isoformat()
 
-    new_issues = get_issues(args.repo_name, "created", yesterday)
-    updated_issues = get_issues(args.repo_name, "updated", yesterday)
+    # For display
+    today = today_time.strftime("%Y-%m-%d")
+    yesterday = yesterday_time.strftime("%Y-%m-%d")
 
-    print(f"<h2>Summary for tickets from {yesterday} to {today}</h2>")
+    new_issues = get_issues(args.repo_name, "created", yesterday_time_str)
+    updated_issues = get_issues(args.repo_name, "updated", yesterday_time_str)
+
+    repo_name = args.repo_name
+    if "/" in repo_name:
+        repo_name = repo_name.rsplit("/", maxsplit=1)[-1]
+    print("<h2>Summary for tickets in {} from {} to {}</h2>".format(repo_name, yesterday, today))
     ids = set()
     print_issues(new_issues, "New", ids)
     print_issues(updated_issues, "Updated", ids)
