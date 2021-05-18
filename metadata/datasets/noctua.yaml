@@ -101,7 +101,7 @@ datasets:
     source: ./products/annotations/noctua_zfin.gpad.gz
     entity_type:
     status: active
-    merge_into: zfin
+    merges_into: zfin
     species_code:
     taxa:
       - NCBITaxon:7955
