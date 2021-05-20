@@ -61,9 +61,13 @@ def pristine(source, ontology, inferences, target):
 
 
 @cli.command()
-@click.argument("pristine", type=click.Path(exists=True, readable=True, file_okay=False, resolve_path=True))
-@click.option("--target", "-t", required=True, type=click.Path(exists=False, resolve_path=True))
+@click.argument("pristine", type=click.Path(exists=True, readable=True, file_okay=False, resolve_path=True), 
+    help="Path to the directory containing the validated annotations and header files produced by the execution of a previous `goat pristine` commmand")
+@click.option("--target", "-t", required=True, type=click.Path(exists=False, resolve_path=True), help="target directory to place assembled files")
 def assemble(pristine, target):
+    """
+    Combine annotation files that should mixed in. For example paint_mgi should be joined to mgi. Run this after a `goat pristine` run.
+    """
     click.echo("Next stop, Assembling headers and annotations")
     os.makedirs(target, exist_ok=True)
 

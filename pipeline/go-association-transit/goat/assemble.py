@@ -119,6 +119,20 @@ class Dataset:
 
 @dataclass
 class AnnotationsWithHeaders:
+    """
+    Encodes multiple separate annotation and Header files as a part of the same logical annotation file.
+
+    `dataset_headers_and_annotations` is an ordered dictionary, where the first item added is the 0th element.
+    This fact allows us to "name" the composite file as whatever we load first, and any subsequent files loaded
+    will be considered the "mixins".
+
+    Use this by initializing with the `from_dataset` class function. Then call `add_dataset` on any other mixin
+    datasets. These will expect a .header file with the same root name as the file passed in. Generally this
+    will be the case after the `goat pristine` command has been run.
+
+    Once all datasets are gathered, use `write` with an output path and the name of the group this new composite dataset
+    belongs to write out the full header along with the joined annotation lines.
+    """
     dataset_headers_and_annotations: OrderEntryDict
     base_header: List[str] = field(default_factory=lambda: [
         "gpad-version: 2.0",
