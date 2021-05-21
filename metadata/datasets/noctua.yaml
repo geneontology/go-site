@@ -83,9 +83,10 @@ datasets:
     dataset: noctua_xenbase
     submitter: GOC
     compression: gzip
-    source: ./products/annotations/noctua_xenbase.gpad.gz
+    source: ./products/annotations/noctua_xenbase-src.gpad.gz
     entity_type:
-    status: inactive
+    status: active
+    merges_into: xenbase
     species_code:
     taxa:
       - NCBITaxon:8364
