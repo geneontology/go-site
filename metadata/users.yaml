@@ -4291,3 +4291,15 @@
   nickname: 'Mark A. Miller'
   organization: 'GO Central'
   uri: 'http://orcid.org/0000-0001-9076-6066'
+-
+  accounts:
+    github: GewieksteVos
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://greekc.org'
+  nickname: 'Yves Snijckers'
+  organization: Radboud University
+  uri: 'https://orcid.org/0000-0001-6913-5104'
