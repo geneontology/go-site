@@ -1821,15 +1821,15 @@
     - type_name: sequence feature
       type_id: SO:0000110
       id_syntax: PF[0-9]{5}
-      url_syntax: http://pfam.xfam.org/family/[example_id]
+      url_syntax: https://pfam.xfam.org/family/[example_id]
       example_id: Pfam:PF00046
-      example_url: http://pfam.xfam.org/family/PF00069
+      example_url: https://pfam.xfam.org/family/PF00069
     - type_name: polypeptide region
       type_id: SO:0000839
       id_syntax: PF[0-9]{5}
-      url_syntax: http://pfam.xfam.org/family/[example_id]
+      url_syntax: https://pfam.xfam.org/family/[example_id]
       example_id: Pfam:PF00046
-      example_url: http://pfam.xfam.org/family/PF00069
+      example_url: https://pfam.xfam.org/family/PF00069
 - database: PharmGKB
   name: Pharmacogenetics and Pharmacogenomics Knowledge Base
   generic_urls:
