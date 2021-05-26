@@ -11,6 +11,9 @@ DATASET_EXCLUDES ?= goa_uniprot_gcrp goa_pdb
 # The gorule tags used to identify which rules to suppress reports from
 GORULE_TAGS_TO_SUPPRESS ?=
 
+BRANCH_NAME ?= master
+DOWNLOAD_URL_FOR_RELATIVE_PATHS = http://skyhook.berkeleybop.org/${BRANCH_NAME}/
+
 # for each path in the shell `find`, get just the filename, then strip the extension for each group
 # Ex: will end up being just the yaml file names in the datasets directory (aspgd mgi goa fb [etc])
 
@@ -83,7 +86,7 @@ SUPPRESS_THESE_TAGS = $(foreach tag,$(GORULE_TAGS_TO_SUPPRESS),--suppress-rule-r
 	# assigns a make variable called `group` computed from the $* generic target stem.
 	# Ex: target/groups/fb/fb.gaf as a target, the stem ($*) is target/groups/fb/fb, so `group` gets assigned to fb
 	$(eval group := $(lastword $(subst /, ,$*)))
-	validate.py -v produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE) $(SUPPRESS_THESE_TAGS) --skip-existing-files --gaferencer-file $*.gaferences.json
+	validate.py -v produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE) $(SUPPRESS_THESE_TAGS) --skip-existing-files --gaferencer-file $*.gaferences.json --base-download-url ${DOWNLOAD_URL_FOR_RELATIVE_PATHS}
 	touch $@
 
 # dataset
