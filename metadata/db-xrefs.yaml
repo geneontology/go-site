@@ -2805,6 +2805,16 @@
       url_syntax: http://en.wikipedia.org/wiki/[example_id]
       example_id: Wikipedia:Endoplasmic_reticulum
       example_url: http://en.wikipedia.org/wiki/Endoplasmic_reticulum
+- database: WikipediaVersioned
+  name: WikipediaVersioned
+  generic_urls:
+    - http://en.wikipedia.org/
+  entity_types:
+    - type_name: entity
+      type_id: BET:0000000
+      url_syntax: https://en.wikipedia.org/w/index.php?title=[example_id]
+      example_id: WikipediaVersioned:Fallopian_tube&oldid=998395727
+      example_url: https://en.wikipedia.org/w/index.php?title=Fallopian_tube&oldid=998395727
 - database: Xenbase
   name: Xenbase
   rdf_uri_prefix: https://registry.identifiers.org/registry/xenbase
