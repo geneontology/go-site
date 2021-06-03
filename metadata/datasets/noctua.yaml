@@ -69,9 +69,10 @@ datasets:
     dataset: noctua_wb
     submitter: GOC
     compression: gzip
-    source: ./products/annotations/noctua_wb.gpad.gz
+    source: ./products/annotations/noctua_wb-src.gpad.gz
     entity_type:
-    status: inactive
+    status: active
+    merges_into: wb
     species_code:
     taxa:
       - NCBITaxon:6239
