@@ -4303,3 +4303,23 @@
   nickname: 'Yves Snijckers'
   organization: Radboud University
   uri: 'https://orcid.org/0000-0001-6913-5104'
+-
+  accounts:
+    github: mitchellcailey
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
+  email-md5:
+    - cailey.mitchell@jax.org
+  groups:
+    - 'http://informatics.jax.org'
+    - 'http://geneontology.org'
+  nickname: 'Cailey Mitchell'
+  organization: MGI
+  uri: 'https://orcid.org/0000-0002-6659-9031'
+  xref: 'GOC:cmm'
+
