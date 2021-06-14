@@ -803,7 +803,7 @@
 -
   nickname: 'Tony Planchart'
   organization: MGI
-  uri: 'https://orcid.org/0000-0001-8691-8856'
+  uri: 'http://orcid.org/0000-0001-8691-8856'
   xref: 'GOC:ajp'
 -
   accounts:
