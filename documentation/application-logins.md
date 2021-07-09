@@ -69,7 +69,7 @@ Naturally, these can be mixed and matched as required for the user.
 
 ```yaml
 -
-  uri: 'http://orcid.org/0000-0002-9551-6370'
+  uri: 'https://orcid.org/0000-0002-9551-6370'
   xref: 'GOC:mec'
   nickname: 'Melanie Courtot'
   email-md5:
@@ -89,7 +89,7 @@ Naturally, these can be mixed and matched as required for the user.
   accounts:
     github: mcourtot
 ```
-	
+
 ### How do I login?
 
 Once your metadata has been captured properly as per above, you should
