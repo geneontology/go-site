@@ -112,6 +112,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000114">GO_REF:0000114 Manual transfer of experimentally-verified manual GO annotation data to homologous complexes by curator judgment of sequence, composition and function similarity.</a>
  * <a href="#goref0000115">GO_REF:0000115 Automatic Gene Ontology annotation of non-coding RNA sequences through association of Rfam records with GO terms.</a>
  * <a href="#goref0000116">GO_REF:0000116 Automatic Gene Ontology annotation based on Rhea mapping.</a>
+ * <a href="#goref0000117">GO_REF:0000117 Electronic Gene Ontology annotations created by ARBA machine learning models</a>
 
 
 
@@ -1538,3 +1539,15 @@ or for further information, please visit the RNAcentral website at http://rnacen
 
 
 Rhea (https://www.rhea-db.org/, PMID:30272209) is an expert-curated knowledgebase of chemical and transport reactions of biological interest - and the standard for enzyme and transporter annotation in UniProtKB (PMID:31688925). Rhea uses the chemical dictionary ChEBI (Chemical Entities of Biological Interest) to describe reaction participants and their chemical transformations in a computationally tractable manner. GO terms corresponding to Rhea reactions are assigned a Rhea database cross-reference. The corresponding GO term is automatically applied to all UniProt entries annotated with a Rhea reaction. The mapping file is available at: http://current.geneontology.org/ontology/external2go/rhea2go.
+
+<a name="goref0000117"/>
+
+## Electronic Gene Ontology annotations created by ARBA machine learning models
+
+ * id: [GO_REF:0000117](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000117.md)
+ * year: 2021
+ * authors: UniProt
+
+
+
+ARBA predicts Gene Ontology (GO) terms among other types of functional annotation such as Protein Description (DE), Keywords (KW), Enzyme Commission numbers (EC), sucellular LOcation (LO), etc. For all annotation types, reviewed UniProtKB/Swiss-Prot records having manual annotations as reference data are used to perform the machine learning phase and generate prediction models. For GO terms, ARBA has an additional feature to augment reference data using the relations between GO terms in the GO graph. The data augmentation is based on adding more general annotations into records containing manual GO terms, which will result in richer reference data. The predicted GO terms are then propagated to all unreviewed UniProtKB/TrEMBL proteins that meet the conditions of ARBA models. GO annotations using this technique receive the evidence code Inferred from Electronic Annotation (IEA; ECO:0000501). These annotations are updated regularly by UniProt and are available for download on both the GO and GOA EBI ftp sites.
