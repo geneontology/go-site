@@ -4319,3 +4319,15 @@
   nickname: 'Cailey Mitchell'
   organization: MGI
   uri: 'https://orcid.org/0000-0002-6659-9031'
+-
+  accounts:
+    github: neurogarg
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.wormbase.org'
+  nickname: 'Pranjal Garg'
+  organization: WB
+  uri: 'https://orcid.org/0000-0001-5576-1016'
