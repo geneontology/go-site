@@ -4310,12 +4310,8 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   groups:
     - 'http://informatics.jax.org'
-    - 'http://geneontology.org'
   nickname: 'Cailey Mitchell'
   organization: MGI
   uri: 'https://orcid.org/0000-0002-6659-9031'
