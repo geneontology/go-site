@@ -41,7 +41,8 @@ smap = {
     "Scer": "Saccharomyces cerevisiae",
     "Solanaceae": "Solanaceae",
     "Spom": "Schizosaccharomyces pombe",
-    "Sscr": "Sus scrofa"
+    "Sscr": "Sus scrofa",
+    "Xenopus": "Xenopus"
 }
 
 def die_screaming(instr):
