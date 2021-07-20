@@ -5,7 +5,7 @@ project_name: "The Zebrafish Information Network"
 contact_email: "zfinadmin@zfin.org"
 project_url: "https://zfin.org/"
 funding_source: "NIH (P41 HG002659)"
-email_report: "dhowe@zfin.org,sabrina@zfin.org"
+email_report: "dhowe@zfin.org"
 datasets:
  -
    id: zfin.gaf

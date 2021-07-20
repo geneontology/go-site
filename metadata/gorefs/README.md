@@ -102,7 +102,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000104">GO_REF:0000104 Electronic Gene Ontology annotations created by transferring manual GO annotations between related proteins based on shared sequence features.</a>
  * <a href="#goref0000105">GO_REF:0000105 Gene Ontology annotation of transfer RNAs based on tRNAscan-SE analysis of the Drosophila melanogaster genome (2002).</a>
  * <a href="#goref0000106">GO_REF:0000106 OBSOLETE Gene Ontology annotation based on protein sequence records.</a>
- * <a href="#goref0000107">GO_REF:0000107 Automatic transfer of experimentally verified manual GO annotation data to orthologs using Ensembl.</a>
+ * <a href="#goref0000107">GO_REF:0000107 Automatic transfer of experimentally verified manual GO annotation data to orthologs using Ensembl Compara.</a>
  * <a href="#goref0000108">GO_REF:0000108 Automatic assignment of GO terms using logical inference, based on on inter-ontology links.</a>
  * <a href="#goref0000109">GO_REF:0000109 Gene Ontology annotation based on curation of genome-wide subcellular localisation of proteins using fluorescent protein tagging in Trypanosoma brucei.</a>
  * <a href="#goref0000110">GO_REF:0000110 Gene Ontology annotation of Drosophila melanogaster nuclear genes encoding proteins targeted to the mitochondrion.</a>
@@ -112,6 +112,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000114">GO_REF:0000114 Manual transfer of experimentally-verified manual GO annotation data to homologous complexes by curator judgment of sequence, composition and function similarity.</a>
  * <a href="#goref0000115">GO_REF:0000115 Automatic Gene Ontology annotation of non-coding RNA sequences through association of Rfam records with GO terms.</a>
  * <a href="#goref0000116">GO_REF:0000116 Automatic Gene Ontology annotation based on Rhea mapping.</a>
+ * <a href="#goref0000117">GO_REF:0000117 Electronic Gene Ontology annotations created by ARBA machine learning models</a>
 
 
 
@@ -1406,7 +1407,7 @@ Between 1986 and 2005 GO annotations were made by FlyBase curators based on info
 
 <a name="goref0000107"/>
 
-## Automatic transfer of experimentally verified manual GO annotation data to orthologs using Ensembl.
+## Automatic transfer of experimentally verified manual GO annotation data to orthologs using Ensembl Compara.
 
  * id: [GO_REF:0000107](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000107.md)
  * year: 2016
@@ -1414,7 +1415,7 @@ Between 1986 and 2005 GO annotations were made by FlyBase curators based on info
 
 
 
-GO terms from a source species are projected onto one or more target species based on gene orthology obtained from Ensembl. One to one, one to many and many to many orthologies are used but annotations are only projected between orthologs that have at least a 40% peptide identity to each other. Only GO annotations with evidence codes ECO:0000314 (IDA), ECO:0000270 (IEP), ECO:0000316 (IGI), ECO:0000315 (IMP), and ECO:0000353 (IPI), or their descendants, are projected; annotations with a 'NOT' qualifier are not projected, and neither are annotations to GO:0005515 (protein binding). Annotations that are projected using this technique receive the evidence code ECO:0000265 (sequence orthology evidence used in automatic assertion), which maps up to the GO Inferred from Electronic Annotation (IEA) evidence code.  The model organism database identifier of the annotation source will be indicated in the 'With' column of the GOA association file.
+GO terms from a source species are projected onto one or more target species based on gene orthology obtained from Ensembl Compara. One-to-one, one-to-many and many-to-many orthology relations and anntations are transferred between orthologs that have at least a 40% peptide identity to each other. Only GO annotations with evidence codes ECO:0000314 (IDA), ECO:0000270 (IEP), ECO:0000316 (IGI), ECO:0000315 (IMP), and ECO:0000353 (IPI), or their descendants, are transferred; annotations with a 'NOT' qualifier are not transferred, and neither are annotations to GO:0005515 (protein binding). Annotations that are transferred using this method receive the evidence code ECO:0000265 (sequence orthology evidence used in automatic assertion), which maps up to the GO Inferred from Electronic Annotation (IEA) evidence code.  The model organism database identifier of the annotation source will be indicated in the 'With' column of the GOA association file.
 
 <a name="goref0000108"/>
 
@@ -1426,7 +1427,7 @@ GO terms from a source species are projected onto one or more target species bas
 
 
 
-GO terms are automatically assigned based on inter-ontology links to generate inferred annotations. Annotations from Molecular Function to Biological Process can be propagated, as well as between Biological Process and Cellular Component . Annotations that are created using this inference method receive either the evidence code ECO:0000366 (evidence based on logical inference from automatic annotation used in automatic assertion) or ECO:0000364 (evidence based on logical inference from manual annotation used in automatic assertion), depending on whether the source annotation has a manual or automatic evidence code. Both of these codes map up to the GO Inferred from Electronic Annotation (IEA) evidence code.
+GO terms are automatically assigned based on inter-ontology links to generate inferred annotations. Annotations from Molecular Function to Biological Process can be propagated, as well as between Biological Process and Cellular Component. Annotations that are created using this inference method receive either the evidence code ECO:0000366 (evidence based on logical inference from automatic annotation used in automatic assertion) or ECO:0000364 (evidence based on logical inference from manual annotation used in automatic assertion), depending on whether the source annotation has a manual or automatic evidence code. Both of these codes map up to the GO Inferred from Electronic Annotation (IEA) evidence code.
 
 <a name="goref0000109"/>
 
@@ -1538,3 +1539,15 @@ or for further information, please visit the RNAcentral website at http://rnacen
 
 
 Rhea (https://www.rhea-db.org/, PMID:30272209) is an expert-curated knowledgebase of chemical and transport reactions of biological interest - and the standard for enzyme and transporter annotation in UniProtKB (PMID:31688925). Rhea uses the chemical dictionary ChEBI (Chemical Entities of Biological Interest) to describe reaction participants and their chemical transformations in a computationally tractable manner. GO terms corresponding to Rhea reactions are assigned a Rhea database cross-reference. The corresponding GO term is automatically applied to all UniProt entries annotated with a Rhea reaction. The mapping file is available at: http://current.geneontology.org/ontology/external2go/rhea2go.
+
+<a name="goref0000117"/>
+
+## Electronic Gene Ontology annotations created by ARBA machine learning models
+
+ * id: [GO_REF:0000117](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000117.md)
+ * year: 2021
+ * authors: UniProt
+
+
+
+ARBA predicts Gene Ontology (GO) terms among other types of functional annotation such as Protein Description (DE), Keywords (KW), Enzyme Commission numbers (EC), sucellular LOcation (LO), etc. For all annotation types, reviewed UniProtKB/Swiss-Prot records having manual annotations as reference data are used to perform the machine learning phase and generate prediction models. For GO terms, ARBA has an additional feature to augment reference data using the relations between GO terms in the GO graph. The data augmentation is based on adding more general annotations into records containing manual GO terms, which will result in richer reference data. The predicted GO terms are then propagated to all unreviewed UniProtKB/TrEMBL proteins that meet the conditions of ARBA models. GO annotations using this technique receive the evidence code Inferred from Electronic Annotation (IEA; ECO:0000501). These annotations are updated regularly by UniProt and are available for download on both the GO and GOA EBI ftp sites.

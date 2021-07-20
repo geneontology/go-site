@@ -426,8 +426,7 @@ the other species in the interaction. Where the interaction is between
 organisms of the same species, both taxon IDs should be the same.
 
 This rule should check that these annotations should be used only in conjunction with
-terms that have the biological process term 'GO:0044419 : interspecies interaction
-between organisms', the process GO:0043903 regulation of interspecies interactions between organisms, or the cellular component term 'GO:0018995 : host cellular component' as an ancestor.
+terms that have the biological process term 'GO:0044419 : biological process involved in interspecies interaction between organisms', the process GO:0043903 regulation of interspecies interactions between organisms, or the cellular component term 'GO:0018995 : host cellular component' as an ancestor.
 
 <a name="gorule0000016"/>
 
@@ -536,8 +535,8 @@ Historically GO treated MF, BP and CC as distinct ontologies. They are now bette
 
 ## Procedure
 
- * Any asserted or inferred annotation to MF, where MF part-of BP, will generate an involved-in to that BP
- * Any asserted or inferred annotation to BP, where BP occurs-in CC, will generate a part-of annotation to that CC
+ * Any asserted or inferred annotation to MF (excluding annotations with a NOT qualifier), where MF part-of BP, will generate an involved-in to that BP
+ * Any asserted or inferred annotation to BP (excluding annotations with a NOT qualifier), where BP occurs-in CC, will generate a part-of annotation to that CC
 
 ### Evidence and provenance
 
