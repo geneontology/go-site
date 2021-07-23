@@ -4327,3 +4327,16 @@
   nickname: 'Pranjal Garg'
   organization: WB
   uri: 'https://orcid.org/0000-0001-5576-1016'
+-
+  accounts:
+    github: sharan-gh
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.wormbase.org'
+  nickname: 'Sharan Prakash'
+  organization: WB
+  uri: 'https://orcid.org/0000-0003-1777-0987'
+  
