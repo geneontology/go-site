@@ -2865,13 +2865,13 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ZDB-(GENE|GENO|MRPHLNO)-[0-9]{6}-[0-9]+
+      id_syntax: ZDB-(TRNAG|LINCRNAG|MIRNAG|NCRNAG|SNORNAG|GENE|GENO|MRPHLNO)-[0-9]{6}-[0-9]+
       url_syntax: http://zfin.org/[example_id]
       example_id: ZDB-GENE-990415-103
       example_url: http://zfin.org/ZDB-GENE-990415-103
     - type_name: variation
       type_id: VariO:0001
-      id_syntax: ZDB-(GENE|GENO|MRPHLNO)-[0-9]{6}-[0-9]+
+      id_syntax: ZDB-(TRNAG|LINCRNAG|MIRNAG|NCRNAG|SNORNAG|GENE|GENO|MRPHLNO)-[0-9]{6}-[0-9]+
       url_syntax: http://zfin.org/[example_id]
       example_id: ZDB-GENE-990415-103
       example_url: http://zfin.org/ZDB-GENE-990415-103
@@ -2921,3 +2921,14 @@
       id_syntax: CorrID:\d+
       example_id: CorrID:37232
       example_url: https://www.animalgenome.org/CorrDB/q/?id=CorrID:37232
+- database: AlphaFold
+  name: AlphaFold Protein Structure Database
+  generic_urls:
+    - https://alphafold.ebi.ac.uk/
+  entity_types:
+    - type_name: protein
+      type_id: PR:000000001
+      id_syntax: ([OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z]([0-9][A-Z][A-Z0-9]{2}){1,2}[0-9])((-[0-9]+)|:PRO_[0-9]{10}|:VAR_[0-9]{6}){0,1}
+      url_syntax: https://alphafold.ebi.ac.uk/entry/[example_id]
+      example_id: AlphaFold:Q5VSL9
+      example_url: https://alphafold.ebi.ac.uk/entry/Q5VSL9
