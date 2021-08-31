@@ -31,7 +31,7 @@ datasets:
    type: gpi
    dataset: pombase
    submitter: pombase
-   compression: ''
+   compression: gzip
    source: https://www.pombase.org/data/annotations/Gene_ontology/pombase.gpi.gz
    entity_type:
    status: active
@@ -47,7 +47,7 @@ datasets:
    type: gpad
    dataset: pombase
    submitter: pombase
-   compression: ''
+   compression: gzip
    source: https://www.pombase.org/data/annotations/Gene_ontology/pombase.gpad.gz
    entity_type:
    status: active
