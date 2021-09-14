@@ -6,13 +6,13 @@ ASAP,,,
 ASPGD,Marek Skrzypek,@marekskrzypek,
 BBOP,Seth Carbon,@kltm,Noctua|Data pipeline|AmiGO|Website
 BBOP,Chris Mungall,@cmungall,All things technical and ontology-related
-BBOP,Eric Douglass,@dougli1sqrd,GO Rules - ROBOT
+BBOP,Sierra Moxon,@sierra-moxon,Pipeline
 BBOP,Mark A. Miller,@turbomam,microbial proteomics | 16S metagenomics | biomedical semantics
 BHF-UCL,Ruth Lovering,@RLovering,
 Buffalo University,Alex Diehl,@addiehl,
 CACAO,Debbie Siegle,@dsiegele,
 CACAO,Jolene Ramsey,@jrr-cpt,
-CAFA,EBI,@pgarmiri,
+CAFA,EBI,@Antonialock,
 CGD,Marek Skrzypek,@marekskrzypek,
 CollectTF,Ivan Erill,@ivanerill,
 CollectTF,General email,collectf@umbc.edu,
@@ -36,20 +36,21 @@ Ensembl,Kevin Howe (EBI),@khowe,
 Eurofung,,,
 FlyBase,Helen Attrill,@hattrill,
 FlyBase,Giulia Antonazzo,@gantonazzo,
-GDB,EBI/GOC,@pgarmiri,
+GDB,EBI/GOC,@Antonialock,
 GDB,EBI/GOC,@pgaudet,
 GeneDB,Achchuthan Shanmugasundram,@Achchuthan,
 GeneDB,Ulrike Boehme,@uliboehme,Plasmodium curator
 GeneDB,F.Silva-Franco, F.Silva-Franco at liverpool.ac.uk,TBRU curator
 GO_Central,Pascale Gaudet,@pgaudet,PAINT|transcription|multiorganism processes|cellular biology
 GO_Central,Chris Mungall,@cmungall,Ontology|Anatomy
+GO_Central - USC,Dustin Ebert,@dustine32,PAINT pipeline|GO pipeline
 GO_Noctua,,,
 GOC,,,
 GOC-OWL,,,
 GR,Pankaj Jaiswal,@jaiswalp,Plant biology
 GR,Not actively maintainted/GO_Central,@vanaukenk,contact @jaiswalp for queries
 GR,Not actively maintainted/GO_Central,@pgaudet,contact @jaiswalp for queries
-GR,Not actively maintainted/EBI,@pgarmiri,contact @jaiswalp for queries
+GR,Not actively maintainted/EBI,@Antonialock,contact @jaiswalp for queries
 GREEKC,Colin Logie,@colinlog,Transcription
 HGNC,Susan Tweedie,@sartweedie,
 HGNC-UCL,Ruth Lovering,@RLovering,
@@ -58,7 +59,6 @@ IntAct,,,
 InterPro,Lowri Williams,lsw26,
 InterPro,Sara Chuguransky,@sarach06,
 InterPro,Beatriz Lazaro Pinto,@blazaropinto,
-InterPro,Hsin-Yu Chang,@EBI-Hsinyu,
 JaponicusDB,Snezka Oliferenko,@snezhkaoliferenko,
 JaponicusDB,Midori Harris,@mah11,
 JCVI,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
@@ -77,7 +77,7 @@ MGI,Harold Drabkin,@hdrabkin,tRNA biology and translation
 MGI,David Hill,@ukemi,
 MGI,Mary Dolan,@mdolanme,
 MTBBASE,GOC,@pgaudet,
-MTBBASE,EBI,@pgarmiri,
+MTBBASE,EBI,@Antonialock,
 NTNU_SB,Astrid Lægreid,,Transcription
 NTNU_SB,Marcio Acencio,@mlacencio,Transcription
 PAINT,Pascale Gaudet,@pgaudet,
@@ -93,19 +93,16 @@ PAMGO_MGG,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for 
 PAMGO_VMD,,,
 ParkinsonsUK-UCL,Ruth Lovering,@RLovering,
 PHI-base,,,
-PINC (ProtInc),Not actively maintainted/GO_Central,@pgarmiri,no contact person
+PINC (ProtInc),Not actively maintainted/GO_Central,@Antonialock,no contact person
 PINC (ProtInc),Not actively maintainted/GO_Central,@pgaudet,no contact person
 PINC (ProtInc),Not actively maintainted/GO_Central,@vanaukenk,no contact person
 PIR,Kati Laiho,@laihokati,
 PomBase,ValWood,@valwood,
 PomBase,Midori Harris,@mah11,
-PomBase,Antonia Lock,@antonialock,
 Protein Ontology, Darren Natale,@nataled,
 PseudoCAP,Fiona Brinkman,@fionabrinkman,
 PseudoCAP,General Group,@brinkmanlab,
 PseudoCAP,Geoff Winsor,@glwinsor,
-Rhea,Anne Morgat,@amorgat,
-Rhea,Arnaud Kerhornou,@arnaudxk,Swiss-Prot & Rhea developer
 Reactome,Peter D'Eustachio,@deustp01,
 Reactome,Antonio Fabregat,@fabregat,
 Rfam,Anton Petrov,@AntonPetrov,
@@ -115,11 +112,13 @@ RGD,Tom Hayman,@gthayman,
 RGD,Mary Kaldunski,@mlkaldunski,curation | annotation | physiology
 RGD,Jennifer Smith,@jrsjrs,pipeline and data
 RGD,Marek Tuta,@tutajm,import and export pipelines
-RHEA,,,
+RHEA,Anne Morgat,@amorgat,
+RHEA,Arnaud Kerhornou,@arnaudxk,Swiss-Prot & Rhea developer
+RHEA,Kristian Axelson,@kaxelsen,RHEA and Swiss-Prot curator
 RNAcentral,,,
 Roslin_Institute,Not actively maintainted/GO_Central,@pgaudet,no contact person
 Roslin_Institute,Not actively maintainted/GO_Central,@vanaukenk,no contact person
-Roslin_Institute,Not actively maintainted/EBI,@pgarmiri,no contact person
+Roslin_Institute,Not actively maintainted/EBI,@Antonialock,no contact person
 SGD,Stacia Engel,@srengel,
 SGD,Suzi Aleksander,@suzialeksander,
 SGN,Lukas Mueller,@lukasmueller,
@@ -129,11 +128,11 @@ SYSCILIA_CCNET,Karen Christie,@krchristie,
 TAIR,Tanya Berardini,@tberardini,Plant biology
 TAIR,Leonore Reiser,@lreiser,Plant biology
 TAIR,Erica Bakker,@ebakker2,Plant biology
-TIGR,Not actively maintainted/GO_Central,@pgarmiri,
+TIGR,Not actively maintainted/GO_Central,@Antonialock,
 TIGR,Not actively maintainted/GO_Central,@pgaudet,
 TIGR,Not actively maintainted/GO_Central,@vanaukenk,
-UniProt (EBI),Antonia Lock,@Antonialock,
 UniProt (EBI),Alex Ignatchenko,@alexsign,
+UniProt (EBI),Antonia Lock,@Antonialock,
 UniProt (EBI),Michelle Magrane,@magrane,
 UniProt (EBI),Sandra Orchard,@sandraorchard,
 UniProt (EBI),Rizwan Ishtiaq,@rizwan-ishtiaq,QuickGO java backend
@@ -146,12 +145,13 @@ UniProt (Swiss-Prot/Geneva),Marc Feuermann,@marcfeuermann,fungi|enzymes
 UniProt (Swiss-Prot/Geneva),Nevila Nouspikel,nnouspikel,lipids|immunology|cancer
 UniProt (Swiss-Prot/Geneva),Ivo Pedruzzi,@pedruzzi, 
 UniProt (Swiss-Prot/Geneva),Sylvain Poux,@sylvainpoux,
-USC,Dustin Ebert,@dustine32,PAINT pipeline
 WB - WormBase,Kimberly Van Auken,@vanaukenk,C.elegans|Noctua|GO-CAM
 Wikidata,Andrew Su,@andrewsu,
-Wikidata,Derek,@djow2019 ,
+Wikidata,Derek,cdjow2019 ,
 Xenbase,Malcolm Fisher,@malcolmfisher103,Xenopus
 YuBioLab,,,
 ZFIN,Doug Howe,@doughowe,Zebra fish
+ZFIN,Leyla Ruzicka,@LeylaR,
+ZFIN,Sridhar Ramanchandran,@sramachand,
 Domain expert,,@khybiske,Chlamydia
 Domain expert,,@putmantime,Chlamydia
