@@ -4341,7 +4341,7 @@
   uri: 'https://orcid.org/0000-0003-1777-0987'
 -
   accounts:
-    github: Rahi13
+    github: RahiNav
   authorizations:
     noctua:
       go:
@@ -4351,4 +4351,3 @@
   nickname: 'Rahi Navelkar'
   organization: SGD
   uri: 'https://orcid.org/0000-0002-4200-7409'
-  
