@@ -4351,3 +4351,16 @@
   nickname: 'Rahi Navelkar'
   organization: SGD
   uri: 'https://orcid.org/0000-0002-4200-7409'
+-
+  accounts:
+    github: c02080219
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://geneontology.org/'
+  nickname: 'YuanChing Chen'
+  organization: National Tsing Hua University (NTHU)
+  uri: 'https://orcid.org/0000-0003-1287-0137'
+  
