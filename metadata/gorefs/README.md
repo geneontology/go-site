@@ -72,7 +72,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000074">GO_REF:0000074 Representation of export of a chemical as biological process in the Gene Ontology</a>
  * <a href="#goref0000075">GO_REF:0000075 Representation of transport of a chemical into a cellular component as biological process in the Gene Ontology</a>
  * <a href="#goref0000076">GO_REF:0000076 Representation of transport or vesicle-mediated transport from cell component to cell component as biological process in the Gene Ontology</a>
- * <a href="#goref0000077">GO_REF:0000077 OSBOLETE Representation of transport of a cellular component as biological process in the Gene Ontology</a>
+ * <a href="#goref0000077">GO_REF:0000077 OBSOLETE Representation of transport of a cellular component as biological process in the Gene Ontology</a>
  * <a href="#goref0000078">GO_REF:0000078 Representation for the transport or vesicle-mediated transport of a chemical from and/or to a cell component as biological process in the Gene Ontology</a>
  * <a href="#goref0000079">GO_REF:0000079 Representation of assembly or disassembly of a cell component as biological process in the Gene Ontology</a>
  * <a href="#goref0000080">GO_REF:0000080 Representation of plant development as biological process in the Gene Ontology</a>
@@ -1042,7 +1042,7 @@ We have created a standard template for classes describing the transport or vesi
 
 <a name="goref0000077"/>
 
-## OSBOLETE Representation of transport of a cellular component as biological process in the Gene Ontology
+## OBSOLETE Representation of transport of a cellular component as biological process in the Gene Ontology
 
  * id: [GO_REF:0000077](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000077.md)
  * year: 2013
