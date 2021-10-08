@@ -109,7 +109,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000111">GO_REF:0000111 Gene Ontology annotations Inferred by Curator (IC) using at least one Inferred by Sequence Similarity (ISS) annotation to support the inference</a>
  * <a href="#goref0000112">GO_REF:0000112 OBSOLETE Gene Ontology annotation by CACAO biocurators</a>
  * <a href="#goref0000113">GO_REF:0000113 Gene Ontology annotation of human sequence-specific DNA binding transcription factors (DbTFs) based on the TFClass database</a>
- * <a href="#goref0000114">GO_REF:0000114 Manual transfer of experimentally-verified manual GO annotation data to homologous complexes by curator judgment of sequence, composition and function similarity.</a>
+ * <a href="#goref0000114">GO_REF:0000114 Manual transfer of experimentally-verified manual GO annotation data to homologous complexes by curator judgment of sequence, composition and function similarity</a>
  * <a href="#goref0000115">GO_REF:0000115 Automatic Gene Ontology annotation of non-coding RNA sequences through association of Rfam records with GO terms.</a>
  * <a href="#goref0000116">GO_REF:0000116 Automatic Gene Ontology annotation based on Rhea mapping.</a>
  * <a href="#goref0000117">GO_REF:0000117 Electronic Gene Ontology annotations created by ARBA machine learning models</a>
@@ -1495,7 +1495,7 @@ The NTNU curation team has evaluated each family and assigned a molecular functi
 
 <a name="goref0000114"/>
 
-## Manual transfer of experimentally-verified manual GO annotation data to homologous complexes by curator judgment of sequence, composition and function similarity.
+## Manual transfer of experimentally-verified manual GO annotation data to homologous complexes by curator judgment of sequence, composition and function similarity
 
  * id: [GO_REF:0000114](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000114.md)
  * year: 2018
