@@ -4363,4 +4363,15 @@
   nickname: 'YuanChing Chen'
   organization: National Tsing Hua University (NTHU)
   uri: 'https://orcid.org/0000-0003-1287-0137'
-  
+-
+  accounts:
+    github: jlewsmith
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
+  nickname: 'Jodi Lew-Smith'
+  organization: SGD
+  uri: 'https://orcid.org/0000-0003-0784-046X'  
