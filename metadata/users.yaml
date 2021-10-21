@@ -754,7 +754,7 @@
   groups:
     - 'https://www.ebi.ac.uk/intact'
   nickname: 'Birgit Meldal'
-  organization: InTact
+  organization: IntAct
   uri: 'https://orcid.org/0000-0003-4062-6158'
   xref: 'GOC:bhm'
 -
@@ -4375,3 +4375,21 @@
   nickname: 'Jodi Lew-Smith'
   organization: SGD
   uri: 'https://orcid.org/0000-0003-0784-046X'  
+-
+  accounts:
+    github: kalpanapanneerselvam
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+    termgenie-go:
+      allow-freeform: false
+      allow-write: true
+  email-md5:
+    -
+  groups:
+    - 'https://www.ebi.ac.uk/intact'
+  nickname: 'Kalpana Panneerselvam'
+  organization: 'IntAct'
+  uri: 'https://orcid.org/0000-0003-2534-198X'
+-
