@@ -2940,5 +2940,5 @@
     - type_name: gene
       type_id: SO:0000704
       url_syntax: https://www.japonicusdb.org/gene/[example_id]
-      example_id: SJAG_01143
+      example_id: JaponicusDB:SJAG_01143
       example_url: https://www.japonicusdb.org/gene/SJAG_01143
