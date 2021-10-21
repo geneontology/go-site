@@ -4385,8 +4385,6 @@
     termgenie-go:
       allow-freeform: false
       allow-write: true
-  email-md5:
-    -
   groups:
     - 'https://www.ebi.ac.uk/intact'
   nickname: 'Kalpana Panneerselvam'
