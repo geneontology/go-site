@@ -414,4 +414,7 @@
   label: Karadeniz Teknik Universitesi
   id: https://www.ktu.edu.tr/bmi-cancermodelingresearchgroup
   shorthand: KTU
- 
+-
+  label: 'JaponicusDB'
+  id: https://www.japonicusdb.org
+  shorthand: JaponicusDB

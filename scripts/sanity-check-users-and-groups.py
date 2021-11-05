@@ -67,10 +67,10 @@ def main():
     ## Read.
     users = None
     with open(args.users) as mhandle:
-        users = yaml.load(mhandle.read())
+        users = yaml.safe_load(mhandle.read())
     groups_linear = None
     with open(args.groups) as mhandle:
-        groups_linear = yaml.load(mhandle.read())
+        groups_linear = yaml.safe_load(mhandle.read())
 
     ## Switch linear groups to lookup by URI.
     groups_lookup = {}

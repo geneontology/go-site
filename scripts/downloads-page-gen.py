@@ -40,6 +40,7 @@ smap = {
     "Rnor": "Rattus norvegicus",
     "Scer": "Saccharomyces cerevisiae",
     "Solanaceae": "Solanaceae",
+    "Sjap": "Schizosaccharomyces japonicus",
     "Spom": "Schizosaccharomyces pombe",
     "Sscr": "Sus scrofa",
     "Xenopus": "Xenopus"
