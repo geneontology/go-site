@@ -2150,13 +2150,19 @@
   uri: 'GOC:ejs'
   xref: 'GOC:ejs'
 -
+  accounts:
+    github: lbreuza
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   email-md5:
     - 3bda03dbc02aa0fb8467c81beb5481b6
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Lionel Breuza'
   organization: UniProt
-  uri: 'GOC:lb'
+  uri: 'https://orcid.org/0000-0002-8075-8625'
   xref: 'GOC:lb'
 -
   authorizations:
