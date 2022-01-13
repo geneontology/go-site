@@ -15,7 +15,7 @@ datasets:
    dataset: xenbase
    submitter: xenbase
    compression: gzip
-   source: ftp://ftp.xenbase.org/pub/GenePageReports/xenbase.gpi.gz
+   source: https://github.com/geneontology/pipeline/files/7862197/xenbase.gpi.gz
    entity_type:
    status: active
    species_code: Xenopus
