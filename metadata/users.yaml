@@ -4380,4 +4380,17 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Jodi Lew-Smith'
   organization: SGD
-  uri: 'https://orcid.org/0000-0003-0784-046X'  
+  uri: 'https://orcid.org/0000-0003-0784-046X'
+-
+  accounts:
+    github: weichiatseng
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://zfin.org'
+  nickname: 'Wei-Chia Tseng'
+  organization: ZFIN
+  uri: 'https://orcid.org/0000-0002-3665-4482'
+ 
