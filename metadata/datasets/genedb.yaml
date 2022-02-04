@@ -5,7 +5,7 @@ project_name: "Leishmania major GeneDB"
 contact_email: "mb4@sanger.ac.uk"
 project_url: "http://www.genedb.org/leish"
 funding_source: "unspecified"
-email_report: "mb4@sanger.ac.uk,maa@sanger.ac.uk,achchu@liverpool.ac.uk,ucb@sanger.ac.uk"
+email_report: "achchu@liverpool.ac.uk,uboehme@liverpool.ac.uk"
 datasets:
  -
    id: genedb_lmajor.gaf
