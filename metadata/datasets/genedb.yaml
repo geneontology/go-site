@@ -16,7 +16,7 @@ datasets:
    dataset: genedb_lmajor
    submitter: genedb
    compression: gzip
-   source: ftp://ftp.sanger.ac.uk/pub/project/pathogens/as44/Lmajor.gaf.gz
+   source: ftp://ftp.sanger.ac.uk/pub/genedb/releases/2022-02/Lmajor/Lmajor.gaf.gz
    entity_type:
    status: active
    species_code:
@@ -31,7 +31,7 @@ datasets:
    dataset: genedb_tbrucei
    submitter: genedb
    compression: gzip
-   source: ftp://ftp.sanger.ac.uk/pub/project/pathogens/as44/Tbruceibrucei927.gaf.gz
+   source: ftp://ftp.sanger.ac.uk/pub/genedb/releases/2022-02/Tbruceibrucei927/Tbruceibrucei927.gaf.gz
    entity_type:
    status: active
    species_code:
