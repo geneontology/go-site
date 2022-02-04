@@ -16,7 +16,7 @@ datasets:
    dataset: genedb_lmajor
    submitter: genedb
    compression: gzip
-   source: ftp://ftp.sanger.ac.uk/pub/genedb/releases/2022-02/Lmajor/Lmajor.gaf.gz
+   source: ftp://ftp.sanger.ac.uk/pub/genedb/releases/latest/Lmajor/Lmajor.gaf.gz
    entity_type:
    status: active
    species_code:
@@ -31,8 +31,7 @@ datasets:
    dataset: genedb_tbrucei
    submitter: genedb
    compression: gzip
-   source: ftp://ftp.sanger.ac.uk/pub/genedb/releases/2022-02/Tbruceibrucei927/Tbruceibrucei927.gaf.gz
-   entity_type:
+   source: ftp://ftp.sanger.ac.uk/pub/genedb/releases/latest/Tbruceibrucei927/Tbruceibrucei927.gaf.gz
    status: active
    species_code:
    taxa:
@@ -46,7 +45,7 @@ datasets:
    dataset: genedb_pfalciparum
    submitter: genedb
    compression: gzip
-   source: http://viewvc.geneontology.org/viewvc/GO-SVN/trunk/gene-associations/submission/gene_association.GeneDB_Pfalciparum.gz
+   source: ftp://ftp.sanger.ac.uk/pub/genedb/releases/latest/Pfalciparum/Pfalciparum.gaf.gz
    entity_type:
    status: active
    species_code:
