@@ -71,7 +71,6 @@ LIFEdb,EBI,@pgarmiri,
 MENGO,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
 MENGO,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
 MENGO,Not actively maintainted/GO_Central,@pgarmiri,contact @mgiglio99 for queries
-MGI,Judy Blake,@judyblake,
 MGI,Karen Christie,@krchristie,
 MGI,Harold Drabkin,@hdrabkin,tRNA biology and translation
 MGI,David Hill,@ukemi,
@@ -97,6 +96,7 @@ PINC (ProtInc),Not actively maintainted/GO_Central,@Antonialock,no contact perso
 PINC (ProtInc),Not actively maintainted/GO_Central,@pgaudet,no contact person
 PINC (ProtInc),Not actively maintainted/GO_Central,@vanaukenk,no contact person
 PIR,Kati Laiho,@laihokati,
+PomBase,general GitHub account,@pombase-admin
 PomBase,ValWood,@valwood,
 PomBase,Midori Harris,@mah11,
 Protein Ontology, Darren Natale,@nataled,
@@ -145,13 +145,15 @@ UniProt (Swiss-Prot/Geneva),Marc Feuermann,@marcfeuermann,fungi|enzymes
 UniProt (Swiss-Prot/Geneva),Nevila Nouspikel,nnouspikel,lipids|immunology|cancer
 UniProt (Swiss-Prot/Geneva),Ivo Pedruzzi,@pedruzzi, 
 UniProt (Swiss-Prot/Geneva),Sylvain Poux,@sylvainpoux,
+UniProt - UniRules, ,esperetta,
+UniProt - UniRules, ,PedroRaposo,
 WB - WormBase,Kimberly Van Auken,@vanaukenk,C.elegans|Noctua|GO-CAM
 Wikidata,Andrew Su,@andrewsu,
 Wikidata,Derek,cdjow2019 ,
 Xenbase,Malcolm Fisher,@malcolmfisher103,Xenopus
 YuBioLab,,,
 ZFIN,Doug Howe,@doughowe,Zebra fish
-ZFIN,Leyla Ruzicka,@LeylaR,
-ZFIN,Sridhar Ramanchandran,@sramachand,
+ZFIN,Leyla Ruzicka,@LeylaR,ZFIN technical
+ZFIN,Sridhar Ramanchandran,@sramachand,ZFIN curation
 Domain expert,,@khybiske,Chlamydia
 Domain expert,,@putmantime,Chlamydia

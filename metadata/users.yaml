@@ -754,7 +754,7 @@
   groups:
     - 'https://www.ebi.ac.uk/intact'
   nickname: 'Birgit Meldal'
-  organization: InTact
+  organization: IntAct
   uri: 'https://orcid.org/0000-0003-4062-6158'
   xref: 'GOC:bhm'
 -
@@ -2150,13 +2150,19 @@
   uri: 'GOC:ejs'
   xref: 'GOC:ejs'
 -
+  accounts:
+    github: lbreuza
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   email-md5:
     - 3bda03dbc02aa0fb8467c81beb5481b6
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Lionel Breuza'
   organization: UniProt
-  uri: 'GOC:lb'
+  uri: 'https://orcid.org/0000-0002-8075-8625'
   xref: 'GOC:lb'
 -
   authorizations:
@@ -3656,7 +3662,7 @@
   groups:
     - 'https://www.ebi.ac.uk/intact'
   nickname: 'Livia Perfetto'
-  organization: InTact
+  organization: IntAct
   uri: 'https://orcid.org/0000-0003-4392-8725'
   xref: 'GOC:lnp'
 -
@@ -4374,4 +4380,28 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Jodi Lew-Smith'
   organization: SGD
-  uri: 'https://orcid.org/0000-0003-0784-046X'  
+  uri: 'https://orcid.org/0000-0003-0784-046X'
+-
+  accounts:
+    github: weichiatseng
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://zfin.org'
+  nickname: 'Wei-Chia Tseng'
+  organization: ZFIN
+  uri: 'https://orcid.org/0000-0002-3665-4482'
+-
+  accounts:
+    github: kalpanapanneerselvam
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.ebi.ac.uk/intact'
+  nickname: 'Kalpana Panneerselvam'
+  organization: IntAct
+  uri: 'https://orcid.org/0000-0003-2534-198X'
