@@ -45,16 +45,6 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-- database: ApiDB_PlasmoDB
-  name: PlasmoDB Plasmodium Genome Resource
-  generic_urls:
-    - http://plasmodb.org/
-  entity_types:
-    - type_name: entity
-      type_id: BET:0000000
-      url_syntax: http://www.plasmodb.org/gene/[example_id]
-      example_id: ApiDB_PlasmoDB:PF11_0344
-      example_url: https://plasmodb.org/plasmo/app/record/gene/PF11_0344
 - database: APweb
   name: Angiosperm Phylogeny Website
   generic_urls:
