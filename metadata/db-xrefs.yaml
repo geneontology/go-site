@@ -859,18 +859,6 @@
       url_syntax: http://gene3d.biochem.ucl.ac.uk/search?mode=family&sterm=[example_id]
       example_id: Gene3D:3.30.390.30
       example_url: http://gene3d.biochem.ucl.ac.uk/search?mode=family&sterm=3.30.390.30
-- database: GeneDB
-  name: GeneDB
-  rdf_uri_prefix: http://identifiers.org/genedb/
-  generic_urls:
-    - http://www.genedb.org/gene/
-  entity_types:
-    - type_name: gene
-      type_id: SO:0000704
-      id_syntax: ((LmjF|LinJ|LmxM)\.[0-9]{2}\.[0-9]{4})|(PF3D7_[0-9]{7})|(Tb[0-9]+\.[A-Za-z0-9]+\.[0-9]+)|(TcCLB\.[0-9]{6}\.[0-9]+)
-      url_syntax: http://www.genedb.org/gene/[example_id]
-      example_id: PF3D7_1467300
-      example_url: http://www.genedb.org/gene/PF3D7_1467300
 - database: Genesys-pgr
   name: Gene DB, Genesys
   generic_urls:
