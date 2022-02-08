@@ -1929,6 +1929,18 @@
       url_syntax: http://planteome.org/po_ref/[example_id]
       example_id: PO_REF:00001
       example_url: http://planteome.org/po_ref/00001
+- database: PlasmoDB
+  name: PlasmoDB
+  rdf_uri_prefix: https://identifiers.org/plasmodb
+  generic_urls:
+    - https://plasmodb.org
+  entity_types:
+    - type_name: gene
+      type_id: SO:0000704
+      id_syntax: PF3D7_[0-9]{7})
+      url_syntax: https://plasmodb.org/plasmo/app/record/gene/[example_id]
+      example_id: PF3D7_1467300
+      example_url: https://plasmodb.org/plasmo/app/record/gene/PF3D7_1467300
 - database: POC
   name: Plant Ontology Consortium
   generic_urls:
@@ -2538,7 +2550,19 @@
       type_id: BET:0000000
       url_syntax: http://dendrome.ucdavis.edu/treegenes/protein/view_protein.php?id=[example_id]
       example_id: TreeGenes:254
-      example_url: http://dendrome.ucdavis.edu/treegenes/protein/view_protein.php?id=254
+      example_url: http://dendrome.ucdavis.edu/treegenes/protein/view_protein.php?id=254  
+- database: TriTrypDB
+  name: TriTrypDB
+  rdf_uri_prefix: https://identifiers.org/tritrypdb
+  generic_urls:
+    - https://tritrypdb.org/
+  entity_types:
+    - type_name: gene
+      type_id: SO:0000704
+      id_syntax: ((LmjF|LinJ|LmxM|LINF)\.[0-9]{2}\.[0-9]{4})|(Tb[0-9]+\.[A-Za-z0-9]+\.[0-9]+)|(Tb\.[0-9]{6}\.[0-9]+)|
+      url_syntax: https://tritrypdb.org/tritrypdb/app/record/gene/[example_id]
+      example_id: Tb927.1.630
+      example_url: https://tritrypdb.org/tritrypdb/app/record/gene/Tb927.1.630   
 - database: UBERON
   name: Uber-anatomy ontology
   description: A multi-species anatomy ontology
