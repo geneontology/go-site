@@ -1,10 +1,7 @@
-import os
 import io
 from typing import Dict, Optional, Tuple, Union
 
 import yamldown
-
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class GoRef:

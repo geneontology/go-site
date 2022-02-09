@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
         if len(header_contents) != len(paragraph_contents):
             logger.warning(
-                f"There are standalone headers or paragraphs in GO_REF: {yaml_content['id']}"
+                f"There are standalone headers or paragraphs in: {yaml_content['id']}"
             )
             continue
 
@@ -64,8 +64,8 @@ if __name__ == "__main__":
         merged_yaml_md = merge_dicts(yaml_content, goref_content)
 
         combined_dict_list.append(merged_yaml_md)
-
+        
     # export combined list of yamldown dicts compiled from all gorefs
     # and export to YAML
-    with open("combined_gorefs.yaml", "w") as outfile:
-        yaml.dump(combined_dict_list, outfile)
+    with open("gorefs.yaml", "w") as outfile:
+        yaml.dump_all(combined_dict_list, outfile, sort_keys=False)
