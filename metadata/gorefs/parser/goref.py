@@ -6,12 +6,14 @@ import yamldown
 
 class GoRef:
     def __init__(self, yamldown_path: str) -> None:
-        with open(yamldown_path, "r") as file:
-            self.yd_content = file.read()
+        self.yd_path = yamldown_path
 
     def parse(
         self, portion: Optional[str] = None
     ) -> Union[Tuple[Dict, str], Dict, str]:
+        with open(self.yd_path, "r") as file:
+            self.yd_content = file.read()
+    
         f = io.StringIO(self.yd_content)
         yaml, md = yamldown.load(f)
 
