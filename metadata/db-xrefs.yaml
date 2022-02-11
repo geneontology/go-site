@@ -1432,7 +1432,7 @@
       example_url: https://maizegdb.org/gene_center/gene/12098
 - database: MaizeGDB_Locus
   name: MaizeGDB
-  rdf_uri_prefix: 	https://identifiers.org/maizegdb.locus
+  rdf_uri_prefix: https://identifiers.org/maizegdb.locus
   generic_urls:
     - https://www.maizegdb.org/
   entity_types:
