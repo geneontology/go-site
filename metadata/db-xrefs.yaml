@@ -1432,7 +1432,7 @@
       example_url: https://maizegdb.org/gene_center/gene/12098
 - database: MaizeGDB_Locus
   name: MaizeGDB
-  rdf_uri_prefix: https://registry.identifiers.org/registry/maizegdb.locus
+  rdf_uri_prefix: https://identifiers.org/maizegdb.locus
   generic_urls:
     - https://www.maizegdb.org/
   entity_types:
@@ -1517,7 +1517,7 @@
   name: Metabolic Encyclopedia of metabolic and other pathways
   synonyms:
     - METACYC
-  rdf_uri_prefix: https://registry.identifiers.org/registry/metacyc.reaction
+  rdf_uri_prefix: https://identifiers.org/metacyc.reaction
   generic_urls:
     - http://metacyc.org/
   entity_types:
@@ -1546,7 +1546,7 @@
       example_id: MGD:Adcy9
 - database: MGI
   name: Mouse Genome Informatics
-  rdf_uri_prefix: https://registry.identifiers.org/registry/mgi
+  rdf_uri_prefix: https://identifiers.org/MGI
   generic_urls:
     - http://www.informatics.jax.org/
   entity_types:
@@ -1621,7 +1621,7 @@
     - GeneID
     - LocusID
     - NCBI_Gene
-  rdf_uri_prefix: https://registry.identifiers.org/registry/ncbigene
+  rdf_uri_prefix: https://identifiers.org/ncbigene
   generic_urls:
     - http://www.ncbi.nlm.nih.gov/
   entity_types:
@@ -1743,7 +1743,7 @@
       type_id: BET:0000000
 - database: PANTHER
   name: Protein ANalysis THrough Evolutionary Relationships Classification System
-  rdf_uri_prefix: https://registry.identifiers.org/registry/panther.family
+  rdf_uri_prefix: https://identifiers.org/panther.family
   generic_urls:
     - http://www.pantherdb.org/
   entity_types:
@@ -1952,7 +1952,7 @@
       type_id: BET:0000000
 - database: PomBase
   name: PomBase
-  rdf_uri_prefix: https://registry.identifiers.org/registry/pombase
+  rdf_uri_prefix: https://identifiers.org/pombase
   generic_urls:
     - https://www.pombase.org/
   entity_types:
@@ -2123,7 +2123,7 @@
   synonyms:
     - REACTOME
     - REAC
-  rdf_uri_prefix: https://registry.identifiers.org/registry/reactome
+  rdf_uri_prefix: https://identifiers.org/reactome
   generic_urls:
     - https://www.reactome.org/
   entity_types:
@@ -2195,7 +2195,7 @@
   synonyms:
     - RAD
     - RGDID
-  rdf_uri_prefix: https://registry.identifiers.org/registry/rgd
+  rdf_uri_prefix: https://identifiers.org/rgd
   generic_urls:
     - https://rgd.mcw.edu/
   entity_types:
@@ -2295,7 +2295,7 @@
   name: Saccharomyces Genome Database
   synonyms:
     - SGDID
-  rdf_uri_prefix: https://registry.identifiers.org/registry/sgd
+  rdf_uri_prefix: https://identifiers.org/sgd
   generic_urls:
     - http://www.yeastgenome.org/
   entity_types:
@@ -2329,7 +2329,7 @@
   name: Sol Genomics Network
   synonyms:
     - SGN_gene
-  rdf_uri_prefix: https://registry.identifiers.org/registry/sgn
+  rdf_uri_prefix: https://identifiers.org/sgn
   generic_urls:
     - https://www.sgn.cornell.edu/
   entity_types:
@@ -2451,7 +2451,7 @@
       type_id: BET:0000000
 - database: TAIR
   name: The Arabidopsis Information Resource
-  rdf_uri_prefix: https://registry.identifiers.org/registry/tair.locus
+  rdf_uri_prefix: https://identifiers.org/tair.locus
   generic_urls:
     - http://www.arabidopsis.org/
   entity_types:
@@ -2500,7 +2500,7 @@
       example_url: http://www.tcdb.org/tcdb/index.php?tc=9.A.4.1.1
 - database: TGD
   name: Tetrahymena Genome Database
-  rdf_uri_prefix: https://registry.identifiers.org/registry/tgd
+  rdf_uri_prefix: https://identifiers.org/tgd
   generic_urls:
     - http://www.ciliate.org/
   entity_types:
@@ -2665,7 +2665,7 @@
 - database: UniProtKB
   name: Universal Protein Knowledgebase
   description: A central repository of protein sequence and function created by joining the information contained in Swiss-Prot, TrEMBL, and PIR database
-  rdf_uri_prefix: https://registry.identifiers.org/registry/uniprot
+  rdf_uri_prefix: https://identifiers.org/uniprot
   generic_urls:
     - http://www.uniprot.org
   entity_types:
@@ -2724,7 +2724,7 @@
   name: WormBase database of nematode biology
   synonyms:
     - WormBase
-  rdf_uri_prefix: https://registry.identifiers.org/registry/wb
+  rdf_uri_prefix: https://identifiers.org/wb
   generic_urls:
     - http://www.wormbase.org/
   entity_types:
@@ -2831,7 +2831,7 @@
       example_url: https://en.wikipedia.org/w/index.php?title=Fallopian_tube&oldid=998395727
 - database: Xenbase
   name: Xenbase
-  rdf_uri_prefix: https://registry.identifiers.org/registry/xenbase
+  rdf_uri_prefix: https://identifiers.org/xenbase
   generic_urls:
     - http://www.xenbase.org/
   entity_types:
@@ -2873,7 +2873,7 @@
     - http://citgenedb.yubiolab.org
 - database: ZFIN
   name: Zebrafish Information Network
-  rdf_uri_prefix: https://registry.identifiers.org/registry/zfin
+  rdf_uri_prefix: https://identifiers.org/zfin
   generic_urls:
     - http://zfin.org/
   entity_types:
