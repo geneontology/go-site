@@ -22,10 +22,10 @@ class GoRef:
     def parse(
         self, portion: Optional[str] = None
     ) -> Union[Tuple[Dict, str], Dict, str]:
-        with open(self.goref_path, "r") as file:
-            self.yd_content = file.read()
+        with open(self.yd_path, "r") as file:
+            yd_content = file.read()
     
-        f = io.StringIO(self.yd_content)
+        f = io.StringIO(yd_content)
         yaml, md = yamldown.load(f)
 
         if portion == "yaml":
