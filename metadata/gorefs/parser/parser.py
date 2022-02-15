@@ -1,3 +1,4 @@
+from email import header
 import os
 import sys
 import logging
@@ -41,24 +42,24 @@ if __name__ == "__main__":
         # get content between <p> tags
         paragraph_contents = get_html_string("p", html)
 
-        if len(header_contents) != len(paragraph_contents):
-            logger.warning(
-                f"There are standalone headers or paragraphs in: {yaml_content['id']}"
-            )
-            continue
+        # enable this block if you want to handle multiple comments differently
+        # if len(header_contents) != len(paragraph_contents):
+        #     logger.warning(
+        #         f"There are standalone headers or paragraphs in: {yaml_content['id']}"
+        #     )
+        #     continue
 
         goref_body = []
         goref_content = {}
 
-        for i in range(len(header_contents)):
-            title_desc_pair = {}
+        title_desc_pair = {}
 
-            title_desc_pair["goref_title"] = header_contents[i]
-            title_desc_pair["goref_body"] = paragraph_contents[i]
+        title_desc_pair["title"] = header_contents[0]
+        title_desc_pair["comments"] = paragraph_contents
 
-            goref_body.append(title_desc_pair)
+        goref_body.append(title_desc_pair)
 
-        goref_content["goref_content"] = goref_body
+        goref_content["content"] = goref_body
 
         # yamldown content in the form of a dictionary
         merged_yaml_md = merge_dicts(yaml_content, goref_content)
