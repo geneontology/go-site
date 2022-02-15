@@ -72,7 +72,7 @@ jobs:
     ## Reuse sparta to check non-go-rules files that are still
     ## structured yamldown/frontmatter.
     - name: SPARTA (other)
-      run: mkdir -p /tmp/foo && mcp 'metadata/gorefs/yamldown/goref-0000*' '/tmp/foo/gorule-0000#1' && sparta valid --rules /tmp/foo/ --schema metadata/gorefs.schema.yaml
+      run: mkdir -p /tmp/foo && mcp 'metadata/gorefs/goref-0000*' '/tmp/foo/gorule-0000#1' && sparta valid --rules /tmp/foo/ --schema metadata/gorefs.schema.yaml
     ## Run GO Rule examples
     - name: GO Rule example validation
       run: pip3 install -r pipeline/requirements.txt && ./scripts/rule-example-validation.sh
