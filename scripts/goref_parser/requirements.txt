@@ -1,0 +1,5 @@
+importlib-metadata==4.10.1
+Markdown==3.3.6
+PyYAML==6.0
+yamldown==0.1.8
+zipp==3.7.0

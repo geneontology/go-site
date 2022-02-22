@@ -19,8 +19,14 @@ if __name__ == "__main__":
     # final list of all dicts that need to be converted to YAML
     combined_dict_list = []
 
-    for file_name in os.listdir("metadata/gorefs/yamldown/"):
-        file_name = os.path.join("metadata/gorefs/yamldown", file_name)
+    for file_name in os.listdir("metadata/gorefs/"):
+        if any(
+            non_goref in file_name
+            for non_goref in ["README-editors.md", "Makefile", "README.md"]
+        ):
+            continue
+
+        file_name = os.path.join("metadata/gorefs/", file_name)
 
         with open(file_name, "r") as file:
             data = file.read()
@@ -65,7 +71,7 @@ if __name__ == "__main__":
         merged_yaml_md = merge_dicts(yaml_content, goref_content)
 
         combined_dict_list.append(merged_yaml_md)
-        
+
     # export combined list of yamldown dicts compiled from all gorefs
     # and export to YAML
     with open("gorefs.yaml", "w") as outfile:
