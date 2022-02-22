@@ -25,7 +25,6 @@ dictyBase,Petra Fey,@pfey03,
 dictyBase,Robert Dodson,@rjdodson,
 DisProt,Federica Quaglia,federicaquaglia,
 EAWAG (ETH Zurich),Emanuel Schmid,@emanuel-schmid,biodegradation | databases | webservices
-EcoCyc,Ingrid Keseler,@keseler,
 EcoCyc,Amanda Mackie,@amandamackie,
 ECO - Evidence and Conclusion Ontology,Michelle Giglio,@mgiglio99,
 ECO - Evidence and Conclusion Ontology,Suvvi Nadendla,@nsuvarnaiari,
@@ -110,12 +109,14 @@ Rfam,Ioanna Kalvari,@kalvari,
 RGD,Stan Laulederkind,@slaulederkind,
 RGD,Tom Hayman,@gthayman,
 RGD,Mary Kaldunski,@mlkaldunski,curation | annotation | physiology
-RGD,Jennifer Smith,@jrsjrs,pipeline and data
+RGD,Jennifer Smith,@jrsjrs,Project Manager| pipeline and data
 RGD,Marek Tuta,@tutajm,import and export pipelines
 RHEA,Anne Morgat,@amorgat,
 RHEA,Arnaud Kerhornou,@arnaudxk,Swiss-Prot & Rhea developer
 RHEA,Kristian Axelson,@kaxelsen,RHEA and Swiss-Prot curator
-RNAcentral,,,
+RNAcentral,Alex Bateman,PI,
+RNAcentral,Blake Sweeny,,
+RNAcentral,Anton Petrov,,
 Roslin_Institute,Not actively maintainted/GO_Central,@pgaudet,no contact person
 Roslin_Institute,Not actively maintainted/GO_Central,@vanaukenk,no contact person
 Roslin_Institute,Not actively maintainted/EBI,@Antonialock,no contact person
@@ -131,8 +132,8 @@ TAIR,Erica Bakker,@ebakker2,Plant biology
 TIGR,Not actively maintainted/GO_Central,@Antonialock,
 TIGR,Not actively maintainted/GO_Central,@pgaudet,
 TIGR,Not actively maintainted/GO_Central,@vanaukenk,
-UniProt (EBI),Alex Ignatchenko,@alexsign,
-UniProt (EBI),Antonia Lock,@Antonialock,
+UniProt (EBI),Alex Ignatchenko,@alexsign,Software & pipeline
+UniProt (EBI),Antonia Lock,@Antonialock,GOA contact for GO
 UniProt (EBI),Michelle Magrane,@magrane,
 UniProt (EBI),Sandra Orchard,@sandraorchard,
 UniProt (EBI),Rizwan Ishtiaq,@rizwan-ishtiaq,QuickGO java backend
