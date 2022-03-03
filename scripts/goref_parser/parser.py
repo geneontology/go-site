@@ -55,20 +55,13 @@ if __name__ == "__main__":
         #     )
         #     continue
 
-        goref_body = []
-        goref_content = {}
-
         title_desc_pair = {}
 
         title_desc_pair["title"] = header_contents[0]
         title_desc_pair["comments"] = paragraph_contents
 
-        goref_body.append(title_desc_pair)
-
-        goref_content["content"] = goref_body
-
         # yamldown content in the form of a dictionary
-        merged_yaml_md = merge_dicts(yaml_content, goref_content)
+        merged_yaml_md = merge_dicts(yaml_content, title_desc_pair)
 
         combined_dict_list.append(merged_yaml_md)
 
