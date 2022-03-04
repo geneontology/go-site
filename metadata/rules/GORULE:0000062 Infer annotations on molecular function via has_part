@@ -1,0 +1,10 @@
+---
+layout: rule
+id: GORULE:0000062
+title: Infer annotations on molecular function via has_part
+type: report
+fail_mode: warning
+status: approved
+contact: "go-quality@mailman.stanford.edu"
+---
+For any annotation to a molecular function MF-X, infer annotation to all MFs that stand in a has_part relationship to MF-X, except if the annotation uses the 'contributes_to' qualifier, then do not infer annotations from the has_part relationship to MF-X.
