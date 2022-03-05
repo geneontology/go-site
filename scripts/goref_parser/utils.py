@@ -13,7 +13,6 @@ def merge_dicts(*dicts):
     super_dict = {}
 
     for d in dicts:
-        for k, v in d.items():
-            super_dict.setdefault(k, []).append(v)
-
+        super_dict.update(d)
+        
     return super_dict
