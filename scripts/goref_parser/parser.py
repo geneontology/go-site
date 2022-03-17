@@ -1,6 +1,6 @@
-from email import header
 import os
 import sys
+import json
 import logging
 
 sys.path.append("../parser/goref.py")
@@ -10,6 +10,7 @@ sys.path.append("../parser/utils.py")
 from utils import get_html_string, merge_dicts
 
 import yaml
+import ruamel.yaml
 import markdown
 
 
@@ -22,7 +23,14 @@ if __name__ == "__main__":
     for file_name in os.listdir("metadata/gorefs/"):
         if any(
             non_goref in file_name
-            for non_goref in ["README-editors.md", "Makefile", "README.md"]
+            for non_goref in [
+                "README-editors.md",
+                "Makefile",
+                "README.md",
+                "gorefs.yaml",
+                "gorefs.json",
+                "gorefs.schema.json",
+            ]
         ):
             continue
 
@@ -68,4 +76,9 @@ if __name__ == "__main__":
     # export combined list of yamldown dicts compiled from all gorefs
     # and export to YAML
     with open("gorefs.yaml", "w") as outfile:
-        yaml.dump_all(combined_dict_list, outfile, sort_keys=False)
+        yaml.dump(combined_dict_list, outfile, sort_keys=False)
+
+    # convert the dumped YAML file into JSON
+    with open("gorefs.yaml", "r") as yaml_in, open("gorefs.json", "w") as json_out:
+        yaml_object = ruamel.yaml.safe_load(yaml_in)
+        json.dump(yaml_object, json_out, indent=4)
