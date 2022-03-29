@@ -422,3 +422,8 @@
   label: 'RHEA'
   id: https://www.rhea-db.org
   shorthand: RHEA
+-
+  label: 'DisProt'
+  id: https://disprot.org
+  shorthand: DisProt
+-
