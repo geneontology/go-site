@@ -8,7 +8,7 @@ setup(
     install_requires=[
         "click",
         "requests",
-        "pyYaml",
+        "pyYaml==5.4.1",
         "pykwalify==1.6.0",
         "SPARQLWrapper==1.8.0",
         "yamldown",

@@ -99,9 +99,10 @@ datasets:
     dataset: noctua_zfin
     submitter: GOC
     compression: gzip
-    source: ./products/annotations/noctua_zfin.gpad.gz
+    source: ./products/annotations/noctua_zfin-src.gpad.gz
     entity_type:
-    status: inactive
+    status: active
+    merges_into: zfin
     species_code:
     taxa:
       - NCBITaxon:7955

@@ -5,7 +5,7 @@ project_name: "Leishmania major GeneDB"
 contact_email: "mb4@sanger.ac.uk"
 project_url: "http://www.genedb.org/leish"
 funding_source: "unspecified"
-email_report: "mb4@sanger.ac.uk,maa@sanger.ac.uk,achchu@liverpool.ac.uk,ucb@sanger.ac.uk"
+email_report: "achchu@liverpool.ac.uk,uboehme@liverpool.ac.uk"
 datasets:
  -
    id: genedb_lmajor.gaf
@@ -16,7 +16,7 @@ datasets:
    dataset: genedb_lmajor
    submitter: genedb
    compression: gzip
-   source: ftp://ftp.sanger.ac.uk/pub/project/pathogens/as44/Lmajor.gaf.gz
+   source: ftp://ftp.sanger.ac.uk/pub/genedb/releases/latest/Lmajor/Lmajor.gaf.gz
    entity_type:
    status: active
    species_code:
@@ -31,9 +31,24 @@ datasets:
    dataset: genedb_tbrucei
    submitter: genedb
    compression: gzip
-   source: ftp://ftp.sanger.ac.uk/pub/project/pathogens/as44/Tbruceibrucei927.gaf.gz
-   entity_type:
+   source: ftp://ftp.sanger.ac.uk/pub/genedb/releases/latest/Tbruceibrucei927/Tbruceibrucei927.gaf.gz
    status: active
    species_code:
    taxa:
     - NCBITaxon:185431
+ -  
+   id: genedb_pfalciparum.gaf
+   label: "genedb_pfalciparum gaf file"
+   description: "gaf file for genedb_pfalciparum from GeneDB"
+   url: http://current.geneontology.org/annotations/genedb_pfalciparum.gaf.gz
+   type: gaf
+   dataset: genedb_pfalciparum
+   submitter: genedb
+   compression: gzip
+   source: ftp://ftp.sanger.ac.uk/pub/genedb/releases/latest/Pfalciparum/Pfalciparum.gaf.gz
+   entity_type:
+   status: active
+   species_code:
+   taxa:
+    - NCBITaxon:5833
+    - NCBITaxon:36329

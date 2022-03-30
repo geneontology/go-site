@@ -8,7 +8,7 @@ contains the information required to execute it.
 For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
 
 
- * <a href="#gorule0000001">GORULE:0000001 GAF lines are parsed according to GAF 2.1 specifications</a>
+ * <a href="#gorule0000001">GORULE:0000001 GAF lines are parsed according to GAF 2.2 specifications</a>
  * <a href="#gorule0000002">GORULE:0000002 No 'NOT' annotations to 'protein binding ; GO:0005515'</a>
  * <a href="#gorule0000003">GORULE:0000003 Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field</a>
  * <a href="#gorule0000004">GORULE:0000004 Reciprocal annotations for 'protein binding ; GO:0005515'</a>
@@ -68,19 +68,20 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
 
 <a name="gorule0000001"/>
 
-## GAF lines are parsed according to GAF 2.1 specifications
+## GAF lines are parsed according to GAF 2.2 specifications
 
  * id: [GORULE:0000001](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000001.md)
  * status: implemented
 
 
-Each line of a GAF file is checked that it generally conforms to the GAF 2.1 spec and some
-GO specific specifications. The GAF 2.1 spec is here: http://geneontology.org/page/go-annotation-file-gaf-format-21.
+Each line of a GAF file is checked that it generally conforms to the GAF 2.2 spec and some
+GO specific specifications. The GAF 2.2 spec is here: http://geneontology.org/docs/go-annotation-file-gaf-format-2.2/.
 
 Qualifier, evidence, aspect and DB object columns must be within the list of allowed values
 (as per the spec).
 
 Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt (details).
+
 <a name="gorule0000002"/>
 
 ## No 'NOT' annotations to 'protein binding ; GO:0005515'
@@ -535,8 +536,8 @@ Historically GO treated MF, BP and CC as distinct ontologies. They are now bette
 
 ## Procedure
 
- * Any asserted or inferred annotation to MF, where MF part-of BP, will generate an involved-in to that BP
- * Any asserted or inferred annotation to BP, where BP occurs-in CC, will generate a part-of annotation to that CC
+ * Any asserted or inferred annotation to MF (excluding annotations with a NOT qualifier), where MF part-of BP, will generate an involved-in to that BP
+ * Any asserted or inferred annotation to BP (excluding annotations with a NOT qualifier), where BP occurs-in CC, will generate a part-of annotation to that CC
 
 ### Evidence and provenance
 

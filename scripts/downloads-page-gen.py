@@ -40,8 +40,10 @@ smap = {
     "Rnor": "Rattus norvegicus",
     "Scer": "Saccharomyces cerevisiae",
     "Solanaceae": "Solanaceae",
+    "Sjap": "Schizosaccharomyces japonicus",
     "Spom": "Schizosaccharomyces pombe",
-    "Sscr": "Sus scrofa"
+    "Sscr": "Sus scrofa",
+    "Xenopus": "Xenopus"
 }
 
 def die_screaming(instr):

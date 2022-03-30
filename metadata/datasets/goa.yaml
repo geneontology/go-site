@@ -936,7 +936,7 @@ datasets:
    dataset: goa_human_complex
    submitter: goa
    compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_complex.gaf.gz
+   source: http://release.geneontology.org/2022-01-13/products/annotations/goa_human_complex-src.gaf.gz
    entity_type: complex
    status: active
    species_code: Hsap

@@ -1,3 +1,4 @@
 PyYAML
-ontobio==2.7.6
+ontobio==2.7.16
 click
+pyparsing==2.4.7

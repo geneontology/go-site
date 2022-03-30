@@ -16,7 +16,7 @@ datasets:
    dataset: aspgd
    submitter: aspgd
    compression: gzip
-   source: http://www.aspergillusgenome.org/download/go/gene_association.aspgd.gz
+   source: https://go-public.s3.amazonaws.com/files/aspgd-20211215.gaf.gz
    entity_type:
    status: active
    species_code: Aspergillus

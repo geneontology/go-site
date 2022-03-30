@@ -24,7 +24,8 @@ WHERE {
       # Find production graphs
       GRAPH ?g {
         ?g :graphType :noctuaCam .
-        ?g <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
+        ?g <http://geneontology.org/lego/modelstate> ?state .
+        FILTER(?state = "production")
         ?s ?p ?o .
       }
     }
@@ -37,8 +38,8 @@ WHERE {
       }
       GRAPH ?asserted {
         ?asserted :graphType :noctuaCam .
-        ?asserted <http://geneontology.org/lego/modelstate> "production"^^xsd:string .
-        ?s1 ?p1 ?o1
+        ?asserted <http://geneontology.org/lego/modelstate> ?state .
+        FILTER(?state = "production")
       }
     }
   }
