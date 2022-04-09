@@ -1,9 +1,0 @@
-* Usage
-  
-  To get ready:
-
-  : npm install
-
-  Running:
-
-  node ./fs-to-s3.js -b foo -d /tmp/node_modules
