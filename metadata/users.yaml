@@ -498,7 +498,7 @@
     - 84a9c2d76c17fb92ae022b1b80fe0b27
   nickname: 'Amelia Ireland'
   organization: 'GO Central'
-  uri: 'http://www.wikidata.org/entity/Q105829129'
+  uri: 'GOC:ai'
   xref: 'GOC:ai'
 -
   authorizations:
