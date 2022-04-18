@@ -439,7 +439,7 @@
 -
   nickname: 'Michael Ashburner'
   organization: FlyBase
-  uri: 'GOC:ma'
+  uri: 'https://orcid.org/0000-0002-6962-2807'
   xref: 'GOC:ma'
 -
   accounts:
@@ -486,7 +486,7 @@
 -
   nickname: 'Matt Berriman'
   organization: GeneDB_Pfalciparum
-  uri: 'GOC:mb'
+  uri: 'https://orcid.org/0000-0002-9581-0377'
   xref: 'GOC:mb'
 -
   nickname: 'Linda Groocock'
@@ -498,7 +498,7 @@
     - 84a9c2d76c17fb92ae022b1b80fe0b27
   nickname: 'Amelia Ireland'
   organization: 'GO Central'
-  uri: 'GOC:ai'
+  uri: 'http://www.wikidata.org/entity/Q105829129'
   xref: 'GOC:ai'
 -
   authorizations:
@@ -523,7 +523,7 @@
 -
   nickname: 'Cath Brooksbank'
   organization: 'GO Central'
-  uri: 'GOC:ceb'
+  uri: 'https://orcid.org/0000-0001-9395-7001'
   xref: 'GOC:ceb'
 -
   nickname: 'Curators at GO editorial office'
@@ -533,7 +533,7 @@
 -
   nickname: 'Jennifer Deegan (nee Clark)'
   organization: 'GO Central'
-  uri: 'GOC:jid'
+  uri: 'https://orcid.org/0000-0001-9227-417X'
   xref: 'GOC:jid'
 -
   authorizations:
@@ -1231,7 +1231,7 @@
 -
   nickname: 'Chandra Theesfeld'
   organization: SGD
-  uri: 'GOC:clt'
+  uri: 'https://orcid.org/0000-0002-8379-6600'
   xref: 'GOC:clt'
 -
   nickname: 'Curators at SGD'
@@ -1274,7 +1274,7 @@
 -
   nickname: 'Eurie Hong'
   organization: SGD
-  uri: 'GOC:elh'
+  uri: 'https://orcid.org/0000-0002-1775-4998'
   xref: 'GOC:elh'
 -
   nickname: 'Janos Demeter'
@@ -1456,7 +1456,7 @@
 -
   nickname: 'Kate Dreher'
   organization: TAIR
-  uri: 'GOC:kad'
+  uri: 'https://orcid.org/0000-0003-4652-4398'
   xref: 'GOC:kad'
 -
   nickname: 'Katica Ilic'
@@ -1537,7 +1537,7 @@
 -
   nickname: 'Linda Hannick'
   organization: JCVI
-  uri: 'GOC:lh'
+  uri: 'https://orcid.org/0000-0002-8018-8466'
   xref: 'GOC:lh'
 -
   nickname: 'Scott Durkin'
@@ -1547,7 +1547,7 @@
 -
   nickname: 'Erika Feltrin'
   organization: TRAIT
-  uri: 'GOC:ef'
+  uri: 'https://orcid.org/0000-0002-9899-7456'
   xref: 'GOC:ef'
 -
   nickname: 'Lorenza Mittempergher'
