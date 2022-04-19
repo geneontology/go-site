@@ -9,9 +9,10 @@ datasets:
     dataset: noctua_mgi
     submitter: GOC
     compression: gzip
-    source: ./products/annotations/noctua_mgi.gpad.gz
+    source: ./products/annotations/noctua_mgi-src.gpad.gz
     entity_type:
-    status: inactive
+    status: active
+    merges_into: mgi
     species_code:
     taxa:
       - NCBITaxon:5476
@@ -99,9 +100,10 @@ datasets:
     dataset: noctua_zfin
     submitter: GOC
     compression: gzip
-    source: ./products/annotations/noctua_zfin.gpad.gz
+    source: ./products/annotations/noctua_zfin-src.gpad.gz
     entity_type:
-    status: inactive
+    status: active
+    merges_into: zfin
     species_code:
     taxa:
       - NCBITaxon:7955

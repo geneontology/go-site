@@ -1,0 +1,57 @@
+id: japonicusdb
+label: JaponicusDB
+description: "GO data for JaponicusDB"
+project_name: "JaponicusDB"
+contact_email: "helpdesk@pombase.org"
+project_url: "https://www.japonicusdb.org/"
+funding_source: "Wellcome Trust"
+email_report: "helpdesk@pombase.org"
+datasets:
+ -
+   id: japonicusdb.gaf
+   label: "japonicusdb gaf file"
+   description: "gaf file for japonicusdb from JaponicusDB"
+   url: http://current.geneontology.org/annotations/japonicusdb.gaf.gz
+   type: gaf
+   dataset: japonicusdb
+   submitter: japonicusdb
+   compression: gzip
+   source: https://www.japonicusdb.org/data/annotations/Gene_ontology/gene_association.japonicusdb.gz
+   entity_type:
+   status: active
+   species_code: Sjap
+   taxa:
+    - NCBITaxon:402676
+    - NCBITaxon:4897
+ -
+   id: japonicusdb.gpi
+   label: "japonicusdb gpi file"
+   description: "gpi file for japonicusdb from JaponicusDB"
+   url: http://current.geneontology.org/annotations/japonicusdb.gpi.gz
+   type: gpi
+   dataset: japonicusdb
+   submitter: japonicusdb
+   compression: gzip
+   source: https://www.japonicusdb.org/data/annotations/Gene_ontology/japonicusdb.gpi.gz
+   entity_type:
+   status: active
+   species_code: Sjap
+   taxa:
+    - NCBITaxon:402676
+    - NCBITaxon:4897
+ -
+   id: japonicusdb.gpad
+   label: "japonicusdb gpad file"
+   description: "gpad file for japonicusdb from JaponicusDB"
+   url: http://current.geneontology.org/annotations/japonicusdb.gpad.gz
+   type: gpad
+   dataset: japonicusdb
+   submitter: japonicusdb
+   compression: gzip
+   source: https://www.japonicusdb.org/data/annotations/Gene_ontology/japonicusdb.gpad.gz
+   entity_type:
+   status: active
+   species_code: Sjap
+   taxa:
+    - NCBITaxon:402676
+    - NCBITaxon:4897

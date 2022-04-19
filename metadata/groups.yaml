@@ -414,4 +414,15 @@
   label: Karadeniz Teknik Universitesi
   id: https://www.ktu.edu.tr/bmi-cancermodelingresearchgroup
   shorthand: KTU
- 
+-
+  label: 'JaponicusDB'
+  id: https://www.japonicusdb.org
+  shorthand: JaponicusDB
+-
+  label: 'RHEA'
+  id: https://www.rhea-db.org
+  shorthand: RHEA
+-
+  label: 'DisProt'
+  id: https://disprot.org
+  shorthand: DisProt

@@ -34,8 +34,6 @@ def group(group, datasets, target, contexts, ontology, gafs, gaferencer, exclude
     if len(group_dataset) == 0:
         raise click.ClickException("No Resource group with the name {}".format(group))
 
-    joined_contexts = ",".join(contexts)
-
     possible_paths = construct_gaf_paths(gafs, group_dataset[0], excludes)
 
     out_paths = []
@@ -55,7 +53,7 @@ def group(group, datasets, target, contexts, ontology, gafs, gaferencer, exclude
         out = os.path.join(target, "{}.gaferences.json".format(name))
 
         # At this point we have an unzipped gaf
-        success, result = run_gaferencer(joined_contexts, ontology, path, out, dryrun=dryrun)
+        success, result = run_gaferencer(contexts, ontology, path, out, dryrun=dryrun)
         if not success:
             raise click.ClickException("Gaferencer Failed: {}".format(result))
 
@@ -96,6 +94,11 @@ def construct_gaf_paths(gaf_dir, group_dataset, excludes):
 
     return gaf_paths
 
+def construct_context_options(contexts):
+    contexts_options = " ".join(["--contexts {c}".format(c=c) for c in contexts])
+
+    return contexts_options
+
 def load_resource_metadata(datasets_dir) -> List[Dict]:
     """
     Loads all the YAML files in `datasets_dir` as dicts in a list.
@@ -124,7 +127,8 @@ def run_gaferencer(contexts, ontology_path, gaf_path, out_path, dryrun=False) ->
     if not. If successful, the secend element is the path downloaded. Otherwise
     it's whatever standard error was from wget.
     """
-    gaferencer_command = "gaferencer gaf --ontfile true --contexts {contexts} {ontology} {gaf} {out}".format(contexts=contexts, ontology=ontology_path, gaf=gaf_path, out=out_path)
+    contexts_options = construct_context_options(contexts)
+    gaferencer_command = "gaferencer gaf --ontfile true {contexts_options} --ontology-iri {ontology} --gaf-file {gaf} --inferred-annotations-outfile {out}".format(contexts_options=contexts_options, ontology=ontology_path, gaf=gaf_path, out=out_path)
 
     click.echo("running gaferencer with: `{}`".format(gaferencer_command))
     result = (True, out_path)

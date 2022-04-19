@@ -24,7 +24,7 @@
   groups:
     - 'http://geneontology.org'
   nickname: 'Paul Thomas'
-  uri: 'http://orcid.org/0000-0002-9074-3507'
+  uri: 'https://orcid.org/0000-0002-9074-3507'
   xref: 'GOC:pt'
 -
   accounts:
@@ -38,7 +38,7 @@
   groups:
     - 'http://geneontology.org'
   nickname: 'Huaiyu Mi'
-  uri: 'http://orcid.org/0000-0001-8721-202X'
+  uri: 'https://orcid.org/0000-0001-8721-202X'
   xref: 'GOC:hm'
 -
   accounts:
@@ -55,7 +55,7 @@
   email-md5:
     - 9afebd4cf92acca9aa2bdb557f96b504
   nickname: 'Nathan Dunn'
-  uri: 'http://orcid.org/0000-0002-4862-3181'
+  uri: 'https://orcid.org/0000-0002-4862-3181'
 -
   accounts:
     email-md5:
@@ -81,7 +81,7 @@
     - 'http://lbl.gov'
   nickname: 'Seth Carbon'
   organization: LBL
-  uri: 'http://orcid.org/0000-0001-8244-1536'
+  uri: 'https://orcid.org/0000-0001-8244-1536'
   xref: 'GOC:sjc'
 -
   email-md5:
@@ -105,7 +105,7 @@
   email-md5:
     - 61ab06ea85d8658a7e17cc30295dafbd
   nickname: 'Heiko Dietze'
-  uri: 'http://orcid.org/0000-0003-0234-1688'
+  uri: 'https://orcid.org/0000-0003-0234-1688'
   xref: 'GOC:hd'
 -
   email-md5:
@@ -197,7 +197,7 @@
   comment: 'status inactive, Collaborator with the BHF group at UCL'
   nickname: 'Jessica Buxton'
   organization: BHF-UCL
-  uri: 'http://orcid.org/0000-0002-0918-9335'
+  uri: 'https://orcid.org/0000-0002-0918-9335'
   xref: 'GOC:jbu'
 -
   authorizations:
@@ -208,7 +208,7 @@
     - 59418a02b3237575e70fd9f79da8d244
   nickname: 'Klaus Mitchell'
   organization: BHF-UCL
-  uri: 'http://orcid.org/0000-0001-9510-5320'
+  uri: 'https://orcid.org/0000-0001-9510-5320'
   xref: 'GOC:kom'
 -
   accounts:
@@ -221,7 +221,7 @@
     - 6c55ad1ed9cdab0b874123a20a0c3905
   nickname: 'Nancy Campbell'
   organization: BHF-UCL
-  uri: 'http://orcid.org/0000-0001-9995-0839'
+  uri: 'https://orcid.org/0000-0001-9995-0839'
   xref: 'GOC:nc'
 -
   accounts:
@@ -241,7 +241,7 @@
     - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/syngo'
   nickname: 'Ruth Lovering'
   organization: BHF-UCL
-  uri: 'http://orcid.org/0000-0002-9791-0064'
+  uri: 'https://orcid.org/0000-0002-9791-0064'
   xref: 'GOC:rl'
 -
   comment: 'formerly HGNC'
@@ -312,7 +312,7 @@
     - 'http://dictybase.org'
   nickname: 'Petra Fey'
   organization: DDB
-  uri: 'http://orcid.org/0000-0002-4532-2703'
+  uri: 'https://orcid.org/0000-0002-4532-2703'
   xref: 'GOC:pf'
 -
   accounts:
@@ -332,7 +332,7 @@
     - 'https://www.nextprot.org'
   nickname: 'Pascale Gaudet'
   organization: 'GO Central'
-  uri: 'http://orcid.org/0000-0003-1813-6857'
+  uri: 'https://orcid.org/0000-0003-1813-6857'
   xref: 'GOC:pg'
 -
   accounts:
@@ -349,7 +349,7 @@
     - 'http://dictybase.org'
   nickname: 'Robert Dodson'
   organization: DDB
-  uri: 'http://orcid.org/0000-0002-2757-5950'
+  uri: 'https://orcid.org/0000-0002-2757-5950'
   xref: 'GOC:rjd'
 -
   groups:
@@ -390,7 +390,7 @@
     - 'http://www.bio.tamu.edu'
   nickname: 'Sandy Labonte'
   organization: 'EcoliWiki/CACAO'
-  uri: 'http://orcid.org/0000-0002-9618-3336'
+  uri: 'https://orcid.org/0000-0002-9618-3336'
 -
   nickname: 'Curators at FlyBase'
   organization: FlyBase
@@ -422,7 +422,7 @@
     - 'http://flybase.org'
   nickname: 'Helen Attrill'
   organization: FlyBase
-  uri: 'http://orcid.org/0000-0003-3212-6364'
+  uri: 'https://orcid.org/0000-0003-3212-6364'
   xref: 'GOC:ha'
 -
   nickname: 'Heather Butler'
@@ -434,12 +434,12 @@
     github: mmc46
   nickname: 'Marta Costa'
   organization: FlyBase
-  uri: 'http://orcid.org/0000-0001-5948-3092'
+  uri: 'https://orcid.org/0000-0001-5948-3092'
   xref: 'GOC:mc'
 -
   nickname: 'Michael Ashburner'
   organization: FlyBase
-  uri: 'GOC:ma'
+  uri: 'https://orcid.org/0000-0002-6962-2807'
   xref: 'GOC:ma'
 -
   accounts:
@@ -460,7 +460,7 @@
     - 'http://geneontology.org'
   nickname: 'David Osumi-Sutherland'
   organization: 'GO Central'
-  uri: 'http://orcid.org/0000-0002-7073-9172'
+  uri: 'https://orcid.org/0000-0002-7073-9172'
   xref: 'GOC:dos'
 -
   nickname: 'Russ Collins'
@@ -481,12 +481,12 @@
     - 'http://flybase.org'
   nickname: 'Susan Tweedie'
   organization: FlyBase
-  uri: 'http://orcid.org/0000-0003-1818-8243'
+  uri: 'https://orcid.org/0000-0003-1818-8243'
   xref: 'GOC:sart'
 -
   nickname: 'Matt Berriman'
   organization: GeneDB_Pfalciparum
-  uri: 'GOC:mb'
+  uri: 'https://orcid.org/0000-0002-9581-0377'
   xref: 'GOC:mb'
 -
   nickname: 'Linda Groocock'
@@ -518,12 +518,12 @@
     - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/parkinsons'
   nickname: 'Rebecca Foulger'
   organization: "UCL-Parkinson's UK Annotation Project"
-  uri: 'http://orcid.org/0000-0001-8682-8754'
+  uri: 'https://orcid.org/0000-0001-8682-8754'
   xref: 'GOC:bf'
 -
   nickname: 'Cath Brooksbank'
   organization: 'GO Central'
-  uri: 'GOC:ceb'
+  uri: 'https://orcid.org/0000-0001-9395-7001'
   xref: 'GOC:ceb'
 -
   nickname: 'Curators at GO editorial office'
@@ -533,7 +533,7 @@
 -
   nickname: 'Jennifer Deegan (nee Clark)'
   organization: 'GO Central'
-  uri: 'GOC:jid'
+  uri: 'https://orcid.org/0000-0001-9227-417X'
   xref: 'GOC:jid'
 -
   authorizations:
@@ -552,7 +552,7 @@
     - 'http://geneontology.org'
   nickname: 'Jane Lomax'
   organization: 'GO Central'
-  uri: 'http://orcid.org/0000-0001-8865-4321'
+  uri: 'https://orcid.org/0000-0001-8865-4321'
   xref: 'GOC:jl'
 -
   accounts:
@@ -574,7 +574,7 @@
     - 'http://geneontology.org'
   nickname: 'Melanie Courtot'
   organization: 'GO Central'
-  uri: 'http://orcid.org/0000-0002-9551-6370'
+  uri: 'https://orcid.org/0000-0002-9551-6370'
   xref: 'GOC:mec'
 -
   accounts:
@@ -595,7 +595,7 @@
     - 'http://geneontology.org'
   nickname: 'Paola Roncaglia'
   organization: 'GO Central'
-  uri: 'http://orcid.org/0000-0002-2825-0621'
+  uri: 'https://orcid.org/0000-0002-2825-0621'
   xref: 'GOC:pr'
 -
   comment: 'Usually indicates GO editorial office curators plus others, e.g. from MODs'
@@ -628,7 +628,7 @@
   previous-groups:
     - 'http://www.ebi.ac.uk/GOA'
   nickname: 'Alice Dashow'
-  uri: 'http://orcid.org/0000-0003-3829-1600'
+  uri: 'https://orcid.org/0000-0003-3829-1600'
   xref: 'GOC:als'
 -
   accounts:
@@ -646,7 +646,7 @@
     - 'http://www.ebi.ac.uk/GOA'
   nickname: 'Elena Speretta'
   organization: GOA
-  uri: 'http://orcid.org/0000-0003-1506-7438'
+  uri: 'https://orcid.org/0000-0003-1506-7438'
   xref: 'GOC:es'
 -
   accounts:
@@ -661,7 +661,7 @@
     - 'http://www.ebi.ac.uk'
   nickname: 'George Georghiou'
   organization: EMBL-EBI
-  uri: 'http://orcid.org/0000-0001-5067-3199'
+  uri: 'https://orcid.org/0000-0001-5067-3199'
   xref: 'GOC:gg'
 -
   accounts:
@@ -678,7 +678,7 @@
     - 'https://www.uniprot.org'
   nickname: 'Hema Bye-A-Jee'
   organization: UniProt
-  uri: 'http://orcid.org/0000-0003-2464-7688'
+  uri: 'https://orcid.org/0000-0003-2464-7688'
   xref: 'GOC:hbye'
 -
   authorizations:
@@ -722,7 +722,7 @@
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
   nickname: 'Rachael Huntley'
   organization: BHF-UCL
-  uri: 'http://orcid.org/0000-0001-6718-3559'
+  uri: 'https://orcid.org/0000-0001-6718-3559'
   xref: 'GOC:rph'
 -
   nickname: 'Vivian Lee'
@@ -754,8 +754,8 @@
   groups:
     - 'https://www.ebi.ac.uk/intact'
   nickname: 'Birgit Meldal'
-  organization: InTact
-  uri: 'http://orcid.org/0000-0003-4062-6158'
+  organization: IntAct
+  uri: 'https://orcid.org/0000-0003-4062-6158'
   xref: 'GOC:bhm'
 -
   email-md5:
@@ -792,7 +792,7 @@
     - 'http://geneontology.org'
   nickname: 'David Hill'
   organization: MGI
-  uri: 'http://orcid.org/0000-0001-7476-6306'
+  uri: 'https://orcid.org/0000-0001-7476-6306'
   xref: 'GOC:dph'
 -
   comment: 'Cell Ontology'
@@ -818,7 +818,7 @@
     - 'http://informatics.jax.org'
   nickname: 'Dmitry Sitnikov'
   organization: MGI
-  uri: 'http://orcid.org/0000-0003-3394-9805'
+  uri: 'https://orcid.org/0000-0003-3394-9805'
   xref: 'GOC:dms'
 -
   authorizations:
@@ -840,7 +840,7 @@
       allow-write: true
   nickname: 'Sue Bello'
   organization: MGI
-  uri: 'http://orcid.org/0000-0003-4606-0597'
+  uri: 'https://orcid.org/0000-0003-4606-0597'
   xref: 'GOC:smb'
 -
   email-md5:
@@ -863,7 +863,7 @@
     - 'http://geneontology.org'
   nickname: 'Mary Dolan'
   organization: MGI
-  uri: 'http://orcid.org/0000-0001-7732-3295'
+  uri: 'https://orcid.org/0000-0001-7732-3295'
 -
   accounts:
     github: hdrabkin
@@ -881,7 +881,7 @@
     - 'http://geneontology.org'
   nickname: 'Harold Drabkin'
   organization: MGI
-  uri: 'http://orcid.org/0000-0003-2689-5511'
+  uri: 'https://orcid.org/0000-0003-2689-5511'
   xref: 'GOC:hjd'
 -
   accounts:
@@ -896,7 +896,7 @@
     - 'http://informatics.jax.org'
   nickname: 'Li Ni'
   organization: MGI
-  uri: 'http://orcid.org/0000-0002-9796-7693'
+  uri: 'https://orcid.org/0000-0002-9796-7693'
   xref: 'GOC:ln'
 -
   accounts:
@@ -912,7 +912,7 @@
     - 'http://geneontology.org'
   nickname: 'Judith Blake'
   organization: MGI
-  uri: 'http://orcid.org/0000-0001-8522-334X'
+  uri: 'https://orcid.org/0000-0001-8522-334X'
   xref: 'GOC:jab'
 -
   email-md5:
@@ -995,7 +995,7 @@
     - 'http://www.pombase.org'
   nickname: 'Antonia Lock'
   organization: PomBase
-  uri: 'http://orcid.org/0000-0003-1179-5999'
+  uri: 'https://orcid.org/0000-0003-1179-5999'
   xref: 'GOC:al'
 -
   nickname: 'Jurg Bahler'
@@ -1019,7 +1019,7 @@
     - 'http://www.pombase.org'
   nickname: 'Midori Harris'
   organization: PomBase
-  uri: 'http://orcid.org/0000-0003-4148-4606'
+  uri: 'https://orcid.org/0000-0003-4148-4606'
   xref: 'GOC:mah'
 -
   accounts:
@@ -1038,7 +1038,7 @@
     - 'http://www.pombase.org'
   nickname: 'Val Wood'
   organization: PomBase
-  uri: 'http://orcid.org/0000-0001-6330-7526'
+  uri: 'https://orcid.org/0000-0001-6330-7526'
   xref: 'GOC:vw'
 -
   nickname: 'Felipe Zapata'
@@ -1061,7 +1061,7 @@
     - 'http://oregonstate.edu'
   nickname: 'Laurel Cooper'
   organization: OSU
-  uri: 'http://orcid.org/0000-0002-6379-8932'
+  uri: 'https://orcid.org/0000-0002-6379-8932'
   xref: 'GOC:lc'
 -
   nickname: 'Laura Moore'
@@ -1115,7 +1115,7 @@
     - 'http://reactome.org'
   nickname: "Peter D'Eustachio"
   organization: Reactome
-  uri: 'http://orcid.org/0000-0002-5494-626X'
+  uri: 'https://orcid.org/0000-0002-5494-626X'
   xref: 'GOC:pde'
 -
   accounts:
@@ -1130,7 +1130,7 @@
     - 'http://reactome.org'
   nickname: 'Phani Garapati'
   organization: FlyBase
-  uri: 'http://orcid.org/0000-0003-0941-2207'
+  uri: 'https://orcid.org/0000-0003-0941-2207'
   xref: 'GOC:phg'
 -
   nickname: 'Steven Jupe'
@@ -1172,7 +1172,7 @@
     - 'http://rgd.mcw.edu'
   nickname: 'Stan Laulederkind'
   organization: RGD
-  uri: 'http://orcid.org/0000-0001-5356-4174-4174'
+  uri: 'https://orcid.org/0000-0001-5356-4174'
   xref: 'GOC:sl'
 -
   nickname: 'Simon Twigger'
@@ -1211,7 +1211,7 @@
     - 'http://lbl.gov'
   nickname: 'Chris Mungall'
   organization: LBL
-  uri: 'http://orcid.org/0000-0002-6601-2165'
+  uri: 'https://orcid.org/0000-0002-6601-2165'
   xref: 'GOC:cjm'
 -
   nickname: 'Anand Sethuraman'
@@ -1231,7 +1231,7 @@
 -
   nickname: 'Chandra Theesfeld'
   organization: SGD
-  uri: 'GOC:clt'
+  uri: 'https://orcid.org/0000-0002-8379-6600'
   xref: 'GOC:clt'
 -
   nickname: 'Curators at SGD'
@@ -1251,7 +1251,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Dianna Fisk'
   organization: SGD
-  uri: 'http://orcid.org/0000-0003-4929-9472'
+  uri: 'https://orcid.org/0000-0003-4929-9472'
   xref: 'GOC:dgf'
 -
   accounts:
@@ -1269,12 +1269,12 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Edith Wong'
   organization: SGD
-  uri: 'http://orcid.org/0000-0001-9799-5523'
+  uri: 'https://orcid.org/0000-0001-9799-5523'
   xref: 'GOC:ew'
 -
   nickname: 'Eurie Hong'
   organization: SGD
-  uri: 'GOC:elh'
+  uri: 'https://orcid.org/0000-0002-1775-4998'
   xref: 'GOC:elh'
 -
   nickname: 'Janos Demeter'
@@ -1312,7 +1312,7 @@
     - 'http://geneontology.org'
   nickname: 'Karen Christie'
   organization: MGI
-  uri: 'http://orcid.org/0000-0001-5501-853X'
+  uri: 'https://orcid.org/0000-0001-5501-853X'
   xref: 'GOC:krc'
 -
   authorizations:
@@ -1328,7 +1328,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Maria Costanzo'
   organization: SGD
-  uri: 'http://orcid.org/0000-0001-9043-693X'
+  uri: 'https://orcid.org/0000-0001-9043-693X'
   xref: 'GOC:mcc'
 -
   authorizations:
@@ -1344,7 +1344,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Rama Balakrishnan'
   organization: SGD
-  uri: 'http://orcid.org/0000-0003-2468-9933'
+  uri: 'https://orcid.org/0000-0003-2468-9933'
   xref: 'GOC:rb'
 -
   accounts:
@@ -1361,7 +1361,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Rob Nash'
   organization: SGD
-  uri: 'http://orcid.org/0000-0002-3726-7441'
+  uri: 'https://orcid.org/0000-0002-3726-7441'
   xref: 'GOC:rn'
 -
   accounts:
@@ -1379,7 +1379,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Stacia Engel'
   organization: SGD
-  uri: 'http://orcid.org/0000-0001-5472-917X'
+  uri: 'https://orcid.org/0000-0001-5472-917X'
   xref: 'GOC:se'
 -
   nickname: 'Selina Dwight'
@@ -1402,7 +1402,7 @@
     - 'http://www.ebi.ac.uk/spot'
   nickname: 'Dani Welter'
   organization: 'SPOT (EBI)'
-  uri: 'http://orcid.org/0000-0003-1058-2668'
+  uri: 'https://orcid.org/0000-0003-1058-2668'
   xref: 'GOC:dw'
 -
   nickname: 'Deepika Brito'
@@ -1436,7 +1436,7 @@
     - 'http://www.arabidopsis.org'
   nickname: 'Donghui Li'
   organization: TAIR
-  uri: 'http://orcid.org/0000-0003-3335-4537'
+  uri: 'https://orcid.org/0000-0003-3335-4537'
   xref: 'GOC:dhl'
 -
   nickname: 'David Swarbreck'
@@ -1456,7 +1456,7 @@
 -
   nickname: 'Kate Dreher'
   organization: TAIR
-  uri: 'GOC:kad'
+  uri: 'https://orcid.org/0000-0003-4652-4398'
   xref: 'GOC:kad'
 -
   nickname: 'Katica Ilic'
@@ -1507,7 +1507,7 @@
     - 'http://www.arabidopsis.org'
   nickname: 'Tanya Berardini'
   organization: TAIR
-  uri: 'http://orcid.org/0000-0002-3837-8864'
+  uri: 'https://orcid.org/0000-0002-3837-8864'
   xref: 'GOC:tb'
 -
   nickname: 'Yigong Lou'
@@ -1537,7 +1537,7 @@
 -
   nickname: 'Linda Hannick'
   organization: JCVI
-  uri: 'GOC:lh'
+  uri: 'https://orcid.org/0000-0002-8018-8466'
   xref: 'GOC:lh'
 -
   nickname: 'Scott Durkin'
@@ -1547,7 +1547,7 @@
 -
   nickname: 'Erika Feltrin'
   organization: TRAIT
-  uri: 'GOC:ef'
+  uri: 'https://orcid.org/0000-0002-9899-7456'
   xref: 'GOC:ef'
 -
   nickname: 'Lorenza Mittempergher'
@@ -1588,7 +1588,7 @@
     - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/parkinsons'
   nickname: 'Paul Denny'
   organization: "UCL-Parkinson's UK Annotation Project"
-  uri: 'http://orcid.org/0000-0003-4659-6893'
+  uri: 'https://orcid.org/0000-0003-4659-6893'
   xref: 'GOC:pad'
 -
   comment: 'status inactive, Student working with the PARL group at UCL'
@@ -1621,7 +1621,7 @@
     - 'http://www.eisai.com'
   nickname: 'Mitsuteru Nakao'
   organization: Eisai
-  uri: 'http://orcid.org/0000-0002-7734-0826'
+  uri: 'https://orcid.org/0000-0002-7734-0826'
 -
   authorizations:
     noctua:
@@ -1636,7 +1636,7 @@
     - 'https://www.uniprot.org'
   nickname: 'Alan Bridge'
   organization: UniProt
-  uri: 'http://orcid.org/0000-0003-2148-9135'
+  uri: 'https://orcid.org/0000-0003-2148-9135'
   xref: 'GOC:ab'
 -
   email-md5:
@@ -1694,7 +1694,7 @@
     - 'https://www.uniprot.org'
   nickname: 'Elena Cibrian-Uhalte'
   organization: UniProt
-  uri: 'http://orcid.org/0000-0002-0987-9862'
+  uri: 'https://orcid.org/0000-0002-0987-9862'
   xref: 'GOC:ecu'
 -
   nickname: 'Elizabeth Coudert'
@@ -1751,7 +1751,7 @@
     - 'https://www.uniprot.org'
   nickname: 'Klemens Pichler'
   organization: UniProt
-  uri: 'http://orcid.org/0000-0001-6099-8931'
+  uri: 'https://orcid.org/0000-0001-6099-8931'
   xref: 'GOC:klp'
 -
   nickname: 'Kristian Axelsen'
@@ -1776,7 +1776,7 @@
     - 'https://www.uniprot.org'
   nickname: 'Marc Feuermann'
   organization: UniProt
-  uri: 'http://orcid.org/0000-0002-4187-2863'
+  uri: 'https://orcid.org/0000-0002-4187-2863'
   xref: 'GOC:mf'
 -
   nickname: 'Marie Claude Blatter'
@@ -1827,7 +1827,7 @@
     - 'https://www.uniprot.org'
   nickname: 'Patrick Masson'
   organization: UniProt
-  uri: 'http://orcid.org/0000-0001-7646-0052'
+  uri: 'https://orcid.org/0000-0001-7646-0052'
   xref: 'GOC:pm2'
 -
   nickname: 'Paula Duek Roggli'
@@ -1849,7 +1849,7 @@
     - 'https://www.uniprot.org'
   nickname: 'Penelope Garmiri'
   organization: UniProt
-  uri: 'http://orcid.org/0000-0002-2283-2575'
+  uri: 'https://orcid.org/0000-0002-2283-2575'
   xref: 'GOC:pga'
 -
   nickname: 'Philippe Le Mercier'
@@ -1882,7 +1882,7 @@
     - 'https://www.uniprot.org'
   nickname: 'Sylvain Poux'
   organization: UniProt
-  uri: 'http://orcid.org/0000-0001-7299-6685'
+  uri: 'https://orcid.org/0000-0001-7299-6685'
   xref: 'GOC:sp'
 -
   email-md5:
@@ -1977,7 +1977,7 @@
     - 'http://www.wormbase.org'
   nickname: 'Daniela Raciti'
   organization: WB
-  uri: 'http://orcid.org/0000-0002-4945-5837'
+  uri: 'https://orcid.org/0000-0002-4945-5837'
   xref: 'GOC:dr'
 -
   nickname: 'Erich Schwarz'
@@ -2003,7 +2003,7 @@
     - 'http://geneontology.org'
   nickname: 'Kimberly Van Auken'
   organization: WB
-  uri: 'http://orcid.org/0000-0002-1706-4196'
+  uri: 'https://orcid.org/0000-0002-1706-4196'
   xref: 'GOC:kmv'
 -
   accounts:
@@ -2020,7 +2020,7 @@
     - 'http://www.wormbase.org'
   nickname: 'Ranjana Kishore'
   organization: WB
-  uri: 'http://orcid.org/0000-0002-1478-7671'
+  uri: 'https://orcid.org/0000-0002-1478-7671'
   xref: 'GOC:rk'
 -
   accounts:
@@ -2036,7 +2036,7 @@
     - 'http://zfin.org'
   nickname: 'Doug Howe'
   organization: ZFIN
-  uri: 'http://orcid.org/0000-0001-5831-7439'
+  uri: 'https://orcid.org/0000-0001-5831-7439'
   xref: 'GOC:dgh'
 -
   accounts:
@@ -2051,7 +2051,7 @@
     - 'http://zfin.org'
   nickname: 'David Fashena'
   organization: ZFIN
-  uri: 'http://orcid.org/0000-0001-9656-0683'
+  uri: 'https://orcid.org/0000-0001-9656-0683'
   xref: 'GOC:dsf'
 -
   accounts:
@@ -2066,7 +2066,7 @@
     - 'http://zfin.org'
   nickname: 'Ceri Van Slyke'
   organization: ZFIN
-  uri: 'http://orcid.org/0000-0002-2244-7917'
+  uri: 'https://orcid.org/0000-0002-2244-7917'
   xref: 'GOC:cvs'
 -
   accounts:
@@ -2079,7 +2079,7 @@
     - 'http://zfin.org'
   nickname: 'Sridhar Ramachandran'
   organization: ZFIN
-  uri: 'http://orcid.org/0000-0002-2246-3722'
+  uri: 'https://orcid.org/0000-0002-2246-3722'
   xref: 'GOC:sr'
 -
   accounts:
@@ -2094,7 +2094,7 @@
     - 'http://zfin.org'
   nickname: 'Yvonne M Bradford'
   organization: ZFIN
-  uri: 'http://orcid.org/0000-0002-9900-7880'
+  uri: 'https://orcid.org/0000-0002-9900-7880'
   xref: 'GOC:ymb'
 -
   accounts:
@@ -2107,7 +2107,7 @@
     - 'http://zfin.org'
   nickname: 'Sabrina Toro'
   organization: ZFIN
-  uri: 'http://orcid.org/0000-0002-4142-7153'
+  uri: 'https://orcid.org/0000-0002-4142-7153'
   xref: 'GOC:sat'
 -
   authorizations:
@@ -2117,7 +2117,7 @@
   groups:
     - 'http://zfin.org'
   nickname: 'Ken Frazer'
-  uri: 'http://orcid.org/0000-0002-6889-0711'
+  uri: 'https://orcid.org/0000-0002-6889-0711'
   xref: 'GOC:ksf'
 -
   accounts:
@@ -2130,7 +2130,7 @@
     - 'http://zfin.org'
   nickname: 'Leyla Ruzicka'
   organization: ZFIN
-  uri: 'http://orcid.org/0000-0002-1009-339X'
+  uri: 'https://orcid.org/0000-0002-1009-339X'
   xref: 'GOC:lrz'
 -
   accounts:
@@ -2143,20 +2143,26 @@
     - 'http://zfin.org'
   nickname: 'Christian Pich'
   organization: ZFIN
-  uri: 'http://orcid.org/0000-0001-5334-4542'
+  uri: 'https://orcid.org/0000-0001-5334-4542'
 -
   nickname: 'Erik Segerdell'
   organization: 'GOC:ejs'
   uri: 'GOC:ejs'
   xref: 'GOC:ejs'
 -
+  accounts:
+    github: lbreuza
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   email-md5:
     - 3bda03dbc02aa0fb8467c81beb5481b6
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Lionel Breuza'
   organization: UniProt
-  uri: 'GOC:lb'
+  uri: 'https://orcid.org/0000-0002-8075-8625'
   xref: 'GOC:lb'
 -
   authorizations:
@@ -2169,7 +2175,7 @@
     - 'http://www.ohsu.edu'
   nickname: 'Melissa Haendel'
   organization: OHSU
-  uri: 'http://orcid.org/0000-0001-9114-8737'
+  uri: 'https://orcid.org/0000-0001-9114-8737'
   xref: 'GOC:mh'
 -
   nickname: 'Terms created automatically from Obol templates. http://wiki.geneontology.org/index.php/Obol'
@@ -2511,7 +2517,7 @@
     - 'http://lbl.gov'
   nickname: 'Monica Munoz-Torres'
   organization: LBL
-  uri: 'http://orcid.org/0000-0001-8430-6039'
+  uri: 'https://orcid.org/0000-0001-8430-6039'
   xref: 'GOC:mmt'
 -
   nickname: 'Addition of CC terms for Giardia and other unicellular organisms (Paola and field experts)'
@@ -2531,7 +2537,7 @@
     - 'http://ronininstitute.org'
   nickname: 'Anne Thessen'
   organization: 'Ronin Institute'
-  uri: 'http://orcid.org/0000-0002-2908-3327'
+  uri: 'https://orcid.org/0000-0002-2908-3327'
   xref: 'GOC:at'
 -
   nickname: 'BioGRID curators'
@@ -2572,7 +2578,7 @@
     - 'http://www.sib.swiss'
   nickname: 'Aurore Britan'
   organization: SIB
-  uri: 'http://orcid.org/0000-0002-9846-2590'
+  uri: 'https://orcid.org/0000-0002-9846-2590'
 -
   authorizations:
     noctua:
@@ -2584,7 +2590,7 @@
     - 'http://www.sib.swiss'
   nickname: 'Valerie Hinard'
   organization: SIB
-  uri: 'http://orcid.org/0000-0001-5891-169X'
+  uri: 'https://orcid.org/0000-0001-5891-169X'
 -
   accounts:
     github: gantonazzo
@@ -2600,7 +2606,7 @@
     - 'http://flybase.org'
   nickname: 'Giulia Antonazzo'
   organization: FlyBase
-  uri: 'http://orcid.org/0000-0003-0086-5621'
+  uri: 'https://orcid.org/0000-0003-0086-5621'
   xref: 'GOC:ga'
 -
   email-md5:
@@ -2622,7 +2628,7 @@
     - 'http://www.ebi.ac.uk'
   nickname: "Claire O'Donovan"
   organization: EMBL-EBI
-  uri: 'http://orcid.org/0000-0001-8051-7429'
+  uri: 'https://orcid.org/0000-0001-8051-7429'
 -
   authorizations:
     noctua:
@@ -2634,7 +2640,7 @@
     - 'http://www.ebi.ac.uk'
   nickname: 'Amaia Sangrador'
   organization: EMBL-EBI
-  uri: 'http://orcid.org/0000-0001-6688-429X'
+  uri: 'https://orcid.org/0000-0001-6688-429X'
 -
   authorizations:
     noctua:
@@ -2646,7 +2652,7 @@
     - 'http://www.ebi.ac.uk'
   nickname: 'Alex Bateman'
   organization: EMBL-EBI
-  uri: 'http://orcid.org/0000-0002-6982-4660'
+  uri: 'https://orcid.org/0000-0002-6982-4660'
 -
   accounts:
     github: ftwkoopmans
@@ -2660,7 +2666,7 @@
     - 'https://syngo.vu.nl'
   nickname: 'Frank Koopmans'
   organization: SynGO
-  uri: 'http://orcid.org/0000-0002-4973-5732'
+  uri: 'https://orcid.org/0000-0002-4973-5732'
 -
   accounts:
     github: Pimmelorus
@@ -2674,7 +2680,7 @@
     - 'https://syngo.vu.nl'
   nickname: 'Pim van Nierop'
   organization: SynGO
-  uri: 'http://orcid.org/0000-0003-0593-3443'
+  uri: 'https://orcid.org/0000-0003-0593-3443'
   xref: 'GOC:pvn'
 -
   accounts:
@@ -2689,7 +2695,7 @@
     - 'http://geneontology.org'
   nickname: 'Jim Balhoff'
   organization: 'GO Central'
-  uri: 'http://orcid.org/0000-0002-8688-6599'
+  uri: 'https://orcid.org/0000-0002-8688-6599'
 -
   authorizations:
     noctua:
@@ -2701,7 +2707,7 @@
     - 'http://www.phenotypercn.org'
   nickname: 'Istvan Miko'
   organization: PhenotypeRCN
-  uri: 'http://orcid.org/0000-0001-9719-0215'
+  uri: 'https://orcid.org/0000-0001-9719-0215'
 -
   authorizations:
     noctua:
@@ -2713,7 +2719,7 @@
     - 'http://www.ohsu.edu'
   nickname: 'Matthew Brush'
   organization: OHSU
-  uri: 'http://orcid.org/0000-0002-1048-5019'
+  uri: 'https://orcid.org/0000-0002-1048-5019'
 -
   authorizations:
     noctua:
@@ -2725,7 +2731,7 @@
     - 'http://www.sandiego.edu'
   nickname: 'Wasila Dahdul'
   organization: USD
-  uri: 'http://orcid.org/0000-0003-3162-7490'
+  uri: 'https://orcid.org/0000-0003-3162-7490'
 -
   authorizations:
     noctua:
@@ -2737,7 +2743,7 @@
     - 'http://www.buffalo.edu'
   nickname: 'Alexander Diehl'
   organization: 'University at Buffalo'
-  uri: 'http://orcid.org/0000-0001-9990-8331'
+  uri: 'https://orcid.org/0000-0001-9990-8331'
   xref: 'GOC:add'
 -
   authorizations:
@@ -2750,7 +2756,7 @@
     - 'http://www.ohsu.edu'
   nickname: 'Jean-Philippe Francois Gourdine'
   organization: OHSU
-  uri: 'http://orcid.org/0000-0001-9969-8610'
+  uri: 'https://orcid.org/0000-0001-9969-8610'
 -
   accounts:
     github: preecej
@@ -2764,7 +2770,7 @@
     - 'http://planteome.org'
   nickname: 'Justin Preece'
   organization: Planteome
-  uri: 'http://orcid.org/0000-0001-5406-4905'
+  uri: 'https://orcid.org/0000-0001-5406-4905'
 -
   accounts:
     github: jaiswalp
@@ -2778,7 +2784,7 @@
     - 'http://planteome.org'
   nickname: 'Pankaj Jaiswal'
   organization: OSU
-  uri: 'http://orcid.org/0000-0002-1005-8383'
+  uri: 'https://orcid.org/0000-0002-1005-8383'
   xref: 'GOC:pj'
 -
   authorizations:
@@ -2791,7 +2797,7 @@
     - 'http://www.buffalo.edu'
   nickname: 'Mark Jensen'
   organization: 'University at Buffalo'
-  uri: 'http://orcid.org/0000-0001-9228-8838'
+  uri: 'https://orcid.org/0000-0001-9228-8838'
 -
   authorizations:
     noctua:
@@ -2803,7 +2809,7 @@
     - 'http://www.embo.org'
   nickname: 'Nancy George'
   organization: EMBO
-  uri: 'http://orcid.org/0000-0002-6470-2429'
+  uri: 'https://orcid.org/0000-0002-6470-2429'
 -
   accounts:
     github: pbuttigieg
@@ -2817,7 +2823,7 @@
     - 'https://www.awi.de'
   nickname: 'Pier Luigi Buttigieg'
   organization: AWI
-  uri: 'http://orcid.org/0000-0002-4366-3088'
+  uri: 'https://orcid.org/0000-0002-4366-3088'
 -
   authorizations:
     noctua:
@@ -2829,7 +2835,7 @@
     - 'https://www.hsph.harvard.edu'
   nickname: 'Bridget C Hanna'
   organization: 'Harvard T.H. Chan School of Public Health'
-  uri: 'http://orcid.org/0000-0001-8798-3326'
+  uri: 'https://orcid.org/0000-0001-8798-3326'
 -
   authorizations:
     noctua:
@@ -2841,7 +2847,7 @@
     - 'http://www.ohsu.edu'
   nickname: 'Daniel Keith'
   organization: OHSU
-  uri: 'http://orcid.org/0000-0002-1643-6242'
+  uri: 'https://orcid.org/0000-0002-1643-6242'
 -
   authorizations:
     noctua:
@@ -2853,7 +2859,7 @@
     - 'http://ualr.edu'
   nickname: 'Thomas Hahn'
   organization: UALR
-  uri: 'http://orcid.org/0000-0002-3499-1346'
+  uri: 'https://orcid.org/0000-0002-3499-1346'
 -
   authorizations:
     noctua:
@@ -2865,7 +2871,7 @@
     - 'http://www.massgeneral.org'
   nickname: 'Karl Helmer'
   organization: MGH
-  uri: 'http://orcid.org/0000-0002-5113-6843'
+  uri: 'https://orcid.org/0000-0002-5113-6843'
 -
   authorizations:
     noctua:
@@ -2877,7 +2883,7 @@
     - 'http://oregonstate.edu'
   nickname: 'Justin Elser'
   organization: OSU
-  uri: 'http://orcid.org/0000-0003-0921-1982'
+  uri: 'https://orcid.org/0000-0003-0921-1982'
 -
   authorizations:
     noctua:
@@ -2889,7 +2895,7 @@
     - 'https://www.roswellpark.org'
   nickname: 'William Duncan'
   organization: 'Roswell Park Cancer Institute'
-  uri: 'http://orcid.org/0000-0001-9625-1899'
+  uri: 'https://orcid.org/0000-0001-9625-1899'
 -
   authorizations:
     noctua:
@@ -2901,7 +2907,7 @@
     - 'https://www.cgiar.org'
   nickname: 'Medha Devare'
   organization: CGIAR
-  uri: 'http://orcid.org/0000-0003-0041-4812'
+  uri: 'https://orcid.org/0000-0003-0041-4812'
 -
   authorizations:
     noctua:
@@ -2913,7 +2919,7 @@
     - 'https://www.ncsu.edu'
   nickname: 'Cynthia J Grondin'
   organization: NCSU
-  uri: 'http://orcid.org/0000-0002-4642-1738'
+  uri: 'https://orcid.org/0000-0002-4642-1738'
 -
   accounts:
     github: selewis
@@ -2928,7 +2934,7 @@
     - 'http://lbl.gov'
   nickname: 'Suzanna Lewis'
   organization: LBL
-  uri: 'http://orcid.org/0000-0002-8343-612X'
+  uri: 'https://orcid.org/0000-0002-8343-612X'
 -
   authorizations:
     noctua:
@@ -2940,7 +2946,7 @@
     - 'https://www.adm.com'
   nickname: 'Jie Liu'
   organization: ADM
-  uri: 'http://orcid.org/0000-0002-9280-1539'
+  uri: 'https://orcid.org/0000-0002-9280-1539'
 -
   authorizations:
     noctua:
@@ -2952,7 +2958,7 @@
     - 'https://www.epa.gov'
   nickname: 'Ronglin Wang'
   organization: 'US EPA'
-  uri: 'http://orcid.org/0000-0002-6537-9758'
+  uri: 'https://orcid.org/0000-0002-6537-9758'
 -
   authorizations:
     noctua:
@@ -2964,7 +2970,7 @@
     - 'http://www.ucdavis.edu'
   nickname: 'Matthew Lange'
   organization: 'UC Davis'
-  uri: 'http://orcid.org/0000-0002-6148-7962'
+  uri: 'https://orcid.org/0000-0002-6148-7962'
 -
   authorizations:
     noctua:
@@ -2976,7 +2982,7 @@
     - 'http://www.ebi.ac.uk'
   nickname: 'Daniel Gonzalez'
   organization: EMBL-EBI
-  uri: 'http://orcid.org/0000-0002-3919-1380'
+  uri: 'https://orcid.org/0000-0002-3919-1380'
 -
   authorizations:
     noctua:
@@ -2988,7 +2994,7 @@
     - 'http://www.ebi.ac.uk'
   nickname: 'Emma Hatton-Ellis'
   organization: EMBL-EBI
-  uri: 'http://orcid.org/0000-0002-7262-1928'
+  uri: 'https://orcid.org/0000-0002-7262-1928'
 -
   authorizations:
     noctua:
@@ -3000,7 +3006,7 @@
     - 'http://www.ebi.ac.uk'
   nickname: 'Barbara Palka'
   organization: EMBL-EBI
-  uri: 'http://orcid.org/0000-0001-8256-1466'
+  uri: 'https://orcid.org/0000-0001-8256-1466'
 -
   authorizations:
     noctua:
@@ -3012,7 +3018,7 @@
     - 'http://www.ebi.ac.uk'
   nickname: 'Ramona Britto'
   organization: EMBL-EBI
-  uri: 'http://orcid.org/0000-0003-1011-5410'
+  uri: 'https://orcid.org/0000-0003-1011-5410'
 -
   authorizations:
     noctua:
@@ -3024,7 +3030,7 @@
     - 'http://www.ebi.ac.uk'
   nickname: 'Alistair MacDougall'
   organization: EBI
-  uri: 'http://orcid.org/0000-0003-2857-3460'
+  uri: 'https://orcid.org/0000-0003-2857-3460'
 -
   accounts:
     github: tuli
@@ -3038,7 +3044,7 @@
     - 'http://www.wormbase.org'
   nickname: 'Mary Ann Tuli'
   organization: WB
-  uri: 'http://orcid.org/0000-0002-4667-9528'
+  uri: 'https://orcid.org/0000-0002-4667-9528'
 -
   authorizations:
     noctua:
@@ -3050,7 +3056,7 @@
     - 'https://www.crick.ac.uk'
   nickname: 'Jacqueline Hayles'
   organization: Crick
-  uri: 'http://orcid.org/0000-0002-8599-8206'
+  uri: 'https://orcid.org/0000-0002-8599-8206'
 -
   authorizations:
     noctua:
@@ -3062,7 +3068,7 @@
     - 'http://www.ebi.ac.uk'
   nickname: 'Nidhi Tyagi'
   organization: EMBL-EBI
-  uri: 'http://orcid.org/0000-0002-2065-9051'
+  uri: 'https://orcid.org/0000-0002-2065-9051'
 -
   accounts:
     github: rozaru
@@ -3078,7 +3084,7 @@
     - 'http://www.ebi.ac.uk'
   nickname: 'Rossana Zaru'
   organization: EMBL-EBI
-  uri: 'http://orcid.org/0000-0002-3358-4423'
+  uri: 'https://orcid.org/0000-0002-3358-4423'
   xref: 'GOC:rz'
 -
   authorizations:
@@ -3091,7 +3097,7 @@
     - 'http://nidm.nidash.org'
   nickname: 'Satrajit Ghosh'
   organization: NIDASH
-  uri: 'http://orcid.org/0000-0002-5312-6729'
+  uri: 'https://orcid.org/0000-0002-5312-6729'
 -
   accounts:
     github: raymond91125
@@ -3105,7 +3111,7 @@
     - 'http://www.wormbase.org'
   nickname: 'Raymond Lee'
   organization: WB
-  uri: 'http://orcid.org/0000-0002-8151-7479'
+  uri: 'https://orcid.org/0000-0002-8151-7479'
 -
   accounts:
     github: malcolmfisher103
@@ -3120,7 +3126,7 @@
     - 'http://www.xenbase.org'
   nickname: 'Malcolm Fisher'
   organization: Xenbase
-  uri: 'http://orcid.org/0000-0003-1074-8103'
+  uri: 'https://orcid.org/0000-0003-1074-8103'
 -
   accounts:
     github: Xenbase2
@@ -3134,7 +3140,7 @@
     - 'http://www.xenbase.org'
   nickname: 'Christina James-Zorn'
   organization: Xenbase
-  uri: 'http://orcid.org/0000-0001-5495-4588'
+  uri: 'https://orcid.org/0000-0001-5495-4588'
 -
   accounts:
     github: MardiNenni
@@ -3148,7 +3154,7 @@
     - 'http://www.xenbase.org'
   nickname: 'Mardi Nenni'
   organization: Xenbase
-  uri: 'http://orcid.org/0000-0002-6238-1932'
+  uri: 'https://orcid.org/0000-0002-6238-1932'
 -
   accounts:
     github: vponferrada
@@ -3162,7 +3168,7 @@
     - 'http://www.xenbase.org'
   nickname: 'Virgilio Ponferrada'
   organization: Xenbase
-  uri: 'http://orcid.org/0000-0002-8590-7183'
+  uri: 'https://orcid.org/0000-0002-8590-7183'
 -
   accounts:
     github: chris-grove
@@ -3176,7 +3182,7 @@
     - 'http://www.wormbase.org'
   nickname: 'Christian Grove'
   organization: WB
-  uri: 'http://orcid.org/0000-0001-9076-6015'
+  uri: 'https://orcid.org/0000-0001-9076-6015'
 -
   accounts:
     github: owlang
@@ -3190,7 +3196,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Olivia Lang'
   organization: SGD
-  uri: 'http://orcid.org/0000-0002-5886-363X'
+  uri: 'https://orcid.org/0000-0002-5886-363X'
 -
   accounts:
     github: suzialeksander
@@ -3204,7 +3210,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Suzi Aleksander'
   organization: SGD
-  uri: 'http://orcid.org/0000-0001-6787-2901'
+  uri: 'https://orcid.org/0000-0001-6787-2901'
 -
   accounts:
     github: lreiser
@@ -3220,7 +3226,7 @@
     - 'http://www.arabidopsis.org'
   nickname: 'Leonore Reiser'
   organization: TAIR
-  uri: 'http://orcid.org/0000-0003-0073-0858'
+  uri: 'https://orcid.org/0000-0003-0073-0858'
   xref: 'GOC:lr'
 -
   accounts:
@@ -3249,7 +3255,7 @@
     - 'http://www.igs.umaryland.edu'
   nickname: 'Marcus Chibucos'
   organization: IGS
-  uri: 'http://orcid.org/0000-0001-9586-0780'
+  uri: 'https://orcid.org/0000-0001-9586-0780'
   xref: 'GOC:mcc2'
 -
   accounts:
@@ -3264,7 +3270,7 @@
     - 'http://www.bio.tamu.edu'
   nickname: 'Debby Siegele'
   organization: 'EcoliWiki/CACAO'
-  uri: 'http://orcid.org/0000-0001-8935-0696'
+  uri: 'https://orcid.org/0000-0001-8935-0696'
   xref: 'GOC:das'
 -
   accounts:
@@ -3284,7 +3290,7 @@
     - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/syngo'
   nickname: 'Barbara Kramarz'
   organization: BHF-UCL
-  uri: 'http://orcid.org/0000-0002-3898-1727'
+  uri: 'https://orcid.org/0000-0002-3898-1727'
   xref: 'GOC:bc'
 -
   accounts:
@@ -3299,7 +3305,7 @@
     - 'http://www.wormbase.org'
   nickname: 'Hans-Michael Muller'
   organization: WB
-  uri: 'http://orcid.org/0000-0003-1036-3051'
+  uri: 'https://orcid.org/0000-0003-1036-3051'
 -
   accounts:
     github: kyook
@@ -3311,7 +3317,7 @@
     - 'http://www.wormbase.org'
   nickname: 'Karen Yook'
   organization: WB
-  uri: 'http://orcid.org/0000-0002-4457-6787'
+  uri: 'https://orcid.org/0000-0002-4457-6787'
 -
   accounts:
     github: fatimasilva
@@ -3324,7 +3330,7 @@
     - 'http://www.genedb.org'
   nickname: 'Fatima Silva-Franco'
   organization: 'University of Liverpool'
-  uri: 'http://orcid.org/0000-0002-2900-027X'
+  uri: 'https://orcid.org/0000-0002-2900-027X'
 -
   accounts:
     github: uliboehme
@@ -3336,7 +3342,7 @@
     - 'http://www.genedb.org'
   nickname: 'Ulrike Bohme'
   organization: 'The Wellcome Trust Sanger Institute'
-  uri: 'http://orcid.org/0000-0002-0248-5924'
+  uri: 'https://orcid.org/0000-0002-0248-5924'
 -
   accounts:
     github: astridla
@@ -3348,7 +3354,7 @@
     - 'https://www.ntnu.edu'
   nickname: 'Astrid Lægreid'
   organization: NTNU
-  uri: 'http://orcid.org/0000-0002-3941-4257'
+  uri: 'https://orcid.org/0000-0002-3941-4257'
 -
   accounts:
     github: gthayman
@@ -3360,7 +3366,7 @@
     - 'http://rgd.mcw.edu'
   nickname: 'George Thomas Hayman'
   organization: RGD
-  uri: 'http://orcid.org/0000-0002-9553-7227'
+  uri: 'https://orcid.org/0000-0002-9553-7227'
 -
   accounts:
     github: emilycamozzi
@@ -3372,7 +3378,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Emily Heald Camozzi'
   organization: SGD
-  uri: 'http://orcid.org/0000-0003-0855-3059'
+  uri: 'https://orcid.org/0000-0003-0855-3059'
 -
   accounts:
     github: asingeror
@@ -3384,7 +3390,7 @@
     - 'http://zfin.org'
   nickname: 'Amy Singer'
   organization: ZFIN
-  uri: 'http://orcid.org/0000-0002-9663-3237'
+  uri: 'https://orcid.org/0000-0002-9663-3237'
 -
   accounts:
     github: marieALaporte
@@ -3396,7 +3402,7 @@
     - 'https://www.bioversityinternational.org'
   nickname: 'Marie-Angélique Laporte'
   organization: 'Bioversity International'
-  uri: 'http://orcid.org/0000-0002-8461-9745'
+  uri: 'https://orcid.org/0000-0002-8461-9745'
 -
   accounts:
     github: austinmeier
@@ -3408,7 +3414,7 @@
     - 'http://planteome.org'
   nickname: Austin
   organization: Planteome
-  uri: 'http://orcid.org/0000-0001-6996-0040'
+  uri: 'https://orcid.org/0000-0001-6996-0040'
 -
   accounts:
     github: grlazo
@@ -3420,7 +3426,7 @@
     - 'https://www.usda.gov'
   nickname: 'Gerard Lazo'
   organization: USDA
-  uri: 'http://orcid.org/000-0002-9160-2052'
+  uri: 'https://orcid.org/000-0002-9160-2052'
 -
   accounts:
     github: priya8328
@@ -3432,7 +3438,7 @@
     - 'http://planteome.org'
   nickname: 'Priyanka Garg'
   organization: Planteome
-  uri: 'http://orcid.org/0000-0002-8293-0329'
+  uri: 'https://orcid.org/0000-0002-8293-0329'
 -
   accounts:
     github: genizamt
@@ -3444,7 +3450,7 @@
     - 'http://oregonstate.edu'
   nickname: 'Matthew Geniza'
   organization: OSU
-  uri: 'http://orcid.org/0000-0003-4828-7891'
+  uri: 'https://orcid.org/0000-0003-4828-7891'
 -
   accounts:
     github: noor-albader
@@ -3456,7 +3462,7 @@
     - 'http://oregonstate.edu'
   nickname: 'Noor Al-Bader'
   organization: OSU
-  uri: 'http://orcid.org/0000-0002-0511-6972'
+  uri: 'https://orcid.org/0000-0002-0511-6972'
 -
   accounts:
     github: naithanis
@@ -3468,7 +3474,7 @@
     - 'http://oregonstate.edu'
   nickname: 'Sushma Naithani'
   organization: OSU
-  uri: 'http://orcid.org/0000-0001-7819-4552'
+  uri: 'https://orcid.org/0000-0001-7819-4552'
 -
   accounts:
     github: guptapa
@@ -3480,7 +3486,7 @@
     - 'http://oregonstate.edu'
   nickname: 'Parul Gupta'
   organization: OSU
-  uri: 'http://orcid.org/0000-0002-0190-8753'
+  uri: 'https://orcid.org/0000-0002-0190-8753'
 -
   accounts:
     github: TomConlin
@@ -3492,7 +3498,7 @@
     - 'http://monarchinitiative.org'
   nickname: 'Tom Conlin'
   organization: Monarch
-  uri: 'http://orcid.org/0000-0003-0355-5581'
+  uri: 'https://orcid.org/0000-0003-0355-5581'
 -
   accounts:
     github: gitkumard
@@ -3504,7 +3510,7 @@
     - 'http://planteome.org'
   nickname: 'Dhirendra Kumar'
   organization: Planteome
-  uri: 'http://orcid.org/0000-0001-8899-9055'
+  uri: 'https://orcid.org/0000-0001-8899-9055'
 -
   accounts:
     github: dougli1sqrd
@@ -3516,7 +3522,7 @@
     - 'http://geneontology.org'
   nickname: 'Eric Douglass'
   organization: 'GO Central'
-  uri: 'http://orcid.org/0000-0001-6946-1807'
+  uri: 'https://orcid.org/0000-0001-6946-1807'
 -
   accounts:
     github: kshefchek
@@ -3528,7 +3534,7 @@
     - 'http://www.ohsu.edu'
   nickname: 'Kent Shefchek'
   organization: OHSU
-  uri: 'http://orcid.org/0000-0001-6439-2224'
+  uri: 'https://orcid.org/0000-0001-6439-2224'
 -
   accounts:
     github: dnahotline
@@ -3541,7 +3547,7 @@
     - 'https://ncats.nih.gov/translator'
   nickname: 'Maureen Hoatlin'
   organization: OHSU
-  uri: 'http://orcid.org/0000-0002-6521-9543'
+  uri: 'https://orcid.org/0000-0002-6521-9543'
 -
   accounts:
     github: Jackson73
@@ -3553,7 +3559,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Terry L. Jackson'
   organization: SGD
-  uri: 'http://orcid.org/0000-0003-2387-6411'
+  uri: 'https://orcid.org/0000-0003-2387-6411'
 -
   accounts:
     github: marekskrzypek
@@ -3565,7 +3571,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Marek Skrzypek'
   organization: SGD
-  uri: 'http://orcid.org/0000-0001-6749-615X'
+  uri: 'https://orcid.org/0000-0001-6749-615X'
 -
   accounts:
     github: kmacpher5
@@ -3577,7 +3583,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Kevin MacPherson'
   organization: SGD
-  uri: 'http://orcid.org/0000-0002-2657-8762'
+  uri: 'https://orcid.org/0000-0002-2657-8762'
 -
   accounts:
     github: Shellerstedt
@@ -3589,7 +3595,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Sage Hellerstedt'
   organization: SGD
-  uri: 'http://orcid.org/0000-0002-5299-5308'
+  uri: 'https://orcid.org/0000-0002-5299-5308'
 -
   accounts:
     github: mendelje
@@ -3601,7 +3607,7 @@
     - 'http://www.wormbase.org'
   nickname: 'Jane Mendel'
   organization: WB
-  uri: 'http://orcid.org/0000-0003-2273-477X'
+  uri: 'https://orcid.org/0000-0003-2273-477X'
 -
   comment: 'Demonstration user for various software.'
   groups:
@@ -3621,7 +3627,7 @@
     - 'http://geneontology.org'
   nickname: 'Hyeongsik Kim'
   organization: LBL
-  uri: 'http://orcid.org/0000-0002-3002-9838'
+  uri: 'https://orcid.org/0000-0002-3002-9838'
 -
   accounts:
     github: WBjae
@@ -3633,7 +3639,7 @@
     - 'http://www.wormbase.org'
   nickname: 'Jae Cho'
   organization: WB
-  uri: 'http://orcid.org/0000-0002-6534-116X'
+  uri: 'https://orcid.org/0000-0002-6534-116X'
 -
   accounts:
     github: tmushayahama
@@ -3645,7 +3651,7 @@
     - 'http://geneontology.org'
   nickname: 'Tremayne Mushayahama'
   organization: USC
-  uri: 'http://orcid.org/0000-0002-2874-6934'
+  uri: 'https://orcid.org/0000-0002-2874-6934'
 -
   accounts:
     github: liviap
@@ -3656,8 +3662,8 @@
   groups:
     - 'https://www.ebi.ac.uk/intact'
   nickname: 'Livia Perfetto'
-  organization: InTact
-  uri: 'http://orcid.org/0000-0003-4392-8725'
+  organization: IntAct
+  uri: 'https://orcid.org/0000-0003-4392-8725'
   xref: 'GOC:lnp'
 -
   accounts:
@@ -3670,7 +3676,7 @@
     - 'http://geneontology.org'
   nickname: 'Ben Good'
   organization: LBL
-  uri: 'http://orcid.org/0000-0002-7334-7852'
+  uri: 'https://orcid.org/0000-0002-7334-7852'
 -
   accounts:
     github: dustine32
@@ -3682,7 +3688,7 @@
     - 'http://geneontology.org'
   nickname: 'Dustin Ebert'
   organization: USC
-  uri: 'http://orcid.org/0000-0002-6659-0416'
+  uri: 'https://orcid.org/0000-0002-6659-0416'
 -
   accounts:
     github: lpalbou
@@ -3694,7 +3700,7 @@
     - 'http://geneontology.org'
   nickname: 'Laurent-Philippe Albou'
   organization: USC
-  uri: 'http://orcid.org/0000-0001-5801-1974'
+  uri: 'https://orcid.org/0000-0001-5801-1974'
 -
   accounts:
     github: paulwsternberg
@@ -3706,7 +3712,7 @@
     - 'http://www.wormbase.org'
   nickname: 'Paul W. Sternberg'
   organization: WB
-  uri: 'http://orcid.org/0000-0002-7699-0173'
+  uri: 'https://orcid.org/0000-0002-7699-0173'
 -
   accounts:
     github: patrickcng90
@@ -3718,7 +3724,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Patrick Ng'
   organization: SGD
-  uri: 'http://orcid.org/0000-0001-8208-652X'
+  uri: 'https://orcid.org/0000-0001-8208-652X'
 -
   accounts:
     github: barbdunn
@@ -3730,7 +3736,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Barbara Dunn'
   organization: SGD
-  uri: 'http://orcid.org/0000-0002-7041-0035'
+  uri: 'https://orcid.org/0000-0002-7041-0035'
 -
   accounts:
     github: Yalbibalderas
@@ -3743,7 +3749,7 @@
     - 'http://www.conacyt.gob.mx/index.php/el-conacyt/desarrollo-cientifico/catedrasconacyt'
   nickname: 'Yalbi Itzel Balderas Martinez'
   organization: CONACYT-INER
-  uri: 'http://orcid.org/0000-0001-6400-0526'
+  uri: 'https://orcid.org/0000-0001-6400-0526'
 -
   accounts:
     github: Achchuthan
@@ -3755,230 +3761,230 @@
     - 'http://www.genedb.org'
     - 'http://eupathdb.org'
   nickname: 'Achchuthan Shanmugasundram'
-  uri: 'http://orcid.org/0000-0003-2349-6929'
+  uri: 'https://orcid.org/0000-0003-2349-6929'
   xref: 'GOC:ach'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Niels Cornelisse'
   organization: 'Department of Functional Genomics, Center for Neurogenomics and Cognitive Research, Neuroscience Campus Amsterdam, Vrije Universiteit (VU), Amsterdam, the Netherlands'
-  uri: 'http://orcid.org/0000-0001-9425-2935'
+  uri: 'https://orcid.org/0000-0001-9425-2935'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Daniela Dieterich'
   organization: 'Department of Neurochemistry and Molecular Biology, Leibniz Institute for Neurobiology, Magdeburg, Germany'
-  uri: 'http://orcid.org/0000-0002-9880-1214'
+  uri: 'https://orcid.org/0000-0002-9880-1214'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Rainer Pielot'
   organization: 'Department of Neurochemistry and Molecular Biology, Leibniz Institute for Neurobiology, Magdeburg, Germany'
-  uri: 'http://orcid.org/0000-0002-9681-3318'
+  uri: 'https://orcid.org/0000-0002-9681-3318'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Karl-Heinz Smalla'
   organization: 'Department of Neurochemistry and Molecular Biology, Leibniz Institute for Neurobiology, Magdeburg, Germany'
-  uri: 'http://orcid.org/0000-0002-0269-0311'
+  uri: 'https://orcid.org/0000-0002-0269-0311'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Eckart Gundelfinger'
   organization: 'Department of Neurochemistry and Molecular Biology, Leibniz Institute for Neurobiology, Magdeburg, Germany'
-  uri: 'http://orcid.org/0000-0001-9377-7414'
+  uri: 'https://orcid.org/0000-0001-9377-7414'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Ruud Toonen'
   organization: 'Department of Functional Genomics, Center for Neurogenomics and Cognitive Research, Neuroscience Campus Amsterdam, Vrije Universiteit (VU), Amsterdam, the Netherlands'
-  uri: 'http://orcid.org/0000-0002-9900-4233'
+  uri: 'https://orcid.org/0000-0002-9900-4233'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Arthur de Jong'
   organization: 'Kaeser Lab, Department of Neurobiology, Harvard Medical School, Boston, USA'
-  uri: 'http://orcid.org/0000-0002-7620-2704'
+  uri: 'https://orcid.org/0000-0002-7620-2704'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Pascal Kaeser'
   organization: 'Kaeser Lab, Department of Neurobiology, Harvard Medical School, Boston, USA'
-  uri: 'http://orcid.org/0000-0002-1558-1958'
+  uri: 'https://orcid.org/0000-0002-1558-1958'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Matthijs Verhage'
   organization: 'Department of Functional Genomics, Center for Neurogenomics and Cognitive Research, Neuroscience Campus Amsterdam, Vrije Universiteit (VU), Amsterdam, the Netherlands'
-  uri: 'http://orcid.org/0000-0002-2514-0216'
+  uri: 'https://orcid.org/0000-0002-2514-0216'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Momchil Ninov'
   organization: 'Department of Neurobiology, Max Planck Institute for Biophysical Chemistry, Gottingen, Germany'
-  uri: 'http://orcid.org/0000-0002-0808-7003'
+  uri: 'https://orcid.org/0000-0002-0808-7003'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Mahdokht Kohansalnodehi'
   organization: 'Department of Neurobiology, Max Planck Institute for Biophysical Chemistry, Gottingen, Germany'
-  uri: 'http://orcid.org/0000-0002-3898-5197'
+  uri: 'https://orcid.org/0000-0002-3898-5197'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Reinhard Jahn'
   organization: 'Department of Neurobiology, Max Planck Institute for Biophysical Chemistry, Gottingen, Germany'
-  uri: 'http://orcid.org/0000-0003-1542-3498'
+  uri: 'https://orcid.org/0000-0003-1542-3498'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Timothy Ryan'
   organization: 'Department of Biochemistry, Weill Cornell Medical College, New York, USA'
-  uri: 'http://orcid.org/0000-0003-2533-9548'
+  uri: 'https://orcid.org/0000-0003-2533-9548'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Tony Cijsouw'
   organization: 'Biederer lab, Department of Neuroscience, Tufts University School of Medicine, Boston, USA'
-  uri: 'http://orcid.org/0000-0003-0912-1514'
+  uri: 'https://orcid.org/0000-0003-0912-1514'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Thomas Biederer'
   organization: 'Biederer lab, Department of Neuroscience, Tufts University School of Medicine, Boston, USA'
-  uri: 'http://orcid.org/0000-0002-3670-7863'
+  uri: 'https://orcid.org/0000-0002-3670-7863'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Harold MacGillavry'
   organization: 'Department of Biology, Faculty of Science, Utrecht University, Utrecht, the Netherlands'
-  uri: 'http://orcid.org/0000-0002-6153-3586'
+  uri: 'https://orcid.org/0000-0002-6153-3586'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Casper Hoogenraad'
   organization: 'Department of Biology, Faculty of Science, Utrecht University, Utrecht, the Netherlands'
-  uri: 'http://orcid.org/0000-0002-2666-0758'
+  uri: 'https://orcid.org/0000-0002-2666-0758'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Alexandros Kanellopoulos'
   organization: 'University of Lausanne, Department of Fundamental Neuroscience, Lausanne, Switzerland; University of Rome Tor Vergata, Department of Biomedicine and Prevention, Rome, Italy'
-  uri: 'http://orcid.org/0000-0002-2094-7491'
+  uri: 'https://orcid.org/0000-0002-2094-7491'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Vittoria Mariano'
   organization: 'University of Lausanne, Department of Fundamental Neuroscience, Lausanne, Switzerland; University of Rome Tor Vergata, Department of Biomedicine and Prevention, Rome, Italy'
-  uri: 'http://orcid.org/0000-0002-9848-0262'
+  uri: 'https://orcid.org/0000-0002-9848-0262'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Achsel Tilmann'
   organization: 'University of Lausanne, Department of Fundamental Neuroscience, Lausanne, Switzerland; University of Rome Tor Vergata, Department of Biomedicine and Prevention, Rome, Italy'
-  uri: 'http://orcid.org/0000-0002-1190-4481'
+  uri: 'https://orcid.org/0000-0002-1190-4481'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Claudia Bagni'
   organization: 'University of Lausanne, Department of Fundamental Neuroscience, Lausanne, Switzerland; University of Rome Tor Vergata, Department of Biomedicine and Prevention, Rome, Italy'
-  uri: 'http://orcid.org/0000-0002-4419-210X'
+  uri: 'https://orcid.org/0000-0002-4419-210X'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Chiara Verpelli'
   organization: "Department of Medical Biotechnology and Translational Medicine, Università degli Studi di Milano, Milan, Italy"
-  uri: 'http://orcid.org/0000-0003-2949-9725'
+  uri: 'https://orcid.org/0000-0003-2949-9725'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Carlo Sala'
   organization: "Department of Medical Biotechnology and Translational Medicine, Università degli Studi di Milano, Milan, Italy"
-  uri: 'http://orcid.org/0000-0003-0662-9523'
+  uri: 'https://orcid.org/0000-0003-0662-9523'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Maria Andres-Alonso'
   organization: 'RG Neuroplasticity, Leibniz Institute for Neurobiology, Magdeburg, Germany'
-  uri: 'http://orcid.org/0000-0002-1585-539X'
+  uri: 'https://orcid.org/0000-0002-1585-539X'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Michael Kreutz'
   organization: 'RG Neuroplasticity, Leibniz Institute for Neurobiology, Magdeburg, Germany'
-  uri: 'http://orcid.org/0000-0003-0575-6950'
+  uri: 'https://orcid.org/0000-0003-0575-6950'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Peter McPherson'
   organization: 'Neurology and Neurosurgery, Montreal Neurological Institute, McGill University, Montreal, Canada'
-  uri: 'http://orcid.org/0000-0001-7806-5662'
+  uri: 'https://orcid.org/0000-0001-7806-5662'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Jan van Weering'
   organization: 'Department of Functional Genomics, Center for Neurogenomics and Cognitive Research, Neuroscience Campus Amsterdam, Vrije Universiteit (VU), Amsterdam, the Netherlands'
-  uri: 'http://orcid.org/0000-0001-5259-4945'
+  uri: 'https://orcid.org/0000-0001-5259-4945'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Noa Lipstein'
   organization: "Department of Molecular Neurobiology, Max Planck Institute of Experimental Medicine, Göttingen, Germany"
-  uri: 'http://orcid.org/0000-0002-0755-5899'
+  uri: 'https://orcid.org/0000-0002-0755-5899'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Cordelia Imig'
   organization: "Department of Molecular Neurobiology, Max Planck Institute of Experimental Medicine, Göttingen, Germany"
-  uri: 'http://orcid.org/0000-0001-7351-8706'
+  uri: 'https://orcid.org/0000-0001-7351-8706'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Vincent O`Connor'
   organization: "Department of Molecular Neurobiology, Max Planck Institute of Experimental Medicine, Göttingen, Germany"
-  uri: 'http://orcid.org/0000-0003-3185-5709'
+  uri: 'https://orcid.org/0000-0003-3185-5709'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Nils Brose'
   organization: "Department of Molecular Neurobiology, Max Planck Institute of Experimental Medicine, Göttingen, Germany"
-  uri: 'http://orcid.org/0000-0003-0938-8534'
+  uri: 'https://orcid.org/0000-0003-0938-8534'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Eunjoon Kim'
   organization: 'Center for Synaptic Brain Dysfunctions, Institute for Basic Science (IBS) and Department of Biological Sciences, Korea Advanced Institute of Science and Technology (KAIST), South Korea'
-  uri: 'http://orcid.org/0000-0001-5518-6584'
+  uri: 'https://orcid.org/0000-0001-5518-6584'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Hana Goldschmidt'
   organization: 'Solomon H. Snyder Department of Neuroscience, Johns Hopkins University School of Medicine, Baltimore, USA'
-  uri: 'http://orcid.org/0000-0002-5676-366X'
+  uri: 'https://orcid.org/0000-0002-5676-366X'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Richard Huganir'
   organization: 'Solomon H. Snyder Department of Neuroscience, Johns Hopkins University School of Medicine, Baltimore, USA'
-  uri: 'http://orcid.org/0000-0001-9783-5183'
+  uri: 'https://orcid.org/0000-0001-9783-5183'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'John Chua'
   organization: 'Department of Physiology, Yong Loo Lin School of Medicine, National University of Singapore, Singapore'
-  uri: 'http://orcid.org/0000-0002-5615-1014'
+  uri: 'https://orcid.org/0000-0002-5615-1014'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Roberto Malinow'
   organization: 'Center for Neural Circuits and Behavior, Department of Neuroscience and Section for Neurobiology, Division of Biology, University of California at San Diego, USA'
-  uri: 'http://orcid.org/0000-0002-8862-2562'
+  uri: 'https://orcid.org/0000-0002-8862-2562'
 -
   groups:
     - 'https://syngo.vu.nl'
   nickname: "Àlex Bayés"
   organization: 'Molecular Physiology of the Synapse Laboratory, Biomedical Research Institute Sant Pau (IIB Sant Pau), Barcelona, Spain'
-  uri: 'http://orcid.org/0000-0002-5265-6306'
+  uri: 'https://orcid.org/0000-0002-5265-6306'
 -
   accounts:
     github: mcharrison345
@@ -3990,7 +3996,7 @@
     - 'http://www.wormbase.org'
   nickname: 'Marie-Claire Harrison'
   organization: WB
-  uri: 'http://orcid.org/0000-0002-3013-9906'
+  uri: 'https://orcid.org/0000-0002-3013-9906'
   xref: 'GOC:mch'
 -
   accounts:
@@ -4004,7 +4010,7 @@
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
   nickname: 'Luana Licata'
   organization: 'University of Rome Tor Vergata'
-  uri: 'http://orcid.org/0000-0001-5084-9000'
+  uri: 'https://orcid.org/0000-0001-5084-9000'
 -
   accounts:
     github: jrr-cpt
@@ -4016,7 +4022,7 @@
     - 'http://www.bio.tamu.edu'
   nickname: 'Jolene Ramsey'
   organization: 'EcoliWiki/CACAO'
-  uri: 'http://orcid.org/0000-0002-3774-5896'
+  uri: 'https://orcid.org/0000-0002-3774-5896'
 -
   accounts:
     github: erbolton
@@ -4028,7 +4034,7 @@
     - 'http://rgd.mcw.edu'
   nickname: 'Liz Bolton'
   organization: 'RGD'
-  uri: 'http://orcid.org/0000-0002-5657-2732'
+  uri: 'https://orcid.org/0000-0002-5657-2732'
 -
   accounts:
     github: nsuvarnaiari
@@ -4040,7 +4046,7 @@
     - 'http://www.igs.umaryland.edu'
   nickname: 'Suvarna Nadendla'
   organization: 'IGS'
-  uri: 'http://orcid.org/0000-0003-3643-281X'
+  uri: 'https://orcid.org/0000-0003-3643-281X'
 -
   accounts:
     github: mgiglio99
@@ -4052,7 +4058,7 @@
     - 'http://www.igs.umaryland.edu'
   nickname: 'Michelle Gwinn Giglio'
   organization: 'IGS'
-  uri: 'http://orcid.org/0000-0001-7628-5565'
+  uri: 'https://orcid.org/0000-0001-7628-5565'
   xref: 'GOC:mlg'
 -
   nickname: 'Josh Jaffery'
@@ -4067,7 +4073,7 @@
 -
  nickname: 'Allan P Davis'
  organization: MGI
- uri: 'GOC:apd'
+ uri: 'https://orcid.org/0000-0002-5741-7128'
  xref: 'GOC:apd'
 -
   accounts:
@@ -4080,7 +4086,7 @@
     - 'http://greekc.org'
   nickname: 'Jesualdo Tomás Fernández Breis'
   organization: 'University of Murcia'
-  uri: 'http://orcid.org/0000-0002-7558-2880'
+  uri: 'https://orcid.org/0000-0002-7558-2880'
 -
   accounts:
     github: belenjc
@@ -4092,7 +4098,7 @@
     - 'http://greekc.org'
   nickname: 'Belén Juanes Cortés'
   organization: 'University of Murcia'
-  uri: 'http://orcid.org/0000-0003-3641-7548'
+  uri: 'https://orcid.org/0000-0003-3641-7548'
 -
   accounts:
     github: jpa29
@@ -4104,7 +4110,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Joanna Argasinska'
   organization: SGD
-  uri: 'http://orcid.org/0000-0003-2678-2824'
+  uri: 'https://orcid.org/0000-0003-2678-2824'
 -
   accounts:
     github: ShirinSaverimuttu
@@ -4118,7 +4124,7 @@
     - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/syngo'
   nickname: 'Shirin Saverimuttu'
   organization: BHF-UCL
-  uri: 'http://orcid.org/0000-0003-1191-2681'
+  uri: 'https://orcid.org/0000-0003-1191-2681'
 -
   accounts:
     github: MariosMakris
@@ -4132,7 +4138,7 @@
     - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological/syngo'
   nickname: 'Marios Makris'
   organization: BHF-UCL
-  uri: 'http://orcid.org/0000-0002-6176-1677'
+  uri: 'https://orcid.org/0000-0002-6176-1677'
 -
   accounts:
     github: Gschindelman
@@ -4144,15 +4150,15 @@
     - 'http://www.wormbase.org'
   nickname: 'Gary Schindelman'
   organization: WB
-  uri: 'http://orcid.org/0000-0001-7883-4388'
+  uri: 'https://orcid.org/0000-0001-7883-4388'
 -
   nickname: 'TBK Reddy'
   organization: MGI
-  uri: 'http://orcid.org/0000-0002-0871-5567'
+  uri: 'https://orcid.org/0000-0002-0871-5567'
 -
   nickname: 'Richard Baldarelli'
   organization: MGI
-  uri: 'http://orcid.org/0000-0002-5819-0228'
+  uri: 'https://orcid.org/0000-0002-5819-0228'
 -
   nickname: 'Louise McKenzie'
   organization: MGI
@@ -4260,7 +4266,7 @@
   groups:
     - 'http://eupathdb.org'
   nickname: 'Beatrice Amos'
-  uri: 'http://orcid.org/0000-0003-2347-712X'
+  uri: 'https://orcid.org/0000-0003-2347-712X'
 -
   accounts:
     github: pwilx666
@@ -4271,7 +4277,7 @@
   groups:
     - 'http://eupathdb.org'
   nickname: 'Paul Wilkinson'
-  uri: 'http://orcid.org/0000-0002-8836-5439'
+  uri: 'https://orcid.org/0000-0002-8836-5439'
 -
   accounts:
     github: obsidian83
@@ -4282,7 +4288,7 @@
   groups:
     - 'http://eupathdb.org'
   nickname: 'David Starns'
-  uri: 'http://orcid.org/0000-0001-6583-9067'
+  uri: 'https://orcid.org/0000-0001-6583-9067'
 -
   accounts:
     github: turbomam
@@ -4290,4 +4296,124 @@
     - 'http://geneontology.org'
   nickname: 'Mark A. Miller'
   organization: 'GO Central'
-  uri: 'http://orcid.org/0000-0001-9076-6066'
+  uri: 'https://orcid.org/0000-0001-9076-6066'
+-
+  accounts:
+    github: GewieksteVos
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://greekc.org'
+  nickname: 'Yves Snijckers'
+  organization: Radboud University
+  uri: 'https://orcid.org/0000-0001-6913-5104'
+-
+  accounts:
+    github: mitchellcailey
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://informatics.jax.org'
+  nickname: 'Cailey Mitchell'
+  organization: MGI
+  uri: 'https://orcid.org/0000-0002-6659-9031'
+-
+  accounts:
+    github: neurogarg
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.wormbase.org'
+  nickname: 'Pranjal Garg'
+  organization: WB
+  uri: 'https://orcid.org/0000-0001-5576-1016'
+-
+  accounts:
+    github: sharan-gh
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.wormbase.org'
+  nickname: 'Sharan Prakash'
+  organization: WB
+  uri: 'https://orcid.org/0000-0003-1777-0987'
+-
+  accounts:
+    github: RahiNav
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
+  nickname: 'Rahi Navelkar'
+  organization: SGD
+  uri: 'https://orcid.org/0000-0002-4200-7409'
+-
+  accounts:
+    github: c02080219
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://geneontology.org'
+  nickname: 'YuanChing Chen'
+  organization: National Tsing Hua University (NTHU)
+  uri: 'https://orcid.org/0000-0003-1287-0137'
+-
+  accounts:
+    github: jlewsmith
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
+  nickname: 'Jodi Lew-Smith'
+  organization: SGD
+  uri: 'https://orcid.org/0000-0003-0784-046X'
+-
+  accounts:
+    github: weichiatseng
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://zfin.org'
+  nickname: 'Wei-Chia Tseng'
+  organization: ZFIN
+  uri: 'https://orcid.org/0000-0002-3665-4482'
+-
+  accounts:
+    github: kalpanapanneerselvam
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.ebi.ac.uk/intact'
+  nickname: 'Kalpana Panneerselvam'
+  organization: IntAct
+  uri: 'https://orcid.org/0000-0003-2534-198X'
+-
+  accounts:
+    github: tgroth58
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.buffalo.edu'
+  nickname: 'Theodore Groth'
+  organization: 'University at Buffalo'
+  uri: 'https://orcid.org/0000-0003-4553-6899'

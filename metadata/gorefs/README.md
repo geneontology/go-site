@@ -24,7 +24,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000025">GO_REF:0000025 Operon structure as IGC evidence</a>
  * <a href="#goref0000026">GO_REF:0000026 OBSOLETE Improving the representation of muscle biology in the biological process and cellular component ontologies.</a>
  * <a href="#goref0000027">GO_REF:0000027 BLAST search criteria for ISS assignment in PAMGO_GAT</a>
- * <a href="#goref0000028">GO_REF:0000028 Criteria for IDA, IEP, ISS, IGC, RCA, ND, and IEA assignment in PAMGO_MGG</a>
+ * <a href="#goref0000028">GO_REF:0000028 Criteria for IDA, IEP, ISS, IGC, RCA, and IEA assignment in PAMGO_MGG</a>
  * <a href="#goref0000029">GO_REF:0000029 OBSOLETE Gene Ontology annotation based on information extracted from curated UniProtKB entries</a>
  * <a href="#goref0000030">GO_REF:0000030 OBSOLETE Portable Annotation Rules</a>
  * <a href="#goref0000031">GO_REF:0000031 OBSOLETE NIAID Cell Ontology Workshop</a>
@@ -72,7 +72,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000074">GO_REF:0000074 Representation of export of a chemical as biological process in the Gene Ontology</a>
  * <a href="#goref0000075">GO_REF:0000075 Representation of transport of a chemical into a cellular component as biological process in the Gene Ontology</a>
  * <a href="#goref0000076">GO_REF:0000076 Representation of transport or vesicle-mediated transport from cell component to cell component as biological process in the Gene Ontology</a>
- * <a href="#goref0000077">GO_REF:0000077 OSBOLETE Representation of transport of a cellular component as biological process in the Gene Ontology</a>
+ * <a href="#goref0000077">GO_REF:0000077 OBSOLETE Representation of transport of a cellular component as biological process in the Gene Ontology</a>
  * <a href="#goref0000078">GO_REF:0000078 Representation for the transport or vesicle-mediated transport of a chemical from and/or to a cell component as biological process in the Gene Ontology</a>
  * <a href="#goref0000079">GO_REF:0000079 Representation of assembly or disassembly of a cell component as biological process in the Gene Ontology</a>
  * <a href="#goref0000080">GO_REF:0000080 Representation of plant development as biological process in the Gene Ontology</a>
@@ -102,16 +102,17 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000104">GO_REF:0000104 Electronic Gene Ontology annotations created by transferring manual GO annotations between related proteins based on shared sequence features.</a>
  * <a href="#goref0000105">GO_REF:0000105 Gene Ontology annotation of transfer RNAs based on tRNAscan-SE analysis of the Drosophila melanogaster genome (2002).</a>
  * <a href="#goref0000106">GO_REF:0000106 OBSOLETE Gene Ontology annotation based on protein sequence records.</a>
- * <a href="#goref0000107">GO_REF:0000107 Automatic transfer of experimentally verified manual GO annotation data to orthologs using Ensembl.</a>
+ * <a href="#goref0000107">GO_REF:0000107 Automatic transfer of experimentally verified manual GO annotation data to orthologs using Ensembl Compara.</a>
  * <a href="#goref0000108">GO_REF:0000108 Automatic assignment of GO terms using logical inference, based on on inter-ontology links.</a>
- * <a href="#goref0000109">GO_REF:0000109 Gene Ontology annotation based on curation of genome-wide subcellular localisation of proteins using fluorescent protein tagging in Trypanosoma brucei.</a>
+ * <a href="#goref0000109">GO_REF:0000109 Gene Ontology annotation based on curation of genome-wide subcellular localisation of proteins using fluorescent protein tagging in Trypanosoma brucei</a>
  * <a href="#goref0000110">GO_REF:0000110 Gene Ontology annotation of Drosophila melanogaster nuclear genes encoding proteins targeted to the mitochondrion.</a>
  * <a href="#goref0000111">GO_REF:0000111 Gene Ontology annotations Inferred by Curator (IC) using at least one Inferred by Sequence Similarity (ISS) annotation to support the inference</a>
  * <a href="#goref0000112">GO_REF:0000112 OBSOLETE Gene Ontology annotation by CACAO biocurators</a>
  * <a href="#goref0000113">GO_REF:0000113 Gene Ontology annotation of human sequence-specific DNA binding transcription factors (DbTFs) based on the TFClass database</a>
- * <a href="#goref0000114">GO_REF:0000114 Manual transfer of experimentally-verified manual GO annotation data to homologous complexes by curator judgment of sequence, composition and function similarity.</a>
- * <a href="#goref0000115">GO_REF:0000115 Automatic Gene Ontology annotation of non-coding RNA sequences through association of Rfam records with GO terms.</a>
+ * <a href="#goref0000114">GO_REF:0000114 Manual transfer of experimentally-verified manual GO annotation data to homologous complexes by curator judgment of sequence, composition and function similarity</a>
+ * <a href="#goref0000115">GO_REF:0000115 Automatic Gene Ontology annotation of non-coding RNA sequences through association of Rfam records with GO terms</a>
  * <a href="#goref0000116">GO_REF:0000116 Automatic Gene Ontology annotation based on Rhea mapping.</a>
+ * <a href="#goref0000117">GO_REF:0000117 Electronic Gene Ontology annotations created by ARBA machine learning models</a>
 
 
 
@@ -284,8 +285,7 @@ Pairwise alignments are generated by taking two sequences and aligning them so t
  * ext xref: GO_REF:nd
 
 
-
-The Gene Ontology (GO) Consortium created the evidence code "ND" (ECO:0000307) to indicate "no biological data available". This code is used for annotations to any of the three terms 'molecular function; GO:0003674', 'biological process; GO:0008150' or 'cellular component; GO:0005575'. In GO member databases, the use of any of these three GO terms, attributed to this reference and supported by the ND evidence code, signifies that a curator has examined the available literature and/or sequence for this gene or protein and that as of the date of the annotation to the root term, there is no information supporting an annotation to any GO term in that ontology. (Note that ND can be used with any one (or two) of the 'root' terms, even if there is data available to support annotation to a term from one or both of the other ontologies; e.g., ND can be used with GO:0008372 if the function and process are known but component is not).
+Direct annotations to any of the three root terms 'molecular function; GO:0003674', 'biological process; GO:0008150' or 'cellular component; GO:0005575' indicate that curators have found no data supporting an annotation to a more specific term, either in the literature and/or by sequence similarity for this gene or protein as of the date of the annotation.
 
 <a name="goref0000018"/>
 
@@ -421,7 +421,7 @@ This GO reference describes the criteria used in assigning the evidence code of 
 
 <a name="goref0000028"/>
 
-## Criteria for IDA, IEP, ISS, IGC, RCA, ND, and IEA assignment in PAMGO_MGG
+## Criteria for IDA, IEP, ISS, IGC, RCA, and IEA assignment in PAMGO_MGG
 
  * id: [GO_REF:0000028](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000028.md)
  * year: 2008
@@ -429,7 +429,7 @@ This GO reference describes the criteria used in assigning the evidence code of 
 
 
 
-This GO reference describes the criteria used in assigning the evidence codes of IDA (ECO:0000314), IEP (ECO:0000270), ISS (ECO:0000250), IGC (ECO_0000317), RCA (ECO:0000245), ND (ECO:0000307) and IEA (ECO:0000501) to annotate gene products from PAMGO_MGG. Standard BLASTP from NCBI was used (http://www.ncbi.nih.gov/blast) to iteratively search reciprocal best hits and thus identify orthologs between predicted proteins of Magnaporthe grisea and GO proteins from multiple organisms with published association to GO terms. The alignments were manually reviewed for those hits with e-value equal to zero and with 80% or better coverage of both query and subject sequences, and for those hits with e<=10^-20, pid >=35 and sequence coverage >=80%. Furthermore, experimental or reviewed data from literature and other sources were incorporated into the GO annotation. IDA was assigned to an annotation if normal function of its gene was determined through transfections into a cell line and overexpression. IEP was assigned to an annotation if according to microarray experiments, its gene was upregulated in a biological process and the fold change was equal to or bigger than 10, or if according to Massively Parallel Signature Sequencing (MPSS), its gene was upregulated only in a certain biological process and the fold change was equal to or bigger than 10. ISS was assigned to an annotation if the entry at the With_column was experimentally characterized and the pairwise alignments were manually reviewed. IGC was assigned to an annotation if it based on comparison and analysis of gene location and structure, clustering of genes, and phylogenetic reconstruction of these genes. RCA was assigned to an annotation if it based on integrated computational analysis of whole genome microarray data, and matches to InterPro, pfam, and COG etc. When no knowledge (experimental/computational) was available about a gene product in any one of the GO aspects, the gene product was annotated to the root term (GO:0005575 for Cellular Component, GO:0003674 for Molecular Function, and GO:0008150 for Biological Process), and was assigned an ND evidence code. IEA was assigned to an annotation if its function assignment based on computational work, and no manual review was done.
+This GO reference describes the criteria used in assigning the evidence codes of IDA (ECO:0000314), IEP (ECO:0000270), ISS (ECO:0000250), IGC (ECO_0000317), RCA (ECO:0000245) and IEA (ECO:0000501) to annotate gene products from PAMGO_MGG. Standard BLASTP from NCBI was used (http://www.ncbi.nih.gov/blast) to iteratively search reciprocal best hits and thus identify orthologs between predicted proteins of Magnaporthe grisea and GO proteins from multiple organisms with published association to GO terms. The alignments were manually reviewed for those hits with e-value equal to zero and with 80% or better coverage of both query and subject sequences, and for those hits with e<=10^-20, pid >=35 and sequence coverage >=80%. Furthermore, experimental or reviewed data from literature and other sources were incorporated into the GO annotation. IDA was assigned to an annotation if normal function of its gene was determined through transfections into a cell line and overexpression. IEP was assigned to an annotation if according to microarray experiments, its gene was upregulated in a biological process and the fold change was equal to or bigger than 10, or if according to Massively Parallel Signature Sequencing (MPSS), its gene was upregulated only in a certain biological process and the fold change was equal to or bigger than 10. ISS was assigned to an annotation if the entry at the With_column was experimentally characterized and the pairwise alignments were manually reviewed. IGC was assigned to an annotation if it based on comparison and analysis of gene location and structure, clustering of genes, and phylogenetic reconstruction of these genes. RCA was assigned to an annotation if it based on integrated computational analysis of whole genome microarray data, and matches to InterPro, pfam, and COG etc. IEA was assigned to an annotation if its function assignment based on computational work, and no manual review was done.
 
 <a name="goref0000029"/>
 
@@ -1041,7 +1041,7 @@ We have created a standard template for classes describing the transport or vesi
 
 <a name="goref0000077"/>
 
-## OSBOLETE Representation of transport of a cellular component as biological process in the Gene Ontology
+## OBSOLETE Representation of transport of a cellular component as biological process in the Gene Ontology
 
  * id: [GO_REF:0000077](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000077.md)
  * year: 2013
@@ -1406,7 +1406,7 @@ Between 1986 and 2005 GO annotations were made by FlyBase curators based on info
 
 <a name="goref0000107"/>
 
-## Automatic transfer of experimentally verified manual GO annotation data to orthologs using Ensembl.
+## Automatic transfer of experimentally verified manual GO annotation data to orthologs using Ensembl Compara.
 
  * id: [GO_REF:0000107](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000107.md)
  * year: 2016
@@ -1414,7 +1414,7 @@ Between 1986 and 2005 GO annotations were made by FlyBase curators based on info
 
 
 
-GO terms from a source species are projected onto one or more target species based on gene orthology obtained from Ensembl. One to one, one to many and many to many orthologies are used but annotations are only projected between orthologs that have at least a 40% peptide identity to each other. Only GO annotations with evidence codes ECO:0000314 (IDA), ECO:0000270 (IEP), ECO:0000316 (IGI), ECO:0000315 (IMP), and ECO:0000353 (IPI), or their descendants, are projected; annotations with a 'NOT' qualifier are not projected, and neither are annotations to GO:0005515 (protein binding). Annotations that are projected using this technique receive the evidence code ECO:0000265 (sequence orthology evidence used in automatic assertion), which maps up to the GO Inferred from Electronic Annotation (IEA) evidence code.  The model organism database identifier of the annotation source will be indicated in the 'With' column of the GOA association file.
+GO terms from a source species are projected onto one or more target species based on gene orthology obtained from Ensembl Compara. One-to-one, one-to-many and many-to-many orthology relations and anntations are transferred between orthologs that have at least a 40% peptide identity to each other. Only GO annotations with evidence codes ECO:0000314 (IDA), ECO:0000270 (IEP), ECO:0000316 (IGI), ECO:0000315 (IMP), and ECO:0000353 (IPI), or their descendants, are transferred; annotations with a 'NOT' qualifier are not transferred, and neither are annotations to GO:0005515 (protein binding). Annotations that are transferred using this method receive the evidence code ECO:0000265 (sequence orthology evidence used in automatic assertion), which maps up to the GO Inferred from Electronic Annotation (IEA) evidence code.  The model organism database identifier of the annotation source will be indicated in the 'With' column of the GOA association file.
 
 <a name="goref0000108"/>
 
@@ -1430,7 +1430,7 @@ GO terms are automatically assigned based on inter-ontology links to generate in
 
 <a name="goref0000109"/>
 
-## Gene Ontology annotation based on curation of genome-wide subcellular localisation of proteins using fluorescent protein tagging in Trypanosoma brucei.
+## Gene Ontology annotation based on curation of genome-wide subcellular localisation of proteins using fluorescent protein tagging in Trypanosoma brucei
 
  * id: [GO_REF:0000109](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000109.md)
  * year: 2016
@@ -1494,7 +1494,7 @@ The NTNU curation team has evaluated each family and assigned a molecular functi
 
 <a name="goref0000114"/>
 
-## Manual transfer of experimentally-verified manual GO annotation data to homologous complexes by curator judgment of sequence, composition and function similarity.
+## Manual transfer of experimentally-verified manual GO annotation data to homologous complexes by curator judgment of sequence, composition and function similarity
 
  * id: [GO_REF:0000114](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000114.md)
  * year: 2018
@@ -1506,7 +1506,7 @@ Method for transferring manual annotations to an entry based on a curator's judg
 
 <a name="goref0000115"/>
 
-## Automatic Gene Ontology annotation of non-coding RNA sequences through association of Rfam records with GO terms.
+## Automatic Gene Ontology annotation of non-coding RNA sequences through association of Rfam records with GO terms
 
  * id: [GO_REF:0000115](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000115.md)
  * year: 2018
@@ -1538,3 +1538,15 @@ or for further information, please visit the RNAcentral website at http://rnacen
 
 
 Rhea (https://www.rhea-db.org/, PMID:30272209) is an expert-curated knowledgebase of chemical and transport reactions of biological interest - and the standard for enzyme and transporter annotation in UniProtKB (PMID:31688925). Rhea uses the chemical dictionary ChEBI (Chemical Entities of Biological Interest) to describe reaction participants and their chemical transformations in a computationally tractable manner. GO terms corresponding to Rhea reactions are assigned a Rhea database cross-reference. The corresponding GO term is automatically applied to all UniProt entries annotated with a Rhea reaction. The mapping file is available at: http://current.geneontology.org/ontology/external2go/rhea2go.
+
+<a name="goref0000117"/>
+
+## Electronic Gene Ontology annotations created by ARBA machine learning models
+
+ * id: [GO_REF:0000117](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000117.md)
+ * year: 2021
+ * authors: UniProt
+
+
+
+Association-Rule-Based Annotator (ARBA) predicts Gene Ontology (GO) terms among other types of functional annotation such as Protein Description (DE), Keywords (KW), Enzyme Commission numbers (EC), subcellular LOcation (LO), etc. For all annotation types, reviewed UniProtKB/Swiss-Prot records having manual annotations as reference data are used to perform the machine learning phase and generate prediction models. For GO terms, ARBA has an additional feature to augment reference data using the relations between GO terms in the GO graph. The data augmentation is based on adding more general annotations into records containing manual GO terms, which will result in richer reference data. The predicted GO terms are then propagated to all unreviewed UniProtKB/TrEMBL proteins that meet the conditions of ARBA models. GO annotations using this technique receive the evidence code Inferred from Electronic Annotation (IEA; ECO:0000501). 

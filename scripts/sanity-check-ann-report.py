@@ -259,6 +259,7 @@ def main():
         reduction_threshold = {
             "gramene_oryza": 0.3,
             "goa_chicken_complex": 0.3,
+            "aspgd": 0.1,
             "ecocyc": 0.3
         }
         if severe_line_reduction_test(aid, reduction_threshold, count_gaf_prod, count_gaf_src, small_file_size):
