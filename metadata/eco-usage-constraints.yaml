@@ -269,13 +269,6 @@ eco_usage_constraints:
   - eco_id: ECO:0005547
     with_presence: disallowed
   - eco_id: ECO:0005543
-    with_presence: optional
-    with_structure: compound
-    with_entities:
-      - entity_type: *protein
-      - entity_type: *chemical_entity
-      - entity_type: *gene
-      - entity_type: *protein_complex
-      - entity_type: *rna
+    with_presence: disallowed
   - eco_id: ECO:0005542
     with_presence: disallowed
