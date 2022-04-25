@@ -97,7 +97,6 @@ SUPPRESS_THESE_TAGS = $(foreach tag,$(GORULE_TAGS_TO_SUPPRESS),--suppress-rule-r
 	--gaf $*.gaf \
 	--createReport \
 	--gaf-report-file $*-owltools-check.txt \
-	--gaf-report-summary-file $*-summary.txt \
 	--gaf-prediction-file $*-prediction.gaf \
 	--gaf-prediction-report-file $*-prediction-report.txt \
 	--gaf-validation-unsatisfiable-module $*-incoherent.owl \
@@ -139,7 +138,6 @@ target/groups/goa/goa_uniprot_all_noiea-owltools-check.txt: target/groups/goa/go
 	--gaf target/groups/goa/goa_uniprot_all_noiea.gaf \
 	--createReport \
 	--gaf-report-file $*-owltools-check.txt \
-	--gaf-report-summary-file $*-summary.txt \
 	--gaf-prediction-file $*-prediction.gaf \
 	--gaf-prediction-report-file $*-prediction-report.txt \
 	--gaf-validation-unsatisfiable-module $*-incoherent.owl \
