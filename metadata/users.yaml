@@ -4429,3 +4429,16 @@
   nickname: 'Manu Lera Ramirez'
   organization: PomBase
   uri: 'https://orcid.org/0000-0002-8666-9746'
+-
+  accounts:
+    github: kimrutherford
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.pombase.org'
+  nickname: 'Kim Rutherford'
+  organization: PomBase
+  uri: 'https://orcid.org/0000-0001-6277-726X'
+  
