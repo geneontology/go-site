@@ -426,7 +426,7 @@
   label: 'DisProt'
   id: https://disprot.org
   shorthand: DisProt
-  -
+ -
   label: 'Cornell University'
   id: https://www.cornell.edu
   shorthand: CU
