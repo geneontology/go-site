@@ -4449,7 +4449,7 @@
       go:
         allow-edit: true
   groups:
-    - 'https://www.cornell.edu/'
+    - 'https://www.cornell.edu'
   nickname: 'Gaurav Moghe'
   organization: 'Cornell University'
   uri: 'https://orcid.org/0000-0002-8761-064X'
