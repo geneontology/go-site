@@ -4453,4 +4453,15 @@
   nickname: 'Gaurav Moghe'
   organization: 'Cornell University'
   uri: 'https://orcid.org/0000-0002-8761-064X'
-  
+-
+  accounts:
+    github: federicaquaglia
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://disprot.org'
+  nickname: 'Federica Quaglia'
+  organization: 'DisProt'
+  uri: 'https://orcid.org/0000-0002-0341-4888'  
