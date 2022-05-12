@@ -9,7 +9,7 @@ BBOP,Chris Mungall,@cmungall,All things technical and ontology-related
 BBOP,Sierra Moxon,@sierra-moxon,Pipeline
 BBOP,Mark A. Miller,@turbomam,microbial proteomics | 16S metagenomics | biomedical semantics
 BHF-UCL,Ruth Lovering,@RLovering,
-Buffalo University,Alex Diehl,@addiehl,
+Buffalo University,Alex Diehl,@addiehl,immunology
 CACAO,Debbie Siegle,@dsiegele,
 CACAO,Jolene Ramsey,@jrr-cpt,
 CAFA,EBI,@Antonialock,
@@ -18,7 +18,7 @@ CollectTF,Ivan Erill,@ivanerill,
 CollectTF,General email,collectf@umbc.edu,
 Complex Portal,Kalpana Panneerselvam,@kalpanap,
 Cornell University,Gaurav Moghe,@moghelab, Plant biology
-DFLAT,Not actively maintainted/GO_Central,@pgarmiri,
+DFLAT,Not actively maintainted/GO_Central,@Antonialock,
 DFLAT,Not actively maintainted/GO_Central,@pgaudet,
 DFLAT,Not actively maintainted/GO_Central,@vanaukenk,
 DIBU - DiBest-Unical,Simona Panni,@simonapanni,
@@ -32,10 +32,12 @@ ECO - Evidence and Conclusion Ontology,Suvvi Nadendla,@nsuvarnaiari,
 ECO - Evidence and Conclusion Ontology,James Munro,@jbmunro,
 ECO - Evidence and Conclusion Ontology,Becky Tauber,@rctauber,
 EcoliWiki,Debbie Siegele,@dsiegele,
-Ensembl,Kevin Howe (EBI),@khowe,
+EcoCyc,Amanda Mackie,@amandamackie,
+Ensembl,,,
 Eurofung,,,
 FlyBase,Helen Attrill,@hattrill,
 FlyBase,Giulia Antonazzo,@gantonazzo,
+FlyBase,Steven Marygold,@sjm41,
 GDB,EBI/GOC,@Antonialock,
 GDB,EBI/GOC,@pgaudet,
 GeneDB,Achchuthan Shanmugasundram,@Achchuthan,
@@ -62,7 +64,7 @@ InterPro,Beatriz Lazaro Pinto,@blazaropinto,
 JaponicusDB,Snezka Oliferenko,@snezhkaoliferenko,
 JaponicusDB,Midori Harris,@mah11,
 JCVI,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
-JCVI,Not actively maintainted/GO_Central,@pgarmiri,contact @mgiglio99 for queries
+JCVI,Not actively maintainted/GO_Central,@Antonialock,contact @mgiglio99 for queries
 JCVI,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
 LIFEdb,Stefan Wiemann,s.wiemann AT dkfz-heidelberg.de,
 LIFEdb,GO_Central,@pgaudet,
@@ -70,7 +72,7 @@ LIFEdb,GO_Central,@vanaukenk,
 LIFEdb,EBI,@pgarmiri,
 MENGO,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
 MENGO,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
-MENGO,Not actively maintainted/GO_Central,@pgarmiri,contact @mgiglio99 for queries
+MENGO,Not actively maintainted/GO_Central,@Antonialock,contact @mgiglio99 for queries
 MGI,Karen Christie,@krchristie,
 MGI,Harold Drabkin,@hdrabkin,tRNA biology and translation
 MGI,David Hill,@ukemi,
@@ -84,10 +86,10 @@ PAINT,Marc Feurmann,@marcfeuermann,
 PAINT,Huaiyu Mi,@huaiyumi,
 PAINT Software, Anushya Muruganujan,@mugitty,PAINT software developer
 PAMGO_GAT,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
-PAMGO_GAT,Not actively maintainted/GO_Central,@pgarmiri,contact @mgiglio99 for queries
+PAMGO_GAT,Not actively maintainted/GO_Central,@Antonialock,contact @mgiglio99 for queries
 PAMGO_GAT,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
 PAMGO_MGG,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
-PAMGO_MGG,Not actively maintainted/GO_Central,@pgarmiri,contact @mgiglio99 for queries
+PAMGO_MGG,Not actively maintainted/GO_Central,@Antonialock,contact @mgiglio99 for queries
 PAMGO_MGG,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
 PAMGO_VMD,,,
 ParkinsonsUK-UCL,Ruth Lovering,@RLovering,
@@ -125,7 +127,7 @@ SGD,Stacia Engel,@srengel,
 SGD,Suzi Aleksander,@suzialeksander,
 SGN,Lukas Mueller,@lukasmueller,
 SynGO,Frank Koopmans,@ftwkoopmans,
-SynGO-UCL,,,
+SynGO-UCL,Ruth Lovering,,
 SYSCILIA_CCNET,Karen Christie,@krchristie,
 TAIR,Tanya Berardini,@tberardini,Plant biology
 TAIR,Leonore Reiser,@lreiser,Plant biology
