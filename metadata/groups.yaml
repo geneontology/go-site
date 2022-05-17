@@ -430,4 +430,7 @@
   label: 'Cornell University'
   id: https://www.cornell.edu
   shorthand: CU
-  
+-
+  label: 'de Crecy Lagard'
+  id: https://microcell.ufl.edu/people/valerie-de-crecy-lagard
+  shorthand: deCL
