@@ -4465,3 +4465,16 @@
   nickname: 'Federica Quaglia'
   organization: 'DisProt'
   uri: 'https://orcid.org/0000-0002-0341-4888'  
+-
+  accounts:
+    github: dexink
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://microcell.ufl.edu/people/valerie-de-crecy-lagard'
+  nickname: 'Colbie Reed'
+  organization: 'de Crécy-Lagard'
+  uri: 'https://orcid.org/0000-0002-5039-2052'
+ 
