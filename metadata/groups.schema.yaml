@@ -19,6 +19,10 @@ sequence:
         type: str
         required: true
         unique: true
+      "parent_group":
+        type: str
+        required: false
+        unique: false
       "shorthand":
         type: str
         required: false
