@@ -3203,6 +3203,7 @@
   authorizations:
     noctua:
       go:
+        allow-admin: true
         allow-edit: true
   email-md5:
     - 4c6434117cef942c05aaeee7e0bec853
