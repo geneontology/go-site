@@ -536,4 +536,8 @@
   id: https://www.cornell.edu
   shorthand: CU
   parent_group: GOC
-  
+-
+  label: 'University of Florida Orphan Proteins Project'
+  id: www.ufl.edu
+  shorthand: UF_OPP
+  parent_group: PomBase
