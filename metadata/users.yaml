@@ -439,7 +439,7 @@
 -
   nickname: 'Michael Ashburner'
   organization: FlyBase
-  uri: 'GOC:ma'
+  uri: 'https://orcid.org/0000-0002-6962-2807'
   xref: 'GOC:ma'
 -
   accounts:
@@ -486,7 +486,7 @@
 -
   nickname: 'Matt Berriman'
   organization: GeneDB_Pfalciparum
-  uri: 'GOC:mb'
+  uri: 'https://orcid.org/0000-0002-9581-0377'
   xref: 'GOC:mb'
 -
   nickname: 'Linda Groocock'
@@ -523,7 +523,7 @@
 -
   nickname: 'Cath Brooksbank'
   organization: 'GO Central'
-  uri: 'GOC:ceb'
+  uri: 'https://orcid.org/0000-0001-9395-7001'
   xref: 'GOC:ceb'
 -
   nickname: 'Curators at GO editorial office'
@@ -533,7 +533,7 @@
 -
   nickname: 'Jennifer Deegan (nee Clark)'
   organization: 'GO Central'
-  uri: 'GOC:jid'
+  uri: 'https://orcid.org/0000-0001-9227-417X'
   xref: 'GOC:jid'
 -
   authorizations:
@@ -1172,7 +1172,7 @@
     - 'http://rgd.mcw.edu'
   nickname: 'Stan Laulederkind'
   organization: RGD
-  uri: 'https://orcid.org/0000-0001-5356-4174-4174'
+  uri: 'https://orcid.org/0000-0001-5356-4174'
   xref: 'GOC:sl'
 -
   nickname: 'Simon Twigger'
@@ -1231,7 +1231,7 @@
 -
   nickname: 'Chandra Theesfeld'
   organization: SGD
-  uri: 'GOC:clt'
+  uri: 'https://orcid.org/0000-0002-8379-6600'
   xref: 'GOC:clt'
 -
   nickname: 'Curators at SGD'
@@ -1274,7 +1274,7 @@
 -
   nickname: 'Eurie Hong'
   organization: SGD
-  uri: 'GOC:elh'
+  uri: 'https://orcid.org/0000-0002-1775-4998'
   xref: 'GOC:elh'
 -
   nickname: 'Janos Demeter'
@@ -1456,7 +1456,7 @@
 -
   nickname: 'Kate Dreher'
   organization: TAIR
-  uri: 'GOC:kad'
+  uri: 'https://orcid.org/0000-0003-4652-4398'
   xref: 'GOC:kad'
 -
   nickname: 'Katica Ilic'
@@ -1537,7 +1537,7 @@
 -
   nickname: 'Linda Hannick'
   organization: JCVI
-  uri: 'GOC:lh'
+  uri: 'https://orcid.org/0000-0002-8018-8466'
   xref: 'GOC:lh'
 -
   nickname: 'Scott Durkin'
@@ -1547,7 +1547,7 @@
 -
   nickname: 'Erika Feltrin'
   organization: TRAIT
-  uri: 'GOC:ef'
+  uri: 'https://orcid.org/0000-0002-9899-7456'
   xref: 'GOC:ef'
 -
   nickname: 'Lorenza Mittempergher'
@@ -3203,6 +3203,7 @@
   authorizations:
     noctua:
       go:
+        allow-admin: true
         allow-edit: true
   email-md5:
     - 4c6434117cef942c05aaeee7e0bec853
@@ -4405,3 +4406,76 @@
   nickname: 'Kalpana Panneerselvam'
   organization: IntAct
   uri: 'https://orcid.org/0000-0003-2534-198X'
+-
+  accounts:
+    github: tgroth58
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.buffalo.edu'
+  nickname: 'Theodore Groth'
+  organization: 'University at Buffalo'
+  uri: 'https://orcid.org/0000-0003-4553-6899'
+-
+  accounts:
+    github: manulera
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.pombase.org'
+  nickname: 'Manu Lera Ramirez'
+  organization: PomBase
+  uri: 'https://orcid.org/0000-0002-8666-9746'
+-
+  accounts:
+    github: kimrutherford
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.pombase.org'
+  nickname: 'Kim Rutherford'
+  organization: PomBase
+  uri: 'https://orcid.org/0000-0001-6277-726X'
+-
+  accounts:
+    github: moghelab
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.cornell.edu'
+  nickname: 'Gaurav Moghe'
+  organization: 'Cornell University'
+  uri: 'https://orcid.org/0000-0002-8761-064X'
+-
+  accounts:
+    github: federicaquaglia
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://disprot.org'
+  nickname: 'Federica Quaglia'
+  organization: 'DisProt'
+  uri: 'https://orcid.org/0000-0002-0341-4888'  
+-
+  accounts:
+    github: dexink
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'www.ufl.edu'
+  nickname: 'Colbie Reed'
+  organization: 'UF_OPP'
+  uri: 'https://orcid.org/0000-0002-5039-2052'
+ 
