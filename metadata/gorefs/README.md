@@ -322,7 +322,7 @@ GO terms from a source species are projected on to one or more target species ba
 
 
 
-GO terms are manually assigned to each HAMAP family rule. High-quality Automated and Manual Annotation of microbial Proteins (HAMAP) family rules are a collection of orthologous microbial protein families, from bacteria, archaea and plastids, generated manually by expert curators. The assigned GO terms are then transferred to all the proteins that belong to each HAMAP family. Only GO terms from the molecular function and biological process ontologies are assigned. GO annotations using this technique will receive the evidence code Inferred from Electronic Annotation (IEA). These annotations are updated monthly by HAMAP and are available for download on both GO and GOA EBI ftp sites. To report an annotation error or inconsistency, or for further information, please contact the GO Consortium at gohelp@genome.stanford.edu or submit a comment the SourceForge Annotation Issues tracker (http://sourceforge.net/projects/geneontology/). HAMAP is a project based at the Swiss Institute of Bioinformatics (Gattiker et al. 2003, Comp. Biol and Chem. 27: 49-58). For further information, please see http://www.expasy.org/sprot/hamap/.
+GO terms are manually assigned to each HAMAP family rule. High-quality Automated and Manual Annotation of microbial Proteins (HAMAP) family rules are a collection of orthologous microbial protein families, from bacteria, archaea and plastids, generated manually by expert curators. The assigned GO terms are then transferred to all the proteins that belong to each HAMAP family. Only GO terms from the molecular function and biological process ontologies are assigned. GO annotations using this technique will receive the evidence code Inferred from Electronic Annotation (IEA). These annotations are updated monthly by HAMAP and are available for download on both GO and GOA EBI ftp sites. To report an annotation error or inconsistency, or for further information, please contact the GO Consortium at help@geneontology.org or submit a comment the SourceForge Annotation Issues tracker (http://sourceforge.net/projects/geneontology/). HAMAP is a project based at the Swiss Institute of Bioinformatics (Gattiker et al. 2003, Comp. Biol and Chem. 27: 49-58). For further information, please see http://www.expasy.org/sprot/hamap/.
 
 <a name="goref0000021"/>
 
@@ -492,7 +492,7 @@ Duplicate of GO_REF:0000108.
  * ext xref: SGD_REF:S000146947
  * ext xref: TAIR:Communication:501741973
  * ext xref: MGI:MGI:4459044
- * ext xref: J:161428 
+ * ext xref: J:161428
  * ext xref: ZFIN:ZDB-PUB-110330-1
  * ext xref: FB:FBrf0232076
 
@@ -597,7 +597,7 @@ Transitive assignment of GO terms based on the UniProtKB Subcellular Location vo
 
 <a name="goref0000041"/>
 
-## Gene Ontology annotation based on UniPathway vocabulary mapping. 
+## Gene Ontology annotation based on UniPathway vocabulary mapping.
 
  * id: [GO_REF:0000041](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000041.md)
  * year: 2012
@@ -610,7 +610,7 @@ Transitive assignment of GO terms based on the UniPathway pathway vocabulary. Un
 
 <a name="goref0000042"/>
 
-## OBSOLETE Gene Ontology annotation through association of InterPro records with GO terms, accompanied by conservative changes to GO terms applied by UniProt. 
+## OBSOLETE Gene Ontology annotation through association of InterPro records with GO terms, accompanied by conservative changes to GO terms applied by UniProt.
 
  * id: [GO_REF:0000042](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000042.md)
  * year: 2012
@@ -643,7 +643,7 @@ When a UniProtKB keyword describes a concept that is within the scope of the Gen
 
 <a name="goref0000044"/>
 
-## Gene Ontology annotation based on UniProtKB/Swiss-Prot Subcellular Location vocabulary mapping, accompanied by conservative changes to GO terms applied by UniProt. 
+## Gene Ontology annotation based on UniProtKB/Swiss-Prot Subcellular Location vocabulary mapping, accompanied by conservative changes to GO terms applied by UniProt.
 
  * id: [GO_REF:0000044](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000044.md)
  * year: 2012
@@ -654,7 +654,7 @@ When a UniProtKB keyword describes a concept that is within the scope of the Gen
 
 
 Transitive assignment of GO terms based on the UniProtKB/Swiss-Prot Subcellular Location vocabulary. UniProtKB Subcellular Location is a controlled vocabulary used to supply subcellular location information to UniProtKB entries in the SUBCELLULAR LOCATION lines. Terms from this vocabulary are annotated manually to UniProtKB/Swiss-Prot entries but are automatically assigned to UniProtKB/TrEMBL entries from the underlying nucleic acid databases and/or by the UniProt automatic annotation program.
-Further information on these two different annotation methods is available https://www.uniprot.org/help/keywords. 
+Further information on these two different annotation methods is available https://www.uniprot.org/help/keywords.
 When a UniProtKB Subcellular Location term describes a concept that is within the scope of the Gene Ontology, a mapping is manually made to the corresponding GO term. The translation table between GO terms and UniProtKB Subcellular Location term is maintained by the EBI GOA team and available at http://www.geneontology.org/external2go/spsl2go.
 
 <a name="goref0000045"/>
@@ -769,7 +769,7 @@ GO Cellular Component terms are manually assigned by curators studying high reso
 
  * id: [GO_REF:0000053](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000053.md)
  * year: 2013
- * authors: GO ontology editors 
+ * authors: GO ontology editors
 
 
 
@@ -809,11 +809,11 @@ Assignment of GO Cellular Component terms based on experimental evidence of cell
 
 
 
-GO is intended to cover the full range of species, therefore GO terms are defined to be taxon neutral, avoiding reliance on taxon information for full definition of the given process, function, or component. For certain terms, however, there is obvious implicit taxon specificity, such that the term should only be used to categorize gene products from particular species. Taxon specificity of GO terms is captured using relationships such as "only_in_taxon" and "never_in_taxon". All taxon constraints are inherited by sub-types and parts of the GO term they are applied to. Taxon constraints are used to prevent inappropriate annotations from being made by curators as well as to identify pre-existing annotations that violate the taxon constraints. Errors in annotations are automatically detected by looking for inconsistencies between the taxonomic origin of the annotated gene products and the implicit taxon specificity of the GO terms. The inconsistencies are passed on to curators for correction, in some cases the constraints need to be tightened or relaxed or the structure of the ontology needs to be adjusted. The taxon constraints are further described in this publication: Deegan, Dimmer and Mungall. BMC Bionformatics (2010) Formalization of taxon-based constraints to detect inconsistencies in annotaiton and ontology development. (PMID:20973947). 
+GO is intended to cover the full range of species, therefore GO terms are defined to be taxon neutral, avoiding reliance on taxon information for full definition of the given process, function, or component. For certain terms, however, there is obvious implicit taxon specificity, such that the term should only be used to categorize gene products from particular species. Taxon specificity of GO terms is captured using relationships such as "only_in_taxon" and "never_in_taxon". All taxon constraints are inherited by sub-types and parts of the GO term they are applied to. Taxon constraints are used to prevent inappropriate annotations from being made by curators as well as to identify pre-existing annotations that violate the taxon constraints. Errors in annotations are automatically detected by looking for inconsistencies between the taxonomic origin of the annotated gene products and the implicit taxon specificity of the GO terms. The inconsistencies are passed on to curators for correction, in some cases the constraints need to be tightened or relaxed or the structure of the ontology needs to be adjusted. The taxon constraints are further described in this publication: Deegan, Dimmer and Mungall. BMC Bionformatics (2010) Formalization of taxon-based constraints to detect inconsistencies in annotaiton and ontology development. (PMID:20973947).
 
 <a name="goref0000058"/>
 
-## Representation of regulation in the Gene Ontology (biological process) 
+## Representation of regulation in the Gene Ontology (biological process)
 
  * id: [GO_REF:0000058](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000058.md)
  * year: 2013
@@ -825,7 +825,7 @@ We have created a standard template for the definition of classes for the regula
 
 <a name="goref0000059"/>
 
-## Representation of regulation in the Gene Ontology (molecular function) 
+## Representation of regulation in the Gene Ontology (molecular function)
 
  * id: [GO_REF:0000059](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000059.md)
  * year: 2013
@@ -1280,7 +1280,7 @@ This article is not referenced in PubMed. Please see contributing data resource 
 
 
 
-Mouse Genome Database (MGD), The HUGO Gene Nomenclature Committee (HGNC), and Rat Genome Database (RGD) have extensive procedures in place, overseen by expert curation, to establish orthology relationships between their genes. The Experimentally based annotations annotated by each group (IDA, IMP IPI, IGI, and EXP) are used to provide annotations  to the respective mouse and rat orthologs, and given the ISO evidence code and an entry in the inferred_from field to indicate the orthologous entity. 
+Mouse Genome Database (MGD), The HUGO Gene Nomenclature Committee (HGNC), and Rat Genome Database (RGD) have extensive procedures in place, overseen by expert curation, to establish orthology relationships between their genes. The Experimentally based annotations annotated by each group (IDA, IMP IPI, IGI, and EXP) are used to provide annotations  to the respective mouse and rat orthologs, and given the ISO evidence code and an entry in the inferred_from field to indicate the orthologous entity.
 
 <a name="goref0000097"/>
 
@@ -1488,9 +1488,9 @@ This GO reference describes the criteria used by biocurators participating in th
 
 
 
-The TFClass (http://tfclass.bioinf.med.uni-goettingen.de/index.jsf) database provides a comprehensive classification of mammalian DNA binding transcription factors (DbTFs) based on their DNA binding domains (DBDs) (PMID:29087517). TFClass classifies mammalian DbTFs by a five-level classification in which the four highest levels represent groups defined by structural and sequence similarities (superclass, class, family, subfamily, and genera) (more details at http://www.edgar-wingender.de/TFClass_schema.html). This classification is based on the combination of background knowledge of the molecular structural features of DBDs (PMID:9340487, PMID:23427989) and phylogenetic trees constructed via multiple sequence alignment with hierarchical clustering of manually validated DBDs and/or full-length protein sequences retrieved from UniProt (PMID:23427989, PMID:23180794, PMID:23427989). 
+The TFClass (http://tfclass.bioinf.med.uni-goettingen.de/index.jsf) database provides a comprehensive classification of mammalian DNA binding transcription factors (DbTFs) based on their DNA binding domains (DBDs) (PMID:29087517). TFClass classifies mammalian DbTFs by a five-level classification in which the four highest levels represent groups defined by structural and sequence similarities (superclass, class, family, subfamily, and genera) (more details at http://www.edgar-wingender.de/TFClass_schema.html). This classification is based on the combination of background knowledge of the molecular structural features of DBDs (PMID:9340487, PMID:23427989) and phylogenetic trees constructed via multiple sequence alignment with hierarchical clustering of manually validated DBDs and/or full-length protein sequences retrieved from UniProt (PMID:23427989, PMID:23180794, PMID:23427989).
 
-The NTNU curation team has evaluated each family and assigned a molecular function annotation, GO:0000981 (DNA-binding transcription factor activity, RNA polymerase II-specific), and a cellular component annotation GO:0000790 (nuclear chromatin), as appropriate. The superclass/class/family or subfamily ID is specified in the "With/From" field. The annotations are supported by the evidence code ECO:0005556 (multiple sequence alignment evidence used in manual assertion). 
+The NTNU curation team has evaluated each family and assigned a molecular function annotation, GO:0000981 (DNA-binding transcription factor activity, RNA polymerase II-specific), and a cellular component annotation GO:0000790 (nuclear chromatin), as appropriate. The superclass/class/family or subfamily ID is specified in the "With/From" field. The annotations are supported by the evidence code ECO:0005556 (multiple sequence alignment evidence used in manual assertion).
 
 <a name="goref0000114"/>
 
@@ -1520,10 +1520,10 @@ a comprehensive collection of non-coding RNA sequences that are regularly annota
 using the Infernal software (PMID:24008419). When a non-coding RNA sequence is matched to one or more Rfam families
 by sequence similarity, the GO terms associated with the Rfam family are transitively assigned to the non-coding RNA sequence.
 Annotations resulting from the transfer of GO terms are assigned the ECO:0000256 evidence code
-(match to sequence model evidence used in automatic assertion) and include RNAcentral and Rfam accessions. 
-The annotations are available on the GOA and EMBL-EBI FTP sites. 
-The mapping between Rfam families and GO terms is available at http://www.geneontology.org/external2go/rfam2go, 
-and the Infernal software can be downloaded at http://eddylab.org/infernal. To report an annotation error or inconsistency, 
+(match to sequence model evidence used in automatic assertion) and include RNAcentral and Rfam accessions.
+The annotations are available on the GOA and EMBL-EBI FTP sites.
+The mapping between Rfam families and GO terms is available at http://www.geneontology.org/external2go/rfam2go,
+and the Infernal software can be downloaded at http://eddylab.org/infernal. To report an annotation error or inconsistency,
 or for further information, please visit the RNAcentral website at http://rnacentral.org.
 
 <a name="goref0000116"/>
@@ -1549,4 +1549,4 @@ Rhea (https://www.rhea-db.org/, PMID:30272209) is an expert-curated knowledgebas
 
 
 
-Association-Rule-Based Annotator (ARBA) predicts Gene Ontology (GO) terms among other types of functional annotation such as Protein Description (DE), Keywords (KW), Enzyme Commission numbers (EC), subcellular LOcation (LO), etc. For all annotation types, reviewed UniProtKB/Swiss-Prot records having manual annotations as reference data are used to perform the machine learning phase and generate prediction models. For GO terms, ARBA has an additional feature to augment reference data using the relations between GO terms in the GO graph. The data augmentation is based on adding more general annotations into records containing manual GO terms, which will result in richer reference data. The predicted GO terms are then propagated to all unreviewed UniProtKB/TrEMBL proteins that meet the conditions of ARBA models. GO annotations using this technique receive the evidence code Inferred from Electronic Annotation (IEA; ECO:0000501). 
+Association-Rule-Based Annotator (ARBA) predicts Gene Ontology (GO) terms among other types of functional annotation such as Protein Description (DE), Keywords (KW), Enzyme Commission numbers (EC), subcellular LOcation (LO), etc. For all annotation types, reviewed UniProtKB/Swiss-Prot records having manual annotations as reference data are used to perform the machine learning phase and generate prediction models. For GO terms, ARBA has an additional feature to augment reference data using the relations between GO terms in the GO graph. The data augmentation is based on adding more general annotations into records containing manual GO terms, which will result in richer reference data. The predicted GO terms are then propagated to all unreviewed UniProtKB/TrEMBL proteins that meet the conditions of ARBA models. GO annotations using this technique receive the evidence code Inferred from Electronic Annotation (IEA; ECO:0000501).
