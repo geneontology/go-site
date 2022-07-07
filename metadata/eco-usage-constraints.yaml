@@ -106,6 +106,7 @@ eco_usage_constraints:
     with_structure: simple
     with_entities:
       - entity_type: *polypeptide_region
+      - entity_type: *protein
       - entity_type: *rule
       - entity_type: *protein_family
   - eco_id: ECO:0000321
