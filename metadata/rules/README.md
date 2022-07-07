@@ -63,7 +63,6 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000058">GORULE:0000058 Object extensions should conform to the extensions-patterns.yaml file in metadata</a>
  * <a href="#gorule0000059">GORULE:0000059 GAF Version 2.0 and 2.1 are converted into GAF Version 2.2</a>
  * <a href="#gorule0000061">GORULE:0000061 Allowed gene product to term relations (gp2term)</a>
- * <a href="#gorule0000062">GORULE:0000062 Infer annotations on molecular function via has_part</a>
 
 
 
@@ -1070,13 +1069,3 @@ GAF2.2 files require a gene product to term (gp2term) relation in Column 4. Allo
     
 * If an annotation has a negation (`NOT`), is is kept as a pipe-separated value with the gp2term relation.
 
-
-<a name="gorule0000062"/>
-
-## Infer annotations on molecular function via has_part
-
- * id: [GORULE:0000062](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000062.md)
- * status: approved
-
-
-For any annotation to a molecular function MF-X, infer annotation to all MFs that stand in a has_part relationship to MF-X, except if the annotation uses the 'contributes_to' qualifier, then do not infer annotations from the has_part relationship to MF-X.
