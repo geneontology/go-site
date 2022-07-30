@@ -22,7 +22,7 @@ title: "SHORT DESCRIPTIVE TITLE"
 type: filter/repair/report
 fail_mode: soft/hard
 status: proposed/approved/implemented/deprecated
-contact: "go-quality@mailman.stanford.edu" or your GITHUB handle for proposed rules
+contact: "go-quality@lists.stanford.edu" or your GITHUB handle for proposed rules
 implementations:
 ---
 

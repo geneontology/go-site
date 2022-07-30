@@ -3203,6 +3203,7 @@
   authorizations:
     noctua:
       go:
+        allow-admin: true
         allow-edit: true
   email-md5:
     - 4c6434117cef942c05aaeee7e0bec853
@@ -4417,3 +4418,64 @@
   nickname: 'Theodore Groth'
   organization: 'University at Buffalo'
   uri: 'https://orcid.org/0000-0003-4553-6899'
+-
+  accounts:
+    github: manulera
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.pombase.org'
+  nickname: 'Manu Lera Ramirez'
+  organization: PomBase
+  uri: 'https://orcid.org/0000-0002-8666-9746'
+-
+  accounts:
+    github: kimrutherford
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.pombase.org'
+  nickname: 'Kim Rutherford'
+  organization: PomBase
+  uri: 'https://orcid.org/0000-0001-6277-726X'
+-
+  accounts:
+    github: moghelab
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.cornell.edu'
+  nickname: 'Gaurav Moghe'
+  organization: 'Cornell University'
+  uri: 'https://orcid.org/0000-0002-8761-064X'
+-
+  accounts:
+    github: federicaquaglia
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://disprot.org'
+  nickname: 'Federica Quaglia'
+  organization: 'DisProt'
+  uri: 'https://orcid.org/0000-0002-0341-4888'  
+-
+  accounts:
+    github: dexink
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'www.ufl.edu'
+  nickname: 'Colbie Reed'
+  organization: 'UF_OPP'
+  uri: 'https://orcid.org/0000-0002-5039-2052'
+ 
