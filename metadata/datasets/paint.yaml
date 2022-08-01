@@ -123,7 +123,7 @@ datasets:
    dataset: paint_other
    submitter: paint
    compression: gzip
-   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_other.gaf.gz
+   source: ftp://ftp.pantherdb.org/downloads/paint/test/15.0/2022-07-29/presubmission/gene_association.paint_other.gaf.gz
    entity_type:
    status: active
    species_code:
@@ -213,6 +213,23 @@ datasets:
    taxa:
     - NCBITaxon:6239
    merges_into: wb
+
+ -
+   id: paint_xenbase.gaf
+   label: "paint_xenbase gaf file"
+   description: "gaf file for paint_xenbase from PAINT"
+   type: gaf
+   dataset: paint_xenbase
+   submitter: paint
+   compression: gzip
+   source: ftp://ftp.pantherdb.org/downloads/paint/test/15.0/2022-07-29/presubmission/gene_association.paint_xenbase.gaf.gz
+   entity_type:
+   status: active
+   species_code: Xenopus
+   taxa:
+    - NCBITaxon:8364
+    - NCBITaxon:8355
+   merges_into: xenbase
 
  -
    id: paint_zfin.gaf
