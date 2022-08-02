@@ -25,7 +25,8 @@ datasets:
    type: gaf
    dataset: mgi
    submitter: mgi
-   source: http://www.informatics.jax.org/downloads/reports/gene_association.mgi
+   compression: gzip
+   source: http://www.informatics.jax.org/downloads/reports/gene_association_nonoctua.mgi.gz
    entity_type:
    status: active
    species_code: Mmus
