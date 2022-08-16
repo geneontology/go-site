@@ -8,6 +8,8 @@ from pytz import timezone
 parser = argparse.ArgumentParser()
 parser.add_argument('repo_name')
 parser.add_argument('duration_in_days')
+parser.add_argument('-t', '--todays_date', help="Override the date to start 'looking back' from. Date must be in ISO "
+                                                "format e.g. '2022-08-16'")
 
 
 # TODO: Confirm this is working
@@ -21,7 +23,8 @@ def make_html_safe(s):
 
 
 def print_single_issue(issue):
-    line = "<li><a href=\"{}\">{}</a> {}</li>".format(issue['html_url'], issue['number'], make_html_safe(issue['title']))
+    line = "<li><a href=\"{}\">{}</a> {}</li>".format(issue['html_url'], issue['number'],
+                                                      make_html_safe(issue['title']))
     print(line)
 
 
@@ -44,7 +47,9 @@ def print_issues(issues, event_type: str, printed_ids: set):
 
 
 def get_issues(repo: str, event_type: str, start_date: str):
-    url = "https://api.github.com/search/issues?q=repo:{}+{}:=>{}+is:issue&type=Issues&per_page=100".format(repo, event_type, start_date)
+    url = "https://api.github.com/search/issues?q=repo:{}+{}:=>{}+is:issue&type=Issues&per_page=100".format(repo,
+                                                                                                            event_type,
+                                                                                                            start_date)
     resp = requests.get(url)
     if resp.status_code == 200:
         resp_objs = json.loads(resp.content)
@@ -59,6 +64,11 @@ if __name__ == "__main__":
     # repo = "geneontology/amigo"
     args = parser.parse_args()
     today_time = datetime.datetime.now(tz=timezone('US/Pacific'))
+    if args.todays_date:
+        try:
+            today_time = datetime.datetime.strptime(args.todays_date, '%Y-%m-%d')
+        except ValueError:
+            raise ValueError("Incorrect data format, todays_date should be YYYY-MM-DD")
     yesterday_time = today_time - datetime.timedelta(int(args.duration_in_days))
     yesterday_time_str = yesterday_time.isoformat()
 
