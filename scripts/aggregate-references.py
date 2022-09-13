@@ -31,7 +31,7 @@ def die_screaming(instr):
     sys.exit(1)
 
 def wtflist2str(wtflist):
-    """Convert the crazy pandoc internal format into something that is much plain text."""
+    """Convert the crazy pandoc internal format into something that is much more plain text."""
     str_cache = ""
     for entity in wtflist:
         if entity['t'] == "Space":
@@ -192,7 +192,7 @@ def main():
                         raise Exception("Unknown PARA")
 
                 else:
-                    raise Exception("Unknown ENTITY")
+                    raise Exception("Unknown ENTITY: " + block['t'])
 
             yml['abstract'] = abstract
             yml['comments'] = comments
