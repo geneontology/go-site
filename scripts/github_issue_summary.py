@@ -61,7 +61,7 @@ def collect_issues(issues, event_type: str, printed_ids: set):
         [collected_issues.append(print_single_issue(i)) for i in to_prints]
         collected_issues.append("</ul>")
     else:
-        collected_issues.appent("<p>There have been no {} tickets.</p>".format(event_type.lower()))
+        collected_issues.append("<p>There have been no {} tickets.</p>".format(event_type.lower()))
     if event_type == "New":
         new_printed_count = printed_count
     else:
