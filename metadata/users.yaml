@@ -3427,7 +3427,7 @@
     - 'https://www.usda.gov'
   nickname: 'Gerard Lazo'
   organization: USDA
-  uri: 'https://orcid.org/000-0002-9160-2052'
+  uri: 'https://orcid.org/0000-0002-9160-2052'
 -
   accounts:
     github: priya8328
@@ -4072,10 +4072,10 @@
   uri: 'GOC:tc'
   xref: 'GOC:tc'
 -
- nickname: 'Allan P Davis'
- organization: MGI
- uri: 'https://orcid.org/0000-0002-5741-7128'
- xref: 'GOC:apd'
+  nickname: 'Allan P Davis'
+  organization: MGI
+  uri: 'https://orcid.org/0000-0002-5741-7128'
+  xref: 'GOC:apd'
 -
   accounts:
     github: jesualdotomasfernandezbreis
@@ -4465,7 +4465,7 @@
     - 'https://disprot.org'
   nickname: 'Federica Quaglia'
   organization: 'DisProt'
-  uri: 'https://orcid.org/0000-0002-0341-4888'  
+  uri: 'https://orcid.org/0000-0002-0341-4888'
 -
   accounts:
     github: dexink
@@ -4478,4 +4478,3 @@
   nickname: 'Colbie Reed'
   organization: 'UF_OPP'
   uri: 'https://orcid.org/0000-0002-5039-2052'
- 
