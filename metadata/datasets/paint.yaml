@@ -123,7 +123,7 @@ datasets:
    dataset: paint_other
    submitter: paint
    compression: gzip
-   source: ftp://ftp.pantherdb.org/downloads/paint/test/15.0/2022-07-29/presubmission/gene_association.paint_other.gaf.gz
+   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_other.gaf.gz
    entity_type:
    status: active
    species_code:
@@ -222,7 +222,7 @@ datasets:
    dataset: paint_xenbase
    submitter: paint
    compression: gzip
-   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_other.gaf.gz
+   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_xenbase.gaf.gz
    entity_type:
    status: active
    species_code: Xenopus
