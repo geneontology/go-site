@@ -1239,6 +1239,11 @@
   uri: 'GOC:sgd_curators'
   xref: 'GOC:sgd_curators'
 -
+  nickname: 'Curators at Reactome'
+  organization: Reactome
+  uri: 'GOC:reactome_curators'
+  xref: 'GOC:reactome_curators'
+-
   authorizations:
     noctua:
       go:
