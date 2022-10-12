@@ -3762,7 +3762,7 @@
   authorizations:
     noctua:
       go:
-        allow-edit: true
+        allow-edit: false
   groups:
     - 'http://www.genedb.org'
     - 'http://eupathdb.org'
