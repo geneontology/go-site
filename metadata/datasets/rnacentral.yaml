@@ -10,7 +10,7 @@ datasets:
    dataset: rnacentral
    submitter: rnacentral
    compression: gzip
-   source: ftp://ftp.ebi.ac.uk/pub/databases/RNAcentral/current_release/gpi/rnacentral.gpi.gz
+   source: https://ftp.ebi.ac.uk/pub/databases/RNAcentral/current_release/gpi/rnacentral.gpi.gz
    entity_type: rna
    status: active
    taxa:
