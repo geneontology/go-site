@@ -1,3 +1,7 @@
+title: GO_REF metadata
+description: >- 
+    YAML file containing GO_REFs as a list of YAML documents
+gorefs:
 - authors: GOA-UniProt curators
   id: GO_REF:0000029
   is_obsolete: true
@@ -190,7 +194,6 @@
 - authors: Mouse Genome Informatics scientific curators
   external_accession:
   - MGI:2154458
-  - J:73065
   id: GO_REF:0000008
   year: 2001
   layout: goref
@@ -396,7 +399,6 @@
   - SGD_REF:S000146947
   - TAIR:Communication:501741973
   - MGI:MGI:4459044
-  - 'J:161428 '
   - ZFIN:ZDB-PUB-110330-1
   - FB:FBrf0232076
   id: GO_REF:0000033
@@ -580,7 +582,6 @@
   citation: PMID:11374909
   external_accession:
   - MGI:2152096
-  - J:72245
   - ZFIN:ZDB-PUB-031118-3
   - SGD_REF:S000124037
   id: GO_REF:0000003
@@ -754,7 +755,6 @@
   id: GO_REF:0000043
   external_accession:
   - SGD_REF:S000148669
-  - J:60000
   - TAIR:AnalysisReference:501756968
   - TAIR:AnalysisReference:501756970
   year: 2012
@@ -828,7 +828,6 @@
   authors: DDB, FB, MGI, GOA, ZFIN curators
   external_accession:
   - MGI:2152098
-  - J:72247
   - ZFIN:ZDB-PUB-020724-1
   - FB:FBrf0174215
   - dictyBase_REF:10157
@@ -1027,7 +1026,6 @@
   citation: PMID:11374909
   external_accession:
   - MGI:2152097
-  - J:72246
   id: GO_REF:0000006
   is_obsolete: true
   year: 2001
@@ -1691,7 +1689,6 @@
   authors: GOA curators
   external_accession:
   - MGI:1354194
-  - J:60000
   - ZFIN:ZDB-PUB-020723-1
   - SGD_REF:S000124038
   id: GO_REF:0000004
@@ -1729,8 +1726,6 @@
     FlyBase and UniProtKB curators.
   external_accession:
   - dictyBase_REF:9
-  - J:73065
-  - J:104715
   - FB:FBrf0202953
   - FB:FBrf0212479
   - FB:FBrf0232278
@@ -1833,7 +1828,6 @@
   citation: PMID:11374909
   external_accession:
   - MGI:1347124
-  - J:56000
   id: GO_REF:0000010
   is_obsolete: true
   year: 1999
@@ -1908,8 +1902,6 @@
     Evolutionary Synthesis Center (NESCent), April 9-10, 2010.
 - authors: Mouse Genome Informatics scientific curators
   external_accession:
-  - J:164563
-  - J:155856
   - RGD:1624291
   id: GO_REF:0000096
   year: 2014
