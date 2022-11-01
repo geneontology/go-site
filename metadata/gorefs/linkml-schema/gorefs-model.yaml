@@ -1,0 +1,121 @@
+id: http://purl.obolibrary.org/obo/go/references/
+name: GO_REF
+title: GO_REF LinkML schema
+description: >- 
+  LinkML schema representing the structure of
+  GO_REF metadata
+
+imports:
+- linkml:types
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  GO_REF: http://purl.obolibrary.org/obo/go/references/
+  ECO: http://purl.obolibrary.org/obo/eco.owl
+  PMID: http://www.ncbi.nlm.nih.gov/pubmed/
+default_prefix: GO_REF
+
+types:
+  Identifier:
+    typeof: string
+    description: GO_REF identifier.
+
+slots:
+  authors:
+    examples:
+    - value: FlyBase
+    range: string
+    description: Author of the GOREF.
+  id:
+    examples:
+    - value: GO_REF:0000098
+    range: Identifier
+    identifier: true
+    description: GO_REF id.
+  is_obsolete:
+    examples:
+    - value: true
+    range: boolean
+    description: >- 
+      Boolean value indicating whether or not the 
+      GO_REF is still in use.
+  year:
+    examples:
+    - value: 2014
+    range: integer
+    description: Year in which the GO_REF was created.
+  layout:
+    examples:
+    - value: goref
+    range: string
+    description: Front matter format hint for Markdown rendering.
+  title:
+    examples:
+    - value: OBSOLETE Gene Ontology annotation based on research conference abstracts
+    range: string
+    description: Title.
+  comments:
+    examples:
+    - value: '["Prior to 2008, FlyBase made GO annotations based on information in
+        abstracts for research conferences, primarily the Annual Drosophila Research
+        Conference and the European Drosophila Research Conference. We no longer curate
+        conference abstracts and we are gradually replacing all abstract-based GO
+        annotation with annotation based on experimental data in primary research
+        papers.""]'
+    multivalued: true
+    range: string
+    description: Comments.
+  external_accession:
+    examples:
+    - value: J:164563
+    multivalued: true
+    range: uriorcurie
+    description: >- 
+      List of cross references from other databases for the same entity.
+  url:
+    examples:
+    - value: http://www.ebi.ac.uk/GOA/ISS_method.html
+    range: uriorcurie
+    description: URL for further information.
+  citation:
+    examples:
+    - value: PMID:11374909
+    range: uriorcurie
+    description: Publication for GO_REF.
+  alt_id:
+    examples:
+    - value: GO_REF:0000009
+    multivalued: true
+    range: uriorcurie
+    description: Alternate IDs for GO_REF.
+  evidence_codes:
+    examples:
+    - value: ECO:0000501
+    multivalued: true
+    range: uriorcurie
+    description: Evidence codes for GO_REF.
+  gorefs:
+    multivalued: true
+    inlined_as_list: true
+    range: GoRef
+    description: List of GO_REFs.
+
+classes:
+  GoRefCollection:
+    tree_root: true
+    slots:
+    - gorefs
+  GoRef:
+    slots:
+    - authors
+    - id
+    - is_obsolete
+    - year
+    - layout
+    - title
+    - comments
+    - external_accession
+    - url
+    - citation
+    - alt_id
+    - evidence_codes
