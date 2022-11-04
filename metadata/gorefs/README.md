@@ -16,7 +16,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000015">GO_REF:0000015 Use of the ND evidence code for Gene Ontology (GO) terms.</a>
  * <a href="#goref0000018">GO_REF:0000018 OBSOLETE dictyBase 'Inferred from Electronic Annotation (BLAST method)'</a>
  * <a href="#goref0000019">GO_REF:0000019 OBSOLETE Automatic transfer of experimentally verified manual GO annotation data to orthologs using Ensembl Compara</a>
- * <a href="#goref0000020">GO_REF:0000020 Electronic Gene Ontology annotations created by transferring manual GO annotations between orthologous microbial proteins</a>
+ * <a href="#goref0000020">GO_REF:0000020 OBSOLETE Electronic Gene Ontology annotations created by transferring manual GO annotations between orthologous microbial proteins</a>
  * <a href="#goref0000021">GO_REF:0000021 Improving the representation of central nervous system development in the biological process ontology</a>
  * <a href="#goref0000022">GO_REF:0000022 Improving the representation of immunology in the biological process Ontology</a>
  * <a href="#goref0000023">GO_REF:0000023 OBSOLETE Gene Ontology annotation based on UniProtKB Subcellular Location vocabulary mapping.</a>
@@ -314,7 +314,7 @@ GO terms from a source species are projected on to one or more target species ba
 
 <a name="goref0000020"/>
 
-## Electronic Gene Ontology annotations created by transferring manual GO annotations between orthologous microbial proteins
+## OBSOLETE Electronic Gene Ontology annotations created by transferring manual GO annotations between orthologous microbial proteins
 
  * id: [GO_REF:0000020](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000020.md)
  * year: 2006
