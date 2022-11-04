@@ -31,7 +31,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000032">GO_REF:0000032 OBSOLETE Inference of Biological Process annotations from inter-ontology links</a>
  * <a href="#goref0000033">GO_REF:0000033 OBSOLETE Annotation inferences using phylogenetic trees</a>
  * <a href="#goref0000034">GO_REF:0000034 Phenoscape Skeletal Anatomy Jamboree</a>
- * <a href="#goref0000035">GO_REF:0000035 Automatic transfer of experimentally verified manual GO annotation data to plant orthologs using Ensembl Compara</a>
+ * <a href="#goref0000035">GO_REF:0000035 OBSOLETE Automatic transfer of experimentally verified manual GO annotation data to plant orthologs using Ensembl Compara</a>
  * <a href="#goref0000036">GO_REF:0000036 Manual annotations that require more than one source of functional data to support the assignment of the associated GO term</a>
  * <a href="#goref0000037">GO_REF:0000037 OBSOLETE Gene Ontology annotation based on manual assignment of UniProtKB keywords in UniProtKB/Swiss-Prot entries.</a>
  * <a href="#goref0000038">GO_REF:0000038 OBSOLETE Gene Ontology annotation based on automatic assignment of UniProtKB keywords in UniProtKB/TrEMBL entries.</a>
@@ -518,7 +518,7 @@ Skeletal cell terms and relationships were added and revised at the Skeletal Ana
 
 <a name="goref0000035"/>
 
-## Automatic transfer of experimentally verified manual GO annotation data to plant orthologs using Ensembl Compara
+## OBSOLETE Automatic transfer of experimentally verified manual GO annotation data to plant orthologs using Ensembl Compara
 
  * id: [GO_REF:0000035](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000035.md)
  * year: 2011
