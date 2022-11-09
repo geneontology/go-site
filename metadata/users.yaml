@@ -1112,7 +1112,7 @@
   email-md5:
     - ba0ab426088546c5a9acf014a722fdd5
   groups:
-    - 'http://reactome.org'
+    - 'https://reactome.org'
   nickname: "Peter D'Eustachio"
   organization: Reactome
   uri: 'https://orcid.org/0000-0002-5494-626X'
@@ -1127,7 +1127,7 @@
   groups:
     - 'http://flybase.org'
   previous-groups:
-    - 'http://reactome.org'
+    - 'https://reactome.org'
   nickname: 'Phani Garapati'
   organization: FlyBase
   uri: 'https://orcid.org/0000-0003-0941-2207'
