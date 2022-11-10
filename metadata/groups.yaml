@@ -198,7 +198,7 @@
   parent_group: GOC
 -
   label: Reactome
-  id: http://reactome.org
+  id: https://reactome.org
   shorthand: Reactome
   parent_group: GOC
 -
