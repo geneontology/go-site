@@ -3,7 +3,9 @@ AgBase,Jinhui Zhang,@jinhuiz,
 Alzheimers_University_of_Toronto,Ruth Lovering,@RLovering, 
 ARUK-UCL,Ruth Lovering,@RLovering,
 ASAP,,,
-ASPGD,,,
+ASPGD,Not actively maintainted/GO_Central,@Antonialock,
+ASPGD,Not actively maintainted/GO_Central,@pgaudet,
+ASPGD,Not actively maintainted/GO_Central,@vanaukenk,
 BBOP,Seth Carbon,@kltm,Noctua|Data pipeline|AmiGO|Website
 BBOP,Chris Mungall,@cmungall,All things technical and ontology-related
 BBOP,Sierra Moxon,@sierra-moxon,Pipeline
@@ -76,8 +78,8 @@ MGI,Karen Christie,@krchristie,
 MGI,Harold Drabkin,@hdrabkin,tRNA biology and translation
 MGI,David Hill,@ukemi,
 MGI,Mary Dolan,@mdolanme,
-MTBBASE,GOC,@pgaudet,
-MTBBASE,EBI,@Antonialock,
+MTBBASE,Not actively maintainted/GO_Central/EBI,@pgaudet,
+MTBBASE,Not actively maintainted/GO_Central/EBI,@Antonialock,
 NTNU_SB,Astrid Lægreid,,Transcription
 NTNU_SB,Marcio Acencio,@mlacencio,Transcription
 PAINT,Pascale Gaudet,@pgaudet,
@@ -148,8 +150,8 @@ UniProt (Swiss-Prot/Geneva),Marc Feuermann,@marcfeuermann,fungi|enzymes
 UniProt (Swiss-Prot/Geneva),Nevila Nouspikel,nnouspikel,lipids|immunology|cancer
 UniProt (Swiss-Prot/Geneva),Ivo Pedruzzi,@pedruzzi, 
 UniProt (Swiss-Prot/Geneva),Sylvain Poux,@sylvainpoux,
-UniProt - UniRules, ,esperetta,
-UniProt - UniRules, ,PedroRaposo,
+UniProt - UniRules,Elena Speretta,esperetta,
+UniProt - UniRules,Pedro Raposo,PedroRaposo,
 WB - WormBase,Kimberly Van Auken,@vanaukenk,C.elegans|Noctua|GO-CAM
 Wikidata,Andrew Su,@andrewsu,
 Wikidata,Derek,cdjow2019 ,
