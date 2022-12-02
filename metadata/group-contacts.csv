@@ -17,7 +17,7 @@ CACAO,Jolene Ramsey,@jrr-cpt,
 CAFA,EBI,@Antonialock,
 CGD,Marek Skrzypek,@marekskrzypek,
 CGD,Jodi Lew-Smith,@jlewsmith,chromatin/gene silencing/cellular aging
-CHEMBL,Barbara Zdrazil,Zdrazil,
+CHEMBL,Barbara Zdrazil,@Zdrazil,
 CollectTF,Ivan Erill,@ivanerill,
 CollectTF,General email,collectf@umbc.edu,
 Complex Portal,Kalpana Panneerselvam,@kalpanap,
@@ -156,7 +156,7 @@ UniProt - UniRules,Elena Speretta,esperetta,
 UniProt - UniRules,Pedro Raposo,PedroRaposo,
 WB - WormBase,Kimberly Van Auken,@vanaukenk,C.elegans|Noctua|GO-CAM
 Wikidata,Andrew Su,@andrewsu,
-Wikidata,Derek,cdjow2019 ,
+Wikidata,Derek,@cdjow2019 ,
 Xenbase,Malcolm Fisher,@malcolmfisher103,Xenopus
 YuBioLab,,,
 ZFIN,Doug Howe,@doughowe,Zebra fish
