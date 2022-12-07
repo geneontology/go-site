@@ -541,3 +541,8 @@
   id: www.ufl.edu
   shorthand: UF_OPP
   parent_group: PomBase
+-
+  label: 'iBeetleBase'
+  id: https://ibeetle-base.uni-goettingen.de/
+  shorthand: iBB
+  parent_group: GOC
