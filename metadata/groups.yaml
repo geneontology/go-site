@@ -198,7 +198,7 @@
   parent_group: GOC
 -
   label: Reactome
-  id: http://reactome.org
+  id: https://reactome.org
   shorthand: Reactome
   parent_group: GOC
 -
@@ -541,3 +541,8 @@
   id: www.ufl.edu
   shorthand: UF_OPP
   parent_group: PomBase
+-
+  label: 'iBeetleBase'
+  id: https://ibeetle-base.uni-goettingen.de
+  shorthand: iBB
+  parent_group: GOC

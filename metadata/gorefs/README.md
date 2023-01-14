@@ -692,6 +692,7 @@ Duplicate of GO_REF:0000023.
  * id: [GO_REF:0000047](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000047.md)
  * year: 2012
  * authors: GO curators
+ * ext xref: FB:FBrf0254415
 
 
 
@@ -1511,6 +1512,7 @@ Method for transferring manual annotations to an entry based on a curator's judg
  * id: [GO_REF:0000115](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000115.md)
  * year: 2018
  * authors: RNAcentral (1). (1) European Bioinformatics Institute (EMBL-EBI), Hinxton, Cambridgeshire, United Kingdom
+ * ext xref: FB:FBrf0253064
 
 
 
