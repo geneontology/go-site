@@ -112,13 +112,16 @@ GOA_UNIPROT_ALL = target/groups/goa/goa_uniprot_all_noiea.gpi target/groups/goa/
 
 # target/groups/goa/goa_uniprot_all.gaf.gz
 target/groups/goa/goa_uniprot_all_noiea.gaf: target/alltaxons.txt target/groups/goa/goa_uniprot_all-src.gaf.gz
+	ls -AlF target/groups/goa/
 	touch target/groups/goa/goa_uniprot_all_skipped.report
-	gzip -dcf target/groups/goa/goa_uniprot_all-src.gaf.gz > target/groups/goa/goa_uniprot_all_noiea.gaf > target/groups/goa/goa_uniprot_all.gaf.tmp
+	gzip -dcf target/groups/goa/goa_uniprot_all-src.gaf.gz > target/groups/goa/goa_uniprot_all_noiea.gaf
 	cp target/groups/goa/goa_uniprot_all_noiea.gaf target/groups/goa/goa_uniprot_all.gaf.tmp
 	mv target/groups/goa/goa_uniprot_all.gaf.tmp target/groups/goa/goa_uniprot_all.gaf
 	gzip -cf target/groups/goa/goa_uniprot_all.gaf > target/groups/goa/goa_uniprot_all.gaf.gz
 	gzip -cf target/groups/goa/goa_uniprot_all_noiea.gaf > target/groups/goa/goa_uniprot_all_noiea.gaf.gz
+	ls -AlF target/groups/goa/
 	rm -f target/groups/goa/goa_uniprot_all-src.gaf target/groups/goa/goa_uniprot_all.gaf || true
+	ls -AlF target/groups/goa/
 
 RDF_GEN = rdfgen.py
 target/groups/goa/goa_uniprot_all_noiea_cam.ttl: target/go-ontology.json target/groups/goa/goa_uniprot_all_noiea.gaf
