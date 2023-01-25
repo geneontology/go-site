@@ -786,7 +786,7 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: FBgn[0-9]{7}
-      url_syntax: https://www.alliancegenome.org/gene/[example_id]
+      url_syntax: https://www.alliancegenome.org/gene/FB:[example_id]
       example_id: FB:FBgn0000024
       example_url: https://www.alliancegenome.org/gene/FB:FBgn0000024
 - database: FBbt
@@ -2222,7 +2222,7 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: '[0-9]{4,7}'
-      url_syntax: https://www.alliancegenome.org/gene/[example_id]
+      url_syntax: https://www.alliancegenome.org/gene/RGD:[example_id]
       example_id: RGD:2004
       example_url: https://www.alliancegenome.org/gene/RGD:2004          
 - database: RHEA
@@ -2322,7 +2322,7 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: S[0-9]{9}
-      url_syntax:  https://www.alliancegenome.org/gene/[example_id]
+      url_syntax:  https://www.alliancegenome.org/gene/SGD:[example_id]
       example_id: SGD:S000006169
       example_url: https://www.alliancegenome.org/gene/SGD:S000006169
 - database: SGD_LOCUS
@@ -2332,7 +2332,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: https://www.alliancegenome.org/gene/[example_id]
+      url_syntax: https://www.alliancegenome.org/gene/SGD:[example_id]
       example_id: SGD_LOCUS:GAL4
       example_url: https://www.alliancegenome.org/gene/SGD:S000006169
 - database: SGD_REF
@@ -2757,13 +2757,13 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
-      url_syntax: https://www.alliancegenome.org/gene/[example_id]
+      url_syntax: https://www.alliancegenome.org/gene/WB:[example_id]
       example_id: WB:WBGene00003001
       example_url: https://www.alliancegenome.org/gene/WB:WBGene00003001
     - type_name: variation
       type_id: VariO:0001
       id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
-      url_syntax: https://www.alliancegenome.org/allele/[example_id]
+      url_syntax: https://www.alliancegenome.org/allele/WB:[example_id]
       example_id: WB:WBVar00089843
       example_url: https://www.alliancegenome.org/allele/WB:WBVar00089843
     - type_name: RNAi
@@ -2775,7 +2775,7 @@
     - type_name: Transgene
       type_id: SO:0000902
       id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
-      url_syntax: https://www.alliancegenome.org/allele/[example_id]
+      url_syntax: https://www.alliancegenome.org/allele/WB:[example_id]
       example_id: WB:WBTransgene00000059
       example_url: https://www.alliancegenome.org/allele/WB:WBTransgene00000059
     - type_name: protein
@@ -2864,7 +2864,7 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: XB-(GENE|LINE|TRANSGENE|MORPHOLINO)-[0-9]+
-      url_syntax: https://www.alliancegenome.org/gene/[example_id]
+      url_syntax: https://www.alliancegenome.org/gene/Xenbase:[example_id]
       example_id: Xenbase:XB-GENE-6255962
       example_url: https://www.alliancegenome.org/gene/Xenbase:XB-GENE-6255962
     - type_name: morpholino oligo
