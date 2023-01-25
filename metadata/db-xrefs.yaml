@@ -786,7 +786,7 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: FBgn[0-9]{7}
-      url_syntax: https://www.alliancegenome.org/gene/FB:[example_id]
+      url_syntax: https://www.alliancegenome.org/gene/[example_id]
       example_id: FB:FBgn0000024
       example_url: https://www.alliancegenome.org/gene/FB:FBgn0000024
 - database: FBbt
