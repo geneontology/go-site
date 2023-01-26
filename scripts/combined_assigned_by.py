@@ -135,15 +135,22 @@ def main():
                     for violation in violations:
                         gaf_line = violation['line']
                         gaf_contents = re.split('\t', gaf_line)
+
+                        ## Get assigned by information from GAF line.  If it does not exist, attempt to get from group that created the GAF file
                         assigned_by = None
                         if (len(gaf_contents) < 14):
                             LOG.error('Found incorrect number of columns in GAF line ' + gaf_line)
                             assigned_by = gaf_creators['id']
                         else:
                             assigned_by = gaf_contents[14]
-                        if (assigned_by is None):
+                        
+                        if not assigned_by:
+                            LOG.error('Assigned by is empty ' + gaf_line)
+                            assigned_by = gaf_creators['id']
+                        if ((assigned_by is None) or (not assigned_by)):
                             LOG.error('Skipping since there is no data generator information in ' + msg_obj)
-                            continue    
+                            continue
+
                         current_violations = lookup.get(assigned_by)
                         if (current_violations is None):
                             current_violations = {}
@@ -154,9 +161,16 @@ def main():
                             current_violations[key] = violation_list
                         violation_list.append(violation)
 
+    ## output is a list of json objects
+    ## Convert dict to list where each entry is a json object
+    violator_list = []
+    for violator in lookup:
+        violator_list.append({violator: lookup.get(violator)})
+    
+
     ## Final writeout.
     with open(args.output, 'w+') as fhandle:
-        fhandle.write(json.dumps(lookup, sort_keys=True, indent=4))
+        fhandle.write(json.dumps(violator_list, sort_keys=True, indent=4))
 
 ## You saw it coming...
 if __name__ == '__main__':
