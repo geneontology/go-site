@@ -5,6 +5,7 @@
 ####
 
 ## Standard imports.
+import copy
 import sys
 import argparse
 import logging
@@ -20,6 +21,53 @@ def die_screaming(instr):
     """Make sure we exit in a way that will get Jenkins's attention."""
     LOG.error(instr)
     sys.exit(1)
+
+def clear_creator_info(creator_info):
+    for key in creator_info.keys():
+        if (key == 'associations' or
+            key == 'dataset' or
+            key == 'group' or
+            key == 'id' or
+            key == 'lines' or
+            key == 'skipped_lines'):
+            
+            creator_info[key] = None
+
+        # remove violations for the rules
+        if (key == 'messages'):
+            msg_obj = creator_info[key]
+            for violation_list in msg_obj.values():
+                violation_list.clear()
+
+        # Clear metadata
+        if (key == 'metadata'):
+            metadata_obj = creator_info[key]
+            for metadata_key in metadata_obj.keys():
+                if (metadata_key == 'compression' or
+                        metadata_key == 'dataset' or
+                        metadata_key == 'description' or
+                        metadata_key == 'entity_type' or
+                        metadata_key == 'id' or
+                        metadata_key == 'label' or
+                        metadata_key == 'resource-contact_email' or
+                        metadata_key == 'resource-description' or
+                        metadata_key == 'resource-email_report' or                                                                                                                                            
+                        metadata_key == 'resource-funding_source' or
+                        metadata_key == 'resource-id' or
+                        metadata_key == 'resource-label' or
+                        metadata_key == 'resource-project_name' or
+                        metadata_key == 'resource-project_url' or
+                        metadata_key == 'source' or
+                        metadata_key == 'species_code' or
+                        metadata_key == 'submitter' or                                                                                                                                            
+                        metadata_key == 'type' or            
+                        metadata_key == 'url'):
+
+                        metadata_obj[metadata_key] = None
+                if (metadata_key == 'taxa'):
+                    metadata_obj[metadata_key] = []
+                if (metadata_key == 'taxa_label_map'):
+                    metadata_obj[metadata_key] = {}                 
 
 def main():
     """The main runner of our script."""
@@ -49,6 +97,10 @@ def main():
     LOG.info('Will output to: ' + args.output)
 
     lookup = {}
+    creator_to_info = {}
+    creator_to_messages = {}
+    lower_id_to_id = {}
+    new_assigned_by_to_info = {}
 
     ##     
     read_date = None
@@ -127,50 +179,100 @@ def main():
     if not read_data:
         die_screaming('No report found for: ' + args.input)
 
-    for gaf_creators in read_data:
-        msg_obj = gaf_creators['messages']
-        #for messages in gaf_creators["messages"]:
+    ## Starting with list of GAF creator data objects in a list
+    ## 1. Create a dictionary of GAF creator to GAF creator object
+    ## 2. Create a dictionary of GAF creator to the messages object
+    ## 3. Remove the violations detail from the GAF creator object in 1.
+
+    empty_gaf_creator = None
+    for gaf_creator in read_data:
+        msg_obj = gaf_creator['messages']
+        
+        gaf_creator_copy = copy.deepcopy(gaf_creator)
+
+        # Create an empty gaf creator template object for when we run into assigned_by that is not in our list of gaf_creators
+        if empty_gaf_creator is None:
+            empty_gaf_creator = copy.deepcopy(gaf_creator)
+            clear_creator_info(empty_gaf_creator)
+            
+        from_id = gaf_creator['id']
+        if (from_id is not None):
+            if (bool(from_id)):
+                from_id_lower = from_id.lower()
+                lower_id_to_id[from_id_lower] = from_id
+                creator_to_info[from_id_lower] = gaf_creator_copy
+                creator_to_messages[from_id_lower] = msg_obj
+
+                msg_copy =  gaf_creator_copy['messages']
+                for key, violations in msg_copy.items():
+                    if (len(violations) != 0):
+                        violations.clear()
+
+    
+    for gaf_creator_id_lower, msg_obj in creator_to_messages.items():
+        gaf_creator_id = lower_id_to_id.get(gaf_creator_id_lower)            
         for key, violations in msg_obj.items():
-                if (len(violations) != 0):
-                    for violation in violations:
-                        gaf_line = violation['line']
-                        gaf_contents = re.split('\t', gaf_line)
+            if (len(violations) == 0):
+                continue
+            
+            for violation in violations:
+                gaf_line = violation['line']
+                gaf_contents = re.split('\t', gaf_line)
 
-                        ## Get assigned by information from GAF line.  If it does not exist, attempt to get from group that created the GAF file
-                        assigned_by = None
-                        if (len(gaf_contents) < 14):
-                            LOG.error('Found incorrect number of columns in GAF line ' + gaf_line)
-                            assigned_by = gaf_creators['id']
-                        else:
-                            assigned_by = gaf_contents[14]
-                        
-                        if not assigned_by:
-                            LOG.error('Assigned by is empty ' + gaf_line)
-                            assigned_by = gaf_creators['id']
-                        if ((assigned_by is None) or (not assigned_by)):
-                            LOG.error('Skipping since there is no data generator information in ' + msg_obj)
-                            continue
+                ## Get assigned by information from GAF line.  If it does not exist, attempt to get from group that created the GAF file
+                assigned_by = None
+                if (len(gaf_contents) < 14):
+                    LOG.info('Found incorrect number of columns in GAF line ' + gaf_line)
+                    assigned_by = gaf_creator_id
+                else:
+                    assigned_by = gaf_contents[14]
+                
+                if not assigned_by:
+                    LOG.info('Assigned by is empty in GAF line ' + gaf_line)
+                    assigned_by = gaf_creator_id
+                if ((assigned_by is None) or (not assigned_by)):
+                    LOG.info('Skipping since there is no data generator information in ' + gaf_creator_id + ' for ' + msg_obj)
+                    continue
+                
+                # Get the gaf creator from creator_to_info. If it does not exist, check in new_assigned_by_to_info and if it does not exist in 
+                # new_assigned_by_to_info, create a new entry
+                assigned_by_lower = assigned_by.lower();
+                gaf_creator_details = creator_to_info.get(assigned_by_lower)
+                
+                if (gaf_creator_details is None):
+                    gaf_creator_details = new_assigned_by_to_info.get(assigned_by_lower)
+                
 
-                        current_violations = lookup.get(assigned_by)
-                        if (current_violations is None):
-                            current_violations = {}
-                            lookup[assigned_by] = current_violations
-                        violation_list = current_violations.get(key)
-                        if (violation_list is None):
-                            violation_list = []
-                            current_violations[key] = violation_list
-                        violation_list.append(violation)
+                if (gaf_creator_details is None):
+                    # Create a new GAF creator object and add to new_assigned_by_to_info
+                    gaf_creator_details = copy.deepcopy(empty_gaf_creator)
+                    gaf_creator_details['id'] = assigned_by
+                    new_assigned_by_to_info[assigned_by_lower] = gaf_creator_details
+
+                # Append the violation detail
+                msg_obj = gaf_creator_details['messages']
+                if (msg_obj.get(key) is None):  # Not all GAF creators specify all GORULE violations
+                    msg_obj[key] = []
+                
+                msg_obj[key].append(violation)
+
 
     ## output is a list of json objects
     ## Convert dict to list where each entry is a json object
     violator_list = []
-    for violator in lookup:
-        violator_list.append({violator: lookup.get(violator)})
-    
+    for gaf_creator in creator_to_info.values():
+        violator_list.append(gaf_creator)
+
+    for gaf_creator in new_assigned_by_to_info.values():
+        violator_list.append(gaf_creator)
+
 
     ## Final writeout.
     with open(args.output, 'w+') as fhandle:
         fhandle.write(json.dumps(violator_list, sort_keys=True, indent=4))
+
+                        
+
 
 ## You saw it coming...
 if __name__ == '__main__':
