@@ -20,7 +20,7 @@ LOG.setLevel(logging.WARNING)
 def die_screaming(instr):
     """Make sure we exit in a way that will get Jenkins's attention."""
     LOG.error(instr)
-    sys.exit(1)
+    sys.exit(1)  
 
 def clear_creator_info(creator_info):
     for key in creator_info.keys():
@@ -188,27 +188,35 @@ def main():
     for gaf_creator in read_data:
         msg_obj = gaf_creator['messages']
         
+
         gaf_creator_copy = copy.deepcopy(gaf_creator)
 
         # Create an empty gaf creator template object for when we run into assigned_by that is not in our list of gaf_creators
         if empty_gaf_creator is None:
             empty_gaf_creator = copy.deepcopy(gaf_creator)
             clear_creator_info(empty_gaf_creator)
-            
-        from_id = gaf_creator['id']
-        if (from_id is not None):
-            if (bool(from_id)):
-                from_id_lower = from_id.lower()
-                lower_id_to_id[from_id_lower] = from_id
-                creator_to_info[from_id_lower] = gaf_creator_copy
-                creator_to_messages[from_id_lower] = msg_obj
 
-                msg_copy =  gaf_creator_copy['messages']
-                for key, violations in msg_copy.items():
-                    if (len(violations) != 0):
-                        violations.clear()
+        # Ensure 'id' is defined or set a label   
+        from_id = gaf_creator['id']
+        if (not (from_id and from_id.strip())):
+            from_id = 'id not specified'
+        else:
+            from_id = from_id.strip()
+
+        # Some of the gaf creator ids are in lower case    
+        from_id_lower = from_id.lower()
+        lower_id_to_id[from_id_lower] = from_id
+        creator_to_info[from_id_lower] = gaf_creator_copy
+        creator_to_messages[from_id_lower] = msg_obj
+
+        # Clear the messages
+        msg_copy =  gaf_creator_copy['messages']
+        for key, violations in msg_copy.items():
+            if (len(violations) != 0):
+                violations.clear()
 
     
+
     for gaf_creator_id_lower, msg_obj in creator_to_messages.items():
         gaf_creator_id = lower_id_to_id.get(gaf_creator_id_lower)            
         for key, violations in msg_obj.items():
@@ -227,10 +235,11 @@ def main():
                 else:
                     assigned_by = gaf_contents[14]
                 
-                if not assigned_by:
-                    LOG.info('Assigned by is empty in GAF line ' + gaf_line)
+                if (not (assigned_by and assigned_by.strip())):
+                    LOG.info('Assigned by is empty or whitespace in GAF line ' + gaf_line)
                     assigned_by = gaf_creator_id
-                if ((assigned_by is None) or (not assigned_by)):
+                    assigned_by = assigned_by.strip()
+                if (not (assigned_by and assigned_by.strip())):
                     LOG.info('Skipping since there is no data generator information in ' + gaf_creator_id + ' for ' + msg_obj)
                     continue
                 
@@ -253,7 +262,6 @@ def main():
                 msg_obj = gaf_creator_details['messages']
                 if (msg_obj.get(key) is None):  # Not all GAF creators specify all GORULE violations
                     msg_obj[key] = []
-                
                 msg_obj[key].append(violation)
 
 
