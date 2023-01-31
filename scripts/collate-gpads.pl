@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 ####
-#### collate-gpads.pl /tmp/legacy/gpad/*.gpad
+#### collate-gpads.pl legacy/gpad/*.gpad
 ####
 use strict;
 use FileHandle;
