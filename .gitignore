@@ -21,7 +21,6 @@ rules.log
 pipeline/target/
 pipeline/env
 pipeline/*.log
-downloads
 
 *.egg-info
 env
