@@ -1,16 +1,27 @@
 """Combined Assigned-By report JSON."""
 ####
 #### Parse the combined.report.json file, which has list of data providers with GO rule violations and applicable GAF line, and output as
-#### assigned-by (from GAF line) to GO rule violation
+#### assigned-by (from GAF line) to GO rule violation. 
+#### Create a separate html file, named 'assigned-by'-combined-report.html for each assigned-by
+#### The html file will have a GORULE violation(s) sectin where each GORULE is a html anchor tag. The anchor tag will link to the GAF lines
+#### for the associated GORULE
 ####
+####  python3 combined_assigned_by.py -v --input /tmp/all_combined.report.json --output assigned-by-combined-report.json
+
 
 ## Standard imports.
+import os
 import copy
 import sys
 import argparse
 import logging
 import json
 import re
+
+### For creating html document
+from xml.etree import ElementTree as ET
+
+
 
 ## Logger basic setup.
 logging.basicConfig(level=logging.INFO)
@@ -35,9 +46,10 @@ def clear_creator_info(creator_info):
 
         # remove violations for the rules
         if (key == 'messages'):
-            msg_obj = creator_info[key]
-            for violation_list in msg_obj.values():
-                violation_list.clear()
+            creator_info[key] = {}
+            # msg_obj = creator_info[key]
+            # for violation_list in msg_obj.values():
+            #     violation_list.clear()
 
         # Clear metadata
         if (key == 'metadata'):
@@ -69,6 +81,87 @@ def clear_creator_info(creator_info):
                 if (metadata_key == 'taxa_label_map'):
                     metadata_obj[metadata_key] = {}                 
 
+def output_html(violations_info_list, path):
+    for violation in violations_info_list:
+        
+        html = ET.Element('html')
+        body = ET.Element('body')
+        html.append(body)
+        heading = ET.Element('h1')
+        body.append(heading)
+        id = violation['id']
+        heading.text = id + ' assigned-by GORULE violations' 
+        body.append(ET.Element('br'))
+
+        ## Create a section with the GORULE list
+        contentSection =  ET.Element('h2')
+        body.append(contentSection)
+        contentSection.text = 'Contents'
+        contentIndex = list(body).index(contentSection)
+
+        ## Add some white space
+        body.append(ET.Element('br'))
+        body.append(ET.Element('br'))        
+
+
+        ## Create a section with the GORULE violation details
+        messageSection =  ET.Element('h2')
+        body.append(messageSection)
+        messageSection.text = 'MESSAGES'
+       
+
+
+        messages = violation['messages']
+        violationsCtr = 0
+        for rule, violations in messages.items():
+            numViolations = len(violations)
+            if 0 == numViolations:
+                continue
+
+            violationsCtr = violationsCtr + 1    
+            ## Add to list of violations
+            paragraph = ET.Element('p')
+            body.insert(contentIndex + violationsCtr, paragraph)
+
+            anchor = '#' + rule
+            link = ET.Element('a', attrib={'href': anchor})
+            paragraph.append(link)
+            link.text = rule
+
+            ## Details about the violation
+            ruleDetails = ET.Element('h3', attrib={'id': rule})
+            body.append(ruleDetails)
+            ruleDetails.text = rule
+
+            msgDescPara = ET.Element('p')
+            body.append(msgDescPara)
+            firstMsg = violations[0]
+            msgDescPara.text = firstMsg['message']
+
+            unorderedList = ET.Element('ul')
+            body.append(unorderedList)
+            totalListItem = ET.Element('li')
+            unorderedList.append(totalListItem)
+            totalListItem.text = 'total: ' + str(numViolations)
+
+            msgText = 'messages_' + str(violationsCtr)
+            msgDetails = ET.Element('h4', attrib={'id': msgText})
+            msgDetails.text = 'messages'
+            body.append(msgDetails)
+
+            unorderedViolationsList = ET.Element('ul')
+            body.append(unorderedViolationsList)
+            for violation in violations:
+                listItem = ET.Element('li')
+                unorderedViolationsList.append(listItem)
+                listItem.text = violation['line']
+
+        ## Write out file
+        ET.indent(html, space=''    '', level=0)
+        fileName = path + '/' + id + '-combined-report.html'
+        ET.ElementTree(html).write(fileName, encoding='unicode', method='html')
+
+
 def main():
     """The main runner of our script."""
     
@@ -96,7 +189,6 @@ def main():
         die_screaming('need an output file argument')
     LOG.info('Will output to: ' + args.output)
 
-    lookup = {}
     creator_to_info = {}
     creator_to_messages = {}
     lower_id_to_id = {}
@@ -266,16 +358,26 @@ def main():
 
 
     ## output is a list of json objects
-    ## Convert dict to list where each entry is a json object
+    ## Convert dict to list where each entry is a json message object
     violator_list = []
-    for gaf_creator in creator_to_info.values():
-        violator_list.append(gaf_creator)
+    for gaf_creator, gaf_creator_msg in creator_to_info.items():
+        # Do not output, if none of the go rules in the message object have any violations
+        msg_obj = gaf_creator_msg['messages']
+        violations = False
+        for key, violations in msg_obj.items():
+            if (len(violations) != 0):
+                violations = True
+                break
+        if (violations == True):
+            violator_list.append(gaf_creator_msg)
 
-    for gaf_creator in new_assigned_by_to_info.values():
-        violator_list.append(gaf_creator)
+    for gaf_creator_msg in new_assigned_by_to_info.values():
+        violator_list.append(gaf_creator_msg)
 
+    ## Output html file for each assigned-by with GORULE violation details
+    output_html(violator_list, os.path.dirname(args.output))
 
-    ## Final writeout.
+    ## Final writeout of combined assigned-by json report
     with open(args.output, 'w+') as fhandle:
         fhandle.write(json.dumps(violator_list, sort_keys=True, indent=4))
 
