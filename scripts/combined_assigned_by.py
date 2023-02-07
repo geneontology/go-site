@@ -2,7 +2,7 @@
 ####
 #### Parse the combined.report.json file, which has list of data providers with GO rule violations and applicable GAF line, and output as
 #### assigned-by (from GAF line) to GO rule violation. 
-#### Create a separate html file, named 'assigned-by'-combined-report.html for each assigned-by
+#### Create a separate html file, named 'assigned-by'-assigned-by-report.html for each assigned-by
 #### The html file will have a GORULE violation(s) sectin where each GORULE is a html anchor tag. The anchor tag will link to the GAF lines
 #### for the associated GORULE
 ####
@@ -158,7 +158,7 @@ def output_html(violations_info_list, path):
 
         ## Write out file
         ET.indent(html, space=''    '', level=0)
-        fileName = path + '/' + id + '-combined-report.html'
+        fileName = path + '/' + id + '-assigned-by-report.html'
         ET.ElementTree(html).write(fileName, encoding='unicode', method='html')
 
 
@@ -172,7 +172,7 @@ def main():
     parser.add_argument('-i', '--input',
                         help='combined json input file')    
     parser.add_argument('-o', '--output',
-                        help='Output file')
+                        help='output file')
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='More verbose output')
     args = parser.parse_args()
