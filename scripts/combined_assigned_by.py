@@ -157,7 +157,6 @@ def output_html(violations_info_list, path):
                 listItem.text = violation['line']
 
         ## Write out file
-        ET.indent(html, space=''    '', level=0)
         fileName = path + '/' + id + '-assigned-by-report.html'
         ET.ElementTree(html).write(fileName, encoding='unicode', method='html')
 
