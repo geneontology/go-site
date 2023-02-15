@@ -1,11 +1,11 @@
 id: ecocyc
-label: Encyclopedia of E. coli metabolism
+label: E. coli Encyclopedia of E. coli metabolism
 description: "GO data for Encyclopedia of E. coli metabolism"
 project_name: "EcoCyc and EcoliWiki collaborative annotation for E. coli K-12"
-contact_email: "ecoliwiki@gmail.com"
+contact_email: "biocyc-support@ai.sri.com"
 project_url: "http://ecoliwiki.org"
-funding_source: "GM077678, NIGMS U24GM088849"
-email_report: "ecoliwiki@gmail.com"
+funding_source: "GM077678"
+email_report: "biocyc-support@ai.sri.com"
 datasets:
  -
    id: ecocyc.gaf
