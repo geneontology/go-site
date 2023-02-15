@@ -47,7 +47,7 @@
             <tr>
                 <th scope="col">Rule</th>
                 {{ #header }}
-                <th scope="col"><a href="{{ id }}-assigned-by-report.html">{{ id }}</a></th>
+                <th scope="col"><a href="assigned-by-{{ id }}-report.html">{{ id }}</a></th>
                 {{ /header }}
             </tr>
         </thead>
@@ -70,7 +70,7 @@
                     {{ amount }}
                     {{ /has-zero-messages }}
                     {{ ^has-zero-messages }}
-                    <a href="{{ dataset }}-assigned-by-report.html#{{ rule }}" data-toggle="tooltip" data-html="true" data-placement="top" title="{{ dataset }}<br>{{ rule }}: ({{ title }})">{{ amount }}</a>
+                    <a href="assigned-by-{{ dataset }}-report.html#{{ rule }}" data-toggle="tooltip" data-html="true" data-placement="top" title="{{ dataset }}<br>{{ rule }}: ({{ title }})">{{ amount }}</a>
                     {{ /has-zero-messages }}
                 </td>
                 {{ /messages }}

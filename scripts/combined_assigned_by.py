@@ -90,7 +90,7 @@ def output_html(violations_info_list, path):
         heading = ET.Element('h1')
         body.append(heading)
         id = violation['id']
-        heading.text = id + ' assigned-by GORULE violations' 
+        heading.text = 'GORULE violations assigned by ' + id 
         body.append(ET.Element('br'))
 
         ## Create a section with the GORULE list
@@ -157,7 +157,7 @@ def output_html(violations_info_list, path):
                 listItem.text = violation['line']
 
         ## Write out file
-        fileName = path + '/' + id + '-assigned-by-report.html'
+        fileName = path + '/assigned-by-' + id + '-report.html'
         ET.ElementTree(html).write(fileName, encoding='unicode', method='html')
 
 
@@ -329,7 +329,8 @@ def main():
                 if (not (assigned_by and assigned_by.strip())):
                     LOG.info('Assigned by is empty or whitespace in GAF line ' + gaf_line)
                     assigned_by = gaf_creator_id
-                    assigned_by = assigned_by.strip()
+
+                assigned_by = assigned_by.strip()
                 if (not (assigned_by and assigned_by.strip())):
                     LOG.info('Skipping since there is no data generator information in ' + gaf_creator_id + ' for ' + msg_obj)
                     continue
