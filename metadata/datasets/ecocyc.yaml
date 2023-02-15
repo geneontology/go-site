@@ -16,7 +16,7 @@ datasets:
    dataset: ecocyc
    submitter: ecocyc
    compression: gzip
-   source: https://www.ai.sri.com/~kr/go/latest/ecocyc.gaf
+   source: https://www.ai.sri.com/~kr/go/latest/ecocyc.gaf.gz
    entity_type:
    status: active
    species_code: Ecol
@@ -26,12 +26,12 @@ datasets:
    id: ecocyc.gpi
    label: "ecocyc gpi file"
    description: "gpi file for E. coli Encyclopedia"
-   url: http://current.geneontology.org/annotations/wb.gpi.gz
+   url: http://current.geneontology.org/annotations/ecocyc.gpi.gz
    type: gpi
-   dataset: wb
-   submitter: wb
-   compression: gzip
-   source: https://www.ai.sri.com/~kr/go/latest/ecocyc.gaf
+   dataset: ecocyc
+   submitter: ecocyc
+   compression:
+   source: https://www.ai.sri.com/~kr/go/latest/ecocyc.gpi
    entity_type:
    status: active
    species_code: Ecol
