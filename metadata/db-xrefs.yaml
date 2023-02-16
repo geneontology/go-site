@@ -600,6 +600,26 @@
       url_syntax: https://ecocyc.org/ECOLI/reference.html?type=CITATION-FRAME&object=[example_id]
       example_id: EcoCyc_REF:COLISALII
       example_url: https://ecocyc.org/ECOLI/reference.html?type=CITATION-FRAME&object=COLISALII
+- 1 database: EcoCyc_GENE
+  name: Scientific database for the bacterium Escherichia coli K-12 MG1655
+  generic_urls:
+    - https://ecocyc.org/
+  entity_types:
+    - type_name: protein
+      type_id: PR:000000001
+      url_syntax: https://ecocyc.org/gene?orgid=ECOLI&id=[example_id]
+      example_id: EcoCyc:RBSA-MONOMER
+      example_url: https://ecocyc.org/gene?orgid=ECOLI&id=RBSA-MONOMER
+    - type_name: ribonucleic acid
+      type_id: CHEBI:33697
+      url_syntax: https://ecocyc.org/gene?orgid=ECOLI&id=[example_id]
+      example_id: EcoCyc:EG30086
+      example_url: https://ecocyc.org/gene?orgid=ECOLI&id=EG30086
+    - type_name: protein-containing complex
+      type_id: GO:0032991
+      url_syntax: https://ecocyc.org/ECOLI/NEW-IMAGE?id=[example_id]
+      example_id: EcoCyc:ABC-28-CPLX
+      example_url: https://ecocyc.org/ECOLI/NEW-IMAGE?id=ABC-28-CPLX      
 - database: EcoliWiki
   name: EcoliWiki from EcoliHub
   description: EcoliHub\'s subsystem for community annotation of E. coli K-12
