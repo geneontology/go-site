@@ -584,7 +584,7 @@
   entity_types:
     - type_name: biological_process
       type_id: GO:0008150
-      id_syntax: EG[0-9]{5}
+      id_syntax: ^[A-Za-z0-9+_.%-:]+$
       url_syntax: https://ecocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY&object=[example_id]
       example_id: EcoCyc:P2-PWY
       example_url: https://ecocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY&object=P2-PWY
@@ -607,16 +607,19 @@
   entity_types:
     - type_name: protein
       type_id: PR:000000001
+      id_syntax: ^[A-Za-z0-9+_.%-:]+$
       url_syntax: https://ecocyc.org/gene?orgid=ECOLI&id=[example_id]
       example_id: EcoCyc:RBSA-MONOMER
       example_url: https://ecocyc.org/gene?orgid=ECOLI&id=RBSA-MONOMER
     - type_name: ribonucleic acid
       type_id: CHEBI:33697
+      id_syntax: ^[A-Za-z0-9+_.%-:]+$
       url_syntax: https://ecocyc.org/gene?orgid=ECOLI&id=[example_id]
       example_id: EcoCyc:EG30086
       example_url: https://ecocyc.org/gene?orgid=ECOLI&id=EG30086
     - type_name: protein-containing complex
       type_id: GO:0032991
+      id_syntax: ^[A-Za-z0-9+_.%-:]+$
       url_syntax: https://ecocyc.org/ECOLI/NEW-IMAGE?id=[example_id]
       example_id: EcoCyc:ABC-28-CPLX
       example_url: https://ecocyc.org/ECOLI/NEW-IMAGE?id=ABC-28-CPLX      
@@ -1573,6 +1576,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
+      id_syntax: ^[A-Za-z0-9+_.%-:]+$
       url_syntax: https://biocyc.org/META/NEW-IMAGE?type=NIL&object=[example_id]
       example_id: MetaCyc:GLUTDEG-PWY
       example_url: https://biocyc.org/META/NEW-IMAGE?type=NIL&object=GLUTDEG-PWY
