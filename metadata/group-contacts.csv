@@ -120,8 +120,8 @@ RGD,Marek Tuta,@tutajm,import and export pipelines
 RHEA,Anne Morgat,@amorgat,
 RHEA,Arnaud Kerhornou,@arnaudxk,Swiss-Prot & Rhea developer
 RHEA,Kristian Axelson,@kaxelsen,RHEA and Swiss-Prot curator
-RNAcentral,Alex Bateman,PI,
-RNAcentral,Blake Sweeny,Annotation Review,blakesweeney,
+RNAcentral,Alex Bateman,,PI
+RNAcentral,Blake Sweeny,@blakesweeney,Annotation Review
 Roslin_Institute,Not actively maintainted/GO_Central,@pgaudet,no contact person
 Roslin_Institute,Not actively maintainted/GO_Central,@vanaukenk,no contact person
 Roslin_Institute,Not actively maintainted/EBI,@Antonialock,no contact person
