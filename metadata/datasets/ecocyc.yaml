@@ -15,8 +15,8 @@ datasets:
    type: gaf
    dataset: ecocyc
    submitter: ecocyc
-   compression: gzip
-   source: https://ecoliwiki.org/gaf/gene_association.ecocyc.gz
+   compression:
+   source: https://ftp.ebi.ac.uk/pub/databases/GO/goa/proteomes/18.E_coli_MG1655.goa
    entity_type:
    status: active
    species_code:

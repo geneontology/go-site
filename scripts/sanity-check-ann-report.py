@@ -263,7 +263,11 @@ def main():
             "ecocyc": 0.3
         }
         if severe_line_reduction_test(aid, reduction_threshold, count_gaf_prod, count_gaf_src, small_file_size):
-            die_screaming('Severe reduction of product for: ' + aid)
+            ## Probably temporary bypass of the fact that ecocyc is not really
+            ## ecocyc for the moment:
+            ## https://github.com/geneontology/go-site/issues/1961#issuecomment-1439062352
+            if not aid == 'ecocyc':
+                die_screaming('Severe reduction of product for: ' + aid)
         ## No fatal remarks should have been made.
         if lines_fatal > 0:
             die_screaming('Fatal error in: ' + aid)
