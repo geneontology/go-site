@@ -674,8 +674,8 @@ corrected aspect.
  * status: implemented
 
 
-All IEA annotations with a date more than two years old should be filered.
-IEAs between 1 and 2 years old trigger a WARNING.
+All IEA annotations with a date more than three years old should be filered.
+IEAs between 1 and 3 years old trigger a WARNING.
 IEAs less than one year old are valid. 
 
 
