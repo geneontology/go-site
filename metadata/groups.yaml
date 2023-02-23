@@ -143,7 +143,7 @@
   parent_group: GOC
 -
   label: AgBase
-  id: http://www.agbase.msstate.edu
+  id: https://agbase.arizona.edu/
   shorthand: AgBase
   parent_group: GOC
 -
