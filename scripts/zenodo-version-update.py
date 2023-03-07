@@ -188,8 +188,34 @@ def main():
     else:
         LOG.info('Will use key/token: <XYZ>')
 
+    ## Get listing core concept deposition.
+    def concept_deposition_search():
+
+        init_dep_check_url = server_url + '/api/deposit/depositions'
+        LOG.info('next command as curl: ' + 'curl -X GET -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer ' + args.key + '" ' + init_dep_check_url)
+        if pause_p:
+            yes_or_die('Check initial depositions using script?')
+        response = requests.get(init_dep_check_url, params={'access_token': args.key})
+
+        ## Test file listing okay.
+        if not successful_response_code(response.status_code, 200):
+            die_screaming('cannot get deposition listing', response)
+
+        ## Go from concept id to deposition listing.
+        ddoc = None
+        for entity in response.json():
+            conceptrecid = entity.get('conceptrecid', None)
+            if conceptrecid and str(conceptrecid) == str(concept_id):
+                ddoc = entity
+
+        ## Test deposition doc search okay.
+        if not ddoc:
+            die_screaming('could not find desired concept', response)
+
+        return ddoc
+
     ###
-    ###
+    ### Start main interaction series.
     ###
 
     ## Convert the filename into a referential base for use later on.
@@ -197,31 +223,43 @@ def main():
     LOG.info('Will upload file: ' + args.file)
     LOG.info('With upload filename: ' + filename)
 
-    ## Get listing of all depositions.
-    init_dep_check_url = server_url + '/api/deposit/depositions'
-    LOG.info('next command as curl: ' + 'curl -X GET -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer ' + args.key + '" ' + init_dep_check_url)
-    if pause_p:
-        yes_or_die('Check initial depositions using script?')
-    response = requests.get(init_dep_check_url, params={'access_token': args.key})
-
-    ## Test file listing okay.
-    if not successful_response_code(response.status_code, 200):
-        die_screaming('cannot get deposition listing', response)
-
-    ## Go from concept id to deposition listing.
-    depdoc = None
-    for entity in response.json():
-        conceptrecid = entity.get('conceptrecid', None)
-        if conceptrecid and str(conceptrecid) == str(concept_id):
-            depdoc = entity
-
-    ## Test deposition doc search okay.
-    if not depdoc:
-        die_screaming('could not find desired concept', response)
+    depdoc = concept_deposition_search()
 
     ## Test that status is published (no open session).
+    has_open_p = False
     if depdoc.get('state', None) != 'done':
-        die_screaming('desired concept currently has an "open" status', response)
+        has_open_p = True
+        LOG.info('desired concept currently has an "open" status')
+    else:
+        LOG.info('desired concept currently has an "published" status')
+
+    LOG.info(depdoc)
+
+    ## Conditionally, attempt to discard any open depositions.
+    if has_open_p :
+
+        ## Get the deposition id for the opened
+        old_dep_id = None
+        if depdoc.get('links', False) and depdoc['links'].get('latest_draft', False):
+            old_dep_id = int(depdoc['links']['latest_draft'].split('/')[-1])
+
+        ## Test that there is a usable deposition ID.
+        if not old_dep_id:
+            die_screaming('could not find open deposition ID', response, old_dep_id)
+        LOG.info('old deposition id: ' + str(old_dep_id))
+
+        discard_url = server_url + '/api/deposit/depositions/' + str(old_dep_id)
+        LOG.info('next command as curl: ' + 'curl -X DELETE -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer ' + args.key + '" ' + discard_url)
+        if pause_p:
+            yes_or_die('Discard open deposition using script?')
+        response = requests.delete(discard_url, params={'access_token': args.key})
+
+        ## Test correct discard (204 NO CONTENT).
+        if not successful_response_code(response.status_code, 204):
+            die_screaming('cannot discard version', response, old_dep_id)
+
+        ## Reset concept search now that we've made changes.
+        depdoc = concept_deposition_search()
 
     ## Get current deposition id.
     curr_dep_id = int(depdoc.get('id', None))
