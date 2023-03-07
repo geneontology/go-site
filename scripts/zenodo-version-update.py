@@ -317,7 +317,7 @@ def main():
     if d.get('links', False) and d['links'].get('bucket', False):
         new_bucket_url = d['links'].get('bucket', False)
 
-    ## Test that there is indded a new bucket and publish URLs.
+    ## Test that there is indeed a new bucket and publish URLs.
     if not new_bucket_url:
         die_screaming('could not find a new bucket URL', response, new_dep_id)
     LOG.info('new bucket URL: ' + str(new_bucket_url))
@@ -434,6 +434,7 @@ def main():
 
     ## Construct update metadata and send to server.
     oldmetadata['version'] = revision
+    oldmetadata['publication_date'] = revision
     newmetadata = {
         "metadata": oldmetadata
     }
