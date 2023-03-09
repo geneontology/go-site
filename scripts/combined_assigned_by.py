@@ -12,6 +12,7 @@
 ## Standard imports.
 import os
 import copy
+import html
 import sys
 import argparse
 import logging
@@ -84,9 +85,9 @@ def clear_creator_info(creator_info):
 def output_html(violations_info_list, path):
     for violation in violations_info_list:
         
-        html = ET.Element('html')
+        htmlObj = ET.Element('html')
         body = ET.Element('body')
-        html.append(body)
+        htmlObj.append(body)
         heading = ET.Element('h1')
         body.append(heading)
         id = violation['id']
@@ -118,6 +119,10 @@ def output_html(violations_info_list, path):
             if 0 == numViolations:
                 continue
 
+            firstMsg = violations[0]
+            ruleDesc = firstMsg['message']    # Rule and description
+            ruleDescEscaped = html.escape(ruleDesc)
+
             violationsCtr = violationsCtr + 1    
             ## Add to list of violations
             paragraph = ET.Element('p')
@@ -127,6 +132,7 @@ def output_html(violations_info_list, path):
             link = ET.Element('a', attrib={'href': anchor})
             paragraph.append(link)
             link.text = rule
+            link.tail = '    ' + ruleDescEscaped
 
             ## Details about the violation
             ruleDetails = ET.Element('h3', attrib={'id': rule})
@@ -136,7 +142,7 @@ def output_html(violations_info_list, path):
             msgDescPara = ET.Element('p')
             body.append(msgDescPara)
             firstMsg = violations[0]
-            msgDescPara.text = firstMsg['message']
+            msgDescPara.text = ruleDescEscaped
 
             unorderedList = ET.Element('ul')
             body.append(unorderedList)
@@ -158,7 +164,7 @@ def output_html(violations_info_list, path):
 
         ## Write out file
         fileName = path + '/assigned-by-' + id + '-report.html'
-        ET.ElementTree(html).write(fileName, encoding='unicode', method='html')
+        ET.ElementTree(htmlObj).write(fileName, encoding='unicode', method='html')
 
 
 def main():
