@@ -10,7 +10,6 @@ import glob
 
 this_script = os.path.abspath(__file__)
 
-
 @click.command()
 @click.option("--report", type=click.File("r"), required=True)
 @click.option("--template", type=click.File("r"), required=True)
@@ -25,7 +24,7 @@ def main(report, template, date, suppress_rule_tag):
     #     {"id": "goa_chicken"}
     #     ...
     # ]
-    header = sorted([{"id": dataset["id"]} for dataset in report_json], key=lambda h: h["id"])
+    header = sorted([{"id": dataset["id"]} for dataset in report_json], key=lambda h: h["id"].casefold())
     # click.echo(json.dumps(header, indent=4))
 
     rules_directory = os.path.normpath(os.path.join(os.path.dirname(this_script), "../metadata/rules"))
