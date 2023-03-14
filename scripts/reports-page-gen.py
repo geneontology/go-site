@@ -145,7 +145,7 @@ def main(report, template, date, suppress_rule_tag):
             }
             contents.append(v)
 
-        contents = sorted(contents, key=lambda d: d["dataset"])
+        contents = sorted(contents, key=lambda d: d["dataset"].casefold())
         cell = {
             "rule": row["rule"],
             "title": rules_descriptions.get(row["rule"], {}).get("title", ""),
