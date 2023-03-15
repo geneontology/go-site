@@ -35,10 +35,10 @@ $(ROOT_PATH)/annotations_new/%.gpad: $(ROOT_PATH)/annotations/%.gpad $(ROOT_PATH
 
 # This will assume that there are noctua gpads in the $(ROOT_PATH)/noctua_sources directory: $(ROOT_PATH)/noctua_sources/noctua_[resource].gpad.gz
 # 1. Files will be unzipped
-# 2. ontobio will parse them and save files as $(ROOT_PATH)/noctua_target/noctua_[resource].gpad, 
+# 2. ontobio will parse them and save files as $(ROOT_PATH)/noctua_target/noctua_[resource].gpad,
 #	along with reports: noctua_[resource].json and noctua_[resource].md
 # 3. noctua_[resource].gpad files will be zipped
-# 4. noctua_[resrouce].gpad.gz files will be uploaded back into skyhook at http://skyhook.berkeleybop.org/[branch]/products/annotations/noctua_[resource].gpad.gz
+# 4. noctua_[resrouce].gpad.gz files will be uploaded back into skyhook at http://skyhook.berkeleybop.org/[branch]/products/upstream_and_raw_data/noctua_[resource].gpad.gz
 # 5. reports will be uploaded to skyhook at http://skyhook.berkeleybop.org/[branch]/reports/
 
 # noctua_target/noctua_*.gpad.gz -> noctua_target/noctua_*.gpad -> noctua_sources/noctua_*-src.gpad -> noctua_sources/noctua_*-src.gpad.gz
@@ -65,4 +65,4 @@ $(ROOT_PATH)/noctua_target/noctua_%.gpad.gz: $(ROOT_PATH)/noctua_target/noctua_%
 OBO=http://purl.obolibrary.org/obo
 ONTOLOGY ?= $(OBO)/go/snapshot/go.json
 $(ROOT_PATH)/go-ontology.json:
-	wget --no-check-certificate $(ONTOLOGY) -O $@.tmp && mv $@.tmp $@ && touch $@	
+	wget --no-check-certificate $(ONTOLOGY) -O $@.tmp && mv $@.tmp $@ && touch $@

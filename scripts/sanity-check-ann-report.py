@@ -15,7 +15,7 @@
 ####  sshfs -oStrictHostKeyChecking=no -o IdentitiesOnly=true -o IdentityFile=/home/sjcarbon/local/share/secrets/bbop/ssh-keys/foo.skyhook -o idmap=user skyhook@skyhook.berkeleybop.org:/home/skyhook /tmp/mnt/
 ####  cp /tmp/mnt/master/annotations/whatever* /tmp/foo
 ####  cp /tmp/mnt/master/reports/whatever* /tmp/foo
-####  cp /tmp/mnt/master/products/annotations/whatever* /tmp/foo
+####  cp /tmp/mnt/master/products/upstream_and_raw_data/whatever* /tmp/foo
 ####  fusermount -u /tmp/mnt
 ####  python3 sanity-check-ann-report.py -v -d /tmp/foo
 ####

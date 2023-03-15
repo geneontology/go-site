@@ -9,7 +9,7 @@ datasets:
     dataset: noctua_mgi
     submitter: GOC
     compression: gzip
-    source: ./products/annotations/noctua_mgi-src.gpad.gz
+    source: ./products/upstream_and_raw_data/noctua_mgi-src.gpad.gz
     entity_type:
     status: active
     merges_into: mgi
@@ -24,7 +24,7 @@ datasets:
     dataset: noctua_fb
     submitter: GOC
     compression: gzip
-    source: ./products/annotations/noctua_fb.gpad.gz
+    source: ./products/upstream_and_raw_data/noctua_fb.gpad.gz
     entity_type:
     status: inactive
     species_code:
@@ -38,7 +38,7 @@ datasets:
     dataset: noctua_rgd
     submitter: GOC
     compression: gzip
-    source: ./products/annotations/noctua_rgd.gpad.gz
+    source: ./products/upstream_and_raw_data/noctua_rgd.gpad.gz
     entity_type:
     status: inactive
     species_code:
@@ -52,7 +52,7 @@ datasets:
     dataset: noctua_sgd
     submitter: GOC
     compression: gzip
-    source: ./products/annotations/noctua_sgd.gpad.gz
+    source: ./products/upstream_and_raw_data/noctua_sgd.gpad.gz
     entity_type:
     status: inactive
     species_code:
@@ -70,7 +70,7 @@ datasets:
     dataset: noctua_wb
     submitter: GOC
     compression: gzip
-    source: ./products/annotations/noctua_wb.gpad.gz
+    source: ./products/upstream_and_raw_data/noctua_wb.gpad.gz
     entity_type:
     status: inactive
     species_code:
@@ -84,7 +84,7 @@ datasets:
     dataset: noctua_xenbase
     submitter: GOC
     compression: gzip
-    source: ./products/annotations/noctua_xenbase-src.gpad.gz
+    source: ./products/upstream_and_raw_data/noctua_xenbase-src.gpad.gz
     entity_type:
     status: active
     merges_into: xenbase
@@ -100,7 +100,7 @@ datasets:
     dataset: noctua_zfin
     submitter: GOC
     compression: gzip
-    source: ./products/annotations/noctua_zfin-src.gpad.gz
+    source: ./products/upstream_and_raw_data/noctua_zfin-src.gpad.gz
     entity_type:
     status: active
     merges_into: zfin
