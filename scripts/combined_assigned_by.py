@@ -12,12 +12,14 @@
 ## Standard imports.
 import os
 import copy
+import datetime
 import html
 import sys
 import argparse
 import logging
 import json
 import re
+import go_stats_utils as utils
 
 ### For creating html document
 from xml.etree import ElementTree as ET
@@ -80,7 +82,61 @@ def clear_creator_info(creator_info):
                 if (metadata_key == 'taxa'):
                     metadata_obj[metadata_key] = []
                 if (metadata_key == 'taxa_label_map'):
-                    metadata_obj[metadata_key] = {}                 
+                    metadata_obj[metadata_key] = {} 
+                    
+def output_md(violations_info_list, path):
+    ## Generate a summary in markdown 
+    for violation in violations_info_list:
+        id = violation['id']
+        s = '# GORULE violations assigned by ' + id
+        s += '\n\n## SUMMARY'
+        s += '\n\nThis report generated on {}'.format(datetime.date.today())
+        ## Table of Contents
+        s += '\n\n## Contents'
+
+       
+        ruleDetails = '\n\n## MESSAGES'
+
+        msgs = violation['messages']
+        rules = list(msgs.keys())
+        rules.sort();
+        messages = {i: msgs[i] for i in rules}
+        for rule, violations in messages.items():
+            numViolations = len(violations)
+            if 0 == numViolations:
+                continue
+
+            firstMsg = violations[0]
+            ruleDesc = firstMsg['message']    # Rule and description
+
+            s+= '\n\n[' + rule + '](#' + rule + ')[' + ruleDesc + ']{}'
+            
+            
+            ruleDetails += '\n\n###' + rule
+            ruleDetails += '\n\n' + ruleDesc
+            ruleDetails += '\n\n* total: ' + str(numViolations)
+
+            ruleDetails += '\n#### Messages'
+            for violation in violations:
+                ruleDetails += '\n* ' + violation['level'] + ' - ' + violation['type'] + ':' + ruleDesc + '--`' + violation['line'] + '`'
+
+        s += ruleDetails        
+        ## Write out file
+        fileName = path + '/assigned-by-' + id + '-report.md'
+        utils.write_text(fileName, s)
+
+
+# From https://stackoverflow.com/questions/28813876/how-do-i-get-pythons-elementtree-to-pretty-print-to-an-xml-file
+def _pretty_print(current, parent=None, index=-1, depth=0):
+    for i, node in enumerate(current):
+        _pretty_print(node, current, i, depth + 1)
+    if parent is not None:
+        if index == 0:
+            parent.text = '\n' + ('\t' * depth)
+        else:
+            parent[index - 1].tail = '\n' + ('\t' * depth)
+        if index == len(parent) - 1:
+            current.tail = '\n' + ('\t' * (depth - 1))                                    
 
 def output_html(violations_info_list, path):
     for violation in violations_info_list:
@@ -112,7 +168,10 @@ def output_html(violations_info_list, path):
        
 
 
-        messages = violation['messages']
+        msgs = violation['messages']
+        rules = list(msgs.keys())
+        rules.sort();
+        messages = {i: msgs[i] for i in rules}
         violationsCtr = 0
         for rule, violations in messages.items():
             numViolations = len(violations)
@@ -132,7 +191,9 @@ def output_html(violations_info_list, path):
             link = ET.Element('a', attrib={'href': anchor})
             paragraph.append(link)
             link.text = rule
-            link.tail = '    ' + ruleDescEscaped
+            ruleDef = ET.Element('span')
+            ruleDef.text = ruleDescEscaped
+            paragraph.append(ruleDef)
 
             ## Details about the violation
             ruleDetails = ET.Element('h3', attrib={'id': rule})
@@ -161,6 +222,9 @@ def output_html(violations_info_list, path):
                 listItem = ET.Element('li')
                 unorderedViolationsList.append(listItem)
                 listItem.text = violation['line']
+
+        # Indent
+        _pretty_print(htmlObj)
 
         ## Write out file
         fileName = path + '/assigned-by-' + id + '-report.html'
@@ -379,6 +443,10 @@ def main():
 
     for gaf_creator_msg in new_assigned_by_to_info.values():
         violator_list.append(gaf_creator_msg)
+
+
+    ## Output md file for each assigned-by with GORULE violation details
+    output_md(violator_list, os.path.dirname(args.output))
 
     ## Output html file for each assigned-by with GORULE violation details
     output_html(violator_list, os.path.dirname(args.output))
