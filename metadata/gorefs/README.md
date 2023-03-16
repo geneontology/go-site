@@ -19,7 +19,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000020">GO_REF:0000020 OBSOLETE Electronic Gene Ontology annotations created by transferring manual GO annotations between orthologous microbial proteins</a>
  * <a href="#goref0000021">GO_REF:0000021 Improving the representation of central nervous system development in the biological process ontology</a>
  * <a href="#goref0000022">GO_REF:0000022 Improving the representation of immunology in the biological process Ontology</a>
- * <a href="#goref0000023">GO_REF:0000023 Gene Ontology annotation based on UniProtKB Subcellular Location vocabulary mapping.</a>
+ * <a href="#goref0000023">GO_REF:0000023 OBSOLETE Gene Ontology annotation based on UniProtKB Subcellular Location vocabulary mapping.</a>
  * <a href="#goref0000024">GO_REF:0000024 Manual transfer of experimentally-verified manual GO annotation data to orthologs by curator judgment of sequence similarity.</a>
  * <a href="#goref0000025">GO_REF:0000025 Operon structure as IGC evidence</a>
  * <a href="#goref0000026">GO_REF:0000026 OBSOLETE Improving the representation of muscle biology in the biological process and cellular component ontologies.</a>
