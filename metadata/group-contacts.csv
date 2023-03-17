@@ -29,6 +29,7 @@ DIBU - DiBest-Unical,Simona Panni,@simonapanni,
 dictyBase,Petra Fey,@pfey03,Annotation Review
 dictyBase,Robert Dodson,@rjdodson,
 DisProt,Federica Quaglia,@federicaquaglia,biocuration | stucture | functions
+DisProt,Victoria Nugnes,@victorianugnes,biocuration | stucture | intrinsically disordered regions (IDRs)
 EAWAG (ETH Zurich),Emanuel Schmid,@emanuel-schmid,biodegradation | databases | webservices
 EcoCyc,Amanda Mackie,@amandamackie,
 ECO - Evidence and Conclusion Ontology,Michelle Giglio,@mgiglio99,
@@ -44,10 +45,10 @@ FlyBase,Giulia Antonazzo,@gantonazzo,
 FlyBase,Steven Marygold,@sjm41,
 GDB,EBI/GOC,@Antonialock,
 GDB,EBI/GOC,@pgaudet,
-GeneDB,Ulrike Boehme,@uliboehme,Plasmodium curator
+GeneDB,Ulrike Boehme,@uliboehme,Plasmodium curator | TriTryp
 GeneDB,F.Silva-Franco, F.Silva-Franco at liverpool.ac.uk,TBRU curator
-GO_Central,Pascale Gaudet,@pgaudet,PAINT|transcription|multiorganism processes|cellular biology
-GO_Central,Chris Mungall,@cmungall,Ontology|Anatomy
+GO_Central,Pascale Gaudet,@pgaudet,PAINT|transcription | multiorganism processes | cellular biology
+GO_Central,Chris Mungall,@cmungall,Ontology | Anatomy
 GO_Central - USC,Dustin Ebert,@dustine32,PAINT pipeline|GO pipeline
 GO_Noctua,,,
 GOC,,,
@@ -64,6 +65,7 @@ IntAct,Kalpana Panneerselvam,@kalpanap,
 InterPro,Lowri Williams,lsw26,
 InterPro,Sara Chuguransky,@sarach06,
 InterPro,Beatriz Lazaro Pinto,@blazaropinto,
+InterPro,Antonina Andreeva (Toni),@tony787 | aea-at- ebi.ac.uk,
 JaponicusDB,Snezka Oliferenko,@snezhkaoliferenko,
 JaponicusDB,Val Wood,@ValWood,
 JCVI,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
@@ -139,28 +141,28 @@ TIGR,Not actively maintainted/GO_Central,@pgaudet,
 TIGR,Not actively maintainted/GO_Central,@vanaukenk,
 UF_OPP, Colbie Reed, @dexink, microbes
 UniProt (EBI),Alex Ignatchenko,@alexsign,Software & pipeline
-UniProt (EBI),Antonia Lock,@Antonialock,Annotation Review|GOA contact for GO
+UniProt (EBI),Antonia Lock,@Antonialock,Annotation Review | GOA contact for GO
 UniProt (EBI),Michelle Magrane,@magrane,
 UniProt (EBI),Sandra Orchard,@sandraorchard,
 UniProt (EBI),Rizwan Ishtiaq,@rizwan-ishtiaq,QuickGO java backend
 UniProt (Swiss-Prot/Geneva),Andrea Auchincloss,@AndreaAuchincloss,Bacteria
-UniProt (Swiss-Prot/Geneva),Cristina Casals Casa,@ccasalsc, Cell Biology|Transcription
+UniProt (Swiss-Prot/Geneva),Cristina Casals Casa,@ccasalsc, Cell Biology | Transcription
 UniProt (Swiss-Prot/Geneva),Florence Jungo,@FJungo,Venoms
 UniProt (Swiss-Prot/Geneva),Kristian Axelsen,@kaxelsen,enzymes
 UniProt (Swiss-Prot/Geneva),Lucila Aimo,@aimol,lipid metabolism
-UniProt (Swiss-Prot/Geneva),Marc Feuermann,@marcfeuermann,fungi|enzymes
-UniProt (Swiss-Prot/Geneva),Nevila Nouspikel,nnouspikel,lipids|immunology|cancer
+UniProt (Swiss-Prot/Geneva),Marc Feuermann,@marcfeuermann,fungi | enzymes
+UniProt (Swiss-Prot/Geneva),Nevila Nouspikel,nnouspikel,lipids | immunology | cancer
 UniProt (Swiss-Prot/Geneva),Ivo Pedruzzi,@pedruzzi, 
 UniProt (Swiss-Prot/Geneva),Sylvain Poux,@sylvainpoux,
 UniProt - UniRules,Elena Speretta,esperetta,
 UniProt - UniRules,Pedro Raposo,PedroRaposo,
-WB - WormBase,Kimberly Van Auken,@vanaukenk,C.elegans|Noctua|GO-CAM
+WB - WormBase,Kimberly Van Auken,@vanaukenk,C.elegans | Noctua | GO-CAM
 Wikidata,Andrew Su,@andrewsu,
 Wikidata,Derek,@cdjow2019 ,
 Xenbase,Malcolm Fisher,@malcolmfisher103,Xenopus
 YuBioLab,,,
 ZFIN,Doug Howe,@doughowe,Zebra fish
 ZFIN,Leyla Ruzicka,@LeylaR,ZFIN technical
-ZFIN,Sridhar Ramanchandran,@sramachand,Annotation Review|ZFIN curation
+ZFIN,Sridhar Ramanchandran,@sramachand,Annotation Review | ZFIN curation
 Domain expert,,@khybiske,Chlamydia
 Domain expert,,@putmantime,Chlamydia
