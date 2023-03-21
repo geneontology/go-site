@@ -2815,15 +2815,15 @@
     - type_name: gene
       type_id: SO:0000704
       id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
-      url_syntax: https://www.alliancegenome.org/gene/WB:[example_id]
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WB:WBGene00003001
-      example_url: https://www.alliancegenome.org/gene/WB:WBGene00003001
+      example_url: http://www.wormbase.org/get?name=WBGene00003001
     - type_name: variation
       type_id: VariO:0001
       id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
-      url_syntax: https://www.alliancegenome.org/allele/WB:[example_id]
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WB:WBVar00089843
-      example_url: https://www.alliancegenome.org/allele/WB:WBVar00089843
+      example_url: http://www.wormbase.org/get?name=WBVar00089843
     - type_name: RNAi
       type_id: topic:3523
       id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
@@ -2833,9 +2833,9 @@
     - type_name: Transgene
       type_id: SO:0000902
       id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
-      url_syntax: https://www.alliancegenome.org/allele/WB:[example_id]
+      url_syntax: http://www.wormbase.org/get?name=[example_id]
       example_id: WB:WBTransgene00000059
-      example_url: https://www.alliancegenome.org/allele/WB:WBTransgene00000059
+      example_url: http://www.wormbase.org/get?name=WBTransgene00000059
     - type_name: protein
       type_id: PR:000000001
       id_syntax: (CE[0-9]{5})|(WB(Gene|Var|RNAi|Transgene)[0-9]{8})
