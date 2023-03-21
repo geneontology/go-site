@@ -233,9 +233,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatget.asp?genid=[example_id] OK
+      url_syntax: https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatget.asp?genid=[example_id]
       example_id: CASGEN:1040
-      example_url: https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatget.asp?genid=1040   OK
+      example_url: https://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatget.asp?genid=1040
 - database: CASREF
   name: Catalog of Fishes publications database
   generic_urls:
@@ -243,9 +243,9 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: https://researcharchive.calacademy.org/research/ichthyology/catalog/getref.asp?id=[example_id] OK
+      url_syntax: https://researcharchive.calacademy.org/research/ichthyology/catalog/getref.asp?id=[example_id]
       example_id: CASREF:2031
-      example_url: https://researcharchive.calacademy.org/research/ichthyology/catalog/getref.asp?id=2031 OK
+      example_url: https://researcharchive.calacademy.org/research/ichthyology/catalog/getref.asp?id=2031
 - database: CASSPC
   name: Catalog of Fishes species database
   synonyms:
