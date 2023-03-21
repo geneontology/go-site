@@ -28,6 +28,7 @@ sequence:
         required: false
       "rdf_uri_prefix":
         type: str
+        pattern: /.+[_/[[:punct:]]]$/
         required: false
       "generic_urls":
         type: seq
