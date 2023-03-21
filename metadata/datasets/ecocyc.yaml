@@ -16,7 +16,7 @@ datasets:
    dataset: ecocyc
    submitter: ecocyc
    compression: gzip
-   source: http://skyhook.berkeleybop.org/ecoli.gaf.gz
+   source: https://ftp.ebi.ac.uk/pub/databases/GO/goa/proteomes/18.E_coli_MG1655.goa
    entity_type:
    status: active
    species_code:
