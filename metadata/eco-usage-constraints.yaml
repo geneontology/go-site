@@ -167,7 +167,13 @@ eco_usage_constraints:
       - entity_type: *catalytic_activity
       - entity_type: *biological_process
       - entity_type: *protein_complex
-      - entity_type: *rna
+      - entity_type: *rna      
+  - eco_id: ECO:0007322
+    go_evidence: IEA
+    with_presence: mandatory
+    with_structure: simple
+    with_entities:
+      - entity_type: *vocabulary
   - eco_id: ECO:0000255
     go_evidence: ISM
     with_presence: recommended
