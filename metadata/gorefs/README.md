@@ -372,10 +372,7 @@ Transitive assignment of GO terms based on the UniProtKB Subcellular Location vo
  * ext xref: dictyBase_REF:9
  * ext xref: J:73065
  * ext xref: J:104715
- * ext xref: FB:FBrf0202953
- * ext xref: FB:FBrf0212479
- * ext xref: FB:FBrf0232278
- * ext xref: FB:FBrf0232279
+ * ext xref: FB:FBrf0255270
 
 
 
