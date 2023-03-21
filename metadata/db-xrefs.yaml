@@ -3005,7 +3005,7 @@
       type_id: QTL_ID:0000000
       url_syntax: https://www.animalgenome.org/QTLdb/q?id=[example_id]
       id_syntax: \d+
-      example_id: 23155
+      example_id: Animal_QTLdb:23155
       example_url: https://www.animalgenome.org/QTLdb/q?id=23155
 - database: Animal_CorrDB
   name: CorrDB
@@ -3017,7 +3017,7 @@
       type_id: CorrID:000000
       url_syntax: https://www.animalgenome.org/CorrDB/q/?id=[example_id]
       id_syntax: \d+
-      example_id: 37232
+      example_id: Animal_CorrDB:37232
       example_url: https://www.animalgenome.org/CorrDB/q/?id=37232
 - database: AlphaFold
   name: AlphaFold Protein Structure Database
