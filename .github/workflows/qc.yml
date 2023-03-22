@@ -33,7 +33,9 @@ jobs:
       run: pip3 install pyyaml typing graphstore/rule-runner
     ## Users.
     - name: Test users schema.
-      run: kwalify -E -m metadata/users.schema.yaml 2>&1 | grep 'INVALID\|ERROR' && false || true
+      run: |
+        kwalify -E -f metadata/db-xrefs.schema.yaml metadata/db-xrefs.yaml 2>&1 | grep 'INVALID\|ERROR'
+        test $? -ne 0
     - name: Test users metadata.
       run: kwalify -E -f metadata/users.schema.yaml metadata/users.yaml 2>&1 | grep 'INVALID\|ERROR' && false || true
     ## Groups.
