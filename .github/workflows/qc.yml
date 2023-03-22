@@ -34,8 +34,8 @@ jobs:
     ## Users.
     - name: Test users schema.
       run: |
-        kwalify -E -f metadata/db-xrefs.schema.yaml metadata/db-xrefs.yaml 2>&1 | grep 'INVALID\|ERROR'
-        test $? -ne 0
+        kwalify -E -f metadata/db-xrefs.schema.yaml metadata/db-xrefs.yaml 2>&1 | grep 'INVALID\|ERROR' > invalid.log
+        test $(stat -c %s invalid.log) -eq 0
     - name: Test users metadata.
       run: kwalify -E -f metadata/users.schema.yaml metadata/users.yaml 2>&1 | grep 'INVALID\|ERROR' && false || true
     ## Groups.
