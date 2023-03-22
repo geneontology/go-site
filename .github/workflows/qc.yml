@@ -33,34 +33,34 @@ jobs:
       run: pip3 install pyyaml typing graphstore/rule-runner
     ## Users.
     - name: Test users schema.
-      run: ! ( kwalify -E -m metadata/users.schema.yaml 2>&1 | grep 'INVALID\|ERROR' )
+      run: kwalify -E -m metadata/users.schema.yaml 2>&1 | grep 'INVALID\|ERROR' && false || true
     - name: Test users metadata.
-      run: ! ( kwalify -E -f metadata/users.schema.yaml metadata/users.yaml 2>&1 | grep 'INVALID\|ERROR' )
+      run: kwalify -E -f metadata/users.schema.yaml metadata/users.yaml 2>&1 | grep 'INVALID\|ERROR' && false || true
     ## Groups.
     - name: Test groups schema.
-      run: ! ( kwalify -E -m metadata/groups.schema.yaml 2>&1 | grep 'INVALID\|ERROR' )
+      run: kwalify -E -m metadata/groups.schema.yaml 2>&1 | grep 'INVALID\|ERROR' && false || true
     - name: Test groups metadata.
-      run: ! ( kwalify -E -f metadata/groups.schema.yaml metadata/groups.yaml 2>&1 | grep 'INVALID\|ERROR' )
+      run: kwalify -E -f metadata/groups.schema.yaml metadata/groups.yaml 2>&1 | grep 'INVALID\|ERROR' && false || true
     ## DB Xrefs.
     - name: Test dbxrefs schema.
-      run: ! ( kwalify -E -m metadata/db-xrefs.schema.yaml 2>&1 | grep 'INVALID\|ERROR' )
+      run: kwalify -E -m metadata/db-xrefs.schema.yaml 2>&1 | grep 'INVALID\|ERROR' && false || true
     - name: Test dbxrefs metadata.
-      run: ! ( kwalify -E -f metadata/db-xrefs.schema.yaml metadata/db-xrefs.yaml 2>&1 | grep 'INVALID\|ERROR' )
+      run: kwalify -E -f metadata/db-xrefs.schema.yaml metadata/db-xrefs.yaml 2>&1 | grep 'INVALID\|ERROR' && false || true
     ## Datasets.
     - name: Test datasets schema.
-      run: ! ( kwalify -E -m metadata/datasets.schema.yaml 2>&1 | grep 'INVALID\|ERROR' )
+      run: kwalify -E -m metadata/datasets.schema.yaml 2>&1 | grep 'INVALID\|ERROR' && false || true
     - name: Test datasets metadata.
-      run: ! ( kwalify -E -f metadata/datasets.schema.yaml metadata/datasets/*.yaml 2>&1 | grep 'INVALID\|ERROR' )
+      run: kwalify -E -f metadata/datasets.schema.yaml metadata/datasets/*.yaml 2>&1 | grep 'INVALID\|ERROR' && false || true
     ## Extension constraints.
     - name: Test extension constraints schema.
-      run: ! ( kwalify -E -m metadata/extensions-constraints.schema.yaml 2>&1 | grep 'INVALID\|ERROR' )
+      run: kwalify -E -m metadata/extensions-constraints.schema.yaml 2>&1 | grep 'INVALID\|ERROR' && false || true
     - name: Test extension constraints metadata.
-      run: ! ( kwalify -E -f metadata/extensions-constraints.schema.yaml metadata/extensions-constraints.yaml 2>&1 | grep 'INVALID\|ERROR' )
+      run: kwalify -E -f metadata/extensions-constraints.schema.yaml metadata/extensions-constraints.yaml 2>&1 | grep 'INVALID\|ERROR' && false || true
     ## GO reference species set.
     - name: Test reference species set schema.
-      run: ! ( kwalify -E -m metadata/go-reference-species.schema.yaml 2>&1 | grep 'INVALID\|ERROR' )
+      run: kwalify -E -m metadata/go-reference-species.schema.yaml 2>&1 | grep 'INVALID\|ERROR' && false || true
     - name: Test reference species set metadata.
-      run: ! ( kwalify -E -f metadata/go-reference-species.schema.yaml metadata/go-reference-species.yaml 2>&1 | grep 'INVALID\|ERROR' )
+      run: kwalify -E -f metadata/go-reference-species.schema.yaml metadata/go-reference-species.yaml 2>&1 | grep 'INVALID\|ERROR' && false || true
     ## Cross-test metadata
     - name: Cross-test users and groups.
       run: python3 ./scripts/sanity-check-users-and-groups.py --verbose --users metadata/users.yaml --groups metadata/groups.yaml
