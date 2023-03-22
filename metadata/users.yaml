@@ -4479,7 +4479,7 @@
       go:
         allow-edit: true
   groups:
-    - 'www.ufl.edu'
+    - 'https://www.ufl.edu'
   nickname: 'Colbie Reed'
   organization: 'UF_OPP'
   uri: 'https://orcid.org/0000-0002-5039-2052'
