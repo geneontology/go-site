@@ -45,7 +45,7 @@ jobs:
     - name: Test dbxrefs schema.
       run: kwalify -E -m metadata/db-xrefs.schema.yaml
     - name: Test dbxrefs metadata.
-      run: kwalify -E -f metadata/db-xrefs.schema.yaml metadata/db-xrefs.yaml
+      run: kwalify -E -f metadata/db-xrefs.schema.yaml metadata/db-xrefs.yaml  2>&1 | tee out.log && grep 'INVALID\|ERROR' out.log; test $? -ne 0
     ## Datasets.
     - name: Test datasets schema.
       run: kwalify -E -m metadata/datasets.schema.yaml
