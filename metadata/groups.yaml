@@ -538,7 +538,7 @@
   parent_group: GOC
 -
   label: 'University of Florida Orphan Proteins Project'
-  id: www.ufl.edu
+  id: https://www.ufl.edu
   shorthand: UF_OPP
   parent_group: PomBase
 -
