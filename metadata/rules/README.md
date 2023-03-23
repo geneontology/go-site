@@ -1024,7 +1024,7 @@ the above file, that element should be dropped from the extensions.
  * status: proposed
 
 
-In GAF2.2, a gp2term relation (column 4) is mandatory for every annotation.
+In GAF2.2, a gp2term relation (column 4; see https://wiki.geneontology.org/Annotation_Relations#Gene_Product_to_GO_term_Relations_(%22qualifiers%22)) is mandatory for every annotation.
 This rule processes older versions of GAF files to provide basic compatibility with the current GAF2.2 format. To convert a GAF Version 2.0 or 2.1 file to a GAF Version 2.2, gp2term relations are assigned as follows: 
 
 For annotations that already have a gp2term relation: 
