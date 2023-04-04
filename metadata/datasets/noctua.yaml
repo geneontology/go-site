@@ -13,7 +13,7 @@ datasets:
     entity_type:
     status: active
     merges_into: mgi
-    species_code:
+    species_code: Mmus
     taxa:
       - NCBITaxon:5476
 
@@ -27,7 +27,7 @@ datasets:
     source: ./products/upstream_and_raw_data/noctua_fb.gpad.gz
     entity_type:
     status: inactive
-    species_code:
+    species_code: Dmel
     taxa:
       - NCBITaxon:7227
 
@@ -41,7 +41,7 @@ datasets:
     source: ./products/upstream_and_raw_data/noctua_rgd.gpad.gz
     entity_type:
     status: inactive
-    species_code:
+    species_code: Rnor
     taxa:
       - NCBITaxon:10116
 
@@ -55,7 +55,7 @@ datasets:
     source: ./products/upstream_and_raw_data/noctua_sgd.gpad.gz
     entity_type:
     status: inactive
-    species_code:
+    species_code: Scer
     taxa:
       - NCBITaxon:285006
       - NCBITaxon:307796
@@ -73,7 +73,7 @@ datasets:
     source: ./products/upstream_and_raw_data/noctua_wb.gpad.gz
     entity_type:
     status: inactive
-    species_code:
+    species_code: Cele
     taxa:
       - NCBITaxon:6239
 
@@ -88,7 +88,7 @@ datasets:
     entity_type:
     status: active
     merges_into: xenbase
-    species_code:
+    species_code: Xenopus
     taxa:
       - NCBITaxon:8364
       - NCBITaxon:8355
@@ -104,6 +104,6 @@ datasets:
     entity_type:
     status: active
     merges_into: zfin
-    species_code:
+    species_code: Drer
     taxa:
       - NCBITaxon:7955
