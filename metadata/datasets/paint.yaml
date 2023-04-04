@@ -13,7 +13,7 @@ datasets:
    source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_cgd.gaf.gz
    entity_type:
    status: active
-   species_code:
+   species_code: Calb
    taxa:
     - NCBITaxon:5476
    merges_into: cgd
@@ -48,7 +48,7 @@ datasets:
    source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_ecocyc.gaf.gz
    entity_type:
    status: active
-   species_code:
+   species_code: Ecol
    taxa:
     - NCBITaxon:83333
    merges_into: ecocyc
@@ -80,7 +80,7 @@ datasets:
    source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_chicken.gaf.gz
    entity_type: chicken
    status: active
-   species_code:
+   species_code: Ggal
    taxa:
    merges_into: goa_chicken
 
@@ -95,7 +95,7 @@ datasets:
    source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_human.gaf.gz
    entity_type: human
    status: active
-   species_code:
+   species_code: Hsap
    taxa:
    merges_into: goa_human
 

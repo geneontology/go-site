@@ -19,7 +19,7 @@ datasets:
    source: ftp://ftp.sanger.ac.uk/pub/project/pathogens/as44/Lmajor.gaf.gz
    entity_type:
    status: active
-   species_code:
+   species_code: Lmaj
    taxa:
     - NCBITaxon:5664
  -
@@ -33,7 +33,7 @@ datasets:
    compression: gzip
    source: ftp://ftp.sanger.ac.uk/pub/project/pathogens/as44/Tbruceibrucei927.gaf.gz
    status: active
-   species_code:
+   species_code: Tbru
    taxa:
     - NCBITaxon:185431
  -  
@@ -48,7 +48,7 @@ datasets:
    source: ftp://ftp.sanger.ac.uk/pub/project/pathogens/as44/Pfalciparum.gaf.gz
    entity_type:
    status: active
-   species_code:
+   species_code: Pfal
    taxa:
     - NCBITaxon:5833
     - NCBITaxon:36329
