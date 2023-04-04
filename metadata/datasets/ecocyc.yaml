@@ -18,6 +18,6 @@ datasets:
    source: https://ftp.ebi.ac.uk/pub/databases/GO/goa/proteomes/18.E_coli_MG1655.goa
    entity_type:
    status: active
-   species_code:
+   species_code: ecol
    taxa:
     - NCBITaxon:83333
