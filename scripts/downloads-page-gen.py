@@ -27,15 +27,19 @@ smap = {
     "Aspergillus": "Aspergillus nidulans",
     "Atal": "Arabidopsis thaliana",
     "Btau": "Bos taurus",
+    "Calb": "Candida albicans"
     "Cele": "Caenorhabditis elegans",
     "Cfam": "Canis lupus familiaris",
     "Ddis": "Dictyostelium discoideum",
     "Dmel": "Drosophila melanogaster",
     "Drer": "Danio rerio",
+    "Ecol": "Escherichia coli"
     "Ggal": "Gallus gallus",
     "Hsap": "Homo sapiens",
+    "Lmaj": "Leishmania major"
     "Mmus": "Mus musculus",
     "Oryz": "Oryza sativa",
+    "Pfal": "Plasmodium falciparum"
     "Pseudomonas": "Pseudomonas aeruginosa",
     "Rnor": "Rattus norvegicus",
     "Scer": "Saccharomyces cerevisiae",
@@ -43,6 +47,7 @@ smap = {
     "Sjap": "Schizosaccharomyces japonicus",
     "Spom": "Schizosaccharomyces pombe",
     "Sscr": "Sus scrofa",
+    "Tbru": "Trypanosoma brucei"
     "Xenopus": "Xenopus"
 }
 
