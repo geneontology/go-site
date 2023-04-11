@@ -102,6 +102,23 @@ def main():
             if smap[scode]:
                 entry["metadata"]["species_label"] = smap[scode]
 
+    ## Prep and execute combining PAINT values into annotations
+    ## counts (https://github.com/geneontology/go-site/issues/1999).
+    ## Create a hash of all entries keyed by "id".
+    entry_hash = {}
+    for entry in read_data:
+        entry_hash[entry["id"]] = entry
+    ## For every entry...
+    for entry in read_data:
+        ## ...check if PAINT version exists...
+        paint_version_id = 'paint_' + entry["id"]
+        if entry_hash.get(paint_version_id, False):
+            ## ...if it does, add it to create a new full count...
+            entry["full_count"] = int(entry["associations"]) + int(entry_hash[paint_version_id]["associations"])
+        else:
+            ## ...otherwise, just use the local count for the full count.
+            entry["full_count"] = int(entry["associations"])
+
     # ## Read in all of the useful data from the metadata data sources.
     # for datum in read_data:
     #     LOG.info('current: ' + datum['id'])
