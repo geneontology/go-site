@@ -27,6 +27,7 @@ smap = {
     "Aspergillus": "Aspergillus nidulans",
     "Atal": "Arabidopsis thaliana",
     "Btau": "Bos taurus",
+    "Calb": "Candida albicans",
     "Cele": "Caenorhabditis elegans",
     "Cfam": "Canis lupus familiaris",
     "Ddis": "Dictyostelium discoideum",
