@@ -4484,8 +4484,22 @@
   organization: 'UF_OPP'
   uri: 'https://orcid.org/0000-0002-5039-2052'
 -
+  accounts:
+    github: lmoore207
   groups:
     - 'http://ecocyc.org'
   nickname: 'Lisa Moore'
   organization: EcoCyc
   uri: 'https://orcid.org/0000-0002-4114-1518'
+-
+  accounts:
+    github: jmuysken
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://zfin.org'
+  nickname: 'Jon Muyskens'
+  organization: ZFIN
+  uri: 'https://orcid.org/0000-0002-7496-2937'
