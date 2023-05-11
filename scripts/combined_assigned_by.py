@@ -84,6 +84,14 @@ def clear_creator_info(creator_info):
                 if (metadata_key == 'taxa_label_map'):
                     metadata_obj[metadata_key] = {} 
                     
+def sort_messages(r, messages):
+        if len(messages) > 0:
+            # Messages for GORULE:0000020 are sorted by level (Error before Warning), then by GO id 
+            if r != "gorule-0000020":
+                return None
+            messages.sort(key=lambda x: x.get('obj'))
+            messages.sort(key=lambda x: x.get('level'))                    
+                    
 def output_md(violations_info_list, path):
     ## Generate a summary in markdown 
     for violation in violations_info_list:
@@ -105,7 +113,7 @@ def output_md(violations_info_list, path):
             numViolations = len(violations)
             if 0 == numViolations:
                 continue
-
+            sort_messages(rule, violations)
             firstMsg = violations[0]
             ruleDesc = firstMsg['message']    # Rule and description
 
@@ -115,7 +123,6 @@ def output_md(violations_info_list, path):
             ruleDetails += '\n\n###' + rule
             ruleDetails += '\n\n' + ruleDesc
             ruleDetails += '\n\n* total: ' + str(numViolations)
-
             ruleDetails += '\n#### Messages'
             for violation in violations:
                 ruleDetails += '\n* ' + violation['level'] + ' - ' + violation['type'] + ':' + ruleDesc + '--`' + violation['line'] + '`'
@@ -179,6 +186,7 @@ def output_html(violations_info_list, path):
                 continue
 
             firstMsg = violations[0]
+            sort_messages(rule, violations)
             ruleDesc = firstMsg['message']    # Rule and description
             ruleDescEscaped = html.escape(ruleDesc)
 
@@ -221,7 +229,7 @@ def output_html(violations_info_list, path):
             for violation in violations:
                 listItem = ET.Element('li')
                 unorderedViolationsList.append(listItem)
-                listItem.text = violation['line']
+                listItem.text = violation['level'] + ' - ' + violation['type'] + ':' + ruleDesc + '--`' + violation['line'] + '`'
 
         # Indent
         _pretty_print(htmlObj)
