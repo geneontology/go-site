@@ -2410,7 +2410,6 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      id_syntax: [A-Z0-9-]{6-32}
       url_syntax:  https://www.yeastgenome.org/locus/[example_id]
       example_id: SGD_PWY:CYSTEINE-SYN2-PWY
       example_url: https://pathway.yeastgenome.org/YEAST/NEW-IMAGE?type=NIL&object=SERSYN-PWY
