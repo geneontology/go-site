@@ -214,6 +214,7 @@ target/blazegraph.jnl: $(BGJAR) target/rdf target/noctua-models
 target/blazegraph-internal.jnl: target/blazegraph.jnl
 	cp $< $@
 	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=$@ update sparql/insert/insert_noctua_metadata.sparql
+	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=$@ update sparql/insert/insert_inferred_models_metadata.sparql
 	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=$@ update sparql/insert/insert_ontology_metadata.sparql
 	JAVA_OPTS=-Xmx$(BGMEM) blazegraph-runner --journal=$@ update sparql/insert/insert_reflexive_subclass_closure.sparql
 
