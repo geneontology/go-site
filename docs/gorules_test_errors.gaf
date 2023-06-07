@@ -1,4 +1,4 @@
-!Fake GAF file containing deliberate errors
+!Fake GAF file containing deliberate errors to test that GO rules are correctly implemented. 
 !
 ! * Blank lines
 ! * Extension errors
