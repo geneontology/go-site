@@ -1,5 +1,5 @@
 !Dummy GAF file containing deliberate errors to test that GO rules are correctly implemented. 
-! In progress - examples for GORULE:0000001 to GORULE:0000007
+! In progress - examples for GORULE:0000001 to GORULE:00000013
 
 ! FAILS GORULE:0000001 - empty col1 and col2
 		At2g28815		GO:0005762	PMID:21873635	IBA	PANTHER:PTN000259457|UniProtKB:Q9NX20|SGD:S000000134	C	60S ribosomal protein L16-like, mitochondrial	UniProtKB:Q84WZ8|PTN000259517	protein	taxon:3702	2017-02-28	GO_Central	
@@ -46,5 +46,16 @@ GeneDB	PF3D7_0507500	SUB1		GO:0005634	PMID:12764150	IEP		F	subtilisin-like	prote
 ! FAILS GORULE:0000007 IPI used with GO:0003824 catalytic activity or descendents (GO:0004674
 protein serine/threonine kinase activity)
 UniProtKB	A0A078CGE6	M3KE1	enables	GO:0004674	PMID:11489177	IPI		F			protein	taxon:3708	20150115	UniProt	
+! FAILS GORULE:0000008 - GO:0005622 is in the subset gocheck_do_not_annotate
+UniProtKB	Q9DGE2	mapk14a		GO:0005622	PMID:10995439	IDA		C	Mitogen-activated protein kinase 14A	mapk14a|mapk14	protein	taxon:7955	20180129	UniProt
+! FAILS GORULE:0000008 - GO:0007049 is in the subset gocheck_do_not_manually_annotate
+UniProtKB	Q9WVH3	Foxo4		GO:0007049	PMID:12048180	IDA		P	Forkhead box protein O4	Foxo4|Afx|Afx1	protein	taxon:10090	20110425	MGI
+! FAILS GORULE:0000011 - because the GO ID is not one of GO:0003674, GO:0008150 or GO:0005575
+UniProtKB	Q4KA26	PFL_3807		GO:0016020	GO_REF:0000015	ND		C	Putative membrane protein	PFL_3807	protein	taxon:220664	20090717	JCVI
+! FAILS GORULE:0000011 - fails because the evidence code is not ND, even if the GO ID one of GO:0003674, GO:0008150 or GO:0005575.
+UniProtKB	Q4KA26	PFL_3807		GO:0005575	GO_REF:0000015	IDA		C	Putative membrane protein	PFL_3807	protein	taxon:220664	20090717	JCVI
+! FAILS GORULE:0000013 - fails because GO:0075342 should not be annotated for human gene products
+UniProtKB	P67870	CSNK2B	involved_in	GO:0075342	PMID:20719947 	IDA	P	Casein kinase II subunit beta	CSNK2B|CK2N|G5A	protein	taxon:9606	20230307	UniProt
+
 
 
