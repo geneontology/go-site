@@ -72,8 +72,54 @@ UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IPI		F	Mitogen-activ
 UniProtKB	P04995	sbcB	involved_in	GO:0090503	GO_REF:0000108	IEA	GO:0000175	P	Exodeoxyribonuclease I	sbcB|cpeA|xonA|JW1993|b2011	protein	taxon:83333	20230509	GOC
 ! FAILS GORULE:0000020 - obsolete term with a replacement term
 TriTrypDB	Tb11.02.5420b	Tb11.02.5420b	located_in	GO:0016021	GO_REF:0000002	ISO	GeneDB:Tb11.02.5420	C	NADPH-cytochrome p450 reductase, putative	mRNA	taxon:185431	20130726	GeneDB
+! FAILS GORULE:0000027 - Prefix not in /db-xrefs.yaml
+UniPotKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		P	Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	BHF-UCL	
+! FAILS GORULE:0000027 - Assigned_by not in /groups.yaml
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		P	Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	SGDDB	
+! FAILS GORULE:0000027 - Bad reference format
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:PMID:14561399	IDA		P	Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	SGDDB	
+! FAILS GORULE:0000027 - Bad reference format
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:unpublished	IDA		P	Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	SGDDB	
+! FAILS GORULE:0000027 - Bad reference format
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:	IDA		P	Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	SGDDB	
+! FAILS GORULE:0000027 - Bad reference format
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:0.	IDA		P	Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	SGDDB	
+! FAILS GORULE:0000028 - Bad GO aspect, C instead of P
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		C	Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	SGDDB	
+! FAILS GORULE:0000028 - Bad GO aspect, F instead of P
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		F	Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	SGDDB	
+! FAILS GORULE:0000028 - Bad GO aspect, P instead of F
+UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IDA		P	Mitogen-activated protein kinase kinase kinase mlk-1	mlk-1,K11D12.10	protein	taxon:6239	20170322	UniProt		
+! FAILS GORULE:0000029 - IEA older than 1 year
+UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000044	IEA	UniProtKB-SubCell:SL-0375	C			protein	taxon:83333	20210507	UniProt
+! FAILS GORULE:0000030 - Deprecated GO_REF
+UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000045	IEA	UniProtKB-SubCell:SL-0375	C			protein	taxon:83333	20210507	UniProt
 ! FAILS GORULE:0000037 - IBA with source other than GO_Central
 UniProtKB	A0A024BTL2	PHKG1	is_active_in	GO:0005634	PMID:21873635	IBA	FB:FBgn0019686|FB:FBgn0028360|FB:FBgn0032677|PANTHER:PTN005196447|PomBase:SPAC14C4.03|PomBase:SPCC1322.08|PomBase:SPCC18B5.11c|RGD:621543|SGD:S000006074|UniProtKB:O96017|UniProtKB:Q5AVW7	C			protein	taxon:9823	20221009	FlyBase
 ! FAILS GORULE:0000037 - IBA with reference other than PMID:21873635
 UniProtKB	A0A024BTL2	PHKG1	is_active_in	GO:0005634	PMID:26221034	IBA	FB:FBgn0019686|FB:FBgn0028360|FB:FBgn0032677|PANTHER:PTN005196447|PomBase:SPAC14C4.03|PomBase:SPCC1322.08|PomBase:SPCC18B5.11c|RGD:621543|SGD:S000006074|UniProtKB:O96017|UniProtKB:Q5AVW7	C			protein	taxon:9823	20221009	GO_Central
+! FAILS GORULE:0000039  Protein complex annotated to GO:0032991 protein-containing complex
+ComplexPortal	CPX-102	dapk-calm_human	part_of	GO:0032991	PMID:10629061	IMP		P			complex	taxon:9606	20200218	ComplexPortal		
+! FAILS GORULE:0000039  Protein complex annotated to an is_a descendant of GO:0032991 protein-containing complex
+ComplexPortal	CPX-102	dapk-calm_human	part_of	 GO:0043020	PMID:10629061	IMP		P			complex	taxon:9606	20200218	ComplexPortal		
+! FAILS GORULE:0000042 - IKR evidence, no negation (NOT) in column 4
+UniProtKB	A0A0B4JCV5	CG9898	enables	GO:0004252	PMID:30367934	IKR		F			protein	taxon:7227	20190311	FlyBase
+! FAILS GORULE:0000046 - self-binding’ term, no data in Column 8 
+UniProtKB	A4D126	CRPPA	enables	GO:0042803	PMID:26687144	IDA		F			protein	taxon:9606	20170627	UniProt	
+! FAILS GORULE:0000046 - self-binding’ term, annotated to a protein other than 'self'
+UniProtKB	A4D126	CRPPA	enables	GO:0042803	PMID:26687144	IDA	P35555	F			protein	taxon:9606	20170627	UniProt	
+! FAILS GORULE:0000050 - self-referential ISS annotations 
+UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISS	UniProtKB:F1N2N9	C	Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	UniProt
+! FAILS GORULE:0000050 - self-referential ISO annotations 
+UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISO	UniProtKB:F1N2N9	C	Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	UniProt
+! FAILS GORULE:0000050 - self-referential ISA annotations 
+UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISA	UniProtKB:F1N2N9	C	Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	UniProt
+! FAILS GORULE:0000055 - Two references in the same ID space - PMID
+PlasmoDB PF3D7_0200400 PF3D7_0200400 GO:0020036 PMID:12477793|PMID:15961998 IDA C stevor PFB0025c|PF02_0004 mRNA taxon:36329 20131007 GeneDB
+! FAILS GORULE:0000055 - Two references in the same ID space - GO_REF
+PlasmoDB PF3D7_0200400 PF3D7_0200400 GO:0020036 GO_REF:0000044|GO_REF:0000001	IDA C stevor PFB0025c|PF02_0004 mRNA taxon:36329 20131007 GeneDB
+! FAILS GORULE:0000059 - GP2term relation missing
+SGN	235	cpk1		GO:0005886	PMID:12011347	IDA	C	calcium-dependent protein kinase	LeCPK1|Solyc03g031670	gene	taxon:4081	20080616	SGN
+! FAILS GORULE:0000061 - the part_of GP2term relation is not allowed for GO:0070865
+FB	FBgn0011273	Acam	part_of	GO:0070865	FB:FBrf0193169|PMID:16790438	IDA	C	Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	FlyBase
 
