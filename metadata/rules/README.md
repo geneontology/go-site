@@ -965,13 +965,12 @@ Note that use of the ND evidence code with an annotation to one of the root node
 ## References should have only one ID per ID space
 
  * id: [GORULE:0000055](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000055.md)
- * status: proposed
+ * status: implemented
 
 
 Since references should only refer to single publications, multiple IDs indicate
-alternate IDs for the same publication. So different reference IDs should be in
-different ID spaces. More than one ID in the same space implies distinct publications
-are being referenced, which is not allowed.
+alternate IDs for the same publication, such that different reference IDs should be in
+different ID spaces. 
 
 <a name="gorule0000056"/>
 
