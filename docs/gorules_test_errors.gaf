@@ -1,5 +1,5 @@
 !Dummy GAF file containing deliberate errors to test that GO rules are correctly implemented. 
-! In progress - examples for GORULE:0000001 to GORULE:00000013
+! In progress - examples for GORULE:0000001 to GORULE:00000020
 
 ! FAILS GORULE:0000001 - empty col1 and col2
 		At2g28815	 is_active_in	GO:0005762	PMID:21873635	IBA	PANTHER:PTN000259457|UniProtKB:Q9NX20|SGD:S000000134	C	60S ribosomal protein L16-like, mitochondrial	UniProtKB:Q84WZ8|PTN000259517	protein	taxon:3702	2017-02-28	GO_Central	
@@ -12,19 +12,19 @@ PomBase	SPAC977.10		is_active_in	GO:1990578	PMID:19171118	IDA		C	plasma membrane
 ! FAILS GORULE:0000001 - Wrong number of columns
 PomBase	SPAC977.10
 ! FAILS GORULE:0000001 - (see also GORULE:0000058) bad extension syntax
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0000001	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of
 ! FAILS GORULE:0000001 - (see also GORULE:0000058) bad extension filler: not a CURIE
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0000002	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(x)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(x)
 ! FAILS GORULE:0000001 - (see also GORULE:0000058) bad extension filler: space in ID
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0000003	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(X:9 X:8)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(X:9 X:8)
 ! FAILS GORULE:0000001 - (see also GORULE:0000058) bad extension filler: space in ID, with an additional valid expression
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0000004	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(X:9 X:8),part_of(X:1)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(X:9 X:8),part_of(X:1)
 ! FAILS GORULE:0000001 - Bad evidence code
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0000005	GO_REF:0000024	MADEUP	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(X:1)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	MADEUP	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(X:1)
 ! FAILS GORULE:0000001 - Bad date, but fixable
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0000006	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	2015-03-05	PomBase	part_of(X:1)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	2015-03-05	PomBase	part_of(X:1)
 ! FAILS GORULE:0000001 - Bad date, unparsable
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0000007	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	TODAY	PomBase	part_of(X:1)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	TODAY	PomBase	part_of(X:1)
 ! FAILS GORULE:0000002 - has a 'NOT' annotations to 'protein binding ; GO:0005515
 UniProtKB	O76187	darA	NOT|enables	GO:0048365	PMID:9802899	IPI	UniProtKB:P34149	F	Darlin	darA	DDB_G0288771	protein	taxon:44689	20100205	UniProt
 ! FAILS GORULE:0000003 - missing Column 8 data ('with' field) for 'binding ; GO:0005488' and 'protein binding ; GO:0005515'
@@ -70,3 +70,10 @@ UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	GO_REF:0000036	IDA	GO:0004198|GO:
 UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IPI		F	Mitogen-activated protein kinase kinase kinase mlk-1	mlk-1,K11D12.10	protein	taxon:6239	20170322	UniProt		
 ! FAILS GORULE:0000020 - obsolete term with no replacement
 UniProtKB	P04995	sbcB	involved_in	GO:0090503	GO_REF:0000108	IEA	GO:0000175	P	Exodeoxyribonuclease I	sbcB|cpeA|xonA|JW1993|b2011	protein	taxon:83333	20230509	GOC
+! FAILS GORULE:0000020 - obsolete term with a replacement term
+TriTrypDB	Tb11.02.5420b	Tb11.02.5420b	located_in	GO:0016021	GO_REF:0000002	ISO	GeneDB:Tb11.02.5420	C	NADPH-cytochrome p450 reductase, putative	mRNA	taxon:185431	20130726	GeneDB
+! FAILS GORULE:0000037 - IBA with source other than GO_Central
+UniProtKB	A0A024BTL2	PHKG1	is_active_in	GO:0005634	PMID:21873635	IBA	FB:FBgn0019686|FB:FBgn0028360|FB:FBgn0032677|PANTHER:PTN005196447|PomBase:SPAC14C4.03|PomBase:SPCC1322.08|PomBase:SPCC18B5.11c|RGD:621543|SGD:S000006074|UniProtKB:O96017|UniProtKB:Q5AVW7	C			protein	taxon:9823	20221009	FlyBase
+! FAILS GORULE:0000037 - IBA with reference other than PMID:21873635
+UniProtKB	A0A024BTL2	PHKG1	is_active_in	GO:0005634	PMID:26221034	IBA	FB:FBgn0019686|FB:FBgn0028360|FB:FBgn0032677|PANTHER:PTN005196447|PomBase:SPAC14C4.03|PomBase:SPCC1322.08|PomBase:SPCC18B5.11c|RGD:621543|SGD:S000006074|UniProtKB:O96017|UniProtKB:Q5AVW7	C			protein	taxon:9823	20221009	GO_Central
+
