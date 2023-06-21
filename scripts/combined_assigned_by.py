@@ -398,8 +398,9 @@ def main():
 
                 ## Get assigned by information from GAF line.  If it does not exist, attempt to get from group that created the GAF file
                 assigned_by = None
-                if (len(gaf_contents) < 14):
-                    LOG.info('Found incorrect number of columns in GAF line ' + gaf_line)
+                len_gaf_contents = len(gaf_contents)
+                if (len_gaf_contents < 15):
+                    LOG.info('Found incorrect number of columns in GAF line found ' + str(len_gaf_contents) + ' column for ' + gaf_line)
                     assigned_by = gaf_creator_id
                 else:
                     assigned_by = gaf_contents[14]
