@@ -421,14 +421,16 @@ This rule is now merged with GORULE:0000020.
  * status: implemented
 
 
-For background: dual species annotations are used to capture information about
-multi-organism interactions. The first taxon ID should be that of the
-species encoding the gene product, and the second should be the taxon of
-the other species in the interaction. Where the interaction is between
-organisms of the same species, both taxon IDs should be the same.
+For background: dual (or multiple) species annotations are used to capture information about multi-species interactions. The first taxon ID should be that of the species encoding the gene product annotated, and the second (and further) IDs should be the taxon of the other species in the interaction. 
 
-This rule should check that these annotations should be used only in conjunction with
-terms that have the biological process term 'GO:0044419 : biological process involved in interspecies interaction between organisms', the process GO:0043903 regulation of interspecies interactions between organisms, or the cellular component term 'GO:0018995 : host cellular component' as an ancestor.
+* Each value in the Taxon column (GAF column 13) should be unique. 
+
+This rule applies to annotations to either these terms of their is_a descendants: 
+* GO:0044419 biological process involved in interspecies interaction between organisms
+* GO:0043903 regulation of interspecies interactions between organisms, or
+* GO:0018995 host cellular component
+
+* Annotations to other terms should have a single value in the Taxon column (GAF column 13).
 
 <a name="gorule0000016"/>
 
