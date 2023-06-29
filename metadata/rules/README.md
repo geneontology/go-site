@@ -118,6 +118,8 @@ on the GO wiki.
  * status: legacy
 
 
+Note that this rule has been replaced by GORULE:0000018 and GORULE:0000051.
+
 Annotations to binding : GO:0005488 or protein binding ; GO:0005515 with
 the TAS, NAS, IC, IMP, IGI and IDA evidence codes are not informative as
 they do not allow the interacting partner to be specified. If the nature
