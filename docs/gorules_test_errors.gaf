@@ -3,8 +3,6 @@
 
 ! FAILS GORULE:0000001 - empty col1 and col2
 		At2g28815	 is_active_in	GO:0005762	PMID:21873635	IBA	PANTHER:PTN000259457|UniProtKB:Q9NX20|SGD:S000000134	C	60S ribosomal protein L16-like, mitochondrial	UniProtKB:Q84WZ8|PTN000259517	protein	taxon:3702	2017-02-28	GO_Central	
-! FAILS GORULE:0000001 - bad GO ID
-PomBase	SPAC25B8.17	ypf1	is_active_in	BAD_GO_ID	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase
 ! FAILS GORULE:0000001 - No gene symbol (Column 3)
 PomBase	SPAC977.10		is_active_in	GO:1990578	PMID:19171118	IDA		C	plasma membrane sodium ion/proton antiporter Nhe1/Sod2	sod2	protein	taxon:4896	20151201	PomBase
 ! FAILS GORULE:0000001 - Blank lines
@@ -73,6 +71,12 @@ UniProtKB	O76187	darA	GO:0005488	PMID:9802899	IPI	UniProtKB:Q23862	F			protein	t
 UniProtKB	P04995	sbcB	involved_in	GO:0090503	GO_REF:0000108	IEA	GO:0000175	P	Exodeoxyribonuclease I	sbcB|cpeA|xonA|JW1993|b2011	protein	taxon:83333	20230509	GOC
 ! FAILS GORULE:0000020 - obsolete term with a replacement term
 TriTrypDB	Tb11.02.5420b	Tb11.02.5420b	located_in	GO:0016021	GO_REF:0000002	ISO	GeneDB:Tb11.02.5420	C	NADPH-cytochrome p450 reductase, putative	mRNA	taxon:185431	20130726	GeneDB
+! FAILS GORULE:0000027 - bad GO ID syntax
+PomBase	SPAC25B8.17	ypf1	is_active_in	BAD_GO_ID	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase
+! FAILS GORULE:0000027 - bad GO ID syntax; no colon
+PomBase	SPAC25B8.18	ypf2	is_active_in	GO0006921	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase
+! FAILS GORULE:0000027 - bad GO ID syntax; bas namespace
+PomBase	SPAC25B8.19	ypf3	is_active_in	RO:0006921	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase
 ! FAILS GORULE:0000027 - Prefix not in /db-xrefs.yaml
 UniPotKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		P	Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	BHF-UCL	
 ! FAILS GORULE:0000027 - Assigned_by not in /groups.yaml
@@ -100,9 +104,9 @@ UniProtKB	A0A024BTL2	PHKG1	is_active_in	GO:0005634	PMID:21873635	IBA	FB:FBgn0019
 ! FAILS GORULE:0000037 - IBA with reference other than PMID:21873635
 UniProtKB	A0A024BTL2	PHKG1	is_active_in	GO:0005634	PMID:26221034	IBA	FB:FBgn0019686|FB:FBgn0028360|FB:FBgn0032677|PANTHER:PTN005196447|PomBase:SPAC14C4.03|PomBase:SPCC1322.08|PomBase:SPCC18B5.11c|RGD:621543|SGD:S000006074|UniProtKB:O96017|UniProtKB:Q5AVW7	C			protein	taxon:9823	20221009	GO_Central
 ! FAILS GORULE:0000039  Protein complex annotated to GO:0032991 protein-containing complex
-ComplexPortal	CPX-102	dapk-calm_human	part_of	GO:0032991	PMID:10629061	IMP		P			complex	taxon:9606	20200218	ComplexPortal		
+ComplexPortal	CPX-102	dapk-calm_human	part_of	GO:0032991	PMID:10629061	IMP		C			complex	taxon:9606	20200218	ComplexPortal		
 ! FAILS GORULE:0000039  Protein complex annotated to an is_a descendant of GO:0032991 protein-containing complex
-ComplexPortal	CPX-102	dapk-calm_human	part_of	 GO:0043020	PMID:10629061	IMP		P			complex	taxon:9606	20200218	ComplexPortal		
+ComplexPortal	CPX-102	dapk-calm_human	part_of	 GO:0043020	PMID:10629061	IMP		C			complex	taxon:9606	20200218	ComplexPortal		
 ! FAILS GORULE:0000042 - IKR evidence, no negation (NOT) in column 4
 UniProtKB	A0A0B4JCV5	CG9898	enables	GO:0004252	PMID:30367934	IKR		F			protein	taxon:7227	20190311	FlyBase
 ! FAILS GORULE:0000046 - self-binding’ term, no data in Column 8 
