@@ -27,8 +27,6 @@ PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S0000015
 PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	TODAY	PomBase	part_of(X:1)
 ! FAILS GORULE:0000002 - has a 'NOT' annotations to 'protein binding ; GO:0005515
 UniProtKB	O76187	darA	NOT|enables	GO:0048365	PMID:9802899	IPI	UniProtKB:P34149	F	Darlin	darA	DDB_G0288771	protein	taxon:44689	20100205	UniProt
-! FAILS GORULE:0000003 - missing Column 8 data ('with' field) for 'binding ; GO:0005488' and 'protein binding ; GO:0005515'
-UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IPI	UniProtKB:Q23862	F			protein	taxon:44689	20230513	IntAct	
 ! TBC FAILS GORULE:0000003 - incorrect evidence codes for 'binding ; GO:0005488' and 'protein binding ; GO:0005515'
 UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IDA	UniProtKB:P34149	F	Darlin	darA	DDB_G0288771	protein	taxon:44689	20100205	UniProt
 ! TBC FAILS GORULE:0000005 - incorrect evidence codes for 'protein binding ; GO:0005515' - ISS not allowed
@@ -67,6 +65,8 @@ UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	GO_REF:0000036	IC		P	Calpain-10	C
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	GO_REF:0000036	IDA	GO:0004198|GO:0008092	P	Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	BHF-UCL	
 ! FAILS GORULE:0000018 - column 8 (with/from) is null
 UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IPI		F	Mitogen-activated protein kinase kinase kinase mlk-1	mlk-1,K11D12.10	protein	taxon:6239	20170322	UniProt		
+! FAILS GORULE:0000018 - missing Column 8 data ('with' field) for 'binding ; GO:0005488' and 'protein binding ; GO:0005515'
+UniProtKB	O76187	darA	GO:0005488	PMID:9802899	IPI	UniProtKB:Q23862	F			protein	taxon:44689	20230513	IntAct	
 ! FAILS GORULE:0000020 - obsolete term with no replacement
 UniProtKB	P04995	sbcB	involved_in	GO:0090503	GO_REF:0000108	IEA	GO:0000175	P	Exodeoxyribonuclease I	sbcB|cpeA|xonA|JW1993|b2011	protein	taxon:83333	20230509	GOC
 ! FAILS GORULE:0000020 - obsolete term with a replacement term
