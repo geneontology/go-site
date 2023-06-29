@@ -36,9 +36,9 @@ UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	ISO	UniProtKB:P34149	F	Dar
 ! TBC FAILS GORULE:0000005 - incorrect evidence codes for 'protein binding ; GO:0005515' - IBA not allowed
 UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IBA	UniProtKB:P34149	F	Darlin	darA	DDB_G0288771	protein	taxon:44689	20100205	
 ! FAILS GORULE:0000006 - fails because uses IEP with a molecular function term.
-GeneDB	PF3D7_0507500	SUB1	enables	GO:0005634	PMID:12764150	IEP		F	subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GeneDB
+GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	IEP		F	subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GeneDB
 ! FAILS GORULE:0000006 - fails because uses HEP with a molecular function term.
-GeneDB	PF3D7_0507500	SUB1	enables	GO:0005634	PMID:12764150	HEP		F	subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GeneDB
+GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	HEP		F	subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GeneDB
 ! FAILS GORULE:0000006 - fails because uses IEP with a cellular component term.
 GeneDB	PF3D7_0507500	SUB1	enables	GO:0005634	PMID:12764150	IEP		F	subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GeneDB
 ! FAILS GORULE:0000007 IPI used with GO:0003824 catalytic activity or descendents (GO:0004674 protein serine/threonine kinase activity)
