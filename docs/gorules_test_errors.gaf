@@ -43,8 +43,7 @@ GeneDB	PF3D7_0507500	SUB1	enables	GO:0005634	PMID:12764150	IEP		F	subtilisin-lik
 GeneDB	PF3D7_0507500	SUB1	enables	GO:0005634	PMID:12764150	HEP		F	subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GeneDB
 ! FAILS GORULE:0000006 - fails because uses IEP with a cellular component term.
 GeneDB	PF3D7_0507500	SUB1	enables	GO:0005634	PMID:12764150	IEP		F	subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GeneDB
-! FAILS GORULE:0000007 IPI used with GO:0003824 catalytic activity or descendents (GO:0004674
-protein serine/threonine kinase activity)
+! FAILS GORULE:0000007 IPI used with GO:0003824 catalytic activity or descendents (GO:0004674 protein serine/threonine kinase activity)
 UniProtKB	A0A078CGE6	M3KE1	enables	GO:0004674	PMID:11489177	IPI		F			protein	taxon:3708	20150115	UniProt	
 ! FAILS GORULE:0000008 - GO:0005622 is in the subset gocheck_do_not_annotate
 UniProtKB	Q9DGE2	mapk14a	is_active_in	GO:0005622	PMID:10995439	IDA		C	Mitogen-activated protein kinase 14A	mapk14a|mapk14	protein	taxon:7955	20180129	UniProt
