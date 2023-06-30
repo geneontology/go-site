@@ -26,13 +26,13 @@ PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S0000015
 ! FAILS GORULE:0000002 - has a 'NOT' annotations to 'protein binding ; GO:0005515
 UniProtKB	O76187	darA	NOT|enables	GO:0048365	PMID:9802899	IPI	UniProtKB:P34149	F	Darlin	darA	DDB_G0288771	protein	taxon:44689	20100205	UniProt
 ! TBC FAILS GORULE:0000003 - incorrect evidence codes for 'binding ; GO:0005488' and 'protein binding ; GO:0005515'
-UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IDA	UniProtKB:P34149	F	Darlin	darA	DDB_G0288771	protein	taxon:44689	20100205	UniProt
+UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IDA	UniProtKB:P34149	F	Darlin	darA	protein	taxon:44689	20100205	UniProt
 ! TBC FAILS GORULE:0000005 - incorrect evidence codes for 'protein binding ; GO:0005515' - ISS not allowed
-UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	ISS	UniProtKB:P34149	F	Darlin	darA	DDB_G0288771	protein	taxon:44689	20100205	UniProt
+UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	ISS	UniProtKB:P34149	F	Darlin	darA	protein	taxon:44689	20100205	UniProt
 ! TBC FAILS GORULE:0000005 - incorrect evidence codes for 'protein binding ; GO:0005515' - IS0 not allowed
-UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	ISO	UniProtKB:P34149	F	Darlin	darA	DDB_G0288771	protein	taxon:44689	20100205	UniProt
+UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	ISO	UniProtKB:P34149	F	Darlin	darA	protein	taxon:44689	20100205	UniProt
 ! TBC FAILS GORULE:0000005 - incorrect evidence codes for 'protein binding ; GO:0005515' - IBA not allowed
-UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IBA	UniProtKB:P34149	F	Darlin	darA	DDB_G0288771	protein	taxon:44689	20100205	
+UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IBA	UniProtKB:P34149	F	Darlin	darA	protein	taxon:44689	20100205	
 ! FAILS GORULE:0000006 - fails because uses IEP with a molecular function term.
 GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	IEP		F	subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GeneDB
 ! FAILS GORULE:0000006 - fails because uses HEP with a molecular function term.
