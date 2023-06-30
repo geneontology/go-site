@@ -10,35 +10,35 @@ PomBase	SPAC977.10		is_active_in	GO:1990578	PMID:19171118	IDA		C	plasma membrane
 ! FAILS GORULE:0000001 - Wrong number of columns
 PomBase	SPAC977.10
 ! FAILS GORULE:0000001 - (see also GORULE:0000058) bad extension syntax
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-1 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of
 ! FAILS GORULE:0000001 - (see also GORULE:0000058) bad extension filler: not a CURIE
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(x)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-2 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(x)
 ! FAILS GORULE:0000001 - (see also GORULE:0000058) bad extension filler: space in ID
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(X:9 X:8)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-3 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(X:9 X:8)
 ! FAILS GORULE:0000001 - (see also GORULE:0000058) bad extension filler: space in ID, with an additional valid expression
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(X:9 X:8),part_of(X:1)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-4 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(X:9 X:8),part_of(X:1)
 ! FAILS GORULE:0000001 - Bad evidence code
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	MADEUP	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(X:1)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	MADEUP	SGD:S000001583	C	GORULE:0000001-5 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(X:1)
 ! FAILS GORULE:0000001 - Bad date, but fixable
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	2015-03-05	PomBase	part_of(X:1)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-6 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	2015-03-05	PomBase	part_of(X:1)
 ! FAILS GORULE:0000001 - Bad date, unparsable
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	TODAY	PomBase	part_of(X:1)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-7 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	TODAY	PomBase	part_of(X:1)
 ! FAILS GORULE:0000002 - has a 'NOT' annotations to 'protein binding ; GO:0005515
-UniProtKB	O76187	darA	NOT|enables	GO:0048365	PMID:9802899	IPI	UniProtKB:P34149	F	Darlin	darA	DDB_G0288771	protein	taxon:44689	20100205	UniProt
+UniProtKB	O76187	darA	NOT|enables	GO:0048365	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000002-1 Darlin	darA	DDB_G0288771	protein	taxon:44689	20100205	UniProt
 ! TBC FAILS GORULE:0000003 - incorrect evidence codes for 'binding ; GO:0005488' and 'protein binding ; GO:0005515'
-UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IDA	UniProtKB:P34149	F	Darlin	darA	protein	taxon:44689	20100205	UniProt
+UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IDA	UniProtKB:P34149	F	GORULE:0000003-1 Darlin	darA	protein	taxon:44689	20100205	UniProt
 ! TBC FAILS GORULE:0000005 - incorrect evidence codes for 'protein binding ; GO:0005515' - ISS not allowed
-UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	ISS	UniProtKB:P34149	F	Darlin	darA	protein	taxon:44689	20100205	UniProt
+UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	ISS	UniProtKB:P34149	F	GORULE:0000005-1 Darlin	darA	protein	taxon:44689	20100205	UniProt
 ! TBC FAILS GORULE:0000005 - incorrect evidence codes for 'protein binding ; GO:0005515' - IS0 not allowed
-UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	ISO	UniProtKB:P34149	F	Darlin	darA	protein	taxon:44689	20100205	UniProt
+UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	ISO	UniProtKB:P34149	F	GORULE:0000005-2 Darlin	darA	protein	taxon:44689	20100205	UniProt
 ! TBC FAILS GORULE:0000005 - incorrect evidence codes for 'protein binding ; GO:0005515' - IBA not allowed
-UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IBA	UniProtKB:P34149	F	Darlin	darA	protein	taxon:44689	20100205	
+UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IBA	UniProtKB:P34149	F	GORULE:0000005-3 Darlin	darA	protein	taxon:44689	20100205	
 ! FAILS GORULE:0000006 - fails because uses IEP with a molecular function term.
-GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	IEP		F	subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GeneDB
+GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	IEP		F	GORULE:0000006-1 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GeneDB
 ! FAILS GORULE:0000006 - fails because uses HEP with a molecular function term.
-GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	HEP		F	subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GeneDB
+GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	HEP		F	GORULE:0000006-2 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GeneDB
 ! FAILS GORULE:0000006 - fails because uses IEP with a cellular component term.
-GeneDB	PF3D7_0507500	SUB1	enables	GO:0005634	PMID:12764150	IEP		C	subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GeneDB
+GeneDB	PF3D7_0507500	SUB1	enables	GO:0005634	PMID:12764150	IEP		C	GORULE:0000006-3 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GeneDB
 ! FAILS GORULE:0000007 IPI used with GO:0003824 catalytic activity or descendents (GO:0004674 protein serine/threonine kinase activity)
 UniProtKB	A0A078CGE6	M3KE1	enables	GO:0004674	PMID:11489177	IPI		F			protein	taxon:3708	20150115	UniProt	
 ! FAILS GORULE:0000008 - GO:0005622 is in the subset gocheck_do_not_annotate
