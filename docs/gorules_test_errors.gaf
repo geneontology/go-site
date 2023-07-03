@@ -24,7 +24,7 @@ PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S0000015
 ! FAILS GORULE:0000001 - Bad date, unparsable
 PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-7 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	TODAY	PomBase	part_of(X:1)
 ! FAILS GORULE:0000002 - has a 'NOT' annotations to 'protein binding ; GO:0005515
-UniProtKB	O76187	darA	NOT|enables	GO:0048365	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000002-1 Darlin	darA	DDB_G0288771	protein	taxon:44689	20100205	UniProt
+UniProtKB	O76187	darA	NOT|enables	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000002-1 Darlin	darA	DDB_G0288771	protein	taxon:44689	20100205	UniProt
 ! TBC FAILS GORULE:0000003 - incorrect evidence codes for 'binding ; GO:0005488' and 'protein binding ; GO:0005515'
 UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IDA	UniProtKB:P34149	F	GORULE:0000003-1 Darlin	darA	protein	taxon:44689	20100205	UniProt
 ! TBC FAILS GORULE:0000005 - incorrect evidence codes for 'protein binding ; GO:0005515' - ISS not allowed
