@@ -1,5 +1,7 @@
-!Dummy GAF file containing deliberate errors to test that GO rules are correctly implemented. 
-! In progress - examples for GORULE:0000001 to GORULE:00000020
+! gaf-version: 2.2
+! generated-by: GOC
+! date-generated: 2023-07-13
+! Dummy GAF file containing deliberate errors to test that GO rules are correctly implemented. 
 
 ! FAILS GORULE:0000001 - empty col1 and col2
 		At2g28815	 is_active_in	GO:0005762	PMID:21873635	IBA	PANTHER:PTN000259457|UniProtKB:Q9NX20|SGD:S000000134	C	60S ribosomal protein L16-like, mitochondrial	UniProtKB:Q84WZ8|PTN000259517	protein	taxon:3702	2017-02-28	GO_Central	
