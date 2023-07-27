@@ -91,14 +91,13 @@ Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt
  * status: implemented
 
 
+No direct annotations to protein binding ; GO:0005515 can contain the qualifier 'NOT' in GAF 2.2 Column 4 or GPAD 2.0 Column 2.
+
 Even if an identifier is available in the 'with' column, a qualifier
 only informs on the GO term, it cannot instruct users to restrict the
 annotation to just the protein identified in the 'with', therefore an
 annotation applying protein binding ; GO:0005515 with the not qualifier
-implies that the annotated protein cannot bind anything.
-
-This is such a wide-reaching statement that few curators would want to
-make.
+implies that the annotated protein cannot bind anything, which is unlikely to be correct.
 
 This rule *only* applies to GO:0005515; children of this term can be
 qualified with not, as further information on the type of binding is
