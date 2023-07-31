@@ -4503,3 +4503,15 @@
   nickname: 'Jon Muyskens'
   organization: ZFIN
   uri: 'https://orcid.org/0000-0002-7496-2937'
+-
+  accounts:
+    github: sjm41
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://flybase.org'
+  nickname: 'Steven Marygold'
+  organization: FlyBase
+  uri: 'https://orcid.org/0000-0003-2759-266X'
