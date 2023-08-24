@@ -86,9 +86,7 @@ def clear_creator_info(creator_info):
                     
 def sort_messages(r, messages):
         if len(messages) > 0:
-            # Messages for GORULE:0000020 are sorted by level (Error before Warning), then by GO id 
-            if r != "gorule-0000020":
-                return None
+            # Messages are sorted by GO id followed by Error level
             messages.sort(key=lambda x: x.get('obj'))
             messages.sort(key=lambda x: x.get('level'))                    
                     
