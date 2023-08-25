@@ -112,6 +112,10 @@ mapping:
             type: str
             required: false
             unique: false
+          "mirror_of":
+            type: str
+            required: false
+            unique: false
           "species_code":
             type: str
             required: false
