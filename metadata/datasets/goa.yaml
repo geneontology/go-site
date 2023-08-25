@@ -17,6 +17,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_chicken.gpa.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken.gpa.gz
    entity_type: protein
    status: active
    species_code: Ggal
@@ -37,6 +38,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_chicken.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken.gpi.gz
    entity_type: protein
    status: active
    species_code: Ggal
@@ -56,6 +58,7 @@ datasets:
    dataset: goa_chicken_complex
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_complex.gpa.gz
    source: https://mirror.geneontology.io/goa_chicken_complex.gpa.gz
    entity_type: complex
    status: active
@@ -76,6 +79,7 @@ datasets:
    dataset: goa_chicken_complex
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_complex.gpi.gz
    source: https://mirror.geneontology.io/goa_chicken_complex.gpi.gz
    entity_type: complex
    status: active
@@ -96,6 +100,7 @@ datasets:
    dataset: goa_chicken_isoform
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_isoform.gpa.gz
    source: https://mirror.geneontology.io/goa_chicken_isoform.gpa.gz
    entity_type: isoform
    status: active
@@ -116,6 +121,7 @@ datasets:
    dataset: goa_chicken_isoform
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_isoform.gpi.gz
    source: https://mirror.geneontology.io/goa_chicken_isoform.gpi.gz
    entity_type: isoform
    status: active
@@ -136,6 +142,7 @@ datasets:
    dataset: goa_chicken_rna
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_rna.gpa.gz
    source: https://mirror.geneontology.io/goa_chicken_rna.gpa.gz
    entity_type: rna
    status: active
@@ -156,6 +163,7 @@ datasets:
    dataset: goa_chicken_rna
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_rna.gpi.gz
    source: https://mirror.geneontology.io/goa_chicken_rna.gpi.gz
    entity_type: rna
    status: active
@@ -177,6 +185,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_cow.gpa.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow.gpa.gz
    entity_type: protein
    status: active
    species_code: Btau
@@ -195,6 +204,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_cow.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow.gpi.gz
    entity_type: protein
    status: active
    species_code: Btau
@@ -213,6 +223,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_cow_complex.gpa.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_complex.gpa.gz
    entity_type: complex
    status: active
    species_code: Btau
@@ -231,6 +242,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_cow_complex.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_complex.gpi.gz
    entity_type: complex
    status: active
    species_code: Btau
@@ -249,6 +261,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_cow_isoform.gpa.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_isoform.gpa.gz
    entity_type: isoform
    status: active
    species_code: Btau
@@ -267,6 +280,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_cow_isoform.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_isoform.gpi.gz
    entity_type: isoform
    status: active
    species_code: Btau
@@ -285,6 +299,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_cow_rna.gpa.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_rna.gpa.gz
    entity_type: rna
    status: active
    species_code: Btau
@@ -303,6 +318,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_cow_rna.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_rna.gpi.gz
    entity_type: rna
    status: active
    species_code: Btau
@@ -321,6 +337,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_dog.gpa.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog.gpa.gz
    entity_type: protein
    status: active
    species_code: Cfam
@@ -337,6 +354,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_dog.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog.gpi.gz
    entity_type: protein
    status: active
    species_code: Cfam
@@ -353,6 +371,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_dog_complex.gpa.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_complex.gpa.gz
    entity_type: complex
    status: active
    species_code: Cfam
@@ -369,6 +388,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_dog_complex.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_complex.gpi.gz
    entity_type: complex
    status: active
    species_code: Cfam
@@ -385,6 +405,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_dog_isoform.gpa.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_isoform.gpa.gz
    entity_type: isoform
    status: active
    species_code: Cfam
@@ -401,6 +422,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_dog_isoform.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_isoform.gpi.gz
    entity_type: isoform
    status: active
    species_code: Cfam
@@ -417,6 +439,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_dog_rna.gpa.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_rna.gpa.gz
    entity_type: rna
    status: active
    species_code: Cfam
@@ -433,6 +456,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_dog_rna.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_rna.gpi.gz
    entity_type: rna
    status: active
    species_code: Cfam
@@ -449,6 +473,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_human.gpa.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human.gpa.gz
    entity_type: protein
    status: active
    species_code: Hsap
@@ -465,6 +490,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_human.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human.gpi.gz
    entity_type: protein
    status: active
    species_code: Hsap
@@ -480,6 +506,7 @@ datasets:
    dataset: goa_human_complex
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_complex.gpa.gz
    source: https://mirror.geneontology.io/goa_human_complex.gpa.gz
    entity_type: complex
    status: active
@@ -496,6 +523,7 @@ datasets:
    dataset: goa_human_complex
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_complex.gpi.gz
    source: https://mirror.geneontology.io/goa_human_complex.gpi.gz
    entity_type: complex
    status: active
@@ -512,6 +540,7 @@ datasets:
    dataset: goa_human_isoform
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_isoform.gpa.gz
    source: https://mirror.geneontology.io/goa_human_isoform.gpa.gz
    entity_type: isoform
    status: active
@@ -528,6 +557,7 @@ datasets:
    dataset: goa_human_isoform
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_isoform.gpi.gz
    source: https://mirror.geneontology.io/goa_human_isoform.gpi.gz
    entity_type: isoform
    status: active
@@ -545,6 +575,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_human_rna.gpa.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_rna.gpa.gz
    entity_type: rna
    status: active
    species_code: Hsap
@@ -561,6 +592,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_human_rna.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_rna.gpi.gz
    entity_type: rna
    status: active
    species_code: Hsap
@@ -577,6 +609,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_pig.gpa.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig.gpa.gz
    entity_type: protein
    status: active
    species_code: Sscr
@@ -593,6 +626,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_pig.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig.gpi.gz
    entity_type: protein
    status: active
    species_code: Sscr
@@ -609,6 +643,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_pig_complex.gpa.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_complex.gpa.gz
    entity_type: complex
    status: active
    species_code: Sscr
@@ -625,6 +660,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_pig_complex.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_complex.gpi.gz
    entity_type: complex
    status: active
    species_code: Sscr
@@ -641,6 +677,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_pig_isoform.gpa.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_isoform.gpa.gz
    entity_type: isoform
    status: active
    species_code: Sscr
@@ -657,6 +694,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_pig_isoform.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_isoform.gpi.gz
    entity_type: isoform
    status: active
    species_code: Sscr
@@ -673,6 +711,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_pig_rna.gpa.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_rna.gpa.gz
    entity_type: rna
    status: active
    species_code: Sscr
@@ -689,6 +728,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_pig_rna.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_rna.gpi.gz
    entity_type: rna
    status: active
    species_code: Sscr
@@ -705,6 +745,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_chicken.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken.gaf.gz
    entity_type: protein
    status: active
    species_code: Ggal
@@ -724,6 +765,7 @@ datasets:
    dataset: goa_chicken_complex
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_complex.gaf.gz
    source: https://mirror.geneontology.io/goa_chicken_complex.gaf.gz
    entity_type: complex
    status: active
@@ -744,6 +786,7 @@ datasets:
    dataset: goa_chicken_isoform
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_isoform.gaf.gz
    source: https://mirror.geneontology.io/goa_chicken_isoform.gaf.gz
    entity_type: isoform
    status: active
@@ -764,6 +807,7 @@ datasets:
    dataset: goa_chicken_rna
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_rna.gaf.gz
    source: https://mirror.geneontology.io/goa_chicken_rna.gaf.gz
    entity_type: rna
    status: active
@@ -785,6 +829,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_cow.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow.gaf.gz
    entity_type: protein
    status: active
    species_code: Btau
@@ -803,6 +848,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_cow_complex.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_complex.gaf.gz
    entity_type: complex
    status: active
    species_code: Btau
@@ -821,6 +867,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_cow_isoform.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_isoform.gaf.gz
    entity_type: isoform
    status: active
    species_code: Btau
@@ -839,6 +886,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_cow_rna.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_rna.gaf.gz
    entity_type: rna
    status: active
    species_code: Btau
@@ -857,6 +905,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_dog.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog.gaf.gz
    entity_type: protein
    status: active
    species_code: Cfam
@@ -873,6 +922,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_dog_complex.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_complex.gaf.gz
    entity_type: complex
    status: active
    species_code: Cfam
@@ -889,6 +939,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_dog_isoform.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_isoform.gaf.gz
    entity_type: isoform
    status: active
    species_code: Cfam
@@ -905,6 +956,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_dog_rna.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_rna.gaf.gz
    entity_type: rna
    status: active
    species_code: Cfam
@@ -921,6 +973,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_human.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human.gaf.gz
    entity_type: protein
    status: active
    species_code: Hsap
@@ -952,6 +1005,7 @@ datasets:
    dataset: goa_human_isoform
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_isoform.gaf.gz
    source: https://mirror.geneontology.io/goa_human_isoform.gaf.gz
    entity_type: isoform
    status: active
@@ -969,6 +1023,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_human_rna.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_rna.gaf.gz
    entity_type: rna
    status: active
    species_code: Hsap
@@ -985,6 +1040,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_pdb.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PDB/goa_pdb.gaf.gz
    entity_type: protein
    status: active
    species_code:
@@ -1001,6 +1057,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_pig.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig.gaf.gz
    entity_type: protein
    status: active
    species_code: Sscr
@@ -1017,6 +1074,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_pig_complex.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_complex.gaf.gz
    entity_type: complex
    status: active
    species_code: Sscr
@@ -1033,6 +1091,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_pig_isoform.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_isoform.gaf.gz
    entity_type: isoform
    status: active
    species_code: Sscr
@@ -1049,6 +1108,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_pig_rna.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_rna.gaf.gz
    entity_type: rna
    status: active
    species_code: Sscr
@@ -1064,6 +1124,7 @@ datasets:
    dataset: goa_uniprot_all
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gaf.gz
    source: https://mirror.geneontology.io/goa_uniprot_all.gaf.gz
    entity_type: all
    status: active
@@ -1080,6 +1141,7 @@ datasets:
    dataset: goa_uniprot_all
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gpi.gz
    source: https://mirror.geneontology.io/goa_uniprot_all.gpi.gz
    entity_type: all
    status: active
@@ -1096,6 +1158,7 @@ datasets:
    dataset: goa_uniprot_all
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gpa.gz
    source: https://mirror.geneontology.io/goa_uniprot_all.gpa.gz
    entity_type: all
    status: active
@@ -1112,6 +1175,7 @@ datasets:
    dataset: goa_uniprot_gcrp
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gaf.gz
    source: https://mirror.geneontology.io/goa_uniprot_gcrp.gaf.gz
    entity_type: all
    status: active
@@ -1129,6 +1193,7 @@ datasets:
    dataset: goa_uniprot_gcrp
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gpi.gz
    source: https://mirror.geneontology.io/goa_uniprot_gcrp.gpi.gz
    entity_type: all
    status: active
@@ -1146,6 +1211,7 @@ datasets:
    dataset: goa_uniprot_gcrp
    submitter: goa
    compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gpa.gz
    source: https://mirror.geneontology.io/goa_uniprot_gcrp.gpa.gz
    entity_type: all
    status: active
@@ -1163,6 +1229,7 @@ datasets:
    dataset: interpro2go
    submitter: goa
    source: https://mirror.geneontology.io/interpro2go
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/interpro2go
    status: active
 
  -
@@ -1174,6 +1241,7 @@ datasets:
    dataset: pfam2go
    submitter: goa
    source: https://mirror.geneontology.io/pfam2go
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/pfam2go
    status: active
 
  -
@@ -1185,6 +1253,7 @@ datasets:
    dataset: pirsf2go
    submitter: goa
    source: https://mirror.geneontology.io/pirsf2go
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/pirsf2go
    status: active
 
  -
@@ -1196,6 +1265,7 @@ datasets:
    dataset: prints2go
    submitter: goa
    source: https://mirror.geneontology.io/prints2go
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/prints2go
    status: active
 
  -
@@ -1207,6 +1277,7 @@ datasets:
    dataset: prodom2go
    submitter: goa
    source: https://mirror.geneontology.io/prodom2go
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/prodom2go
    status: active
 
  -
@@ -1218,6 +1289,7 @@ datasets:
    dataset: prosite2go
    submitter: goa
    source: https://mirror.geneontology.io/prosite2go
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/prosite2go
    status: active
 
  -
@@ -1229,6 +1301,7 @@ datasets:
    dataset: smart2go
    submitter: goa
    source: https://mirror.geneontology.io/smart2go
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/smart2go
    status: active
 
  -
@@ -1240,6 +1313,7 @@ datasets:
    dataset: uniprotkb_kw2go
    submitter: goa
    source: https://mirror.geneontology.io/uniprotkb_kw2go
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/uniprotkb_kw2go
    status: active
 
  -
@@ -1251,6 +1325,7 @@ datasets:
    dataset: uniprotkb_sl2go
    submitter: goa
    source: https://mirror.geneontology.io/uniprotkb_sl2go
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/uniprotkb_sl2go
    status: active
 
  -
@@ -1262,6 +1337,7 @@ datasets:
    dataset: unirule2go
    submitter: goa
    source: https://mirror.geneontology.io/unirule2go
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/unirule2go
    status: active
 
  -
@@ -1273,4 +1349,5 @@ datasets:
    dataset: hamap2go
    submitter: goa
    source: https://mirror.geneontology.io/hamap2go
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/hamap2go
    status: active
