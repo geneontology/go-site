@@ -1,6 +1,6 @@
 !gaf-version: 2.2
 !generated-by: GOC
-!date-generated: 2023-07-27
+!date-generated: 2023-08-25
 ! Dummy GAF file containing deliberate errors to test that GO rules are correctly implemented. 
 
 ! FAILS GORULE:0000001 - empty col1 and col2
@@ -26,7 +26,7 @@ PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S0000015
 ! FAILS GORULE:0000001 - Bad date, unparsable
 PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-7 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	TODAY	PomBase	part_of(X:1)
 ! FAILS GORULE:0000002 - has a 'NOT' annotations to 'protein binding ; GO:0005515
-UniProtKB	O76187	darA	NOT|enables	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000002-1 Darlin	darA	DDB_G0288771	protein	taxon:44689	20100205	UniProt
+UniProtKB	O76187	darA	NOT|involved_in	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000002-1 Darlin	darA	protein	taxon:44689	20100205	UniProt
 ! TBC FAILS GORULE:0000003 - incorrect evidence codes for 'binding ; GO:0005488' and 'protein binding ; GO:0005515'
 UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IDA	UniProtKB:P34149	F	GORULE:0000003-1 Darlin	darA	protein	taxon:44689	20100205	UniProt
 ! TBC FAILS GORULE:0000005 - incorrect evidence codes for 'protein binding ; GO:0005515' - ISS not allowed
@@ -54,7 +54,7 @@ UniProtKB	Q4KA26	PFL_3807	is_active_in	GO:0016020	GO_REF:0000015	ND		C	GORULE:00
 ! FAILS GORULE:0000011 - fails because the evidence code is not ND, even if the GO ID one of GO:0003674, GO:0008150 or GO:0005575.
 UniProtKB	Q4KA26	PFL_3807	is_active_in	GO:0005575	GO_REF:0000015	IDA		C	GORULE:0000011-2 Putative membrane protein	PFL_3807	protein	taxon:220664	20090717	JCVI
 ! FAILS GORULE:0000013 - fails because GO:0075342 should not be annotated for human gene products
-UniProtKB	P67870	CSNK2B	involved_in	GO:0075342	PMID:20719947 	IDA	P	GORULE:0000013-1 Casein kinase II subunit beta	CSNK2B|CK2N|G5A	protein	taxon:9606	20230307	UniProt
+UniProtKB	P67870	CSNK2B	involved_in	GO:0075342	PMID:20719947 	IDA		P	GORULE:0000013-1 Casein kinase II subunit beta	CSNK2B|CK2N|G5A	protein	taxon:9606	20230307	UniProt
 ! FAILS GORULE:0000015 - GO:0005886 plasma membrane is not a child of "GO:0018995 host cellular component"
 UniProtKB	O56786	hol187	is_active_in	GO:0005886	PMID:10419939	IDA		C	GORULE:0000015-1 Holin protein Hol187	hol187	protein	taxon:55511|taxon:9696	20170423	CACAO
 ! FAILS GORULE:0000015 - "neutrophil chemotaxis" is not a child of "GO:0044419 interspecies interaction between organisms"
@@ -74,9 +74,9 @@ UniProtKB	O76187	darA	GO:0005488	PMID:9802899	IPI	UniProtKB:Q23862	F	GORULE:0000
 ! FAILS GORULE:0000020 - obsolete term with no replacement
 UniProtKB	P04995	sbcB	involved_in	GO:0090503	GO_REF:0000108	IEA	GO:0000175	P	GORULE:0000020-1 Exodeoxyribonuclease I	sbcB|cpeA|xonA|JW1993|b2011	protein	taxon:83333	20230509	GOC
 ! FAILS GORULE:0000020 - obsolete term with a replacement term
-TriTrypDB	Tb11.02.5420b	Tb11.02.5420b	located_in	GO:0016021	GO_REF:0000002	ISO	GeneDB:Tb11.02.5420	C	GORULE:0000020-2 NADPH-cytochrome p450 reductase, putative	mRNA	taxon:185431	20130726	GeneDB
+TriTrypDB	Tb11.02.5420b	Tb11.02.5420b	located_in	GO:0016021	GO_REF:0000002	ISO	GeneDB:Tb11.02.5420	C	GORULE:0000020-2 NADPH-cytochrome p450 reductase, putative		mRNA	taxon:185431	20130726	GeneDB
 ! FAILS GORULE:0000020 - obsolete term in 'with' (column 8) with no replacement
-MGI:1100518 Smad7 involved_in GO:0017015 MGI:MGI:3836072|PMID:18952608 IC GO:0060389 P GORULE:0000020-3 SMAD family member 7 Madh7 protein_coding_gene taxon:10090 20090211 BHF-UCL 
+MGI:1100518	Smad7	bla	involved_in	GO:0017015	MGI:MGI:3836072|PMID:18952608	IC	GO:0060389	P	GORULE:0000020-3	SMAD	protein_coding_gene	taxon:10090	20090211	BHF-UCL 
 ! FAILS GORULE:0000027 - bad GO ID syntax
 PomBase	SPAC25B8.17	ypf1	is_active_in	BAD_GO_ID	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000027-1 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase
 ! FAILS GORULE:0000027 - bad GO ID syntax; no colon
@@ -126,11 +126,10 @@ UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISO	UniProtKB:F1N2N9	C	G
 ! FAILS GORULE:0000050 - self-referential ISA annotations 
 UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISA	UniProtKB:F1N2N9	C	GORULE:0000050-3 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	UniProt
 ! FAILS GORULE:0000055 - Two references in the same ID space - PMID
-PlasmoDB	PF3D7_0200400	PF3D7_0200400	GO:0020036	PMID:12477793|PMID:15961998	IDA	C	GORULE:0000055-1 stevor	PFB0025c|PF02_0004	mRNA	taxon:36329	20131007	GeneDB
+PlasmoDB	PF3D7_0200400	PF3D7_0200400	is_active_in	GO:0020036	PMID:12477793|PMID:15961998	IDA		C	GORULE:0000055-1	stevor	mRNA	taxon:4896	20131007	GeneDB
 ! FAILS GORULE:0000055 - Two references in the same ID space - GO_REF
-PlasmoDB PF3D7_0200400 PF3D7_0200400 GO:0020036 GO_REF:0000044|GO_REF:0000001	IDA C GORULE:0000055-1 stevor PFB0025c|PF02_0004 mRNA taxon:36329 20131007 GeneDB
+PlasmoDB	PF3D7_0200400	PF3D7_0200400	is_active_in	GO:0020036 	GO_REF:0000044|GO_REF:0000001	IDA		C	GORULE:0000055-1	stevor	mRNA	taxon:4896	20131007	GeneDB
 ! FAILS GORULE:0000059 - GP2term relation missing
 SGN	235	cpk1		GO:0005886	PMID:12011347	IDA	C	GORULE:0000059-1 calcium-dependent protein kinase	LeCPK1|Solyc03g031670	gene	taxon:4081	20080616	SGN
 ! FAILS GORULE:0000061 - the part_of GP2term relation is not allowed for GO:0070865
 FB	FBgn0011273	Acam	part_of	GO:0070865	FB:FBrf0193169|PMID:16790438	IDA	C	GORULE:0000061-1 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	FlyBase
-
