@@ -1,6 +1,7 @@
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX lego: <http://geneontology.org/lego/>
 PREFIX : <http://model.geneontology.org/>
 
 DELETE {
@@ -9,38 +10,20 @@ DELETE {
   }
 }
 WHERE {
-
   # This is all triples from noctua cam graphs, including inferred graphs
-# Total
-
-  GRAPH ?g {
+  {
     ?g :graphType :noctuaCam .
-    ?s ?p ?o .
+    ?g lego:modelstate ?state .
+    FILTER(?state != "production")
   }
-
-  # We'll subtract out production (cause we want to keep them)
-  FILTER NOT EXISTS {
-    {
-      # Find production graphs
-      GRAPH ?g {
-        ?g :graphType :noctuaCam .
-        ?g <http://geneontology.org/lego/modelstate> ?state .
-        FILTER(?state = "production")
-        ?s ?p ?o .
-      }
-    }
-    UNION {
-      # Union with inferred graphs from the found production
-      GRAPH ?g {
-        ?g :graphType :noctuaCam .
-        ?g prov:wasDerivedFrom ?asserted .
-        ?s ?p ?o
-      }
-      GRAPH ?asserted {
-        ?asserted :graphType :noctuaCam .
-        ?asserted <http://geneontology.org/lego/modelstate> ?state .
-        FILTER(?state = "production")
-      }
-    }
+  UNION
+  {
+    ?g :graphType :noctuaInferences .
+    ?g prov:wasDerivedFrom ?asserted .
+    ?asserted lego:modelstate ?state .
+    FILTER(?state != "production")
+  }
+  GRAPH ?g {    
+    ?s ?p ?o .
   }
 }

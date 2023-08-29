@@ -5,12 +5,15 @@ PREFIX : <http://model.geneontology.org/>
 
 INSERT {
   GRAPH ?g {
-    ?g :graphType :noctuaCam .
+    ?g :graphType :noctuaInferences .
   }
 }
 WHERE {
   GRAPH ?g {
-    ?g a owl:Ontology .
+    ?g prov:wasDerivedFrom ?ag .
+  }
+  # Copied asserted models also have wasDerivedFrom links
+  FILTER NOT EXISTS {
     ?g <http://geneontology.org/lego/modelstate> ?state .
-  } 
+  }
 }

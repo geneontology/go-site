@@ -97,10 +97,7 @@ Use an existing rule as a template
 ## Other Notes
 Note: it is OK to create a stub entry and have a godev member help you
 fill out the details. However, stub entries will not be merged until
-completed.
-
-If you wish to have an automated rule, cc @dougli1sqrd. Note that not
-every rule is automatable. We use this system to document standard
+completed. Note that not every rule is automatable. We use this system to document standard
 manual QC checks.
 
 Additional note: Even when your PR is merged, it will not show up in

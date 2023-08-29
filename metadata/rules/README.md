@@ -13,7 +13,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000003">GORULE:0000003 Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field</a>
  * <a href="#gorule0000004">GORULE:0000004 Reciprocal annotations for 'protein binding ; GO:0005515'</a>
  * <a href="#gorule0000005">GORULE:0000005 No ISS or ISS-related annotations to 'protein binding ; GO:0005515'</a>
- * <a href="#gorule0000006">GORULE:0000006 IEP and HEP usage is restricted to terms from the Biological Process ontology</a>
+ * <a href="#gorule0000006">GORULE:0000006 IEP and HEP usage is restricted to terms from the Biological Process ontology, except when assigned by GOC</a>
  * <a href="#gorule0000007">GORULE:0000007 IPI should not be used with GO:0003824 catalytic activity or descendents</a>
  * <a href="#gorule0000008">GORULE:0000008 No annotations should be made to uninformative high level terms</a>
  * <a href="#gorule0000009">GORULE:0000009 Annotation Intersection Alerts</a>
@@ -117,6 +117,8 @@ on the GO wiki.
  * id: [GORULE:0000003](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000003.md)
  * status: legacy
 
+
+Note that this rule has been replaced by GORULE:0000018 and GORULE:0000051.
 
 Annotations to binding : GO:0005488 or protein binding ; GO:0005515 with
 the TAS, NAS, IC, IMP, IGI and IDA evidence codes are not informative as
@@ -228,7 +230,7 @@ Error report (number of errors) in [db_species]-report.html & owltools-check.txt
 
 <a name="gorule0000006"/>
 
-## IEP and HEP usage is restricted to terms from the Biological Process ontology
+## IEP and HEP usage is restricted to terms from the Biological Process ontology, except when assigned by GOC
 
  * id: [GORULE:0000006](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000006.md)
  * status: implemented
@@ -422,14 +424,16 @@ This rule is now merged with GORULE:0000020.
  * status: implemented
 
 
-For background: dual species annotations are used to capture information about
-multi-organism interactions. The first taxon ID should be that of the
-species encoding the gene product, and the second should be the taxon of
-the other species in the interaction. Where the interaction is between
-organisms of the same species, both taxon IDs should be the same.
+For background: dual (or multiple) species annotations are used to capture information about multi-species interactions. The first taxon ID should be that of the species encoding the gene product annotated, and the second (and further) IDs should be the taxon of the other species in the interaction. 
 
-This rule should check that these annotations should be used only in conjunction with
-terms that have the biological process term 'GO:0044419 : biological process involved in interspecies interaction between organisms', the process GO:0043903 regulation of interspecies interactions between organisms, or the cellular component term 'GO:0018995 : host cellular component' as an ancestor.
+* Each value in the Taxon column (GAF column 13) should be unique. 
+
+This rule applies to annotations to either these terms of their is_a descendants: 
+* GO:0044419 biological process involved in interspecies interaction between organisms
+* GO:0043903 regulation of interspecies interactions between organisms, or
+* GO:0018995 host cellular component
+
+* Annotations to other terms should have a single value in the Taxon column (GAF column 13).
 
 <a name="gorule0000016"/>
 
@@ -490,11 +494,14 @@ reasoner such as HermiT.
  * status: implemented
 
 
-There should be no annotations to obsolete terms or to an alternate ID. Obsolete terms that have a `replaced_by` tag and
-terms annotated to one of their alternative IDs (merged terms; `alt_id` in the .obo files) will automatically be repaired to the valid term id.
+There should be no annotations to obsolete terms or to an alternate ID (Column 5 of GAF, Column 4 of GPAD). As well, GO terms present in annotations also should be repaired if possible: 
+* with/from: Column 8 of GAF, Column 7 of GPAD
+* extensions, Column 16 of GAF, Column 11 of GPAD 
+
+Obsolete terms that have a `replaced_by` tag and terms annotated to one of their alternative IDs (merged terms; `alt_id` in the .obo files) will automatically be repaired to the valid term id.
 If no replacement is found, the annotation will be filtered.
 
-Other GO terms present in annotations (with/from column, etc) also should be repaired if possible.
+
 
 <a name="gorule0000021"/>
 
