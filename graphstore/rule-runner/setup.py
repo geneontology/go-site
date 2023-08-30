@@ -8,9 +8,9 @@ setup(
     install_requires=[
         "click",
         "requests",
-        "pyYaml==5.4.1",
+        "pyYaml",
         "pykwalify==1.6.0",
-        "SPARQLWrapper==1.8.0",
+        "SPARQLWrapper",
         "yamldown",
         "rdflib==4.2.2"
     ],
