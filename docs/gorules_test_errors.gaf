@@ -138,4 +138,4 @@ FB	FBgn0011273	Acam		GO:0070865	FB:FBrf0193169|PMID:16790438	IDA	C	GORULE:000006
 ! FAILS GORULE:0000061 - the part_of GP2term relation is not allowed for GO:0070864
 FB	FBgn0011273	shi	part_of	GO:0070864	PMID:12432073	IDA	C	GORULE:0000061-3 Dynamin	Protein shibire|dDyn	protein	taxon:7227	20180501	FlyBase
 ! FAILS GORULE:0000061 - the part_of GP2term relation is not allowed for GO:0140827
-UniProtKB	A1B2F4	aztD	enables	GO:0140827	PMID:26468286	IDA		F	GORULE:0000061-4		protein	taxon:318586	20230427	UniProt	has_regulation_target(
+UniProtKB	A1B2F4	aztD	part_of	GO:0140827	PMID:26468286	IDA		F	GORULE:0000061-4		protein	taxon:318586	20230427	UniProt	has_regulation_target(
