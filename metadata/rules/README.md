@@ -944,6 +944,9 @@ Direct annotations to these terms require a value in the Annotation Extension fi
  * 'GO:0005515 protein binding' 
  * 'GO:0005488 binding'
 
+For more information, see the [binding guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
+on the GO wiki.
+
 <a name="gorule0000053"/>
 
 ## 'NOT' annotation should not have extension
