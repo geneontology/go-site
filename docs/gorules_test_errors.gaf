@@ -191,4 +191,17 @@ UniProtKB	A1B2F4	aztD	part_of	GO:0005634	PMID:26468286	IDA		F	GORULE:0000061-28	
 UniProtKB	A1B2F4	aztD	enables	GO:0005634	PMID:26468286	IDA		F	GORULE:0000061-29		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - 'contributes_to' is not allowed for a GO CC
 UniProtKB	A1B2F4	aztD	contributes_to	GO:0005634	PMID:26468286	IDA		F	GORULE:0000061-30		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - 'enables' is not allowed for a GO BP
+UniProtKB	A1B2F4	aztD	enables	GO:0043491	PMID:26468286	IDA		F	GORULE:0000061-31		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - 'contributes_to' is not allowed for a GO BP
+UniProtKB	A1B2F4	aztD	contributes_to	GO:0043491	PMID:26468286	IDA		F	GORULE:0000061-32		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - 'located in' is not allowed for a GO BP
+UniProtKB	A1B2F4	aztD	located in	GO:0043491	PMID:26468286	IDA		F	GORULE:0000061-33		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - 'is_active_in' is not allowed for a GO BP
+UniProtKB	A1B2F4	aztD	is_active_in	GO:0043491	PMID:26468286	IDA		F	GORULE:0000061-31		protein	taxon:318586	20230427	UniProt
+GORULE:0000061-34		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - 'colocalizes_with' is not allowed for a GO BP
+UniProtKB	A1B2F4	aztD	colocalizes_with	GO:0043491	PMID:26468286	IDA		F	GORULE:0000061-35		protein	taxon:318586	20230427	UniProt
+
+
 
