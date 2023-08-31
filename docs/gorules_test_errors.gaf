@@ -169,3 +169,26 @@ UniProtKB	A1B2F4	aztD	part_of	GO:0004672	PMID:26468286	IDA		F	GORULE:0000061-17	
 UniProtKB	A1B2F4	aztD	located_in	GO:0004672	PMID:26468286	IDA		F	GORULE:0000061-18		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - 'colocalizes_with' is not allowed for a GO MF
 UniProtKB	A1B2F4	aztD	colocalizes_with	GO:0004672	PMID:26468286	IDA		F	GORULE:0000061-19		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - 'acts_upstream_of_or_within' is not allowed for a GO CC
+UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within	GO:0005634	PMID:26468286	IDA		F	GORULE:0000061-20		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - 'acts_upstream_of' is not allowed for a GO CC
+UniProtKB	A1B2F4	aztD	acts_upstream_of	GO:0005634	PMID:26468286	IDA		F	GORULE:0000061-21		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - 'involved_in' is not allowed for a GO CC
+UniProtKB	A1B2F4	aztD	involved_in	GO:0005634	PMID:26468286	IDA		F	GORULE:0000061-22		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - 'acts_upstream_of_or_within,_positive_effect' is not allowed for a GO CC
+UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within,_positive_effect	GO:0005634	PMID:26468286	IDA		F	GORULE:0000061-23		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - 'acts_upstream_of_or_within,_negative_effect' is not allowed for a GO CC
+UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within,_negative_effect	GO:0005634	PMID:26468286	IDA		F	GORULE:0000061-24		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - 'acts_upstream_of,_positive_effect' is not allowed for a GO CC
+UniProtKB	A1B2F4	aztD	acts_upstream_of,_positive_effect	GO:0005634	PMID:26468286	IDA		F	GORULE:0000061-25		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - 'acts_upstream_of,_negative_effect' is not allowed for a GO CC
+UniProtKB	A1B2F4	aztD	acts_upstream_of,_negative_effect	GO:0005634	PMID:26468286	IDA		F	GORULE:0000061-26		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - 'is_active_in' is not allowed for a GO CC
+UniProtKB	A1B2F4	aztD	is_active_in	GO:0005634	PMID:26468286	IDA		F	GORULE:0000061-27		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - 'part_of' is not allowed for a GO CC
+UniProtKB	A1B2F4	aztD	part_of	GO:0005634	PMID:26468286	IDA		F	GORULE:0000061-28		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - 'enables' is not allowed for a GO CC
+UniProtKB	A1B2F4	aztD	enables	GO:0005634	PMID:26468286	IDA		F	GORULE:0000061-29		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - 'contributes_to' is not allowed for a GO CC
+UniProtKB	A1B2F4	aztD	contributes_to	GO:0005634	PMID:26468286	IDA		F	GORULE:0000061-30		protein	taxon:318586	20230427	UniProt
+
