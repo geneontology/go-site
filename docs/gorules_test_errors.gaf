@@ -131,5 +131,11 @@ PlasmoDB	PF3D7_0200400	PF3D7_0200400	is_active_in	GO:0020036	PMID:12477793|PMID:
 PlasmoDB	PF3D7_0200400	PF3D7_0200400	is_active_in	GO:0020036 	GO_REF:0000044|GO_REF:0000001	IDA		C	GORULE:0000055-1	stevor	mRNA	taxon:4896	20131007	GeneDB
 ! FAILS GORULE:0000059 - GP2term relation missing
 SGN	235	cpk1		GO:0005886	PMID:12011347	IDA	C	GORULE:0000059-1 calcium-dependent protein kinase	LeCPK1|Solyc03g031670	gene	taxon:4081	20080616	SGN
-! FAILS GORULE:0000061 - the part_of GP2term relation is not allowed for GO:0070865
+! FAILS GORULE:0000061 - SHOULD NOT FAIL (wrong on snapshot??) the part_of GP2term relation is not allowed for GO:0070865
 FB	FBgn0011273	Acam	part_of	GO:0070865	FB:FBrf0193169|PMID:16790438	IDA	C	GORULE:0000061-1 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	FlyBase
+! FAILS GORULE:0000061 - fails because no data in column 4
+FB	FBgn0011273	Acam		GO:0070865	FB:FBrf0193169|PMID:16790438	IDA	C	GORULE:0000061-2 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	FlyBase
+! FAILS GORULE:0000061 - the part_of GP2term relation is not allowed for GO:0070864
+FB	FBgn0011273	shi	part_of	GO:0070864	PMID:12432073	IDA	C	GORULE:0000061-3 Dynamin	Protein shibire|dDyn	protein	taxon:7227	20180501	FlyBase
+! FAILS GORULE:0000061 - the part_of GP2term relation is not allowed for GO:0140827
+UniProtKB	A1B2F4	aztD	enables	GO:0140827	PMID:26468286	IDA		F			protein	taxon:318586	20230427	UniProt	has_regulation_target(
