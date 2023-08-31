@@ -22,7 +22,7 @@ def taxons(dataset_dir, out):
 
 def read_taxa_for_path(dataset_path):
     with open(dataset_path) as group_file:
-        group_data = yaml.load(group_file)
+        group_data = yaml.safe_load(group_file)
         gaf_data = [data for data in group_data["datasets"] if data["type"] == "gaf"]
         taxa = [ taxon for gaf in gaf_data if gaf["taxa"] for taxon in gaf["taxa"] if taxon.split(":")[1] != "1" ]
         return taxa
