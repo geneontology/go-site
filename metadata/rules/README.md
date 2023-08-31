@@ -940,12 +940,13 @@ Annotations to ISS, ISA and ISO should not have the same identifier in the 'gene
 
 Direct annotations to these terms require a value in the Annotation Extension field: 
 
- * 'GO:0008283 cell population proliferation' 
  * 'GO:0005515 protein binding' 
  * 'GO:0005488 binding'
 
 For more information, see the [binding guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
 on the GO wiki.
+
+This rule may be expanded in the future to include other terms such as 'GO:0008283 cell population proliferation'.
 
 <a name="gorule0000053"/>
 
