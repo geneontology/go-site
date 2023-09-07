@@ -12,7 +12,7 @@ setup(
         "pykwalify==1.6.0",
         "SPARQLWrapper",
         "yamldown",
-        "rdflib==4.2.2"
+        "rdflib"
     ],
     entry_points='''
         [console_scripts]
