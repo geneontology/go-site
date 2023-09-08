@@ -9,7 +9,7 @@ setup(
         "click",
         "requests",
         "pyYaml",
-        "pykwalify==1.6.0",
+        "pykwalify",
         "SPARQLWrapper",
         "yamldown",
         "rdflib"
