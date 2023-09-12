@@ -84,6 +84,12 @@ def clear_creator_info(creator_info):
                 if (metadata_key == 'taxa_label_map'):
                     metadata_obj[metadata_key] = {} 
                     
+def sort_messages(r, messages):
+        if len(messages) > 0:
+            # Messages are sorted by GO id followed by Error level
+            messages.sort(key=lambda x: x.get('obj'))
+            messages.sort(key=lambda x: x.get('level'))                    
+                    
 def output_md(violations_info_list, path):
     ## Generate a summary in markdown 
     for violation in violations_info_list:
@@ -105,7 +111,7 @@ def output_md(violations_info_list, path):
             numViolations = len(violations)
             if 0 == numViolations:
                 continue
-
+            sort_messages(rule, violations)
             firstMsg = violations[0]
             ruleDesc = firstMsg['message']    # Rule and description
 
@@ -115,7 +121,6 @@ def output_md(violations_info_list, path):
             ruleDetails += '\n\n###' + rule
             ruleDetails += '\n\n' + ruleDesc
             ruleDetails += '\n\n* total: ' + str(numViolations)
-
             ruleDetails += '\n#### Messages'
             for violation in violations:
                 ruleDetails += '\n* ' + violation['level'] + ' - ' + violation['type'] + ':' + ruleDesc + '--`' + violation['line'] + '`'
@@ -179,6 +184,7 @@ def output_html(violations_info_list, path):
                 continue
 
             firstMsg = violations[0]
+            sort_messages(rule, violations)
             ruleDesc = firstMsg['message']    # Rule and description
             ruleDescEscaped = html.escape(ruleDesc)
 
@@ -221,7 +227,7 @@ def output_html(violations_info_list, path):
             for violation in violations:
                 listItem = ET.Element('li')
                 unorderedViolationsList.append(listItem)
-                listItem.text = violation['line']
+                listItem.text = violation['level'] + ' - ' + violation['type'] + ':' + ruleDesc + '--`' + violation['line'] + '`'
 
         # Indent
         _pretty_print(htmlObj)
@@ -390,8 +396,9 @@ def main():
 
                 ## Get assigned by information from GAF line.  If it does not exist, attempt to get from group that created the GAF file
                 assigned_by = None
-                if (len(gaf_contents) < 14):
-                    LOG.info('Found incorrect number of columns in GAF line ' + gaf_line)
+                len_gaf_contents = len(gaf_contents)
+                if (len_gaf_contents < 15):
+                    LOG.info('Found incorrect number of columns in GAF line found ' + str(len_gaf_contents) + ' column for ' + gaf_line)
                     assigned_by = gaf_creator_id
                 else:
                     assigned_by = gaf_contents[14]

@@ -17,7 +17,7 @@ def main():
     datasets = []
     for fn in args.files:
         f = open(fn, 'r') 
-        obj = yaml.load(f)
+        obj = yaml.safe_load(f)
         datasets.extend(obj['datasets'])
         f.close()
     print(dumps(datasets, sort_keys=True, indent=4, separators=(',', ': ')))
