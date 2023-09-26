@@ -79,6 +79,10 @@ UniProtKB	P04995	sbcB	involved_in	GO:0090503	GO_REF:0000108	IEA	GO:0000175	P	GOR
 TriTrypDB	Tb11.02.5420b	Tb11.02.5420b	located_in	GO:0016021	GO_REF:0000002	ISO	GeneDB:Tb11.02.5420	C	GORULE:0000020-2 NADPH-cytochrome p450 reductase, putative		mRNA	taxon:185431	20130726	GeneDB
 ! FAILS GORULE:0000020 - TEST 3 - obsolete term in 'with' (column 8) with no replacement
 MGI:1100518	Smad7	bla	involved_in	GO:0017015	MGI:MGI:3836072|PMID:18952608	IC	GO:0060389	P	GORULE:0000020-3	SMAD	protein_coding_gene	taxon:10090	20090211	BHF-UCL 
+! FAILS GORULE:0000020 - TEST 4 - obsolete term in 'extension' (column 16) with no replacement
+UniProtKB	O76187	darA	enables	GO:0004672	PMID:9802899	IPI	UniProtKB:P34149	P	GORULE:0000020-4 Darlin	darA	protein	taxon:44689	20100205	UniProt	involved_in(GO:0090503)
+! FAILS GORULE:0000020 - TEST 5 - obsolete term in 'extension' (column 16) with a replacement
+UniProtKB	O76187	darA	enables	GO:0004672	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000020-5 Darlin	darA	protein	taxon:44689	20100205	UniProt	involved_in(GO:0014067)
 ! FAILS GORULE:0000027 - TEST 1 - bad GO ID syntax
 PomBase	SPAC25B8.17	ypf1	is_active_in	BAD_GO_ID	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000027-1 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase
 ! FAILS GORULE:0000027 - TEST 2 - bad GO ID syntax; no colon
