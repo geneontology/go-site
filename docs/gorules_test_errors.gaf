@@ -1,6 +1,6 @@
 !gaf-version: 2.2
 !generated-by: GOC
-!date-generated: 2023-08-25
+!date-generated: 2023-09-16
 ! Dummy GAF file containing deliberate errors to test that GO rules are correctly implemented. 
 
 ! FAILS GORULE:0000001 - empty col1 and col2
@@ -25,6 +25,8 @@ PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	MADEUP	SGD:S0000
 PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-6 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	2015-03-05	PomBase	part_of(X:1)
 ! FAILS GORULE:0000001 - TEST 7 - Bad date, unparsable
 PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-7 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	TODAY	PomBase	part_of(X:1)
+! FAILS GORULE:0000001 - TEST 8 - invalid taxon 0
+ZFIN	ZDB-GENE-070117-1552	obj_symbol	acts_upstream_of_or_within	GO:0045601	PMID:17531218	IMP	ZFIN:ZDB-GENO-080318-17	P	GORULE:0000001-8		gene_product	taxon:0	20080326	ZFIN
 ! FAILS GORULE:0000002 - TEST 1 - has a 'NOT' annotations to 'protein binding ; GO:0005515
 UniProtKB	O76187	darA	NOT|involved_in	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000002-1 Darlin	darA	protein	taxon:44689	20100205	UniProt
 ! TBC FAILS GORULE:0000003 - incorrect evidence codes for 'binding ; GO:0005488' and 'protein binding ; GO:0005515'
@@ -125,6 +127,10 @@ UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISS	UniProtKB:F1N2N9	C	G
 UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISO	UniProtKB:F1N2N9	C	GORULE:0000050-2 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	UniProt
 ! FAILS GORULE:0000050 - TEST 3 - self-referential ISA annotations 
 UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISA	UniProtKB:F1N2N9	C	GORULE:0000050-3 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	UniProt
+! FAILS GORULE:0000051 - Pass TEST 51 - Annotation extension for certain GO terms - protein binding; GO:0005515
+UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000051-1 Darlin	darA	protein	taxon:44689	20100205	UniProt	has_input(GO:0003674)|occurs_in(CL:123456)
+! FAILS GORULE:0000051 - TEST 51 - Annotation extension is required for certain terms - binding GO:0005488 
+UniProtKB	O76187	darA	enables	GO:0005488	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000051-2 Darlin	darA	protein	taxon:44689	20100205	UniProt
 ! FAILS GORULE:0000055 - TEST 1 - Two references in the same ID space - PMID
 PlasmoDB	PF3D7_0200400	PF3D7_0200400	is_active_in	GO:0020036	PMID:12477793|PMID:15961998	IDA		C	GORULE:0000055-1	stevor	mRNA	taxon:4896	20131007	GeneDB
 ! FAILS GORULE:0000055 - TEST 2 -  Two references in the same ID space - GO_REF
@@ -132,20 +138,20 @@ PlasmoDB	PF3D7_0200400	PF3D7_0200400	is_active_in	GO:0020036 	GO_REF:0000044|GO_
 ! FAILS GORULE:0000059 - TEST 1 - GP2term relation missing
 SGN	235	cpk1		GO:0005886	PMID:12011347	IDA	C	GORULE:0000059-1 calcium-dependent protein kinase	LeCPK1|Solyc03g031670	gene	taxon:4081	20080616	SGN
 ! FAILS GORULE:0000061 - TEST 1 SHOULD NOT FAIL (wrong on snapshot??) the part_of GP2term relation is not allowed for GO:0070865
-FB	FBgn0011273	Acam	part_of	GO:0070865	FB:FBrf0193169|PMID:16790438	IDA	C		GORULE:0000061-1 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	FlyBase
-! FAILS GORULE:0000061 - TEST 2 -fails because no data in column 4
+FB	FBgn0011273	Acam	part_of	GO:0070865	FB:FBrf0193169|PMID:16790438	IDA		C	GORULE:0000061-1 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	FlyBase
+! FAILS GORULE:0000061 - TEST 2 -fails because no data in column 4.  This is GORULE 1
 FB	FBgn0011273	Acam		GO:0070865	FB:FBrf0193169|PMID:16790438	IDA	C		GORULE:0000061-2 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	FlyBase
 ! FAILS GORULE:0000061 -  TEST 3 - SHOULD NOT FAIL the 'part_of' GP2term relation is allowed for GO:0070864 (CC complex)
-FB	FBgn0011273	shi	part_of	GO:0070864	PMID:12432073	IDA	C		GORULE:0000061-3 Dynamin	Protein shibire|dDyn	protein	taxon:7227	20180501	FlyBase
+FB	FBgn0011273	shi	part_of	GO:0070864	PMID:12432073	IDA		C	GORULE:0000061-3 Dynamin	Protein shibire|dDyn	protein	taxon:7227	20180501	FlyBase
 ! FAILS GORULE:0000061 - TEST 4 - the 'part_of' GP2term relation is not allowed for GO:0140827 (MF)
 UniProtKB	A1B2F4	aztD	part_of	GO:0140827	PMID:26468286	IDA		F	GORULE:0000061-4		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - TEST 5 - the 'enables' GP2term relation is not allowed for GO:0005856 (CC)
 UniProtKB	A1B2F4	aztD	enables	GO:0005856	PMID:26468286	IDA		F	GORULE:0000061-5		protein	taxon:318586	20230427	UniProt
-! FAILS GORULE:0000061 - TEST 6 - the 'located in' GP2term relation is not allowed for GO:0005575 (root CC)
+! FAILS GORULE:0000061 - TEST 6 - the 'located in' GP2term relation is not allowed for GO:0005575 (root CC) - Fails GORULE 11
 UniProtKB	A1B2F4	aztD	located_in	GO:0005575	PMID:26468286	IDA		F	GORULE:0000061-6		protein	taxon:318586	20230427	UniProt
-! FAILS GORULE:0000061 - TEST 7 - the 'contributes_to' GP2term relation is not allowed for GO:0003674 (root MF)
+! FAILS GORULE:0000061 - TEST 7 - the 'contributes_to' GP2term relation is not allowed for GO:0003674 (root MF) - Fails GORULE 11
 UniProtKB	A1B2F4	aztD	contributes_to	GO:0003674	PMID:26468286	IDA		F	GORULE:0000061-7		protein	taxon:318586	20230427	UniProt
-! FAILS GORULE:0000061 - TEST 8 - the 'acts upstream of or within' GP2term relation is not allowed for GO:0008150 (root BP)
+! FAILS GORULE:0000061 - TEST 8 - the 'acts upstream of or within' GP2term relation is not allowed for GO:0008150 (root BP) - Fails GORULE 11
 UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within	GO:0008150	PMID:26468286	IDA		F	GORULE:0000061-8		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - test 9- 'enables' is not allowed for a GO BP														
 UniProtKB	A1B2F4	aztD	enables	GO:0043491	PMID:26468286	IDA		P	GORULE:0000061-9		protein	taxon:318586	20230427	UniProt
@@ -207,3 +213,15 @@ UniProtKB	A1B2F4	aztD	located_in	GO:0043491	PMID:26468286	IDA		C	GORULE:0000061-
 UniProtKB	A1B2F4	aztD	colocalizes_with	GO:0043491	PMID:26468286	IDA		C	GORULE:0000061-37		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - test 38 - 'part_of' is not allowed for a GO CC - cellular anatomical entity														
 UniProtKB	A1B2F4	aztD	part_of	GO:0005634	PMID:26468286	IDA		C	GORULE:0000061-38		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - test 39 - 'part_of' is not allowed for GO CC - cellular anatomical entity														
+UniProtKB	A1B2F4	aztD	NOT|part_of	GO:0005634	PMID:26468286	IDA		C	GORULE:0000061-39		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - test 40 - Fail unknown GO id type
+FB	FBgn0011273	shi	NOT|part_of	GO:1234567	PMID:12432073	IDA		C	GORULE:0000061-40 Dynamin	Protein shibire|dDyn	protein	taxon:7227	20180501	FlyBase
+! FAILS GORULE:0000061 - test 41 -  'part_of' is not allowed for  GO CC - cell plate descendent of cellular anatomical entity
+UniProtKB	A1B2F4	aztD	part_of	GO:0009504	PMID:26468286	IDA		C	GORULE:0000061-41		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - test 42 -  'part_of' is not allowed for  GO CC cellular anatomical entity
+UniProtKB	A1B2F4	aztD	part_of	GO:0110165	PMID:26468286	IDA		C	GORULE:0000061-42		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - test 43 -  'part_of' is not allowed for GO CC  virion component														
+UniProtKB	A1B2F4	aztD	part_of	GO:0044423	PMID:26468286	IDA		C	GORULE:0000061-43		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - test 44 -  'part_of' is not allowed for a GO CC  icosahedral viral capsid, neck descendant of virion component 														
+UniProtKB	A1B2F4	aztD	part_of	GO:0098030	PMID:26468286	IDA		C	GORULE:0000061-44		protein	taxon:318586	20230427	UniProt
