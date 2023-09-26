@@ -1031,7 +1031,7 @@ the above file, that element should be dropped from the extensions.
 ## GAF Version 2.0 and 2.1 are converted into GAF Version 2.2
 
  * id: [GORULE:0000059](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000059.md)
- * status: proposed
+ * status: implemented
 
 
 In GAF2.2, a gp2term relation (column 4; see https://wiki.geneontology.org/Annotation_Relations#Gene_Product_to_GO_term_Relations_(%22qualifiers%22)) is mandatory for every annotation.
