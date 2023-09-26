@@ -147,12 +147,12 @@ FB	FBgn0011273	shi	part_of	GO:0070864	PMID:12432073	IDA		C	GORULE:0000061-3 Dyna
 UniProtKB	A1B2F4	aztD	part_of	GO:0140827	PMID:26468286	IDA		F	GORULE:0000061-4		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - TEST 5 - the 'enables' GP2term relation is not allowed for GO:0005856 (CC)
 UniProtKB	A1B2F4	aztD	enables	GO:0005856	PMID:26468286	IDA		F	GORULE:0000061-5		protein	taxon:318586	20230427	UniProt
-! FAILS GORULE:0000061 - TEST 6 - the 'located in' GP2term relation is not allowed for GO:0005575 (root CC) - Fails GORULE 11
-UniProtKB	A1B2F4	aztD	located_in	GO:0005575	PMID:26468286	IDA		F	GORULE:0000061-6		protein	taxon:318586	20230427	UniProt
-! FAILS GORULE:0000061 - TEST 7 - the 'contributes_to' GP2term relation is not allowed for GO:0003674 (root MF) - Fails GORULE 11
-UniProtKB	A1B2F4	aztD	contributes_to	GO:0003674	PMID:26468286	IDA		F	GORULE:0000061-7		protein	taxon:318586	20230427	UniProt
-! FAILS GORULE:0000061 - TEST 8 - the 'acts upstream of or within' GP2term relation is not allowed for GO:0008150 (root BP) - Fails GORULE 11
-UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within	GO:0008150	PMID:26468286	IDA		F	GORULE:0000061-8		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - TEST 6 - also fails GORULE-0000011 - the 'located in' GP2term relation is not allowed for GO:0005575 (root CC) - Fails GORULE 11
+UniProtKB	A1B2F4	aztD	located_in	GO:0005575	PMID:26468286	IDA		F	GORULE:0000061-6 & GORULE-0000011-3		protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - TEST 7 - also fails GORULE-0000011 - the 'contributes_to' GP2term relation is not allowed for GO:0003674 (root MF) - Fails GORULE 11
+UniProtKB	A1B2F4	aztD	contributes_to	GO:0003674	PMID:26468286	IDA		F	GORULE:0000061-7 & GORULE-0000011-4			protein	taxon:318586	20230427	UniProt
+! FAILS GORULE:0000061 - TEST 8  - also fails GORULE-0000011 - the 'acts upstream of or within' GP2term relation is not allowed for GO:0008150 (root BP) - Fails GORULE 11
+UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within	GO:0008150	PMID:26468286	IDA		F	GORULE:0000061-8 & GORULE-0000011-5			protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - test 9- 'enables' is not allowed for a GO BP														
 UniProtKB	A1B2F4	aztD	enables	GO:0043491	PMID:26468286	IDA		P	GORULE:0000061-9		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - test 10 -  'contributes_to' is not allowed for a GO BP														
