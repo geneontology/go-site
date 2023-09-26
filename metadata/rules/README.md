@@ -178,7 +178,7 @@ on the GO wiki.
 ## No ISS or ISS-related annotations to 'protein binding ; GO:0005515'
 
  * id: [GORULE:0000005](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000005.md)
- * status: legacy
+ * status: proposed
 
 
 If we take an example annotation:
@@ -225,7 +225,6 @@ For more information, see the [binding
 guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
 on the GO wiki.
 
-Error report (number of errors) in [db_species]-report.html & owltools-check.txt (details).
 
 <a name="gorule0000006"/>
 
