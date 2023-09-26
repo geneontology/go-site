@@ -27,6 +27,8 @@ PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S0000015
 PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-7 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	TODAY	PomBase	part_of(X:1)
 ! FAILS GORULE:0000001 - TEST 8 - invalid taxon 0
 ZFIN	ZDB-GENE-070117-1552	obj_symbol	acts_upstream_of_or_within	GO:0045601	PMID:17531218	IMP	ZFIN:ZDB-GENO-080318-17	P	GORULE:0000001-8		gene_product	taxon:0	20080326	ZFIN
+! FAILS GORULE:0000001 - TEST 9 -fails because no data in column 4.  
+FB	FBgn0011273	Acam		GO:0070865	FB:FBrf0193169|PMID:16790438	IDA	C		GORULE:0000061-2 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	FlyBase
 ! FAILS GORULE:0000002 - TEST 1 - has a 'NOT' annotations to 'protein binding ; GO:0005515
 UniProtKB	O76187	darA	NOT|involved_in	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000002-1 Darlin	darA	protein	taxon:44689	20100205	UniProt
 ! TBC FAILS GORULE:0000005 - TEST 1 - incorrect evidence codes for 'protein binding ; GO:0005515' - ISS not allowed
@@ -143,8 +145,6 @@ PlasmoDB	PF3D7_0200400	PF3D7_0200400	is_active_in	GO:0020036 	GO_REF:0000044|GO_
 SGN	235	cpk1		GO:0005886	PMID:12011347	IDA	C	GORULE:0000059-1 calcium-dependent protein kinase	LeCPK1|Solyc03g031670	gene	taxon:4081	20080616	SGN
 ! FAILS GORULE:0000061 - TEST 1 SHOULD NOT FAIL (wrong on snapshot??) the part_of GP2term relation is not allowed for GO:0070865
 FB	FBgn0011273	Acam	part_of	GO:0070865	FB:FBrf0193169|PMID:16790438	IDA		C	GORULE:0000061-1 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	FlyBase
-! FAILS GORULE:0000061 - TEST 2 -fails because no data in column 4.  This is GORULE 1
-FB	FBgn0011273	Acam		GO:0070865	FB:FBrf0193169|PMID:16790438	IDA	C		GORULE:0000061-2 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	FlyBase
 ! FAILS GORULE:0000061 -  TEST 3 - SHOULD NOT FAIL the 'part_of' GP2term relation is allowed for GO:0070864 (CC complex)
 FB	FBgn0011273	shi	part_of	GO:0070864	PMID:12432073	IDA		C	GORULE:0000061-3 Dynamin	Protein shibire|dDyn	protein	taxon:7227	20180501	FlyBase
 ! FAILS GORULE:0000061 - TEST 4 - the 'part_of' GP2term relation is not allowed for GO:0140827 (MF)
