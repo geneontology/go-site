@@ -259,8 +259,6 @@ Evidence from a binary interaction ([IPI - Inferred from Physical Interaction ev
 code](http://www.geneontology.org/GO.evidence.shtml#ipi)) is considered too weak to support an annotation to catalytic activity ; GO:0003824 or children. 
 These annotations are flagged and should be reviewed. 
 
-Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt (details).
-
 <a name="gorule0000008"/>
 
 ## No annotations should be made to uninformative high level terms
