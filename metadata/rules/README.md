@@ -255,13 +255,9 @@ Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt
  * status: implemented
 
 
-Evidence from a binary interaction ([IPI - Inferred from Physical Interaction) evidence
-code](http://www.geneontology.org/GO.evidence.shtml#ipi) is considered too weak to support an annotation to catalytic activity ; GO:0003824 or children. 
+Evidence from a binary interaction ([IPI - Inferred from Physical Interaction evidence
+code](http://www.geneontology.org/GO.evidence.shtml#ipi)) is considered too weak to support an annotation to catalytic activity ; GO:0003824 or children. 
 These annotations are flagged and should be reviewed. 
-
-For more information, see the [catalytic activity annotation
-guide](http://wiki.geneontology.org/index.php/Annotations_to_Catalytic_activity_with_IPI)
-on the GO wiki.
 
 Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt (details).
 
