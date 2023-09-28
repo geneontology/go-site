@@ -148,7 +148,7 @@ This reference will normally be replaced upon publication of the data supporting
 
 
 
-Transitive assignment of GO terms based on InterPro classification. For any database entry (representing a protein or protein-coding gene) that has been annotated with one or more InterPro domains, The corresponding GO terms are obtained from a translation table of InterPro entries to GO terms (interpro2go) generated manually by the InterPro team at EBI. The mapping file is available at http://www.geneontology.org/external2go/interpro2go.
+Transitive assignment of GO terms based on InterPro classification. For any database entry (representing a protein or protein-coding gene) that has been annotated with one or more InterPro domains, the corresponding GO terms are obtained from a translation table of InterPro entries to GO terms (interpro2go) generated manually by the InterPro team at EBI. The mapping file is available at http://www.geneontology.org/external2go/interpro2go.
 
 ## Comments
 
