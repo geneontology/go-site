@@ -30,7 +30,11 @@ ZFIN	ZDB-GENE-070117-1552	obj_symbol	acts_upstream_of_or_within	GO:0045601	PMID:
 ! FAILS GORULE:0000001 - TEST 9 -fails because no data in column 4.  
 FB	FBgn0011273	Acam		GO:0070865	FB:FBrf0193169|PMID:16790438	IDA	C		GORULE:0000001-9 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	FlyBase
 ! FAILS GORULE:0000002 - TEST 1 - has a 'NOT' annotations to 'protein binding ; GO:0005515
-UniProtKB	O76187	darA	NOT|involved_in	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000002-1 Darlin	darA	protein	taxon:44689	20100205	UniProt
+UniProtKB	O76187	darA	NOT|enables	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000002-1 Darlin	darA	protein	taxon:44689	20100205	UniProt
+! FAILS GORULE:0000002 - TEST 2 - has a 'NOT' annotations to 'binding ; GO:0005515
+UniProtKB	O76187	darA	NOT|enables	GO:0005488	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000002-2 Darlin	darA	protein	taxon:44689	20100205	UniProt
+! PASSES GORULE:0000003 - TEST 3 - has a 'NOT' annotations to GO:0005509, a child of 'binding ; GO:0005515
+UniProtKB	O76187	darA	NOT|enables	GO:0005509	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000002-3-PASS Darlin	darA	protein	taxon:44689	20100205	UniProt
 ! TBC FAILS GORULE:0000005 - TEST 1 - incorrect evidence codes for 'protein binding ; GO:0005515' - ISS not allowed
 UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	ISS	UniProtKB:P34149	F	GORULE:0000005-1 Darlin	darA	protein	taxon:44689	20100205	UniProt
 ! TBC FAILS GORULE:0000005 - TEST 2 - incorrect evidence codes for 'protein binding ; GO:0005515' - IS0 not allowed
