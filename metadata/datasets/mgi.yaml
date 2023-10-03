@@ -64,3 +64,19 @@ datasets:
    species_code: Mmus
    taxa:
     - NCBITaxon:10090
+
+ -
+   id:
+   label: "mgi cross reference file"
+   description: "cross reference file for mgi from Mouse Genome Informatics"
+   url: http://current.geneontology.org/products/upstream_and_raw_data/HOM_MouseHumanSequence.rpt
+   type: cross_reference
+   dataset: mgi
+   submitter: mgi
+   compression:
+   source: http://www.informatics.jax.org/downloads/reports/HOM_MouseHumanSequence.rpt
+   entity_type:
+   status: active
+   species_code: Mmus
+   taxa:
+    - NCBITaxon:10090

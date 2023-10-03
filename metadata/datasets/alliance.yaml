@@ -1,0 +1,20 @@
+id: agr
+label: Alliance of Genome Resources
+description: "Data available from AGR, used in processing automated annotations."
+project_name: "Alliance of Genome Resources (AGR)"
+contact_email: "help@alliance.org"
+project_url: "http://www.alliancegenome.org/"
+funding_source: "NIH of US National Institutes of Health"
+email_report: "smoxon@lbl.gov"
+datasets:
+ -
+   id: ORTHOLOGY-ALLIANCE-JSON_COMBINED.json
+   label: "Alliance Orthology File"
+   description: "Alliance Orthology File"
+   url: http://current.geneontology.org/products/upstream_and_raw_data/ORTHOLOGY-ALLIANCE-JSON_COMBINED.json.gz
+   type: orthology
+   dataset: alliance
+   submitter: alliance
+   compression: gzip
+   source: https://fms.alliancegenome.org/download/ORTHOLOGY-ALLIANCE-JSON_COMBINED.json.gz
+   status: active
