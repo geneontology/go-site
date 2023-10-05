@@ -61,7 +61,7 @@ UniProtKB	O76187	darA	enables	GO:0005488	PMID:9802899	IPI	UniProtKB:P34149	F	GOR
 UniProtKB	Q4KA26	PFL_3807	is_active_in	GO:0016020	GO_REF:0000015	ND		C	GORULE:0000011-1 Putative membrane protein	PFL_3807	protein	taxon:220664	20090717	JCVI
 ! FAILS GORULE:0000011 - TEST 2 - fails because the evidence code is not ND, even if the GO ID one of GO:0003674, GO:0008150 or GO:0005575.
 UniProtKB	Q4KA26	PFL_3807	is_active_in	GO:0005575	GO_REF:0000015	IDA		C	GORULE:0000011-2 Putative membrane protein	PFL_3807	protein	taxon:220664	20090717	JCVI
-! SHOULD PASS GORULE:0000011 - TEST 3 -- is failing on release 2023-07-27
+! SHOULD PASS GORULE:0000011 - TEST 3
 UniProtKB	Q6UW15	REG3G	involved_in	GO:0050689	PMID:16931762	IDA	P	GORULE:0000011-3 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein taxon:9606|taxon:1334565	20220606	UniProt `
 ! FAILS GORULE:0000013 - fails because GO:0075342 should not be annotated for human gene products - cannot be tested in ontobio parser (not a line-by-line check)
 UniProtKB	P67870	CSNK2B	involved_in	GO:0075342	PMID:20719947 	IDA		P	GORULE:0000013-1 Casein kinase II subunit beta	CSNK2B|CK2N|G5A	protein	taxon:9606	20230307	UniProt
@@ -71,6 +71,8 @@ UniProtKB	O56786	hol187	is_active_in	GO:0005886	PMID:10419939	IDA		C	GORULE:0000
 UniProtKB	A0A0K2S4Q6	CD300H	involved_in	GO:0030593	PMID:26221034	IDA		P	GORULE:0000015-2 Protein CD300H	CD300H	protein	taxon:9606|taxon:55511	20160428	UniProt
 ! FAILS GORULE:0000015 - TEST 3 - same taxon in Column 13 for  GO:0044158 host cell wall
 UniProtKB	O56786	hol187	is_active_in	GO:0018995	PMID:10419939	IDA		C	GORULE:0000015-3 Holin protein Hol187	hol187	protein	taxon:9606|taxon:9606	20170423	CACAO
+! SHOULD PASS GORULE:0000015 - TEST 4 -  GO:0050689 negative regulation of defense response to virus by host
+UniProtKB	Q6UW15	REG3G	involved_in	GO:0050689	PMID:16931762	IDA	P	GORULE:0000015-4 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein taxon:9606|taxon:1334565	20220606	UniProt `
 ! FAILS GORULE:0000016 -  TEST 1 - column 8 (with/from) is null
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	GO_REF:0000036	IC		P	GORULE:0000016-1 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	BHF-UCL	
 ! FAILS GORULE:0000017 - TEST 1 - IDA annotations must not have a with/from entry (column 8) 
