@@ -61,6 +61,8 @@ UniProtKB	O76187	darA	enables	GO:0005488	PMID:9802899	IPI	UniProtKB:P34149	F	GOR
 UniProtKB	Q4KA26	PFL_3807	is_active_in	GO:0016020	GO_REF:0000015	ND		C	GORULE:0000011-1 Putative membrane protein	PFL_3807	protein	taxon:220664	20090717	JCVI
 ! FAILS GORULE:0000011 - TEST 2 - fails because the evidence code is not ND, even if the GO ID one of GO:0003674, GO:0008150 or GO:0005575.
 UniProtKB	Q4KA26	PFL_3807	is_active_in	GO:0005575	GO_REF:0000015	IDA		C	GORULE:0000011-2 Putative membrane protein	PFL_3807	protein	taxon:220664	20090717	JCVI
+! SHOULD PASS GORULE:0000011 - TEST 3 -- is failing on snapshot 2023-10-05
+UniProtKB	Q6UW15	REG3G	involved_in	GO:0044278	PMID:16931762	IDA	P	GORULE:0000011-3 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein taxon:9606|taxon:1334565	20220606	UniProt `
 ! FAILS GORULE:0000013 - fails because GO:0075342 should not be annotated for human gene products - cannot be tested in ontobio parser (not a line-by-line check)
 UniProtKB	P67870	CSNK2B	involved_in	GO:0075342	PMID:20719947 	IDA		P	GORULE:0000013-1 Casein kinase II subunit beta	CSNK2B|CK2N|G5A	protein	taxon:9606	20230307	UniProt
 ! FAILS GORULE:0000015 - TEST 1 - GO:0005886 plasma membrane is not a child of "GO:0018995 host cellular component"
