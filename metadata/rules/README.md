@@ -34,7 +34,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000025">GORULE:0000025 Creating more specific annotations by reasoning over extensions</a>
  * <a href="#gorule0000026">GORULE:0000026 IBA annotations must have been sourced from the PAINT inference pipeline</a>
  * <a href="#gorule0000027">GORULE:0000027 Each identifier in GAF is valid</a>
- * <a href="#gorule0000028">GORULE:0000028 Aspect can only be one of C, P, F and should be repaired using the GO term</a>
+ * <a href="#gorule0000028">GORULE:0000028 GO aspect should match the term's namespace; otherwise it is repaired to the appropriate aspect</a>
  * <a href="#gorule0000029">GORULE:0000029 IEAs should be less than one year old.</a>
  * <a href="#gorule0000030">GORULE:0000030 Deprecated GO_REFs are not allowed</a>
  * <a href="#gorule0000031">GORULE:0000031 Annotation relations are replaced when not provided by source</a>
@@ -645,17 +645,17 @@ the following examples are invalid
 
 <a name="gorule0000028"/>
 
-## Aspect can only be one of C, P, F and should be repaired using the GO term
+## GO aspect should match the term's namespace; otherwise it is repaired to the appropriate aspect
 
  * id: [GORULE:0000028](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000028.md)
  * status: implemented
 
 
-Aspect (Column 9) can be one either C, P, or F. These correspond to the three main
-branches of the Gene Ontology: C for Cellular Component, P for Biological Process,
-F for Molecular Function. These can be computed from the GO Term in the GAF
-annotation. If the Aspect is incorrect issue a warning and replace with the
-corrected aspect.
+GO aspect (GAF column 9) should correspond to the namespace of the GO term (GAF column 5). 
+The value in this column must be on of: C, P, or F, corresponding to the three main
+Cellular Component (C), Biological Process (P), and Molecular Function (F). 
+If the Aspect is incorrect, the value is repaired. 
+Note that this rule does not apply to GPAD files, since the GO aspect is not part of the GPAD file.
 
 <a name="gorule0000029"/>
 
