@@ -156,7 +156,7 @@ FB	FBgn0011273	shi	part_of	GO:0070864	PMID:12432073	IDA		C	GORULE:0000061-3 Dyna
 ! FAILS GORULE:0000061 - TEST 4 - the 'part_of' GP2term relation is not allowed for GO:0140827 (MF)
 UniProtKB	A1B2F4	aztD	part_of	GO:0140827	PMID:26468286	IDA		F	GORULE:0000061-4		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - TEST 5 - the 'enables' GP2term relation is not allowed for GO:0005856 (CC)
-UniProtKB	A1B2F4	aztD	enables	GO:0005856	PMID:26468286	IDA		F	GORULE:0000061-5		protein	taxon:318586	20230427	UniProt
+UniProtKB	A1B2F4	aztD	enables	GO:0005856	PMID:26468286	IDA		C	GORULE:0000061-5		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - TEST 6 - also fails GORULE-0000011 - the 'located in' GP2term relation is not allowed for GO:0005575 (root CC) - Fails GORULE 11
 UniProtKB	A1B2F4	aztD	located_in	GO:0005575	PMID:26468286	IDA		F	GORULE:0000061-6 & GORULE-0000011-3		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - TEST 7 - also fails GORULE-0000011 - the 'contributes_to' GP2term relation is not allowed for GO:0003674 (root MF) - Fails GORULE 11
@@ -218,9 +218,9 @@ UniProtKB	A1B2F4	aztD	colocalizes_with	GO:0043491	PMID:26468286	IDA		P	GORULE:00
 ! FAILS GORULE:0000061 - test 35 -  'is_active_in' is not allowed for a GO CC - complex														
 UniProtKB	A1B2F4	aztD	is_active_in	GO:0000124	PMID:26468286	IDA		C	GORULE:0000061-35		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - test 36 -  'located_in' is not allowed for a GO CC - complex														
-UniProtKB	A1B2F4	aztD	located_in	GO:0043491	PMID:26468286	IDA		C	GORULE:0000061-36		protein	taxon:318586	20230427	UniProt
+UniProtKB	A1B2F4	aztD	located_in	GO:0042101	PMID:26468286	IDA		C	GORULE:0000061-36		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - test 37 - 'colocalizes_with' is not allowed for a GO CC - complex														
-UniProtKB	A1B2F4	aztD	colocalizes_with	GO:0043491	PMID:26468286	IDA		C	GORULE:0000061-37		protein	taxon:318586	20230427	UniProt
+UniProtKB	A1B2F4	aztD	colocalizes_with	GO:0042101	PMID:26468286	IDA		C	GORULE:0000061-37		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - test 38 - 'part_of' is not allowed for a GO CC - cellular anatomical entity														
 UniProtKB	A1B2F4	aztD	part_of	GO:0005634	PMID:26468286	IDA		C	GORULE:0000061-38		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - test 39 - 'part_of' is not allowed for GO CC - cellular anatomical entity														
