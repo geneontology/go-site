@@ -118,7 +118,9 @@ UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IDA		P	GORULE:000002
 ! FAILS GORULE:0000028 - TEST 4 - GO aspect missing
 UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IDA			GORULE:0000028-4 Mitogen-activated protein kinase kinase kinase mlk-1	mlk-1,K11D12.10	protein	taxon:6239	20170322	UniProt		
 ! FAILS GORULE:0000029 - TEST 1 - IEA older than 1 year
-UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000044	IEA	UniProtKB-SubCell:SL-0375	C	GORULE:0000029-1		protein	taxon:83333	20210507	UniProt
+UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000044	IEA	UniProtKB-SubCell:SL-0375	C	GORULE:0000029-1		protein	taxon:83333	20220807	UniProt
+! FAILS GORULE:0000029 - TEST 2 - IEA older than 3 years
+UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000044	IEA	UniProtKB-SubCell:SL-0375	C	GORULE:0000029-2		protein	taxon:83333	20200507	UniProt
 ! FAILS GORULE:0000030 - TEST 1 - Deprecated GO_REF
 UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000045	IEA	UniProtKB-SubCell:SL-0375	C	GORULE:0000030-1		protein	taxon:83333	20230607	UniProt
 ! FAILS GORULE:0000037 - TEST 1 - IBA with Assigned_by other than GO_Central
