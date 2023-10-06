@@ -115,6 +115,8 @@ UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		C	GORULE:00000
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		F	GORULE:0000028-2 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	SGDDB	
 ! FAILS GORULE:0000028 - TEST 3 - Bad GO aspect, P instead of F
 UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IDA		P	GORULE:0000028-3 Mitogen-activated protein kinase kinase kinase mlk-1	mlk-1,K11D12.10	protein	taxon:6239	20170322	UniProt		
+! FAILS GORULE:0000028 - TEST 4 - GO aspect missing
+UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IDA			GORULE:0000028-4 Mitogen-activated protein kinase kinase kinase mlk-1	mlk-1,K11D12.10	protein	taxon:6239	20170322	UniProt		
 ! FAILS GORULE:0000029 - TEST 1 - IEA older than 1 year
 UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000044	IEA	UniProtKB-SubCell:SL-0375	C	GORULE:0000029-1		protein	taxon:83333	20210507	UniProt
 ! FAILS GORULE:0000030 - TEST 1 - Deprecated GO_REF
