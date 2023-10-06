@@ -438,8 +438,8 @@ guidelines](http://wiki.geneontology.org/index.php/Inferred_by_Curator_(IC)).
  * status: implemented
 
 
-Use IDA only when no identifier can be placed in the "With/From" column.
-When there is an appropriate ID for the "With/From" column, use IPI.
+IDA annotations should not have data in the "With/From" column.
+For binding annotations, when there is an appropriate ID for the "With/From" column, use IPI.
 
 <a name="gorule0000018"/>
 
