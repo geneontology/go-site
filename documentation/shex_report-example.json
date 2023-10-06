@@ -1,0 +1,2648 @@
+{
+  "taxa": [],
+  "number_of_models": 50,
+  "number_of_models_in_error": 31,
+  "number_of_correct_models": 19,
+  "messages": {
+    "gorule-0000019": [
+      {
+        "level": "ERROR",
+        "model-id": "gomodel:5d27d1cf00000154",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000019: Model is logically inconsistent",
+        "rule": 19
+      },
+      {
+        "level": "ERROR",
+        "model-id": "gomodel:5d27d1cf00000311",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000019: Model is logically inconsistent",
+        "rule": 19
+      },
+      {
+        "level": "ERROR",
+        "model-id": "gomodel:5d27d1cf00000368",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000019: Model is logically inconsistent",
+        "rule": 19
+      },
+      {
+        "level": "ERROR",
+        "model-id": "gomodel:5d27d1cf00000173",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000019: Model is logically inconsistent",
+        "rule": 19
+      },
+      {
+        "level": "ERROR",
+        "model-id": "gomodel:59dc728000000512",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000019: Model is logically inconsistent",
+        "rule": 19
+      },
+      {
+        "level": "ERROR",
+        "model-id": "gomodel:5d27d1cf00000250",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000019: Model is logically inconsistent",
+        "rule": 19
+      },
+      {
+        "level": "ERROR",
+        "model-id": "gomodel:5b528b1100000186",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000019: Model is logically inconsistent",
+        "rule": 19
+      },
+      {
+        "level": "ERROR",
+        "model-id": "gomodel:5d27d1cf00000484",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000019: Model is logically inconsistent",
+        "rule": 19
+      },
+      {
+        "level": "ERROR",
+        "model-id": "gomodel:5d27d1cf00000078",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000019: Model is logically inconsistent",
+        "rule": 19
+      },
+      {
+        "level": "ERROR",
+        "model-id": "gomodel:5d27d1cf00000330",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000019: Model is logically inconsistent",
+        "rule": 19
+      },
+      {
+        "level": "ERROR",
+        "model-id": "gomodel:5d27d1cf00000231",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000019: Model is logically inconsistent",
+        "rule": 19
+      },
+      {
+        "level": "ERROR",
+        "model-id": "gomodel:5d27d1cf00000387",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000019: Model is logically inconsistent",
+        "rule": 19
+      },
+      {
+        "level": "ERROR",
+        "model-id": "gomodel:5d27d1cf00000135",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000019: Model is logically inconsistent",
+        "rule": 19
+      },
+      {
+        "level": "ERROR",
+        "model-id": "gomodel:5d27d1cf00000116",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000019: Model is logically inconsistent",
+        "rule": 19
+      },
+      {
+        "level": "ERROR",
+        "model-id": "gomodel:59dc728000000513",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000019: Model is logically inconsistent",
+        "rule": 19
+      },
+      {
+        "level": "ERROR",
+        "model-id": "gomodel:5d27d1cf00000464",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000019: Model is logically inconsistent",
+        "rule": 19
+      }
+    ],
+    "gorule-0000056": [
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000135",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology",
+            "violations": [
+              {
+                "node": "id of inconsistent node"
+              }
+            ]
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000135/5d27d1cf00000153",
+                        "property": "BFO:0000066",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "GO:0006261"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/BiologicalProcess",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/AnatomicalEntity"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000135/5d27d1cf00000143"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000311",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology",
+            "violations": [
+              {
+                "node": "id of inconsistent node"
+              }
+            ]
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000311/5d27d1cf00000321",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "CHEBI:75962"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      },
+                      {
+                        "object": "gomodel:5d27d1cf00000311/5d27d1cf00000329",
+                        "property": "RO:0002233",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "GO:0006260"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/BiologicalProcess",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000311/5d27d1cf00000319"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:59dc728000000512",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology",
+            "violations": [
+              {
+                "node": "id of inconsistent node"
+              }
+            ]
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:59dc728000000512/5ce58dde00002086",
+                        "property": "BFO:0000050",
+                        "node_types": [
+                          "GO:0016874"
+                        ],
+                        "object_types": [
+                          "GO:0005829"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/AnatomicalEntity",
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity",
+                          "obo:go/shapes/CellularComponent"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/BiologicalProcess"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:59dc728000000512/59dc728000000520"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000349",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": true,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology"
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000349/5d27d1cf00000367",
+                        "property": "RO:0002413",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "GO:0006261"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/BiologicalProcess",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/MolecularFunction",
+                          "obo:go/shapes/MolecularEvent"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000349/5d27d1cf00000357"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000097",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": true,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology"
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000097/5d27d1cf00000107",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "CHEBI:75962"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      },
+                      {
+                        "object": "gomodel:5d27d1cf00000097/5d27d1cf00000115",
+                        "property": "BFO:0000066",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "GO:0043853"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/ProteinContainingComplex",
+                          "obo:go/shapes/GoCamEntity",
+                          "obo:go/shapes/CellularComponent"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/AnatomicalEntity"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000097/5d27d1cf00000105"
+              },
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/GoCamModel",
+                    "constraints": [
+                      {
+                        "property": "dc11:title",
+                        "cardinality": "[1; 1]",
+                        "nobjects": 0
+                      },
+                      {
+                        "object": "owl:Ontology",
+                        "property": "rdf:type",
+                        "node_types": [
+                          "owl:Ontology"
+                        ],
+                        "object_types": [],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "owl:Ontology"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000097"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000173",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology",
+            "violations": [
+              {
+                "node": "id of inconsistent node"
+              }
+            ]
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000173/5d27d1cf00000191",
+                        "property": "RO:0002411",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "GO:0005634"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/AnatomicalEntity",
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity",
+                          "obo:go/shapes/CellularComponent"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/BiologicalProcess",
+                          "obo:go/shapes/MolecularFunction",
+                          "obo:go/shapes/MolecularEvent"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000173/5d27d1cf00000181"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:R-HSA-5660668",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": true,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology"
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:R-HSA-5660668/R-HSA-202461_R-HSA-5660665",
+                        "property": "RO:0002233",
+                        "node_types": [
+                          "GO:0005488"
+                        ],
+                        "object_types": [
+                          "gomodel:R-HSA-202461"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      },
+                      {
+                        "object": "gomodel:R-HSA-5660668/R-HSA-5660651_R-HSA-5660665",
+                        "property": "RO:0002233",
+                        "node_types": [
+                          "GO:0005488"
+                        ],
+                        "object_types": [
+                          "gomodel:R-HSA-5660651"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      },
+                      {
+                        "object": "gomodel:R-HSA-5660668/R-HSA-5660654_R-HSA-5660665",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0005488"
+                        ],
+                        "object_types": [
+                          "gomodel:R-HSA-5660654"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:R-HSA-5660668/R-HSA-5660665"
+              },
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:R-HSA-5660668/R-HSA-194047_R-HSA-5660622_controller",
+                        "property": "RO:0002233",
+                        "node_types": [
+                          "GO:0005488"
+                        ],
+                        "object_types": [
+                          "gomodel:R-HSA-194047"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      },
+                      {
+                        "object": "gomodel:R-HSA-5660668/R-HSA-5660622",
+                        "property": "RO:0002213",
+                        "node_types": [
+                          "GO:0005488"
+                        ],
+                        "object_types": [],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/MolecularFunction",
+                          "obo:go/shapes/MolecularEvent"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:R-HSA-5660668/07239d56-e211-4e98-bdce-1812f7e69a2b"
+              },
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:R-HSA-5660668/R-HSA-5660653_R-HSA-5660662",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0005488"
+                        ],
+                        "object_types": [
+                          "gomodel:R-HSA-5660653"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      },
+                      {
+                        "object": "gomodel:R-HSA-5660668/R-HSA-561191_R-HSA-5660662",
+                        "property": "RO:0002233",
+                        "node_types": [
+                          "GO:0005488"
+                        ],
+                        "object_types": [
+                          "gomodel:R-HSA-561191"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      },
+                      {
+                        "object": "gomodel:R-HSA-5660668/R-HSA-5660654_R-HSA-5660662",
+                        "property": "RO:0002233",
+                        "node_types": [
+                          "GO:0005488"
+                        ],
+                        "object_types": [
+                          "gomodel:R-HSA-5660654"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:R-HSA-5660668/R-HSA-5660662"
+              },
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:R-HSA-5660668/R-HSA-448689_R-HSA-5660663",
+                        "property": "RO:0002233",
+                        "node_types": [
+                          "GO:0004197"
+                        ],
+                        "object_types": [
+                          "gomodel:R-HSA-448689"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      },
+                      {
+                        "object": "gomodel:R-HSA-5660668/R-HSA-449030_R-HSA-5660663",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0004197"
+                        ],
+                        "object_types": [
+                          "gomodel:R-HSA-449030"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      },
+                      {
+                        "object": "gomodel:R-HSA-5660668/26d1cd45-2aa3-4bd5-a067-4592a157ffdb",
+                        "property": "RO:0002333",
+                        "node_types": [
+                          "GO:0004197"
+                        ],
+                        "object_types": [
+                          "gomodel:R-HSA-5660651"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ProteinContainingComplex",
+                          "obo:go/shapes/InformationBiomacromolecule"
+                        ]
+                      },
+                      {
+                        "object": "gomodel:R-HSA-5660668/R-HSA-449046_R-HSA-5660663",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0004197"
+                        ],
+                        "object_types": [
+                          "gomodel:R-HSA-449046"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:R-HSA-5660668/R-HSA-5660663"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000647",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": true,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology"
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000647/5d27d1cf00000657",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "CHEBI:75962"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000647/5d27d1cf00000655"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000116",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology",
+            "violations": [
+              {
+                "node": "id of inconsistent node"
+              }
+            ]
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000116/5d27d1cf00000134",
+                        "property": "RO:0002333",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "GO:0006261"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/BiologicalProcess",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ProteinContainingComplex",
+                          "obo:go/shapes/InformationBiomacromolecule"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000116/5d27d1cf00000124"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000368",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology",
+            "violations": [
+              {
+                "node": "id of inconsistent node"
+              }
+            ]
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000368/5d27d1cf00000370",
+                        "property": "RO:0002413",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "GO:0005634"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/AnatomicalEntity",
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity",
+                          "obo:go/shapes/CellularComponent"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/MolecularFunction",
+                          "obo:go/shapes/MolecularEvent"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000368/5d27d1cf00000378"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000569",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": true,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology"
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000569/5d27d1cf00000579",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "CHEBI:75962"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      },
+                      {
+                        "property": "BFO:0000066",
+                        "cardinality": "[0; 1]",
+                        "nobjects": 2
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000569/5d27d1cf00000577"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000550",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": true,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology"
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "property": "BFO:0000050",
+                        "cardinality": "[0; 1]",
+                        "nobjects": 2
+                      },
+                      {
+                        "object": "gomodel:5d27d1cf00000550/5d27d1cf00000560",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "CHEBI:75962"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000550/5d27d1cf00000558"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000288",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": true,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology"
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000288/5d27d1cf00000294",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "CHEBI:75962"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000288/5d27d1cf00000296"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000056",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": true,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology"
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/ProteinContainingComplex",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000056/5d27d1cf00000076",
+                        "property": "BFO:0000051",
+                        "node_types": [
+                          "GO:0032991"
+                        ],
+                        "object_types": [
+                          "CHEBI:15414"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ProteinContainingComplex",
+                          "obo:go/shapes/InformationBiomacromolecule"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000056/5d27d1cf00000075"
+              },
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000056/5d27d1cf00000075",
+                        "property": "RO:0002333",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "GO:0032991"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity",
+                          "obo:go/shapes/CellularComponent"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ProteinContainingComplex",
+                          "obo:go/shapes/InformationBiomacromolecule"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000056/5d27d1cf00000064"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000330",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology",
+            "violations": [
+              {
+                "node": "id of inconsistent node"
+              }
+            ]
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000330/5d27d1cf00000348",
+                        "property": "RO:0002233",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "GO:0003713"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/MolecularFunction",
+                          "obo:go/shapes/MolecularEvent",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      },
+                      {
+                        "object": "gomodel:5d27d1cf00000330/5d27d1cf00000340",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "CHEBI:75962"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000330/5d27d1cf00000338"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000154",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology",
+            "violations": [
+              {
+                "node": "id of inconsistent node"
+              }
+            ]
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000154/5d27d1cf00000172",
+                        "property": "BFO:0000050",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "WB:WBGene00011345",
+                          "CHEBI:33695"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/InformationBiomacromolecule",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/BiologicalProcess"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000154/5d27d1cf00000162"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000509",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": true,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology"
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000509/5d27d1cf00000513",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "CHEBI:75962"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      },
+                      {
+                        "object": "gomodel:5d27d1cf00000509/5d27d1cf00000530",
+                        "property": "RO:0002092",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "GO:0003887"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/MolecularFunction",
+                          "obo:go/shapes/MolecularEvent",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/PlantStructureDevelopmentStage",
+                          "obo:go/shapes/BiologicalPhase",
+                          "obo:go/shapes/LifeCycleStage"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000509/5d27d1cf00000524"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000444",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": true,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology"
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000444/5d27d1cf00000445",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "CHEBI:75962"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      },
+                      {
+                        "object": "gomodel:5d27d1cf00000444/5d29218800000055",
+                        "property": "RO:0002092",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "GO:0006352"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/BiologicalProcess",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/PlantStructureDevelopmentStage",
+                          "obo:go/shapes/BiologicalPhase",
+                          "obo:go/shapes/LifeCycleStage"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000444/5d27d1cf00000449"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000484",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology",
+            "violations": [
+              {
+                "node": "id of inconsistent node"
+              }
+            ]
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000484/5d27d1cf00000498",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "CHEBI:75962"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      },
+                      {
+                        "object": "gomodel:5d27d1cf00000484/5d27d1cf00000506",
+                        "property": "RO:0002092",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "GO:0032991"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/ProteinContainingComplex",
+                          "obo:go/shapes/GoCamEntity",
+                          "obo:go/shapes/CellularComponent"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/PlantStructureDevelopmentStage",
+                          "obo:go/shapes/BiologicalPhase",
+                          "obo:go/shapes/LifeCycleStage"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000484/5d27d1cf00000487"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000531",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": true,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology"
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000531/5d27d1cf00000541",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "CHEBI:75962"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      },
+                      {
+                        "property": "RO:0002333",
+                        "cardinality": "[0; 1]",
+                        "nobjects": 2
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000531/5d27d1cf00000539"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000387",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology",
+            "violations": [
+              {
+                "node": "id of inconsistent node"
+              }
+            ]
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000387/5d27d1cf00000403",
+                        "property": "RO:0002413",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "CHEBI:33695",
+                          "WB:WBGene00001865"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/InformationBiomacromolecule",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/MolecularFunction",
+                          "obo:go/shapes/MolecularEvent"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000387/5d27d1cf00000395"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000666",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": true,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology"
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000666/5d27d1cf00000678",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "CHEBI:75962"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000666/5d27d1cf00000680"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000231",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology",
+            "violations": [
+              {
+                "node": "id of inconsistent node"
+              }
+            ]
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000231/5d27d1cf00000249",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "GO:0006261"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/BiologicalProcess",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000231/5d27d1cf00000239"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000078",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology",
+            "violations": [
+              {
+                "node": "id of inconsistent node"
+              }
+            ]
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000078/5d27d1cf00000096",
+                        "property": "BFO:0000066",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "GO:0001055"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/MolecularFunction",
+                          "obo:go/shapes/MolecularEvent",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/AnatomicalEntity"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000078/5d27d1cf00000086"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:59dc728000000513",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology",
+            "violations": [
+              {
+                "node": "id of inconsistent node"
+              }
+            ]
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/InformationBiomacromolecule",
+                    "constraints": [
+                      {
+                        "object": "http://model.geneontology.org/59dc728000000513/5ce58dde00000266",
+                        "property": "BFO:0000066",
+                        "node_types": [
+                          "CHEBI:36080",
+                          "UniProtKB:Q13253"
+                        ],
+                        "object_types": [
+                          "GO:0005634"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/AnatomicalEntity",
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity",
+                          "obo:go/shapes/CellularComponent"
+                        ],
+                        "intended-range-shapes": [
+                          "owl:Nothing"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:59dc728000000513/59dc728000000521"
+              },
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:59dc728000000513/5ce58dde00000266",
+                        "property": "RO:0002333",
+                        "node_types": [
+                          "GO:0016874"
+                        ],
+                        "object_types": [
+                          "GO:0005634"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/AnatomicalEntity",
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity",
+                          "obo:go/shapes/CellularComponent"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ProteinContainingComplex",
+                          "obo:go/shapes/InformationBiomacromolecule"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:59dc728000000513/59dc728000000520"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000038",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": true,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology"
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/GoCamModel",
+                    "constraints": [
+                      {
+                        "property": "dc11:contributor",
+                        "cardinality": "[1; *]",
+                        "nobjects": 0
+                      },
+                      {
+                        "object": "owl:Ontology",
+                        "property": "rdf:type",
+                        "node_types": [
+                          "owl:Ontology"
+                        ],
+                        "object_types": [],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "owl:Ontology"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000038"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5b528b1100000186",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology",
+            "violations": [
+              {
+                "node": "id of inconsistent node"
+              }
+            ]
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "property": "BFO:0000050",
+                        "cardinality": "[0; 1]",
+                        "nobjects": 2
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5b528b1100000186/5c4605cc00000669"
+              },
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5b528b1100000186/5ce58dde00001444",
+                        "property": "BFO:0000050",
+                        "node_types": [
+                          "GO:0003972"
+                        ],
+                        "object_types": [
+                          "GO:2000767"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/BiologicalProcess"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5b528b1100000186/5ce58dde00001438"
+              },
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/BiologicalProcess",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5b528b1100000186/5c4605cc00000669",
+                        "property": "RO:0002213",
+                        "node_types": [
+                          "GO:2000767"
+                        ],
+                        "object_types": [
+                          "GO:0003700"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/MolecularEvent",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/BiologicalProcess"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5b528b1100000186/5ce58dde00001444"
+              },
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5b528b1100000186/5b528b1100000304",
+                        "property": "BFO:0000050",
+                        "node_types": [
+                          "GO:0016887"
+                        ],
+                        "object_types": [
+                          "GO:0044183"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/MolecularFunction",
+                          "obo:go/shapes/MolecularEvent",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/BiologicalProcess"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5b528b1100000186/5b528b1100000314"
+              },
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "property": "BFO:0000050",
+                        "cardinality": "[0; 1]",
+                        "nobjects": 2
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5b528b1100000186/5b528b1100000198"
+              },
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5b528b1100000186/5b528b1100000320",
+                        "property": "BFO:0000050",
+                        "node_types": [
+                          "GO:0051082"
+                        ],
+                        "object_types": [
+                          "GO:0044183"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/MolecularFunction",
+                          "obo:go/shapes/MolecularEvent",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/BiologicalProcess"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5b528b1100000186/5b528b1100000362"
+              },
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "property": "BFO:0000050",
+                        "cardinality": "[0; 1]",
+                        "nobjects": 2
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5b528b1100000186/5b91dbd100002136"
+              },
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5b528b1100000186/5b528b1100000304",
+                        "property": "BFO:0000050",
+                        "node_types": [
+                          "GO:0051082"
+                        ],
+                        "object_types": [
+                          "GO:0044183"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/MolecularFunction",
+                          "obo:go/shapes/MolecularEvent",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/BiologicalProcess"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5b528b1100000186/5b528b1100000311"
+              },
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5b528b1100000186/5b528b1100000320",
+                        "property": "BFO:0000050",
+                        "node_types": [
+                          "GO:0016887"
+                        ],
+                        "object_types": [
+                          "GO:0044183"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/MolecularFunction",
+                          "obo:go/shapes/MolecularEvent",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/BiologicalProcess"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5b528b1100000186/5b528b1100000358"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000250",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology",
+            "violations": [
+              {
+                "node": "id of inconsistent node"
+              }
+            ]
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000250/5d27d1cf00000268",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "GO:0003714"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/MolecularFunction",
+                          "obo:go/shapes/MolecularEvent",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000250/5d27d1cf00000258"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000464",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology",
+            "violations": [
+              {
+                "node": "id of inconsistent node"
+              }
+            ]
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000464/5d27d1cf00000483",
+                        "property": "RO:0002092",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "GO:0032390"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/ProteinContainingComplex",
+                          "obo:go/shapes/GoCamEntity",
+                          "obo:go/shapes/CellularComponent"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/PlantStructureDevelopmentStage",
+                          "obo:go/shapes/BiologicalPhase",
+                          "obo:go/shapes/LifeCycleStage"
+                        ]
+                      },
+                      {
+                        "object": "gomodel:5d27d1cf00000464/5d27d1cf00000474",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "CHEBI:75962"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000464/5d27d1cf00000471"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000627",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": true,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology"
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000627/5d27d1cf00000637",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "CHEBI:75962"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000627/5d27d1cf00000635"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "level": "WARNING",
+        "model-id": "gomodel:5d27d1cf00000269",
+        "type": "Violates GO Rule",
+        "obj": "",
+        "taxa": [],
+        "message": "GORULE:0000056: Model does not validate against shex schema",
+        "rule": 56,
+        "explanations": {
+          "is-conformant": false,
+          "owl-validation": {
+            "id": "OWL_REASONER",
+            "is-conformant": true,
+            "tracker": "https://github.com/geneontology/helpdesk/issues",
+            "rule-file": "https://github.com/geneontology/go-ontology"
+          },
+          "shex-validation": {
+            "node-matched-shapes": {},
+            "is-conformant": false,
+            "tracker": "https://github.com/geneontology/go-shapes/issues",
+            "rule-file": "https://github.com/geneontology/go-shapes/blob/master/shapes/go-cam-shapes.shex",
+            "violations": [
+              {
+                "explanations": [
+                  {
+                    "shape": "obo:go/shapes/MolecularFunction",
+                    "constraints": [
+                      {
+                        "object": "gomodel:5d27d1cf00000269/5d27d1cf00000279",
+                        "property": "RO:0002234",
+                        "node_types": [
+                          "GO:0009008"
+                        ],
+                        "object_types": [
+                          "CHEBI:75962"
+                        ],
+                        "nobjects": 0,
+                        "matched_range_shapes": [
+                          "obo:go/shapes/ProvenanceAnnotated",
+                          "obo:go/shapes/GoCamEntity"
+                        ],
+                        "intended-range-shapes": [
+                          "obo:go/shapes/ChemicalEntity",
+                          "obo:go/shapes/ProteinContainingComplex"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "node": "gomodel:5d27d1cf00000269/5d27d1cf00000277"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
