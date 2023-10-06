@@ -651,8 +651,8 @@ the following examples are invalid
  * status: implemented
 
 
-GO aspect (GAF column 9) should correspond to the namespace of the GO term (GAF column 5). 
-The value in this column must be on of: C, P, or F, corresponding to the three main
+The GO aspect (GAF column 9) should correspond to the namespace of the GO term (GAF column 5). 
+The value in this column must be on of: C, P, or F, corresponding to the three GO aspects: 
 Cellular Component (C), Biological Process (P), and Molecular Function (F). 
 If the Aspect is incorrect, the value is repaired. 
 Note that this rule does not apply to GPAD files, since the GO aspect is not part of the GPAD file.
