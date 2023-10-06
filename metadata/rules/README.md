@@ -51,7 +51,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000045">GORULE:0000045 With/from: Verify that the combination of evidence (ECO) codes conform to the rules in eco-usage-constraints.yaml</a>
  * <a href="#gorule0000046">GORULE:0000046 The ‘with’ field (GAF column 8) must be the same as the gene product (GAF colummn 2) when annotating to ‘self-binding’ terms.</a>
  * <a href="#gorule0000047">GORULE:0000047 With/from: ChEBI IDs in With/from can only be used with terms that are descendants of GO:0005488 (binding)</a>
- * <a href="#gorule0000048">GORULE:0000048 Gene products having ND annotations and other annotations in the same aspect should be reviewed</a>
+ * <a href="#gorule0000048">GORULE:0000048 DEPRECATED Gene products having ND annotations and other annotations in the same aspect should be reviewed</a>
  * <a href="#gorule0000049">GORULE:0000049 If the annotation has 'contributes_to' as its qualifier, verify that at least one annotation to GO:0043234 (protein complex), or one of its child terms exists</a>
  * <a href="#gorule0000050">GORULE:0000050 Annotations to ISS, ISA and ISO should not be self-referential</a>
  * <a href="#gorule0000051">GORULE:0000051 Some GO terms require a value in the Annotation Extension field</a>
@@ -884,13 +884,14 @@ Annotations using a ChEBI ID in the with/from (col 8 of GAF) column should only 
 
 <a name="gorule0000048"/>
 
-## Gene products having ND annotations and other annotations in the same aspect should be reviewed
+## DEPRECATED Gene products having ND annotations and other annotations in the same aspect should be reviewed
 
  * id: [GORULE:0000048](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000048.md)
  * status: proposed
 
 
 
+DEPRECATED; redundant with ORULE:0000054
 If a gene product has an annotation by the ND evidence code, this rule checks whether any manual annotations in the same GO aspect exists for this gene product.
 
 <a name="gorule0000049"/>
