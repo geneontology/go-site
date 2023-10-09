@@ -295,8 +295,10 @@ def annotation_datasets_to_download(groups_metadata: List[Dict]) -> List[Dataset
     """
     type_vals = {
         "gaf": 1,
+        "orthology": 1,
         "gpad": 2,
-        "gpi": 2
+        "gpi": 2,
+        "cross_reference": 2
     }
     for group in groups_metadata:
         for dataset in group["datasets"]:
