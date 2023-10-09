@@ -961,7 +961,7 @@ Note that use of the ND evidence code with an annotation to one of the root node
 ## References should have only one ID per ID space
 
  * id: [GORULE:0000055](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000055.md)
- * status: proposed
+ * status: implemented
 
 
 Since references should only refer to single publications, multiple IDs indicate
