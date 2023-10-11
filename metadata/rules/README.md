@@ -9,7 +9,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
 
 
  * <a href="#gorule0000001">GORULE:0000001 GAF lines are parsed according to GAF 2.2 specifications</a>
- * <a href="#gorule0000002">GORULE:0000002 No 'NOT' annotations to 'protein binding ; GO:0005515'</a>
+ * <a href="#gorule0000002">GORULE:0000002 No 'NOT' annotations to binding ; GO:0005488 or 'protein binding ; GO:0005515'</a>
  * <a href="#gorule0000003">GORULE:0000003 Deprecated Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field</a>
  * <a href="#gorule0000004">GORULE:0000004 Reciprocal annotations for 'protein binding ; GO:0005515'</a>
  * <a href="#gorule0000005">GORULE:0000005 No ISS or ISS-related annotations to 'protein binding ; GO:0005515'</a>
@@ -85,30 +85,22 @@ Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt
 
 <a name="gorule0000002"/>
 
-## No 'NOT' annotations to 'protein binding ; GO:0005515'
+## No 'NOT' annotations to binding ; GO:0005488 or 'protein binding ; GO:0005515'
 
  * id: [GORULE:0000002](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000002.md)
  * status: implemented
 
 
-Even if an identifier is available in the 'with' column, a qualifier
-only informs on the GO term, it cannot instruct users to restrict the
-annotation to just the protein identified in the 'with', therefore an
-annotation applying protein binding ; GO:0005515 with the not qualifier
-implies that the annotated protein cannot bind anything.
 
-This is such a wide-reaching statement that few curators would want to
-make.
+An annotation to binding ; GO:0005488 or protein binding ; GO:0005515 with the 'not' qualifier implies that the annotated protein cannot bind anything. There are no characterized examples of a protein with no interactions.
 
-This rule *only* applies to GO:0005515; children of this term can be
-qualified with not, as further information on the type of binding is
-then supplied in the GO term; e.g. not + NFAT4 protein binding ;
-GO:0051529 would be fine, as the negative binding statement only applies
-to the NFAT4 protein.
+The presence of an identifier in the 'with' column or in an annotation extension would not justify a 'not' annotation either, since a qualifier 
+add precision to the GO term; it does not imply that a protein does not have the activity designated by the GO term under the specific context specified by the annotation extension. 
 
-For more information, see the [binding
-guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
-on the GO wiki.
+This rule *only* applies to direct annotations to GO:0005488  and GO:0005515; children of these terms can be
+qualified with 'not', as further information on the type of binding is
+then supplied in the GO term. For more information, see the [binding
+guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines) on the GO wiki.
 
 <a name="gorule0000003"/>
 
