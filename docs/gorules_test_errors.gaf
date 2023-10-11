@@ -27,8 +27,10 @@ PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S0000015
 PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-7 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	TODAY	PomBase	part_of(X:1)
 ! FAILS GORULE:0000001 - TEST 8 - invalid taxon 0
 ZFIN	ZDB-GENE-070117-1552	obj_symbol	acts_upstream_of_or_within	GO:0045601	PMID:17531218	IMP	ZFIN:ZDB-GENO-080318-17	P	GORULE:0000001-8		gene_product	taxon:0	20080326	ZFIN
-! FAILS GORULE:0000001 - TEST 9 -fails because no data in column 4.  
-FB	FBgn0011273	Acam		GO:0070865	FB:FBrf0193169|PMID:16790438	IDA	C		GORULE:0000001-9 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	FlyBase
+! FAILS GORULE:0000001 - TEST 9 - invalid taxon non-numeric
+ZFIN	ZDB-GENE-070117-1552	obj_symbol	acts_upstream_of_or_within	GO:0045601	PMID:17531218	IMP	ZFIN:ZDB-GENO-080318-17	P	GORULE:0000001-9		gene_product	taxon:12v!89	20080326	ZFIN
+! FAILS GORULE:0000001 - TEST 10 -fails because no data in column 4.  
+FB	FBgn0011273	Acam		GO:0070865	FB:FBrf0193169|PMID:16790438	IDA	C		GORULE:0000001-10 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	FlyBase
 ! FAILS GORULE:0000002 - TEST 1 - has a 'NOT' annotations to 'protein binding ; GO:0005515
 UniProtKB	O76187	darA	NOT|enables	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000002-1 Darlin	darA	protein	taxon:44689	20100205	UniProt
 ! FAILS GORULE:0000002 - TEST 2 - has a 'NOT' annotations to 'binding ; GO:0005515
@@ -62,7 +64,7 @@ UniProtKB	Q4KA26	PFL_3807	is_active_in	GO:0016020	GO_REF:0000015	ND		C	GORULE:00
 ! FAILS GORULE:0000011 - TEST 2 - fails because the evidence code is not ND, even if the GO ID one of GO:0003674, GO:0008150 or GO:0005575.
 UniProtKB	Q4KA26	PFL_3807	is_active_in	GO:0005575	GO_REF:0000015	IDA		C	GORULE:0000011-2 Putative membrane protein	PFL_3807	protein	taxon:220664	20090717	JCVI
 ! SHOULD PASS GORULE:0000011 - TEST 3
-UniProtKB	Q6UW15	REG3G	involved_in	GO:0050689	PMID:16931762	IDA	P	GORULE:0000011-3 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein taxon:9606|taxon:1334565	20220606	UniProt `
+UniProtKB	Q6UW15	REG3G	involved_in	GO:0050689	PMID:16931762	IDA		P	GORULE:0000011-3 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606|taxon:1334565	20220606	UniProt
 ! FAILS GORULE:0000013 - fails because GO:0075342 should not be annotated for human gene products - cannot be tested in ontobio parser (not a line-by-line check)
 UniProtKB	P67870	CSNK2B	involved_in	GO:0075342	PMID:20719947 	IDA		P	GORULE:0000013-1 Casein kinase II subunit beta	CSNK2B|CK2N|G5A	protein	taxon:9606	20230307	UniProt
 ! FAILS GORULE:0000015 - TEST 1 - GO:0005886 plasma membrane is not a child of "GO:0018995 host cellular component"
@@ -72,7 +74,7 @@ UniProtKB	A0A0K2S4Q6	CD300H	involved_in	GO:0030593	PMID:26221034	IDA		P	GORULE:0
 ! FAILS GORULE:0000015 - TEST 3 - same taxon in Column 13 for  GO:0044158 host cell wall
 UniProtKB	O56786	hol187	is_active_in	GO:0018995	PMID:10419939	IDA		C	GORULE:0000015-3 Holin protein Hol187	hol187	protein	taxon:9606|taxon:9606	20170423	CACAO
 ! SHOULD PASS GORULE:0000015 - TEST 4 -  GO:0050689 negative regulation of defense response to virus by host
-UniProtKB	Q6UW15	REG3G	involved_in	GO:0050689	PMID:16931762	IDA	P	GORULE:0000015-4 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein taxon:9606|taxon:1334565	20220606	UniProt `
+UniProtKB	Q6UW15	REG3G	involved_in	GO:0050689	PMID:16931762	IDA		P	GORULE:0000015-4 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606|taxon:1334565	20220606	UniProt
 ! FAILS GORULE:0000016 -  TEST 1 - column 8 (with/from) is null
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	GO_REF:0000036	IC		P	GORULE:0000016-1 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	BHF-UCL	
 ! FAILS GORULE:0000017 - TEST 1 - IDA annotations must not have a with/from entry (column 8) 
@@ -82,7 +84,7 @@ UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IPI		F	GORULE:000001
 ! FAILS GORULE:0000018 - TEST 2 - missing Column 8 data ('with' field) for 'binding ; GO:0005488' 
 UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IPI		F	GORULE:0000018-2 Mitogen-activated protein kinase kinase kinase mlk-1	mlk-1,K11D12.10	protein	taxon:6239	20170322	UniProt		
 ! FAILS GORULE:0000018 - TEST 3 - missing Column 8 data ('with' field) for 'binding ; GO:0005488'
-UniProtKB	O76187	darA	GO:0005488	PMID:9802899	IPI	UniProtKB:Q23862	F	GORULE:0000018-3	protein	taxon:44689	20230513	IntAct
+UniProtKB	O76187	darA	involved_in	GO:0005488	PMID:9802899	IPI	UniProtKB:Q23862	F	GORULE:0000018-3		protein	taxon:44689	20230513	IntAct
 ! FAILS GORULE:0000020 - TEST 1 - obsolete term with no replacement
 UniProtKB	P04995	sbcB	involved_in	GO:0090503	GO_REF:0000108	IEA	GO:0000175	P	GORULE:0000020-1 Exodeoxyribonuclease I	sbcB|cpeA|xonA|JW1993|b2011	protein	taxon:83333	20230509	GOC
 ! FAILS GORULE:0000020 - TEST 2 - obsolete term with a replacement term
@@ -156,7 +158,7 @@ PlasmoDB	PF3D7_0200400	PF3D7_0200400	is_active_in	GO:0020036	PMID:12477793|PMID:
 ! FAILS GORULE:0000055 - TEST 2 -  Two references in the same ID space - GO_REF
 PlasmoDB	PF3D7_0200400	PF3D7_0200400	is_active_in	GO:0020036 	GO_REF:0000044|GO_REF:0000001	IDA		C	GORULE:0000055-2	stevor	mRNA	taxon:4896	20131007	GeneDB
 ! FAILS GORULE:0000059 - TEST 1 - GP2term relation missing
-SGN	235	cpk1		GO:0005886	PMID:12011347	IDA	C	GORULE:0000059-1 calcium-dependent protein kinase	LeCPK1|Solyc03g031670	gene	taxon:4081	20080616	SGN
+SGN	235	cpk1		GO:0005886	PMID:12011347	IDA		C	GORULE:0000059-1 calcium-dependent protein kinase	LeCPK1|Solyc03g031670	gene	taxon:4081	20080616	SGN
 ! FAILS GORULE:0000061 - TEST 1 SHOULD NOT FAIL (wrong on snapshot??) the part_of GP2term relation is not allowed for GO:0070865
 FB	FBgn0011273	Acam	part_of	GO:0070865	FB:FBrf0193169|PMID:16790438	IDA		C	GORULE:0000061-1 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	FlyBase
 ! FAILS GORULE:0000061 -  TEST 3 - SHOULD NOT FAIL the 'part_of' GP2term relation is allowed for GO:0070864 (CC complex)
@@ -166,11 +168,11 @@ UniProtKB	A1B2F4	aztD	part_of	GO:0140827	PMID:26468286	IDA		F	GORULE:0000061-4		
 ! FAILS GORULE:0000061 - TEST 5 - the 'enables' GP2term relation is not allowed for GO:0005856 (CC)
 UniProtKB	A1B2F4	aztD	enables	GO:0005856	PMID:26468286	IDA		C	GORULE:0000061-5		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - TEST 6 - also fails GORULE-0000011 - the 'located in' GP2term relation is not allowed for GO:0005575 (root CC) - Fails GORULE 11
-UniProtKB	A1B2F4	aztD	located_in	GO:0005575	PMID:26468286	IDA		F	GORULE:0000061-6	protein	taxon:318586	20230427	UniProt
+UniProtKB	A1B2F4	aztD	located_in	GO:0005575	PMID:26468286	IDA		F	GORULE:0000061-6		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - TEST 7 - also fails GORULE-0000011 - the 'contributes_to' GP2term relation is not allowed for GO:0003674 (root MF) - Fails GORULE 11
-UniProtKB	A1B2F4	aztD	contributes_to	GO:0003674	PMID:26468286	IDA		F	GORULE:0000061-7	protein	taxon:318586	20230427	UniProt
+UniProtKB	A1B2F4	aztD	contributes_to	GO:0003674	PMID:26468286	IDA		F	GORULE:0000061-7		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - TEST 8  - also fails GORULE-0000011 - the 'acts upstream of or within' GP2term relation is not allowed for GO:0008150 (root BP) - Fails GORULE 11
-UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within	GO:0008150	PMID:26468286	IDA		F	GORULE:0000061-8	protein	taxon:318586	20230427	UniProt
+UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within	GO:0008150	PMID:26468286	IDA		F	GORULE:0000061-8		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - test 9- 'enables' is not allowed for a GO BP														
 UniProtKB	A1B2F4	aztD	enables	GO:0043491	PMID:26468286	IDA		P	GORULE:0000061-9		protein	taxon:318586	20230427	UniProt
 ! FAILS GORULE:0000061 - test 10 -  'contributes_to' is not allowed for a GO BP														
