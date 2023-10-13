@@ -40,7 +40,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000031">GORULE:0000031 Annotation relations are replaced when not provided by source</a>
  * <a href="#gorule0000032">GORULE:0000032 DEPRECATED Allowed References for each ECO.</a>
  * <a href="#gorule0000033">GORULE:0000033 DEPRECATED. Public Reference IDs (PMID, PMC, doi, or GO_REF) should be preferred over group specific Reference IDs</a>
- * <a href="#gorule0000035">GORULE:0000035 'Deprecated - Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.</a>
+ * <a href="#gorule0000035">GORULE:0000035 DEPRECATED - Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.</a>
  * <a href="#gorule0000036">GORULE:0000036 Report annotations that involve gene products where the gene product is annotated to a term 'x' and 'regulation of X' (multiple annotations involved)</a>
  * <a href="#gorule0000037">GORULE:0000037 IBA annotations should ONLY be assigned_by GO_Central and have PMID:21873635 as a reference</a>
  * <a href="#gorule0000038">GORULE:0000038 Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column) where there exists another annotation with the same or a more granular term using experimental evidence</a>
@@ -725,12 +725,13 @@ The list of GO_REFs are here: https://github.com/geneontology/go-site/tree/maste
 
 <a name="gorule0000035"/>
 
-## 'Deprecated - Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.
+## DEPRECATED - Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.
 
  * id: [GORULE:0000035](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000035.md)
  * status: deprecated
 
 
+Replaced by GORULE:0000059 and GORULE:0000061.
 
 <a name="gorule0000036"/>
 
