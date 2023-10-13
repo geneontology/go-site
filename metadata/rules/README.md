@@ -36,7 +36,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000027">GORULE:0000027 Each identifier in GAF is valid</a>
  * <a href="#gorule0000028">GORULE:0000028 GO aspect should match the term's namespace; otherwise it is repaired to the appropriate aspect</a>
  * <a href="#gorule0000029">GORULE:0000029 IEAs should be less than one year old.</a>
- * <a href="#gorule0000030">GORULE:0000030 Deprecated GO_REFs are not allowed</a>
+ * <a href="#gorule0000030">GORULE:0000030 Obsolete GO_REFs are not allowed</a>
  * <a href="#gorule0000031">GORULE:0000031 Annotation relations are replaced when not provided by source</a>
  * <a href="#gorule0000032">GORULE:0000032 DEPRECATED Allowed References for each ECO.</a>
  * <a href="#gorule0000033">GORULE:0000033 DEPRECATED. Public Reference IDs (PMID, PMC, doi, or GO_REF) should be preferred over group specific Reference IDs</a>
@@ -666,18 +666,14 @@ IEAs less than one year old are valid.
 
 <a name="gorule0000030"/>
 
-## Deprecated GO_REFs are not allowed
+## Obsolete GO_REFs are not allowed
 
  * id: [GORULE:0000030](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000030.md)
  * status: implemented
 
 
 GO_REFs are here: https://github.com/geneontology/go-site/tree/master/metadata/gorefs
-The following references are not allowed:
-
-GO_REF:0000033
-GO_PAINT:nnnnnnn
-(where n are digits)
+References for which is_obsolete: `true` should not be allowed as a reference (GAF column 6; GPAD column 5).
 
 <a name="gorule0000031"/>
 
