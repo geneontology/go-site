@@ -483,12 +483,14 @@ If no replacement is found, the annotation will be filtered.
 ## Check with/from for sequence similarity evidence for valid database ID
 
  * id: [GORULE:0000021](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000021.md)
- * status: approved
+ * status: deprecated
 
 
 For ISS and related evidence types, the With/From field should point to
 a valid gene or gene product identifier that is annotated with a GO term
 that is either identical to or a descendant of the main annotation.
+
+Duplicate of GORULE:0000038
 
 <a name="gorule0000022"/>
 
