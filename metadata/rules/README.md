@@ -27,7 +27,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000018">GORULE:0000018 IPI annotations require a With/From entry</a>
  * <a href="#gorule0000019">GORULE:0000019 Generic Reasoner Validation Check</a>
  * <a href="#gorule0000020">GORULE:0000020 Automatic repair of annotations to merged or obsoleted terms</a>
- * <a href="#gorule0000021">GORULE:0000021 Check with/from for sequence similarity evidence for valid database ID</a>
+ * <a href="#gorule0000021">GORULE:0000021 DEPRECATED Check with/from for sequence similarity evidence for valid database ID</a>
  * <a href="#gorule0000022">GORULE:0000022 Check for, and filter, annotations made to retracted publications</a>
  * <a href="#gorule0000023">GORULE:0000023 Materialize annotations for inter-branch links in the GO</a>
  * <a href="#gorule0000024">GORULE:0000024 Prevent propagation of certain terms by orthology</a>
@@ -480,13 +480,13 @@ If no replacement is found, the annotation will be filtered.
 
 <a name="gorule0000021"/>
 
-## Check with/from for sequence similarity evidence for valid database ID
+## DEPRECATED Check with/from for sequence similarity evidence for valid database ID
 
  * id: [GORULE:0000021](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000021.md)
  * status: deprecated
 
 
-For ISS and related evidence types, the With/From field should point to
+DEPRECATED For ISS and related evidence types, the With/From field should point to
 a valid gene or gene product identifier that is annotated with a GO term
 that is either identical to or a descendant of the main annotation.
 
