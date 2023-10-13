@@ -6,7 +6,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
 
  * <a href="#goref0000001">GO_REF:0000001 OBSOLETE GO Consortium unpublished data</a>
  * <a href="#goref0000002">GO_REF:0000002 Gene Ontology annotation through association of InterPro records with GO terms.</a>
- * <a href="#goref0000003">GO_REF:0000003 Gene Ontology annotation based on Enzyme Commission mapping.</a>
+ * <a href="#goref0000003">GO_REF:0000003 Gene Ontology annotation based on Enzyme Commission mapping</a>
  * <a href="#goref0000004">GO_REF:0000004 Gene Ontology annotation based on UniProtKB keyword mapping.</a>
  * <a href="#goref0000006">GO_REF:0000006 OBSOLETE Gene Ontology annotation by the MGI curatorial staff, Mouse Locus Catalog</a>
  * <a href="#goref0000008">GO_REF:0000008 Gene Ontology annotation by the MGI curatorial staff, curated orthology</a>
@@ -154,7 +154,7 @@ Note that some groups filter GO annotations based on InterPro-to-GO transitive a
 
 <a name="goref0000003"/>
 
-## Gene Ontology annotation based on Enzyme Commission mapping.
+## Gene Ontology annotation based on Enzyme Commission mapping
 
  * id: [GO_REF:0000003](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000003.md)
  * year: 2001
@@ -168,9 +168,6 @@ Note that some groups filter GO annotations based on InterPro-to-GO transitive a
 
 
 Transitive assignment using Enzyme Commission identifiers. This method is used for any database entry, such as a protein record in UniProtKB or TrEMBL, that has had an Enzyme Commission number assigned. The corresponding GO term is determined using the EC cross-references in the GO molecular function ontology. Also see Hill et al., Genomics (2001) 74:121-128. The mapping file is available at http://www.geneontology.org/external2go/ec2go.
-
-## Comments
-
 
 <a name="goref0000004"/>
 
