@@ -128,7 +128,6 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
 
 No abstract available.
 
-## Comments
 
 
 <a name="goref0000002"/>
