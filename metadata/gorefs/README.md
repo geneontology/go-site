@@ -151,7 +151,7 @@ Transitive assignment of GO terms based on InterPro classification. For any data
 
 ## Comments
 
-Formerly GOA:interpro. Note that GO annotations based on InterPro-to-GO transitive assignment may undergo subsequent filtering, e.g. to remove annotations redundant with manual curation; consult documentation from the annotation providers for further information.
+Note that some groups filter GO annotations based on InterPro-to-GO transitive assignment, e.g. to remove annotations redundant with manual curation.
 
 <a name="goref0000003"/>
 
