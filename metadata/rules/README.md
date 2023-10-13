@@ -10,7 +10,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
 
  * <a href="#gorule0000001">GORULE:0000001 GAF lines are parsed according to GAF 2.2 specifications</a>
  * <a href="#gorule0000002">GORULE:0000002 No 'NOT' annotations to binding ; GO:0005488 or 'protein binding ; GO:0005515'</a>
- * <a href="#gorule0000003">GORULE:0000003 Deprecated Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field</a>
+ * <a href="#gorule0000003">GORULE:0000003 DEPRECATED Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field</a>
  * <a href="#gorule0000004">GORULE:0000004 Reciprocal annotations for 'protein binding ; GO:0005515'</a>
  * <a href="#gorule0000005">GORULE:0000005 No ISS or ISS-related annotations to 'protein binding ; GO:0005515'</a>
  * <a href="#gorule0000006">GORULE:0000006 IEP and HEP usage is restricted to terms from the Biological Process ontology, except when assigned by GOC</a>
@@ -104,13 +104,13 @@ guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines) on the GO
 
 <a name="gorule0000003"/>
 
-## Deprecated Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field
+## DEPRECATED Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field
 
  * id: [GORULE:0000003](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000003.md)
  * status: deprecated
 
 
-Note that this rule has been replaced by GORULE:0000018 and GORULE:0000051.
+Replaced by GORULE:0000018 and GORULE:0000051.
 
 Annotations to binding : GO:0005488 or protein binding ; GO:0005515 with
 the TAS, NAS, IC, IMP, IGI and IDA evidence codes are not informative as
