@@ -172,7 +172,6 @@ Transitive assignment using Enzyme Commission identifiers. This method is used f
 
 ## Comments
 
-Formerly GOA:spec.
 
 <a name="goref0000004"/>
 
