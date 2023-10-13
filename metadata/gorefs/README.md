@@ -4,7 +4,7 @@ This is a collection of references used by the GO Consortium
 
 To see how to add to this file, see [README-editors.md](README-editors.md)
 
- * <a href="#goref0000001">GO_REF:0000001 GO Consortium unpublished data</a>
+ * <a href="#goref0000001">GO_REF:0000001 OBSOLETE GO Consortium unpublished data</a>
  * <a href="#goref0000002">GO_REF:0000002 Gene Ontology annotation through association of InterPro records with GO terms.</a>
  * <a href="#goref0000003">GO_REF:0000003 Gene Ontology annotation based on Enzyme Commission mapping.</a>
  * <a href="#goref0000004">GO_REF:0000004 Gene Ontology annotation based on UniProtKB keyword mapping.</a>
@@ -118,7 +118,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
 
 <a name="goref0000001"/>
 
-## GO Consortium unpublished data
+## OBSOLETE GO Consortium unpublished data
 
  * id: [GO_REF:0000001](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000001.md)
  * year: 1998
@@ -130,7 +130,6 @@ No abstract available.
 
 ## Comments
 
-This reference will normally be replaced upon publication of the data supporting the annotation. Formerly GOC:unpublished.
 
 <a name="goref0000002"/>
 
