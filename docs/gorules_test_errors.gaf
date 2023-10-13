@@ -51,6 +51,10 @@ GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	HEP		F	GORULE:0000006
 GeneDB	PF3D7_0507500	SUB1	enables	GO:0005634	PMID:12764150	IEP		C	GORULE:0000006-3 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GeneDB
 ! SHOULD PASS GORULE:0000006 - TEST 4 - passes because uses assigned_by is GOC, even if there is an IEP with a molecular function term.
 GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	IEP		F	GORULE:0000006-4 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GOC
+! SHOULD PASS GORULE:0000006 - TEST 5 - should pass because obsolete BP term should be isgnored; GO:1901011 obsolete (S)-reticuline catabolic process
+GeneDB	PF3D7_0507500	SUB1	GO:1901011	PMID:12764150	IEP		C	GORULE:0000006-5 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GeneDB
+! SHOULD PASS GORULE:0000006 - TEST 6 - should pass because alt_ids should be ignored, and GO:0006758 is an alt_id to GO:0006754 ATP biosynthetic process
+GeneDB	PF3D7_0507500	SUB1	enables	GO:0006758	PMID:12764150	IEP		C	GORULE:0000006-6 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GeneDB
 ! FAILS GORULE:0000007 IPI used with GO:0003824 catalytic activity or descendents (GO:0004674 protein serine/threonine kinase activity)
 UniProtKB	A0A078CGE6	M3KE1	enables	GO:0004674	PMID:11489177	IPI		F	GORULE:0000007-1		protein	taxon:3708	20150115	UniProt
 ! FAILS GORULE:0000008 - TEST 1 - GO:0005622 is in the subset gocheck_do_not_annotate
