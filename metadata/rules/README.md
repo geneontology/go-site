@@ -20,7 +20,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000010">GORULE:0000010 DEPRECATED - PubMed reference formatting must be correct</a>
  * <a href="#gorule0000011">GORULE:0000011 ND evidence code should be to root nodes only, and no terms other than root nodes can have the evidence code ND</a>
  * <a href="#gorule0000013">GORULE:0000013 Taxon-appropriate annotation check</a>
- * <a href="#gorule0000014">GORULE:0000014 Deprecated. GO terms in annotations should not be obsolete.</a>
+ * <a href="#gorule0000014">GORULE:0000014 DEPRECATED. GO terms in annotations should not be obsolete.</a>
  * <a href="#gorule0000015">GORULE:0000015 Dual species taxon check</a>
  * <a href="#gorule0000016">GORULE:0000016 With/From: IC annotations require a With/From GO ID</a>
  * <a href="#gorule0000017">GORULE:0000017 IDA annotations must not have a With/From entry</a>
@@ -383,13 +383,13 @@ for more details.
 
 <a name="gorule0000014"/>
 
-## Deprecated. GO terms in annotations should not be obsolete.
+## DEPRECATED. GO terms in annotations should not be obsolete.
 
  * id: [GORULE:0000014](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000014.md)
  * status: deprecated
 
 
-This rule is now merged with GORULE:0000020.
+DEPRECATED Replaced by GORULE:0000020.
 
 <a name="gorule0000015"/>
 
