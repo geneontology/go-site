@@ -17,7 +17,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000007">GORULE:0000007 IPI should not be used with GO:0003824 catalytic activity or descendents</a>
  * <a href="#gorule0000008">GORULE:0000008 No annotations should be made to uninformative high level terms</a>
  * <a href="#gorule0000009">GORULE:0000009 Annotation Intersection Alerts</a>
- * <a href="#gorule0000010">GORULE:0000010 Deprecated - PubMed reference formatting must be correct</a>
+ * <a href="#gorule0000010">GORULE:0000010 DEPRECATED - PubMed reference formatting must be correct</a>
  * <a href="#gorule0000011">GORULE:0000011 ND evidence code should be to root nodes only, and no terms other than root nodes can have the evidence code ND</a>
  * <a href="#gorule0000013">GORULE:0000013 Taxon-appropriate annotation check</a>
  * <a href="#gorule0000014">GORULE:0000014 Deprecated. GO terms in annotations should not be obsolete.</a>
@@ -294,7 +294,7 @@ The report lives here http://snapshot.geneontology.org/reports/shared-annotation
 
 <a name="gorule0000010"/>
 
-## Deprecated - PubMed reference formatting must be correct
+## DEPRECATED - PubMed reference formatting must be correct
 
  * id: [GORULE:0000010](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000010.md)
  * status: deprecated
