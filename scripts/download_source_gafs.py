@@ -268,20 +268,20 @@ def annotation_datasets_to_download(groups_metadata: List[Dict]) -> List[Dataset
         "goa_chicken": {
             type_val: int,
             datasets: [Dataset("goa", "goa_chicken", ...)]
-        },
+        }
     }
 
     The type_val represents the broad type, and is an integer to be comparable. gaf is 1, gpad/gpi is 2,
     and anything else is 0. If we have gaf already in our `to_download_map` for a dataset, and we come
     across a gpad or gpi of the same dataset name, we know that we should use that instead by 
-    comparing the value of the incoming type (gpad is 2) to the existing Dataset (gaf is 1). Thus the 
+    comparing the value of the incoming type (gpad is 2) to the existing Dataset (gaf is 1). Thus, the
     gpad version of the dataset replaces the items in the "datasets" key, and type_val is set to 2.
 
-    Then if we come across another dataset with the same name, also gpad or gpi, that dataset is *added*
+    Then, if we come across another dataset with the same name, also gpad or gpi, that dataset is *added*
     to the list (since the type value is equal). For example, if we have a mgi gpad in the map, and we
-    come across an mgi gpi, we can add it the list.
+    come across a mgi gpi, we can add it the list.
 
-    Datasets with less value then already exist will be ignored.
+    Datasets with less value than already exist will be ignored.
     """
     to_download_map = dict() # type: Dict[str, Dataset]
     # dataset name -> Dataset
@@ -342,8 +342,6 @@ def annotation_datasets_to_download(groups_metadata: List[Dict]) -> List[Dataset
     return functools.reduce(
         lambda accum, element: accum + element["datasets"], 
         [ds for ds in to_download_map.values() if ds["type_val"] >= 1], [])
-
-
 
 
 # def active_datasets()
