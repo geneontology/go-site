@@ -23,11 +23,11 @@ $(ROOT_PATH)/gaferencer-products/%: $(ROOT_PATH)/gaferencer-products/%.gz
 
 $(ROOT_PATH)/annotations_new/%.gaf: $(ROOT_PATH)/annotations/%.gaf $(ROOT_PATH)/gaferencer-products/all.gaferences.json
 	mkdir -p $(ROOT_PATH)/annotations_new
-	ontobio-parse-assocs.py -f $< -F gaf -o $@ -I $(ROOT_PATH)/gaferencer-products/all.gaferences.json --report-md /tmp/report.md --report-json /tmp/report.json --allow_paint -l all convert --to gaf -n 2.2
+	ontobio-parse-assocs.py -f $< -F gaf -o $@ -I $(ROOT_PATH)/gaferencer-products/all.gaferences.json --report-md /tmp/report.md --report-json /tmp/report.json -m $(ROOT_PATH)/metadata --allow_paint -l all convert --to gaf -n 2.2
 
 $(ROOT_PATH)/annotations_new/%.gpad: $(ROOT_PATH)/annotations/%.gpad $(ROOT_PATH)/gaferencer-products/all.gaferences.json
 	mkdir -p $(ROOT_PATH)/annotations_new
-	ontobio-parse-assocs.py -f $< -F gpad -o $@ -I $(ROOT_PATH)/gaferencer-products/all.gaferences.json --report-md /tmp/report.md --report-json /tmp/report.json --allow_paint -l all convert --to gpad
+	ontobio-parse-assocs.py -f $< -F gpad -o $@ -I $(ROOT_PATH)/gaferencer-products/all.gaferences.json --report-md /tmp/report.md --report-json /tmp/report.json -m $(ROOT_PATH)/metadata --allow_paint -l all convert --to gpad
 
 ####################################################################################################
 ### Noctua GPAD
