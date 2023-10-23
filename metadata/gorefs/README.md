@@ -29,7 +29,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000030">GO_REF:0000030 OBSOLETE Portable Annotation Rules</a>
  * <a href="#goref0000031">GO_REF:0000031 OBSOLETE NIAID Cell Ontology Workshop</a>
  * <a href="#goref0000032">GO_REF:0000032 OBSOLETE Inference of Biological Process annotations from inter-ontology links</a>
- * <a href="#goref0000033">GO_REF:0000033 OBSOLETE Annotation inferences using phylogenetic trees</a>
+ * <a href="#goref0000033">GO_REF:0000033 Annotation inferences using phylogenetic trees</a>
  * <a href="#goref0000034">GO_REF:0000034 Phenoscape Skeletal Anatomy Jamboree</a>
  * <a href="#goref0000035">GO_REF:0000035 OBSOLETE Automatic transfer of experimentally verified manual GO annotation data to plant orthologs using Ensembl Compara</a>
  * <a href="#goref0000036">GO_REF:0000036 Manual annotations that require more than one source of functional data to support the assignment of the associated GO term</a>
@@ -474,7 +474,7 @@ Duplicate of GO_REF:0000108.
 
 <a name="goref0000033"/>
 
-## OBSOLETE Annotation inferences using phylogenetic trees
+## Annotation inferences using phylogenetic trees
 
  * id: [GO_REF:0000033](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000033.md)
  * year: 2010
@@ -488,11 +488,13 @@ Duplicate of GO_REF:0000108.
 
 
 
-This GO_REF was originally used to support PAINT annotations. The SOP has changed, and now phylogenetic annotations are supported using the identifier for the family itself.
+
+
+The full method is deacribed in PMID:21873635.
 
 ### Original Documentation Below
 
-The goal of the GO Reference Genome Project, described in PMID 19578431, is to provide accurate, complete and consistent GO annotations for all genes in twelve model organism genomes.To this end, GO curators are annotating evolutionary trees from the PANTHER database with GO terms describing molecular function, biological process and cellular component. GO terms based on experimental data from the scientific literature are used to annotate ancestral genes in the phylogenetic tree by sequence similarity (ISS), and unannotated descendants of these ancestral genes are inferred to have inherited these same GO annotations by descent. The annotations are done using a tool called PAINT (Phylogenetic Annotation and INference Tool).
+The goal of the GO Reference Genome Project, described in PMID 19578431, is to provide accurate, complete and consistent GO annotations for all genes in twelve model organism genomes. To this end, GO curators are annotating evolutionary trees from the PANTHER database with GO terms describing molecular function, biological process and cellular component. GO terms based on experimental data from the scientific literature are used to annotate ancestral genes in the phylogenetic tree by sequence similarity (ISS), and unannotated descendants of these ancestral genes are inferred to have inherited these same GO annotations by descent. The annotations are done using a tool called PAINT (Phylogenetic Annotation and INference Tool).
 
 <a name="goref0000034"/>
 
