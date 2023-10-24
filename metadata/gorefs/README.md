@@ -113,6 +113,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000115">GO_REF:0000115 Automatic Gene Ontology annotation of non-coding RNA sequences through association of Rfam records with GO terms</a>
  * <a href="#goref0000116">GO_REF:0000116 Automatic Gene Ontology annotation based on Rhea mapping.</a>
  * <a href="#goref0000117">GO_REF:0000117 Electronic Gene Ontology annotations created by ARBA machine learning models</a>
+ * <a href="#goref0000033">GO_REF:0000033 OBSOLETE Annotation inferences using phylogenetic trees</a>
 
 
 
@@ -1541,3 +1542,25 @@ Rhea (https://www.rhea-db.org/, PMID:30272209) is an expert-curated knowledgebas
 
 Association-Rule-Based Annotator (ARBA) predicts Gene Ontology (GO) terms among other types of functional annotation such as Protein Description (DE), Keywords (KW), Enzyme Commission numbers (EC), subcellular LOcation (LO), etc. For all annotation types, reviewed UniProtKB/Swiss-Prot records having manual annotations as reference data are used to perform the machine learning phase and generate prediction models. For GO terms, ARBA has an additional feature to augment reference data using the relations between GO terms in the GO graph. The data augmentation is based on adding more general annotations into records containing manual GO terms, which will result in richer reference data. The predicted GO terms are then propagated to all unreviewed UniProtKB/TrEMBL proteins that meet the conditions of ARBA models. GO annotations using this technique receive the evidence code Inferred from Electronic Annotation (IEA; ECO:0000501).
 Links: ARBA documentation at UniProt (https://www.uniprot.org/help/arba), Blog on ARBA (http://insideuniprot.blogspot.com/2020/09/association-rule-based-annotator-arba.html).
+
+<a name="goref0000033"/>
+
+## OBSOLETE Annotation inferences using phylogenetic trees
+
+ * id: [GO_REF:0000033](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000033.md)
+ * year: 2010
+ * authors: Pascale Gaudet, Michael Livstone, Paul Thomas, The Reference Genome Project
+ * ext xref: SGD_REF:S000146947
+ * ext xref: TAIR:Communication:501741973
+ * ext xref: MGI:MGI:4459044
+ * ext xref: J:161428 
+ * ext xref: ZFIN:ZDB-PUB-110330-1
+ * ext xref: FB:FBrf0232076
+
+
+
+This GO_REF was originally used to support PAINT annotations. The SOP has changed, and now phylogenetic annotations are supported using the identifier for the family itself.
+
+### Original Documentation Below
+
+The goal of the GO Reference Genome Project, described in PMID 19578431, is to provide accurate, complete and consistent GO annotations for all genes in twelve model organism genomes.To this end, GO curators are annotating evolutionary trees from the PANTHER database with GO terms describing molecular function, biological process and cellular component. GO terms based on experimental data from the scientific literature are used to annotate ancestral genes in the phylogenetic tree by sequence similarity (ISS), and unannotated descendants of these ancestral genes are inferred to have inherited these same GO annotations by descent. The annotations are done using a tool called PAINT (Phylogenetic Annotation and INference Tool).
