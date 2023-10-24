@@ -1549,7 +1549,7 @@ Links: ARBA documentation at UniProt (https://www.uniprot.org/help/arba), Blog o
 
  * id: [GO_REF:0000118](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000118.md)
  * year: 2023
- * authors: Haiming Tang, Alex Ignatchenko, Matthias Blum, Robert Finn, Paul Thomas
+ * authors: Haiming Tang, Dustin Ebert, Matthias Blum, Robert Finn, Paul Thomas
 
 
 
