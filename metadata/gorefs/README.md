@@ -487,14 +487,10 @@ Duplicate of GO_REF:0000108.
  * ext xref: FB:FBrf0232076
 
 
-
-
-
-The full method is deacribed in PMID:21873635.
-
-### Original Documentation Below
-
-The goal of the GO Reference Genome Project, described in PMID 19578431, is to provide accurate, complete and consistent GO annotations for all genes in twelve model organism genomes. To this end, GO curators are annotating evolutionary trees from the PANTHER database with GO terms describing molecular function, biological process and cellular component. GO terms based on experimental data from the scientific literature are used to annotate ancestral genes in the phylogenetic tree by sequence similarity (ISS), and unannotated descendants of these ancestral genes are inferred to have inherited these same GO annotations by descent. The annotations are done using a tool called PAINT (Phylogenetic Annotation and INference Tool).
+The Phylogenetic ANnotation using Gene Ontology (PAN-GO) method annotates evolutionary trees from the PANTHER database with GO terms describing molecular function, biological process and cellular component. The GO terms are manually selected by a curator and used to annotate ancestral genes in the phylogenetic tree using the evidence code IBA (Inferred from Biological Ancestor). All supporting annotations must be based on experimental data from the scientific literature. The PAN-GO annotations are fully traceable from the data in the 'with/from' column of the annotation, which provides the PANTHER node ID (PTN) from which the annotation is derived, as well as all descendants sequences that support the annotation of the ancestral node. 
+ 
+The full method is described in PMID:21873635.
+ 
 
 <a name="goref0000034"/>
 
