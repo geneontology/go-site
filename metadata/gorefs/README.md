@@ -479,7 +479,7 @@ Duplicate of GO_REF:0000108.
 
  * id: [GO_REF:0000033](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000033.md)
  * year: 2010
- * authors: Pascale Gaudet, Michael Livstone, Paul Thomas, The Reference Genome Project
+ * authors: Marc Feuermann, Huaiyu Mi, Pascale Gaudet, Dustin Ebert, Anushya Muruganujan, Paul Thomas
  * ext xref: SGD_REF:S000146947
  * ext xref: TAIR:Communication:501741973
  * ext xref: MGI:MGI:4459044
