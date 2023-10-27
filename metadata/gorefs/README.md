@@ -47,7 +47,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000048">GO_REF:0000048 OBSOLETE TIGR's Eukaryotic Manual Gene Ontology Assignment Method</a>
  * <a href="#goref0000049">GO_REF:0000049 OBSOLETE Automatic transfer of experimentally verified manual GO annotation data to fungal orthologs using Ensembl Compara</a>
  * <a href="#goref0000050">GO_REF:0000050 Manual transfer of GO annotation data to genes by curator judgment of sequence model</a>
- * <a href="#goref0000051">GO_REF:0000051 OBSOLETE S. pombe keyword mapping</a>
+ * <a href="#goref0000051">GO_REF:0000051 S. pombe keyword mapping</a>
  * <a href="#goref0000052">GO_REF:0000052 Gene Ontology annotation based on curation of immunofluorescence data</a>
  * <a href="#goref0000053">GO_REF:0000053 OBSOLETE Automatic classification of GO using the ELK reasoner</a>
  * <a href="#goref0000054">GO_REF:0000054 Gene Ontology annotation based on curation of intracellular localizations of expressed fusion proteins in living cells.</a>
@@ -729,15 +729,13 @@ Transitive assignment of GO terms to a gene based on a curator's judgment of its
 
 <a name="goref0000051"/>
 
-## OBSOLETE S. pombe keyword mapping
+## S. pombe keyword mapping
 
  * id: [GO_REF:0000051](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000051.md)
  * year: 2012
  * authors: PomBase curators
 
 
-
-Active 2006-2012.
 
 Keywords derived from manually curated primary annotation, e.g. gene product descriptions, are mapped to GO terms. Annotations made by this method have the evidence code Non-traceable Author Statement (NAS), and are filtered from the PomBase annotation files wherever another annotation exists that is equally or more specific, and supported by experimental or manually evaluated comparative evidence (such as ISS and its subtypes). Formerly GOC:pombekw2GO.
 
