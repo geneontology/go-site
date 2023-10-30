@@ -11,7 +11,7 @@ datasets:
    id: japonicusdb.gaf
    label: "japonicusdb gaf file"
    description: "gaf file for japonicusdb from JaponicusDB"
-   url: http://current.geneontology.org/annotations/japonicusdb.gaf.gz
+   url: https://current.geneontology.org/annotations/japonicusdb.gaf.gz
    type: gaf
    dataset: japonicusdb
    submitter: japonicusdb
@@ -27,7 +27,7 @@ datasets:
    id: japonicusdb.gpi
    label: "japonicusdb gpi file"
    description: "gpi file for japonicusdb from JaponicusDB"
-   url: http://current.geneontology.org/annotations/japonicusdb.gpi.gz
+   url: https://current.geneontology.org/annotations/japonicusdb.gpi.gz
    type: gpi
    dataset: japonicusdb
    submitter: japonicusdb
@@ -43,7 +43,7 @@ datasets:
    id: japonicusdb.gpad
    label: "japonicusdb gpad file"
    description: "gpad file for japonicusdb from JaponicusDB"
-   url: http://current.geneontology.org/annotations/japonicusdb.gpad.gz
+   url: https://current.geneontology.org/annotations/japonicusdb.gpad.gz
    type: gpad
    dataset: japonicusdb
    submitter: japonicusdb

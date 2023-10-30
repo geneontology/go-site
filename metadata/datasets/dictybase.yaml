@@ -11,7 +11,7 @@ datasets:
    id: dictybase.gpa
    label: "dictybase gpad file"
    description: "gpad file for dictyBase from dictyBase"
-   url: http://current.geneontology.org/annotations/dictybase.gpad.gz
+   url: https://current.geneontology.org/annotations/dictybase.gpad.gz
    type: gpad
    dataset: dictybase
    submitter: dictyBase
@@ -29,7 +29,7 @@ datasets:
    id: dictybase.gpi
    label: "dictybase gpi file"
    description: "gpi file for dictyBase from dictyBase"
-   url: http://current.geneontology.org/annotations/dictybase.gpi.gz
+   url: https://current.geneontology.org/annotations/dictybase.gpi.gz
    type: gpi
    dataset: dictybase
    submitter: dictyBase
@@ -47,7 +47,7 @@ datasets:
    id: dictybase.gaf
    label: "dictybase gaf file"
    description: "gaf file for dictybase from dictyBase"
-   url: http://current.geneontology.org/annotations/dictybase.gaf.gz
+   url: https://current.geneontology.org/annotations/dictybase.gaf.gz
    type: gaf
    dataset: dictybase
    submitter: dictyBase
