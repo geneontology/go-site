@@ -4515,3 +4515,15 @@
   nickname: 'Steven Marygold'
   organization: FlyBase
   uri: 'https://orcid.org/0000-0003-2759-266X'
+-
+  accounts:
+    github: LucillePo
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Lucille Pourcel'
+  organization: UniProt
+  uri: 'https://orcid.org/0000-0003-1522-9900'
