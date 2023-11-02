@@ -1938,9 +1938,17 @@
   uri: 'GOC:jc'
   xref: 'GOC:jc'
 -
+  accounts:
+    github: Argoudpuy
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.uniprot.org'
   nickname: 'Ghislaine Argoud-Puy'
-  organization: neXtProt
-  uri: 'GOC:gap'
+  organization: UniProt
+  uri: 'https://orcid.org/0000-0002-2979-8613'
   xref: 'GOC:gap'
 -
   email-md5:
