@@ -1116,6 +1116,24 @@ datasets:
     - NCBITaxon:9823
 
  -
+   id: goa_sars-cov-2.gaf
+   label: "goa_sars-cov-2 gaf file"
+   description: "gaf file for goa_sars-cov-2 from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_sars-cov-2.gaf.gz
+   type: gaf
+   dataset: goa_sars-cov-2
+   submitter: goa
+   #compression: gzip
+   compression: ""
+   #source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/uniprot_sars-cov-2.gaf.gz
+   source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/uniprot_sars-cov-2.gaf
+   entity_type: protein
+   status: active
+   species_code: SARS-CoV-2
+   taxa:
+    - NCBITaxon:2697049
+
+ -
    id: goa_uniprot_all.gaf
    label: "goa_uniprot_all gaf file"
    description: "gaf file for goa_uniprot_all from EBI Gene Ontology Annotation Database"
