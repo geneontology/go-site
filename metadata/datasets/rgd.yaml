@@ -11,7 +11,7 @@ datasets:
    id: rgd.gaf
    label: "rgd gaf file"
    description: "gaf file for rgd from Rat Genome Database"
-   url: http://current.geneontology.org/annotations/rgd.gaf.gz
+   url: https://current.geneontology.org/annotations/rgd.gaf.gz
    type: gaf
    dataset: rgd
    submitter: rgd

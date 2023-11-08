@@ -11,7 +11,7 @@ datasets:
    id: cgd.gaf
    label: "cgd gaf file"
    description: "gaf file for cgd from Candida Genome Database"
-   url: http://current.geneontology.org/annotations/cgd.gaf.gz
+   url: https://current.geneontology.org/annotations/cgd.gaf.gz
    type: gaf
    dataset: cgd
    submitter: cgd

@@ -26,7 +26,7 @@ datasets:
     id: xenbase.gaf
     label: "xenbase gaf file"
     description: "GAF file for Xenbase"
-    url: http://current.geneontology.org/annotations/xenbase.gaf.gz
+    url: https://current.geneontology.org/annotations/xenbase.gaf.gz
     type: gaf
     dataset: xenbase
     submitter: xenbase

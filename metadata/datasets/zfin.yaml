@@ -11,7 +11,7 @@ datasets:
    id: zfin.gaf
    label: "zfin gaf file"
    description: "gaf file for zfin from Zebrafish Information Network"
-   url: http://current.geneontology.org/annotations/zfin.gaf.gz
+   url: https://current.geneontology.org/annotations/zfin.gaf.gz
    type: gaf
    dataset: zfin
    submitter: zfin
@@ -26,7 +26,7 @@ datasets:
    id: zfin.gpi
    label: "zfin gpi file"
    description: "gpi file for zfin from Zebrafish Information Network"
-   url: http://current.geneontology.org/annotations/zfin.gpi.gz
+   url: https://current.geneontology.org/annotations/zfin.gpi.gz
    type: gpi
    dataset: zfin
    submitter: zfin

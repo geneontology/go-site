@@ -11,7 +11,7 @@ datasets:
    id: sgd.gaf
    label: "sgd gaf file"
    description: "gaf file for sgd from Saccharomyces Genome Database"
-   url: http://current.geneontology.org/annotations/sgd.gaf.gz
+   url: https://current.geneontology.org/annotations/sgd.gaf.gz
    type: gaf
    dataset: sgd
    submitter: sgd
@@ -30,7 +30,7 @@ datasets:
    id: sgd.gpad
    label: "sgd gpad file"
    description: "gpad file for sgd from Saccharomyces Genome Database"
-   url: http://current.geneontology.org/annotations/sgd.gpad.gz
+   url: https://current.geneontology.org/annotations/sgd.gpad.gz
    type: gpad
    dataset: sgd
    submitter: sgd
@@ -49,7 +49,7 @@ datasets:
    id: sgd.gpi
    label: "sgd gpi file"
    description: "gpi file for sgd from Saccharomyces Genome Database"
-   url: http://current.geneontology.org/annotations/sgd.gpi.gz
+   url: https://current.geneontology.org/annotations/sgd.gpi.gz
    type: gpi
    dataset: sgd
    submitter: sgd

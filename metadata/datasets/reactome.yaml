@@ -11,7 +11,7 @@ datasets:
    id: reactome.gaf
    label: "reactome gaf file"
    description: "gaf file for reactome from Reactome - a curated knowledgebase of biological pathways"
-   url: http://current.geneontology.org/annotations/reactome.gaf.gz
+   url: https://current.geneontology.org/annotations/reactome.gaf.gz
    type: gaf
    dataset: reactome
    submitter: reactome

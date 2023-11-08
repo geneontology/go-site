@@ -115,10 +115,13 @@ def main():
         paint_version_id = 'paint_' + entry["id"]
         if entry_hash.get(paint_version_id, False):
             ## ...if it does, add it to create a new full count...
+            LOG.info('Found paint version: ' + paint_version_id + ' (' + str(int(entry_hash[paint_version_id]["associations"])) + ') for ' + entry["id"] + ' (' + str(int(entry["associations"])) + ')')
             entry["full_count"] = int(entry["associations"]) + int(entry_hash[paint_version_id]["associations"])
         else:
             ## ...otherwise, just use the local count for the full count.
+            LOG.info('No paint version: ' + entry["id"])
             entry["full_count"] = int(entry["associations"])
+        LOG.info('  Count: ' + str(entry["full_count"]))
 
     # ## Read in all of the useful data from the metadata data sources.
     # for datum in read_data:

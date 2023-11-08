@@ -1938,9 +1938,17 @@
   uri: 'GOC:jc'
   xref: 'GOC:jc'
 -
+  accounts:
+    github: Argoudpuy
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.uniprot.org'
   nickname: 'Ghislaine Argoud-Puy'
-  organization: neXtProt
-  uri: 'GOC:gap'
+  organization: UniProt
+  uri: 'https://orcid.org/0000-0002-2979-8613'
   xref: 'GOC:gap'
 -
   email-md5:
@@ -4515,3 +4523,15 @@
   nickname: 'Steven Marygold'
   organization: FlyBase
   uri: 'https://orcid.org/0000-0003-2759-266X'
+-
+  accounts:
+    github: LucillePo
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Lucille Pourcel'
+  organization: UniProt
+  uri: 'https://orcid.org/0000-0003-1522-9900'

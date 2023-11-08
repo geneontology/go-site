@@ -21,7 +21,7 @@ datasets:
    id: mgi.gaf
    label: "mgi gaf file"
    description: "gaf file for mgi from Mouse Genome Informatics"
-   url: http://current.geneontology.org/annotations/mgi.gaf.gz
+   url: https://current.geneontology.org/annotations/mgi.gaf.gz
    type: gaf
    dataset: mgi
    submitter: mgi
@@ -37,7 +37,7 @@ datasets:
    id: mgi.gpad
    label: "mgi gpad file"
    description: "gpad file for mgi from Mouse Genome Informatics"
-   url: http://current.geneontology.org/annotations/mgi.gpad.gz
+   url: https://current.geneontology.org/annotations/mgi.gpad.gz
    type: gpad
    dataset: mgi
    submitter: mgi
@@ -53,7 +53,7 @@ datasets:
    id: mgi.gpi
    label: "mgi gpi file"
    description: "gpi file for mgi from Mouse Genome Informatics"
-   url: http://current.geneontology.org/annotations/mgi.gpi.gz
+   url: https://current.geneontology.org/annotations/mgi.gpi.gz
    type: gpi
    dataset: mgi
    submitter: mgi

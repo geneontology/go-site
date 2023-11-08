@@ -12,7 +12,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000002">GORULE:0000002 No 'NOT' annotations to binding ; GO:0005488 or 'protein binding ; GO:0005515'</a>
  * <a href="#gorule0000003">GORULE:0000003 DEPRECATED Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field</a>
  * <a href="#gorule0000004">GORULE:0000004 Reciprocal annotations for 'protein binding ; GO:0005515'</a>
- * <a href="#gorule0000005">GORULE:0000005 No ISS or ISS-related annotations directly to to 'protein binding ; GO:0005515 or 'binding ; GO:0005488''</a>
+ * <a href="#gorule0000005">GORULE:0000005 IEA and ISS or ISS-related annotations should not be used to support direct annotations to 'protein binding ; GO:0005515 or 'binding ; GO:0005488''</a>
  * <a href="#gorule0000006">GORULE:0000006 IEP and HEP usage is restricted to terms from the Biological Process ontology, except when assigned by GOC</a>
  * <a href="#gorule0000007">GORULE:0000007 IPI should not be used with GO:0003824 catalytic activity or descendents</a>
  * <a href="#gorule0000008">GORULE:0000008 No annotations should be made to uninformative high level terms</a>
@@ -167,10 +167,18 @@ on the GO wiki.
 
 <a name="gorule0000005"/>
 
-## No ISS or ISS-related annotations directly to to 'protein binding ; GO:0005515 or 'binding ; GO:0005488''
+## IEA and ISS or ISS-related annotations should not be used to support direct annotations to 'protein binding ; GO:0005515 or 'binding ; GO:0005488''
 
  * id: [GORULE:0000005](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000005.md)
  * status: proposed
+
+
+
+This rule only applies to direct annotations to GO:0005515 and GO:0005488 (GAF column 5, GAPD column 4), 
+Annotations to descendant terms such as mitogen-activated protein kinase p38 binding ; GO:0048273 are allowed, since the GO term name contains 
+specific information describing the identity of the interactor.
+
+The following evidence codes (GAF column 7, GPAD column 6) are not allowed: IEA, ISS, ISM, ISO, ISA, IBA.
 
 
 If we take an example annotation:
@@ -208,10 +216,7 @@ from protein binding is not particularly useful as you are only really
 telling the user that you think an homologous protein binds a protein,
 based on overall sequence similarity.
 
-This rule only applies to GO:0005515 and GO:0005488, as descendant terms such as
-mitogen-activated protein kinase p38 binding ; GO:0048273 used as ISS
-annotations are informative as the GO term name contains far more
-specific information as to the identity of the interactor.
+
 
 For more information, see the [binding
 guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
@@ -499,10 +504,10 @@ Duplicate of GORULE:0000038
  * status: approved
 
 
-GO should not include annotations to retracted publications. PubMed
-keeps record of retracted publications in the PublicationTypeList of
-each paper's XML entry. For additional details on this proposed rule,
-please see: https://github.com/geneontology/go-annotation/issues/1479
+GO should not include annotations to retracted publications (GAF column 6, GPAD column 5). 
+
+PubMed keeps record of retracted publications in the PublicationTypeList of
+each paper's XML entry.
 
 <a name="gorule0000023"/>
 
@@ -911,7 +916,7 @@ Annotations to ISS, ISA and ISO should not have the same identifier in the 'gene
 ## Some GO terms require a value in the Annotation Extension field
 
  * id: [GORULE:0000051](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000051.md)
- * status: implemented
+ * status: proposed
 
 
 Direct annotations to these terms require a value in the Annotation Extension field: 

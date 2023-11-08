@@ -29,7 +29,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000030">GO_REF:0000030 OBSOLETE Portable Annotation Rules</a>
  * <a href="#goref0000031">GO_REF:0000031 OBSOLETE NIAID Cell Ontology Workshop</a>
  * <a href="#goref0000032">GO_REF:0000032 OBSOLETE Inference of Biological Process annotations from inter-ontology links</a>
- * <a href="#goref0000033">GO_REF:0000033 OBSOLETE Annotation inferences using phylogenetic trees</a>
+ * <a href="#goref0000033">GO_REF:0000033 Annotation inferences using phylogenetic trees</a>
  * <a href="#goref0000034">GO_REF:0000034 Phenoscape Skeletal Anatomy Jamboree</a>
  * <a href="#goref0000035">GO_REF:0000035 OBSOLETE Automatic transfer of experimentally verified manual GO annotation data to plant orthologs using Ensembl Compara</a>
  * <a href="#goref0000036">GO_REF:0000036 Manual annotations that require more than one source of functional data to support the assignment of the associated GO term</a>
@@ -47,7 +47,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000048">GO_REF:0000048 OBSOLETE TIGR's Eukaryotic Manual Gene Ontology Assignment Method</a>
  * <a href="#goref0000049">GO_REF:0000049 OBSOLETE Automatic transfer of experimentally verified manual GO annotation data to fungal orthologs using Ensembl Compara</a>
  * <a href="#goref0000050">GO_REF:0000050 Manual transfer of GO annotation data to genes by curator judgment of sequence model</a>
- * <a href="#goref0000051">GO_REF:0000051 OBSOLETE S. pombe keyword mapping</a>
+ * <a href="#goref0000051">GO_REF:0000051 S. pombe keyword mapping</a>
  * <a href="#goref0000052">GO_REF:0000052 Gene Ontology annotation based on curation of immunofluorescence data</a>
  * <a href="#goref0000053">GO_REF:0000053 OBSOLETE Automatic classification of GO using the ELK reasoner</a>
  * <a href="#goref0000054">GO_REF:0000054 Gene Ontology annotation based on curation of intracellular localizations of expressed fusion proteins in living cells.</a>
@@ -113,6 +113,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000115">GO_REF:0000115 Automatic Gene Ontology annotation of non-coding RNA sequences through association of Rfam records with GO terms</a>
  * <a href="#goref0000116">GO_REF:0000116 Automatic Gene Ontology annotation based on Rhea mapping.</a>
  * <a href="#goref0000117">GO_REF:0000117 Electronic Gene Ontology annotations created by ARBA machine learning models</a>
+ * <a href="#goref0000118">GO_REF:0000118 TreeGrafter-generated GO annotations</a>
 
 
 
@@ -474,11 +475,11 @@ Duplicate of GO_REF:0000108.
 
 <a name="goref0000033"/>
 
-## OBSOLETE Annotation inferences using phylogenetic trees
+## Annotation inferences using phylogenetic trees
 
  * id: [GO_REF:0000033](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000033.md)
  * year: 2010
- * authors: Pascale Gaudet, Michael Livstone, Paul Thomas, The Reference Genome Project
+ * authors: Marc Feuermann, Huaiyu Mi, Pascale Gaudet, Dustin Ebert, Anushya Muruganujan, Paul Thomas
  * ext xref: SGD_REF:S000146947
  * ext xref: TAIR:Communication:501741973
  * ext xref: MGI:MGI:4459044
@@ -487,12 +488,10 @@ Duplicate of GO_REF:0000108.
  * ext xref: FB:FBrf0232076
 
 
-
-This GO_REF was originally used to support PAINT annotations. The SOP has changed, and now phylogenetic annotations are supported using the identifier for the family itself.
-
-### Original Documentation Below
-
-The goal of the GO Reference Genome Project, described in PMID 19578431, is to provide accurate, complete and consistent GO annotations for all genes in twelve model organism genomes.To this end, GO curators are annotating evolutionary trees from the PANTHER database with GO terms describing molecular function, biological process and cellular component. GO terms based on experimental data from the scientific literature are used to annotate ancestral genes in the phylogenetic tree by sequence similarity (ISS), and unannotated descendants of these ancestral genes are inferred to have inherited these same GO annotations by descent. The annotations are done using a tool called PAINT (Phylogenetic Annotation and INference Tool).
+The Phylogenetic ANnotation using Gene Ontology (PAN-GO) method annotates evolutionary trees from the PANTHER database with GO terms describing molecular function, biological process and cellular component. The GO terms are manually selected by a curator and used to annotate ancestral genes in the phylogenetic tree using the evidence code IBA (Inferred from Biological Ancestor). All supporting annotations must be based on experimental data from the scientific literature. The PAN-GO annotations are fully traceable from the data in the 'with/from' column of the annotation, which provides the PANTHER node ID (PTN) from which the annotation is derived, as well as all descendants sequences that support the annotation of the ancestral node. 
+ 
+The full method is described in PMID:21873635.
+ 
 
 <a name="goref0000034"/>
 
@@ -730,15 +729,13 @@ Transitive assignment of GO terms to a gene based on a curator's judgment of its
 
 <a name="goref0000051"/>
 
-## OBSOLETE S. pombe keyword mapping
+## S. pombe keyword mapping
 
  * id: [GO_REF:0000051](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000051.md)
  * year: 2012
  * authors: PomBase curators
 
 
-
-Active 2006-2012.
 
 Keywords derived from manually curated primary annotation, e.g. gene product descriptions, are mapped to GO terms. Annotations made by this method have the evidence code Non-traceable Author Statement (NAS), and are filtered from the PomBase annotation files wherever another annotation exists that is equally or more specific, and supported by experimental or manually evaluated comparative evidence (such as ISS and its subtypes). Formerly GOC:pombekw2GO.
 
@@ -1543,3 +1540,17 @@ Rhea (https://www.rhea-db.org/, PMID:30272209) is an expert-curated knowledgebas
 
 Association-Rule-Based Annotator (ARBA) predicts Gene Ontology (GO) terms among other types of functional annotation such as Protein Description (DE), Keywords (KW), Enzyme Commission numbers (EC), subcellular LOcation (LO), etc. For all annotation types, reviewed UniProtKB/Swiss-Prot records having manual annotations as reference data are used to perform the machine learning phase and generate prediction models. For GO terms, ARBA has an additional feature to augment reference data using the relations between GO terms in the GO graph. The data augmentation is based on adding more general annotations into records containing manual GO terms, which will result in richer reference data. The predicted GO terms are then propagated to all unreviewed UniProtKB/TrEMBL proteins that meet the conditions of ARBA models. GO annotations using this technique receive the evidence code Inferred from Electronic Annotation (IEA; ECO:0000501).
 Links: ARBA documentation at UniProt (https://www.uniprot.org/help/arba), Blog on ARBA (http://insideuniprot.blogspot.com/2020/09/association-rule-based-annotator-arba.html).
+
+<a name="goref0000118"/>
+
+## TreeGrafter-generated GO annotations
+
+ * id: [GO_REF:0000118](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000118.md)
+ * year: 2023
+ * authors: Haiming Tang, Dustin Ebert, Matthias Blum, Robert Finn, Paul Thomas
+
+
+
+TreeGrafter is a software tool for annotating protein sequences using pre-annotated PANTHER phylogenetic trees. TreeGrafter takes an input query protein sequence, finds the best matching homologous family, and then grafts it to the best location in the tree. It then annotates the query sequence by propagating annotations from the appropriate ancestral node(s) in the reference tree, which were manually annotated using the PAN-GO method (see GOREF_0000033). This method is integrated into InterProScan, which produces annotations to millions of genes across tens of thousands of organisms.
+ 
+The full method is described in PMID:30032202.

@@ -11,7 +11,7 @@ datasets:
    id: fb.gaf
    label: "fb gaf file"
    description: "gaf file for fb from FlyBase"
-   url: http://current.geneontology.org/annotations/fb.gaf.gz
+   url: https://current.geneontology.org/annotations/fb.gaf.gz
    type: gaf
    dataset: fb
    submitter: fb
@@ -26,7 +26,7 @@ datasets:
    id: fb.gpi
    label: "fb gpi file"
    description: "gpi file for Drosophila melanogaster from FlyBase"
-   url: http://current.geneontology.org/annotations/fb.gpi.gz
+   url: https://current.geneontology.org/annotations/fb.gpi.gz
    type: gpi
    dataset: fb
    submitter: fb

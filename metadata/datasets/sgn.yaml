@@ -11,7 +11,7 @@ datasets:
    id: sgn.gaf
    label: "sgn gaf file"
    description: "gaf file for sgn from Sol Genomics Network"
-   url: http://current.geneontology.org/annotations/sgn.gaf.gz
+   url: https://current.geneontology.org/annotations/sgn.gaf.gz
    type: gaf
    dataset: sgn
    submitter: sgn
