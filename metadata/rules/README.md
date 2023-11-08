@@ -911,7 +911,7 @@ Annotations to ISS, ISA and ISO should not have the same identifier in the 'gene
 ## Some GO terms require a value in the Annotation Extension field
 
  * id: [GORULE:0000051](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000051.md)
- * status: implemented
+ * status: proposed
 
 
 Direct annotations to these terms require a value in the Annotation Extension field: 
