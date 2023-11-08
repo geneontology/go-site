@@ -504,10 +504,10 @@ Duplicate of GORULE:0000038
  * status: approved
 
 
-GO should not include annotations to retracted publications. PubMed
-keeps record of retracted publications in the PublicationTypeList of
-each paper's XML entry. For additional details on this proposed rule,
-please see: https://github.com/geneontology/go-annotation/issues/1479
+GO should not include annotations to retracted publications (GAF column 6, GPAD column 5). 
+
+PubMed keeps record of retracted publications in the PublicationTypeList of
+each paper's XML entry.
 
 <a name="gorule0000023"/>
 
