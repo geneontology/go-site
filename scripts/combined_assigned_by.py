@@ -11,8 +11,10 @@
 
 ## Standard imports.
 import os
+import glob
 import copy
 import datetime
+import yamldown
 import html
 import sys
 import argparse
@@ -20,6 +22,8 @@ import logging
 import json
 import re
 import go_stats_utils as utils
+
+this_script = os.path.abspath(__file__)
 
 ### For creating html document
 from xml.etree import ElementTree as ET
@@ -90,7 +94,7 @@ def sort_messages(r, messages):
             messages.sort(key=lambda x: x.get('obj'))
             messages.sort(key=lambda x: x.get('level'))                    
                     
-def output_md(violations_info_list, path):
+def output_md(violations_info_list, path, rules_descriptions):
     ## Generate a summary in markdown 
     for violation in violations_info_list:
         id = violation['id']
@@ -112,8 +116,7 @@ def output_md(violations_info_list, path):
             if 0 == numViolations:
                 continue
             sort_messages(rule, violations)
-            firstMsg = violations[0]
-            ruleDesc = firstMsg['message']    # Rule and description
+            ruleDesc = rules_descriptions[rule]["title"]
 
             s+= '\n\n[' + rule + '](#' + rule + ')[' + ruleDesc + ']{}'
             
@@ -123,7 +126,7 @@ def output_md(violations_info_list, path):
             ruleDetails += '\n\n* total: ' + str(numViolations)
             ruleDetails += '\n#### Messages'
             for violation in violations:
-                ruleDetails += '\n* ' + violation['level'] + ' - ' + violation['type'] + ':' + ruleDesc + '--`' + violation['line'] + '`'
+                ruleDetails += '\n* ' + violation['level'] + ' - ' + violation['type'] + ':' + violation['message'] + '--`' + violation['line'] + '`'
 
         s += ruleDetails        
         ## Write out file
@@ -143,7 +146,7 @@ def _pretty_print(current, parent=None, index=-1, depth=0):
         if index == len(parent) - 1:
             current.tail = '\n' + ('\t' * (depth - 1))                                    
 
-def output_html(violations_info_list, path):
+def output_html(violations_info_list, path, rules_descriptions):
     for violation in violations_info_list:
         
         htmlObj = ET.Element('html')
@@ -182,10 +185,10 @@ def output_html(violations_info_list, path):
             numViolations = len(violations)
             if 0 == numViolations:
                 continue
-
-            firstMsg = violations[0]
+ 
             sort_messages(rule, violations)
-            ruleDesc = firstMsg['message']    # Rule and description
+            ruleDesc = rules_descriptions[rule]["title"]
+            
             ruleDescEscaped = html.escape(ruleDesc)
 
             violationsCtr = violationsCtr + 1    
@@ -208,7 +211,7 @@ def output_html(violations_info_list, path):
 
             msgDescPara = ET.Element('p')
             body.append(msgDescPara)
-            firstMsg = violations[0]
+            
             msgDescPara.text = ruleDescEscaped
 
             unorderedList = ET.Element('ul')
@@ -227,7 +230,7 @@ def output_html(violations_info_list, path):
             for violation in violations:
                 listItem = ET.Element('li')
                 unorderedViolationsList.append(listItem)
-                listItem.text = violation['level'] + ' - ' + violation['type'] + ':' + ruleDesc + '--`' + violation['line'] + '`'
+                listItem.text = violation['level'] + ' - ' + violation['type'] + ':' + violation['message'] + '--`' + violation['line'] + '`'
 
         # Indent
         _pretty_print(htmlObj)
@@ -239,6 +242,18 @@ def output_html(violations_info_list, path):
 
 def main():
     """The main runner of our script."""
+    
+    #Get rule descriptions
+    rules_directory = os.path.normpath(os.path.join(os.path.dirname(this_script), "../metadata/rules"))
+    rules_descriptions = dict()
+    # Rule Descriptions is a map of rule ID to a {"title": rule title}
+    for rule_path in glob.glob(os.path.join(rules_directory, "gorule*.md")):
+        with open(rule_path) as rule_file:
+            rule = yamldown.load(rule_file)[0]
+            rule_id = rule["id"].lower().replace(":", "-")
+            rules_descriptions[rule_id] = {
+                "title": rule["title"]
+            }
     
     ## Deal with incoming.
     parser = argparse.ArgumentParser(
@@ -453,10 +468,10 @@ def main():
 
 
     ## Output md file for each assigned-by with GORULE violation details
-    output_md(violator_list, os.path.dirname(args.output))
+    output_md(violator_list, os.path.dirname(args.output), rules_descriptions)
 
     ## Output html file for each assigned-by with GORULE violation details
-    output_html(violator_list, os.path.dirname(args.output))
+    output_html(violator_list, os.path.dirname(args.output), rules_descriptions)
 
     ## Final writeout of combined assigned-by json report
     with open(args.output, 'w+') as fhandle:
