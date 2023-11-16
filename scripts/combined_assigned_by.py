@@ -238,7 +238,67 @@ def output_html(violations_info_list, path, rules_descriptions):
         ## Write out file
         fileName = path + '/assigned-by-' + id + '-report.html'
         ET.ElementTree(htmlObj).write(fileName, encoding='unicode', method='html')
+        
+def output_aggregate_html(rules_to_violations, path, rules_descriptions):
+    htmlObj = ET.Element('html')
+    body = ET.Element('body')
+    htmlObj.append(body)
+    heading = ET.Element('h1')
+    body.append(heading)
+    heading.text = 'Aggregate GORULE violations' 
+    body.append(ET.Element('br'))
+    
+ ## Create a section with the GORULE violation details
+    messageSection =  ET.Element('h2')
+    body.append(messageSection)
+    messageSection.text = 'MESSAGES'
+    
+    rules = list(rules_to_violations.keys())
+    rules.sort()
+    
+    tableSection = ET.Element('Table', attrib={'border': "1px solid black;"})
+    body.append(tableSection)
+    tableHeaderRow = ET.Element('tr')
+    tableSection.append(tableHeaderRow)
+    
+    headerCellRule = ET.Element('th');
+    tableHeaderRow.append(headerCellRule)
+    headerCellRule.text = 'Rule'
+    
+    headerCellDetails = ET.Element('th');
+    tableHeaderRow.append(headerCellDetails)
+    headerCellDetails.text = 'Rule Violations'          
+    
+    for rule in rules:
+        violations = rules_to_violations[rule]
+        if violations is None:
+            continue
+        
+        tableRow = ET.Element('tr')
+        tableHeaderRow.append(tableRow)
+        cellRuleDetails = ET.Element('td', attrib={'style':"white-space:nowrap;"})
+        tableRow.append(cellRuleDetails)
+        
+        cellRuleDetails.text = html.escape(rule + ' - ' + str(len(violations)) + " violations - " + rules_descriptions[rule]["title"])
+        
+        cellRuleViolations = ET.Element('td');
+        tableRow.append(cellRuleViolations)
+        
+        unorderedList = ET.Element('ul')
+        cellRuleViolations.append(unorderedList)
+        for violation in violations: 
+            violationItem = ET.Element('li')
+            unorderedList.append(violationItem)
+            violationItem.text = html.escape(violation['message']  + '--`' + violation['line'])
+            
+    # Indent
+    _pretty_print(htmlObj)
 
+    ## Write out file
+    fileName = path + '/aggregate-rule-violation-report.html'
+    ET.ElementTree(htmlObj).write(fileName, encoding='unicode', method='html')        
+        
+            
 
 def main():
     """The main runner of our script."""
@@ -254,6 +314,9 @@ def main():
             rules_descriptions[rule_id] = {
                 "title": rule["title"]
             }
+            
+    #Create a rule to all violations dictionary
+    rules_to_violations = dict()        
     
     ## Deal with incoming.
     parser = argparse.ArgumentParser(
@@ -405,8 +468,17 @@ def main():
             if (len(violations) == 0):
                 continue
             
+            #Add violations to the key_violations Lookup
+            if key in rules_to_violations:
+                cur_violations = rules_to_violations[key]
+            else:
+                cur_violations = []
+            rules_to_violations[key] = cur_violations
+             
+            
             for violation in violations:
                 gaf_line = violation['line']
+                cur_violations.append(violation)
                 gaf_contents = re.split('\t', gaf_line)
 
                 ## Get assigned by information from GAF line.  If it does not exist, attempt to get from group that created the GAF file
@@ -472,6 +544,9 @@ def main():
 
     ## Output html file for each assigned-by with GORULE violation details
     output_html(violator_list, os.path.dirname(args.output), rules_descriptions)
+    
+    ## Output aggregate violations file
+    output_aggregate_html(rules_to_violations, os.path.dirname(args.output), rules_descriptions)
 
     ## Final writeout of combined assigned-by json report
     with open(args.output, 'w+') as fhandle:
