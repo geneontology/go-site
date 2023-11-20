@@ -264,8 +264,8 @@ UniProtKB	A1B2F4	aztD	NOT|part_of	GO:0005634	PMID:26468286	IDA		C	GORULE:0000061
 FB	FBgn0011273	shi	NOT|part_of	GO:1234567	PMID:12432073	IDA		C	GORULE:0000061-40 Dynamin	Protein shibire|dDyn	protein	taxon:7227	20180501	GO_Central	
 ! FAILS GORULE:0000061 - test 41 -  'part_of' is not allowed for  GO CC - cell plate descendent of cellular anatomical entity															
 UniProtKB	A1B2F4	aztD	part_of	GO:0009504	PMID:26468286	IDA		C	GORULE:0000061-41		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 42 -  'part_of' is not allowed for  GO CC cellular anatomical entity															
-UniProtKB	A1B2F4	aztD	part_of	GO:0110165	PMID:26468286	IDA		C	GORULE:0000061-42		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - test 42 -  'part_of' is not allowed for  GO CC cellular anatomical entity (GO:0005739 mitochondrion)													
+UniProtKB	A1B2F4	aztD	part_of	 GO:0005739	PMID:26468286	IDA		C	GORULE:0000061-42		protein	taxon:318586	20230427	GO_Central	
 ! FAILS GORULE:0000061 - test 43 -  'part_of' is not allowed for GO CC  virion component															
 UniProtKB	A1B2F4	aztD	part_of	GO:0044423	PMID:26468286	IDA		C	GORULE:0000061-43		protein	taxon:318586	20230427	GO_Central	
 ! FAILS GORULE:0000061 - test 44 -  'part_of' is not allowed for a GO CC  icosahedral viral capsid, neck descendant of virion component												
