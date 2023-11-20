@@ -66,7 +66,7 @@ GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	HEP		F	GORULE:0000006
 GeneDB	PF3D7_0507500	SUB1	enables	GO:0005634	PMID:12764150	IEP		C	GORULE:0000006-3 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GO_Central	
 ! SHOULD PASS GORULE:0000006 - TEST 4 - passes because uses assigned_by is GOC, even if there is an IEP with a molecular function term.														
 GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	IEP		F	GORULE:0000006-4 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GOC	
-! SHOULD PASS GORULE:0000006 - TEST 5 - should pass because obsolete BP term should be isgnored; GO:1901011 obsolete (S)-reticuline catabolic process															
+! SHOULD PASS GORULE:0000006 - TEST 5 - should pass because obsolete BP term should be ignored; GO:1901011 obsolete (S)-reticuline catabolic process															
 GeneDB	PF3D7_0507500	SUB1	enables	GO:1901011	PMID:12764150	IEP		C	GORULE:0000006-5 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GO_Central	
 ! SHOULD PASS GORULE:0000006 - TEST 6 - should pass because alt_ids should be ignored, and GO:0006758 is an alt_id to GO:0006754 ATP biosynthetic process														
 GeneDB	PF3D7_0507500	SUB1	enables	GO:0006758	PMID:12764150	IEP		C	GORULE:0000006-6 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GO_Central	
