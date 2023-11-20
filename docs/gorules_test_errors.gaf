@@ -167,7 +167,7 @@ UniProtKB	A0A0B4JCV5	CG9898	enables	GO:0004252	PMID:30367934	IKR		F	GORULE:00000
 ! FAILS GORULE:0000046 - TEST 1 - self-binding’ term, no data in Column 8														
 UniProtKB	A4D126	CRPPA	enables	GO:0042803	PMID:26687144	IDA		F	GORULE:0000046-1		protein	taxon:9606	20170627	GO_Central	
 ! FAILS GORULE:0000046 - TEST 2 - self-binding’ term, annotated to a protein other than 'self'													
-UniProtKB	A4D126	CRPPA	enables	GO:0042803	PMID:26687144	IDA	UniProtKB:P35555	F	GORULE:0000046-2		protein	taxon:9606	20170627	GO_Central	
+UniProtKB	A4D126	CRPPA	enables	GO:0042803	PMID:26687144	IPI	UniProtKB:P35555	F	GORULE:0000046-2		protein	taxon:9606	20170627	GO_Central	
 ! FAILS GORULE:0000050 - TEST 1 - self-referential ISS annotations 															
 UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISS	UniProtKB:F1N2N9	C	GORULE:0000050-1 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	GO_Central	
 ! FAILS GORULE:0000050 - TEST 2 - self-referential ISO annotations 															
