@@ -70,7 +70,7 @@ GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	IEP		F	GORULE:0000006
 GeneDB	PF3D7_0507500	SUB1	enables	GO:1901011	PMID:12764150	IEP		C	GORULE:0000006-5 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GO_Central	
 ! SHOULD PASS GORULE:0000006 - TEST 6 - should pass because alt_ids should be ignored, and GO:0006758 is an alt_id to GO:0006754 ATP biosynthetic process														
 GeneDB	PF3D7_0507500	SUB1	enables	GO:0006758	PMID:12764150	IEP		C	GORULE:0000006-6 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GO_Central	
-! FAILS GORULE:0000007 IPI used with GO:0003824 catalytic activity or descendents (GO:0004674 protein serine/threonine kinase activity)															
+! FAILS GORULE:0000007 - IPI used with GO:0003824 catalytic activity or descendents (GO:0004674 protein serine/threonine kinase activity)															
 UniProtKB	A0A078CGE6	M3KE1	enables	GO:0004674	PMID:11489177	IPI		F	GORULE:0000007-1		protein	taxon:3708	20150115	GO_Central	
 ! FAILS GORULE:0000008 - TEST 1 - GO:0005622 is in the subset gocheck_do_not_annotate															
 UniProtKB	Q9DGE2	mapk14a	is_active_in	GO:0005622	PMID:10995439	IDA		C	GORULE:0000008-1 Mitogen-activated protein kinase 14A	mapk14a|mapk14	protein	taxon:7955	20180129	GO_Central	
@@ -160,7 +160,7 @@ UniProtKB	A0A024BTL2	PHKG1	is_active_in	GO:0005634	PMID:21873635	IBA	FB:FBgn0019
 UniProtKB	A0A024BTL2	PHKG1	is_active_in	GO:0005634	PMID:26221034	IBA	FB:FBgn0019686|FB:FBgn0028360|FB:FBgn0032677|PANTHER:PTN005196447|PomBase:SPAC14C4.03|PomBase:SPCC1322.08|PomBase:SPCC18B5.11c|RGD:621543|SGD:S000006074|UniProtKB:O96017|UniProtKB:Q5AVW7	C	GORULE:0000037-2		protein	taxon:9823	20221009	GO_Central	
 ! FAILS GORULE:0000039  - TEST 1 - Protein complex annotated to GO:0032991 protein-containing complex															
 ComplexPortal	CPX-102	dapk-calm_human	part_of	GO:0032991	PMID:10629061	IMP		C	GORULE:0000039-1		complex	taxon:9606	20200218	GO_Central	
-! FAILS GORULE:0000039  TEST 2 - Protein complex annotated to an is_a descendant of GO:0032991 protein-containing complex															
+! FAILS GORULE:0000039  - TEST 2 - Protein complex annotated to an is_a descendant of GO:0032991 protein-containing complex															
 ComplexPortal	CPX-102	dapk-calm_human	part_of	 GO:0043020	PMID:10629061	IMP		C	GORULE:0000039-2		complex	taxon:9606	20200218	GO_Central	
 ! FAILS GORULE:0000042 - TEST 1 - IKR evidence, no negation (NOT) in column 4														
 UniProtKB	A0A0B4JCV5	CG9898	enables	GO:0004252	PMID:30367934	IKR		F	GORULE:0000042-1		protein	taxon:7227	20190311	GO_Central	
