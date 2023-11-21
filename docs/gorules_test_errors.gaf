@@ -181,7 +181,7 @@ UniProtKB	O76187	darA	enables	GO:0005488	PMID:9802899	IPI	UniProtKB:P34149	F	GOR
 ! FAILS GORULE:0000055 - TEST 1 - Two references in the same ID space - PMID															
 PlasmoDB	PF3D7_0200400	PF3D7_0200400	is_active_in	GO:0020036	PMID:12477793|PMID:15961998	IDA		C	GORULE:0000055-1	stevor	mRNA	taxon:4896	20131007	GO_Central	
 ! FAILS GORULE:0000055 - TEST 2 -  Two references in the same ID space - GO_REF															
-PlasmoDB	PF3D7_0200400	PF3D7_0200400	is_active_in	GO:0020036 	GO_REF:0000044|GO_REF:0000001	IDA		C	GORULE:0000055-2	stevor	mRNA	taxon:4896	20131007	GO_Central	
+PlasmoDB	PF3D7_0200400	PF3D7_0200400	is_active_in	GO:0020036 	GO_REF:0000044|GO_REF:0000003	IDA		C	GORULE:0000055-2	stevor	mRNA	taxon:4896	20131007	GO_Central	
 ! FAILS GORULE:0000059 - TEST 1 - GP2term relation missing															
 SGN	235	cpk1		GO:0005886	PMID:12011347	IDA		C	GORULE:0000059-1 calcium-dependent protein kinase	LeCPK1|Solyc03g031670	gene	taxon:4081	20080616	GO_Central	
 ! FAILS GORULE:0000061 - TEST 1 SHOULD NOT FAIL (wrong on snapshot??) the part_of GP2term relation is not allowed for GO:0070865															
