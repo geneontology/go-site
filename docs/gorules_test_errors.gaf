@@ -11,266 +11,264 @@ PomBase	SPAC977.10		is_active_in	GO:1990578	PMID:19171118	IDA		C	plasma membrane
 ! FAILS GORULE:0000001 - TEST 1 - Wrong number of columns															
 PomBase	SPAC977.10														
 ! FAILS GORULE:0000001 - TEST 2 - (see also GORULE:0000058) bad extension syntax															
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-1 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000001-1 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of
 ! FAILS GORULE:0000001 - (see also GORULE:0000058) bad extension filler: not a CURIE															
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-2 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(x)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000001-2 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(x)
 ! FAILS GORULE:0000001 - TEST 3 - (see also GORULE:0000058) bad extension filler: space in ID															
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-3 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(X:9 X:8)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000001-3 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(X:9 X:8)
 ! FAILS GORULE:0000001 - TEST 4 - (see also GORULE:0000058) bad extension filler: space in ID, with an additional valid expression															
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-4 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	"part_of(X:9 X:8),part_of(X:1)"
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000001-4 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	"part_of(X:9 X:8),part_of(X:1)"
 ! FAILS GORULE:0000001 - TEST 5 - Bad evidence code															
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	MADEUP	SGD:S000001583	C	GORULE:0000001-5 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(X:1)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	MADEUP	SGD:S000001583	C	GORULE_TEST:0000001-5 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	part_of(X:1)
 ! FAILS GORULE:0000001 - TEST 6 - Bad date, but fixable														
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-6 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	3/5/15	PomBase	part_of(X:1)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000001-6 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	3/5/15	PomBase	part_of(X:1)
 ! FAILS GORULE:0000001 - TEST 7 - Bad date, unparsable															
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-7 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	TODAY	PomBase	part_of(X:1)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000001-7 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	TODAY	PomBase	part_of(X:1)
 ! FAILS GORULE:0000001 - TEST 8 - invalid taxon 0															
-ZFIN	ZDB-GENE-070117-1552	obj_symbol	acts_upstream_of_or_within	GO:0045601	PMID:17531218	IMP	ZFIN:ZDB-GENO-080318-17	P	GORULE:0000001-8		gene_product	taxon:0	20080326	PomBase	
+ZFIN	ZDB-GENE-070117-1552	obj_symbol	acts_upstream_of_or_within	GO:0045601	PMID:17531218	IMP	ZFIN:ZDB-GENO-080318-17	P	GORULE_TEST:0000001-8		gene_product	taxon:0	20080326	PomBase	
 ! FAILS GORULE:0000001 - TEST 9 - invalid taxon non-numeric															
-ZFIN	ZDB-GENE-070117-1552	obj_symbol	acts_upstream_of_or_within	GO:0045601	PMID:17531218	IMP	ZFIN:ZDB-GENO-080318-17	P	GORULE:0000001-9		gene_product	taxon:12v!89	20080326	PomBase	
+ZFIN	ZDB-GENE-070117-1552	obj_symbol	acts_upstream_of_or_within	GO:0045601	PMID:17531218	IMP	ZFIN:ZDB-GENO-080318-17	P	GORULE_TEST:0000001-9		gene_product	taxon:12v!89	20080326	PomBase	
 ! FAILS GORULE:0000001 - TEST 10 -fails because no data in column 4.  															
-FB	FBgn0011273	Acam		GO:0070865	FB:FBrf0193169|PMID:16790438	IDA	C		GORULE:0000001-10 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	PomBase	
+FB	FBgn0011273	Acam		GO:0070865	FB:FBrf0193169|PMID:16790438	IDA	C		GORULE_TEST:0000001-10 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	PomBase	
 ! FAILS GORULE:0000001 - TEST 11 - bad GO ID syntax															
-PomBase	SPAC25B8.17	ypf1	is_active_in	BAD_GO_ID	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-11 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	
+PomBase	SPAC25B8.17	ypf1	is_active_in	BAD_GO_ID	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000001-11 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	
 ! FAILS GORULE:0000001 - TEST 12 - bad GO ID syntax; no colon															
-PomBase	SPAC25B8.18	ypf2	is_active_in	GO0006921	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-12 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	
+PomBase	SPAC25B8.18	ypf2	is_active_in	GO0006921	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000001-12 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	
 ! FAILS GORULE:0000001 - TEST 13 - bad GO ID syntax; bad namespace															
-PomBase	SPAC25B8.19	ypf3	is_active_in	RO:0006921	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-13 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	
-! FAILS GORULE:0000001 - test 14 - 'acts_upstream_of,_positive_effect' is not a valid relation (should not contain a comma)															
-UniProtKB	A1B2F4	aztD	"acts_upstream_of,_positive_effect"	GO:0005634	PMID:26468286	IDA		C	GORULE:0000001-14		protein	taxon:318586	20230427	PomBase	
-! FAILS GORULE:0000001 - test 15 - 'acts_upstream_of_positive_effect' is not a valid relation (should not contain a comma)															
-UniProtKB	A1B2F4	aztD	acts_upstream_of_positive_effect	GO:0005634	PMID:26468286	IDA		C	GORULE:0000001-15		protein	taxon:318586	20230427	PomBase	
-! FAILS GORULE:0000001 -  test 16 - 'acts_upstream_of_or_within,_positive_effect' is not a valid relation (should not contain a comma)															
-UniProtKB	A1B2F4	aztD	"acts_upstream_of_or_within,_positive_effect"	GO:0005634	PMID:26468286	IDA		C	GORULE:0000001-16		protein	taxon:318586	20230427	PomBase	
-! FAILS GORULE:0000001 - test 17 - 'acts_upstream_of_or_within,_negative_effect' is not a valid relation (should not contain a comma)															
-UniProtKB	A1B2F4	aztD	"acts_upstream_of_or_within,_negative_effect"	GO:0005634	PMID:26468286	IDA		C	GORULE:0000001-17		protein	taxon:318586	20230427	PomBase	
-! FAILS GORULE:0000001 - test 18 - pipes are not allowed in Symbol field (GAF column 3)														
-UniProtKB	A1B2F4	azt|D	"acts_upstream_of_or_within,_negative_effect"	GO:0005634	PMID:26468286	IDA		C	GORULE:0000001-18		protein	taxon:318586	20230427	PomBase	
+PomBase	SPAC25B8.19	ypf3	is_active_in	RO:0006921	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000001-13 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	
+! FAILS GORULE:0000001 - TEST 14 - 'acts_upstream_of,_positive_effect' is not a valid relation (should not contain a comma)															
+UniProtKB	A1B2F4	aztD	"acts_upstream_of,_positive_effect"	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000001-14		protein	taxon:318586	20230427	PomBase	
+! FAILS GORULE:0000001 - TEST 15 - 'acts_upstream_of_positive_effect' is not a valid relation (should not contain a comma)															
+UniProtKB	A1B2F4	aztD	acts_upstream_of_positive_effect	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000001-15		protein	taxon:318586	20230427	PomBase	
+! FAILS GORULE:0000001 -  TEST 16 - 'acts_upstream_of_or_within,_positive_effect' is not a valid relation (should not contain a comma)															
+UniProtKB	A1B2F4	aztD	"acts_upstream_of_or_within,_positive_effect"	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000001-16		protein	taxon:318586	20230427	PomBase	
+! FAILS GORULE:0000001 - TEST 17 - 'acts_upstream_of_or_within,_negative_effect' is not a valid relation (should not contain a comma)															
+UniProtKB	A1B2F4	aztD	"acts_upstream_of_or_within,_negative_effect"	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000001-17		protein	taxon:318586	20230427	PomBase	
+! FAILS GORULE:0000001 - TEST 18 - pipes are not allowed in Symbol field (GAF column 3)														
+UniProtKB	A1B2F4	azt|D	"acts_upstream_of_or_within,_negative_effect"	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000001-18		protein	taxon:318586	20230427	PomBase	
 ! FAILS GORULE:0000002 - TEST 1 - has a 'NOT' annotations to 'protein binding ; GO:0005515															
-UniProtKB	O76187	darA	NOT|enables	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000002-1 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
+UniProtKB	O76187	darA	NOT|enables	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE_TEST:0000002-1 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
 ! FAILS GORULE:0000002 - TEST 2 - has a 'NOT' annotations to 'binding ; GO:0005515															
-UniProtKB	O76187	darA	NOT|enables	GO:0005488	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000002-2 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
-! PASSES GORULE:0000003 - TEST 3 - has a 'NOT' annotations to GO:0005509, a child of 'binding ; GO:0005515															
-UniProtKB	O76187	darA	NOT|enables	GO:0005509	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000002-3-PASS Darlin	darA	protein	taxon:44689	20100205	GO_Central	
+UniProtKB	O76187	darA	NOT|enables	GO:0005488	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE_TEST:0000002-2 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
+! SHOULD PASS GORULE:0000003 - TEST 3 - has a 'NOT' annotations to GO:0005509, a child of 'binding ; GO:0005515															
+UniProtKB	O76187	darA	NOT|enables	GO:0005509	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE_TEST:0000002-3-PASS Darlin	darA	protein	taxon:44689	20100205	GO_Central	
 ! TBC FAILS GORULE:0000005 - TEST 1 - incorrect evidence codes for 'protein binding ; GO:0005515' - ISS not allowed															
-UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	ISS	UniProtKB:P34149	F	GORULE:0000005-1 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
+UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	ISS	UniProtKB:P34149	F	GORULE_TEST:0000005-1 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
 ! TBC FAILS GORULE:0000005 - TEST 2 - incorrect evidence codes for 'protein binding ; GO:0005515' - IS0 not allowed															
-UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	ISO	UniProtKB:P34149	F	GORULE:0000005-2 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
+UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	ISO	UniProtKB:P34149	F	GORULE_TEST:0000005-2 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
 ! TBC FAILS GORULE:0000005 - TEST 3 - incorrect evidence codes for 'protein binding ; GO:0005515' - IBA not allowed															
-UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IBA	UniProtKB:P34149	F	GORULE:0000005-3 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
+UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IBA	UniProtKB:P34149	F	GORULE_TEST:0000005-3 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
 ! FAILS GORULE:0000006 - TEST 1 - fails because uses IEP with a molecular function term.															
-GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	IEP		F	GORULE:0000006-1 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GO_Central	
+GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	IEP		F	GORULE_TEST:0000006-1 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GO_Central	
 ! FAILS GORULE:0000006 - TEST 2 - fails because uses HEP with a molecular function term.															
-GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	HEP		F	GORULE:0000006-2 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GO_Central	
+GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	HEP		F	GORULE_TEST:0000006-2 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GO_Central	
 ! FAILS GORULE:0000006 - TEST 3 - fails because uses IEP with a cellular component term.															
-GeneDB	PF3D7_0507500	SUB1	enables	GO:0005634	PMID:12764150	IEP		C	GORULE:0000006-3 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GO_Central	
+GeneDB	PF3D7_0507500	SUB1	enables	GO:0005634	PMID:12764150	IEP		C	GORULE_TEST:0000006-3 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GO_Central	
 ! SHOULD PASS GORULE:0000006 - TEST 4 - passes because uses assigned_by is GOC, even if there is an IEP with a molecular function term.														
-GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	IEP		F	GORULE:0000006-4 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GOC	
+GeneDB	PF3D7_0507500	SUB1	enables	GO:0004672	PMID:12764150	IEP		F	GORULE_TEST:0000006-4 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GOC	
 ! SHOULD PASS GORULE:0000006 - TEST 5 - should pass because obsolete BP term should be ignored; GO:1901011 obsolete (S)-reticuline catabolic process															
-GeneDB	PF3D7_0507500	SUB1	enables	GO:1901011	PMID:12764150	IEP		C	GORULE:0000006-5 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GO_Central	
+GeneDB	PF3D7_0507500	SUB1	enables	GO:1901011	PMID:12764150	IEP		C	GORULE_TEST:0000006-5 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GO_Central	
 ! SHOULD PASS GORULE:0000006 - TEST 6 - should pass because alt_ids should be ignored, and GO:0006758 is an alt_id to GO:0006754 ATP biosynthetic process														
-GeneDB	PF3D7_0507500	SUB1	enables	GO:0006758	PMID:12764150	IEP		P	GORULE:0000006-6 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GO_Central	
+GeneDB	PF3D7_0507500	SUB1	enables	GO:0006758	PMID:12764150	IEP		P	GORULE_TEST:0000006-6 subtilisin-like	protease 1	gene	NCBITaxon:36329	20090624	GO_Central	
 ! FAILS GORULE:0000007 - IPI used with GO:0003824 catalytic activity or descendents (GO:0004674 protein serine/threonine kinase activity)															
-UniProtKB	A0A078CGE6	M3KE1	enables	GO:0004674	PMID:11489177	IPI	A0A078FEZ9	F	GORULE:0000007-1		protein	taxon:3708	20150115	GO_Central	
+UniProtKB	A0A078CGE6	M3KE1	enables	GO:0004674	PMID:11489177	IPI	A0A078FEZ9	F	GORULE_TEST:0000007-1		protein	taxon:3708	20150115	GO_Central	
 ! FAILS GORULE:0000008 - TEST 1 - GO:0005622 is in the subset gocheck_do_not_annotate															
-UniProtKB	Q9DGE2	mapk14a	is_active_in	GO:0005622	PMID:10995439	IDA		C	GORULE:0000008-1 Mitogen-activated protein kinase 14A	mapk14a|mapk14	protein	taxon:7955	20180129	GO_Central	
+UniProtKB	Q9DGE2	mapk14a	is_active_in	GO:0005622	PMID:10995439	IDA		C	GORULE_TEST:0000008-1 Mitogen-activated protein kinase 14A	mapk14a|mapk14	protein	taxon:7955	20180129	GO_Central	
 ! FAILS GORULE:0000008 - TEST 2 - GO:0007049 is in the subset gocheck_do_not_manually_annotate															
-UniProtKB	Q9WVH3	Foxo4	involved_in	GO:0007049	PMID:12048180	IDA		P	GORULE:0000008-2 Forkhead box protein O4	Foxo4|Afx|Afx1	protein	taxon:10090	20110425	GO_Central	
+UniProtKB	Q9WVH3	Foxo4	involved_in	GO:0007049	PMID:12048180	IDA		P	GORULE_TEST:0000008-2 Forkhead box protein O4	Foxo4|Afx|Afx1	protein	taxon:10090	20110425	GO_Central	
 ! FAILS GORULE:0000008 - TEST 3 - also fails GORULE:0000051 - GO:0005488 is in the subset gocheck_do_not_manually_annotate															
-UniProtKB	O76187	darA	enables	GO:0005488	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000008-3 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
+UniProtKB	O76187	darA	enables	GO:0005488	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE_TEST:0000008-3 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
 ! FAILS GORULE:0000011 - TEST 1 - because the GO ID is not one of GO:0003674, GO:0008150 or GO:0005575														
-UniProtKB	Q4KA26	PFL_3807	is_active_in	GO:0016020	GO_REF:0000015	ND		C	GORULE:0000011-1 Putative membrane protein	PFL_3807	protein	taxon:220664	20090717	GO_Central	
+UniProtKB	Q4KA26	PFL_3807	is_active_in	GO:0016020	GO_REF:0000015	ND		C	GORULE_TEST:0000011-1 Putative membrane protein	PFL_3807	protein	taxon:220664	20090717	GO_Central	
 ! FAILS GORULE:0000011 - TEST 2 - fails because the evidence code is not ND, even if the GO ID one of GO:0003674, GO:0008150 or GO:0005575.														
-UniProtKB	Q4KA26	PFL_3807	is_active_in	GO:0005575	GO_REF:0000015	IDA		C	GORULE:0000011-2 Putative membrane protein	PFL_3807	protein	taxon:220664	20090717	GO_Central	
+UniProtKB	Q4KA26	PFL_3807	is_active_in	GO:0005575	GO_REF:0000015	IDA		C	GORULE_TEST:0000011-2 Putative membrane protein	PFL_3807	protein	taxon:220664	20090717	GO_Central	
 ! SHOULD PASS GORULE:0000011 - TEST 3															
-UniProtKB	Q6UW15	REG3G	involved_in	GO:0050689	PMID:16931762	IDA		P	GORULE:0000011-3 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	
+UniProtKB	Q6UW15	REG3G	involved_in	GO:0050689	PMID:16931762	IDA		P	GORULE_TEST:0000011-3 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	
 ! FAILS GORULE:0000013 - fails because GO:0075342 should not be annotated for human gene products - cannot be tested in ontobio parser (not a line-by-line check)															
-UniProtKB	P67870	CSNK2B	involved_in	GO:0075342	PMID:20719947 	IDA		P	GORULE:0000013-1 Casein kinase II subunit beta	CSNK2B|CK2N|G5A	protein	taxon:9606	20230307	GO_Central	
+UniProtKB	P67870	CSNK2B	involved_in	GO:0075342	PMID:20719947 	IDA		P	GORULE_TEST:0000013-1 Casein kinase II subunit beta	CSNK2B|CK2N|G5A	protein	taxon:9606	20230307	GO_Central	
 ! FAILS GORULE:0000015 - TEST 1 - GO:0005886 plasma membrane is not a child of "GO:0018995 host cellular component"															
-UniProtKB	O56786	hol187	is_active_in	GO:0005886	PMID:10419939	IDA		C	GORULE:0000015-1 Holin protein Hol187	hol187	protein	taxon:55511|taxon:9696	20170423	GO_Central	
+UniProtKB	O56786	hol187	is_active_in	GO:0005886	PMID:10419939	IDA		C	GORULE_TEST:0000015-1 Holin protein Hol187	hol187	protein	taxon:55511|taxon:9696	20170423	GO_Central	
 ! FAILS GORULE:0000015 - TEST 2 - "neutrophil chemotaxis" is not a child of "GO:0044419 interspecies interaction between organisms"														
-UniProtKB	A0A0K2S4Q6	CD300H	involved_in	GO:0030593	PMID:26221034	IDA		P	GORULE:0000015-2 Protein CD300H	CD300H	protein	taxon:9606|taxon:55511	20160428	GO_Central	
+UniProtKB	A0A0K2S4Q6	CD300H	involved_in	GO:0030593	PMID:26221034	IDA		P	GORULE_TEST:0000015-2 Protein CD300H	CD300H	protein	taxon:9606|taxon:55511	20160428	GO_Central	
 ! FAILS GORULE:0000015 - TEST 3 - same taxon in Column 13 for  GO:0044158 host cell wall															
-UniProtKB	O56786	hol187	is_active_in	GO:0018995	PMID:10419939	IDA		C	GORULE:0000015-3 Holin protein Hol187	hol187	protein	taxon:9606|taxon:9606	20170423	GO_Central	
+UniProtKB	O56786	hol187	is_active_in	GO:0018995	PMID:10419939	IDA		C	GORULE_TEST:0000015-3 Holin protein Hol187	hol187	protein	taxon:9606|taxon:9606	20170423	GO_Central	
 ! SHOULD PASS GORULE:0000015 - TEST 4 -   GO:0010363 regulation of plant-type hypersensitive response is_ GO:0043903 regulation of biological process involved in symbiotic interaction 															
-UniProtKB	Q6UW15	REG3G	involved_in	GO:0010363	PMID:16931762	IDA		P	GORULE:0000015-4 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606|taxon:1334565	20220606	GO_Central	
+UniProtKB	Q6UW15	REG3G	involved_in	GO:0010363	PMID:16931762	IDA		P	GORULE_TEST:0000015-4 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606|taxon:1334565	20220606	GO_Central	
 ! FAILS GORULE:0000016 -  TEST 1 - column 8 (with/from) is null															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	GO_REF:0000036	IC		P	GORULE:0000016-1 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	GO_REF:0000036	IC		P	GORULE_TEST:0000016-1 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000016 -  TEST 2 - column 8 (with/from) is has a non-GOID															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	GO_REF:0000036	IC	UBERON:0002048	P	GORULE:0000016-2 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	GO_REF:0000036	IC	UBERON:0002048	P	GORULE_TEST:0000016-2 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000016 -  TEST 3 - column 8 (with/from) is the same GOID as column 5															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	GO_REF:0000036	IC	GO:0006921	P	GORULE:0000016-3 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	GO_REF:0000036	IC	GO:0006921	P	GORULE_TEST:0000016-3 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! SHOULD PASS GORULE:0000016 -  TEST 5 - column 8 (with/from) is has a valid GO ID															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	GO_REF:0000036	IC	GO:009718	P	GORULE:0000016-5 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	GO_REF:0000036	IC	GO:009718	P	GORULE_TEST:0000016-5 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000017 - TEST 1 - IDA annotations must not have a with/from entry (column 8) 															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	GO_REF:0000036	IDA	GO:0004198|GO:0008092	P	GORULE:0000017-1 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	GO_REF:0000036	IDA	GO:0004198|GO:0008092	P	GORULE_TEST:0000017-1 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000018 - TEST 1 - column 8 (with/from) is null for IPI annotation to 'protein binding ; GO:0005515'															
-UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IPI		F	GORULE:0000018-1 Mitogen-activated protein kinase kinase kinase mlk-1	mlk-1,K11D12.10	protein	taxon:6239	20170322	GO_Central	
+UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IPI		F	GORULE_TEST:0000018-1 Mitogen-activated protein kinase kinase kinase mlk-1	mlk-1,K11D12.10	protein	taxon:6239	20170322	GO_Central	
 ! FAILS GORULE:0000018 - TEST 2 - missing Column 8 data ('with' field) for 'binding ; GO:0005488' 															
-UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IPI		F	GORULE:0000018-2 Mitogen-activated protein kinase kinase kinase mlk-1	mlk-1,K11D12.10	protein	taxon:6239	20170322	GO_Central	
+UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IPI		F	GORULE_TEST:0000018-2 Mitogen-activated protein kinase kinase kinase mlk-1	mlk-1,K11D12.10	protein	taxon:6239	20170322	GO_Central	
 ! FAILS GORULE:0000018 - TEST 3 - missing Column 8 data ('with' field) for 'binding ; GO:0005488'															
-UniProtKB	O76187	darA	involved_in	GO:0005488	PMID:9802899	IPI		F	GORULE:0000018-3		protein	taxon:44689	20230513	GO_Central	
+UniProtKB	O76187	darA	involved_in	GO:0005488	PMID:9802899	IPI		F	GORULE_TEST:0000018-3		protein	taxon:44689	20230513	GO_Central	
 ! FAILS GORULE:0000020 - TEST 1 - obsolete term with no replacement															
-UniProtKB	P04995	sbcB	involved_in	GO:0090503	GO_REF:0000108	IEA	GO:0000175	P	GORULE:0000020-1 Exodeoxyribonuclease I	sbcB|cpeA|xonA|JW1993|b2011	protein	taxon:83333	20230509	GO_Central	
+UniProtKB	P04995	sbcB	involved_in	GO:0090503	GO_REF:0000108	IEA	GO:0000175	P	GORULE_TEST:0000020-1 Exodeoxyribonuclease I	sbcB|cpeA|xonA|JW1993|b2011	protein	taxon:83333	20230509	GO_Central	
 ! FAILS GORULE:0000020 - TEST 2 - obsolete term with a replacement term															
-TriTrypDB	Tb11.02.5420b	Tb11.02.5420b	located_in	GO:0016021	GO_REF:0000002	ISO	GeneDB:Tb11.02.5420	C	GORULE:0000020-2 NADPH-cytochrome p450 reductase, putative		mRNA	taxon:185431	20130726	GO_Central	
+TriTrypDB	Tb11.02.5420b	Tb11.02.5420b	located_in	GO:0016021	GO_REF:0000002	ISO	GeneDB:Tb11.02.5420	C	GORULE_TEST:0000020-2 NADPH-cytochrome p450 reductase, putative		mRNA	taxon:185431	20130726	GO_Central	
 ! FAILS GORULE:0000020 - TEST 3 - obsolete term in 'with' (column 8) with no replacement															
-MGI:1100518	Smad7	bla	involved_in	GO:0017015	MGI:MGI:3836072|PMID:18952608	IC	GO:0060389	P	GORULE:0000020-3	SMAD	protein_coding_gene	taxon:10090	20090211	GO_Central	
+MGI:1100518	Smad7	bla	involved_in	GO:0017015	MGI:MGI:3836072|PMID:18952608	IC	GO:0060389	P	GORULE_TEST:0000020-3	SMAD	protein_coding_gene	taxon:10090	20090211	GO_Central	
 ! FAILS GORULE:0000020 - TEST 4 - obsolete term in 'extension' (column 16) with no replacement															
-UniProtKB	O76187	darA	enables	GO:0004672	PMID:9802899	IDA	UniProtKB:P34149	F	GORULE:0000020-4 Darlin	darA	protein	taxon:44689	20100205	GO_Central	involved_in(GO:0090503)
+UniProtKB	O76187	darA	enables	GO:0004672	PMID:9802899	IDA	UniProtKB:P34149	F	GORULE_TEST:0000020-4 Darlin	darA	protein	taxon:44689	20100205	GO_Central	involved_in(GO:0090503)
 ! FAILS GORULE:0000020 - TEST 5 - obsolete term in 'extension' (column 16) with a replacement															
-UniProtKB	O76187	darA	enables	GO:0004672	PMID:9802899	IDA	UniProtKB:P34149	F	GORULE:0000020-5 Darlin	darA	protein	taxon:44689	20100205	GO_Central	involved_in(GO:0014067)
+UniProtKB	O76187	darA	enables	GO:0004672	PMID:9802899	IDA	UniProtKB:P34149	F	GORULE_TEST:0000020-5 Darlin	darA	protein	taxon:44689	20100205	GO_Central	involved_in(GO:0014067)
 ! FAILS GORULE:0000027 - TEST 1 - bad GO ID syntax															
-PomBase	SPAC25B8.17	ypf1	is_active_in	BAD_GO_ID	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000027-1 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	GO_Central	
+PomBase	SPAC25B8.17	ypf1	is_active_in	BAD_GO_ID	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000027-1 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	GO_Central	
 ! FAILS GORULE:0000027 - TEST 2 - bad GO ID syntax; no colon															
-PomBase	SPAC25B8.18	ypf2	is_active_in	GO0006921	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000027-2 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	GO_Central	
+PomBase	SPAC25B8.18	ypf2	is_active_in	GO0006921	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000027-2 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	GO_Central	
 ! FAILS GORULE:0000027 - TEST 3 - bad GO ID syntax; bad namespace															
-PomBase	SPAC25B8.19	ypf3	is_active_in	RO:0006921	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000027-3 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	GO_Central	
+PomBase	SPAC25B8.19	ypf3	is_active_in	RO:0006921	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000027-3 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	GO_Central	
 ! FAILS GORULE:0000027 - TEST 4 - Prefix not in /db-xrefs.yaml															
-UniPotKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		P	GORULE:0000027-4 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+UniPotKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		P	GORULE_TEST:0000027-4 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000027 - TEST 5 - Assigned_by not in /groups.yaml															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		P	GORULE:0000027-5 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	SGDDB	
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		P	GORULE_TEST:0000027-5 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	SGDDB	
 ! FAILS GORULE:0000027 - TEST 6 - Bad reference format															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:PMID:14561399	IDA		P	GORULE:0000027-6 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:PMID:14561399	IDA		P	GORULE_TEST:0000027-6 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000027 - TEST 7 - Bad reference format															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:unpublished	IDA		P	GORULE:0000027-7 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:unpublished	IDA		P	GORULE_TEST:0000027-7 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000027 - TEST 8 - Bad reference format															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:	IDA		P	GORULE:0000027-8 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:	IDA		P	GORULE_TEST:0000027-8 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000027 - TEST 9 - Bad reference format															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:0.	IDA		P	GORULE:0000027-9 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:0.	IDA		P	GORULE_TEST:0000027-9 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000028 - TEST 1 - Bad GO aspect, C instead of P														
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		C	GORULE:0000028-1 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		C	GORULE_TEST:0000028-1 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000028 - TEST 2 - Bad GO aspect, F instead of P															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		F	GORULE:0000028-2 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		F	GORULE_TEST:0000028-2 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000028 - TEST 3 - Bad GO aspect, P instead of F															
-UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IDA		P	GORULE:0000028-3 Mitogen-activated protein kinase kinase kinase mlk-1	mlk-1,K11D12.10	protein	taxon:6239	20170322	GO_Central	
+UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IDA		P	GORULE_TEST:0000028-3 Mitogen-activated protein kinase kinase kinase mlk-1	mlk-1,K11D12.10	protein	taxon:6239	20170322	GO_Central	
 ! FAILS GORULE:0000028 - TEST 4 - GO aspect missing															
-UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IDA			GORULE:0000028-4 Mitogen-activated protein kinase kinase kinase mlk-1	mlk-1,K11D12.10	protein	taxon:6239	20170322	GO_Central	
+UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IDA			GORULE_TEST:0000028-4 Mitogen-activated protein kinase kinase kinase mlk-1	mlk-1,K11D12.10	protein	taxon:6239	20170322	GO_Central	
 ! FAILS GORULE:0000029 - TEST 1 - IEA older than 1 year															
-UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000044	IEA	UniProtKB-SubCell:SL-0375	C	GORULE:0000029-1		protein	taxon:83333	20220807	GO_Central	
+UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000044	IEA	UniProtKB-SubCell:SL-0375	C	GORULE_TEST:0000029-1		protein	taxon:83333	20220807	GO_Central	
 ! FAILS GORULE:0000029 - TEST 2 - IEA older than 3 years															
-UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000044	IEA	UniProtKB-SubCell:SL-0375	C	GORULE:0000029-2		protein	taxon:83333	20200507	GO_Central	
+UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000044	IEA	UniProtKB-SubCell:SL-0375	C	GORULE_TEST:0000029-2		protein	taxon:83333	20200507	GO_Central	
 ! FAILS GORULE:0000030 - TEST 1 - Deprecated GO_REF															
-UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000045	IEA	UniProtKB-SubCell:SL-0375	C	GORULE:0000030-1		protein	taxon:83333	20230607	GO_Central	
+UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000045	IEA	UniProtKB-SubCell:SL-0375	C	GORULE_TEST:0000030-1		protein	taxon:83333	20230607	GO_Central	
 ! SHOULD PASS GORULE:0000030 - TEST 2 - Valid GO_REF															
-UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000033	IEA	UniProtKB-SubCell:SL-0375	C	GORULE:0000030-2		protein	taxon:83333	20230607	GO_Central	
+UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000033	IEA	UniProtKB-SubCell:SL-0375	C	GORULE_TEST:0000030-2		protein	taxon:83333	20230607	GO_Central	
 ! FAILS GORULE:0000037 - TEST 1 - IBA with Assigned_by other than GO_Central															
-UniProtKB	A0A024BTL2	PHKG1	is_active_in	GO:0005634	PMID:21873635	IBA	FB:FBgn0019686|FB:FBgn0028360|FB:FBgn0032677|PANTHER:PTN005196447|PomBase:SPAC14C4.03|PomBase:SPCC1322.08|PomBase:SPCC18B5.11c|RGD:621543|SGD:S000006074|UniProtKB:O96017|UniProtKB:Q5AVW7	C	GORULE:0000037-1		protein	taxon:9823	20221009	PomBase	
+UniProtKB	A0A024BTL2	PHKG1	is_active_in	GO:0005634	PMID:21873635	IBA	FB:FBgn0019686|FB:FBgn0028360|FB:FBgn0032677|PANTHER:PTN005196447|PomBase:SPAC14C4.03|PomBase:SPCC1322.08|PomBase:SPCC18B5.11c|RGD:621543|SGD:S000006074|UniProtKB:O96017|UniProtKB:Q5AVW7	C	GORULE_TEST:0000037-1		protein	taxon:9823	20221009	PomBase	
 ! FAILS GORULE:0000037 - TEST 2 - IBA with reference other than PMID:21873635															
-UniProtKB	A0A024BTL2	PHKG1	is_active_in	GO:0005634	PMID:26221034	IBA	FB:FBgn0019686|FB:FBgn0028360|FB:FBgn0032677|PANTHER:PTN005196447|PomBase:SPAC14C4.03|PomBase:SPCC1322.08|PomBase:SPCC18B5.11c|RGD:621543|SGD:S000006074|UniProtKB:O96017|UniProtKB:Q5AVW7	C	GORULE:0000037-2		protein	taxon:9823	20221009	GO_Central	
+UniProtKB	A0A024BTL2	PHKG1	is_active_in	GO:0005634	PMID:26221034	IBA	FB:FBgn0019686|FB:FBgn0028360|FB:FBgn0032677|PANTHER:PTN005196447|PomBase:SPAC14C4.03|PomBase:SPCC1322.08|PomBase:SPCC18B5.11c|RGD:621543|SGD:S000006074|UniProtKB:O96017|UniProtKB:Q5AVW7	C	GORULE_TEST:0000037-2		protein	taxon:9823	20221009	GO_Central	
 ! FAILS GORULE:0000039  - TEST 1 - Protein complex annotated to GO:0032991 protein-containing complex															
-ComplexPortal	CPX-102	dapk-calm_human	part_of	GO:0032991	PMID:10629061	IMP		C	GORULE:0000039-1		complex	taxon:9606	20200218	GO_Central	
+ComplexPortal	CPX-102	dapk-calm_human	part_of	GO:0032991	PMID:10629061	IMP		C	GORULE_TEST:0000039-1		complex	taxon:9606	20200218	GO_Central	
 ! FAILS GORULE:0000039  - TEST 2 - Protein complex annotated to an is_a descendant of GO:0032991 protein-containing complex															
-ComplexPortal	CPX-102	dapk-calm_human	part_of	 GO:0043020	PMID:10629061	IMP		C	GORULE:0000039-2		complex	taxon:9606	20200218	GO_Central	
+ComplexPortal	CPX-102	dapk-calm_human	part_of	 GO:0043020	PMID:10629061	IMP		C	GORULE_TEST:0000039-2		complex	taxon:9606	20200218	GO_Central	
 ! FAILS GORULE:0000042 - TEST 1 - IKR evidence, no negation (NOT) in column 4														
-UniProtKB	A0A0B4JCV5	CG9898	enables	GO:0004252	PMID:30367934	IKR		F	GORULE:0000042-1		protein	taxon:7227	20190311	GO_Central	
+UniProtKB	A0A0B4JCV5	CG9898	enables	GO:0004252	PMID:30367934	IKR		F	GORULE_TEST:0000042-1		protein	taxon:7227	20190311	GO_Central	
 ! FAILS GORULE:0000046 - TEST 1 - self-binding’ term, no data in Column 8														
-UniProtKB	A4D126	CRPPA	enables	GO:0042803	PMID:26687144	IDA		F	GORULE:0000046-1		protein	taxon:9606	20170627	GO_Central	
+UniProtKB	A4D126	CRPPA	enables	GO:0042803	PMID:26687144	IDA		F	GORULE_TEST:0000046-1		protein	taxon:9606	20170627	GO_Central	
 ! FAILS GORULE:0000046 - TEST 2 - self-binding’ term, annotated to a protein other than 'self'													
-UniProtKB	A4D126	CRPPA	enables	GO:0042803	PMID:26687144	IPI	UniProtKB:P35555	F	GORULE:0000046-2		protein	taxon:9606	20170627	GO_Central	
+UniProtKB	A4D126	CRPPA	enables	GO:0042803	PMID:26687144	IPI	UniProtKB:P35555	F	GORULE_TEST:0000046-2		protein	taxon:9606	20170627	GO_Central	
 ! FAILS GORULE:0000050 - TEST 1 - self-referential ISS annotations 															
-UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISS	UniProtKB:F1N2N9	C	GORULE:0000050-1 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	GO_Central	
+UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISS	UniProtKB:F1N2N9	C	GORULE_TEST:0000050-1 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	GO_Central	
 ! FAILS GORULE:0000050 - TEST 2 - self-referential ISO annotations 															
-UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISO	UniProtKB:F1N2N9	C	GORULE:0000050-2 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	GO_Central	
+UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISO	UniProtKB:F1N2N9	C	GORULE_TEST:0000050-2 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	GO_Central	
 ! FAILS GORULE:0000050 - TEST 3 - self-referential ISA annotations 															
-UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISA	UniProtKB:F1N2N9	C	GORULE:0000050-3 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	GO_Central	
+UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISA	UniProtKB:F1N2N9	C	GORULE_TEST:0000050-3 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	GO_Central	
 ! SHOULD PASS GORULE:0000051 - Pass RULE 51 - Annotation extension for certain GO terms - protein binding; GO:0005515															
-UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000051-PASS1 Darlin	darA	protein	taxon:44689	20100205	GO_Central	has_input(GO:0003674)|occurs_in(CL:123456)
+UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE_TEST:0000051-PASS1 Darlin	darA	protein	taxon:44689	20100205	GO_Central	has_input(GO:0003674)|occurs_in(CL:123456)
 ! FAILS GORULE:0000051 - TEST 1 - also fails GORULE:0000008 - Annotation extension is required for certain terms - binding GO:0005488 															
-UniProtKB	O76187	darA	enables	GO:0005488	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE:0000051-1 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
+UniProtKB	O76187	darA	enables	GO:0005488	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE_TEST:0000051-1 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
 ! FAILS GORULE:0000055 - TEST 1 - Two references in the same ID space - PMID															
-PlasmoDB	PF3D7_0200400	PF3D7_0200400	is_active_in	GO:0020036	PMID:12477793|PMID:15961998	IDA		C	GORULE:0000055-1	stevor	mRNA	taxon:4896	20131007	GO_Central	
+PlasmoDB	PF3D7_0200400	PF3D7_0200400	is_active_in	GO:0020036	PMID:12477793|PMID:15961998	IDA		C	GORULE_TEST:0000055-1	stevor	mRNA	taxon:4896	20131007	GO_Central	
 ! FAILS GORULE:0000055 - TEST 2 -  Two references in the same ID space - GO_REF															
-PlasmoDB	PF3D7_0200400	PF3D7_0200400	is_active_in	GO:0020036 	GO_REF:0000044|GO_REF:0000003	IDA		C	GORULE:0000055-2	stevor	mRNA	taxon:4896	20131007	GO_Central	
+PlasmoDB	PF3D7_0200400	PF3D7_0200400	is_active_in	GO:0020036 	GO_REF:0000044|GO_REF:0000003	IDA		C	GORULE_TEST:0000055-2	stevor	mRNA	taxon:4896	20131007	GO_Central	
 ! FAILS GORULE:0000059 - TEST 1 - GP2term relation missing															
-SGN	235	cpk1		GO:0005886	PMID:12011347	IDA		C	GORULE:0000059-1 calcium-dependent protein kinase	LeCPK1|Solyc03g031670	gene	taxon:4081	20080616	GO_Central	
-! FAILS GORULE:0000061 - TEST 1 SHOULD NOT FAIL (wrong on snapshot??) the part_of GP2term relation is not allowed for GO:0070865															
-FB	FBgn0011273	Acam	part_of	GO:0070865	FB:FBrf0193169|PMID:16790438	IDA		C	GORULE:0000061-1 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	GO_Central	
-! FAILS GORULE:0000061 -  TEST 3 - SHOULD NOT FAIL the 'part_of' GP2term relation is allowed for GO:0070864 (CC complex)															
-FB	FBgn0011273	shi	part_of	GO:0070864	PMID:12432073	IDA		C	GORULE:0000061-3 Dynamin	Protein shibire|dDyn	protein	taxon:7227	20180501	GO_Central	
+SGN	235	cpk1		GO:0005886	PMID:12011347	IDA		C	GORULE_TEST:0000059-1 calcium-dependent protein kinase	LeCPK1|Solyc03g031670	gene	taxon:4081	20080616	GO_Central	
+! SHOULD PASS GORULE:0000061 - TEST 1 - the part_of GP2term relation is allowed for GO:0008023 (CC complex)														
+FB	FBgn0011273	Acam	part_of	GO:0008023	FB:FBrf0193169|PMID:16790438	IDA		C	GORULE_TEST:0000061-1 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	GO_Central	
+! SHOULD PASS GORULE:0000061 - TEST 2- 'enables' is allowed for a GO MF															
+UniProtKB	A1B2F4	aztD	enables	GO:0003909	PMID:26468286	IDA		P	GORULE_TEST:0000061-2		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 -  TEST 3  the 'part_of' GP2term relation is not allowed for GO:0070864 (CC cellular anatomical entity)															
+FB	FBgn0011273	shi	part_of	GO:0070864	PMID:12432073	IDA		C	GORULE_TEST:0000061-3 Dynamin	Protein shibire|dDyn	protein	taxon:7227	20180501	GO_Central	
 ! FAILS GORULE:0000061 - TEST 4 - the 'part_of' GP2term relation is not allowed for GO:0140827 (MF)															
-UniProtKB	A1B2F4	aztD	part_of	GO:0140827	PMID:26468286	IDA		F	GORULE:0000061-4		protein	taxon:318586	20230427	GO_Central	
+UniProtKB	A1B2F4	aztD	part_of	GO:0140827	PMID:26468286	IDA		F	GORULE_TEST:0000061-4		protein	taxon:318586	20230427	GO_Central	
 ! FAILS GORULE:0000061 - TEST 5 - the 'enables' GP2term relation is not allowed for GO:0005856 (CC)															
-UniProtKB	A1B2F4	aztD	enables	GO:0005856	PMID:26468286	IDA		C	GORULE:0000061-5		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - TEST 6 - also fails GORULE-0000011 - the 'located in' GP2term relation is not allowed for GO:0005575 (root CC) - Fails GORULE 11															
-UniProtKB	A1B2F4	aztD	located_in	GO:0005575	PMID:26468286	IDA		F	GORULE:0000061-6		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - TEST 7 - also fails GORULE-0000011 - the 'contributes_to' GP2term relation is not allowed for GO:0003674 (root MF) - Fails GORULE 11															
-UniProtKB	A1B2F4	aztD	contributes_to	GO:0003674	PMID:26468286	IDA		F	GORULE:0000061-7		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - TEST 8  - also fails GORULE-0000011 - the 'acts upstream of or within' GP2term relation is not allowed for GO:0008150 (root BP) - Fails GORULE 11															
-UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within	GO:0008150	PMID:26468286	IDA		F	GORULE:0000061-8		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 9- 'enables' is not allowed for a GO BP															
-UniProtKB	A1B2F4	aztD	enables	GO:0043491	PMID:26468286	IDA		P	GORULE:0000061-9		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 10 -  'contributes_to' is not allowed for a GO BP															
-UniProtKB	A1B2F4	aztD	contributes_to	GO:0043491	PMID:26468286	IDA		P	GORULE:0000061-10		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 -  test 11 'enables' is not allowed for a GO CC															
-UniProtKB	A1B2F4	aztD	enables	GO:0005634	PMID:26468286	IDA		C	GORULE:0000061-11		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 12 - 'contributes_to' is not allowed for a GO CC															
-UniProtKB	A1B2F4	aztD	contributes_to	GO:0005634	PMID:26468286	IDA		C	GORULE:0000061-12		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 13 - 'involved_in' is not allowed for a GO MF															
-UniProtKB	A1B2F4	aztD	involved_in	GO:0004672	PMID:26468286	IDA		F	GORULE:0000061-13		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 14- 'acts_upstream_of_or_within' is not allowed for a GO MF															
-UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within	GO:0004672	PMID:26468286	IDA		F	GORULE:0000061-14		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 15- 'acts_upstream_of_or_within_positive_effect' is not allowed for a GO MF															
-UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within_positive_effect	GO:0004672	PMID:26468286	IDA		F	GORULE:0000061-15		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 16 - 'acts_upstream_of_or_within_negative_effect' is not allowed for a GO MF															
-UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within_negative_effect	GO:0004672	PMID:26468286	IDA		F	GORULE:0000061-16		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 17 -  'acts_upstream_of' is not allowed for a GO MF															
-UniProtKB	A1B2F4	aztD	acts_upstream_of	GO:0004672	PMID:26468286	IDA		F	GORULE:0000061-17		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 18 - acts_upstream_of_positive_effect' is not allowed for a GO MF															
-UniProtKB	A1B2F4	aztD	acts_upstream_of_positive_effect	GO:0004672	PMID:26468286	IDA		F	GORULE:0000061-18		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 19-  'acts_upstream_of_negative_effect' is not allowed for a GO MF															
-UniProtKB	A1B2F4	aztD	acts_upstream_of_negative_effect	GO:0004672	PMID:26468286	IDA		F	GORULE:0000061-19		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 20 - 'involved_in' is not allowed for a GO CC															
-UniProtKB	A1B2F4	aztD	involved_in	GO:0005634	PMID:26468286	IDA		C	GORULE:0000061-20		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 21- 'acts_upstream_of_or_within' is not allowed for a GO CC															
-UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within	GO:0005634	PMID:26468286	IDA		C	GORULE:0000061-21		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 -  test 22 - 'acts_upstream_of_or_within_positive_effect' is not allowed for a GO CC															
-UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within_positive_effect	GO:0005634	PMID:26468286	IDA		C	GORULE:0000061-22		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 23 - 'acts_upstream_of_or_within_negative_effect' is not allowed for a GO CC															
-UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within_negative_effect	GO:0005634	PMID:26468286	IDA		C	GORULE:0000061-23		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 24 - 'acts_upstream_of' is not allowed for a GO CC															
-UniProtKB	A1B2F4	aztD	acts_upstream_of	GO:0005634	PMID:26468286	IDA		C	GORULE:0000061-24		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 25 - 'acts_upstream_of_positive_effect' is not allowed for a GO CC															
-UniProtKB	A1B2F4	aztD	acts_upstream_of_positive_effect	GO:0005634	PMID:26468286	IDA		C	GORULE:0000061-25		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 26 - 'acts_upstream_of_negative_effect' is not allowed for a GO CC															
-UniProtKB	A1B2F4	aztD	acts_upstream_of_negative_effect	GO:0005634	PMID:26468286	IDA		C	GORULE:0000061-26		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 -  test 27 - 'is_active_in' is not allowed for a GO MF															
-UniProtKB	A1B2F4	aztD	is_active_in	GO:0004672	PMID:26468286	IDA		F	GORULE:0000061-27		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 28 -  'part_of' is not allowed for a GO MF															
-UniProtKB	A1B2F4	aztD	part_of	GO:0004672	PMID:26468286	IDA		F	GORULE:0000061-28		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 29 -  'located_in' is not allowed for a GO MF															
-UniProtKB	A1B2F4	aztD	located_in	GO:0004672	PMID:26468286	IDA		F	GORULE:0000061-29		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 30 - 'colocalizes_with' is not allowed for a GO MF															
-UniProtKB	A1B2F4	aztD	colocalizes_with	GO:0004672	PMID:26468286	IDA		F	GORULE:0000061-30		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 -  test 31 - 'is_active_in' is not allowed for a GO BP															
-UniProtKB	A1B2F4	aztD	is_active_in	GO:0043491	PMID:26468286	IDA		P	GORULE:0000061-31		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 32 -  'part_of' is not allowed for a GO BP															
-UniProtKB	A1B2F4	aztD	part_of	GO:0043491	PMID:26468286	IDA		P	GORULE:0000061-32		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 33 -  'located_in' is not allowed for a GO BP															
-UniProtKB	A1B2F4	aztD	located_in	GO:0043491	PMID:26468286	IDA		P	GORULE:0000061-33		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 34 - 'colocalizes_with' is not allowed for a GO BP															
-UniProtKB	A1B2F4	aztD	colocalizes_with	GO:0043491	PMID:26468286	IDA		P	GORULE:0000061-34		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 35 -  'is_active_in' is not allowed for a GO CC - complex															
-UniProtKB	A1B2F4	aztD	is_active_in	GO:0000124	PMID:26468286	IDA		C	GORULE:0000061-35		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 36 -  'located_in' is not allowed for a GO CC - complex															
-UniProtKB	A1B2F4	aztD	located_in	GO:0042101	PMID:26468286	IDA		C	GORULE:0000061-36		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 37 - 'colocalizes_with' is not allowed for a GO CC - complex															
-UniProtKB	A1B2F4	aztD	colocalizes_with	GO:0042101	PMID:26468286	IDA		C	GORULE:0000061-37		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 38 - 'part_of' is not allowed for a GO CC - cellular anatomical entity															
-UniProtKB	A1B2F4	aztD	part_of	GO:0005634	PMID:26468286	IDA		C	GORULE:0000061-38		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 39 - 'part_of' is not allowed for GO CC - cellular anatomical entity															
-UniProtKB	A1B2F4	aztD	NOT|part_of	GO:0005634	PMID:26468286	IDA		C	GORULE:0000061-39		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 40 - Fail unknown GO id type															
-FB	FBgn0011273	shi	NOT|part_of	GO:1234567	PMID:12432073	IDA		C	GORULE:0000061-40 Dynamin	Protein shibire|dDyn	protein	taxon:7227	20180501	GO_Central	
-! FAILS GORULE:0000061 - test 41 -  'part_of' is not allowed for  GO CC - cell plate descendent of cellular anatomical entity															
-UniProtKB	A1B2F4	aztD	part_of	GO:0009504	PMID:26468286	IDA		C	GORULE:0000061-41		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 42 -  'part_of' is not allowed for  GO CC cellular anatomical entity (GO:0005739 mitochondrion)													
-UniProtKB	A1B2F4	aztD	part_of	 GO:0005739	PMID:26468286	IDA		C	GORULE:0000061-42		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 43 -  'part_of' is not allowed for GO CC  virion component															
-UniProtKB	A1B2F4	aztD	part_of	GO:0044423	PMID:26468286	IDA		C	GORULE:0000061-43		protein	taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000061 - test 44 -  'part_of' is not allowed for a GO CC  icosahedral viral capsid, neck descendant of virion component												
-UniProtKB	A1B2F4	aztD	part_of	GO:0098030	PMID:26468286	IDA		C	GORULE:0000061-44		protein	taxon:318586	20230427	GO_Central	
-! SHOULD PASS GORULE:0000061 - test 45- 'enables' is allowed for a GO MF															
-UniProtKB	A1B2F4	aztD	enables	GO:0003909	PMID:26468286	IDA		P	GORULE:0000061-9		protein	taxon:318586	20230427	GO_Central	
-! SHOULD PASS GORULE:0000061 - test 46 -  'is_active_in' is allowed for  GO CC - cell plate descendent of cellular anatomical entity															
-UniProtKB	A1B2F4	aztD	is_active_in	GO:0009504	PMID:26468286	IDA		C	GORULE:0000061-41		protein	taxon:318586	20230427	GO_Central	
+UniProtKB	A1B2F4	aztD	enables	GO:0005856	PMID:26468286	IDA		C	GORULE_TEST:0000061-5		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 6 - the 'located in' GP2term relation is not allowed for GO:0005575 (root CC)														
+UniProtKB	A1B2F4	aztD	located_in	GO:0005575	PMID:26468286	ND		C	GORULE_TEST:0000061-6		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 7 -  the 'contributes_to' GP2term relation is not allowed for GO:0003674 (root MF) 															
+UniProtKB	A1B2F4	aztD	contributes_to	GO:0003674	PMID:26468286	ND		F	GORULE_TEST:0000061-7		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 8 - the 'acts upstream of or within' GP2term relation is not allowed for GO:0008150 (root BP) 															
+UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within	GO:0008150	PMID:26468286	ND		P	GORULE_TEST:0000061-8		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 9 - 'enables' is not allowed for a GO BP															
+UniProtKB	A1B2F4	aztD	enables	GO:0043491	PMID:26468286	IDA		P	GORULE_TEST:0000061-9		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 10 -  'contributes_to' is not allowed for a GO BP															
+UniProtKB	A1B2F4	aztD	contributes_to	GO:0043491	PMID:26468286	IDA		P	GORULE_TEST:0000061-10		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 -  TEST 11 - 'enables' is not allowed for a GO CC															
+UniProtKB	A1B2F4	aztD	enables	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000061-11		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 12 - 'contributes_to' is not allowed for a GO CC															
+UniProtKB	A1B2F4	aztD	contributes_to	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000061-12		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 13 - 'involved_in' is not allowed for a GO MF															
+UniProtKB	A1B2F4	aztD	involved_in	GO:0004672	PMID:26468286	IDA		F	GORULE_TEST:0000061-13		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 14 - 'acts_upstream_of_or_within' is not allowed for a GO MF															
+UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within	GO:0004672	PMID:26468286	IDA		F	GORULE_TEST:0000061-14		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 15 - 'acts_upstream_of_or_within_positive_effect' is not allowed for a GO MF															
+UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within_positive_effect	GO:0004672	PMID:26468286	IDA		F	GORULE_TEST:0000061-15		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 16 - 'acts_upstream_of_or_within_negative_effect' is not allowed for a GO MF															
+UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within_negative_effect	GO:0004672	PMID:26468286	IDA		F	GORULE_TEST:0000061-16		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 17 - 'acts_upstream_of' is not allowed for a GO MF															
+UniProtKB	A1B2F4	aztD	acts_upstream_of	GO:0004672	PMID:26468286	IDA		F	GORULE_TEST:0000061-17		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 18 - acts_upstream_of_positive_effect' is not allowed for a GO MF															
+UniProtKB	A1B2F4	aztD	acts_upstream_of_positive_effect	GO:0004672	PMID:26468286	IDA		F	GORULE_TEST:0000061-18		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 19 - 'acts_upstream_of_negative_effect' is not allowed for a GO MF															
+UniProtKB	A1B2F4	aztD	acts_upstream_of_negative_effect	GO:0004672	PMID:26468286	IDA		F	GORULE_TEST:0000061-19		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 20 - 'involved_in' is not allowed for a GO CC															
+UniProtKB	A1B2F4	aztD	involved_in	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000061-20		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 21 - 'acts_upstream_of_or_within' is not allowed for a GO CC															
+UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000061-21		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 22 - 'acts_upstream_of_or_within_positive_effect' is not allowed for a GO CC															
+UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within_positive_effect	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000061-22		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 23 - 'acts_upstream_of_or_within_negative_effect' is not allowed for a GO CC															
+UniProtKB	A1B2F4	aztD	acts_upstream_of_or_within_negative_effect	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000061-23		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 24 - 'acts_upstream_of' is not allowed for a GO CC															
+UniProtKB	A1B2F4	aztD	acts_upstream_of	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000061-24		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 25 - 'acts_upstream_of_positive_effect' is not allowed for a GO CC															
+UniProtKB	A1B2F4	aztD	acts_upstream_of_positive_effect	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000061-25		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 26 - 'acts_upstream_of_negative_effect' is not allowed for a GO CC															
+UniProtKB	A1B2F4	aztD	acts_upstream_of_negative_effect	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000061-26		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 27 - 'is_active_in' is not allowed for a GO MF															
+UniProtKB	A1B2F4	aztD	is_active_in	GO:0004672	PMID:26468286	IDA		F	GORULE_TEST:0000061-27		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 28 -  'part_of' is not allowed for a GO MF															
+UniProtKB	A1B2F4	aztD	part_of	GO:0004672	PMID:26468286	IDA		F	GORULE_TEST:0000061-28		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 29 -  'located_in' is not allowed for a GO MF															
+UniProtKB	A1B2F4	aztD	located_in	GO:0004672	PMID:26468286	IDA		F	GORULE_TEST:0000061-29		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 30 - 'colocalizes_with' is not allowed for a GO MF															
+UniProtKB	A1B2F4	aztD	colocalizes_with	GO:0004672	PMID:26468286	IDA		F	GORULE_TEST:0000061-30		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 -  TEST 31 - 'is_active_in' is not allowed for a GO BP															
+UniProtKB	A1B2F4	aztD	is_active_in	GO:0043491	PMID:26468286	IDA		P	GORULE_TEST:0000061-31		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 32 -  'part_of' is not allowed for a GO BP															
+UniProtKB	A1B2F4	aztD	part_of	GO:0043491	PMID:26468286	IDA		P	GORULE_TEST:0000061-32		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 33 - 'located_in' is not allowed for a GO BP															
+UniProtKB	A1B2F4	aztD	located_in	GO:0043491	PMID:26468286	IDA		P	GORULE_TEST:0000061-33		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 34 - 'colocalizes_with' is not allowed for a GO BP															
+UniProtKB	A1B2F4	aztD	colocalizes_with	GO:0043491	PMID:26468286	IDA		P	GORULE_TEST:0000061-34		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 35 - 'is_active_in' is not allowed for a GO CC - complex															
+UniProtKB	A1B2F4	aztD	is_active_in	GO:0000124	PMID:26468286	IDA		C	GORULE_TEST:0000061-35		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 36 - 'located_in' is not allowed for a GO CC - complex															
+UniProtKB	A1B2F4	aztD	located_in	GO:0042101	PMID:26468286	IDA		C	GORULE_TEST:0000061-36		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 37 - 'colocalizes_with' is not allowed for a GO CC - complex															
+UniProtKB	A1B2F4	aztD	colocalizes_with	GO:0042101	PMID:26468286	IDA		C	GORULE_TEST:0000061-37		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 38 - 'part_of' is not allowed for a GO CC - cellular anatomical entity															
+UniProtKB	A1B2F4	aztD	part_of	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000061-38		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 39 - 'part_of' is not allowed for GO CC - cellular anatomical entity															
+UniProtKB	A1B2F4	aztD	NOT|part_of	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000061-39		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 40 - 'part_of' is not allowed for  GO CC - cell plate descendent of cellular anatomical entity															
+UniProtKB	A1B2F4	aztD	part_of	GO:0009504	PMID:26468286	IDA		C	GORULE_TEST:0000061-40		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 41 - 'part_of' is not allowed for  GO CC cellular anatomical entity (GO:0005739 mitochondrion)													
+UniProtKB	A1B2F4	aztD	part_of	 GO:0005739	PMID:26468286	IDA		C	GORULE_TEST:0000061-41		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 42 - 'part_of' is not allowed for GO CC  virion component															
+UniProtKB	A1B2F4	aztD	part_of	GO:0044423	PMID:26468286	IDA		C	GORULE_TEST:0000061-42		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000061 - TEST 43 - 'part_of' is not allowed for a GO CC  icosahedral viral capsid, neck descendant of virion component												
+UniProtKB	A1B2F4	aztD	part_of	GO:0098030	PMID:26468286	IDA		C	GORULE_TEST:0000061-43		protein	taxon:318586	20230427	GO_Central	
+! SHOULD PASS GORULE:0000061 - TEST 44 - 'is_active_in' is allowed for  GO CC - 'cell plate' descendent of cellular anatomical entity															
+UniProtKB	A1B2F4	aztD	is_active_in	GO:0009504	PMID:26468286	IDA		C	GORULE_TEST:0000061-44		protein	taxon:318586	20230427	GO_Central	
