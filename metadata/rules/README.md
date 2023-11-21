@@ -42,7 +42,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000033">GORULE:0000033 DEPRECATED. Public Reference IDs (PMID, PMC, doi, or GO_REF) should be preferred over group specific Reference IDs</a>
  * <a href="#gorule0000035">GORULE:0000035 DEPRECATED - Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.</a>
  * <a href="#gorule0000036">GORULE:0000036 Report annotations that involve gene products where the gene product is annotated to a term 'x' and 'regulation of X' (multiple annotations involved)</a>
- * <a href="#gorule0000037">GORULE:0000037 IBA annotations should ONLY be assigned_by GO_Central and have PMID:21873635 as a reference</a>
+ * <a href="#gorule0000037">GORULE:0000037 IBA annotations should ONLY be assigned_by GO_Central and have GO_REF:0000033 as a reference</a>
  * <a href="#gorule0000038">GORULE:0000038 Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column) where there exists another annotation with the same or a more granular term using experimental evidence</a>
  * <a href="#gorule0000039">GORULE:0000039 Protein complexes can not be annotated to GO:0032991 (protein-containing complex) or its descendants</a>
  * <a href="#gorule0000042">GORULE:0000042 Qualifier: IKR evidence code requires a NOT qualifier</a>
@@ -751,20 +751,18 @@ As a second step we may create exception lists for cases known to be correct.
 
 <a name="gorule0000037"/>
 
-## IBA annotations should ONLY be assigned_by GO_Central and have PMID:21873635 as a reference
+## IBA annotations should ONLY be assigned_by GO_Central and have GO_REF:0000033 as a reference
 
  * id: [GORULE:0000037](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000037.md)
  * status: implemented
 
 
 
-Only files coming from the https://github.com/geneontology/go-site/blob/master/metadata/datasets/paint.yaml can use the IBA evidence code. 
+For annotations with the IBA evidence code, (1) the 'assigned_by' field (GAF column 15; GPAD column 10) must be GO_Central and (2) the 'reference' field (GAF column 6; GPAD column 5) must be GO_REF:0000033.
 
-If the evidence code is IBA, then (1) the assigned_by field must be GO_Central and (2) the reference field must be PMID:21873635.
+Implementation: the GO Central pipeline filters out IBAs from any submission source that is not in the PAINT submission source, i.e. one registered in [paint.yaml](https://github.com/geneontology/go-site/blob/master/metadata/datasets/paint.yaml). IBAs from PAINT are injected in to the final release files as part of the release process.
 
-Implementation: the GO Central pipeline should filter out IBAs from any submission source that is not a PAINT submission source, i.e. one registered in paint.yaml and having a name paint_X. Note that IBAs from PAINT will be injected in to the final release file for that organism.
-
-Also see GORULE:0000026.
+See also GORULE:0000026.
 
 <a name="gorule0000038"/>
 
