@@ -739,7 +739,7 @@ datasets:
    id: goa_chicken.gaf
    label: "goa_chicken gaf file"
    description: "gaf file for goa_chicken from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_chicken.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_chicken.gaf.gz
    type: gaf
    dataset: goa_chicken
    submitter: goa
@@ -760,7 +760,7 @@ datasets:
    id: goa_chicken_complex.gaf
    label: "goa_chicken_complex gaf file"
    description: "gaf file for goa_chicken_complex from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_chicken_complex.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_chicken_complex.gaf.gz
    type: gaf
    dataset: goa_chicken_complex
    submitter: goa
@@ -781,7 +781,7 @@ datasets:
    id: goa_chicken_isoform.gaf
    label: "goa_chicken_isoform gaf file"
    description: "gaf file for goa_chicken_isoform from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_chicken_isoform.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_chicken_isoform.gaf.gz
    type: gaf
    dataset: goa_chicken_isoform
    submitter: goa
@@ -802,7 +802,7 @@ datasets:
    id: goa_chicken_rna.gaf
    label: "goa_chicken_rna gaf file"
    description: "gaf file for goa_chicken_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_chicken_rna.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_chicken_rna.gaf.gz
    type: gaf
    dataset: goa_chicken_rna
    submitter: goa
@@ -823,7 +823,7 @@ datasets:
    id: goa_cow.gaf
    label: "goa_cow gaf file"
    description: "gaf file for goa_cow from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_cow.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_cow.gaf.gz
    type: gaf
    dataset: goa_cow
    submitter: goa
@@ -842,7 +842,7 @@ datasets:
    id: goa_cow_complex.gaf
    label: "goa_cow_complex gaf file"
    description: "gaf file for goa_cow_complex from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_cow_complex.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_cow_complex.gaf.gz
    type: gaf
    dataset: goa_cow_complex
    submitter: goa
@@ -861,7 +861,7 @@ datasets:
    id: goa_cow_isoform.gaf
    label: "goa_cow_isoform gaf file"
    description: "gaf file for goa_cow_isoform from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_cow_isoform.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_cow_isoform.gaf.gz
    type: gaf
    dataset: goa_cow_isoform
    submitter: goa
@@ -880,7 +880,7 @@ datasets:
    id: goa_cow_rna.gaf
    label: "goa_cow_rna gaf file"
    description: "gaf file for goa_cow_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_cow_rna.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_cow_rna.gaf.gz
    type: gaf
    dataset: goa_cow_rna
    submitter: goa
@@ -899,7 +899,7 @@ datasets:
    id: goa_dog.gaf
    label: "goa_dog gaf file"
    description: "gaf file for goa_dog from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_dog.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_dog.gaf.gz
    type: gaf
    dataset: goa_dog
    submitter: goa
@@ -916,7 +916,7 @@ datasets:
    id: goa_dog_complex.gaf
    label: "goa_dog_complex gaf file"
    description: "gaf file for goa_dog_complex from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_dog_complex.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_dog_complex.gaf.gz
    type: gaf
    dataset: goa_dog_complex
    submitter: goa
@@ -933,7 +933,7 @@ datasets:
    id: goa_dog_isoform.gaf
    label: "goa_dog_isoform gaf file"
    description: "gaf file for goa_dog_isoform from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_dog_isoform.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_dog_isoform.gaf.gz
    type: gaf
    dataset: goa_dog_isoform
    submitter: goa
@@ -950,7 +950,7 @@ datasets:
    id: goa_dog_rna.gaf
    label: "goa_dog_rna gaf file"
    description: "gaf file for goa_dog_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_dog_rna.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_dog_rna.gaf.gz
    type: gaf
    dataset: goa_dog_rna
    submitter: goa
@@ -967,7 +967,7 @@ datasets:
    id: goa_human.gaf
    label: "goa_human gaf file"
    description: "gaf file for goa_human from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_human.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_human.gaf.gz
    type: gaf
    dataset: goa_human
    submitter: goa
@@ -984,7 +984,7 @@ datasets:
    id: goa_human_complex.gaf
    label: "goa_human_complex gaf file"
    description: "gaf file for goa_human_complex from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_human_complex.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_human_complex.gaf.gz
    type: gaf
    dataset: goa_human_complex
    submitter: goa
@@ -1000,7 +1000,7 @@ datasets:
    id: goa_human_isoform.gaf
    label: "goa_human_isoform gaf file"
    description: "gaf file for goa_human_isoform from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_human_isoform.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_human_isoform.gaf.gz
    type: gaf
    dataset: goa_human_isoform
    submitter: goa
@@ -1017,7 +1017,7 @@ datasets:
    id: goa_human_rna.gaf
    label: "goa_human_rna gaf file"
    description: "gaf file for goa_human_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_human_rna.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_human_rna.gaf.gz
    type: gaf
    dataset: goa_human_rna
    submitter: goa
@@ -1034,7 +1034,7 @@ datasets:
    id: goa_pdb.gaf
    label: "goa_pdb gaf file"
    description: "gaf file for goa_pdb from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_pdb.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_pdb.gaf.gz
    type: gaf
    dataset: goa_pdb
    submitter: goa
@@ -1051,7 +1051,7 @@ datasets:
    id: goa_pig.gaf
    label: "goa_pig gaf file"
    description: "gaf file for goa_pig from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_pig.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_pig.gaf.gz
    type: gaf
    dataset: goa_pig
    submitter: goa
@@ -1068,7 +1068,7 @@ datasets:
    id: goa_pig_complex.gaf
    label: "goa_pig_complex gaf file"
    description: "gaf file for goa_pig_complex from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_pig_complex.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_pig_complex.gaf.gz
    type: gaf
    dataset: goa_pig_complex
    submitter: goa
@@ -1085,7 +1085,7 @@ datasets:
    id: goa_pig_isoform.gaf
    label: "goa_pig_isoform gaf file"
    description: "gaf file for goa_pig_isoform from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_pig_isoform.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_pig_isoform.gaf.gz
    type: gaf
    dataset: goa_pig_isoform
    submitter: goa
@@ -1102,7 +1102,7 @@ datasets:
    id: goa_pig_rna.gaf
    label: "goa_pig_rna gaf file"
    description: "gaf file for goa_pig_rna from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_pig_rna.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_pig_rna.gaf.gz
    type: gaf
    dataset: goa_pig_rna
    submitter: goa
@@ -1119,7 +1119,7 @@ datasets:
    id: goa_uniprot_all.gaf
    label: "goa_uniprot_all gaf file"
    description: "gaf file for goa_uniprot_all from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_uniprot_all.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_uniprot_all.gaf.gz
    type: gaf
    dataset: goa_uniprot_all
    submitter: goa
@@ -1136,7 +1136,7 @@ datasets:
    id: goa_uniprot_all.gpi
    label: "goa_uniprot_all gpi file"
    description: "gpi file for goa_uniprot_all from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_uniprot_all.gpi.gz
+   url: https://current.geneontology.org/annotations/goa_uniprot_all.gpi.gz
    type: gpi
    dataset: goa_uniprot_all
    submitter: goa
@@ -1153,7 +1153,7 @@ datasets:
    id: goa_uniprot_all.gpad
    label: "goa_uniprot_all gpad file"
    description: "gpad file for goa_uniprot_all from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_uniprot_all.gpad.gz
+   url: https://current.geneontology.org/annotations/goa_uniprot_all.gpad.gz
    type: gpad
    dataset: goa_uniprot_all
    submitter: goa
@@ -1170,7 +1170,7 @@ datasets:
    id: goa_uniprot_gcrp.gaf
    label: "goa_uniprot_gcrp gaf file"
    description: "gaf file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gaf.gz
+   url: https://current.geneontology.org/annotations/goa_uniprot_gcrp.gaf.gz
    type: gaf
    dataset: goa_uniprot_gcrp
    submitter: goa
@@ -1188,7 +1188,7 @@ datasets:
    id: goa_uniprot_gcrp.gpi
    label: "goa_uniprot_gcrp gpi file"
    description: "gpi file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gpi.gz
+   url: https://current.geneontology.org/annotations/goa_uniprot_gcrp.gpi.gz
    type: gpi
    dataset: goa_uniprot_gcrp
    submitter: goa
@@ -1206,7 +1206,7 @@ datasets:
    id: goa_uniprot_gcrp.gpad
    label: "goa_uniprot_gcrp gpad file"
    description: "gpad file for goa_uniprot_gcrp from EBI Gene Ontology Annotation Database"
-   url: http://geneontology.org/gene-associations/goa_uniprot_gcrp.gpad.gz
+   url: https://current.geneontology.org/annotations/goa_uniprot_gcrp.gpad.gz
    type: gpad
    dataset: goa_uniprot_gcrp
    submitter: goa
