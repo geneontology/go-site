@@ -187,7 +187,7 @@ SGN	235	cpk1		GO:0005886	PMID:12011347	IDA		C	GORULE_TEST:0000059-1 calcium-depe
 ! SHOULD PASS GORULE:0000061 - TEST 1 - the part_of GP2term relation is allowed for GO:0008023 (CC complex)														
 FB	FBgn0011273	Acam	part_of	GO:0008023	FB:FBrf0193169|PMID:16790438	IDA		C	GORULE_TEST:0000061-1 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	GO_Central	
 ! SHOULD PASS GORULE:0000061 - TEST 2- 'enables' is allowed for a GO MF															
-UniProtKB	A1B2F4	aztD	enables	GO:0003909	PMID:26468286	IDA		P	GORULE_TEST:0000061-2		protein	taxon:318586	20230427	GO_Central	
+UniProtKB	A1B2F4	aztD	enables	GO:0003909	PMID:26468286	IDA		F	GORULE_TEST:0000061-2		protein	taxon:318586	20230427	GO_Central	
 ! FAILS GORULE:0000061 -  TEST 3  the 'part_of' GP2term relation is not allowed for GO:0070864 (CC cellular anatomical entity)															
 FB	FBgn0011273	shi	part_of	GO:0070864	PMID:12432073	IDA		C	GORULE_TEST:0000061-3 Dynamin	Protein shibire|dDyn	protein	taxon:7227	20180501	GO_Central	
 ! FAILS GORULE:0000061 - TEST 4 - the 'part_of' GP2term relation is not allowed for GO:0140827 (MF)															
