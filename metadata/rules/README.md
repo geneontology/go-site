@@ -170,7 +170,7 @@ on the GO wiki.
 ## IEA and ISS or ISS-related annotations should not be used to support direct annotations to 'protein binding ; GO:0005515 or 'binding ; GO:0005488''
 
  * id: [GORULE:0000005](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000005.md)
- * status: proposed
+ * status: approved
 
 
 
