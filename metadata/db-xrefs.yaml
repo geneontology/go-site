@@ -2829,7 +2829,7 @@
   name: WormBase database of nematode biology
   synonyms:
     - WormBase
-  rdf_uri_prefix: http://identifiers.org/wb/
+  rdf_uri_prefix: http://identifiers.org/wormbase/
   generic_urls:
     - http://www.wormbase.org/
   entity_types:
