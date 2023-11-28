@@ -2373,7 +2373,7 @@
   name: Saccharomyces Genome Database
   synonyms:
     - SGDID
-  rdf_uri_prefix: http://identifiers.org/sgd
+  rdf_uri_prefix: http://identifiers.org/sgd/
   generic_urls:
     - http://www.yeastgenome.org/
   entity_types:
