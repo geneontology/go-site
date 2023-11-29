@@ -47,7 +47,7 @@ UniProtKB	A1B2F4	aztD	"acts_upstream_of_or_within,_negative_effect"	GO:0005634	P
 ! FAILS GORULE:0000001 - TEST 18 - pipes are not allowed in Symbol field (GAF column 3)														
 UniProtKB	A1B2F4	azt|D	"acts_upstream_of_or_within,_negative_effect"	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000001-18		protein	taxon:318586	20230427	PomBase	
 ! FAILS GORULE:0000001 - TEST 19 - 'with' missing namespace														
-UniProtKB	A0A078CGE6	M3KE1	enables	GO:0005515	PMID:11489177	IPI	A0A078FEZ9	F	GORULE_TEST:0000007-1		protein	taxon:3708	20150115	PomBase	
+UniProtKB	A0A078CGE6	M3KE1	enables	GO:0005515	PMID:11489177	IPI	A0A078FEZ9	F	GORULE_TEST:0000001-19		protein	taxon:3708	20150115	PomBase	
 ! FAILS GORULE:0000002 - TEST 1 - has a 'NOT' annotations to 'protein binding ; GO:0005515															
 UniProtKB	O76187	darA	NOT|enables	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE_TEST:0000002-1 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
 ! FAILS GORULE:0000002 - TEST 2 - has a 'NOT' annotations to 'binding ; GO:0005515															
