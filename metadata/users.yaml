@@ -3094,9 +3094,9 @@
   email-md5:
     - 0de11318dae17ecd44c3cbc35378622a
   groups:
-    - 'http://www.ebi.ac.uk'
+    - 'http://flybase.org'
   nickname: 'Rossana Zaru'
-  organization: EMBL-EBI
+  organization: FlyBase
   uri: 'https://orcid.org/0000-0002-3358-4423'
   xref: 'GOC:rz'
 -
