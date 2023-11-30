@@ -138,12 +138,12 @@ MGI:1100518	Smad7	bla	involved_in	GO:0017015	MGI:MGI:3836072|PMID:18952608	IC	GO
 UniProtKB	O76187	darA	enables	GO:0004672	PMID:9802899	IDA	UniProtKB:P34149	F	GORULE_TEST:0000020-4 Darlin	darA	protein	taxon:44689	20100205	GO_Central	involved_in(GO:0090503)
 ! FAILS GORULE:0000020 - TEST 5 - obsolete term in 'extension' (column 16) with a replacement															
 UniProtKB	O76187	darA	enables	GO:0004672	PMID:9802899	IDA	UniProtKB:P34149	F	GORULE_TEST:0000020-5 Darlin	darA	protein	taxon:44689	20100205	GO_Central	involved_in(GO:0014067)
-! FAILS GORULE:0000027 - TEST 4 - Prefix not in /db-xrefs.yaml															
-UniPotKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		P	GORULE_TEST:0000027-4 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
-! FAILS GORULE:0000027 - TEST 5 - Assigned_by not in /groups.yaml															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		P	GORULE_TEST:0000027-5 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	SGDDB	
-! FAILS GORULE:0000027 - TEST 6 - Bad reference format															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:PMID:14561399	IDA		P	GORULE_TEST:0000027-6 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+! FAILS GORULE:0000027 - TEST 1 - Prefix not in /db-xrefs.yaml															
+UniPotKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		P	GORULE_TEST:0000027-1 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+! FAILS GORULE:0000027 - TEST 2 - Assigned_by not in /groups.yaml															
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		P	GORULE_TEST:0000027-2 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	SGDDB	
+! FAILS GORULE:0000027 - TEST 3 - Bad reference format															
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:PMID:14561399	IDA		P	GORULE_TEST:0000027-3 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000027 - TEST 7 - Bad reference format															
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:unpublished	IDA		P	GORULE_TEST:0000027-7 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000027 - TEST 8 - Bad reference format															
