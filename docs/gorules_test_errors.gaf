@@ -144,12 +144,12 @@ UniPotKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		P	GORULE_TEST:0
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		P	GORULE_TEST:0000027-2 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	SGDDB	
 ! FAILS GORULE:0000027 - TEST 3 - Bad reference format															
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:PMID:14561399	IDA		P	GORULE_TEST:0000027-3 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
-! FAILS GORULE:0000027 - TEST 7 - Bad reference format															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:unpublished	IDA		P	GORULE_TEST:0000027-7 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
-! FAILS GORULE:0000027 - TEST 8 - Bad reference format															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:	IDA		P	GORULE_TEST:0000027-8 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
-! FAILS GORULE:0000027 - TEST 9 - Bad reference format															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:0.	IDA		P	GORULE_TEST:0000027-9 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+! FAILS GORULE:0000027 - TEST 4 - Bad reference format															
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:unpublished	IDA		P	GORULE_TEST:0000027-4 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+! FAILS GORULE:0000027 - TEST 5 - Bad reference format															
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:	IDA		P	GORULE_TEST:0000027-5 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+! FAILS GORULE:0000027 - TEST 6 - Bad reference format															
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:0.	IDA		P	GORULE_TEST:0000027-6 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000028 - TEST 1 - Bad GO aspect, C instead of P														
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		C	GORULE_TEST:0000028-1 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000028 - TEST 2 - Bad GO aspect, F instead of P															
