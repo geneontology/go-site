@@ -42,7 +42,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000033">GORULE:0000033 DEPRECATED. Public Reference IDs (PMID, PMC, doi, or GO_REF) should be preferred over group specific Reference IDs</a>
  * <a href="#gorule0000035">GORULE:0000035 DEPRECATED - Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.</a>
  * <a href="#gorule0000036">GORULE:0000036 Report annotations that involve gene products where the gene product is annotated to a term 'x' and 'regulation of X' (multiple annotations involved)</a>
- * <a href="#gorule0000037">GORULE:0000037 IBA annotations should ONLY be assigned_by GO_Central and have PMID:21873635 as a reference</a>
+ * <a href="#gorule0000037">GORULE:0000037 IBA annotations should ONLY be assigned_by GO_Central and have GO_REF:0000033 as a reference</a>
  * <a href="#gorule0000038">GORULE:0000038 Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column) where there exists another annotation with the same or a more granular term using experimental evidence</a>
  * <a href="#gorule0000039">GORULE:0000039 Protein complexes can not be annotated to GO:0032991 (protein-containing complex) or its descendants</a>
  * <a href="#gorule0000042">GORULE:0000042 Qualifier: IKR evidence code requires a NOT qualifier</a>
@@ -170,7 +170,7 @@ on the GO wiki.
 ## IEA and ISS or ISS-related annotations should not be used to support direct annotations to 'protein binding ; GO:0005515 or 'binding ; GO:0005488''
 
  * id: [GORULE:0000005](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000005.md)
- * status: proposed
+ * status: approved
 
 
 
@@ -613,33 +613,28 @@ See also GORULE:0000037
  * status: implemented
 
 
--   Col 1 and all DB abbreviations must be in
-    [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml) (see below)
--   The `assigned_by` field is checked against [groups.yaml](https://github.com/geneontology/go-site/blob/master/metadata/groups.yaml)  
--   All GO IDs must be extant in current ontology
+-   DB (GAF and GPAD column 1); and all DB abbreviations in 'with' field (GAF column 8; GPAD column 7) and in the annotation extensions (GAF column 16; GPAD column 11) must be in [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml) (see below)
+-   id_syntax information in the [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml) file can be used to validate local identifiers.
+-   The 'with' field can additionally contain GO terms, when the Evidence code is IC. GO terms are checked in GORULE:0000001. 
+-   The `assigned_by` field (GAF column 15; GPAD column 10) is checked against [groups.yaml](https://github.com/geneontology/go-site/blob/master/metadata/groups.yaml)
 
+-   TBC (thy may be GORULE:0000001) All GO IDs must be extant in current ontology: GO IDs can be present in Columns 5, 8, and 16 of GAF (4, 7, 11 in GPAD).
+  
 ### Additional notes on identifiers
 
-In some contexts an identifier is represented using two fields, for example col1 (prefix)
-and col2 (local id) of a GAF or GPAD. The global id is formed by concatenating these with `:`.
-In other contexts such as the "With/from" field, a global ID is specified, which MUST always be prefixed.
+In GAF and GPAD, the identifier is represented using two fields, column 1 is the prefex (DB), and column 2 is the local identifier. 
+The global id is formed by concatenating these with `:`.
+In all other fields, such as the "With/from" field, the reference, the extensions, a global ID is specified, which MUST always be prefixed; 
+i. e. contain a namespace and an identifier, separated by a colon.
 
 In all cases, the prefix MUST be in [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml).
 The prefix SHOULD be identical (case-sensitive match) to the `database` field.
-If it does not match then it MUST be identical (case-sensitive) to one of the synonyms.
 
-When consuming association files, programs SHOULD *repair* by replacing prefix synonyms
-with the canonical form, in addition to reporting on the mismatch. For example, as part
-of the association file release the submitted files should swap out legacy uses of 'UniProt' with 'UniProtKB'
+When consuming GAF files, programs SHOULD *repair* by replacing prefix synonyms with the canonical form, in addition to reporting on the mismatch. For example, as part of the association file release the submitted files should swap out legacy uses of 'UniProt' with 'UniProtKB'.
 
-### PubMed reference formatting must be correct
-References in the GAF (Column 6) should be of the format db_name:db_key|PMID:12345678,
-e.g. SGD_REF:S000047763|PMID:2676709. No other format is acceptable for PubMed references;
-the following examples are invalid
--   PMID:PMID:14561399
--   PMID:unpublished
--   PMID:.
--   PMID:0
+### Reference formatting must be correct
+References in the GAF (Column 6) should be of the format db_name:db_key. Multiple values can be pipe-separated, 
+e.g. SGD_REF:S000047763|PMID:2676709. PMID, DOIs, Agricola, GO_REF and internal MOD references are allowed. 
 
 <a name="gorule0000028"/>
 
@@ -751,20 +746,18 @@ As a second step we may create exception lists for cases known to be correct.
 
 <a name="gorule0000037"/>
 
-## IBA annotations should ONLY be assigned_by GO_Central and have PMID:21873635 as a reference
+## IBA annotations should ONLY be assigned_by GO_Central and have GO_REF:0000033 as a reference
 
  * id: [GORULE:0000037](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000037.md)
  * status: implemented
 
 
 
-Only files coming from the https://github.com/geneontology/go-site/blob/master/metadata/datasets/paint.yaml can use the IBA evidence code. 
+For annotations with the IBA evidence code, (1) the 'assigned_by' field (GAF column 15; GPAD column 10) must be GO_Central and (2) the 'reference' field (GAF column 6; GPAD column 5) must be GO_REF:0000033.
 
-If the evidence code is IBA, then (1) the assigned_by field must be GO_Central and (2) the reference field must be PMID:21873635.
+Implementation: the GO Central pipeline filters out IBAs from any submission source that is not in the PAINT submission source, i.e. one registered in [paint.yaml](https://github.com/geneontology/go-site/blob/master/metadata/datasets/paint.yaml). IBAs from PAINT are injected in to the final release files as part of the release process.
 
-Implementation: the GO Central pipeline should filter out IBAs from any submission source that is not a PAINT submission source, i.e. one registered in paint.yaml and having a name paint_X. Note that IBAs from PAINT will be injected in to the final release file for that organism.
-
-Also see GORULE:0000026.
+See also GORULE:0000026.
 
 <a name="gorule0000038"/>
 
@@ -1044,19 +1037,19 @@ For annotations that don't have a gp2term relation:
 
 
 GAF2.2 files require a gene product to term (gp2term) relation in Column 4. Allowed gp2term relations:  
-* For `GO:0003674 "molecular function"` and subclass descendants:
-    * If the annotation is to the root term `"molecular function"`, then the gp2term relation should `RO:0002327 "enables"`; else, it is repaired to `RO:0002327 "enables"`.
-    * If the annotation is to is a subclass descendant of `"molecular function"`, then the allowed gp2term relations are `RO:0002327 "enables"` and `RO_0002326 "contributes_to"`; else, it is updated to `RO:0002327 "enables"`.
+* For `GO:0003674 "molecular_function"` and subclass descendants:
+    * If the annotation is to the root term `"molecular_function"`, then the gp2term relation should `RO:0002327 "enables"`; else, it is repaired to `RO:0002327 "enables"`.
+    * If the annotation is to is a subclass descendant of `"molecular_function"`, then the allowed gp2term relations are `RO:0002327 "enables"` and `RO_0002326 "contributes_to"`; else, it is updated to `RO:0002327 "enables"`.
 * For `GO:0008150 "biological process"`: 
-    * If the annotation is to the root term `"biological process"`, then the gp2term relation should be `RO:0002331 "involved_in"`. If the gp2term relation is different, it is repaired to `RO:0002331 "involved_in"`.
-    * If the annotation is to is a subclass descendant of `"biological process"` then the allowed gp2term relations are `RO:0002331 "involved_in"`, `RO:0002264 "acts upstream or within"`, `RO:0004032 "acts upstream of or within, positive effect"`, `RO:0004033 "acts upstream of or within, negative effect"`, `RO:0002263 "acts upstream of"`, `RO:0004034 "acts upstream of, positive effect"`, `RO:0004035 "acts upstream of, negative effect"`; else, the relation is repaired to `RO:0002264 "acts upstream of or within"`.
+    * If the annotation is to the root term `"biological_process"`, then the gp2term relation should be `RO:0002331 "involved_in"`. If the gp2term relation is different, it is repaired to `RO:0002331 "involved_in"`.
+    * If the annotation is to is a subclass descendant of `"biological_process"` then the allowed gp2term relations are `RO:0002331 "involved_in"`, `RO:0002264 "acts_upstream_or_within"`, `RO:0004032 "acts_upstream_of_or_within_positive_effect"`, `RO:0004033 "acts upstream of or within_negative_effect"`, `RO:0002263 "acts_upstream_of"`, `RO:0004034 "acts_upstream_of_positive_effect"`, `RO:0004035 "acts upstream of, negative effect"`; else, the relation is repaired to `RO:0002264 "acts upstream of or within"`.
 * For `GO:0005575 "cellular component"`
     * If the annotation is to the root term `"cellular_component"`, then the gp2term relation should be `RO:0002432 "is_active_in"`; else, it is repaired to `RO:0002432 "is_active_in"`.
-    * If the annotation is to `"GO:0032991 "protein-containing complex"` or a subclass descendant of, then the gp2term relation should be `"BFO:0000050 "part of"`; else, it is repaired to `"BFO:0000050 "part of"`.
-    * If the annotation is to `GO:0110165 "cellular anatomical entity"` or to `GO:0044423 "virion component"` or a descendant of either of these terms, then the allowed gp2term relations are `RO:0001025 "located in"` and `RO:0002432 "is_active_in"`, and `RO_0002325 "colocalizes_with"`; else it is repaired to `RO:0001025 "located in"`.
+    * If the annotation is to `"GO:0032991 "protein-containing complex"` or a subclass descendant of, then the gp2term relation should be `"BFO:0000050 "part_of"`; else, it is repaired to `"BFO:0000050 "part of"`.
+    * If the annotation is to `GO:0110165 "cellular anatomical entity"` or to `GO:0044423 "virion component"` or a descendant of either of these terms, then the allowed gp2term relations are `RO:0001025 "located_in"` and `RO:0002432 "is_active_in"`, and `RO_0002325 "colocalizes_with"`; else it is repaired to `RO:0001025 "located_in"`.
     
 * If an annotation has a negation (`NOT`), is is kept as a pipe-separated value with the gp2term relation.
-
+* Note that RO does not have underscores in the term labels, but the userscores are used in the GP2Term relations in GAF 2.2.
 
 <a name="gorule0000062"/>
 
