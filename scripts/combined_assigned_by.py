@@ -238,7 +238,33 @@ def output_html(violations_info_list, path, rules_descriptions):
         ## Write out file
         fileName = path + '/assigned-by-' + id + '-report.html'
         ET.ElementTree(htmlObj).write(fileName, encoding='unicode', method='html')
+        
+def output_aggregate_md(rules_to_violations, path, rules_descriptions):
+    s = 'Aggregate GORULE violations'
+    s += '\n\n## SUMMARY'
+    s += '\n\nThis report generated on {}'.format(datetime.date.today())
+    s += '\n\n## Rule Violations'
+    
+    
+    rules = list(rules_descriptions.keys())
+    rules.sort()
+     
+    
+    for rule in rules:
+        if rule in rules_to_violations:
+            violations = rules_to_violations[rule]
+            s += '\n\n## ' + rule + ' - ' + str(len(violations)) + " violations - " + rules_descriptions[rule]["title"]
+            for violation in violations: 
+                s+= '\n' + violation['message']  + '--`' + violation['line'].strip()
+        else:
+            s += '\n\n## ' + rule + ' - no violations - ' + rules_descriptions[rule]["title"]
+            continue
 
+
+    ## Write out file
+    fileName = path + '/aggregate-rule-violation-report.md'
+    utils.write_text(fileName, s)   
+            
 
 def main():
     """The main runner of our script."""
@@ -254,6 +280,9 @@ def main():
             rules_descriptions[rule_id] = {
                 "title": rule["title"]
             }
+            
+    #Create a rule to all violations dictionary
+    rules_to_violations = dict()        
     
     ## Deal with incoming.
     parser = argparse.ArgumentParser(
@@ -405,8 +434,17 @@ def main():
             if (len(violations) == 0):
                 continue
             
+            #Add violations to the key_violations Lookup
+            if key in rules_to_violations:
+                cur_violations = rules_to_violations[key]
+            else:
+                cur_violations = []
+            rules_to_violations[key] = cur_violations
+             
+            
             for violation in violations:
                 gaf_line = violation['line']
+                cur_violations.append(violation)
                 gaf_contents = re.split('\t', gaf_line)
 
                 ## Get assigned by information from GAF line.  If it does not exist, attempt to get from group that created the GAF file
@@ -472,6 +510,9 @@ def main():
 
     ## Output html file for each assigned-by with GORULE violation details
     output_html(violator_list, os.path.dirname(args.output), rules_descriptions)
+    
+    ## Output aggregate violations file
+    output_aggregate_md(rules_to_violations, os.path.dirname(args.output), rules_descriptions)
 
     ## Final writeout of combined assigned-by json report
     with open(args.output, 'w+') as fhandle:
