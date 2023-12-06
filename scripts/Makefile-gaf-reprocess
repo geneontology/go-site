@@ -27,7 +27,7 @@ $(ROOT_PATH)/annotations_new/%.gaf: $(ROOT_PATH)/annotations/%.gaf $(ROOT_PATH)/
 
 $(ROOT_PATH)/annotations_new/%.gpad: $(ROOT_PATH)/annotations/%.gpad $(ROOT_PATH)/gaferencer-products/all.gaferences.json
 	mkdir -p $(ROOT_PATH)/annotations_new
-	ontobio-parse-assocs.py -f $< -F gpad -o $@ -I $(ROOT_PATH)/gaferencer-products/all.gaferences.json --report-md /tmp/report.md --report-json /tmp/report.json -m $(ROOT_PATH)/metadata --allow_paint -l all convert --to gpad
+	ontobio-parse-assocs.py -f $< -F gpad -o $@ -I $(ROOT_PATH)/gaferencer-products/all.gaferences.json --report-md /tmp/report.md --report-json /tmp/report.json -m $(ROOT_PATH)/metadata --allow_paint -l all convert --to gpad -n 2.0
 
 ####################################################################################################
 ### Noctua GPAD
@@ -57,7 +57,7 @@ $(ROOT_PATH)/noctua_sources/noctua_%-src.gpad: $(ROOT_PATH)/noctua_sources/noctu
 
 $(ROOT_PATH)/noctua_target/noctua_%.gpad: $(ROOT_PATH)/noctua_sources/noctua_%-src.gpad $(ROOT_PATH)/go-ontology.json
 	mkdir -p $(ROOT_PATH)/noctua_target
-	ontobio-parse-assocs.py -f $< -F gpad -o $@ -r $(ROOT_PATH)/go-ontology.json --report-md $(ROOT_PATH)/noctua_target/noctua_$*.report.md --report-json $(ROOT_PATH)/noctua_target/noctua_$*.report.json -l all convert --to gpad -n 1.2
+	ontobio-parse-assocs.py -f $< -F gpad -o $@ -r $(ROOT_PATH)/go-ontology.json --report-md $(ROOT_PATH)/noctua_target/noctua_$*.report.md --report-json $(ROOT_PATH)/noctua_target/noctua_$*.report.json -l all convert --to gpad -n 2.0
 
 $(ROOT_PATH)/noctua_target/noctua_%.gpad.gz: $(ROOT_PATH)/noctua_target/noctua_%.gpad
 	pigz $<
