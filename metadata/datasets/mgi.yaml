@@ -21,12 +21,11 @@ datasets:
    id: mgi.gaf
    label: "mgi gaf file"
    description: "gaf file for mgi from Mouse Genome Informatics"
-   url: https://current.geneontology.org/annotations/mgi.gaf.gz
+   url: http://skyhook.berkeleybop.org/issue-325-gopreprocess/products/upstream_and_raw_data/preprocess_raw_files/MGI/mgi-merged.gaf
    type: gaf
    dataset: mgi
    submitter: mgi
-   compression: gzip
-   source: http://www.informatics.jax.org/downloads/reports/gene_association_nonoctua.mgi.gz
+   source: http://skyhook.berkeleybop.org/issue-325-gopreprocess/products/upstream_and_raw_data/preprocess_raw_files/MGI/mgi-merged.gaf
    entity_type:
    status: active
    species_code: Mmus
