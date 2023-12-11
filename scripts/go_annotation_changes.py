@@ -332,7 +332,7 @@ def create_text_report(json_changes):
 
         for qualifier in qualifiers:
             if qualifier not in json_changes["detailed_changes"]["annotations"]["by_model_organism"][taxon]["by_qualifier"]:
-                print("WARNING: qualifier " + qualifier + " for taxon " + taxon + " is no longer present - QC should check before release")
+                # print("WARNING: qualifier " + qualifier + " for taxon " + taxon + " is no longer present - QC should check before release")
                 warnings += "- qualifier " + qualifier + " for taxon " + taxon + " is no longer present\n"
                 continue
                 
