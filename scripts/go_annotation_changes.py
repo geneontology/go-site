@@ -312,7 +312,7 @@ def create_text_report(json_changes):
 
         for evidence in ev_all:
             if evidence not in json_changes["detailed_changes"]["annotations"]["by_model_organism"][taxon]["by_evidence"]:
-                print("WARNING: evidence " + evidence + " for taxon " + taxon + " is no longer present - QC should check before release")
+               # print("WARNING: evidence " + evidence + " for taxon " + taxon + " is no longer present - QC should check before release")
                 warnings += "- evidence " + evidence + " for taxon " + taxon + " is no longer present\n"
                 continue
 

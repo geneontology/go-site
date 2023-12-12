@@ -206,29 +206,30 @@ def main(argv):
     for taxon in go_stats.reference_genomes_ids:
         key = go_stats.taxon_label(taxon)
         pmids_by_reference_genome[key] = json_stats["references"]["pmids"]["by_filtered_taxon"][key] if key in json_stats["references"]["pmids"]["by_filtered_taxon"] else { }
-        
-
-
 
 
     # This is to modify the structure of the annotation changes based on recent requests
     print("\n4c - SAVING GO-ANNOTATION-CHANGES...\n")
-    json_annot_changes = go_annotation_changes.alter_annotation_changes(json_stats, previous_stats, current_references_ids, previous_references_ids, json_annot_changes)
+    json_annot_changes = go_annotation_changes.alter_annotation_changes(json_stats,
+                                                                        previous_stats,
+                                                                        current_references_ids,
+                                                                        previous_references_ids,
+                                                                        json_annot_changes)
     utils.write_json(output_annotation_changes, json_annot_changes)
     tsv_annot_changes = go_annotation_changes.create_text_report(json_annot_changes)
     utils.write_text(output_annotation_changes_tsv, tsv_annot_changes)
     print("DONE.")
 
-
     print("\n4d - SAVING GO-ANNOTATION-NO-PB-CHANGES...\n")
-    json_annot_no_pb_changes = go_annotation_changes.alter_annotation_changes(json_stats_no_pb, previous_stats_no_pb, current_references_ids, previous_references_ids, json_annot_no_pb_changes)
+    json_annot_no_pb_changes = go_annotation_changes.alter_annotation_changes(json_stats_no_pb,
+                                                                              previous_stats_no_pb,
+                                                                              current_references_ids,
+                                                                              previous_references_ids,
+                                                                              json_annot_no_pb_changes)
     utils.write_json(output_annotation_changes_no_pb, json_annot_no_pb_changes)
     tsv_annot_changes_no_pb = go_annotation_changes.create_text_report(json_annot_no_pb_changes)
     utils.write_text(output_annotation_changes_no_pb_tsv, tsv_annot_changes_no_pb)
     print("DONE.")
-
-
-
 
     json_stats_summary = {
         "release_date" : json_stats["release_date"],
