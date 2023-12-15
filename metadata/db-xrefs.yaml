@@ -5,7 +5,6 @@
   name: AgBase resource for functional analysis of agricultural plant and animal gene products
   generic_urls:
     - http://www.agbase.msstate.edu/
-    
   entity_types:
     - type_name: entity
       type_id: BET:0000000
