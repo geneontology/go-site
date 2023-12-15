@@ -615,10 +615,10 @@ See also GORULE:0000037
 
 -   DB (GAF and GPAD column 1); and all DB abbreviations in 'with' field (GAF column 8; GPAD column 7) and in the annotation extensions (GAF column 16; GPAD column 11) must be in [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml) (see below)
 -   id_syntax information in the [db-xrefs.yaml](https://github.com/geneontology/go-site/blob/master/metadata/db-xrefs.yaml) file can be used to validate local identifiers.
--   The 'with' field can additionally contain GO terms, when the Evidence code is IC. GO terms are checked in GORULE:0000001. 
+-   The 'with' field can either contain GO terms, when the Evidence code is IC. GO terms are checked in GORULE:0000001, or DB:ID, which are checked as Columns 1 & 2.
 -   The `assigned_by` field (GAF column 15; GPAD column 10) is checked against [groups.yaml](https://github.com/geneontology/go-site/blob/master/metadata/groups.yaml)
-
--   TBC (thy may be GORULE:0000001) All GO IDs must be extant in current ontology: GO IDs can be present in Columns 5, 8, and 16 of GAF (4, 7, 11 in GPAD).
+-   The 'extension' field (GAF column 16; GPAD column 11) can either contain GO terms, or DB:ID, which are checked as Columns 1 & 2.
+-   TBC (this may be GORULE:0000001) All GO IDs must be extant in current ontology: GO IDs can be present in Columns 5, 8, and 16 of GAF (4, 7, 11 in GPAD).
   
 ### Additional notes on identifiers
 
