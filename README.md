@@ -15,7 +15,7 @@ The location of all core GO-related metadata. Most notably:
 
  - [db-xrefs.yaml](metadata/db-xrefs.yaml) - prefix registry, for anything that is col1 of a GAF, or the prefix of a CURIE/Identifier
  - [users.yaml](metadata/users.yaml) - metadata on GOC members and contributors
- - [groups.yaml](metadata/groups.yaml) - metadata on GOC groups, for anything that cann be the value of a 'contributor' or 'assigned_by'
+ - [groups.yaml](metadata/groups.yaml) - metadata on GOC groups, for anything that can be the value of a 'contributor' or 'assigned_by'
  - [datasets/](metadata/datasets/) - metadata on contributed and released files
  - [rules/](metadata/rules/) - metadata on cGO annotation QC rules
 
