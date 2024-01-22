@@ -17,7 +17,7 @@ The location of all core GO-related metadata. Most notably:
  - [users.yaml](metadata/users.yaml) - metadata on GOC members and contributors
  - [groups.yaml](metadata/groups.yaml) - metadata on GOC groups, for anything that can be the value of a 'contributor' or 'assigned_by'
  - [datasets/](metadata/datasets/) - metadata on contributed and released files
- - [rules/](metadata/rules/) - metadata on cGO annotation QC rules
+ - [rules/](metadata/rules/) - metadata on GO annotation QC rules
 
 Each of the these has their own yaml schema.
 
