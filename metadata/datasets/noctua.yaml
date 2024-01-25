@@ -54,7 +54,8 @@ datasets:
     compression: gzip
     source: ./products/upstream_and_raw_data/noctua_sgd.gpad.gz
     entity_type:
-    status: inactive
+    status: active
+    merges_into: sgd
     species_code: Scer
     taxa:
       - NCBITaxon:285006
