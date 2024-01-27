@@ -16,7 +16,7 @@ datasets:
    dataset: sgd
    submitter: sgd
    compression: gzip
-   source: https://sgd-prod-upload.s3.amazonaws.com/latest/gene_association.sgd.gaf.gz
+   source: http://data.pantherdb.org/ftp/downloads/test_sgd/remainders_mock_sgd.remapped.gaf.gz
    entity_type:
    status: active
    species_code: Scer
