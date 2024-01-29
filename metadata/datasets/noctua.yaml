@@ -52,7 +52,7 @@ datasets:
     dataset: noctua_sgd
     submitter: GOC
     compression: gzip
-    source: ./products/upstream_and_raw_data/noctua_sgd.gpad.gz
+    source: ./products/upstream_and_raw_data/noctua_sgd-src.gpad.gz
     entity_type:
     status: active
     merges_into: sgd
