@@ -33,22 +33,6 @@ datasets:
     - NCBITaxon:10090
 
  -
-   id: mgi.gpad
-   label: "mgi gpad file"
-   description: "gpad file for mgi from Mouse Genome Informatics"
-   url: https://current.geneontology.org/annotations/mgi.gpad.gz
-   type: gpad
-   dataset: mgi
-   submitter: mgi
-   compression: gzip
-   source: http://www.informatics.jax.org/downloads/reports/mgi.gpad.gz
-   entity_type:
-   status: active
-   species_code: Mmus
-   taxa:
-    - NCBITaxon:10090
-
- -
    id: mgi.gpi
    label: "mgi gpi file"
    description: "gpi file for mgi from Mouse Genome Informatics"
