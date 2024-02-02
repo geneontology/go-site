@@ -1,6 +1,8 @@
 #!/usr/bin/perl -w
 ####
-#### collate-gpads.pl legacy/gpad/*.gpad
+#### collate-gpads.pl legacy/gpad
+####
+#### Used to be: collate-gpads.pl legacy/gpad/*.gpad
 ####
 use strict;
 use FileHandle;
@@ -8,10 +10,15 @@ use FileHandle;
 my $today = `date +%Y-%m-%d`;
 chomp $today;
 
+## Glob instead of CLI, to deal with too many args;
+## https://github.com/geneontology/pipeline/issues/360
+my ($dir) = @ARGV;
+my $full_glob = $dir . '/' . '*.gpad';
+
 # maps group names to filehandles;
 # e.g. zfin => wrte filehandle for zfin.gpad
 my %fhmap = ();
-while (<>) {
+while (glob($full_glob)) {
   next if (m@^\!@);
   chomp;
   my @vals = split(/\t/, $_);
