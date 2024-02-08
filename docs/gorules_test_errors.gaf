@@ -45,7 +45,7 @@ UniProtKB	A1B2F4	aztD	"acts_upstream_of_or_within,_positive_effect"	GO:0005634	P
 ! FAILS GORULE:0000001 - TEST 17 - 'acts_upstream_of_or_within,_negative_effect' is not a valid relation (should not contain a comma)															
 UniProtKB	A1B2F4	aztD	"acts_upstream_of_or_within,_negative_effect"	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000001-17		protein	taxon:318586	20230427	PomBase	
 ! FAILS GORULE:0000001 - TEST 18 - pipes are not allowed in Symbol field (GAF column 3)														
-UniProtKB	A1B2F4	azt|D	"acts_upstream_of_or_within,_negative_effect"	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000001-18		protein	taxon:318586	20230427	PomBase	
+UniProtKB	A1B2F4	azt|D	acts_upstream_of_or_within_negative_effect	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000001-18		protein	taxon:318586	20230427	PomBase	
 ! FAILS GORULE:0000001 - TEST 19 - 'with' missing namespace														
 UniProtKB	A0A078CGE6	M3KE1	enables	GO:0005515	PMID:11489177	IPI	A0A078FEZ9	F	GORULE_TEST:0000001-19		protein	taxon:3708	20150115	PomBase	
 ! FAILS GORULE:0000001 - TEST 20 - bad GO ID syntax															
