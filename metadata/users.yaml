@@ -152,7 +152,7 @@
     - 'http://candidagenome.org'
   nickname: 'Diane Inglis'
   organization: AspGD
-  uri: 'GOC:di'
+  uri: 'https://orcid.org/0000-0003-3166-4638'
   xref: 'GOC:di'
 -
   nickname: 'Courtland Yockey'
@@ -1234,6 +1234,18 @@
   uri: 'https://orcid.org/0000-0002-8379-6600'
   xref: 'GOC:clt'
 -
+  nickname: 'Kara Dolinski'
+  organization: SGD
+  uri: 'https://orcid.org/0000-0002-7010-0264'
+-  
+  nickname: 'Paul Lloyd'
+  organization: SGD
+  uri: 'https://orcid.org/0000-0003-3508-5553'
+-  
+  nickname: 'Rose Oughtred'
+  organization: SGD
+  uri: 'https://orcid.org/0000-0002-6475-3373'
+-
   nickname: 'Curators at SGD'
   organization: SGD
   uri: 'GOC:sgd_curators'
@@ -1284,7 +1296,7 @@
 -
   nickname: 'Janos Demeter'
   organization: SGD
-  uri: 'GOC:jd'
+  uri: 'https://orcid.org/0000-0002-7301-8055'
   xref: 'GOC:jd'
 -
   email-md5:
@@ -1293,7 +1305,7 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Jodi Hirschman'
   organization: SGD
-  uri: 'GOC:jh'
+  uri: 'https://orcid.org/0000-0001-8850-9925'
   xref: 'GOC:jh'
 -
   nickname: 'Julie Park'
@@ -1389,7 +1401,7 @@
 -
   nickname: 'Selina Dwight'
   organization: SGD
-  uri: 'GOC:ssd'
+  uri: 'https://orcid.org/0000-0002-8546-7798'
   xref: 'GOC:ssd'
 -
   accounts:
