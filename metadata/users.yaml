@@ -1374,6 +1374,8 @@
     noctua:
       go:
         allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
   nickname: 'Julie Park'
   organization: SGD
   uri: 'GOC:jp'
@@ -1469,6 +1471,8 @@
     noctua:
       go:
         allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
   nickname: 'Selina Dwight'
   organization: SGD
   uri: 'https://orcid.org/0000-0002-8546-7798'
