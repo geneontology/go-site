@@ -1,5 +1,5 @@
 PyYAML
-ontobio==2.8.22
+git+https://github.com/biolink/ontobio.git@go-site-1218-gorule-0000027-valid-identifier
 click
 pyparsing==2.4.7
 antlr4-python3-runtime==4.9.3
