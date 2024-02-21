@@ -281,6 +281,6 @@ UniProtKB	A1B2F4	aztD	part_of	GO:0044423	PMID:26468286	IDA		C	GORULE_TEST:000006
 ! FAILS GORULE:0000061 - TEST 43 - 'part_of' is not allowed for a GO CC  icosahedral viral capsid, neck descendant of virion component												
 UniProtKB	A1B2F4	aztD	part_of	GO:0098030	PMID:26468286	IDA		C	GORULE_TEST:0000061-43		protein	taxon:318586	20230427	GO_Central	
 ! FAILS GORULE:0000061 - TEST 44 - acts_upstream_of needs underscores										
-UniProtKB	A1B2F4	aztD	acts upstream of	GO:0097696	PMID:26468286	IDA		F	GORULE_TEST:0000061-17		protein	taxon:318586	20230427	GO_Central	
+UniProtKB	A1B2F4	aztD	acts upstream of	GO:0097696	PMID:26468286	IDA		F	GORULE_TEST:0000061-44		protein	taxon:318586	20230427	GO_Central	
 ! SHOULD PASS GORULE:0000061 - TEST 45 - 'is_active_in' is allowed for  GO CC - 'cell plate' descendent of cellular anatomical entity															
 UniProtKB	A1B2F4	aztD	is_active_in	GO:0009504	PMID:26468286	IDA		C	GORULE_TEST:0000061-45		protein	taxon:318586	20230427	GO_Central	
