@@ -976,13 +976,10 @@ Annotations as GO-CAMs should successfully validate against this set of Shex Sha
 ## Group specific filter rules should be applied to annotations
 
  * id: [GORULE:0000057](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000057.md)
- * status: proposed
+ * status: deprecated
 
 
-
-Certain groups may have specific Annotation filter rules for importing.
-
-These will be expressed in the datasets group YAML files in go-site/metadata/datasets/.
+For the MOD Imports Project into Noctua, it was proposed that group-specific annotation filter rules would be expressed in the datasets group YAML files in go-site/metadata/datasets/. This was done differently, so this rule was not needed.
 
 <a name="gorule0000058"/>
 
