@@ -64,6 +64,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000059">GORULE:0000059 GAF Version 2.0 and 2.1 are converted into GAF Version 2.2</a>
  * <a href="#gorule0000061">GORULE:0000061 Allowed gene product to term relations (gp2term)</a>
  * <a href="#gorule0000062">GORULE:0000062 Infer annotations on molecular function via has_part</a>
+ * <a href="#gorule0000063">GORULE:0000063 Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column)</a>
 
 
 
@@ -1060,3 +1061,14 @@ GAF2.2 files require a gene product to term (gp2term) relation in Column 4. Allo
 
 
 For any annotation to a molecular function MF-X, infer annotation to all MFs that stand in a has_part relationship to MF-X, except if the annotation uses the 'contributes_to' qualifier, then do not infer annotations from the has_part relationship to MF-X.
+
+<a name="gorule0000063"/>
+
+## Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column)
+
+ * id: [GORULE:0000063](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000063.md)
+ * status: approved
+
+
+
+See also GO-RULE:0000038 (proposed) for a check of the values in the 'with' field. 
