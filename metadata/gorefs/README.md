@@ -486,7 +486,7 @@ Duplicate of GO_REF:0000108.
  * ext xref: MGI:MGI:4459044
  * ext xref: J:161428 
  * ext xref: ZFIN:ZDB-PUB-110330-1
- * ext xref: FB:FBrf0232076
+ * ext xref: FB:FBrf0258542
 
 
 The Phylogenetic ANnotation using Gene Ontology (PAN-GO) method annotates evolutionary trees from the PANTHER database with GO terms describing molecular function, biological process and cellular component. The GO terms are manually selected by a curator and used to annotate ancestral genes in the phylogenetic tree using the evidence code IBA (Inferred from Biological Ancestor). All supporting annotations must be based on experimental data from the scientific literature. The PAN-GO annotations are fully traceable from the data in the 'with/from' column of the annotation, which provides the PANTHER node ID (PTN) from which the annotation is derived, as well as all descendants sequences that support the annotation of the ancestral node. 
