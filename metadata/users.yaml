@@ -145,6 +145,10 @@
 -
   accounts:
     github: dianeoinglis
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true    
   email-md5:
     - 601f7b3e4f8165ba4be5057e65143f76
   groups:
@@ -1214,34 +1218,64 @@
   uri: 'https://orcid.org/0000-0002-6601-2165'
   xref: 'GOC:cjm'
 -
+  groups:
+    - 'http://www.yeastgenome.org'        
   nickname: 'Anand Sethuraman'
   organization: SGD
   uri: 'GOC:as'
   xref: 'GOC:as'
 -
+  groups:
+    - 'http://www.yeastgenome.org'        
   nickname: 'Cathy Ball'
   organization: SGD
   uri: 'GOC:cab2'
   xref: 'GOC:cab2'
 -
+  groups:
+    - 'http://www.yeastgenome.org'
   nickname: 'Cindy Krieger'
   organization: SGD
   uri: 'GOC:cjk'
   xref: 'GOC:cjk'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'        
   nickname: 'Chandra Theesfeld'
   organization: SGD
   uri: 'https://orcid.org/0000-0002-8379-6600'
   xref: 'GOC:clt'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
   nickname: 'Kara Dolinski'
   organization: SGD
   uri: 'https://orcid.org/0000-0002-7010-0264'
 -  
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
   nickname: 'Paul Lloyd'
   organization: SGD
   uri: 'https://orcid.org/0000-0003-3508-5553'
 -  
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
   nickname: 'Rose Oughtred'
   organization: SGD
   uri: 'https://orcid.org/0000-0002-6475-3373'
@@ -1289,16 +1323,32 @@
   uri: 'https://orcid.org/0000-0001-9799-5523'
   xref: 'GOC:ew'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
   nickname: 'Eurie Hong'
   organization: SGD
   uri: 'https://orcid.org/0000-0002-1775-4998'
   xref: 'GOC:elh'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
   nickname: 'Janos Demeter'
   organization: SGD
   uri: 'https://orcid.org/0000-0002-7301-8055'
   xref: 'GOC:jd'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   email-md5:
     - db80b5b690c934af872903cdc4985a22
   groups:
@@ -1308,6 +1358,8 @@
   uri: 'https://orcid.org/0000-0001-8850-9925'
   xref: 'GOC:jh'
 -
+  groups:
+    - 'http://www.yeastgenome.org'
   nickname: 'Julie Park'
   organization: SGD
   uri: 'GOC:jp'
@@ -1399,6 +1451,12 @@
   uri: 'https://orcid.org/0000-0001-5472-917X'
   xref: 'GOC:se'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.yeastgenome.org'
   nickname: 'Selina Dwight'
   organization: SGD
   uri: 'https://orcid.org/0000-0002-8546-7798'
