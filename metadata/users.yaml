@@ -1218,10 +1218,6 @@
   uri: 'https://orcid.org/0000-0002-6601-2165'
   xref: 'GOC:cjm'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.yeastgenome.org'        
   nickname: 'Anand Sethuraman'
@@ -1229,10 +1225,6 @@
   uri: 'GOC:as'
   xref: 'GOC:as'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true  
   groups:
     - 'http://www.yeastgenome.org'        
   nickname: 'Cathy Ball'
@@ -1240,10 +1232,6 @@
   uri: 'GOC:cab2'
   xref: 'GOC:cab2'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Cindy Krieger'
@@ -1370,10 +1358,6 @@
   uri: 'https://orcid.org/0000-0001-8850-9925'
   xref: 'GOC:jh'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Julie Park'
