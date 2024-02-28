@@ -1,12 +1,10 @@
 id: http://purl.obolibrary.org/obo/go/references/
 name: GO_REF
 title: GO_REF LinkML schema
-description: >- 
-  LinkML schema representing the structure of
-  GO_REF metadata
+description: LinkML schema representing the structure of GO_REF metadata
 
 imports:
-- linkml:types
+  - linkml:types
 
 prefixes:
   linkml: https://w3id.org/linkml/
@@ -15,107 +13,105 @@ prefixes:
   PMID: http://www.ncbi.nlm.nih.gov/pubmed/
 default_prefix: GO_REF
 
-types:
-  Identifier:
-    typeof: string
-    description: GO_REF identifier.
-
 slots:
+  alt_id:
+    examples:
+      - value: GO_REF:0000009
+    multivalued: true
+    range: uriorcurie
+    pattern: GO_REF:[0-9]{7}
+    description: Alternate IDs for GO_REF.
+
   authors:
     examples:
-    - value: FlyBase
+      - value: FlyBase
     range: string
+    required: true
     description: Author of the GOREF.
-  id:
+
+  citation:
     examples:
-    - value: GO_REF:0000098
-    range: Identifier
-    identifier: true
-    description: GO_REF id.
-  is_obsolete:
-    examples:
-    - value: true
-    range: boolean
-    description: >- 
-      Boolean value indicating whether or not the 
-      GO_REF is still in use.
-  year:
-    examples:
-    - value: 2014
-    range: integer
-    description: Year in which the GO_REF was created.
-  layout:
-    examples:
-    - value: goref
-    range: string
-    description: Front matter format hint for Markdown rendering.
-  title:
-    examples:
-    - value: OBSOLETE Gene Ontology annotation based on research conference abstracts
-    range: string
-    description: Title.
+      - value: PMID:11374909
+    range: uriorcurie
+    description: Publication for GO_REF.
+
   comments:
-    examples:
-    - value: '["Prior to 2008, FlyBase made GO annotations based on information in
-        abstracts for research conferences, primarily the Annual Drosophila Research
-        Conference and the European Drosophila Research Conference. We no longer curate
-        conference abstracts and we are gradually replacing all abstract-based GO
-        annotation with annotation based on experimental data in primary research
-        papers.""]'
     multivalued: true
     range: string
     description: Comments.
-  external_accession:
-    examples:
-    - value: J:164563
-    multivalued: true
-    range: uriorcurie
-    description: >- 
-      List of cross references from other databases for the same entity.
-  url:
-    examples:
-    - value: http://www.ebi.ac.uk/GOA/ISS_method.html
-    range: uriorcurie
-    description: URL for further information.
-  citation:
-    examples:
-    - value: PMID:11374909
-    range: uriorcurie
-    description: Publication for GO_REF.
-  alt_id:
-    examples:
-    - value: GO_REF:0000009
-    multivalued: true
-    range: uriorcurie
-    description: Alternate IDs for GO_REF.
+
+  description:
+    range: string
+    required: true
+    aliases:
+      - abstract
+      - definition
+
   evidence_codes:
     examples:
-    - value: ECO:0000501
+      - value: ECO:0000501
     multivalued: true
     range: uriorcurie
+    pattern: ECO:[0-9]{7}
     description: Evidence codes for GO_REF.
-  gorefs:
+
+  external_accession:
+    examples:
+      - value: J:164563
     multivalued: true
-    inlined_as_list: true
-    range: GoRef
-    description: List of GO_REFs.
+    range: uriorcurie
+    pattern: '[a-zA-Z\_]+:[0-9a-zA-Z\_]+'
+    description: >-
+      List of cross references from other databases for the same entity.
+
+  id:
+    examples:
+      - value: GO_REF:0000098
+    range: string
+    identifier: true
+    description: GO_REF identifier
+    pattern: GO_REF:[0-9]{7}
+
+  is_obsolete:
+    examples:
+      - value: true
+    range: boolean
+    description: >-
+      Boolean value indicating whether or not the GO_REF is still in use.
+
+  title:
+    examples:
+      - value: OBSOLETE Gene Ontology annotation based on research conference abstracts
+    range: string
+    description: Title.
+    required: true
+
+  url:
+    examples:
+      - value: http://www.ebi.ac.uk/GOA/ISS_method.html
+    range: uriorcurie
+    description: URL for further information.
+    pattern: 'http[s]?://'
+
+  year:
+    examples:
+      - value: 2014
+    range: integer
+    description: Year in which the GO_REF was created.
+    minimum_value: 1998
 
 classes:
-  GoRefCollection:
-    tree_root: true
-    slots:
-    - gorefs
   GoRef:
     slots:
-    - authors
-    - id
-    - is_obsolete
-    - year
-    - layout
-    - title
-    - comments
-    - external_accession
-    - url
-    - citation
-    - alt_id
-    - evidence_codes
+      - alt_id
+      - authors
+      - citation
+      - comments
+      - description
+      - evidence_codes
+      - external_accession
+      - id
+      - is_obsolete
+      - title
+      - url
+      - year
