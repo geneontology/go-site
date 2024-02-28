@@ -1,3 +1,10 @@
+# DEPRECATED
+
+The Markdown files in this directory are now deprecated and will be removed in the future. To update or add a new reference, edit the `gorefs.yaml` file in the `metadata` directory.
+
+
+### Previous instructions for historical reference
+<details>
 How to add a reference to the system:
 
  1. Go to [https://github.com/geneontology/go-site/tree/master/metadata/gorefs](https://github.com/geneontology/go-site/tree/master/metadata/gorefs)
@@ -11,3 +18,4 @@ How to add a reference to the system:
 A member of GO Central will review your changes and either incorporate. This person will also update the index -- the [README.md](README.md) file. This is done by typing `make all` on the command line after checking out the repo.
 
 Note the same procedure can be used to make edits to existing GOREFS.
+</details>
