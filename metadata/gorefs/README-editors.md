@@ -1,6 +1,6 @@
 # DEPRECATED
 
-The Markdown files in this directory are now deprecated and will be removed in the future. To update or add a new reference, edit the `gorefs.yaml` file in the `metadata` directory.
+The Markdown files in this directory are now deprecated and will be removed in the future. To update or add a new reference, edit the `gorefs.yaml` file in the `metadata` directory. For more information on the YAML format, see the description in the [`metadata/README.md`](../README.md) file.
 
 
 ### Previous instructions for historical reference
