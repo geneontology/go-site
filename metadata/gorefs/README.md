@@ -1263,14 +1263,15 @@ This article is not referenced in PubMed. Please see contributing data resource 
  * id: [GO_REF:0000096](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000096.md)
  * year: 2014
  * authors: Mouse Genome Informatics scientific curators
- * ext xref: J:164563
  * ext xref: J:155856
  * ext xref: RGD:1624291
 
 
-
-Mouse Genome Database (MGD), The HUGO Gene Nomenclature Committee (HGNC), and Rat Genome Database (RGD) have extensive procedures in place, overseen by expert curation, to establish orthology relationships between their genes. The Experimentally based annotations annotated by each group (IDA, IMP IPI, IGI, and EXP) are used to provide annotations  to the respective mouse and rat orthologs, and given the ISO evidence code and an entry in the inferred_from field to indicate the orthologous entity. 
-
+Automated transfer of experimentally-verified manual GO annotation data to close orthologs.
+Mouse Genome Database (MGD) and The Alliance of Genome Resources have extensive procedures in place to 
+establish orthology relationships between genes. The experimentally-based annotations provided by 
+model-organism groups (IDA, IMP IPI, IGI, and EXP) are used to provide annotations to the respective 
+orthologs, and given the ISO evidence code and an entry in the inferred_from field to indicate the orthologous entity.
 <a name="goref0000097"/>
 
 ## Gene Ontology annotation based on personal communication to FlyBase
