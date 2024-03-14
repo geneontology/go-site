@@ -91,7 +91,7 @@ To see how to add to this file, see [README-editors.md](README-editors.md)
  * <a href="#goref0000093">GO_REF:0000093 Representation for the degradation to or via a chemical as biological process in the Gene Ontology</a>
  * <a href="#goref0000094">GO_REF:0000094 Representation of metazoan development as biological process in the Gene Ontology</a>
  * <a href="#goref0000095">GO_REF:0000095 Literature reference not indexed by PubMed</a>
- * <a href="#goref0000096">GO_REF:0000096 Automated transfer of experimentally-verified manual GO annotation data to close orthologs.</a>
+ * <a href="#goref0000096">GO_REF:0000096 Automated transfer of experimentally-verified manual GO annotation data to mouse-rat orthologs.</a>
  * <a href="#goref0000097">GO_REF:0000097 Gene Ontology annotation based on personal communication to FlyBase</a>
  * <a href="#goref0000098">GO_REF:0000098 OBSOLETE Gene Ontology annotation based on research conference abstracts</a>
  * <a href="#goref0000099">GO_REF:0000099 OBSOLETE Gene Ontology annotation based on DNA/RNA sequence records</a>
@@ -1258,18 +1258,17 @@ This article is not referenced in PubMed. Please see contributing data resource 
 
 <a name="goref0000096"/>
 
-## Automated transfer of experimentally-verified manual GO annotation data to close orthologs.
+## Automated transfer of experimentally-verified manual GO annotation data to mouse-rat orthologs.
 
  * id: [GO_REF:0000096](https://github.com/geneontology/go-site/blob/master/metadata/gorefs/goref-0000096.md)
  * year: 2014
- * authors: Mouse Genome Informatics scientific curators
- * ext xref: J:164563
+ * authors: The Gene Ontology Consortium
  * ext xref: J:155856
  * ext xref: RGD:1624291
 
 
 
-Mouse Genome Database (MGD), The HUGO Gene Nomenclature Committee (HGNC), and Rat Genome Database (RGD) have extensive procedures in place, overseen by expert curation, to establish orthology relationships between their genes. The Experimentally based annotations annotated by each group (IDA, IMP IPI, IGI, and EXP) are used to provide annotations  to the respective mouse and rat orthologs, and given the ISO evidence code and an entry in the inferred_from field to indicate the orthologous entity. 
+The Alliance of Genome Resources (https://www.alliancegenome.org/) has procedures in place to establish orthology relationships between genes. The experimentally-based annotations (IDA, IMP IPI, IGI, and EXP) annotated by Rat Genome Database (RGD) and The Mouse Genome Database (MGD) are used to provide annotations to the respective mouse and rat orthologs, and given the ISO evidence code and an entry in the inferred_from field to indicate the orthologous entity.
 
 <a name="goref0000097"/>
 
