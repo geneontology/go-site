@@ -1268,7 +1268,7 @@ This article is not referenced in PubMed. Please see contributing data resource 
 
 
 
-The Alliance of Genome Resources (https://www.alliancegenome.org/) has procedures in place to establish orthology relationships between genes. The experimentally-based annotations (IDA, IMP IPI, IGI, and EXP) annotated by Rat Genome Database (RGD) and The Mouse Genome Database (MGD) are used to provide annotations to the respective mouse and rat orthologs, and given the ISO evidence code and an entry in the inferred_from field to indicate the orthologous entity.
+The Alliance of Genome Resources (https://www.alliancegenome.org/) has procedures in place to establish orthology relationships between genes. The experimentally-based annotations (IDA, IMP IPI, IGI, and EXP) annotated by Rat Genome Database (RGD) and The Mouse Genome Database (MGD) are used to provide annotations to the respective mouse and rat orthologs, and given the ISO evidence code and an entry in the "With (or) From" field to indicate the orthologous entity.
 
 <a name="goref0000097"/>
 
