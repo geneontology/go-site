@@ -4,21 +4,6 @@ description: "GO data for PAINT"
 datasets:
 
  -
-   id: paint_goa_human.gaf
-   label: "paint_goa_human gaf file"
-   description: "gaf file for paint_goa_human from PAINT"
-   type: gaf
-   dataset: paint_goa_human
-   submitter: paint
-   compression: gzip
-   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_human.gaf.gz
-   entity_type: human
-   status: active
-   species_code: Hsap
-   taxa:
-   merges_into: goa_human
-
- -
    id: paint_mgi.gaf
    label: "paint_mgi gaf file"
    description: "gaf file for paint_mgi from PAINT"
@@ -33,36 +18,6 @@ datasets:
    taxa:
     - NCBITaxon:10090
    merges_into: mgi
-
- -
-   id: paint_other.gaf
-   label: "paint_other gaf file"
-   description: "gaf file for paint_other from PAINT"
-   type: gaf
-   dataset: paint_other
-   submitter: paint
-   compression: gzip
-   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_other.gaf.gz
-   entity_type:
-   status: active
-   species_code:
-   taxa: []
-
- -
-   id: paint_rgd.gaf
-   label: "paint_rgd gaf file"
-   description: "gaf file for paint_rgd from PAINT"
-   type: gaf
-   dataset: paint_rgd
-   submitter: paint
-   compression: gzip
-   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_rgd.gaf.gz
-   entity_type:
-   status: active
-   species_code: Rnor
-   taxa:
-    - NCBITaxon:10116
-   merges_into: rgd
 
  -
    id: paint_wb.gaf
