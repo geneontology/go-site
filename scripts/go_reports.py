@@ -1,5 +1,6 @@
-# This script is the one to launch at every release to compute the full set of stats and changes between this and the previous release
-# The script can also be used to compute the changes between any two releases by selecting older go-stats and OBO files
+# This script is the one to launch at every release to compute the full set of stats and changes between this and the
+# previous release. The script can also be used to compute the changes between any two releases by selecting older
+# go-stats and OBO files.
 
 import json
 import sys, getopt, os
@@ -12,7 +13,9 @@ import go_stats_utils as utils
 
 
 def print_help():
-    print('\nUsage: python go_reports.py -g <current_golr_url> -d <release_date> -s <previous_stats_url> -n <previous_stats_no_pb_url> -c <current_obo_url> -p <previous_obo_url> -r <previous_references_url> -o <output_rep>\n')
+    print('\nUsage: python go_reports.py -g <current_golr_url> -d <release_date> -s <previous_stats_url> '
+          '-n <previous_stats_no_pb_url> -c <current_obo_url> -p <previous_obo_url> -r <previous_references_url> '
+          '-o <output_rep>\n')
 
 
 def main(argv):
@@ -31,7 +34,8 @@ def main(argv):
         sys.exit(2)
 
     try:
-        opts, argv = getopt.getopt(argv,"g:s:n:c:p:o:d:r:",["golrurl=", "pstats=", "pnstats=", "cobo=", "pobo=", "orep=", "date=", "ref="])
+        opts, argv = getopt.getopt(argv,"g:s:n:c:p:o:d:r:",["golrurl=", "pstats=", "pnstats=", "cobo=", "pobo=",
+                                                            "orep=", "date=", "ref="])
     except getopt.GetoptError:
         print_help()
         sys.exit(2)
@@ -202,29 +206,30 @@ def main(argv):
     for taxon in go_stats.reference_genomes_ids:
         key = go_stats.taxon_label(taxon)
         pmids_by_reference_genome[key] = json_stats["references"]["pmids"]["by_filtered_taxon"][key] if key in json_stats["references"]["pmids"]["by_filtered_taxon"] else { }
-        
-
-
 
 
     # This is to modify the structure of the annotation changes based on recent requests
     print("\n4c - SAVING GO-ANNOTATION-CHANGES...\n")
-    json_annot_changes = go_annotation_changes.alter_annotation_changes(json_stats, previous_stats, current_references_ids, previous_references_ids, json_annot_changes)
+    json_annot_changes = go_annotation_changes.alter_annotation_changes(json_stats,
+                                                                        previous_stats,
+                                                                        current_references_ids,
+                                                                        previous_references_ids,
+                                                                        json_annot_changes)
     utils.write_json(output_annotation_changes, json_annot_changes)
     tsv_annot_changes = go_annotation_changes.create_text_report(json_annot_changes)
     utils.write_text(output_annotation_changes_tsv, tsv_annot_changes)
     print("DONE.")
 
-
     print("\n4d - SAVING GO-ANNOTATION-NO-PB-CHANGES...\n")
-    json_annot_no_pb_changes = go_annotation_changes.alter_annotation_changes(json_stats_no_pb, previous_stats_no_pb, current_references_ids, previous_references_ids, json_annot_no_pb_changes)
+    json_annot_no_pb_changes = go_annotation_changes.alter_annotation_changes(json_stats_no_pb,
+                                                                              previous_stats_no_pb,
+                                                                              current_references_ids,
+                                                                              previous_references_ids,
+                                                                              json_annot_no_pb_changes)
     utils.write_json(output_annotation_changes_no_pb, json_annot_no_pb_changes)
     tsv_annot_changes_no_pb = go_annotation_changes.create_text_report(json_annot_no_pb_changes)
     utils.write_text(output_annotation_changes_no_pb_tsv, tsv_annot_changes_no_pb)
     print("DONE.")
-
-
-
 
     json_stats_summary = {
         "release_date" : json_stats["release_date"],
@@ -234,10 +239,10 @@ def main(argv):
             "total_no_pb" : json_stats_no_pb["annotations"]["total"],
             "total_pb" : json_stats["annotations"]["total"] - json_stats_no_pb["annotations"]["total"],
             "by_aspect" : {
-                "P" : json_stats["annotations"]["by_aspect"]["P"],
-                "F" : json_stats["annotations"]["by_aspect"]["F"],
-                "C" : json_stats["annotations"]["by_aspect"]["C"],
-                "B" : json_stats["annotations"]["by_aspect"]["F"] - json_stats_no_pb["annotations"]["by_aspect"]["F"]
+                "P" : json_stats["annotations"]["by_aspect"].get("P"),
+                "F" : json_stats["annotations"]["by_aspect"].get("F"),
+                "C" : json_stats["annotations"]["by_aspect"].get("C"),
+                "B" : json_stats["annotations"]["by_aspect"].get("F") - json_stats_no_pb["annotations"]["by_aspect"].get("F")
             },
             "by_bioentity_type_cluster" : json_stats["annotations"]["by_bioentity_type"]["cluster"],
             "by_bioentity_type_cluster_no_pb" : json_stats_no_pb["annotations"]["by_bioentity_type"]["cluster"],

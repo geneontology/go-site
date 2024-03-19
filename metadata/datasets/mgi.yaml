@@ -21,28 +21,11 @@ datasets:
    id: mgi.gaf
    label: "mgi gaf file"
    description: "gaf file for mgi from Mouse Genome Informatics"
-   url: https://current.geneontology.org/annotations/mgi.gaf.gz
+   url: http://skyhook.berkeleybop.org/silver-issue-325-gopreprocess/products/upstream_and_raw_data/preprocess_raw_files/mgi-merged.gaf
    type: gaf
    dataset: mgi
    submitter: mgi
-   compression: gzip
-   source: http://www.informatics.jax.org/downloads/reports/gene_association_nonoctua.mgi.gz
-   entity_type:
-   status: active
-   species_code: Mmus
-   taxa:
-    - NCBITaxon:10090
-
- -
-   id: mgi.gpad
-   label: "mgi gpad file"
-   description: "gpad file for mgi from Mouse Genome Informatics"
-   url: https://current.geneontology.org/annotations/mgi.gpad.gz
-   type: gpad
-   dataset: mgi
-   submitter: mgi
-   compression: gzip
-   source: http://www.informatics.jax.org/downloads/reports/mgi.gpad.gz
+   source: http://skyhook.berkeleybop.org/silver-issue-325-gopreprocess/products/upstream_and_raw_data/preprocess_raw_files/mgi-merged.gaf
    entity_type:
    status: active
    species_code: Mmus

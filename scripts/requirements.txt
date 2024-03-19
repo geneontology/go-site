@@ -1,5 +1,5 @@
 PyYAML
-ontobio==2.8.4
+git+https://github.com/biolink/ontobio.git@gopreprocess-gpad20#egg=ontobio
 click
 pyparsing==2.4.7
 antlr4-python3-runtime==4.9.3
