@@ -1063,7 +1063,7 @@ For any annotation to a molecular function MF-X, infer annotation to all MFs tha
 ## Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column)
 
  * id: [GORULE:0000063](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000063.md)
- * status: approved
+ * status: implemented
 
 
 
