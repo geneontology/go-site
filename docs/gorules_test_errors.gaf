@@ -284,3 +284,7 @@ UniProtKB	A1B2F4	aztD	part_of	GO:0044423	PMID:26468286	IDA		C	GORULE_TEST:000006
 UniProtKB	A1B2F4	aztD	part_of	GO:0098030	PMID:26468286	IDA		C	GORULE_TEST:0000061-43		protein	taxon:318586	20230427	GO_Central	
 ! SHOULD PASS GORULE:0000061 - TEST 45 - 'is_active_in' is allowed for  GO CC - 'cell plate' descendent of cellular anatomical entity															
 UniProtKB	A1B2F4	aztD	is_active_in	GO:0009504	PMID:26468286	IDA		C	GORULE_TEST:0000061-45		protein	taxon:318586	20230427	GO_Central	
+! SHOULD PASS GORULE:0000063 - TEST 1
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000063-1 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein taxon:4896	20230427 GO_Central
+! FAILS GORULE:0000063 - TEST 2
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO		C	GORULE_TEST:0000063-2 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20230427	GO_Central
