@@ -65,6 +65,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000061">GORULE:0000061 Allowed gene product to term relations (gp2term)</a>
  * <a href="#gorule0000062">GORULE:0000062 Infer annotations on molecular function via has_part</a>
  * <a href="#gorule0000063">GORULE:0000063 Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column)</a>
+ * <a href="#gorule0000064">GORULE:0000064 TreeGrafter IEAs should be filtered for GO reference species</a>
 
 
 
@@ -1068,3 +1069,15 @@ For any annotation to a molecular function MF-X, infer annotation to all MFs tha
 
 
 See also GO-RULE:0000038 (proposed) for a check of the values in the 'with' field. 
+
+<a name="gorule0000064"/>
+
+## TreeGrafter IEAs should be filtered for GO reference species
+
+ * id: [GORULE:0000064](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000064.md)
+ * status: approved
+
+
+
+If an annotation is an IEA to GO_REF:0000118 and the taxon is not in the GO reference species list 
+(i.e 143 Panther species), then filter out.
