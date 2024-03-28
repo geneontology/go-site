@@ -1067,8 +1067,9 @@ For any annotation to a molecular function MF-X, infer annotation to all MFs tha
  * status: implemented
 
 
-
+If evidence (GAF column 7; GPAD column 6) is one of ISS, ISA, ISO, then there must be a value in the 'with/from' field (GAF column 8; GPAD column 7). 
 See also GO-RULE:0000038 (proposed) for a check of the values in the 'with' field. 
+Noting that ISM is not covered by this rule yet.
 
 <a name="gorule0000064"/>
 
