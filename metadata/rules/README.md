@@ -1079,5 +1079,4 @@ See also GO-RULE:0000038 (proposed) for a check of the values in the 'with' fiel
 
 
 
-If an annotation has GO_REF:0000118 (GAF column 6, GPAD column 5) and the taxon (GAF column 13, GPI column 7) is present in the GO reference species list 
-(i.e 143 Panther species; [go-reference-species.yaml](https://github.com/geneontology/go-site/blob/master/metadata/go-reference-species.yaml)), then the annotation should be filter out.
+If an annotation has GO_REF:0000118 (GAF column 6, GPAD column 5) and the taxon (GAF column 13, GPI column 7) is present in the GO reference species list (i.e 143 Panther species; [go-reference-species.yaml](https://github.com/geneontology/go-site/blob/master/metadata/go-reference-species.yaml)), then the annotation should be filter out. Note that this is not a line-by-line check in GPAD since it required both the GPAD and the GPI files.
