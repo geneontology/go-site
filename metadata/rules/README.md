@@ -1076,7 +1076,7 @@ Noting that ISM is not covered by this rule yet.
 ## TreeGrafter IEAs should be filtered for GO reference species
 
  * id: [GORULE:0000064](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000064.md)
- * status: approved
+ * status: implemented
 
 
 
