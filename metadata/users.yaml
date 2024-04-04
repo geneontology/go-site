@@ -4617,3 +4617,14 @@
   nickname: 'Pascal Carme'
   organization: PomBase
   uri: 'https://orcid.org/0009-0003-9059-1333'
+-
+  accounts:
+    github: IvanTsers
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.evolbio.mpg.de'
+  nickname: 'Ivan Tsers'
+  uri: 'https://orcid.org/0000-0001-7831-4366'
