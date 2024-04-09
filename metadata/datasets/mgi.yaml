@@ -26,7 +26,7 @@ datasets:
    dataset: mgi
    submitter: mgi
    compression: gzip
-   source: http://www.informatics.jax.org/downloads/reports/gene_association_nonoctua.mgi.gz
+   source: https://mirror.geneontology.io/mgi-p2go-homology.gaf.gz
    entity_type:
    status: active
    species_code: Mmus
