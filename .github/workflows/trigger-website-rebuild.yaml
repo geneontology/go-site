@@ -37,6 +37,8 @@ jobs:
         with:
           app-id: ${{ vars.WORKFLOW_BOT_APP_ID }}
           private-key: ${{ secrets.WORKFLOW_BOT_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: "go-site,geneontology.github.io"
 
       - name: Trigger deploy workflow in geneontology.github.io
         run: |
