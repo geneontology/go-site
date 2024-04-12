@@ -39,6 +39,8 @@ jobs:
           private-key: ${{ secrets.WORKFLOW_BOT_PRIVATE_KEY }}
 
       - name: Trigger deploy workflow in geneontology.github.io
-        run: gh workflow run deploy.yaml --repo geneontology/geneontology.github.io
+        run: |
+          gh auth status -t
+          gh workflow run deploy.yaml --repo geneontology/geneontology.github.io
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
