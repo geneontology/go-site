@@ -1,0 +1,29 @@
+# This workflow triggers a rebuild of the GO website when the gorefs.yaml file is updated.
+# This repo has the GO Workflow Bot app installed, and the app's private key is stored as
+# a repo secret. The private key is used to generate an access token. The access token is
+# provided to the GitHub CLI when triggering the deploy workflow in the
+# geneontology.github.io repo. Without the app-generated token, the default GITHUB_TOKEN
+# would not have the necessary permissions to trigger workflows in a different repo.
+
+name: Trigger Website Rebuild
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - metadata/gorefs.yaml
+      - .github/workflows/trigger-website-rebuild.yaml
+
+jobs:
+  trigger-website-rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ vars.WORKFLOW_BOT_APP_ID }}
+          private-key: ${{ secrets.WORKFLOW_BOT_PRIVATE_KEY }}
+      - run: gh workflow run deploy.yaml --repo geneontology/geneontology.github.io
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
