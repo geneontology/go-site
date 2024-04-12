@@ -22,6 +22,7 @@ jobs:
       # In theory, a failed validation would have been caught by the qc workflow before this point.
       # But we validate again here just to double-check that we're not triggering a rebuild based
       # on invalid data. This is also simpler than tying this workflow to the qc workflow.
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
