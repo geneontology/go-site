@@ -21,11 +21,11 @@ datasets:
    id: mgi.gaf
    label: "mgi gaf file"
    description: "gaf file for mgi from Mouse Genome Informatics"
-   url: http://skyhook.berkeleybop.org/silver-issue-325-gopreprocess/products/upstream_and_raw_data/preprocess_raw_files/mgi-merged.gaf
+   url: https://mirror.geneontology.io/mgi-p2go-homology.gaf.gz
    type: gaf
    dataset: mgi
    submitter: mgi
-   source: http://skyhook.berkeleybop.org/silver-issue-325-gopreprocess/products/upstream_and_raw_data/preprocess_raw_files/mgi-merged.gaf
+   source: https://mirror.geneontology.io/mgi-p2go-homology.gaf.gz
    entity_type:
    status: active
    species_code: Mmus

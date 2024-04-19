@@ -17,18 +17,4 @@ datasets:
     taxa:
       - NCBITaxon:5476
 
-  - id: noctua_wb.gpad
-    label: "noctua_wb gpad file"
-    description: "GPAD file for WB from Noctua"
-    type: gpad
-    dataset: noctua_wb
-    submitter: GOC
-    compression: gzip
-    source: ./products/upstream_and_raw_data/noctua_wb.gpad.gz
-    entity_type:
-    status: inactive
-    species_code: Cele
-    taxa:
-      - NCBITaxon:6239
-
 

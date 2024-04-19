@@ -19,19 +19,3 @@ datasets:
     - NCBITaxon:10090
    merges_into: mgi
 
- -
-   id: paint_wb.gaf
-   label: "paint_wb gaf file"
-   description: "gaf file for paint_wb from PAINT"
-   type: gaf
-   dataset: paint_wb
-   submitter: paint
-   compression: gzip
-   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_wb.gaf.gz
-   entity_type:
-   status: active
-   species_code: Cele
-   taxa:
-    - NCBITaxon:6239
-   merges_into: wb
-

@@ -55,6 +55,8 @@ noctua_gpad: $(foreach name,$(BASE_VALID_NOCTUA_GPAD_NAME),$(ROOT_PATH)/noctua_t
 $(ROOT_PATH)/noctua_sources/noctua_%-src.gpad: $(ROOT_PATH)/noctua_sources/noctua_%-src.gpad.gz
 	unpigz $<
 
+# This is where we reprocess noctua GPADs once again after the validate produce step in the Megamake step.
+# This is called from the Temporary post filter.
 $(ROOT_PATH)/noctua_target/noctua_%.gpad: $(ROOT_PATH)/noctua_sources/noctua_%-src.gpad $(ROOT_PATH)/go-ontology.json
 	mkdir -p $(ROOT_PATH)/noctua_target
 	ontobio-parse-assocs.py -f $< -F gpad -o $@ -r $(ROOT_PATH)/go-ontology.json --report-md $(ROOT_PATH)/noctua_target/noctua_$*.report.md --report-json $(ROOT_PATH)/noctua_target/noctua_$*.report.json -l all convert --to gpad -n 2.0
