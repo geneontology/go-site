@@ -11,7 +11,7 @@ datasets:
    id: pseudocap.gaf
    label: "pseudocap gaf file"
    description: "gaf file for pseudocap from Pseudomonas Genome Project"
-   url: http://current.geneontology.org/annotations/pseudocap.gaf.gz
+   url: https://current.geneontology.org/annotations/pseudocap.gaf.gz
    type: gaf
    dataset: pseudocap
    submitter: pseudocap

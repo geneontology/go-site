@@ -23,10 +23,7 @@ class GoRef:
         self, portion: Optional[str] = None
     ) -> Union[Tuple[Dict, str], Dict, str]:
         with open(self.yd_path, "r") as file:
-            yd_content = file.read()
-    
-        f = io.StringIO(yd_content)
-        yaml, md = yamldown.load(f)
+            yaml, md = yamldown.load(file)
 
         if portion == "yaml":
             return yaml

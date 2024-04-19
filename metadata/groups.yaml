@@ -546,3 +546,8 @@
   id: https://ibeetle-base.uni-goettingen.de
   shorthand: iBB
   parent_group: GOC
+-
+  label: 'Max Planck Institute for Evolutionary Biology'
+  id: https://www.evolbio.mpg.de
+  shorthand: IMPRS-EB
+  parent_group: GOC

@@ -1,0 +1,46 @@
+# This workflow triggers a rebuild of the GO website when the gorefs.yaml file is updated.
+# This repo has the GO Workflow Bot app installed, and the app's private key is stored as
+# a repo secret. The private key is used to generate an access token. The access token is
+# provided to the GitHub CLI when triggering the deploy workflow in the
+# geneontology.github.io repo. Without the app-generated token, the default GITHUB_TOKEN
+# would not have the necessary permissions to trigger workflows in a different repo.
+
+name: Trigger Website Rebuild
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - metadata/gorefs.yaml
+      - .github/workflows/trigger-website-rebuild.yaml
+
+jobs:
+  trigger-website-rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      # In theory, a failed validation would have been caught by the qc workflow before this point.
+      # But we validate again here just to double-check that we're not triggering a rebuild based
+      # on invalid data. This is also simpler than tying this workflow to the qc workflow.
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - run: pip install linkml
+      - name: Validate gorefs.yaml
+        run: linkml-validate -s metadata/gorefs.schema.yaml metadata/gorefs.yaml
+
+      - name: Create GitHub App token
+        uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ vars.WORKFLOW_BOT_APP_ID }}
+          private-key: ${{ secrets.WORKFLOW_BOT_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: "go-site,geneontology.github.io"
+
+      - name: Trigger deploy workflow in geneontology.github.io
+        run: gh workflow run deploy.yaml --repo geneontology/geneontology.github.io
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}

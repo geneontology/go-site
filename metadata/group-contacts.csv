@@ -29,7 +29,8 @@ dictyBase,Petra Fey,@pfey03,Annotation Review
 dictyBase,Robert Dodson,@rjdodson,
 DisProt,Federica Quaglia,@federicaquaglia,biocuration | stucture | functions
 DisProt,Victoria Nugnes,@victorianugnes,biocuration | stucture | intrinsically disordered regions (IDRs)
-EAWAG (ETH Zurich),Emanuel Schmid,@emanuel-schmid,biodegradation | databases | webservices
+EAWAG-BBD (ETH Zurich),Emanuel Schmid,@emanuel-schmid,biodegradation | databases | webservices
+EAWAG-BBD (ETH Zurich),Kathrin Fenner,Kathrin.Fenner - at - eawag.ch,biodegradation | enviPath.org
 ECO - Evidence and Conclusion Ontology,Michelle Giglio,@mgiglio99,
 ECO - Evidence and Conclusion Ontology,Suvvi Nadendla,@nsuvarnaiari,
 ECO - Evidence and Conclusion Ontology,James Munro,@jbmunro,
@@ -41,6 +42,7 @@ Eurofung,,,
 FlyBase,Helen Attrill,@hattrill,Annotation Review
 FlyBase,Giulia Antonazzo,@gantonazzo,
 FlyBase,Steven Marygold,@sjm41,
+FlyBase,Rossana Zaru,@rozaru,
 GDB,EBI/GOC,@Antonialock,
 GDB,EBI/GOC,@pgaudet,
 GeneDB,Ulrike Boehme,@uliboehme,Plasmodium curator | TriTryp
@@ -59,6 +61,7 @@ GREEKC,Colin Logie,@colinlog,Transcription
 HGNC,Susan Tweedie,@sartweedie,
 HGNC-UCL,Ruth Lovering,@RLovering,
 HPA,Emma Lundberg, emma.lundberg AT scilifelab.se,
+IMPRS-EB,Ivan Tsers,@IvanTsers,phytopathology | comparative genomics | gene functional classification
 IntAct,Kalpana Panneerselvam,@kalpanap,
 InterPro,Lowri Williams,lsw26,
 InterPro,Sara Chuguransky,@sarach06,
@@ -104,6 +107,7 @@ PIR,Kati Laiho,@laihokati,
 PomBase,general GitHub account,@pombase-admin,
 PomBase,ValWood,@valwood,Annotation Review
 PomBase,Kim Rutherford,@kimrutherford,
+PomBase,Pascal Carme,@PCarme,curator
 Protein Ontology, Darren Natale,@nataled,
 PseudoCAP,Fiona Brinkman,@fionabrinkman,
 PseudoCAP,General Group,@brinkmanlab,
@@ -149,7 +153,7 @@ UniProt (Swiss-Prot/Geneva),Kristian Axelsen,@kaxelsen,enzymes
 UniProt (Swiss-Prot/Geneva),Lucila Aimo,@aimol,lipid metabolism
 UniProt (Swiss-Prot/Geneva),Marc Feuermann,@marcfeuermann,fungi | enzymes
 UniProt (Swiss-Prot/Geneva),Nevila Nouspikel,nnouspikel,lipids | immunology | cancer
-UniProt (Swiss-Prot/Geneva),Ivo Pedruzzi,@pedruzzi, 
+UniProt (Swiss-Prot/Geneva),Ivo Pedruzzi,@pedruzzi,HAMAP
 UniProt (Swiss-Prot/Geneva),Sylvain Poux,@sylvainpoux,
 UniProt - UniRules,Elena Speretta,esperetta,
 UniProt - UniRules,Pedro Raposo,PedroRaposo,

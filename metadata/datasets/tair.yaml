@@ -11,12 +11,12 @@ datasets:
    id: tair.gaf
    label: "tair gaf file"
    description: "gaf file for tair from The Arabidopsis Information Resource"
-   url: http://current.geneontology.org/annotations/tair.gaf.gz
+   url: https://current.geneontology.org/annotations/tair.gaf.gz
    type: gaf
    dataset: tair
    submitter: tair
    compression: gzip
-   source: https://www.arabidopsis.org/download_files/GO_and_PO_Annotations/Gene_Ontology_Annotations/gene_association.tair.gz
+   source: https://release.geneontology.org/2024-03-28/products/upstream_and_raw_data/tair-src.gaf.gz
    entity_type:
    status: active
    species_code: Atal

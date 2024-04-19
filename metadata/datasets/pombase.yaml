@@ -11,12 +11,12 @@ datasets:
    id: pombase.gaf
    label: "pombase gaf file"
    description: "gaf file for pombase from PomBase"
-   url: http://current.geneontology.org/annotations/pombase.gaf.gz
+   url: https://current.geneontology.org/annotations/pombase.gaf.gz
    type: gaf
    dataset: pombase
    submitter: pombase
    compression: gzip
-   source: https://www.pombase.org/data/annotations/Gene_ontology/gene_association.pombase.gz
+   source: https://release.geneontology.org/2024-03-28/products/upstream_and_raw_data/pombase-src.gaf.gz
    entity_type:
    status: active
    species_code: Spom
@@ -27,7 +27,7 @@ datasets:
    id: pombase.gpi
    label: "pombase gpi file"
    description: "gpi file for pombase from PomBase"
-   url: http://current.geneontology.org/annotations/pombase.gpi.gz
+   url: https://current.geneontology.org/annotations/pombase.gpi.gz
    type: gpi
    dataset: pombase
    submitter: pombase
@@ -43,7 +43,7 @@ datasets:
    id: pombase.gpad
    label: "pombase gpad file"
    description: "gpad file for pombase from PomBase"
-   url: http://current.geneontology.org/annotations/pombase.gpad.gz
+   url: https://current.geneontology.org/annotations/pombase.gpad.gz
    type: gpad
    dataset: pombase
    submitter: pombase

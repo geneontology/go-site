@@ -118,10 +118,26 @@ Enumerated rules used for QC within the GO
 
 See the [gorules/](gorules) directory for more details
 
-# gorefs
+# gorefs.yaml
+
+- [gorefs.yaml](gorefs.yaml) - metadata on GOC members and contributors
+- [gorefs.schema.yaml](gorefs.schema.yaml) - schema (uses [LinkML](https://linkml.io/linkml/))
 
 Ad-hoc references and publications referenced within GO, where no PMID or DOI available.
 
-See the [gorefs/](gorefs) directory for more details
+Fields:
+
+- id (REQUIRED, UNIQUE) - A URI uniquely identifying the reference. Follows the pattern `GO_REF:NNNNNNN` where N is a digit. Typically the number should be the next available number (e.g. `GO_REF:0000119`)
+- title (REQUIRED) - The title of the reference.
+- description (REQUIRED) - A description or abstract for the reference.
+- comments (ZERO TO MANY) - Comments on the reference. These will be displayed separately from the description. Rarely used except for by some old references.
+- alt_id (ZERO TO MANY) - Alternative IDs for the reference. Must follow the same pattern as the id field.
+- authors (REQUIRED) - Authors of the reference.
+- citation (OPTIONAL) - PMID of a published citation for this reference (e.g. `PMID:30272209`)
+- evidence_codes (ZERO TO MANY) - Evidence codes that are used in the reference. Must be an ECO term ID (e.g. `ECO:0000501`)
+- external_accession (ZERO TO MANY) - Cross references to other databases for the reference. Must be of the form `PFX:ID` where PFX is the database prefix and ID is the accession number (e.g. `SGD_REF:S000148669`)
+- is_obsolete (BOOLEAN, OPTIONAL) - Whether the reference is obsolete. If true, the title should also begin with "OBSOLETE".
+- url (OPTIONAL) - a URL to get more information about the reference.
+- year (OPTIONAL, INTEGER) - The year the reference was created. 
 
 

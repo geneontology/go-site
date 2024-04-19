@@ -255,10 +255,14 @@ def main():
         ## This dictionary should be a map of  dataset id `aid` to percent allowable reduction.
         ## gramene_oryza is allowed to be 30% of total. This is due to old IEAs (GORULE:0000029)
         ## goa_chicken_complex is temporarily being reduced by bad evidence codes
+        ## goa_chicken_isoform from geneontology/pipeline#367
+        ## goa_pig_isoform from geneontology/pipeline#367
         ## ecocyc is temporarily being reduced by bad evidence codes
         reduction_threshold = {
             "gramene_oryza": 0.3,
             "goa_chicken_complex": 0.3,
+            "goa_chicken_isoform": 0.3,
+            "goa_pig_isoform": 0.3,
             "aspgd": 0.1,
             "ecocyc": 0.3
         }
