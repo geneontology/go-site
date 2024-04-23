@@ -5,4 +5,4 @@
 
 ## Errata
 
-* n/a
+* There was an issue with the ontology subsets build during this release period (https://github.com/geneontology/go-ontology/issues/27687); this causes an erroneous illegal subset to be added.
