@@ -4593,6 +4593,7 @@
   nickname: 'Steven Marygold'
   organization: FlyBase
   uri: 'https://orcid.org/0000-0003-2759-266X'
+  xref: 'GOC:sjm'
 -
   accounts:
     github: LucillePo
