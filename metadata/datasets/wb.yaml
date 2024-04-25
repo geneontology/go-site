@@ -23,8 +23,8 @@ datasets:
    dataset: wb
    submitter: wb
    compression: gzip
-   source: http://release.geneontology.org/2024-03-28/products/upstream_and_raw_data/wb-src.gaf.gz
-   #source: ftp://ftp.wormbase.org/pub/wormbase/species/c_elegans/PRJNA13758/annotation/gene_association/c_elegans.PRJNA13758.current.gene_association.wb.gz
+   #source: http://release.geneontology.org/2024-03-28/products/upstream_and_raw_data/wb-src.gaf.gz
+   source: ftp://ftp.wormbase.org/pub/wormbase/species/c_elegans/PRJNA13758/annotation/gene_association/c_elegans.PRJNA13758.current.gene_association.wb.gz
    entity_type:
    status: active
    species_code: Cele
@@ -39,8 +39,8 @@ datasets:
    dataset: wb
    submitter: wb
    compression: gzip
-   source: http://release.geneontology.org/2024-03-28/products/upstream_and_raw_data/wb-src.gpi.gz
-   #source: ftp://ftp.wormbase.org/pub/wormbase/species/c_elegans/PRJNA13758/annotation/gene_product_info/c_elegans.PRJNA13758.current.gene_product_info.gpi.gz
+   #source: http://release.geneontology.org/2024-03-28/products/upstream_and_raw_data/wb-src.gpi.gz
+   source: ftp://ftp.wormbase.org/pub/wormbase/species/c_elegans/PRJNA13758/annotation/gene_product_info/c_elegans.PRJNA13758.current.gene_product_info.gpi.gz
    entity_type:
    status: active
    species_code: Cele
