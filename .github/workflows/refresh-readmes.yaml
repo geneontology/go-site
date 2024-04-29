@@ -15,9 +15,6 @@ jobs:
       - name: run make on rules
         working-directory: ./metadata/rules/
         run: make -B README.md
-      - name: run make on gorefs
-        working-directory: ./metadata/gorefs
-        run: make -B README.md
       - uses: stefanzweifel/git-auto-commit-action@v4
         name: commit READMEs
         with:
