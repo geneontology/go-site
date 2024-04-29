@@ -17,7 +17,6 @@ def process_single_file(source_file, gpis, ontology, out_dir, annotation_inferen
     ontology = cached_ontology.from_file(ontology)
     config = assocparser.AssocParserConfig(
         ontology=ontology,
-        goref_metadata=metadata.yamldown_lookup(os.path.join(metadata_dir, "gorefs")),
         rule_metadata=metadata.yamldown_lookup(os.path.join(metadata_dir, "rules")),
         rule_contexts=[],
         suppress_rule_reporting_tags=[],
