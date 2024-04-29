@@ -672,7 +672,7 @@ IEAs less than one year old are valid.
  * status: implemented
 
 
-GO_REFs are here: https://github.com/geneontology/go-site/tree/master/metadata/gorefs
+GO_REFs are here: https://github.com/geneontology/go-site/tree/master/metadata/gorefs.yaml
 References for which is_obsolete: `true` should not be allowed as a reference (GAF column 6; GPAD column 5).
 
 <a name="gorule0000031"/>
@@ -721,7 +721,7 @@ If the group reference is the only one present, it will be reported as a warning
 
 Already existing References from PMID, PMC, doi, or GO_REF will not be reported on as these are all correct.
 
-The list of GO_REFs are here: https://github.com/geneontology/go-site/tree/master/metadata/gorefs.
+The list of GO_REFs are here: https://github.com/geneontology/go-site/tree/master/metadata/gorefs.yaml.
 
 <a name="gorule0000035"/>
 
