@@ -1933,6 +1933,8 @@
     at UniProt (https://www.uniprot.org/help/arba), Blog on ARBA
     (http://insideuniprot.blogspot.com/2020/09/association-rule-based-annotator-arba.html).
   authors: UniProt
+  external_accession:
+    - J:342609
   year: 2021
 - id: GO_REF:0000118
   title: TreeGrafter-generated GO annotations
