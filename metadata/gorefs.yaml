@@ -421,8 +421,7 @@
     FlyBase and UniProtKB curators.
   external_accession:
     - dictyBase_REF:9
-    - J:73065
-    - J:104715
+    - J:342587
     - FB:FBrf0255270
   is_obsolete: false
   year: 2011
@@ -665,6 +664,7 @@
   authors: GO Annotation working group
   external_accession:
     - SGD_REF:S000147045
+    - J:342596
   year: 2011
 - id: GO_REF:0000037
   title: OBSOLETE Gene Ontology annotation based on manual assignment of UniProtKB
@@ -789,6 +789,7 @@
   authors: UniProt-GOA
   external_accession:
     - ZFIN:ZDB-PUB-130131-1
+    - J:342601
   year: 2012
 - id: GO_REF:0000042
   title: OBSOLETE Gene Ontology annotation through association of InterPro records
@@ -857,6 +858,7 @@
   external_accession:
     - TAIR:AnalysisReference:501756971
     - TAIR:AnalysisReference:50175724
+    - J:342604
   year: 2012
 - id: GO_REF:0000045
   title: OBSOLETE Gene Ontology annotation based on UniProtKB/TrEMBL entries keyword
@@ -1689,6 +1691,7 @@
   authors: UniProt curators
   external_accession:
     - ZFIN:ZDB-PUB-170525-1
+    - J:342612
   year: 2015
 - id: GO_REF:0000105
   title: Gene Ontology annotation of transfer RNAs based on tRNAscan-SE analysis of
@@ -1730,6 +1733,8 @@
     model organism database identifier of the annotation source will be indicated
     in the 'With' column of the GOA association file.
   authors: GOA curators
+  external_accession:
+    - J:342605
   year: 2016
 - id: GO_REF:0000108
   title: Automatic assignment of GO terms using logical inference, based on on inter-ontology
@@ -1745,6 +1750,8 @@
     source annotation has a manual or automatic evidence code. Both of these codes
     map up to the GO Inferred from Electronic Annotation (IEA) evidence code.
   authors: GOA curators
+  external_accession:
+    - J:346132
   year: 2016
 - id: GO_REF:0000109
   title: Gene Ontology annotation based on curation of genome-wide subcellular localisation
@@ -1790,6 +1797,7 @@
   authors: TBD
   external_accession:
     - FB:FBrf0233689
+    - J:342606
   year: 2016
 - id: GO_REF:0000112
   title: OBSOLETE Gene Ontology annotation by CACAO biocurators
@@ -1876,6 +1884,8 @@
     paralogs for a single species, multiple variants of the complex can be inferred.
   authors: Birgit Meldal and Sandra Orchard (1). (1) European Bioinformatics Institute
     (EBI), Hinxton, Cambridgeshire, United Kingdom
+  external_accession:
+    - J:342607
   year: 2018
 - id: GO_REF:0000115
   title: Automatic Gene Ontology annotation of non-coding RNA sequences through association
@@ -1913,6 +1923,8 @@
     all UniProt entries annotated with a Rhea reaction. The mapping file is available
     at: http://current.geneontology.org/ontology/external2go/rhea2go.
   authors: GO Central curators, GOA curators, Rhea curators
+  external_accession:
+    - J:342608
   citation: PMID:30272209
   year: 2020
 - id: GO_REF:0000117
