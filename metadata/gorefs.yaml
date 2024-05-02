@@ -35,21 +35,16 @@
 - id: GO_REF:0000003
   title: Gene Ontology annotation based on Enzyme Commission mapping
   description: |-
-    Transitive assignment using Enzyme Commission identifiers. This method is used
-    for any database entry, such as a protein record in UniProtKB or TrEMBL, that
-    has had an Enzyme Commission number assigned. The corresponding GO term is determined
-    using the EC cross-references in the GO molecular function ontology. Also see
-    Hill et al., Genomics (2001) 74:121-128. The mapping file is available at
-    http://www.geneontology.org/external2go/ec2go.
+  In UniProt, proteins with enzymatic activities have traditionally been annotated using reference vocabularies such as the hierarchical enzyme classification of the Enzyme Nomenclature Committee of the IUBMB 
+  (often referred to as Enzyme Commission or EC numbers; https://enzyme.expasy.org/). EC numbers are manually curated in Swiss-Prot ('UniProt Reviewed') entries and added automatically to 
+  TrEMBL ('UniProt Uneviewed') entries. A mapping between EC numbers and GO Molecular Function terms is maintainted by GO editors. UniProt entries assigned with an EC number
+  with a GO mapping are automatically annotated with the correponding GO term, as described in PMID:30395331. GO annotations using this method receive the evidence code 
+  Inferred from Electronic Annotation (IEA). This method has been evaluated at up to 100% accurate (Camon et. al. 2005). The EC2GO mapping file is available at
+  http://current.geneontology.org/ontology/external2go/ec2go.
   alt_id:
     - GO_REF:0000005
-  authors: GOA curators, MGI curators
-  citation: PMID:11374909
-  external_accession:
-    - MGI:2152096
-    - J:72245
-    - ZFIN:ZDB-PUB-031118-3
-    - SGD_REF:S000124037
+  authors: GO Central curators
+  citation: PMID:31688925
   is_obsolete: false
   year: 2001
 - id: GO_REF:0000004
