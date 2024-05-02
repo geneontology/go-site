@@ -770,7 +770,7 @@
   description: |-
     Transitive assignment of GO terms based on the UniPathway pathway vocabulary.
     UniPathway is not maintained anymore. It was a manually curated resource of enzyme-catalyzed and spontaneous
-    chemical reactions that provided a hierarchical representation of metabolic pathways. The last release of UniPatway 
+    chemical reactions that provided a hierarchical representation of metabolic pathways. The last release of UniPathway 
     was in March 2015 and is archived at NCBO: 
     https://bioportal.bioontology.org/ontologies/UPA.
   authors: UniProt-GOA
