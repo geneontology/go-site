@@ -34,7 +34,6 @@ def main(report, template, date, suppress_rule_tag):
     for rule_path in glob.glob(os.path.join(rules_directory, "gorule*.md")):
         with open(rule_path) as rule_file:
             rule = yamldown.load(rule_file)[0]
-
             rule_id = rule["id"].lower().replace(":", "-")
             rules_descriptions[rule_id] = {
                 "title": rule["title"],
