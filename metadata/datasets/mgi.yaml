@@ -21,28 +21,11 @@ datasets:
    id: mgi.gaf
    label: "mgi gaf file"
    description: "gaf file for mgi from Mouse Genome Informatics"
-   url: https://current.geneontology.org/annotations/mgi.gaf.gz
+   url: https://mirror.geneontology.io/mgi-p2go-homology.gaf.gz
    type: gaf
    dataset: mgi
    submitter: mgi
-   compression: gzip
-   source: https://release.geneontology.org/2024-03-28/products/upstream_and_raw_data/mgi-src.gaf.gz
-   entity_type:
-   status: active
-   species_code: Mmus
-   taxa:
-    - NCBITaxon:10090
-
- -
-   id: mgi.gpad
-   label: "mgi gpad file"
-   description: "gpad file for mgi from Mouse Genome Informatics"
-   url: https://current.geneontology.org/annotations/mgi.gpad.gz
-   type: gpad
-   dataset: mgi
-   submitter: mgi
-   compression: gzip
-   source: http://www.informatics.jax.org/downloads/reports/mgi.gpad.gz
+   source: https://mirror.geneontology.io/mgi-p2go-homology.gaf.gz
    entity_type:
    status: active
    species_code: Mmus
