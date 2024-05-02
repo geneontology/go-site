@@ -416,7 +416,7 @@
     decision is taken on a case by case basis and may be influenced by statements
     by researchers in the field. Further detailed information on this procedure, including
     how ISS annotations are made to protein isoforms, can be found at:
-    http://www.ebi.ac.uk/GOA/ISS_method.html.
+    https://wiki.geneontology.org/Inferred_from_Sequence_or_structural_Similarity_(ISS).
   authors: AgBase, BHF-UCL, Parkinson's UK-UCL, dictyBase, HGNC, Roslin Institute,
     FlyBase and UniProtKB curators.
   external_accession:
@@ -769,23 +769,10 @@
   title: Gene Ontology annotation based on UniPathway vocabulary mapping.
   description: |-
     Transitive assignment of GO terms based on the UniPathway pathway vocabulary.
-    UniPathway is a manually curated resource of enzyme-catalyzed and spontaneous
-    chemical reactions. It provides a hierarchical representation of metabolic pathways.
-    Descriptions of the pathway(s) that a particular protein is involved in are included
-    in UniProtKB records.
-
-    UniPathway data are cross-linked to existing pathway resources such as KEGG and
-    MetaCyc. Further information on the UniPathway resource is available at
-    http://www.unipathway.org/obiwarehouse/unipathway.
-
-    When a UniPathway pathway describes a concept that is within the scope of the
-    Gene Ontology, it is investigated to determine whether it is appropriate to map
-    the term to an equivalent term in GO. The mapping between UniPathway terms and
-    GO terms is carried out manually. Definitions and hierarchies of the terms in
-    the two resources are compared and the mapping generated will reflect the most
-    correct correspondence. The translation table between GO terms and UniPathway
-    pathways is maintained by the UniPathway team and is available at
-    http://www.grenoble.prabi.fr/dev/obiwarehouse/download/unipathway/public/unipathway2go.tsv.
+    UniPathway is not maintained anymore. It was a manually curated resource of enzyme-catalyzed and spontaneous
+    chemical reactions that provided a hierarchical representation of metabolic pathways. The last release of UniPathway 
+    was in March 2015 and is archived at NCBO: 
+    https://bioportal.bioontology.org/ontologies/UPA.
   authors: UniProt-GOA
   external_accession:
     - ZFIN:ZDB-PUB-130131-1
@@ -850,10 +837,10 @@
     information on these two different annotation methods is available
     https://www.uniprot.org/help/keywords.
     When a UniProtKB Subcellular Location term describes a concept that is within
-    the scope of the Gene Ontology, a mapping is manually made to the corresponding
+    the scope of the Gene Ontology, a mapping is made to the corresponding
     GO term. The translation table between GO terms and UniProtKB Subcellular Location
     term is maintained by the EBI GOA team and available at
-    http://www.geneontology.org/external2go/spsl2go.
+    http://current.geneontology.org/ontology/external2go/uniprotkb_sl2go.
   authors: UniProt-GOA
   external_accession:
     - TAIR:AnalysisReference:501756971
