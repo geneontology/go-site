@@ -15,13 +15,10 @@ jobs:
       - name: run make on rules
         working-directory: ./metadata/rules/
         run: make -B README.md
-      - name: run make on gorefs
-        working-directory: ./metadata/gorefs
-        run: make -B README.md
       - uses: stefanzweifel/git-auto-commit-action@v4
         name: commit READMEs
         with:
-          commit_message: refreshing goref and rules README.md files
+          commit_message: refreshing rules README.md file
           commit_user_email: edouglass@lbl.gov
           # Please do the dirty check, don't skip
           skip_dirty_check: false
