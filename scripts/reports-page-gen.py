@@ -34,9 +34,11 @@ def main(report, template, date, suppress_rule_tag):
     for rule_path in glob.glob(os.path.join(rules_directory, "gorule*.md")):
         with open(rule_path) as rule_file:
             rule = yamldown.load(rule_file)[0]
+
             rule_id = rule["id"].lower().replace(":", "-")
             rules_descriptions[rule_id] = {
                 "title": rule["title"],
+                "status": rule["status"],
                 "tags": rule.get("tags", [])
             }
 
@@ -93,6 +95,9 @@ def main(report, template, date, suppress_rule_tag):
             if any([tag in rules_descriptions.get(rule, {}).get("tags", []) for tag in suppress_rule_tag ]):
                 # For any that is passed in to be suppressed, if it is a tag in the rule, then skip the rule.
                 continue
+                # Skip rules that have not been implemented
+            if "implemented" != rules_descriptions.get(rule, {}).get("status", ""):
+                continue 
 
             # If we haven't added the rule, then add the messages, level, and rule ID to the value (keyed to the rule ID)
             if rule not in rule_by_dataset:
