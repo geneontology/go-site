@@ -8,21 +8,19 @@
   title: Gene Ontology annotation through association of InterPro records with GO
     terms.
   description: |-
-    Transitive assignment of GO terms based on InterPro classification. For any database
-    entry (representing a protein or protein-coding gene) that has been annotated
-    with one or more InterPro domains, the corresponding GO terms are obtained from
-    a translation table of InterPro entries to GO terms (interpro2go) generated manually
-    by the InterPro team at EBI. The mapping file is available at
-    http://www.geneontology.org/external2go/interpro2go.
+  [http://www.ebi.ac.uk/interpro/ InterPro] is an integrated resource from the EBI of protein families, domains and sites which are combined from a number 
+  of different protein signature databases, including Gene3D, Panther, PRSF, Pfam, PRINTS, ProSite, ProDom, SMART, SUPERFAMILY and TIGRFAMs. 
+  Signatures describing the same protein family or domain are grouped into unique InterPro entries. When appropriate, the InterPro team maps InterPro entries to 
+  GO terms (Molecular Function, Biological Process and/or Cellular Component). InterPro runs InterProScan on the entire set of UniProt proteins. InterPro hits are 
+  assigned the corresponding GO annotations by the GOA pipeline. The mapping file is available at http://current.geneontology.org/ontology/external2go/interpro2go.
   comments:
-    - Note that some groups filter GO annotations based on InterPro-to-GO transitive
-      assignment, e.g. to remove annotations redundant with manual curation.
+    - Note that some groups filter GO annotations based on InterPro-to-GO transitive assignment, e.g. to remove annotations redundant with manual curation.
   alt_id:
     - GO_REF:0000007
     - GO_REF:0000014
     - GO_REF:0000016
     - GO_REF:0000017
-  authors: DDB, FB, MGI, GOA, ZFIN curators
+  authors: GO Central curators, 2024.
   external_accession:
     - MGI:2152098
     - J:72247
@@ -43,7 +41,7 @@
   http://current.geneontology.org/ontology/external2go/ec2go.
   alt_id:
     - GO_REF:0000005
-  authors: GO Central curators
+  authors: GO Central curators, 2024
   citation: PMID:31688925
   is_obsolete: false
   year: 2001
