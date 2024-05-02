@@ -8,7 +8,7 @@
   title: Gene Ontology annotation through association of InterPro records with GO
     terms.
   description: |-
-  [http://www.ebi.ac.uk/interpro/ InterPro] is an integrated resource from the EBI of protein families, domains and sites which are combined from a number 
+  InterPro (http://www.ebi.ac.uk/interpro/) is an integrated resource from the EBI of protein families, domains and sites which are combined from a number 
   of different protein signature databases, including Gene3D, Panther, PRSF, Pfam, PRINTS, ProSite, ProDom, SMART, SUPERFAMILY and TIGRFAMs. 
   Signatures describing the same protein family or domain are grouped into unique InterPro entries. When appropriate, the InterPro team maps InterPro entries to 
   GO terms (Molecular Function, Biological Process and/or Cellular Component). InterPro runs InterProScan on the entire set of UniProt proteins. InterPro hits are 
