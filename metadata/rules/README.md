@@ -172,7 +172,7 @@ on the GO wiki.
 ## IEA, ISS, ISO, ISM, ISA, IBA, RCA annotations ae not allowed for direct annotations to to 'protein binding ; GO:0005515 or GO:0005488 binding''
 
  * id: [GORULE:0000005](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000005.md)
- * status: approved
+ * status: implemented
 
 
 
