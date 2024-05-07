@@ -147,12 +147,12 @@ UniProt,,,,
 ° UniProt (EBI),P2GO,,Sandra Orchard @sandraorchard,
 ° UniProt (EBI),,,Rizwan Ishtiaq @rizwan-ishtiaq,QuickGO java backend
 ° UniProt (PIR),P2GO,,Kati Laiho @laihokati,
-° UniProt (Swiss-Prot/Geneva),P2GO,,Andrea Auchincloss @AndreaAuchincloss,Bacteria
-° UniProt (Swiss-Prot/Geneva),P2GO | Noctua,,Cristina Casals Casa @ccasalsc, Cell Biology | Transcription
-° UniProt (Swiss-Prot/Geneva),P2GO,,Florence Jungo @FJungo,Venoms
-° UniProt (Swiss-Prot/Geneva),P2GO,,Kristian Axelsen @kaxelsen,enzymes
 ° UniProt (Swiss-Prot/Geneva),P2GO,,Lucila Aimo @aimol,lipid metabolism
-° UniProt (Swiss-Prot/Geneva),P2GO | Noctua,,Marc Feuermann @marcfeuermann,fungi | enzymes
+° UniProt (Swiss-Prot/Geneva),P2GO,,Andrea Auchincloss @AndreaAuchincloss,Bacteria
+° UniProt (Swiss-Prot/Geneva),P2GO,,Kristian Axelsen @kaxelsen,enzymes
+° UniProt (Swiss-Prot/Geneva),P2GO | Noctua,,Cristina Casals Casa @ccasalsc, Cell Biology | Transcription
+° UniProt (Swiss-Prot/Geneva),PAINT | P2GO | Noctua,,Marc Feuermann @marcfeuermann,fungi | enzymes
+° UniProt (Swiss-Prot/Geneva),P2GO,,Florence Jungo @FJungo,Venoms
 ° UniProt (Swiss-Prot/Geneva),P2GO,,Nevila Nouspikel nnouspikel,lipids | immunology | cancer
 ° UniProt (Swiss-Prot/Geneva),P2GO | Noctua,@sylvainpoux, Sylvain Poux @sylvainpoux,
 ° UniProt - HAMAP,< ! > Local < ! >,@pedruzzi, Ivo Pedruzzi @pedruzzi,
