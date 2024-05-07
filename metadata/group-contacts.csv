@@ -133,7 +133,7 @@ SGD,,,,
 SGN,< ! > Local < ! >,@lukasmueller,Lukas Mueller @lukasmueller,
 SynGO,< ! > Local < ! >,@ftwkoopmans,Frank Koopmans @ftwkoopmans,
 SynGO-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
-SYSCILIA_CCNET,P2GO?,Karen Christie,@krchristie,
+SYSCILIA_CCNET,P2GO?,@krchristie,Karen Christie @krchristie,
 TAIR,,,,
 ° TAIR,Local,@tberardini,Tanya Berardini @tberardini,Plant biology 
 ° TAIR,Local,,Leonore Reiser @lreiser,Plant biology
