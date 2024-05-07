@@ -1,16 +1,16 @@
-Group,Contact name,Contact GitHub ID,Expertise/Domains of interest
-AgBase,Jinhui Zhang,@jinhuiz, 
-Alzheimers_University_of_Toronto,Ruth Lovering,@RLovering, 
-ARUK-UCL,Ruth Lovering,@RLovering,
-ASAP,,,
-AspGD,Not actively maintainted/GO_Central,@Antonialock,
-AspGD,Not actively maintainted/GO_Central,@pgaudet,
-AspGD,Not actively maintainted/GO_Central,@vanaukenk,
-BBOP,Seth Carbon,@kltm,Noctua|Data pipeline|AmiGO|Website
-BBOP,Chris Mungall,@cmungall,All things technical and ontology-related
-BBOP,Sierra Moxon,@sierra-moxon,Pipeline
-BBOP,Mark A. Miller,@turbomam,microbial proteomics | 16S metagenomics | biomedical semantics
-BHF-UCL,Ruth Lovering,@RLovering,
+Group,Curation Tool,Contact name,Contact GitHub ID,Expertise/Domains of interest
+AgBase,,Jinhui Zhang,@jinhuiz, 
+Alzheimers_University_of_Toronto,,Ruth Lovering,@RLovering, 
+ARUK-UCL,,Ruth Lovering,@RLovering,
+ASAP,,,,
+AspGD,,Not actively maintainted/GO_Central,@Antonialock,
+AspGD,,Not actively maintainted/GO_Central,@pgaudet,
+AspGD,,Not actively maintainted/GO_Central,@vanaukenk,
+BBOP,,Seth Carbon,@kltm,Noctua|Data pipeline|AmiGO|Website
+BBOP,,Chris Mungall,@cmungall,All things technical and ontology-related
+BBOP,,Sierra Moxon,@sierra-moxon,Pipeline
+BBOP,,Mark A. Miller,@turbomam,microbial proteomics | 16S metagenomics | biomedical semantics
+BHF-UCL,,Ruth Lovering,@RLovering,
 Buffalo University,Alex Diehl,@addiehl,immunology
 CACAO,Debbie Siegle,@dsiegele,
 CACAO,Jolene Ramsey,@jrr-cpt,
