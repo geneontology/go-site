@@ -157,8 +157,9 @@ UniProt,,,,
 ° UniProt (Swiss-Prot/Geneva),P2GO,Nevila Nouspikel,nnouspikel,lipids | immunology | cancer
 ° UniProt (Swiss-Prot/Geneva),P2GO,Ivo Pedruzzi,@pedruzzi,HAMAP
 ° UniProt (Swiss-Prot/Geneva),P2GO, & NoctuaSylvain Poux,@sylvainpoux,Contact for Annotation Review
-° UniProt - UniRules,Local,Elena Speretta,esperetta,
-° UniProt - UniRules,Local,Pedro Raposo,PedroRaposo,
+° UniProt - HAMAP,< ! > Local < ! >,Ivo Pedruzzi,@pedruzzi,
+° UniProt - UniRules,< ! > Local < ! >,Elena Speretta,@esperetta,
+° UniProt - UniRules,< ! > Local < ! >,Pedro Raposo,@PedroRaposo,
 WB - WormBase,P2GO,@vanaukenk,Kimberly Van Auken @vanaukenk,C.elegans | Noctua | GO-CAM
 Wikidata,,,,
 ° Wikidata,NA,Andrew Su,@andrewsu,
