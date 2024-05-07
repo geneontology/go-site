@@ -59,8 +59,8 @@ GO_Central,,,,
 ° GO_Central,P2GO & Noctua,,Chris Mungall @cmungall,Ontology | Anatomy
 ° GO_Central - USC,,,Dustin Ebert @dustine32,PAINT pipeline|GO pipeline
 GO_Noctua,,,,
-GOC,,,,
-GOC-OWL,,,,
+GOC,,@pgaudet,,
+GOC-OWL,,@pgaudet,,
 GR,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Gramene Database - contact Pankaj Jaiswal @jaiswalp for queries
 GREEKC,NA,Colin Logie,@colinlog,Transcription
 HGNC,Local,Susan Tweedie,@sartweedie,
