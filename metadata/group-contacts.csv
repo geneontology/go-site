@@ -154,9 +154,9 @@ UniProt,,,,
 ° UniProt (Swiss-Prot/Geneva),P2GO | Noctua,,Marc Feuermann @marcfeuermann,fungi | enzymes
 ° UniProt (Swiss-Prot/Geneva),P2GO,,Nevila Nouspikel nnouspikel,lipids | immunology | cancer
 ° UniProt (Swiss-Prot/Geneva),P2GO | Noctua,@sylvainpoux, Sylvain Poux @sylvainpoux,
-° UniProt - HAMAP,< ! > Local < ! >,Ivo Pedruzzi,@pedruzzi,
-° UniProt - UniRules,< ! > Local < ! >,Elena Speretta,@esperetta,
-° UniProt - UniRules,< ! > Local < ! >,Pedro Raposo,@PedroRaposo,
+° UniProt - HAMAP,< ! > Local < ! >,@pedruzzi, Ivo Pedruzzi @pedruzzi,
+° UniProt - UniRules,< ! > Local < ! >,@esperetta,Elena Speretta @esperetta,
+° UniProt - UniRules,< ! > Local < ! >,@PedroRaposo,Pedro Raposo @PedroRaposo,
 WB - WormBase,P2GO  |Noctua,@vanaukenk,Kimberly Van Auken @vanaukenk,C.elegans | Noctua | GO-CAM
 Wikidata,,,,
 ° Wikidata,NA,Andrew Su,@andrewsu,
