@@ -159,13 +159,13 @@ UniProt,,,,
 ° UniProt - UniRules,< ! > Local < ! >,@PedroRaposo,Pedro Raposo @PedroRaposo,
 WB - WormBase,P2GO  |Noctua,@vanaukenk,Kimberly Van Auken @vanaukenk,C.elegans | Noctua | GO-CAM
 Wikidata,,,,
-° Wikidata,NA,Andrew Su,@andrewsu,
-° Wikidata,NA,Derek,@cdjow2019 ,
+° Wikidata,,,Andrew Su @andrewsu,
+° Wikidata,,,Derek @cdjow2019 ,
 Xenbase,Noctua,@malcolmfisher103,Malcolm Fisher @malcolmfisher103,Xenopus
 YuBioLab,,,,
 ZFIN,,,,
-° ZFIN,Noctua,Doug Howe,@doughowe,Zebra fish
-° ZFIN,Noctua,Leyla Ruzicka,@LeylaR,ZFIN technical
+° ZFIN,Noctua,,Doug Howe @doughowe,Zebra fish
+° ZFIN,Noctua,.Leyla Ruzicka @LeylaR,ZFIN technical
 ° ZFIN,Noctua,@sramachand,Sridhar Ramanchandran @sramachand,ZFIN curation
 Domain expert,,,@khybiske,Chlamydia
 Domain expert,,,@putmantime,Chlamydia
