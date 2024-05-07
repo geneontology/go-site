@@ -3,9 +3,7 @@ AgBase,P2GO,Jinhui Zhang,@jinhuiz,
 Alzheimers_University_of_Toronto,P2GO,Ruth Lovering,@RLovering, 
 ARUK-UCL,P2GO,Ruth Lovering,@RLovering,
 ASAP,P2GO,,,
-AspGD,P2GO,Not actively maintainted/GO_Central,@Antonialock,
-AspGD,P2GO,Not actively maintainted/GO_Central,@pgaudet,
-AspGD,P2GO,Not actively maintainted/GO_Central,@vanaukenk,
+AspGD,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,
 BBOP,NA,Seth Carbon,@kltm,Noctua|Data pipeline|AmiGO|Website
 BBOP,NA,Chris Mungall,@cmungall,All things technical and ontology-related
 BBOP,NA,Sierra Moxon,@sierra-moxon,Pipeline
