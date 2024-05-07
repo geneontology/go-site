@@ -64,59 +64,48 @@ InterPro,Local*,Beatriz Lazaro Pinto,@blazaropinto,
 InterPro,Local*,Antonina Andreeva (Toni),@tony787 | aea-at- ebi.ac.uk,
 JaponicusDB,Local*,Snezka Oliferenko,@snezhkaoliferenko,
 JaponicusDB,Local*,Val Wood,@ValWood,
-JCVI,P2GO,Not actively maintainted/GO_Central,@pgaudet @Antonialock @vanaukenk,,contact @mgiglio99 for queries
+JCVI,P2GO,Not actively maintainted/GO_Central,@pgaudet @Antonialock @vanaukenk,contact @mgiglio99 for queries
 LIFEdb,P2GO,GO_Central,@Antonialock @pgaudet@vanaukenk, contact Stefan Wiemann,s.wiemann AT dkfz-heidelberg.de for queries
-MENGO,P2GO,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
-MENGO,P2GO,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
-MENGO,P2GO,Not actively maintainted/GO_Central,@Antonialock,contact @mgiglio99 for queries
+MENGO,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,contact @mgiglio99 for queries
 MGI,Noctua,Karen Christie,@krchristie,
 MGI,Noctua,Li Ni,@LiNiMGI,Annotation Review
 MGI,Noctua,David Hill,@ukemi,Development | GO-CAM Modeling | MGI Data & Pipeline issues
-MTBBASE,P2GO,Not actively maintainted/GO_Central/EBI,@pgaudet,
-MTBBASE,P2GO,Not actively maintainted/GO_Central/EBI,@Antonialock,
+MTBBASE,P2GO,Not actively maintainted/GO_Central/EBI,@Antonialock @pgaudet @vanaukenk,
 NTNU_SB,P2GO,Astrid Lægreid,,Transcription
 NTNU_SB,P2GO,Marcio Acencio,@mlacencio,Transcription
 PAINT,PAINT,Pascale Gaudet,@pgaudet,
 PAINT,PAINT,Marc Feurmann,@marcfeuermann,
 PAINT,PAINT,Huaiyu Mi,@huaiyumi,
 PAINT Software,NA,Anushya Muruganujan,@mugitty,PAINT software developer
-PAMGO_GAT,P2GO,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
-PAMGO_GAT,P2GO,Not actively maintainted/GO_Central,@Antonialock,contact @mgiglio99 for queries
-PAMGO_GAT,P2GO,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
-PAMGO_MGG,P2GO,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
-PAMGO_MGG,P2GO,Not actively maintainted/GO_Central,@Antonialock,contact @mgiglio99 for queries
-PAMGO_MGG,P2GO,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
+PAMGO_GAT,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,contact @mgiglio99 for queries
+PAMGO_MGG,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,contact @mgiglio99 for queries
 PAMGO_VMD,,,,
 ParkinsonsUK-UCL,P2GO,Ruth Lovering,@RLovering,
 PHI-base,Local,,,
-PINC (ProtInc),P2GO,Not actively maintainted/GO_Central,@Antonialock,no contact person
-PINC (ProtInc),P2GO,Not actively maintainted/GO_Central,@pgaudet,no contact person
-PINC (ProtInc),P2GO,Not actively maintainted/GO_Central,@vanaukenk,no contact person
+PINC (ProtInc),P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,no contact person
 PIR,P2GO,Kati Laiho,@laihokati,
-PomBase,Local,general GitHub account,@pombase-admin,
-PomBase,Local,ValWood,@valwood,Annotation Review
-PomBase,Local,Kim Rutherford,@kimrutherford,
-PomBase,Local,Pascal Carme,@PCarme,curator
+PomBase,Local*,general GitHub account,@pombase-admin,
+PomBase,Local*,ValWood,@valwood,Annotation Review
+PomBase,Local*,Kim Rutherford,@kimrutherford,
+PomBase,Local*,Pascal Carme,@PCarme,curator
 Protein Ontology,NA,Darren Natale,@nataled,
-PseudoCAP,Local,Fiona Brinkman,@fionabrinkman,
-PseudoCAP,Local,General Group,@brinkmanlab,
-PseudoCAP,Local,Geoff Winsor,@glwinsor,
-Reactome,Local,Peter D'Eustachio,@deustp01,
+PseudoCAP,Local*,Fiona Brinkman,@fionabrinkman,
+PseudoCAP,Local*,General Group,@brinkmanlab,
+PseudoCAP,Local*,Geoff Winsor,@glwinsor,
+Reactome,Local*,Peter D'Eustachio,@deustp01,
 Reactome,NA,Antonio Fabregat,@fabregat,
-Rfam,Local,Blake Sweeney,@blakesweeney,
-RGD,Local,Stan Laulederkind,@slaulederkind,
-RGD,Local,Tom Hayman,@gthayman,Annotation Review
-RGD,Local,Mary Kaldunski,@mlkaldunski,curation | annotation | physiology
-RGD,Local,Jennifer Smith,@jrsjrs,Project Manager| pipeline and data
-RGD,Local,Marek Tuta,@tutajm,import and export pipelines
+Rfam,Local*,Blake Sweeney,@blakesweeney,
+RGD,Local*,Stan Laulederkind,@slaulederkind,
+RGD,Local*,Tom Hayman,@gthayman,Annotation Review
+RGD,Local*,Mary Kaldunski,@mlkaldunski,curation | annotation | physiology
+RGD,Local*,Jennifer Smith,@jrsjrs,Project Manager| pipeline and data
+RGD,Local*,Marek Tuta,@tutajm,import and export pipelines
 RHEA,NA,Anne Morgat,@amorgat,
 RHEA,NA,Arnaud Kerhornou,@arnaudxk,Swiss-Prot & Rhea developer
 RHEA,NA,Kristian Axelson,@kaxelsen,RHEA and Swiss-Prot curator
-RNAcentral,Local,Alex Bateman,,PI
-RNAcentral,Local,Blake Sweeny,@blakesweeney,Annotation Review
-Roslin_Institute,P2GO,Not actively maintainted/GO_Central,@pgaudet,no contact person
-Roslin_Institute,P2GO,Not actively maintainted/GO_Central,@vanaukenk,no contact person
-Roslin_Institute,P2GO,Not actively maintainted/EBI,@Antonialock,no contact person
+RNAcentral,Local*,Alex Bateman,,PI
+RNAcentral,Local*,Blake Sweeny,@blakesweeney,Annotation Review
+Roslin_Institute,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,no contact person
 SGD,Noctua,Stacia Engel,@srengel,
 SGD,Noctua,Suzi Aleksander,@suzialeksander,
 SGN,Local,Lukas Mueller,@lukasmueller,
