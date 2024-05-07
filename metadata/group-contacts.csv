@@ -58,7 +58,8 @@ GO_Central,,,,
 ° GO_Central,PAINT | P2GO | Noctua,@pgaudet,Pascale Gaudet @pgaudet,ontology development | PAINT | transcription | multiorganism processes | cellular biology| pipeline QC
 ° GO_Central,PAINT | P2GO | Noctua,@marcfeuermann,Marc Feurmann @marcfeuermann,fungal biology
 ° GO_Central,PAINT,,Huaiyu Mi @huaiyumi,
-° GO_Central,P2GO | Noctua,,Chris Mungall @cmungall,Ontology | Anatomy
+° GO_Central,Noctua,,Chris Mungall @cmungall,Ontology | Anatomy
+° GO_Central,Noctua,,Paul Thomas @thomaspd,Ontology | Phylogenetics | PAINT|Panther
 ° GO_Central,,,Dustin Ebert @dustine32,PAINT pipeline|GO pipeline
 ° GO_Central,,,Anushya Muruganujan @mugitty,PAINT software developer
 GO_Noctua,,,,
