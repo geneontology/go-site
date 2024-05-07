@@ -3,25 +3,23 @@ AgBase,P2GO,Jinhui Zhang,@jinhuiz,
 Alzheimers_University_of_Toronto,P2GO,Ruth Lovering,@RLovering, 
 ARUK-UCL,P2GO,Ruth Lovering,@RLovering,
 ASAP,P2GO,,,
-AspGD,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,
+AspGD,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,Aspergillus Genome Database
 BBOP,NA,Seth Carbon,@kltm,Noctua|Data pipeline|AmiGO|Website
 BBOP,NA,Chris Mungall,@cmungall,All things technical and ontology-related
 BBOP,NA,Sierra Moxon,@sierra-moxon,Pipeline
 BBOP,NA,Mark A. Miller,@turbomam,microbial proteomics | 16S metagenomics | biomedical semantics
 BHF-UCL,P2GO,Ruth Lovering,@RLovering,
 Buffalo University,NA,Alex Diehl,@addiehl,immunology
-CACAO,Local,Debbie Siegle,@dsiegele,
-CACAO,Local,Jolene Ramsey,@jrr-cpt,
-CAFA,P2GO,EBI,@Antonialock,
+CACAO,Local*,Debbie Siegle,@dsiegele,
+CACAO,Local*,Jolene Ramsey,@jrr-cpt,
+CAFA,P2GO,EBI,@Antonialock,Training sets for CAFA competition
 CGD,Local,Jodi Lew-Smith,@jlewsmith,chromatin/gene silencing/cellular aging
 CHEMBL,NA,Barbara Zdrazil,@Zdrazil,ChEMBL subset
 CollectTF,Local,Ivan Erill,@ivanerill,
 CollectTF,Local,General email,collectf@umbc.edu,
 Complex Portal,Local,Sandra Orchard,@sandraorchard,
 Cornell University,NA,Gaurav Moghe,@moghelab, Plant biology
-DFLAT,P2GO,Not actively maintainted/GO_Central,@Antonialock,
-DFLAT,P2GO,Not actively maintainted/GO_Central,@pgaudet,
-DFLAT,P2GO,Not actively maintainted/GO_Central,@vanaukenk,
+DFLAT,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,
 DIBU - DiBest-Unical,Local,Simona Panni,@simonapanni,
 dictyBase,P2GO,Petra Fey,@pfey03,Annotation Review
 dictyBase,P2GO,Robert Dodson,@rjdodson,
@@ -33,8 +31,8 @@ ECO - Evidence and Conclusion Ontology,NA,Michelle Giglio,@mgiglio99,
 ECO - Evidence and Conclusion Ontology,NA,Suvvi Nadendla,@nsuvarnaiari,
 ECO - Evidence and Conclusion Ontology,NA,James Munro,@jbmunro,
 ECO - Evidence and Conclusion Ontology,NA,Becky Tauber,@rctauber,
-EcoCyc,Local,Amanda Mackie,@amandamackie,
-EcoCyc,Local,Lisa Moore,@lmoore207,
+EcoCyc,Local*,Amanda Mackie,@amandamackie,
+EcoCyc,Local*,Lisa Moore,@lmoore207,
 EcoCyc,NA,Markus Krummenacker,,EcoCyc pipeline
 EcoliWiki,Local,Debbie Siegele,@dsiegele,
 Ensembl,NA,,,
