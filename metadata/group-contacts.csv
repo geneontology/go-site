@@ -55,9 +55,13 @@ GeneDB (EuPathDB),,,,
 ° GeneDB,< ! > Local < ! >,@uliboehme, Ulrike Boehme @uliboehme,Plasmodium curator | TriTryp
 ° GeneDB,< ! > Local < ! >,,F.Silva-Franco F.Silva-Franco at liverpool.ac.uk,TBRU curator
 GO_Central,,,,
+° GO_Central,PAINT,@pgaudet,Pascale Gaudet @pgaudet,
+° GO_Central,PAINT,@marcfeuermann,Marc Feurmann @marcfeuermann,
+° GO_Central,PAINT,,Huaiyu Mi @huaiyumi,
 ° GO_Central,P2GO & Noctua,@pgaudet,Pascale Gaudet @pgaudet,PAINT|transcription | multiorganism processes | cellular biology
 ° GO_Central,P2GO & Noctua,,Chris Mungall @cmungall,Ontology | Anatomy
-° GO_Central - USC,,,Dustin Ebert @dustine32,PAINT pipeline|GO pipeline
+° GO_Central,,,Dustin Ebert @dustine32,PAINT pipeline|GO pipeline
+° GO_Central,,Anushya Muruganujan,@mugitty,PAINT software developer
 GO_Noctua,,,,
 GOC,,@pgaudet,,
 GOC-OWL,,@pgaudet,,
@@ -89,11 +93,6 @@ MTBBASE,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Centra
 NTNU_SB,,,,
 ° NTNU_SB,P2GO,,Astrid Lægreid,Transcription
 ° NTNU_SB,P2GO,@mlacencio,Marcio Acencio @mlacencio,Transcription
-PAINT,,,,
-° PAINT,PAINT,@pgaudet,Pascale Gaudet @pgaudet,
-° PAINT,PAINT,@marcfeuermann,Marc Feurmann @marcfeuermann,
-° PAINT,PAINT,Huaiyu Mi,@huaiyumi,
-° PAINT Software,NA,Anushya Muruganujan,@mugitty,PAINT software developer
 PAMGO_GAT,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact @mgiglio99 for queries
 PAMGO_MGG,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact @mgiglio99 for queries
 PAMGO_VMD,,,,
