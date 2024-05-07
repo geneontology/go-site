@@ -14,8 +14,8 @@ AspGD,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,
 BHF-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
 Buffalo University,---,Alex Diehl,@addiehl,immunology
 CACAO,^,^,^,^
-- CACAO,< ! >Local < ! >,@dsiegele,Debbie Siegle @dsiegele,
-- CACAO,< ! >Local< ! >,,Jolene Ramsey @jrr-cpt,
+- CACAO,< ! > Local < ! >,@dsiegele,Debbie Siegle @dsiegele,
+- CACAO,< ! > Local< ! >,,Jolene Ramsey @jrr-cpt,
 CAFA,P2GO,@Antonialock,,Training sets for CAFA competition
 CGD,Local*,@jlewsmith,Jodi Lew-Smith @jlewsmith,chromatin/gene silencing/cellular aging
 CHEMBL,---,@Zdrazil,Barbara Zdrazil @Zdrazil,ChEMBL subset
@@ -36,8 +36,8 @@ ECO - Evidence and Conclusion Ontology,NA,Suvvi Nadendla,@nsuvarnaiari,
 ECO - Evidence and Conclusion Ontology,NA,James Munro,@jbmunro,
 ECO - Evidence and Conclusion Ontology,NA,Becky Tauber,@rctauber,
 EcoCyc,,,,
-- EcoCyc,< ! >Local < ! >,Amanda Mackie,@amandamackie,Contact for Annotation Review
-- EcoCyc,< ! >Local < ! >,Lisa Moore,@lmoore207,
+- EcoCyc,< ! > Local < ! >,Amanda Mackie,@amandamackie,Contact for Annotation Review
+- EcoCyc,< ! > Local < ! >,Lisa Moore,@lmoore207,
 - EcoCyc,--,Markus Krummenacker,,EcoCyc pipeline
 EcoliWiki,Local*,Debbie Siegele,@dsiegele,
 Ensembl,NA,,,
@@ -48,8 +48,8 @@ FlyBase,,,,
 - FlyBase,,P2GO & Noctua,Steven Marygold @sjm41,
 - FlyBase,,P2GO & Noctua,Rossana Zaru @rozaru,
 GDB,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,
-GeneDB,Local*,Ulrike Boehme,@uliboehme,Plasmodium curator | TriTryp
-GeneDB,Local*,F.Silva-Franco, F.Silva-Franco at liverpool.ac.uk,TBRU curator
+GeneDB,< ! > Local < ! >,Ulrike Boehme,@uliboehme,Plasmodium curator | TriTryp
+GeneDB,< ! > Local < ! >,F.Silva-Franco, F.Silva-Franco at liverpool.ac.uk,TBRU curator
 GO_Central,P2GO & Noctua,Pascale Gaudet,@pgaudet,PAINT|transcription | multiorganism processes | cellular biology
 GO_Central,P2GO & Noctua,Chris Mungall,@cmungall,Ontology | Anatomy
 GO_Central - USC,NA,Dustin Ebert,@dustine32,PAINT pipeline|GO pipeline
@@ -62,14 +62,14 @@ HGNC,Local,Susan Tweedie,@sartweedie,
 HGNC-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
 HPA,Local*,Emma Lundberg, emma.lundberg AT scilifelab.se,
 IMPRS-EB,Noctua,Ivan Tsers,@IvanTsers,phytopathology | comparative genomics | gene functional classification
-IntAct,Local*,Kalpana Panneerselvam,@kalpanap,
+IntAct,< ! > Local < ! >,Kalpana Panneerselvam,@kalpanap,
 InterPro,,,,
-- InterPro,Local*,@lsw26,Lowri Williams @lsw26,
-- InterPro,Local*,@sarach06,Sara Chuguransky @sarach06,
-- InterPro,Local*,@blazaropinto,Beatriz Lazaro Pinto @blazaropinto,
-- InterPro,Local*,@tony787 ,Antonina Andreeva (Toni) @tony787 | aea-at- ebi.ac.uk,
-JaponicusDB,Local*,Snezka Oliferenko,@snezhkaoliferenko,
-JaponicusDB,Local*,Val Wood,@ValWood,
+- InterPro,< ! > Local < ! >,@lsw26,Lowri Williams @lsw26,
+- InterPro,< ! > Local < ! >,@sarach06,Sara Chuguransky @sarach06,
+- InterPro,< ! > Local < ! >,@blazaropinto,Beatriz Lazaro Pinto @blazaropinto,
+- InterPro,< ! > Local < ! >,@tony787 ,Antonina Andreeva (Toni) @tony787 | aea-at- ebi.ac.uk,
+JaponicusDB,< ! > Local < ! >,Snezka Oliferenko,@snezhkaoliferenko,
+JaponicusDB,< ! > Local < ! >,Val Wood,@ValWood,
 JCVI,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact @mgiglio99 for queries
 LIFEdb,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact Stefan Wiemann s.wiemann AT dkfz-heidelberg.de for queries
 MENGO,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact @mgiglio99 for queries
@@ -87,22 +87,22 @@ PAMGO_GAT,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Cent
 PAMGO_MGG,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact @mgiglio99 for queries
 PAMGO_VMD,,,,
 ParkinsonsUK-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
-PHI-base,Local,,,
+PHI-base,< ! > Local < ! >,,,
 PINC (ProtInc),P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,no contact person
 PIR,P2GO,Kati Laiho,@laihokati,
 PomBase,,,,
-- PomBase,Local*,,general GitHub account @pombase-admin,
-- PomBase,Local*,@valwood,ValWood @valwood,Annotation Review
-- PomBase,Local*,,Kim Rutherford @kimrutherford,
-- PomBase,Local*,,Pascal Carme @PCarme,curator
+- PomBase,< ! > Local < ! >,,general GitHub account @pombase-admin,
+- PomBase,< ! > Local < ! > & Noctua,@valwood,ValWood @valwood,Annotation Review
+- PomBase,---,,Kim Rutherford @kimrutherford,
+- PomBase,< ! > Local < ! >, & Noctua,Pascal Carme @PCarme,curator
 Protein Ontology,NA,Darren Natale,@nataled,
 PseudoCAP,,,,
 PseudoCAP,Local*,,Fiona Brinkman @fionabrinkman,
 PseudoCAP,Local*,,General Group @brinkmanlab,
 PseudoCAP,Local*,@glwinsor,Geoff Winsor @glwinsor,
 Reactome,,,,
-Reactome,Local*,@deustp01,Peter D'Eustachio @deustp01,
-Reactome,NA,,Antonio Fabregat @fabregat,
+- Reactome,< ! > Local < ! >,@deustp01,Peter D'Eustachio @deustp01,
+- Reactome,---,,Antonio Fabregat @fabregat,
 Rfam,Local*,@blakesweeney,Blake Sweeney @blakesweeney,
 RGD,,,,
 - RGD,Local,,Stan Laulederkind @slaulederkind,
@@ -113,18 +113,19 @@ RGD,,,,
 RHEA,NA,Anne Morgat,@amorgat,
 RHEA,NA,Arnaud Kerhornou,@arnaudxk,Swiss-Prot & Rhea developer
 RHEA,NA,Kristian Axelson,@kaxelsen,RHEA and Swiss-Prot curator
-RNAcentral,Local*,Alex Bateman,,PI
-RNAcentral,Local*,Blake Sweeny,@blakesweeney,Contact for Annotation Review
+RNAcentral,< ! > Local < ! >,,Alex Bateman,,PI
+RNAcentral,< ! > Local < ! >,Blake Sweeny,@blakesweeney,Contact for Annotation Review
 Roslin_Institute,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,no contact person
-SGD,Noctua,Stacia Engel,@srengel,Contact for Annotation Review
-SGD,Noctua,Suzi Aleksander,@suzialeksander,
-SGN,Local,Lukas Mueller,@lukasmueller,
-SynGO,Local,Frank Koopmans,@ftwkoopmans,
+SGD,Noctua,@srengel,Stacia Engel @srengel,Contact for Annotation Review
+SGD,Noctua,,Suzi Aleksander @suzialeksander,
+SGN,< ! > Local < ! >,@lukasmueller,Lukas Mueller @lukasmueller,
+SynGO,< ! > Local < ! >,@ftwkoopmans,Frank Koopmans @ftwkoopmans,
 SynGO-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
 SYSCILIA_CCNET,P2GO?,Karen Christie,@krchristie,
-TAIR,Local*,Tanya Berardini,@tberardini,Plant biology | Contact for Annotation Review
-TAIR,Local*,Leonore Reiser,@lreiser,Plant biology
-TAIR,Local*,Erica Bakker,@ebakker2,Plant biology
+TAIR,,,,
+° TAIR,Local,Tanya Berardini,@tberardini,Plant biology | Contact for Annotation Review
+° TAIR,Local,Leonore Reiser,@lreiser,Plant biology
+° TAIR,Local,Erica Bakker,@ebakker2,Plant biology
 TIGR,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact @mgiglio99 for queries
 UF_OPP,, Colbie Reed, @dexink, microbes
 UniProt (EBI),,,,
