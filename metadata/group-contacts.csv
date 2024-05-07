@@ -144,7 +144,7 @@ UniProt,,,,
 ° UniProt (EBI),P2GO,@Antonialock,Antonia Lock @Antonialock, GOA contact for GO
 ° UniProt (EBI),P2GO,,Michelle Magrane @magrane,
 ° UniProt (EBI),P2GO,,Sandra Orchard @sandraorchard,
-° UniProt (EBI),,Rizwan Ishtiaq,@rizwan-ishtiaq,QuickGO java backend
+° UniProt (EBI),,,Rizwan Ishtiaq @rizwan-ishtiaq,QuickGO java backend
 ° UniProt (PIR),P2GO,,Kati Laiho @laihokati,
 ° UniProt (Swiss-Prot/Geneva),P2GO,,Andrea Auchincloss @AndreaAuchincloss,Bacteria
 ° UniProt (Swiss-Prot/Geneva),P2GO | Noctua,,Cristina Casals Casa @ccasalsc, Cell Biology | Transcription
