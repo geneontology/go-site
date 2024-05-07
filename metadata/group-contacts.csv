@@ -54,9 +54,10 @@ GDB,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,
 GeneDB (EuPathDB),,,,
 ° GeneDB,< ! > Local < ! >,@uliboehme, Ulrike Boehme @uliboehme,Plasmodium curator | TriTryp
 ° GeneDB,< ! > Local < ! >,,F.Silva-Franco F.Silva-Franco at liverpool.ac.uk,TBRU curator
-GO_Central,P2GO & Noctua,@pgaudet,Pascale Gaudet @pgaudet,PAINT|transcription | multiorganism processes | cellular biology
-GO_Central,P2GO & Noctua,,Chris Mungall @cmungall,Ontology | Anatomy
-GO_Central - USC,,NA,Dustin Ebert @dustine32,PAINT pipeline|GO pipeline
+GO_Central,,,,
+° GO_Central,P2GO & Noctua,@pgaudet,Pascale Gaudet @pgaudet,PAINT|transcription | multiorganism processes | cellular biology
+° GO_Central,P2GO & Noctua,,Chris Mungall @cmungall,Ontology | Anatomy
+° GO_Central - USC,,,Dustin Ebert @dustine32,PAINT pipeline|GO pipeline
 GO_Noctua,,,,
 GOC,,,,
 GOC-OWL,,,,
