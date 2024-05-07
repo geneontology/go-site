@@ -16,14 +16,14 @@ CACAO,Local*,Jolene Ramsey,@jrr-cpt,
 CAFA,P2GO,EBI,@Antonialock,Training sets for CAFA competition
 CGD,Local*,Jodi Lew-Smith,@jlewsmith,chromatin/gene silencing/cellular aging
 CHEMBL,NA,Barbara Zdrazil,@Zdrazil,ChEMBL subset
-CollectTF*,Local,Ivan Erill,@ivanerill,
-CollectTF*,Local,General email,collectf@umbc.edu,
+CollectTF,Local*,Ivan Erill,@ivanerill,General email,collectf@umbc.edu
 Complex Portal,Local*,Sandra Orchard,@sandraorchard,
 Cornell University,NA,Gaurav Moghe,@moghelab, Plant biology
 DFLAT,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,
 DIBU - DiBest-Unical,Local*,Simona Panni,@simonapanni,
-dictyBase,P2GO,Petra Fey,@pfey03,Contact for Annotation Review
-dictyBase,P2GO,Robert Dodson,@rjdodson,
+dictyBase,,,,
+- dictyBase,P2GO,Petra Fey,@pfey03,Contact for Annotation Review
+- dictyBase,P2GO,Robert Dodson,@rjdodson,
 DisProt,Local*,Federica Quaglia,@federicaquaglia,biocuration | stucture | functions | Contact for Annotation Review
 DisProt,Local*,Victoria Nugnes,@victorianugnes,biocuration | stucture | intrinsically disordered regions (IDRs) | Contact for Annotation Review
 EAWAG-BBD (ETH Zurich),NA,Emanuel Schmid,@emanuel-schmid,biodegradation | databases | webservices
