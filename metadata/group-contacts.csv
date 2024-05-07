@@ -25,8 +25,8 @@ Cornell University,,,Gaurav Moghe @moghelab, Plant biology
 DFLAT,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,
 DIBU - DiBest-Unical,< ! > Local< ! >,@simonapanni,Simona Panni @simonapanni,
 dictyBase,,,,
-° dictyBase,P2GO & Noctua,@pfey03, Petra Fey @pfey03,
-° dictyBase,P2GO Noctua,,Robert Dodson @rjdodson,
+° dictyBase,P2GO |  Noctua,@pfey03, Petra Fey @pfey03,
+° dictyBase,P2GO | Noctua,,Robert Dodson @rjdodson,
 DisProt,,,,
 ° DisProt,< ! > Local< ! >,@federicaquaglia, Federica Quaglia @federicaquaglia,biocuration | stucture | functions 
 ° DisProt,< ! > Local< ! >,@victorianugnes, Victoria Nugnes @victorianugnes,biocuration | stucture | intrinsically disordered regions (IDRs) 
@@ -46,10 +46,10 @@ EcoliWiki,< ! > Local < ! >,@dsiegele,Debbie Siegele @dsiegele,
 Ensembl,,,,
 Eurofung,P2GO,,,
 FlyBase,,,,
-° FlyBase,P2GO & Noctua,@hattrill,Helen Attrill @hattrill,
-° FlyBase,P2GO & Noctua,,Giulia Antonazzo @gantonazzo,
-° FlyBase,P2GO & Noctua,,Steven Marygold @sjm41,
-° FlyBase,P2GO & Noctua,,Rossana Zaru @rozaru,
+° FlyBase,P2GO | Noctua,@hattrill,Helen Attrill @hattrill,
+° FlyBase,P2GO | Noctua,,Giulia Antonazzo @gantonazzo,
+° FlyBase,P2GO | Noctua,,Steven Marygold @sjm41,
+° FlyBase,P2GO | Noctua,,Rossana Zaru @rozaru,
 GDB,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,
 GeneDB (EuPathDB),,,,
 ° GeneDB,< ! > Local < ! >,@uliboehme, Ulrike Boehme @uliboehme,Plasmodium curator | TriTryp
@@ -100,9 +100,9 @@ PHI-base,< ! > Local < ! >,,,
 PINC (ProtInc),P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,no contact person
 PomBase,,,,
 ° PomBase,< ! > Local < ! >,,general GitHub account @pombase-admin,
-° PomBase,< ! > Local < ! > & Noctua,@valwood,ValWood @valwood,Annotation Review
+° PomBase,< ! > Local < ! > | Noctua,@valwood,ValWood @valwood,Annotation Review
 ° PomBase,---,,Kim Rutherford @kimrutherford,
-° PomBase,< ! > Local < ! >, & Noctua,Pascal Carme @PCarme,curator
+° PomBase,< ! > Local < ! > | Noctua,,Pascal Carme @PCarme,curator
 Protein Ontology,NA,Darren Natale,@nataled,
 PseudoCAP,,,,
 ° PseudoCAP,Local*,,Fiona Brinkman @fionabrinkman,
@@ -147,17 +147,17 @@ UniProt,,,,
 ° UniProt (EBI),,Rizwan Ishtiaq,@rizwan-ishtiaq,QuickGO java backend
 ° UniProt (PIR),P2GO,,Kati Laiho @laihokati,
 ° UniProt (Swiss-Prot/Geneva),P2GO,,Andrea Auchincloss @AndreaAuchincloss,Bacteria
-° UniProt (Swiss-Prot/Geneva),P2GO & Noctua,,Cristina Casals Casa @ccasalsc, Cell Biology | Transcription
+° UniProt (Swiss-Prot/Geneva),P2GO | Noctua,,Cristina Casals Casa @ccasalsc, Cell Biology | Transcription
 ° UniProt (Swiss-Prot/Geneva),P2GO,,Florence Jungo @FJungo,Venoms
 ° UniProt (Swiss-Prot/Geneva),P2GO,,Kristian Axelsen @kaxelsen,enzymes
 ° UniProt (Swiss-Prot/Geneva),P2GO,,Lucila Aimo @aimol,lipid metabolism
-° UniProt (Swiss-Prot/Geneva),P2GO & Noctua,,Marc Feuermann @marcfeuermann,fungi | enzymes
+° UniProt (Swiss-Prot/Geneva),P2GO | Noctua,,Marc Feuermann @marcfeuermann,fungi | enzymes
 ° UniProt (Swiss-Prot/Geneva),P2GO,,Nevila Nouspikel nnouspikel,lipids | immunology | cancer
-° UniProt (Swiss-Prot/Geneva),P2GO & Noctua,@sylvainpoux, Sylvain Poux @sylvainpoux,
+° UniProt (Swiss-Prot/Geneva),P2GO | Noctua,@sylvainpoux, Sylvain Poux @sylvainpoux,
 ° UniProt - HAMAP,< ! > Local < ! >,Ivo Pedruzzi,@pedruzzi,
 ° UniProt - UniRules,< ! > Local < ! >,Elena Speretta,@esperetta,
 ° UniProt - UniRules,< ! > Local < ! >,Pedro Raposo,@PedroRaposo,
-WB - WormBase,P2GO,@vanaukenk,Kimberly Van Auken @vanaukenk,C.elegans | Noctua | GO-CAM
+WB - WormBase,P2GO  |Noctua,@vanaukenk,Kimberly Van Auken @vanaukenk,C.elegans | Noctua | GO-CAM
 Wikidata,,,,
 ° Wikidata,NA,Andrew Su,@andrewsu,
 ° Wikidata,NA,Derek,@cdjow2019 ,
