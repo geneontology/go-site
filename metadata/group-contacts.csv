@@ -1,6 +1,6 @@
 Group,Curation Tool,Contact for Annotation Review,Contact name & Contact GitHub ID,Expertise/Domains of interest
 AgBase,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,
-Alzheimers_University_of_Toronto,P2GO,Ruth Lovering,@RLovering, 
+Alzheimers_University_of_Toronto,P2GO,@RLovering, Ruth Lovering @RLovering, 
 ARUK-UCL,P2GO,@RLovering,Ruth Lovering @RLovering,
 ASAP,P2GO,,,
 AspGD,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,Aspergillus Genome Database
@@ -9,7 +9,7 @@ BBOP,,,,
 - BBOP,NA,Chris Mungall,@cmungall,GO PI | All things technical and ontology-related
 - BBOP,NA,Sierra Moxon,@sierra-moxon,Pipeline
 - BBOP,NA,Mark A. Miller,@turbomam,microbial proteomics | 16S metagenomics | biomedical semantics
-BHF-UCL,P2GO,Ruth Lovering,@RLovering,
+BHF-UCL,P2GO,,@RLovering, Ruth Lovering @RLovering, 
 Buffalo University,NA,Alex Diehl,@addiehl,immunology
 CACAO,Local*,Debbie Siegle,@dsiegele,Contact for Annotation Review
 CACAO,Local*,Jolene Ramsey,@jrr-cpt,
@@ -55,7 +55,7 @@ GOC-OWL,,,,
 GR,P2GO,Not actively maintainted/EBI,@Antonialock @pgaudet @vanaukenk,Gramene Database - contact Pankaj Jaiswal @jaiswalp for queries
 GREEKC,NA,Colin Logie,@colinlog,Transcription
 HGNC,Local,Susan Tweedie,@sartweedie,
-HGNC-UCL,P2GO,Ruth Lovering,@RLovering,
+HGNC-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
 HPA,Local*,Emma Lundberg, emma.lundberg AT scilifelab.se,
 IMPRS-EB,Noctua,Ivan Tsers,@IvanTsers,phytopathology | comparative genomics | gene functional classification
 IntAct,Local*,Kalpana Panneerselvam,@kalpanap,
@@ -81,7 +81,7 @@ PAINT Software,NA,Anushya Muruganujan,@mugitty,PAINT software developer
 PAMGO_GAT,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,contact @mgiglio99 for queries
 PAMGO_MGG,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,contact @mgiglio99 for queries
 PAMGO_VMD,,,,
-ParkinsonsUK-UCL,P2GO,Ruth Lovering,@RLovering,
+ParkinsonsUK-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
 PHI-base,Local,,,
 PINC (ProtInc),P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,no contact person
 PIR,P2GO,Kati Laiho,@laihokati,
@@ -111,7 +111,7 @@ SGD,Noctua,Stacia Engel,@srengel,Contact for Annotation Review
 SGD,Noctua,Suzi Aleksander,@suzialeksander,
 SGN,Local,Lukas Mueller,@lukasmueller,
 SynGO,Local,Frank Koopmans,@ftwkoopmans,
-SynGO-UCL,P2GO,Ruth Lovering,@RLovering,
+SynGO-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
 SYSCILIA_CCNET,P2GO?,Karen Christie,@krchristie,
 TAIR,Local*,Tanya Berardini,@tberardini,Plant biology | Contact for Annotation Review
 TAIR,Local*,Leonore Reiser,@lreiser,Plant biology
