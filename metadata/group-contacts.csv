@@ -1,7 +1,7 @@
-Group,Curation Tool,Contact for Annotation Review,Contact name,Contact GitHub ID,Expertise/Domains of interest
+Group,Curation Tool,Contact for Annotation Review,Contact name & Contact GitHub ID,Expertise/Domains of interest
 AgBase,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,,
 Alzheimers_University_of_Toronto,P2GO,Ruth Lovering,@RLovering, 
-ARUK-UCL,P2GO,Ruth Lovering,@RLovering,
+ARUK-UCL,P2GO,@RLovering,Ruth Lovering @RLovering,
 ASAP,P2GO,,,
 AspGD,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,Aspergillus Genome Database
 BBOP,,,,
