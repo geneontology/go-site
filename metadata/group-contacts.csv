@@ -7,18 +7,19 @@ ASAP,P2GO,,,
 AspGD,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Aspergillus Genome Database
 BBOP,---,---,---,---
 - BBOP,---,,Seth Carbon @kltm,Noctua | Data pipeline  |AmiGO|  GO Website
+- BBOP,---,,Patrick Kalita @@pkalita-lbl,
 - BBOP,---,,Chris Mungall @cmungall,GO PI | All things technical and ontology-related
 - BBOP,---,,Sierra Moxon @sierra-moxon,Pipeline
 - BBOP,---,,Mark A. Miller @turbomam,microbial proteomics | 16S metagenomics | biomedical semantics
 BHF-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
 Buffalo University,---,Alex Diehl,@addiehl,immunology
-CACAO,Local*,Debbie Siegle,@dsiegele,Contact for Annotation Review
-CACAO,Local*,Jolene Ramsey,@jrr-cpt,
+CACAO,Local*,@dsiegele,Debbie Siegle @dsiegele,
+CACAO,Local*,,Jolene Ramsey,@jrr-cpt,
 CAFA,P2GO,EBI,@Antonialock,Training sets for CAFA competition
 CGD,Local*,Jodi Lew-Smith,@jlewsmith,chromatin/gene silencing/cellular aging
-CHEMBL,NA,Barbara Zdrazil,@Zdrazil,ChEMBL subset
-CollectTF,Local*,Ivan Erill,@ivanerill,General email:collectf@umbc.edu
-Complex Portal,Local*,Sandra Orchard,@sandraorchard,
+CHEMBL,---,@Zdrazil,Barbara Zdrazil @Zdrazil,ChEMBL subset
+CollectTF,Local*,@ivanerill,Ivan Erill @ivanerill,General email:collectf@umbc.edu
+Complex Portal,Local*,@sandraorchard,Sandra Orchard @sandraorchard,
 Cornell University,NA,Gaurav Moghe,@moghelab, Plant biology
 DFLAT,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,
 DIBU - DiBest-Unical,Local*,Simona Panni,@simonapanni,
