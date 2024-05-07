@@ -16,12 +16,12 @@ Buffalo University,---,Alex Diehl,@addiehl,immunology
 CACAO,^,^,^,^
 - CACAO,Local*,@dsiegele,Debbie Siegle @dsiegele,
 - CACAO,Local*,,Jolene Ramsey @jrr-cpt,
-CAFA,P2GO,EBI,@Antonialock,Training sets for CAFA competition
-CGD,Local*,Jodi Lew-Smith,@jlewsmith,chromatin/gene silencing/cellular aging
+CAFA,P2GO,@Antonialock,,Training sets for CAFA competition
+CGD,Local*,@jlewsmith,Jodi Lew-Smith @jlewsmith,chromatin/gene silencing/cellular aging
 CHEMBL,---,@Zdrazil,Barbara Zdrazil @Zdrazil,ChEMBL subset
 CollectTF,Local*,@ivanerill,Ivan Erill @ivanerill,General email:collectf@umbc.edu
 Complex Portal,Local*,@sandraorchard,Sandra Orchard @sandraorchard,
-Cornell University,NA,Gaurav Moghe,@moghelab, Plant biology
+Cornell University,---,Gaurav Moghe,@moghelab, Plant biology
 DFLAT,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,
 DIBU - DiBest-Unical,Local*,Simona Panni,@simonapanni,
 dictyBase,,,,
