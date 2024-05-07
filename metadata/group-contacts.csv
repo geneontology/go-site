@@ -4,7 +4,7 @@ AgBase,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central
 Alzheimers_University_of_Toronto,P2GO,@RLovering, Ruth Lovering @RLovering, 
 ARUK-UCL,P2GO,@RLovering,Ruth Lovering @RLovering,
 ASAP,P2GO,,,
-AspGD,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,Aspergillus Genome Database
+AspGD,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Aspergillus Genome Database
 BBOP,,,,
 - BBOP,NA,Seth Carbon,@kltm,Noctua | Data pipeline  |AmiGO|  GO Website
 - BBOP,NA,Chris Mungall,@cmungall,GO PI | All things technical and ontology-related
@@ -53,7 +53,7 @@ GO_Central - USC,NA,Dustin Ebert,@dustine32,PAINT pipeline|GO pipeline
 GO_Noctua,,,,
 GOC,,,,
 GOC-OWL,,,,
-GR,P2GO,Not actively maintainted/EBI,@Antonialock @pgaudet @vanaukenk,Gramene Database - contact Pankaj Jaiswal @jaiswalp for queries
+GR,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Gramene Database - contact Pankaj Jaiswal @jaiswalp for queries
 GREEKC,NA,Colin Logie,@colinlog,Transcription
 HGNC,Local,Susan Tweedie,@sartweedie,
 HGNC-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
@@ -66,9 +66,9 @@ InterPro,Local*,Beatriz Lazaro Pinto,@blazaropinto,
 InterPro,Local*,Antonina Andreeva (Toni),@tony787 | aea-at- ebi.ac.uk,
 JaponicusDB,Local*,Snezka Oliferenko,@snezhkaoliferenko,
 JaponicusDB,Local*,Val Wood,@ValWood,
-JCVI,P2GO,Not actively maintainted/GO_Central,@pgaudet @Antonialock @vanaukenk,contact @mgiglio99 for queries
-LIFEdb,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,contact Stefan Wiemann s.wiemann AT dkfz-heidelberg.de for queries
-MENGO,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,contact @mgiglio99 for queries
+JCVI,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact @mgiglio99 for queries
+LIFEdb,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact Stefan Wiemann s.wiemann AT dkfz-heidelberg.de for queries
+MENGO,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact @mgiglio99 for queries
 MGI,Noctua,Karen Christie,@krchristie,
 MGI,Noctua,Li Ni,@LiNiMGI,Contact for Annotation Review
 MGI,Noctua,David Hill,@ukemi,Development | GO-CAM Modeling | MGI Data & Pipeline issues
@@ -79,35 +79,39 @@ PAINT,PAINT,Pascale Gaudet,@pgaudet,
 PAINT,PAINT,Marc Feurmann,@marcfeuermann,
 PAINT,PAINT,Huaiyu Mi,@huaiyumi,
 PAINT Software,NA,Anushya Muruganujan,@mugitty,PAINT software developer
-PAMGO_GAT,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,contact @mgiglio99 for queries
-PAMGO_MGG,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,contact @mgiglio99 for queries
+PAMGO_GAT,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact @mgiglio99 for queries
+PAMGO_MGG,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact @mgiglio99 for queries
 PAMGO_VMD,,,,
 ParkinsonsUK-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
 PHI-base,Local,,,
-PINC (ProtInc),P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,no contact person
+PINC (ProtInc),P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,no contact person
 PIR,P2GO,Kati Laiho,@laihokati,
-PomBase,Local*,general GitHub account,@pombase-admin,
-PomBase,Local*,ValWood,@valwood,Annotation Review
-PomBase,Local*,Kim Rutherford,@kimrutherford,
-PomBase,Local*,Pascal Carme,@PCarme,curator
+PomBase,,,,
+- PomBase,Local*,,general GitHub account @pombase-admin,
+- PomBase,Local*,@valwood,ValWood @valwood,Annotation Review
+- PomBase,Local*,,Kim Rutherford @kimrutherford,
+- PomBase,Local*,,Pascal Carme @PCarme,curator
 Protein Ontology,NA,Darren Natale,@nataled,
-PseudoCAP,Local*,Fiona Brinkman,@fionabrinkman,
-PseudoCAP,Local*,General Group,@brinkmanlab,
-PseudoCAP,Local*,Geoff Winsor,@glwinsor,
-Reactome,Local*,Peter D'Eustachio,@deustp01,
-Reactome,NA,Antonio Fabregat,@fabregat,
-Rfam,Local*,Blake Sweeney,@blakesweeney,
-RGD,Local*,Stan Laulederkind,@slaulederkind,
-RGD,Local*,Tom Hayman,@gthayman,Contact for Annotation Review
-RGD,Local*,Mary Kaldunski,@mlkaldunski,curation | annotation | physiology
-RGD,Local*,Jennifer Smith,@jrsjrs,Project Manager| pipeline and data
-RGD,Local*,Marek Tuta,@tutajm,import and export pipelines
+PseudoCAP,,,,
+PseudoCAP,Local*,,Fiona Brinkman @fionabrinkman,
+PseudoCAP,Local*,,General Group @brinkmanlab,
+PseudoCAP,Local*,@glwinsor,Geoff Winsor @glwinsor,
+Reactome,,,,
+Reactome,Local*,@deustp01,Peter D'Eustachio @deustp01,
+Reactome,NA,,Antonio Fabregat @fabregat,
+Rfam,Local*,@blakesweeney,Blake Sweeney @blakesweeney,
+RGD,,,,
+- RGD,Local,,Stan Laulederkind @slaulederkind,
+- RGD,Local,@gthayman,Tom Hayman @gthayman,Contact for Annotation Review
+- RGD,Local,.Mary Kaldunski @mlkaldunski,curation | annotation | physiology
+- RGD,Local,,Jennifer Smith @jrsjrs,Project Manager| pipeline and data
+- RGD,Local,,Marek Tuta @tutajm,import and export pipelines
 RHEA,NA,Anne Morgat,@amorgat,
 RHEA,NA,Arnaud Kerhornou,@arnaudxk,Swiss-Prot & Rhea developer
 RHEA,NA,Kristian Axelson,@kaxelsen,RHEA and Swiss-Prot curator
 RNAcentral,Local*,Alex Bateman,,PI
 RNAcentral,Local*,Blake Sweeny,@blakesweeney,Contact for Annotation Review
-Roslin_Institute,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,no contact person
+Roslin_Institute,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,no contact person
 SGD,Noctua,Stacia Engel,@srengel,Contact for Annotation Review
 SGD,Noctua,Suzi Aleksander,@suzialeksander,
 SGN,Local,Lukas Mueller,@lukasmueller,
@@ -117,33 +121,32 @@ SYSCILIA_CCNET,P2GO?,Karen Christie,@krchristie,
 TAIR,Local*,Tanya Berardini,@tberardini,Plant biology | Contact for Annotation Review
 TAIR,Local*,Leonore Reiser,@lreiser,Plant biology
 TAIR,Local*,Erica Bakker,@ebakker2,Plant biology
-TIGR,P2GO,Not actively maintainted/GO_Central,@Antonialock,
-TIGR,P2GO,Not actively maintainted/GO_Central,@pgaudet,
-TIGR,P2GO,Not actively maintainted/GO_Central,@vanaukenk,
+TIGR,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact @mgiglio99 for queries
 UF_OPP,, Colbie Reed, @dexink, microbes
-UniProt (EBI),NA,Alex Ignatchenko,@alexsign,Software & pipeline
-UniProt (EBI),P2GO,Antonia Lock,@Antonialock,Annotation Review | GOA contact for GO
-UniProt (EBI),P2GO,Michelle Magrane,@magrane,
-UniProt (EBI),P2GO,Sandra Orchard,@sandraorchard,
-UniProt (EBI),NA,Rizwan Ishtiaq,@rizwan-ishtiaq,QuickGO java backend
-UniProt (Swiss-Prot/Geneva),P2GO,Andrea Auchincloss,@AndreaAuchincloss,Bacteria
-UniProt (Swiss-Prot/Geneva),P2GO & Noctua,Cristina Casals Casa,@ccasalsc, Cell Biology | Transcription
-UniProt (Swiss-Prot/Geneva),P2GO,Florence Jungo,@FJungo,Venoms
-UniProt (Swiss-Prot/Geneva),P2GO,Kristian Axelsen,@kaxelsen,enzymes
-UniProt (Swiss-Prot/Geneva),P2GO,Lucila Aimo,@aimol,lipid metabolism
-UniProt (Swiss-Prot/Geneva),P2GO & Noctua,Marc Feuermann,@marcfeuermann,fungi | enzymes
-UniProt (Swiss-Prot/Geneva),P2GO,Nevila Nouspikel,nnouspikel,lipids | immunology | cancer
-UniProt (Swiss-Prot/Geneva),P2GO,Ivo Pedruzzi,@pedruzzi,HAMAP
-UniProt (Swiss-Prot/Geneva),P2GO, & NoctuaSylvain Poux,@sylvainpoux,Contact for Annotation Review
-UniProt - UniRules,Local,Elena Speretta,esperetta,
-UniProt - UniRules,Local,Pedro Raposo,PedroRaposo,
-WB - WormBase,P2GO,Kimberly Van Auken,@vanaukenk,C.elegans | Noctua | GO-CAM
+UniProt (EBI),,,,
+- UniProt (EBI),NA,Alex Ignatchenko,@alexsign,Software & pipeline
+- UniProt (EBI),P2GO,Antonia Lock,@Antonialock,Annotation Review | GOA contact for GO
+- UniProt (EBI),P2GO,Michelle Magrane,@magrane,
+- UniProt (EBI),P2GO,Sandra Orchard,@sandraorchard,
+- UniProt (EBI),NA,Rizwan Ishtiaq,@rizwan-ishtiaq,QuickGO java backend
+- UniProt (Swiss-Prot/Geneva),P2GO,Andrea Auchincloss,@AndreaAuchincloss,Bacteria
+- UniProt (Swiss-Prot/Geneva),P2GO & Noctua,Cristina Casals Casa,@ccasalsc, Cell Biology | Transcription
+- UniProt (Swiss-Prot/Geneva),P2GO,Florence Jungo,@FJungo,Venoms
+- UniProt (Swiss-Prot/Geneva),P2GO,Kristian Axelsen,@kaxelsen,enzymes
+- UniProt (Swiss-Prot/Geneva),P2GO,Lucila Aimo,@aimol,lipid metabolism
+- UniProt (Swiss-Prot/Geneva),P2GO & Noctua,Marc Feuermann,@marcfeuermann,fungi | enzymes
+- UniProt (Swiss-Prot/Geneva),P2GO,Nevila Nouspikel,nnouspikel,lipids | immunology | cancer
+- UniProt (Swiss-Prot/Geneva),P2GO,Ivo Pedruzzi,@pedruzzi,HAMAP
+- UniProt (Swiss-Prot/Geneva),P2GO, & NoctuaSylvain Poux,@sylvainpoux,Contact for Annotation Review
+- UniProt - UniRules,Local,Elena Speretta,esperetta,
+- UniProt - UniRules,Local,Pedro Raposo,PedroRaposo,
+WB - WormBase,P2GO,@vanaukenk,Kimberly Van Auken @vanaukenk,C.elegans | Noctua | GO-CAM
 Wikidata,NA,Andrew Su,@andrewsu,
 Wikidata,NA,Derek,@cdjow2019 ,
-Xenbase,Noctua,Malcolm Fisher,@malcolmfisher103,Xenopus
+Xenbase,Noctua,@malcolmfisher103,Malcolm Fisher @malcolmfisher103,Xenopus
 YuBioLab,,,,
 ZFIN,Noctua,Doug Howe,@doughowe,Zebra fish
 ZFIN,Noctua,Leyla Ruzicka,@LeylaR,ZFIN technical
-ZFIN,Noctua,Sridhar Ramanchandran,@sramachand,Contact for Annotation Review | ZFIN curation
+ZFIN,Noctua,@sramachand,Sridhar Ramanchandran @sramachand,ZFIN curation
 Domain expert,,,@khybiske,Chlamydia
 Domain expert,,,@putmantime,Chlamydia
