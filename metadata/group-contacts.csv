@@ -51,7 +51,7 @@ GO_Central - USC,NA,Dustin Ebert,@dustine32,PAINT pipeline|GO pipeline
 GO_Noctua,,,,
 GOC,,,,
 GOC-OWL,,,,
-GR,P2GO,,Not actively maintainted/EBI,@Antonialock @pgaudet @vanaukenk,Gramene Database - contact Pankaj Jaiswal @jaiswalp for queries
+GR,P2GO,Not actively maintainted/EBI,@Antonialock @pgaudet @vanaukenk,Gramene Database - contact Pankaj Jaiswal @jaiswalp for queries
 GREEKC,NA,Colin Logie,@colinlog,Transcription
 HGNC,Local,Susan Tweedie,@sartweedie,
 HGNC-UCL,P2GO,Ruth Lovering,@RLovering,
