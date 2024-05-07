@@ -113,8 +113,8 @@ RGD,,,,
 RHEA,NA,Anne Morgat,@amorgat,
 RHEA,NA,Arnaud Kerhornou,@arnaudxk,Swiss-Prot & Rhea developer
 RHEA,NA,Kristian Axelson,@kaxelsen,RHEA and Swiss-Prot curator
-RNAcentral,< ! > Local < ! >,,Alex Bateman,,PI
-RNAcentral,< ! > Local < ! >,Blake Sweeny,@blakesweeney,Contact for Annotation Review
+RNAcentral,< ! > Local < ! >,,Alex Bateman,PI
+RNAcentral,< ! > Local < ! >,@blakesweeney, Blake Sweeny @blakesweeney,
 Roslin_Institute,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,no contact person
 SGD,Noctua,@srengel,Stacia Engel @srengel,Contact for Annotation Review
 SGD,Noctua,,Suzi Aleksander @suzialeksander,
