@@ -6,15 +6,16 @@ ARUK-UCL,P2GO,@RLovering,Ruth Lovering @RLovering,
 ASAP,P2GO,,,
 AspGD,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Aspergillus Genome Database
 BBOP,---,---,---,---
-- BBOP,---,,Seth Carbon @kltm,Noctua | Data pipeline  |AmiGO|  GO Website
-- BBOP,---,,Patrick Kalita @@pkalita-lbl,
+- ---,---,,Seth Carbon @kltm,Noctua | Data pipeline  |AmiGO|  GO Website
+- ---,---,,Patrick Kalita @@pkalita-lbl,
 - BBOP,---,,Chris Mungall @cmungall,GO PI | All things technical and ontology-related
 - BBOP,---,,Sierra Moxon @sierra-moxon,Pipeline
 - BBOP,---,,Mark A. Miller @turbomam,microbial proteomics | 16S metagenomics | biomedical semantics
 BHF-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
 Buffalo University,---,Alex Diehl,@addiehl,immunology
+CACAO,---,---,---,---
 CACAO,Local*,@dsiegele,Debbie Siegle @dsiegele,
-CACAO,Local*,,Jolene Ramsey,@jrr-cpt,
+CACAO,Local*,,Jolene Ramsey @jrr-cpt,,
 CAFA,P2GO,EBI,@Antonialock,Training sets for CAFA competition
 CGD,Local*,Jodi Lew-Smith,@jlewsmith,chromatin/gene silencing/cellular aging
 CHEMBL,---,@Zdrazil,Barbara Zdrazil @Zdrazil,ChEMBL subset
