@@ -35,20 +35,21 @@ ECO - Evidence and Conclusion Ontology,NA,Michelle Giglio,@mgiglio99,
 ECO - Evidence and Conclusion Ontology,NA,Suvvi Nadendla,@nsuvarnaiari,
 ECO - Evidence and Conclusion Ontology,NA,James Munro,@jbmunro,
 ECO - Evidence and Conclusion Ontology,NA,Becky Tauber,@rctauber,
-EcoCyc,Local*,Amanda Mackie,@amandamackie,Contact for Annotation Review
-EcoCyc,Local*,Lisa Moore,@lmoore207,
-EcoCyc,NA,Markus Krummenacker,,EcoCyc pipeline
+EcoCyc,,,,
+- EcoCyc,Local*,Amanda Mackie,@amandamackie,Contact for Annotation Review
+- EcoCyc,Local*,Lisa Moore,@lmoore207,
+- EcoCyc,--,Markus Krummenacker,,EcoCyc pipeline
 EcoliWiki,Local*,Debbie Siegele,@dsiegele,
 Ensembl,NA,,,
 Eurofung,P2GO,,,
-FlyBase,P2GO & Noctua,Helen Attrill,@hattrill,Contact for Annotation Review
-FlyBase,P2GO & Noctua,Giulia Antonazzo,@gantonazzo,
-FlyBase,P2GO & Noctua,Steven Marygold,@sjm41,
-FlyBase,P2GO & Noctua,Rossana Zaru,@rozaru,
-GDB,P2GO,EBI/GOC,@Antonialock,
-GDB,P2GO,EBI/GOC,@pgaudet,
-GeneDB,Local,Ulrike Boehme,@uliboehme,Plasmodium curator | TriTryp
-GeneDB,Local,F.Silva-Franco, F.Silva-Franco at liverpool.ac.uk,TBRU curator
+FlyBase,,,,
+- FlyBase,@hattrillP2GO & Noctua,Helen Attrill @hattrill,
+- FlyBase,,P2GO & Noctua,Giulia Antonazzo @gantonazzo,
+- FlyBase,,P2GO & Noctua,Steven Marygold @sjm41,
+- FlyBase,,P2GO & Noctua,Rossana Zaru @rozaru,
+GDB,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,
+GeneDB,Local*,Ulrike Boehme,@uliboehme,Plasmodium curator | TriTryp
+GeneDB,Local*,F.Silva-Franco, F.Silva-Franco at liverpool.ac.uk,TBRU curator
 GO_Central,P2GO & Noctua,Pascale Gaudet,@pgaudet,PAINT|transcription | multiorganism processes | cellular biology
 GO_Central,P2GO & Noctua,Chris Mungall,@cmungall,Ontology | Anatomy
 GO_Central - USC,NA,Dustin Ebert,@dustine32,PAINT pipeline|GO pipeline
@@ -62,10 +63,11 @@ HGNC-UCL,P2GO,@RLovering, Ruth Lovering @RLovering,
 HPA,Local*,Emma Lundberg, emma.lundberg AT scilifelab.se,
 IMPRS-EB,Noctua,Ivan Tsers,@IvanTsers,phytopathology | comparative genomics | gene functional classification
 IntAct,Local*,Kalpana Panneerselvam,@kalpanap,
-InterPro,Local*,Lowri Williams,lsw26,
-InterPro,Local*,Sara Chuguransky,@sarach06,
-InterPro,Local*,Beatriz Lazaro Pinto,@blazaropinto,
-InterPro,Local*,Antonina Andreeva (Toni),@tony787 | aea-at- ebi.ac.uk,
+InterPro,,,,
+- InterPro,Local*,@lsw26,Lowri Williams @lsw26,
+- InterPro,Local*,@sarach06,Sara Chuguransky @sarach06,
+- InterPro,Local*,@blazaropinto,Beatriz Lazaro Pinto @blazaropinto,
+- InterPro,Local*,@tony787 ,Antonina Andreeva (Toni) @tony787 | aea-at- ebi.ac.uk,
 JaponicusDB,Local*,Snezka Oliferenko,@snezhkaoliferenko,
 JaponicusDB,Local*,Val Wood,@ValWood,
 JCVI,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact @mgiglio99 for queries
