@@ -12,7 +12,7 @@ BBOP,,,,
 ° BBOP,,,Sierra Moxon @sierra-moxon,Pipeline
 ° BBOP,,,Mark A. Miller @turbomam,microbial proteomics | 16S metagenomics | biomedical semantics
 BHF-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
-Buffalo University,---,Alex Diehl,@addiehl,immunology
+Buffalo University,,Alex Diehl,@addiehl,immunology
 CACAO,,,,
 ° CACAO,< ! > Local < ! >,@dsiegele,Debbie Siegle @dsiegele,
 ° CACAO,< ! > Local< ! >,,Jolene Ramsey @jrr-cpt,
@@ -27,14 +27,16 @@ DIBU - DiBest-Unical,Local*,Simona Panni,@simonapanni,
 dictyBase,,,,
 ° dictyBase,P2GO,Petra Fey,@pfey03,Contact for Annotation Review
 ° dictyBase,P2GO,Robert Dodson,@rjdodson,
-DisProt,Local*,Federica Quaglia,@federicaquaglia,biocuration | stucture | functions | Contact for Annotation Review
-DisProt,Local*,Victoria Nugnes,@victorianugnes,biocuration | stucture | intrinsically disordered regions (IDRs) | Contact for Annotation Review
+DisProt,,,,
+° DisProt,< ! > Local< ! >,@federicaquaglia, Federica Quaglia @federicaquaglia,biocuration | stucture | functions 
+° DisProt,< ! > Local< ! >,@victorianugnes Victoria Nugnes @victorianugnes,biocuration | stucture | intrinsically disordered regions (IDRs) 
 EAWAG-BBD (ETH Zurich),NA,Emanuel Schmid,@emanuel-schmid,biodegradation | databases | webservices
 EAWAG-BBD (ETH Zurich),NA,Kathrin Fenner,Kathrin.Fenner - at - eawag.ch,biodegradation | enviPath.org
-ECO - Evidence and Conclusion Ontology,NA,Michelle Giglio,@mgiglio99,
-ECO - Evidence and Conclusion Ontology,NA,Suvvi Nadendla,@nsuvarnaiari,
-ECO - Evidence and Conclusion Ontology,NA,James Munro,@jbmunro,
-ECO - Evidence and Conclusion Ontology,NA,Becky Tauber,@rctauber,
+ECO - Evidence and Conclusion Ontology,,,,
+° ECO,,,Michelle Giglio,@mgiglio99,
+° ECO,,,Suvvi Nadendla,@nsuvarnaiari,
+° ECO,,,James Munro,@jbmunro,
+° ECO,,,Becky Tauber,@rctauber,
 EcoCyc,,,,
 ° EcoCyc,< ! > Local < ! >,Amanda Mackie,@amandamackie,Contact for Annotation Review
 ° EcoCyc,< ! > Local < ! >,Lisa Moore,@lmoore207,
