@@ -21,8 +21,8 @@ CGD,< ! > Local< ! >,@jlewsmith,Jodi Lew-Smith @jlewsmith,chromatin/gene silenci
 CHEMBL,,@Zdrazil,Barbara Zdrazil @Zdrazil,ChEMBL subset
 CollectTF,< ! > Local< ! >,@ivanerill,Ivan Erill @ivanerill,General email:collectf@umbc.edu
 Complex Portal,< ! > Local< ! >,@sandraorchard,Sandra Orchard @sandraorchard,
-Cornell University,,Gaurav Moghe,@moghelab, Plant biology
-DFLAT,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,
+Cornell University,,,Gaurav Moghe @moghelab, Plant biology
+DFLAT,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,
 DIBU - DiBest-Unical,Local*,Simona Panni,@simonapanni,
 dictyBase,,,,
 ° dictyBase,P2GO & Noctua,@pfey03, Petra Fey @pfey03,
