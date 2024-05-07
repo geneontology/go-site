@@ -744,72 +744,9 @@ datasets:
    dataset: goa_chicken
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_chicken.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken.gaf.gz
+   source: https://mirror.geneontology.io/goa_chicken_plus.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_plus.gaf.gz
    entity_type: protein
-   status: active
-   species_code: Ggal
-   taxa:
-    - NCBITaxon:208524
-    - NCBITaxon:208525
-    - NCBITaxon:208526
-    - NCBITaxon:400035
-    - NCBITaxon:9031
-
- -
-   id: goa_chicken_complex.gaf
-   label: "goa_chicken_complex gaf file"
-   description: "gaf file for goa_chicken_complex from EBI Gene Ontology Annotation Database"
-   url: https://current.geneontology.org/annotations/goa_chicken_complex.gaf.gz
-   type: gaf
-   dataset: goa_chicken_complex
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_complex.gaf.gz
-   source: https://mirror.geneontology.io/goa_chicken_complex.gaf.gz
-   entity_type: complex
-   status: active
-   species_code: Ggal
-   taxa:
-    - NCBITaxon:208524
-    - NCBITaxon:208525
-    - NCBITaxon:208526
-    - NCBITaxon:400035
-    - NCBITaxon:9031
-
- -
-   id: goa_chicken_isoform.gaf
-   label: "goa_chicken_isoform gaf file"
-   description: "gaf file for goa_chicken_isoform from EBI Gene Ontology Annotation Database"
-   url: https://current.geneontology.org/annotations/goa_chicken_isoform.gaf.gz
-   type: gaf
-   dataset: goa_chicken_isoform
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_isoform.gaf.gz
-   source: https://mirror.geneontology.io/goa_chicken_isoform.gaf.gz
-   entity_type: isoform
-   status: active
-   species_code: Ggal
-   taxa:
-    - NCBITaxon:208524
-    - NCBITaxon:208525
-    - NCBITaxon:208526
-    - NCBITaxon:400035
-    - NCBITaxon:9031
-
- -
-   id: goa_chicken_rna.gaf
-   label: "goa_chicken_rna gaf file"
-   description: "gaf file for goa_chicken_rna from EBI Gene Ontology Annotation Database"
-   url: https://current.geneontology.org/annotations/goa_chicken_rna.gaf.gz
-   type: gaf
-   dataset: goa_chicken_rna
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_rna.gaf.gz
-   source: https://mirror.geneontology.io/goa_chicken_rna.gaf.gz
-   entity_type: rna
    status: active
    species_code: Ggal
    taxa:
@@ -828,66 +765,9 @@ datasets:
    dataset: goa_cow
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_cow.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow.gaf.gz
+   source: https://mirror.geneontology.io/goa_cow_plus.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_plus.gaf.gz
    entity_type: protein
-   status: active
-   species_code: Btau
-   taxa:
-    - NCBITaxon:297284
-    - NCBITaxon:30523
-    - NCBITaxon:9913
-
- -
-   id: goa_cow_complex.gaf
-   label: "goa_cow_complex gaf file"
-   description: "gaf file for goa_cow_complex from EBI Gene Ontology Annotation Database"
-   url: https://current.geneontology.org/annotations/goa_cow_complex.gaf.gz
-   type: gaf
-   dataset: goa_cow_complex
-   submitter: goa
-   compression: gzip
-   source: https://mirror.geneontology.io/goa_cow_complex.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_complex.gaf.gz
-   entity_type: complex
-   status: active
-   species_code: Btau
-   taxa:
-    - NCBITaxon:297284
-    - NCBITaxon:30523
-    - NCBITaxon:9913
-
- -
-   id: goa_cow_isoform.gaf
-   label: "goa_cow_isoform gaf file"
-   description: "gaf file for goa_cow_isoform from EBI Gene Ontology Annotation Database"
-   url: https://current.geneontology.org/annotations/goa_cow_isoform.gaf.gz
-   type: gaf
-   dataset: goa_cow_isoform
-   submitter: goa
-   compression: gzip
-   source: https://mirror.geneontology.io/goa_cow_isoform.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_isoform.gaf.gz
-   entity_type: isoform
-   status: active
-   species_code: Btau
-   taxa:
-    - NCBITaxon:297284
-    - NCBITaxon:30523
-    - NCBITaxon:9913
-
- -
-   id: goa_cow_rna.gaf
-   label: "goa_cow_rna gaf file"
-   description: "gaf file for goa_cow_rna from EBI Gene Ontology Annotation Database"
-   url: https://current.geneontology.org/annotations/goa_cow_rna.gaf.gz
-   type: gaf
-   dataset: goa_cow_rna
-   submitter: goa
-   compression: gzip
-   source: https://mirror.geneontology.io/goa_cow_rna.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_rna.gaf.gz
-   entity_type: rna
    status: active
    species_code: Btau
    taxa:
@@ -904,60 +784,9 @@ datasets:
    dataset: goa_dog
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_dog.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog.gaf.gz
+   source: https://mirror.geneontology.io/goa_dog_plus.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_plus.gaf.gz
    entity_type: protein
-   status: active
-   species_code: Cfam
-   taxa:
-    - NCBITaxon:9615
-
- -
-   id: goa_dog_complex.gaf
-   label: "goa_dog_complex gaf file"
-   description: "gaf file for goa_dog_complex from EBI Gene Ontology Annotation Database"
-   url: https://current.geneontology.org/annotations/goa_dog_complex.gaf.gz
-   type: gaf
-   dataset: goa_dog_complex
-   submitter: goa
-   compression: gzip
-   source: https://mirror.geneontology.io/goa_dog_complex.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_complex.gaf.gz
-   entity_type: complex
-   status: active
-   species_code: Cfam
-   taxa:
-    - NCBITaxon:9615
-
- -
-   id: goa_dog_isoform.gaf
-   label: "goa_dog_isoform gaf file"
-   description: "gaf file for goa_dog_isoform from EBI Gene Ontology Annotation Database"
-   url: https://current.geneontology.org/annotations/goa_dog_isoform.gaf.gz
-   type: gaf
-   dataset: goa_dog_isoform
-   submitter: goa
-   compression: gzip
-   source: https://mirror.geneontology.io/goa_dog_isoform.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_isoform.gaf.gz
-   entity_type: isoform
-   status: active
-   species_code: Cfam
-   taxa:
-    - NCBITaxon:9615
-
- -
-   id: goa_dog_rna.gaf
-   label: "goa_dog_rna gaf file"
-   description: "gaf file for goa_dog_rna from EBI Gene Ontology Annotation Database"
-   url: https://current.geneontology.org/annotations/goa_dog_rna.gaf.gz
-   type: gaf
-   dataset: goa_dog_rna
-   submitter: goa
-   compression: gzip
-   source: https://mirror.geneontology.io/goa_dog_rna.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_rna.gaf.gz
-   entity_type: rna
    status: active
    species_code: Cfam
    taxa:
@@ -972,59 +801,9 @@ datasets:
    dataset: goa_human
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_human.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human.gaf.gz
+   source: https://mirror.geneontology.io/goa_human_plus.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_plus.gaf.gz
    entity_type: protein
-   status: active
-   species_code: Hsap
-   taxa:
-    - NCBITaxon:9606
-
- -
-   id: goa_human_complex.gaf
-   label: "goa_human_complex gaf file"
-   description: "gaf file for goa_human_complex from EBI Gene Ontology Annotation Database"
-   url: https://current.geneontology.org/annotations/goa_human_complex.gaf.gz
-   type: gaf
-   dataset: goa_human_complex
-   submitter: goa
-   compression: gzip
-   source: http://release.geneontology.org/2022-01-13/products/annotations/goa_human_complex-src.gaf.gz
-   entity_type: complex
-   status: active
-   species_code: Hsap
-   taxa:
-    - NCBITaxon:9606
-
- -
-   id: goa_human_isoform.gaf
-   label: "goa_human_isoform gaf file"
-   description: "gaf file for goa_human_isoform from EBI Gene Ontology Annotation Database"
-   url: https://current.geneontology.org/annotations/goa_human_isoform.gaf.gz
-   type: gaf
-   dataset: goa_human_isoform
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_isoform.gaf.gz
-   source: https://mirror.geneontology.io/goa_human_isoform.gaf.gz
-   entity_type: isoform
-   status: active
-   species_code: Hsap
-   taxa:
-    - NCBITaxon:9606
-
- -
-   id: goa_human_rna.gaf
-   label: "goa_human_rna gaf file"
-   description: "gaf file for goa_human_rna from EBI Gene Ontology Annotation Database"
-   url: https://current.geneontology.org/annotations/goa_human_rna.gaf.gz
-   type: gaf
-   dataset: goa_human_rna
-   submitter: goa
-   compression: gzip
-   source: https://mirror.geneontology.io/goa_human_rna.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_rna.gaf.gz
-   entity_type: rna
    status: active
    species_code: Hsap
    taxa:
@@ -1056,60 +835,9 @@ datasets:
    dataset: goa_pig
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_pig.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig.gaf.gz
+   source: https://mirror.geneontology.io/goa_pig_plus.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_plus.gaf.gz
    entity_type: protein
-   status: active
-   species_code: Sscr
-   taxa:
-    - NCBITaxon:9823
-
- -
-   id: goa_pig_complex.gaf
-   label: "goa_pig_complex gaf file"
-   description: "gaf file for goa_pig_complex from EBI Gene Ontology Annotation Database"
-   url: https://current.geneontology.org/annotations/goa_pig_complex.gaf.gz
-   type: gaf
-   dataset: goa_pig_complex
-   submitter: goa
-   compression: gzip
-   source: https://mirror.geneontology.io/goa_pig_complex.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_complex.gaf.gz
-   entity_type: complex
-   status: active
-   species_code: Sscr
-   taxa:
-    - NCBITaxon:9823
-
- -
-   id: goa_pig_isoform.gaf
-   label: "goa_pig_isoform gaf file"
-   description: "gaf file for goa_pig_isoform from EBI Gene Ontology Annotation Database"
-   url: https://current.geneontology.org/annotations/goa_pig_isoform.gaf.gz
-   type: gaf
-   dataset: goa_pig_isoform
-   submitter: goa
-   compression: gzip
-   source: https://mirror.geneontology.io/goa_pig_isoform.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_isoform.gaf.gz
-   entity_type: isoform
-   status: active
-   species_code: Sscr
-   taxa:
-    - NCBITaxon:9823
-
- -
-   id: goa_pig_rna.gaf
-   label: "goa_pig_rna gaf file"
-   description: "gaf file for goa_pig_rna from EBI Gene Ontology Annotation Database"
-   url: https://current.geneontology.org/annotations/goa_pig_rna.gaf.gz
-   type: gaf
-   dataset: goa_pig_rna
-   submitter: goa
-   compression: gzip
-   source: https://mirror.geneontology.io/goa_pig_rna.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_rna.gaf.gz
-   entity_type: rna
    status: active
    species_code: Sscr
    taxa:
