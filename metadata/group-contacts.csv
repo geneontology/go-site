@@ -138,7 +138,7 @@ TAIR,,,,
 ° TAIR,Local,,Leonore Reiser @lreiser,Plant biology
 ° TAIR,Local,,Erica Bakker @ebakker2,Plant biology
 TIGR,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact @mgiglio99 for queries
-UF_OPP,, Colbie Reed, @dexink, microbes
+UF_OPP,,, Colbie Reed @dexink, microbes
 UniProt,,,,
 ° UniProt (EBI),,,Alex Ignatchenko @alexsign,Software & pipeline
 ° UniProt (EBI),P2GO,@Antonialock,Antonia Lock @Antonialock, GOA contact for GO
