@@ -62,13 +62,13 @@ GO_Noctua,,,,
 GOC,,@pgaudet,,
 GOC-OWL,,@pgaudet,,
 GR,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Gramene Database - contact Pankaj Jaiswal @jaiswalp for queries
-GREEKC,NA,Colin Logie,@colinlog,Transcription
-HGNC,Local,Susan Tweedie,@sartweedie,
+GREEKC,,,Colin Logie @colinlog,Transcription
+HGNC,< ! > Local < ! >,@sartweedie,Susan Tweedie @sartweedie,
 HGNC-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
-HPA,Local*,Emma Lundberg, emma.lundberg AT scilifelab.se,
-IMPRS-EB,Noctua,Ivan Tsers,@IvanTsers,phytopathology | comparative genomics | gene functional classification
+HPA,< ! > Local < ! >,emma.lundberg AT scilifelab.se,Emma Lundberg emma.lundberg AT scilifelab.se,
+IMPRS-EB,Noctua,@IvanTsers,Ivan Tsers @IvanTsers,phytopathology | comparative genomics | gene functional classification
 IntAct,,,,
-° IntAct,< ! > Local < ! >,Kalpana Panneerselvam,@kalpanap,
+° IntAct,< ! > Local < ! >,,Kalpana Panneerselvam @kalpanap,
 ° IntAct,< ! > Local < ! >,@sandraorchard,Sandra Orchard @sandraorchard,
 InterPro,,,,
 ° InterPro,< ! > Local < ! >,@lsw26,Lowri Williams @lsw26,
