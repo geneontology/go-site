@@ -12,7 +12,7 @@ BBOP,,,,
 ° BBOP,,,Sierra Moxon @sierra-moxon,Pipeline
 ° BBOP,,,Mark A. Miller @turbomam,microbial proteomics | 16S metagenomics | biomedical semantics
 BHF-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
-Buffalo University,,Alex Diehl,@addiehl,immunology
+Buffalo University,,,Alex Diehl @addiehl,immunology
 CACAO,,,,
 ° CACAO,< ! > Local < ! >,@dsiegele,Debbie Siegle @dsiegele,
 ° CACAO,< ! > Local< ! >,,Jolene Ramsey @jrr-cpt,
@@ -25,8 +25,8 @@ Cornell University,,Gaurav Moghe,@moghelab, Plant biology
 DFLAT,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,
 DIBU - DiBest-Unical,Local*,Simona Panni,@simonapanni,
 dictyBase,,,,
-° dictyBase,P2GO,Petra Fey,@pfey03,Contact for Annotation Review
-° dictyBase,P2GO,Robert Dodson,@rjdodson,
+° dictyBase,P2GO,@pfey03Petra Fey,@pfey03,
+° dictyBase,P2GO,,Robert Dodson,@rjdodson,
 DisProt,,,,
 ° DisProt,< ! > Local< ! >,@federicaquaglia, Federica Quaglia @federicaquaglia,biocuration | stucture | functions 
 ° DisProt,< ! > Local< ! >,@victorianugnes, Victoria Nugnes @victorianugnes,biocuration | stucture | intrinsically disordered regions (IDRs) 
@@ -39,8 +39,8 @@ ECO - Evidence and Conclusion Ontology,,,,
 ° ECO,,,James Munro @jbmunro,
 ° ECO,,,Becky Tauber @rctauber,
 EcoCyc,,,,
-° EcoCyc,< ! > Local < ! >,Amanda Mackie,@amandamackie,Contact for Annotation Review
-° EcoCyc,< ! > Local < ! >,Lisa Moore,@lmoore207,
+° EcoCyc,< ! > Local < ! >,@amandamackie,Amanda Mackie @amandamackie,
+° EcoCyc,< ! > Local < ! >,,Lisa Moore,@lmoore207,
 ° EcoCyc,,Markus Krummenacker,,EcoCyc pipeline
 EcoliWiki,Local*,Debbie Siegele,@dsiegele,
 Ensembl,,,,
