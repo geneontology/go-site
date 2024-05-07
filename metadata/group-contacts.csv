@@ -19,8 +19,8 @@ CACAO,,,,
 CAFA,P2GO,@Antonialock,,Training sets for CAFA competition
 CGD,< ! > Local< ! >,@jlewsmith,Jodi Lew-Smith @jlewsmith,chromatin/gene silencing/cellular aging
 CHEMBL,,@Zdrazil,Barbara Zdrazil @Zdrazil,ChEMBL subset
-CollectTF,Local*,@ivanerill,Ivan Erill @ivanerill,General email:collectf@umbc.edu
-Complex Portal,Local*,@sandraorchard,Sandra Orchard @sandraorchard,
+CollectTF,< ! > Local< ! >,@ivanerill,Ivan Erill @ivanerill,General email:collectf@umbc.edu
+Complex Portal,< ! > Local< ! >,@sandraorchard,Sandra Orchard @sandraorchard,
 Cornell University,,Gaurav Moghe,@moghelab, Plant biology
 DFLAT,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,
 DIBU - DiBest-Unical,Local*,Simona Panni,@simonapanni,
@@ -66,7 +66,9 @@ HGNC,Local,Susan Tweedie,@sartweedie,
 HGNC-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
 HPA,Local*,Emma Lundberg, emma.lundberg AT scilifelab.se,
 IMPRS-EB,Noctua,Ivan Tsers,@IvanTsers,phytopathology | comparative genomics | gene functional classification
-IntAct,< ! > Local < ! >,Kalpana Panneerselvam,@kalpanap,
+IntAct,,,,
+° IntAct,< ! > Local < ! >,Kalpana Panneerselvam,@kalpanap,
+° IntAct,< ! > Local < ! >,@sandraorchard,Sandra Orchard @sandraorchard,
 InterPro,,,,
 ° InterPro,< ! > Local < ! >,@lsw26,Lowri Williams @lsw26,
 ° InterPro,< ! > Local < ! >,@sarach06,Sara Chuguransky @sarach06,
