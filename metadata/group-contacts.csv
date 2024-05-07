@@ -13,18 +13,18 @@ Buffalo University,NA,Alex Diehl,@addiehl,immunology
 CACAO,Local*,Debbie Siegle,@dsiegele,
 CACAO,Local*,Jolene Ramsey,@jrr-cpt,
 CAFA,P2GO,EBI,@Antonialock,Training sets for CAFA competition
-CGD,Local,Jodi Lew-Smith,@jlewsmith,chromatin/gene silencing/cellular aging
+CGD,Local*,Jodi Lew-Smith,@jlewsmith,chromatin/gene silencing/cellular aging
 CHEMBL,NA,Barbara Zdrazil,@Zdrazil,ChEMBL subset
-CollectTF,Local,Ivan Erill,@ivanerill,
-CollectTF,Local,General email,collectf@umbc.edu,
-Complex Portal,Local,Sandra Orchard,@sandraorchard,
+CollectTF*,Local,Ivan Erill,@ivanerill,
+CollectTF*,Local,General email,collectf@umbc.edu,
+Complex Portal,Local*,Sandra Orchard,@sandraorchard,
 Cornell University,NA,Gaurav Moghe,@moghelab, Plant biology
 DFLAT,P2GO,Not actively maintainted/GO_Central,@Antonialock @pgaudet @vanaukenk,
-DIBU - DiBest-Unical,Local,Simona Panni,@simonapanni,
+DIBU - DiBest-Unical,Local*,Simona Panni,@simonapanni,
 dictyBase,P2GO,Petra Fey,@pfey03,Annotation Review
 dictyBase,P2GO,Robert Dodson,@rjdodson,
-DisProt,Local,Federica Quaglia,@federicaquaglia,biocuration | stucture | functions
-DisProt,Local,Victoria Nugnes,@victorianugnes,biocuration | stucture | intrinsically disordered regions (IDRs)
+DisProt,Local*,Federica Quaglia,@federicaquaglia,biocuration | stucture | functions
+DisProt,Local*,Victoria Nugnes,@victorianugnes,biocuration | stucture | intrinsically disordered regions (IDRs)
 EAWAG-BBD (ETH Zurich),NA,Emanuel Schmid,@emanuel-schmid,biodegradation | databases | webservices
 EAWAG-BBD (ETH Zurich),NA,Kathrin Fenner,Kathrin.Fenner - at - eawag.ch,biodegradation | enviPath.org
 ECO - Evidence and Conclusion Ontology,NA,Michelle Giglio,@mgiglio99,
@@ -34,7 +34,7 @@ ECO - Evidence and Conclusion Ontology,NA,Becky Tauber,@rctauber,
 EcoCyc,Local*,Amanda Mackie,@amandamackie,
 EcoCyc,Local*,Lisa Moore,@lmoore207,
 EcoCyc,NA,Markus Krummenacker,,EcoCyc pipeline
-EcoliWiki,Local,Debbie Siegele,@dsiegele,
+EcoliWiki,Local*,Debbie Siegele,@dsiegele,
 Ensembl,NA,,,
 Eurofung,P2GO,,,
 FlyBase,P2GO & Noctua,Helen Attrill,@hattrill,Annotation Review
@@ -51,29 +51,21 @@ GO_Central - USC,NA,Dustin Ebert,@dustine32,PAINT pipeline|GO pipeline
 GO_Noctua,,,,
 GOC,,,,
 GOC-OWL,,,,
-GR,P2GO,Pankaj Jaiswal,@jaiswalp,Plant biology
-GR,P2GO,Not actively maintainted/GO_Central,@vanaukenk,contact @jaiswalp for queries
-GR,P2GO,Not actively maintainted/GO_Central,@pgaudet,contact @jaiswalp for queries
-GRP2GO,,Not actively maintainted/EBI,@Antonialock,contact @jaiswalp for queries
+GR,P2GO,,Not actively maintainted/EBI,@Antonialock @pgaudet @vanaukenk,Gramene Database - contact Pankaj Jaiswal @jaiswalp for queries
 GREEKC,NA,Colin Logie,@colinlog,Transcription
 HGNC,Local,Susan Tweedie,@sartweedie,
 HGNC-UCL,P2GO,Ruth Lovering,@RLovering,
-HPA,Local,Emma Lundberg, emma.lundberg AT scilifelab.se,
+HPA,Local*,Emma Lundberg, emma.lundberg AT scilifelab.se,
 IMPRS-EB,Noctua,Ivan Tsers,@IvanTsers,phytopathology | comparative genomics | gene functional classification
-IntAct,Local,Kalpana Panneerselvam,@kalpanap,
-InterPro,Local,Lowri Williams,lsw26,
-InterPro,Local,Sara Chuguransky,@sarach06,
-InterPro,Local,Beatriz Lazaro Pinto,@blazaropinto,
-InterPro,Local,Antonina Andreeva (Toni),@tony787 | aea-at- ebi.ac.uk,
-JaponicusDB,Local,Snezka Oliferenko,@snezhkaoliferenko,
-JaponicusDB,Local,Val Wood,@ValWood,
-JCVI,P2GO,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
-JCVI,P2GO,Not actively maintainted/GO_Central,@Antonialock,contact @mgiglio99 for queries
-JCVI,P2GO,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
-LIFEdb,P2GO,Stefan Wiemann,s.wiemann AT dkfz-heidelberg.de,
-LIFEdb,P2GO,GO_Central,@pgaudet,
-LIFEdb,P2GO,GO_Central,@vanaukenk,
-LIFEdb,P2GO,EBI,@Antonialock,
+IntAct,Local*,Kalpana Panneerselvam,@kalpanap,
+InterPro,Local*,Lowri Williams,lsw26,
+InterPro,Local*,Sara Chuguransky,@sarach06,
+InterPro,Local*,Beatriz Lazaro Pinto,@blazaropinto,
+InterPro,Local*,Antonina Andreeva (Toni),@tony787 | aea-at- ebi.ac.uk,
+JaponicusDB,Local*,Snezka Oliferenko,@snezhkaoliferenko,
+JaponicusDB,Local*,Val Wood,@ValWood,
+JCVI,P2GO,Not actively maintainted/GO_Central,@pgaudet @Antonialock @vanaukenk,,contact @mgiglio99 for queries
+LIFEdb,P2GO,GO_Central,@Antonialock @pgaudet@vanaukenk, contact Stefan Wiemann,s.wiemann AT dkfz-heidelberg.de for queries
 MENGO,P2GO,Not actively maintainted/GO_Central,@pgaudet,contact @mgiglio99 for queries
 MENGO,P2GO,Not actively maintainted/GO_Central,@vanaukenk,contact @mgiglio99 for queries
 MENGO,P2GO,Not actively maintainted/GO_Central,@Antonialock,contact @mgiglio99 for queries
