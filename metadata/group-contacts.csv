@@ -61,7 +61,7 @@ GO_Central,,,,,
 ° GO_Central,GOC Technical,,,Sierra Moxon @sierra-moxon,Pipeline and data
 ° GO_Central,GOC Technical,,,Mark A. Miller @turbomam,microbial proteomics | 16S metagenomics | biomedical semantics
 GOC,Curation,,@pgaudet,,Automatic inferences
-GOC-OWL,,@pgaudet,,Automatic inferences
+GOC-OWL,,,@pgaudet,,Automatic inferences
 GR,Curation (inactive),P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Gramene Database - contact Pankaj Jaiswal @jaiswalp for queries
 GREEKC,Domain expert,,,Colin Logie @colinlog,Transcription
 HGNC,Curation,< ! > In-house < ! >,@sartweedie,Susan Tweedie @sartweedie,
