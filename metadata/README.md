@@ -140,4 +140,8 @@ Fields:
 - url (OPTIONAL) - a URL to get more information about the reference.
 - year (OPTIONAL, INTEGER) - The year the reference was created. 
 
+# retracted.txt
+
+- PMID's from retracted publicaions. Some entries have associated PMCID delimited by comma
+
 
