@@ -1,18 +1,18 @@
-Group,Curation Tool,Contact for Annotation Review,Contact name & Contact GitHub ID,Expertise/Domains of interest
+Group,Role,Curation Tool,Contact for Annotation Review,Contact name & Contact GitHub ID,Expertise/Domains of interest
 ,< ! > = No automatic replacement of obsolete terms,,,
-AgBase,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,
-Alzheimers_University_of_Toronto,P2GO,@RLovering, Ruth Lovering @RLovering, 
-ARUK-UCL,P2GO,@RLovering,Ruth Lovering @RLovering,
-ASAP,P2GO,,,
-AspGD,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Aspergillus Genome Database
+AgBase,Curation (inactive),P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,
+Alzheimers_University_of_Toronto,Curation,P2GO,@RLovering, Ruth Lovering @RLovering, 
+ARUK-UCL,Curation,P2GO,@RLovering,Ruth Lovering @RLovering,
+ASAP,Curation (inactive),P2GO,,,
+AspGD,Curation (inactive),P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Aspergillus Genome Database
 BBOP,,,,
-° BBOP,,,Seth Carbon @kltm,Noctua | Data pipeline  |AmiGO|  GO Website
-° BBOP,,,Patrick Kalita @@pkalita-lbl,
-° BBOP,,,Chris Mungall @cmungall,GO PI | All things technical and ontology-related
-° BBOP,,,Sierra Moxon @sierra-moxon,Pipeline
-° BBOP,,,Mark A. Miller @turbomam,microbial proteomics | 16S metagenomics | biomedical semantics
-BHF-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
-Buffalo University,,,Alex Diehl @addiehl,immunology
+° BBOP,GOC Technical,,,Seth Carbon @kltm,Noctua | Data pipeline  |AmiGO|  GO Website
+° BBOP,GOC Technical,,,Patrick Kalita @@pkalita-lbl,
+° BBOP,GOC Technical,,,Chris Mungall @cmungall,GO PI | All things technical and ontology-related
+° BBOP,GOC Technical,,,Sierra Moxon @sierra-moxon,Pipeline
+° BBOP,GOC Technical,,,Mark A. Miller @turbomam,microbial proteomics | 16S metagenomics | biomedical semantics
+BHF-UCL,Curation,P2GO,@RLovering, Ruth Lovering @RLovering, 
+Buffalo University,Ontology development,,,Alex Diehl @addiehl,immunology
 CACAO,,,,
 ° CACAO,< ! > In-house < ! >,@dsiegele,Debbie Siegle @dsiegele,
 ° CACAO,< ! > In-house< ! >,,Jolene Ramsey @jrr-cpt,
