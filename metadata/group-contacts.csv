@@ -8,13 +8,13 @@ AspGD,Curation (inactive),P2GO,@Antonialock @pgaudet @vanaukenk,Not actively mai
 BHF-UCL,Curation,P2GO,@RLovering, Ruth Lovering @RLovering, 
 Buffalo University,Ontology development,,,Alex Diehl @addiehl,immunology
 CACAO,,,,,
-° CACAO,,< ! > In-house < ! >,@dsiegele,Debbie Siegle @dsiegele,
-° CACAO,,< ! > In-house< ! >,,Jolene Ramsey @jrr-cpt,
-CAFA,,P2GO,@Antonialock,,Training sets for CAFA competition
-CGD,,< ! > In-house< ! >,@jlewsmith,Jodi Lew-Smith @jlewsmith,chromatin/gene silencing/cellular aging
-CHEMBL,,,@Zdrazil,Barbara Zdrazil @Zdrazil,ChEMBL subset
+° CACAO,Curation,< ! > In-house < ! >,@dsiegele,Debbie Siegle @dsiegele,
+° CACAO,Curation,< ! > In-house< ! >,,Jolene Ramsey @jrr-cpt,
+CAFA,Curation,P2GO,@Antonialock,,Training sets for CAFA competition
+CGD,Curation,< ! > In-house< ! >,@jlewsmith,Jodi Lew-Smith @jlewsmith,chromatin/gene silencing/cellular aging
+CHEMBL,Subsets,,@Zdrazil,Barbara Zdrazil @Zdrazil,ChEMBL subset
 CollectTF,Curation (inactive),< ! > In-house< ! >,@ivanerill,Ivan Erill @ivanerill,General email:collectf@umbc.edu
-Complex Portal,,< ! > In-house< ! >,@sandraorchard,Sandra Orchard @sandraorchard,
+Complex Portal,Curation,< ! > In-house< ! >,@sandraorchard,Sandra Orchard @sandraorchard,
 Cornell University,,,,Gaurav Moghe @moghelab, Plant biology
 DFLAT,Curation (inactive),P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,
 DIBU - DiBest-Unical,Curation,< ! > In-house< ! >,@simonapanni,Simona Panni @simonapanni,
