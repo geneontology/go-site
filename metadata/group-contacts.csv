@@ -53,12 +53,12 @@ GO_Central,,,,,
 ° GO_Central,GO PI,PAINT | Noctua,,Paul Thomas @thomaspd,Ontology | Phylogenetics | PAINT|Panther
 ° GO_Central,Curation,PAINT | P2GO | Noctua,@pgaudet,Pascale Gaudet @pgaudet,ontology development | PAINT | transcription | multiorganism processes | cellular biology| pipeline QC
 ° GO_Central,Curation,PAINT,,Huaiyu Mi @huaiyumi,
-° GO_Central,GOC Technical,,Dustin Ebert @dustine32,PAINT pipeline|GO pipeline
+° GO_Central,GOC Technical,,,Dustin Ebert @dustine32,PAINT pipeline|GO pipeline
 ° GO_Central,GOC Technical,,,Anushya Muruganujan @mugitty,PAINT software developer
 ° GO_Central,GOC Technical,,,Tremayne @tmushayahama,Noctua UI
 ° GO_Central,GOC Technical,,,Seth Carbon @kltm,Noctua | Data pipeline  |AmiGO|  GO Website
 ° GO_Central,GOC Technical,,,Patrick Kalita @@pkalita-lbl,
-° GO_Central,GOC Technical,,Sierra Moxon @sierra-moxon,Pipeline and data
+° GO_Central,GOC Technical,,,Sierra Moxon @sierra-moxon,Pipeline and data
 ° GO_Central,GOC Technical,,,Mark A. Miller @turbomam,microbial proteomics | 16S metagenomics | biomedical semantics
 GOC,Curation,,@pgaudet,,Automatic inferences
 GOC-OWL,,@pgaudet,,Automatic inferences
