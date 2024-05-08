@@ -23,7 +23,7 @@ CollectTF,< ! > In-house< ! >,@ivanerill,Ivan Erill @ivanerill,General email:col
 Complex Portal,< ! > In-house< ! >,@sandraorchard,Sandra Orchard @sandraorchard,
 Cornell University,,,Gaurav Moghe @moghelab, Plant biology
 DFLAT,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,
-DIBU - DiBest-Unical,< ! > Local< ! >,@simonapanni,Simona Panni @simonapanni,
+DIBU - DiBest-Unical,< ! > In-house< ! >,@simonapanni,Simona Panni @simonapanni,
 dictyBase,,,,
 ° dictyBase,P2GO |  Noctua,@pfey03, Petra Fey @pfey03,
 ° dictyBase,P2GO | Noctua,,Robert Dodson @rjdodson,
@@ -112,13 +112,13 @@ PseudoCAP,,,,
 Reactome,,,,
 ° Reactome,< ! > In-house < ! >,@deustp01,Peter D'Eustachio @deustp01,
 ° Reactome,,,Adam Wright @adamjohnwright,
-Rfam,< ! > Local < ! >,@blakesweeney,Blake Sweeney @blakesweeney,
+Rfam,< ! > In-house < ! >,@blakesweeney,Blake Sweeney @blakesweeney,
 RGD,,,,
-° RGD,Local,@slaulederkind,Stan Laulederkind @slaulederkind,Contact for Annotation Review
-° RGD,Local,@gthayman,Tom Hayman @gthayman,Contact for Annotation Review
-° RGD,Local,,Mary Kaldunski @mlkaldunski,curation | annotation | physiology
-° RGD,Local,,Jennifer Smith @jrsjrs,Project Manager| pipeline and data
-° RGD,Local,,Marek Tutaj @tutajm,import and export pipelines
+° RGD,In-house,@slaulederkind,Stan Laulederkind @slaulederkind,Contact for Annotation Review
+° RGD,In-house,@gthayman,Tom Hayman @gthayman,Contact for Annotation Review
+° RGD,In-house,,Mary Kaldunski @mlkaldunski,curation | annotation | physiology
+° RGD,In-house,,Jennifer Smith @jrsjrs,Project Manager| pipeline and data
+° RGD,In-house,,Marek Tutaj @tutajm,import and export pipelines
 RHEA,,,,
 ° RHEA,,,Kristian Axelson @kaxelsen,RHEA and Swiss-Prot curator
 ° RHEA,,,Anne Morgat @amorgat,
