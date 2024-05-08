@@ -14,13 +14,13 @@ BBOP,,,,
 BHF-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
 Buffalo University,,,Alex Diehl @addiehl,immunology
 CACAO,,,,
-° CACAO,< ! > Local < ! >,@dsiegele,Debbie Siegle @dsiegele,
-° CACAO,< ! > Local< ! >,,Jolene Ramsey @jrr-cpt,
+° CACAO,< ! > In-house < ! >,@dsiegele,Debbie Siegle @dsiegele,
+° CACAO,< ! > In-house< ! >,,Jolene Ramsey @jrr-cpt,
 CAFA,P2GO,@Antonialock,,Training sets for CAFA competition
-CGD,< ! > Local< ! >,@jlewsmith,Jodi Lew-Smith @jlewsmith,chromatin/gene silencing/cellular aging
+CGD,< ! > In-house< ! >,@jlewsmith,Jodi Lew-Smith @jlewsmith,chromatin/gene silencing/cellular aging
 CHEMBL,,@Zdrazil,Barbara Zdrazil @Zdrazil,ChEMBL subset
-CollectTF,< ! > Local< ! >,@ivanerill,Ivan Erill @ivanerill,General email:collectf@umbc.edu
-Complex Portal,< ! > Local< ! >,@sandraorchard,Sandra Orchard @sandraorchard,
+CollectTF,< ! > In-house< ! >,@ivanerill,Ivan Erill @ivanerill,General email:collectf@umbc.edu
+Complex Portal,< ! > In-house< ! >,@sandraorchard,Sandra Orchard @sandraorchard,
 Cornell University,,,Gaurav Moghe @moghelab, Plant biology
 DFLAT,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,
 DIBU - DiBest-Unical,< ! > Local< ! >,@simonapanni,Simona Panni @simonapanni,
@@ -28,8 +28,8 @@ dictyBase,,,,
 ° dictyBase,P2GO |  Noctua,@pfey03, Petra Fey @pfey03,
 ° dictyBase,P2GO | Noctua,,Robert Dodson @rjdodson,
 DisProt,,,,
-° DisProt,< ! > Local< ! >,@federicaquaglia, Federica Quaglia @federicaquaglia,biocuration | stucture | functions 
-° DisProt,< ! > Local< ! >,@victorianugnes, Victoria Nugnes @victorianugnes,biocuration | stucture | intrinsically disordered regions (IDRs) 
+° DisProt,< ! > In-house< ! >,@federicaquaglia, Federica Quaglia @federicaquaglia,biocuration | stucture | functions 
+° DisProt,< ! > In-house< ! >,@victorianugnes, Victoria Nugnes @victorianugnes,biocuration | stucture | intrinsically disordered regions (IDRs) 
 EAWAG-BBD (ETH Zurich),,,,
 ° EAWAG-BBD (ETH Zurich),,,Emanuel Schmid @emanuel-schmid,biodegradation | databases | webservices
 ° EAWAG-BBD (ETH Zurich),,,Kathrin Fenner Kathrin.Fenner - at - eawag.ch,biodegradation | PI | enviPath.org
@@ -39,10 +39,10 @@ ECO - Evidence and Conclusion Ontology,,,,
 ° ECO,,,James Munro @jbmunro,
 ° ECO,,,Becky Tauber @rctauber,
 EcoCyc,,,,
-° EcoCyc,< ! > Local < ! >,@amandamackie,Amanda Mackie @amandamackie,
-° EcoCyc,< ! > Local < ! >,,Lisa Moore @lmoore207,
+° EcoCyc,< ! > In-house < ! >,@amandamackie,Amanda Mackie @amandamackie,
+° EcoCyc,< ! > In-house < ! >,,Lisa Moore @lmoore207,
 ° EcoCyc,,,Markus Krummenacker,EcoCyc pipeline
-EcoliWiki,< ! > Local < ! >,@dsiegele,Debbie Siegele @dsiegele,
+EcoliWiki,< ! > In-house < ! >,@dsiegele,Debbie Siegele @dsiegele,
 Ensembl,,,,
 Eurofung,P2GO,,,
 FlyBase,,,,
@@ -52,8 +52,8 @@ FlyBase,,,,
 ° FlyBase,P2GO | Noctua,,Rossana Zaru @rozaru,
 GDB,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,
 GeneDB (EuPathDB),,,,
-° GeneDB,< ! > Local < ! >,@uliboehme, Ulrike Boehme @uliboehme,Plasmodium curator | TriTryp
-° GeneDB,< ! > Local < ! >,,F.Silva-Franco F.Silva-Franco at liverpool.ac.uk,TBRU curator
+° GeneDB,< ! > In-house < ! >,@uliboehme, Ulrike Boehme @uliboehme,Plasmodium curator | TriTryp
+° GeneDB,< ! > In-house < ! >,,F.Silva-Franco F.Silva-Franco at liverpool.ac.uk,TBRU curator
 GO_Central,,,,
 ° GO_Central,PAINT | P2GO | Noctua,@pgaudet,Pascale Gaudet @pgaudet,ontology development | PAINT | transcription | multiorganism processes | cellular biology| pipeline QC
 ° GO_Central,PAINT | P2GO | Noctua,@marcfeuermann,Marc Feurmann @marcfeuermann,fungal biology
@@ -67,21 +67,21 @@ GOC,,@pgaudet,,
 GOC-OWL,,@pgaudet,,
 GR,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Gramene Database - contact Pankaj Jaiswal @jaiswalp for queries
 GREEKC,,,Colin Logie @colinlog,Transcription
-HGNC,< ! > Local < ! >,@sartweedie,Susan Tweedie @sartweedie,
+HGNC,< ! > In-house < ! >,@sartweedie,Susan Tweedie @sartweedie,
 HGNC-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
-HPA,< ! > Local < ! >,emma.lundberg AT scilifelab.se,Emma Lundberg emma.lundberg AT scilifelab.se,
+HPA,< ! > In-house < ! >,emma.lundberg AT scilifelab.se,Emma Lundberg emma.lundberg AT scilifelab.se,
 IMPRS-EB,Noctua,@IvanTsers,Ivan Tsers @IvanTsers,phytopathology | comparative genomics | gene functional classification
 IntAct,,,,
-° IntAct,< ! > Local < ! >,,Kalpana Panneerselvam @kalpanap,
-° IntAct,< ! > Local < ! >,@sandraorchard,Sandra Orchard @sandraorchard,
+° IntAct,< ! > In-house < ! >,,Kalpana Panneerselvam @kalpanap,
+° IntAct,< ! > In-house < ! >,@sandraorchard,Sandra Orchard @sandraorchard,
 InterPro,,,,
-° InterPro,< ! > Local < ! >,@lsw26,Lowri Williams @lsw26,
-° InterPro,< ! > Local < ! >,@sarach06,Sara Chuguransky @sarach06,
-° InterPro,< ! > Local < ! >,@blazaropinto,Beatriz Lazaro Pinto @blazaropinto,
-° InterPro,< ! > Local < ! >,@tony787 ,Antonina Andreeva (Toni) @tony787 | aea-at- ebi.ac.uk,
+° InterPro,< ! > In-house < ! >,@lsw26,Lowri Williams @lsw26,
+° InterPro,< ! > In-house < ! >,@sarach06,Sara Chuguransky @sarach06,
+° InterPro,< ! > In-house < ! >,@blazaropinto,Beatriz Lazaro Pinto @blazaropinto,
+° InterPro,< ! > In-house < ! >,@tony787 ,Antonina Andreeva (Toni) @tony787 | aea-at- ebi.ac.uk,
 JaponicusDB,,,,
-° JaponicusDB,< ! > Local < ! >,,Snezka Oliferenko @snezhkaoliferenko,
-° JaponicusDB,< ! > Local < ! >,@ValWood,Val Wood @ValWood,
+° JaponicusDB,< ! > In-house < ! >,,Snezka Oliferenko @snezhkaoliferenko,
+° JaponicusDB,< ! > In-house < ! >,@ValWood,Val Wood @ValWood,
 JCVI,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact @mgiglio99 for queries
 LIFEdb,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact Stefan Wiemann s.wiemann AT dkfz-heidelberg.de for queries
 MENGO,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact @mgiglio99 for queries
@@ -97,20 +97,20 @@ PAMGO_GAT,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Cent
 PAMGO_MGG,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact @mgiglio99 for queries
 PAMGO_VMD,,,,
 ParkinsonsUK-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
-PHI-base,< ! > Local < ! >,,,
+PHI-base,< ! > In-house < ! >,,,
 PINC (ProtInc),P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,no contact person
 PomBase,,,,
-° PomBase,< ! > Local < ! >,,general GitHub account @pombase-admin,
-° PomBase,< ! > Local < ! > | Noctua,@valwood,ValWood @valwood,Annotation Review
-° PomBase,< ! > Local < ! > | Noctua,,Pascal Carme @PCarme,curator
+° PomBase,< ! > In-house < ! >,,general GitHub account @pombase-admin,
+° PomBase,< ! > In-house < ! > | Noctua,@valwood,ValWood @valwood,Annotation Review
+° PomBase,< ! > In-house < ! > | Noctua,,Pascal Carme @PCarme,curator
 ° PomBase,,,Kim Rutherford @kimrutherford,
 Protein Ontology,,,Darren Natale @nataled,
 PseudoCAP,,,,
-° PseudoCAP,< ! > Local < ! >,@glwinsor,Geoff Winsor @glwinsor,
-° PseudoCAP,< ! > Local < ! >,,Fiona Brinkman @fionabrinkman,
-° PseudoCAP,< ! > Local < ! >,,General Group @brinkmanlab,
+° PseudoCAP,< ! > In-house < ! >,@glwinsor,Geoff Winsor @glwinsor,
+° PseudoCAP,< ! > In-house < ! >,,Fiona Brinkman @fionabrinkman,
+° PseudoCAP,< ! > In-house < ! >,,General Group @brinkmanlab,
 Reactome,,,,
-° Reactome,< ! > Local < ! >,@deustp01,Peter D'Eustachio @deustp01,
+° Reactome,< ! > In-house < ! >,@deustp01,Peter D'Eustachio @deustp01,
 ° Reactome,,,Adam Wright @adamjohnwright,
 Rfam,< ! > Local < ! >,@blakesweeney,Blake Sweeney @blakesweeney,
 RGD,,,,
@@ -124,20 +124,20 @@ RHEA,,,,
 ° RHEA,,,Anne Morgat @amorgat,
 ° RHEA,,,Arnaud Kerhornou @arnaudxk,Swiss-Prot & Rhea developer
 RNA Central,,,,
-° RNAcentral,< ! > Local < ! >,,Alex Bateman,PI
-° RNAcentral,< ! > Local < ! >,@blakesweeney, Blake Sweeny @blakesweeney,
+° RNAcentral,< ! > In-house < ! >,,Alex Bateman,PI
+° RNAcentral,< ! > In-house < ! >,@blakesweeney, Blake Sweeny @blakesweeney,
 Roslin_Institute,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,no contact person
 SGD,,,,
 ° SGD,Noctua,@srengel,Stacia Engel @srengel,Contact for Annotation Review
 ° SGD,Noctua,,Suzi Aleksander @suzialeksander,
-SGN,< ! > Local < ! >,@lukasmueller,Lukas Mueller @lukasmueller,
-SynGO,< ! > Local < ! >,@ftwkoopmans,Frank Koopmans @ftwkoopmans,
+SGN,< ! > In-house < ! >,@lukasmueller,Lukas Mueller @lukasmueller,
+SynGO,< ! > In-house < ! >,@ftwkoopmans,Frank Koopmans @ftwkoopmans,
 SynGO-UCL,P2GO,@RLovering, Ruth Lovering @RLovering, 
 SYSCILIA_CCNET,P2GO?,@krchristie,Karen Christie @krchristie,
 TAIR,,,,
-° TAIR,Local,@tberardini,Tanya Berardini @tberardini,Plant biology 
-° TAIR,Local,,Leonore Reiser @lreiser,Plant biology
-° TAIR,Local,,Erica Bakker @ebakker2,Plant biology
+° TAIR,In-house,@tberardini,Tanya Berardini @tberardini,Plant biology 
+° TAIR,In-house,,Leonore Reiser @lreiser,Plant biology
+° TAIR,In-house,,Erica Bakker @ebakker2,Plant biology
 TIGR,P2GO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,contact @mgiglio99 for queries
 UF_OPP,,, Colbie Reed @dexink, microbes
 UniProt,,,,
@@ -155,9 +155,9 @@ UniProt,,,,
 ° UniProt (Swiss-Prot/Geneva),P2GO,,Florence Jungo @FJungo,Venoms
 ° UniProt (Swiss-Prot/Geneva),P2GO,,Nevila Nouspikel nnouspikel,lipids | immunology | cancer
 ° UniProt (Swiss-Prot/Geneva),P2GO | Noctua,@sylvainpoux, Sylvain Poux @sylvainpoux,
-° UniProt - HAMAP,< ! > Local < ! >,@pedruzzi, Ivo Pedruzzi @pedruzzi,
-° UniProt - UniRules,< ! > Local < ! >,@esperetta,Elena Speretta @esperetta,
-° UniProt - UniRules,< ! > Local < ! >,@PedroRaposo,Pedro Raposo @PedroRaposo,
+° UniProt - HAMAP,< ! > In-house < ! >,@pedruzzi, Ivo Pedruzzi @pedruzzi,
+° UniProt - UniRules,< ! > In-house < ! >,@esperetta,Elena Speretta @esperetta,
+° UniProt - UniRules,< ! > In-house < ! >,@PedroRaposo,Pedro Raposo @PedroRaposo,
 WB - WormBase,P2GO  |Noctua,@vanaukenk,Kimberly Van Auken @vanaukenk,C.elegans | Noctua | GO-CAM
 Wikidata,,,,
 ° Wikidata,,,Andrew Su @andrewsu,
