@@ -142,6 +142,6 @@ Fields:
 
 # retracted-publications.txt
 
-- PMID's from retracted publicaions. Some entries have associated PMCID delimited by comma
+- PMID's from retracted publications. Some entries have associated PMCID delimited by comma
 
 
