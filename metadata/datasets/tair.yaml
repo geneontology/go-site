@@ -16,7 +16,7 @@ datasets:
    dataset: tair
    submitter: tair
    compression: gzip
-   source: https://release.geneontology.org/2024-03-28/products/upstream_and_raw_data/tair-src.gaf.gz
+   source: https://www.arabidopsis.org/download/file?path=GO_and_PO_Annotations/Gene_Ontology_Annotations/gene_association.tair.gz
    entity_type:
    status: active
    species_code: Atal
