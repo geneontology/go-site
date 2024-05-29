@@ -60,6 +60,12 @@ UniProtKB	O76187	darA	NOT|enables	GO:0005509	PMID:9802899	IC	GO0005634	F	GORULE_
 UniProtKB	A0A078CGE6	M3KE1	enables	GO:0005515	PMID:11489177	IPI	A0A078FEZ9	F	GORULE_TEST:0000001-24		protein	taxon:3708	20150115	PomBase	involved_in(GO0090503)
 ! FAILS GORULE:0000001 - TEST 25 - qualifier needs underscores	(acts_upstream_of )									
 UniProtKB	A1B2F4	aztD	acts upstream of	GO:0097696	PMID:26468286	IDA		F	GORULE_TEST:0000001-25		protein	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000001 - TEST 26 - bad entity type									
+UniProtKB	A1B2F4	aztD	acts upstream of	GO:0097696	PMID:26468286	IDA		F	GORULE_TEST:0000001-26		other	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000001 - TEST 27 - entity type	missing									
+UniProtKB	A1B2F4	aztD	acts upstream of	GO:0097696	PMID:26468286	IDA		F	GORULE_TEST:0000001-27			taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000001 - TEST 27 - bad entity type 										
+UniProtKB	A1B2F4	aztD	acts upstream of	GO:0097696	PMID:26468286	IDA		F	GORULE_TEST:0000001-27		misc_RNA	taxon:318586	20230427	GO_Central	
 ! FAILS GORULE:0000002 - TEST 1 - has a 'NOT' annotations to 'protein binding ; GO:0005515															
 UniProtKB	O76187	darA	NOT|enables	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE_TEST:0000002-1 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
 ! FAILS GORULE:0000002 - TEST 2 - has a 'NOT' annotations to 'binding ; GO:0005515															
