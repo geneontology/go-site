@@ -120,7 +120,7 @@ def main():
 
         metadata_data = None
         with open(metadata_filename) as mhandle:
-            metadata_data = yaml.load(mhandle.read())
+            metadata_data = yaml.safe_load(mhandle.read())
 
         for subset in metadata_data['datasets']:
             ## Add what we want.
