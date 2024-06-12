@@ -949,6 +949,21 @@ datasets:
    exclude: true
 
  -
+   id: goa_uniprot_sars-cov-2.gpi
+   label: "goa_uniprot SARS CoV-2 gpi file"
+   description: "gpi file for SARS CoV-2 from EBI Gene Ontology Annotation Database"
+   url: http://geneontology.org/gene-associations/goa_uniprot_sars-cov-2.gpi.gz
+   type: gpi
+   dataset: goa_uniprot_sars-cov-2
+   submitter: goa
+   source: ftp://ftp.ebi.ac.uk/pub/contrib/goa/uniprot_reviewed_sars-cov-2.gpi
+   entity_type: all
+   status: active
+   aggregates: goa
+   taxa:
+    - NCBITaxon:2697049
+
+ -
    id: interpro2go
    label: "interpro2go mapping file"
    description: "external2go file to map InterPro entries to GO terms"
