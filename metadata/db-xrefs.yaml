@@ -1803,7 +1803,7 @@
   entity_types:
     - type_name: protein family
       type_id: NCIT:C20130
-      id_syntax: PTN[0-9]{9}|PTHR[0-9]{5}_[A-Z0-9]+
+      id_syntax: PTN[0-9]{9}|PTHR[0-9]{5}|PTHR[0-9]{5}:SF[0-9]+
       url_syntax: http://www.pantherdb.org/panther/lookupId.jsp?id=[example_id]
       example_id: PANTHER:PTHR11455
       example_url: http://www.pantherdb.org/panther/lookupId.jsp?id=PTHR10000
