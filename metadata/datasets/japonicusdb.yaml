@@ -17,7 +17,7 @@ datasets:
    submitter: japonicusdb
    compression: gzip
    source: https://www.japonicusdb.org/data/annotations/Gene_ontology/gene_association.japonicusdb.gz
-   entity_type:
+   entity_type: protein
    status: active
    species_code: Sjap
    taxa:
