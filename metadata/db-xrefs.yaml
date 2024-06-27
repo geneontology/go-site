@@ -2567,10 +2567,10 @@
       url_syntax: http://arabidopsis.org/servlets/TairObject?accession=[example_id]
       example_id: TAIR:locus:2146653
       example_url: http://arabidopsis.org/servlets/TairObject?accession=locus:2146653
-- database: taxon
+- database: NCBItaxon
   name: NCBI Taxonomy
   synonyms:
-    - NCBITaxon
+    - taxon
     - ncbi_taxid
   rdf_uri_prefix: http://purl.obolibrary.org/obo/NCBITaxon_
   generic_urls:
@@ -2579,7 +2579,7 @@
     - type_name: entity
       type_id: BET:0000000
       url_syntax: http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=[example_id]
-      example_id: taxon:7227
+      example_id: NCBItaxon:7227
       example_url: http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3702
 - database: TC
   name: Transport Protein Database
