@@ -166,7 +166,7 @@ target/alltaxons.txt:
 target/noctua-models:
 	# If target/noctua-models does not exist, then clone it
 	# Modified for: https://github.com/geneontology/go-site/issues/2336
-	if [ ! -d target/nocuta-models ]; then git clone --no-tags --progress --depth 1 --branch $(NOCTUA_MODELS_BRANCH_NAME) https://github.com/geneontology/noctua-models.git; fi
+	if [ ! -d target/nocuta-models ]; then git clone --no-tags --progress --depth 1 --branch $(NOCTUA_MODELS_BRANCH_NAME) https://github.com/geneontology/noctua-models.git target/noctua-models; fi
 
 ONT_MERGED = target/go-graphstore-merged.ttl
 $(ONT_MERGED):
