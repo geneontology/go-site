@@ -88,7 +88,7 @@ SUPPRESS_THESE_TAGS = $(foreach tag,$(GORULE_TAGS_TO_SUPPRESS),--suppress-rule-r
 	# assigns a make variable called `group` computed from the $* generic target stem.
 	# Ex: target/groups/fb/fb.gaf as a target, the stem ($*) is target/groups/fb/fb, so `group` gets assigned to fb
 	$(eval group := $(lastword $(subst /, ,$*)))
-	validate.py -v produce $(group) --gpad --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE) $(SUPPRESS_THESE_TAGS) --skip-existing-files --gaferencer-file $*.gaferences.json --base-download-url ${DOWNLOAD_URL_FOR_RELATIVE_PATHS}
+	validate.py -v produce $(group) --gpad-gpi-output-version "2.0" --ttl -m $(METADATA_DIR) --target target/ --ontology $< $(DONT_VALIDATE) $(SUPPRESS_THESE_TAGS) --skip-existing-files --gaferencer-file $*.gaferences.json --base-download-url ${DOWNLOAD_URL_FOR_RELATIVE_PATHS}
 	touch $@
 
 # dataset
