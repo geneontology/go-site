@@ -7,8 +7,8 @@ ASAP,,,Curation (inactive),P2GO,
 AspGD,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curation (inactive),P2GO,Aspergillus Genome Database
 BHF-UCL,@RLovering, Ruth Lovering @RLovering,Curation,P2GO, 
 CACAO,,,,,
-° CACAO,@dsiegele,Debbie Siegle @dsiegele,Curation,< ! > In-house < ! >,
-° CACAO,,Jolene Ramsey @jrr-cpt,Curation,< ! > In-house< ! >,
+° CACAO,@dsiegele,Debbie Siegle @dsiegele,Curation,< ! > P2GO < ! >,
+° CACAO,,Jolene Ramsey @jrr-cpt,Curation,< ! > P2GO < ! >,
 CAFA,@Antonialock,,Curation,P2GO,Training sets for CAFA competition
 CGD,@jlewsmith,Jodi Lew-Smith @jlewsmith,Curation,< ! > In-house< ! >,chromatin/gene silencing/cellular aging
 CHEMBL,@Zdrazil,Barbara Zdrazil @Zdrazil,CHEMBL Subset,,ChEMBL subset
