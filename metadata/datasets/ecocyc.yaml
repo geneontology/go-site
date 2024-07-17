@@ -21,3 +21,18 @@ datasets:
    species_code: Ecol
    taxa:
     - NCBITaxon:83333
+- 
+   id: ecocyc.gpi
+   label: "ecocyc gpi file"
+   description: "gpi file for Escherichia coli from EcoCyc"
+   url: 
+   type: gpi
+   dataset: ecocyc
+   submitter: ecocyc
+   compression: gzip
+   source: https://www.ai.sri.com/~kr/go/latest/ecocyc.gpi
+   entity_type:
+   status: active
+   species_code: Ecol
+   taxa:
+    - NCBITaxon:83333
