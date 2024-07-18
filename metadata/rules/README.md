@@ -508,7 +508,9 @@ Duplicate of GORULE:0000038
 GO should not include annotations to retracted publications (GAF column 6, GPAD column 5). 
 
 PubMed keeps record of retracted publications in the PublicationTypeList of
-each paper's XML entry.
+each paper's XML entry. GOC manually download the data from [Europe PMC](https://europepmc.org/betaSearch?query=%28PUB_TYPE%3A%22Retracted%20Publication%22%29&page=1)
+and save it on the [go-site/metadata folder](https://github.com/geneontology/go-site/blob/master/metadata/retracted-publications.txt).
+
 
 <a name="gorule0000023"/>
 
