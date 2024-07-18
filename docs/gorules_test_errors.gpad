@@ -1,0 +1,234 @@
+! FAILS GORULE:0000002 - TEST 1 - has a 'NOT' annotations to 'protein binding ; GO:0005515												
+UniProtKB:O76187	NOT	RO:0002327	GO:0005515	PMID:9802899	ECO:0000021	UniProtKB:P34149		2010-02-05	GO_Central		GORULE_TEST=0000002-1 Darlin	
+! FAILS GORULE:0000002 - TEST 2 - has a 'NOT' annotations to 'binding ; GO:0005515												
+UniProtKB:O76187	NOT	RO:0002327	GO:0005488	PMID:9802899	ECO:0000021	UniProtKB:P34149		2010-02-05	GO_Central		GORULE_TEST=0000002-1 Darlin	
+! SHOULD PASS GORULE:0000003 - TEST 3 - has a 'NOT' annotations to GO:0005509, a child of 'binding ; GO:0005515												
+UniProtKB:O76187	NOT	RO:0002327	GO:0005509	PMID:9802899	ECO:0000021	UniProtKB:P34149		2010-02-05	GO_Central		GORULE_TEST=0000002-3-PASS Darlin	
+! TBC FAILS GORULE:0000005 - TEST 1 - incorrect evidence codes for 'protein binding ; GO:0005515' - ISS not allowed												
+UniProtKB:O76187		RO:0002327	GO:0005515	PMID:9802899	ECO:0000250	UniProtKB:P34149		2010-02-05	GO_Central		GORULE_TEST=0000005-1 Darlin	
+! TBC FAILS GORULE:0000005 - TEST 2 - incorrect evidence codes for 'protein binding ; GO:0005515' - IS0 not allowed												
+UniProtKB:O76187		RO:0002327	GO:0005515	PMID:9802899	ECO:0000266	UniProtKB:P34149		2010-02-05	GO_Central		GORULE_TEST=0000005-2 Darlin	
+! TBC FAILS GORULE:0000005 - TEST 3 - incorrect evidence codes for 'protein binding ; GO:0005515' - IBA not allowed												
+UniProtKB:O76187		RO:0002327	GO:0005515	GO_REF:0000033	ECO:0000318	UniProtKB:P34149		2010-02-05	GO_Central		GORULE_TEST=0000005-3 Darlin	
+! FAILS GORULE:0000006 - TEST 1 - fails because uses IEP with a molecular function term.												
+GeneDB:PF3D7_0507500		RO:0002327	GO:0004672	PMID:12764150	ECO:0000270			2010-02-05	GO_Central		GORULE_TEST=0000006-1 subtilisin-like	
+! FAILS GORULE:0000006 - TEST 2 - fails because uses HEP with a molecular function term.												
+GeneDB:PF3D7_0507500		RO:0002327	GO:0004672	PMID:12764150	ECO:0007007			2010-02-05	GO_Central		GORULE_TEST=0000006-2 subtilisin-like	
+! FAILS GORULE:0000006 - TEST 3 - fails because uses IEP with a cellular component term.												
+GeneDB:PF3D7_0507500		RO:0002327	GO:0005634	PMID:12764150	ECO:0000270			2010-02-05	GO_Central		GORULE_TEST=0000006-3 subtilisin-like	
+! SHOULD PASS GORULE:0000006 - TEST 4 - passes because uses assigned_by is GOC, even if there is an IEP with a molecular function term.												
+GeneDB:PF3D7_0507500		RO:0002327	GO:0004672	PMID:12764150	ECO:0000270			2010-02-05	GOC		GORULE_TEST=0000006-4 subtilisin-like	
+! SHOULD PASS GORULE:0000006 - TEST 5 - should pass because obsolete BP term should be ignored; GO:1901011 obsolete (S)-reticuline catabolic process												
+GeneDB:PF3D7_0507500		RO:0002327	GO:1901011	PMID:12764150	ECO:0000270			2010-02-05	GO_Central		GORULE_TEST=0000006-5 subtilisin-like	
+! SHOULD PASS GORULE:0000006 - TEST 6 - should pass because alt_ids should be ignored, and GO:0006758 is an alt_id to GO:0006754 ATP biosynthetic process												
+GeneDB:PF3D7_0507500		RO:0002327	GO:0006758	PMID:12764150	ECO:0000270			2010-02-05	GO_Central		GORULE_TEST=0000006-6 subtilisin-like	
+! FAILS GORULE:0000007 - IPI used with GO:0003824 catalytic activity or descendents (GO:0004674 protein serine/threonine kinase activity)												
+UniProtKB:A0A078CGE6		RO:0002327	GO:0004674	PMID:11489177	ECO:0000021	UniProtKB:A0A078FEZ9		2010-02-05	GO_Central		GORULE_TEST=0000007-1	
+! FAILS GORULE:0000008 - TEST 1 - GO:0005622 is in the subset gocheck_do_not_annotate												
+UniProtKB:Q9DGE2		RO:0002432	GO:0005622	PMID:10995439	ECO:0000314			2018-01-29	GO_Central		GORULE_TEST=0000008-1 Mitogen-activated protein kinase 14A	
+! FAILS GORULE:0000008 - TEST 2 - GO:0007049 is in the subset gocheck_do_not_manually_annotate												
+UniProtKB:Q9WVH3		RO:0002331	GO:0007049	PMID:12048180	ECO:0000314			2018-01-29	GO_Central		GORULE_TEST=0000008-2 Forkhead box protein O4	
+! FAILS GORULE:0000008 - TEST 3 - also fails GORULE:0000051 - GO:0005488 is in the subset gocheck_do_not_manually_annotate												
+UniProtKB:O76187		RO:0002327	GO:0005488	PMID:9802899	ECO:0000021	UniProtKB:P34149		2018-01-29	GO_Central		GORULE_TEST=0000008-3 Darlin	
+! FAILS GORULE:0000011 - TEST 1 - because the GO ID is not one of GO:0003674, GO:0008150 or GO:0005575												
+UniProtKB:Q4KA26		RO:0002432	GO:0016020	GO_REF:0000015	ECO:0000307			2018-01-29	GO_Central		GORULE_TEST=0000011-1 Putative membrane protein	
+! FAILS GORULE:0000011 - TEST 2 - fails because the evidence code is not ND, even if the GO ID one of GO:0003674, GO:0008150 or GO:0005575.												
+UniProtKB:Q4KA26		RO:0002432	GO:0005575	GO_REF:0000015	ECO:0000314			2018-01-29	GO_Central		GORULE_TEST=0000011-2 Putative membrane protein	
+! SHOULD PASS GORULE:0000011 - TEST 3												
+UniProtKB:Q6UW15		RO:0002331	GO:0050689	PMID:16931762	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000011-3 Regenerating islet-derived protein 3-gamma	
+! FAILS GORULE:0000013 - fails because GO:0075342 should not be annotated for human gene products - cannot be tested in ontobio parser (not a line-by-line check)												
+UniProtKB:P67870		RO:0002331	GO:0075342	PMID:20719947	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000013-1 Casein kinase II subunit beta	
+! FAILS GORULE:0000015 - TEST 1 - GO:0005886 plasma membrane is not a child of "GO:0018995 host cellular component"												
+UniProtKB:O56786		RO:0002432	GO:0005886	PMID:10419939	ECO:0000314		taxon:9696	2022-06-06	GO_Central		GORULE_TEST=0000015-1 Holin protein Hol187	
+! FAILS GORULE:0000015 - TEST 2 - "neutrophil chemotaxis" is not a child of "GO:0044419 interspecies interaction between organisms"												
+UniProtKB:A0A0K2S4Q6		RO:0002331	GO:0030593	PMID:26221034	ECO:0000314		taxon:55511	2022-06-06	GO_Central		GORULE_TEST=0000015-2 Protein CD300H	
+! FAILS GORULE:0000015 - TEST 3 - same taxon in Column 13 for GO:0044158 host cell wall												
+UniProtKB:O56786		RO:0002432	GO:0018995	PMID:10419939	ECO:0000314		taxon:9606	2022-06-06	GO_Central		GORULE_TEST=0000015-3 Holin protein Hol187	
+! PASSES GORULE:0000015 - TEST 4 - "GO:0042025 host cell nucleus" with single taxon ID												
+UniProtKB:O56786		RO:0002432	GO:0042025	PMID:10419939	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000015-4 Holin protein Hol187	
+! PASSES GORULE:0000015 - TEST 5 - "GO:0010363 regulation of plant-type hypersensitive response" with single taxon ID												
+UniProtKB:O56786		RO:0002331	GO:0010363	PMID:10419939	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000015-4 Holin protein Hol187	
+! PASSES GORULE:0000015 - TEST 6 - "GO:0141062 disruption of tissue in another organism" with single taxon ID												
+UniProtKB:O56786		RO:0002331	GO:0141062	PMID:10419939	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000015-4 Holin protein Hol187	
+! SHOULD PASS GORULE:0000015 - TEST 4 - GO:0010363 regulation of plant-type hypersensitive response is_ GO:0043903 regulation of biological process involved in symbiotic interaction												
+UniProtKB:Q6UW15		RO:0002331	GO:0010363	PMID:16931762	ECO:0000314		taxon:1334565	2022-06-06	GO_Central		GORULE_TEST=0000015-4 Regenerating islet-derived protein 3-gamma	
+! FAILS GORULE:0000016 - TEST 1 - column 8 (with/from) is null												
+UniProtKB:Q9HC96		RO:0002331	GO:0006921	GO_REF:0000036	ECO:0000305			2022-06-06	GO_Central		GORULE_TEST=0000016-1 Calpain-10	
+! FAILS GORULE:0000016 - TEST 2 - column 8 (with/from) is has a non-GOID												
+UniProtKB:Q9HC96		RO:0002331	GO:0006921	GO_REF:0000036	ECO:0000305	UBERON:0002048		2022-06-06	GO_Central		GORULE_TEST=0000016-2 Calpain-10	
+! FAILS GORULE:0000016 - TEST 3 - column 8 (with/from) is the same GOID as column 5												
+UniProtKB:Q9HC96		RO:0002331	GO:0006921	GO_REF:0000036	ECO:0000305	GO:0006921		2022-06-06	GO_Central		GORULE_TEST=0000016-3 Calpain-10	
+! SHOULD PASS GORULE:0000016 - TEST 4 - column 8 (with/from) is has a valid GO ID												
+UniProtKB:Q9HC96		RO:0002432	GO:0005886	GO_REF:0000036	ECO:0000305	GO:0001591		2022-06-06	GO_Central		GORULE_TEST=0000016-4 Calpain-10	
+! FAILS GORULE:0000017 - TEST 1 - IDA annotations must not have a with/from entry (column 8)												
+UniProtKB:Q9HC96		RO:0002331	GO:0006921	GO_REF:0000036	ECO:0000314	GO:0004198|GO:0008092		2022-06-06	GO_Central		GORULE_TEST=0000017-1 Calpain-10	
+! FAILS GORULE:0000018 - TEST 1 - column 8 (with/from) is null for IPI annotation to 'protein binding ; GO:0005515'												
+UniProtKB:A0A0K3AV08		RO:0002327	GO:0005080	PMID:23072806	ECO:0000021			2022-06-06	GO_Central		GORULE_TEST=0000018-1 Mitogen-activated protein kinase kinase kinase mlk-1	
+! FAILS GORULE:0000018 - TEST 2 - missing Column 8 data ('with' field) for 'binding ; GO:0005488'												
+UniProtKB:A0A0K3AV08		RO:0002327	GO:0005080	PMID:23072806	ECO:0000021			2022-06-06	GO_Central		GORULE_TEST=0000018-2 Mitogen-activated protein kinase kinase kinase mlk-1	
+! FAILS GORULE:0000018 - TEST 3 - missing Column 8 data ('with' field) for 'binding ; GO:0005488'												
+UniProtKB:O76187		RO:0002331	GO:0005488	PMID:9802899	ECO:0000021			2022-06-06	GO_Central		GORULE_TEST=0000018-3	
+! FAILS GORULE:0000020 - TEST 1 - obsolete term with no replacement												
+UniProtKB:P04995		RO:0002331	GO:0090503	GO_REF:0000108	ECO:0000501	GO:0000175		2022-06-06	GO_Central		GORULE_TEST=0000020-1 Exodeoxyribonuclease I	
+! FAILS GORULE:0000020 - TEST 2 - obsolete term with a replacement term												
+TriTrypDB:Tb11.02.5420b		RO:0001025	GO:0016021	GO_REF:0000002	ECO:0000266	GeneDB:Tb11.02.5420		2022-06-06	GO_Central		GORULE_TEST=0000020-2 NADPH-cytochrome p450 reductase, putative	
+! FAILS GORULE:0000020 - TEST 3 - obsolete term in 'with' (column 8) with no replacement												
+MGI:1100518:Smad7		RO:0002331	GO:0017015	MGI:MGI:3836072|PMID:18952608	ECO:0000305	GO:0060389		2022-06-06	GO_Central		GORULE_TEST=0000020-3	
+! FAILS GORULE:0000020 - TEST 4 - obsolete term in 'extension' (column 16) with no replacement												
+UniProtKB:O76187		RO:0002327	GO:0004672	PMID:9802899	ECO:0000314	UniProtKB:P34149		2022-06-06	GO_Central	RO:0002331(GO:0090503)	GORULE_TEST=0000020-4 Darlin	
+! FAILS GORULE:0000020 - TEST 5 - obsolete term in 'extension' (column 16) with a replacement												
+UniProtKB:O76187		RO:0002327	GO:0004672	PMID:9802899	ECO:0000314	UniProtKB:P34149		2022-06-06	GO_Central	RO:0002331(GO:0014067)	GORULE_TEST=0000020-5 Darlin	
+! FAILS GORULE:0000022 - TEST 1 - retracted paper												
+UniProtKB:O76187		RO:0002327	GO:0004672	PMID:37278189	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST:0000022-1	
+! FAILS GORULE:0000027 - TEST 1 - Prefix not in /db-xrefs.yaml												
+UniPotKB:Q9HC96		RO:0002331	GO:0006921	PMID:23072806	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000027-1 Calpain-10	
+! FAILS GORULE:0000027 - TEST 2 - Assigned_by not in /groups.yaml												
+UniPotKB:Q9HC96		RO:0002331	GO:0006921	PMID:23072806	ECO:0000314			2022-06-06	SGDDB		GORULE_TEST=0000027-2 Calpain-10	
+! FAILS GORULE:0000027 - TEST 3 - Bad reference syntax												
+UniPotKB:Q9HC96		RO:0002331	GO:0006921	PMID:PMID:14561399	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000027-3 Calpain-10	
+! FAILS GORULE:0000027 - TEST 4 - Bad reference syntax												
+UniPotKB:Q9HC96		RO:0002331	GO:0006921	PMID:unpublished	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000027-4 Calpain-10	
+! FAILS GORULE:0000027 - TEST 5 - Bad referencesyntax												
+UniPotKB:Q9HC96		RO:0002331	GO:0006921	PMID:	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000027-5 Calpain-10	
+! FAILS GORULE:0000027 - TEST 6 - Bad reference syntax												
+UniPotKB:Q9HC96		RO:0002331	GO:0006921	PMID:0.	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000027-6 Calpain-10	
+! FAILS GORULE:0000028 - TEST 1 - Bad GO aspect, C instead of P												
+UniPotKB:Q9HC96		RO:0002331	GO:0006921	PMID:23072806	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000028-1 Calpain-10	
+! FAILS GORULE:0000028 - TEST 2 - Bad GO aspect, F instead of P												
+UniPotKB:Q9HC96		RO:0002331	GO:0006921	PMID:23072806	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000028-2 Calpain-10	
+! FAILS GORULE:0000028 - TEST 3 - Bad GO aspect, P instead of F												
+UniProtKB:A0A0K3AV08		RO:0002327	GO:0005080	PMID:23072806	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000028-3 Mitogen-activated protein kinase kinase kinase mlk-1	
+! FAILS GORULE:0000028 - TEST 4 - GO aspect missing												
+UniProtKB:A0A0K3AV08		RO:0002327	GO:0005080	PMID:23072806	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000028-4 Mitogen-activated protein kinase kinase kinase mlk-1	
+! FAILS GORULE:0000029 - TEST 1 - IEA older than 1 year												
+UniProtKB:P77335		RO:0001025	GO:0020002	GO_REF:0000044	ECO:0000501	UniProtKB-SubCell:SL-0375		2023-05-06	GO_Central		GORULE_TEST=0000029-1	
+! FAILS GORULE:0000029 - TEST 2 - IEA older than 3 years												
+UniProtKB:P77335		RO:0001025	GO:0020002	GO_REF:0000044	ECO:0000501	UniProtKB-SubCell:SL-0375		2020-06-06	GO_Central		GORULE_TEST=0000029-2	
+! FAILS GORULE:0000030 - TEST 1 - Deprecated GO_REF												
+UniProtKB:P77335		RO:0001025	GO:0020002	GO_REF:0000045	ECO:0000501	UniProtKB-SubCell:SL-0375		2022-06-06	GO_Central		GORULE_TEST=0000030-1	
+! SHOULD PASS GORULE:0000030 - TEST 2 - Valid GO_REF												
+UniProtKB:P77335		RO:0001025	GO:0020002	GO_REF:0000033	ECO:0000318	FB:FBgn0032677|PANTHER:PTN005196447		2022-06-06	GO_Central		GORULE_TEST=0000030-2	
+! FAILS GORULE:0000037 - TEST 1 - IBA with Assigned_by other than GO_Central												
+UniProtKB:A0A024BTL2		RO:0002432	GO:0005634	PMID:21873635	ECO:0000318	FB:FBgn0019686|FB:FBgn0028360|FB:FBgn0032677|PANTHER:PTN005196447|PomBase:SPAC14C4.03|PomBase:SPCC1322.08|PomBase:SPCC18B5.11c|RGD:621543|SGD:S000006074|UniProtKB:O96017|UniProtKB:Q5AVW7	FB:FBgn0019686|FB:FBgn0028360|FB:FBgn0032677|PANTHER:PTN005196447|PomBase:SPAC14C4.03|PomBase:SPCC1322.08|PomBase:SPCC18B5.11c|RGD:621543|SGD:S000006074|UniProtKB:O96017|UniProtKB:Q5AVW7	2022-06-06	PomBase		GORULE_TEST=0000037-1	
+! FAILS GORULE:0000037 - TEST 2 - IBA with reference other than GO_REF:0000033												
+UniProtKB:A0A024BTL2		RO:0002432	GO:0005634	PMID:26221034	ECO:0000318	FB:FBgn0019686|FB:FBgn0028360|FB:FBgn0032677|PANTHER:PTN005196447|PomBase:SPAC14C4.03|PomBase:SPCC1322.08|PomBase:SPCC18B5.11c|RGD:621543|SGD:S000006074|UniProtKB:O96017|UniProtKB:Q5AVW7	FB:FBgn0019686|FB:FBgn0028360|FB:FBgn0032677|PANTHER:PTN005196447|PomBase:SPAC14C4.03|PomBase:SPCC1322.08|PomBase:SPCC18B5.11c|RGD:621543|SGD:S000006074|UniProtKB:O96017|UniProtKB:Q5AVW7	2022-06-06	GO_Central		GORULE_TEST=0000037-2	
+! FAILS GORULE:0000039 - TEST 1 - Protein complex annotated to GO:0032991 protein-containing complex												
+ComplexPortal:CPX-102		BFO:0000050	GO:0032991	PMID:10629061	ECO:0000315			2022-06-06	GO_Central		GORULE_TEST=0000039-1	
+! FAILS GORULE:0000039 - TEST 2 - Protein complex annotated to an is_a descendant of GO:0032991 protein-containing complex												
+ComplexPortal:CPX-102		BFO:0000050	GO:0043020	PMID:10629061	ECO:0000315			2022-06-06	GO_Central		GORULE_TEST=0000039-2	
+! FAILS GORULE:0000042 - TEST 1 - IKR evidence, no negation (NOT) in column 4												
+UniProtKB:A0A0B4JCV5		RO:0002327	GO:0004252	PMID:30367934	ECO:0000320			2022-06-06	GO_Central		GORULE_TEST=0000042-1	
+! FAILS GORULE:0000046 - TEST 1 - self-binding’ term, no data in Column 8												
+UniProtKB:A4D126		RO:0002327	GO:0042803	PMID:26687144	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000046-1	
+! FAILS GORULE:0000046 - TEST 2 - self-binding’ term, annotated to a protein other than 'self'												
+UniProtKB:A4D126		RO:0002327	GO:0042803	PMID:26687144	ECO:0000021	UniProtKB:P35555		2022-06-06	GO_Central		GORULE_TEST=0000046-2	
+! FAILS GORULE:0000050 - TEST 1 - self-referential ISS annotations												
+UniProtKB:F1N2N9		BFO:0000050	GO:0120228	PMID:34715025	ECO:0000250	UniProtKB:F1N2N9		2022-06-06	GO_Central		GORULE_TEST=0000050-1 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114
+! FAILS GORULE:0000050 - TEST 2 - self-referential ISO annotations												
+UniProtKB:F1N2N9		BFO:0000050	GO:0120228	PMID:34715025	ECO:0000266	UniProtKB:F1N2N9		2022-06-06	GO_Central		GORULE_TEST=0000050-2 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114
+! FAILS GORULE:0000050 - TEST 3 - self-referential ISA annotations												
+UniProtKB:F1N2N9		BFO:0000050	GO:0120228	PMID:34715025	ECO:0000247	UniProtKB:F1N2N9		2022-06-06	GO_Central		GORULE_TEST=0000050-3 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114
+! SHOULD PASS GORULE:0000051 - Pass RULE 51 - Annotation extension for certain GO terms - protein binding; GO:0005515												
+UniProtKB:O76187		RO:0002327	GO:0005515	PMID:9802899	ECO:0000021	UniProtKB:P34149		2022-06-06	GO_Central	RO:0002233(GO:0003674)|BFO:0000066(CL:123456)	GORULE_TEST=0000051-PASS1 Darlin	
+! FAILS GORULE:0000051 - TEST 1 - also fails GORULE:0000008 - Annotation extension is required for certain terms - binding GO:0005488												
+UniProtKB:O76187		RO:0002327	GO:0005488	PMID:9802899	ECO:0000021	UniProtKB:P34149		2022-06-06	GO_Central		GORULE_TEST=0000051-1 Darlin	
+! FAILS GORULE:0000055 - TEST 1 - Two references in the same ID space - PMID												
+PlasmoDB:PF3D7_0200400		RO:0002432	GO:0020036	PMID:12477793|PMID:15961998	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000055-1	
+! FAILS GORULE:0000055 - TEST 2 - Two references in the same ID space - GO_REF												
+PlasmoDB:PF3D7_0200400		RO:0002432	GO:0020036	GO_REF:0000044|GO_REF:0000003	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000055-2	
+! SHOULD PASS GORULE:0000061 - TEST 1 - the part_of GP2term relation is allowed for GO:0008023 (CC complex)												
+FB:FBgn0011273		BFO:0000050	GO:0008023	FB:FBrf0193169|PMID:16790438	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000061-1 Androcam	
+! SHOULD PASS GORULE:0000061 - TEST 2- 'enables' is allowed for a GO MF												
+UniProtKB:A1B2F4		RO:0002327	GO:0003909	PMID:26468286	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000061-2	
+! FAILS GORULE:0000061 - TEST 3 the 'part_of' GP2term relation is not allowed for GO:0070864 (CC cellular anatomical entity)												
+FB:FBgn0011273		BFO:0000050	GO:0070864	PMID:12432073	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000061-3 Dynamin	
+! FAILS GORULE:0000061 - TEST 4 - the 'part_of' GP2term relation is not allowed for GO:0140827 (MF)												
+UniProtKB:A1B2F4		BFO:0000050	GO:0140827	PMID:26468286	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000061-4	
+! FAILS GORULE:0000061 - TEST 5 - the 'enables' GP2term relation is not allowed for GO:0005856 (CC)												
+UniProtKB:A1B2F4		RO:0002327	GO:0005856	PMID:26468286	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST=0000061-5	
+! FAILS GORULE:0000061 - TEST 6 - the 'located in' GP2term relation is not allowed for GO:0005575 (root CC)												
+UniProtKB:A1B2F4		RO:0001025	GO:0005575	PMID:26468286	ECO:0000307			2023-04-27	GO_Central		GORULE_TEST=0000061-6	
+! FAILS GORULE:0000061 - TEST 7 - the 'contributes_to' GP2term relation is not allowed for GO:0003674 (root MF)												
+UniProtKB:A1B2F4		RO:0002326	GO:0003674	PMID:26468286	ECO:0000307			2023-04-27	GO_Central		GORULE_TEST=0000061-7	
+! FAILS GORULE:0000061 - TEST 8 - the 'acts upstream of or within' GP2term relation is not allowed for GO:0008150 (root BP)												
+UniProtKB:A1B2F4		RO:0002264	GO:0008150	PMID:26468286	ECO:0000307			2023-04-27	GO_Central		GORULE_TEST=0000061-8	
+! FAILS GORULE:0000061 - TEST 9 - 'enables' is not allowed for a GO BP												
+UniProtKB:A1B2F4		RO:0002327	GO:0043491	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-9	
+! FAILS GORULE:0000061 - TEST 10 - 'contributes_to' is not allowed for a GO BP												
+UniProtKB:A1B2F4		RO:0002326	GO:0043491	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-10	
+! FAILS GORULE:0000061 - TEST 11 - 'enables' is not allowed for a GO CC												
+UniProtKB:A1B2F4		RO:0002327	GO:0005634	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-11	
+! FAILS GORULE:0000061 - TEST 12 - 'contributes_to' is not allowed for a GO CC												
+UniProtKB:A1B2F4		RO:0002326	GO:0005634	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-12	
+! FAILS GORULE:0000061 - TEST 13 - 'involved_in' is not allowed for a GO MF												
+UniProtKB:A1B2F4		RO:0002331	GO:0004672	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-13	
+! FAILS GORULE:0000061 - TEST 14 - 'acts_upstream_of_or_within' is not allowed for a GO MF												
+UniProtKB:A1B2F4		RO:0002264	GO:0004672	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-14	
+! FAILS GORULE:0000061 - TEST 15 - 'acts_upstream_of_or_within_positive_effect' is not allowed for a GO MF												
+UniProtKB:A1B2F4		RO:0004032	GO:0004672	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-15	
+! FAILS GORULE:0000061 - TEST 16 - 'acts_upstream_of_or_within_negative_effect' is not allowed for a GO MF												
+UniProtKB:A1B2F4		RO:0004033	GO:0004672	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-16	
+! FAILS GORULE:0000061 - TEST 17 - 'acts_upstream_of' is not allowed for a GO MF												
+UniProtKB:A1B2F4		RO:0002263	GO:0004672	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-17	
+! FAILS GORULE:0000061 - TEST 18 - acts_upstream_of_positive_effect' is not allowed for a GO MF												
+UniProtKB:A1B2F4		RO:0004034	GO:0004672	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-18	
+! FAILS GORULE:0000061 - TEST 19 - 'acts_upstream_of_negative_effect' is not allowed for a GO MF												
+UniProtKB:A1B2F4		RO:0004033	GO:0004672	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-19	
+! FAILS GORULE:0000061 - TEST 20 - 'involved_in' is not allowed for a GO CC												
+UniProtKB:A1B2F4		RO:0002331	GO:0005634	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-20	
+! FAILS GORULE:0000061 - TEST 21 - 'acts_upstream_of_or_within' is not allowed for a GO CC												
+UniProtKB:A1B2F4		RO:0002264	GO:0005634	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-21	
+! FAILS GORULE:0000061 - TEST 22 - 'acts_upstream_of_or_within_positive_effect' is not allowed for a GO CC												
+UniProtKB:A1B2F4		RO:0004032	GO:0005634	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-22	
+! FAILS GORULE:0000061 - TEST 23 - 'acts_upstream_of_or_within_negative_effect' is not allowed for a GO CC												
+UniProtKB:A1B2F4		RO:0004033	GO:0005634	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-23	
+! FAILS GORULE:0000061 - TEST 24 - 'acts_upstream_of' is not allowed for a GO CC												
+UniProtKB:A1B2F4		RO:0002263	GO:0005634	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-24	
+! FAILS GORULE:0000061 - TEST 25 - 'acts_upstream_of_positive_effect' is not allowed for a GO CC												
+UniProtKB:A1B2F4		RO:0004034	GO:0005634	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-25	
+! FAILS GORULE:0000061 - TEST 26 - 'acts_upstream_of_negative_effect' is not allowed for a GO CC												
+UniProtKB:A1B2F4		RO:0004033	GO:0005634	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-26	
+! FAILS GORULE:0000061 - TEST 27 - 'is_active_in' is not allowed for a GO MF												
+UniProtKB:A1B2F4		RO:0002432	GO:0004672	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-27	
+! FAILS GORULE:0000061 - TEST 28 - 'part_of' is not allowed for a GO MF												
+UniProtKB:A1B2F4		BFO:0000050	GO:0004672	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-28	
+! FAILS GORULE:0000061 - TEST 29 - 'located_in' is not allowed for a GO MF												
+UniProtKB:A1B2F4		RO:0001025	GO:0004672	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TES=0000061-29	
+! FAILS GORULE:0000061 - TEST 30 - 'colocalizes_with' is not allowed for a GO MF												
+UniProtKB:A1B2F4		RO:0002325	GO:0004672	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-30	
+! FAILS GORULE:0000061 - TEST 31 - 'is_active_in' is not allowed for a GO BP												
+UniProtKB:A1B2F4		RO:0002432	GO:0043491	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-31	
+! FAILS GORULE:0000061 - TEST 32 - 'part_of' is not allowed for a GO BP												
+UniProtKB:A1B2F4		BFO:0000050	GO:0043491	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-32	
+! FAILS GORULE:0000061 - TEST 33 - 'located_in' is not allowed for a GO BP												
+UniProtKB:A1B2F4		RO:0001025	GO:0043491	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-33	
+! FAILS GORULE:0000061 - TEST 34 - 'colocalizes_with' is not allowed for a GO BP												
+UniProtKB:A1B2F4		RO:0002325	GO:0043491	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-34	
+! FAILS GORULE:0000061 - TEST 35 - 'is_active_in' is not allowed for a GO CC - complex												
+UniProtKB:A1B2F4		RO:0002432	GO:0000124	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-34	
+! FAILS GORULE:0000061 - TEST 36 - 'located_in' is not allowed for a GO CC - complex												
+UniProtKB:A1B2F4		RO:0001025	GO:0042101	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-36	
+! FAILS GORULE:0000061 - TEST 37 - 'colocalizes_with' is not allowed for a GO CC - complex												
+UniProtKB:A1B2F4		RO:0002325	GO:0042101	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-37	
+! FAILS GORULE:0000061 - TEST 38 - 'part_of' is not allowed for a GO CC - cellular anatomical entity												
+UniProtKB:A1B2F4		BFO:0000050	GO:0005634	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-38	
+! FAILS GORULE:0000061 - TEST 39 - 'part_of' is not allowed for GO CC - cellular anatomical entity												
+UniProtKB:A1B2F4	NOT	BFO:0000050	GO:0005634	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-39	
+! FAILS GORULE:0000061 - TEST 40 - 'part_of' is not allowed for GO CC - cell plate descendent of cellular anatomical entity												
+UniProtKB:A1B2F4		BFO:0000050	GO:0009504	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-40	
+! FAILS GORULE:0000061 - TEST 41 - 'part_of' is not allowed for GO CC cellular anatomical entity (GO:0005739 mitochondrion)												
+UniProtKB:A1B2F4		BFO:0000050	GO:0005739	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-41	
+! FAILS GORULE:0000061 - TEST 42 - 'part_of' is not allowed for GO CC virion component												
+UniProtKB:A1B2F4		BFO:0000050	GO:0044423	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-42	
+! FAILS GORULE:0000061 - TEST 43 - 'part_of' is not allowed for a GO CC icosahedral viral capsid, neck descendant of virion component												
+UniProtKB:A1B2F4		BFO:0000050	GO:0098030	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-43	
+! SHOULD PASS GORULE:0000061 - TEST 45 - 'is_active_in' is allowed for GO CC - 'cell plate' descendent of cellular anatomical entity												
+UniProtKB:A1B2F4		RO:0002432	GO:0009504	PMID:26468286	ECO:0000314			2023-04-27	GO_Central		GORULE_TEST=0000061-45	
+! SHOULD PASS GORULE:0000063 - TEST 1												
+PomBase:SPAC25B8.17		RO:0002432	GO:0005634	GO_REF:0000024	ECO:0000266	SGD:S000001583		2023-04-27	GO_Central		GORULE_TEST:0000063-1	
+! FAILS GORULE:0000063 - TEST 2 - no data in 'with' field (column 7)												
+PomBase:SPAC25B8.17		RO:0002432	GO:0005634	GO_REF:0000024	ECO:0000266			2023-04-27	GO_Central		GORULE_TEST:0000063-2	
+! FAILS GORULE:0000064 - TEST 1 - human protein has TreeGrafter annotation												
+UniProtKB:A0A140VJL9		RO:0002331	GO:0006783	GO_REF:0000118		PANTHER:PTHR11458:SF0		2023-04-27	TreeGrafter		GORULE_TEST:0000064-1	
+! FAILS GORULE:0000064 - TEST 2 - Drosophila protein has TreeGrafter annotation												
+FB:FBgn0014191		RO:0002331	GO:0006783	GO_REF:0000118		PANTHER:PTHR11557:SF0		2023-04-27	TreeGrafter		GORULE_TEST:0000064-1	
