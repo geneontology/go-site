@@ -1,7 +1,8 @@
 !gaf-version: 2.2															
 !generated-by: GOC															
-!date-generated: 2023-11-09															
-! Dummy GAF file containing deliberate errors to test that GO rules are correctly implemented. 															
+!date-generated: 2024-07-14
+! Dummy GAF file containing deliberate errors to test that GO rules are correctly implemented. 	
+! Should be equivalent to https://github.com/geneontology/go-site/blob/master/docs/gorules_test_errors.gpad when the rule applies.													
 ! FAILS GORULE:0000001 - empty col1 and col2															
 		ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-1 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	
 ! FAILS GORULE:0000001 - No gene symbol (Column 3)															
