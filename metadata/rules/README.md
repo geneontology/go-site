@@ -502,7 +502,7 @@ Duplicate of GORULE:0000038
 ## Check for, and filter, annotations made to retracted publications
 
  * id: [GORULE:0000022](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000022.md)
- * status: approved
+ * status: implemented
 
 
 GO should not include annotations to retracted publications (GAF column 6, GPAD column 5). 
