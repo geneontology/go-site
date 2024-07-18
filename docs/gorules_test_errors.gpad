@@ -1,3 +1,8 @@
+!gpad-version: 2.0														
+!generated-by: GOC															
+!date-generated: 2024-07-14
+! Dummy GPAD file containing deliberate errors to test that GO rules are correctly implemented. 	
+! Should be equivalent to https://github.com/geneontology/go-site/blob/master/docs/gorules_test_errors.gaf when the rule applies.	
 ! FAILS GORULE:0000002 - TEST 1 - has a 'NOT' annotations to 'protein binding ; GO:0005515												
 UniProtKB:O76187	NOT	RO:0002327	GO:0005515	PMID:9802899	ECO:0000021	UniProtKB:P34149		2010-02-05	GO_Central		GORULE_TEST=0000002-1 Darlin	
 ! FAILS GORULE:0000002 - TEST 2 - has a 'NOT' annotations to 'binding ; GO:0005515												
