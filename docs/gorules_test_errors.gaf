@@ -65,8 +65,10 @@ UniProtKB	A1B2F4	aztD	acts upstream of	GO:0097696	PMID:26468286	IDA		F	GORULE_TE
 UniProtKB	A1B2F4	aztD	acts upstream of	GO:0097696	PMID:26468286	IDA		F	GORULE_TEST:0000001-26		other	taxon:318586	20230427	GO_Central	
 ! FAILS GORULE:0000001 - TEST 27 - entity type	missing									
 UniProtKB	A1B2F4	aztD	acts upstream of	GO:0097696	PMID:26468286	IDA		F	GORULE_TEST:0000001-27			taxon:318586	20230427	GO_Central	
-! FAILS GORULE:0000001 - TEST 27 - bad entity type 										
-UniProtKB	A1B2F4	aztD	acts upstream of	GO:0097696	PMID:26468286	IDA		F	GORULE_TEST:0000001-27		misc_RNA	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000001 - TEST 28 - bad entity type 										
+UniProtKB	A1B2F4	aztD	acts upstream of	GO:0097696	PMID:26468286	IDA		F	GORULE_TEST:0000001-28		misc_RNA	taxon:318586	20230427	GO_Central	
+! FAILS GORULE:0000001 - TEST 29 - Bad referencesyntax															
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:	IDA		P	GORULE_TEST:0000001-29 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000002 - TEST 1 - has a 'NOT' annotations to 'protein binding ; GO:0005515															
 UniProtKB	O76187	darA	NOT|enables	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE_TEST:0000002-1 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
 ! FAILS GORULE:0000002 - TEST 2 - has a 'NOT' annotations to 'binding ; GO:0005515															
@@ -157,10 +159,8 @@ UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		P	GORULE_TEST:
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:PMID:14561399	IDA		P	GORULE_TEST:0000027-3 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000027 - TEST 4 - Bad reference syntax															
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:unpublished	IDA		P	GORULE_TEST:0000027-4 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
-! FAILS GORULE:0000027 - TEST 5 - Bad referencesyntax															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:	IDA		P	GORULE_TEST:0000027-5 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
-! FAILS GORULE:0000027 - TEST 6 - Bad reference syntax															
-UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:0.	IDA		P	GORULE_TEST:0000027-6 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
+! FAILS GORULE:0000027 - TEST 5 - Bad reference syntax															
+UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:0.	IDA		P	GORULE_TEST:0000027-5 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000028 - TEST 1 - Bad GO aspect, C instead of P														
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		C	GORULE_TEST:0000028-1 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000028 - TEST 2 - Bad GO aspect, F instead of P															
