@@ -37,7 +37,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000028">GORULE:0000028 GO aspect should match the term's namespace; otherwise it is repaired to the appropriate aspect</a>
  * <a href="#gorule0000029">GORULE:0000029 IEAs should be less than one year old.</a>
  * <a href="#gorule0000030">GORULE:0000030 Obsolete GO_REFs are not allowed</a>
- * <a href="#gorule0000031">GORULE:0000031 Annotation relations are replaced when not provided by source</a>
+ * <a href="#gorule0000031">GORULE:0000031 DEPRECATED. Annotation relations are replaced when not provided by source</a>
  * <a href="#gorule0000032">GORULE:0000032 DEPRECATED Allowed References for each ECO.</a>
  * <a href="#gorule0000033">GORULE:0000033 DEPRECATED. Public Reference IDs (PMID, PMC, doi, or GO_REF) should be preferred over group specific Reference IDs</a>
  * <a href="#gorule0000035">GORULE:0000035 DEPRECATED - Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.</a>
@@ -679,10 +679,10 @@ References for which is_obsolete: `true` should not be allowed as a reference (G
 
 <a name="gorule0000031"/>
 
-## Annotation relations are replaced when not provided by source
+## DEPRECATED. Annotation relations are replaced when not provided by source
 
  * id: [GORULE:0000031](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000031.md)
- * status: implemented
+ * status: deprecated
 
 
 In GAFs, relation is overloaded into qualifier.
@@ -692,6 +692,8 @@ For Biological Process: relation = 'involved_in'
 For Molecular Function: relation = 'enables'
 
 ##This seems to be only exported in GPAD for now.
+
+##Now covered by GORULE-0000059 and GORULE-0000061. This was not being reported in rule reports as og 2024-07.
 
 <a name="gorule0000032"/>
 
