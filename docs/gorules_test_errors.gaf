@@ -4,7 +4,7 @@
 ! Dummy GAF file containing deliberate errors to test that GO rules are correctly implemented. 	
 ! Should be equivalent to https://github.com/geneontology/go-site/blob/master/docs/gorules_test_errors.gpad when the rule applies.													
 ! FAILS GORULE:0000001 - empty col1 and col2															
-		ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE:0000001-1 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	
+		ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	
 ! FAILS GORULE:0000001 - No gene symbol (Column 3)															
 PomBase	SPAC977.10		is_active_in	GO:1990578	PMID:19171118	IDA		C	plasma membrane sodium ion/proton antiporter Nhe1/Sod2	sod2	protein	taxon:4896	20151201	PomBase	
 ! FAILS GORULE:0000001 - Blank lines															
