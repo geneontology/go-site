@@ -146,7 +146,7 @@ MGI:1100518	Smad7	bla	involved_in	GO:0017015	MGI:MGI:3836072|PMID:18952608	IC	GO
 ! FAILS GORULE:0000020 - TEST 4 - obsolete term in 'extension' (column 16) with no replacement															
 UniProtKB	O76187	darA	enables	GO:0004672	PMID:9802899	IDA	UniProtKB:P34149	F	GORULE_TEST:0000020-4 Darlin	darA	protein	taxon:44689	20100205	GO_Central	involved_in(GO:0090503)
 ! FAILS GORULE:0000020 - TEST 5 - obsolete term in 'extension' (column 16) with a replacement															
-UniProtKB	O76187	darA	enables	GO:0004672	PMID:9802899	IDA	UniProtKB:P34149	F	GORULE_TEST:0000020-5 Darlin	darA	protein	taxon:44689	20100205	GO_Central	involved_in(GO:0014067)
+UniProtKB	O76187	darA	enables	GO:0004672	PMID:9802899	IDA		F	GORULE_TEST:0000020-5 Darlin	darA	protein	taxon:44689	20100205	GO_Central	involved_in(GO:0014067)
 ! FAILS GORULE:0000022 - TEST 1 - retracted paper															
 UniProtKB	O76187	darA	involved_in	GO:0017015	PMID:37278189	IDA		F	GORULE_TEST:0000022-1		protein	taxon:44689	20230513	GO_Central	
 ! FAILS GORULE:0000027 - TEST 1 - Prefix not in /db-xrefs.yaml															
