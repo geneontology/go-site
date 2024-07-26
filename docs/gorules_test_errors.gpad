@@ -41,20 +41,16 @@ UniProtKB:Q4KA26		RO:0002432	GO:0005575	GO_REF:0000015	ECO:0000314			2018-01-29	
 UniProtKB:Q6UW15		RO:0002331	GO:0050689	PMID:16931762	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST:0000011-3 Regenerating islet-derived protein 3-gamma	
 ! FAILS GORULE:0000013 - fails because GO:0075342 should not be annotated for human gene products - cannot be tested in ontobio parser (not a line-by-line check)												
 UniProtKB:P67870		RO:0002331	GO:0075342	PMID:20719947	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST:0000013-1 Casein kinase II subunit beta	
-! FAILS GORULE:0000015 - TEST 1 - "GO:0005886 plasma membrane" is not a child of "GO:0018995 host cellular component"												
-UniProtKB:O56786		RO:0002432	GO:0005886	PMID:10419939	ECO:0000314		taxon:9696	2022-06-06	GO_Central		GORULE_TEST:0000015-1 Holin protein Hol187	
-! FAILS GORULE:0000015 - TEST 2 - "GO:0030593 neutrophil chemotaxis" is not a child of "GO:0044419 interspecies interaction between organisms"												
-UniProtKB:A0A0K2S4Q6		RO:0002331	GO:0030593	PMID:26221034	ECO:0000314		taxon:55511	2022-06-06	GO_Central		GORULE_TEST:0000015-2 Protein CD300H	
-! FAILS GORULE:0000015 - TEST 3 - same taxon in Column 13 for GO:0044158 host cell wall												
-UniProtKB:O56786		RO:0002432	GO:0018995	PMID:10419939	ECO:0000314		taxon:9606	2022-06-06	GO_Central		GORULE_TEST:0000015-3 Holin protein Hol187	
-! SHOULD PASS GORULE:0000015 - TEST 4 - "GO:0042025 host cell nucleus" with single taxon ID												
-UniProtKB:O56786		RO:0002432	GO:0042025	PMID:10419939	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST:0000015-4 Holin protein Hol187	
-! SHOULD PASS GORULE:0000015 - TEST 5 - "GO:0010363 regulation of plant-type hypersensitive response" with single taxon ID												
-UniProtKB:O56786		RO:0002331	GO:0010363	PMID:10419939	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST:0000015-5 Holin protein Hol187	
-! SHOULD PASS GORULE:0000015 - TEST 6 - "GO:0141062 disruption of tissue in another organism" with single taxon ID												
-UniProtKB:O56786		RO:0002331	GO:0141062	PMID:10419939	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST:0000015-6 Holin protein Hol187	
-! SHOULD PASS GORULE:0000015 - TEST 7 - GO:0010363 regulation of plant-type hypersensitive response is_ GO:0043903 regulation of biological process involved in symbiotic interaction												
-UniProtKB:Q6UW15		RO:0002331	GO:0010363	PMID:16931762	ECO:0000314		taxon:1334565	2022-06-06	GO_Central		GORULE_TEST:0000015-7 Regenerating islet-derived protein 3-gamma	
+! FAILS GORULE:0000015 - TEST 1 - "GO:0005886 plasma membrane" is not a child of "GO:0018995 host cellular component"																									
+UniProtKB:O56786		RO:0002432	GO:0005886	PMID:10419939	ECO:0000314		taxon:9696	2022-06-06	GO_Central		GORULE_TEST:0000015-1 Holin protein Hol187														
+! FAILS GORULE:0000015 - TEST 2 - "GO:0030593 neutrophil chemotaxis" is not a child of "GO:0044419 interspecies interaction between organisms"																									
+UniProtKB:A0A0K2S4Q6		RO:0002331	GO:0030593	PMID:26221034	ECO:0000314		taxon:55511	2022-06-06	GO_Central		GORULE_TEST:0000015-2 Protein CD300H														
+! FAILS GORULE:0000015 - TEST 3 - same taxon in Column 13 for  GO:0044158 host cell wall																									
+UniProtKB:O56786		RO:0002432	GO:0018995	PMID:10419939	ECO:0000314		taxon:9606|taxon:9606	2022-06-06	GO_Central		GORULE_TEST:0000015-3 Holin protein Hol187														
+! SHOULD PASS GORULE:0000015 - GPAD TEST 4 -  "GO:0042025 host cell nucleus" with no interacting taxon																									
+UniProtKB:O56786		RO:0002331	GO:0034053	PMID:10419939	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST:0000015-5 Holin protein Hol187														
+!  DO NOT APPLY TO GPAD GORULE:0000015 - TEST 5 -  "GO:0141062 disruption of tissue in another organism" with single taxon ID																									
+!  DO NOT APPLY TO GPAD GORULE:0000015 - TEST 6 - "GO:0010363 regulation of plant-type hypersensitive response" is_a "GO:0043903 regulation of biological process involved in symbiotic interaction"                																									
 ! FAILS GORULE:0000016 - TEST 1 - column 8 (with/from) is null												
 UniProtKB:Q9HC96		RO:0002331	GO:0006921	GO_REF:0000036	ECO:0000305			2022-06-06	GO_Central		GORULE_TEST:0000016-1 Calpain-10	
 ! FAILS GORULE:0000016 - TEST 2 - column 8 (with/from) is has a non-GOID												
