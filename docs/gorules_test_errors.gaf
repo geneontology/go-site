@@ -136,7 +136,7 @@ UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IPI		F	GORULE_TEST:0
 ! FAILS GORULE:0000018 - TEST 2 - missing Column 8 data ('with' field) for 'binding ; GO:0005488' 															
 UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IPI		F	GORULE_TEST:0000018-2 Mitogen-activated protein kinase kinase kinase mlk-1	mlk-1,K11D12.10	protein	taxon:6239	20170322	GO_Central	
 ! FAILS GORULE:0000018 - TEST 3 - missing Column 8 data ('with' field) for 'binding ; GO:0005488'															
-UniProtKB	O76187	darA	involved_in	GO:0005488	PMID:9802899	IPI		F	GORULE_TEST:0000018-3		protein	taxon:44689	20230513	GO_Central	
+UniProtKB	O76187	darA	enables	GO:0005488	PMID:9802899	IPI		F	GORULE_TEST:0000018-3		protein	taxon:44689	20230513	GO_Central	
 ! FAILS GORULE:0000020 - TEST 1 - obsolete term with no replacement															
 UniProtKB	P04995	sbcB	involved_in	GO:0090503	GO_REF:0000108	IEA	GO:0000175	P	GORULE_TEST:0000020-1 Exodeoxyribonuclease I	sbcB|cpeA|xonA|JW1993|b2011	protein	taxon:83333	20230509	GO_Central	
 ! FAILS GORULE:0000020 - TEST 2 - obsolete term with a replacement term															
