@@ -125,9 +125,9 @@ UniProtKB:F1N2N9		BFO:0000050	GO:0120228	PMID:34715025	ECO:0000250	UniProtKB:F1N
 UniProtKB:F1N2N9		BFO:0000050	GO:0120228	PMID:34715025	ECO:0000266	UniProtKB:F1N2N9		2022-06-06	GO_Central		GORULE_TEST:0000050-2 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114
 ! FAILS GORULE:0000050 - TEST 3 - self-referential ISA annotations												
 UniProtKB:F1N2N9		BFO:0000050	GO:0120228	PMID:34715025	ECO:0000247	UniProtKB:F1N2N9		2022-06-06	GO_Central		GORULE_TEST:0000050-3 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114
-! SHOULD PASS GORULE:0000051 - Pass RULE 51 - Annotation extension for certain GO terms - protein binding; GO:0005515												
+! PROPOSED GORULE:0000051 - Pass RULE 51 - Annotation extension for certain GO terms - protein binding; GO:0005515												
 UniProtKB:O76187		RO:0002327	GO:0005515	PMID:9802899	ECO:0000021	UniProtKB:P34149		2022-06-06	GO_Central	RO:0002233(GO:0003674)|BFO:0000066(CL:123456)	GORULE_TEST:0000051-PASS1 Darlin	
-! FAILS GORULE:0000051 - TEST 1 - also fails GORULE:0000008 - Annotation extension is required for certain terms - binding GO:0005488												
+! PROPOSED GORULE:0000051 - TEST 1 - also fails GORULE:0000008 - Annotation extension is required for certain terms - binding GO:0005488												
 UniProtKB:O76187		RO:0002327	GO:0005488	PMID:9802899	ECO:0000021	UniProtKB:P34149		2022-06-06	GO_Central		GORULE_TEST:0000051-1 Darlin	
 ! FAILS GORULE:0000055 - TEST 1 - Two references in the same ID space - PMID												
 PlasmoDB:PF3D7_0200400		RO:0002432	GO:0020036	PMID:12477793|PMID:15961998	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST:0000055-1	
