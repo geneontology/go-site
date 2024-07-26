@@ -7,17 +7,30 @@ project_url: "http://ecocyc.org"
 funding_source: "NIH/NIGMS GM077678"
 email_report: "biocyc-support@ai.sri.com"
 datasets:
- -
-   id: ecocyc.gaf
-   label: "ecocyc gaf file"
-   description: "gaf file for ecocyc from Encyclopedia of E. coli metabolism"
-   url: https://current.geneontology.org/annotations/ecocyc.gaf.gz
-   type: gaf
-   dataset: ecocyc
-   submitter: ecocyc
-   source: https://ftp.ebi.ac.uk/pub/databases/GO/goa/proteomes/18.E_coli_MG1655.goa
-   entity_type:
-   status: active
-   species_code: Ecol
-   taxa:
-    - NCBITaxon:83333
+  - id: ecocyc.gaf
+    label: "ecocyc gaf file"
+    description: "gaf file for ecocyc from Encyclopedia of E. coli metabolism"
+    url: https://current.geneontology.org/annotations/ecocyc.gaf.gz
+    type: gaf
+    dataset: ecocyc
+    submitter: ecocyc
+    source: https://ftp.ebi.ac.uk/pub/databases/GO/goa/proteomes/18.E_coli_MG1655.goa
+    entity_type:
+    status: active
+    species_code: Ecol
+    taxa:
+      - NCBITaxon:83333
+  - id: ecocyc.gpi
+    label: "ecocyc gpi file"
+    description: "gpi file for Escherichia coli from EcoCyc"
+    url: https://current.geneontology.org/annotations/ecocyc.gpi.gz
+    type: gpi
+    dataset: ecocyc
+    submitter: ecocyc
+    compression: gzip
+    source: https://www.ai.sri.com/~kr/go/latest/ecocyc.gpi.gz
+    entity_type:
+    status: active
+    species_code: Ecol
+    taxa:
+      - NCBITaxon:83333
