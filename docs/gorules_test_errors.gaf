@@ -107,9 +107,9 @@ UniProtKB	Q4KA26	PFL_3807	is_active_in	GO:0005575	GO_REF:0000015	IDA		C	GORULE_T
 UniProtKB	Q6UW15	REG3G	involved_in	GO:0050689	PMID:16931762	IDA		P	GORULE_TEST:0000011-3 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	
 ! FAILS GORULE:0000013 - fails because GO:0075342 should not be annotated for human gene products - cannot be tested in ontobio parser (not a line-by-line check)															
 UniProtKB	P67870	CSNK2B	involved_in	GO:0075342	PMID:20719947 	IDA		P	GORULE_TEST:0000013-1 Casein kinase II subunit beta	CSNK2B|CK2N|G5A	protein	taxon:9606	20230307	GO_Central	
-! FAILS GORULE:0000015 - TEST 1 - GO:0005886 plasma membrane is not a child of "GO:0018995 host cellular component"															
+! FAILS GORULE:0000015 - TEST 1 - "GO:0005886 plasma membrane" is not a child of "GO:0018995 host cellular component"															
 UniProtKB	O56786	hol187	is_active_in	GO:0005886	PMID:10419939	IDA		C	GORULE_TEST:0000015-1 Holin protein Hol187	hol187	protein	taxon:55511|taxon:9696	20170423	GO_Central	
-! FAILS GORULE:0000015 - TEST 2 - "neutrophil chemotaxis" is not a child of "GO:0044419 interspecies interaction between organisms"														
+! FAILS GORULE:0000015 - TEST 2 - "GO:0030593 neutrophil chemotaxis" is not a child of "GO:0044419 interspecies interaction between organisms"														
 UniProtKB	A0A0K2S4Q6	CD300H	involved_in	GO:0030593	PMID:26221034	IDA		P	GORULE_TEST:0000015-2 Protein CD300H	CD300H	protein	taxon:9606|taxon:55511	20160428	GO_Central	
 ! FAILS GORULE:0000015 - TEST 3 - same taxon in Column 13 for  GO:0044158 host cell wall															
 UniProtKB	O56786	hol187	is_active_in	GO:0018995	PMID:10419939	IDA		C	GORULE_TEST:0000015-3 Holin protein Hol187	hol187	protein	taxon:9606|taxon:9606	20170423	GO_Central	
