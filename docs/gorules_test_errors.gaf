@@ -200,7 +200,7 @@ UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000044	IEA	UniProtKB-SubCell
 ! FAILS GORULE:0000029 - TEST 2 - IEA older than 3 years															
 UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000044	IEA	UniProtKB-SubCell:SL-0375	C	GORULE_TEST:0000029-2		protein	taxon:83333	20200507	GO_Central	
 ! FAILS GORULE:0000030 - TEST 1 - Deprecated GO_REF															
-UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000045	IEA	UniProtKB-SubCell:SL-0375	C	GORULE_TEST:0000030-1		protein	taxon:83333	20230607	GO_Central	
+UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000045	IEA	UniProtKB-SubCell:SL-0375	C	GORULE_TEST:0000030-1		protein	taxon:83333	20240707	GO_Central	
 ! SHOULD PASS GORULE:0000030 - TEST 2 - Valid GO_REF															
 UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000033	IBA	FB:FBgn0032677|PANTHER:PTN005196447	C	GORULE_TEST:0000030-2		protein	taxon:83333	20230607	GO_Central	
 ! FAILS GORULE:0000037 - TEST 1 - IBA with Assigned_by other than GO_Central															
