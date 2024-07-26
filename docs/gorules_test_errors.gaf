@@ -208,9 +208,9 @@ UniProtKB	A0A024BTL2	PHKG1	is_active_in	GO:0005634	PMID:21873635	IBA	FB:FBgn0019
 ! FAILS GORULE:0000037 - TEST 2 - IBA with reference other than GO_REF:0000033														
 UniProtKB	A0A024BTL2	PHKG1	is_active_in	GO:0005634	PMID:26221034	IBA	FB:FBgn0019686|FB:FBgn0028360|FB:FBgn0032677|PANTHER:PTN005196447|PomBase:SPAC14C4.03|PomBase:SPCC1322.08|PomBase:SPCC18B5.11c|RGD:621543|SGD:S000006074|UniProtKB:O96017|UniProtKB:Q5AVW7	C	GORULE_TEST:0000037-2		protein	taxon:9823	20221009	GO_Central	
 ! FAILS GORULE:0000039  - TEST 1 - Protein complex annotated to GO:0032991 protein-containing complex															
-ComplexPortal	CPX-102	dapk-calm_human	part_of	GO:0032991	PMID:10629061	IMP		C	GORULE_TEST:0000039-1		complex	taxon:9606	20200218	GO_Central	
+ComplexPortal	CPX-102	dapk-calm_human	part_of	GO:0032991	PMID:10629061	IMP		C	GORULE_TEST:0000039-1		protein_complex	taxon:9606	20200218	GO_Central	
 ! FAILS GORULE:0000039  - TEST 2 - Protein complex annotated to an is_a descendant of GO:0032991 protein-containing complex															
-ComplexPortal	CPX-102	dapk-calm_human	part_of	 GO:0043020	PMID:10629061	IMP		C	GORULE_TEST:0000039-2		complex	taxon:9606	20200218	GO_Central	
+ComplexPortal	CPX-102	dapk-calm_human	part_of	 GO:0043020	PMID:10629061	IMP		C	GORULE_TEST:0000039-2		protein_complex	taxon:9606	20200218	GO_Central	
 ! FAILS GORULE:0000042 - TEST 1 - IKR evidence, no negation (NOT) in column 4														
 UniProtKB	A0A0B4JCV5	CG9898	enables	GO:0004252	PMID:30367934	IKR		F	GORULE_TEST:0000042-1		protein	taxon:7227	20190311	GO_Central	
 ! FAILS GORULE:0000046 - TEST 1 - self-binding’ term, no data in Column 8														
