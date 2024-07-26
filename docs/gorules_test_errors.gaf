@@ -116,7 +116,7 @@ UniProtKB	O56786	hol187	is_active_in	GO:0018995	PMID:10419939	IDA		C	GORULE_TEST
 ! SHOULD PASS GORULE:0000015 - TEST 4 -  "GO:0042025 host cell nucleus" with single taxon ID															
 UniProtKB	O56786	hol187	is_active_in	GO:0042025	PMID:10419939	IDA		C	GORULE_TEST:0000015-4 Holin protein Hol187	hol187	protein	taxon:55511	20170423	GO_Central	
 ! SHOULD PASS GORULE:0000015 - TEST 5 -  "GO:0010363 regulation of plant-type hypersensitive response" with single taxon ID															
-UniProtKB	O56786	hol187	involved_in	GO:0010363	PMID:10419939	IDA		C	GORULE_TEST:0000015-5 Holin protein Hol187	hol187	protein	taxon:55511	20170423	GO_Central	
+UniProtKB	O56786	hol187	involved_in	GO:0010363	PMID:10419939	IDA		P	GORULE_TEST:0000015-5 Holin protein Hol187	hol187	protein	taxon:55511	20170423	GO_Central	
 ! SHOULD PASS GORULE:0000015 - TEST 6 -  "GO:0141062 disruption of tissue in another organism" with single taxon ID															
 UniProtKB	O56786	hol187	involved_in	GO:0141062	PMID:10419939	IDA		C	GORULE_TEST:0000015-6 Holin protein Hol187	hol187	protein	taxon:55511	20170423	GO_Central	
 ! SHOULD PASS GORULE:0000015 - TEST 7 -   "GO:0034053 symbiont-mediated perturbation of host defense-related programmed cell death" with two taxon ID															
