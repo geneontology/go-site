@@ -223,9 +223,9 @@ UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISS	UniProtKB:F1N2N9	C	G
 UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISO	UniProtKB:F1N2N9	C	GORULE_TEST:0000050-2 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	GO_Central	
 ! FAILS GORULE:0000050 - TEST 3 - self-referential ISA annotations 															
 UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISA	UniProtKB:F1N2N9	C	GORULE_TEST:0000050-3 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	GO_Central	
-! SHOULD PASS GORULE:0000051 - Pass RULE 51 - Annotation extension for certain GO terms - protein binding; GO:0005515															
+! PROPOSED RULE GORULE:0000051 - Pass RULE 51 - Annotation extension for certain GO terms - protein binding; GO:0005515															
 UniProtKB	O76187	darA	enables	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE_TEST:0000051-PASS1 Darlin	darA	protein	taxon:44689	20100205	GO_Central	has_input(GO:0003674)|occurs_in(CL:1234567)
-! FAILS GORULE:0000051 - TEST 1 - also fails GORULE:0000008 - Annotation extension is required for certain terms - binding GO:0005488 															
+! PROPOSED RULE GORULE:0000051 - TEST 1 - also fails GORULE:0000008 - Annotation extension is required for certain terms - binding GO:0005488 															
 UniProtKB	O76187	darA	enables	GO:0005488	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE_TEST:0000051-1 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
 ! FAILS GORULE:0000055 - TEST 1 - Two references in the same ID space - PMID															
 PlasmoDB	PF3D7_0200400	PF3D7_0200400	is_active_in	GO:0020036	PMID:12477793|PMID:15961998	IDA		C	GORULE_TEST:0000055-1	stevor	mRNA	taxon:4896	20131007	GO_Central	
