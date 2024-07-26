@@ -50,11 +50,11 @@ UniProtKB:O56786		RO:0002432	GO:0018995	PMID:10419939	ECO:0000314		taxon:9606	20
 ! PASSES GORULE:0000015 - TEST 4 - "GO:0042025 host cell nucleus" with single taxon ID												
 UniProtKB:O56786		RO:0002432	GO:0042025	PMID:10419939	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST:0000015-4 Holin protein Hol187	
 ! PASSES GORULE:0000015 - TEST 5 - "GO:0010363 regulation of plant-type hypersensitive response" with single taxon ID												
-UniProtKB:O56786		RO:0002331	GO:0010363	PMID:10419939	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST:0000015-4 Holin protein Hol187	
+UniProtKB:O56786		RO:0002331	GO:0010363	PMID:10419939	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST:0000015-5 Holin protein Hol187	
 ! PASSES GORULE:0000015 - TEST 6 - "GO:0141062 disruption of tissue in another organism" with single taxon ID												
-UniProtKB:O56786		RO:0002331	GO:0141062	PMID:10419939	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST:0000015-4 Holin protein Hol187	
-! SHOULD PASS GORULE:0000015 - TEST 4 - GO:0010363 regulation of plant-type hypersensitive response is_ GO:0043903 regulation of biological process involved in symbiotic interaction												
-UniProtKB:Q6UW15		RO:0002331	GO:0010363	PMID:16931762	ECO:0000314		taxon:1334565	2022-06-06	GO_Central		GORULE_TEST:0000015-4 Regenerating islet-derived protein 3-gamma	
+UniProtKB:O56786		RO:0002331	GO:0141062	PMID:10419939	ECO:0000314			2022-06-06	GO_Central		GORULE_TEST:0000015-6 Holin protein Hol187	
+! SHOULD PASS GORULE:0000015 - TEST 7 - GO:0010363 regulation of plant-type hypersensitive response is_ GO:0043903 regulation of biological process involved in symbiotic interaction												
+UniProtKB:Q6UW15		RO:0002331	GO:0010363	PMID:16931762	ECO:0000314		taxon:1334565	2022-06-06	GO_Central		GORULE_TEST:0000015-7 Regenerating islet-derived protein 3-gamma	
 ! FAILS GORULE:0000016 - TEST 1 - column 8 (with/from) is null												
 UniProtKB:Q9HC96		RO:0002331	GO:0006921	GO_REF:0000036	ECO:0000305			2022-06-06	GO_Central		GORULE_TEST:0000016-1 Calpain-10	
 ! FAILS GORULE:0000016 - TEST 2 - column 8 (with/from) is has a non-GOID												
