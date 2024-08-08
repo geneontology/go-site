@@ -16,7 +16,7 @@ datasets:
    dataset: fb
    submitter: fb
    compression: gzip
-   source: ftp://ftp.flybase.net/releases/current/precomputed_files/go/gene_association.fb.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    entity_type:
    status: active
    species_code: Dmel

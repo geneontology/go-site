@@ -16,7 +16,7 @@ datasets:
    dataset: reactome
    submitter: reactome
    compression: gzip
-   source: https://www.reactome.org/download/current/gene_association.reactome.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    entity_type:
    status: inactive
    species_code:

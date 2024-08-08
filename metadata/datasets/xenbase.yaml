@@ -31,7 +31,7 @@ datasets:
     dataset: xenbase
     submitter: xenbase
     compression: gzip
-    source: https://ftp.xenbase.org/pub/DataExchange/GO/xenbase.EBI.only.2.2.gaf.gz
+    source: http://skyhook.berkeleybop.org/empty.gaf.gz
     entity_type:
     status: active
     species_code: Xenopus

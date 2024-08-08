@@ -16,7 +16,7 @@ datasets:
    dataset: zfin
    submitter: zfin
    compression: gzip
-   source: https://zfin.org/downloads/gene_association2.2_automated_only.zfin.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    entity_type:
    status: active
    species_code: Drer

@@ -52,8 +52,7 @@ datasets:
    dataset: dictybase
    submitter: dictyBase
    compression: gzip
-   #source: https://release.geneontology.org/2024-03-28/products/upstream_and_raw_data/dictybase-src.gaf.gz
-   source: https://ftp.ebi.ac.uk/pub/contrib/goa/dictyBase.gaf.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    entity_type:
    status: active
    species_code: Ddis

@@ -16,7 +16,7 @@ datasets:
    dataset: genedb_lmajor
    submitter: genedb
    compression: gzip
-   source: ftp://ftp.sanger.ac.uk/pub/project/pathogens/as44/Lmajor.gaf.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    entity_type:
    status: active
    species_code: Lmaj
@@ -31,12 +31,12 @@ datasets:
    dataset: genedb_tbrucei
    submitter: genedb
    compression: gzip
-   source: ftp://ftp.sanger.ac.uk/pub/project/pathogens/as44/Tbruceibrucei927.gaf.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    status: active
    species_code: Tbru
    taxa:
     - NCBITaxon:185431
- -  
+ -
    id: genedb_pfalciparum.gaf
    label: "genedb_pfalciparum gaf file"
    description: "gaf file for genedb_pfalciparum from GeneDB"
@@ -45,7 +45,7 @@ datasets:
    dataset: genedb_pfalciparum
    submitter: genedb
    compression: gzip
-   source: ftp://ftp.sanger.ac.uk/pub/project/pathogens/as44/Pfalciparum.gaf.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    entity_type:
    status: active
    species_code: Pfal

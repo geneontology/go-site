@@ -16,7 +16,7 @@ datasets:
    dataset: sgd
    submitter: sgd
    compression: gzip
-   source: https://sgd-prod-upload.s3.amazonaws.com/latest/gene_association.sgd.gaf.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    entity_type:
    status: active
    species_code: Scer

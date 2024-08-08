@@ -16,8 +16,7 @@ datasets:
    dataset: pombase
    submitter: pombase
    compression: gzip
-   #source: https://release.geneontology.org/2024-03-28/products/upstream_and_raw_data/pombase-src.gaf.gz
-   source: https://www.pombase.org/data/annotations/Gene_ontology/gene_association.pombase.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    entity_type:
    status: active
    species_code: Spom

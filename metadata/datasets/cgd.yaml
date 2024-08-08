@@ -16,10 +16,10 @@ datasets:
    dataset: cgd
    submitter: cgd
    compression: gzip
-   source: http://www.candidagenome.org/download/go/gene_association.cgd.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    entity_type:
    status: active
-   species_code: 
+   species_code:
    taxa:
     - NCBITaxon:5476
     - NCBITaxon:5478

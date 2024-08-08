@@ -744,8 +744,7 @@ datasets:
    dataset: goa_chicken
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_chicken_plus.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_plus.gaf.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    entity_type: protein
    status: active
    species_code: Ggal
@@ -765,8 +764,7 @@ datasets:
    dataset: goa_cow
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_cow_plus.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_plus.gaf.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    entity_type: protein
    status: active
    species_code: Btau
@@ -784,8 +782,7 @@ datasets:
    dataset: goa_dog
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_dog_plus.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_plus.gaf.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    entity_type: protein
    status: active
    species_code: Cfam
@@ -801,8 +798,7 @@ datasets:
    dataset: goa_human
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_human_plus.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_plus.gaf.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    entity_type: protein
    status: active
    species_code: Hsap
@@ -818,8 +814,7 @@ datasets:
    dataset: goa_pdb
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_pdb.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PDB/goa_pdb.gaf.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    entity_type: protein
    status: active
    species_code:
@@ -835,8 +830,7 @@ datasets:
    dataset: goa_pig
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_pig_plus.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_plus.gaf.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    entity_type: protein
    status: active
    species_code: Sscr
@@ -852,8 +846,7 @@ datasets:
    dataset: goa_uniprot_all
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gaf.gz
-   source: https://mirror.geneontology.io/goa_uniprot_all.gaf.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    entity_type: all
    status: active
    aggregates: goa
@@ -903,8 +896,7 @@ datasets:
    dataset: goa_uniprot_gcrp
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gaf.gz
-   source: https://mirror.geneontology.io/goa_uniprot_gcrp.gaf.gz
+   source: http://skyhook.berkeleybop.org/empty.gaf.gz
    entity_type: all
    status: active
    aggregates: goa
