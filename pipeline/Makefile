@@ -119,8 +119,8 @@ GOA_UNIPROT_ALL = target/groups/goa/goa_uniprot_all_noiea.gpi target/groups/goa/
 target/groups/goa/goa_uniprot_all_noiea.gaf: target/alltaxons.txt target/groups/goa/goa_uniprot_all-src.gaf.gz
 	cp target/groups/goa/goa_uniprot_all-src.gaf.gz target/groups/goa/goa_uniprot_all.gaf.gz
 	cp target/groups/goa/goa_uniprot_all-src.gaf.gz target/groups/goa/goa_uniprot_all_noiea.gaf.gz
-	gzip -dcf target/groups/goa/goa_uniprot_all-src.gaf.gz | target/groups/goa/goa_uniprot_all.gaf
-	gzip -dcf target/groups/goa/goa_uniprot_all-src.gaf.gz | target/groups/goa/goa_uniprot_all_noiea.gaf
+	gzip -dcf target/groups/goa/goa_uniprot_all-src.gaf.gz > target/groups/goa/goa_uniprot_all.gaf
+	gzip -dcf target/groups/goa/goa_uniprot_all-src.gaf.gz > target/groups/goa/goa_uniprot_all_noiea.gaf
 	rm -f target/groups/goa/goa_uniprot_all-src.gaf target/groups/goa/goa_uniprot_all.gaf || true
 
 RDF_GEN = rdfgen.py
