@@ -24,7 +24,7 @@ PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	MADEUP	SGD:S0000
 ! FAILS GORULE:0000001 - TEST 6 - Bad date, but fixable														
 PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000001-6 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	3/5/15	PomBase
 ! FAILS GORULE:0000001 - TEST 7 - Bad date, unparsable															
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000001-7 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	TODAY	PomBase	part_of(X:1)
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000001-7 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	TODAY	PomBase	
 ! FAILS GORULE:0000001 - TEST 8 - invalid taxon 0															
 ZFIN	ZDB-GENE-070117-1552	obj_symbol	acts_upstream_of_or_within	GO:0045601	PMID:17531218	IMP	ZFIN:ZDB-GENO-080318-17	P	GORULE_TEST:0000001-8		gene_product	taxon:0	20080326	PomBase	
 ! FAILS GORULE:0000001 - TEST 9 - invalid taxon non-numeric															
