@@ -159,7 +159,7 @@ UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:PMID:14561399	IDA		P	GORULE_
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:unpublished	IDA		P	GORULE_TEST:0000027-4 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000027 - TEST 5 - Bad reference syntax															
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:0.	IDA		P	GORULE_TEST:0000027-5 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
-! FAILS GORULE:0000027 - TEST 6 - Prefix is a synonyms in /db-xrefs.yaml and IS REPAIRED															
+! FAILS GORULE:0000027 - TEST 6 - Prefix in column 1 ("WormBase") is a synonyms in /db-xrefs.yaml and IS REPAIRED															
 WormBase	WBGene00000002	aat-1	part_of	GO:1990184	WB_REF:WBPaper00006408|PMID:14668347	IPI	WB:WBGene00000225	C		GORULE_TEST:0000027-6 F27C8.1	gene	taxon:6239	20131022	GO_Central		
 ! FAILS GORULE:0000027 - TEST 7 - bad id syntax: WB needs 8 digits, has only 7														
 WormBase	WBGene0000002	aat-1	part_of	GO:1990184	WB_REF:WBPaper00006408|PMID:14668347	IPI	WB:WBGene00000225	C		GORULE_TEST:0000027-7 F27C8.1	gene	taxon:6239	20131022	GO_Central		
