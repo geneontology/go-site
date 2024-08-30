@@ -186,7 +186,7 @@ FB	FBgn0024811	Crk	involved_in	GO:0048010	FB:FBrf0180198|PMID:1545721X	IMP		P	GO
 ! SHOULD PASS GORULE:0000027 - TEST 18 - 'Assigned by' is in groups.yaml (but not in dbxref.yaml)													
 UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:16931762	IDA		P	GORULE_TEST:0000027-18 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	LBL	
 ! FAILS GORULE:0000027 - TEST 19 - 'Assigned by' is in dbxref.yaml but not in groups.yaml												
-UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:16931762	IDA		P	GORULE_TEST:0000027-18 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	PO	
+UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:16931762	IDA		P	GORULE_TEST:0000027-19 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	PO	
 ! FAILS GORULE:0000027 - TEST 20 - Bad value in extension 'X'														
 PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000027-20 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20180912	PomBase	part_of(X:1)
 ! FAILS GORULE:0000028 - TEST 1 - Bad GO aspect, C instead of P														
