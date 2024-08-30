@@ -162,7 +162,7 @@ UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:0.	IDA		P	GORULE_TEST:000002
 ! FAILS GORULE:0000027 - TEST 6 - Prefix in column 1 ("WormBase") is a synonyms in /db-xrefs.yaml and IS REPAIRED															
 WormBase	WBGene00000002	aat-1	part_of	GO:1990184	WB_REF:WBPaper00006408|PMID:14668347	IPI	WB:WBGene00000225	C		GORULE_TEST:0000027-6 F27C8.1	gene	taxon:6239	20131022	GO_Central		
 ! FAILS GORULE:0000027 - TEST 7 - bad id syntax: WB needs 8 digits, has only 7														
-WormBase	WBGene0000002	aat-1	part_of	GO:1990184	WB_REF:WBPaper00006408|PMID:14668347	IPI	WB:WBGene00000225	C		GORULE_TEST:0000027-7 F27C8.1	gene	taxon:6239	20131022	GO_Central		
+WB	WBGene0000002	aat-1	part_of	GO:1990184	WB_REF:WBPaper00006408|PMID:14668347	IPI	WB:WBGene00000225	C		GORULE_TEST:0000027-7 F27C8.1	gene	taxon:6239	20131022	GO_Central		
 ! FAILS GORULE:0000027 - TEST 8 - caolumn 2 cardinality should be 1													
 WormBase	WBGene00000002|WBGene00000003	aat-1	part_of	GO:1990184	WB_REF:WBPaper00006408|PMID:14668347	IPI	WB:WBGene00000225	C		GORULE_TEST:0000027-8 F27C8.1	gene	taxon:6239	20131022	GO_Central		
 ! SHOULD PASS GORULE:0000027 - TEST 9 - 2 values in with field, pipe-separated															
