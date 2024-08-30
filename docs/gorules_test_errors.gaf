@@ -167,7 +167,7 @@ WB	WBGene0000002	aat-1	part_of	GO:1990184	PMID:14668347	IPI	WB:WBGene00000225	C	
 WB	WBGene00000002|WBGene00000003	aat-1	part_of	GO:1990184	PMID:14668347	IPI	WB:WBGene00000225	C		GORULE_TEST:0000027-8 F27C8.1	gene	taxon:6239	20131022	GO_Central		
 ! SHOULD PASS GORULE:0000027 - TEST 9 - 2 values in with field, pipe-separated															
 UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:16931762	IGI	UniProtKB:P77335|UniProtKB:A0A0K3AV08	P	GORULE_TEST:0000027-9 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	
-! FAILS GORULE:0000027 - TEST 10 - 2 values in 'with' field, comma-separated															
+! SHOULD PASS GORULE:0000027 - TEST 10 - 2 values in 'with' field, comma-separated															
 UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:16931762	IGI	UniProtKB:P77335,UniProtKB:A0A0K3AV08	P	GORULE_TEST:0000027-10 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	
 ! FAILS GORULE:0000027 - TEST 11 - 2 values in 'with' field, second namespace missing															
 UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:16931762	IGI	UniProtKB:P77335|A0A0K3AV08	P	GORULE_TEST:0000027-11 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	
