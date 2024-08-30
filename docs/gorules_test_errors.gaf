@@ -177,7 +177,7 @@ UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:16931762	IGI	UniPotKB:P77335	
 FB	FBgn0020238	14-3-3epsilon	involved_in	GO:0006401	PMID:16931762	IGI	FLYBASE:FBgn0004907	P	GORULE_TEST:0000027-13 14-3-3epsilon	14-3-3|14-3-3 epsilon|14-3-3 protein epsilon	protein	taxon:7227	20220606	GO_Central	
 ! FAILS GORULE:0000027 - TEST 14 - 'bad with' id syntax  - should have 7 digits, has 8													
 FB	FBgn0020238	14-3-3epsilon	involved_in	GO:0006401	PMID:16931762	IGI	FB:FBgn10004907	P	GORULE_TEST:0000027-14 14-3-3epsilon	14-3-3|14-3-3 epsilon|14-3-3 protein epsilon	protein	taxon:7227	20220606	GO_Central	
-! SHOULD PASS GORULE:0000027 - TEST 15 - Two references	in different ID spaces, space separated	(instead of pipe-separated)										
+! SHOULD PASS GORULE:0000027 - TEST 15 - Two references	in different ID spaces, pipe-separated									
 FB	FBgn0024811	Crk	involved_in	GO:0048010	FB:FBrf0180198|PMID:15457211	IMP		P	GORULE_TEST:0000027-15 Crk oncogene	CED-2|CG1587|CRK|D-CRK|D-Crk|DCrk|Dcrk|crk|dCRK|dCrk	protein	taxon:7227	20180912	GO_Central		
 ! FAILS GORULE:0000027 - TEST 16 - Two references in different ID spaces											
 FB	FBgn0024811	Crk	involved_in	GO:0048010	FB:FBrf0180198 PMID:15457211	IMP		P	GORULE_TEST:0000027-16 Crk oncogene	CED-2|CG1587|CRK|D-CRK|D-Crk|DCrk|Dcrk|crk|dCRK|dCrk	protein	taxon:7227	20180912	GO_Central		
