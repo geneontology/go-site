@@ -71,6 +71,8 @@ UniProtKB	A1B2F4	aztD	acts_upstream_of_positive_effect	GO:0097696	PMID:26468286	
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:	IDA		P	GORULE_TEST:0000001-29 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000001 - TEST 30 - 2 values in 'with' field, second namespace missing															
 UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:16931762	IGI	UniProtKB:P77335|A0A0K3AV08	P	GORULE_TEST:0000001-30 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	
+! FAILS GORULE:0000001 - TEST 31 - Two references in different ID spaces, space separated											
+FB	FBgn0024811	Crk	involved_in	GO:0048010	FB:FBrf0180198 PMID:15457211	IMP		P	GORULE_TEST:0000001-31 Crk oncogene	CED-2|CG1587|CRK|D-CRK|D-Crk|DCrk|Dcrk|crk|dCRK|dCrk	protein	taxon:7227	20180912	GO_Central		
 ! FAILS GORULE:0000002 - TEST 1 - has a 'NOT' annotations to 'protein binding ; GO:0005515															
 UniProtKB	O76187	darA	NOT|enables	GO:0005515	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE_TEST:0000002-1 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
 ! FAILS GORULE:0000002 - TEST 2 - has a 'NOT' annotations to 'binding ; GO:0005515															
@@ -179,8 +181,6 @@ FB	FBgn0020238	14-3-3epsilon	involved_in	GO:0006401	PMID:16931762	IGI	FLYBASE:FB
 FB	FBgn0020238	14-3-3epsilon	involved_in	GO:0006401	PMID:16931762	IGI	FB:FBgn10004907	P	GORULE_TEST:0000027-14 14-3-3epsilon	14-3-3|14-3-3 epsilon|14-3-3 protein epsilon	protein	taxon:7227	20220606	GO_Central	
 ! SHOULD PASS GORULE:0000027 - TEST 15 - Two references	in different ID spaces, pipe-separated									
 FB	FBgn0024811	Crk	involved_in	GO:0048010	FB:FBrf0180198|PMID:15457211	IMP		P	GORULE_TEST:0000027-15 Crk oncogene	CED-2|CG1587|CRK|D-CRK|D-Crk|DCrk|Dcrk|crk|dCRK|dCrk	protein	taxon:7227	20180912	GO_Central		
-! FAILS GORULE:0000027 - TEST 16 - Two references in different ID spaces, space separated											
-FB	FBgn0024811	Crk	involved_in	GO:0048010	FB:FBrf0180198 PMID:15457211	IMP		P	GORULE_TEST:0000027-16 Crk oncogene	CED-2|CG1587|CRK|D-CRK|D-Crk|DCrk|Dcrk|crk|dCRK|dCrk	protein	taxon:7227	20180912	GO_Central		
 ! FAILS GORULE:0000027 - TEST 17 - bad PMID ID syntax											
 FB	FBgn0024811	Crk	involved_in	GO:0048010	FB:FBrf0180198|PMID:1545721X	IMP		P	GORULE_TEST:0000027-17 Crk oncogene	CED-2|CG1587|CRK|D-CRK|D-Crk|DCrk|Dcrk|crk|dCRK|dCrk	protein	taxon:7227	20180912	GO_Central		
 ! SHOULD PASS GORULE:0000027 - TEST 18 - 'Assigned by' is in groups.yaml (but not in dbxref.yaml)													
