@@ -89,7 +89,7 @@ UniPotKB:Q9HC96		RO:0002331	GO:0006921	PMID:PMID:14561399	ECO:0000314			2022-06-
 UniPotKB:Q9HC96		RO:0002331	GO:0006921	PMID:unpublished	ECO:0000314			2022-06-06	GO_Central		comment=GORULE_TEST0000027-4
 ! FAILS GORULE:0000027 - TEST 5 - Bad reference syntax												
 UniPotKB:Q9HC96		RO:0002331	GO:0006921	PMID:0.	ECO:0000314			2022-06-06	GO_Central		comment=GORULE_TEST:0000027-5
-! FAILS GORULE:0000027 - TEST 6 - Prefix is a synonyms in /db-xrefs.yaml and IS REPAIRED																									
+! FAILS GORULE:0000027 - TEST 6 - Prefix in column 1 ("WormBase") is a synonyms in /db-xrefs.yaml and IS REPAIRED																									
 WormBase:WBGene00000002		BFO:0000050	GO:1990184	WB_REF:WBPaper00006408|PMID:14668347	ECO:0000021			2013-10-22	GO_Central		comment=GORULE_TEST:0000027-6													
 ! FAILS GORULE:0000027 - TEST 7 - bad id syntax: WB needs 8 digits, has only 7																									
 WormBase:WBGene00000002		BFO:0000050	GO:1990184	WB_REF:WBPaper00006408|PMID:14668347	ECO:0000021			2013-10-22	GO_Central		comment=GORULE_TEST:0000027-7													
@@ -116,7 +116,7 @@ FB:FBgn0024811		RO:0002331	GO:0048010	FB:FBrf0180198|PMID:1545721X	ECO:0000315		
 ! SHOULD PASS GORULE:0000027 - TEST 18 - 'Assigned by' is in groups.yaml (but not in dbxref.yaml)																									
 UniProtKB:Q6UW15		RO:0002331	GO:0006401	PMID:16931762	ECO:0000314			2013-10-22	LBL		comment=GORULE_TEST:0000027-18														
 ! FAILS GORULE:0000027 - TEST 19 - 'Assigned by' is in dbxref.yaml but not in groups.yaml																									
-UniProtKB:Q6UW15		RO:0002331	GO:0006401	PMID:16931762	ECO:0000314			2013-10-22	PO		comment=GORULE_TEST:0000027-18														
+UniProtKB:Q6UW15		RO:0002331	GO:0006401	PMID:16931762	ECO:0000314			2013-10-22	PO		comment=GORULE_TEST:0000027-19
 ! FAILS GORULE:0000028 - TEST 1 - Bad GO aspect, C instead of P												
 UniPotKB:Q9HC96		RO:0002331	GO:0006921	PMID:23072806	ECO:0000314			2022-06-06	GO_Central		comment=GORULE_TEST:0000028-1
 ! FAILS GORULE:0000028 - TEST 2 - Bad GO aspect, F instead of P												
