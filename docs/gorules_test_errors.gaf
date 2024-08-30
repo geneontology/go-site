@@ -162,9 +162,9 @@ UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:0.	IDA		P	GORULE_TEST:000002
 ! FAILS GORULE:0000027 - TEST 6 - Prefix in column 1 ("WormBase") is a synonyms in /db-xrefs.yaml and IS REPAIRED															
 WormBase	WBGene00000002	aat-1	part_of	GO:1990184	WB_REF:WBPaper00006408|PMID:14668347	IPI	WB:WBGene00000225	C		GORULE_TEST:0000027-6 F27C8.1	gene	taxon:6239	20131022	GO_Central		
 ! FAILS GORULE:0000027 - TEST 7 - bad id syntax: WB needs 8 digits, has only 7														
-WB	WBGene0000002	aat-1	part_of	GO:1990184	WB_REF:WBPaper00006408|PMID:14668347	IPI	WB:WBGene00000225	C		GORULE_TEST:0000027-7 F27C8.1	gene	taxon:6239	20131022	GO_Central		
+WB	WBGene0000002	aat-1	part_of	GO:1990184	PMID:14668347	IPI	WB:WBGene00000225	C		GORULE_TEST:0000027-7 F27C8.1	gene	taxon:6239	20131022	GO_Central		
 ! FAILS GORULE:0000027 - TEST 8 - column 2 cardinality should be 1													
-WormBase	WBGene00000002|WBGene00000003	aat-1	part_of	GO:1990184	WB_REF:WBPaper00006408|PMID:14668347	IPI	WB:WBGene00000225	C		GORULE_TEST:0000027-8 F27C8.1	gene	taxon:6239	20131022	GO_Central		
+WB	WBGene00000002|WBGene00000003	aat-1	part_of	GO:1990184	PMID:14668347	IPI	WB:WBGene00000225	C		GORULE_TEST:0000027-8 F27C8.1	gene	taxon:6239	20131022	GO_Central		
 ! SHOULD PASS GORULE:0000027 - TEST 9 - 2 values in with field, pipe-separated															
 UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:16931762	IGI	UniProtKB:P77335|UniProtKB:A0A0K3AV08	P	GORULE_TEST:0000027-9 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	
 ! FAILS GORULE:0000027 - TEST 10 - 2 values in 'with' field, comma-separated															
@@ -189,6 +189,8 @@ UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:16931762	IDA		P	GORULE_TEST:0
 UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:16931762	IDA		P	GORULE_TEST:0000027-19 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	PO	
 ! FAILS GORULE:0000027 - TEST 20 - Bad value in extension 'X'														
 PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000027-20 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20180912	PomBase	part_of(X:1)
+! SHOULD PASS GORULE:0000027 - TEST 21 - WB_REF should be allowed														
+WB	WBGene00000002	aat-1	part_of	GO:1990184	WB_REF:WBPaper00006408|PMID:14668347	IPI	WB:WBGene00000225	C		GORULE_TEST:0000027-21 F27C8.1	gene	taxon:6239	20131022	GO_Central		
 ! FAILS GORULE:0000028 - TEST 1 - Bad GO aspect, C instead of P														
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		C	GORULE_TEST:0000028-1 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000028 - TEST 2 - Bad GO aspect, F instead of P															
