@@ -173,7 +173,7 @@ UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:16931762	IGI	UniProtKB:P77335
 UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:16931762	IGI	UniProtKB:P77335,UniProtKB:A0A0K3AV08	P	GORULE_TEST:0000027-10 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	
 ! FAILS GORULE:0000027 - TEST 12 - 'with' prefix not in /db-xrefs.yaml															
 UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:16931762	IGI	UniPotKB:P77335	P	GORULE_TEST:0000027-12 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	
-! FAILS GORULE:0000027 - TEST 13 - 'with' Prefix is a synonyms in /db-xrefs.yaml and IS REPAIRED													
+! FAILS GORULE:0000027 - TEST 13 - 'with' Prefix is a synonyms in /db-xrefs.yaml. This is a WARNING, only Column 1 is REPAIRED for dbxref synonyms													
 FB	FBgn0020238	14-3-3epsilon	involved_in	GO:0006401	PMID:16931762	IGI	FLYBASE:FBgn0004907	P	GORULE_TEST:0000027-13 14-3-3epsilon	14-3-3|14-3-3 epsilon|14-3-3 protein epsilon	protein	taxon:7227	20220606	GO_Central	
 ! FAILS GORULE:0000027 - TEST 14 - 'bad with' id syntax  - should have 7 digits, has 8													
 FB	FBgn0020238	14-3-3epsilon	involved_in	GO:0006401	PMID:16931762	IGI	FLYBASE:FBgn10004907	P	GORULE_TEST:0000027-14 14-3-3epsilon	14-3-3|14-3-3 epsilon|14-3-3 protein epsilon	protein	taxon:7227	20220606	GO_Central	
