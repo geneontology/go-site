@@ -993,7 +993,7 @@ For the MOD Imports Project into Noctua, it was proposed that group-specific ann
  * status: proposed
 
 
-Rules are in the `extensions-constraints.yaml` file. This is
+Rules are in the `extensions-constraints.yaml` file (https://github.com/geneontology/go-site/blob/master/metadata/extensions-constraints.yaml). This is
 a list of allowed extension Relation, Filler (the ID inside the parentheses), and
 the acceptable GO Term roots used with this relation. A cardinality constraint may also be
 applied.
