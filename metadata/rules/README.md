@@ -990,7 +990,7 @@ For the MOD Imports Project into Noctua, it was proposed that group-specific ann
 ## Object extensions should conform to the extensions-patterns.yaml file in metadata
 
  * id: [GORULE:0000058](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000058.md)
- * status: proposed
+ * status: implemented
 
 
 Rules are in the `extensions-constraints.yaml` file (https://github.com/geneontology/go-site/blob/master/metadata/extensions-constraints.yaml). This is
@@ -1001,6 +1001,8 @@ applied.
 Extensions in annotations should conform to these constraints. If an element of a
 disjunction in the extensions does not follow one of the constraints as listed in
 the above file, that element should be dropped from the extensions.
+
+Note that in the GO Central pipeline, this is only implmented upon imports of external annotations into Noctua.
 
 <a name="gorule0000059"/>
 
