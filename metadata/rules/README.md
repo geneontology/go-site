@@ -990,17 +990,19 @@ For the MOD Imports Project into Noctua, it was proposed that group-specific ann
 ## Object extensions should conform to the extensions-patterns.yaml file in metadata
 
  * id: [GORULE:0000058](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000058.md)
- * status: proposed
+ * status: implemented
 
 
-In the go-site/metadata directory there is a file `extensions-constraints.yaml`. This is
+Rules are in the `extensions-constraints.yaml` file (https://github.com/geneontology/go-site/blob/master/metadata/extensions-constraints.yaml). This is
 a list of allowed extension Relation, Filler (the ID inside the parentheses), and
 the acceptable GO Term roots used with this relation. A cardinality constraint may also be
 applied.
 
-Extensions in annotations should conform to these constraints. If an element of a
+Extensions in annotations should conform to these constraints. If an element of a 
 disjunction in the extensions does not follow one of the constraints as listed in
-the above file, that element should be dropped from the extensions.
+the above file, that element is dropped from the extensions with a warning, and the remaining annotation is kept.
+
+Note that in the GO Central pipeline, this is only implmented upon imports of external annotations into Noctua.
 
 <a name="gorule0000059"/>
 
