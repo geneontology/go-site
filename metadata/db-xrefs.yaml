@@ -2046,6 +2046,12 @@
       url_syntax: https://www.pombase.org/gene/[example_id]
       example_id: PomBase:SPBC11B10.09
       example_url: https://www.pombase.org/gene/SPBC11B10.09
+    - type_name: transcript
+      type_id: SO:0000673
+      id_syntax: S\w+(\.)?\w+(\.)?\d+
+      url_syntax: https://www.pombase.org/gene/[example_id]
+      example_id: PomBase:SPCC548.03c.2
+      example_url: https://www.pombase.org/gene/SPCC548.03c.2
 - database: Pompep
   name: Schizosaccharomyces pombe protein data
   generic_urls:
