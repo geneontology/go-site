@@ -13,7 +13,7 @@ Any of the files here can be edited via the [go-site page on github](https://git
 
 The location of all core GO-related metadata. Most notably:
 
- - [db-xrefs.yaml](metadata/db-xrefs.yaml) - prefix registry, for anything that is col1 of a GAF, or the prefix of a CURIE/Identifier
+ - [db-xrefs.yaml](metadata/db-xrefs.yaml) - a linkout registry used by GO, for anything that is col1 of a GAF, or the prefix of a CURIE/Identifier; as well, the `rdf_uri_prefix` column is used to generate the GO context for https://github.com/linkml/prefixmaps.
  - [users.yaml](metadata/users.yaml) - metadata on GOC members and contributors
  - [groups.yaml](metadata/groups.yaml) - metadata on GOC groups, for anything that can be the value of a 'contributor' or 'assigned_by'
  - [datasets/](metadata/datasets/) - metadata on contributed and released files
@@ -27,7 +27,7 @@ See the [metadata/README.md](metadata/README.md) for more details
 
   Maintenance and support scripts.
 
-# drupal7
+# drupal7 (legacy)
 
   The files that we're using tp modify our Drupal 7 installation from
   stock. This may also serve as a base for when we push onto a
