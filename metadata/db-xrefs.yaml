@@ -971,6 +971,7 @@
       type_id: BET:0000000
 - database: GO_REF
   name: Gene Ontology Database references
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/go/references/
   generic_urls:
     - http://geneontology.org/gorefs
   entity_types:
@@ -1968,6 +1969,7 @@
   name: PubMed
   synonyms:
     - PUBMED
+  rdf_uri_prefix: http://identifiers.org/pubmed/
   generic_urls:
     - https://www.ncbi.nlm.nih.gov/pubmed
   entity_types:
