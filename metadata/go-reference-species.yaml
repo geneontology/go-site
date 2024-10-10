@@ -1,4 +1,4 @@
-#### PANTHER_VERSION=17.0
+#### PANTHER_VERSION=19.0
 - common_name: Amborella
   organism: Amborella trichopoda
   reference_proteome_short_name: AMBTC
@@ -55,6 +55,10 @@
   organism: Branchiostoma floridae
   reference_proteome_short_name: BRAFL
   taxon_id: NCBITaxon:7739
+- common_name: e_campestris
+  organism: Brassica campestris
+  reference_proteome_short_name: BRACM
+  taxon_id: NCBITaxon:3711
 - common_name: canola
   organism: Brassica napus
   reference_proteome_short_name: BRANA
@@ -155,10 +159,18 @@
   organism: Entamoeba histolytica
   reference_proteome_short_name: ENTHI
   taxon_id: NCBITaxon:5759
+- common_name: e_histolytica
+  organism: Entamoeba histolytica
+  reference_proteome_short_name: ENTH1
+  taxon_id: NCBITaxon:294381
 - common_name: horse
   organism: Equus caballus
   reference_proteome_short_name: HORSE
   taxon_id: NCBITaxon:9796
+- common_name: e_gossypii
+  organism: Eremothecium gossypii
+  reference_proteome_short_name: EREGS
+  taxon_id: NCBITaxon:284811
 - common_name: yellow monkey flower
   organism: Erythranthe guttata
   reference_proteome_short_name: ERYGU
@@ -509,8 +521,8 @@
   taxon_id: NCBITaxon:7070
 - common_name: trichomonas
   organism: Trichomonas vaginalis
-  reference_proteome_short_name: TRIVA
-  taxon_id: NCBITaxon:5722
+  reference_proteome_short_name: TRIV3
+  taxon_id: NCBITaxon:412133
 - common_name: trichoplax
   organism: Trichoplax adhaerens
   reference_proteome_short_name: TRIAD
@@ -539,6 +551,10 @@
   organism: Xanthomonas campestris
   reference_proteome_short_name: XANCP
   taxon_id: NCBITaxon:190485
+- common_name: x_laevis
+  organism: Xenopus laevis
+  reference_proteome_short_name: XENLA
+  taxon_id: NCBITaxon:8355
 - common_name: frog
   organism: Xenopus tropicalis
   reference_proteome_short_name: XENTR
