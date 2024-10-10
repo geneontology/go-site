@@ -155,10 +155,6 @@
   organism: Emericella nidulans
   reference_proteome_short_name: EMENI
   taxon_id: NCBITaxon:227321
-- common_name: entamoeba
-  organism: Entamoeba histolytica
-  reference_proteome_short_name: ENTHI
-  taxon_id: NCBITaxon:5759
 - common_name: e_histolytica
   organism: Entamoeba histolytica
   reference_proteome_short_name: ENTH1
