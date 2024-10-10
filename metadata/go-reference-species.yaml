@@ -19,10 +19,6 @@
   organism: Arabidopsis thaliana
   reference_proteome_short_name: ARATH
   taxon_id: NCBITaxon:3702
-- common_name: ashbya
-  organism: Ashbya gossypii
-  reference_proteome_short_name: ASHGO
-  taxon_id: NCBITaxon:284811
 - common_name: bacillus_cereus
   organism: Bacillus cereus
   reference_proteome_short_name: BACCR
