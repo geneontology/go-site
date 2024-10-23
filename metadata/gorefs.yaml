@@ -1955,3 +1955,17 @@
   external_accession:
     - J:164563
   is_obsolete: false
+- id: GO_REF:0000120
+  title: Combined Automated Annotation using Multiple IEA Methods.
+  description: |-
+    An automated process that integrates identical annotations from multiple electronic pipelines,
+    including UniRule(GO_REF:0000104), ARBA(GO_REF:0000117), InterPro2GO(GO_REF:0000002), 
+    TreeGrafter2GO(GO_REF:0000118), RHEA2GO(GO_REF:0000116), KeyWord2GO(GO_REF:0000004), 
+    SubCellular2GO(GO_REF:0000109), EC2GO(GO_REF:0000003), and EnsEMBL Compara(GO_REF:0000107). 
+    This method reduces redundancy in automated GO annotations, offering a clearer and less 
+    cluttered page view. The combined annotations use the ECO:0000501 evidence code, with the 
+    sources of GO annotation assignments from individual IEA pipelines listed in the “with/from” field,
+    separated by a pipe delimiter.
+  authors: UniProt
+  year: 2024
+  is_obsolete: false
