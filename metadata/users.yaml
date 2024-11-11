@@ -1650,6 +1650,8 @@
   uri: 'GOC:PARL'
   xref: 'GOC:PARL'
 -
+  accounts:
+    github: Pauldenny
   authorizations:
     noctua:
       go:
