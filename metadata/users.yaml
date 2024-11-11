@@ -1656,13 +1656,12 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  comment: 'status inactive'
   email-md5:
     - a72a432b85b5f44d05e2e124e5ebfd23
   groups:
-    - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/parkinsons'
+    - 'https://www.uniprot.org'
   nickname: 'Paul Denny'
-  organization: "UCL-Parkinson's UK Annotation Project"
+  organization: UniProt
   uri: 'https://orcid.org/0000-0003-4659-6893'
   xref: 'GOC:pad'
 -
