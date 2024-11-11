@@ -9,7 +9,7 @@
     terms.
   description: |-
     InterPro (http://www.ebi.ac.uk/interpro/) is an integrated resource from the EBI of protein families, domains and sites which are combined from a number 
-    of different protein signature databases, including Gene3D, Panther, PRSF, Pfam, PRINTS, ProSite, ProDom, SMART, SUPERFAMILY and TIGRFAMs. Signatures describing the same protein 
+    of different protein signature databases, including CATH-Gene3D, CDD, HAMAP, NCBIfam, Panther, Pfam, PIRSF, PRINTS, ProSite, SMART, and SUPERFAMILY. Signatures describing the same protein 
     family or domain are grouped into unique InterPro entries. When appropriate, the InterPro team maps InterPro entries to  GO terms (Molecular Function, Biological Process and/or Cellular Component). 
     InterPro runs InterProScan on the entire set of UniProt proteins. InterPro hits are assigned the corresponding GO annotations by the GOA pipeline. The mapping file is available at http://current.geneontology.org/ontology/external2go/interpro2go.
   comments:
