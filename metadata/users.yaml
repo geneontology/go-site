@@ -996,9 +996,9 @@
     - e0d33c1c706cdbd74d033961f2f9bb43
     - 7e821339ca29fac9f47d78ce3bed1c11
   groups:
-    - 'http://www.pombase.org'
+    - 'https://www.uniprot.org'
   nickname: 'Antonia Lock'
-  organization: PomBase
+  organization: UniProt
   uri: 'https://orcid.org/0000-0003-1179-5999'
   xref: 'GOC:al'
 -
