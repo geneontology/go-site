@@ -24,7 +24,6 @@ datasets:
     - NCBITaxon:352472
     - NCBITaxon:366501
     - NCBITaxon:44689
-    - NCBITaxon:5782
  -
    id: dictybase.gpi
    label: "dictybase gpi file"
@@ -42,7 +41,6 @@ datasets:
     - NCBITaxon:352472
     - NCBITaxon:366501
     - NCBITaxon:44689
-    - NCBITaxon:5782
  -
    id: dictybase.gaf
    label: "dictybase gaf file"
@@ -61,4 +59,3 @@ datasets:
     - NCBITaxon:352472
     - NCBITaxon:366501
     - NCBITaxon:44689
-    - NCBITaxon:5782
