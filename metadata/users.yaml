@@ -1874,13 +1874,19 @@
   uri: 'GOC:mt'
   xref: 'GOC:mt'
 -
+  accounts:
+    github: magrane
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   email-md5:
     - 2ae8276bb8b2eb2a2f62ad6361d2af6d
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Michele Magrane'
   organization: UniProt
-  uri: 'GOC:mm2'
+  uri: 'https://orcid.org/0000-0003-3544-996X'
   xref: 'GOC:mm2'
 -
   nickname: 'Nadine Gruaz Gumowski'
