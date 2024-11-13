@@ -1874,6 +1874,12 @@
   uri: 'GOC:mt'
   xref: 'GOC:mt'
 -
+  accounts:
+    github: magrane
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   email-md5:
     - 2ae8276bb8b2eb2a2f62ad6361d2af6d
   groups:
