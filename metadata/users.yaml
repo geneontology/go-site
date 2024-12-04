@@ -4550,7 +4550,7 @@
   authorizations:
     noctua:
       go:
-        allow-edit: true
+        allow-edit: false
   groups:
     - 'https://disprot.org'
   nickname: 'Federica Quaglia'
