@@ -66,6 +66,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000062">GORULE:0000062 Infer annotations on molecular function via has_part</a>
  * <a href="#gorule0000063">GORULE:0000063 Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column)</a>
  * <a href="#gorule0000064">GORULE:0000064 TreeGrafter IEAs should be filtered for GO reference species</a>
+ * <a href="#gorule0000065">GORULE:0000065 Annotations to term that are candidates for obsoletion should be removed</a>
 
 
 
@@ -1087,3 +1088,16 @@ Noting that ISM is not covered by this rule yet.
 
 
 If an annotation has GO_REF:0000118 (GAF column 6, GPAD column 5) and the taxon (GAF column 13, GPI column 7) is present in the GO reference species list (i.e 143 Panther species; [go-reference-species.yaml](https://github.com/geneontology/go-site/blob/master/metadata/go-reference-species.yaml)), then the annotation should be filter out. Note that this is not a line-by-line check in GPAD since it required both the GPAD and the GPI files.
+
+<a name="gorule0000065"/>
+
+## Annotations to term that are candidates for obsoletion should be removed
+
+ * id: [GORULE:0000065](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000065.md)
+ * status: implemented
+
+
+Terms scheduled for obsoletion are identified by the subset gocheck_obsoletion_candidate. 
+New annotations should not be made to these terms, and existing annotations should be removed or replaced.
+
+Error report: <group>.report.md
