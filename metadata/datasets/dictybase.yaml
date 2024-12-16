@@ -21,8 +21,6 @@ datasets:
    status: active
    species_code: Ddis
    taxa:
-    - NCBITaxon:352472
-    - NCBITaxon:366501
     - NCBITaxon:44689
  -
    id: dictybase.gpi
@@ -38,8 +36,6 @@ datasets:
    status: active
    species_code: Ddis
    taxa:
-    - NCBITaxon:352472
-    - NCBITaxon:366501
     - NCBITaxon:44689
  -
    id: dictybase.gaf
@@ -56,6 +52,4 @@ datasets:
    status: active
    species_code: Ddis
    taxa:
-    - NCBITaxon:352472
-    - NCBITaxon:366501
     - NCBITaxon:44689
