@@ -22,7 +22,6 @@ datasets:
    status: active
    species_code: Spom
    taxa:
-    - NCBITaxon:284812
     - NCBITaxon:4896
  -
    id: pombase.gpi
@@ -38,7 +37,6 @@ datasets:
    status: active
    species_code: Spom
    taxa:
-    - NCBITaxon:284812
     - NCBITaxon:4896
  -
    id: pombase.gpad
@@ -54,5 +52,4 @@ datasets:
    status: active
    species_code: Spom
    taxa:
-    - NCBITaxon:284812
     - NCBITaxon:4896
