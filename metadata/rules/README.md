@@ -1094,7 +1094,7 @@ If an annotation has GO_REF:0000118 (GAF column 6, GPAD column 5) and the taxon 
 ## Annotations to term that are candidates for obsoletion should be removed
 
  * id: [GORULE:0000065](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000065.md)
- * status: approved
+ * status: implemented
 
 
 Terms scheduled for obsoletion are identified by the subset gocheck_obsoletion_candidate. 
