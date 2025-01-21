@@ -1,80 +1,68 @@
-####
-#### Scan all GO-CAM json files in directory and create metadata file
-#### mapping providedBy to GO-CAM model ID for production models.
-####
-#### Done raw on 3.12.3
-####
-#### Usage:
-####   python3 gen-model-meta.py > ../metadata.json
-####
-
 import os
 import glob
 import json
 import sys
-import argparse
 import logging
 from pathlib import Path
+import click
 
-## Logger basic setup.
+# Logger basic setup
 logging.basicConfig(level=logging.INFO)
 LOG = logging.getLogger('gen-model-meta')
 LOG.setLevel(logging.WARNING)
 
 def die_screaming(instr):
-    """Make sure we exit in a way that will get Jenkins's attention."""
+    """Exit in a way that will get attention."""
     LOG.error(instr)
     sys.exit(1)
 
-parser = argparse.ArgumentParser(
-    description =__doc__,
-    formatter_class=argparse.RawDescriptionHelpFormatter)
+@click.command()
+@click.option('-v', '--verbose',
+              is_flag=True,
+              help='Enable verbose output')
+@click.option('-k', '--key',
+              required=True,
+              help='The key in the Minerva JSON output whose values are going to be extracted into a collection')
+def main(verbose, key):
+    """Scan all GO-CAM JSON files in the directory and create metadata mapping."""
 
-parser.add_argument('-v', '--verbose', action='store_true',
-                    help='More verbose output')
-args = parser.parse_args()
+    if verbose:
+        LOG.setLevel(logging.INFO)
+        LOG.info('Verbose mode enabled')
 
-if args.verbose:
-    LOG.setLevel(logging.INFO)
-    LOG.info('Verbose: on')
-
-def main():
-    """The main runner of our script."""
-
-
-    #LOG.info("test")
     provided_models = {}
-    for f in glob.glob(os.path.join("*.json")):
-        #LOG.info(f)
-        model_id = Path(f).stem
-        #LOG.info(model_id)
-        with open(f) as fhandle:
-            read_data = json.loads(fhandle.read())
+
+    for file_path in glob.glob("*.json"):
+        model_id = Path(file_path).stem
+
+        with open(file_path) as fhandle:
+            try:
+                read_data = json.load(fhandle)
+            except json.JSONDecodeError:
+                die_screaming(f"ERROR decoding JSON in file: {file_path}")
+
             if not read_data:
-                die_screaming('ERROR on: ' + f)
-            #LOG.info(json.dumps(read_data['annotations']))
+                die_screaming(f"ERROR: No data in file: {file_path}")
 
-            ## Key scan.
+            # Key scan
             production_p = False
-            provided_by = []
-            for ann in read_data['annotations']:
-                #LOG.info(json.dumps(ann['key']))
-                if ann['key'] == 'state' and ann['value'] == 'production':
+            extracted_values = []
+
+            for annotation in read_data.get('annotations', []):
+                if annotation.get('key') == 'state' and annotation.get('value') == 'production':
                     production_p = True
-                if ann['key'] == 'providedBy':
-                    provided_by.append(ann['value'])
+                if annotation.get('key') == key:
+                    extracted_values.append(annotation.get('value'))
+
             if production_p:
-                #LOG.info(json.dumps(provided_by))
+                for value in extracted_values:
+                    if value not in provided_models:
+                        provided_models[value] = []
+                    provided_models[value].append(model_id)
 
-                ## Ensure and add.
-                for provider in provided_by:
-                    if provider not in provided_models:
-                        provided_models[provider] = []
-                    provided_models[provider].append(model_id)
+    # Print the resulting metadata
+    print(json.dumps(provided_models, indent=2))
 
-    ## Proint what we got:
-    print(json.dumps(provided_models))
-
-## You saw it coming...
 if __name__ == '__main__':
     main()
+
