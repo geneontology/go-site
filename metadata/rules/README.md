@@ -883,11 +883,11 @@ Annotations using a ChEBI ID in the with/from (col 8 of GAF) column should only 
 ## DEPRECATED Gene products having ND annotations and other annotations in the same aspect should be reviewed
 
  * id: [GORULE:0000048](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000048.md)
- * status: proposed
+ * status: deprecated
 
 
 
-DEPRECATED; redundant with ORULE:0000054
+DEPRECATED; redundant with GORULE:0000054
 If a gene product has an annotation by the ND evidence code, this rule checks whether any manual annotations in the same GO aspect exists for this gene product.
 
 <a name="gorule0000049"/>
