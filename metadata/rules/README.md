@@ -935,10 +935,10 @@ This rule may be expanded in the future to include other terms such as 'GO:00082
 ## 'NOT' annotation should not have extension
 
  * id: [GORULE:0000053](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000053.md)
- * status: deprecated
+ * status: approved
 
 
-This rule will not be implemented, because extensions are additions to terms, so if we allow NOT annotations, we need to allow negating annotations with extensions.  
+Implemented in P2GO.
 
 <a name="gorule0000054"/>
 
