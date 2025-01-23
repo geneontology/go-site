@@ -806,7 +806,7 @@ IKR evidence code requires a NOT qualifier.
 ## Check for valid combination of evidence code and GO_REF
 
  * id: [GORULE:0000043](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000043.md)
- * status: proposed
+ * status: accepted
 
 
 
@@ -821,6 +821,7 @@ Specific allowed combinations:
 - IDA (ECO:0000314): GO_REF:0000052, GO_REF:0000054
 This list may not be exhaustive.
 
+Implemented by GOA, check occurs in the GOA phase of the GOC-GOA pipeline. 
 TODO: include above list in appropriate metadata file.
 see http://wiki.geneontology.org/index.php/Evidence_Code_Ontology_(ECO)
 
