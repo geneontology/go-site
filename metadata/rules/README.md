@@ -844,10 +844,11 @@ Reference: check for invalid use of GO_REF:0000057 can only be used with terms t
 ## With/from: Verify that the combination of evidence (ECO) codes conform to the rules in eco-usage-constraints.yaml
 
  * id: [GORULE:0000045](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000045.md)
- * status: proposed
+ * status: deprecated
 
 
 With/from: Verify that the combination of evidence (ECO) codes conform to the rules in eco-usage-constraints.yaml
+Redundant with GORULE-0000043.
 
 <a name="gorule0000046"/>
 
