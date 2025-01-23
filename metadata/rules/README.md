@@ -895,10 +895,10 @@ If a gene product has an annotation by the ND evidence code, this rule checks wh
 ## If the annotation has 'contributes_to' as its qualifier, verify that at least one annotation to GO:0043234 (protein complex), or one of its child terms exists
 
  * id: [GORULE:0000049](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000049.md)
- * status: proposed
+ * status: approved
 
 
-
+Implemented in P2GO.
 The 'contributes to' qualifier can only be applied to proteins belonging to complexes, so any gene product with a MF annotation using the 'contributes to' should also be annotated to a child of protein complex. 
 
 <a name="gorule0000050"/>
