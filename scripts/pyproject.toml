@@ -17,3 +17,6 @@ docutils = "0.21.2"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[scripts]
+gen_model_meta = "gen_model_meta:main"
