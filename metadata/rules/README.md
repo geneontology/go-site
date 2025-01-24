@@ -806,7 +806,7 @@ IKR evidence code requires a NOT qualifier.
 ## Check for valid combination of evidence code and GO_REF
 
  * id: [GORULE:0000043](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000043.md)
- * status: accepted
+ * status: approved
 
 
 
