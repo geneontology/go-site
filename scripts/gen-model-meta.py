@@ -1,9 +1,9 @@
 """
-Script to generate model indicies.  to run:
+Script to generate model indexes.  to run:
 
 % cd scripts
 % poetry install
-% poetry run python gen-model-meta.py --keys-to-index contributor,term_id,reference_id --output-dir /tmp/output
+% poetry run python gen-model-meta.py --keys-to-index contributor --keys-to-index providedBy --output-dir /tmp/output
 
 """
 import os
@@ -11,7 +11,6 @@ import json
 import sys
 import logging
 from pathlib import Path
-from pprint import pprint
 
 import click
 
@@ -44,7 +43,6 @@ def process_json_files(keys_to_index, output_dir, path_to_json=json_path):
         # Open, parse, and save the JSON in a dictionary file
         file_url = os.path.join(path_to_json, file_name)
         with open(file_url, "r") as f:
-            print(model_id)
             read_data = json.load(f)
 
             if not read_data:
@@ -52,6 +50,16 @@ def process_json_files(keys_to_index, output_dir, path_to_json=json_path):
 
             # Create indices for the current file
             individuals = read_data.get("individuals", [])
+            if "bioentity_id" or "term_id" in keys_to_index:
+                for individual in individuals:
+                    types = individual.get("type", [])
+                    for entity_type in types:
+                        entity_id = entity_type.get("id")
+                        if entity_id not in indices["entity"]:
+                            indices["entity"][entity_id] = []
+                        if model_id not in indices["entity"][entity_id]:
+                            indices["entity"][entity_id].append(model_id)
+
             for individual in individuals:
                 annotations = individual.get("annotations", [])
                 for annotation in annotations:
@@ -62,9 +70,10 @@ def process_json_files(keys_to_index, output_dir, path_to_json=json_path):
                             indices[key][value] = []
                         if model_id not in indices[key][value]:
                             indices[key][value].append(model_id)
+
     # for each top level key in the indicies dictionary, write out the JSON to a file
     for key, value in indices.items():
-        with open(os.path.join(output_dir, f"{key}.json"), "w") as f:
+        with open(os.path.join(output_dir, f"{key}_index.json"), "w") as f:
             json.dump(value, f, indent=4)
 
 
@@ -75,7 +84,7 @@ def process_json_files(keys_to_index, output_dir, path_to_json=json_path):
     "-k",
     multiple=True,
     required=True,
-    help="List of keys to index (e.g., contributor, term_id, reference_id).",
+    help="List of keys to index (e.g., contributor, bioentity_id, term_id).",
 )
 @click.option(
     "--output-dir",
