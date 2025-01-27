@@ -11,7 +11,7 @@ import json
 import sys
 import logging
 from pathlib import Path
-
+from oaklib import get_implementation_from_shorthand
 import click
 
 # Logger basic setup
@@ -19,6 +19,8 @@ logging.basicConfig(level=logging.INFO)
 LOG = logging.getLogger("gen-model-meta")
 LOG.setLevel(logging.WARNING)
 json_path = Path("/tmp/gocams/")
+ontology = get_implementation_from_shorthand("https://purl.obolibrary.org/obo/go.json")
+
 
 def die_screaming(instr):
     """Exit in a way that will get attention."""
@@ -50,7 +52,7 @@ def process_json_files(keys_to_index, output_dir, path_to_json=json_path):
 
             # Create indices for the current file
             individuals = read_data.get("individuals", [])
-            if "bioentity_id" or "term_id" in keys_to_index:
+            if "entity" in keys_to_index:
                 for individual in individuals:
                     types = individual.get("type", [])
                     for entity_type in types:
