@@ -21,9 +21,6 @@ datasets:
    status: active
    species_code: Scer
    taxa:
-    - NCBITaxon:285006
-    - NCBITaxon:307796
-    - NCBITaxon:41870
     - NCBITaxon:4932
     - NCBITaxon:559292
  -
