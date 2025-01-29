@@ -4636,3 +4636,15 @@
     - 'https://www.evolbio.mpg.de'
   nickname: 'Ivan Tsers'
   uri: 'https://orcid.org/0000-0001-7831-4366'
+-
+  accounts:
+    github: JamesDC04
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.pombase.org'
+  nickname: 'James de Candole'
+  organization: PomBase
+  uri: 'https://orcid.org/0009-0005-6259-9260'
