@@ -50,12 +50,6 @@ def download_and_initialize_oak_adapter(url: str, save_path: str):
     return adapter
 
 
-# Example: Fetch term parents
-def get_term_parents(adapter, term_id):
-    """Fetches parent terms of a given ontology term."""
-    return list(adapter.ancestors(term_id, predicates=["rdfs:subClassOf"]))
-
-
 # Logger basic setup
 logging.basicConfig(level=logging.INFO)
 LOG = logging.getLogger("gen-model-meta")
