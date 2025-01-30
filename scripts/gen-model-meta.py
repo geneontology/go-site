@@ -1,25 +1,69 @@
 """
 Script to generate model indexes.  to run:
 
+% cp ~/Downloads/noctua-models-json/*.json to /tmp/gocams
+# as downloaded from snapshot.geneontology.org/products/json/noctua-models-json.tgz
+
 % cd scripts
 % poetry install
 % poetry run python gen-model-meta.py --keys-to-index contributor --keys-to-index providedBy --output-dir /tmp/output
 
 """
-import os
 import json
 import sys
 import logging
 from pathlib import Path
-from oaklib import get_implementation_from_shorthand
+
 import click
+
+from oaklib import get_adapter
+import requests
+import os
+from oaklib.implementations.obograph.obograph_implementation import OboGraphImplementation
+from oaklib.resource import OntologyResource
+
+url = "http://snapshot.geneontology.org/ontology/go.json"
+save_path = "go.json"
+
+
+def download_and_initialize_oak_adapter(url: str, save_path: str):
+    """
+    Downloads an OBOJSON file, initializes an OAK Lib adapter using OboGraphImplementation,
+    and returns the adapter for ontology term lookup.
+
+    :param url: URL of the OBOJSON file
+    :param save_path: Path to save the downloaded file
+    :return: OboGraphImplementation adapter
+    """
+    # Download the file if it doesn't exist
+    if not os.path.exists(save_path):
+        print(f"Downloading {url}...")
+        response = requests.get(url)
+        response.raise_for_status()
+        with open(save_path, "wb") as file:
+            file.write(response.content)
+        print(f"File saved to {save_path}")
+    else:
+        print(f"Using cached file: {save_path}")
+
+    # Initialize OAK Lib adapter
+    resource = OntologyResource(save_path)
+    adapter = OboGraphImplementation(resource)
+    return adapter
+
+
+# Example: Fetch term parents
+def get_term_parents(adapter, term_id):
+    """Fetches parent terms of a given ontology term."""
+    return list(adapter.hierarchical_parents(term_id))
+
 
 # Logger basic setup
 logging.basicConfig(level=logging.INFO)
 LOG = logging.getLogger("gen-model-meta")
 LOG.setLevel(logging.WARNING)
 json_path = Path("/tmp/gocams/")
-ontology = get_implementation_from_shorthand("https://purl.obolibrary.org/obo/go.json")
+
 
 
 def die_screaming(instr):
@@ -34,6 +78,10 @@ def process_json_files(keys_to_index, output_dir, path_to_json=json_path):
     # Get the list of files from path_to_json
     json_files = [f for f in os.listdir(path_to_json) if f.endswith(".json")]
     indices = {key: {} for key in keys_to_index}
+    adapter = download_and_initialize_oak_adapter(url, save_path)
+    term_id = "GO:0098754"  # Biological process
+    parents = get_term_parents(adapter, term_id)
+    print(f"Parents of {term_id}: {parents}")
 
     # Ensure the output directory exists
     os.makedirs(output_dir, exist_ok=True)
