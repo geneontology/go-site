@@ -9,14 +9,12 @@ Script to generate model indexes.  to run:
 % poetry run python gen-model-meta.py --keys-to-index contributor --keys-to-index providedBy --output-dir /tmp/output
 
 """
-import json
 import sys
 import logging
+import json
 from pathlib import Path
-
 import click
 
-from oaklib import get_adapter
 import requests
 import os
 from oaklib.implementations.obograph.obograph_implementation import OboGraphImplementation
@@ -55,7 +53,7 @@ def download_and_initialize_oak_adapter(url: str, save_path: str):
 # Example: Fetch term parents
 def get_term_parents(adapter, term_id):
     """Fetches parent terms of a given ontology term."""
-    return list(adapter.hierarchical_parents(term_id))
+    return list(adapter.ancestors(term_id, predicates=["rdfs:subClassOf"]))
 
 
 # Logger basic setup
@@ -71,60 +69,89 @@ def die_screaming(instr):
     LOG.error(instr)
     sys.exit(1)
 
+
+def get_go_parents(adapter, go_parent_cache, entity_id):
+    """
+    Retrieve parents of a GO term, caching results to avoid redundant computation.
+    """
+    if entity_id in go_parent_cache:
+        return go_parent_cache[entity_id]  # Return cached parents
+
+    # Compute parents if not cached
+    parents = list(adapter.ancestors(entity_id, predicates=["BFO:0000050", "rdfs:subClassOf"]))
+    go_parent_cache[entity_id] = parents  # Store in cache for future use
+    return parents
+
 def process_json_files(keys_to_index, output_dir, path_to_json=json_path):
     """
     Process all JSON files, generate indices for the specified keys, and save them.
     """
-    # Get the list of files from path_to_json
-    json_files = [f for f in os.listdir(path_to_json) if f.endswith(".json")]
-    indices = {key: {} for key in keys_to_index}
-    adapter = download_and_initialize_oak_adapter(url, save_path)
-    term_id = "GO:0098754"  # Biological process
-    parents = get_term_parents(adapter, term_id)
-    print(f"Parents of {term_id}: {parents}")
 
-    # Ensure the output directory exists
+    # Get the list of JSON files
+    json_files = [f for f in os.listdir(path_to_json) if f.endswith(".json")]
+    if not json_files:
+        die_screaming(f"ERROR: No JSON files found in {path_to_json}")
+
+    # Initialize indices and cache
+    indices = {key: {} for key in keys_to_index}
+    go_parent_cache = {}  # Store computed GO term parent relationships
+    adapter = download_and_initialize_oak_adapter(url, save_path)
+
+    # Ensure output directory exists
     os.makedirs(output_dir, exist_ok=True)
 
     # Process each JSON file
     for file_name in json_files:
         model_id = Path(file_name).stem
+        file_path = os.path.join(path_to_json, file_name)
 
-        # Open, parse, and save the JSON in a dictionary file
-        file_url = os.path.join(path_to_json, file_name)
-        with open(file_url, "r") as f:
+        with open(file_path, "r") as f:
             read_data = json.load(f)
-
             if not read_data:
-                die_screaming(f"ERROR: No data in file: {file_url}")
+                die_screaming(f"ERROR: No data in file: {file_path}")
 
-            # Create indices for the current file
-            individuals = read_data.get("individuals", [])
+        individuals = read_data.get("individuals", [])
+
+        # Process annotations
+        for individual in individuals:
+            for annotation in individual.get("annotations", []):
+                key, value = annotation.get("key"), annotation.get("value")
+                if key in keys_to_index and value:
+                    indices[key].setdefault(value, [])
+                    if model_id not in indices[key][value]:
+                        indices[key][value].append(model_id)
+
+            # Process entity indices
             if "entity" in keys_to_index:
+                entity_index = indices["entity"]
+
                 for individual in individuals:
-                    types = individual.get("type", [])
-                    for entity_type in types:
+                    for entity_type in individual.get("type", []):
                         entity_id = entity_type.get("id")
-                        if entity_id not in indices["entity"]:
-                            indices["entity"][entity_id] = []
-                        if model_id not in indices["entity"][entity_id]:
-                            indices["entity"][entity_id].append(model_id)
+                        if not entity_id:
+                            continue  # Skip if no ID present
 
-            for individual in individuals:
-                annotations = individual.get("annotations", [])
-                for annotation in annotations:
-                    key = annotation.get("key")
-                    value = annotation.get("value")
-                    if key in keys_to_index:
-                        if value not in indices[key]:
-                            indices[key][value] = []
-                        if model_id not in indices[key][value]:
-                            indices[key][value].append(model_id)
+                        print(entity_id)
 
-    # for each top level key in the indicies dictionary, write out the JSON to a file
+                        # Compute and cache GO term parents if entity_id is a GO term
+                        parents = get_go_parents(adapter, go_parent_cache, entity_id) if entity_id.startswith("GO:") else []
+
+                        # Ensure entity and its parents exist in the index
+                        for eid in [entity_id] + parents:
+                            entity_index.setdefault(eid, [])
+
+                        # Add model_id only if not already present
+                        for eid in [entity_id] + parents:
+                            if model_id not in entity_index[eid]:
+                                entity_index[eid].append(model_id)
+
+    # Write indices to output files
     for key, value in indices.items():
-        with open(os.path.join(output_dir, f"{key}_index.json"), "w") as f:
+        output_file = os.path.join(output_dir, f"{key}_index.json")
+        with open(output_file, "w") as f:
             json.dump(value, f, indent=4)
+
+    print("Indexing completed successfully.")
 
 
 # CLI using Click
@@ -134,7 +161,7 @@ def process_json_files(keys_to_index, output_dir, path_to_json=json_path):
     "-k",
     multiple=True,
     required=True,
-    help="List of keys to index (e.g., contributor, bioentity_id, term_id).",
+    help="List of keys to index (e.g., contributor, entity).",
 )
 @click.option(
     "--output-dir",
