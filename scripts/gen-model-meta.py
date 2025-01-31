@@ -118,26 +118,22 @@ def process_json_files(keys_to_index, output_dir, path_to_json=json_path):
             # Process entity indices
             if "entity" in keys_to_index:
                 entity_index = indices["entity"]
+                for entity_type in individual.get("type", []):
+                    entity_id = entity_type.get("id")
+                    if not entity_id:
+                        continue  # Skip if no ID present
 
-                for individual in individuals:
-                    for entity_type in individual.get("type", []):
-                        entity_id = entity_type.get("id")
-                        if not entity_id:
-                            continue  # Skip if no ID present
+                    # Compute and cache GO term parents if entity_id is a GO term
+                    parents = get_go_parents(adapter, go_parent_cache, entity_id) if entity_id.startswith("GO:") else []
 
-                        print(entity_id)
+                    # Ensure entity and its parents exist in the index
+                    for eid in [entity_id] + parents:
+                        entity_index.setdefault(eid, [])
 
-                        # Compute and cache GO term parents if entity_id is a GO term
-                        parents = get_go_parents(adapter, go_parent_cache, entity_id) if entity_id.startswith("GO:") else []
-
-                        # Ensure entity and its parents exist in the index
-                        for eid in [entity_id] + parents:
-                            entity_index.setdefault(eid, [])
-
-                        # Add model_id only if not already present
-                        for eid in [entity_id] + parents:
-                            if model_id not in entity_index[eid]:
-                                entity_index[eid].append(model_id)
+                    # Add model_id only if not already present
+                    for eid in [entity_id] + parents:
+                        if model_id not in entity_index[eid]:
+                            entity_index[eid].append(model_id)
 
     # Write indices to output files
     for key, value in indices.items():
