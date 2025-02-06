@@ -551,3 +551,8 @@
   id: https://www.evolbio.mpg.de
   shorthand: IMPRS-EB
   parent_group: GOC
+-  
+  label: 'Signature Science'
+  id: https://www.signaturescience.com/
+  shorthand: SigSci
+  parent_group: GOC
