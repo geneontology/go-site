@@ -961,6 +961,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_253.gpi.gz
    entity_type: all
    status: active
+   species_code: CHRID
    taxa:
     - NCBITaxon:253
    exclude: true
@@ -978,6 +979,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_287.gpi.gz
    entity_type: all
    status: active
+   species_code: PSEAI
    taxa:
     - NCBITaxon:287
    exclude: true
@@ -995,6 +997,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_470.gpi.gz
    entity_type: all
    status: active
+   species_code: ACIBA
    taxa:
     - NCBITaxon:470
    exclude: true
@@ -1012,6 +1015,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_545.gpi.gz
    entity_type: all
    status: active
+   species_code: CITKO
    taxa:
     - NCBITaxon:545
    exclude: true
@@ -1029,6 +1033,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_546.gpi.gz
    entity_type: all
    status: active
+   species_code: CITFR
    taxa:
     - NCBITaxon:546
    exclude: true
@@ -1046,6 +1051,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_548.gpi.gz
    entity_type: all
    status: active
+   species_code: KLEAE
    taxa:
     - NCBITaxon:548
    exclude: true
@@ -1063,6 +1069,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_550.gpi.gz
    entity_type: all
    status: active
+   species_code: ENTCL
    taxa:
     - NCBITaxon:550
    exclude: true
@@ -1080,6 +1087,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_562.gpi.gz
    entity_type: all
    status: active
+   species_code: ECOLX
    taxa:
     - NCBITaxon:562
    exclude: true
@@ -1097,6 +1105,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_571.gpi.gz
    entity_type: all
    status: active
+   species_code: KLEOX
    taxa:
     - NCBITaxon:571
    exclude: true
@@ -1114,6 +1123,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_573.gpi.gz
    entity_type: all
    status: active
+   species_code: KLEPN
    taxa:
     - NCBITaxon:573
    exclude: true
@@ -1131,6 +1141,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_615.gpi.gz
    entity_type: all
    status: active
+   species_code: SERMA
    taxa:
     - NCBITaxon:615
    exclude: true
@@ -1148,6 +1159,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_623.gpi.gz
    entity_type: all
    status: active
+   species_code: SHIFL
    taxa:
     - NCBITaxon:623
    exclude: true
@@ -1165,6 +1177,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_1313.gpi.gz
    entity_type: all
    status: active
+   species_code: STREE
    taxa:
     - NCBITaxon:1313
    exclude: true
@@ -1182,6 +1195,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_1352.gpi.gz
    entity_type: all
    status: active
+   species_code: ENTFC
    taxa:
     - NCBITaxon:1352
    exclude: true
@@ -1199,6 +1213,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_1353.gpi.gz
    entity_type: all
    status: active
+   species_code: ENTGA
    taxa:
     - NCBITaxon:1353
    exclude: true
@@ -1216,6 +1231,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_1390.gpi.gz
    entity_type: all
    status: active
+   species_code: BACAM
    taxa:
     - NCBITaxon:1390
    exclude: true
@@ -1233,6 +1249,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_1392.gpi.gz
    entity_type: all
    status: active
+   species_code: BACAN
    taxa:
     - NCBITaxon:1392
    exclude: true
@@ -1250,6 +1267,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_1901.gpi.gz
    entity_type: all
    status: active
+   species_code: STRCL
    taxa:
     - NCBITaxon:1901
    exclude: true
@@ -1267,6 +1285,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_10254.gpi.gz
    entity_type: all
    status: active
+   species_code: VACCW
    taxa:
     - NCBITaxon:10254
    exclude: true
@@ -1284,6 +1303,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_10255.gpi.gz
    entity_type: all
    status: active
+   species_code: VARV
    taxa:
     - NCBITaxon:10255
    exclude: true
@@ -1301,6 +1321,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_10298.gpi.gz
    entity_type: all
    status: active
+   species_code: HHV1
    taxa:
     - NCBITaxon:10298
    exclude: true
@@ -1318,6 +1339,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_10335.gpi.gz
    entity_type: all
    status: active
+   species_code: HHV3
    taxa:
     - NCBITaxon:10335
    exclude: true
@@ -1335,6 +1357,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_10359.gpi.gz
    entity_type: all
    status: active
+   species_code: HCMV
    taxa:
     - NCBITaxon:10359
    exclude: true
@@ -1352,6 +1375,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_11251.gpi.gz
    entity_type: all
    status: active
+   species_code: HRSV1
    taxa:
     - NCBITaxon:11251
    exclude: true
@@ -1369,6 +1393,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_12118.gpi.gz
    entity_type: all
    status: active
+   species_code: FMDVO
    taxa:
     - NCBITaxon:12118
    exclude: true
@@ -1386,6 +1411,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_35703.gpi.gz
    entity_type: all
    status: active
+   species_code: CITAM
    taxa:
     - NCBITaxon:35703
    exclude: true
@@ -1403,6 +1429,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_36352.gpi.gz
    entity_type: all
    status: active
+   species_code: Hher
    taxa:
     - NCBITaxon:36352
    exclude: true
@@ -1420,6 +1447,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_37734.gpi.gz
    entity_type: all
    status: active
+   species_code: ENTCA
    taxa:
     - NCBITaxon:37734
    exclude: true
@@ -1437,6 +1465,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_63746.gpi.gz
    entity_type: all
    status: active
+   species_code: HCV77
    taxa:
     - NCBITaxon:63746
    exclude: true
@@ -1454,6 +1483,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_64320.gpi.gz
    entity_type: all
    status: active
+   species_code: ZIKV
    taxa:
     - NCBITaxon:64320
    exclude: true
@@ -1471,6 +1501,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_71421.gpi.gz
    entity_type: all
    status: active
+   species_code: HAEIN
    taxa:
     - NCBITaxon:71421
    exclude: true
@@ -1488,6 +1519,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_83333.gpi.gz
    entity_type: all
    status: active
+   species_code: ECOLI
    taxa:
     - NCBITaxon:83333
    exclude: true
@@ -1505,6 +1537,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_83334.gpi.gz
    entity_type: all
    status: active
+   species_code: ECO57
    taxa:
     - NCBITaxon:83334
    exclude: true
@@ -1522,6 +1555,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_85962.gpi.gz
    entity_type: all
    status: active
+   species_code: HELPY
    taxa:
     - NCBITaxon:85962
    exclude: true
@@ -1539,6 +1573,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_90371.gpi.gz
    entity_type: all
    status: active
+   species_code: SALTM
    taxa:
     - NCBITaxon:90371
    exclude: true
@@ -1556,6 +1591,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_99287.gpi.gz
    entity_type: all
    status: active
+   species_code: SALTY
    taxa:
     - NCBITaxon:99287
    exclude: true
@@ -1573,6 +1609,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_100226.gpi.gz
    entity_type: all
    status: active
+   species_code: STRCO
    taxa:
     - NCBITaxon:100226
    exclude: true
@@ -1590,6 +1627,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_122586.gpi.gz
    entity_type: all
    status: active
+   species_code: NEIMB
    taxa:
     - NCBITaxon:122586
    exclude: true
@@ -1607,6 +1645,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_128958.gpi.gz
    entity_type: all
    status: active
+   species_code: Pchr
    taxa:
     - NCBITaxon:128958
    exclude: true
@@ -1624,6 +1663,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_169963.gpi.gz
    entity_type: all
    status: active
+   species_code: LISMO
    taxa:
     - NCBITaxon:169963
    exclude: true
@@ -1641,6 +1681,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_170187.gpi.gz
    entity_type: all
    status: active
+   species_code: STRPN
    taxa:
     - NCBITaxon:170187
    exclude: true
@@ -1658,6 +1699,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_171101.gpi.gz
    entity_type: all
    status: active
+   species_code: STRR6
    taxa:
     - NCBITaxon:171101
    exclude: true
@@ -1675,6 +1717,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_192222.gpi.gz
    entity_type: all
    status: active
+   species_code: CAMJE
    taxa:
     - NCBITaxon:192222
    exclude: true
@@ -1692,6 +1735,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_208964.gpi.gz
    entity_type: all
    status: active
+   species_code: PSEAE
    taxa:
     - NCBITaxon:208964
    exclude: true
@@ -1709,6 +1753,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_224308.gpi.gz
    entity_type: all
    status: active
+   species_code: BACSU
    taxa:
     - NCBITaxon:224308
    exclude: true
@@ -1726,6 +1771,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_226185.gpi.gz
    entity_type: all
    status: active
+   species_code: ENTFA
    taxa:
     - NCBITaxon:226185
    exclude: true
@@ -1743,6 +1789,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_243273.gpi.gz
    entity_type: all
    status: active
+   species_code: MYCGE
    taxa:
     - NCBITaxon:243273
    exclude: true
@@ -1760,6 +1807,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_272558.gpi.gz
    entity_type: all
    status: active
+   species_code: HALH5
    taxa:
     - NCBITaxon:272558
    exclude: true
@@ -1777,6 +1825,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_272634.gpi.gz
    entity_type: all
    status: active
+   species_code: MYCPN
    taxa:
     - NCBITaxon:272634
    exclude: true
@@ -1794,6 +1843,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_286636.gpi.gz
    entity_type: all
    status: active
+   species_code: STRP6
    taxa:
     - NCBITaxon:286636
    exclude: true
@@ -1811,6 +1861,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_327105.gpi.gz
    entity_type: all
    status: active
+   species_code: HV1AN
    taxa:
     - NCBITaxon:327105
    exclude: true
@@ -1828,6 +1879,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_333760.gpi.gz
    entity_type: all
    status: active
+   species_code: HPV16
    taxa:
     - NCBITaxon:333760
    exclude: true
@@ -1845,6 +1897,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_367830.gpi.gz
    entity_type: all
    status: active
+   species_code: STAA3
    taxa:
     - NCBITaxon:367830
    exclude: true
@@ -1862,6 +1915,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_373153.gpi.gz
    entity_type: all
    status: active
+   species_code: STRP2
    taxa:
     - NCBITaxon:373153
    exclude: true
@@ -1879,6 +1933,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_416870.gpi.gz
    entity_type: all
    status: active
+   species_code: LACLM
    taxa:
     - NCBITaxon:416870
    exclude: true
@@ -1896,6 +1951,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_419947.gpi.gz
    entity_type: all
    status: active
+   species_code: MYCTA
    taxa:
     - NCBITaxon:419947
    exclude: true
@@ -1913,6 +1969,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_529507.gpi.gz
    entity_type: all
    status: active
+   species_code: PROMH
    taxa:
     - NCBITaxon:529507
    exclude: true
@@ -1930,6 +1987,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_575584.gpi.gz
    entity_type: all
    status: active
+   species_code: ACIB2
    taxa:
     - NCBITaxon:575584
    exclude: true
@@ -1947,6 +2005,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_645098.gpi.gz
    entity_type: all
    status: active
+   species_code: MEASC
    taxa:
     - NCBITaxon:645098
    exclude: true
@@ -1964,6 +2023,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_928302.gpi.gz
    entity_type: all
    status: active
+   species_code: HBVCJ
    taxa:
     - NCBITaxon:928302
    exclude: true
@@ -1981,6 +2041,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_941280.gpi.gz
    entity_type: all
    status: active
+   species_code: ECO25
    taxa:
     - NCBITaxon:941280
    exclude: true
@@ -1998,6 +2059,7 @@ datasets:
    source: https://mirror.geneontology.io/taxon_1125630.gpi.gz
    entity_type: all
    status: active
+   species_code: KLEPH
    taxa:
     - NCBITaxon:1125630
    exclude: true
