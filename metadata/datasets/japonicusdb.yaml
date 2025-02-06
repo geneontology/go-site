@@ -22,6 +22,7 @@ datasets:
    species_code: Sjap
    taxa:
     - NCBITaxon:4897
+    - NCBITaxon:402676
  -
    id: japonicusdb.gpi
    label: "japonicusdb gpi file"
@@ -37,6 +38,7 @@ datasets:
    species_code: Sjap
    taxa:
     - NCBITaxon:4897
+    - NCBITaxon:402676
  -
    id: japonicusdb.gpad
    label: "japonicusdb gpad file"
@@ -52,3 +54,4 @@ datasets:
    species_code: Sjap
    taxa:
     - NCBITaxon:4897
+    - NCBITaxon:402676
