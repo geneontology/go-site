@@ -20,8 +20,8 @@ import os
 from oaklib.implementations.obograph.obograph_implementation import OboGraphImplementation
 from oaklib.resource import OntologyResource
 
-url = "http://snapshot.geneontology.org/ontology/go.json"
-save_path = "go.json"
+url = "https://purl.obolibrary.org/obo/go/go-basic.json"
+save_path = "go-basic.json"
 
 
 def download_and_initialize_oak_adapter(url: str, save_path: str):
@@ -72,7 +72,7 @@ def get_go_parents(adapter, go_parent_cache, entity_id):
         return go_parent_cache[entity_id]  # Return cached parents
 
     # Compute parents if not cached
-    parents = list(adapter.ancestors(entity_id, predicates=["BFO:0000050", "rdfs:subClassOf"]))
+    parents = list(adapter.ancestors(entity_id, predicates=["part_of", "is_a"]))
     go_parent_cache[entity_id] = parents  # Store in cache for future use
     return parents
 
