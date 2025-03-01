@@ -110,4 +110,4 @@ jobs:
       run: sparta valid --rules metadata/rules/ --schema metadata/rules.schema.yaml
     ## Run GO Rule examples
     - name: GO Rule example validation
-      run: pip3 list && ./usr/lib/python3 -m pip list && pip3 install -r pipeline/requirements.txt && ./scripts/rule-example-validation.sh
+      run: pip3 list && /usr/lib/python3 -m pip list && pip3 install -r pipeline/requirements.txt && ./scripts/rule-example-validation.sh
