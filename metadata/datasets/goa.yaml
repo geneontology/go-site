@@ -947,61 +947,7 @@ datasets:
    taxa:
     - NCBITaxon:1
    exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_253.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_253"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_253"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_253.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_253
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_253.gpi.gz
-   source: https://mirror.geneontology.io/taxon_253.gpi.gz
-   entity_type: all
-   status: active
-   species_code: CHRID
-   taxa:
-    - NCBITaxon:253
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_287.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_287"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_287"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_287.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_287
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_287.gpi.gz
-   source: https://mirror.geneontology.io/taxon_287.gpi.gz
-   entity_type: all
-   status: active
-   species_code: PSEAI
-   taxa:
-    - NCBITaxon:287
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_470.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_470"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_470"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_470.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_470
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_470.gpi.gz
-   source: https://mirror.geneontology.io/taxon_470.gpi.gz
-   entity_type: all
-   status: active
-   species_code: ACIBA
-   taxa:
-    - NCBITaxon:470
-   exclude: true
-
+   
  -
    id: goa_virus_bacteria_taxon_545.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_545"
@@ -1021,129 +967,21 @@ datasets:
    exclude: true
 
  -
-   id: goa_virus_bacteria_taxon_546.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_546"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_546"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_546.gpi.gz
+   id: goa_virus_bacteria_taxon_574.gpi
+   label: "goa_virus_bacteria_gpi4neo taxon_574"
+   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_545"
+   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_574.gpi.gz
    type: gpi
-   dataset: goa_virus_bacteria_taxon_546
+   dataset: goa_virus_bacteria_taxon_574
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_546.gpi.gz
-   source: https://mirror.geneontology.io/taxon_546.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_574.gpi.gz
+   source: https://mirror.geneontology.io/taxon_574.gpi.gz
    entity_type: all
    status: active
-   species_code: CITFR
+   species_code: KLEPO
    taxa:
-    - NCBITaxon:546
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_548.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_548"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_548"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_548.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_548
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_548.gpi.gz
-   source: https://mirror.geneontology.io/taxon_548.gpi.gz
-   entity_type: all
-   status: active
-   species_code: KLEAE
-   taxa:
-    - NCBITaxon:548
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_550.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_550"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_550"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_550.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_550
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_550.gpi.gz
-   source: https://mirror.geneontology.io/taxon_550.gpi.gz
-   entity_type: all
-   status: active
-   species_code: ENTCL
-   taxa:
-    - NCBITaxon:550
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_562.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_562"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_562"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_562.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_562
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_562.gpi.gz
-   source: https://mirror.geneontology.io/taxon_562.gpi.gz
-   entity_type: all
-   status: active
-   species_code: ECOLX
-   taxa:
-    - NCBITaxon:562
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_571.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_571"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_571"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_571.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_571
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_571.gpi.gz
-   source: https://mirror.geneontology.io/taxon_571.gpi.gz
-   entity_type: all
-   status: active
-   species_code: KLEOX
-   taxa:
-    - NCBITaxon:571
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_573.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_573"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_573"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_573.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_573
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_573.gpi.gz
-   source: https://mirror.geneontology.io/taxon_573.gpi.gz
-   entity_type: all
-   status: active
-   species_code: KLEPN
-   taxa:
-    - NCBITaxon:573
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_615.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_615"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_615"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_615.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_615
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_615.gpi.gz
-   source: https://mirror.geneontology.io/taxon_615.gpi.gz
-   entity_type: all
-   status: active
-   species_code: SERMA
-   taxa:
-    - NCBITaxon:615
+    - NCBITaxon:574
    exclude: true
 
  -
@@ -1165,42 +1003,6 @@ datasets:
    exclude: true
 
  -
-   id: goa_virus_bacteria_taxon_1313.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_1313"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_1313"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_1313.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_1313
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_1313.gpi.gz
-   source: https://mirror.geneontology.io/taxon_1313.gpi.gz
-   entity_type: all
-   status: active
-   species_code: STREE
-   taxa:
-    - NCBITaxon:1313
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_1352.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_1352"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_1352"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_1352.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_1352
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_1352.gpi.gz
-   source: https://mirror.geneontology.io/taxon_1352.gpi.gz
-   entity_type: all
-   status: active
-   species_code: ENTFC
-   taxa:
-    - NCBITaxon:1352
-   exclude: true
-
- -
    id: goa_virus_bacteria_taxon_1353.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_1353"
    description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_1353"
@@ -1216,24 +1018,6 @@ datasets:
    species_code: ENTGA
    taxa:
     - NCBITaxon:1353
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_1390.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_1390"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_1390"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_1390.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_1390
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_1390.gpi.gz
-   source: https://mirror.geneontology.io/taxon_1390.gpi.gz
-   entity_type: all
-   status: active
-   species_code: BACAM
-   taxa:
-    - NCBITaxon:1390
    exclude: true
 
  -
@@ -1291,96 +1075,60 @@ datasets:
    exclude: true
 
  -
-   id: goa_virus_bacteria_taxon_10255.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_10255"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_10255"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_10255.gpi.gz
+   id: goa_virus_bacteria_taxon_10299.gpi
+   label: "goa_virus_bacteria_gpi4neo taxon_10299"
+   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_10254"
+   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_10299.gpi.gz
    type: gpi
-   dataset: goa_virus_bacteria_taxon_10255
+   dataset: goa_virus_bacteria_taxon_10299
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_10255.gpi.gz
-   source: https://mirror.geneontology.io/taxon_10255.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_10299.gpi.gz
+   source: https://mirror.geneontology.io/taxon_10299.gpi.gz
    entity_type: all
    status: active
-   species_code: VARV
+   species_code: HHV11
    taxa:
-    - NCBITaxon:10255
+    - NCBITaxon:10299
    exclude: true
 
  -
-   id: goa_virus_bacteria_taxon_10298.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_10298"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_10298"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_10298.gpi.gz
+   id: goa_virus_bacteria_taxon_10338.gpi
+   label: "goa_virus_bacteria_gpi4neo taxon_10338"
+   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_10254"
+   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_10338.gpi.gz
    type: gpi
-   dataset: goa_virus_bacteria_taxon_10298
+   dataset: goa_virus_bacteria_taxon_10338
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_10298.gpi.gz
-   source: https://mirror.geneontology.io/taxon_10298.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_10338.gpi.gz
+   source: https://mirror.geneontology.io/taxon_10338.gpi.gz
    entity_type: all
    status: active
-   species_code: HHV1
+   species_code: VZVD
    taxa:
-    - NCBITaxon:10298
+    - NCBITaxon:10338
    exclude: true
 
  -
-   id: goa_virus_bacteria_taxon_10335.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_10335"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_10335"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_10335.gpi.gz
+   id: goa_virus_bacteria_taxon_10360.gpi
+   label: "goa_virus_bacteria_gpi4neo taxon_10360"
+   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_10254"
+   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_10360.gpi.gz
    type: gpi
-   dataset: goa_virus_bacteria_taxon_10335
+   dataset: goa_virus_bacteria_taxon_10360
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_10335.gpi.gz
-   source: https://mirror.geneontology.io/taxon_10335.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_10360.gpi.gz
+   source: https://mirror.geneontology.io/taxon_10360.gpi.gz
    entity_type: all
    status: active
-   species_code: HHV3
+   species_code: HCMVA
    taxa:
-    - NCBITaxon:10335
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_10359.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_10359"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_10359"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_10359.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_10359
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_10359.gpi.gz
-   source: https://mirror.geneontology.io/taxon_10359.gpi.gz
-   entity_type: all
-   status: active
-   species_code: HCMV
-   taxa:
-    - NCBITaxon:10359
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_11251.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_11251"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_11251"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_11251.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_11251
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_11251.gpi.gz
-   source: https://mirror.geneontology.io/taxon_11251.gpi.gz
-   entity_type: all
-   status: active
-   species_code: HRSV1
-   taxa:
-    - NCBITaxon:11251
-   exclude: true
-
- -
+    - NCBITaxon:10360
+   exclude: true   
+  
+- 
    id: goa_virus_bacteria_taxon_12118.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_12118"
    description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_12118"
@@ -1396,60 +1144,6 @@ datasets:
    species_code: FMDVO
    taxa:
     - NCBITaxon:12118
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_35703.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_35703"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_35703"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_35703.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_35703
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_35703.gpi.gz
-   source: https://mirror.geneontology.io/taxon_35703.gpi.gz
-   entity_type: all
-   status: active
-   species_code: CITAM
-   taxa:
-    - NCBITaxon:35703
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_36352.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_36352"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_36352"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_36352.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_36352
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_36352.gpi.gz
-   source: https://mirror.geneontology.io/taxon_36352.gpi.gz
-   entity_type: all
-   status: active
-   species_code: Hher
-   taxa:
-    - NCBITaxon:36352
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_37734.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_37734"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_37734"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_37734.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_37734
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_37734.gpi.gz
-   source: https://mirror.geneontology.io/taxon_37734.gpi.gz
-   entity_type: all
-   status: active
-   species_code: ENTCA
-   taxa:
-    - NCBITaxon:37734
    exclude: true
 
  -
@@ -1506,25 +1200,7 @@ datasets:
     - NCBITaxon:71421
    exclude: true
 
- -
-   id: goa_virus_bacteria_taxon_83333.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_83333"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_83333"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_83333.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_83333
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_83333.gpi.gz
-   source: https://mirror.geneontology.io/taxon_83333.gpi.gz
-   entity_type: all
-   status: active
-   species_code: ECOLI
-   taxa:
-    - NCBITaxon:83333
-   exclude: true
-
- -
+- 
    id: goa_virus_bacteria_taxon_83334.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_83334"
    description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_83334"
@@ -1561,23 +1237,23 @@ datasets:
    exclude: true
 
  -
-   id: goa_virus_bacteria_taxon_90371.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_90371"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_90371"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_90371.gpi.gz
+   id: goa_virus_bacteria_taxon_93061.gpi
+   label: "goa_virus_bacteria_gpi4neo taxon_93061"
+   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_85962"
+   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_93061.gpi.gz
    type: gpi
-   dataset: goa_virus_bacteria_taxon_90371
+   dataset: goa_virus_bacteria_taxon_93061
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_90371.gpi.gz
-   source: https://mirror.geneontology.io/taxon_90371.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_93061.gpi.gz
+   source: https://mirror.geneontology.io/taxon_93061.gpi.gz
    entity_type: all
    status: active
-   species_code: SALTM
+   species_code: STAA8
    taxa:
-    - NCBITaxon:90371
+    - NCBITaxon:93061
    exclude: true
-
+   
  -
    id: goa_virus_bacteria_taxon_99287.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_99287"
@@ -1630,24 +1306,6 @@ datasets:
    species_code: NEIMB
    taxa:
     - NCBITaxon:122586
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_128958.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_128958"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_128958"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_128958.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_128958
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_128958.gpi.gz
-   source: https://mirror.geneontology.io/taxon_128958.gpi.gz
-   entity_type: all
-   status: active
-   species_code: Pchr
-   taxa:
-    - NCBITaxon:128958
    exclude: true
 
  -
@@ -1830,24 +1488,42 @@ datasets:
     - NCBITaxon:272634
    exclude: true
 
- -
-   id: goa_virus_bacteria_taxon_286636.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_286636"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_286636"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_286636.gpi.gz
+-
+   id: goa_virus_bacteria_taxon_295027.gpi
+   label: "goa_virus_bacteria_gpi4neo taxon_295027"
+   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_272634"
+   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_295027.gpi.gz
    type: gpi
-   dataset: goa_virus_bacteria_taxon_286636
+   dataset: goa_virus_bacteria_taxon_295027
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_286636.gpi.gz
-   source: https://mirror.geneontology.io/taxon_286636.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_295027.gpi.gz
+   source: https://mirror.geneontology.io/taxon_295027.gpi.gz
    entity_type: all
    status: active
-   species_code: STRP6
+   species_code: HCMVM
    taxa:
-    - NCBITaxon:286636
+    - NCBITaxon:295027
    exclude: true
 
+-
+   id: goa_virus_bacteria_taxon_301447.gpi
+   label: "goa_virus_bacteria_gpi4neo taxon_301447"
+   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_272634"
+   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_301447.gpi.gz
+   type: gpi
+   dataset: goa_virus_bacteria_taxon_301447
+   submitter: goa
+   compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_301447.gpi.gz
+   source: https://mirror.geneontology.io/taxon_301447.gpi.gz
+   entity_type: all
+   status: active
+   species_code: STRP1
+   taxa:
+    - NCBITaxon:301447
+   exclude: true
+   
  -
    id: goa_virus_bacteria_taxon_327105.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_327105"
@@ -1885,24 +1561,6 @@ datasets:
    exclude: true
 
  -
-   id: goa_virus_bacteria_taxon_367830.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_367830"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_367830"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_367830.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_367830
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_367830.gpi.gz
-   source: https://mirror.geneontology.io/taxon_367830.gpi.gz
-   entity_type: all
-   status: active
-   species_code: STAA3
-   taxa:
-    - NCBITaxon:367830
-   exclude: true
-
- -
    id: goa_virus_bacteria_taxon_373153.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_373153"
    description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_373153"
@@ -1918,24 +1576,6 @@ datasets:
    species_code: STRP2
    taxa:
     - NCBITaxon:373153
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_416870.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_416870"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_416870"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_416870.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_416870
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_416870.gpi.gz
-   source: https://mirror.geneontology.io/taxon_416870.gpi.gz
-   entity_type: all
-   status: active
-   species_code: LACLM
-   taxa:
-    - NCBITaxon:416870
    exclude: true
 
  -
@@ -1955,23 +1595,23 @@ datasets:
    taxa:
     - NCBITaxon:419947
    exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_529507.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_529507"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_529507"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_529507.gpi.gz
+   
+-
+   id: goa_virus_bacteria_taxon_565655.gpi
+   label: "goa_virus_bacteria_gpi4neo taxon_565655"
+   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_419947"
+   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_565655.gpi.gz
    type: gpi
-   dataset: goa_virus_bacteria_taxon_529507
+   dataset: goa_virus_bacteria_taxon_565655
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_529507.gpi.gz
-   source: https://mirror.geneontology.io/taxon_529507.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_565655.gpi.gz
+   source: https://mirror.geneontology.io/taxon_565655.gpi.gz
    entity_type: all
    status: active
-   species_code: PROMH
+   species_code: ENTCA
    taxa:
-    - NCBITaxon:529507
+    - NCBITaxon:565655
    exclude: true
 
  -
@@ -1990,6 +1630,24 @@ datasets:
    species_code: ACIB2
    taxa:
     - NCBITaxon:575584
+   exclude: true
+
+ -
+   id: goa_virus_bacteria_taxon_587200.gpi
+   label: "goa_virus_bacteria_gpi4neo taxon_587200"
+   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_575584"
+   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_587200.gpi.gz
+   type: gpi
+   dataset: goa_virus_bacteria_taxon_587200
+   submitter: goa
+   compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_587200.gpi.gz
+   source: https://mirror.geneontology.io/taxon_587200.gpi.gz
+   entity_type: all
+   status: active
+   species_code: VAR67
+   taxa:
+    - NCBITaxon:587200
    exclude: true
 
  -
@@ -2026,24 +1684,6 @@ datasets:
    species_code: HBVCJ
    taxa:
     - NCBITaxon:928302
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_941280.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_941280"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_941280"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_941280.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_941280
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/taxon_941280.gpi.gz
-   source: https://mirror.geneontology.io/taxon_941280.gpi.gz
-   entity_type: all
-   status: active
-   species_code: ECO25
-   taxa:
-    - NCBITaxon:941280
    exclude: true
 
  -
