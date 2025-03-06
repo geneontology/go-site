@@ -1128,7 +1128,7 @@ datasets:
     - NCBITaxon:10360
    exclude: true
 
--
+ -
    id: goa_virus_bacteria_taxon_12118.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_12118"
    description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_12118"
@@ -1200,7 +1200,7 @@ datasets:
     - NCBITaxon:71421
    exclude: true
 
--
+ -
    id: goa_virus_bacteria_taxon_83334.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_83334"
    description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_83334"
@@ -1488,7 +1488,7 @@ datasets:
     - NCBITaxon:272634
    exclude: true
 
--
+ -
    id: goa_virus_bacteria_taxon_295027.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_295027"
    description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_295027"
@@ -1506,7 +1506,7 @@ datasets:
     - NCBITaxon:295027
    exclude: true
 
--
+ -
    id: goa_virus_bacteria_taxon_301447.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_301447"
    description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_301447"
@@ -1596,7 +1596,7 @@ datasets:
     - NCBITaxon:419947
    exclude: true
 
--
+ -
    id: goa_virus_bacteria_taxon_565655.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_565655"
    description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_565655"
