@@ -969,7 +969,7 @@ datasets:
  -
    id: goa_virus_bacteria_taxon_574.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_574"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_545"
+   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_574"
    url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_574.gpi.gz
    type: gpi
    dataset: goa_virus_bacteria_taxon_574
