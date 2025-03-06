@@ -947,7 +947,7 @@ datasets:
    taxa:
     - NCBITaxon:1
    exclude: true
-   
+
  -
    id: goa_virus_bacteria_taxon_545.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_545"
@@ -1126,9 +1126,9 @@ datasets:
    species_code: HCMVA
    taxa:
     - NCBITaxon:10360
-   exclude: true   
-  
-- 
+   exclude: true
+
+-
    id: goa_virus_bacteria_taxon_12118.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_12118"
    description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_12118"
@@ -1200,7 +1200,7 @@ datasets:
     - NCBITaxon:71421
    exclude: true
 
-- 
+-
    id: goa_virus_bacteria_taxon_83334.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_83334"
    description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_83334"
@@ -1253,7 +1253,7 @@ datasets:
    taxa:
     - NCBITaxon:93061
    exclude: true
-   
+
  -
    id: goa_virus_bacteria_taxon_99287.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_99287"
@@ -1523,7 +1523,7 @@ datasets:
    taxa:
     - NCBITaxon:301447
    exclude: true
-   
+
  -
    id: goa_virus_bacteria_taxon_327105.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_327105"
@@ -1595,7 +1595,7 @@ datasets:
    taxa:
     - NCBITaxon:419947
    exclude: true
-   
+
 -
    id: goa_virus_bacteria_taxon_565655.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_565655"
