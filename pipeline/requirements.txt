@@ -1,4 +1,5 @@
 PyYAML
+pysolr==3.6
 ontobio==2.9.12
 click
 pyparsing==2.4.7
