@@ -18,7 +18,7 @@ datasets:
    compression: gzip
    source: https://mirror.geneontology.io/goa_chicken_plus.gaf.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_plus.gaf.gz
-   entity_type: protein
+   entity_type: all
    status: active
    species_code: Ggal
    taxa:
@@ -39,7 +39,7 @@ datasets:
    compression: gzip
    source: https://mirror.geneontology.io/goa_chicken.gpa.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_plus.gpa.gz
-   entity_type: protein
+   entity_type: all
    status: active
    species_code: Ggal
    taxa:
@@ -60,7 +60,7 @@ datasets:
    compression: gzip
    source: https://mirror.geneontology.io/goa_chicken.gpi.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_plus.gpi.gz
-   entity_type: protein
+   entity_type: all
    status: active
    species_code: Ggal
    taxa:
@@ -69,7 +69,6 @@ datasets:
     - NCBITaxon:208526
     - NCBITaxon:400035
     - NCBITaxon:9031
-
 
  -
    id: goa_cow.gaf
@@ -82,7 +81,7 @@ datasets:
    compression: gzip
    source: https://mirror.geneontology.io/goa_cow_plus.gaf.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_plus.gaf.gz
-   entity_type: protein
+   entity_type: all
    status: active
    species_code: Btau
    taxa:
@@ -101,7 +100,7 @@ datasets:
    compression: gzip
    source: https://mirror.geneontology.io/goa_cow.gpa.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_plus.gpa.gz
-   entity_type: protein
+   entity_type: all
    status: active
    species_code: Btau
    taxa:
@@ -120,7 +119,7 @@ datasets:
    compression: gzip
    source: https://mirror.geneontology.io/goa_cow.gpi.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_plus.gpi.gz
-   entity_type: protein
+   entity_type: all
    status: active
    species_code: Btau
    taxa:
@@ -139,7 +138,7 @@ datasets:
    compression: gzip
    source: https://mirror.geneontology.io/goa_dog_plus.gaf.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_plus.gaf.gz
-   entity_type: protein
+   entity_type: all
    status: active
    species_code: Cfam
    taxa:
@@ -156,7 +155,7 @@ datasets:
    compression: gzip
    source: https://mirror.geneontology.io/goa_dog.gpa.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_plus.gpa.gz
-   entity_type: protein
+   entity_type: all
    status: active
    species_code: Cfam
    taxa:
@@ -173,7 +172,7 @@ datasets:
    compression: gzip
    source: https://mirror.geneontology.io/goa_dog.gpi.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_plus.gpi.gz
-   entity_type: protein
+   entity_type: all
    status: active
    species_code: Cfam
    taxa:
@@ -190,7 +189,7 @@ datasets:
    compression: gzip
    source: https://mirror.geneontology.io/goa_human_plus.gaf.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_plus.gaf.gz
-   entity_type: protein
+   entity_type: all
    status: active
    species_code: Hsap
    taxa:
@@ -207,7 +206,7 @@ datasets:
    compression: gzip
    source: https://mirror.geneontology.io/goa_human.gpa.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_plus.gpa.gz
-   entity_type: protein
+   entity_type: all
    status: active
    species_code: Hsap
    taxa:
@@ -224,7 +223,7 @@ datasets:
    compression: gzip
    source: https://mirror.geneontology.io/goa_human.gpi.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_plus.gpi.gz
-   entity_type: protein
+   entity_type: all
    status: active
    species_code: Hsap
    taxa:
@@ -241,7 +240,7 @@ datasets:
    compression: gzip
    source: https://mirror.geneontology.io/goa_pig_plus.gaf.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_plus.gaf.gz
-   entity_type: protein
+   entity_type: all
    status: active
    species_code: Sscr
    taxa:
@@ -258,7 +257,7 @@ datasets:
    compression: gzip
    source: https://mirror.geneontology.io/goa_pig.gpa.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_plus.gpa.gz
-   entity_type: protein
+   entity_type: all
    status: active
    species_code: Sscr
    taxa:
@@ -275,7 +274,7 @@ datasets:
    compression: gzip
    source: https://mirror.geneontology.io/goa_pig.gpi.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_plus.gpi.gz
-   entity_type: protein
+   entity_type: all
    status: active
    species_code: Sscr
    taxa:
