@@ -8,7 +8,6 @@ funding_source: "unspecified"
 email_report: "goa@ebi.ac.uk"
 datasets:
  -
- 
    id: goa_chicken.gaf
    label: "goa_chicken gaf file"
    description: "gaf file for goa_chicken from EBI Gene Ontology Annotation Database"
