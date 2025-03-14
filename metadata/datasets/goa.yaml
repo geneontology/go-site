@@ -89,7 +89,7 @@ datasets:
     - NCBITaxon:30523
     - NCBITaxon:9913
 
-  - 
+ - 
    id: goa_cow.gpad
    label: "goa_cow gpad file"
    description: "gpad file for goa_cow from EBI Gene Ontology Annotation Database"
