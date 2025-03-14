@@ -195,7 +195,7 @@ datasets:
    taxa:
     - NCBITaxon:9606
 
-  -
+ -
    id: goa_human.gpad
    label: "goa_human gpad file"
    description: "gpad file for goa_human from EBI Gene Ontology Annotation Database"
