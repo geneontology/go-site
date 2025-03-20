@@ -1002,6 +1002,18 @@
   uri: 'https://orcid.org/0000-0003-1179-5999'
   xref: 'GOC:al'
 -
+  accounts:
+    github: nadya-urakova
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Nadya Urakova'
+  organization: UniProt
+  uri: 'https://orcid.org/0000-0003-3499-8158'
+-
   nickname: 'Jurg Bahler'
   organization: PomBase
   uri: 'GOC:jb'
