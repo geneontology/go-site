@@ -4648,3 +4648,15 @@
   nickname: 'James de Candole'
   organization: PomBase
   uri: 'https://orcid.org/0009-0005-6259-9260'
+-
+  accounts:
+    github: lina2015
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://ngdc.cncb.ac.cn/lncrnawiki/'
+  nickname: 'Lina Ma'
+  organization: LncRNAWiki
+  uri: 'https://orcid.org/0000-0001-6390-6289'
