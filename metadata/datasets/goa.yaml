@@ -28,7 +28,7 @@ datasets:
     - NCBITaxon:400035
     - NCBITaxon:9031
 
- -  
+ -
    id: goa_chicken.gpad
    label: "goa_chicken gpad file"
    description: "gpad file for goa_chicken from EBI Gene Ontology Annotation Database"
@@ -37,7 +37,7 @@ datasets:
    dataset: goa_chicken
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_chicken.gpa.gz
+   source: https://mirror.geneontology.io/goa_chicken_plus.gpa.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_plus.gpa.gz
    entity_type: all
    status: active
@@ -58,7 +58,7 @@ datasets:
    dataset: goa_chicken
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_chicken.gpi.gz
+   source: https://mirror.geneontology.io/goa_chicken_plus.gpi.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_plus.gpi.gz
    entity_type: all
    status: active
@@ -89,7 +89,7 @@ datasets:
     - NCBITaxon:30523
     - NCBITaxon:9913
 
- - 
+ -
    id: goa_cow.gpad
    label: "goa_cow gpad file"
    description: "gpad file for goa_cow from EBI Gene Ontology Annotation Database"
@@ -98,7 +98,7 @@ datasets:
    dataset: goa_cow
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_cow.gpa.gz
+   source: https://mirror.geneontology.io/goa_cow_plus.gpa.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_plus.gpa.gz
    entity_type: all
    status: active
@@ -117,7 +117,7 @@ datasets:
    dataset: goa_cow
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_cow.gpi.gz
+   source: https://mirror.geneontology.io/goa_cow_plus.gpi.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_plus.gpi.gz
    entity_type: all
    status: active
@@ -153,7 +153,7 @@ datasets:
    dataset: goa_dog
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_dog.gpa.gz
+   source: https://mirror.geneontology.io/goa_dog_plus.gpa.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_plus.gpa.gz
    entity_type: all
    status: active
@@ -170,7 +170,7 @@ datasets:
    dataset: goa_dog
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_dog.gpi.gz
+   source: https://mirror.geneontology.io/goa_dog_plus.gpi.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_plus.gpi.gz
    entity_type: all
    status: active
@@ -204,7 +204,7 @@ datasets:
    dataset: goa_human
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_human.gpa.gz
+   source: https://mirror.geneontology.io/goa_human_plus.gpa.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_plus.gpa.gz
    entity_type: all
    status: active
@@ -221,7 +221,7 @@ datasets:
    dataset: goa_human
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_human.gpi.gz
+   source: https://mirror.geneontology.io/goa_human_plus.gpi.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_plus.gpi.gz
    entity_type: all
    status: active
@@ -245,8 +245,8 @@ datasets:
    species_code: Sscr
    taxa:
     - NCBITaxon:9823
-    
- - 
+
+ -
    id: goa_pig.gpad
    label: "goa_pig gpad file"
    description: "gpad file for goa_pig from EBI Gene Ontology Annotation Database"
@@ -255,7 +255,7 @@ datasets:
    dataset: goa_pig
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_pig.gpa.gz
+   source: https://mirror.geneontology.io/goa_pig_plus.gpa.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_plus.gpa.gz
    entity_type: all
    status: active
@@ -272,7 +272,7 @@ datasets:
    dataset: goa_pig
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_pig.gpi.gz
+   source: https://mirror.geneontology.io/goa_pig_plus.gpi.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_plus.gpi.gz
    entity_type: all
    status: active
