@@ -553,6 +553,11 @@
   parent_group: GOC
 -  
   label: 'Signature Science'
-  id: https://www.signaturescience.com/
+  id: https://www.signaturescience.com
   shorthand: SigSci
+  parent_group: GOC
+-
+  label: 'LncRNAWiki'
+  id: https://ngdc.cncb.ac.cn/lncrnawiki
+  shorthand: LncRNA
   parent_group: GOC
