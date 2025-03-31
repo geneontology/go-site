@@ -148,7 +148,7 @@
   authorizations:
     noctua:
       go:
-        allow-edit: true    
+        allow-edit: true
   email-md5:
     - 601f7b3e4f8165ba4be5057e65143f76
   groups:
@@ -1219,14 +1219,14 @@
   xref: 'GOC:cjm'
 -
   groups:
-    - 'http://www.yeastgenome.org'        
+    - 'http://www.yeastgenome.org'
   nickname: 'Anand Sethuraman'
   organization: SGD
   uri: 'GOC:as'
   xref: 'GOC:as'
 -
   groups:
-    - 'http://www.yeastgenome.org'        
+    - 'http://www.yeastgenome.org'
   nickname: 'Cathy Ball'
   organization: SGD
   uri: 'GOC:cab2'
@@ -1244,7 +1244,7 @@
       go:
         allow-edit: true
   groups:
-    - 'http://www.yeastgenome.org'        
+    - 'http://www.yeastgenome.org'
   nickname: 'Chandra Theesfeld'
   organization: SGD
   uri: 'https://orcid.org/0000-0002-8379-6600'
@@ -1259,7 +1259,7 @@
   nickname: 'Kara Dolinski'
   organization: SGD
   uri: 'https://orcid.org/0000-0002-7010-0264'
--  
+-
   authorizations:
     noctua:
       go:
@@ -1269,7 +1269,7 @@
   nickname: 'Paul Lloyd'
   organization: SGD
   uri: 'https://orcid.org/0000-0003-3508-5553'
--  
+-
   authorizations:
     noctua:
       go:
@@ -4648,3 +4648,15 @@
   nickname: 'James de Candole'
   organization: PomBase
   uri: 'https://orcid.org/0009-0005-6259-9260'
+-
+  accounts:
+    github: lina2015
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://ngdc.cncb.ac.cn/lncrnawiki'
+  nickname: 'Lina Ma'
+  organization: LncRNAWiki
+  uri: 'https://orcid.org/0000-0001-6390-6289'
