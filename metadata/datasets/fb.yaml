@@ -16,7 +16,7 @@ datasets:
    dataset: fb
    submitter: fb
    compression: gzip
-   source: ftp://ftp.flybase.net/releases/current/precomputed_files/go/gene_association.fb.gz
+   source: https://flybase-ftp.s3.us-east-1.amazonaws.com/releases/FB2025_01/precomputed_files/go/gene_association.fb.gz
    entity_type:
    status: active
    species_code: Dmel
@@ -31,7 +31,7 @@ datasets:
    dataset: fb
    submitter: fb
    compression: gzip
-   source: http://ftp.flybase.net/releases/current/precomputed_files/collaborators/gp_information.fb.gz
+   source: https://flybase-ftp.s3.us-east-1.amazonaws.com/releases/FB2025_01/collaborators/gp_information.fb.gz
    entity_type:
    status: active
    species_code: Dmel
