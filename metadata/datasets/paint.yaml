@@ -146,7 +146,7 @@ datasets:
     - NCBITaxon:4896
    merges_into: pombase
 
--
+ -
    id: paint_japonicusdb.gaf
    label: "paint_japonicusdb gaf file"
    description: "gaf file for paint_japonicusdb from PAINT"
