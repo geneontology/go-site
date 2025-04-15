@@ -146,6 +146,23 @@ datasets:
     - NCBITaxon:4896
    merges_into: pombase
 
+-
+   id: paint_japonicusdb.gaf
+   label: "paint_japonicusdb gaf file"
+   description: "gaf file for paint_japonicusdb from PAINT"
+   type: gaf
+   dataset: paint_japonicusdb
+   submitter: paint
+   compression: gzip
+   source: ftp://ftp.pantherdb.org/downloads/paint/presubmission/gene_association.paint_japonicusdb.gaf.gz
+   entity_type:
+   status: active
+   species_code: Sjap
+   taxa:
+    - NCBITaxon:4897
+    - NCBITaxon:402676
+   merges_into: japonicusdb
+
  -
    id: paint_rgd.gaf
    label: "paint_rgd gaf file"
