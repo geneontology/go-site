@@ -4660,3 +4660,75 @@
   nickname: 'Lina Ma'
   organization: LncRNAWiki
   uri: 'https://orcid.org/0000-0001-6390-6289'
+-
+  accounts:
+    github: wmm1103
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://ngdc.cncb.ac.cn/lncrnawiki'
+  nickname: 'Miaomiao Wang'
+  organization: LncRNAWiki
+  uri: 'https://orcid.org/0009-0004-4855-0893'
+-
+  accounts:
+    github: ShaosenZhang
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://ngdc.cncb.ac.cn/lncrnawiki'
+  nickname: 'Shaosen Zhang'
+  organization: LncRNAWiki
+  uri: 'https://orcid.org/0009-0008-5439-6043'
+-
+  accounts:
+    github: ZXingRong
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://ngdc.cncb.ac.cn/lncrnawiki'
+  nickname: 'Xing Zheng'
+  organization: LncRNAWiki
+  uri: 'https://orcid.org/0000-0003-4494-3214'
+-
+  accounts:
+    github: Thea1009
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://ngdc.cncb.ac.cn/lncrnawiki'
+  nickname: 'Xinyu Zhou'
+  organization: LncRNAWiki
+  uri: 'https://orcid.org/0000-0003-4331-2023'
+-
+  accounts:
+    github: WENERYUE620
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://ngdc.cncb.ac.cn/lncrnawiki'
+  nickname: 'Yue Qi'
+  organization: LncRNAWiki
+  uri: 'https://orcid.org/0009-0009-7894-0143'
+-
+  accounts:
+    github: lizhao-git
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://ngdc.cncb.ac.cn/lncrnawiki'
+  nickname: 'Zhao Li'
+  organization: LncRNAWiki
+  uri: 'https://orcid.org/0000-0001-7374-3348'  
