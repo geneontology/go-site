@@ -77,7 +77,14 @@ JaponicusDB,,,,,
 ° JaponicusDB,@ValWood,Val Wood @ValWood,Curation,< ! > In-house < ! >,
 JCVI,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curation (inactive),P2GO,contact @mgiglio99 for queries
 LIFEdb,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curation,P2GO,contact Stefan Wiemann s.wiemann AT dkfz-heidelberg.de for queries
-LncRNAWiki,@lina2015,Lina Ma @lina2015,Curation,,lncRNA identification | lncRNA functional analysis | lncRNA database
+LncRNAWiki,,,,,
+° LncRNAWiki,@lina2015,Lina Ma @lina2015,Curation,Noctua,lncRNA identification | lncRNA functional analysis | lncRNA database
+° LncRNAWiki,,Shaosen Zhang @ShaosenZhang,Curation,Noctua,
+° LncRNAWiki,,Xing Zheng @ZXingRong,Curation,Noctua,Developing a tool for lncRNA curation
+° LncRNAWiki,,Miaomiao Wang @wmm1103,Curation,Noctua,lncRNA function prediction
+° LncRNAWiki,,Xinyu Zhou @Thea1009,Curation,Noctua,Genomic annotation of human long non-coding RNAs (lncRNAs)
+° LncRNAWiki,,Zhao Li @lizhao-git,Curation,Noctua,Chromatin binding and regulation of lncRNAs, Nuclear organization functions of lncRNAs
+° LncRNAWiki,,Yue Qi @WENERYUE620,Curation,Noctua,Long non-coding RNA regulatory networks
 MENGO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curation (inactive),P2GO,contact @mgiglio99 for queries
 MGI,,,,,
 ° MGI,,Karen Christie @krchristie,Curation,Noctua,
