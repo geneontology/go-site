@@ -122,8 +122,9 @@ RNA Central,,,,,
 ° RNAcentral,@blakesweeney, Blake Sweeny @blakesweeney,Curation,< ! > In-house < ! >,
 Roslin_Institute,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curation (inactive),<P2GO,no contact person
 SGD,,,,,
-° SGD,@srengel,Stacia Engel @srengel,Curation,<Noctua,Contact for Annotation Review
-° SGD,,Suzi Aleksander @suzialeksander,Curation,<Noctua,
+° SGD,,Stacia Engel @srengel,Curation,Noctua,
+° SGD,@suzialeksander,Suzi Aleksander @suzialeksander,Curation,Noctua,Contact for Annotation Review
+° SGD,@edwong57,Edith Wong @edwong57,Curation,Noctua,Contact for Annotation Review
 SGN,@lukasmueller,Lukas Mueller @lukasmueller,Curation,< ! > In-house < ! >,
 SynGO,@ftwkoopmans,Frank Koopmans @ftwkoopmans,Curation,< ! > In-house < ! >,
 SynGO-UCL,@RLovering, Ruth Lovering @RLovering,Curation,<P2GO, 
