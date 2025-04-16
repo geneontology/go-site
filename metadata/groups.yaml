@@ -561,3 +561,9 @@
   id: https://ngdc.cncb.ac.cn/lncrnawiki
   shorthand: LncRNA
   parent_group: GOC
+-
+  label: 'University of Osnabrueck Molecular Cell Biology Division'
+  id: https://holthuis-lab-uos.de
+  shorthand: UOS_MCB
+  parent_group: GOC
+  
