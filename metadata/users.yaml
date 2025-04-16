@@ -4731,4 +4731,16 @@
     - 'https://ngdc.cncb.ac.cn/lncrnawiki'
   nickname: 'Zhao Li'
   organization: LncRNAWiki
-  uri: 'https://orcid.org/0000-0001-7374-3348'  
+  uri: 'https://orcid.org/0000-0001-7374-3348'
+-
+  accounts:
+    github: Vitalina-Kha
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://holthuis-lab-uos.de'
+  nickname: 'Vitalina Kharchenko'
+  organization: University of Osnabrueck Molecular Cell Biology Division
+  uri: 'https://orcid.org/0009-0002-7487-1936'
