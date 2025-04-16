@@ -1152,13 +1152,19 @@
   uri: 'GOC:jsg'
   xref: 'GOC:jsg'
 -
+  accounts:
+    github: shurjenw
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   email-md5:
     - f6cb73c2299e72ab430475ba02567e49
   groups:
     - 'http://rgd.mcw.edu'
   nickname: 'Shur-Jen Wang'
   organization: RGD
-  uri: 'GOC:sjw'
+  uri: 'https://orcid.org/0000-0001-5256-8683'
   xref: 'GOC:sjw'
 -
   accounts:
