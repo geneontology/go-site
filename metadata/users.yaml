@@ -4750,3 +4750,27 @@
   nickname: 'Vitalina Kharchenko'
   organization: University of Osnabrueck Molecular Cell Biology Division
   uri: 'https://orcid.org/0009-0002-7487-1936'
+-
+  accounts:
+    github: nadgruaz
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Nadine Gruaz'
+  organization: UniProt
+  uri: 'https://orcid.org/0000-0002-4699-4907'
+-
+  accounts:
+    github: marialivia
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Livia Famiglietti'
+  organization: UniProt
+  uri: 'https://orcid.org/0000-0002-5283-6593'
