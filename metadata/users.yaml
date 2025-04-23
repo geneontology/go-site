@@ -806,6 +806,8 @@
   xref: 'GOC:tfm'
 -
   nickname: 'Tony Planchart'
+  groups:
+    - 'http://informatics.jax.org'
   organization: MGI
   uri: 'https://orcid.org/0000-0001-8691-8856'
   xref: 'GOC:ajp'
