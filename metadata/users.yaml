@@ -808,6 +808,10 @@
   nickname: 'Tony Planchart'
   groups:
     - 'http://informatics.jax.org'
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   organization: MGI
   uri: 'https://orcid.org/0000-0001-8691-8856'
   xref: 'GOC:ajp'
@@ -4172,6 +4176,10 @@
 -
   nickname: 'Allan P Davis'
   organization: MGI
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   uri: 'https://orcid.org/0000-0002-5741-7128'
   xref: 'GOC:apd'
 -
