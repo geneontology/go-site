@@ -3867,222 +3867,370 @@
   uri: 'https://orcid.org/0000-0003-2349-6929'
   xref: 'GOC:ach'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Niels Cornelisse'
   organization: 'Department of Functional Genomics, Center for Neurogenomics and Cognitive Research, Neuroscience Campus Amsterdam, Vrije Universiteit (VU), Amsterdam, the Netherlands'
   uri: 'https://orcid.org/0000-0001-9425-2935'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Daniela Dieterich'
   organization: 'Department of Neurochemistry and Molecular Biology, Leibniz Institute for Neurobiology, Magdeburg, Germany'
   uri: 'https://orcid.org/0000-0002-9880-1214'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Rainer Pielot'
   organization: 'Department of Neurochemistry and Molecular Biology, Leibniz Institute for Neurobiology, Magdeburg, Germany'
   uri: 'https://orcid.org/0000-0002-9681-3318'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Karl-Heinz Smalla'
   organization: 'Department of Neurochemistry and Molecular Biology, Leibniz Institute for Neurobiology, Magdeburg, Germany'
   uri: 'https://orcid.org/0000-0002-0269-0311'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Eckart Gundelfinger'
   organization: 'Department of Neurochemistry and Molecular Biology, Leibniz Institute for Neurobiology, Magdeburg, Germany'
   uri: 'https://orcid.org/0000-0001-9377-7414'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Ruud Toonen'
   organization: 'Department of Functional Genomics, Center for Neurogenomics and Cognitive Research, Neuroscience Campus Amsterdam, Vrije Universiteit (VU), Amsterdam, the Netherlands'
   uri: 'https://orcid.org/0000-0002-9900-4233'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Arthur de Jong'
   organization: 'Kaeser Lab, Department of Neurobiology, Harvard Medical School, Boston, USA'
   uri: 'https://orcid.org/0000-0002-7620-2704'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Pascal Kaeser'
   organization: 'Kaeser Lab, Department of Neurobiology, Harvard Medical School, Boston, USA'
   uri: 'https://orcid.org/0000-0002-1558-1958'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Matthijs Verhage'
   organization: 'Department of Functional Genomics, Center for Neurogenomics and Cognitive Research, Neuroscience Campus Amsterdam, Vrije Universiteit (VU), Amsterdam, the Netherlands'
   uri: 'https://orcid.org/0000-0002-2514-0216'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Momchil Ninov'
   organization: 'Department of Neurobiology, Max Planck Institute for Biophysical Chemistry, Gottingen, Germany'
   uri: 'https://orcid.org/0000-0002-0808-7003'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Mahdokht Kohansalnodehi'
   organization: 'Department of Neurobiology, Max Planck Institute for Biophysical Chemistry, Gottingen, Germany'
   uri: 'https://orcid.org/0000-0002-3898-5197'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Reinhard Jahn'
   organization: 'Department of Neurobiology, Max Planck Institute for Biophysical Chemistry, Gottingen, Germany'
   uri: 'https://orcid.org/0000-0003-1542-3498'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Timothy Ryan'
   organization: 'Department of Biochemistry, Weill Cornell Medical College, New York, USA'
   uri: 'https://orcid.org/0000-0003-2533-9548'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Tony Cijsouw'
   organization: 'Biederer lab, Department of Neuroscience, Tufts University School of Medicine, Boston, USA'
   uri: 'https://orcid.org/0000-0003-0912-1514'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Thomas Biederer'
   organization: 'Biederer lab, Department of Neuroscience, Tufts University School of Medicine, Boston, USA'
   uri: 'https://orcid.org/0000-0002-3670-7863'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Harold MacGillavry'
   organization: 'Department of Biology, Faculty of Science, Utrecht University, Utrecht, the Netherlands'
   uri: 'https://orcid.org/0000-0002-6153-3586'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Casper Hoogenraad'
   organization: 'Department of Biology, Faculty of Science, Utrecht University, Utrecht, the Netherlands'
   uri: 'https://orcid.org/0000-0002-2666-0758'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Alexandros Kanellopoulos'
   organization: 'University of Lausanne, Department of Fundamental Neuroscience, Lausanne, Switzerland; University of Rome Tor Vergata, Department of Biomedicine and Prevention, Rome, Italy'
   uri: 'https://orcid.org/0000-0002-2094-7491'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Vittoria Mariano'
   organization: 'University of Lausanne, Department of Fundamental Neuroscience, Lausanne, Switzerland; University of Rome Tor Vergata, Department of Biomedicine and Prevention, Rome, Italy'
   uri: 'https://orcid.org/0000-0002-9848-0262'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Achsel Tilmann'
   organization: 'University of Lausanne, Department of Fundamental Neuroscience, Lausanne, Switzerland; University of Rome Tor Vergata, Department of Biomedicine and Prevention, Rome, Italy'
   uri: 'https://orcid.org/0000-0002-1190-4481'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Claudia Bagni'
   organization: 'University of Lausanne, Department of Fundamental Neuroscience, Lausanne, Switzerland; University of Rome Tor Vergata, Department of Biomedicine and Prevention, Rome, Italy'
   uri: 'https://orcid.org/0000-0002-4419-210X'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Chiara Verpelli'
   organization: "Department of Medical Biotechnology and Translational Medicine, Università degli Studi di Milano, Milan, Italy"
   uri: 'https://orcid.org/0000-0003-2949-9725'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Carlo Sala'
   organization: "Department of Medical Biotechnology and Translational Medicine, Università degli Studi di Milano, Milan, Italy"
   uri: 'https://orcid.org/0000-0003-0662-9523'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Maria Andres-Alonso'
   organization: 'RG Neuroplasticity, Leibniz Institute for Neurobiology, Magdeburg, Germany'
   uri: 'https://orcid.org/0000-0002-1585-539X'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Michael Kreutz'
   organization: 'RG Neuroplasticity, Leibniz Institute for Neurobiology, Magdeburg, Germany'
   uri: 'https://orcid.org/0000-0003-0575-6950'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Peter McPherson'
   organization: 'Neurology and Neurosurgery, Montreal Neurological Institute, McGill University, Montreal, Canada'
   uri: 'https://orcid.org/0000-0001-7806-5662'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Jan van Weering'
   organization: 'Department of Functional Genomics, Center for Neurogenomics and Cognitive Research, Neuroscience Campus Amsterdam, Vrije Universiteit (VU), Amsterdam, the Netherlands'
   uri: 'https://orcid.org/0000-0001-5259-4945'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Noa Lipstein'
   organization: "Department of Molecular Neurobiology, Max Planck Institute of Experimental Medicine, Göttingen, Germany"
   uri: 'https://orcid.org/0000-0002-0755-5899'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Cordelia Imig'
   organization: "Department of Molecular Neurobiology, Max Planck Institute of Experimental Medicine, Göttingen, Germany"
   uri: 'https://orcid.org/0000-0001-7351-8706'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Vincent O`Connor'
   organization: "Department of Molecular Neurobiology, Max Planck Institute of Experimental Medicine, Göttingen, Germany"
   uri: 'https://orcid.org/0000-0003-3185-5709'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Nils Brose'
   organization: "Department of Molecular Neurobiology, Max Planck Institute of Experimental Medicine, Göttingen, Germany"
   uri: 'https://orcid.org/0000-0003-0938-8534'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Eunjoon Kim'
   organization: 'Center for Synaptic Brain Dysfunctions, Institute for Basic Science (IBS) and Department of Biological Sciences, Korea Advanced Institute of Science and Technology (KAIST), South Korea'
   uri: 'https://orcid.org/0000-0001-5518-6584'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Hana Goldschmidt'
   organization: 'Solomon H. Snyder Department of Neuroscience, Johns Hopkins University School of Medicine, Baltimore, USA'
   uri: 'https://orcid.org/0000-0002-5676-366X'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Richard Huganir'
   organization: 'Solomon H. Snyder Department of Neuroscience, Johns Hopkins University School of Medicine, Baltimore, USA'
   uri: 'https://orcid.org/0000-0001-9783-5183'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'John Chua'
   organization: 'Department of Physiology, Yong Loo Lin School of Medicine, National University of Singapore, Singapore'
   uri: 'https://orcid.org/0000-0002-5615-1014'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Roberto Malinow'
   organization: 'Center for Neural Circuits and Behavior, Department of Neuroscience and Section for Neurobiology, Division of Biology, University of California at San Diego, USA'
   uri: 'https://orcid.org/0000-0002-8862-2562'
 -
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: "Àlex Bayés"
