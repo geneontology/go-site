@@ -25,11 +25,6 @@ sequence:
       "nickname":
         type: str
         required: true
-      "email-md5":
-        type: seq
-        required: false
-        sequence:
-          - type: str
       "authorizations":
         type: map
         required: false
