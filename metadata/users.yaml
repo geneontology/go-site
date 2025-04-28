@@ -36,12 +36,6 @@
   accounts:
     github: nathandunn
     orcid: 0000-0002-4862-3181
-  authorizations:
-    termgenie-go:
-      allow-freeform: false
-      allow-management: false
-      allow-review: true
-      allow-write: true
   nickname: 'Nathan Dunn'
   uri: 'https://orcid.org/0000-0002-4862-3181'
 -
@@ -54,11 +48,6 @@
       go:
         allow-admin: true
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-management: true
-      allow-review: true
-      allow-write: true
   groups:
     - 'http://geneontology.org'
     - 'http://planteome.org'
@@ -134,10 +123,6 @@
   uri: 'GOC:cy'
   xref: 'GOC:cy'
 -
-  authorizations:
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   nickname: 'Anna Melidoni (formerly BHF-UCL)'
   organization: IntAct
   uri: 'GOC:ame'
@@ -155,9 +140,6 @@
   uri: 'GOC:gr'
   xref: 'GOC:gr'
 -
-  authorizations:
-    termgenie-go:
-      allow-write: true
   comment: 'status inactive, Masters Student working with the BHF group at UCL'
   nickname: 'Hadil Alrohaif'
   organization: BHF-UCL
@@ -170,9 +152,6 @@
   uri: 'https://orcid.org/0000-0002-0918-9335'
   xref: 'GOC:jbu'
 -
-  authorizations:
-    termgenie-go:
-      allow-write: true
   comment: 'status inactive, Masters Student working with the BHF group at UCL'
   nickname: 'Klaus Mitchell'
   organization: BHF-UCL
@@ -181,10 +160,6 @@
 -
   accounts:
     github: NancyCampbell
-  authorizations:
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   nickname: 'Nancy Campbell'
   organization: BHF-UCL
   uri: 'https://orcid.org/0000-0001-9995-0839'
@@ -196,8 +171,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   comment: 'formerly HGNC'
   groups:
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
@@ -262,8 +235,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://dictybase.org'
   nickname: 'Petra Fey'
@@ -277,9 +248,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   groups:
     - 'http://geneontology.org'
     - 'https://www.nextprot.org'
@@ -294,8 +262,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://dictybase.org'
   nickname: 'Robert Dodson'
@@ -360,8 +326,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://flybase.org'
   nickname: 'Helen Attrill'
@@ -392,12 +356,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-freeform-litxref-optional: true
-      allow-management: true
-      allow-review: true
-      allow-write: true
   groups:
     - 'http://geneontology.org'
   nickname: 'David Osumi-Sutherland'
@@ -414,9 +372,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   groups:
     - 'http://flybase.org'
   nickname: 'Susan Tweedie'
@@ -443,12 +398,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-freeform-litxref-optional: true
-      allow-management: true
-      allow-review: true
-      allow-write: true
   comment: 'former affiliations: FlyBase, UniProt, GO'
   groups:
     - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/parkinsons'
@@ -476,12 +425,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-freeform-litxref-optional: true
-      allow-management: true
-      allow-review: true
-      allow-write: true
   groups:
     - 'http://geneontology.org'
   nickname: 'Jane Lomax'
@@ -495,12 +438,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-freeform-litxref-optional: true
-      allow-management: true
-      allow-review: true
-      allow-write: true
   groups:
     - 'http://geneontology.org'
   nickname: 'Melanie Courtot'
@@ -514,12 +451,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-freeform-litxref-optional: true
-      allow-management: true
-      allow-review: true
-      allow-write: true
   groups:
     - 'http://geneontology.org'
   nickname: 'Paola Roncaglia'
@@ -564,8 +495,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://www.ebi.ac.uk/GOA'
   nickname: 'Elena Speretta'
@@ -592,8 +521,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Hema Bye-A-Jee'
@@ -601,9 +528,6 @@
   uri: 'https://orcid.org/0000-0003-2464-7688'
   xref: 'GOC:hbye'
 -
-  authorizations:
-    termgenie-go:
-      allow-write: true
   nickname: 'Alex Holmes'
   organization: GOA
   uri: 'GOC:ah'
@@ -627,9 +551,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   comment: 'formerly GOA'
   groups:
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
@@ -656,9 +577,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   comment: 'Birgit Meldal'
   groups:
     - 'https://www.ebi.ac.uk/intact'
@@ -686,12 +604,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-freeform-litxref-optional: true
-      allow-management: true
-      allow-review: true
-      allow-write: true
   groups:
     - 'http://informatics.jax.org'
     - 'http://geneontology.org'
@@ -730,10 +642,6 @@
   uri: 'https://orcid.org/0000-0003-3394-9805'
   xref: 'GOC:dms'
 -
-  authorizations:
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   nickname: 'Cynthia Smith'
   organization: MGI
   uri: 'GOC:cls'
@@ -741,10 +649,6 @@
 -
   accounts:
     github: sbello
-  authorizations:
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   nickname: 'Sue Bello'
   organization: MGI
   uri: 'https://orcid.org/0000-0003-4606-0597'
@@ -774,9 +678,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   groups:
     - 'http://informatics.jax.org'
     - 'http://geneontology.org'
@@ -829,9 +730,6 @@
   uri: 'GOC:rs'
   xref: 'GOC:rs'
 -
-  authorizations:
-    termgenie-go:
-      allow-write: true
   nickname: 'Trish Whetzel'
   organization: NCBO
   uri: 'GOC:tw'
@@ -876,9 +774,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Antonia Lock'
@@ -897,9 +792,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   comment: 'former affiliations: GO editorial office; MGI; SGD in distant past'
   groups:
     - 'http://www.pombase.org'
@@ -914,9 +806,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   comment: 'former affiliation: GeneDB_Spombe'
   groups:
     - 'http://www.pombase.org'
@@ -936,8 +825,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://oregonstate.edu'
   nickname: 'Laurel Cooper'
@@ -987,9 +874,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   groups:
     - 'https://reactome.org'
   nickname: "Peter D'Eustachio"
@@ -1046,9 +930,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   groups:
     - 'http://rgd.mcw.edu'
   nickname: 'Stan Laulederkind'
@@ -1078,12 +959,6 @@
       go:
         allow-admin: true
         allow-edit: true
-    termgenie-go:
-      allow-freeform: true
-      allow-freeform-litxref-optional: true
-      allow-management: true
-      allow-review: true
-      allow-write: true
   groups:
     - 'http://geneontology.org'
     - 'http://planteome.org'
@@ -1169,8 +1044,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Dianna Fisk'
@@ -1184,8 +1057,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Edith Wong'
@@ -1239,9 +1110,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   groups:
     - 'http://informatics.jax.org'
     - 'http://geneontology.org'
@@ -1254,9 +1122,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Maria Costanzo'
@@ -1268,9 +1133,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Rama Balakrishnan'
@@ -1284,8 +1146,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Rob Nash'
@@ -1299,9 +1159,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Stacia Engel'
@@ -1326,8 +1183,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://www.ebi.ac.uk/spot'
   nickname: 'Dani Welter'
@@ -1356,9 +1211,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   groups:
     - 'http://www.arabidopsis.org'
   nickname: 'Donghui Li'
@@ -1422,12 +1274,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-freeform-litxref-optional: true
-      allow-management: true
-      allow-review: true
-      allow-write: true
   groups:
     - 'http://www.arabidopsis.org'
   nickname: 'Tanya Berardini'
@@ -1506,8 +1352,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Paul Denny'
@@ -1547,9 +1391,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Alan Bridge'
@@ -1600,8 +1441,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Elena Cibrian-Uhalte'
@@ -1749,8 +1588,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Penelope Garmiri'
@@ -1779,9 +1616,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Sylvain Poux'
@@ -1894,9 +1728,6 @@
       go:
         allow-admin: true
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   comment: 'GOC:kva is also used; occasionally MAH goes through and updates to GOC:kmv'
   groups:
     - 'http://www.wormbase.org'
@@ -1912,8 +1743,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://www.wormbase.org'
   nickname: 'Ranjana Kishore'
@@ -1927,9 +1756,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-freeform: false
-      allow-write: true
   groups:
     - 'http://zfin.org'
   nickname: 'Doug Howe'
@@ -1943,8 +1769,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://zfin.org'
   nickname: 'David Fashena'
@@ -1958,8 +1782,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://zfin.org'
   nickname: 'Ceri Van Slyke'
@@ -1986,8 +1808,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://zfin.org'
   nickname: 'Yvonne M Bradford'
@@ -2396,8 +2216,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://lbl.gov'
   nickname: 'Monica Munoz-Torres'
@@ -2414,8 +2232,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://ronininstitute.org'
   nickname: 'Anne Thessen'
@@ -2475,8 +2291,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://flybase.org'
   nickname: 'Giulia Antonazzo'
@@ -2877,8 +2691,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://flybase.org'
   nickname: 'Rossana Zaru'
@@ -3000,8 +2812,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'http://www.arabidopsis.org'
   nickname: 'Leonore Reiser'
@@ -3053,8 +2863,6 @@
     noctua:
       go:
         allow-edit: true
-    termgenie-go:
-      allow-write: true
   groups:
     - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological'
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
