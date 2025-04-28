@@ -1,12 +1,8 @@
 -
-  email-md5:
-    - e10e731bffebbca8fbe2c5f86a02419f
   nickname: 'Jim Knowles'
   uri: 'GOC:jk'
   xref: 'GOC:jk'
 -
-  email-md5:
-    - 2032c0dc70a2aa2c3cadf452302a7e8d
   groups:
     - 'http://geneontology.org'
   nickname: 'Anushya Muruganujan'
@@ -19,8 +15,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 84c8bfa613c72bb30f82839e1ce78a55
   groups:
     - 'http://geneontology.org'
   nickname: 'Paul Thomas'
@@ -33,8 +27,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 7e66eb2d15fe29c8a051e43000cc681c
   groups:
     - 'http://geneontology.org'
   nickname: 'Huaiyu Mi'
@@ -42,8 +34,6 @@
   xref: 'GOC:hm'
 -
   accounts:
-    email-md5:
-      - 7da61ebeb6459e809d61aebf28f2a315
     github: nathandunn
     orcid: 0000-0002-4862-3181
   authorizations:
@@ -52,14 +42,10 @@
       allow-management: false
       allow-review: true
       allow-write: true
-  email-md5:
-    - 9afebd4cf92acca9aa2bdb557f96b504
   nickname: 'Nathan Dunn'
   uri: 'https://orcid.org/0000-0002-4862-3181'
 -
   accounts:
-    email-md5:
-      - 65d762aea47eaf21e2b19177f448b3c3
     github: kltm
     google-plus: '112360324542574840929'
     orcid: 0000-0001-8244-1536
@@ -73,8 +59,6 @@
       allow-management: true
       allow-review: true
       allow-write: true
-  email-md5:
-    - 65d762aea47eaf21e2b19177f448b3c3
   groups:
     - 'http://geneontology.org'
     - 'http://planteome.org'
@@ -84,32 +68,22 @@
   uri: 'https://orcid.org/0000-0001-8244-1536'
   xref: 'GOC:sjc'
 -
-  email-md5:
-    - d62320e131b827615ba8da3decafa6f3
   nickname: 'Jeremy Nguyen Xuan'
   uri: 'GOC:jnx'
   xref: 'GOC:jnx'
 -
-  email-md5:
-    - ac1bfce31c215d31cd99e43281811dad
   nickname: 'Anna Melidoni'
   uri: 'GOC:anm'
   xref: 'GOC:anm'
 -
-  email-md5:
-    - 8e80fce402cd52cb2455d4c6c51720a5
   nickname: 'Mike Livstone'
   uri: 'GOC:ml2'
   xref: 'GOC:ml2'
 -
-  email-md5:
-    - 61ab06ea85d8658a7e17cc30295dafbd
   nickname: 'Heiko Dietze'
   uri: 'https://orcid.org/0000-0003-0234-1688'
   xref: 'GOC:hd'
 -
-  email-md5:
-    - 1c98b0f0a4b0dc79242cfaaf739f9cc8
   groups:
     - 'http://ucsd.edu'
   nickname: 'Dexter Pratt'
@@ -134,8 +108,6 @@
 -
   accounts:
     github: michaelerice
-  email-md5:
-    - a9c277d0f6301c4d5c48bb593268536d
   groups:
     - 'http://www.agbase.msstate.edu'
   nickname: 'Michael Rice'
@@ -149,8 +121,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 601f7b3e4f8165ba4be5057e65143f76
   groups:
     - 'http://www.aspgd.org'
     - 'http://candidagenome.org'
@@ -168,8 +138,6 @@
     termgenie-go:
       allow-freeform: false
       allow-write: true
-  email-md5:
-    - ac1bfce31c215d31cd99e43281811dad
   nickname: 'Anna Melidoni (formerly BHF-UCL)'
   organization: IntAct
   uri: 'GOC:ame'
@@ -191,8 +159,6 @@
     termgenie-go:
       allow-write: true
   comment: 'status inactive, Masters Student working with the BHF group at UCL'
-  email-md5:
-    - e4a501963ab7181d1e40298d93741e50
   nickname: 'Hadil Alrohaif'
   organization: BHF-UCL
   uri: 'GOC:hal'
@@ -208,8 +174,6 @@
     termgenie-go:
       allow-write: true
   comment: 'status inactive, Masters Student working with the BHF group at UCL'
-  email-md5:
-    - 59418a02b3237575e70fd9f79da8d244
   nickname: 'Klaus Mitchell'
   organization: BHF-UCL
   uri: 'https://orcid.org/0000-0001-9510-5320'
@@ -221,8 +185,6 @@
     termgenie-go:
       allow-freeform: false
       allow-write: true
-  email-md5:
-    - 6c55ad1ed9cdab0b874123a20a0c3905
   nickname: 'Nancy Campbell'
   organization: BHF-UCL
   uri: 'https://orcid.org/0000-0001-9995-0839'
@@ -237,8 +199,6 @@
     termgenie-go:
       allow-write: true
   comment: 'formerly HGNC'
-  email-md5:
-    - 87b721597d5a997234f5a8f61bde469b
   groups:
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
     - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological'
@@ -249,16 +209,12 @@
   xref: 'GOC:rl'
 -
   comment: 'formerly HGNC'
-  email-md5:
-    - 0a23c8a275ee44e7304d76fe98b7b0b1
   nickname: 'Varsha Khodiyar'
   organization: BHF-UCL
   uri: 'GOC:vk'
   xref: 'GOC:vk'
 -
   comment: 'status inactive, formerly BHF_UCL'
-  email-md5:
-    - 724b4f5c03cd807d3977f8ae4c43970a
   groups:
     - 'http://www.utoronto.ca'
   nickname: 'Sejal Patel'
@@ -271,8 +227,6 @@
   uri: 'GOC:nln'
   xref: 'GOC:nln'
 -
-  email-md5:
-    - a35c6a73b68acd8ba279d77dad079d8f
   groups:
     - 'http://web.expasy.org/groups/calipho'
   nickname: 'Isabelle Cusin'
@@ -310,8 +264,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - 816b724b99c13b7fd733a9401f879f4e
   groups:
     - 'http://dictybase.org'
   nickname: 'Petra Fey'
@@ -328,9 +280,6 @@
     termgenie-go:
       allow-freeform: false
       allow-write: true
-  email-md5:
-    - 55e50a7c9ce412fdcbdfbb57caeb0aaa
-    - e92521fb31f573641b4bdd6b9b7b088b
   groups:
     - 'http://geneontology.org'
     - 'https://www.nextprot.org'
@@ -347,8 +296,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - 0187a194e1fe3ce4482be77cdfe32c79
   groups:
     - 'http://dictybase.org'
   nickname: 'Robert Dodson'
@@ -375,8 +322,6 @@
   uri: 'https://orcid.org/0000-0001-9016-2684'
   xref: 'GOC:jh2'
 -
-  email-md5:
-    - 439abe0f9680c9b6a016f44e23d2e3a4
   groups:
     - 'http://www.bio.tamu.edu'
   nickname: 'Brenley McIntosh'
@@ -401,8 +346,6 @@
   uri: 'GOC:fb_curators'
   xref: 'GOC:fb_curators'
 -
-  email-md5:
-    - 17d2b31399e746373f3b18f7f65ab7fe
   groups:
     - 'http://monarchinitiative.org'
     - 'https://ncats.nih.gov/translator'
@@ -419,9 +362,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - 82989df351e8628287c7d71227c299cb
-    - 8f2851f24e6a524cc10da6bb2a72e7eb
   groups:
     - 'http://flybase.org'
   nickname: 'Helen Attrill'
@@ -458,8 +398,6 @@
       allow-management: true
       allow-review: true
       allow-write: true
-  email-md5:
-    - 3e373dc40c5b80696bed3d0987fea2dc
   groups:
     - 'http://geneontology.org'
   nickname: 'David Osumi-Sutherland'
@@ -479,8 +417,6 @@
     termgenie-go:
       allow-freeform: false
       allow-write: true
-  email-md5:
-    - b979cd6be9eec5bef6c92a1ff4173306
   groups:
     - 'http://flybase.org'
   nickname: 'Susan Tweedie'
@@ -498,8 +434,6 @@
   uri: 'GOC:lmg'
   xref: 'GOC:lmg'
 -
-  email-md5:
-    - 84a9c2d76c17fb92ae022b1b80fe0b27
   nickname: 'Amelia Ireland'
   organization: 'GO Central'
   uri: 'GOC:ai'
@@ -516,8 +450,6 @@
       allow-review: true
       allow-write: true
   comment: 'former affiliations: FlyBase, UniProt, GO'
-  email-md5:
-    - 67660068792406332d36a17cd886a5e6
   groups:
     - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/parkinsons'
   nickname: 'Rebecca Foulger'
@@ -550,8 +482,6 @@
       allow-management: true
       allow-review: true
       allow-write: true
-  email-md5:
-    - dad114c06bf7c24dd3aeeedf79fe8168
   groups:
     - 'http://geneontology.org'
   nickname: 'Jane Lomax'
@@ -571,9 +501,6 @@
       allow-management: true
       allow-review: true
       allow-write: true
-  email-md5:
-    - 792d70ba0832fd43a97a9d4ec5136c86
-    - a1f4be95870984265a3b33604a963b01
   groups:
     - 'http://geneontology.org'
   nickname: 'Melanie Courtot'
@@ -593,8 +520,6 @@
       allow-management: true
       allow-review: true
       allow-write: true
-  email-md5:
-    - 98ca4b42efb7564953508c74394d8634
   groups:
     - 'http://geneontology.org'
   nickname: 'Paola Roncaglia'
@@ -625,8 +550,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 211b318809e38f23520d0bd64f4a2330
   groups:
     - 'http://geneontology.org'
   previous-groups:
@@ -643,9 +566,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - e4c08a3f5b380e6103ac2cc3d94d83ff
-    - c961c90fe1e38150467f235fe1ba6737
   groups:
     - 'http://www.ebi.ac.uk/GOA'
   nickname: 'Elena Speretta'
@@ -659,8 +579,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - a5d3f603d546cc29f906118a5d9762a4
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'George Georghiou'
@@ -676,8 +594,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - eeaf1be2f013ee3e4fe9204b8e48a1a6
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Hema Bye-A-Jee'
@@ -688,8 +604,6 @@
   authorizations:
     termgenie-go:
       allow-write: true
-  email-md5:
-    - b7f33ede546b87737fd185642dbd2bb8
   nickname: 'Alex Holmes'
   organization: GOA
   uri: 'GOC:ah'
@@ -700,8 +614,6 @@
   uri: 'GOC:ecd'
   xref: 'GOC:ecd'
 -
-  email-md5:
-    - c1e6bbfeb859c09c827614d106331252
   groups:
     - 'http://www.ebi.ac.uk/GOA'
   nickname: 'Prudence Mutowo'
@@ -719,9 +631,6 @@
       allow-freeform: false
       allow-write: true
   comment: 'formerly GOA'
-  email-md5:
-    - 3beee3c95e50a25e13cf834785fb2b21
-    - 35a1ee6e08a0eb2d914ca1529f2fd770
   groups:
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
   nickname: 'Rachael Huntley'
@@ -734,8 +643,6 @@
   uri: 'GOC:vl'
   xref: 'GOC:vl'
 -
-  email-md5:
-    - dcec55f1f13d54c59c64f061dbb52797
   groups:
     - 'http://www.ebi.ac.uk/GOA'
   nickname: 'Yasmin Alam-Faruque'
@@ -753,8 +660,6 @@
       allow-freeform: false
       allow-write: true
   comment: 'Birgit Meldal'
-  email-md5:
-    - f8b0b6bba244b89fd625b8994bdd1744
   groups:
     - 'https://www.ebi.ac.uk/intact'
   nickname: 'Birgit Meldal'
@@ -762,8 +667,6 @@
   uri: 'https://orcid.org/0000-0003-4062-6158'
   xref: 'GOC:bhm'
 -
-  email-md5:
-    - af515eed93a426d45d1d01200f4e8399
   groups:
     - 'http://metacyc.org'
   nickname: 'Ingrid Keseler'
@@ -789,8 +692,6 @@
       allow-management: true
       allow-review: true
       allow-write: true
-  email-md5:
-    - 65769275d47653aced3fae5ab1f805b1
   groups:
     - 'http://informatics.jax.org'
     - 'http://geneontology.org'
@@ -811,7 +712,7 @@
   authorizations:
     noctua:
       go:
-        allow-edit: true 
+        allow-edit: true
   organization: MGI
   uri: 'https://orcid.org/0000-0001-8691-8856'
   xref: 'GOC:ajp'
@@ -822,8 +723,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 5ee6809ed1e68d38c7366e9ae14a5b9e
   groups:
     - 'http://informatics.jax.org'
   nickname: 'Dmitry Sitnikov'
@@ -835,8 +734,6 @@
     termgenie-go:
       allow-freeform: false
       allow-write: true
-  email-md5:
-    - cb42c1c690ef5723e25000df7e9265fb
   nickname: 'Cynthia Smith'
   organization: MGI
   uri: 'GOC:cls'
@@ -853,8 +750,6 @@
   uri: 'https://orcid.org/0000-0003-4606-0597'
   xref: 'GOC:smb'
 -
-  email-md5:
-    - 1108e1579ce5583a35c743cb3a85afa7
   groups:
     - 'http://informatics.jax.org'
   nickname: 'Grace Stafford'
@@ -866,8 +761,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - d5acbd91b75ea699632b1d569e342a53
   groups:
     - 'http://informatics.jax.org'
     - 'http://geneontology.org'
@@ -884,8 +777,6 @@
     termgenie-go:
       allow-freeform: false
       allow-write: true
-  email-md5:
-    - 9bac0f35f8afc5a22677fa7c950b681d
   groups:
     - 'http://informatics.jax.org'
     - 'http://geneontology.org'
@@ -900,8 +791,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - e39ac0f072d7278ae76953722298f26f
   groups:
     - 'http://informatics.jax.org'
   nickname: 'Li Ni'
@@ -915,8 +804,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 6ea952218c0da22097c3cab09fbb5c36
   groups:
     - 'http://informatics.jax.org'
     - 'http://geneontology.org'
@@ -925,8 +812,6 @@
   uri: 'https://orcid.org/0000-0001-8522-334X'
   xref: 'GOC:jab'
 -
-  email-md5:
-    - 53a33cd048b9032e65454b9672b7fd4f
   groups:
     - 'http://www.microme.eu'
   nickname: 'Claudia Rato da Silva'
@@ -947,8 +832,6 @@
   authorizations:
     termgenie-go:
       allow-write: true
-  email-md5:
-    - 3ee520e060d32cc1fe26951496e40486
   nickname: 'Trish Whetzel'
   organization: NCBO
   uri: 'GOC:tw'
@@ -964,8 +847,6 @@
   uri: 'GOC:cc'
   xref: 'GOC:cc'
 -
-  email-md5:
-    - ab543d1ed0770d00f679aa6df6bb4048
   groups:
     - 'http://pamgo.vbi.vt.edu'
   nickname: 'Magdalen Lindeberg'
@@ -998,9 +879,6 @@
     termgenie-go:
       allow-freeform: false
       allow-write: true
-  email-md5:
-    - e0d33c1c706cdbd74d033961f2f9bb43
-    - 7e821339ca29fac9f47d78ce3bed1c11
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Antonia Lock'
@@ -1023,8 +901,6 @@
       allow-freeform: false
       allow-write: true
   comment: 'former affiliations: GO editorial office; MGI; SGD in distant past'
-  email-md5:
-    - f92c1acf7ecd91f8b798d4f4526795dd
   groups:
     - 'http://www.pombase.org'
   nickname: 'Midori Harris'
@@ -1042,8 +918,6 @@
       allow-freeform: false
       allow-write: true
   comment: 'former affiliation: GeneDB_Spombe'
-  email-md5:
-    - 945b113a7c06ea578318b77dbc31d990
   groups:
     - 'http://www.pombase.org'
   nickname: 'Val Wood'
@@ -1064,9 +938,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - f89228b8459a2a5bb6c8b0c25d611e0d
-    - b5c9d1c80d688dbe4766f40d8461d8c0
   groups:
     - 'http://oregonstate.edu'
   nickname: 'Laurel Cooper'
@@ -1119,8 +990,6 @@
     termgenie-go:
       allow-freeform: false
       allow-write: true
-  email-md5:
-    - ba0ab426088546c5a9acf014a722fdd5
   groups:
     - 'https://reactome.org'
   nickname: "Peter D'Eustachio"
@@ -1164,8 +1033,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - f6cb73c2299e72ab430475ba02567e49
   groups:
     - 'http://rgd.mcw.edu'
   nickname: 'Shur-Jen Wang'
@@ -1182,8 +1049,6 @@
     termgenie-go:
       allow-freeform: false
       allow-write: true
-  email-md5:
-    - f9d6b79638672cdbba515fb1e60b81e8
   groups:
     - 'http://rgd.mcw.edu'
   nickname: 'Stan Laulederkind'
@@ -1219,8 +1084,6 @@
       allow-management: true
       allow-review: true
       allow-write: true
-  email-md5:
-    - 5611a7dfafec2dfcc4c6da9fa5ce7a84
   groups:
     - 'http://geneontology.org'
     - 'http://planteome.org'
@@ -1308,8 +1171,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - ce6b7d80ecad08852a1c06bf24fb7f5a
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Dianna Fisk'
@@ -1325,9 +1186,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - ab69ceef7068adeed08e0a38aaa9539c
-    - cd939e00b2e9a939e151fcc6d2516ef0
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Edith Wong'
@@ -1361,8 +1219,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - db80b5b690c934af872903cdc4985a22
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Jodi Hirschman'
@@ -1386,8 +1242,6 @@
     termgenie-go:
       allow-freeform: false
       allow-write: true
-  email-md5:
-    - af6c0d66acf0836edf60f3e8b1e6b7c9
   groups:
     - 'http://informatics.jax.org'
     - 'http://geneontology.org'
@@ -1403,8 +1257,6 @@
     termgenie-go:
       allow-freeform: false
       allow-write: true
-  email-md5:
-    - 0049fc37c812f45193a4500186dd622a
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Maria Costanzo'
@@ -1419,8 +1271,6 @@
     termgenie-go:
       allow-freeform: false
       allow-write: true
-  email-md5:
-    - a7c69cee7738a961f8bf5c0f9a9ff874
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Rama Balakrishnan'
@@ -1436,8 +1286,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - 0dcb74135234ebffddc3931f28eab539
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Rob Nash'
@@ -1454,8 +1302,6 @@
     termgenie-go:
       allow-freeform: false
       allow-write: true
-  email-md5:
-    - 8688146764c94ec2dad5b1a47b047c73
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Stacia Engel'
@@ -1482,9 +1328,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - 583eaf69b34a4dcbb51d019f7eede0f0
-    - 3f4da4804976ac88536a6fe0ef77f817
   groups:
     - 'http://www.ebi.ac.uk/spot'
   nickname: 'Dani Welter'
@@ -1516,9 +1359,6 @@
     termgenie-go:
       allow-freeform: false
       allow-write: true
-  email-md5:
-    - 956bb66ec7d213352c0d751377cb299a
-    - 181e343a68ffb867cd031faafc827b3b
   groups:
     - 'http://www.arabidopsis.org'
   nickname: 'Donghui Li'
@@ -1588,8 +1428,6 @@
       allow-management: true
       allow-review: true
       allow-write: true
-  email-md5:
-    - 82fc9d312d1ed22725cb4ecd55df6878
   groups:
     - 'http://www.arabidopsis.org'
   nickname: 'Tanya Berardini'
@@ -1670,8 +1508,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - a72a432b85b5f44d05e2e124e5ebfd23
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Paul Denny'
@@ -1690,8 +1526,6 @@
   uri: 'GOC:aa'
   xref: 'GOC:aa'
 -
-  email-md5:
-    - b656cb1ab16819a79c770231982988f1
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Anne Estreicher'
@@ -1703,8 +1537,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 9090e122cba40b90124ea8eb4859bf8e
   groups:
     - 'http://www.eisai.com'
   nickname: 'Mitsuteru Nakao'
@@ -1718,8 +1550,6 @@
     termgenie-go:
       allow-freeform: false
       allow-write: true
-  email-md5:
-    - dc11dd680545ac2aa73044fc222db268
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Alan Bridge'
@@ -1727,8 +1557,6 @@
   uri: 'https://orcid.org/0000-0003-2148-9135'
   xref: 'GOC:ab'
 -
-  email-md5:
-    - 69e41e8a803dd018c7e7073e0b0fd3f3
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Andre Stutz'
@@ -1761,8 +1589,6 @@
   uri: 'GOC:dl2'
   xref: 'GOC:dl2'
 -
-  email-md5:
-    - e76fdf6a52a910f0bdd2c521f964c1d4
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Duncan Legge'
@@ -1776,8 +1602,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - 1d5e7a8509c6a8bc9d5472b1ff5f570d
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Elena Cibrian-Uhalte'
@@ -1805,8 +1629,6 @@
   uri: 'GOC:gc'
   xref: 'GOC:gc'
 -
-  email-md5:
-    - f3c8177c584faab5eae5d6a411a91976
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Guillaume Keller'
@@ -1833,8 +1655,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 774e21706bb2937d5cd30edf73c6469d
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Klemens Pichler'
@@ -1858,8 +1678,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - a70eb53334ef240f607a3ca63272dcaa
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Marc Feuermann'
@@ -1872,8 +1690,6 @@
   uri: 'GOC:mcb'
   xref: 'GOC:mcb'
 -
-  email-md5:
-    - d5ba5a1fe3db79ae75578d3e7783ac94
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Michel Schneider'
@@ -1892,8 +1708,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 2ae8276bb8b2eb2a2f62ad6361d2af6d
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Michele Magrane'
@@ -1937,8 +1751,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - 66204f7039a6c6d6daeac682221e3773
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Penelope Garmiri'
@@ -1970,8 +1782,6 @@
     termgenie-go:
       allow-freeform: false
       allow-write: true
-  email-md5:
-    - dc9b175604eafb96720c1a6ca7980cd4
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Sylvain Poux'
@@ -1979,8 +1789,6 @@
   uri: 'https://orcid.org/0000-0001-7299-6685'
   xref: 'GOC:sp'
 -
-  email-md5:
-    - 5cf46e6664c70bd80092a55367950f2d
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Shyamala Sundaram'
@@ -1988,8 +1796,6 @@
   uri: 'GOC:ss'
   xref: 'GOC:ss'
 -
-  email-md5:
-    - 8796f95a22eb1783692cb06d8c69d190
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Ursula Hinz'
@@ -2004,8 +1810,6 @@
 -
   accounts:
     github: mlschaeffer
-  email-md5:
-    - 024f54a93edddb9690970c2281f728b7
   groups:
     - 'http://www.maizegdb.org'
   nickname: 'Mary L. Schaeffer'
@@ -2013,8 +1817,6 @@
   uri: 'GOC:mls'
   xref: 'GOC:mls'
 -
-  email-md5:
-    - 688d5d2cd34ad4eabc188653d120561b
   groups:
     - 'https://www.nextprot.org'
   nickname: 'Nevila Hyka-Nouspikel'
@@ -2040,8 +1842,6 @@
   uri: 'https://orcid.org/0000-0002-2979-8613'
   xref: 'GOC:gap'
 -
-  email-md5:
-    - 8a64baba4e3e7eb11dd41526530cdc30
   groups:
     - 'https://www.ebi.ac.uk/intact'
   nickname: 'Pablo Porras Millan'
@@ -2098,8 +1898,6 @@
       allow-freeform: false
       allow-write: true
   comment: 'GOC:kva is also used; occasionally MAH goes through and updates to GOC:kmv'
-  email-md5:
-    - 52a4b1e1f8519d5ad27335e0b920eb7e
   groups:
     - 'http://www.wormbase.org'
     - 'http://geneontology.org'
@@ -2116,8 +1914,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - 12e3a61abf80a74384cf251641d48fd0
   groups:
     - 'http://www.wormbase.org'
   nickname: 'Ranjana Kishore'
@@ -2258,8 +2054,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 3bda03dbc02aa0fb8467c81beb5481b6
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Lionel Breuza'
@@ -2271,8 +2065,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 6c5e50debb93f1f802ad7256952fc488
   groups:
     - 'http://www.ohsu.edu'
   nickname: 'Melissa Haendel'
@@ -2290,8 +2082,6 @@
   uri: 'GOC:mag'
   xref: 'GOC:mag'
 -
-  email-md5:
-    - b7c9c4fec6813374ff3ffa10b7e0be1b
   groups:
     - 'https://www.bi.vt.edu'
   nickname: 'Trudy Torto'
@@ -2306,9 +2096,6 @@
 -
   accounts:
     github: helenp
-  email-md5:
-    - ca849fa17a251946fc841296544f14f1
-    - 7da8a4640eb919c6f97581190be625d4
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Helen Parkinson'
@@ -2611,10 +2398,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - 10c7ac321b4dd7fcca0c2eccc81ff78f
-    - 0317fbb65069c545c831431d73e2d0fc
-    - 1cf7f1399ec6b4f52fe3e1209b063f5d
   groups:
     - 'http://lbl.gov'
   nickname: 'Monica Munoz-Torres'
@@ -2633,8 +2416,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - 50406c097b7cc168e38ca1980f1c4bc2
   groups:
     - 'http://ronininstitute.org'
   nickname: 'Anne Thessen'
@@ -2664,8 +2445,6 @@
 -
   accounts:
     github: pnrobinson
-  email-md5:
-    - c727817e3b98721cf962f69613afd192
   nickname: 'Peter Robinson'
   uri: 'GOC:pnr'
   xref: 'GOC:pnr'
@@ -2674,8 +2453,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 511024223bef1686c82af8cee07aa5ab
   groups:
     - 'http://www.sib.swiss'
   nickname: 'Aurore Britan'
@@ -2686,8 +2463,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - f82886a594366a817267e7843aaa94eb
   groups:
     - 'http://www.sib.swiss'
   nickname: 'Valerie Hinard'
@@ -2702,8 +2477,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - 7379792826dca5b368ea626350f42fdb
   groups:
     - 'http://flybase.org'
   nickname: 'Giulia Antonazzo'
@@ -2711,8 +2484,6 @@
   uri: 'https://orcid.org/0000-0003-0086-5621'
   xref: 'GOC:ga'
 -
-  email-md5:
-    - b63b38a114f54e74e6b7e22f728fc6a2
   groups:
     - 'http://www.sib.swiss'
   nickname: 'Anne Niknejad'
@@ -2724,8 +2495,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - d4b32aa1fdf6e448fdcac39e1029b29d
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: "Claire O'Donovan"
@@ -2736,8 +2505,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - df1dc4e85198a40a3fe2e0ce710e93a6
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Amaia Sangrador'
@@ -2748,8 +2515,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - af32cf0251de5801656a01abc87347d8
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Alex Bateman'
@@ -2762,8 +2527,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - b1979eaa19640f88f4eae7e968401083
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Frank Koopmans'
@@ -2776,8 +2539,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 8a249393af4561952b7283f8ca183919
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Pim van Nierop'
@@ -2791,8 +2552,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - f28e1be9fc622bffbecb166378ef2456
   groups:
     - 'http://geneontology.org'
   nickname: 'Jim Balhoff'
@@ -2803,8 +2562,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 7a113f413bef0385f3f26ea11500697e
   groups:
     - 'http://www.phenotypercn.org'
   nickname: 'Istvan Miko'
@@ -2815,8 +2572,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 693f54b57c5b0fd811daaa764f0a408a
   groups:
     - 'http://www.ohsu.edu'
   nickname: 'Matthew Brush'
@@ -2827,8 +2582,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - c4cc79c1a42a3421eede8fd303bce97b
   groups:
     - 'http://www.sandiego.edu'
   nickname: 'Wasila Dahdul'
@@ -2839,8 +2592,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - b620974b9361d4b213f40f286b11ae3e
   groups:
     - 'http://www.buffalo.edu'
   nickname: 'Alexander Diehl'
@@ -2852,8 +2603,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 02f07e64c15efd21bcb53209aa9fdcf0
   groups:
     - 'http://www.ohsu.edu'
   nickname: 'Jean-Philippe Francois Gourdine'
@@ -2866,8 +2615,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 0c93d771ecbe7f79da921d148bbc523b
   groups:
     - 'http://planteome.org'
   nickname: 'Justin Preece'
@@ -2880,8 +2627,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 8a9733d55915899470bb4f488cb02d0b
   groups:
     - 'http://planteome.org'
   nickname: 'Pankaj Jaiswal'
@@ -2893,8 +2638,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - f94b258f360ac5e23bdae69665f1abed
   groups:
     - 'http://www.buffalo.edu'
   nickname: 'Mark Jensen'
@@ -2905,8 +2648,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - e9e16245c16495c1939a3f94cfe10014
   groups:
     - 'http://www.embo.org'
   nickname: 'Nancy George'
@@ -2919,8 +2660,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 119420f70952561ee251188593af2c22
   groups:
     - 'https://www.awi.de'
   nickname: 'Pier Luigi Buttigieg'
@@ -2931,8 +2670,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 615524629ee74d978a22e37e302fb891
   groups:
     - 'https://www.hsph.harvard.edu'
   nickname: 'Bridget C Hanna'
@@ -2943,8 +2680,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 1da7b1538b4b21f1cfe7ce462965a549
   groups:
     - 'http://www.ohsu.edu'
   nickname: 'Daniel Keith'
@@ -2955,8 +2690,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 28b281ff7eb6702879dc492d46640789
   groups:
     - 'http://ualr.edu'
   nickname: 'Thomas Hahn'
@@ -2967,8 +2700,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - ade6fb1b95edb06e29febb863f6df9d0
   groups:
     - 'http://www.massgeneral.org'
   nickname: 'Karl Helmer'
@@ -2979,8 +2710,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 127b8bf1b1867d4639eb18b126505863
   groups:
     - 'http://oregonstate.edu'
   nickname: 'Justin Elser'
@@ -2991,8 +2720,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - a674a0c01d206479aa80032570eae279
   groups:
     - 'https://www.roswellpark.org'
   nickname: 'William Duncan'
@@ -3003,8 +2730,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 996df2555af6fbe9083d4e9a4d92b528
   groups:
     - 'https://www.cgiar.org'
   nickname: 'Medha Devare'
@@ -3015,8 +2740,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 86dadf06302586b8d2667c6e60f0a60c
   groups:
     - 'https://www.ncsu.edu'
   nickname: 'Cynthia J Grondin'
@@ -3029,8 +2752,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - caad47c5134fca150d4e9ff086c1d7f5
   groups:
     - 'http://geneontology.org'
     - 'http://lbl.gov'
@@ -3042,8 +2763,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - a479c2d87277745766db1dd1a6551a7f
   groups:
     - 'https://www.adm.com'
   nickname: 'Jie Liu'
@@ -3054,8 +2773,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 6fe3d0f5a77c3f18a4403a2d6db7ab52
   groups:
     - 'https://www.epa.gov'
   nickname: 'Ronglin Wang'
@@ -3066,8 +2783,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 21fe7d3d1db7e96c7a3221c8d31e136b
   groups:
     - 'http://www.ucdavis.edu'
   nickname: 'Matthew Lange'
@@ -3078,8 +2793,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 634abb3b6437498bec616150ef57270d
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Daniel Gonzalez'
@@ -3090,8 +2803,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 2d2a5cce07b6ea476ae866ddf83b440d
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Emma Hatton-Ellis'
@@ -3102,8 +2813,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - ebaf882a667319fea1abc78811b565e4
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Barbara Palka'
@@ -3114,8 +2823,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - cb9c22aab5ab96df62098f7407c1069f
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Ramona Britto'
@@ -3126,8 +2833,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 0dcbbae41504af90fcca94f8f756a961
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Alistair MacDougall'
@@ -3140,8 +2845,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - cefa19821d8dda55a07a755a964e4946
   groups:
     - 'http://www.wormbase.org'
   nickname: 'Mary Ann Tuli'
@@ -3152,8 +2855,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - d0e31b86f6f57470844a06bcc4e49a6d
   groups:
     - 'https://www.crick.ac.uk'
   nickname: 'Jacqueline Hayles'
@@ -3164,8 +2865,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - c3c4847dd8d71c1d667d5bf7895d4a9e
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Nidhi Tyagi'
@@ -3180,8 +2879,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - 0de11318dae17ecd44c3cbc35378622a
   groups:
     - 'http://flybase.org'
   nickname: 'Rossana Zaru'
@@ -3193,8 +2890,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 1c8c8eeba90d924df74f588bc2f1de23
   groups:
     - 'http://nidm.nidash.org'
   nickname: 'Satrajit Ghosh'
@@ -3207,8 +2902,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 55a339645c9d8022ea8ab3f9316b8459
   groups:
     - 'http://www.wormbase.org'
   nickname: 'Raymond Lee'
@@ -3222,8 +2915,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - f28ff1081377a5278fd2e9ff01c35215
   groups:
     - 'http://www.xenbase.org'
   nickname: 'Malcolm Fisher'
@@ -3236,8 +2927,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    -
   groups:
     - 'http://www.xenbase.org'
   nickname: 'Christina James-Zorn'
@@ -3250,8 +2939,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    -
   groups:
     - 'http://www.xenbase.org'
   nickname: 'Mardi Nenni'
@@ -3264,8 +2951,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    -
   groups:
     - 'http://www.xenbase.org'
   nickname: 'Virgilio Ponferrada'
@@ -3278,8 +2963,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - f00a4d8dce61e251624a99fed04385f4
   groups:
     - 'http://www.wormbase.org'
   nickname: 'Christian Grove'
@@ -3292,8 +2975,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 8cb0f722515de37b1d05747738fd86e1
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Olivia Lang'
@@ -3307,8 +2988,6 @@
       go:
         allow-admin: true
         allow-edit: true
-  email-md5:
-    - 4c6434117cef942c05aaeee7e0bec853
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Suzi Aleksander'
@@ -3323,8 +3002,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - 12db676395b362177f57aecbe87fbf50
   groups:
     - 'http://www.arabidopsis.org'
   nickname: 'Leonore Reiser'
@@ -3338,8 +3015,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 6543248f6b6f9e104c0afbd5a18b59c6
   groups:
     - 'http://www.arabidopsis.org'
   nickname: 'Erica Bakker'
@@ -3352,8 +3027,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - c30dfaf88e3a1eca070de8281a049e91
   groups:
     - 'http://www.igs.umaryland.edu'
   nickname: 'Marcus Chibucos'
@@ -3367,8 +3040,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - 1bdb7f274ade49f24e617eaaf364c344
   groups:
     - 'http://www.bio.tamu.edu'
   nickname: 'Debby Siegele'
@@ -3384,9 +3055,6 @@
         allow-edit: true
     termgenie-go:
       allow-write: true
-  email-md5:
-    - 05856707bf8eca390ae3ddcf689e9011
-    - 99b4072c338978afc0a90bc7f217cef8
   groups:
     - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological'
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
@@ -3402,8 +3070,6 @@
     noctua:
       go:
         allow-edit: true
-  email-md5:
-    - f4e3ff656a9a5ace8642819c114f2dcd
   groups:
     - 'http://www.wormbase.org'
   nickname: 'Hans-Michael Muller'
