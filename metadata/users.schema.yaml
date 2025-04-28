@@ -34,25 +34,6 @@ sequence:
         type: map
         required: false
         mapping:
-          "termgenie-go":
-            type: map
-            required: false
-            mapping:
-              "allow-write":
-                type: bool
-                required: false
-              "allow-review":
-                type: bool
-                required: false
-              "allow-management":
-                type: bool
-                required: false
-              "allow-freeform":
-                type: bool
-                required: false
-              "allow-freeform-litxref-optional":
-                type: bool
-                required: false
           ## Legacy "noctua-go".
           "noctua-go":
             type: map
