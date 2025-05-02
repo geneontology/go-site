@@ -4314,6 +4314,8 @@
 -
   nickname: 'Josh Jaffery'
   organization: WB
+  previous-groups:
+    - 'http://wormbase.org'
   uri: 'GOC:jja'
   xref: 'GOC:jja'
 -
