@@ -250,7 +250,6 @@
         allow-edit: true
   groups:
     - 'http://geneontology.org'
-    - 'https://www.nextprot.org'
   nickname: 'Pascale Gaudet'
   organization: 'GO Central'
   uri: 'https://orcid.org/0000-0003-1813-6857'
