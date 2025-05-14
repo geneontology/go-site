@@ -25,6 +25,7 @@ sequence:
       "nickname":
         type: str
         required: true
+        unique: true
       "authorizations":
         type: map
         required: false
