@@ -1505,11 +1505,6 @@
   uri: 'GOC:ka'
   xref: 'GOC:ka'
 -
-  nickname: 'Livia Famiglietti'
-  organization: UniProt
-  uri: 'GOC:lf'
-  xref: 'GOC:lf'
--
   accounts:
     github: marcfeuermann
   authorizations:
@@ -4402,3 +4397,4 @@
   nickname: 'Livia Famiglietti'
   organization: UniProt
   uri: 'https://orcid.org/0000-0002-5283-6593'
+  xref: 'GOC:lf'
