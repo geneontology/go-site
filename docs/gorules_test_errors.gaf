@@ -192,9 +192,9 @@ PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S0000015
 ! SHOULD PASS GORULE:0000027 - TEST 21 - WB_REF should be allowed														
 WB	WBGene00000002	aat-1	part_of	GO:1990184	WB_REF:WBPaper00006408|PMID:14668347	IPI	WB:WBGene00000225	C		GORULE_TEST:0000027-21 F27C8.1	gene	taxon:6239	20131022	GO_Central		
 ! FAILS GORULE:0000027 - TEST 22 - Alt GO ID in Col 3 (see pipeline#209)													
-UniProtKB	Q6UW15	REG3G	involved_in	GO:0036459	PMID:23072806	IDA		C	GORULE_TEST:0000027-22	Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	
+UniProtKB	Q6UW15	REG3G	involved_in	GO:0036459	PMID:23072806	IDA		C	GORULE_TEST:0000027-22 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	
 ! FAILS GORULE:0000027 - TEST 23 - Alt GO ID in Extension (Col 16)														
-UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:23072806	IDA		C	GORULE_TEST:0000027-23	Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	part_of(GO:0036459)	
+UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:23072806	IDA		C	GORULE_TEST:0000027-23 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	part_of(GO:0036459)	
 ! FAILS GORULE:0000028 - TEST 1 - Bad GO aspect, C instead of P													
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		C	GORULE_TEST:0000028-1 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000028 - TEST 2 - Bad GO aspect, F instead of P															
