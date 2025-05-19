@@ -14,7 +14,7 @@ datasets:
     type: gaf
     dataset: ecocyc
     submitter: ecocyc
-    source: https://ftp.ebi.ac.uk/pub/databases/GO/goa/proteomes/18.E_coli_MG1655.goa
+    source: https://www.ai.sri.com/~kr/go/latest/ecocyc.gaf.gz
     entity_type:
     status: active
     species_code: Ecol
