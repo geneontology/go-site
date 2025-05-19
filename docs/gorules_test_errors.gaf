@@ -225,6 +225,8 @@ UniProtKB	A0A0B4JCV5	CG9898	enables	GO:0004252	PMID:30367934	IKR		F	GORULE_TEST:
 UniProtKB	A4D126	CRPPA	enables	GO:0042803	PMID:26687144	IDA		F	GORULE_TEST:0000046-1		protein	taxon:9606	20170627	GO_Central	
 ! FAILS GORULE:0000046 - TEST 2 - self-binding’ term, annotated to a protein other than 'self'													
 UniProtKB	A4D126	CRPPA	enables	GO:0042803	PMID:26687144	IPI	UniProtKB:P35555	F	GORULE_TEST:0000046-2		protein	taxon:9606	20170627	GO_Central	
+! SHOULD PASS GORULE:0000046 - TEST 3 - Same protein in 'with', but with a chain ID. Matches Col17 data
+UniProtKB	P05067	APP	enables	GO:0042803	PMID:15447668	IPI	UniProtKB:P05067-PRO_0000000092	F	Amyloid-beta precursor protein APP|A4|AD1	protein	taxon:9606	20230314	ARUK-UCL	UniProtKB:P05067-PRO_0000000092 `
 ! FAILS GORULE:0000050 - TEST 1 - self-referential ISS annotations 															
 UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISS	UniProtKB:F1N2N9	C	GORULE_TEST:0000050-1 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	GO_Central	
 ! FAILS GORULE:0000050 - TEST 2 - self-referential ISO annotations 															
@@ -335,5 +337,3 @@ PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO		C	GORULE_TE
 UniProtKB	A0A140VJL9	A0A140VJL9	involved_in	GO:0006783	GO_REF:0000118	IEA	PANTHER:PTHR11458:SF0	P	GORULE_TEST:0000064-1		protein	taxon:9606	20240201	TreeGrafter	
 ! FAILS GORULE:0000064 - TEST 2 - Drosophila protein
 UniProtKB	Q8IH53	Hmbs	involved_in	GO:0006783	GO_REF:0000118	IEA	PANTHER:PTHR11557:SF0	P	GORULE_TEST:0000064-2		protein	taxon:7227	20240201	TreeGrafter		
-
-
