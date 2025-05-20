@@ -200,13 +200,6 @@
   uri: 'GOC:nln'
   xref: 'GOC:nln'
 -
-  groups:
-    - 'http://web.expasy.org/groups/calipho'
-  nickname: 'Isabelle Cusin'
-  organization: CALIPHO
-  uri: 'GOC:ic'
-  xref: 'GOC:ic'
--
   comment: 'not directly affiliated with a database, but collaborates on Cell Ontology development'
   nickname: 'Anna Maria Masci'
   organization: CL
