@@ -191,7 +191,7 @@ UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:16931762	IDA		P	GORULE_TEST:0
 PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000027-20 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20180912	PomBase	part_of(X:1)
 ! SHOULD PASS GORULE:0000027 - TEST 21 - WB_REF should be allowed														
 WB	WBGene00000002	aat-1	part_of	GO:1990184	WB_REF:WBPaper00006408|PMID:14668347	IPI	WB:WBGene00000225	C		GORULE_TEST:0000027-21 F27C8.1	gene	taxon:6239	20131022	GO_Central		
-! FAILS GORULE:0000027 - TEST 22 - Alt GO ID in Col 3 (see pipeline#209)													
+! FAILS GORULE:0000027 - TEST 22 - Alt GO ID in Col 3 												
 UniProtKB	Q6UW15	REG3G	involved_in	GO:0036459	PMID:23072806	IDA		C	GORULE_TEST:0000027-22 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	
 ! FAILS GORULE:0000027 - TEST 23 - Alt GO ID in Extension (Col 16)														
 UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:23072806	IDA		C	GORULE_TEST:0000027-23 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	part_of(GO:0036459)	
