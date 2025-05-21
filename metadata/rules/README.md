@@ -1080,6 +1080,8 @@ If evidence (GAF column 7; GPAD column 6) is one of ISS, ISA, ISO, then there mu
 See also GO-RULE:0000038 (proposed) for a check of the values in the 'with' field. 
 Noting that ISM is not covered by this rule yet.
 
+Exception: (not yet implemented at GO Central): objects of type 'ncRNA' (SO:0001263 and children) using ISM as evidence do not need data in the 'with' field.
+
 <a name="gorule0000064"/>
 
 ## TreeGrafter IEAs should be filtered for GO reference species
