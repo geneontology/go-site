@@ -66,7 +66,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000062">GORULE:0000062 Infer annotations on molecular function via has_part</a>
  * <a href="#gorule0000063">GORULE:0000063 Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column)</a>
  * <a href="#gorule0000064">GORULE:0000064 TreeGrafter IEAs should be filtered for GO reference species</a>
- * <a href="#gorule0000065">GORULE:0000065 Annotations to term that are candidates for obsoletion should be removed</a>
+ * <a href="#gorule0000065">GORULE:0000065 Annotations to term that are candidates for obsoletion should be produce a warning</a>
 
 
 
@@ -1095,7 +1095,7 @@ If an annotation has GO_REF:0000118 (GAF column 6, GPAD column 5) and the taxon 
 
 <a name="gorule0000065"/>
 
-## Annotations to term that are candidates for obsoletion should be removed
+## Annotations to term that are candidates for obsoletion should be produce a warning
 
  * id: [GORULE:0000065](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000065.md)
  * status: implemented
