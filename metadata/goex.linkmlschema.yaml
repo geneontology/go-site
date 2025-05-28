@@ -1,0 +1,37 @@
+id: https://w3id.org/linkml/examples/goexmetadata
+name: goexmetadata
+prefixes:
+  linkml: https://w3id.org/linkml/
+  personinfo: https://w3id.org/linkml/examples/goexmetadata
+imports:
+  - linkml:types
+default_range: string
+default_prefix: goexmetadata
+
+classes:
+  Container:
+    tree_root: true
+    attributes:
+      organisms:
+        multivalued: true
+        inlined_as_list: true
+        range: Organism
+  Organism:
+    attributes:
+      taxon_id:
+        identifier: true
+        required: true
+      taxon_id_uniprot:
+        identifier: true
+        required: true
+      full_name:
+        required: true
+      common_name_panther:
+      common_name_uniprot:
+      code_uniprot:
+        required: true
+      code_goc:
+      group:
+        required: true
+      mod_id_space:
+        required: true

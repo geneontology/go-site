@@ -1,0 +1,1558 @@
+organisms:
+  - taxon_id: NCBITaxon:28377
+    taxon_id_uniprot: UP000001646
+    full_name: Anolis carolinensis
+    common_name_panther: lizard
+    common_name_uniprot: Green anole
+    code_uniprot: ANOCA
+    code_goc:
+    group: UniProt
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:28377
+    full_name: Anolis carolinensis
+    common_name_panther: lizard
+    common_name_uniprot: Green anole
+    code_uniprot: ANOCA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001646
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:7165
+    full_name: Anopheles gambiae
+    common_name_panther: mosquito
+    common_name_uniprot:
+    code_uniprot: ANOGA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000007062
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:224324
+    full_name: Aquifex aeolicus
+    common_name_panther: aquaficae bacteria
+    common_name_uniprot:
+    code_uniprot: AQUAE
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000798
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:3702
+    full_name: Arabidopsis thaliana
+    common_name_panther: thale cress
+    common_name_uniprot: Mouse-ear cress
+    code_uniprot: ARATH
+    code_goc:
+    group: TAIR
+    taxon_id_uniprot: UP000006548
+    mod_id_space: TAIR
+  - taxon_id: NCBITaxon:226900
+    full_name: Bacillus cereus
+    common_name_panther: bacillus cereus
+    common_name_uniprot:
+    code_uniprot: BACCR
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001417
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:224308
+    full_name: Bacillus subtilis
+    common_name_panther: b subtilis
+    common_name_uniprot:
+    code_uniprot: BACSU
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001570
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:226186
+    full_name: Bacteroides thetaiotaomicron
+    common_name_panther: bacteroidetes bacteria
+    common_name_uniprot:
+    code_uniprot: BACTN
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001414
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:684364
+    full_name: Batrachochytrium dendrobatidis
+    common_name_panther: chytrid fungus
+    common_name_uniprot: Frog chytrid fungus
+    code_uniprot: BATDJ
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000007241
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:9913
+    full_name: Bos taurus
+    common_name_panther: cow
+    common_name_uniprot: Bovine
+    code_uniprot: BOVIN
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000009136
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:15368
+    full_name: Brachypodium distachyon
+    common_name_panther: purple false brome
+    common_name_uniprot: Purple false brome
+    code_uniprot: BRADI
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000008810
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:224911
+    full_name: Bradyrhizobium diazoefficiens
+    common_name_panther: alphaproteobacteria
+    common_name_uniprot:
+    code_uniprot: BRADU
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002526
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:7739
+    full_name: Branchiostoma floridae
+    common_name_panther: lancelet
+    common_name_uniprot: Florida lancelet
+    code_uniprot: BRAFL
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001554
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:3711
+    full_name: Brassica campestris
+    common_name_panther: field mustard
+    common_name_uniprot: Field mustard
+    code_uniprot: BRACM
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000011750
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:6238
+    full_name: Caenorhabditis briggsae
+    common_name_panther: nematode worm
+    common_name_uniprot:
+    code_uniprot: CAEBR
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000008549
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:6239
+    full_name: Caenorhabditis elegans
+    common_name_panther: nematode worm
+    common_name_uniprot:
+    code_uniprot: CAEEL
+    code_goc:
+    group: WB
+    taxon_id_uniprot: UP000001940
+    mod_id_space: WB
+  - taxon_id: NCBITaxon:237561
+    full_name: Candida albicans
+    common_name_panther: candida
+    common_name_uniprot: Yeast
+    code_uniprot: CANAL
+    code_goc:
+    group: CGD
+    taxon_id_uniprot: UP000000559
+    mod_id_space: CGD
+  - taxon_id: NCBITaxon:9615
+    full_name: Canis lupus familiaris
+    common_name_panther: dog
+    common_name_uniprot: Dog
+    code_uniprot: CANLF
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000805418
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:272561
+    full_name: Chlamydia trachomatis
+    common_name_panther: chlamydia
+    common_name_uniprot:
+    code_uniprot: CHLTR
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000431
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:3055
+    full_name: Chlamydomonas reinhardtii
+    common_name_panther: green algae
+    common_name_uniprot:
+    code_uniprot: CHLRE
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000006906
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:324602
+    full_name: Chloroflexus aurantiacus
+    common_name_panther: chloroflexi bacteria
+    common_name_uniprot:
+    code_uniprot: CHLAA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002008
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:7719
+    full_name: Ciona intestinalis
+    common_name_panther: sea squirt
+    common_name_uniprot: Transparent sea squirt
+    code_uniprot: CIOIN
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000008144
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:441771
+    full_name: Clostridium botulinum
+    common_name_panther: firmicutes bacteria
+    common_name_uniprot:
+    code_uniprot: CLOBH
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: P000001986
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:227377
+    full_name: Coxiella burnetii
+    common_name_panther: gammaproteobacteria
+    common_name_uniprot:
+    code_uniprot: COXBU
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002671
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:214684
+    full_name: Cryptococcus neoformans
+    common_name_panther: basidiomycote fungus
+    common_name_uniprot:
+    code_uniprot: CRYNJ
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002149
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:7955
+    full_name: Danio rerio
+    common_name_panther: zebrafish
+    common_name_uniprot: Zebrafish
+    code_uniprot: DANRE
+    code_goc:
+    group: ZFIN
+    taxon_id_uniprot: UP000000437
+    mod_id_space: ZFIN
+  - taxon_id: NCBITaxon:6669
+    full_name: Daphnia pulex
+    common_name_panther: water_flea
+    common_name_uniprot: Water flea
+    code_uniprot: DAPPU
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000305
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:243230
+    full_name: Deinococcus radiodurans
+    common_name_panther: deinococcus bacteria
+    common_name_uniprot:
+    code_uniprot: DEIRA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002524
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:515635
+    full_name: Dictyoglomus turgidum
+    common_name_panther: dictyoglomi bacteria
+    common_name_uniprot:
+    code_uniprot: DICTD
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000007719
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:44689
+    full_name: Dictyostelium discoideum
+    common_name_panther: slime mold
+    common_name_uniprot: Social amoeba
+    code_uniprot: DICDI
+    code_goc:
+    group: dictyBase
+    taxon_id_uniprot: UP000002195
+    mod_id_space: dictyBase
+  - taxon_id: NCBITaxon:5786
+    full_name: Dictyostelium purpureum
+    common_name_panther: slime mold
+    common_name_uniprot: Slime mold
+    code_uniprot: DICPU
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001064
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:7227
+    full_name: Drosophila melanogaster
+    common_name_panther: fruit fly
+    common_name_uniprot: Fruit fly
+    code_uniprot: DROME
+    code_goc:
+    group: FlyBase
+    taxon_id_uniprot: UP000000803
+    mod_id_space: FB
+  - taxon_id: NCBITaxon:227321
+    full_name: Emericella nidulans
+    common_name_panther: ascomycote fungus
+    common_name_uniprot:
+    code_uniprot: EMENI
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000560
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:294381
+    full_name: Entamoeba histolytica
+    common_name_panther: amoeba
+    common_name_uniprot:
+    code_uniprot: ENTH1
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001926
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:9796
+    full_name: Equus caballus
+    common_name_panther: horse
+    common_name_uniprot: Horse
+    code_uniprot: HORSE
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002281
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:284811
+    full_name: Eremothecium gossypii
+    common_name_panther: budding yeasts
+    common_name_uniprot: Yeast
+    code_uniprot: EREGS
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000591
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:83333
+    full_name: Escherichia coli
+    common_name_panther: E. coli
+    common_name_uniprot:
+    code_uniprot: ECOLI
+    code_goc:  Ecol
+    group: EcoCyc
+    taxon_id_uniprot: UP000000625
+    mod_id_space: EcoCyc
+  - taxon_id: NCBITaxon:9685
+    full_name: Felis catus
+    common_name_panther: cat
+    common_name_uniprot: Cat
+    code_uniprot: FELCA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000011712
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:190304
+    full_name: Fusobacterium nucleatum
+    common_name_panther: fusobacteria
+    common_name_uniprot:
+    code_uniprot: FUSNN
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002521
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:9031
+    full_name: Gallus gallus
+    common_name_panther: chicken
+    common_name_uniprot: Chicken
+    code_uniprot: CHICK
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000539
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:243231
+    full_name: Geobacter sulfurreducens
+    common_name_panther: deltaproteobacteria
+    common_name_uniprot:
+    code_uniprot: GEOSL
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000577
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:184922
+    full_name: Giardia intestinalis
+    common_name_panther: giardia
+    common_name_uniprot:
+    code_uniprot: GIAIC
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001548
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:251221
+    full_name: Gloeobacter violaceus
+    common_name_panther: cyanobacteria
+    common_name_uniprot:
+    code_uniprot: GLOVI
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000557
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:3847
+    full_name: Glycine max
+    common_name_panther: soybean
+    common_name_uniprot: Soybean
+    code_uniprot: SOYBN
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000008827
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:9595
+    full_name: Gorilla gorilla gorilla
+    common_name_panther: gorilla
+    common_name_uniprot: Western lowland gorilla
+    code_uniprot: GORGO
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001519
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:3635
+    full_name: Gossypium hirsutum
+    common_name_panther: upland cotton
+    common_name_uniprot: Upland cotton
+    code_uniprot: GOSHI
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000189702
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:71421
+    full_name: Haemophilus influenzae
+    common_name_panther: gammaproteobacteria
+    common_name_uniprot:
+    code_uniprot: HAEIN
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000579
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:64091
+    full_name: Halobacterium salinarum
+    common_name_panther: euryarchaea
+    common_name_uniprot:
+    code_uniprot: HALSA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000554
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:4232
+    full_name: Helianthus annuus
+    common_name_panther: common sunflower
+    common_name_uniprot: Common sunflower
+    code_uniprot: HELAN
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000215914
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:85962
+    full_name: Helicobacter pylori
+    common_name_panther: H.pylori
+    common_name_uniprot:
+    code_uniprot: HELPY
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000429
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:6412
+    full_name: Helobdella robusta
+    common_name_panther: leech
+    common_name_uniprot: Californian leech
+    code_uniprot: HELRO
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000015101
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:9606
+    full_name: Homo sapiens
+    common_name_panther: human
+    common_name_uniprot: Human
+    code_uniprot: HUMAN
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000005640
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:112509
+    full_name: Hordeum vulgare subsp. vulgare
+    common_name_panther: barley
+    common_name_uniprot: Domesticated barley
+    code_uniprot: HORVV
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000011116
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:6945
+    full_name: Ixodes scapularis
+    common_name_panther: tick
+    common_name_uniprot: Deer tick
+    code_uniprot: IXOSC
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001555
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:51240
+    full_name: Juglans regia
+    common_name_panther: english walnut
+    common_name_uniprot: English walnut
+    code_uniprot: JUGRE
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000235220
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:105231
+    full_name: Klebsormidium nitens
+    common_name_panther: green algae
+    common_name_uniprot: Green alga
+    code_uniprot: KLENI
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000054558
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:374847
+    full_name: Korarchaeum cryptofilum
+    common_name_panther: candidatus archaea
+    common_name_uniprot:
+    code_uniprot: KORCO
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001686
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:4236
+    full_name: Lactuca sativa
+    common_name_panther: garden lettuce
+    common_name_uniprot: Garden lettuce
+    code_uniprot: LACSA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000235145
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:5664
+    full_name: Leishmania major
+    common_name_panther: leishmania
+    common_name_uniprot:
+    code_uniprot: LEIMA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000542
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:7918
+    full_name: Lepisosteus oculatus
+    common_name_panther: spotted gar
+    common_name_uniprot: Spotted gar
+    code_uniprot: LEPOC
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000018468
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:189518
+    full_name: Leptospira interrogans
+    common_name_panther: spirochaetes bacteria
+    common_name_uniprot:
+    code_uniprot: LEPIN
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001408
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:169963
+    full_name: Listeria monocytogenes
+    common_name_panther: firmicutes bacteria
+    common_name_uniprot:
+    code_uniprot: LISMO
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000817
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:9544
+    full_name: Macaca mulatta
+    common_name_panther: macacque monkey
+    common_name_uniprot: Rhesus macaque
+    code_uniprot: MACMU
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000006718
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:3983
+    full_name: Manihot esculenta
+    common_name_panther: cassava
+    common_name_uniprot: Cassava
+    code_uniprot: MANES
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000091857
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:3197
+    full_name: Marchantia polymorpha
+    common_name_panther: liverwort
+    common_name_uniprot: Common liverwort
+    code_uniprot: MARPO
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000244005
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:3880
+    full_name: Medicago truncatula
+    common_name_panther: barrel medic
+    common_name_uniprot: Barrel medic
+    code_uniprot: MEDTR
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002051
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:243232
+    full_name: Methanocaldococcus jannaschii
+    common_name_panther: methanococci archaea
+    common_name_uniprot:
+    code_uniprot: METJA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000805
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:188937
+    full_name: Methanosarcina acetivorans
+    common_name_panther: euryarchaea
+    common_name_uniprot:
+    code_uniprot: METAC
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002487
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:13616
+    full_name: Monodelphis domestica
+    common_name_panther: opossum
+    common_name_uniprot: Gray short-tailed opossum
+    code_uniprot: MONDO
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002280
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:81824
+    full_name: Monosiga brevicollis
+    common_name_panther: sponge
+    common_name_uniprot:
+    code_uniprot: MONBE
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001357
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:10090
+    full_name: Mus musculus
+    common_name_panther: mouse
+    common_name_uniprot: Mouse
+    code_uniprot: MOUSE
+    code_goc:
+    group: MGI
+    taxon_id_uniprot: UP000000589
+    mod_id_space: MGI:MGI
+  - taxon_id: NCBITaxon:83332
+    full_name: Mycobacterium tuberculosis
+    common_name_panther: actinobacteria
+    common_name_uniprot:
+    code_uniprot: MYCTU
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001584
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:243273
+    full_name: Mycoplasma genitalium
+    common_name_panther: mollicutes bacteria
+    common_name_uniprot:
+    code_uniprot: MYCGE
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000807
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:122586
+    full_name: Neisseria meningitidis serogroup b
+    common_name_panther: betaproteobacteria
+    common_name_uniprot:
+    code_uniprot: NEIMB
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000425
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:4432
+    full_name: Nelumbo nucifera
+    common_name_panther: sacred lotus
+    common_name_uniprot: Sacred lotus
+    code_uniprot: NELNU
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000189703
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:45351
+    full_name: Nematostella vectensis
+    common_name_panther: anemone
+    common_name_uniprot: Starlet sea anemone
+    code_uniprot: NEMVE
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001593
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:330879
+    full_name: Neosartorya fumigata
+    common_name_panther: ascomycote fungus
+    common_name_uniprot:
+    code_uniprot: ASPFU
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002530
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:367110
+    full_name: Neurospora crassa
+    common_name_panther: ascomycote fungus
+    common_name_uniprot:
+    code_uniprot: NEUCR
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001805
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:4097
+    full_name: Nicotiana tabacum
+    common_name_panther: tobacco
+    common_name_uniprot: Common tobacco
+    code_uniprot: TOBAC
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000084051
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:436308
+    full_name: Nitrosopumilus maritimus
+    common_name_panther: thaumarchaea
+    common_name_uniprot:
+    code_uniprot: NITMS
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000792
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:9258
+    full_name: Ornithorhynchus anatinus
+    common_name_panther: platypus
+    common_name_uniprot: Duckbill platypus
+    code_uniprot: ORNAN
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002279
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:39947
+    full_name: Oryza sativa
+    common_name_panther: rice
+    common_name_uniprot: Rice
+    code_uniprot: ORYSJ
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000059680
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:8090
+    full_name: Oryzias latipes
+    common_name_panther: Japanese rice fish
+    common_name_uniprot: Japanese rice fish
+    code_uniprot: ORYLA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001038
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:9598
+    full_name: Pan troglodytes
+    common_name_panther: chimpanzee
+    common_name_uniprot: Chimpanzee
+    code_uniprot: PANTR
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002277
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:5888
+    full_name: Paramecium tetraurelia
+    common_name_panther: alveolate
+    common_name_uniprot:
+    code_uniprot: PARTE
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000600
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:321614
+    full_name: Phaeosphaeria nodorum
+    common_name_panther: ascomycote fungus
+    common_name_uniprot: Glume blotch fungus
+    code_uniprot: PHANO
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000663193
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:3218
+    full_name: Physcomitrella patens
+    common_name_panther: moss
+    common_name_uniprot: Spreading-leaved earth moss
+    code_uniprot: PHYPA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000006727
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:164328
+    full_name: Phytophthora ramorum
+    common_name_panther: oomycete
+    common_name_uniprot: Sudden oak death agent
+    code_uniprot: PHYRM
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000005238
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:36329
+    full_name: Plasmodium falciparum
+    common_name_panther: apicomplexan
+    common_name_uniprot:
+    code_uniprot: PLAF7
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001450
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:3694
+    full_name: Populus trichocarpa
+    common_name_panther: black cottonwood
+    common_name_uniprot: Western balsam poplar
+    code_uniprot: POPTR
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000006729
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:54126
+    full_name: Pristionchus pacificus
+    common_name_panther: nematode worm
+    common_name_uniprot: Parasitic nematode
+    code_uniprot: PRIPA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000005239
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:3760
+    full_name: Prunus persica
+    common_name_panther: peach
+    common_name_uniprot: Peach
+    code_uniprot: PRUPE
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000006882
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:208964
+    full_name: Pseudomonas aeruginosa
+    common_name_panther: gammaproteobacteria
+    common_name_uniprot:
+    code_uniprot: PSEAE
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002438
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:418459
+    full_name: Puccinia graminis
+    common_name_panther: basidiomycote fungus
+    common_name_uniprot: Black stem rust fungus
+    code_uniprot: PUCGT
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000008783
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:178306
+    full_name: Pyrobaculum aerophilum
+    common_name_panther: crenarchaea
+    common_name_uniprot:
+    code_uniprot: PYRAE
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002439
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:10116
+    full_name: Rattus norvegicus
+    common_name_panther: rat
+    common_name_uniprot: Rat
+    code_uniprot: RAT
+    code_goc:  Rnor
+    group: RGD
+    taxon_id_uniprot: UP000002494
+    mod_id_space: RGD
+  - taxon_id: NCBITaxon:243090
+    full_name: Rhodopirellula baltica
+    common_name_panther: planctomycetes bacteria
+    common_name_uniprot:
+    code_uniprot: RHOBA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001025
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:559292
+    full_name: Saccharomyces cerevisiae
+    common_name_panther: Brewer's yeast
+    common_name_uniprot: Baker's yeast
+    code_uniprot: YEAST
+    code_goc:  Scer
+    group: SGD
+    taxon_id_uniprot: UP000002311
+    mod_id_space: SGD
+  - taxon_id: NCBITaxon:99287
+    full_name: Salmonella typhimurium
+    common_name_panther: salmonella
+    common_name_uniprot:
+    code_uniprot: SALTY
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001014
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:402676
+    full_name: Schizosaccharomyces japonicus
+    common_name_panther: fission yeast
+    common_name_uniprot: Fission yeast
+    code_uniprot: SCHJY
+    code_goc:  Sjap
+    group: JaponicusDB
+    taxon_id_uniprot: UP000001744
+    mod_id_space: JaponicusDB
+  - taxon_id: NCBITaxon:284812
+    full_name: Schizosaccharomyces pombe
+    common_name_panther: fission yeast
+    common_name_uniprot: Fission yeast
+    code_uniprot: SCHPO
+    code_goc:  Spom
+    group: PomBase
+    taxon_id_uniprot: UP000002485
+    mod_id_space: PomBase
+  - taxon_id: NCBITaxon:665079
+    full_name: Sclerotinia sclerotiorum
+    common_name_panther: ascomycote fungus
+    common_name_uniprot: White mold
+    code_uniprot: SCLS1
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001312
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:211586
+    full_name: Shewanella oneidensis
+    common_name_panther: shewanella
+    common_name_uniprot:
+    code_uniprot: SHEON
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000008186
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:4081
+    full_name: Solanum lycopersicum
+    common_name_panther: tomato
+    common_name_uniprot: Tomato
+    code_uniprot: SOLLC
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000004994
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:4558
+    full_name: Sorghum bicolor
+    common_name_panther: sorghum
+    common_name_uniprot: Sorghum
+    code_uniprot: SORBI
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000768
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:3562
+    full_name: Spinacia oleracea
+    common_name_panther: spinach
+    common_name_uniprot: Spinach
+    code_uniprot: SPIOL
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP001155700
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:93061
+    full_name: Staphylococcus aureus
+    common_name_panther: staph
+    common_name_uniprot:
+    code_uniprot: STAA8
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000008816
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:171101
+    full_name: Streptococcus pneumoniae
+    common_name_panther: strep
+    common_name_uniprot:
+    code_uniprot: STRR6
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000586
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:100226
+    full_name: Streptomyces coelicolor
+    common_name_panther: actinobacteria
+    common_name_uniprot:
+    code_uniprot: STRCO
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001973
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:7668
+    full_name: Strongylocentrotus purpuratus
+    common_name_panther: sea urchin
+    common_name_uniprot: Purple sea urchin
+    code_uniprot: STRPU
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000007110
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:273057
+    full_name: Sulfolobus solfataricus
+    common_name_panther: crenarchaea
+    common_name_uniprot:
+    code_uniprot: SACS2
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001974
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:9823
+    full_name: Sus scrofa
+    common_name_panther: pig
+    common_name_uniprot: Pig
+    code_uniprot: PIG
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000008227
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:1111708
+    full_name: Synechocystis sp.
+    common_name_panther: cyanobacteria
+    common_name_uniprot:
+    code_uniprot: SYNY3
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001425
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:35128
+    full_name: Thalassiosira pseudonana
+    common_name_panther: diatom
+    common_name_uniprot: Marine diatom
+    code_uniprot: THAPS
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001449
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:3641
+    full_name: Theobroma cacao
+    common_name_panther: cocoa
+    common_name_uniprot: Cacao
+    code_uniprot: THECC
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000026915
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:69014
+    full_name: Thermococcus kodakaraensis
+    common_name_panther: euryarchaea
+    common_name_uniprot:
+    code_uniprot: THEKO
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000536
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:289376
+    full_name: Thermodesulfovibrio yellowstonii
+    common_name_panther: nitrospirae bacteria
+    common_name_uniprot:
+    code_uniprot: THEYD
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000718
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:243274
+    full_name: Thermotoga maritima
+    common_name_panther: thermotogae bacteria
+    common_name_uniprot:
+    code_uniprot: THEMA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000008183
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:7070
+    full_name: Tribolium castaneum
+    common_name_panther: red flour beetle
+    common_name_uniprot: Red flour beetle
+    code_uniprot: TRICA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000007266
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:412133
+    full_name: Trichomonas vaginalis
+    common_name_panther: excavate
+    common_name_uniprot:
+    code_uniprot: TRIV3
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001542
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:10228
+    full_name: Trichoplax adhaerens
+    common_name_panther: placozoan
+    common_name_uniprot:
+    code_uniprot: TRIAD
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000009022
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:4565
+    full_name: Triticum aestivum
+    common_name_panther: wheat
+    common_name_uniprot: Wheat
+    code_uniprot: WHEAT
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000019116
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:185431
+    full_name: Trypanosoma brucei
+    common_name_panther: excavate
+    common_name_uniprot:
+    code_uniprot: TRYB2
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000008524
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:5270
+    full_name: Ustilago maydis
+    common_name_panther: basidiomycote fungus
+    common_name_uniprot: Corn smut fungus
+    code_uniprot: USTMA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000561
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:243277
+    full_name: Vibrio cholerae
+    common_name_panther: cholera
+    common_name_uniprot:
+    code_uniprot: VIBCH
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000584
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:190485
+    full_name: Xanthomonas campestris
+    common_name_panther: xanthomonas
+    common_name_uniprot:
+    code_uniprot: XANCP
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001010
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:8355
+    full_name: Xenopus laevis
+    common_name_panther: african clawed frog
+    common_name_uniprot: African clawed frog
+    code_uniprot: XENLA
+    code_goc:
+    group: XenBase
+    taxon_id_uniprot: UP000186698
+    mod_id_space: XenBase
+  - taxon_id: NCBITaxon:8364
+    full_name: Xenopus tropicalis
+    common_name_panther: frog
+    common_name_uniprot: Western clawed frog
+    code_uniprot: XENTR
+    code_goc:
+    group: XenBase
+    taxon_id_uniprot: UP000008143
+    mod_id_space: XenBase
+  - taxon_id: NCBITaxon:284591
+    full_name: Yarrowia lipolytica
+    common_name_panther: ascomycote fungus
+    common_name_uniprot: Yeast
+    code_uniprot: YARLI
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001300
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:632
+    full_name: Yersinia pestis
+    common_name_panther: plague bacteria
+    common_name_uniprot:
+    code_uniprot: YERPE
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000815
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:4577
+    full_name: Zea mays
+    common_name_panther: corn
+    common_name_uniprot: Maize
+    code_uniprot: MAIZE
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000007305
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:545
+    full_name: Citrobacter koseri (Citrobacter diversus)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: CITKO
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000270272
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:574
+    full_name: Klebsiella pneumoniae subsp. ozaenae (subspecies)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: KLEPO
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000255382
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:623
+    full_name: Shigella flexneri
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: SHIFL
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001006
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:1353
+    full_name: Enterococcus gallinarum
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: ENTGA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000254807
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:1392
+    full_name: Bacillus anthracis
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: BACAN
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000594
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:1901
+    full_name: Streptomyces clavuligerus
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: STRCL
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002357
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:10254
+    full_name: Vaccinia virus (strain Western Reserve) (VACV) (Vaccinia virus (strain WR))
+    common_name_panther:
+    common_name_uniprot: VACV
+    code_uniprot: VACCW
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000344
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:10299
+    full_name: Human herpesvirus 1 (strain 17) (HHV-1) (Human herpes simplex virus 1)
+    common_name_panther:
+    common_name_uniprot: HHV-1
+    code_uniprot: HHV11
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000009294
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:10338
+    full_name: Varicella-zoster virus (strain Dumas) (HHV-3) (Human herpesvirus 3)
+    common_name_panther:
+    common_name_uniprot: HHV-3
+    code_uniprot: VZVD
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002602
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:10360
+    full_name: Human cytomegalovirus (strain AD169)
+    common_name_panther:
+    common_name_uniprot: HHV-5
+    code_uniprot: HCMVA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000008992
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:12118
+    full_name: Foot-and-mouth disease virus serotype O (FMDV)
+    common_name_panther:
+    common_name_uniprot: FMDV
+    code_uniprot: FMDVO
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000008765
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:63746
+    full_name: Hepatitis C virus genotype 1a (isolate H77) (HCV)
+    common_name_panther:
+    common_name_uniprot: HCV
+    code_uniprot: HCV77
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000518
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:64320
+    full_name: Zika virus (ZIKV)
+    common_name_panther:
+    common_name_uniprot: ZIKV
+    code_uniprot: ZIKV
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000054557
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:71421
+    full_name: Haemophilus influenzae (strain ATCC 51907 / DSM 11121 / KW20 / Rd)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: HAEIN
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000579
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:83334
+    full_name: Escherichia coli O157:H7
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: ECO57
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000558
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:85962
+    full_name: Helicobacter pylori (strain ATCC 700392 / 26695)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: HELPY
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000429
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:93061
+    full_name: Staphylococcus aureus (strain NCTC 8325 / PS 47)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: STAA8
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000008816
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:99287
+    full_name: Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: SALTY
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001014
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:100226
+    full_name: Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: STRCO
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001973
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:122586
+    full_name: Neisseria meningitidis serogroup B (strain ATCC BAA-335 / MC58)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: NEIMB
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000425
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:169963
+    full_name: Listeria monocytogenes serovar 1/2a (strain ATCC BAA-679 / EGD-e)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: LISMO
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000817
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:170187
+    full_name: Streptococcus pneumoniae serotype 4 (strain ATCC BAA-334 / TIGR4)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: STRPN
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000585
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:171101
+    full_name: Streptococcus pneumoniae (strain ATCC BAA-255 / R6)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: STRR6
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000586
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:192222
+    full_name: Campylobacter jejuni subsp. jejuni serotype O:2 (strain ATCC 700819 / NCTC 11168)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: CAMJE
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000799
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:208964
+    full_name: Pseudomonas aeruginosa (strain ATCC 15692 / DSM 22644 / CIP 104116 / JCM 14847 / LMG 12228 / 1C / PRS 101 / PAO1)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: PSEAE
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002438
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:224308
+    full_name: Bacillus subtilis (strain 168)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: BACSU
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001570
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:226185
+    full_name: Enterococcus faecalis (strain ATCC 700802 / V583)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: ENTFA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001415
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:243273
+    full_name: Mycoplasma genitalium (strain ATCC 33530 / DSM 19775 / NCTC 10195 / G37) (Mycoplasmoides genitalium)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: MYCGE
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000807
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:272558
+    full_name: Halalkalibacterium halodurans (strain ATCC BAA-125 / DSM 18197 / FERM 7344 / JCM 9153 / C-125) (Bacillus halodurans)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: HALH5
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001258
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:272634
+    full_name: Mycoplasma pneumoniae (strain ATCC 29342 / M129 / Subtype 1) (Mycoplasmoides pneumoniae)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: MYCPN
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000808
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:295027
+    full_name: Human cytomegalovirus (strain Merlin) (HHV-5) (Human herpesvirus 5)
+    common_name_panther:
+    common_name_uniprot: HHV-5
+    code_uniprot: HCMVM
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000938
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:301447
+    full_name: "Streptococcus pyogenes serotype M1 (Strain: ATCC 700294 / SF370 / Serotype M1)"
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: STRP1
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000000750
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:327105
+    full_name: Human immunodeficiency virus type 1 group O (isolate ANT70)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: HV1AN
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000007689
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:333760
+    full_name: Human papillomavirus type 16
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: HPV16
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000009251
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:373153
+    full_name: Streptococcus pneumoniae serotype 2 (strain D39 / NCTC 7466)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: STRP2
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001452
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:419947
+    full_name: Mycobacterium tuberculosis (strain ATCC 25177 / H37Ra)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: MYCTA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000001988
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:565655
+    full_name: Enterococcus casseliflavus EC20
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: ENTCA
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000012675
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:575584
+    full_name: Acinetobacter baumannii (strain ATCC 19606 / DSM 30007 / JCM 6841 / CCUG 19606 / CIP 70.34 / NBRC 109757 / NCIMB 12457 / NCTC 12156 / 81)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: ACIB2
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000005740
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:587200
+    full_name: Variola virus (isolate Human/India/Ind3/1967)
+    common_name_panther:
+    common_name_uniprot: VARV
+    code_uniprot: VAR67
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000002060
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:645098
+    full_name: Measles virus (strain Ichinose-B95a) (MeV) (Subacute sclerose panencephalitis virus)
+    common_name_panther:
+    common_name_uniprot: MeV
+    code_uniprot: MEASC
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000008699
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:928302
+    full_name: Hepatitis B virus genotype C subtype ayr (isolate Human/Japan/Okamoto/-) (HBV-C)
+    common_name_panther:
+    common_name_uniprot: HBV-C
+    code_uniprot: HBVCJ
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000008591
+    mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:1125630
+    full_name: Klebsiella pneumoniae subsp. pneumoniae (strain HS11286)
+    common_name_panther:
+    common_name_uniprot:
+    code_uniprot: KLEPH
+    code_goc:
+    group: UniProt
+    taxon_id_uniprot: UP000007841
+    mod_id_space: UniProtKB
