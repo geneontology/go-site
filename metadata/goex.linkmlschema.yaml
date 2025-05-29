@@ -2,7 +2,7 @@ id: https://w3id.org/linkml/examples/goexmetadata
 name: goexmetadata
 prefixes:
   linkml: https://w3id.org/linkml/
-  personinfo: https://w3id.org/linkml/examples/goexmetadata
+  goexmetadata: https://w3id.org/linkml/examples/goexmetadata
 imports:
   - linkml:types
 default_range: string
