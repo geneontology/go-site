@@ -21,7 +21,7 @@ classes:
       taxon_id:
         identifier: true
         required: true
-      taxon_id_uniprot:
+        uniprot_proteome_id:
         identifier: true
         required: true
       full_name:
@@ -32,6 +32,6 @@ classes:
         required: true
       code_goc:
       group:
-        required: true
+        required: false
       mod_id_space:
         required: true
