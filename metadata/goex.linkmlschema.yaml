@@ -21,16 +21,19 @@ classes:
       taxon_id:
         identifier: true
         required: true
-        uniprot_proteome_id:
+      uniprot_proteome_id:
         identifier: true
         required: true
       full_name:
         required: true
       common_name_panther:
+        required: false
       common_name_uniprot:
+        required: false
       code_uniprot:
         required: true
       code_goc:
+        required: false
       group:
         required: false
       mod_id_space:
