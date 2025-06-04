@@ -204,7 +204,7 @@ organisms:
     code_uniprot: CLOBH
     code_goc:
     group: UniProt
-    uniprot_proteome_id: uniprot.proteome:P000001986
+    uniprot_proteome_id: uniprot.proteome:UP000001986
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:227377
     full_name: Coxiella burnetii
