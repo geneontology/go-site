@@ -1,0 +1,109 @@
+mapping:
+  - from_id: SO:0001217
+    from_label: protein_coding_gene
+    to_id: SO:0000104
+    to_label: protein
+  - from_id: SO:0002127
+    from_label: lncRNA_gene
+    to_id: SO:0001877
+    to_label: lncRNA
+  - from_id: SO:0001265
+    from_label: miRNA_gene
+    to_id: SO:0000276
+    to_label: miRNA
+  - from_id: SO:0001272
+    from_label: tRNA_gene
+    to_id: SO:0000253
+    to_label: tRNA
+  - from_id: SO:0002182
+    from_label: antisense_lncRNA_gene
+    to_id: SO:0001904
+    to_label: antisense_lncRNA
+  - from_id: SO:0001268
+    from_label: snRNA_gene
+    to_id: SO:0000274
+    to_label: snRNA
+  - from_id: SO:0001267
+    from_label: snoRNA_gene
+    to_id: SO:0000275
+    to_label: snoRNA
+  - from_id: SO:0001263
+    from_label: ncRNA_gene
+    to_id: SO:0000655
+    to_label: ncRNA
+  - from_id: SO:0001637
+    from_label: rRNA_gene
+    to_id: SO:0000252
+    to_label: rRNA
+  - from_id: SO:0001641
+    from_label: lincRNA_gene
+    to_id: SO:0001463
+    to_label: lincRNA
+  - from_id: SO:0002184
+    from_label: sense_intronic_ncRNA_gene
+    to_id: SO:0002131
+    to_label: sense_intronic_lncRNA
+  - from_id: SO:0001643
+    from_label: telomerase_RNA_gene
+    to_id: SO:0000390
+    to_label: telomerase_RNA
+  - from_id: SO:0001639
+    from_label: RNase_P_RNA_gene
+    to_id: SO:0000386
+    to_label: RNase_P_RNA
+  - from_id: SO:0001269
+    from_label: SRP_RNA_gene
+    to_id: SO:0000385
+    to_label: RNase_MRP_RNA
+  - from_id: SO:0001266
+    from_label: scRNA_gene
+    to_id: SO:0000013
+    to_label: scRNA
+  - from_id: SO:0002183
+    from_label: sense_overlap_ncRNA_gene
+    to_id: SO:0002132
+    to_label: sense_overlap_lncRNA
+  - from_id: SO:0001640
+    from_label: RNase_MRP_RNA_gene
+    to_id: SO:0000385
+    to_label: RNase_MRP_RNA
+  - from_id: SO:0000111
+    from_label: transposable_element_gene
+    to_id: "protein [Feedback needed]"
+    to_label: transposable_element_gene
+  - from_id: Not used
+    from_label: "tmRNA_region [Feedback needed]"
+    to_id: SO:0000584
+    to_label: tmRNA
+  - from_id: SO:0002339
+    from_label: scaRNA_gene
+    to_id: SO:0002095
+    to_label: scaRNA
+  - from_id: SO:0001638
+    from_label: piRNA_gene
+    to_id: SO:0001035
+    to_label: piRNA
+  - from_id: Not used
+    from_label: "[Feedback needed]"
+    to_id: SO:0000380
+    to_label: hammerhead_ribozyme
+  - from_id: SO:0002181
+    from_label: ribozyme_gene
+    to_id: SO:0000374
+    to_label: ribozyme
+  - from_id: Not used
+    from_label: "ncRNA_gene?? [Feedback needed]"
+    to_id: SO:0000602
+    to_label: guide_RNA
+  - from_id: SO:0001641
+    from_label: lincRNA_gene
+    to_id: SO:0001463
+    to_label: lincRNA
+  - from_id: SO:0001269
+    from_label: SRP_RNA_gene
+    to_id: SO:0000590
+    to_label: SRP_RNA
+  - from_id: SO:0002127
+    from_label: lncRNA_gene
+    to_id: SO:0000644
+    to_label: antisense_RNA
