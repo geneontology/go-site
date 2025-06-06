@@ -244,10 +244,9 @@ def main(folder_path: Path, verbose: bool, dry_run: bool):
 
     if failed_conversions > 0:
         logger.warning(f"Failed conversions: {failed_conversions}")
-        sys.exit(1)
+        #sys.exit(1)
     else:
         logger.info("All conversions completed successfully!")
-
 
 if __name__ == "__main__":
     main()
