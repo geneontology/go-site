@@ -16,7 +16,7 @@ datasets:
    dataset: zfin
    submitter: zfin
    compression: gzip
-   source: https://zfin.org/downloads/gene_association2.2_automated_only.zfin.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/DANRE_7955_UP000000437.gaf.gz
    entity_type:
    status: active
    species_code: Drer
@@ -31,7 +31,7 @@ datasets:
    dataset: zfin
    submitter: zfin
    compression: gzip
-   source: https://zfin.org/downloads/zfin.gpi.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/DANRE_7955_UP000000437.gpi.gz
    entity_type:
    status: active
    species_code: Drer

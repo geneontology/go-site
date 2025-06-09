@@ -16,7 +16,7 @@ datasets:
    dataset: pseudocap
    submitter: pseudocap
    compression: gzip
-   source: https://github.com/brinkmanlab/pseudomonas-genome-database/raw/master/pseudocap-annotation-files/gene_association.pseudocap.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/PSEAE_208964_UP000002438.gaf.gz
    entity_type:
    status: active
    species_code: Pseudomonas

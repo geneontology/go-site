@@ -16,7 +16,7 @@ datasets:
    dataset: sgd
    submitter: sgd
    compression: gzip
-   source: https://sgd-prod-upload.s3.amazonaws.com/latest/gene_association.sgd.gaf.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/YEAST_559292_UP000002311.gaf.gz
    entity_type:
    status: active
    species_code: Scer
@@ -32,7 +32,7 @@ datasets:
    dataset: sgd
    submitter: sgd
    compression: gzip
-   source: https://ftp.ebi.ac.uk/pub/contrib/goa/gp_association.559292_sgd.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpad/YEAST_559292_UP000002311.gpa.gz
    entity_type:
    status: active
    species_code: Scer
@@ -48,7 +48,7 @@ datasets:
    dataset: sgd
    submitter: sgd
    compression: gzip
-   source: https://downloads.yeastgenome.org/latest/gpi.sgd.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/YEAST_559292_UP000002311.gpi.gz
    entity_type:
    status: active
    species_code: Scer

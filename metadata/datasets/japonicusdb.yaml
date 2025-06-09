@@ -16,7 +16,7 @@ datasets:
    dataset: japonicusdb
    submitter: japonicusdb
    compression: gzip
-   source: https://www.japonicusdb.org/data/annotations/Gene_ontology/gene_association.japonicusdb.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/SCHJY_4897_UP000001744.gaf.gz
    entity_type:
    status: active
    species_code: Sjap
@@ -32,7 +32,7 @@ datasets:
    dataset: japonicusdb
    submitter: japonicusdb
    compression: gzip
-   source: https://www.japonicusdb.org/data/annotations/Gene_ontology/japonicusdb.gpi.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/SCHJY_4897_UP000001744.gpi.gz
    entity_type:
    status: active
    species_code: Sjap
@@ -48,7 +48,7 @@ datasets:
    dataset: japonicusdb
    submitter: japonicusdb
    compression: gzip
-   source: https://www.japonicusdb.org/data/annotations/Gene_ontology/japonicusdb.gpad.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpad/SCHJY_4897_UP000001744.gpa.gz
    entity_type:
    status: active
    species_code: Sjap
