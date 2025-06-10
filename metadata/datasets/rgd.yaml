@@ -22,3 +22,19 @@ datasets:
    species_code: Rnor
    taxa:
     - NCBITaxon:10116
+
+ -
+   id: rgd.gpi
+   label: "rgd gpi file"
+   description: "gpi file for rgd from Rat Genome Database"
+   url: https://current.geneontology.org/annotations/rgd.gpi.gz
+   type: gpi
+   dataset: rgd
+   submitter: rgd
+   compression: gzip
+   source: https://github.com/rat-genome-database/rgd-annotation-files/blob/master/rgd.gpi.gz
+   entity_type:
+   status: active
+   species_code: Rnor
+   taxa:
+    - NCBITaxon:10116
