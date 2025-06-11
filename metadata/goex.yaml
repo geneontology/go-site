@@ -1,14 +1,5 @@
 organisms:
   - taxon_id: NCBITaxon:28377
-    uniprot_proteome_id: uniprot.proteome:UP000001646
-    full_name: Anolis carolinensis
-    common_name_panther: lizard
-    common_name_uniprot: Green anole
-    code_uniprot: ANOCA
-    code_goc:
-    group: UniProt
-    mod_id_space: UniProtKB
-  - taxon_id: NCBITaxon:28377
     full_name: Anolis carolinensis
     common_name_panther: lizard
     common_name_uniprot: Green anole
@@ -413,15 +404,6 @@ organisms:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000189702
     mod_id_space: UniProtKB
-  - taxon_id: NCBITaxon:71421
-    full_name: Haemophilus influenzae
-    common_name_panther: gammaproteobacteria
-    common_name_uniprot:
-    code_uniprot: HAEIN
-    code_goc:
-    group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000000579
-    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:64091
     full_name: Halobacterium salinarum
     common_name_panther: euryarchaea
@@ -547,16 +529,7 @@ organisms:
     code_goc:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000001408
-    mod_id_space: UniProtKB
-  - taxon_id: NCBITaxon:169963
-    full_name: Listeria monocytogenes
-    common_name_panther: firmicutes bacteria
-    common_name_uniprot:
-    code_uniprot: LISMO
-    code_goc:
-    group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000000817
-    mod_id_space: UniProtKB
+    mod_id_space: UniProtKBB
   - taxon_id: NCBITaxon:9544
     full_name: Macaca mulatta
     common_name_panther: macacque monkey
@@ -655,15 +628,6 @@ organisms:
     code_goc:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000000807
-    mod_id_space: UniProtKB
-  - taxon_id: NCBITaxon:122586
-    full_name: Neisseria meningitidis serogroup b
-    common_name_panther: betaproteobacteria
-    common_name_uniprot:
-    code_uniprot: NEIMB
-    code_goc:
-    group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000000425
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:4432
     full_name: Nelumbo nucifera
@@ -881,15 +845,6 @@ organisms:
     group: SGD
     uniprot_proteome_id: uniprot.proteome:UP000002311
     mod_id_space: SGD
-  - taxon_id: NCBITaxon:99287
-    full_name: Salmonella typhimurium
-    common_name_panther: salmonella
-    common_name_uniprot:
-    code_uniprot: SALTY
-    code_goc:
-    group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000001014
-    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:402676
     full_name: Schizosaccharomyces japonicus
     common_name_panther: fission yeast
@@ -952,15 +907,6 @@ organisms:
     code_goc:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP001155700
-    mod_id_space: UniProtKB
-  - taxon_id: NCBITaxon:93061
-    full_name: Staphylococcus aureus
-    common_name_panther: staph
-    common_name_uniprot:
-    code_uniprot: STAA8
-    code_goc:
-    group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000008816
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:171101
     full_name: Streptococcus pneumoniae
@@ -1313,15 +1259,6 @@ organisms:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000000558
     mod_id_space: UniProtKB
-  - taxon_id: NCBITaxon:85962
-    full_name: Helicobacter pylori (strain ATCC 700392 / 26695)
-    common_name_panther:
-    common_name_uniprot:
-    code_uniprot: HELPY
-    code_goc:
-    group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000000429
-    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:93061
     full_name: Staphylococcus aureus (strain NCTC 8325 / PS 47)
     common_name_panther:
@@ -1340,18 +1277,9 @@ organisms:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000001014
     mod_id_space: UniProtKB
-  - taxon_id: NCBITaxon:100226
-    full_name: Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)
-    common_name_panther:
-    common_name_uniprot:
-    code_uniprot: STRCO
-    code_goc:
-    group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000001973
-    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:122586
     full_name: Neisseria meningitidis serogroup B (strain ATCC BAA-335 / MC58)
-    common_name_panther:
+    common_name_panther: betaproteobacteria
     common_name_uniprot:
     code_uniprot: NEIMB
     code_goc:
@@ -1376,15 +1304,6 @@ organisms:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000000585
     mod_id_space: UniProtKB
-  - taxon_id: NCBITaxon:171101
-    full_name: Streptococcus pneumoniae (strain ATCC BAA-255 / R6)
-    common_name_panther:
-    common_name_uniprot:
-    code_uniprot: STRR6
-    code_goc:
-    group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000000586
-    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:192222
     full_name: Campylobacter jejuni subsp. jejuni serotype O:2 (strain ATCC 700819 / NCTC 11168)
     common_name_panther:
@@ -1394,24 +1313,6 @@ organisms:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000000799
     mod_id_space: UniProtKB
-  - taxon_id: NCBITaxon:208964
-    full_name: Pseudomonas aeruginosa (strain ATCC 15692 / DSM 22644 / CIP 104116 / JCM 14847 / LMG 12228 / 1C / PRS 101 / PAO1)
-    common_name_panther:
-    common_name_uniprot:
-    code_uniprot: PSEAE
-    code_goc:
-    group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000002438
-    mod_id_space: UniProtKB
-  - taxon_id: NCBITaxon:224308
-    full_name: Bacillus subtilis (strain 168)
-    common_name_panther:
-    common_name_uniprot:
-    code_uniprot: BACSU
-    code_goc:
-    group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000001570
-    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:226185
     full_name: Enterococcus faecalis (strain ATCC 700802 / V583)
     common_name_panther:
@@ -1420,15 +1321,6 @@ organisms:
     code_goc:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000001415
-    mod_id_space: UniProtKB
-  - taxon_id: NCBITaxon:243273
-    full_name: Mycoplasma genitalium (strain ATCC 33530 / DSM 19775 / NCTC 10195 / G37) (Mycoplasmoides genitalium)
-    common_name_panther:
-    common_name_uniprot:
-    code_uniprot: MYCGE
-    code_goc:
-    group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000000807
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:272558
     full_name: Halalkalibacterium halodurans (strain ATCC BAA-125 / DSM 18197 / FERM 7344 / JCM 9153 / C-125) (Bacillus halodurans)
