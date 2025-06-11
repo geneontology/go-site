@@ -1,4 +1,4 @@
-id: https://w3id.org/linkml/examples/goexmetadata
+id: http://purl.obolibrary.org/obo/go/goexmetadata/
 name: goexmetadata
 prefixes:
   linkml: https://w3id.org/linkml/
@@ -17,24 +17,46 @@ classes:
         inlined_as_list: true
         range: Organism
   Organism:
-    attributes:
-      taxon_id:
-        identifier: true
-        required: true
-      uniprot_proteome_id:
-        identifier: true
-        required: true
-      full_name:
-        required: true
-      common_name_panther:
-        required: false
-      common_name_uniprot:
-        required: false
-      code_uniprot:
-        required: true
-      code_goc:
-        required: false
-      group:
-        required: false
-      mod_id_space:
-        required: true
+    slots:
+      - taxon_id
+      - uniprot_proteome_id
+      - full_name
+      - common_name_panther
+      - common_name_uniprot
+      - code_uniprot
+      - code_goc
+      - group
+      - mod_id_space
+
+slots:
+
+  taxon_id:
+    identifier: true
+    required: true
+    range: curie
+
+  uniprot_proteome_id:
+    identifier: true
+    required: true
+    range: curie
+
+  full_name:
+    required: true
+
+  common_name_panther:
+    required: false
+
+  common_name_uniprot:
+    required: false
+
+  code_uniprot:
+    required: true
+
+  code_goc:
+    required: false
+
+  group:
+    required: false
+
+  mod_id_space:
+    required: true
