@@ -629,15 +629,6 @@ organisms:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000000807
     mod_id_space: UniProtKB
-  - taxon_id: NCBITaxon:122586
-    full_name: Neisseria meningitidis serogroup b
-    common_name_panther: betaproteobacteria
-    common_name_uniprot:
-    code_uniprot: NEIMB
-    code_goc:
-    group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000000425
-    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:4432
     full_name: Nelumbo nucifera
     common_name_panther: sacred lotus
@@ -1288,7 +1279,7 @@ organisms:
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:122586
     full_name: Neisseria meningitidis serogroup B (strain ATCC BAA-335 / MC58)
-    common_name_panther:
+    common_name_panther: betaproteobacteria
     common_name_uniprot:
     code_uniprot: NEIMB
     code_goc:
