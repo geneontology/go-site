@@ -36,7 +36,6 @@ slots:
     range: curie
 
   uniprot_proteome_id:
-    identifier: true
     required: true
     range: curie
 
