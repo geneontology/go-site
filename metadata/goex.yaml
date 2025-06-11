@@ -854,7 +854,7 @@ organisms:
     group: SGD
     uniprot_proteome_id: uniprot.proteome:UP000002311
     mod_id_space: SGD
-   - taxon_id: NCBITaxon:402676
+  - taxon_id: NCBITaxon:402676
     full_name: Schizosaccharomyces japonicus
     common_name_panther: fission yeast
     common_name_uniprot: Fission yeast
