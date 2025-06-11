@@ -11,7 +11,7 @@ datasets:
     compression: gzip
     source: ./products/upstream_and_raw_data/noctua_mgi-src.gpad.gz
     entity_type:
-    status: active
+    status: inactive
     merges_into: mgi
     species_code: Mmus
     taxa:
@@ -77,21 +77,21 @@ datasets:
     taxa:
       - NCBITaxon:6239
 
-  - id: noctua_xenbase.gpad
-    label: "noctua_xenbase gpad file"
-    description: "GPAD file for Xenbase from Noctua"
-    type: gpad
-    dataset: noctua_xenbase
-    submitter: GOC
-    compression: gzip
-    source: ./products/upstream_and_raw_data/noctua_xenbase-src.gpad.gz
-    entity_type:
-    status: active
-    merges_into: xenbase
-    species_code: Xenopus
-    taxa:
-      - NCBITaxon:8364
-      - NCBITaxon:8355
+  # - id: noctua_xenbase.gpad
+  #   label: "noctua_xenbase gpad file"
+  #   description: "GPAD file for Xenbase from Noctua"
+  #   type: gpad
+  #   dataset: noctua_xenbase
+  #   submitter: GOC
+  #   compression: gzip
+  #   source: ./products/upstream_and_raw_data/noctua_xenbase-src.gpad.gz
+  #   entity_type:
+  #   status: inactive
+  #   merges_into: xenbase
+  #   species_code: Xenopus
+  #   taxa:
+  #     - NCBITaxon:8364
+  #     - NCBITaxon:8355
 
   - id: noctua_zfin.gpad
     label: "noctua_zfin gpad file"
@@ -102,7 +102,7 @@ datasets:
     compression: gzip
     source: ./products/upstream_and_raw_data/noctua_zfin-src.gpad.gz
     entity_type:
-    status: active
+    status: inactive
     merges_into: zfin
     species_code: Drer
     taxa:
