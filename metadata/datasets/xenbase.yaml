@@ -1,4 +1,4 @@
-id: xenbase_tr
+id: xenbase
 label: Xenbase (tropicalis)
 description: "GO data for Xenbase (tropicalis)"
 project_name: "Xenbase"
@@ -8,11 +8,11 @@ funding_source: "National Institute of Child Health and Human Development, grant
 email_report: "malcolm.fisher@cchmc.org"
 datasets:
   -
-    id: xenbase_tr.gpi
+    id: xenbase.gpi
     label: "Xenbase tropicalis gpi file"
     description: "gpi file for Xenbase tropicalis"
     type: gpi
-    dataset: xenbase_tr
+    dataset: xenbase
     submitter: xenbase
     compression: gzip
     source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/XENTR_8364_UP000008143.gpi.gz
@@ -22,17 +22,18 @@ datasets:
     taxa:
       - NCBITaxon:8364
   -
-    id: xenbase_tr.gaf
-    label: "xenbase tropicalis gaf file"
-    description: "GAF file for Xenbase tropicalis"
+    id: xenbase.gaf
+    label: "xenbase tropicalis gaf file (possible LA IBA injection)"
+    description: "GAF file for Xenbase tropicalis (possible LA IBA injection)"
     url: https://current.geneontology.org/annotations/xenbase.gaf.gz
     type: gaf
-    dataset: xenbase_tr
+    dataset: xenbase
     submitter: xenbase
     compression: gzip
     source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/XENTR_8364_UP000008143.gaf.gz
     entity_type:
     status: active
-    species_code: XENTR
+    species_code: XEN
     taxa:
       - NCBITaxon:8364
+      - NCBITaxon:8355
