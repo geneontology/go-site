@@ -26,7 +26,7 @@ datasets:
     compression: gzip
     source: ./products/upstream_and_raw_data/noctua_fb.gpad.gz
     entity_type:
-    status: inactive
+    status: active
     species_code: Dmel
     taxa:
       - NCBITaxon:7227
@@ -102,7 +102,7 @@ datasets:
     compression: gzip
     source: ./products/upstream_and_raw_data/noctua_zfin-src.gpad.gz
     entity_type:
-    status: inactive
+    status: active
     merges_into: zfin
     species_code: Drer
     taxa:
