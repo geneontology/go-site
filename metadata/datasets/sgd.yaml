@@ -21,7 +21,6 @@ datasets:
    status: active
    species_code: Scer
    taxa:
-    - NCBITaxon:4932
     - NCBITaxon:559292
  -
    id: sgd.gpad
@@ -37,7 +36,6 @@ datasets:
    status: active
    species_code: Scer
    taxa:
-    - NCBITaxon:4932
     - NCBITaxon:559292
  -
    id: sgd.gpi
@@ -53,5 +51,4 @@ datasets:
    status: active
    species_code: Scer
    taxa:
-    - NCBITaxon:4932
     - NCBITaxon:559292
