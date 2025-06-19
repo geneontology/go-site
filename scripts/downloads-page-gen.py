@@ -48,7 +48,8 @@ smap = {
     "Spom": "Schizosaccharomyces pombe",
     "Sscr": "Sus scrofa",
     "Tbru": "Trypanosoma brucei",
-    "Xenopus": "Xenopus"
+    "Xenopus": "Xenopus tropicalis",
+    "XENLA": "Xenopus laevis"
 }
 
 def die_screaming(instr):
