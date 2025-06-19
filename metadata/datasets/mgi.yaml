@@ -26,7 +26,8 @@ datasets:
    dataset: mgi
    submitter: mgi
    compression: gzip
-   source: https://mirror.geneontology.io/mgi-p2go-homology.gaf.gz
+   #source: https://mirror.geneontology.io/mgi-p2go-homology.gaf.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/MOUSE_10090_UP000000589.gaf.gz
    entity_type:
    status: active
    species_code: Mmus
@@ -42,7 +43,8 @@ datasets:
    dataset: mgi
    submitter: mgi
    compression: gzip
-   source: http://www.informatics.jax.org/downloads/reports/mgi.gpi.gz
+   #source: http://www.informatics.jax.org/downloads/reports/mgi.gpi.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/MOUSE_10090_UP000000589.gpi.gz
    entity_type:
    status: active
    species_code: Mmus

@@ -16,7 +16,7 @@ datasets:
    dataset: dictybase
    submitter: dictyBase
    compression: gzip
-   source: https://ftp.ebi.ac.uk/pub/contrib/goa/dictyBase.gpa.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpad/DICDI_44689_UP000002195.gpa.gz
    entity_type:
    status: active
    species_code: Ddis
@@ -31,7 +31,7 @@ datasets:
    dataset: dictybase
    submitter: dictyBase
    compression: gzip
-   source: https://ftp.ebi.ac.uk/pub/contrib/goa/dictyBase.gpi.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/DICDI_44689_UP000002195.gpi.gz
    entity_type:
    status: active
    species_code: Ddis
@@ -47,7 +47,7 @@ datasets:
    submitter: dictyBase
    compression: gzip
    #source: https://release.geneontology.org/2024-03-28/products/upstream_and_raw_data/dictybase-src.gaf.gz
-   source: https://ftp.ebi.ac.uk/pub/contrib/goa/dictyBase.gaf.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/DICDI_44689_UP000002195.gaf.gz
    entity_type:
    status: active
    species_code: Ddis
