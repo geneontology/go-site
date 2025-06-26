@@ -1,7 +1,7 @@
 mapping:
   - from_id: SO:0001217
     from_label: protein_coding_gene
-    to_id: SO:0000104
+    to_id: PR:000000001
     to_label: protein
   - from_id: SO:0002127
     from_label: lncRNA_gene
@@ -69,12 +69,8 @@ mapping:
     to_label: RNase_MRP_RNA
   - from_id: SO:0000111
     from_label: transposable_element_gene
-    to_id: "protein [Feedback needed]"
-    to_label: transposable_element_gene
-  - from_id: Not used
-    from_label: "tmRNA_region [Feedback needed]"
-    to_id: SO:0000584
-    to_label: tmRNA
+    to_id: SO:0000180
+    to_label: retrotransposon
   - from_id: SO:0002339
     from_label: scaRNA_gene
     to_id: SO:0002095
@@ -83,18 +79,10 @@ mapping:
     from_label: piRNA_gene
     to_id: SO:0001035
     to_label: piRNA
-  - from_id: Not used
-    from_label: "[Feedback needed]"
-    to_id: SO:0000380
-    to_label: hammerhead_ribozyme
   - from_id: SO:0002181
     from_label: ribozyme_gene
     to_id: SO:0000374
     to_label: ribozyme
-  - from_id: Not used
-    from_label: "ncRNA_gene?? [Feedback needed]"
-    to_id: SO:0000602
-    to_label: guide_RNA
   - from_id: SO:0001641
     from_label: lincRNA_gene
     to_id: SO:0001463
@@ -107,3 +95,11 @@ mapping:
     from_label: lncRNA_gene
     to_id: SO:0000644
     to_label: antisense_RNA
+  - from_id: SO:0001411
+    from_label: biological_region
+    to_id: PR:000000001
+    to_label: protein
+  - from_id: SO:3000000
+    from_label: gene_segment
+    to_id: PR:000000001
+    to_label: protein
