@@ -18,7 +18,7 @@ datasets:
     source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/XENTR_8364_UP000008143.gpi.gz
     entity_type:
     status: active
-    species_code: Xenopus
+    species_code: Xtro
     taxa:
       - NCBITaxon:8364
   -
@@ -33,6 +33,6 @@ datasets:
     source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/XENTR_8364_UP000008143.gaf.gz
     entity_type:
     status: active
-    species_code: Xenopus
+    species_code: Xtro
     taxa:
       - NCBITaxon:8364
