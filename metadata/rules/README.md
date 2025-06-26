@@ -776,7 +776,7 @@ See also GORULE:0000026.
 For annotations by ISO, ISA or ISS, the annotations of the gene product (col 8 info in the GAF) should be checked to ensure that an annotation exists to the same or a more granular term. For instance:
 
 Gene Product 1 | GO:1233456 |  ISS/ISO/ISA | with: Gene Product 2
-Gene Product 2 | GO:1233456 (or a descentant) | EXP (or a descendant)
+Gene Product 2 | GO:1233456 (or a descendant) | EXP (or a descendant)
 
 Allowed evidence codes for the primary annotations: EXP, IMP, IDA, IPI, IEP, IGI, HTP, HMP, HDA, HEP, HGI.
 
