@@ -69,8 +69,8 @@ mapping:
     to_label: RNase_MRP_RNA
   - from_id: SO:0000111
     from_label: transposable_element_gene
-    to_id: "protein [Feedback needed]"
-    to_label: transposable_element_gene
+    to_id: SO:0000180
+    to_label: retrotransposon
   - from_id: SO:0002339
     from_label: scaRNA_gene
     to_id: SO:0002095
@@ -95,3 +95,11 @@ mapping:
     from_label: lncRNA_gene
     to_id: SO:0000644
     to_label: antisense_RNA
+  - from_id: SO:0001411
+    from_label: biological_region
+    to_id: PR:000000001
+    to_label: protein
+  - from_id: SO:3000000
+    from_label: gene_segment
+    to_id: PR:000000001
+    to_label: protein
