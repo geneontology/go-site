@@ -16,7 +16,7 @@ datasets:
    dataset: rgd
    submitter: rgd
    compression: gzip
-   source: https://github.com/rat-genome-database/rgd-annotation-files/raw/master/gene_association.rgd.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/RAT_10116_UP000002494.gaf.gz
    entity_type:
    status: active
    species_code: Rnor

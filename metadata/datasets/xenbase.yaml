@@ -1,6 +1,6 @@
 id: xenbase
-label: Xenbase
-description: "GO data for Xenbase"
+label: Xenbase (tropicalis)
+description: "GO data for Xenbase (tropicalis)"
 project_name: "Xenbase"
 contact_email: "xenbase@ucalgary.ca"
 project_url: "http://www.xenbase.org/"
@@ -9,32 +9,30 @@ email_report: "malcolm.fisher@cchmc.org"
 datasets:
   -
     id: xenbase.gpi
-    label: "Xenbase gpi file"
-    description: "gpi file for Xenbase"
+    label: "Xenbase tropicalis gpi file"
+    description: "gpi file for Xenbase tropicalis"
     type: gpi
     dataset: xenbase
     submitter: xenbase
     compression: gzip
-    source: https://go-build.s3.us-east-1.amazonaws.com/xenbase.gpi.gz
+    source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/XENTR_8364_UP000008143.gpi.gz
     entity_type:
     status: active
-    species_code: Xenopus
+    species_code: Xtro
     taxa:
       - NCBITaxon:8364
-      - NCBITaxon:8355
   -
     id: xenbase.gaf
-    label: "xenbase gaf file"
-    description: "GAF file for Xenbase"
+    label: "xenbase tropicalis gaf file (possible LA IBA injection)"
+    description: "GAF file for Xenbase tropicalis (possible LA IBA injection)"
     url: https://current.geneontology.org/annotations/xenbase.gaf.gz
     type: gaf
     dataset: xenbase
     submitter: xenbase
     compression: gzip
-    source: https://ftp.xenbase.org/pub/DataExchange/GO/xenbase.EBI.only.2.2.gaf.gz
+    source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/XENTR_8364_UP000008143.gaf.gz
     entity_type:
     status: active
-    species_code: Xenopus
+    species_code: Xtro
     taxa:
       - NCBITaxon:8364
-      - NCBITaxon:8355

@@ -15,7 +15,7 @@ datasets:
     dataset: ecocyc
     submitter: ecocyc
     compression: gzip
-    source: https://www.ai.sri.com/~kr/go/latest/ecocyc.gaf.gz
+    source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/ECOLI_83333_UP000000625.gaf.gz
     entity_type:
     status: active
     species_code: Ecol
@@ -29,7 +29,7 @@ datasets:
     dataset: ecocyc
     submitter: ecocyc
     compression: gzip
-    source: https://www.ai.sri.com/~kr/go/latest/ecocyc.gpi.gz
+    source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/ECOLI_83333_UP000000625.gpi.gz
     entity_type:
     status: active
     species_code: Ecol

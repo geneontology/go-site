@@ -17,7 +17,7 @@ datasets:
    submitter: pombase
    compression: gzip
    #source: https://release.geneontology.org/2024-03-28/products/upstream_and_raw_data/pombase-src.gaf.gz
-   source: https://www.pombase.org/data/annotations/Gene_ontology/gene_association.pombase.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/SCHPO_4896_UP000002485.gaf.gz
    entity_type:
    status: active
    species_code: Spom
@@ -32,7 +32,7 @@ datasets:
    dataset: pombase
    submitter: pombase
    compression: gzip
-   source: https://www.pombase.org/data/annotations/Gene_ontology/pombase.gpi.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/SCHPO_4896_UP000002485.gpi.gz
    entity_type:
    status: active
    species_code: Spom
@@ -47,7 +47,7 @@ datasets:
    dataset: pombase
    submitter: pombase
    compression: gzip
-   source: https://www.pombase.org/data/annotations/Gene_ontology/pombase.gpad.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpad/SCHPO_4896_UP000002485.gpa.gz
    entity_type:
    status: active
    species_code: Spom

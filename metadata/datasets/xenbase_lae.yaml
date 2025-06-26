@@ -1,0 +1,38 @@
+id: xenbase_lae
+label: Xenbase (laevis)
+description: "GO data for Xenbase (laevis)"
+project_name: "Xenbase"
+contact_email: "xenbase@ucalgary.ca"
+project_url: "http://www.xenbase.org/"
+funding_source: "National Institute of Child Health and Human Development, grant P41 HD064556"
+email_report: "malcolm.fisher@cchmc.org"
+datasets:
+  -
+    id: xenbase_lae.gpi
+    label: "Xenbase laevis gpi file"
+    description: "gpi file for Xenbase laevis"
+    type: gpi
+    dataset: xenbase_lae
+    submitter: xenbase
+    compression: gzip
+    source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/XENLA_8355_UP000186698.gpi.gz
+    entity_type:
+    status: active
+    species_code: Xlae
+    taxa:
+      - NCBITaxon:8355
+  -
+    id: xenbase_lae.gaf
+    label: "xenbase laevis gaf file"
+    description: "GAF file for Xenbase laevis"
+    url: https://current.geneontology.org/annotations/xenbase.gaf.gz
+    type: gaf
+    dataset: xenbase_lae
+    submitter: xenbase
+    compression: gzip
+    source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/XENLA_8355_UP000186698.gaf.gz
+    entity_type:
+    status: active
+    species_code: Xlae
+    taxa:
+      - NCBITaxon:8355
