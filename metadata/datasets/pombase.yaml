@@ -32,7 +32,8 @@ datasets:
    dataset: pombase
    submitter: pombase
    compression: gzip
-   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/SCHPO_4896_UP000002485.gpi.gz
+   #source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/SCHPO_4896_UP000002485.gpi.gz
+   source: https://www.pombase.org/data/annotations/Gene_ontology/pombase.gpi.gz
    entity_type:
    status: active
    species_code: Spom
