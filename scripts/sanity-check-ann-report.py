@@ -265,6 +265,7 @@ def main():
             "goa_pig_isoform": 0.3,
             "aspgd": 0.1,
             "ecocyc": 0.3,
+            "japonicusdb": 0.25,
             "sgd": 0.25
         }
         if severe_line_reduction_test(aid, reduction_threshold, count_gaf_prod, count_gaf_src, small_file_size):

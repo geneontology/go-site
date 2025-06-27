@@ -1,0 +1,61 @@
+id: http://purl.obolibrary.org/obo/go/goexmetadata/
+name: goexmetadata
+prefixes:
+  linkml: https://w3id.org/linkml/
+  goexmetadata: https://w3id.org/linkml/examples/goexmetadata
+imports:
+  - linkml:types
+default_range: string
+default_prefix: goexmetadata
+
+classes:
+  Container:
+    tree_root: true
+    attributes:
+      organisms:
+        multivalued: true
+        inlined_as_list: true
+        range: Organism
+  Organism:
+    slots:
+      - taxon_id
+      - uniprot_proteome_id
+      - full_name
+      - common_name_panther
+      - common_name_uniprot
+      - code_uniprot
+      - code_goc
+      - group
+      - mod_id_space
+
+slots:
+
+  taxon_id:
+    identifier: true
+    required: true
+    range: curie
+
+  uniprot_proteome_id:
+    required: true
+    range: curie
+
+  full_name:
+    required: true
+
+  common_name_panther:
+    required: false
+
+  common_name_uniprot:
+    required: false
+
+  code_uniprot:
+    required: true
+
+  code_goc:
+    required: false
+
+  group:
+    required: false
+
+  mod_id_space:
+    required: true

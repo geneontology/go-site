@@ -1969,3 +1969,16 @@
   authors: UniProt
   year: 2024
   is_obsolete: false
+- id: GO_REF:0000121
+  title: RGD ISO annotations to rat from other mammalian species.
+  description: |-
+    RGD (https://rgd.mcw.edu/) imports high quality ortholog calls from the Human Gene 
+    Nomenclature Committee's HCOP tool and the Alliance of Genome Resources for multiple mammalian species 
+    and manually assigns orthologs between rat genes and those in other species where necessary based on 
+    sequence similarity and synteny. Experimentally-based manual GO annotations (IDA, IMP IPI, IGI, and EXP) 
+    from other RGD species are used to provide annotations to the respective rat orthologs. The resulting 
+    annotations are given the ISO evidence code and an entry is made in the "With (or) From" field 
+    to indicate the orthologous entity.
+  authors: RGD
+  year: 2025
+  is_obsolete: false

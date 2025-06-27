@@ -10,7 +10,7 @@ entity_types:
       name: gene
   - &protein_complex
       id: GO:0032991
-      name: protein-cotaining complex
+      name: protein-containing complex
   - &genotype
       id: SO:0001027
       name: genotype

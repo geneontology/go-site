@@ -25,34 +25,11 @@ sequence:
       "nickname":
         type: str
         required: true
-      "email-md5":
-        type: seq
-        required: false
-        sequence:
-          - type: str
+        unique: true
       "authorizations":
         type: map
         required: false
         mapping:
-          "termgenie-go":
-            type: map
-            required: false
-            mapping:
-              "allow-write":
-                type: bool
-                required: false
-              "allow-review":
-                type: bool
-                required: false
-              "allow-management":
-                type: bool
-                required: false
-              "allow-freeform":
-                type: bool
-                required: false
-              "allow-freeform-litxref-optional":
-                type: bool
-                required: false
           ## Legacy "noctua-go".
           "noctua-go":
             type: map
@@ -133,8 +110,3 @@ sequence:
             type: str
             required: false
             unique: true
-          "email-md5":
-            type: seq
-            required: false
-            sequence:
-              - type: str

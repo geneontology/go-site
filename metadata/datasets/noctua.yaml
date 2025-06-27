@@ -11,7 +11,7 @@ datasets:
     compression: gzip
     source: ./products/upstream_and_raw_data/noctua_mgi-src.gpad.gz
     entity_type:
-    status: active
+    status: inactive
     merges_into: mgi
     species_code: Mmus
     taxa:
@@ -26,7 +26,7 @@ datasets:
     compression: gzip
     source: ./products/upstream_and_raw_data/noctua_fb.gpad.gz
     entity_type:
-    status: inactive
+    status: active
     species_code: Dmel
     taxa:
       - NCBITaxon:7227
@@ -86,7 +86,7 @@ datasets:
     compression: gzip
     source: ./products/upstream_and_raw_data/noctua_xenbase-src.gpad.gz
     entity_type:
-    status: active
+    status: inactive
     merges_into: xenbase
     species_code: Xenopus
     taxa:
