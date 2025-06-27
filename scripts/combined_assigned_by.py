@@ -15,7 +15,6 @@ import glob
 import copy
 import datetime
 import yamldown
-import html
 import sys
 import argparse
 import logging
@@ -189,7 +188,8 @@ def output_html(violations_info_list, path, rules_descriptions):
             sort_messages(rule, violations)
             ruleDesc = rules_descriptions[rule]["title"]
             
-            ruleDescEscaped = html.escape(ruleDesc)
+            # DO NOT ESCAPE
+            #ruleDescEscaped = ruleDesc   #html.escape(ruleDesc, quote=True)
 
             violationsCtr = violationsCtr + 1    
             ## Add to list of violations
@@ -201,7 +201,7 @@ def output_html(violations_info_list, path, rules_descriptions):
             paragraph.append(link)
             link.text = rule
             ruleDef = ET.Element('span')
-            ruleDef.text = ruleDescEscaped
+            ruleDef.text = ruleDesc
             paragraph.append(ruleDef)
 
             ## Details about the violation
@@ -212,7 +212,7 @@ def output_html(violations_info_list, path, rules_descriptions):
             msgDescPara = ET.Element('p')
             body.append(msgDescPara)
             
-            msgDescPara.text = ruleDescEscaped
+            msgDescPara.text = ruleDesc
 
             unorderedList = ET.Element('ul')
             body.append(unorderedList)

@@ -18,8 +18,7 @@ Cornell University,,Gaurav Moghe @moghelab,,, Plant biology
 DFLAT,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curation (inactive),P2GO,
 DIBU - DiBest-Unical,@simonapanni,Simona Panni @simonapanni,Curation,< ! > In-house< ! >,
 dictyBase,,,,,
-° dictyBase,@pfey03, Petra Fey @pfey03,Curation,P2GO |  Noctua,
-° dictyBase,,Robert Dodson @rjdodson,Curation,P2GO | Noctua,
+° dictyBase,@rjdodson, Robert Dodson @rjdodson,Curation,P2GO | Noctua,
 DisProt,,,,,
 ° DisProt,@victorianugnes, Victoria Nugnes @victorianugnes,Curation,< ! > In-house< ! >,biocuration | stucture | intrinsically disordered regions (IDRs) 
 EAWAG-BBD (ETH Zurich),,,,,
@@ -77,11 +76,20 @@ JaponicusDB,,,,,
 ° JaponicusDB,@ValWood,Val Wood @ValWood,Curation,< ! > In-house < ! >,
 JCVI,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curation (inactive),P2GO,contact @mgiglio99 for queries
 LIFEdb,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curation,P2GO,contact Stefan Wiemann s.wiemann AT dkfz-heidelberg.de for queries
+LncRNAWiki,,,,,
+° LncRNAWiki,@lina2015,Lina Ma @lina2015,Curation,Noctua,lncRNA identification | lncRNA functional analysis | lncRNA database
+° LncRNAWiki,,Shaosen Zhang @ShaosenZhang,Curation,Noctua,
+° LncRNAWiki,,Xing Zheng @ZXingRong,Curation,Noctua,Developing a tool for lncRNA curation
+° LncRNAWiki,,Miaomiao Wang @wmm1103,Curation,Noctua,lncRNA function prediction
+° LncRNAWiki,,Xinyu Zhou @Thea1009,Curation,Noctua,Genomic annotation of human long non-coding RNAs (lncRNAs)
+° LncRNAWiki,,Zhao Li @lizhao-git,Curation,Noctua,Chromatin binding and regulation of lncRNAs | Nuclear organization functions of lncRNAs
+° LncRNAWiki,,Yue Qi @WENERYUE620,Curation,Noctua,Long non-coding RNA regulatory networks
 MENGO,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curation (inactive),P2GO,contact @mgiglio99 for queries
 MGI,,,,,
 ° MGI,,Karen Christie @krchristie,Curation,Noctua,
 ° MGI,@LiNiMGI,Li Ni @LiNiMGI,Curation,Noctua,
 ° MGI,,David Hill @ukemi,Curation,Noctua,Development | GO-CAM Modeling | MGI Data & Pipeline issues
+° MGI,@dms321,Dmitry Sitnikov @dms321,Curation,Noctua,
 MTBBASE,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curation (inactive),P2GO,no contact person
 NTNU_SB,,,,,
 ° NTNU_SB,,Astrid Lægreid,Curation (inactive),P2GO,Transcription
@@ -108,10 +116,10 @@ Reactome,,,,,
 Rfam,@blakesweeney,Blake Sweeney @blakesweeney,Rfam Mappings,< ! > In-house < ! >,
 RGD,,,,,
 ° RGD,@slaulederkind,Stan Laulederkind @slaulederkind,Curation,In-house,Contact for Annotation Review
-° RGD,@gthayman,Tom Hayman @gthayman,Curation,In-house,Contact for Annotation Review
 ° RGD,,Mary Kaldunski @mlkaldunski,Curation,In-house,curation | annotation | physiology
 ° RGD,,Jennifer Smith @jrsjrs,Pipeline and data,In-house,Project Manager| pipeline and data
 ° RGD,,Marek Tutaj @tutajm,Pipeline and data,In-house,import and export pipelines
+° RGD,,Shur-Jen Wang @shurjenw,Curation,In-house,GO | disease | phenotype
 RHEA,,,,,
 ° RHEA,,Kristian Axelson @kaxelsen,RHEA development,,RHEA and Swiss-Prot curator
 ° RHEA,,Anne Morgat @amorgat,RHEA development,,
@@ -121,8 +129,9 @@ RNA Central,,,,,
 ° RNAcentral,@blakesweeney, Blake Sweeny @blakesweeney,Curation,< ! > In-house < ! >,
 Roslin_Institute,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curation (inactive),<P2GO,no contact person
 SGD,,,,,
-° SGD,@srengel,Stacia Engel @srengel,Curation,<Noctua,Contact for Annotation Review
-° SGD,,Suzi Aleksander @suzialeksander,Curation,<Noctua,
+° SGD,,Stacia Engel @srengel,Curation,Noctua,
+° SGD,@suzialeksander,Suzi Aleksander @suzialeksander,Curation,Noctua,Contact for Annotation Review
+° SGD,@edwong57,Edith Wong @edwong57,Curation,Noctua,Contact for Annotation Review
 SGN,@lukasmueller,Lukas Mueller @lukasmueller,Curation,< ! > In-house < ! >,
 SynGO,@ftwkoopmans,Frank Koopmans @ftwkoopmans,Curation,< ! > In-house < ! >,
 SynGO-UCL,@RLovering, Ruth Lovering @RLovering,Curation,<P2GO, 
@@ -137,6 +146,7 @@ UniProt,,,,,
 ° UniProt (EBI),,Alex Ignatchenko @alexsign,Pipeline and data,,Software & pipeline
 ° UniProt (EBI),@Antonialock,Antonia Lock @Antonialock,Curation,P2GO, GOA contact for GO
 ° UniProt (EBI),,Michelle Magrane @magrane,Curation,P2GO,
+° UniProt (EBI),,Nadya Urakova @nadya-urakova,Curation,P2GO,
 ° UniProt (EBI),,Sandra Orchard @sandraorchard,Curation,P2GO,
 ° UniProt (EBI),Rizwan Ishtiaq @rizwan-ishtiaq,QuickGO java backend,QuickGO backend,,
 ° UniProt (PIR),,Kati Laiho @laihokati,Curation,P2GO,
@@ -149,8 +159,11 @@ UniProt,,,,,
 ° UniProt (Swiss-Prot/Geneva),,Nevila Nouspikel nnouspikel,Curation,P2GO,lipids | immunology | cancer
 ° UniProt (Swiss-Prot/Geneva),@sylvainpoux, Sylvain Poux @sylvainpoux,Curation,P2GO | Noctua,
 ° UniProt (Swiss-Prot/Geneva),@pedruzzi, Ivo Pedruzzi @pedruzzi,HAMAP Mappings,< ! > In-house < ! >,
+° UniProt (Swiss-Prot/Geneva),@marialivia, Livia Famiglietti @marialivia,Curation,P2GO | Noctua,
+° UniProt (Swiss-Prot/Geneva),@nadgruaz, Nadine Gruaz @nadgruaz,Curation,P2GO | Noctua,
 ° UniProt (EBI),@esperetta,Elena Speretta @esperetta, UniRules Mappings,< ! > In-house < ! >,
 ° UniProt (EBI),@PedroRaposo,Pedro Raposo @PedroRaposo, UniRules Mappings,< ! > In-house < ! >,
+UOS_MCB - University of Osnabrueck Molecular Cell Biology Division,@Vitalina-Kha, Vitalina Kharchenko @Vitalina-Kha, Curation, Noctua,
 WB - WormBase,@vanaukenk,Kimberly Van Auken @vanaukenk,Curation,P2GO  |Noctua,C.elegans | Noctua | GO-CAM
 Wikidata,,,,,
 ° Wikidata,,Andrew Su @andrewsu,,,
@@ -163,3 +176,4 @@ ZFIN,,,,,
 ° ZFIN,@sramachand,Sridhar Ramanchandran @sramachand,Curation,Noctua,ZFIN curation
 ,Domain expert,,Alex Diehl @addiehl (Buffalo University),,immunology
 ,Domain expert,,@khybiske,,Chlamydia
+,Domain expert,,Gene Godbold @ggodbold,,Human Pathogens/Signature Science

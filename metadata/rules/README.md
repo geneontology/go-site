@@ -12,7 +12,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000002">GORULE:0000002 No 'NOT' annotations to binding ; GO:0005488 or 'protein binding ; GO:0005515'</a>
  * <a href="#gorule0000003">GORULE:0000003 DEPRECATED Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field</a>
  * <a href="#gorule0000004">GORULE:0000004 Reciprocal annotations for 'protein binding ; GO:0005515'</a>
- * <a href="#gorule0000005">GORULE:0000005 IEA, ISS, ISO, ISM, ISA, IBA, RCA annotations ae not allowed for direct annotations to to 'protein binding ; GO:0005515 or GO:0005488 binding''</a>
+ * <a href="#gorule0000005">GORULE:0000005 IEA, ISS, ISO, ISM, ISA, IBA, RCA annotations are not allowed for direct annotations to to 'protein binding ; GO:0005515 or GO:0005488 binding''</a>
  * <a href="#gorule0000006">GORULE:0000006 IEP and HEP usage is restricted to terms from the Biological Process ontology, except when assigned by GOC</a>
  * <a href="#gorule0000007">GORULE:0000007 IPI should not be used with GO:0003824 catalytic activity or descendents</a>
  * <a href="#gorule0000008">GORULE:0000008 No annotations should be made to uninformative high level terms</a>
@@ -47,7 +47,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000039">GORULE:0000039 Protein complexes can not be annotated to GO:0032991 (protein-containing complex) or its descendants</a>
  * <a href="#gorule0000042">GORULE:0000042 Qualifier: IKR evidence code requires a NOT qualifier</a>
  * <a href="#gorule0000043">GORULE:0000043 Check for valid combination of evidence code and GO_REF</a>
- * <a href="#gorule0000044">GORULE:0000044 Deprecated - Reference: check for invalid use of GO_REF:0000057 can only be used with terms that are descendants of GO:0006915 (apoptotic process)</a>
+ * <a href="#gorule0000044">GORULE:0000044 DEPRECATED - Reference: check for invalid use of GO_REF:0000057 can only be used with terms that are descendants of GO:0006915 (apoptotic process)</a>
  * <a href="#gorule0000045">GORULE:0000045 With/from: Verify that the combination of evidence (ECO) codes conform to the rules in eco-usage-constraints.yaml</a>
  * <a href="#gorule0000046">GORULE:0000046 The ‘with’ field (GAF column 8) must be the same as the gene product (GAF column 2) when annotating to ‘self-binding’ terms.</a>
  * <a href="#gorule0000047">GORULE:0000047 With/from: ChEBI IDs in With/from can only be used with terms that are descendants of GO:0005488 (binding)</a>
@@ -66,7 +66,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000062">GORULE:0000062 Infer annotations on molecular function via has_part</a>
  * <a href="#gorule0000063">GORULE:0000063 Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column)</a>
  * <a href="#gorule0000064">GORULE:0000064 TreeGrafter IEAs should be filtered for GO reference species</a>
- * <a href="#gorule0000065">GORULE:0000065 Annotations to term that are candidates for obsoletion should be removed</a>
+ * <a href="#gorule0000065">GORULE:0000065 Annotations to term that are candidates for obsoletion should be produce a warning</a>
 
 
 
@@ -170,7 +170,7 @@ on the GO wiki.
 
 <a name="gorule0000005"/>
 
-## IEA, ISS, ISO, ISM, ISA, IBA, RCA annotations ae not allowed for direct annotations to to 'protein binding ; GO:0005515 or GO:0005488 binding''
+## IEA, ISS, ISO, ISM, ISA, IBA, RCA annotations are not allowed for direct annotations to to 'protein binding ; GO:0005515 or GO:0005488 binding''
 
  * id: [GORULE:0000005](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000005.md)
  * status: implemented
@@ -776,7 +776,7 @@ See also GORULE:0000026.
 For annotations by ISO, ISA or ISS, the annotations of the gene product (col 8 info in the GAF) should be checked to ensure that an annotation exists to the same or a more granular term. For instance:
 
 Gene Product 1 | GO:1233456 |  ISS/ISO/ISA | with: Gene Product 2
-Gene Product 2 | GO:1233456 (or a descentant) | EXP (or a descendant)
+Gene Product 2 | GO:1233456 (or a descendant) | EXP (or a descendant)
 
 Allowed evidence codes for the primary annotations: EXP, IMP, IDA, IPI, IEP, IGI, HTP, HMP, HDA, HEP, HGI.
 
@@ -806,7 +806,7 @@ IKR evidence code requires a NOT qualifier.
 ## Check for valid combination of evidence code and GO_REF
 
  * id: [GORULE:0000043](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000043.md)
- * status: proposed
+ * status: approved
 
 
 
@@ -821,6 +821,7 @@ Specific allowed combinations:
 - IDA (ECO:0000314): GO_REF:0000052, GO_REF:0000054
 This list may not be exhaustive.
 
+Implemented by GOA, check occurs in the GOA phase of the GOC-GOA pipeline. 
 TODO: include above list in appropriate metadata file.
 see http://wiki.geneontology.org/index.php/Evidence_Code_Ontology_(ECO)
 
@@ -829,7 +830,7 @@ See also http://wiki.geneontology.org/index.php/Mappings_of_GO_Evidence_Code_%2B
 
 <a name="gorule0000044"/>
 
-## Deprecated - Reference: check for invalid use of GO_REF:0000057 can only be used with terms that are descendants of GO:0006915 (apoptotic process)
+## DEPRECATED - Reference: check for invalid use of GO_REF:0000057 can only be used with terms that are descendants of GO:0006915 (apoptotic process)
 
  * id: [GORULE:0000044](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000044.md)
  * status: deprecated
@@ -843,10 +844,11 @@ Reference: check for invalid use of GO_REF:0000057 can only be used with terms t
 ## With/from: Verify that the combination of evidence (ECO) codes conform to the rules in eco-usage-constraints.yaml
 
  * id: [GORULE:0000045](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000045.md)
- * status: proposed
+ * status: deprecated
 
 
 With/from: Verify that the combination of evidence (ECO) codes conform to the rules in eco-usage-constraints.yaml
+Redundant with GORULE-0000043.
 
 <a name="gorule0000046"/>
 
@@ -881,11 +883,11 @@ Annotations using a ChEBI ID in the with/from (col 8 of GAF) column should only 
 ## DEPRECATED Gene products having ND annotations and other annotations in the same aspect should be reviewed
 
  * id: [GORULE:0000048](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000048.md)
- * status: proposed
+ * status: deprecated
 
 
 
-DEPRECATED; redundant with ORULE:0000054
+DEPRECATED; redundant with GORULE:0000054
 If a gene product has an annotation by the ND evidence code, this rule checks whether any manual annotations in the same GO aspect exists for this gene product.
 
 <a name="gorule0000049"/>
@@ -893,10 +895,10 @@ If a gene product has an annotation by the ND evidence code, this rule checks wh
 ## If the annotation has 'contributes_to' as its qualifier, verify that at least one annotation to GO:0043234 (protein complex), or one of its child terms exists
 
  * id: [GORULE:0000049](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000049.md)
- * status: proposed
+ * status: approved
 
 
-
+Implemented in P2GO.
 The 'contributes to' qualifier can only be applied to proteins belonging to complexes, so any gene product with a MF annotation using the 'contributes to' should also be annotated to a child of protein complex. 
 
 <a name="gorule0000050"/>
@@ -933,10 +935,10 @@ This rule may be expanded in the future to include other terms such as 'GO:00082
 ## 'NOT' annotation should not have extension
 
  * id: [GORULE:0000053](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000053.md)
- * status: deprecated
+ * status: approved
 
 
-This rule will not be implemented, because extensions are additions to terms, so if we allow NOT annotations, we need to allow negating annotations with extensions.  
+Implemented in P2GO.
 
 <a name="gorule0000054"/>
 
@@ -1078,6 +1080,8 @@ If evidence (GAF column 7; GPAD column 6) is one of ISS, ISA, ISO, then there mu
 See also GO-RULE:0000038 (proposed) for a check of the values in the 'with' field. 
 Noting that ISM is not covered by this rule yet.
 
+Exception: (not yet implemented at GO Central): objects of type 'ncRNA' (SO:0001263 and children) using ISM as evidence do not need data in the 'with' field.
+
 <a name="gorule0000064"/>
 
 ## TreeGrafter IEAs should be filtered for GO reference species
@@ -1091,7 +1095,7 @@ If an annotation has GO_REF:0000118 (GAF column 6, GPAD column 5) and the taxon 
 
 <a name="gorule0000065"/>
 
-## Annotations to term that are candidates for obsoletion should be removed
+## Annotations to term that are candidates for obsoletion should be produce a warning
 
  * id: [GORULE:0000065](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000065.md)
  * status: implemented

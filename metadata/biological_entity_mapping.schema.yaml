@@ -1,0 +1,30 @@
+id: https://w3id.org/linkml/examples/biological_entity_mapping
+name: goexmetadata
+prefixes:
+  linkml: https://w3id.org/linkml/
+  goexmetadata: https://w3id.org/linkml/examples/biological_entity_mapping
+imports:
+  - linkml:types
+default_range: string
+default_prefix: biological_entity_mapping
+
+classes:
+  Container:
+    tree_root: true
+    attributes:
+      mapping:
+        multivalued: true
+        inlined_as_list: true
+        range: MapFunction
+  MapFunction:
+    attributes:
+      from_id:
+        identifier: true
+        required: true
+      from_label:
+        required: false
+      to_id:
+        identifier: true
+        required: true
+      to_label:
+        required: false
