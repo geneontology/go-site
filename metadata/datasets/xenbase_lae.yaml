@@ -25,7 +25,7 @@ datasets:
     id: xenbase_lae.gaf
     label: "xenbase laevis gaf file"
     description: "GAF file for Xenbase laevis"
-    url: https://current.geneontology.org/annotations/xenbase.gaf.gz
+    url: https://current.geneontology.org/annotations/xenbase_lae.gaf.gz
     type: gaf
     dataset: xenbase_lae
     submitter: xenbase
