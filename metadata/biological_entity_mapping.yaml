@@ -119,11 +119,11 @@ mapping:
     from_label: pre_miRNA
     to_id: SO:0000276
     to_label: miRNA
-  - from_id: SO:0002378
+  - from_id: SO:0001179
     from_label: U3_snoRNA
     to_id: SO:0000275
     to_label: snoRNA
-  - from_id: mt_SSU_rRNA
+  - from_id: SO:0002344
     from_label: mt_SSU_rRNA
     to_id: SO:0000252
     to_label: rRNA
