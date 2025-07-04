@@ -1982,3 +1982,13 @@
   authors: RGD
   year: 2025
   is_obsolete: false
+- id: GO_REF:0000122
+  title: AtSubP analysis
+  description: |-
+    AtSubP predicts the subcellular localization of Arabidopsis protein sequences utilizing five diverse prediction modules,  
+    aa composition, PSI-BLAST, & Position Spec. Scoring Matrix.
+  authors: TAIR
+  year: 2010
+  external_accession:
+    - TAIR:AnalysisReference:501780126
+  is_obsolete: false
