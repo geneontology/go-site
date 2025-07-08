@@ -17,7 +17,8 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_chicken_plus.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_plus.gaf.gz
+   #mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_plus.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/CHICK_9031_UP000000539.gaf.gz
    entity_type: all
    status: active
    species_code: Ggal
@@ -68,13 +69,12 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_cow_plus.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_plus.gaf.gz
+   #mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_plus.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/BOVIN_9913_UP000009136.gaf.gz
    entity_type: all
    status: active
    species_code: Btau
    taxa:
-    - NCBITaxon:297284
-    - NCBITaxon:30523
     - NCBITaxon:9913
 
  -
@@ -92,8 +92,6 @@ datasets:
    status: active
    species_code: Btau
    taxa:
-    - NCBITaxon:297284
-    - NCBITaxon:30523
     - NCBITaxon:9913
 
  -
@@ -111,8 +109,6 @@ datasets:
    status: active
    species_code: Btau
    taxa:
-    - NCBITaxon:297284
-    - NCBITaxon:30523
     - NCBITaxon:9913
 
  -
@@ -125,7 +121,8 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_dog_plus.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_plus.gaf.gz
+   #mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_plus.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/CANLF_9615_UP000805418.gaf.gz
    entity_type: all
    status: active
    species_code: Cfam
@@ -176,7 +173,8 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_human_plus.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_plus.gaf.gz
+   #mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_plus.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/HUMAN_9606_UP000005640.gaf.gz
    entity_type: all
    status: active
    species_code: Hsap
@@ -227,7 +225,8 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_pig_plus.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_plus.gaf.gz
+   #mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_plus.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/PIG_9823_UP000008227.gaf.gz
    entity_type: all
    status: active
    species_code: Sscr
