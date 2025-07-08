@@ -22,10 +22,6 @@ datasets:
    status: active
    species_code: Ggal
    taxa:
-    - NCBITaxon:208524
-    - NCBITaxon:208525
-    - NCBITaxon:208526
-    - NCBITaxon:400035
     - NCBITaxon:9031
 
  -
@@ -43,10 +39,6 @@ datasets:
    status: active
    species_code: Ggal
    taxa:
-    - NCBITaxon:208524
-    - NCBITaxon:208525
-    - NCBITaxon:208526
-    - NCBITaxon:400035
     - NCBITaxon:9031
 
  -
@@ -64,10 +56,6 @@ datasets:
    status: active
    species_code: Ggal
    taxa:
-    - NCBITaxon:208524
-    - NCBITaxon:208525
-    - NCBITaxon:208526
-    - NCBITaxon:400035
     - NCBITaxon:9031
 
  -
