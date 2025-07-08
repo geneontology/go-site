@@ -3072,6 +3072,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
+      id_syntax: S\w+(\_)?\d
       url_syntax: https://www.japonicusdb.org/gene/[example_id]
       example_id: JaponicusDB:SJAG_01143
       example_url: https://www.japonicusdb.org/gene/SJAG_01143
