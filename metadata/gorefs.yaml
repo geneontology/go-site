@@ -1534,7 +1534,6 @@
   authors: The Gene Ontology Consortium
   external_accession:
     - J:155856
-    - RGD:1624291
   year: 2014
 - id: GO_REF:0000097
   title: Gene Ontology annotation based on personal communication to FlyBase
@@ -1981,6 +1980,8 @@
     to indicate the orthologous entity.
   authors: RGD
   year: 2025
+  external_accession:
+    - RGD:1624291
   is_obsolete: false
 - id: GO_REF:0000122
   title: AtSubP analysis
