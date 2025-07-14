@@ -1276,3 +1276,15 @@ datasets:
    source: https://mirror.geneontology.io/hamap2go
    mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/external2go/hamap2go
    status: active
+
+ -
+   id: rfam2go
+   label: "rfam2go mapping file"
+   description: "external2go file to map Rfam family members to GO terms"
+   url: http://geneontology.org/external2go/rfam2go
+   type: external2go
+   dataset: rfam2go
+   submitter: goa
+   source: https://mirror.geneontology.io/rfam2go
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/Rfam/CURRENT/rfam2go/rfam2go
+   status: active
