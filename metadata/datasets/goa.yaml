@@ -52,7 +52,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_chicken_plus.gpi.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_plus.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/CHICK_9031_UP000000539.gpi.gz
    entity_type: all
    status: active
    species_code: Ggal
@@ -104,7 +104,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_cow_plus.gpi.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_plus.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/BOVIN_9913_UP000009136.gpi.gz
    entity_type: all
    status: active
    species_code: Btau
@@ -156,7 +156,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_dog_plus.gpi.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_plus.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/CANLF_9615_UP000805418.gpi.gz
    entity_type: all
    status: active
    species_code: Cfam
@@ -208,7 +208,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_human_plus.gpi.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_plus.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HUMAN_9606_UP000005640.gpi.gz
    entity_type: all
    status: active
    species_code: Hsap
@@ -260,7 +260,7 @@ datasets:
    submitter: goa
    compression: gzip
    source: https://mirror.geneontology.io/goa_pig_plus.gpi.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_plus.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/PIG_9823_UP000008227.gpi.gz
    entity_type: all
    status: active
    species_code: Sscr
@@ -398,7 +398,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_545
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000270272.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/CITKO_545_UP000270272.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000270272.gpi.gz
    entity_type: all
    status: active
@@ -416,7 +416,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_574
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000255382.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/KLEPO_574_UP000255382.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000255382.gpi.gz
    entity_type: all
    status: active
@@ -434,7 +434,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_623
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000001006.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/SHIFL_623_UP000001006.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000001006.gpi.gz
    entity_type: all
    status: active
@@ -452,7 +452,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_1353
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000254807.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/ENTGA_1353_UP000254807.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000254807.gpi.gz
    entity_type: all
    status: active
@@ -470,7 +470,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_1392
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000000594.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/BACAN_1392_UP000000594.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000000594.gpi.gz
    entity_type: all
    status: active
@@ -488,7 +488,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_1901
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000002357.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/STRCL_1901_UP000002357.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000002357.gpi.gz
    entity_type: all
    status: active
@@ -506,7 +506,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_10254
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000000344.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/VACCW_10254_UP000000344.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000000344.gpi.gz
    entity_type: all
    status: active
@@ -524,7 +524,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_10299
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000009294.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HHV11_10299_UP000009294.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000009294.gpi.gz
    entity_type: all
    status: active
@@ -542,7 +542,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_10338
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000002602.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/VZVD_10338_UP000002602.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000002602.gpi.gz
    entity_type: all
    status: active
@@ -560,7 +560,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_10360
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000008992.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HCMVA_10360_UP000008992.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000008992.gpi.gz
    entity_type: all
    status: active
@@ -578,7 +578,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_12118
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000008765.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/FMDVO_12118_UP000008765.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000008765.gpi.gz
    entity_type: all
    status: active
@@ -596,7 +596,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_63746
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000000518.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HCV77_63746_UP000000518.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000000518.gpi.gz
    entity_type: all
    status: active
@@ -614,7 +614,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_64320
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000054557.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/ZIKV_64320_UP000054557.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000054557.gpi.gz
    entity_type: all
    status: active
@@ -632,7 +632,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_71421
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000000579.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HAEIN_71421_UP000000579.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000000579.gpi.gz
    entity_type: all
    status: active
@@ -650,7 +650,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_83334
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000000558.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/ECO57_83334_UP000000558.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000000558.gpi.gz
    entity_type: all
    status: active
@@ -668,7 +668,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_85962
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000000429.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HELPY_85962_UP000000429.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000000429.gpi.gz
    entity_type: all
    status: active
@@ -686,7 +686,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_93061
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000008816.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/STAA8_93061_UP000008816.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000008816.gpi.gz
    entity_type: all
    status: active
@@ -704,7 +704,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_99287
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000001014.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/SALTY_99287_UP000001014.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000001014.gpi.gz
    entity_type: all
    status: active
@@ -722,7 +722,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_100226
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000001973.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/STRCO_100226_UP000001973.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000001973.gpi.gz
    entity_type: all
    status: active
@@ -740,7 +740,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_122586
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000000425.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/NEIMB_122586_UP000000425.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000000425.gpi.gz
    entity_type: all
    status: active
@@ -758,7 +758,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_169963
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000000817.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/LISMO_169963_UP000000817.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000000817.gpi.gz
    entity_type: all
    status: active
@@ -776,7 +776,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_170187
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000000585.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/STRPN_170187_UP000000585.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000000585.gpi.gz
    entity_type: all
    status: active
@@ -794,7 +794,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_171101
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000000586.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/STRR6_171101_UP000000586.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000000586.gpi.gz
    entity_type: all
    status: active
@@ -812,7 +812,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_192222
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000000799.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/CAMJE_192222_UP000000799.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000000799.gpi.gz
    entity_type: all
    status: active
@@ -830,7 +830,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_208964
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000002438.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/PSEAE_208964_UP000002438.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000002438.gpi.gz
    entity_type: all
    status: active
@@ -848,7 +848,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_224308
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000001570.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/BACSU_224308_UP000001570.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000001570.gpi.gz
    entity_type: all
    status: active
@@ -866,7 +866,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_226185
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000001415.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/ENTFA_226185_UP000001415.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000001415.gpi.gz
    entity_type: all
    status: active
@@ -884,7 +884,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_243273
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000000807.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/MYCGE_243273_UP000000807.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000000807.gpi.gz
    entity_type: all
    status: active
@@ -902,7 +902,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_272558
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000001258.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HALH5_272558_UP000001258.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000001258.gpi.gz
    entity_type: all
    status: active
@@ -920,7 +920,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_272634
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000000808.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/MYCPN_272634_UP000000808.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000000808.gpi.gz
    entity_type: all
    status: active
@@ -938,7 +938,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_295027
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000000938.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HCMVM_295027_UP000000938.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000000938.gpi.gz
    entity_type: all
    status: active
@@ -956,7 +956,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_301447
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000000750.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/STRP1_301447_UP000000750.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000000750.gpi.gz
    entity_type: all
    status: active
@@ -974,7 +974,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_327105
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000007689.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HV1AN_327105_UP000007689.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000007689.gpi.gz
    entity_type: all
    status: active
@@ -992,7 +992,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_333760
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000009251.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HPV16_333760_UP000009251.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000009251.gpi.gz
    entity_type: all
    status: active
@@ -1010,7 +1010,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_373153
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000001452.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/STRP2_373153_UP000001452.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000001452.gpi.gz
    entity_type: all
    status: active
@@ -1028,7 +1028,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_419947
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000001988.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/MYCTA_419947_UP000001988.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000001988.gpi.gz
    entity_type: all
    status: active
@@ -1046,7 +1046,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_565655
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000012675.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/ENTCA_565655_UP000012675.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000012675.gpi.gz
    entity_type: all
    status: active
@@ -1064,7 +1064,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_575584
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000005740.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/ACIB2_575584_UP000005740.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000005740.gpi.gz
    entity_type: all
    status: active
@@ -1082,7 +1082,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_587200
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000002060.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/VAR67_587200_UP000002060.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000002060.gpi.gz
    entity_type: all
    status: active
@@ -1100,7 +1100,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_645098
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000008699.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/MEASC_645098_UP000008699.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000008699.gpi.gz
    entity_type: all
    status: active
@@ -1118,7 +1118,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_928302
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000008591.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HBVCJ_928302_UP000008591.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000008591.gpi.gz
    entity_type: all
    status: active
@@ -1136,7 +1136,7 @@ datasets:
    dataset: goa_virus_bacteria_taxon_1125630
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/virus_bacteria_gpi4neo/proteome_UP000007841.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/KLEPH_1125630_UP000007841.gpi.gz
    source: https://mirror.geneontology.io/proteome_UP000007841.gpi.gz
    entity_type: all
    status: active
