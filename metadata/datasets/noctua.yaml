@@ -9,7 +9,7 @@ datasets:
     dataset: noctua_mgi
     submitter: GOC
     compression: gzip
-    source: ./products/upstream_and_raw_data/noctua_mgi-src.gpad.gz
+    source: ./products/upstream_and_raw_data/noctua_mgi.gpad.gz
     entity_type:
     status: inactive
     merges_into: mgi
@@ -57,10 +57,6 @@ datasets:
     status: inactive
     species_code: Scer
     taxa:
-      - NCBITaxon:285006
-      - NCBITaxon:307796
-      - NCBITaxon:41870
-      - NCBITaxon:4932
       - NCBITaxon:559292
 
   - id: noctua_wb.gpad
@@ -84,7 +80,7 @@ datasets:
     dataset: noctua_xenbase
     submitter: GOC
     compression: gzip
-    source: ./products/upstream_and_raw_data/noctua_xenbase-src.gpad.gz
+    source: ./products/upstream_and_raw_data/noctua_xenbase.gpad.gz
     entity_type:
     status: inactive
     merges_into: xenbase
@@ -100,7 +96,7 @@ datasets:
     dataset: noctua_zfin
     submitter: GOC
     compression: gzip
-    source: ./products/upstream_and_raw_data/noctua_zfin-src.gpad.gz
+    source: ./products/upstream_and_raw_data/noctua_zfin.gpad.gz
     entity_type:
     status: active
     merges_into: zfin
