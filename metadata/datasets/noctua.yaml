@@ -10,7 +10,7 @@ datasets:
     dataset: noctua_fb
     submitter: GOC
     compression: gzip
-    source: ./products/upstream_and_raw_data/noctua_fb.gpad.gz
+    source: ./products/upstream_and_raw_data/noctua_fb-src.gpad.gz
     entity_type:
     status: active
     species_code: Dmel
@@ -24,7 +24,7 @@ datasets:
     dataset: noctua_zfin
     submitter: GOC
     compression: gzip
-    source: ./products/upstream_and_raw_data/noctua_zfin.gpad.gz
+    source: ./products/upstream_and_raw_data/noctua_zfin-src.gpad.gz
     entity_type:
     status: active
     merges_into: zfin
