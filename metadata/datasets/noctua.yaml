@@ -10,9 +10,9 @@ datasets:
     dataset: noctua_fb
     submitter: GOC
     compression: gzip
-    source: ./products/upstream_and_raw_data/noctua_fb-src.gpad.gz
+    source: ./products/upstream_and_raw_data/noctua_fb.gpad.gz
     entity_type:
-    status: active
+    status: inactive
     species_code: Dmel
     taxa:
       - NCBITaxon:7227
