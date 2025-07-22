@@ -559,7 +559,7 @@
 -
   label: 'LncRNAWiki'
   id: https://ngdc.cncb.ac.cn/lncrnawiki
-  shorthand: LncRNA
+  shorthand: LncRNAWiki
   parent_group: GOC
 -
   label: 'University of Osnabrueck Molecular Cell Biology Division'
