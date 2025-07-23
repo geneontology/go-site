@@ -1804,7 +1804,7 @@
       type_id: BET:0000000
 - database: PANTHER
   name: Protein ANalysis THrough Evolutionary Relationships Classification System
-  rdf_uri_prefix: https://identifiers.org/panther.family/
+  rdf_uri_prefix: http://identifiers.org/panther.family/
   generic_urls:
     - http://www.pantherdb.org/
   entity_types:
@@ -3078,7 +3078,7 @@
       example_url: https://www.japonicusdb.org/gene/SJAG_01143
 - database: TreeGrafter
   name: TreeGrafter-generated GO annotations
-  rdf_uri_prefix: https://identifiers.org/panther.family/
+  rdf_uri_prefix: http://identifiers.org/panther.family/
   generic_urls:
     - https://www.pantherdb.org/
   entity_types:
