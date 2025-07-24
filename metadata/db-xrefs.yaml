@@ -1806,7 +1806,7 @@
   name: Protein ANalysis THrough Evolutionary Relationships Classification System
   rdf_uri_prefix: http://identifiers.org/panther.family/
   generic_urls:
-    - http://www.pantherdb.org/
+    - https://www.pantherdb.org/
   entity_types:
     - type_name: protein family
       type_id: NCIT:C20130
