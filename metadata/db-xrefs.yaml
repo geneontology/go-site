@@ -2575,6 +2575,12 @@
       url_syntax: https://www.arabidopsis.org/communication?key=[example_id]
       example_id: TAIR:Communication:1345790
       example_url: https://www.arabidopsis.org/communication?key=1345790
+   - type_name: AnalysisReference
+      type_id: BET:0000000
+      id_syntax: AnalysisReference:[0-9]{7,12}
+      url_syntax: https://www.arabidopsis.org/analysisreference?key=[example_id]
+      example_id: TAIR:Communication:501780126
+      example_url: https://www.arabidopsis.org/analysisreference?key=501780126
     - type_name: primary transcript
       type_id: SO:0000185
       id_syntax: locus:[0-9]{7,12}
