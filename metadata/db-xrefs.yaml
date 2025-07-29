@@ -2572,9 +2572,9 @@
     - type_name: communication
       type_id: BET:0000000
       id_syntax: Communication:[0-9]{7,12}
-      url_syntax: http://arabidopsis.org/servlets/TairObject?type=communication&id=[example_id]
+      url_syntax: https://www.arabidopsis.org/communication?key=[example_id]
       example_id: TAIR:Communication:1345790
-      example_url: http://arabidopsis.org/servlets/TairObject?type=communication&id=1345790
+      example_url: https://www.arabidopsis.org/communication?key=1345790
     - type_name: primary transcript
       type_id: SO:0000185
       id_syntax: locus:[0-9]{7,12}
