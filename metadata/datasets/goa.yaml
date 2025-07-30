@@ -16,8 +16,7 @@ datasets:
    dataset: goa_chicken
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_chicken_plus.gaf.gz
-   #mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/goa_chicken_plus.gaf.gz
+   source: https://mirror.geneontology.io/CHICK_9031_UP000000539.gaf.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/CHICK_9031_UP000000539.gaf.gz
    entity_type: all
    status: active
@@ -51,7 +50,7 @@ datasets:
    dataset: goa_chicken
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_chicken_plus.gpi.gz
+   source: https://mirror.geneontology.io/CHICK_9031_UP000000539.gpi.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/CHICK_9031_UP000000539.gpi.gz
    entity_type: all
    status: active
@@ -68,8 +67,7 @@ datasets:
    dataset: goa_cow
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_cow_plus.gaf.gz
-   #mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/goa_cow_plus.gaf.gz
+   source: https://mirror.geneontology.io/BOVIN_9913_UP000009136.gaf.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/BOVIN_9913_UP000009136.gaf.gz
    entity_type: all
    status: active
@@ -103,7 +101,7 @@ datasets:
    dataset: goa_cow
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_cow_plus.gpi.gz
+   source: https://mirror.geneontology.io/BOVIN_9913_UP000009136.gpi.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/BOVIN_9913_UP000009136.gpi.gz
    entity_type: all
    status: active
@@ -120,8 +118,7 @@ datasets:
    dataset: goa_dog
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_dog_plus.gaf.gz
-   #mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/goa_dog_plus.gaf.gz
+   source: https://mirror.geneontology.io/CANLF_9615_UP000805418.gaf.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/CANLF_9615_UP000805418.gaf.gz
    entity_type: all
    status: active
@@ -155,7 +152,7 @@ datasets:
    dataset: goa_dog
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_dog_plus.gpi.gz
+   source: https://mirror.geneontology.io/CANLF_9615_UP000805418.gpi.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/CANLF_9615_UP000805418.gpi.gz
    entity_type: all
    status: active
@@ -172,8 +169,7 @@ datasets:
    dataset: goa_human
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_human_plus.gaf.gz
-   #mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/goa_human_plus.gaf.gz
+   source: https://mirror.geneontology.io/HUMAN_9606_UP000005640.gaf.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/HUMAN_9606_UP000005640.gaf.gz
    entity_type: all
    status: active
@@ -207,7 +203,7 @@ datasets:
    dataset: goa_human
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_human_plus.gpi.gz
+   source: https://mirror.geneontology.io/HUMAN_9606_UP000005640.gpi.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HUMAN_9606_UP000005640.gpi.gz
    entity_type: all
    status: active
@@ -224,8 +220,7 @@ datasets:
    dataset: goa_pig
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_pig_plus.gaf.gz
-   #mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/goa_pig_plus.gaf.gz
+   source: https://mirror.geneontology.io/PIG_9823_UP000008227.gaf.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/PIG_9823_UP000008227.gaf.gz
    entity_type: all
    status: active
@@ -259,7 +254,7 @@ datasets:
    dataset: goa_pig
    submitter: goa
    compression: gzip
-   source: https://mirror.geneontology.io/goa_pig_plus.gpi.gz
+   source: https://mirror.geneontology.io/PIG_9823_UP000008227.gpi.gz
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/PIG_9823_UP000008227.gpi.gz
    entity_type: all
    status: active
@@ -293,8 +288,8 @@ datasets:
    dataset: goa_uniprot_all
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gaf.gz
    source: https://mirror.geneontology.io/goa_uniprot_all.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gaf.gz
    entity_type: all
    status: active
    aggregates: goa
@@ -310,8 +305,8 @@ datasets:
    dataset: goa_uniprot_all
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gpi.gz
    source: https://mirror.geneontology.io/goa_uniprot_all.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gpi.gz
    entity_type: all
    status: active
    aggregates: goa
@@ -327,8 +322,8 @@ datasets:
    dataset: goa_uniprot_all
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gpa.gz
    source: https://mirror.geneontology.io/goa_uniprot_all.gpa.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_all.gpa.gz
    entity_type: all
    status: active
    aggregates: goa
@@ -344,8 +339,8 @@ datasets:
    dataset: goa_uniprot_gcrp
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gaf.gz
    source: https://mirror.geneontology.io/goa_uniprot_gcrp.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gaf.gz
    entity_type: all
    status: active
    aggregates: goa
@@ -362,8 +357,8 @@ datasets:
    dataset: goa_uniprot_gcrp
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gpi.gz
    source: https://mirror.geneontology.io/goa_uniprot_gcrp.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gpi.gz
    entity_type: all
    status: active
    aggregates: goa
@@ -380,8 +375,8 @@ datasets:
    dataset: goa_uniprot_gcrp
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gpa.gz
    source: https://mirror.geneontology.io/goa_uniprot_gcrp.gpa.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/databases/GO/goa/UNIPROT/goa_uniprot_gcrp.gpa.gz
    entity_type: all
    status: active
    aggregates: goa
@@ -399,7 +394,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/CITKO_545_UP000270272.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000270272.gpi.gz
+   source: https://mirror.geneontology.io/CITKO_545_UP000270272.gpi.gz
    entity_type: all
    status: active
    species_code: CITKO
@@ -417,7 +412,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/KLEPO_574_UP000255382.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000255382.gpi.gz
+   source: https://mirror.geneontology.io/KLEPO_574_UP000255382.gpi.gz
    entity_type: all
    status: active
    species_code: KLEPO
@@ -435,7 +430,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/SHIFL_623_UP000001006.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000001006.gpi.gz
+   source: https://mirror.geneontology.io/SHIFL_623_UP000001006.gpi.gz
    entity_type: all
    status: active
    species_code: SHIFL
@@ -453,7 +448,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/ENTGA_1353_UP000254807.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000254807.gpi.gz
+   source: https://mirror.geneontology.io/ENTGA_1353_UP000254807.gpi.gz
    entity_type: all
    status: active
    species_code: ENTGA
@@ -471,7 +466,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/BACAN_1392_UP000000594.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000000594.gpi.gz
+   source: https://mirror.geneontology.io/BACAN_1392_UP000000594.gpi.gz
    entity_type: all
    status: active
    species_code: BACAN
@@ -489,7 +484,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/STRCL_1901_UP000002357.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000002357.gpi.gz
+   source: https://mirror.geneontology.io/STRCL_1901_UP000002357.gpi.gz
    entity_type: all
    status: active
    species_code: STRCL
@@ -507,7 +502,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/VACCW_10254_UP000000344.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000000344.gpi.gz
+   source: https://mirror.geneontology.io/VACCW_10254_UP000000344.gpi.gz
    entity_type: all
    status: active
    species_code: VACCW
@@ -525,7 +520,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HHV11_10299_UP000009294.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000009294.gpi.gz
+   source: https://mirror.geneontology.io/HHV11_10299_UP000009294.gpi.gz
    entity_type: all
    status: active
    species_code: HHV11
@@ -543,7 +538,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/VZVD_10338_UP000002602.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000002602.gpi.gz
+   source: https://mirror.geneontology.io/VZVD_10338_UP000002602.gpi.gz
    entity_type: all
    status: active
    species_code: VZVD
@@ -561,7 +556,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HCMVA_10360_UP000008992.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000008992.gpi.gz
+   source: https://mirror.geneontology.io/HCMVA_10360_UP000008992.gpi.gz
    entity_type: all
    status: active
    species_code: HCMVA
@@ -579,7 +574,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/FMDVO_12118_UP000008765.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000008765.gpi.gz
+   source: https://mirror.geneontology.io/FMDVO_12118_UP000008765.gpi.gz
    entity_type: all
    status: active
    species_code: FMDVO
@@ -597,7 +592,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HCV77_63746_UP000000518.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000000518.gpi.gz
+   source: https://mirror.geneontology.io/HCV77_63746_UP000000518.gpi.gz
    entity_type: all
    status: active
    species_code: HCV77
@@ -615,7 +610,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/ZIKV_64320_UP000054557.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000054557.gpi.gz
+   source: https://mirror.geneontology.io/ZIKV_64320_UP000054557.gpi.gz
    entity_type: all
    status: active
    species_code: ZIKV
@@ -633,7 +628,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HAEIN_71421_UP000000579.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000000579.gpi.gz
+   source: https://mirror.geneontology.io/HAEIN_71421_UP000000579.gpi.gz
    entity_type: all
    status: active
    species_code: HAEIN
@@ -651,7 +646,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/ECO57_83334_UP000000558.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000000558.gpi.gz
+   source: https://mirror.geneontology.io/ECO57_83334_UP000000558.gpi.gz
    entity_type: all
    status: active
    species_code: ECO57
@@ -669,7 +664,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HELPY_85962_UP000000429.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000000429.gpi.gz
+   source: https://mirror.geneontology.io/HELPY_85962_UP000000429.gpi.gz
    entity_type: all
    status: active
    species_code: HELPY
@@ -687,7 +682,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/STAA8_93061_UP000008816.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000008816.gpi.gz
+   source: https://mirror.geneontology.io/STAA8_93061_UP000008816.gpi.gz
    entity_type: all
    status: active
    species_code: STAA8
@@ -705,7 +700,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/SALTY_99287_UP000001014.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000001014.gpi.gz
+   source: https://mirror.geneontology.io/SALTY_99287_UP000001014.gpi.gz
    entity_type: all
    status: active
    species_code: SALTY
@@ -723,7 +718,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/STRCO_100226_UP000001973.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000001973.gpi.gz
+   source: https://mirror.geneontology.io/STRCO_100226_UP000001973.gpi.gz
    entity_type: all
    status: active
    species_code: STRCO
@@ -741,7 +736,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/NEIMB_122586_UP000000425.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000000425.gpi.gz
+   source: https://mirror.geneontology.io/NEIMB_122586_UP000000425.gpi.gz
    entity_type: all
    status: active
    species_code: NEIMB
@@ -759,7 +754,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/LISMO_169963_UP000000817.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000000817.gpi.gz
+   source: https://mirror.geneontology.io/LISMO_169963_UP000000817.gpi.gz
    entity_type: all
    status: active
    species_code: LISMO
@@ -777,7 +772,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/STRPN_170187_UP000000585.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000000585.gpi.gz
+   source: https://mirror.geneontology.io/STRPN_170187_UP000000585.gpi.gz
    entity_type: all
    status: active
    species_code: STRPN
@@ -795,7 +790,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/STRR6_171101_UP000000586.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000000586.gpi.gz
+   source: https://mirror.geneontology.io/STRR6_171101_UP000000586.gpi.gz
    entity_type: all
    status: active
    species_code: STRR6
@@ -813,7 +808,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/CAMJE_192222_UP000000799.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000000799.gpi.gz
+   source: https://mirror.geneontology.io/CAMJE_192222_UP000000799.gpi.gz
    entity_type: all
    status: active
    species_code: CAMJE
@@ -831,7 +826,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/PSEAE_208964_UP000002438.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000002438.gpi.gz
+   source: https://mirror.geneontology.io/PSEAE_208964_UP000002438.gpi.gz
    entity_type: all
    status: active
    species_code: PSEAE
@@ -849,7 +844,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/BACSU_224308_UP000001570.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000001570.gpi.gz
+   source: https://mirror.geneontology.io/BACSU_224308_UP000001570.gpi.gz
    entity_type: all
    status: active
    species_code: BACSU
@@ -867,7 +862,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/ENTFA_226185_UP000001415.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000001415.gpi.gz
+   source: https://mirror.geneontology.io/ENTFA_226185_UP000001415.gpi.gz
    entity_type: all
    status: active
    species_code: ENTFA
@@ -885,7 +880,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/MYCGE_243273_UP000000807.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000000807.gpi.gz
+   source: https://mirror.geneontology.io/MYCGE_243273_UP000000807.gpi.gz
    entity_type: all
    status: active
    species_code: MYCGE
@@ -903,7 +898,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HALH5_272558_UP000001258.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000001258.gpi.gz
+   source: https://mirror.geneontology.io/HALH5_272558_UP000001258.gpi.gz
    entity_type: all
    status: active
    species_code: HALH5
@@ -921,7 +916,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/MYCPN_272634_UP000000808.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000000808.gpi.gz
+   source: https://mirror.geneontology.io/MYCPN_272634_UP000000808.gpi.gz
    entity_type: all
    status: active
    species_code: MYCPN
@@ -939,7 +934,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HCMVM_295027_UP000000938.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000000938.gpi.gz
+   source: https://mirror.geneontology.io/HCMVM_295027_UP000000938.gpi.gz
    entity_type: all
    status: active
    species_code: HCMVM
@@ -957,7 +952,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/STRP1_301447_UP000000750.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000000750.gpi.gz
+   source: https://mirror.geneontology.io/STRP1_301447_UP000000750.gpi.gz
    entity_type: all
    status: active
    species_code: STRP1
@@ -975,7 +970,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HV1AN_327105_UP000007689.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000007689.gpi.gz
+   source: https://mirror.geneontology.io/HV1AN_327105_UP000007689.gpi.gz
    entity_type: all
    status: active
    species_code: HV1AN
@@ -993,7 +988,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HPV16_333760_UP000009251.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000009251.gpi.gz
+   source: https://mirror.geneontology.io/HPV16_333760_UP000009251.gpi.gz
    entity_type: all
    status: active
    species_code: HPV16
@@ -1011,7 +1006,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/STRP2_373153_UP000001452.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000001452.gpi.gz
+   source: https://mirror.geneontology.io/STRP2_373153_UP000001452.gpi.gz
    entity_type: all
    status: active
    species_code: STRP2
@@ -1029,7 +1024,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/MYCTA_419947_UP000001988.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000001988.gpi.gz
+   source: https://mirror.geneontology.io/MYCTA_419947_UP000001988.gpi.gz
    entity_type: all
    status: active
    species_code: MYCTA
@@ -1047,7 +1042,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/ENTCA_565655_UP000012675.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000012675.gpi.gz
+   source: https://mirror.geneontology.io/ENTCA_565655_UP000012675.gpi.gz
    entity_type: all
    status: active
    species_code: ENTCA
@@ -1065,7 +1060,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/ACIB2_575584_UP000005740.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000005740.gpi.gz
+   source: https://mirror.geneontology.io/ACIB2_575584_UP000005740.gpi.gz
    entity_type: all
    status: active
    species_code: ACIB2
@@ -1083,7 +1078,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/VAR67_587200_UP000002060.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000002060.gpi.gz
+   source: https://mirror.geneontology.io/VAR67_587200_UP000002060.gpi.gz
    entity_type: all
    status: active
    species_code: VAR67
@@ -1101,7 +1096,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/MEASC_645098_UP000008699.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000008699.gpi.gz
+   source: https://mirror.geneontology.io/MEASC_645098_UP000008699.gpi.gz
    entity_type: all
    status: active
    species_code: MEASC
@@ -1119,7 +1114,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/HBVCJ_928302_UP000008591.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000008591.gpi.gz
+   source: https://mirror.geneontology.io/HBVCJ_928302_UP000008591.gpi.gz
    entity_type: all
    status: active
    species_code: HBVCJ
@@ -1137,7 +1132,7 @@ datasets:
    submitter: goa
    compression: gzip
    mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/KLEPH_1125630_UP000007841.gpi.gz
-   source: https://mirror.geneontology.io/proteome_UP000007841.gpi.gz
+   source: https://mirror.geneontology.io/KLEPH_1125630_UP000007841.gpi.gz
    entity_type: all
    status: active
    species_code: KLEPH
