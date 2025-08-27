@@ -21,17 +21,8 @@ datasets:
    status: active
    species_code: 
    taxa:
-    - NCBITaxon:5476
-    - NCBITaxon:5478
-    - NCBITaxon:5480
     - NCBITaxon:1136231
-    - NCBITaxon:284592
-    - NCBITaxon:294746
-    - NCBITaxon:294747
     - NCBITaxon:294748
-    - NCBITaxon:306902
-    - NCBITaxon:379508
-    - NCBITaxon:42374
     - NCBITaxon:573826
     - NCBITaxon:284593
     - NCBITaxon:578454
