@@ -1158,7 +1158,7 @@ organisms:
     code_uniprot: ENTGA
     code_goc:
     group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000254807
+    uniprot_proteome_id: uniprot.proteome:UP0002CDG7
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:1392
     full_name: Bacillus anthracis
@@ -1454,78 +1454,78 @@ organisms:
     common_name_uniprot:
     code_uniprot: CANDC
     code_goc:
-    group: UniProt
+    group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000002605
-    mod_id_space: UniProtKB
+    mod_id_space: CGD
   - taxon_id: NCBITaxon:1136231
     full_name: Candida orthopsilosis (strain 90-125) (Co 90-125)
     common_name_panther:
     common_name_uniprot:
     code_uniprot: CANCO
     code_goc:
-    group: UniProt
+    group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000005018
-    mod_id_space: UniProtKB
+    mod_id_space: CGD
   - taxon_id: NCBITaxon:284593
     full_name: Candida glabrata (strain ATCC 2001 / BCRC 20586 / JCM 3761 / NBRC 0622 / NRRL Y-65 / CBS 138) (Nakaseomyces glabratus)
     common_name_panther:
     common_name_uniprot:
     code_uniprot: CANGB
     code_goc:
-    group: UniProt
+    group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000002428
-    mod_id_space: UniProtKB
+    mod_id_space: CGD
   - taxon_id: NCBITaxon:578454
     full_name: Candida parapsilosis (strain CDC 317 / ATCC MYA-4646)
     common_name_panther:
     common_name_uniprot:
     code_uniprot: CANPA
     code_goc:
-    group: UniProt
+    group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000005221
-    mod_id_space: UniProtKB
+    mod_id_space: CGD
   - taxon_id: NCBITaxon:294747
     full_name: Candida tropicalis (strain ATCC MYA-3404 / T1)
     common_name_panther:
     common_name_uniprot:
     code_uniprot: CANTI
     code_goc:
-    group: UniProt
+    group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000002037
-    mod_id_space: UniProtKB
+    mod_id_space: CGD
   - taxon_id: NCBITaxon:306902
     full_name: Clavispora lusitaniae (strain ATCC 42720)
     common_name_panther:
     common_name_uniprot:
     code_uniprot: CLALU
     code_goc:
-    group: UniProt
+    group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000007703
-    mod_id_space: UniProtKB
+    mod_id_space: CGD
   - taxon_id: NCBITaxon:284592
     full_name: Debaryomyces hansenii (strain ATCC 36239 / CBS 767 / BCRC 21394 / JCM 1990 / NBRC 0083 / IGC 2968) (Torulaspora hansenii)
     common_name_panther:
     common_name_uniprot:
     code_uniprot: DEBHA
     code_goc:
-    group: UniProt
+    group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000000599
-    mod_id_space: UniProtKB
+    mod_id_space: CGD
   - taxon_id: NCBITaxon:379508
     full_name: Lodderomyces elongisporus (strain ATCC 11503 / CBS 2605 / JCM 1781 / NBRC 1676 / NRRL YB-4239) (Saccharomyces elongisporus)
     common_name_panther:
     common_name_uniprot:
     code_uniprot: LODEL
     code_goc:
-    group: UniProt
+    group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000001996
-    mod_id_space: UniProtKB
+    mod_id_space: CGD
   - taxon_id: NCBITaxon:294746
     full_name: Meyerozyma guilliermondii (strain ATCC 6260 / CBS 566 / DSM 6381 / JCM 1539 / NBRC 10279 / NRRL Y-324) (Candida guilliermondii)
     common_name_panther:
     common_name_uniprot:
     code_uniprot: PICGU
     code_goc:
-    group: UniProt
+    group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000001997
-    mod_id_space: UniProtKB
+    mod_id_space: CGD
