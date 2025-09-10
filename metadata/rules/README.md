@@ -269,21 +269,15 @@ These annotations are flagged and should be reviewed.
 Some terms are too high-level to provide useful information when used
 for annotation, regardless of the evidence code used.
 
-We provide and maintain the list of too high-level terms as two subsets
+We provide and maintain the list of too high-level terms as a subsets
 in the ontology:
 
 -   gocheck\_do\_not\_annotate "Term not to be used for direct
     annotation"
--   gocheck\_do\_not\_manually\_annotate "Term not to be used for direct
-    manual annotation"
 
-Both subsets denote high level terms, not to be used for any manual
+This subset denotes high level terms, not to be used for any manual
 annotation.
 
-For inferred electronic annotations (IEAs), we allow the use of terms
-from the gocheck\_do\_not\_manually\_annotate subset. These terms may
-still offer some general information, but a human curator should always
-be able to find a more specific annotation.
 
 Error report: <group>.report.md
 
