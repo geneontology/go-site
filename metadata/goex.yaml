@@ -1158,7 +1158,7 @@ organisms:
     code_uniprot: ENTGA
     code_goc:
     group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP0002CDG7
+    uniprot_proteome_id: uniprot.proteome:UP000254807
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:1392
     full_name: Bacillus anthracis
