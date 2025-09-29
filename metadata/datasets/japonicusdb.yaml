@@ -16,8 +16,8 @@ datasets:
    dataset: japonicusdb
    submitter: japonicusdb
    compression: gzip
-   source: https://www.japonicusdb.org/data/annotations/Gene_ontology/gene_association.japonicusdb.gz
-   #source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/SCHJY_4897_UP000001744.gaf.gz
+   #source: https://www.japonicusdb.org/data/annotations/Gene_ontology/gene_association.japonicusdb.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/SCHJY_4897_UP000001744.gaf.gz
    entity_type:
    status: active
    species_code: Sjap
