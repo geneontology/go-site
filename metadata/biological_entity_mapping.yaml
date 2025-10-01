@@ -3,6 +3,10 @@ mapping:
     from_label: protein_coding_gene
     to_id: PR:000000001
     to_label: protein
+  - from_id: GO:0032991
+    from_label: protein-containing complex
+    to_id: GO:0032991
+    to_label: protein-containing complex
   - from_id: PR:000000001
     from_label: protein
     to_id: PR:000000001
