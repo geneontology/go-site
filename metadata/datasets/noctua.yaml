@@ -3,31 +3,18 @@ label: Noctua
 description: "GO-CAM data from Noctua"
 datasets:
 
-  - id: noctua_fb.gpad
-    label: "noctua_fb gpad file"
-    description: "GPAD file for FB from Noctua"
+  - id: noctua_xenbase.gpad
+    label: "noctua_xenbase gpad file"
+    description: "GPAD file for Xenbase from Noctua"
     type: gpad
-    dataset: noctua_fb
+    dataset: noctua_xenbase
     submitter: GOC
     compression: gzip
-    source: ./products/upstream_and_raw_data/noctua_fb.gpad.gz
-    entity_type:
-    status: inactive
-    species_code: Dmel
-    taxa:
-      - NCBITaxon:7227
-
-  - id: noctua_zfin.gpad
-    label: "noctua_zfin gpad file"
-    description: "GPAD file for ZFIN from Noctua"
-    type: gpad
-    dataset: noctua_zfin
-    submitter: GOC
-    compression: gzip
-    source: ./products/upstream_and_raw_data/noctua_zfin-src.gpad.gz
+    source: ./products/upstream_and_raw_data/noctua_xenbase-src.gpad.gz
     entity_type:
     status: active
-    merges_into: zfin
-    species_code: Drer
+    merges_into: xenbase
+    species_code: Xenopus
     taxa:
-      - NCBITaxon:7955
+      - NCBITaxon:8364
+      - NCBITaxon:8355
