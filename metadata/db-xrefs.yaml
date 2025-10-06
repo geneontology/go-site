@@ -2592,6 +2592,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
+      id_syntax: NCBITaxon[0-9]+
       url_syntax: http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=[example_id]
       example_id: NCBITaxon:7227
       example_url: http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3702
