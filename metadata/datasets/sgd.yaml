@@ -46,7 +46,8 @@ datasets:
    dataset: sgd
    submitter: sgd
    compression: gzip
-   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/YEAST_559292_UP000002311.gpi.gz
+   #source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/YEAST_559292_UP000002311.gpi.gz
+   source: https://downloads.yeastgenome.org/latest/gpi.sgd.gz
    entity_type:
    status: active
    species_code: Scer

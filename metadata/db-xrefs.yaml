@@ -1613,13 +1613,13 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: MGI:[0-9]{5,}
+      id_syntax: MGI:[0-9]+
       url_syntax: http://www.informatics.jax.org/accession/[example_id]
       example_id: MGI:MGI:1345277
       example_url: http://www.informatics.jax.org/accession/MGI:1345277
     - type_name: variation
       type_id: VariO:0001
-      id_syntax: MGI:[0-9]{5,}
+      id_syntax: MGI:[0-9]+
       url_syntax: http://www.informatics.jax.org/accession/[example_id]
       example_id: MGI:MGI:3590672
       example_url: http://www.informatics.jax.org/accession/MGI:3590672
@@ -1806,14 +1806,14 @@
   name: Protein ANalysis THrough Evolutionary Relationships Classification System
   rdf_uri_prefix: http://identifiers.org/panther.family/
   generic_urls:
-    - http://www.pantherdb.org/
+    - https://www.pantherdb.org/
   entity_types:
     - type_name: protein family
       type_id: NCIT:C20130
       id_syntax: PTN[0-9]{9}|PTHR[0-9]{5}|PTHR[0-9]{5}:SF[0-9]+
-      url_syntax: http://www.pantherdb.org/panther/lookupId.jsp?id=[example_id]
+      url_syntax: https://www.pantherdb.org/panther/lookupId.jsp?id=[example_id]
       example_id: PANTHER:PTHR11455
-      example_url: http://www.pantherdb.org/panther/lookupId.jsp?id=PTHR10000
+      example_url: https://www.pantherdb.org/panther/lookupId.jsp?id=PTHR10000
 - database: orcid
   name: Open Researcher and Contributor
   description: ORCID (Open Researcher and Contributor ID) is an open, non-profit, community-based effort to create and maintain a registry of unique identifiers for individual researchers.
@@ -1971,14 +1971,14 @@
     - PUBMED
   rdf_uri_prefix: http://identifiers.org/pubmed/
   generic_urls:
-    - https://www.ncbi.nlm.nih.gov/pubmed
+    - https://pubmed.ncbi.nlm.nih.gov/
   entity_types:
     - type_name: entity
       type_id: BET:0000000
       id_syntax: '[0-9]+'
-      url_syntax: http://www.ncbi.nlm.nih.gov/pubmed/[example_id]
+      url_syntax: https://pubmed.ncbi.nlm.nih.gov/[example_id]
       example_id: PMID:31931324
-      example_url: https://www.ncbi.nlm.nih.gov/pubmed/31931324
+      example_url: https://pubmed.ncbi.nlm.nih.gov/31931324
 - database: PO
   name: Plant Ontology
   rdf_uri_prefix: http://purl.obolibrary.org/obo/PO_
@@ -2592,6 +2592,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
+      id_syntax: NCBITaxon[0-9]+
       url_syntax: http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=[example_id]
       example_id: NCBITaxon:7227
       example_url: http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3702
@@ -2998,16 +2999,16 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
-      id_syntax: ZDB-(TRNAG|LINCRNAG|MIRNAG|NCRNAG|SNORNAG|GENE|GENO|MRPHLNO)-[0-9]{6}-[0-9]+
-      url_syntax: http://zfin.org/[example_id]
-      example_id: ZDB-GENE-990415-103
-      example_url: http://zfin.org/ZDB-GENE-990415-103
+      id_syntax: ZDB-(TRNAG|LINCRNAG|MIRNAG|NCRNAG|SNORNAG|GENE)-[0-9]{6}-[0-9]+
+      url_syntax: https://zfin.org/[example_id]
+      example_id: ZFIN:ZDB-GENE-990415-103
+      example_url: https://zfin.org/ZDB-GENE-990415-103
     - type_name: variation
       type_id: VariO:0001
-      id_syntax: ZDB-(TRNAG|LINCRNAG|MIRNAG|NCRNAG|SNORNAG|GENE|GENO|MRPHLNO)-[0-9]{6}-[0-9]+
-      url_syntax: http://zfin.org/[example_id]
-      example_id: ZDB-GENE-990415-103
-      example_url: http://zfin.org/ZDB-GENE-990415-103
+      id_syntax: ZDB-(GENO|MRPHLNO|CRISPR|FISH|TALEN)-[0-9]{6}-[0-9]+
+      url_syntax: https://zfin.org/[example_id]
+      example_id: ZFIN:ZDB-MRPHLNO-081020-2
+      example_url: https://zfin.org/ZDB-MRPHLNO-081020-2
 - database: TFClass
   name: TFClass is a resource for the classification of eukaryotic transcription factors based on the characteristics of their DNA-binding domains
   generic_urls:
@@ -3072,6 +3073,7 @@
   entity_types:
     - type_name: gene
       type_id: SO:0000704
+      id_syntax: S\w+(\_)?\d
       url_syntax: https://www.japonicusdb.org/gene/[example_id]
       example_id: JaponicusDB:SJAG_01143
       example_url: https://www.japonicusdb.org/gene/SJAG_01143
@@ -3079,11 +3081,11 @@
   name: TreeGrafter-generated GO annotations
   rdf_uri_prefix: http://identifiers.org/panther.family/
   generic_urls:
-    - http://www.pantherdb.org/
+    - https://www.pantherdb.org/
   entity_types:
     - type_name: protein family
       type_id: NCIT:C20130
       id_syntax: PTN[0-9]{9}|PTHR[0-9]{5}|PTHR[0-9]{5}:SF[0-9]+
-      url_syntax: http://www.pantherdb.org/panther/lookupId.jsp?id=[example_id]
+      url_syntax: https://www.pantherdb.org/panther/lookupId.jsp?id=[example_id]
       example_id: PANTHER:PTHR11455
-      example_url: http://www.pantherdb.org/panther/lookupId.jsp?id=PTHR10000
+      example_url: https://www.pantherdb.org/panther/lookupId.jsp?id=PTHR10000

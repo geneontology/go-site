@@ -1660,7 +1660,7 @@
         allow-edit: true
   groups:
     - 'https://www.uniprot.org'
-  nickname: 'Ghislaine Argoud-Puy'
+  nickname: 'Guilaine Argoud-Puy'
   organization: UniProt
   uri: 'https://orcid.org/0000-0002-2979-8613'
   xref: 'GOC:gap'

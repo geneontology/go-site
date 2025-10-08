@@ -3,98 +3,174 @@ mapping:
     from_label: protein_coding_gene
     to_id: PR:000000001
     to_label: protein
+  - from_id: GO:0032991
+    from_label: protein-containing complex
+    to_id: GO:0032991
+    to_label: protein-containing complex
+  - from_id: PR:000000001
+    from_label: protein
+    to_id: PR:000000001
+    to_label: protein
   - from_id: SO:0002127
     from_label: lncRNA_gene
+    to_id: SO:0001877
+    to_label: lncRNA
+  - from_id: SO:0001877
+    from_label: lncRNA
     to_id: SO:0001877
     to_label: lncRNA
   - from_id: SO:0001265
     from_label: miRNA_gene
     to_id: SO:0000276
     to_label: miRNA
+  - from_id: SO:0000276
+    from_label: miRNA
+    to_id: SO:0000276
+    to_label: miRNA
   - from_id: SO:0001272
     from_label: tRNA_gene
+    to_id: SO:0000253
+    to_label: tRNA
+  - from_id: SO:0000253
+    from_label: tRNA
     to_id: SO:0000253
     to_label: tRNA
   - from_id: SO:0002182
     from_label: antisense_lncRNA_gene
     to_id: SO:0001904
     to_label: antisense_lncRNA
+  - from_id: SO:0001904
+    from_label: antisense_lncRNA
+    to_id: SO:0001904
+    to_label: antisense_lncRNA
   - from_id: SO:0001268
     from_label: snRNA_gene
+    to_id: SO:0000274
+    to_label: snRNA
+  - from_id: SO:0000274
+    from_label: snRNA
     to_id: SO:0000274
     to_label: snRNA
   - from_id: SO:0001267
     from_label: snoRNA_gene
     to_id: SO:0000275
     to_label: snoRNA
+  - from_id: SO:0000275
+    from_label: snoRNA
+    to_id: SO:0000275
+    to_label: snoRNA
   - from_id: SO:0001263
     from_label: ncRNA_gene
     to_id: SO:0000655
     to_label: ncRNA
+  - from_id: SO:0000655
+    from_label: ncRNA
+    to_id: SO:0000655
+    to_label: ncRNA   
   - from_id: SO:0001637
     from_label: rRNA_gene
+    to_id: SO:0000252
+    to_label: rRNA
+  - from_id: SO:0000252
+    from_label: rRNA
     to_id: SO:0000252
     to_label: rRNA
   - from_id: SO:0001641
     from_label: lincRNA_gene
     to_id: SO:0001463
-    to_label: lincRNA
+    to_label: lincRNA 
+  - from_id: SO:0001463
+    from_label: lincRNA
+    to_id: SO:0001463
+    to_label: lincRNA 
   - from_id: SO:0002184
     from_label: sense_intronic_ncRNA_gene
-    to_id: SO:0002131
-    to_label: sense_intronic_lncRNA
+    to_id: SO:0001877
+    to_label: lncRNA
   - from_id: SO:0001643
     from_label: telomerase_RNA_gene
-    to_id: SO:0000390
-    to_label: telomerase_RNA
-  - from_id: SO:0001639
-    from_label: RNase_P_RNA_gene
-    to_id: SO:0000386
-    to_label: RNase_P_RNA
-  - from_id: SO:0001269
-    from_label: SRP_RNA_gene
-    to_id: SO:0000385
-    to_label: RNase_MRP_RNA
-  - from_id: SO:0001266
-    from_label: scRNA_gene
-    to_id: SO:0000013
-    to_label: scRNA
-  - from_id: SO:0002183
-    from_label: sense_overlap_ncRNA_gene
-    to_id: SO:0002132
-    to_label: sense_overlap_lncRNA
+    to_id: SO:0000372
+    to_label: enzymatic_RNA
   - from_id: SO:0001640
     from_label: RNase_MRP_RNA_gene
-    to_id: SO:0000385
-    to_label: RNase_MRP_RNA
+    to_id: SO:0000372
+    to_label: enzymatic_RNA
+  - from_id: SO:0000385
+    from_label: RNase_MRP_RNA
+    to_id: SO:0000372
+    to_label: enzymatic_RNA
+  - from_id: SO:0002181
+    from_label: ribozyme_gene
+    to_id: SO:0000372
+    to_label: enzymatic_RNA
+  - from_id: SO:0000588
+    from_label: autocatalytically_spliced_intron
+    to_id: SO:0000372
+    to_label: enzymatic_RNA
+  - from_id: SO:0000386
+    from_label: RNase_P_RNA
+    to_id: SO:0000372
+    to_label: enzymatic_RNA
+  - from_id: SO:0000380
+    from_label: hammerhead_ribozyme
+    to_id: SO:0000372
+    to_label: enzymatic_RNA
+  - from_id: SO:0000587
+    from_label: group_I_intron
+    to_id: SO:0000372
+    to_label: enzymatic_RNA
+  - from_id: SO:0000603
+    from_label: group_II_intron
+    to_id: SO:0000372
+    to_label: enzymatic_RNA
+  - from_id: SO:0001639
+    from_label: RNase_P_RNA_gene
+    to_id: SO:0000372
+    to_label: enzymatic_RNA
+  - from_id: SO:0000372
+    from_label: enzymatic_RNA
+    to_id: SO:0000372
+    to_label: enzymatic_RNA
+  - from_id: SO:0001269
+    from_label: SRP_RNA_gene
+    to_id: SO:0000655
+    to_label: ncRNA
+  - from_id: SO:0001266
+    from_label: scRNA_gene
+    to_id: SO:0000655
+    to_label: ncRNA
+  - from_id: SO:0002183
+    from_label: sense_overlap_lncRNA_gene
+    to_id: SO:0000655
+    to_label: ncRNA
   - from_id: SO:0000111
     from_label: transposable_element_gene
     to_id: SO:0000180
     to_label: retrotransposon
+  - from_id: SO:0000180
+    from_label: retrotransposon
+    to_id: SO:0000180
+    to_label: retrotransposon
   - from_id: SO:0002339
     from_label: scaRNA_gene
-    to_id: SO:0002095
-    to_label: scaRNA
+    to_id: SO:0000655
+    to_label: ncRNA
   - from_id: SO:0001638
     from_label: piRNA_gene
     to_id: SO:0001035
     to_label: piRNA
-  - from_id: SO:0002181
-    from_label: ribozyme_gene
-    to_id: SO:0000374
-    to_label: ribozyme
-  - from_id: SO:0001641
-    from_label: lincRNA_gene
-    to_id: SO:0001463
-    to_label: lincRNA
+  - from_id: SO:0001035
+    from_label: piRNA
+    to_id: SO:0001035
+    to_label: piRNA
   - from_id: SO:0001269
     from_label: SRP_RNA_gene
     to_id: SO:0000590
     to_label: SRP_RNA
-  - from_id: SO:0002127
-    from_label: lncRNA_gene
-    to_id: SO:0000644
-    to_label: antisense_RNA
+  - from_id: SO:0000590
+    from_label: SRP_RNA
+    to_id: SO:0000590
+    to_label: SRP_RNA   
   - from_id: SO:0001411
     from_label: biological_region
     to_id: PR:000000001
@@ -103,3 +179,87 @@ mapping:
     from_label: gene_segment
     to_id: PR:000000001
     to_label: protein
+  - from_id: SO:0000651
+    from_label: cytosolic_LSU_rRNA
+    to_id: SO:0000252
+    to_label: rRNA
+  - from_id: SO:0000650
+    from_label: cytosolic_SSU_rRNA
+    to_id: SO:0000252
+    to_label: rRNA
+  - from_id: SO:0000252
+    from_label: rRNA
+    to_id: SO:0000252
+    to_label: rRNA
+  - from_id: SO:0001244
+    from_label: pre_miRNA
+    to_id: SO:0000276
+    to_label: miRNA
+  - from_id: SO:0001179
+    from_label: U3_snoRNA
+    to_id: SO:0000275
+    to_label: snoRNA
+  - from_id: SO:0002344
+    from_label: mt_SSU_rRNA
+    to_id: SO:0000252
+    to_label: rRNA
+  - from_id: SO:0000378
+    from_label: DsrA_RNA
+    to_id: SO:0000655
+    to_label: ncRNA 
+  - from_id: SO:0000652
+    from_label: cytosolic_5S_rRNA
+    to_id: SO:0000252
+    to_label: rRNA 
+  - from_id: SO:0001001
+    from_label: cytosolic_23S_rRNA
+    to_id: SO:0000252
+    to_label: rRNA
+  - from_id: SO:0000370    
+  - from_label: small_regulatory_ncRNA
+    to_id: SO:0000655
+    to_label: ncRNA 
+  - from_id: SO:0000653
+    from_label: cytosolic_28S_rRNA
+    to_id: SO:0000252
+    to_label: rRNA
+  - from_id: SO:0002345
+    from_label: mt_LSU_rRNA
+    to_id: SO:0000252
+    to_label: rRNA
+  - from_id: SO:0000407
+    from_label: cytosolic_18S_rRNA
+    to_id: SO:0000252
+    to_label: rRNA
+  - from_id: SO:0000387
+    from_label: RprA_RNA
+    to_id: SO:0000655
+    to_label: ncRNA
+  - from_id: SO:0000383
+    from_label: MicF_RNA
+    to_id: SO:0000655
+    to_label: ncRNA
+  - from_id: SO:0000375
+    from_label: cytosolic_5_8S_rRNA
+    to_id: SO:0000252
+    to_label: rRNA
+  - from_id: SO:0000584
+    from_label: tmRNA
+    to_id: SO:0000655
+    to_label: ncRNA 
+  - from_id: SO:0000209
+    from_label: rRNA_primary_transcript
+    to_id: SO:0000252
+    to_label: rRNA
+  - from_id: SO:0001000
+    from_label: cytosolic_16S_rRNA
+    to_id: SO:0000252
+    to_label: rRNA
+  - from_id: SO:0000379
+    from_label: GcvB_RNA
+    to_id: SO:0000655
+    to_label: ncRNA
+  - from_id: SO:0000646
+    from_label: siRNA
+    to_id: SO:0000646
+    to_label: siRNA
