@@ -93,24 +93,27 @@ def legacy_main():
     for f in glob.glob(os.path.join("*.json")):
         model_id = Path(f).stem
         
-        with open(f) as fhandle:
-            read_data = json.load(fhandle)
-            if not read_data:
-                die_screaming('ERROR on: ' + f)
-            
-            production_p = False
-            provided_by = []
-            for ann in read_data.get('annotations', []):
-                if ann['key'] == 'state' and ann['value'] == 'production':
-                    production_p = True
-                if ann['key'] == 'providedBy':
-                    provided_by.append(ann['value'])
-            
-            if production_p:
-                for provider in provided_by:
-                    if provider not in provided_models:
-                        provided_models[provider] = []
-                    provided_models[provider].append(model_id)
+        try:
+            with open(f) as fhandle:
+                read_data = json.load(fhandle)
+                if not read_data:
+                    continue
+                
+                production_p = False
+                provided_by = []
+                for ann in read_data.get('annotations', []):
+                    if ann.get('key') == 'state' and ann.get('value') == 'production':
+                        production_p = True
+                    if ann.get('key') == 'providedBy':
+                        provided_by.append(ann['value'])
+                
+                if production_p:
+                    for provider in provided_by:
+                        if provider not in provided_models:
+                            provided_models[provider] = []
+                        provided_models[provider].append(model_id)
+        except (json.JSONDecodeError, KeyError):
+            continue
     
     print(json.dumps(provided_models))
 
