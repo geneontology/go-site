@@ -54,7 +54,7 @@ def download_and_initialize_oak_adapter(url: str, save_path: str):
 logging.basicConfig(level=logging.INFO)
 LOG = logging.getLogger("gen-model-meta")
 LOG.setLevel(logging.WARNING)
-json_path = Path("/tmp/gocams/")
+DEFAULT_JSON_PATH = Path("/tmp/gocams/")
 
 
 
@@ -117,7 +117,7 @@ def legacy_main():
     
     print(json.dumps(provided_models))
 
-def process_json_files(keys_to_index, output_dir, path_to_json=json_path):
+def process_json_files(keys_to_index, output_dir, path_to_json):
     """
     Process all JSON files, generate indices for the specified keys, and save them.
     """
@@ -200,9 +200,17 @@ def process_json_files(keys_to_index, output_dir, path_to_json=json_path):
     required=False,
     help="Directory where the JSON index files will be saved.",
 )
-def main(keys_to_index, output_dir):
+@click.option(
+    "--input-dir",
+    "-i",
+    type=click.Path(exists=True, file_okay=False, dir_okay=True, path_type=str),
+    required=False,
+    default=str(DEFAULT_JSON_PATH),
+    help="Directory containing JSON files to index (default: /tmp/gocams/).",
+)
+def main(keys_to_index, output_dir, input_dir):
     if keys_to_index and output_dir:
-        process_json_files(keys_to_index, output_dir)
+        process_json_files(keys_to_index, output_dir, input_dir)
     elif not keys_to_index and not output_dir:
         legacy_main()
     else:
