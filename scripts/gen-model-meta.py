@@ -1,18 +1,18 @@
 """
-Script to generate model indexes.  to run:
+Scan all GO-CAM json files in directory and create metadata file
+mapping providedBy to GO-CAM model ID for production models.
 
-% cp ~/Downloads/noctua-models-json/*.json to /tmp/gocams
-# as downloaded from snapshot.geneontology.org/products/json/noctua-models-json.tgz
+Legacy usage (backward compatible):
+  python3 gen-model-meta.py > ../metadata.json
 
-% cd scripts
-% poetry install
-% poetry run python gen-model-meta.py --keys-to-index contributor --keys-to-index providedBy --keys-to-index gene --output-dir /tmp/output
-
+New usage with indexing:
+  python gen-model-meta.py --keys-to-index contributor --keys-to-index providedBy --keys-to-index source --keys-to-index evidence --keys-to-index entity --output-dir /tmp/output
 """
 import sys
 import logging
 import json
 from pathlib import Path
+import glob
 import click
 
 import requests
@@ -83,6 +83,36 @@ def get_go_parents(go_parent_cache, entity_id):
     Retrieve parents of a GO term from precomputed cache.
     """
     return go_parent_cache.get(entity_id, [])
+
+def legacy_main():
+    """
+    Legacy mode: scan JSON files in current directory and output providedBy mapping to stdout.
+    """
+    provided_models = {}
+    
+    for f in glob.glob(os.path.join("*.json")):
+        model_id = Path(f).stem
+        
+        with open(f) as fhandle:
+            read_data = json.load(fhandle)
+            if not read_data:
+                die_screaming('ERROR on: ' + f)
+            
+            production_p = False
+            provided_by = []
+            for ann in read_data.get('annotations', []):
+                if ann['key'] == 'state' and ann['value'] == 'production':
+                    production_p = True
+                if ann['key'] == 'providedBy':
+                    provided_by.append(ann['value'])
+            
+            if production_p:
+                for provider in provided_by:
+                    if provider not in provided_models:
+                        provided_models[provider] = []
+                    provided_models[provider].append(model_id)
+    
+    print(json.dumps(provided_models))
 
 def process_json_files(keys_to_index, output_dir, path_to_json=json_path):
     """
@@ -157,18 +187,23 @@ def process_json_files(keys_to_index, output_dir, path_to_json=json_path):
     "--keys-to-index",
     "-k",
     multiple=True,
-    required=True,
+    required=False,
     help="List of keys to index (contributor, entity, providedBy, evidence, source).",
 )
 @click.option(
     "--output-dir",
     "-o",
     type=click.Path(file_okay=False, dir_okay=True, writable=True, path_type=str),
-    required=True,
+    required=False,
     help="Directory where the JSON index files will be saved.",
 )
 def main(keys_to_index, output_dir):
-    process_json_files(keys_to_index, output_dir)
+    if keys_to_index and output_dir:
+        process_json_files(keys_to_index, output_dir)
+    elif not keys_to_index and not output_dir:
+        legacy_main()
+    else:
+        die_screaming("ERROR: Both --keys-to-index and --output-dir are required together, or omit both for legacy mode")
 
 # Ensure the script runs only when executed directly
 if __name__ == "__main__":
