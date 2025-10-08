@@ -191,7 +191,8 @@ def process_json_files(keys_to_index, output_dir, path_to_json):
     "-k",
     multiple=True,
     required=False,
-    help="List of keys to index (contributor, entity, providedBy, evidence, source).",
+    default=["providedBy"],
+    help="List of keys to index (contributor, entity, providedBy, evidence, source). Default: providedBy",
 )
 @click.option(
     "--output-dir",
@@ -209,12 +210,10 @@ def process_json_files(keys_to_index, output_dir, path_to_json):
     help="Directory containing JSON files to index (default: /tmp/gocams/).",
 )
 def main(keys_to_index, output_dir, input_dir):
-    if keys_to_index and output_dir:
+    if output_dir:
         process_json_files(keys_to_index, output_dir, input_dir)
-    elif not keys_to_index and not output_dir:
-        legacy_main()
     else:
-        die_screaming("ERROR: Both --keys-to-index and --output-dir are required together, or omit both for legacy mode")
+        legacy_main()
 
 # Ensure the script runs only when executed directly
 if __name__ == "__main__":
