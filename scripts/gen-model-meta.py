@@ -129,7 +129,7 @@ def process_json_files(keys_to_index, output_dir, path_to_json):
 
     # Initialize indices and cache
     indices = {key: {} for key in keys_to_index}
-    adapter = download_and_initialize_oak_adapter(url, save_path)
+    adapter = download_and_initialize_oak_adapter(URL, SAVE_PATH)
     go_parent_cache = precompute_all_ancestors(adapter)
 
     # Ensure output directory exists
