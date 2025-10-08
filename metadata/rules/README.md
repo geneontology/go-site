@@ -336,7 +336,7 @@ Error report (number of errors) in [db_species]-report.html & owltools-check.txt
 ## Taxon-appropriate annotation check
 
  * id: [GORULE:0000013](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000013.md)
- * status: approved
+ * status: implemented
 
 
 - GO taxon constraints ensure that annotations are not made to inappropriate species or sets of species. 
