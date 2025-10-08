@@ -20,8 +20,8 @@ import os
 from oaklib.implementations.obograph.obograph_implementation import OboGraphImplementation
 from oaklib.resource import OntologyResource
 
-url = "https://purl.obolibrary.org/obo/go/go-basic.json"
-save_path = "go-basic.json"
+URL = "https://purl.obolibrary.org/obo/go/go-basic.json"
+SAVE_PATH = "go-basic.json"
 
 
 def download_and_initialize_oak_adapter(url: str, save_path: str):
