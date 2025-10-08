@@ -6,7 +6,7 @@ Script to generate model indexes.  to run:
 
 % cd scripts
 % poetry install
-% poetry run python gen-model-meta.py --keys-to-index contributor --keys-to-index providedBy --output-dir /tmp/output
+% poetry run python gen-model-meta.py --keys-to-index contributor --keys-to-index providedBy --keys-to-index gene --output-dir /tmp/output
 
 """
 import sys
@@ -64,17 +64,25 @@ def die_screaming(instr):
     sys.exit(1)
 
 
-def get_go_parents(adapter, go_parent_cache, entity_id):
+def precompute_all_ancestors(adapter):
     """
-    Retrieve parents of a GO term, caching results to avoid redundant computation.
+    Precompute ancestors for all GO terms in the ontology.
     """
-    if entity_id in go_parent_cache:
-        return go_parent_cache[entity_id]  # Return cached parents
+    ancestor_map = {}
+    all_go_terms = [term for term in adapter.entities() if term.startswith("GO:")]
+    print(f"Precomputing ancestors for {len(all_go_terms)} GO terms...")
 
-    # Compute parents if not cached
-    parents = list(adapter.ancestors(entity_id, predicates=["part_of", "is_a"]))
-    go_parent_cache[entity_id] = parents  # Store in cache for future use
-    return parents
+    for term in all_go_terms:
+        ancestor_map[term] = list(adapter.ancestors(term, predicates=["part_of", "is_a"]))
+
+    print(f"Precomputation complete. Cached {len(ancestor_map)} terms.")
+    return ancestor_map
+
+def get_go_parents(go_parent_cache, entity_id):
+    """
+    Retrieve parents of a GO term from precomputed cache.
+    """
+    return go_parent_cache.get(entity_id, [])
 
 def process_json_files(keys_to_index, output_dir, path_to_json=json_path):
     """
@@ -88,8 +96,8 @@ def process_json_files(keys_to_index, output_dir, path_to_json=json_path):
 
     # Initialize indices and cache
     indices = {key: {} for key in keys_to_index}
-    go_parent_cache = {}  # Store computed GO term parent relationships
     adapter = download_and_initialize_oak_adapter(url, save_path)
+    go_parent_cache = precompute_all_ancestors(adapter)
 
     # Ensure output directory exists
     os.makedirs(output_dir, exist_ok=True)
@@ -123,8 +131,7 @@ def process_json_files(keys_to_index, output_dir, path_to_json=json_path):
                     if not entity_id:
                         continue  # Skip if no ID present
 
-                    # Compute and cache GO term parents if entity_id is a GO term
-                    parents = get_go_parents(adapter, go_parent_cache, entity_id) if entity_id.startswith("GO:") else []
+                    parents = get_go_parents(go_parent_cache, entity_id) if entity_id.startswith("GO:") else []
 
                     # Ensure entity and its parents exist in the index
                     for eid in [entity_id] + parents:
@@ -151,7 +158,7 @@ def process_json_files(keys_to_index, output_dir, path_to_json=json_path):
     "-k",
     multiple=True,
     required=True,
-    help="List of keys to index (e.g., contributor, entity).",
+    help="List of keys to index (contributor, entity, providedBy, evidence, source).",
 )
 @click.option(
     "--output-dir",
