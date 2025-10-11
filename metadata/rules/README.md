@@ -13,7 +13,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000003">GORULE:0000003 DEPRECATED Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field</a>
  * <a href="#gorule0000004">GORULE:0000004 Reciprocal annotations for 'protein binding ; GO:0005515'</a>
  * <a href="#gorule0000005">GORULE:0000005 IEA, ISS, ISO, ISM, ISA, IBA, RCA annotations are not allowed for direct annotations to to 'protein binding ; GO:0005515 or GO:0005488 binding''</a>
- * <a href="#gorule0000006">GORULE:0000006 IEP and HEP usage is restricted to terms from the Biological Process ontology, except when assigned by GOC</a>
+ * <a href="#gorule0000006">GORULE:0000006 IEP and HEP usage is restricted to terms from the Biological Process ontology</a>
  * <a href="#gorule0000007">GORULE:0000007 IPI should not be used with GO:0003824 catalytic activity or descendents</a>
  * <a href="#gorule0000008">GORULE:0000008 No annotations should be made to uninformative high level terms</a>
  * <a href="#gorule0000009">GORULE:0000009 Annotation Intersection Alerts</a>
@@ -227,24 +227,18 @@ on the GO wiki.
 
 <a name="gorule0000006"/>
 
-## IEP and HEP usage is restricted to terms from the Biological Process ontology, except when assigned by GOC
+## IEP and HEP usage is restricted to terms from the Biological Process ontology
 
  * id: [GORULE:0000006](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000006.md)
  * status: implemented
 
 
-The IEP and its high throughput equivalent, HEP, evidence codes are used where process involvement is inferred from
-the timing or location of expression of a gene, particularly when
-comparing a gene that is not yet characterized with the timing or
-location of expression of genes known to be involved in a particular
-process. This type of annotation is only suitable with terms from the
-Biological Process ontology, except when the annotation comes from 
-an inter ontology link, in which case all GO aspects are allowed.
+Annotations using the IEA evidence code (GAF column 7; GPAD column 6) must also have Aspect = P (GAF column 9; GPAD does not contain this information directly). 
+The reason for this is that IEP and its high throughput equivalent, HEP, evidence codes are used where process involvement is inferred from
+the timing or location of expression of a gene, particularly when comparing a gene that is not yet characterized with the timing or
+location of expression of genes known to be involved in a particular process. This type of annotation is only suitable with terms from the
+Biological Process ontology. For CC annotations that assess the localization of a gene product, IDA should be used. 
 
-For more information, see the [binding
-guidelines](http://wiki.geneontology.org/index.php/Binding_Guidelines)
-on the GO wiki.
-Error report (number of errors) in [db_species]-summary.txt & owltools-check.txt (details).
 
 <a name="gorule0000007"/>
 
