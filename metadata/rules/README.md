@@ -1043,7 +1043,7 @@ GAF2.2 files require a gene product to term (gp2term) relation in Column 4. Allo
     * If the annotation is to `"GO:0032991 "protein-containing complex"` or a subclass descendant of, then the gp2term relation should be `"BFO:0000050 "part_of"`; else, it is repaired to `"BFO:0000050 "part of"`.
     * If the annotation is to `GO:0110165 "cellular anatomical entity"` or to `GO:0044423 "virion component"` or a descendant of either of these terms, then the allowed gp2term relations are `RO:0001025 "located_in"` and `RO:0002432 "is_active_in"`, and `RO_0002325 "colocalizes_with"`; else it is repaired to `RO:0001025 "located_in"`.
     
-* If an annotation has a negation (`NOT`), is is kept as a pipe-separated value with the gp2term relation.
+* If an annotation has a negation (`NOT`), is is kept as a pipe-separated value with the gp2term relation in addition to the relation. 'NOT' is not allowed on its own.
 * Note that RO does not have underscores in the term labels, but the userscores are used in the GP2Term relations in GAF 2.2.
 
 <a name="gorule0000062"/>
