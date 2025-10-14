@@ -16,7 +16,7 @@ datasets:
    dataset: fb
    submitter: fb
    compression: gzip
-   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/DROME_7227_UP000000803.gaf.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gaf/DROME_7227_UP000000803.gaf.gz
    #source: https://s3ftp.flybase.org/releases/current/precomputed_files/go/gene_association.fb.gz
    #source: http://experimental.geneontology.io/gene_association.fb.gz
    entity_type:
@@ -33,7 +33,7 @@ datasets:
    dataset: fb
    submitter: fb
    compression: gzip
-   #source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/DROME_7227_UP000000803.gpi.gz
+   #source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gpi/DROME_7227_UP000000803.gpi.gz
    source: https://s3ftp.flybase.org/releases/current/collaborators/gp_information.fb.gz
    #source: http://experimental.geneontology.io/gp_information.fb.gz
    entity_type:

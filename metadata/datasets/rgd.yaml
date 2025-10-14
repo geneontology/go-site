@@ -16,7 +16,7 @@ datasets:
    dataset: rgd
    submitter: rgd
    compression: gzip
-   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/RAT_10116_UP000002494.gaf.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gaf/RAT_10116_UP000002494.gaf.gz
    entity_type:
    status: active
    species_code: Rnor
