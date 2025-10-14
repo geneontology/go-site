@@ -23,7 +23,7 @@ datasets:
    dataset: wb
    submitter: wb
    compression: gzip
-   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gaf/CAEEL_6239_UP000001940.gaf.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gaf/CAEEL_6239_UP000001940.gaf.gz
    entity_type:
    status: active
    species_code: Cele
@@ -38,7 +38,7 @@ datasets:
    dataset: wb
    submitter: wb
    compression: gzip
-   #source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/gpi/CAEEL_6239_UP000001940.gpi.gz
+   #source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gpi/CAEEL_6239_UP000001940.gpi.gz
    source: https://downloads.wormbase.org/species/c_elegans/PRJNA13758/annotation/gene_product_info/c_elegans.canonical_bioproject.current.gene_product_info.gpi.gz
    entity_type:
    status: active
