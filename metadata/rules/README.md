@@ -39,7 +39,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000030">GORULE:0000030 Obsolete GO_REFs are not allowed</a>
  * <a href="#gorule0000031">GORULE:0000031 DEPRECATED. Annotation relations are replaced when not provided by source</a>
  * <a href="#gorule0000032">GORULE:0000032 DEPRECATED Allowed References for each ECO.</a>
- * <a href="#gorule0000033">GORULE:0000033 DEPRECATED. Public Reference IDs (PMID, PMC, doi, or GO_REF) should be preferred over group specific Reference IDs</a>
+ * <a href="#gorule0000033">GORULE:0000033 Group-specific Reference IDs are not allowed, only public reference IDs (PMID, doi, or GO_REF)</a>
  * <a href="#gorule0000035">GORULE:0000035 DEPRECATED - Colocalizes_with' qualifier not allowed with protein-containing complex (GO:0032991)' and children.</a>
  * <a href="#gorule0000036">GORULE:0000036 Report annotations that involve gene products where the gene product is annotated to a term 'x' and 'regulation of X' (multiple annotations involved)</a>
  * <a href="#gorule0000037">GORULE:0000037 IBA annotations should ONLY be assigned_by GO_Central and have GO_REF:0000033 as a reference</a>
@@ -696,25 +696,21 @@ DEPRECATED. See GORULE:0000043
 
 <a name="gorule0000033"/>
 
-## DEPRECATED. Public Reference IDs (PMID, PMC, doi, or GO_REF) should be preferred over group specific Reference IDs
+## Group-specific Reference IDs are not allowed, only public reference IDs (PMID, doi, or GO_REF)
 
  * id: [GORULE:0000033](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000033.md)
- * status: deprecated
+ * status: approved
 
 
 
-# DEPRECATED
+# Approved
 
-References for an annotation should prefer sources from PMID, PMC, doi, or GO_REF over group specific references. 
+References for an annotation (GAF column 6; GPAD column 5) must use either a PMID, a doi, or a GO_REF. Group-specific reference records are stripped during the data load process. 
 
-Group references that are part of an "external accession" in a GO_REF will be replaced by the GO_REF. 
+Group-specific reference records that are a external xrefs of a GO_REF (https://github.com/geneontology/go-site/tree/master/metadata/gorefs.yaml) is replaced by that GO_REF. For example, `FB:FBrf0159398` is an external accession for `GO_REF:0000015`, so the FB ID is repaired to the GO_REF. 
 
-For example, `FB:FBrf0159398` is an external accession for `GO_REF:0000015`, so the FB ID will be repaired to the GO_REF.
-If the group reference is the only one present, it will be reported as a warning, but not removed. 
+If the group reference is the only one present, it will be reported as an error, and the annotation line removed since the reference field is mandatory.
 
-Already existing References from PMID, PMC, doi, or GO_REF will not be reported on as these are all correct.
-
-The list of GO_REFs are here: https://github.com/geneontology/go-site/tree/master/metadata/gorefs.yaml.
 
 <a name="gorule0000035"/>
 
