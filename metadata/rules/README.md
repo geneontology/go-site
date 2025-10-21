@@ -664,7 +664,7 @@ IEAs less than one year old are valid.
 
 
 GO_REFs are here: https://github.com/geneontology/go-site/tree/master/metadata/gorefs.yaml
-References for which is_obsolete: `true` should not be allowed as a reference (GAF column 6; GPAD column 5).
+References for which is_obsolete: `true` are not allowed as a reference (GAF column 6; GPAD column 5), and annotations using those as a reference are filtered by the pipeline and reported as errors.
 
 <a name="gorule0000031"/>
 
