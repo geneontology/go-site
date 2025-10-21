@@ -811,7 +811,6 @@
   authors: UniProt-GOA
   external_accession:
     - SGD_REF:S000148669
-    - J:60000
     - TAIR:AnalysisReference:501756968
     - TAIR:AnalysisReference:501756970
   year: 2012
