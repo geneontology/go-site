@@ -12,7 +12,7 @@ Usage:
 Arguments:
     input_dir       Directory containing gzipped files
     output_dir      Directory to write output files to
-    output_prefix   Prefix for output files (e.g., 'merged' → merged_1.gaf, merged_2.gaf, ...)
+    output_prefix   Prefix for output files (e.g., 'merged' → merged_1.gaf.gz, merged_2.gaf.gz, ...)
     num_groups      Number of groups to partition files into (positive integer)
 
 Examples:
@@ -26,7 +26,7 @@ Examples:
     python scripts/partition_and_merge_gaf.py --help
 
 Output:
-    Creates N files named: {output_prefix}_1.gaf, {output_prefix}_2.gaf, ..., {output_prefix}_N.gaf
+    Creates N gzipped files named: {output_prefix}_1.gaf.gz, {output_prefix}_2.gaf.gz, ..., {output_prefix}_N.gaf.gz
     Files in input directory are distributed round-robin across groups.
 
 Notes:
@@ -130,7 +130,7 @@ Examples:
   %(prog)s goex/gaf output merged 4
   %(prog)s data/input data/output combined 10
 
-Output files are named: {output_prefix}_1.gaf, {output_prefix}_2.gaf, etc.
+Output files are gzipped and named: {output_prefix}_1.gaf.gz, {output_prefix}_2.gaf.gz, etc.
 Files are distributed round-robin across groups.
 Comment lines (starting with '!') are filtered out.
         """,
@@ -149,7 +149,7 @@ Comment lines (starting with '!') are filtered out.
     parser.add_argument(
         "output_prefix",
         metavar="OUTPUT_PREFIX",
-        help="prefix for output files (e.g., 'merged' creates merged_1.gaf, merged_2.gaf, ...)"
+        help="prefix for output files (e.g., 'merged' creates merged_1.gaf.gz, merged_2.gaf.gz, ...)"
     )
     parser.add_argument(
         "num_groups",
@@ -166,8 +166,8 @@ Comment lines (starting with '!') are filtered out.
     parser.add_argument(
         "--output-ext",
         metavar="EXT",
-        default=".gaf",
-        help="extension for output files (default: .gaf)"
+        default=".gaf.gz",
+        help="extension for output files (default: .gaf.gz)"
     )
 
     args = parser.parse_args()
@@ -228,7 +228,7 @@ Comment lines (starting with '!') are filtered out.
         group_lines_skipped = 0
 
         try:
-            with open(output_filename, 'w', encoding='utf-8') as output_file:
+            with gzip.open(output_filename, 'wt', encoding='utf-8') as output_file:
                 for file_num, input_file in enumerate(group_files, 1):
                     written, skipped = process_gzipped_file(
                         input_file,
