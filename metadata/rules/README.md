@@ -860,7 +860,7 @@ GO:0051289 protein homotetramerization, GO:0070207 protein homotrimerization, GO
 
 
 
-Annotations using a ChEBI ID in the with/from (col 8 of GAF) column should only be annotated with GO terms that are descendants of GO:0005488 (binding) (Col 5 of GAF)"
+Annotations using a ChEBI ID in the with/from (col 8 of GAF) column should only be annotated with GO terms that are descendants of GO:0005488 (binding) (Col 5 of GAF)" but not protein binding GO:0005515.
 
 <a name="gorule0000048"/>
 
