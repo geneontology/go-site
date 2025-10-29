@@ -126,6 +126,8 @@ eco_usage_constraints:
       - entity_type: *protein
       - entity_type: *protein_complex
       - entity_type: *rna
+    allowed_references:
+      - GO_REF:0000(024|030|008|027|028|110|122)$
   - eco_id: ECO:0000266
     go_evidence: ISO
     with_presence: mandatory
