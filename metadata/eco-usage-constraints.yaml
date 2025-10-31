@@ -137,7 +137,7 @@ eco_usage_constraints:
       - GO_REF:0000(024|030|008|027|028|110|122)$
   - eco_id: ECO:0000266
     go_evidence: ISO
-    allowed_reference: 
+    allowed_reference: GO_REF:0000(024|096|008|101|119|121|122)$,|PMID:[0-9]+
     with_presence: mandatory
     with_structure: simple
     with_entities:
@@ -148,7 +148,7 @@ eco_usage_constraints:
       - entity_type: *rna
   - eco_id: ECO:0000247
     go_evidence: ISA
-    allowed_reference: 
+    allowed_reference: GO_REF:0000(012|113|122)$|PMID:[0-9]+
     with_presence: mandatory
     with_structure: simple
     with_entities:
@@ -159,7 +159,7 @@ eco_usage_constraints:
       - entity_type: *rna
   - eco_id: ECO:0000305
     go_evidence: IC
-    allowed_reference: PMID:[0-9]+|
+    allowed_reference: GO_REF:0000(024|036|050|111)$|PMID:[0-9]+
     with_presence: mandatory
     with_structure: compound
     with_entities:
