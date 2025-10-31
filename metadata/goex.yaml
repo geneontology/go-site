@@ -2,7 +2,7 @@ organisms:
   - taxon_id: NCBITaxon:28377
     full_name: Anolis carolinensis
     common_name_panther: lizard
-    common_name_uniprot: Green anole
+    common_name_uniprot: Green anole (American chameleon)
     code_uniprot: ANOCA
     code_goc:
     group: UniProt
@@ -11,7 +11,7 @@ organisms:
   - taxon_id: NCBITaxon:7165
     full_name: Anopheles gambiae
     common_name_panther: mosquito
-    common_name_uniprot:
+    common_name_uniprot: African malaria mosquito
     code_uniprot: ANOGA
     code_goc:
     group: UniProt
@@ -101,7 +101,7 @@ organisms:
   - taxon_id: NCBITaxon:7739
     full_name: Branchiostoma floridae
     common_name_panther: lancelet
-    common_name_uniprot: Florida lancelet
+    common_name_uniprot: Florida lancelet (Amphioxus)
     code_uniprot: BRAFL
     code_goc:
     group: UniProt
@@ -1188,18 +1188,18 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000344
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:10299
-    full_name: Human herpesvirus 1 (strain 17) (HHV-1) (Human herpes simplex virus 1)
+    full_name: Human herpesvirus 1 (strain 17)
     common_name_panther:
-    common_name_uniprot: HHV-1
+    common_name_uniprot: Human herpes simplex virus 1 (HHV-1)
     code_uniprot: HHV11
     code_goc:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000009294
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:10338
-    full_name: Varicella-zoster virus (strain Dumas) (HHV-3) (Human herpesvirus 3)
+    full_name: Varicella-zoster virus (strain Dumas)
     common_name_panther:
-    common_name_uniprot: HHV-3
+    common_name_uniprot: Human herpesvirus 3 (HHV-3)
     code_uniprot: VZVD
     code_goc:
     group: UniProt
@@ -1208,7 +1208,7 @@ organisms:
   - taxon_id: NCBITaxon:10360
     full_name: Human cytomegalovirus (strain AD169)
     common_name_panther:
-    common_name_uniprot: HHV-5
+    common_name_uniprot: Human herpesvirus 5 (HHV-5)
     code_uniprot: HCMVA
     code_goc:
     group: UniProt
