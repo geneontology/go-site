@@ -190,7 +190,7 @@ eco_usage_constraints:
       - entity_type: *vocabulary
   - eco_id: ECO:0000255
     go_evidence: ISM
-    allowed_reference: 
+    allowed_reference: GO_REF:0000(030|050|011|122)$
     with_presence: recommended
     with_structure: simple
     with_entities:
