@@ -266,7 +266,7 @@ eco_usage_constraints:
     with_presence: disallowed
   - eco_id: ECO:0000314
     go_evidence: IDA
-    allowed_reference: PMID:[0-9]+
+    allowed_reference: GO_REF:0000(052|054|109)$|PMID:[0-9]+
     with_presence: disallowed
   - eco_id: ECO:0000270
     go_evidence: IEP
@@ -282,7 +282,7 @@ eco_usage_constraints:
     with_presence: disallowed
   - eco_id: ECO:0000307
     go_evidence: ND
-    allowed_reference: 
+    allowed_reference: GO_REF:0000015$
     with_presence: disallowed
   - eco_id: ECO:0006056
     go_evidence: HTP
