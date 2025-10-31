@@ -34,6 +34,9 @@ mapping:
             type: str
             required: false
             enum: [ EXP, IBA, IBD, IC, IDA, IEA, IEP, IGC, IGI, IKR, IMP, IPI, IRD, ISA, ISM, ISO, ISS, NAS, ND, RCA, TAS ]
+          "allowed_reference":
+             type: str
+             required: true
           "with_presence":
             type: str
             required: true
