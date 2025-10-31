@@ -41,6 +41,8 @@
   alt_id:
     - GO_REF:0000005
   authors: GO Central curators, 2024
+  external_accession:
+    - ZFIN:ZDB-PUB-031118-3
   citation: PMID:31688925
   is_obsolete: false
   year: 2001
@@ -415,6 +417,8 @@
     - dictyBase_REF:9
     - J:342587
     - FB:FBrf0255270
+    - ZFIN:ZDB-PUB-110105-1
+    - ZFIN:ZDB-PUB-040216-1
   is_obsolete: false
   year: 2011
 - id: GO_REF:0000025
@@ -813,6 +817,7 @@
     - SGD_REF:S000148669
     - TAIR:AnalysisReference:501756968
     - TAIR:AnalysisReference:501756970
+    - ZFIN:ZDB-PUB-020723-1
   year: 2012
 - id: GO_REF:0000044
   title: Gene Ontology annotation based on UniProtKB/Swiss-Prot Subcellular Location
@@ -837,6 +842,7 @@
     - TAIR:AnalysisReference:501756971
     - TAIR:AnalysisReference:50175724
     - J:342604
+    - ZFIN:ZDB-PUB-120306-4
   year: 2012
 - id: GO_REF:0000045
   title: OBSOLETE Gene Ontology annotation based on UniProtKB/TrEMBL entries keyword
@@ -1900,6 +1906,7 @@
   authors: GO Central curators, GOA curators, Rhea curators
   external_accession:
     - J:342608
+    - ZFIN:ZDB-PUB-221108-20
   citation: PMID:30272209
   year: 2020
 - id: GO_REF:0000117
@@ -1922,6 +1929,7 @@
   authors: UniProt
   external_accession:
     - J:342609
+    - ZFIN:ZDB-PUB-221108-21
   year: 2021
 - id: GO_REF:0000118
   title: TreeGrafter-generated GO annotations
