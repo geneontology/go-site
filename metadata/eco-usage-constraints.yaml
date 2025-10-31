@@ -125,7 +125,7 @@ eco_usage_constraints:
       - entity_type: *rna
   - eco_id: ECO:0000250
     go_evidence: ISS
-    allowed_reference: 
+    allowed_reference: GO_REF:0000(024|027|110|122)$|PMID:[0-9]+
     with_presence: mandatory
     with_structure: simple
     with_entities:
