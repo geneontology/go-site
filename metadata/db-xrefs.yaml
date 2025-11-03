@@ -533,7 +533,7 @@
       example_url: http://dx.doi.org/10.1016/S0963-9969(99)00021-6
 - database: EC
   name: Enzyme Commission
-  rdf_uri_prefix: https://enzyme.expasy.org/EC/
+  rdf_uri_prefix: http://purl.uniprot.org/enzyme/
   generic_urls:
     - http://enzyme.expasy.org/
   entity_types:
@@ -2302,7 +2302,7 @@
 - database: RHEA
   name: Rhea, the Annotated Reactions Database
   description: Rhea is a manually annotated database of chemical reactions. All data in Rhea is freely accessible and available for anyone to use.
-  rdf_uri_prefix: https://www.rhea-db.org/rhea/
+  rdf_uri_prefix: http://rdf.rhea-db.org/
   generic_urls:
     - https://www.rhea-db.org
   entity_types:
