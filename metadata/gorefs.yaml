@@ -422,7 +422,7 @@
   is_obsolete: false
   year: 2011
 - id: GO_REF:0000025
-  title: Operon structure as IGC evidence
+  title: DEPRECATED Operon structure as IGC evidence
   description: |-
     Genes in prokaryotic organisms are often arranged in operons. Genes in an operon
     are all transcribed into one mRNA. Generally the genes in the operons code for
@@ -443,7 +443,7 @@
     is inferred from the context of the gene in an operon, and therefore the evidence
     code is IGC "inferred from genomic context."
   authors: Michelle Gwinn, TIGR curators
-  is_obsolete: false
+  is_obsolete: true
   year: 2007
 - id: GO_REF:0000026
   title: OBSOLETE Improving the representation of muscle biology in the biological
@@ -488,7 +488,7 @@
   year: 2007
   is_obsolete: false
 - id: GO_REF:0000028
-  title: Criteria for IDA, IEP, ISS, IGC, RCA, and IEA assignment in PAMGO_MGG
+  title: DEPRECATED Criteria for IDA, IEP, ISS, IGC, RCA, and IEA assignment in PAMGO_MGG
   description: |-
     This GO reference describes the criteria used in assigning the evidence codes
     of IDA (ECO:0000314), IEP (ECO:0000270), ISS (ECO:0000250), IGC (ECO_0000317),
@@ -516,7 +516,7 @@
     if its function assignment based on computational work, and no manual review was
     done.
   authors: PAMGO_MGG curators
-  is_obsolete: false
+  is_obsolete: true
   year: 2008
 - id: GO_REF:0000029
   title: OBSOLETE Gene Ontology annotation based on information extracted from curated
