@@ -46,7 +46,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000038">GORULE:0000038 Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column) where there exists another annotation with the same or a more granular term using experimental evidence</a>
  * <a href="#gorule0000039">GORULE:0000039 Protein complexes can not be annotated to GO:0032991 (protein-containing complex) or its descendants</a>
  * <a href="#gorule0000042">GORULE:0000042 Qualifier: IKR evidence code requires a NOT qualifier</a>
- * <a href="#gorule0000043">GORULE:0000043 Check for valid combination of evidence code and GO_REF</a>
+ * <a href="#gorule0000043">GORULE:0000043 Check for valid combination of evidence code, with/from rules and GO_REF</a>
  * <a href="#gorule0000044">GORULE:0000044 DEPRECATED - Reference: check for invalid use of GO_REF:0000057 can only be used with terms that are descendants of GO:0006915 (apoptotic process)</a>
  * <a href="#gorule0000045">GORULE:0000045 With/from: Verify that the combination of evidence (ECO) codes conform to the rules in eco-usage-constraints.yaml</a>
  * <a href="#gorule0000046">GORULE:0000046 The ‘with’ field (GAF column 8) must be the same as the gene product (GAF column 2) when annotating to ‘self-binding’ terms.</a>
@@ -787,29 +787,16 @@ IKR evidence code requires a NOT qualifier.
 
 <a name="gorule0000043"/>
 
-## Check for valid combination of evidence code and GO_REF
+## Check for valid combination of evidence code, with/from rules and GO_REF
 
  * id: [GORULE:0000043](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000043.md)
- * status: approved
+ * status: implemented
 
 
 
-Specific allowed combinations: 
-- ND (ECO:0000307): GO_REF:0000015
-- ISS (ECO:0000250): GO_REF:0000024
-- ISA (ECO:0000247): GO_REF:0000030, GO_REF:0000113
-- ISM (ECO:0000255): GO_REF:0000030, GO_REF:0000050
-- ISO (ECO:0000266): GO_REF:0000024
-- IC (ECO:0000305): GO_REF:0000036, GO_REF:0000057, GO_REF:0000111
-- IKR (ECO:0000320): GO_REF:0000047
-- IDA (ECO:0000314): GO_REF:0000052, GO_REF:0000054
-This list may not be exhaustive.
+Specific allowed combinations are defined in the https://github.com/geneontology/go-site/blob/master/metadata/eco-usage-constraints.yaml file.
 
-Implemented by GOA, check occurs in the GOA phase of the GOC-GOA pipeline. 
-TODO: include above list in appropriate metadata file.
-see http://wiki.geneontology.org/index.php/Evidence_Code_Ontology_(ECO)
-
-See also http://wiki.geneontology.org/index.php/Mappings_of_GO_Evidence_Code_%2B_GOREF_combinations_to_ECO
+Evidence code documentation is at: http://wiki.geneontology.org/index.php/Evidence_Code_Ontology_(ECO)
 
 
 <a name="gorule0000044"/>
