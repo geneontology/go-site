@@ -1,27 +1,12 @@
 id: xenbase
-label: Xenbase (tropicalis)
-description: "GO data for Xenbase"
+label: Xenbase (unified)
+description: "GO data for Xenbase (unified)"
 project_name: "Xenbase"
 contact_email: "xenbase@cchmc.org"
 project_url: "http://www.xenbase.org/"
 funding_source: "National Institute of Child Health and Human Development, grant P41 HD064556"
 email_report: "malcolm.fisher@cchmc.org"
 datasets:
-  -
-    id: xenbase.gpi
-    label: "Xenbase gpi file"
-    description: "gpi file for Xenbase"
-    type: gpi
-    dataset: xenbase
-    submitter: xenbase
-    compression: gzip
-    source: https://download.xenbase.org/xenbase/GenePageReports/xenbase.gpi.gz
-    entity_type:
-    status: active
-    species_code: Xenopus
-    taxa:
-      - NCBITaxon:8364
-      - NCBITaxon:8355
   -
     id: xenbase.gaf
     label: "xenbase gaf file"
