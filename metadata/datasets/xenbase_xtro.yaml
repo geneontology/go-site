@@ -12,7 +12,7 @@ datasets:
     label: "Xenbase X. tropicalis gpi file"
     description: "gpi file for X. tropicalis from Xenbase"
     type: gpi
-    dataset: xenbase
+    dataset: xenbase_xtro
     submitter: xenbase
     compression: gzip
     source: https://download.xenbase.org/xenbase/GenePageReports/GOBySpecies/xenbase_v2.0.xtrop.only.gpi.gz
