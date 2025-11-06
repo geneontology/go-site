@@ -207,10 +207,10 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000002671
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:214684
-    full_name: Cryptococcus neoformans
-    common_name_panther: basidiomycote fungus
+    full_name: Cryptococcus neoformans var. neoformans serotype D (Filobasidiella neoformans)
+    common_name_panther: C. neoformans
     common_name_uniprot:
-    code_uniprot: CRYNJ
+    code_uniprot: CRYD1
     code_goc:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000002149
@@ -330,16 +330,16 @@ organisms:
     code_uniprot: FELCA
     code_goc:
     group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000011712
+    uniprot_proteome_id: uniprot.proteome:UP000823872
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:190304
-    full_name: Fusobacterium nucleatum
-    common_name_panther: fusobacteria
+    full_name: Fusobacterium nucleatum (strain ATCC 25586)
+    common_name_panther: F. nucleatum ATCC 25586
     common_name_uniprot:
     code_uniprot: FUSNN
     code_goc:
     group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000002521
+    uniprot_proteome_id: uniprot.proteome:UP000241660
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:9031
     full_name: Gallus gallus
@@ -423,8 +423,8 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000215914
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:85962
-    full_name: Helicobacter pylori
-    common_name_panther: H.pylori
+    full_name: Helicobacter pylori (Campylobacter pylori) strain ATCC 700392 / 26695
+    common_name_panther: H. pylori
     common_name_uniprot:
     code_uniprot: HELPY
     code_goc:
@@ -1053,10 +1053,10 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000008524
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:5270
-    full_name: Ustilago maydis
+    full_name: Mycosarcoma maydis (Ustilago maydis)
     common_name_panther: basidiomycote fungus
     common_name_uniprot: Corn smut fungus
-    code_uniprot: USTMA
+    code_uniprot: MYCMD
     code_goc:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000000561
@@ -1124,14 +1124,14 @@ organisms:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000007305
     mod_id_space: UniProtKB
-  - taxon_id: NCBITaxon:545
-    full_name: Citrobacter koseri (Citrobacter diversus)
+  - taxon_id: NCBITaxon:290338
+    full_name: Citrobacter koseri (strain ATCC BAA-895 / CDC 4225-83 / SGSC4696)
     common_name_panther:
     common_name_uniprot:
-    code_uniprot: CITKO
+    code_uniprot: CITK8
     code_goc:
     group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000270272
+    uniprot_proteome_id: uniprot.proteome:UP000008148
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:574
     full_name: Klebsiella pneumoniae subsp. ozaenae (subspecies)
@@ -1179,9 +1179,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000002357
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:10254
-    full_name: Vaccinia virus (strain Western Reserve) (VACV) (Vaccinia virus (strain WR))
+    full_name: Vaccinia virus (strain Western Reserve)
     common_name_panther:
-    common_name_uniprot: VACV
+    common_name_uniprot: VACV strain WR
     code_uniprot: VACCW
     code_goc:
     group: UniProt
@@ -1189,7 +1189,7 @@ organisms:
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:10299
     full_name: Human herpesvirus 1 (strain 17)
-    common_name_panther:
+    common_name_panther: 
     common_name_uniprot: Human herpes simplex virus 1 (HHV-1)
     code_uniprot: HHV11
     code_goc:
@@ -1197,9 +1197,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000009294
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:10338
-    full_name: Varicella-zoster virus (strain Dumas)
+    full_name: Varicella-zoster virus (Human herpesvirus 3) strain Dumas
     common_name_panther:
-    common_name_uniprot: Human herpesvirus 3 (HHV-3)
+    common_name_uniprot: HHV-3 strain Dumas
     code_uniprot: VZVD
     code_goc:
     group: UniProt
@@ -1224,7 +1224,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000008765
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:63746
-    full_name: Hepatitis C virus genotype 1a (isolate H77) (HCV)
+    full_name: Hepatitis C virus genotype 1a (isolate H77)
     common_name_panther:
     common_name_uniprot: HCV
     code_uniprot: HCV77
@@ -1233,7 +1233,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000518
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:64320
-    full_name: Zika virus (ZIKV)
+    full_name: Zika virus
     common_name_panther:
     common_name_uniprot: ZIKV
     code_uniprot: ZIKV
@@ -1243,7 +1243,7 @@ organisms:
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:71421
     full_name: Haemophilus influenzae (strain ATCC 51907 / DSM 11121 / KW20 / Rd)
-    common_name_panther:
+    common_name_panther: H. influenzae strain ATCC 51907
     common_name_uniprot:
     code_uniprot: HAEIN
     code_goc:
@@ -1254,14 +1254,14 @@ organisms:
     full_name: Escherichia coli O157:H7
     common_name_panther:
     common_name_uniprot:
-    code_uniprot: ECO57
+    code_uniprot: E. coli ECO57
     code_goc:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000000558
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:93061
     full_name: Staphylococcus aureus (strain NCTC 8325 / PS 47)
-    common_name_panther:
+    common_name_panther: S. aureus NCTC 8325
     common_name_uniprot:
     code_uniprot: STAA8
     code_goc:
@@ -1270,7 +1270,7 @@ organisms:
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:99287
     full_name: Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720)
-    common_name_panther:
+    common_name_panther: S. typhimurium LT2
     common_name_uniprot:
     code_uniprot: SALTY
     code_goc:
@@ -1332,7 +1332,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001258
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:272634
-    full_name: Mycoplasma pneumoniae (strain ATCC 29342 / M129 / Subtype 1) (Mycoplasmoides pneumoniae)
+    full_name: Mycoplasma pneumoniae strain ATCC 29342 / M129 / Subtype 1
     common_name_panther:
     common_name_uniprot:
     code_uniprot: MYCPN
@@ -1341,9 +1341,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000808
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:295027
-    full_name: Human cytomegalovirus (strain Merlin) (HHV-5) (Human herpesvirus 5)
+    full_name: Human cytomegalovirus (Human herpesvirus 5) strain Merlin
     common_name_panther:
-    common_name_uniprot: HHV-5
+    common_name_uniprot: HHV-5 Merlin
     code_uniprot: HCMVM
     code_goc:
     group: UniProt
@@ -1405,15 +1405,15 @@ organisms:
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:575584
     full_name: Acinetobacter baumannii (strain ATCC 19606 / DSM 30007 / JCM 6841 / CCUG 19606 / CIP 70.34 / NBRC 109757 / NCIMB 12457 / NCTC 12156 / 81)
-    common_name_panther:
+    common_name_panther: A. baumannii ATCC 19606
     common_name_uniprot:
     code_uniprot: ACIB2
     code_goc:
     group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000005740
+    uniprot_proteome_id: uniprot.proteome:UP000498640
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:587200
-    full_name: Variola virus (isolate Human/India/Ind3/1967)
+    full_name: Variola virus (Smallpox virus) (isolate Human/India/Ind3/1967)  
     common_name_panther:
     common_name_uniprot: VARV
     code_uniprot: VAR67
@@ -1422,16 +1422,16 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000002060
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:645098
-    full_name: Measles virus (strain Ichinose-B95a) (MeV) (Subacute sclerose panencephalitis virus)
+    full_name: Measles virus (Subacute sclerose panencephalitis virus) strain Ichinose-B95a
     common_name_panther:
-    common_name_uniprot: MeV
+    common_name_uniprot: MeV strain Ichinose-B95a
     code_uniprot: MEASC
     code_goc:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000008699
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:928302
-    full_name: Hepatitis B virus genotype C subtype ayr (isolate Human/Japan/Okamoto/-) (HBV-C)
+    full_name: Hepatitis B virus genotype C subtype ayr (isolate Human/Japan/Okamoto/-)
     common_name_panther:
     common_name_uniprot: HBV-C
     code_uniprot: HBVCJ
