@@ -21,7 +21,7 @@ classes:
       - taxon_id
       - uniprot_proteome_id
       - full_name
-      - common_name_panther
+      - common_name_goc
       - common_name_uniprot
       - code_uniprot
       - code_goc
