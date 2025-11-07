@@ -1529,3 +1529,12 @@ organisms:
     group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000001997
     mod_id_space: CGD
+  - taxon_id: 29760
+    full_name: Vitis vinifera
+    common_name_panther:
+    common_name_uniprot: Grape
+    code_uniprot: VITVI
+    code_goc:
+    group: UniProt
+    uniprot_proteome_id: uniprot.proteome:UP000009183
+    mod_id_space: UniProtKB
