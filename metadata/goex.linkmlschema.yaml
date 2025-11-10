@@ -23,6 +23,7 @@ classes:
       - full_name
       - common_name_goc
       - common_name_uniprot
+      - taxonomic_group
       - code_uniprot
       - code_goc
       - group
