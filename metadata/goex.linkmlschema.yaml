@@ -43,7 +43,7 @@ slots:
   full_name:
     required: true
 
-  common_name_panther:
+  common_name_goc:
     required: false
 
   common_name_uniprot:
