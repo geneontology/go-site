@@ -36,6 +36,11 @@ slots:
     required: true
     range: curie
 
+  taxonomic_group:
+    identifier: true
+    required: true
+    range: curie
+
   uniprot_proteome_id:
     required: true
     range: curie
