@@ -932,8 +932,8 @@ organisms:
   - taxon_id: NCBITaxon:559292
     taxonomic_group: NCBITaxon:1
     full_name: Saccharomyces cerevisiae
-    common_name_goc: Brewer's yeast
-    common_name_uniprot: Baker's yeast
+    common_name_goc: "Brewer's yeast"
+    common_name_uniprot: "Baker's yeast"
     code_uniprot: YEAST
     code_goc:  Scer
     group: SGD
@@ -1699,7 +1699,7 @@ organisms:
     group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000001997
     mod_id_space: CGD
-  - taxon_id: 29760
+  - taxon_id: NCBITaxon:29760
     taxonomic_group: NCBITaxon:1
     full_name: Vitis vinifera
     common_name_goc:
