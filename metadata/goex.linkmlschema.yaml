@@ -19,11 +19,11 @@ classes:
   Organism:
     slots:
       - taxon_id
+      - taxonomic_group
       - uniprot_proteome_id
       - full_name
       - common_name_goc
       - common_name_uniprot
-      - taxonomic_group
       - code_uniprot
       - code_goc
       - group
@@ -37,7 +37,6 @@ slots:
     range: curie
 
   taxonomic_group:
-    identifier: true
     required: true
     range: curie
 
