@@ -19,9 +19,10 @@ classes:
   Organism:
     slots:
       - taxon_id
+      - taxonomic_group
       - uniprot_proteome_id
       - full_name
-      - common_name_panther
+      - common_name_goc
       - common_name_uniprot
       - code_uniprot
       - code_goc
@@ -35,6 +36,10 @@ slots:
     required: true
     range: curie
 
+  taxonomic_group:
+    required: true
+    range: curie
+
   uniprot_proteome_id:
     required: true
     range: curie
@@ -42,7 +47,7 @@ slots:
   full_name:
     required: true
 
-  common_name_panther:
+  common_name_goc:
     required: false
 
   common_name_uniprot:
