@@ -340,9 +340,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000002281
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:284811
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:4751
     full_name: Eremothecium gossypii
-    common_name_goc: budding yeasts
+    common_name_goc: E. gossypii
     common_name_uniprot: Yeast
     code_uniprot: EREGS
     code_goc:
@@ -350,9 +350,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000591
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:83333
-    taxonomic_group: NCBITaxon:1
-    full_name: Escherichia coli
-    common_name_goc: E. coli
+    taxonomic_group: NCBITaxon:2
+    full_name: Escherichia coli K12
+    common_name_goc: E. coli K12
     common_name_uniprot:
     code_uniprot: ECOLI
     code_goc:  Ecol
@@ -360,9 +360,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000625
     mod_id_space: EcoCyc
   - taxon_id: NCBITaxon:9685
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:7742
     full_name: Felis catus
-    common_name_goc: cat
+    common_name_goc: Cat
     common_name_uniprot: Cat
     code_uniprot: FELCA
     code_goc:
