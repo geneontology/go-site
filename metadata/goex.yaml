@@ -1,8 +1,8 @@
 organisms:
   - taxon_id: NCBITaxon:28377
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:7742
     full_name: Anolis carolinensis
-    common_name_goc: lizard
+    common_name_goc: Lizard
     common_name_uniprot: Green anole (American chameleon)
     code_uniprot: ANOCA
     code_goc:
@@ -10,9 +10,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001646
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:7165
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:6656
     full_name: Anopheles gambiae
-    common_name_goc: mosquito
+    common_name_goc: Mosquito
     common_name_uniprot: African malaria mosquito
     code_uniprot: ANOGA
     code_goc:
@@ -20,9 +20,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000007062
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:224324
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Aquifex aeolicus
-    common_name_goc: aquaficae bacteria
+    common_name_goc: Aquaficae bacteria
     common_name_uniprot:
     code_uniprot: AQUAE
     code_goc:
@@ -30,9 +30,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000798
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:3702
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:33090
     full_name: Arabidopsis thaliana
-    common_name_goc: thale cress
+    common_name_goc: Mouse-ear cress
     common_name_uniprot: Mouse-ear cress
     code_uniprot: ARATH
     code_goc:
@@ -40,9 +40,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000006548
     mod_id_space: TAIR
   - taxon_id: NCBITaxon:226900
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Bacillus cereus
-    common_name_goc: bacillus cereus
+    common_name_goc: B. cereus
     common_name_uniprot:
     code_uniprot: BACCR
     code_goc:
@@ -50,9 +50,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001417
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:224308
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Bacillus subtilis
-    common_name_goc: b subtilis
+    common_name_goc: B. subtilis
     common_name_uniprot:
     code_uniprot: BACSU
     code_goc:
@@ -60,9 +60,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001570
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:226186
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Bacteroides thetaiotaomicron
-    common_name_goc: bacteroidetes bacteria
+    common_name_goc: Bacteroidetes bacteria
     common_name_uniprot:
     code_uniprot: BACTN
     code_goc:
@@ -70,9 +70,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001414
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:684364
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:4751
     full_name: Batrachochytrium dendrobatidis
-    common_name_goc: chytrid fungus
+    common_name_goc: Frog chytrid fungus
     common_name_uniprot: Frog chytrid fungus
     code_uniprot: BATDJ
     code_goc:
@@ -80,9 +80,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000007241
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:9913
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:7742
     full_name: Bos taurus
-    common_name_goc: cow
+    common_name_goc: Bovine
     common_name_uniprot: Bovine
     code_uniprot: BOVIN
     code_goc:
@@ -90,9 +90,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000009136
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:15368
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:33090
     full_name: Brachypodium distachyon
-    common_name_goc: purple false brome
+    common_name_goc: Purple false brome
     common_name_uniprot: Purple false brome
     code_uniprot: BRADI
     code_goc:
@@ -100,9 +100,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000008810
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:224911
-    taxonomic_group: NCBITaxon:1
-    full_name: Bradyrhizobium diazoefficiens
-    common_name_goc: alphaproteobacteria
+    taxonomic_group: NCBITaxon:2
+    full_name: Bradyrhizobium diazoefficiens strain JCM 10833
+    common_name_goc: B. diazoefficiens strain JCM 10833
     common_name_uniprot:
     code_uniprot: BRADU
     code_goc:
@@ -110,9 +110,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000002526
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:7739
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:6072
     full_name: Branchiostoma floridae
-    common_name_goc: lancelet
+    common_name_goc: Florida lancelet (Amphioxus)
     common_name_uniprot: Florida lancelet (Amphioxus)
     code_uniprot: BRAFL
     code_goc:
@@ -120,9 +120,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001554
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:3711
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:33090
     full_name: Brassica campestris
-    common_name_goc: field mustard
+    common_name_goc: Field mustard
     common_name_uniprot: Field mustard
     code_uniprot: BRACM
     code_goc:
@@ -130,9 +130,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000011750
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:6238
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:6231
     full_name: Caenorhabditis briggsae
-    common_name_goc: nematode worm
+    common_name_goc: Nematode C. briggsae
     common_name_uniprot:
     code_uniprot: CAEBR
     code_goc:
@@ -140,8 +140,8 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000008549
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:6239
-    taxonomic_group: NCBITaxon:1
-    full_name: Caenorhabditis elegans
+    taxonomic_group: NCBITaxon:6231
+    full_name: Nematode C. elegans
     common_name_goc: nematode worm
     common_name_uniprot:
     code_uniprot: CAEEL
@@ -150,9 +150,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001940
     mod_id_space: WB
   - taxon_id: NCBITaxon:237561
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:4751
     full_name: Candida albicans
-    common_name_goc: candida
+    common_name_goc: Candida
     common_name_uniprot: Yeast
     code_uniprot: CANAL
     code_goc:
@@ -160,9 +160,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000559
     mod_id_space: CGD
   - taxon_id: NCBITaxon:9615
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:7742
     full_name: Canis lupus familiaris
-    common_name_goc: dog
+    common_name_goc: Dog
     common_name_uniprot: Dog
     code_uniprot: CANLF
     code_goc:
@@ -170,9 +170,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000805418
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:272561
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Chlamydia trachomatis
-    common_name_goc: chlamydia
+    common_name_goc: Chlamydia
     common_name_uniprot:
     code_uniprot: CHLTR
     code_goc:
@@ -180,9 +180,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000431
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:3055
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:33090
     full_name: Chlamydomonas reinhardtii
-    common_name_goc: green algae
+    common_name_goc: Green algae
     common_name_uniprot:
     code_uniprot: CHLRE
     code_goc:
@@ -190,9 +190,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000006906
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:324602
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Chloroflexus aurantiacus
-    common_name_goc: chloroflexi bacteria
+    common_name_goc: Chloroflexi bacteria
     common_name_uniprot:
     code_uniprot: CHLAA
     code_goc:
@@ -200,9 +200,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000002008
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:7719
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:6072
     full_name: Ciona intestinalis
-    common_name_goc: sea squirt
+    common_name_goc: Sea squirt
     common_name_uniprot: Transparent sea squirt
     code_uniprot: CIOIN
     code_goc:
@@ -210,9 +210,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000008144
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:441771
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Clostridium botulinum
-    common_name_goc: firmicutes bacteria
+    common_name_goc: C. botulinum
     common_name_uniprot:
     code_uniprot: CLOBH
     code_goc:
@@ -220,9 +220,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001986
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:227377
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Coxiella burnetii
-    common_name_goc: gammaproteobacteria
+    common_name_goc: Coxiella bacteria
     common_name_uniprot:
     code_uniprot: COXBU
     code_goc:
@@ -230,7 +230,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000002671
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:214684
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:4751
     full_name: Cryptococcus neoformans var. neoformans serotype D (Filobasidiella neoformans)
     common_name_goc: C. neoformans
     common_name_uniprot:
@@ -240,9 +240,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000002149
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:7955
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:7742
     full_name: Danio rerio
-    common_name_goc: zebrafish
+    common_name_goc: Zebrafish
     common_name_uniprot: Zebrafish
     code_uniprot: DANRE
     code_goc:
@@ -250,9 +250,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000437
     mod_id_space: ZFIN
   - taxon_id: NCBITaxon:6669
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:6656
     full_name: Daphnia pulex
-    common_name_goc: water_flea
+    common_name_goc: Water flea
     common_name_uniprot: Water flea
     code_uniprot: DAPPU
     code_goc:
@@ -260,9 +260,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000305
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:243230
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Deinococcus radiodurans
-    common_name_goc: deinococcus bacteria
+    common_name_goc: Deinococcus bacteria
     common_name_uniprot:
     code_uniprot: DEIRA
     code_goc:
@@ -270,9 +270,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000002524
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:515635
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Dictyoglomus turgidum
-    common_name_goc: dictyoglomi bacteria
+    common_name_goc: Dictyoglomi bacteria
     common_name_uniprot:
     code_uniprot: DICTD
     code_goc:
@@ -280,9 +280,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000007719
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:44689
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:554915
     full_name: Dictyostelium discoideum
-    common_name_goc: slime mold
+    common_name_goc: Social amoeba
     common_name_uniprot: Social amoeba
     code_uniprot: DICDI
     code_goc:
@@ -290,9 +290,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000002195
     mod_id_space: dictyBase
   - taxon_id: NCBITaxon:5786
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:554915
     full_name: Dictyostelium purpureum
-    common_name_goc: slime mold
+    common_name_goc: Slime mold
     common_name_uniprot: Slime mold
     code_uniprot: DICPU
     code_goc:
@@ -300,9 +300,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001064
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:7227
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:6656
     full_name: Drosophila melanogaster
-    common_name_goc: fruit fly
+    common_name_goc: Fruit fly
     common_name_uniprot: Fruit fly
     code_uniprot: DROME
     code_goc:
@@ -310,9 +310,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000803
     mod_id_space: FB
   - taxon_id: NCBITaxon:227321
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:4751
     full_name: Emericella nidulans
-    common_name_goc: ascomycote fungus
+    common_name_goc: E. nidulans
     common_name_uniprot:
     code_uniprot: EMENI
     code_goc:
@@ -320,9 +320,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000560
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:294381
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:554915
     full_name: Entamoeba histolytica
-    common_name_goc: amoeba
+    common_name_goc: Entamoeba
     common_name_uniprot:
     code_uniprot: ENTH1
     code_goc:
@@ -330,9 +330,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001926
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:9796
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:7742
     full_name: Equus caballus
-    common_name_goc: horse
+    common_name_goc: Horse
     common_name_uniprot: Horse
     code_uniprot: HORSE
     code_goc:
@@ -1310,7 +1310,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000002357
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:10254
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:10239
     full_name: Vaccinia virus (strain Western Reserve)
     common_name_goc:
     common_name_uniprot: VACV strain WR
@@ -1320,7 +1320,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000344
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:10299
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:10239
     full_name: Human herpesvirus 1 (strain 17)
     common_name_goc:
     common_name_uniprot: Human herpes simplex virus 1 (HHV-1)
@@ -1330,7 +1330,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000009294
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:10338
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:10239
     full_name: Varicella-zoster virus (Human herpesvirus 3) strain Dumas
     common_name_goc:
     common_name_uniprot: HHV-3 strain Dumas
@@ -1340,7 +1340,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000002602
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:10360
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:10239
     full_name: Human cytomegalovirus (strain AD169)
     common_name_goc:
     common_name_uniprot: Human herpesvirus 5 (HHV-5)
@@ -1350,7 +1350,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000008992
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:12118
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:10239
     full_name: Foot-and-mouth disease virus serotype O (FMDV)
     common_name_goc:
     common_name_uniprot: FMDV
@@ -1360,7 +1360,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000008765
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:63746
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:10239
     full_name: Hepatitis C virus genotype 1a (isolate H77)
     common_name_goc:
     common_name_uniprot: HCV
@@ -1370,7 +1370,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000518
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:64320
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:10239
     full_name: Zika virus
     common_name_goc:
     common_name_uniprot: ZIKV
@@ -1380,7 +1380,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000054557
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:71421
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:10239
     full_name: Haemophilus influenzae (strain ATCC 51907 / DSM 11121 / KW20 / Rd)
     common_name_goc: H. influenzae strain ATCC 51907
     common_name_uniprot:
@@ -1390,7 +1390,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000579
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:83334
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Escherichia coli O157:H7
     common_name_goc:
     common_name_uniprot:
@@ -1400,7 +1400,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000558
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:93061
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Staphylococcus aureus (strain NCTC 8325 / PS 47)
     common_name_goc: S. aureus NCTC 8325
     common_name_uniprot:
@@ -1410,7 +1410,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000008816
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:99287
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720)
     common_name_goc: S. typhimurium LT2
     common_name_uniprot:
@@ -1420,7 +1420,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001014
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:122586
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Neisseria meningitidis serogroup B (strain ATCC BAA-335 / MC58)
     common_name_goc: betaproteobacteria
     common_name_uniprot:
@@ -1430,7 +1430,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000425
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:169963
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Listeria monocytogenes serovar 1/2a (strain ATCC BAA-679 / EGD-e)
     common_name_goc:
     common_name_uniprot:
@@ -1440,7 +1440,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000817
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:170187
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Streptococcus pneumoniae serotype 4 (strain ATCC BAA-334 / TIGR4)
     common_name_goc:
     common_name_uniprot:
@@ -1450,7 +1450,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000585
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:192222
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Campylobacter jejuni subsp. jejuni serotype O:2 (strain ATCC 700819 / NCTC 11168)
     common_name_goc:
     common_name_uniprot:
@@ -1460,7 +1460,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000799
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:226185
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Enterococcus faecalis (strain ATCC 700802 / V583)
     common_name_goc:
     common_name_uniprot:
@@ -1470,7 +1470,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001415
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:272558
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Halalkalibacterium halodurans (strain ATCC BAA-125 / DSM 18197 / FERM 7344 / JCM 9153 / C-125) (Bacillus halodurans)
     common_name_goc:
     common_name_uniprot:
@@ -1480,7 +1480,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001258
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:272634
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Mycoplasma pneumoniae strain ATCC 29342 / M129 / Subtype 1
     common_name_goc:
     common_name_uniprot:
@@ -1490,7 +1490,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000808
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:295027
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:10239
     full_name: Human cytomegalovirus (Human herpesvirus 5) strain Merlin
     common_name_goc:
     common_name_uniprot: HHV-5 Merlin
@@ -1500,7 +1500,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000938
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:301447
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: "Streptococcus pyogenes serotype M1 (Strain: ATCC 700294 / SF370 / Serotype M1)"
     common_name_goc:
     common_name_uniprot:
@@ -1510,7 +1510,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000750
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:327105
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:10239
     full_name: Human immunodeficiency virus type 1 group O (isolate ANT70)
     common_name_goc:
     common_name_uniprot:
@@ -1520,7 +1520,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000007689
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:333760
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:10239
     full_name: Human papillomavirus type 16
     common_name_goc:
     common_name_uniprot:
@@ -1530,7 +1530,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000009251
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:373153
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Streptococcus pneumoniae serotype 2 (strain D39 / NCTC 7466)
     common_name_goc:
     common_name_uniprot:
@@ -1540,7 +1540,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001452
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:419947
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Mycobacterium tuberculosis (strain ATCC 25177 / H37Ra)
     common_name_goc:
     common_name_uniprot:
@@ -1550,7 +1550,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001988
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:565655
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Enterococcus casseliflavus EC20
     common_name_goc:
     common_name_uniprot:
@@ -1560,7 +1560,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000012675
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:575584
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Acinetobacter baumannii (strain ATCC 19606 / DSM 30007 / JCM 6841 / CCUG 19606 / CIP 70.34 / NBRC 109757 / NCIMB 12457 / NCTC 12156 / 81)
     common_name_goc: A. baumannii ATCC 19606
     common_name_uniprot:
@@ -1570,7 +1570,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000498640
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:587200
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:10239
     full_name: Variola virus (Smallpox virus) (isolate Human/India/Ind3/1967)
     common_name_goc:
     common_name_uniprot: VARV
@@ -1580,7 +1580,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000002060
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:645098
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:10239
     full_name: Measles virus (Subacute sclerose panencephalitis virus) strain Ichinose-B95a
     common_name_goc:
     common_name_uniprot: MeV strain Ichinose-B95a
@@ -1590,7 +1590,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000008699
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:928302
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:10239
     full_name: Hepatitis B virus genotype C subtype ayr (isolate Human/Japan/Okamoto/-)
     common_name_goc:
     common_name_uniprot: HBV-C
@@ -1600,7 +1600,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000008591
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:1125630
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:2
     full_name: Klebsiella pneumoniae subsp. pneumoniae (strain HS11286)
     common_name_goc:
     common_name_uniprot:
@@ -1610,7 +1610,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000007841
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:573826
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:4751
     full_name: Candida dubliniensis (strain CD36 / ATCC MYA-646 / CBS 7987 / NCPF 3949 / NRRL Y-17841)
     common_name_goc:
     common_name_uniprot:
@@ -1620,7 +1620,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000002605
     mod_id_space: CGD
   - taxon_id: NCBITaxon:1136231
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:4751
     full_name: Candida orthopsilosis (strain 90-125) (Co 90-125)
     common_name_goc:
     common_name_uniprot:
@@ -1630,7 +1630,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000005018
     mod_id_space: CGD
   - taxon_id: NCBITaxon:284593
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:4751
     full_name: Candida glabrata (strain ATCC 2001 / BCRC 20586 / JCM 3761 / NBRC 0622 / NRRL Y-65 / CBS 138) (Nakaseomyces glabratus)
     common_name_goc:
     common_name_uniprot:
@@ -1640,7 +1640,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000002428
     mod_id_space: CGD
   - taxon_id: NCBITaxon:578454
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:4751
     full_name: Candida parapsilosis (strain CDC 317 / ATCC MYA-4646)
     common_name_goc:
     common_name_uniprot:
@@ -1650,7 +1650,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000005221
     mod_id_space: CGD
   - taxon_id: NCBITaxon:294747
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:4751
     full_name: Candida tropicalis (strain ATCC MYA-3404 / T1)
     common_name_goc:
     common_name_uniprot:
@@ -1660,7 +1660,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000002037
     mod_id_space: CGD
   - taxon_id: NCBITaxon:306902
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:4751
     full_name: Clavispora lusitaniae (strain ATCC 42720)
     common_name_goc:
     common_name_uniprot:
@@ -1670,7 +1670,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000007703
     mod_id_space: CGD
   - taxon_id: NCBITaxon:284592
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:4751
     full_name: Debaryomyces hansenii (strain ATCC 36239 / CBS 767 / BCRC 21394 / JCM 1990 / NBRC 0083 / IGC 2968) (Torulaspora hansenii)
     common_name_goc:
     common_name_uniprot:
@@ -1680,7 +1680,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000000599
     mod_id_space: CGD
   - taxon_id: NCBITaxon:379508
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:4751
     full_name: Lodderomyces elongisporus (strain ATCC 11503 / CBS 2605 / JCM 1781 / NBRC 1676 / NRRL YB-4239) (Saccharomyces elongisporus)
     common_name_goc:
     common_name_uniprot:
@@ -1690,9 +1690,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001996
     mod_id_space: CGD
   - taxon_id: NCBITaxon:294746
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:4751
     full_name: Meyerozyma guilliermondii (strain ATCC 6260 / CBS 566 / DSM 6381 / JCM 1539 / NBRC 10279 / NRRL Y-324) (Candida guilliermondii)
-    common_name_goc:
+    common_name_goc: Candida guilliermondii
     common_name_uniprot:
     code_uniprot: PICGU
     code_goc:
@@ -1700,9 +1700,9 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001997
     mod_id_space: CGD
   - taxon_id: NCBITaxon:29760
-    taxonomic_group: NCBITaxon:1
+    taxonomic_group: NCBITaxon:33090
     full_name: Vitis vinifera
-    common_name_goc:
+    common_name_goc: Grape
     common_name_uniprot: Grape
     code_uniprot: VITVI
     code_goc:
