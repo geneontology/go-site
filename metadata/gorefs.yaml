@@ -2001,3 +2001,11 @@
   external_accession:
     - TAIR:AnalysisReference:501780126
   is_obsolete: false
+id: GO_REF:0000123
+  title: YeastPathways to GO-CAM conversion
+  description: |-
+    YeastPathways is a database of metabolic pathways and enzymes in the budding yeast Saccharomyces cerevisiae. YeastPathways content is manually curated and maintained by the curation team at the Saccharomyces Genome Database (SGD), the model organism database for budding yeast. Only genes involved in metabolic pathways and reactions are included in the set of 220 YeastPathways, but the YeastPathways also contained manual summaries of the pathways and a complete list of references used to construct each pathway. YeastPathways were built in from MetaCyc data in 2003 using the Pathways Tools software from Bioinformatics Research Group at SRI International, and in 2020 Yeast Pathways were converted from biopax3 to TTL files and loaded into Noctua, the curation tool from the Gene Ontology. YeastPathways are available at https://pathway.yeastgenome.org/ and as Noctua models.
+    To create complete GO annotations for the individual enzymes in each pathway, the annotations logically constructed from the imported Noctua models were given the evidence code computational combinatorial evidence used in manual assertion (ECO:0000245), which corresponds to the GO evidence code RCA. This is further detailed in PMID:39530598.
+  authors: SGD
+  year: 2025
+  is_obsolete: false
