@@ -4398,3 +4398,27 @@
   organization: UniProt
   uri: 'https://orcid.org/0000-0002-5283-6593'
   xref: 'GOC:lf'
+-
+  accounts:
+    github: ReneRanzinger
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.glygen.org'
+  nickname: 'Rene Ranzinger'
+  organization: GlyGen
+  uri: 'https://orcid.org/0000-0003-3147-448X'
+-
+  accounts:
+    github: mtiemeyer0919
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.glygen.org'
+  nickname: 'Mike Tiemeyer'
+  organization: GlyGen
+  uri: 'https://orcid.org/0000-0002-8704-9143'
