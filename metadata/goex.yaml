@@ -142,7 +142,7 @@ organisms:
   - taxon_id: NCBITaxon:6239
     taxonomic_group: NCBITaxon:6231
     full_name: Nematode C. elegans
-    common_name_goc: nematode worm
+    common_name_goc: Nematode C. elegans
     common_name_uniprot:
     code_uniprot: CAEEL
     code_goc:
@@ -721,8 +721,8 @@ organisms:
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:330879
     taxonomic_group: NCBITaxon:4751
-    full_name: Aspergillus fumigatus (Af293)
-    common_name_goc: A. fumigatus Af293
+    full_name: Aspergillus fumigatus
+    common_name_goc: A. fumigatus
     common_name_uniprot:
     code_uniprot: ASPFU
     code_goc:
@@ -932,8 +932,8 @@ organisms:
   - taxon_id: NCBITaxon:559292
     taxonomic_group: NCBITaxon:4751
     full_name: Saccharomyces cerevisiae
-    common_name_goc: "Brewer's yeast"
-    common_name_uniprot: "Baker's yeast"
+    common_name_goc: Baker's yeast
+    common_name_uniprot: Baker's yeast
     code_uniprot: YEAST
     code_goc:  Scer
     group: SGD
@@ -1012,7 +1012,7 @@ organisms:
   - taxon_id: NCBITaxon:171101
     taxonomic_group: NCBITaxon:2
     full_name: Streptococcus pneumoniae (strain ATCC BAA-255 / R6)
-    common_name_goc: Streptococcus pneumoniae R6
+    common_name_goc: S. pneumoniae R6
     common_name_uniprot:
     code_uniprot: STRR6
     code_goc:
@@ -1392,7 +1392,7 @@ organisms:
   - taxon_id: NCBITaxon:83334
     taxonomic_group: NCBITaxon:2
     full_name: Escherichia coli O157:H7
-    common_name_goc:
+    common_name_goc: E. coli O157:H7
     common_name_uniprot:
     code_uniprot: E. coli ECO57
     code_goc:
@@ -1432,7 +1432,7 @@ organisms:
   - taxon_id: NCBITaxon:169963
     taxonomic_group: NCBITaxon:2
     full_name: Listeria monocytogenes serovar 1/2a (strain ATCC BAA-679 / EGD-e)
-    common_name_goc:
+    common_name_goc: Listeria
     common_name_uniprot:
     code_uniprot: LISMO
     code_goc:
@@ -1442,7 +1442,7 @@ organisms:
   - taxon_id: NCBITaxon:170187
     taxonomic_group: NCBITaxon:2
     full_name: Streptococcus pneumoniae serotype 4 (strain ATCC BAA-334 / TIGR4)
-    common_name_goc:
+    common_name_goc: S. pneumoniae TIGR4
     common_name_uniprot:
     code_uniprot: STRPN
     code_goc:
@@ -1451,8 +1451,8 @@ organisms:
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:192222
     taxonomic_group: NCBITaxon:2
-    full_name: Campylobacter jejuni subsp. jejuni serotype O:2 (strain ATCC 700819 / NCTC 11168)
-    common_name_goc:
+    full_name: Campylobacter jejuni serotype O:2
+    common_name_goc: Campylobacter O:2
     common_name_uniprot:
     code_uniprot: CAMJE
     code_goc:
@@ -1501,8 +1501,8 @@ organisms:
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:301447
     taxonomic_group: NCBITaxon:2
-    full_name: "Streptococcus pyogenes serotype M1 (Strain: ATCC 700294 / SF370 / Serotype M1)"
-    common_name_goc:
+    full_name: Streptococcus pyogenes serotype M1
+    common_name_goc: Streptococcus
     common_name_uniprot:
     code_uniprot: STRP1
     code_goc:
@@ -1512,7 +1512,7 @@ organisms:
   - taxon_id: NCBITaxon:327105
     taxonomic_group: NCBITaxon:10239
     full_name: Human immunodeficiency virus type 1 group O (isolate ANT70)
-    common_name_goc:
+    common_name_goc: HIV-1
     common_name_uniprot:
     code_uniprot: HV1AN
     code_goc:
@@ -1522,7 +1522,7 @@ organisms:
   - taxon_id: NCBITaxon:333760
     taxonomic_group: NCBITaxon:10239
     full_name: Human papillomavirus type 16
-    common_name_goc:
+    common_name_goc:HPV
     common_name_uniprot:
     code_uniprot: HPV16
     code_goc:
@@ -1532,7 +1532,7 @@ organisms:
   - taxon_id: NCBITaxon:373153
     taxonomic_group: NCBITaxon:2
     full_name: Streptococcus pneumoniae serotype 2 (strain D39 / NCTC 7466)
-    common_name_goc:
+    common_name_goc: S. pneumoniae D39
     common_name_uniprot:
     code_uniprot: STRP2
     code_goc:
@@ -1542,7 +1542,7 @@ organisms:
   - taxon_id: NCBITaxon:419947
     taxonomic_group: NCBITaxon:2
     full_name: Mycobacterium tuberculosis (strain ATCC 25177 / H37Ra)
-    common_name_goc:
+    common_name_goc: Mycobacterium sp. H37Ra
     common_name_uniprot:
     code_uniprot: MYCTA
     code_goc:
@@ -1602,7 +1602,7 @@ organisms:
   - taxon_id: NCBITaxon:1125630
     taxonomic_group: NCBITaxon:2
     full_name: Klebsiella pneumoniae subsp. pneumoniae (strain HS11286)
-    common_name_goc:
+    common_name_goc: Bacillus pneumoniae
     common_name_uniprot:
     code_uniprot: KLEPH
     code_goc:
@@ -1611,8 +1611,8 @@ organisms:
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:573826
     taxonomic_group: NCBITaxon:4751
-    full_name: Candida dubliniensis (strain CD36 / ATCC MYA-646 / CBS 7987 / NCPF 3949 / NRRL Y-17841)
-    common_name_goc:
+    full_name: Candida dubliniensis
+    common_name_goc: C. dubliniensis
     common_name_uniprot:
     code_uniprot: CANDC
     code_goc:
