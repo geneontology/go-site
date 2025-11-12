@@ -1522,7 +1522,7 @@ organisms:
   - taxon_id: NCBITaxon:333760
     taxonomic_group: NCBITaxon:10239
     full_name: Human papillomavirus type 16
-    common_name_goc:HPV
+    common_name_goc: HPV
     common_name_uniprot:
     code_uniprot: HPV16
     code_goc:
