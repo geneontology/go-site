@@ -43,6 +43,9 @@ GDB,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curatio
 GeneDB (EuPathDB),,,,,
 ° GeneDB,@uliboehme, Ulrike Boehme @uliboehme,Curation,< ! > In-house < ! >,Plasmodium curator | TriTryp
 ° GeneDB,,F.Silva-Franco F.Silva-Franco at liverpool.ac.uk,Curation,< ! > In-house < ! >,TBRU curator
+GlyGen,,,,,
+° GlyGen,@mtiemeyer0919, Mike Tiemeyer @mtiemeyer0919,Curation| Domain expert,Noctua,glycobiology | neuroscience | data standardization
+° GlyGen,@ReneRanzinger, Rene Ranzinger @ReneRanzinger,Curation| Software developer,Noctua,glycobiology | bioinformatics | data standardization
 GO_Central,,,,,
 ° GO_Central,,Chris Mungall @cmungall,GO PI,,GO PI | All things technical and ontology-related
 ° GO_Central,,Paul Thomas @thomaspd,GO PI,PAINT | Noctua,Ontology | Phylogenetics | PAINT|Panther
