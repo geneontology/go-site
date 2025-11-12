@@ -4406,7 +4406,7 @@
       go:
         allow-edit: true
   groups:
-    - ''
+    - 'https://www.glygen.org'
   nickname: 'Rene Ranzinger'
   organization: GlyGen
   uri: 'https://orcid.org/0000-0003-3147-448X'
@@ -4418,7 +4418,8 @@
       go:
         allow-edit: true
   groups:
-    - ''
+    - 'https://www.glygen.org'
   nickname: 'Mike Tiemeyer'
   organization: GlyGen
   uri: 'https://orcid.org/0000-0002-8704-9143'
+-  
