@@ -566,3 +566,9 @@
   id: https://holthuis-lab-uos.de
   shorthand: UOS_MCB
   parent_group: GOC
+-
+  label: 'GlyGen'
+  id: https://www.glygen.org
+  shorthand: GlyGen
+  parent_group: GOC
+-
