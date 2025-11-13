@@ -233,7 +233,7 @@ eco_usage_constraints:
       - entity_type: *rna
   - eco_id: ECO:0000245
     go_evidence: RCA
-    allowed_reference: PMID:[0-9]+
+    allowed_reference: (GO_REF:0000123$|PMID:[0-9]+)
     with_presence: optional
     with_structure: simple
     with_entities:
