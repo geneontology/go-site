@@ -192,7 +192,7 @@ def main():
 
             ## Create the new object that we want.
             s3bucket = s3.Bucket(bucket)
-            multipart_upload(filename, s3bucket, s3path, content_type=mime, metadata=tags, policy="public-read")
+            multipart_upload(filename, s3bucket, s3path, content_type=mime, metadata=tags)
 
             # newobj = s3.Object(args.bucket, s3path)
             # outfile = open(filename, 'rb')
