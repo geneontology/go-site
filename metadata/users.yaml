@@ -4422,3 +4422,15 @@
   nickname: 'Mike Tiemeyer'
   organization: GlyGen
   uri: 'https://orcid.org/0000-0002-8704-9143'
+-
+  accounts:
+    github: emilyann-RB
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.mcmaster.ca'
+  nickname: 'Emily Bordeleau '
+  organization: McM
+  uri: 'https://orcid.org/0009-0008-9725-6614'
