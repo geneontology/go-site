@@ -571,3 +571,8 @@
   id: https://www.glygen.org
   shorthand: GlyGen
   parent_group: GOC
+-
+  label: 'McMaster University'
+  id: https://www.mcmaster.ca
+  shorthand: McM
+  parent_group: GOC
