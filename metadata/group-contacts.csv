@@ -116,7 +116,8 @@ PseudoCAP,,,,,
 Reactome,,,,,
 ° Reactome,@deustp01,Peter D'Eustachio @deustp01,Curation 6 Reactome mappings,< ! > In-house < ! >,
 ° Reactome,,Adam Wright @adamjohnwright,Technical,,
-Rfam,@blakesweeney,Blake Sweeney @blakesweeney,Rfam Mappings,< ! > In-house < ! >,
+Rfam,@afg1,Andrew Green @afg1,Rfam Mappings,< ! > In-house < ! >,
+Rfam,@pmb59,Pedro Madrigal @pmb59,Rfam Mappings,< ! > In-house < ! >,
 RGD,,,,,
 ° RGD,,Mary Kaldunski @mlkaldunski,Curation,In-house,curation | annotation | physiology
 ° RGD,,Jennifer Smith @jrsjrs,Pipeline and data,In-house,Project Manager| pipeline and data
@@ -124,11 +125,11 @@ RGD,,,,,
 ° RGD,,Shur-Jen Wang @shurjenw,Curation,In-house,GO | disease | phenotype
 RHEA,,,,,
 ° RHEA,,Kristian Axelson @kaxelsen,RHEA development,,RHEA and Swiss-Prot curator
-° RHEA,,Anne Morgat @amorgat,RHEA development,,
 ° RHEA,,Arnaud Kerhornou @arnaudxk,Pipeline and data,,Swiss-Prot & Rhea developer
 RNA Central,,,,,
 ° RNAcentral,,Alex Bateman,Curation,< ! > In-house < ! >,PI
-° RNAcentral,@blakesweeney, Blake Sweeny @blakesweeney,Curation,< ! > In-house < ! >,
+° RNAcentral,@afg1, Andrew Green @afg1,Curation/RNA Central mappings,< ! > In-house < ! >,
+° RNAcentral,@pmb59, Pedro Madrigal @pmb59,Curation/RNA Central mappings,< ! > In-house < ! >,
 Roslin_Institute,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curation (inactive),<P2GO,no contact person
 SGD,,,,,
 ° SGD,,Stacia Engel @srengel,Curation,Noctua,
