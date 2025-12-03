@@ -44,8 +44,7 @@ datasets:
    submitter: mgi
    compression: gzip
    #source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gpi/MOUSE_10090_UP000000589.gpi.gz
-   #source: http://www.informatics.jax.org/downloads/reports/mgi.gpi.gz
-   source: https://go-public.s3.us-east-1.amazonaws.com/files/GOC_mgi.gpi.gz
+   source: https://www.informatics.jax.org/downloads/reports/mgi.gpi.gz
    entity_type:
    status: active
    species_code: Mmus
