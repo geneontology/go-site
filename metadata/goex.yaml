@@ -1389,16 +1389,6 @@ organisms:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000000579
     mod_id_space: UniProtKB
-  - taxon_id: NCBITaxon:83334
-    taxonomic_group: NCBITaxon:2
-    full_name: Escherichia coli O157:H7
-    common_name_goc: E. coli O157:H7
-    common_name_uniprot:
-    code_uniprot: E. coli ECO57
-    code_goc:
-    group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000000558
-    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:93061
     taxonomic_group: NCBITaxon:2
     full_name: Staphylococcus aureus (strain NCTC 8325 / PS 47)
