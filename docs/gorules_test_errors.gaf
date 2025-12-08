@@ -146,7 +146,7 @@ TriTrypDB	Tb11.02.5420b	Tb11.02.5420b	located_in	GO:0016021	GO_REF:0000002	ISO	G
 ! FAILS GORULE:0000020 - TEST 3 - obsolete term in 'with' (column 8) with no replacement															
 MGI:1100518	Smad7	bla	involved_in	GO:0017015	MGI:MGI:3836072|PMID:18952608	IC	GO:0060389	P	GORULE_TEST:0000020-3	SMAD	protein_coding_gene	taxon:10090	20090211	GO_Central	
 ! FAILS GORULE:0000020 - TEST 4 - obsolete term in 'extension' (column 16) with no replacement															
-UniProtKB	O76187	darA	enables	GO:0004672	PMID:9802899	IDA	UniProtKB:P34149	F	GORULE_TEST:0000020-4 Darlin	darA	protein	taxon:44689	20100205	GO_Central	involved_in(GO:0090503)
+UniProtKB	O76187	darA	enables	GO:0004672	PMID:9802899	IDA		F	GORULE_TEST:0000020-4 Darlin	darA	protein	taxon:44689	20100205	GO_Central	involved_in(GO:0090503)
 ! FAILS GORULE:0000020 - TEST 5 - obsolete term in 'extension' (column 16) with a replacement															
 UniProtKB	O76187	darA	enables	GO:0004672	PMID:9802899	IDA		F	GORULE_TEST:0000020-5 Darlin	darA	protein	taxon:44689	20100205	GO_Central	involved_in(GO:0014067)
 ! FAILS GORULE:0000022 - TEST 1 - retracted paper															
