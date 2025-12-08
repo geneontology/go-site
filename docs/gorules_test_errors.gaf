@@ -99,10 +99,8 @@ GeneDB	PF3D7_0507500	SUB1	enables	GO:0006758	PMID:12764150	IEP		P	GORULE_TEST:00
 UniProtKB	A0A078CGE6	M3KE1	enables	GO:0004674	PMID:11489177	IPI	UniProtKB:A0A078FEZ9	F	GORULE_TEST:0000007-1		protein	taxon:3708	20150115	GO_Central	
 ! FAILS GORULE:0000008 - TEST 1 - GO:0005622 is in the subset gocheck_do_not_annotate															
 UniProtKB	Q9DGE2	mapk14a	is_active_in	GO:0005622	PMID:10995439	IDA		C	GORULE_TEST:0000008-1 Mitogen-activated protein kinase 14A	mapk14a|mapk14	protein	taxon:7955	20180129	GO_Central	
-! FAILS GORULE:0000008 - TEST 2 - GO:0007049 is in the subset gocheck_do_not_manually_annotate															
+! FAILS GORULE:0000008 - TEST 2 - GO:0007049 is in the subset gocheck_do_not_annotate															
 UniProtKB	Q9WVH3	Foxo4	involved_in	GO:0007049	PMID:12048180	IDA		P	GORULE_TEST:0000008-2 Forkhead box protein O4	Foxo4|Afx|Afx1	protein	taxon:10090	20110425	GO_Central	
-! FAILS GORULE:0000008 - TEST 3 - also fails GORULE:0000051 - GO:0005488 is in the subset gocheck_do_not_manually_annotate															
-UniProtKB	O76187	darA	enables	GO:0005488	PMID:9802899	IPI	UniProtKB:P34149	F	GORULE_TEST:0000008-3 Darlin	darA	protein	taxon:44689	20100205	GO_Central	
 ! FAILS GORULE:0000011 - TEST 1 - because the GO ID is not one of GO:0003674, GO:0008150 or GO:0005575														
 UniProtKB	Q4KA26	PFL_3807	is_active_in	GO:0016020	GO_REF:0000015	ND		C	GORULE_TEST:0000011-1 Putative membrane protein	PFL_3807	protein	taxon:220664	20090717	GO_Central	
 ! FAILS GORULE:0000011 - TEST 2 - fails because the evidence code is not ND, even if the GO ID one of GO:0003674, GO:0008150 or GO:0005575.														
