@@ -48,7 +48,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000042">GORULE:0000042 Qualifier: IKR evidence code requires a NOT qualifier</a>
  * <a href="#gorule0000043">GORULE:0000043 Check for valid combination of evidence code, with/from rules and GO_REF</a>
  * <a href="#gorule0000044">GORULE:0000044 DEPRECATED - Reference: check for invalid use of GO_REF:0000057 can only be used with terms that are descendants of GO:0006915 (apoptotic process)</a>
- * <a href="#gorule0000045">GORULE:0000045 With/from: Verify that the combination of evidence (ECO) codes conform to the rules in eco-usage-constraints.yaml</a>
+ * <a href="#gorule0000045">GORULE:0000045 DEPRECATED With/from: Verify that the combination of evidence (ECO) codes conform to the rules in eco-usage-constraints.yaml</a>
  * <a href="#gorule0000046">GORULE:0000046 The ‘with’ field (GAF column 8) must be the same as the gene product (GAF column 2) when annotating to ‘self-binding’ terms.</a>
  * <a href="#gorule0000047">GORULE:0000047 With/from: ChEBI IDs in With/from can only be used with terms that are descendants of GO:0005488 (binding)</a>
  * <a href="#gorule0000048">GORULE:0000048 DEPRECATED Gene products having ND annotations and other annotations in the same aspect should be reviewed</a>
@@ -812,7 +812,7 @@ Reference: check for invalid use of GO_REF:0000057 can only be used with terms t
 
 <a name="gorule0000045"/>
 
-## With/from: Verify that the combination of evidence (ECO) codes conform to the rules in eco-usage-constraints.yaml
+## DEPRECATED With/from: Verify that the combination of evidence (ECO) codes conform to the rules in eco-usage-constraints.yaml
 
  * id: [GORULE:0000045](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000045.md)
  * status: deprecated
