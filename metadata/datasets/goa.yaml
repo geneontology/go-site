@@ -383,7 +383,7 @@ datasets:
    taxa:
     - NCBITaxon:1
    exclude: true
- 
+
  -
    id: goa_virus_bacteria_taxon_290338.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_290338"
@@ -401,7 +401,7 @@ datasets:
    taxa:
     - NCBITaxon:290338
    exclude: true
- 
+
  -
    id: goa_virus_bacteria_taxon_574.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_574"
@@ -1041,8 +1041,8 @@ datasets:
    dataset: goa_virus_bacteria_taxon_575584
    submitter: goa
    compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gpi/ACIB2_575584_UP000005740.gpi.gz
-   source: https://mirror.geneontology.io/ACIB2_575584_UP000005740.gpi.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gpi/ACIB2_575584_UP000498640.gpi.gz
+   source: https://mirror.geneontology.io/ACIB2_575584_UP000498640.gpi.gz
    entity_type: all
    status: active
    species_code: ACIB2
