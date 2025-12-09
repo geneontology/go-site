@@ -383,7 +383,25 @@ datasets:
    taxa:
     - NCBITaxon:1
    exclude: true
-
+ 
+ -
+   id: goa_virus_bacteria_taxon_290338.gpi
+   label: "goa_virus_bacteria_gpi4neo taxon_290338"
+   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_290338"
+   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_290338.gpi.gz
+   type: gpi
+   dataset: goa_virus_bacteria_taxon_290338
+   submitter: goa
+   compression: gzip
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gpi/CITKO_290338_UP000008148.gaf.gz
+   source: https://mirror.geneontology.io/CITK8_290338_UP000270272.gpi.gz
+   entity_type: all
+   status: active
+   species_code: CITK8
+   taxa:
+    - NCBITaxon:290338
+   exclude: true
+ 
  -
    id: goa_virus_bacteria_taxon_574.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_574"
