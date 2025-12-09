@@ -355,7 +355,7 @@ organisms:
     common_name_goc: E. coli K12
     common_name_uniprot:
     code_uniprot: ECOLI
-    code_goc:  Ecol
+    code_goc: Ecol
     group: EcoCyc
     uniprot_proteome_id: uniprot.proteome:UP000000625
     mod_id_space: EcoCyc
@@ -915,7 +915,7 @@ organisms:
     common_name_goc: Rat
     common_name_uniprot: Rat
     code_uniprot: RAT
-    code_goc:  Rnor
+    code_goc: Rnor
     group: RGD
     uniprot_proteome_id: uniprot.proteome:UP000002494
     mod_id_space: RGD
@@ -932,10 +932,10 @@ organisms:
   - taxon_id: NCBITaxon:559292
     taxonomic_group: NCBITaxon:4751
     full_name: Saccharomyces cerevisiae
-    common_name_goc: Baker's yeast
-    common_name_uniprot: Baker's yeast
+    common_name_goc: "Baker's yeast"
+    common_name_uniprot: "Baker's yeast"
     code_uniprot: YEAST
-    code_goc:  Scer
+    code_goc: Scer
     group: SGD
     uniprot_proteome_id: uniprot.proteome:UP000002311
     mod_id_space: SGD
@@ -945,7 +945,7 @@ organisms:
     common_name_goc: Fission yeast
     common_name_uniprot: Fission yeast
     code_uniprot: SCHJY
-    code_goc:  Sjap
+    code_goc: Sjap
     group: JaponicusDB
     uniprot_proteome_id: uniprot.proteome:UP000001744
     mod_id_space: JaponicusDB
@@ -955,7 +955,7 @@ organisms:
     common_name_goc: Fission yeast
     common_name_uniprot: Fission yeast
     code_uniprot: SCHPO
-    code_goc:  Spom
+    code_goc: Spom
     group: PomBase
     uniprot_proteome_id: uniprot.proteome:UP000002485
     mod_id_space: PomBase

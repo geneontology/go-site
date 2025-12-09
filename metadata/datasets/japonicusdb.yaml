@@ -16,13 +16,12 @@ datasets:
    dataset: japonicusdb
    submitter: japonicusdb
    compression: gzip
-   #source: https://www.japonicusdb.org/data/annotations/Gene_ontology/gene_association.japonicusdb.gz
-   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gaf/SCHJY_4897_UP000001744.gaf.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gaf/SCHJY_402676_UP000001744.gaf.gz
    entity_type:
    status: active
    species_code: Sjap
    taxa:
-    - NCBITaxon:4897
+    - NCBITaxon:402676
  -
    id: japonicusdb.gpi
    label: "japonicusdb gpi file"
@@ -32,13 +31,12 @@ datasets:
    dataset: japonicusdb
    submitter: japonicusdb
    compression: gzip
-   #source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gpi/SCHJY_4897_UP000001744.gpi.gz
    source: https://www.japonicusdb.org/data/annotations/Gene_ontology/japonicusdb.gpi.gz
    entity_type:
    status: active
    species_code: Sjap
    taxa:
-    - NCBITaxon:4897
+    - NCBITaxon:402676
  -
    id: japonicusdb.gpad
    label: "japonicusdb gpad file"
@@ -48,10 +46,9 @@ datasets:
    dataset: japonicusdb
    submitter: japonicusdb
    compression: gzip
-   #source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gpad/SCHJY_4897_UP000001744.gpa.gz
    source: https://www.japonicusdb.org/data/annotations/Gene_ontology/japonicusdb.gpad.gz
    entity_type:
    status: active
    species_code: Sjap
    taxa:
-    - NCBITaxon:4897
+    - NCBITaxon:402676
