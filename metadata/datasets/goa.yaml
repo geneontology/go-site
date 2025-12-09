@@ -385,24 +385,6 @@ datasets:
    exclude: true
 
  -
-   id: goa_virus_bacteria_taxon_545.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_545"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_545"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_545.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_545
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gpi/CITKO_545_UP000270272.gpi.gz
-   source: https://mirror.geneontology.io/CITKO_545_UP000270272.gpi.gz
-   entity_type: all
-   status: active
-   species_code: CITKO
-   taxa:
-    - NCBITaxon:545
-   exclude: true
-
- -
    id: goa_virus_bacteria_taxon_574.gpi
    label: "goa_virus_bacteria_gpi4neo taxon_574"
    description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_574"
@@ -634,24 +616,6 @@ datasets:
    species_code: HAEIN
    taxa:
     - NCBITaxon:71421
-   exclude: true
-
- -
-   id: goa_virus_bacteria_taxon_83334.gpi
-   label: "goa_virus_bacteria_gpi4neo taxon_83334"
-   description: "GPI file for use in NEO for virus and bacteria annotation from EBI Gene Ontology Annotation Database taxon_83334"
-   url: https://current.geneontology.org/annotations/goa_virus_bacteria_taxon_83334.gpi.gz
-   type: gpi
-   dataset: goa_virus_bacteria_taxon_83334
-   submitter: goa
-   compression: gzip
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gpi/ECO57_83334_UP000000558.gpi.gz
-   source: https://mirror.geneontology.io/ECO57_83334_UP000000558.gpi.gz
-   entity_type: all
-   status: active
-   species_code: ECO57
-   taxa:
-    - NCBITaxon:83334
    exclude: true
 
  -
