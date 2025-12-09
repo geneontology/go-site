@@ -1399,6 +1399,16 @@ organisms:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000008816
     mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:83334
+    taxonomic_group: NCBITaxon:2
+    full_name: Escherichia coli O157:H7
+    common_name_goc: E. coli O157:H7
+    common_name_uniprot:
+    code_uniprot: ECO57
+    code_goc:
+    group: UniProt
+    uniprot_proteome_id: uniprot.proteome:UP000000558
+    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:99287
     taxonomic_group: NCBITaxon:2
     full_name: Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720)
