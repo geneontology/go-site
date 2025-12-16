@@ -6,7 +6,7 @@
   year: 1998
 - id: GO_REF:0000002
   title: Gene Ontology annotation through association of InterPro records with GO
-    terms.
+    terms
   description: |-
     InterPro (http://www.ebi.ac.uk/interpro/) is an integrated resource from the EBI of protein families, domains and sites which are combined from a number 
     of different protein signature databases, including CATH-Gene3D, CDD, HAMAP, NCBIfam, Panther, Pfam, PIRSF, PRINTS, ProSite, SMART, and SUPERFAMILY. Signatures describing the same protein 
@@ -19,7 +19,7 @@
     - GO_REF:0000014
     - GO_REF:0000016
     - GO_REF:0000017
-  authors: GO Central curators, 2024.
+  authors: GO Central curators, 2024
   external_accession:
     - MGI:2152098
     - J:72247
@@ -47,7 +47,7 @@
   is_obsolete: false
   year: 2001
 - id: GO_REF:0000004
-  title: Gene Ontology annotation based on UniProtKB keyword mapping.
+  title: Gene Ontology annotation based on UniProtKB keyword mapping
   description: |-
     Transitive assignments using UniProtKB keywords. The UniProtKB keyword
     controlled vocabulary has been created and used by the UniProt Knowledgebase
@@ -218,7 +218,7 @@
   is_obsolete: false
   year: 2003
 - id: GO_REF:0000015
-  title: Use of the ND evidence code for Gene Ontology (GO) terms.
+  title: Use of the ND evidence code for Gene Ontology (GO) terms
   description: |-
     Direct annotations to any of the three root terms 'molecular function; GO:0003674',
     'biological process; GO:0008150' or 'cellular component; GO:0005575' indicate
@@ -349,7 +349,7 @@
   year: 2005
 - id: GO_REF:0000023
   title: Gene Ontology annotation based on UniProtKB Subcellular Location vocabulary
-    mapping.
+    mapping
   description: |-
     Transitive assignment of GO terms based on the UniProtKB Subcellular Location
     vocabulary. UniProtKB Subcellular Location is a controlled vocabulary used to
@@ -377,7 +377,7 @@
   year: 2007
 - id: GO_REF:0000024
   title: Manual transfer of experimentally-verified manual GO annotation data to orthologs
-    by curator judgment of sequence similarity.
+    by curator judgment of sequence similarity
   description: |-
     Method for transferring manual annotations to an entry based on a curator's judgment
     of its similarity to a putative ortholog that has annotations that are supported
@@ -448,7 +448,7 @@
   year: 2007
 - id: GO_REF:0000026
   title: OBSOLETE Improving the representation of muscle biology in the biological
-    process and cellular component ontologies.
+    process and cellular component ontologies
   description: |-
     A meeting focused on the biology of skeletal and smooth muscle has been held on
     24-25 July 2007 at the University of Padua, Italy, as a collaboration with the
@@ -622,7 +622,7 @@
     of Biology, University of South Dakota; Martin Ringwald, Mouse Genome Informatics
     (MGI); Erik Segerdell, Oregon Health Sciences University; Ceri Van Slyke, Zebrafish
     Information Network (ZFIN); Monte Westerfield, Zebrafish Information Network (ZFIN)
-    and Institute of Neuroscience, University of Oregon.
+    and Institute of Neuroscience, University of Oregon
   year: 2010
 - id: GO_REF:0000035
   title: OBSOLETE Automatic transfer of experimentally verified manual GO annotation
@@ -665,7 +665,7 @@
   year: 2011
 - id: GO_REF:0000037
   title: OBSOLETE Gene Ontology annotation based on manual assignment of UniProtKB
-    keywords in UniProtKB/Swiss-Prot entries.
+    keywords in UniProtKB/Swiss-Prot entries
   description: |-
     Transitive assignments using UniProtKB keywords. The UniProtKB keyword controlled
     vocabulary has been created and used by the UniProt Knowledgebase (UniProtKB)
@@ -692,7 +692,7 @@
     - ECO:0000501
 - id: GO_REF:0000038
   title: OBSOLETE Gene Ontology annotation based on automatic assignment of UniProtKB
-    keywords in UniProtKB/TrEMBL entries.
+    keywords in UniProtKB/TrEMBL entries
   description: |-
     Transitive assignments using UniProtKB keywords. The UniProtKB keyword controlled
     vocabulary has been created and used by the UniProt Knowledgebase (UniProtKB)
@@ -719,7 +719,7 @@
   year: 2011
 - id: GO_REF:0000039
   title: OBSOLETE Gene Ontology annotation based on the manual assignment of UniProtKB
-    Subcellular Location terms in UniProtKB/Swiss-Prot entries.
+    Subcellular Location terms in UniProtKB/Swiss-Prot entries
   description: |-
     Transitive assignment of GO terms based on the UniProtKB Subcellular Location
     vocabulary. UniProtKB Subcellular Location is a controlled vocabulary used to
@@ -741,7 +741,7 @@
   year: 2011
 - id: GO_REF:0000040
   title: OBSOLETE Gene Ontology annotation based on the automatic assignment of UniProtKB
-    Subcellular Location terms in UniProtKB/TrEMBL entries.
+    Subcellular Location terms in UniProtKB/TrEMBL entries
   description: |-
     Transitive assignment of GO terms based on the UniProtKB Subcellular Location
     vocabulary. UniProtKB Subcellular Location is a controlled vocabulary used to
@@ -763,7 +763,7 @@
   is_obsolete: true
   year: 2011
 - id: GO_REF:0000041
-  title: Gene Ontology annotation based on UniPathway vocabulary mapping.
+  title: Gene Ontology annotation based on UniPathway vocabulary mapping
   description: |-
     Transitive assignment of GO terms based on the UniPathway pathway vocabulary.
     UniPathway is not maintained anymore. It was a manually curated resource of enzyme-catalyzed and spontaneous
@@ -777,7 +777,7 @@
   year: 2012
 - id: GO_REF:0000042
   title: OBSOLETE Gene Ontology annotation through association of InterPro records
-    with GO terms, accompanied by conservative changes to GO terms applied by UniProt.
+    with GO terms, accompanied by conservative changes to GO terms applied by UniProt
   description: |-
     Transitive assignment of GO terms based on InterPro classification. For any database
     entry (representing a protein or protein-coding gene) that has been annotated
@@ -823,7 +823,7 @@
 - id: GO_REF:0000044
   title: Gene Ontology annotation based on UniProtKB/Swiss-Prot Subcellular Location
     vocabulary mapping, accompanied by conservative changes to GO terms applied by
-    UniProt.
+    UniProt
   description: |-
     Transitive assignment of GO terms based on the UniProtKB/Swiss-Prot Subcellular
     Location vocabulary. UniProtKB Subcellular Location is a controlled vocabulary
@@ -847,7 +847,7 @@
   year: 2012
 - id: GO_REF:0000045
   title: OBSOLETE Gene Ontology annotation based on UniProtKB/TrEMBL entries keyword
-    mapping, accompanied by conservative changes to GO terms applied by UniProt.
+    mapping, accompanied by conservative changes to GO terms applied by UniProt
   description: |-
     Transitive assignments using UniProtKB/TrEMBL keywords. The UniProtKB keyword
     controlled vocabulary has been created and used by the UniProt Knowledgebase (UniProtKB)
@@ -883,7 +883,7 @@
 - id: GO_REF:0000046
   title: OBSOLETE Gene Ontology annotation based on UniProtKB/TrEMBL Subcellular Location
     vocabulary mapping, accompanied by conservative changes to GO terms applied by
-    UniProt.
+    UniProt
   description: |-
     Transitive assignment of GO terms based on the UniProtKB/TrEMBL Subcellular Location
     vocabulary. UniProtKB Subcellular Location is a controlled vocabulary used to
@@ -911,7 +911,7 @@
   is_obsolete: true
   year: 2012
 - id: GO_REF:0000047
-  title: Gene Ontology annotation based on absence of key sequence residues.
+  title: Gene Ontology annotation based on absence of key sequence residues
   description: |-
     This describes a method for supplying a NOT-qualified, IKR-evidenced GO annotation
     to a gene product, when general sequence homology considerations would suggest
@@ -1055,7 +1055,7 @@
   is_obsolete: true
 - id: GO_REF:0000054
   title: Gene Ontology annotation based on curation of intracellular localizations
-    of expressed fusion proteins in living cells.
+    of expressed fusion proteins in living cells
   description: |-
     LIFEdb is a database that was created to manage the experimental data
     produced by the German Cancer Research Institute (DKFZ) and its collaborators,
@@ -1081,7 +1081,7 @@
   authors: LIFEdb
   year: 2013
 - id: GO_REF:0000055
-  title: OBSOLETE Gene Ontology Cellular Component annotation based on cellular fractionation.
+  title: OBSOLETE Gene Ontology Cellular Component annotation based on cellular fractionation
   description: |-
     Assignment of GO Cellular Component terms based on experimental evidence of cellular
     localization from Differential Detergent Fractionation (DDF). Cellular proteins
@@ -1094,7 +1094,7 @@
   is_obsolete: true
 - id: GO_REF:0000056
   title: OBSOLETE Taxon constraints to detect inconsistencies in annotation and ontology
-    structure.
+    structure
   description: |-
     GO is intended to cover the full range of species, therefore GO terms are defined
     to be taxon neutral, avoiding reliance on taxon information for full definition
@@ -1529,7 +1529,7 @@
   year: 2014
 - id: GO_REF:0000096
   title: Automated transfer of experimentally-verified manual GO annotation data to 
-    mouse-rat orthologs.
+    mouse-rat orthologs
   description: |-
     The Alliance of Genome Resources (https://www.alliancegenome.org/) has procedures in 
     place to establish orthology relationships between genes. The experimentally-based 
@@ -1654,7 +1654,7 @@
   year: 2015
 - id: GO_REF:0000104
   title: Electronic Gene Ontology annotations created by transferring manual GO annotations
-    between related proteins based on shared sequence features.
+    between related proteins based on shared sequence features
   description: |-
     GO terms are manually assigned to each rule in UniRule. These rules are prepared
     manually by UniProt curators based on the annotations present in reviewed UniProtKB/Swiss-Prot
@@ -1677,7 +1677,7 @@
   year: 2015
 - id: GO_REF:0000105
   title: Gene Ontology annotation of transfer RNAs based on tRNAscan-SE analysis of
-    the Drosophila melanogaster genome (2002).
+    the Drosophila melanogaster genome (2002)
   description: |-
     Gene Ontology annotation based on predicted cytoplasmic tRNAs using tRNAscan-SE
     analysis (doi: 10.1093/nar/25.5.0955) of the Drosophila melanogaster genome (2002).
@@ -1689,7 +1689,7 @@
     - FB:FBrf0145624
   year: 2016
 - id: GO_REF:0000106
-  title: OBSOLETE Gene Ontology annotation based on protein sequence records.
+  title: OBSOLETE Gene Ontology annotation based on protein sequence records
   description: |-
     Between 1986 and 2005 GO annotations were made by FlyBase curators based on information
     in UniProtKB/Swiss-Prot protein sequence records. We no longer add GO annotations
@@ -1700,7 +1700,7 @@
   year: 2016
 - id: GO_REF:0000107
   title: Automatic transfer of experimentally verified manual GO annotation data to
-    orthologs using Ensembl Compara.
+    orthologs using Ensembl Compara
   description: |-
     GO terms from a source species are projected onto one or more target species based
     on gene orthology obtained from Ensembl Compara. One-to-one, one-to-many and many-to-many
@@ -1720,7 +1720,7 @@
   year: 2016
 - id: GO_REF:0000108
   title: Automatic assignment of GO terms using logical inference, based on on inter-ontology
-    links.
+    links
   description: |-
     GO terms are automatically assigned based on inter-ontology links to generate
     inferred annotations. Annotations from Molecular Function to Biological Process
@@ -1753,7 +1753,7 @@
   year: 2016
 - id: GO_REF:0000110
   title: Gene Ontology annotation of Drosophila melanogaster nuclear genes encoding
-    proteins targeted to the mitochondrion.
+    proteins targeted to the mitochondrion
   description: |-
     Gene Ontology annotation of Drosophila melanogaster nuclear genes encoding proteins
     targeted to the mitochondrion based on analysis by MitoDrome (http://mitodrome.ba.itb.cnr.it/)
@@ -1893,7 +1893,7 @@
     - FB:FBrf0253064
   year: 2018
 - id: GO_REF:0000116
-  title: Automatic Gene Ontology annotation based on Rhea mapping.
+  title: Automatic Gene Ontology annotation based on Rhea mapping
   description: |-
     Rhea (https://www.rhea-db.org/, PMID:30272209) is an expert-curated knowledgebase
     of chemical and transport reactions of biological interest - and the standard
@@ -1949,7 +1949,7 @@
   is_obsolete: false
 - id: GO_REF:0000119
   title: Automated transfer of experimentally-verified manual GO annotation data to 
-    mouse-human orthologs.
+    mouse-human orthologs
   description: |-
     The Alliance of Genome Resources (https://www.alliancegenome.org/) has procedures in 
     place to establish orthology relationships between genes. The experimentally-based 
@@ -1963,7 +1963,7 @@
     - J:164563
   is_obsolete: false
 - id: GO_REF:0000120
-  title: Combined Automated Annotation using Multiple IEA Methods.
+  title: Combined Automated Annotation using Multiple IEA Methods
   description: |-
     An automated process that integrates identical annotations from multiple electronic pipelines,
     including UniRule(GO_REF:0000104), ARBA(GO_REF:0000117), InterPro2GO(GO_REF:0000002), 
@@ -1977,7 +1977,7 @@
   year: 2024
   is_obsolete: false
 - id: GO_REF:0000121
-  title: RGD ISO annotations to rat from other mammalian species.
+  title: RGD ISO annotations to rat from other mammalian species
   description: |-
     RGD (https://rgd.mcw.edu/) imports high quality ortholog calls from the Human Gene 
     Nomenclature Committee's HCOP tool and the Alliance of Genome Resources for multiple mammalian species 
