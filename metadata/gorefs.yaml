@@ -43,6 +43,7 @@
   authors: GO Central curators, 2024
   external_accession:
     - ZFIN:ZDB-PUB-031118-3
+    - SGD_REF:S000124037
   citation: PMID:31688925
   is_obsolete: false
   year: 2001
@@ -599,7 +600,7 @@
   authors: Marc Feuermann, Huaiyu Mi, Pascale Gaudet, Dustin Ebert, Anushya Muruganujan,
     Paul Thomas
   external_accession:
-    - SGD_REF:S000146947
+    - SGD_REF:S000185201
     - TAIR:Communication:501741973
     - MGI:MGI:4459044
     - J:161428
@@ -774,6 +775,7 @@
   external_accession:
     - ZFIN:ZDB-PUB-130131-1
     - J:342601
+    - SGD_REF:S000150560
   year: 2012
 - id: GO_REF:0000042
   title: OBSOLETE Gene Ontology annotation through association of InterPro records
@@ -844,6 +846,7 @@
     - TAIR:AnalysisReference:50175724
     - J:342604
     - ZFIN:ZDB-PUB-120306-4
+    - SGD_REF:S000250403
   year: 2012
 - id: GO_REF:0000045
   title: OBSOLETE Gene Ontology annotation based on UniProtKB/TrEMBL entries keyword
@@ -1674,6 +1677,7 @@
   external_accession:
     - ZFIN:ZDB-PUB-170525-1
     - J:342612
+    - SGD_REF:S000181514
   year: 2015
 - id: GO_REF:0000105
   title: Gene Ontology annotation of transfer RNAs based on tRNAscan-SE analysis of
@@ -1734,6 +1738,7 @@
   authors: GOA curators
   external_accession:
     - J:346132
+    - SGD_REF:S000204515
   year: 2016
 - id: GO_REF:0000109
   title: Gene Ontology annotation based on curation of genome-wide subcellular localisation
@@ -1868,6 +1873,7 @@
     (EBI), Hinxton, Cambridgeshire, United Kingdom
   external_accession:
     - J:342607
+    - SGD_REF:S000250427
   year: 2018
 - id: GO_REF:0000115
   title: Automatic Gene Ontology annotation of non-coding RNA sequences through association
@@ -1908,6 +1914,7 @@
   external_accession:
     - J:342608
     - ZFIN:ZDB-PUB-221108-20
+    - SGD_REF:S000309092
   citation: PMID:30272209
   year: 2020
 - id: GO_REF:0000117
@@ -1931,6 +1938,7 @@
   external_accession:
     - J:342609
     - ZFIN:ZDB-PUB-221108-21
+    - SGD_REF:S000315490
   year: 2021
 - id: GO_REF:0000118
   title: TreeGrafter-generated GO annotations
