@@ -418,6 +418,7 @@
     - dictyBase_REF:9
     - J:342587
     - FB:FBrf0255270
+    - SGD_REF:S000250423
     - ZFIN:ZDB-PUB-110105-1
     - ZFIN:ZDB-PUB-040216-1
     - ZFIN:ZDB-PUB-071010-1
@@ -1897,6 +1898,7 @@
     Cambridgeshire, United Kingdom
   external_accession:
     - FB:FBrf0253064
+    - SGD_REF:S000246363
   year: 2018
 - id: GO_REF:0000116
   title: Automatic Gene Ontology annotation based on Rhea mapping
