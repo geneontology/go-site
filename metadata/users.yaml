@@ -813,6 +813,18 @@
   uri: 'https://orcid.org/0000-0001-6330-7526'
   xref: 'GOC:vw'
 -
+  accounts:
+    github: PolinaEka
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://www.pombase.org'
+  nickname: 'Polina Eka'
+  organization: PomBase
+  uri: 'https://orcid.org/0009-0001-2744-0829'
+-
   nickname: 'Felipe Zapata'
   organization: PO
   uri: 'GOC:fz'
@@ -2348,6 +2360,18 @@
   organization: SynGO
   uri: 'https://orcid.org/0000-0003-0593-3443'
   xref: 'GOC:pvn'
+-
+  accounts:
+    github: jobberkhout
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://syngo.vu.nl'
+  nickname: 'Job Berkhout'
+  organization: SynGO
+  uri: 'https://orcid.org/0009-0005-9047-3868'
 -
   accounts:
     github: balhoff
