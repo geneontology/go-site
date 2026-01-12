@@ -108,6 +108,7 @@ PomBase,,,,,
 ° PomBase,@valwood,ValWood @valwood,Curation,< ! > In-house < ! > | Noctua,Annotation Review
 ° PomBase,,Pascal Carme @PCarme,Curation,< ! > In-house < ! > | Noctua,curator
 ° PomBase,,Kim Rutherford @kimrutherford,Technical,,
+° PomBase,,Polina Ekaette @@PolinaEka,Curation,,DNA repair | fission yeast
 Protein Ontology,,Darren Natale @nataled,PRO development,,
 PseudoCAP,,,,,
 ° PseudoCAP,@glwinsor,Geoff Winsor @glwinsor,Curation,< ! > In-house < ! >,
@@ -137,6 +138,7 @@ SGD,,,,,
 ° SGD,@edwong57,Edith Wong @edwong57,Curation,Noctua,Contact for Annotation Review
 SGN,@lukasmueller,Lukas Mueller @lukasmueller,Curation,< ! > In-house < ! >,
 SynGO,@ftwkoopmans,Frank Koopmans @ftwkoopmans,Curation,< ! > In-house < ! >,
+° SynGO,@jobberkhout,Job Berkhout @jobberkhout,Curation,< ! > In-house < ! >,Neural Tube Closure | Synapse Biology
 SynGO-UCL,@RLovering, Ruth Lovering @RLovering,Curation,<P2GO, 
 SYSCILIA_CCNET,@krchristie,Karen Christie @krchristie,Curation,<P2GO?,
 TAIR,,,,,
