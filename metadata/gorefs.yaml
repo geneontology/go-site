@@ -1786,6 +1786,7 @@
   external_accession:
     - FB:FBrf0233689
     - J:342606
+    - SGD_REF:S000246362
   year: 2016
 - id: GO_REF:0000112
   title: OBSOLETE Gene Ontology annotation by CACAO biocurators
