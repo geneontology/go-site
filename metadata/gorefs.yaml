@@ -1,7 +1,7 @@
 - id: GO_REF:0000001
   title: OBSOLETE GO Consortium unpublished data
   description: No abstract available.
-  authors: GO curators
+  authors: GO Curators
   is_obsolete: true
   year: 1998
 - id: GO_REF:0000002
@@ -19,7 +19,7 @@
     - GO_REF:0000014
     - GO_REF:0000016
     - GO_REF:0000017
-  authors: GO Central curators, 2024
+  authors: GO Central Curators, 2024
   external_accession:
     - MGI:2152098
     - J:72247
@@ -40,7 +40,7 @@
     http://current.geneontology.org/ontology/external2go/ec2go.
   alt_id:
     - GO_REF:0000005
-  authors: GO Central curators, 2024
+  authors: GO Central Curators, 2024
   external_accession:
     - ZFIN:ZDB-PUB-031118-3
     - SGD_REF:S000124037
@@ -73,7 +73,7 @@
   alt_id:
     - GO_REF:0000009
     - GO_REF:0000013
-  authors: GOA curators
+  authors: GOA Curators
   external_accession:
     - MGI:1354194
     - J:60000
@@ -90,7 +90,7 @@
     based on MLC textual descriptions of genes that could not be traced to the primary
     literature. Details of this strategy can be found in Hill et al, Genomics (2001)
     74:121-128.
-  authors: Mouse Genome Informatics scientific curators
+  authors: Mouse Genome Informatics Scientific Curators
   citation: PMID:11374909
   external_accession:
     - MGI:2152097
@@ -110,7 +110,7 @@
     be adopted by MGI. GO terms that are assigned to the ortholog of the mouse gene
     computationally (i.e. IEA), will not be transferred to the mouse ortholog. The
     evidence code represented by this citation is Inferred by Sequence Orthology (ISO).
-  authors: Mouse Genome Informatics scientific curators
+  authors: Mouse Genome Informatics Scientific Curators
   external_accession:
     - MGI:2154458
     - J:73065
@@ -125,7 +125,7 @@
     molecular functions, biological processes or cellular components. GO annotations
     were assigned to these genes in groups. Details of this strategy can be found
     in Hill et al., Genomics (2001) 74:121-128.
-  authors: Mouse Genome Informatics scientific curators
+  authors: Mouse Genome Informatics Scientific Curators
   citation: PMID:11374909
   external_accession:
     - MGI:1347124
@@ -172,7 +172,7 @@
     in which the query protein resides and in light of any other information that
     might be available about the query protein. After carefully considering all of
     these issues the annotator makes an annotation.
-  authors: Michelle Gwinn, TIGR curators
+  authors: Michelle Gwinn, TIGR Curators
   is_obsolete: false
   year: 2003
 - id: GO_REF:0000012
@@ -215,7 +215,7 @@
     than others and therefore tolerances for percent identity may have to be adjusted.
     Finally, the alignment must be considered in the context of what else is known
     about the query protein and the organism as a whole.
-  authors: Michelle Gwinn, TIGR curators
+  authors: Michelle Gwinn, TIGR Curators
   is_obsolete: false
   year: 2003
 - id: GO_REF:0000015
@@ -254,7 +254,7 @@
     and attached to the corresponding gene product in dictyBase. The proteins from
     which the annotations are derived are displayed in the 'Evidence' column on the
     Gene Ontology evidence and references page.
-  authors: DictyBase curators
+  authors: DictyBase Curators
   external_accession:
     - dictyBase_REF:10158
   is_obsolete: true
@@ -271,7 +271,7 @@
     the evidence code, inferred from electronic annotation, 'IEA'. The Ensembl protein
     identifier of the annotation source is indicated in the 'With' column of the GOA
     association file.
-  authors: Ensembl curators, GOA curators
+  authors: Ensembl Curators, GOA Curators
   is_obsolete: true
   year: 2006
 - id: GO_REF:0000020
@@ -292,7 +292,7 @@
     (http://sourceforge.net/projects/geneontology/). HAMAP is a project based at the Swiss
     Institute of Bioinformatics (Gattiker et al. 2003, Comp. Biol and Chem. 27: 49-58).
     For further information, please see http://www.expasy.org/sprot/hamap/.
-  authors: Swiss Institute of Bioinformatics (SIB) curators, GOA curators
+  authors: Swiss Institute of Bioinformatics (SIB) Curators, GOA Curators
   is_obsolete: true
   year: 2006
 - id: GO_REF:0000021
@@ -371,7 +371,7 @@
     will reflect the most correct correspondence. The translation table between GO
     terms and UniProtKB Subcellular Location term is maintained by the UniProt-GOA
     team and available at http://www.geneontology.org/external2go/spsl2go.
-  authors: GOA curators, UniProt curators
+  authors: GOA Curators, UniProt Curators
   external_accession:
     - SGD_REF:S000125578
   is_obsolete: true
@@ -413,7 +413,7 @@
     how ISS annotations are made to protein isoforms, can be found at:
     https://wiki.geneontology.org/Inferred_from_Sequence_or_structural_Similarity_(ISS).
   authors: AgBase, BHF-UCL, Parkinson's UK-UCL, dictyBase, HGNC, Roslin Institute,
-    FlyBase and UniProtKB curators.
+    FlyBase and UniProtKB Curators
   external_accession:
     - dictyBase_REF:9
     - J:342587
@@ -445,7 +445,7 @@
     in another species, then the annotation should be made. This type of evidence
     is inferred from the context of the gene in an operon, and therefore the evidence
     code is IGC "inferred from genomic context."
-  authors: Michelle Gwinn, TIGR curators
+  authors: Michelle Gwinn, TIGR Curators
   is_obsolete: true
   year: 2007
 - id: GO_REF:0000026
@@ -487,7 +487,7 @@
     from NCBI was used (http://www.ncbi.nih.gov/blast) to query the non-redundant
     (NR) database. Hits are considered to be significant if the E-value is at or less
     than 10^-4. All other parameters are default according to http://www.ncbi.nih.gov/blast.
-  authors: PAMGO_GAT curators
+  authors: PAMGO_GAT Curators
   year: 2007
   is_obsolete: false
 - id: GO_REF:0000028
@@ -518,7 +518,7 @@
     and matches to InterPro, pfam, and COG etc. IEA was assigned to an annotation
     if its function assignment based on computational work, and no manual review was
     done.
-  authors: PAMGO_MGG curators
+  authors: PAMGO_MGG Curators
   is_obsolete: true
   year: 2008
 - id: GO_REF:0000029
@@ -532,7 +532,7 @@
     the corresponding publicly-available, manually curated UniProtKB entry. Such GO
     annotations were submitted by the GOA-UniProt group from 2001, but this annotation
     practice was discontinued in 2007.
-  authors: GOA-UniProt curators
+  authors: GOA-UniProt Curators
   is_obsolete: true
   year: 2007
 - id: GO_REF:0000030
@@ -642,7 +642,7 @@
     in the 'With' column of the GOA association file.
 
     Duplicate of GO_REF:0000107.
-  authors: Ensembl, GRAMENE, GOA curators
+  authors: Ensembl, GRAMENE, GOA Curators
   is_obsolete: true
   year: 2011
 - id: GO_REF:0000036
@@ -936,7 +936,7 @@
     on the GOC website provides more details on the
     <a href="http://www.geneontology.org/GO.evidence.shtml#ikr">correct use of the
     IKR evidence code</a>.
-  authors: GO curators
+  authors: GO Curators
   external_accession:
     - FB:FBrf0254415
   year: 2012
@@ -989,7 +989,7 @@
     the transfer of GO terms use the 'ISM' evidence code and include an accession
     for the model from which the annotation was projected in the 'with' field (column
     8).
-  authors: PomBase curators
+  authors: PomBase Curators
   external_accession:
     - FB:FBrf0231277
   year: 2012
@@ -1002,7 +1002,7 @@
     files wherever another annotation exists that is equally or more specific, and
     supported by experimental or manually evaluated comparative evidence (such as
     ISS and its subtypes). Formerly GOC:pombekw2GO.
-  authors: PomBase curators
+  authors: PomBase Curators
   is_obsolete: false
   year: 2012
 - id: GO_REF:0000052
@@ -1054,7 +1054,7 @@
     links which are automatically added to the ontology with the "is_inferred" tag
     set. The pipeline generates a report describing which links have changed as a
     part of this process.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
   is_obsolete: true
 - id: GO_REF:0000054
@@ -1093,7 +1093,7 @@
     localization is based upon identification of proteins in different fractions and
     analysis of their predicted transmembrane domains. Proteins are assigned GO CC
     based upon a manually reviewed DDF2GO mapping file.
-  authors: AgBase biocurators
+  authors: AgBase Biocurators
   year: 2013
   is_obsolete: true
 - id: GO_REF:0000056
@@ -1129,7 +1129,7 @@
     X" (regulation), "GO:0065007 and 'negatively_regulates' some X" (negative regulation),
     and "GO:0065007 and 'positively_regulates' some X" (positive regulation), where
     X is a biological process.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000059
   title: Representation of regulation in the Gene Ontology (molecular function)
@@ -1140,7 +1140,7 @@
     X" (regulation), "GO:0065007 and 'negatively_regulates' some X" (negative regulation),
     and "GO:0065007 and 'positively_regulates' some X" (positive regulation), where
     X is a molecular function.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000060
   title: Representation of processes involved in other process in the Gene Ontology
@@ -1148,7 +1148,7 @@
     We have created a standard template for classes describing processes involved
     in other processes. The underlying equivalence axiom template is "P and 'part_of'
     some W", where P and W are biological processes.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000061
   title: Representation of a molecular function involved in a biological process in
@@ -1158,7 +1158,7 @@
     involved in other biological processes. The underlying equivalence axiom template
     is "P and 'part_of' some W", where P is a molecular function and W is a biological
     processes.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000062
   title: Representation of processes occurring in parts of the cell in the Gene Ontology
@@ -1166,7 +1166,7 @@
     We have created a standard template for classes describing processes occurring
     in parts of the cell. The underlying equivalence axiom template is "P and 'occurs
     in' some C", where P is a biological process and C is a cellular component.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000063
   title: Representation of processes regulated by other regulating processes in the
@@ -1176,7 +1176,7 @@
     by other regulating processes. The underlying equivalence axiom template is "R
     and 'results_in' some P", where R is a biological process and P is a regulation
     of biological process subclass.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000064
   title: Representation of cell components as part of other cell components in the
@@ -1185,7 +1185,7 @@
     We have created a standard template for classes describing cell components as
     part of other cell components. The underlying equivalence axiom template is "P
     and 'part_of' some W", where P and W are cell components.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000065
   title: Representation of transport of a chemical entity as a biological process
@@ -1196,7 +1196,7 @@
     is "GO:0006810 and 'transports or maintains localization of' some X", where X
     is a chemical entity (CHEBI:24431). The approach to combine GO and ChEBI has been
     described in the following publication: PMID:23895341.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000066
   title: Representation of transport of a chemical entity as molecular function in
@@ -1207,7 +1207,7 @@
     template is "GO:0005215 and 'transports or maintains localization of' some X",
     where X is a chemical entity (CHEBI:24431). The approach to combine GO and ChEBI
     has been described in the following publication: PMID:23895341.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000067
   title: Representation of binding to a chemical entity as molecular function in the
@@ -1218,7 +1218,7 @@
     is "GO:0005488 and 'has input' some X", where X is a chemical entity (CHEBI:24431).
     The approach to combine GO and ChEBI has been described in the following publication:
     PMID:23895341.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000068
   title: Representation of metabolic triad (metabolism, catabolism, biosynthesis)
@@ -1230,7 +1230,7 @@
     "GO:0009056 and 'has input' some X" (catabolism), "GO:0009058 and 'has output'
     some X" and (biosynthesis),  where X is a chemical entity (CHEBI:24431). The approach
     to combine GO and ChEBI has been described in the following publication: PMID:23895341.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000069
   title: Representation of transmembrane transport of a chemical as biological process
@@ -1241,7 +1241,7 @@
     axiom template is "GO:0055085 and 'transports or maintains localization of' some
     X", where X is a chemical entity (CHEBI:24431). The approach to combine GO and
     ChEBI has been described in the following publication: PMID:23895341.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000070
   title: Representation of transmembrane transporter activity as molecular function
@@ -1257,7 +1257,7 @@
     or GO:0042626 depending on the variant. The variable X is a chemical entity (CHEBI:24431).
     The approach to combine GO and ChEBI has been described in the following publication:
     PMID:23895341.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000071
   title: Representation of response to and cellular response to a chemical as biological
@@ -1269,7 +1269,7 @@
     to) and "GO:0070887 and 'has input' some X" (cellular response to), where X is
     a chemical entity (CHEBI:24431). The approach to combine GO and ChEBI has been
     described in the following publication: PMID:23895341.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000072
   title: Representation of chemical homeostasis and cellular chemical homeostasisl
@@ -1281,7 +1281,7 @@
     some X" (homeostasis) and "GO:0055082 and 'regulates level of' some X" (cellular
     homeostasis), where X is a chemical entity (CHEBI:24431). The approach to combine
     GO and ChEBI has been described in the following publication: PMID:23895341.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000073
   title: Representation of import of a chemical as biological process in the Gene
@@ -1292,7 +1292,7 @@
     is "GO:0006810 and 'imports' some X", where X is a chemical entity (CHEBI:24431).
     The approach to combine GO and ChEBI has been described in the following publication:
     PMID:23895341.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000074
   title: Representation of export of a chemical as biological process in the Gene
@@ -1303,7 +1303,7 @@
     is "GO:0006810 and 'exports' some X", where X is a chemical entity (CHEBI:24431).
     The approach to combine GO and ChEBI has been described in the following publication:
     PMID:23895341.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000075
   title: Representation of transport of a chemical into a cellular component as biological
@@ -1315,7 +1315,7 @@
     some T and 'imports' some S", where T is a cellular component and S is a chemical
     entity (CHEBI:24431). The approach to combine GO and ChEBI has been described
     in the following publication: PMID:23895341.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000076
   title: Representation of transport or vesicle-mediated transport from cell component
@@ -1327,7 +1327,7 @@
     some F and 'has_target_end_location' some T" (transport) and "GO:0016192 and
     'has_target_start_location' some F and 'has_target_end_location' some T" (vesicle-mediated
     transport), where F and T are a cellular components.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000077
   title: OBSOLETE Representation of transport of a cellular component as biological
@@ -1338,7 +1338,7 @@
     axiom templates are "GO:0006810 and 'transports or maintains localization of'
     some C" (transport) and "GO:0016192 and 'transports or maintains localization
     of' some C" (vesicle-mediated transport), where C is a cellular component.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
   is_obsolete: true
 - id: GO_REF:0000078
@@ -1355,7 +1355,7 @@
     where F and T are cellular components and X is a chemical entity (CHEBI:24431).
     The approach to combine GO and ChEBI has been described in the following publication:
     PMID:23895341.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000079
   title: Representation of assembly or disassembly of a cell component as biological
@@ -1366,7 +1366,7 @@
     templates are "GO:0022607 and 'results_in_assembly_of' some C" (assembly) and
     "GO:0022411 and 'results_in_disassembly_of' some C" (disassembly), where C is
     a cellular component.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000080
   title: Representation of plant development as biological process in the Gene Ontology
@@ -1375,7 +1375,7 @@
     a plant structure as a biological process. The underlying equivalence axiom template
     is "'anatomical structure development' and 'results in development of' some P",
     where P is a plant anatomical entity (PO:0025131).
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000081
   title: Representation of plant formation as biological process in the Gene Ontology
@@ -1384,7 +1384,7 @@
     plant structure as a biological process. The underlying equivalence axiom template
     is "'anatomical structure formation involved in morphogenesis' and 'results in
     formation of' some P", where P is a plant anatomical entity (PO:0025131).
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000082
   title: OBSOLETE Representation of plant maturation as biological process in the
@@ -1394,7 +1394,7 @@
     plant structure as a biological process. The underlying equivalence axiom template
     is "'developmental maturation' and 'results in developmental progression of' some
     P", where P is a plant anatomical entity (PO:0025131).
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   is_obsolete: true
   year: 2013
 - id: GO_REF:0000083
@@ -1404,7 +1404,7 @@
     a plant structure as a biological process. The underlying equivalence axiom template
     is "'anatomical structure morphogenesis' and 'results in morphogenesis of' some
     P", where P is a plant anatomical entity (PO:0025131).
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000084
   title: Representation of plant structural organization as biological process in
@@ -1414,7 +1414,7 @@
     of a plant structure as a biological process. The underlying equivalence axiom
     template is "'anatomical structure arrangement' and 'results in structural organization
     of' some P", where P is a plant anatomical entity (PO:0025131).
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000085
   title: Representation of cell apoptotic process as biological process in the Gene
@@ -1423,7 +1423,7 @@
     We have created a standard template for classes describing the apoptotic process
     for a cell type as a biological process. The underlying equivalence axiom template
     is "'apoptotic process' and 'occurs in' some C", where C is a native cell (CL:0000003).
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000086
   title: Representation of cell differentiation as biological process in the Gene
@@ -1433,7 +1433,7 @@
     process for a cell type as a biological process. The underlying equivalence axiom
     template is "GO:0030154 and 'results in acquisition of features of' some C", where
     C is a native cell (CL:0000003).
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000087
   title: Representation of protein localization and establishment of protein localization
@@ -1445,7 +1445,7 @@
     'has_target_end_location' some C" (protein localization) and "GO:0045184 and
     'has_target_end_location' some C" (establishment of protein localization), where C
     is cellular component.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000088
   title: Representation of protein complex by molecular function in the Gene Ontology
@@ -1453,7 +1453,7 @@
     We have created a standard template for classes defining a protein complex by
     a molecular function as a cellular component. The underlying equivalence axiom
     template is "GO:0043234 and 'capable_of' some ?A", where A is a molecular function.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000089
   title: Representation of single-organism and multi-organism biological processes
@@ -1463,7 +1463,7 @@
     and multi-organism biological processes. The underlying equivalence axiom templates
     are "P and 'bearer_of' some PATO:0002487" (single-organism) and "P and 'bearer_of'
     some PATO:0002486" (multi-organism), where P is a biological process.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000090
   title: Automatic creation of relationships between ontology branches in the Gene
@@ -1478,7 +1478,7 @@
     'transports_or_maintains_localization_of' some X"; "'transmembrane transporter activity'
     and 'transports_or_maintains_localization_of' some X -part_of-> 'transmembrane transport'
     and 'transports_or_maintains_localization_of' some X"
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2013
 - id: GO_REF:0000091
   title: Representation of cell migration as biological processes in the Gene Ontology
@@ -1487,7 +1487,7 @@
     process for a cell type as a biological process. The underlying equivalence axiom
     template is "'cell migration' and 'alters_location_of' some C", where C is a native
     cell (CL:0000004).
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2014
 - id: GO_REF:0000092
   title: Representation for the biosynthesis from or via a chemical as biological
@@ -1500,7 +1500,7 @@
     some T and 'has intermediate' some I" (biosynthesis via), where T,F, and I are
     chemical entities (CHEBI:24431). The approach to combine GO and ChEBI has been
     described in the following publication: PMID:23895341.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2014
 - id: GO_REF:0000093
   title: Representation for the degradation to or via a chemical as biological process
@@ -1513,7 +1513,7 @@
     S and 'has intermediate' some I" (catabolism via), where S,T, and I are chemical
     entities (CHEBI:24431). The approach to combine GO and ChEBI has been described
     in the following publication: PMID:23895341.
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2014
 - id: GO_REF:0000094
   title: Representation of metazoan development as biological process in the Gene
@@ -1523,13 +1523,13 @@
     a metazoan structure as a biological process. The underlying equivalence axiom
     template is "'anatomical structure development' and 'results in development of'
     some E", where E is a anatomical entity (UBERON:0001062).
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   year: 2014
 - id: GO_REF:0000095
   title: Literature reference not indexed by PubMed
   description: This article is not referenced in PubMed. Please see contributing data
     resource for details.
-  authors: Mouse Genome Informatics scientific curators and FlyBase
+  authors: Mouse Genome Informatics Scientific Curators and FlyBase
   year: 2014
 - id: GO_REF:0000096
   title: Automated transfer of experimentally-verified manual GO annotation data to 
@@ -1613,7 +1613,7 @@
     curators are required to analyze the reference literature for identified matches
     and shall perform GO annotations with appropriate evidence codes if these were
     not available.
-  authors: Ivan Erill, SEA-PHAGE biocurators
+  authors: Ivan Erill, SEA-PHAGE Biocurators
   is_obsolete: true
   year: 2014
 - id: GO_REF:0000101
@@ -1633,7 +1633,7 @@
     populated with the source feature references (e.g. "GeneDB:LmjF.28.0960"). OrthoMCL
     runs are done using the parameterization suggested in the OrthoMCL algorithm document
     (blastall -F 'm S' -e 1e-5).
-  authors: Sascha Steinbiss, GeneDB curators
+  authors: Sascha Steinbiss, GeneDB Curators
   year: 2015
 - id: GO_REF:0000102
   title: OBSOLETE Representation of cellular component binding as molecular functions
@@ -1642,7 +1642,7 @@
     We have created a standard template for classes cellular component binding as
     a molecular function. The underlying equivalence axiom template is "'binding'
     and 'has input' some C", where C is a cellular component (GO:0005575).
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   is_obsolete: true
   year: 2015
 - id: GO_REF:0000103
@@ -1653,7 +1653,7 @@
     as a biological process. The underlying equivalence axiom template is "'cellular
     component organization' and 'results_in_organization_of' some C", where C is a
     cellular component (GO:0005575).
-  authors: GO ontology editors
+  authors: GO Ontology Editors
   is_obsolete: true
   year: 2015
 - id: GO_REF:0000104
@@ -1674,7 +1674,7 @@
     and the Protein Information Resource at Georgetown University (PIR). For further
     information, please see UniProt: a hub for protein information Nucleic Acids Res.
     2015, 43, D204, doi: 10.1093/nar/gku989 or www.uniprot.org.
-  authors: UniProt curators
+  authors: UniProt Curators
   external_accession:
     - ZFIN:ZDB-PUB-170525-1
     - J:342612
@@ -1719,7 +1719,7 @@
     which maps up to the GO Inferred from Electronic Annotation (IEA) evidence code.  The
     model organism database identifier of the annotation source will be indicated
     in the 'With' column of the GOA association file.
-  authors: GOA curators
+  authors: GOA Curators
   external_accession:
     - J:342605
   year: 2016
@@ -1736,7 +1736,7 @@
     from manual annotation used in automatic assertion), depending on whether the
     source annotation has a manual or automatic evidence code. Both of these codes
     map up to the GO Inferred from Electronic Annotation (IEA) evidence code.
-  authors: GOA curators
+  authors: GOA Curators
   external_accession:
     - J:346132
     - SGD_REF:S000204515
@@ -1912,7 +1912,7 @@
     database cross-reference. The corresponding GO term is automatically applied to
     all UniProt entries annotated with a Rhea reaction. The mapping file is available
     at: http://current.geneontology.org/ontology/external2go/rhea2go.
-  authors: GO Central curators, GOA curators, Rhea curators
+  authors: GO Central Curators, GOA Curators, Rhea Curators
   external_accession:
     - J:342608
     - ZFIN:ZDB-PUB-221108-20
