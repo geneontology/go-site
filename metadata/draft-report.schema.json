@@ -1,0 +1,118 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+
+    "definitions": {
+        "rule-message": {
+            "$comment": "Contents of a rule",
+            "type": "object",
+            "properties": {
+                "level": {
+                    "type": "string",
+                    "enum": ["PASS", "WARNING", "ERROR"]
+                },
+                "entity": {
+                    "type": "string",
+                    "$comment": "This is the entity being reported on. Whether it's a GAF line or model ID."
+                },
+                "type": {
+                    "type": "string",
+                    "$comment": "Usually should say 'Violates GO Rule', unless it's directly some kind of parse error"
+                },
+                "message": {
+                    "type": "string",
+                    "$comment": "Whatever extra message about the nature of the error in the validation source"
+                },
+                "obj": {
+                    "type": "string",
+                    "default": "",
+                    "$comment": "Optional. If available, this should be the part of the `entity` that failed."
+                },
+                "rule": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9999999,
+                    "$comment": "This is not strictly necessary given the provided information, and the rule for a message should be calculable given what rule ID key it's in. This should not be required in the future"
+                }
+            },
+            "required": ["level", "entity", "type", "message", "rule"]
+        },
+
+        "messages-group": {
+            "type": "object",
+            "patternProperties": {
+                "^gorule-[0-9]{6}[1-9]$": {
+                    "oneOf": [
+                        {
+                            "type": "string",
+                            "enum": ["skipped"]
+                        },
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "$ref": "#/definitions/rule-message"
+                            }
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+
+    "type": "object",
+    "properties": {
+        "messages": {
+            "type": "object",
+            "$ref": "#/definitions/messages-group"
+        },
+        "entities": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "errors": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "valid-entities": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "groupable-keys": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "key": {
+                        "type": "string"
+                    },
+                    "default": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "entity-type": {
+            "type": "string"
+        },
+        "message-template": {
+            "type": "string"
+        },
+        "report-group-urls": {
+            "type": "object",
+            "properties": {
+                "group-url": {
+                    "type": "string",
+                    "format": "uri-template"
+                },
+                "group-rule-url": {
+                    "$comment": "Can use like: `{base}/reports/{group}#{ruleid}`",
+                    "type": "string",
+                    "format": "uri-template"
+                }
+            }
+        }
+    },
+
+    "required": ["messages", "entities", "errors", "valid-entities", "groupable-keys", "entity-type"]
+}

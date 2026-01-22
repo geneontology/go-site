@@ -1,0 +1,29 @@
+
+{
+    "entities": 2,
+    "errors": 0,
+    "valid-entities": 2,
+    "groupable-keys": [
+        {
+            "key":"taxon",
+            "default": "taxon:0"
+        },
+        {
+            "key": "group",
+            "default": "unknown"
+        }
+    ],
+    "group": "rebels",
+    "messages": {
+        "gorule-0000001": [
+            {
+                "level": "WARNING",
+                "entity": "I'm\ta\tGAF\tline",
+                "type": "Violates GO Rule",
+                "message": "This is an error message",
+                "rule": 1,
+                "taxon": "taxon:12345"
+            }
+        ]
+    }
+}
