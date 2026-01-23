@@ -135,6 +135,7 @@ RNA Central,,,,,
 ° RNAcentral,@afg1, Andrew Green @afg1,Curation/RNA Central mappings,< ! > In-house < ! >,
 ° RNAcentral,@pmb59, Pedro Madrigal @pmb59,Curation/RNA Central mappings,< ! > In-house < ! >,
 Roslin_Institute,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curation (inactive),<P2GO,no contact person
+SignatureScience,@genegodbold,Gene Godbold,,Pathogenic organisms,
 SGD,,,,,
 ° SGD,,Stacia Engel @srengel,Curation,Noctua,
 ° SGD,@suzialeksander,Suzi Aleksander @suzialeksander,Curation,Noctua,Contact for Annotation Review
