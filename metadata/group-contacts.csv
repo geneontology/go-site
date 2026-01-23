@@ -33,6 +33,8 @@ EcoCyc,,,,,
 ° EcoCyc,,Markus Krummenacker,Technical,,EcoCyc pipeline
 EcoliWiki,@dsiegele,Debby Siegele @dsiegele,Curation,< ! > In-house < ! >,
 Ensembl,,,Curation,,
+*EnsemblFungi*,,,,,
+*EnsemblPlants*,,,,,
 Eurofung,,,Curation,P2GO,
 FlyBase,,,,,
 ° FlyBase,@hattrill,Helen Attrill @hattrill,Curation,P2GO | Noctua,
@@ -103,9 +105,12 @@ NTNU_SB,,,,,
 PAMGO_GAT,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curation (inactive),P2GO,contact @mgiglio99 for queries
 PAMGO_MGG,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curation (inactive),P2GO,contact @mgiglio99 for queries
 PAMGO_VMD,,,Curation (inactive),,
+*PANTHER*,@pgaudet,,,,
 ParkinsonsUK-UCL,@RLovering, Ruth Lovering @RLovering,Curation,P2GO, 
 PHI-base,,,Curation,< ! > In-house < ! >,
 PINC (ProtInc),@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curation, (inactive)P2GO,no contact person
+*Planteome*,,,,,
+*Plant Reactome*,,,,,
 PomBase,,,,,
 ° PomBase,,general GitHub account @pombase-admin,,< ! > In-house < ! >,
 ° PomBase,@valwood,ValWood @valwood,Curation,< ! > In-house < ! > | Noctua,Annotation Review
