@@ -119,8 +119,8 @@ UniProtKB	O56786	hol187	is_active_in	GO:0018995	PMID:10419939	IDA		C	GORULE_TEST
 UniProtKB	O56786	hol187	is_active_in	GO:0042025	PMID:10419939	IDA		C	GORULE_TEST:0000015-4 Holin protein Hol187	hol187	protein	taxon:55511	20170423	GO_Central	
 ! SHOULD PASS GORULE:0000015 - TEST 5 -  "GO:0010363 regulation of plant-type hypersensitive response" with single taxon ID															
 UniProtKB	O56786	hol187	involved_in	GO:0010363	PMID:10419939	IDA		P	GORULE_TEST:0000015-5 Holin protein Hol187	hol187	protein	taxon:55511	20170423	GO_Central	
-! SHOULD PASS GORULE:0000015 - TEST 6 -  "GO:0141062 disruption of tissue in another organism" with single taxon ID															
-UniProtKB	O56786	hol187	involved_in	GO:0141062	PMID:10419939	IDA		P	GORULE_TEST:0000015-6 Holin protein Hol187	hol187	protein	taxon:55511	20170423	GO_Central	
+! SHOULD PASS GORULE:0000015 - TEST 6 -  "GO:0035915 'pore formation in membrane of another organism" with single taxon ID															
+UniProtKB	O56786	hol187	involved_in	GO:0035915	PMID:10419939	IDA		P	GORULE_TEST:0000015-6 Holin protein Hol187	hol187	protein	taxon:55511	20170423	GO_Central	
 ! SHOULD PASS GORULE:0000015 - TEST 7 -   "GO:0075071 symbiont-mediated perturbation of host autophagy" with two taxon ID															
 UniProtKB	P16971	recA	involved_in	GO:0075071	PMID:26221034	IDA		P	GORULE_TEST:0000015-7 Protein CD300H	CD300H	protein	taxon:9606|taxon:224308	20160428	GO_Central	
 ! FAILS GORULE:0000016 -  TEST 1 - column 8 (with/from) is null															
