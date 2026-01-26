@@ -30,7 +30,7 @@ ZFIN	ZDB-GENE-070117-1552	obj_symbol	acts_upstream_of_or_within	GO:0045601	PMID:
 ! FAILS GORULE:0000001 - TEST 9 - invalid taxon non-numeric															
 ZFIN	ZDB-GENE-070117-1552	obj_symbol	acts_upstream_of_or_within	GO:0045601	PMID:17531218	IMP	ZFIN:ZDB-GENO-080318-17	P	GORULE_TEST:0000001-9		gene_product	taxon:12v!89	20080326	PomBase	
 ! FAILS GORULE:0000001 - TEST 10 -fails because no data in column 4.  															
-FB	FBgn0011273	Acam		GO:0070865	FB:FBrf0193169|PMID:16790438	IDA	C		GORULE_TEST:0000001-10 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	PomBase	
+FB	FBgn0011273	Acam		GO:0070865	FB:FBrf0193169|PMID:16790438	IDA		C		GORULE_TEST:0000001-10 Androcam	ACaM|And|CG17769|CalB|Calmodulin-related 97A|Camr97A|androcalmodulin|androcam	protein	taxon:7227	20180501	PomBase	
 ! FAILS GORULE:0000001 - TEST 11 - bad GO ID syntax															
 PomBase	SPAC25B8.17	ypf1	is_active_in	BAD_GO_ID	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000001-11 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	
 ! FAILS GORULE:0000001 - TEST 12 - bad GO ID syntax; no colon															
