@@ -263,3 +263,7 @@ mapping:
     from_label: siRNA
     to_id: SO:0000646
     to_label: siRNA
+  - from_id: SO_0002353
+    from_label: sbRNA
+    to_id: SO:0000655
+    to_label: ncRNA
