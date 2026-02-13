@@ -6,6 +6,7 @@
   groups:
     - 'http://geneontology.org'
   nickname: 'Anushya Muruganujan'
+  organization: 'GO Central'
   uri: 'GOC:amu'
   xref: 'GOC:amu'
 -
@@ -18,6 +19,7 @@
   groups:
     - 'http://geneontology.org'
   nickname: 'Paul Thomas'
+  organization: 'GO Central'
   uri: 'https://orcid.org/0000-0002-9074-3507'
   xref: 'GOC:pt'
 -
@@ -30,6 +32,7 @@
   groups:
     - 'http://geneontology.org'
   nickname: 'Huaiyu Mi'
+  organization: 'GO Central'
   uri: 'https://orcid.org/0000-0001-8721-202X'
   xref: 'GOC:hm'
 -
@@ -282,13 +285,15 @@
 -
   accounts:
     github: jimhu-tamu
+  comment: 'status inactive'  
   nickname: 'Jim Hu'
-  organization: 'E. coli'
+  organization: 'EcoliWiki/CACAO'
   uri: 'https://orcid.org/0000-0001-9016-2684'
   xref: 'GOC:jh2'
 -
   groups:
     - 'http://www.bio.tamu.edu'
+  comment: 'status inactive'  
   nickname: 'Brenley McIntosh'
   organization: 'EcoliWiki/CACAO'
   uri: 'GOC:bm'
@@ -302,6 +307,7 @@
         allow-edit: true
   groups:
     - 'http://www.bio.tamu.edu'
+  comment: 'status inactive'  
   nickname: 'Sandy Labonte'
   organization: 'EcoliWiki/CACAO'
   uri: 'https://orcid.org/0000-0002-9618-3336'
@@ -372,9 +378,10 @@
       go:
         allow-edit: true
   groups:
-    - 'http://flybase.org'
+    - 'https://www.genenames.org/'
+  comment: 'formely with FlyBase' 
   nickname: 'Susan Tweedie'
-  organization: FlyBase
+  organization: HGNC
   uri: 'https://orcid.org/0000-0003-1818-8243'
   xref: 'GOC:sart'
 -
@@ -388,6 +395,7 @@
   uri: 'GOC:lmg'
   xref: 'GOC:lmg'
 -
+  comment: 'status inactive' 
   nickname: 'Amelia Ireland'
   organization: 'GO Central'
   uri: 'GOC:ai'
@@ -406,7 +414,7 @@
   xref: 'GOC:bf'
 -
   nickname: 'Cath Brooksbank'
-  organization: 'GO Central'
+  organization: 'EMBL-EBI'
   uri: 'https://orcid.org/0000-0001-9395-7001'
   xref: 'GOC:ceb'
 -
@@ -415,8 +423,9 @@
   uri: 'GOC:go_curators'
   xref: 'GOC:go_curators'
 -
+  comment: 'status inactive' 
   nickname: 'Jennifer Deegan (nee Clark)'
-  organization: 'GO Central'
+  organization: 'null'
   uri: 'https://orcid.org/0000-0001-9227-417X'
   xref: 'GOC:jid'
 -
@@ -426,8 +435,9 @@
         allow-edit: true
   groups:
     - 'http://geneontology.org'
+  comment: 'status inactive' 
   nickname: 'Jane Lomax'
-  organization: 'GO Central'
+  organization: 'null'
   uri: 'https://orcid.org/0000-0001-8865-4321'
   xref: 'GOC:jl'
 -
@@ -439,8 +449,9 @@
         allow-edit: true
   groups:
     - 'http://geneontology.org'
+  comment: 'status inactive' 
   nickname: 'Melanie Courtot'
-  organization: 'GO Central'
+  organization: 'null'
   uri: 'https://orcid.org/0000-0002-9551-6370'
   xref: 'GOC:mec'
 -
@@ -452,8 +463,9 @@
         allow-edit: true
   groups:
     - 'http://geneontology.org'
+  comment: 'status inactive' 
   nickname: 'Paola Roncaglia'
-  organization: 'GO Central'
+  organization: 'null'
   uri: 'https://orcid.org/0000-0002-2825-0621'
   xref: 'GOC:pr'
 -
@@ -509,6 +521,7 @@
         allow-edit: true
   groups:
     - 'http://www.ebi.ac.uk'
+  comment: 'status inactive' 
   nickname: 'George Georghiou'
   organization: EMBL-EBI
   uri: 'https://orcid.org/0000-0001-5067-3199'
@@ -553,6 +566,7 @@
   comment: 'formerly GOA'
   groups:
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
+  comment: 'status inactive' 
   nickname: 'Rachael Huntley'
   organization: BHF-UCL
   uri: 'https://orcid.org/0000-0001-6718-3559'
@@ -576,11 +590,9 @@
     noctua:
       go:
         allow-edit: true
-  comment: 'Birgit Meldal'
-  groups:
-    - 'https://www.ebi.ac.uk/intact'
+  comment: 'status inactive, formerly IntAct' 
   nickname: 'Birgit Meldal'
-  organization: IntAct
+  organization: null
   uri: 'https://orcid.org/0000-0003-4062-6158'
   xref: 'GOC:bhm'
 -
