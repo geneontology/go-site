@@ -121,8 +121,8 @@ UniProtKB	O56786	hol187	is_active_in	GO:0042025	PMID:10419939	IDA		C	GORULE_TEST
 UniProtKB	O56786	hol187	involved_in	GO:0010363	PMID:10419939	IDA		P	GORULE_TEST:0000015-5 Holin protein Hol187	hol187	protein	taxon:55511	20170423	GO_Central	
 ! SHOULD PASS GORULE:0000015 - TEST 6 -  "GO:0035915 'pore formation in membrane of another organism" with single taxon ID															
 UniProtKB	O56786	hol187	involved_in	GO:0035915	PMID:10419939	IDA		P	GORULE_TEST:0000015-6 Holin protein Hol187	hol187	protein	taxon:55511	20170423	GO_Central	
-! SHOULD PASS GORULE:0000015 - TEST 7 -   "GO:0075071 symbiont-mediated perturbation of host autophagy" with two taxon ID															
-UniProtKB	P16971	recA	involved_in	GO:0075071	PMID:26221034	IDA		P	GORULE_TEST:0000015-7 Protein CD300H	CD300H	protein	taxon:9606|taxon:224308	20160428	GO_Central	
+! SHOULD PASS GORULE:0000015 - TEST 7 -   "GO:0052067 symbiont-mediated perturbation of host phagocytosis" with two taxon ID															
+UniProtKB	P16971	recA	involved_in	GO:0052067	PMID:26221034	IDA		P	GORULE_TEST:0000015-7 Protein CD300H	CD300H	protein	taxon:9606|taxon:224308	20160428	GO_Central	
 ! FAILS GORULE:0000016 -  TEST 1 - column 8 (with/from) is null															
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	GO_REF:0000036	IC		P	GORULE_TEST:0000016-1 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000016 -  TEST 2 - column 8 (with/from) is has a non-GOID															
