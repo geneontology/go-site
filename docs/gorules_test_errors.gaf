@@ -333,3 +333,5 @@ PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO		C	GORULE_TE
 UniProtKB	A0A140VJL9	A0A140VJL9	involved_in	GO:0006783	GO_REF:0000118	IEA	PANTHER:PTHR11458:SF0	P	GORULE_TEST:0000064-1		protein	taxon:9606	20240201	TreeGrafter	
 ! FAILS GORULE:0000064 - TEST 2 - Drosophila protein
 UniProtKB	Q8IH53	Hmbs	involved_in	GO:0006783	GO_REF:0000118	IEA	PANTHER:PTHR11557:SF0	P	GORULE_TEST:0000064-2		protein	taxon:7227	20240201	TreeGrafter		
+! FAIL GORULE:0000065 - TEST 1 GO:0030047 actin modification is an obsoletion candidate
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0030047	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000065-1 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein taxon:4896	20230427 GO_Central
