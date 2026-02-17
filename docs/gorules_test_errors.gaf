@@ -1,6 +1,6 @@
 !gaf-version: 2.2															
 !generated-by: GOC															
-!date-generated: 2024-07-26
+!date-generated: 2026-02-17
 ! Dummy GAF file containing deliberate errors to test that GO rules are correctly implemented. 	
 ! Should be equivalent to https://github.com/geneontology/go-site/blob/master/docs/gorules_test_errors.gpad when the rule applies.													
 ! FAILS GORULE:0000001 - empty col1 and col2															
