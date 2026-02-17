@@ -56,7 +56,7 @@ PomBase	SPAC25B8.18	ypf2	is_active_in	GO0006921	GO_REF:0000024	ISO	SGD:S00000158
 ! FAILS GORULE:0000001 - TEST 22 - bad GO ID syntax; bad namespace															
 PomBase	SPAC25B8.19	ypf3	is_active_in	RO:0006921	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000001-22 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20150305	PomBase	
 ! FAILS GORULE:0000001 - TEST 23 - bad GO ID syntax in 'with' 												
-UniProtKB	O76187	darA	NOT|enables	GO:0005509	PMID:9802899	IC	GO0005634	F	GORULE_TEST:0000001-23 Darlin	darA	protein	taxon:44689	20100205	PomBase	
+UniProtKB	O76187	darA	NOT|enables	GO:0005509	PMID:9802899	IDA	GO0005634	F	GORULE_TEST:0000001-23 Darlin	darA	protein	taxon:44689	20100205	PomBase	
 ! FAILS GORULE:0000001 - TEST 24 - bad GO ID syntax in extension 														
 UniProtKB	A0A078CGE6	M3KE1	enables	GO:0005515	PMID:11489177	IPI	A0A078FEZ9	F	GORULE_TEST:0000001-24		protein	taxon:3708	20150115	PomBase	involved_in(GO0090503)
 ! FAILS GORULE:0000001 - TEST 25 - qualifier needs underscores	(acts_upstream_of )									
