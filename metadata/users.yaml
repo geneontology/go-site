@@ -425,7 +425,6 @@
 -
   comment: 'status inactive' 
   nickname: 'Jennifer Deegan (nee Clark)'
-  organization: 'null'
   uri: 'https://orcid.org/0000-0001-9227-417X'
   xref: 'GOC:jid'
 -
@@ -437,7 +436,6 @@
     - 'http://geneontology.org'
   comment: 'status inactive' 
   nickname: 'Jane Lomax'
-  organization: 'null'
   uri: 'https://orcid.org/0000-0001-8865-4321'
   xref: 'GOC:jl'
 -
@@ -451,7 +449,6 @@
     - 'http://geneontology.org'
   comment: 'status inactive' 
   nickname: 'Melanie Courtot'
-  organization: 'null'
   uri: 'https://orcid.org/0000-0002-9551-6370'
   xref: 'GOC:mec'
 -
@@ -465,7 +462,6 @@
     - 'http://geneontology.org'
   comment: 'status inactive' 
   nickname: 'Paola Roncaglia'
-  organization: 'null'
   uri: 'https://orcid.org/0000-0002-2825-0621'
   xref: 'GOC:pr'
 -
@@ -593,7 +589,6 @@
   groups:
     - 'https://www.ebi.ac.uk/intact'
   nickname: 'Birgit Meldal'
-  organization: null
   uri: 'https://orcid.org/0000-0003-4062-6158'
   xref: 'GOC:bhm'
 -
