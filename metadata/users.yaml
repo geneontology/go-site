@@ -378,7 +378,7 @@
       go:
         allow-edit: true
   groups:
-    - 'https://www.genenames.org/'
+    - 'https://www.genenames.org'
   comment: 'formely with FlyBase' 
   nickname: 'Susan Tweedie'
   organization: HGNC
@@ -563,10 +563,9 @@
     noctua:
       go:
         allow-edit: true
-  comment: 'formerly GOA'
+  comment: 'status inactive, formerly GOA'
   groups:
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
-  comment: 'status inactive' 
   nickname: 'Rachael Huntley'
   organization: BHF-UCL
   uri: 'https://orcid.org/0000-0001-6718-3559'
