@@ -98,10 +98,6 @@ def main():
                 }
                 users[index] = user # save new back into list
 
-        ## Skip inactive users.
-        if 'status inactive' in user.get('comment', ''):
-            continue
-
         ## Does the user have noctua perms?
         if user.get('authorizations', False):
             auth = user.get('authorizations', {})

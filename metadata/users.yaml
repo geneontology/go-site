@@ -586,6 +586,8 @@
       go:
         allow-edit: true
   comment: 'status inactive, formerly IntAct'
+  groups:
+    - 'https://www.ebi.ac.uk/intact'
   nickname: 'Birgit Meldal'
   uri: 'https://orcid.org/0000-0003-4062-6158'
   xref: 'GOC:bhm'
