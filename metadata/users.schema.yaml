@@ -80,7 +80,6 @@ sequence:
       "organization":
         type: str
         required: false
-        pattern: /\S+/
       "groups":
         type: seq
         required: false
