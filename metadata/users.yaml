@@ -379,7 +379,7 @@
         allow-edit: true
   groups:
     - 'https://www.genenames.org'
-  comment: 'formely with FlyBase' 
+  comment: 'formerly with FlyBase'
   nickname: 'Susan Tweedie'
   organization: HGNC
   uri: 'https://orcid.org/0000-0003-1818-8243'
