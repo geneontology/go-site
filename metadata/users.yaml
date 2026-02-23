@@ -410,11 +410,6 @@
   uri: 'https://orcid.org/0000-0001-9395-7001'
   xref: 'GOC:ceb'
 -
-  nickname: 'Curators at GO editorial office'
-  organization: 'GO Central'
-  uri: 'GOC:go_curators'
-  xref: 'GOC:go_curators'
--
   nickname: 'Jennifer Deegan (nee Clark)'
   organization: 'GO Central'
   uri: 'https://orcid.org/0000-0001-9227-417X'
