@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" crossorigin="anonymous"/>
 
-        <title>GO-CAM Stats Report</title>
+        <title>{{ title }}</title>
 
         <script>
         $(document).ready(function(){
@@ -34,8 +34,13 @@
 
     <body>
         <div class="container-fluid">
-        <h2 id="test">GO-CAM Aggregate Statistics</h2>
+        <h2>{{ title }}</h2>
         Generated on {{ date }}<br/>
+        <nav class="mt-2 mb-3">
+            {{ #links }}
+            <a href="{{ href }}" class="btn btn-outline-primary btn-sm">{{ label }}</a>
+            {{ /links }}
+        </nav>
         <div class="table-responsive">
         <table id="sourcestable" class="table table-sm table-striped rud-compact-table table-bordered table-hover">
         <thead>
