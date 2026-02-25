@@ -578,6 +578,6 @@
   parent_group: GOC
 -
   label: 'TreeGrafter'
-  id: https://geneontology.org/GO_REF/0000118.html
+  id: https://www.pantherdb.org
   shorthand: TreeGrafter
   parent_group: GOC
