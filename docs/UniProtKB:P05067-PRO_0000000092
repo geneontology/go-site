@@ -222,7 +222,7 @@ UniProtKB	A4D126	CRPPA	enables	GO:0042803	PMID:26687144	IDA		F	GORULE_TEST:00000
 ! FAILS GORULE:0000046 - TEST 2 - self-binding’ term, annotated to a protein other than 'self'													
 UniProtKB	A4D126	CRPPA	enables	GO:0042803	PMID:26687144	IPI	UniProtKB:P35555	F	GORULE_TEST:0000046-2		protein	taxon:9606	20170627	GO_Central	
 ! SHOULD PASS GORULE:0000046 - TEST 3 - Same protein in 'with', but with a chain ID. Matches Col17 data
-UniProtKB	P05067	APP	enables	GO:0042803	PMID:15447668	IPI	UniProtKB:P05067-PRO_0000000092	F	Amyloid-beta precursor protein APP|A4|AD1	protein	taxon:9606	20230314	ARUK-UCL	UniProtKB:P05067-PRO_0000000092 `
+UniProtKB	P05067	APP	enables	GO:0042803	PMID:15447668	IPI	UniProtKB:P05067-PRO_0000000092	F	GORULE_TEST:0000046-3	protein	taxon:9606	20230314	ARUK-UCL	UniProtKB:P05067-PRO_0000000092 `
 ! FAILS GORULE:0000050 - TEST 1 - self-referential ISS annotations 															
 UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISS	UniProtKB:F1N2N9	C	GORULE_TEST:0000050-1 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	GO_Central	
 ! FAILS GORULE:0000050 - TEST 2 - self-referential ISO annotations 															
