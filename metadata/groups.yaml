@@ -576,3 +576,8 @@
   id: https://www.mcmaster.ca
   shorthand: McM
   parent_group: GOC
+-
+  label: 'TreeGrafter'
+  id: https://geneontology.org/GO_REF/0000118.html
+  shorthand: TreeGrafter
+  parent_group: GOC
