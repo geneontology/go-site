@@ -1,4 +1,4 @@
-# python3 ./scripts/reports-go-cam-stats.py --directory /path/to/go_cam_stats_output --template ./scripts/go-cam-stats-template.html --output /path/to/output
+# python3 ./scripts/reports-go-cam-stats.py --directory /path/to/go_cam_stats_output --template ./scripts/go-cam-stats-template.html --output /path/to/output --metadata /path/to/metadata
 
 import click
 import pystache
@@ -7,19 +7,8 @@ import datetime
 import os
 import glob
 import re
-
-
-def extract_column_name(filename, prefix):
-    """Extract column name from filename by stripping the prefix and .json suffix.
-
-    e.g. stats_by_curator_0000-0001-7299-6685.json -> 0000-0001-7299-6685
-         stats_by_group_flybase.org.json -> flybase.org
-    """
-    base = os.path.basename(filename)
-    match = re.match(r"{}(.+)\.json".format(re.escape(prefix)), base)
-    if match:
-        return match.group(1)
-    return base.replace(".json", "")
+import yaml
+from urllib.parse import urlparse
 
 
 def build_table_data(json_data_list, column_names):
@@ -54,36 +43,92 @@ def render_and_write(template_str, context, output_path):
     click.echo("Wrote {}".format(output_path))
 
 
+def load_users(metadata_dir):
+    """Load users.yaml and return a dict keyed by uri."""
+    users_path = os.path.join(metadata_dir, "users.yaml")
+    if not os.path.exists(users_path):
+        click.echo("Warning: users.yaml not found at {}".format(users_path), err=True)
+        return {}
+    with open(users_path) as f:
+        users_list = yaml.safe_load(f)
+    users_by_uri = {}
+    for user in users_list:
+        uri = user.get("uri", "")
+        if uri:
+            users_by_uri[uri] = user
+    return users_by_uri
+
+
+def load_groups(metadata_dir):
+    """Load groups.yaml and return a dict keyed by id."""
+    groups_path = os.path.join(metadata_dir, "groups.yaml")
+    if not os.path.exists(groups_path):
+        click.echo("Warning: groups.yaml not found at {}".format(groups_path), err=True)
+        return {}
+    with open(groups_path) as f:
+        groups_list = yaml.safe_load(f)
+    groups_by_id = {}
+    for group in groups_list:
+        gid = group.get("id", "")
+        if gid:
+            groups_by_id[gid] = group
+    return groups_by_id
+
+
+def get_curator_display_name(uri, users_by_uri):
+    """Get display name for a curator: nickname if available, otherwise the ID part of the URI."""
+    user = users_by_uri.get(uri)
+    if user and user.get("nickname"):
+        return user["nickname"]
+    # Extract the ID part from the URI (e.g., last path segment)
+    parsed = urlparse(uri)
+    return parsed.path.rstrip("/").split("/")[-1]
+
+
+def get_curator_groups(uri, users_by_uri):
+    """Get the list of group IDs a curator belongs to."""
+    user = users_by_uri.get(uri)
+    if user and user.get("groups"):
+        return user["groups"]
+    return []
+
+
+def make_safe_filename(name):
+    """Convert a group label to a safe filename."""
+    return re.sub(r'[^a-zA-Z0-9_-]', '-', name).lower().strip('-')
+
+
 @click.command()
 @click.option("--directory", type=click.Path(exists=True), required=True)
 @click.option("--template", type=click.File("r"), required=True)
 @click.option("--output", type=click.Path(), required=True)
+@click.option("--metadata", type=click.Path(exists=True), required=False, default=None,
+              help="Directory containing users.yaml and groups.yaml metadata files")
 @click.option("--date", default=str(datetime.date.today()))
-def main(directory, template, output, date):
+def main(directory, template, output, metadata, date):
     os.makedirs(output, exist_ok=True)
     template_str = template.read()
 
-    # --- Aggregate stats ---
-    aggregate_files = sorted(glob.glob(os.path.join(directory, "aggregate*.json")))
-    if not aggregate_files:
-        click.echo("No aggregate JSON files found in {}".format(directory), err=True)
+    # Load metadata if provided
+    users_by_uri = {}
+    groups_by_id = {}
+    if metadata:
+        users_by_uri = load_users(metadata)
+        groups_by_id = load_groups(metadata)
+
+    # --- Aggregate stats (Model only) ---
+    aggregate_file = os.path.join(directory, "aggregate_model_stats.json")
+    if not os.path.exists(aggregate_file):
+        click.echo("No aggregate_model_stats.json found in {}".format(directory), err=True)
         return
 
-    entities = []
-    for fpath in aggregate_files:
-        with open(fpath) as f:
-            entities.append(json.load(f))
+    with open(aggregate_file) as f:
+        model_entity = json.load(f)
 
-    # Column headers from the "entity" field
-    column_names = [e["entity"] for e in entities]
-    # Exclude "entity" from rows since it is the column header
-    for e in entities:
-        e.pop("entity", None)
-
-    header, rows = build_table_data(entities, column_names)
+    column_name = model_entity.pop("entity", "Model")
+    header, rows = build_table_data([model_entity], [column_name])
 
     links = [
-        {"href": "go-cam-curator-stats.html", "label": "Stats by Curator"},
         {"href": "go-cam-group-stats.html", "label": "Stats by Group"},
     ]
 
@@ -95,36 +140,40 @@ def main(directory, template, output, date):
         "date": date,
     }, os.path.join(output, "go-cam-aggregate-stats.html"))
 
-    # --- Stats by curator ---
+    # --- Build curator info from stats_by_curator ---
     curator_dir = os.path.join(directory, "stats_by_curator")
+    curator_data_list = []
+    curator_uris = []
     if os.path.isdir(curator_dir):
         curator_files = sorted(glob.glob(os.path.join(curator_dir, "stats_by_curator_*.json")))
-        if curator_files:
-            curator_data = []
-            curator_columns = []
-            for fpath in curator_files:
-                with open(fpath) as f:
-                    curator_data.append(json.load(f))
-                curator_columns.append(extract_column_name(fpath, "stats_by_curator_"))
+        for fpath in curator_files:
+            with open(fpath) as f:
+                data = json.load(f)
+            curator_data_list.append(data)
+            curator_uris.append(data.get("uri", ""))
 
-            header, rows = build_table_data(curator_data, curator_columns)
+    # --- Stats by curator (all curators) ---
+    if curator_data_list:
+        curator_columns = [
+            get_curator_display_name(uri, users_by_uri) for uri in curator_uris
+        ]
 
-            links = [
-                {"href": "go-cam-aggregate-stats.html", "label": "Aggregate Statistics"},
-                {"href": "go-cam-group-stats.html", "label": "Stats by Group"},
-            ]
+        header, rows = build_table_data(curator_data_list, curator_columns)
 
-            render_and_write(template_str, {
-                "title": "GO-CAM Stats by Curator",
-                "header": header,
-                "rows": rows,
-                "links": links,
-                "date": date,
-            }, os.path.join(output, "go-cam-curator-stats.html"))
-        else:
-            click.echo("No curator stats files found in {}".format(curator_dir), err=True)
+        links = [
+            {"href": "go-cam-aggregate-stats.html", "label": "Aggregate Statistics"},
+            {"href": "go-cam-group-stats.html", "label": "Stats by Group"},
+        ]
+
+        render_and_write(template_str, {
+            "title": "GO-CAM Stats by Curator",
+            "header": header,
+            "rows": rows,
+            "links": links,
+            "date": date,
+        }, os.path.join(output, "go-cam-curator-stats.html"))
     else:
-        click.echo("stats_by_curator directory not found in {}".format(directory), err=True)
+        click.echo("No curator stats files found", err=True)
 
     # --- Stats by group ---
     group_dir = os.path.join(directory, "stats_by_group")
@@ -132,17 +181,67 @@ def main(directory, template, output, date):
         group_files = sorted(glob.glob(os.path.join(group_dir, "stats_by_group_*.json")))
         if group_files:
             group_data = []
-            group_columns = []
+            group_uris = []
+            group_labels = []
+            group_page_filenames = []
             for fpath in group_files:
                 with open(fpath) as f:
-                    group_data.append(json.load(f))
-                group_columns.append(extract_column_name(fpath, "stats_by_group_"))
+                    data = json.load(f)
+                group_data.append(data)
+                group_uri = data.get("uri", "")
+                group_uris.append(group_uri)
+                # Map to group label via groups.yaml
+                group = groups_by_id.get(group_uri)
+                if group and group.get("label"):
+                    label = group["label"]
+                else:
+                    label = group_uri
+                group_labels.append(label)
+                group_page_filenames.append("go-cam-group-curator-stats-{}.html".format(make_safe_filename(label)))
 
-            header, rows = build_table_data(group_data, group_columns)
+            # Build header with links to per-group curator pages
+            header = [
+                {"id": label, "href": page_fn}
+                for label, page_fn in zip(group_labels, group_page_filenames)
+            ]
+
+            # Also add "Other" column header if there are ungrouped curators
+            # Build group membership for curators
+            group_to_curators = {}  # group_id -> list of (data, display_name)
+            ungrouped_curators = []
+            for data, uri in zip(curator_data_list, curator_uris):
+                display_name = get_curator_display_name(uri, users_by_uri)
+                curator_groups = get_curator_groups(uri, users_by_uri)
+                if not curator_groups:
+                    ungrouped_curators.append((data, display_name))
+                else:
+                    for gid in curator_groups:
+                        group_to_curators.setdefault(gid, []).append((data, display_name))
+
+            if ungrouped_curators:
+                other_page_fn = "go-cam-group-curator-stats-other.html"
+                header.append({"id": "Other", "href": other_page_fn})
+
+            # Build rows from group_data (non-array, non-dict fields)
+            field_names = [
+                key for key, val in group_data[0].items()
+                if not isinstance(val, list) and not isinstance(val, dict)
+            ]
+
+            rows = []
+            for field in field_names:
+                values = [{"value": data.get(field, "")} for data in group_data]
+                # Add empty value for "Other" column if present
+                if ungrouped_curators:
+                    values.append({"value": ""})
+                rows.append({
+                    "field": field,
+                    "field_display": field.replace("_", " "),
+                    "values": values,
+                })
 
             links = [
                 {"href": "go-cam-aggregate-stats.html", "label": "Aggregate Statistics"},
-                {"href": "go-cam-curator-stats.html", "label": "Stats by Curator"},
             ]
 
             render_and_write(template_str, {
@@ -152,6 +251,53 @@ def main(directory, template, output, date):
                 "links": links,
                 "date": date,
             }, os.path.join(output, "go-cam-group-stats.html"))
+
+            # --- Create per-group curator pages ---
+            for group_uri, label, page_fn in zip(group_uris, group_labels, group_page_filenames):
+                curators_in_group = group_to_curators.get(group_uri, [])
+                if not curators_in_group:
+                    # No curators found for this group via metadata, skip
+                    click.echo("No curators found for group '{}' via metadata".format(label), err=True)
+                    continue
+
+                grp_curator_data = [c[0] for c in curators_in_group]
+                grp_curator_names = [c[1] for c in curators_in_group]
+
+                grp_header, grp_rows = build_table_data(grp_curator_data, grp_curator_names)
+
+                grp_links = [
+                    {"href": "go-cam-aggregate-stats.html", "label": "Aggregate Statistics"},
+                    {"href": "go-cam-group-stats.html", "label": "Stats by Group"},
+                ]
+
+                render_and_write(template_str, {
+                    "title": "GO-CAM Curator Stats - {}".format(label),
+                    "header": grp_header,
+                    "rows": grp_rows,
+                    "links": grp_links,
+                    "date": date,
+                }, os.path.join(output, page_fn))
+
+            # --- Create "Other" page for ungrouped curators ---
+            if ungrouped_curators:
+                other_data = [c[0] for c in ungrouped_curators]
+                other_names = [c[1] for c in ungrouped_curators]
+
+                other_header, other_rows = build_table_data(other_data, other_names)
+
+                other_links = [
+                    {"href": "go-cam-aggregate-stats.html", "label": "Aggregate Statistics"},
+                    {"href": "go-cam-group-stats.html", "label": "Stats by Group"},
+                ]
+
+                render_and_write(template_str, {
+                    "title": "GO-CAM Curator Stats - Other",
+                    "header": other_header,
+                    "rows": other_rows,
+                    "links": other_links,
+                    "date": date,
+                }, os.path.join(output, "go-cam-group-curator-stats-other.html"))
+
         else:
             click.echo("No group stats files found in {}".format(group_dir), err=True)
     else:

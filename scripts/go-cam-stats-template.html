@@ -47,7 +47,8 @@
             <tr>
                 <th scope="col">Statistic</th>
                 {{ #header }}
-                <th scope="col">{{ id }}</th>
+                {{#href}}<th scope="col"><a href="{{ href }}">{{ id }}</a></th>{{/href}}
+                {{^href}}<th scope="col">{{ id }}</th>{{/href}}
                 {{ /header }}
             </tr>
         </thead>
