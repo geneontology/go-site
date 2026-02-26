@@ -4453,3 +4453,14 @@
   nickname: 'Emily Bordeleau '
   organization: McM
   uri: 'https://orcid.org/0009-0008-9725-6614'
+-
+  accounts:
+    github: pkalita-lbl
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'http://geneontology.org'
+  nickname: 'Patrick Kalita'
+  uri: 'https://orcid.org/0000-0002-6150-307X'
