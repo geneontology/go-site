@@ -3,6 +3,12 @@
   uri: 'GOC:jk'
   xref: 'GOC:jk'
 -
+  accounts:
+    github: mugitty
+  authorizations:
+    noctua:
+      go:
+        allow-edit: false
   groups:
     - 'http://geneontology.org'
   nickname: 'Anushya Muruganujan'
@@ -19,7 +25,7 @@
     - 'http://geneontology.org'
   nickname: 'Paul Thomas'
   uri: 'https://orcid.org/0000-0002-9074-3507'
-  xref: 'GOC:pt'
+  xref: 'GOC:pdt'
 -
   accounts:
     github: huaiyumi
