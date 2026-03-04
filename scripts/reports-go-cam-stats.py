@@ -98,6 +98,27 @@ def make_safe_filename(name):
     return re.sub(r'[^a-zA-Z0-9_-]', '-', name).lower().strip('-')
 
 
+def ensure_group_entry(group_uri, groups_by_id):
+    """If group_uri has no entry in groups_by_id, create a synthetic one with a unique label.
+
+    The label is derived from the last path segment of the URI. If that label
+    already exists among existing groups, a numeric suffix is appended to
+    ensure uniqueness.
+    """
+    if not group_uri or group_uri in groups_by_id:
+        return
+    parsed = urlparse(group_uri)
+    base_label = parsed.path.rstrip("/").split("/")[-1]
+    # Collect all existing labels for uniqueness check
+    existing_labels = {g.get("label", "").lower() for g in groups_by_id.values()}
+    label = base_label
+    counter = 2
+    while label.lower() in existing_labels:
+        label = "{}_{}".format(base_label, counter)
+        counter += 1
+    groups_by_id[group_uri] = {"id": group_uri, "label": label}
+
+
 @click.command()
 @click.option("--directory", type=click.Path(exists=True), required=True)
 @click.option("--template", type=click.File("r"), required=True)
@@ -190,6 +211,8 @@ def main(directory, template, output, metadata, date):
                 group_data.append(data)
                 group_uri = data.get("uri", "")
                 group_uris.append(group_uri)
+                # Ensure a groups_by_id entry exists for this URI
+                ensure_group_entry(group_uri, groups_by_id)
                 # Map to group label via groups.yaml
                 group = groups_by_id.get(group_uri)
                 if group and group.get("label"):
@@ -255,20 +278,28 @@ def main(directory, template, output, metadata, date):
             # --- Create per-group curator pages ---
             for group_uri, label, page_fn in zip(group_uris, group_labels, group_page_filenames):
                 curators_in_group = group_to_curators.get(group_uri, [])
+
+                grp_links = [
+                    {"href": "go-cam-aggregate-stats.html", "label": "Aggregate Statistics"},
+                    {"href": "go-cam-group-stats.html", "label": "Stats by Group"},
+                ]
+
                 if not curators_in_group:
-                    # No curators found for this group via metadata, skip
                     click.echo("No curators found for group '{}' via metadata".format(label), err=True)
+                    # Still create the page so the link from group stats is not broken
+                    render_and_write(template_str, {
+                        "title": "GO-CAM Curator Stats - {}".format(label),
+                        "header": [],
+                        "rows": [],
+                        "links": grp_links,
+                        "date": date,
+                    }, os.path.join(output, page_fn))
                     continue
 
                 grp_curator_data = [c[0] for c in curators_in_group]
                 grp_curator_names = [c[1] for c in curators_in_group]
 
                 grp_header, grp_rows = build_table_data(grp_curator_data, grp_curator_names)
-
-                grp_links = [
-                    {"href": "go-cam-aggregate-stats.html", "label": "Aggregate Statistics"},
-                    {"href": "go-cam-group-stats.html", "label": "Stats by Group"},
-                ]
 
                 render_and_write(template_str, {
                     "title": "GO-CAM Curator Stats - {}".format(label),
