@@ -302,10 +302,6 @@
 -
   accounts:
     github: sandyl27
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.bio.tamu.edu'
   nickname: 'Sandy Labonte'
@@ -357,10 +353,6 @@
 -
   accounts:
     github: dosumis
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://geneontology.org'
   nickname: 'David Osumi-Sutherland'
@@ -373,10 +365,6 @@
   uri: 'GOC:rc'
   xref: 'GOC:rc'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://flybase.org'
   nickname: 'Susan Tweedie'
@@ -399,10 +387,6 @@
   uri: 'GOC:ai'
   xref: 'GOC:ai'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   comment: 'former affiliations: FlyBase, UniProt, GO'
   groups:
     - 'http://www.ucl.ac.uk/functional-gene-annotation/neurological/projects/parkinsons'
@@ -421,10 +405,6 @@
   uri: 'https://orcid.org/0000-0001-9227-417X'
   xref: 'GOC:jid'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://geneontology.org'
   nickname: 'Jane Lomax'
@@ -434,10 +414,6 @@
 -
   accounts:
     github: mcourtot
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://geneontology.org'
   nickname: 'Melanie Courtot'
@@ -447,10 +423,6 @@
 -
   accounts:
     github: paolaroncaglia
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://geneontology.org'
   nickname: 'Paola Roncaglia'
@@ -477,10 +449,6 @@
 -
   accounts:
     github: zebrafishembryo
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://geneontology.org'
   previous-groups:
@@ -491,10 +459,6 @@
 -
   accounts:
     github: esperetta
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ebi.ac.uk/GOA'
   nickname: 'Elena Speretta'
@@ -504,10 +468,6 @@
 -
   accounts:
     github: ggeorghiou
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'George Georghiou'
@@ -517,10 +477,6 @@
 -
   accounts:
     github: hbye
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Hema Bye-A-Jee'
@@ -547,10 +503,6 @@
 -
   accounts:
     github: rachhuntley
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   comment: 'formerly GOA'
   groups:
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
@@ -573,10 +525,6 @@
 -
   accounts:
     github: bmeldal
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   comment: 'Birgit Meldal'
   groups:
     - 'https://www.ebi.ac.uk/intact'
@@ -661,10 +609,6 @@
   uri: 'GOC:id'
   xref: 'GOC:id'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://informatics.jax.org'
     - 'http://geneontology.org'
@@ -701,10 +645,6 @@
 -
   accounts:
     github: judyblake
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://informatics.jax.org'
     - 'http://geneontology.org'
@@ -833,10 +773,6 @@
 -
   accounts:
     github: cooperl09
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://oregonstate.edu'
   nickname: 'Laurel Cooper'
@@ -895,10 +831,6 @@
 -
   accounts:
     github: phanivg
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://flybase.org'
   previous-groups:
@@ -938,10 +870,6 @@
 -
   accounts:
     github: slaulederkind
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://rgd.mcw.edu'
   nickname: 'Stan Laulederkind'
@@ -1191,10 +1119,6 @@
 -
   accounts:
     github: daniwelter
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ebi.ac.uk/spot'
   nickname: 'Dani Welter'
@@ -1219,10 +1143,6 @@
 -
   accounts:
     github: dhldhl
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.arabidopsis.org'
   nickname: 'Donghui Li'
@@ -1389,20 +1309,12 @@
   uri: 'GOC:ae'
   xref: 'GOC:ae'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.eisai.com'
   nickname: 'Mitsuteru Nakao'
   organization: Eisai
   uri: 'https://orcid.org/0000-0002-7734-0826'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Alan Bridge'
@@ -1449,10 +1361,6 @@
   uri: 'GOC:dl'
   xref: 'GOC:dl'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Elena Cibrian-Uhalte'
@@ -1502,10 +1410,6 @@
   uri: 'GOC:kd'
   xref: 'GOC:kd'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Klemens Pichler'
@@ -1550,10 +1454,6 @@
 -
   accounts:
     github: magrane
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Michele Magrane'
@@ -1586,10 +1486,6 @@
 -
   accounts:
     github: pgarmiri
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Penelope Garmiri'
@@ -1707,10 +1603,6 @@
 -
   accounts:
     github: draciti
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.wormbase.org'
   nickname: 'Daniela Raciti'
@@ -1830,10 +1722,6 @@
   uri: 'https://orcid.org/0000-0002-4142-7153'
   xref: 'GOC:sat'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://zfin.org'
   nickname: 'Ken Frazer'
@@ -1855,10 +1743,6 @@
 -
   accounts:
     github: cmpich
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://zfin.org'
   nickname: 'Christian Pich'
@@ -1883,10 +1767,6 @@
   uri: 'https://orcid.org/0000-0002-8075-8625'
   xref: 'GOC:lb'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ohsu.edu'
   nickname: 'Melissa Haendel'
@@ -2214,10 +2094,6 @@
 -
   accounts:
     github: monicacecilia
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://lbl.gov'
   nickname: 'Monica Munoz-Torres'
@@ -2230,10 +2106,6 @@
   uri: 'GOC:giardia'
   xref: 'GOC:giardia'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://ronininstitute.org'
   nickname: 'Anne Thessen'
@@ -2267,20 +2139,12 @@
   uri: 'GOC:pnr'
   xref: 'GOC:pnr'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.sib.swiss'
   nickname: 'Aurore Britan'
   organization: SIB
   uri: 'https://orcid.org/0000-0002-9846-2590'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.sib.swiss'
   nickname: 'Valerie Hinard'
@@ -2295,30 +2159,18 @@
   uri: 'GOC:ani'
   xref: 'GOC:ani'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: "Claire O'Donovan"
   organization: EMBL-EBI
   uri: 'https://orcid.org/0000-0001-8051-7429'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Amaia Sangrador'
   organization: EMBL-EBI
   uri: 'https://orcid.org/0000-0001-6688-429X'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Alex Bateman'
@@ -2374,40 +2226,24 @@
   organization: 'GO Central'
   uri: 'https://orcid.org/0000-0002-8688-6599'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.phenotypercn.org'
   nickname: 'Istvan Miko'
   organization: PhenotypeRCN
   uri: 'https://orcid.org/0000-0001-9719-0215'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ohsu.edu'
   nickname: 'Matthew Brush'
   organization: OHSU
   uri: 'https://orcid.org/0000-0002-1048-5019'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.sandiego.edu'
   nickname: 'Wasila Dahdul'
   organization: USD
   uri: 'https://orcid.org/0000-0003-3162-7490'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.buffalo.edu'
   nickname: 'Alexander Diehl'
@@ -2415,10 +2251,6 @@
   uri: 'https://orcid.org/0000-0001-9990-8331'
   xref: 'GOC:add'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ohsu.edu'
   nickname: 'Jean-Philippe Francois Gourdine'
@@ -2427,10 +2259,6 @@
 -
   accounts:
     github: preecej
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://planteome.org'
   nickname: 'Justin Preece'
@@ -2439,10 +2267,6 @@
 -
   accounts:
     github: jaiswalp
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://planteome.org'
   nickname: 'Pankaj Jaiswal'
@@ -2450,20 +2274,12 @@
   uri: 'https://orcid.org/0000-0002-1005-8383'
   xref: 'GOC:pj'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.buffalo.edu'
   nickname: 'Mark Jensen'
   organization: 'University at Buffalo'
   uri: 'https://orcid.org/0000-0001-9228-8838'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.embo.org'
   nickname: 'Nancy George'
@@ -2472,90 +2288,54 @@
 -
   accounts:
     github: pbuttigieg
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.awi.de'
   nickname: 'Pier Luigi Buttigieg'
   organization: AWI
   uri: 'https://orcid.org/0000-0002-4366-3088'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.hsph.harvard.edu'
   nickname: 'Bridget C Hanna'
   organization: 'Harvard T.H. Chan School of Public Health'
   uri: 'https://orcid.org/0000-0001-8798-3326'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ohsu.edu'
   nickname: 'Daniel Keith'
   organization: OHSU
   uri: 'https://orcid.org/0000-0002-1643-6242'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://ualr.edu'
   nickname: 'Thomas Hahn'
   organization: UALR
   uri: 'https://orcid.org/0000-0002-3499-1346'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.massgeneral.org'
   nickname: 'Karl Helmer'
   organization: MGH
   uri: 'https://orcid.org/0000-0002-5113-6843'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://oregonstate.edu'
   nickname: 'Justin Elser'
   organization: OSU
   uri: 'https://orcid.org/0000-0003-0921-1982'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.roswellpark.org'
   nickname: 'William Duncan'
   organization: 'Roswell Park Cancer Institute'
   uri: 'https://orcid.org/0000-0001-9625-1899'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.cgiar.org'
   nickname: 'Medha Devare'
   organization: CGIAR
   uri: 'https://orcid.org/0000-0003-0041-4812'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.ncsu.edu'
   nickname: 'Cynthia J Grondin'
@@ -2564,10 +2344,6 @@
 -
   accounts:
     github: selewis
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://geneontology.org'
     - 'http://lbl.gov'
@@ -2575,80 +2351,48 @@
   organization: LBL
   uri: 'https://orcid.org/0000-0002-8343-612X'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.adm.com'
   nickname: 'Jie Liu'
   organization: ADM
   uri: 'https://orcid.org/0000-0002-9280-1539'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.epa.gov'
   nickname: 'Ronglin Wang'
   organization: 'US EPA'
   uri: 'https://orcid.org/0000-0002-6537-9758'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ucdavis.edu'
   nickname: 'Matthew Lange'
   organization: 'UC Davis'
   uri: 'https://orcid.org/0000-0002-6148-7962'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Daniel Gonzalez'
   organization: EMBL-EBI
   uri: 'https://orcid.org/0000-0002-3919-1380'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Emma Hatton-Ellis'
   organization: EMBL-EBI
   uri: 'https://orcid.org/0000-0002-7262-1928'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Barbara Palka'
   organization: EMBL-EBI
   uri: 'https://orcid.org/0000-0001-8256-1466'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Ramona Britto'
   organization: EMBL-EBI
   uri: 'https://orcid.org/0000-0003-1011-5410'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Alistair MacDougall'
@@ -2657,30 +2401,18 @@
 -
   accounts:
     github: tuli
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.wormbase.org'
   nickname: 'Mary Ann Tuli'
   organization: WB
   uri: 'https://orcid.org/0000-0002-4667-9528'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.crick.ac.uk'
   nickname: 'Jacqueline Hayles'
   organization: Crick
   uri: 'https://orcid.org/0000-0002-8599-8206'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Nidhi Tyagi'
@@ -2700,10 +2432,6 @@
   uri: 'https://orcid.org/0000-0002-3358-4423'
   xref: 'GOC:rz'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://nidm.nidash.org'
   nickname: 'Satrajit Ghosh'
@@ -2761,10 +2489,6 @@
 -
   accounts:
     github: vponferrada
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.xenbase.org'
   nickname: 'Virgilio Ponferrada'
@@ -2773,10 +2497,6 @@
 -
   accounts:
     github: chris-grove
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.wormbase.org'
   nickname: 'Christian Grove'
@@ -2785,10 +2505,6 @@
 -
   accounts:
     github: owlang
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Olivia Lang'
@@ -2823,10 +2539,6 @@
 -
   accounts:
     github: ebakker2
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.arabidopsis.org'
   nickname: 'Erica Bakker'
@@ -2835,10 +2547,6 @@
 -
   accounts:
     github: mchibucos
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.igs.umaryland.edu'
   nickname: 'Marcus Chibucos'
@@ -2861,10 +2569,6 @@
 -
   accounts:
     github: BarbaraCzub
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological'
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
@@ -2876,10 +2580,6 @@
 -
   accounts:
     github: goldturtle
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.wormbase.org'
   nickname: 'Hans-Michael Muller'
@@ -2888,10 +2588,6 @@
 -
   accounts:
     github: kyook
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.wormbase.org'
   nickname: 'Karen Yook'
@@ -2900,10 +2596,6 @@
 -
   accounts:
     github: fatimasilva
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://eupathdb.org'
     - 'http://www.genedb.org'
@@ -2913,10 +2605,6 @@
 -
   accounts:
     github: uliboehme
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.genedb.org'
   nickname: 'Ulrike Bohme'
@@ -2937,10 +2625,6 @@
 -
   accounts:
     github: gthayman
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://rgd.mcw.edu'
   nickname: 'George Thomas Hayman'
@@ -2973,10 +2657,6 @@
 -
   accounts:
     github: marieALaporte
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.bioversityinternational.org'
   nickname: 'Marie-Angélique Laporte'
@@ -2985,10 +2665,6 @@
 -
   accounts:
     github: austinmeier
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://planteome.org'
   nickname: Austin
@@ -2997,10 +2673,6 @@
 -
   accounts:
     github: grlazo
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.usda.gov'
   nickname: 'Gerard Lazo'
@@ -3009,10 +2681,6 @@
 -
   accounts:
     github: priya8328
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://planteome.org'
   nickname: 'Priyanka Garg'
@@ -3021,10 +2689,6 @@
 -
   accounts:
     github: genizamt
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://oregonstate.edu'
   nickname: 'Matthew Geniza'
@@ -3033,10 +2697,6 @@
 -
   accounts:
     github: noor-albader
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://oregonstate.edu'
   nickname: 'Noor Al-Bader'
@@ -3045,10 +2705,6 @@
 -
   accounts:
     github: naithanis
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://oregonstate.edu'
   nickname: 'Sushma Naithani'
@@ -3057,10 +2713,6 @@
 -
   accounts:
     github: guptapa
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://oregonstate.edu'
   nickname: 'Parul Gupta'
@@ -3069,10 +2721,6 @@
 -
   accounts:
     github: TomConlin
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://monarchinitiative.org'
   nickname: 'Tom Conlin'
@@ -3081,10 +2729,6 @@
 -
   accounts:
     github: gitkumard
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://planteome.org'
   nickname: 'Dhirendra Kumar'
@@ -3093,10 +2737,6 @@
 -
   accounts:
     github: dougli1sqrd
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://geneontology.org'
   nickname: 'Eric Douglass'
@@ -3105,10 +2745,6 @@
 -
   accounts:
     github: kshefchek
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.ohsu.edu'
   nickname: 'Kent Shefchek'
@@ -3117,10 +2753,6 @@
 -
   accounts:
     github: dnahotline
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://monarchinitiative.org'
     - 'https://ncats.nih.gov/translator'
@@ -3166,10 +2798,6 @@
 -
   accounts:
     github: Shellerstedt
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Sage Hellerstedt'
@@ -3178,10 +2806,6 @@
 -
   accounts:
     github: mendelje
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.wormbase.org'
   nickname: 'Jane Mendel'
@@ -3197,10 +2821,6 @@
 -
   accounts:
     github: yy20716
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://lbl.gov'
     - 'http://geneontology.org'
@@ -3210,10 +2830,6 @@
 -
   accounts:
     github: WBjae
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.wormbase.org'
   nickname: 'Jae Cho'
@@ -3234,10 +2850,6 @@
 -
   accounts:
     github: liviap
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.ebi.ac.uk/intact'
   nickname: 'Livia Perfetto'
@@ -3247,10 +2859,6 @@
 -
   accounts:
     github: goodb
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://geneontology.org'
   nickname: 'Ben Good'
@@ -3271,10 +2879,6 @@
 -
   accounts:
     github: lpalbou
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://geneontology.org'
   nickname: 'Laurent-Philippe Albou'
@@ -3283,10 +2887,6 @@
 -
   accounts:
     github: paulwsternberg
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.wormbase.org'
   nickname: 'Paul W. Sternberg'
@@ -3307,10 +2907,6 @@
 -
   accounts:
     github: barbdunn
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Barbara Dunn'
@@ -3319,10 +2915,6 @@
 -
   accounts:
     github: Yalbibalderas
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.iner.salud.gob.mx'
     - 'http://www.conacyt.gob.mx/index.php/el-conacyt/desarrollo-cientifico/catedrasconacyt'
@@ -3693,10 +3285,6 @@
   organization: 'Department of Physiology, Yong Loo Lin School of Medicine, National University of Singapore, Singapore'
   uri: 'https://orcid.org/0000-0002-5615-1014'
 -
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://syngo.vu.nl'
   nickname: 'Roberto Malinow'
@@ -3728,10 +3316,6 @@
 -
   accounts:
     github: luanalicata
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://signor.uniroma2.it'
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
@@ -3753,10 +3337,6 @@
 -
   accounts:
     github: erbolton
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://rgd.mcw.edu'
   nickname: 'Liz Bolton'
@@ -3847,10 +3427,6 @@
 -
   accounts:
     github: ShirinSaverimuttu
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological'
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
@@ -3861,10 +3437,6 @@
 -
   accounts:
     github: MariosMakris
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.ucl.ac.uk/functional-gene-annotation/neurological'
     - 'http://www.ucl.ac.uk/functional-gene-annotation/cardiovascular'
@@ -3875,10 +3447,6 @@
 -
   accounts:
     github: Gschindelman
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.wormbase.org'
   nickname: 'Gary Schindelman'
@@ -3915,10 +3483,6 @@
 -
   accounts:
     github: Fbolio
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.wormbase.org'
   nickname: 'Fernando Bolio'
@@ -3951,10 +3515,6 @@
 -
   accounts:
     github: mlkaldunski
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://rgd.mcw.edu'
   nickname: 'Mary Kaldunski'
@@ -3963,10 +3523,6 @@
 -
   accounts:
     github: davidwsant
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://greekc.org'
   nickname: 'David W. Sant'
@@ -3975,10 +3531,6 @@
 -
   accounts:
     github: yazeyen
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.ktu.edu.tr/bmi-cancermodelingresearchgroup'
   nickname: 'Yasemin Zeynep Avci'
@@ -3992,10 +3544,6 @@
 -
   accounts:
     github: bea-liv
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://eupathdb.org'
   nickname: 'Beatrice Amos'
@@ -4003,10 +3551,6 @@
 -
   accounts:
     github: pwilx666
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://eupathdb.org'
   nickname: 'Paul Wilkinson'
@@ -4014,10 +3558,6 @@
 -
   accounts:
     github: obsidian83
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://eupathdb.org'
   nickname: 'David Starns'
@@ -4057,10 +3597,6 @@
 -
   accounts:
     github: neurogarg
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.wormbase.org'
   nickname: 'Pranjal Garg'
@@ -4081,10 +3617,6 @@
 -
   accounts:
     github: RahiNav
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.yeastgenome.org'
   nickname: 'Rahi Navelkar'
@@ -4093,10 +3625,6 @@
 -
   accounts:
     github: c02080219
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://geneontology.org'
   nickname: 'YuanChing Chen'
@@ -4129,10 +3657,6 @@
 -
   accounts:
     github: kalpanapanneerselvam
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.ebi.ac.uk/intact'
   nickname: 'Kalpana Panneerselvam'
@@ -4141,10 +3665,6 @@
 -
   accounts:
     github: tgroth58
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.buffalo.edu'
   nickname: 'Theodore Groth'
@@ -4153,10 +3673,6 @@
 -
   accounts:
     github: manulera
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'http://www.pombase.org'
   nickname: 'Manu Lera Ramirez'
@@ -4177,10 +3693,6 @@
 -
   accounts:
     github: moghelab
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.cornell.edu'
   nickname: 'Gaurav Moghe'
@@ -4201,10 +3713,6 @@
 -
   accounts:
     github: dexink
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.ufl.edu'
   nickname: 'Colbie Reed'
@@ -4270,10 +3778,6 @@
 -
   accounts:
     github: IvanTsers
-  authorizations:
-    noctua:
-      go:
-        allow-edit: true
   groups:
     - 'https://www.evolbio.mpg.de'
   nickname: 'Ivan Tsers'
