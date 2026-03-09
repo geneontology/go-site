@@ -2600,7 +2600,9 @@
       url_syntax: http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=[example_id]
       example_id: NCBITaxon:7227
       example_url: http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=3702
-- database: TC
+- database: TCDB
+  synonyms:
+    - TC
   name: Transport Protein Database
   rdf_uri_prefix: http://identifiers.org/tcdb/
   generic_urls:
@@ -2610,7 +2612,7 @@
       type_id: PR:000000001
       id_syntax: '[0-9]+\.[A-Z](\.[0-9]+)+'
       url_syntax: http://www.tcdb.org/tcdb/index.php?tc=[example_id]
-      example_id: TC:9.A.4.1.1
+      example_id: TCDB:9.A.4.1.1
       example_url: http://www.tcdb.org/tcdb/index.php?tc=9.A.4.1.1
 - database: TGD
   name: Tetrahymena Genome Database
