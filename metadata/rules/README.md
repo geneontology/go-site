@@ -19,6 +19,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000009">GORULE:0000009 Annotation Intersection Alerts</a>
  * <a href="#gorule0000010">GORULE:0000010 DEPRECATED - PubMed reference formatting must be correct</a>
  * <a href="#gorule0000011">GORULE:0000011 ND evidence code should be to root nodes only, and no terms other than root nodes can have the evidence code ND</a>
+ * <a href="#gorule0000012">GORULE:0000012 IC needs with GO</a>
  * <a href="#gorule0000013">GORULE:0000013 Taxon-appropriate annotation check</a>
  * <a href="#gorule0000014">GORULE:0000014 DEPRECATED. GO terms in annotations should not be obsolete.</a>
  * <a href="#gorule0000015">GORULE:0000015 Dual species taxon check</a>
@@ -324,6 +325,19 @@ for annotations to the root nodes: GO:0008150 biological_process, GO:0003674 mol
 The root nodes: GO:0008150 biological_process, GO:0003674 molecular_function and GO:0005575 cellular_component can only be annotated with the [No Data (ND) evidence code](http://www.geneontology.org/GO.evidence.shtml#nd).  
 
 Error report (number of errors) in [db_species]-report.html & owltools-check.txt (details).
+
+<a name="gorule0000012"/>
+
+## IC needs with GO
+
+ * id: [GORULE:0000012](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000012.md)
+ * status: approved
+
+
+
+
+TO COMPLETE 
+For With/from column, If Evidence code  = IC, then it has to be GO id.  Else it has to be one of the databases .  Some evidence codes do not have a with/From entry. Rule 17.
 
 <a name="gorule0000013"/>
 
