@@ -254,6 +254,7 @@
     noctua:
       go:
         allow-edit: true
+        allow-admin: true
   groups:
     - 'http://geneontology.org'
   nickname: 'Pascale Gaudet'
