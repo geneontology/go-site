@@ -2178,6 +2178,18 @@
   organization: EMBL-EBI
   uri: 'https://orcid.org/0000-0002-6982-4660'
 -
+  groups:
+    - 'http://www.ebi.ac.uk'
+  nickname: 'Emily Bowler-Barnett'
+  organization: EMBL-EBI
+  uri: 'https://orcid.org/0000-0003-4785-7231'
+-
+  groups:
+    - 'http://www.ebi.ac.uk'
+  nickname: 'Stephanie Lo'
+  organization: EMBL-EBI
+  uri: 'https://orcid.org/0000-0002-2182-0222'
+-
   accounts:
     github: ftwkoopmans
   authorizations:
