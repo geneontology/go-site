@@ -246,6 +246,7 @@ eco_usage_constraints:
       - entity_type: *biological_process
       - entity_type: *protein_complex
       - entity_type: *rna
+      - entity_type: *entity
   - eco_id: ECO:0007001
     go_evidence: HMP
     allowed_reference: PMID:[0-9]+
