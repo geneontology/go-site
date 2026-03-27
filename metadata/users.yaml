@@ -1455,6 +1455,10 @@
 -
   accounts:
     github: magrane
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'https://www.uniprot.org'
   nickname: 'Michele Magrane'
@@ -3975,3 +3979,39 @@
     - 'http://geneontology.org'
   nickname: 'Patrick Kalita'
   uri: 'https://orcid.org/0000-0002-6150-307X'
+-
+  accounts:
+    github: CY-uniprot
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Conny Yu'
+  organization: UniProt
+  uri: 'https://orcid.org/0000-0002-6478-5762'
+-
+  accounts:
+    github: EBIDaveC
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'David Carpentier'
+  organization: UniProt
+  uri: 'https://orcid.org/0000-0002-8172-9121'
+-
+  accounts:
+    github: PedroRaposo
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Pedro Raposo'
+  organization: UniProt
+  uri: 'https://orcid.org/0000-0001-6149-9456'
