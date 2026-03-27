@@ -4015,3 +4015,15 @@
   nickname: 'Pedro Raposo'
   organization: UniProt
   uri: 'https://orcid.org/0000-0001-6149-9456'
+-
+  accounts:
+    github: adura-a
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://www.uniprot.org'
+  nickname: 'Aduragbemi Adesina'
+  organization: UniProt
+  uri: 'https://orcid.org/0000-0002-1029-4159'
