@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+	  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html lang="en" dir="ltr"
+      xmlns:content="http://purl.org/rss/1.0/modules/content/"
+      xmlns:dc="http://purl.org/dc/terms/"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:sioc="http://rdfs.org/sioc/ns#"
+      xmlns:sioct="http://rdfs.org/sioc/types#"
+      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <head profile="http://www.w3.org/1999/xhtml/vocab">
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="shortcut icon" href="http://geneontology.org/sites/default/files/go-logo-favicon_0.ico" type="image/vnd.microsoft.icon" />
+        <link rel="shortcut icon" href="logo-circle.ico">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" crossorigin="anonymous"/>
+        <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+
+        <title>{{ title }}</title>
+
+        <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+            $('#sourcestable').DataTable({
+                "paging": true,
+                "pageLength": 25,
+                "ordering": true,
+                "searching": true
+            });
+        });
+        </script>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+        <h2>{{ title }}</h2>
+        Generated on {{ date }}<br/>
+        <nav class="mt-2 mb-3">
+            {{ #links }}
+            <a href="{{ href }}" class="btn btn-outline-primary btn-sm">{{ label }}</a>
+            {{ /links }}
+        </nav>
+        <div class="table-responsive">
+        <table id="sourcestable" class="table table-sm table-striped rud-compact-table table-bordered table-hover">
+        <thead>
+            <tr>
+                {{ #columns }}
+                <th scope="col">{{ label }}</th>
+                {{ /columns }}
+            </tr>
+        </thead>
+        <tbody>
+            {{ #records }}
+            <tr>
+                {{ #cells }}
+                <td>{{ value }}</td>
+                {{ /cells }}
+            </tr>
+            {{ /records }}
+        </tbody>
+        </table>
+        </div>
+        </div>
+    </body>
+
+</html>

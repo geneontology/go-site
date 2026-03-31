@@ -35,11 +35,102 @@ def build_table_data(json_data_list, column_names):
     return header, rows
 
 
+def load_ontology_labels(resource_path):
+    """Load an OBO JSON ontology file and return a dict mapping GO ID to label.
+
+    The OBO JSON format stores nodes under graphs[0]["nodes"], where each node
+    has an "id" (URI like http://purl.obolibrary.org/obo/GO_0042613) and "lbl"
+    (the human-readable label).
+    """
+    with open(resource_path) as f:
+        data = json.load(f)
+    labels = {}
+    for node in data.get("graphs", [{}])[0].get("nodes", []):
+        uri = node.get("id", "")
+        lbl = node.get("lbl", "")
+        if lbl and "/" in uri:
+            # Extract GO ID: last segment of URI, replace _ with :
+            raw_id = uri.rsplit("/", 1)[-1]
+            go_id = raw_id.replace("_", ":")
+            labels[go_id] = lbl
+    return labels
+
+
+def get_go_term_label(go_id, ontology_labels):
+    """Look up a GO term label from the ontology dict."""
+    return ontology_labels.get(go_id, "")
+
+
+def build_record_table_data(records, field_specs):
+    """Build columns and record rows for a row-oriented (records) template.
+
+    Args:
+        records: list of dicts (the JSON array)
+        field_specs: list of (field_name, display_label, formatter_fn) tuples.
+            formatter_fn takes a raw value and returns a display string.
+
+    Returns:
+        columns: [{"label": str}]
+        record_rows: [{"cells": [{"value": str}]}]
+    """
+    columns = [{"label": label} for _, label, _ in field_specs]
+    record_rows = []
+    for rec in records:
+        cells = []
+        for field_name, _, formatter in field_specs:
+            raw = rec.get(field_name, "")
+            cells.append({"value": formatter(raw)})
+        record_rows.append({"cells": cells})
+    return columns, record_rows
+
+
+def format_curator_list(uris, users_by_uri):
+    """Resolve a list of curator URIs to display names, comma-joined."""
+    if not uris:
+        return ""
+    return ", ".join(get_curator_display_name(uri, users_by_uri) for uri in uris)
+
+
+def format_group_list(uris, groups_by_id):
+    """Resolve a list of group URIs to labels, comma-joined."""
+    if not uris:
+        return ""
+    labels = []
+    for uri in uris:
+        ensure_group_entry(uri, groups_by_id)
+        group = groups_by_id.get(uri)
+        if group and group.get("label"):
+            labels.append(group["label"])
+        else:
+            labels.append(uri)
+    return ", ".join(labels)
+
+
+def build_links(exclude_filename, available_pages):
+    """Build navigation links excluding the current page."""
+    return [{"href": fn, "label": label} for fn, label in available_pages if fn != exclude_filename]
+
+
 def render_and_write(template_str, context, output_path):
     """Render a mustache template and write to output_path."""
     rendered = pystache.render(template_str, context)
     with open(output_path, "w") as f:
         f.write(rendered)
+    click.echo("Wrote {}".format(output_path))
+
+
+def write_tsv(headers, rows, output_path):
+    """Write a TSV file with the given headers and rows.
+
+    Args:
+        headers: list of column header strings
+        rows: list of lists of string values
+        output_path: path to write the TSV file
+    """
+    with open(output_path, "w") as f:
+        f.write("\t".join(headers) + "\n")
+        for row in rows:
+            f.write("\t".join(str(v) for v in row) + "\n")
     click.echo("Wrote {}".format(output_path))
 
 
@@ -123,12 +214,17 @@ def ensure_group_entry(group_uri, groups_by_id):
 @click.option("--directory", type=click.Path(exists=True), required=True)
 @click.option("--template", type=click.File("r"), required=True)
 @click.option("--output", type=click.Path(), required=True)
+@click.option("--template-records", type=click.File("r"), required=False, default=None,
+              help="Mustache template for record-oriented tables (protein complex, variable definitions)")
+@click.option("-r", "--resource", type=click.Path(exists=True), required=False, default=None,
+              help="Ontology file in OBO JSON format (e.g., go.json) for resolving GO term labels")
 @click.option("--metadata", type=click.Path(exists=True), required=False, default=None,
               help="Directory containing users.yaml and groups.yaml metadata files")
 @click.option("--date", default=str(datetime.date.today()))
-def main(directory, template, output, metadata, date):
+def main(directory, template, output, template_records, resource, metadata, date):
     os.makedirs(output, exist_ok=True)
     template_str = template.read()
+    records_template_str = template_records.read() if template_records else None
 
     # Load metadata if provided
     users_by_uri = {}
@@ -136,6 +232,23 @@ def main(directory, template, output, metadata, date):
     if metadata:
         users_by_uri = load_users(metadata)
         groups_by_id = load_groups(metadata)
+
+    # Load ontology labels if provided
+    ontology_labels = {}
+    if resource:
+        ontology_labels = load_ontology_labels(resource)
+
+    # Build dynamic available_pages list based on which JSON files exist
+    available_pages = [
+        ("go-cam-aggregate-stats.html", "Aggregate Statistics"),
+        ("go-cam-group-stats.html", "Stats by Group"),
+    ]
+    protein_complex_file = os.path.join(directory, "aggregate_protein_complex.json")
+    definitions_file = os.path.join(directory, "member_variable_definitions.json")
+    if records_template_str and os.path.exists(protein_complex_file):
+        available_pages.append(("go-cam-protein-complex.html", "Protein Complex Activities"))
+    if records_template_str and os.path.exists(definitions_file):
+        available_pages.append(("go-cam-variable-definitions.html", "Variable Definitions"))
 
     # --- Aggregate stats (Model only) ---
     aggregate_file = os.path.join(directory, "aggregate_model_stats.json")
@@ -149,15 +262,11 @@ def main(directory, template, output, metadata, date):
     column_name = model_entity.pop("entity", "Model")
     header, rows = build_table_data([model_entity], [column_name])
 
-    links = [
-        {"href": "go-cam-group-stats.html", "label": "Stats by Group"},
-    ]
-
     render_and_write(template_str, {
         "title": "GO-CAM Aggregate Statistics",
         "header": header,
         "rows": rows,
-        "links": links,
+        "links": build_links("go-cam-aggregate-stats.html", available_pages),
         "date": date,
     }, os.path.join(output, "go-cam-aggregate-stats.html"))
 
@@ -181,16 +290,11 @@ def main(directory, template, output, metadata, date):
 
         header, rows = build_table_data(curator_data_list, curator_columns)
 
-        links = [
-            {"href": "go-cam-aggregate-stats.html", "label": "Aggregate Statistics"},
-            {"href": "go-cam-group-stats.html", "label": "Stats by Group"},
-        ]
-
         render_and_write(template_str, {
             "title": "GO-CAM Stats by Curator",
             "header": header,
             "rows": rows,
-            "links": links,
+            "links": build_links("go-cam-curator-stats.html", available_pages),
             "date": date,
         }, os.path.join(output, "go-cam-curator-stats.html"))
     else:
@@ -263,15 +367,11 @@ def main(directory, template, output, metadata, date):
                     "values": values,
                 })
 
-            links = [
-                {"href": "go-cam-aggregate-stats.html", "label": "Aggregate Statistics"},
-            ]
-
             render_and_write(template_str, {
                 "title": "GO-CAM Stats by Group",
                 "header": header,
                 "rows": rows,
-                "links": links,
+                "links": build_links("go-cam-group-stats.html", available_pages),
                 "date": date,
             }, os.path.join(output, "go-cam-group-stats.html"))
 
@@ -279,10 +379,7 @@ def main(directory, template, output, metadata, date):
             for group_uri, label, page_fn in zip(group_uris, group_labels, group_page_filenames):
                 curators_in_group = group_to_curators.get(group_uri, [])
 
-                grp_links = [
-                    {"href": "go-cam-aggregate-stats.html", "label": "Aggregate Statistics"},
-                    {"href": "go-cam-group-stats.html", "label": "Stats by Group"},
-                ]
+                grp_links = build_links(page_fn, available_pages)
 
                 if not curators_in_group:
                     click.echo("No curators found for group '{}' via metadata".format(label), err=True)
@@ -316,16 +413,11 @@ def main(directory, template, output, metadata, date):
 
                 other_header, other_rows = build_table_data(other_data, other_names)
 
-                other_links = [
-                    {"href": "go-cam-aggregate-stats.html", "label": "Aggregate Statistics"},
-                    {"href": "go-cam-group-stats.html", "label": "Stats by Group"},
-                ]
-
                 render_and_write(template_str, {
                     "title": "GO-CAM Curator Stats - Other",
                     "header": other_header,
                     "rows": other_rows,
-                    "links": other_links,
+                    "links": build_links("go-cam-group-curator-stats-other.html", available_pages),
                     "date": date,
                 }, os.path.join(output, "go-cam-group-curator-stats-other.html"))
 
@@ -333,6 +425,81 @@ def main(directory, template, output, metadata, date):
             click.echo("No group stats files found in {}".format(group_dir), err=True)
     else:
         click.echo("stats_by_group directory not found in {}".format(directory), err=True)
+
+    # --- Protein Complex Activities report ---
+    if records_template_str and os.path.exists(protein_complex_file):
+        with open(protein_complex_file) as f:
+            protein_complex_data = json.load(f)
+
+        if protein_complex_data:
+            field_specs = [
+                ("model_id", "Model ID", str),
+                ("model_name", "Model Name", str),
+                ("activity_id", "Activity ID", str),
+                ("protein_complex_term", "Protein Complex Term", str),
+            ]
+            if ontology_labels:
+                field_specs.append(
+                    ("protein_complex_term", "Protein Complex Label",
+                     lambda go_id: get_go_term_label(go_id, ontology_labels)))
+            field_specs.append(("molecular_function", "Molecular Function", str))
+            if ontology_labels:
+                field_specs.append(
+                    ("molecular_function", "Molecular Function Label",
+                     lambda go_id: get_go_term_label(go_id, ontology_labels)))
+            field_specs.extend([
+                ("unique_curators", "Curators", lambda uris: format_curator_list(uris, users_by_uri)),
+                ("unique_groups", "Groups", lambda uris: format_group_list(uris, groups_by_id)),
+            ])
+            columns, records = build_record_table_data(protein_complex_data, field_specs)
+
+            render_and_write(records_template_str, {
+                "title": "GO-CAM Protein Complex Activities",
+                "columns": columns,
+                "records": records,
+                "links": build_links("go-cam-protein-complex.html", available_pages),
+                "date": date,
+            }, os.path.join(output, "go-cam-protein-complex.html"))
+
+            # Also write TSV with the same columns
+            tsv_headers = [label for _, label, _ in field_specs]
+            tsv_rows = []
+            for rec in protein_complex_data:
+                row = []
+                for field_name, _, formatter in field_specs:
+                    raw = rec.get(field_name, "")
+                    row.append(formatter(raw))
+                tsv_rows.append(row)
+            write_tsv(tsv_headers, tsv_rows, os.path.join(output, "go-cam-protein-complex.tsv"))
+        else:
+            click.echo("aggregate_protein_complex.json is empty", err=True)
+    elif records_template_str:
+        click.echo("No aggregate_protein_complex.json found in {}".format(directory), err=True)
+
+    # --- Variable Definitions report ---
+    if records_template_str and os.path.exists(definitions_file):
+        with open(definitions_file) as f:
+            definitions_data = json.load(f)
+
+        if definitions_data:
+            field_specs = [
+                ("class", "Class", str),
+                ("variable", "Variable", str),
+                ("description", "Description", str),
+            ]
+            columns, records = build_record_table_data(definitions_data, field_specs)
+
+            render_and_write(records_template_str, {
+                "title": "GO-CAM Variable Definitions",
+                "columns": columns,
+                "records": records,
+                "links": build_links("go-cam-variable-definitions.html", available_pages),
+                "date": date,
+            }, os.path.join(output, "go-cam-variable-definitions.html"))
+        else:
+            click.echo("member_variable_definitions.json is empty", err=True)
+    elif records_template_str:
+        click.echo("No member_variable_definitions.json found in {}".format(directory), err=True)
 
 
 if __name__ == "__main__":
