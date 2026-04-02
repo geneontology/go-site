@@ -2182,6 +2182,12 @@
   organization: EMBL-EBI
   uri: 'https://orcid.org/0000-0002-6982-4660'
 -
+  accounts:
+    github: StephanieWLo
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
   groups:
     - 'http://www.ebi.ac.uk'
   nickname: 'Stephanie Lo'
