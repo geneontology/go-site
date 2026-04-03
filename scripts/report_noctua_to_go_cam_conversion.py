@@ -124,6 +124,8 @@ def load_users(metadata_dir: Path) -> tuple[dict[str, dict], dict[str, dict]]:
     users_by_uri: dict[str, dict] = {}
     users_by_xref: dict[str, dict] = {}
     for user in users_list:
+        if not isinstance(user, dict):
+            continue
         uri = user.get("uri", "")
         if uri:
             users_by_uri[uri] = user
