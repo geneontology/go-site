@@ -40,7 +40,7 @@ PomBase	SPAC25B8.19	ypf3	is_active_in	RO:0006921	GO_REF:0000024	ISO	SGD:S0000015
 ! FAILS GORULE:0000001 - TEST 14 - 'acts_upstream_of,_positive_effect' is not a valid relation (should not contain a comma)															
 UniProtKB	A1B2F4	aztD	"acts_upstream_of,_positive_effect"	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000001-14		protein	taxon:318586	20230427	PomBase	
 ! FAILS GORULE:0000001 - TEST 15 - 'acts_upstream_of_positive_effect' is not a valid relation (should not contain a comma)															
-UniProtKB	A1B2F4	aztD	acts_upstream_of_positive_effect	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000001-15		protein	taxon:318586	20230427	PomBase	
+UniProtKB	A1B2F4	aztD	acts_upstream_of_,positive_effect	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000001-15		protein	taxon:318586	20230427	PomBase	
 ! FAILS GORULE:0000001 -  TEST 16 - 'acts_upstream_of_or_within,_positive_effect' is not a valid relation (should not contain a comma)															
 UniProtKB	A1B2F4	aztD	"acts_upstream_of_or_within,_positive_effect"	GO:0005634	PMID:26468286	IDA		C	GORULE_TEST:0000001-16		protein	taxon:318586	20230427	PomBase	
 ! FAILS GORULE:0000001 - TEST 17 - 'acts_upstream_of_or_within,_negative_effect' is not a valid relation (should not contain a comma)															
@@ -121,6 +121,8 @@ UniProtKB	O56786	hol187	involved_in	GO:0010363	PMID:10419939	IDA		P	GORULE_TEST:
 UniProtKB	O56786	hol187	involved_in	GO:0035915	PMID:10419939	IDA		P	GORULE_TEST:0000015-6 Holin protein Hol187	hol187	protein	taxon:55511	20170423	GO_Central	
 ! SHOULD PASS GORULE:0000015 - TEST 7 -   "GO:0052067 symbiont-mediated perturbation of host phagocytosis" with two taxon ID															
 UniProtKB	P16971	recA	involved_in	GO:0052067	PMID:26221034	IDA		P	GORULE_TEST:0000015-7 Protein CD300H	CD300H	protein	taxon:9606|taxon:224308	20160428	GO_Central	
+! SHOULD PASS GORULE:0000015 - TEST 8 -   "GO:0052067 symbiont-mediated perturbation of host phagocytosis" with three taxon ID															
+UniProtKB	P16971	recA	involved_in	GO:0052067	PMID:26221034	IDA		P	GORULE_TEST:0000015-8 Protein CD300H	CD300H	protein	taxon:9606|taxon:224308|taxon:57667	20160428	GO_Central	
 ! FAILS GORULE:0000016 -  TEST 1 - column 8 (with/from) is null															
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	GO_REF:0000036	IC		P	GORULE_TEST:0000016-1 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000016 -  TEST 2 - column 8 (with/from) is has a non-GOID															
@@ -138,15 +140,19 @@ UniProtKB	A0A0K3AV08	mlk-1	enables	GO:0005080	PMID:23072806	IPI		F	GORULE_TEST:0
 ! FAILS GORULE:0000018 - TEST 3 - missing Column 8 data ('with' field) for 'binding ; GO:0005488'															
 UniProtKB	O76187	darA	enables	GO:0005488	PMID:9802899	IPI		F	GORULE_TEST:0000018-3		protein	taxon:44689	20230513	GO_Central	
 ! FAILS GORULE:0000020 - TEST 1 - obsolete term with no replacement															
-UniProtKB	P04995	sbcB	involved_in	GO:0090503	PMID:18952608	IDA	GO:0000175	P	GORULE_TEST:0000020-1 Exodeoxyribonuclease I	sbcB|cpeA|xonA|JW1993|b2011	protein	taxon:83333	20230509	GO_Central	
-! FAILS GORULE:0000020 - TEST 2 - obsolete term with a replacement term			
-UniProtKB	P04995	sbcB	located_in	GO:0016021	PMID:18952608	IDA	GO:0000175	P	GORULE_TEST:0000020-2 Exodeoxyribonuclease I	sbcB|cpeA|xonA|JW1993|b2011	protein	taxon:83333	20230509	GO_Central	
+UniProtKB	P04995	sbcB	involved_in	GO:0090503	PMID:18952608	IDA		P	GORULE_TEST:0000020-1 Exodeoxyribonuclease I	sbcB|cpeA|xonA|JW1993|b2011	protein	taxon:83333	20230509	GO_Central	
+! FAILS WITH WARNING GORULE:0000020 - TEST 2 - obsolete term with a replacement term			
+UniProtKB	P04995	sbcB	located_in	GO:0016021	PMID:18952608	IDA		P	GORULE_TEST:0000020-2 Exodeoxyribonuclease I	sbcB|cpeA|xonA|JW1993|b2011	protein	taxon:83333	20230509	GO_Central	
 ! FAILS GORULE:0000020 - TEST 3 - obsolete term in 'with' (column 8) with no replacement															
 MGI:1100518	Smad7	bla	involved_in	GO:0017015	MGI:MGI:3836072|PMID:18952608	IC	GO:0060389	P	GORULE_TEST:0000020-3	SMAD	protein_coding_gene	taxon:10090	20090211	GO_Central	
 ! FAILS GORULE:0000020 - TEST 4 - obsolete term in 'extension' (column 16) with no replacement															
 UniProtKB	O76187	darA	enables	GO:0004672	PMID:9802899	IDA		F	GORULE_TEST:0000020-4 Darlin	darA	protein	taxon:44689	20100205	GO_Central	involved_in(GO:0090503)
-! FAILS GORULE:0000020 - TEST 5 - obsolete term in 'extension' (column 16) with a replacement															
+! FAILS WITH WARNING GORULE:0000020 - TEST 5 - obsolete term in 'extension' (column 16) with a replacement															
 UniProtKB	O76187	darA	enables	GO:0004672	PMID:9802899	IDA		F	GORULE_TEST:0000020-5 Darlin	darA	protein	taxon:44689	20100205	GO_Central	involved_in(GO:0014067)
+! FAILS GORULE:0000027 - TEST 6 - Alt GO ID in Col 5 												
+UniProtKB	Q6UW15	REG3G	involved_in	GO:0036459	PMID:23072806	IDA		C	GORULE_TEST:0000020-6 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	
+! FAILS GORULE:0000027 - TEST 7 - Alt GO ID in Extension (Col 16)														
+UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:23072806	IDA		C	GORULE_TEST:0000020-2 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	part_of(GO:0036459)	
 ! FAILS GORULE:0000022 - TEST 1 - retracted paper															
 UniProtKB	O76187	darA	involved_in	GO:0017015	PMID:37278189	IDA		F	GORULE_TEST:0000022-1		protein	taxon:44689	20230513	GO_Central	
 ! FAILS GORULE:0000027 - TEST 1 - Prefix not in /db-xrefs.yaml															
@@ -187,10 +193,6 @@ UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:16931762	IDA		P	GORULE_TEST:0
 PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000027-20 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20180912	PomBase	part_of(X:1)
 ! SHOULD PASS GORULE:0000027 - TEST 21 - WB_REF should be allowed														
 WB	WBGene00000002	aat-1	part_of	GO:1990184	WB_REF:WBPaper00006408|PMID:14668347	IPI	WB:WBGene00000225	C		GORULE_TEST:0000027-21 F27C8.1	gene	taxon:6239	20131022	GO_Central		
-! FAILS GORULE:0000027 - TEST 22 - Alt GO ID in Col 5 												
-UniProtKB	Q6UW15	REG3G	involved_in	GO:0036459	PMID:23072806	IDA		C	GORULE_TEST:0000027-22 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	
-! FAILS GORULE:0000027 - TEST 23 - Alt GO ID in Extension (Col 16)														
-UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:23072806	IDA		C	GORULE_TEST:0000027-23 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	part_of(GO:0036459)	
 ! FAILS GORULE:0000028 - TEST 1 - Bad GO aspect, C instead of P		(IRRELEVANT IN GOEX)											
 UniProtKB	Q9HC96	CAPN10	involved_in	GO:0006921	PMID:23072806	IDA		C	GORULE_TEST:0000028-1 Calpain-10	CAPN10,KIAA1845	protein	taxon:9606	20140213	GO_Central	
 ! FAILS GORULE:0000028 - TEST 2 - Bad GO aspect, F instead of P		(IRRELEVANT IN GOEX)													
@@ -204,9 +206,13 @@ UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000044	IEA	UniProtKB-SubCell
 ! FAILS GORULE:0000029 - TEST 2 - IEA older than 3 years(IRRELEVANT IN GOEX)														
 UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000044	IEA	UniProtKB-SubCell:SL-0375	C	GORULE_TEST:0000029-2		protein	taxon:83333	20200507	GO_Central	
 ! FAILS GORULE:0000030 - TEST 1 - Deprecated GO_REF															
-UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000045	IEA	UniProtKB-SubCell:SL-0375	C	GORULE_TEST:0000030-1		protein	taxon:83333	20240707	GO_Central	
+UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000045	ISS	UniProtKB-SubCell:SL-0375	C	GORULE_TEST:0000030-1		protein	taxon:83333	20240707	GO_Central	
 ! SHOULD PASS GORULE:0000030 - TEST 2 - Valid GO_REF															
-UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000033	IBA	FB:FBgn0032677|PANTHER:PTN005196447	C	GORULE_TEST:0000030-2		protein	taxon:83333	20230607	GO_Central	
+UniProtKB	P77335	hlyE	located_in	GO:0020002	GO_REF:0000050	ISS	FB:FBgn0032677	C	GORULE_TEST:0000030-2		protein	taxon:83333	20230607	GO_Central	
+! SHOULD PASS GORULE:0000030 - TEST 3 - Valid GO_REF + MOD_Internal_reference_ID															
+UniProtKB	P77335	hlyE	located_in	GO:0020002	MGI:2154458|GO_REF:0000008	ISS	FB:FBgn0032677	C	GORULE_TEST:0000030-3		protein	taxon:83333	20230607	GO_Central	
+! SHOULD PASS GORULE:0000030 - TEST 4 - Mappable MOD_Internal_reference_ID															
+UniProtKB	P77335	hlyE	located_in	GO:0020002	MGI:2154458	ISS	FB:FBgn0032677	C	GORULE_TEST:0000030-4		protein	taxon:83333	20230607	GO_Central	
 ! FAILS GORULE:0000037 - TEST 1 - IBA with Assigned_by other than GO_Central															
 UniProtKB	A0A024BTL2	PHKG1	is_active_in	GO:0005634	PMID:21873635	IBA	FB:FBgn0019686|FB:FBgn0028360|FB:FBgn0032677|PANTHER:PTN005196447|PomBase:SPAC14C4.03|PomBase:SPCC1322.08|PomBase:SPCC18B5.11c|RGD:621543|SGD:S000006074|UniProtKB:O96017|UniProtKB:Q5AVW7	C	GORULE_TEST:0000037-1		protein	taxon:9823	20221009	PomBase	
 ! FAILS GORULE:0000037 - TEST 2 - IBA with reference other than GO_REF:0000033														
@@ -222,7 +228,7 @@ UniProtKB	A4D126	CRPPA	enables	GO:0042803	PMID:26687144	IDA		F	GORULE_TEST:00000
 ! FAILS GORULE:0000046 - TEST 2 - self-binding’ term, annotated to a protein other than 'self'													
 UniProtKB	A4D126	CRPPA	enables	GO:0042803	PMID:26687144	IPI	UniProtKB:P35555	F	GORULE_TEST:0000046-2		protein	taxon:9606	20170627	GO_Central	
 ! SHOULD PASS GORULE:0000046 - TEST 3 - Same protein in 'with', but with a chain ID. Matches Col17 data
-UniProtKB	P05067	APP	enables	GO:0042803	PMID:15447668	IPI	UniProtKB:P05067-PRO_0000000092	F	Amyloid-beta precursor protein APP|A4|AD1	protein	taxon:9606	20230314	ARUK-UCL	UniProtKB:P05067-PRO_0000000092 `
+UniProtKB	P05067	APP	enables	GO:0042803	PMID:15447668	IPI	UniProtKB:P05067-PRO_0000000092	F	GORULE_TEST:0000046-3		protein	taxon:9606	20230314	GO_Central	UniProtKB:P05067-PRO_0000000092 `
 ! FAILS GORULE:0000050 - TEST 1 - self-referential ISS annotations 															
 UniProtKB	F1N2N9	ODAD1	part_of	GO:0120228	PMID:34715025	ISS	UniProtKB:F1N2N9	C	GORULE_TEST:0000050-1 Outer dynein arm-docking complex subunit 1	ODAD1|CCDC114	protein	taxon:9913	20220422	GO_Central	
 ! FAILS GORULE:0000050 - TEST 2 - self-referential ISO annotations 															
@@ -326,7 +332,7 @@ UniProtKB	A1B2F4	aztD	part_of	GO:0098030	PMID:26468286	IDA		C	GORULE_TEST:000006
 ! SHOULD PASS GORULE:0000061 - TEST 45 - 'is_active_in' is allowed for  GO CC - 'cell plate' descendent of cellular anatomical entity															
 UniProtKB	A1B2F4	aztD	is_active_in	GO:0009504	PMID:26468286	IDA		C	GORULE_TEST:0000061-45		protein	taxon:318586	20230427	GO_Central	
 ! SHOULD PASS GORULE:0000063 - TEST 1
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000063-1 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein taxon:4896	20230427 GO_Central
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000063-1 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20230427 GO_Central
 ! FAILS GORULE:0000063 - TEST 2
 PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0005634	GO_REF:0000024	ISO		C	GORULE_TEST:0000063-2 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20230427	GO_Central
 ! FAILS GORULE:0000064 - TEST 1 - human protein
@@ -334,4 +340,4 @@ UniProtKB	A0A140VJL9	A0A140VJL9	involved_in	GO:0006783	GO_REF:0000118	IEA	PANTHE
 ! FAILS GORULE:0000064 - TEST 2 - Drosophila protein
 UniProtKB	Q8IH53	Hmbs	involved_in	GO:0006783	GO_REF:0000118	IEA	PANTHER:PTHR11557:SF0	P	GORULE_TEST:0000064-2		protein	taxon:7227	20240201	TreeGrafter		
 ! FAIL GORULE:0000065 - TEST 1 GO:0030047 actin modification is an obsoletion candidate
-PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0030047	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000065-1 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein taxon:4896	20230427 GO_Central
+PomBase	SPAC25B8.17	ypf1	is_active_in	GO:0030047	GO_REF:0000024	ISO	SGD:S000001583	C	GORULE_TEST:0000065-1 intramembrane aspartyl protease of the perinuclear ER membrane Ypf1 (predicted)	ppp81	protein	taxon:4896	20230427 GO_Central

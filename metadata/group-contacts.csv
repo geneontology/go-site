@@ -32,11 +32,14 @@ EcoCyc,,,,,
 ° EcoCyc,,Lisa Moore @lmoore207,Curation,< ! > In-house < ! >,
 ° EcoCyc,,Markus Krummenacker,Technical,,EcoCyc pipeline
 EcoliWiki,@dsiegele,Debby Siegele @dsiegele,Curation,< ! > In-house < ! >,
+EMBL-EBI,,,,,
+° EMBL-EBI,@StephanieWLo,Stephanie Lo @StephanieWLo, Curation,P2GO | Noctua, Pathogen genomics| Antimicrobial resistance| Bacterial vaccine antigens
+° EMBL-EBI,@EmilyBowlerBarnett,Emily Bowler-Barnett @EmilyBowlerBarnett, Senior UniProt curator, P2GO | Noctua, Proteomics| Cancer signaling
+
 Ensembl,,,Curation,,
 Eurofung,,,Curation,P2GO,
 FlyBase,,,,,
 ° FlyBase,@hattrill,Helen Attrill @hattrill,Curation,P2GO | Noctua,
-° FlyBase,@gantonazzo,Giulia Antonazzo @gantonazzo,Curation,P2GO | Noctua,
 ° FlyBase,,Steven Marygold @sjm41,Curation & Ontology development,P2GO | Noctua,
 ° FlyBase,,Rossana Zaru @rozaru,Curation,P2GO | Noctua,
 GDB,@Antonialock @pgaudet @vanaukenk,Not actively maintainted/GO_Central,Curation (inactive),P2GO,

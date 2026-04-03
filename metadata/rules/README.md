@@ -12,7 +12,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000002">GORULE:0000002 No 'NOT' annotations to binding ; GO:0005488 or 'protein binding ; GO:0005515'</a>
  * <a href="#gorule0000003">GORULE:0000003 DEPRECATED Annotations to 'binding ; GO:0005488' and 'protein binding ; GO:0005515' should be made with IPI and an interactor in the 'with' field</a>
  * <a href="#gorule0000004">GORULE:0000004 Reciprocal annotations for 'protein binding ; GO:0005515'</a>
- * <a href="#gorule0000005">GORULE:0000005 IEA, ISS, ISO, ISM, ISA, IBA, RCA annotations are not allowed for direct annotations to to 'protein binding ; GO:0005515 or GO:0005488 binding''</a>
+ * <a href="#gorule0000005">GORULE:0000005 IEA, ISS, ISO, ISM, ISA, IBA, RCA annotations are not allowed for direct annotations to 'protein binding ; GO:0005515 or GO:0005488 binding''</a>
  * <a href="#gorule0000006">GORULE:0000006 IEP and HEP usage is restricted to terms from the Biological Process ontology</a>
  * <a href="#gorule0000007">GORULE:0000007 IPI should not be used with GO:0003824 catalytic activity or descendents</a>
  * <a href="#gorule0000008">GORULE:0000008 No annotations should be made to uninformative high level terms</a>
@@ -36,7 +36,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000027">GORULE:0000027 Each identifier in GAF is valid</a>
  * <a href="#gorule0000028">GORULE:0000028 GO aspect should match the term's namespace; otherwise it is repaired to the appropriate aspect</a>
  * <a href="#gorule0000029">GORULE:0000029 IEAs should be less than one year old.</a>
- * <a href="#gorule0000030">GORULE:0000030 Obsolete GO_REFs are not allowed</a>
+ * <a href="#gorule0000030">GORULE:0000030 Only valid GO_REFs are allowed</a>
  * <a href="#gorule0000031">GORULE:0000031 DEPRECATED. Annotation relations are replaced when not provided by source</a>
  * <a href="#gorule0000032">GORULE:0000032 DEPRECATED Allowed References for each ECO.</a>
  * <a href="#gorule0000033">GORULE:0000033 Group-specific Reference IDs are not allowed, only public reference IDs (PMID, doi, or GO_REF)</a>
@@ -170,7 +170,7 @@ on the GO wiki.
 
 <a name="gorule0000005"/>
 
-## IEA, ISS, ISO, ISM, ISA, IBA, RCA annotations are not allowed for direct annotations to to 'protein binding ; GO:0005515 or GO:0005488 binding''
+## IEA, ISS, ISO, ISM, ISA, IBA, RCA annotations are not allowed for direct annotations to 'protein binding ; GO:0005515 or GO:0005488 binding''
 
  * id: [GORULE:0000005](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000005.md)
  * status: implemented
@@ -400,7 +400,7 @@ For background: dual (or multiple) species annotations are used to capture infor
 
 This rule applies to annotations to either these terms of their is_a descendants: 
 * GO:0044419 biological process involved in interspecies interaction between organisms
-* GO:0043903 regulation of interspecies interactions between organisms, or
+* GO:0043903 regulation of biological process involved in symbiotic interaction, or
 * GO:0018995 host cellular component
 
 * Annotations to other terms should have a single value in the Taxon column (GAF column 13).
@@ -657,14 +657,15 @@ IEAs less than one year old are valid.
 
 <a name="gorule0000030"/>
 
-## Obsolete GO_REFs are not allowed
+## Only valid GO_REFs are allowed
 
  * id: [GORULE:0000030](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000030.md)
  * status: implemented
 
 
 GO_REFs are here: https://github.com/geneontology/go-site/tree/master/metadata/gorefs.yaml
-References for which is_obsolete: `true` are not allowed as a reference (GAF column 6; GPAD column 5), and annotations using those as a reference are filtered by the pipeline and reported as errors.
+- References for which is_obsolete: `true` are not allowed as a reference (GAF column 6; GPAD column 5), and annotations using those as a reference are filtered by the pipeline and reported as errors.
+- All GO_REFs should be valid according to the gorefs.yaml file.
 
 <a name="gorule0000031"/>
 
