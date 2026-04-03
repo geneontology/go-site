@@ -127,10 +127,14 @@ def write_tsv(headers, rows, output_path):
         rows: list of lists of string values
         output_path: path to write the TSV file
     """
+    def quote(val):
+        s = str(val)
+        return '"' + s.replace('"', '""') + '"'
+
     with open(output_path, "w") as f:
-        f.write("\t".join(headers) + "\n")
+        f.write("\t".join(quote(h) for h in headers) + "\n")
         for row in rows:
-            f.write("\t".join(str(v) for v in row) + "\n")
+            f.write("\t".join(quote(v) for v in row) + "\n")
     click.echo("Wrote {}".format(output_path))
 
 
@@ -259,8 +263,25 @@ def main(directory, template, output, template_records, resource, metadata, date
     with open(aggregate_file) as f:
         model_entity = json.load(f)
 
+    # Extract dict field before build_table_data (which skips dicts)
+    models_by_status = model_entity.pop("number_of_models_by_status", {})
+
     column_name = model_entity.pop("entity", "Model")
     header, rows = build_table_data([model_entity], [column_name])
+
+    # Insert number_of_models_by_status rows right after total_number_of_entities_processed
+    status_rows = []
+    for status_name in sorted(models_by_status):
+        status_rows.append({
+            "field": "number_of_models_status_{}".format(status_name),
+            "field_display": "number of models {}".format(status_name),
+            "values": [{"value": models_by_status[status_name]}],
+        })
+    insert_idx = next(
+        (i + 1 for i, r in enumerate(rows) if r["field"] == "total_number_of_entities_processed"),
+        len(rows),
+    )
+    rows[insert_idx:insert_idx] = status_rows
 
     render_and_write(template_str, {
         "title": "GO-CAM Aggregate Statistics",
@@ -435,6 +456,7 @@ def main(directory, template, output, template_records, resource, metadata, date
             field_specs = [
                 ("model_id", "Model ID", str),
                 ("model_name", "Model Name", str),
+                ("model_status", "Model Status", str),
                 ("activity_id", "Activity ID", str),
                 ("protein_complex_term", "Protein Complex Term", str),
             ]
