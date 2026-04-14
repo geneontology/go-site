@@ -4071,8 +4071,8 @@
     github: alexsign
   nickname: 'Alex Signoretti'
   organization: UniProt
-  uri: 'GOC:asign'
-  xref: 'GOC:asign'
+  uri: 'GOC:alexsign'
+  xref: 'GOC:alexsign'
 -
   accounts:
     github: genegodbold
