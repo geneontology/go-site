@@ -666,6 +666,8 @@
   uri: 'GOC:mgi_curators'
   xref: 'GOC:mgi_curators'
 -
+  accounts:
+    github: rwst
   nickname: 'Ralf Stephan'
   organization: MTBbase
   uri: 'GOC:rs'
@@ -807,6 +809,8 @@
   uri: 'GOC:bj'
   xref: 'GOC:bj'
 -
+  accounts:
+    github: gillespm
   nickname: 'Marc Gillespie'
   organization: Reactome
   uri: 'GOC:mg2'
@@ -1318,6 +1322,8 @@
 -
   groups:
     - 'https://www.uniprot.org'
+  accounts:
+    github: alanbridge
   nickname: 'Alan Bridge'
   organization: UniProt
   uri: 'https://orcid.org/0000-0003-2148-9135'
@@ -4039,3 +4045,37 @@
   nickname: 'Emily Bowler-Barnett'
   organization: UniProt
   uri: 'https://orcid.org/0000-0003-4785-7231'
+-
+  accounts:
+    github: karenrothfels
+  nickname: 'Karen Rothfels'
+  organization: OICR
+  uri: 'GOC:krc'
+  xref: 'GOC:krc'
+-
+  accounts:
+    github: lisamatthews
+  nickname: 'Lisa Matthews'
+  organization: Reactome
+  uri: 'GOC:lm'
+  xref: 'GOC:lm'
+-
+  accounts:
+    github: meilbes
+  nickname: 'Melissa Eilbes'
+  organization: MCW
+  uri: 'GOC:me'
+  xref: 'GOC:me'
+-
+  accounts:
+    github: alexsign
+  nickname: 'Alex Signoretti'
+  organization: UniProt
+  uri: 'GOC:as'
+  xref: 'GOC:as'
+-
+  accounts:
+    github: genegodbold
+  nickname: 'Gene Godbold'
+  uri: 'GOC:gg'
+  xref: 'GOC:gg'
