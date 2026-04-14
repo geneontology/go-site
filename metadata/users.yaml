@@ -917,8 +917,8 @@
     - 'http://www.yeastgenome.org'
   nickname: 'Anand Sethuraman'
   organization: SGD
-  uri: 'GOC:as'
-  xref: 'GOC:as'
+  uri: 'GOC:asign'
+  xref: 'GOC:asign'
 -
   groups:
     - 'http://www.yeastgenome.org'
@@ -4050,32 +4050,32 @@
     github: karenrothfels
   nickname: 'Karen Rothfels'
   organization: OICR
-  uri: 'GOC:krc'
-  xref: 'GOC:krc'
+  uri: 'GOC:krothfels'
+  xref: 'GOC:krothfels'
 -
   accounts:
     github: lisamatthews
   nickname: 'Lisa Matthews'
   organization: Reactome
-  uri: 'GOC:lm'
-  xref: 'GOC:lm'
+  uri: 'GOC:lmatthews'
+  xref: 'GOC:lmatthews'
 -
   accounts:
     github: meilbes
   nickname: 'Melissa Eilbes'
   organization: MCW
-  uri: 'GOC:me'
-  xref: 'GOC:me'
+  uri: 'GOC:meilbes'
+  xref: 'GOC:meilbes'
 -
   accounts:
     github: alexsign
   nickname: 'Alex Signoretti'
   organization: UniProt
-  uri: 'GOC:as'
-  xref: 'GOC:as'
+  uri: 'GOC:asign'
+  xref: 'GOC:asign'
 -
   accounts:
     github: genegodbold
   nickname: 'Gene Godbold'
-  uri: 'GOC:gg'
-  xref: 'GOC:gg'
+  uri: 'GOC:ggodbold'
+  xref: 'GOC:ggodbold'
