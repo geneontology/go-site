@@ -647,7 +647,7 @@
   year: 2011
 - id: GO_REF:0000036
   title: Manual annotations that require more than one source of functional data to
-    support the assignment of the associated GO term
+    support the assignment of the associated GO term (IC)
   description: |-
     The Gene Ontology Consortium uses the IC (Inferred by Curator) evidence code when
     an annotation cannot be supported by any direct evidence, but can be inferred
@@ -664,6 +664,7 @@
   external_accession:
     - SGD_REF:S000147045
     - J:342596
+    - ZFIN:ZDB-PUB-031118-2
   year: 2011
 - id: GO_REF:0000037
   title: OBSOLETE Gene Ontology annotation based on manual assignment of UniProtKB
