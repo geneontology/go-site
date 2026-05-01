@@ -39,6 +39,7 @@ class ReportRow:
     model: str
     status: str
     reason: str
+    model_status: str = ""
     contributors: list[str] = field(default_factory=list)
     providers: list[str] = field(default_factory=list)
 
@@ -186,7 +187,7 @@ def get_provider_display_name(
 
 def parse_conversion_info(
     conversion_info_file: Path,
-) -> list[tuple[str, str, str]]:
+) -> list[tuple[str, str, str, str]]:
     """Parse noctua_conversion_info.txt and extract entries needing a report row.
 
     Extracts entries with:
@@ -195,9 +196,11 @@ def parse_conversion_info(
     - status "success" with non-empty "warnings" list
 
     Returns:
-        A list of (model_id, status_label, reason) tuples.
+        A list of (model_id, status_label, reason, model_status) tuples,
+        where model_status is the value of meta.status from the entry (e.g.
+        "production", "development"), or "" if absent.
     """
-    entries: list[tuple[str, str, str]] = []
+    entries: list[tuple[str, str, str, str]] = []
     with open(conversion_info_file) as f:
         for line_num, line in enumerate(f, 1):
             line = line.strip()
@@ -211,21 +214,29 @@ def parse_conversion_info(
 
             model_id = entry.get("model_id", "")
             status = entry.get("status", "")
+            meta = entry.get("meta") or {}
+            model_status = meta.get("status", "") if isinstance(meta, dict) else ""
 
             if status == "error":
                 reason = entry.get("reason", "unknown error")
                 details = entry.get("details", "")
                 if details:
                     reason = f"{reason}: {details}"
-                entries.append((model_id, "Error", reason))
+                entries.append((model_id, "Error", reason, model_status))
             elif status == "filtered":
                 reason = entry.get("reason", "unknown filter reason")
-                entries.append((model_id, "Filtered", reason))
+                entries.append((model_id, "Filtered", reason, model_status))
             elif status == "success":
                 warnings = entry.get("warnings", [])
                 if warnings:
-                    reason = "; ".join(warnings)
-                    entries.append((model_id, "Warning", reason))
+                    warning_strs = [
+                        f"{w.get('type', '')}: {w.get('message', '')}"
+                        if isinstance(w, dict)
+                        else str(w)
+                        for w in warnings
+                    ]
+                    reason = "; ".join(warning_strs)
+                    entries.append((model_id, "Warning", reason, model_status))
 
     return entries
 
@@ -250,12 +261,12 @@ def write_failure_warning_report(rows: list[ReportRow], output_file: Path) -> No
     """
     rows.sort(key=lambda r: r.sort_key)
     with open(output_file, "w") as f:
-        f.write("Model\tStatus\tReason\tContributor\tProvider\n")
+        f.write("Model\tStatus\tModel Status\tReason\tContributor\tProvider\n")
         for row in rows:
             contributors = "|".join(row.contributors) if row.contributors else ""
             providers = "|".join(row.providers) if row.providers else ""
             f.write(
-                f"{row.model}\t{row.status}\t{row.reason}\t{contributors}\t{providers}\n"
+                f"{row.model}\t{row.status}\t{row.model_status}\t{row.reason}\t{contributors}\t{providers}\n"
             )
 
 
@@ -326,7 +337,7 @@ def main(
     noctua_json_dir = input_dir / "noctua_in_json"
     report_rows: list[ReportRow] = []
 
-    for model_id, status, reason in track(
+    for model_id, status, reason, model_status in track(
         entries, description="Building report rows..."
     ):
         json_file = noctua_json_dir / f"{model_id}.json"
@@ -357,6 +368,7 @@ def main(
                 model=model_id,
                 status=status,
                 reason=reason,
+                model_status=model_status,
                 contributors=contributors,
                 providers=providers,
             )
