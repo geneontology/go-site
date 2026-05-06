@@ -265,23 +265,19 @@ def main(directory, template, output, template_records, resource, metadata, date
 
     # Extract dict field before build_table_data (which skips dicts)
     models_by_status = model_entity.pop("number_of_models_by_status", {})
+    # Drop total_number_of_entities_processed so it doesn't appear in the aggregate page
+    model_entity.pop("total_number_of_entities_processed", None)
 
     column_name = model_entity.pop("entity", "Model")
     header, rows = build_table_data([model_entity], [column_name])
 
-    # Insert number_of_models_by_status rows right after total_number_of_entities_processed
-    status_rows = []
-    for status_name in sorted(models_by_status):
-        status_rows.append({
-            "field": "number_of_models_status_{}".format(status_name),
-            "field_display": "number of models {}".format(status_name),
-            "values": [{"value": models_by_status[status_name]}],
-        })
-    insert_idx = next(
-        (i + 1 for i, r in enumerate(rows) if r["field"] == "total_number_of_entities_processed"),
-        len(rows),
-    )
-    rows[insert_idx:insert_idx] = status_rows
+    # Prepend a single "number of production models" row
+    production_row = {
+        "field": "number_of_production_models",
+        "field_display": "number of production models",
+        "values": [{"value": models_by_status.get("production", 0)}],
+    }
+    rows.insert(0, production_row)
 
     render_and_write(template_str, {
         "title": "GO-CAM Aggregate Statistics",
