@@ -57,7 +57,7 @@
             <tr>
                 <th scope="row" style="white-space: nowrap;">{{ field_display }}</th>
                 {{ #values }}
-                <td>{{ value }}</td>
+                <td>{{#href}}<a href="{{ href }}">{{ value }}</a>{{/href}}{{^href}}{{ value }}{{/href}}</td>
                 {{ /values }}
             </tr>
             {{ /rows }}
