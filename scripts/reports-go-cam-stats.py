@@ -44,6 +44,13 @@ Inputs (under ``--directory``)
   Activities record-oriented table (with TSV).
 - ``member_variable_definitions.json`` — optional, drives the variable
   definitions page.
+- ``gene_id_to_label.json`` — optional. Flat ``{id: label}`` map used to
+  populate the ``label`` column on gene-valued drilldown pages (gene product
+  enablers, protein complex member genes, other inputs, other outputs).
+  Keyed by curie-style IDs such as ``UniProtKB:P00387`` or ``FB:FBgn0000566``.
+- ``chebi_id_to_label.json`` — optional. Flat ``{id: label}`` map used to
+  populate the ``label`` column on chemical drilldown pages (chemical inputs,
+  chemical outputs). Keyed by ``CHEBI:<n>`` curies.
 
 Outputs (written to ``--output``)
 ---------------------------------
@@ -73,28 +80,55 @@ Outputs (written to ``--output``)
 
 - ``go-cam-curator-stats.html``, ``go-cam-group-stats.html``,
   ``go-cam-group-curator-stats-<group>.html`` (one per group, plus an
-  ``-other`` variant for ungrouped curators) — unchanged two-column-style
-  layouts where each entity is its own column.
+  ``-other`` variant for ungrouped curators) — entity-as-column layouts
+  where each row is a stat and each column is a curator / group.
+
+  ``go-cam-group-stats.html`` additionally emits three derived rows after
+  the scalar fields read from ``stats_by_group_*.json``:
+
+    * ``number of GO MF terms``  — count of molecular_function terms in
+      that group's ``list_go_terms``
+    * ``number of GO BP terms``  — count of biological_process terms
+    * ``number of GO CC terms``  — count of cellular_component terms
+
+  Counts are totals (with duplicates), matching the existing
+  ``number of go terms`` row's semantics. Namespace classification uses the
+  same ``--resource`` go.json that drives the aggregate-page MF/BP/CC
+  breakdown; if ``--resource`` is omitted, the rows still appear so the
+  table schema is stable, but all values are 0.
 
 - Per-statistic drilldown pages (emitted when the corresponding unique
-  collection on ``AggregateInfo`` is non-empty):
+  collection on ``AggregateInfo`` is non-empty). The first column header and
+  the (optional) label column depend on what kind of entry the page holds:
 
-    * ``go-cam-unique-gene-product-enablers.html``
-    * ``go-cam-unique-protein-complex-enablers.html``
-    * ``go-cam-unique-protein-complex-member-genes.html``
-    * ``go-cam-unique-chemical-inputs.html``
-    * ``go-cam-unique-other-inputs.html``
-    * ``go-cam-unique-chemical-outputs.html``
-    * ``go-cam-unique-other-outputs.html``
-    * ``go-cam-unique-go-terms.html``
-    * ``go-cam-unique-go-mf-terms.html``
-    * ``go-cam-unique-go-bp-terms.html``
-    * ``go-cam-unique-go-cc-terms.html``
-    * ``go-cam-unique-references.html``
+    Gene-valued pages — columns ``id`` + ``label`` (label from
+    ``gene_id_to_label.json``):
+      * ``go-cam-unique-gene-product-enablers.html``
+      * ``go-cam-unique-protein-complex-member-genes.html``
+      * ``go-cam-unique-other-inputs.html``
+      * ``go-cam-unique-other-outputs.html``
 
-  Each drilldown page reuses the record-oriented template
-  (``--template-records``) with one column ``Entry`` (and, when ``--resource``
-  is supplied and the entry is a GO term, an additional ``Label`` column).
+    Chemical (CHEBI) pages — columns ``id`` + ``label`` (label from
+    ``chebi_id_to_label.json``):
+      * ``go-cam-unique-chemical-inputs.html``
+      * ``go-cam-unique-chemical-outputs.html``
+
+    GO-term pages — columns ``Entry`` + ``Label`` (label from ``--resource``
+    OBO-JSON; the ``Label`` column is omitted when ``--resource`` is not
+    supplied):
+      * ``go-cam-unique-protein-complex-enablers.html``
+      * ``go-cam-unique-go-terms.html``
+      * ``go-cam-unique-go-mf-terms.html``
+      * ``go-cam-unique-go-bp-terms.html``
+      * ``go-cam-unique-go-cc-terms.html``
+
+    No-label pages — single ``Entry`` column:
+      * ``go-cam-unique-references.html``
+      * ``go-cam-unique-pmids.html``
+
+  Cells whose ID is missing from the chosen lookup render as blank, so the
+  page schema stays stable across runs even when the source map is absent
+  or incomplete.
 
 - ``go-cam-protein-complex.html`` + ``go-cam-protein-complex.tsv`` —
   unchanged.
@@ -108,6 +142,9 @@ Where
   block accepts ``{label, total, unique_value, unique_href}`` so the Unique
   cell renders as count, hyperlinked count, or ``-``).
 - Drilldown pages reuse ``go-cam-records-template.html``.
+- ``gene_id_to_label.json`` and ``chebi_id_to_label.json`` are emitted by
+  ``output_stats_for_gocam_models.py`` into the same directory as
+  ``aggregate_model_stats.json`` and are loaded by ``load_id_labels`` here.
 - Upstream field definitions live in
   ``gocam-py/pipeline/output_stats_for_gocam_models.py``:
 
@@ -129,7 +166,10 @@ Why
 Issue #2339. Collapses paired ``number_of_X`` / ``number_of_unique_X`` rows
 into one row each (Total + Unique), gives curators a single-click drilldown
 into every unique set, and breaks GO term usage out by namespace
-(molecular_function / biological_process / cellular_component).
+(molecular_function / biological_process / cellular_component). The gene /
+chemical drilldown pages also carry a human-readable ``label`` column next
+to the curie ``id`` so curators can scan the lists without round-tripping
+each ID through an external lookup.
 
 How
 ---
@@ -149,12 +189,25 @@ How
 - Each drilldown page is rendered via ``render_and_write`` against the
   record-oriented template, with the ``links`` block excluding the
   drilldown's own filename so navigation back to the aggregate works.
+- Drilldown column layout is driven by ``drilldown_label_kind`` on each row
+  spec — one of ``"gene"``, ``"chebi"``, ``"go"`` or ``None``. The renderer
+  picks the corresponding label dict (``gene_labels``, ``chebi_labels``,
+  ``ontology_labels``) and headers (``id``/``label`` for gene+chebi,
+  ``Entry``/``Label`` for go, ``Entry`` only for no-label pages).
+- ``load_id_labels`` reads ``gene_id_to_label.json`` and
+  ``chebi_id_to_label.json`` from the ``--directory`` input. Both files are
+  optional; absence yields empty dicts and blank ``label`` cells.
 
 Notes
 -----
 - The per-curator / per-group HTML pages remain in their existing
   "entity-as-column" layout; only ``go-cam-aggregate-stats.html`` adopts
   the three-column Total/Unique format.
+- The MF/BP/CC rows on ``go-cam-group-stats.html`` are derived at render
+  time from ``list_go_terms`` and the ``--resource`` namespace dict — they
+  are not new fields on ``GocamStats`` upstream. This keeps the
+  per-group stats producer unchanged and means refreshing the go.json
+  ontology is enough to pick up reclassified terms.
 - ``list_enabled_by_gene_product`` / ``list_enabled_by_protein_complex``
   are intentionally NOT added to ``AggregateInfo`` — the corresponding
   ``unique_*`` Sets already carry the deduplicated entries needed for the
@@ -237,6 +290,29 @@ def load_ontology_labels(resource_path):
 def get_go_term_label(go_id, ontology_labels):
     """Look up a GO term label from the ontology dict."""
     return ontology_labels.get(go_id, "")
+
+
+def load_id_labels(directory):
+    """Load gene and CHEBI ID-to-label maps from the stats input directory.
+
+    Looks for ``gene_id_to_label.json`` and ``chebi_id_to_label.json``
+    (emitted alongside ``aggregate_model_stats.json`` by
+    ``output_stats_for_gocam_models.py``). Either file may be absent; the
+    corresponding dict is returned empty so callers can render the ``label``
+    column with blank cells instead of failing.
+
+    Returns:
+        (gene_labels, chebi_labels) — two dicts keyed by ID
+        (e.g. ``"UniProtKB:P00387"`` → ``"CYC1 Scer"``,
+        ``"CHEBI:58211"`` → display label).
+    """
+    def _load(name):
+        path = os.path.join(directory, name)
+        if not os.path.exists(path):
+            return {}
+        with open(path) as f:
+            return json.load(f)
+    return _load("gene_id_to_label.json"), _load("chebi_id_to_label.json")
 
 
 def build_record_table_data(records, field_specs):
@@ -402,13 +478,21 @@ def build_aggregate_row_specs(model_entity, namespaces):
     """Build the row catalog for the aggregate stats page.
 
     Each row spec is a dict with these keys:
-        label            — display label
-        total            — int or None ("-" when None)
-        unique           — int or None ("-" when None)
-        unique_entries   — iterable of entries for the drilldown page, or None
+        label              — display label
+        total              — int or None ("-" when None)
+        unique             — int or None ("-" when None)
+        unique_entries     — iterable of entries for the drilldown page, or None
         drilldown_basename — output HTML filename for the drilldown, or None
-        drilldown_title  — title shown on the drilldown page, or None
-        drilldown_is_go  — True when entries are GO terms (drives label column)
+        drilldown_title    — title shown on the drilldown page, or None
+        drilldown_label_kind — what the drilldown's first column holds, used to
+            pick header text and the label-lookup source:
+              * "gene"  → columns ``id`` + ``label`` (from
+                gene_id_to_label.json)
+              * "chebi" → columns ``id`` + ``label`` (from
+                chebi_id_to_label.json)
+              * "go"    → columns ``Entry`` + ``Label`` (from --resource
+                ontology labels)
+              * None    → single ``Entry`` column (references, PMIDs)
     """
     agg = model_entity
     models_by_status = agg.get("number_of_models_by_status", {})
@@ -431,7 +515,8 @@ def build_aggregate_row_specs(model_entity, namespaces):
     unique_pmids = sorted(r for r in unique_refs if _is_pmid(r))
 
     def spec(label, total=None, unique=None, entries=None,
-             drilldown_basename=None, drilldown_title=None, drilldown_is_go=False):
+             drilldown_basename=None, drilldown_title=None,
+             drilldown_label_kind=None):
         return {
             "label": label,
             "total": total,
@@ -439,7 +524,7 @@ def build_aggregate_row_specs(model_entity, namespaces):
             "unique_entries": entries,
             "drilldown_basename": drilldown_basename,
             "drilldown_title": drilldown_title,
-            "drilldown_is_go": drilldown_is_go,
+            "drilldown_label_kind": drilldown_label_kind,
         }
 
     return [
@@ -452,19 +537,21 @@ def build_aggregate_row_specs(model_entity, namespaces):
              unique=agg.get("number_of_unique_gene_product_enablers", 0),
              entries=sorted(agg.get("unique_enabled_by_gene_product", []) or []),
              drilldown_basename="go-cam-unique-gene-product-enablers.html",
-             drilldown_title="Unique Gene Product Enablers"),
+             drilldown_title="Unique Gene Product Enablers",
+             drilldown_label_kind="gene"),
         spec("number of activity units enabled by protein complex association",
              total=agg.get("number_of_activity_units_enabled_by_protein_complex_association", 0),
              unique=agg.get("number_of_unique_protein_complex_terms", 0),
              entries=sorted(agg.get("unique_protein_complex_in_activity_term", []) or []),
              drilldown_basename="go-cam-unique-protein-complex-enablers.html",
              drilldown_title="Unique Protein Complex Enablers",
-             drilldown_is_go=True),
+             drilldown_label_kind="go"),
         spec("number of unique member protein complex gene products",
              unique=agg.get("number_of_unique_member_protein_complex_genes", 0),
              entries=sorted(agg.get("unique_protein_complex_genes", []) or []),
              drilldown_basename="go-cam-unique-protein-complex-member-genes.html",
-             drilldown_title="Unique Member Protein Complex Gene Products"),
+             drilldown_title="Unique Member Protein Complex Gene Products",
+             drilldown_label_kind="gene"),
         spec("number of genes",
              total=agg.get("number_of_genes", 0)),
         spec("number of explicit causal relations",
@@ -484,53 +571,57 @@ def build_aggregate_row_specs(model_entity, namespaces):
              unique=len(unique_chem_inputs),
              entries=unique_chem_inputs,
              drilldown_basename="go-cam-unique-chemical-inputs.html",
-             drilldown_title="Unique Chemical Inputs"),
+             drilldown_title="Unique Chemical Inputs",
+             drilldown_label_kind="chebi"),
         spec("number of other inputs",
              total=agg.get("number_of_other_inputs", 0),
              unique=len(unique_other_inputs),
              entries=unique_other_inputs,
              drilldown_basename="go-cam-unique-other-inputs.html",
-             drilldown_title="Unique Other Inputs"),
+             drilldown_title="Unique Other Inputs",
+             drilldown_label_kind="gene"),
         spec("number of chemical outputs",
              total=agg.get("number_of_chemical_outputs", 0),
              unique=len(unique_chem_outputs),
              entries=unique_chem_outputs,
              drilldown_basename="go-cam-unique-chemical-outputs.html",
-             drilldown_title="Unique Chemical Outputs"),
+             drilldown_title="Unique Chemical Outputs",
+             drilldown_label_kind="chebi"),
         spec("number of other outputs",
              total=agg.get("number_of_other_outputs", 0),
              unique=len(unique_other_outputs),
              entries=unique_other_outputs,
              drilldown_basename="go-cam-unique-other-outputs.html",
-             drilldown_title="Unique Other Outputs"),
+             drilldown_title="Unique Other Outputs",
+             drilldown_label_kind="gene"),
         spec("number of go terms",
              total=agg.get("number_of_go_terms", 0),
              unique=agg.get("number_of_unique_go_terms", 0),
              entries=unique_go,
              drilldown_basename="go-cam-unique-go-terms.html",
              drilldown_title="Unique GO Terms",
-             drilldown_is_go=True),
+             drilldown_label_kind="go"),
         spec("number of GO MF terms",
              total=len(mf_terms),
              unique=len(unique_mf),
              entries=unique_mf,
              drilldown_basename="go-cam-unique-go-mf-terms.html",
              drilldown_title="Unique GO Molecular Function Terms",
-             drilldown_is_go=True),
+             drilldown_label_kind="go"),
         spec("number of GO BP terms",
              total=len(bp_terms),
              unique=len(unique_bp),
              entries=unique_bp,
              drilldown_basename="go-cam-unique-go-bp-terms.html",
              drilldown_title="Unique GO Biological Process Terms",
-             drilldown_is_go=True),
+             drilldown_label_kind="go"),
         spec("number of GO CC terms",
              total=len(cc_terms),
              unique=len(unique_cc),
              entries=unique_cc,
              drilldown_basename="go-cam-unique-go-cc-terms.html",
              drilldown_title="Unique GO Cellular Component Terms",
-             drilldown_is_go=True),
+             drilldown_label_kind="go"),
         spec("total number of inferred relations",
              total=agg.get("total_number_of_inferred_relations", 0)),
     ]
@@ -559,12 +650,26 @@ def render_aggregate_rows(row_specs):
 
 
 def render_drilldown_pages(row_specs, records_template_str, output_dir,
-                           available_pages, ontology_labels, date):
+                           available_pages, ontology_labels, gene_labels,
+                           chebi_labels, date):
     """Emit one drilldown HTML page per row spec that has non-empty entries.
 
-    Each page lists the unique entries (one row per entry). If the entries are
-    GO terms and ``ontology_labels`` is populated, a second "Label" column is
-    appended.
+    Each page lists the unique entries (one row per entry). The first column
+    header and the optional second "label" column are chosen by
+    ``drilldown_label_kind`` on the spec:
+
+        - ``"gene"``  → columns ``id`` + ``label`` (lookups in ``gene_labels``,
+          loaded from ``gene_id_to_label.json``).
+        - ``"chebi"`` → columns ``id`` + ``label`` (lookups in
+          ``chebi_labels``, loaded from ``chebi_id_to_label.json``).
+        - ``"go"``    → columns ``Entry`` + ``Label`` (lookups in
+          ``ontology_labels``, loaded from the OBO-JSON ``--resource``). The
+          ``Label`` column is omitted if no ontology was supplied.
+        - otherwise  → single ``Entry`` column (no label lookup).
+
+    Missing keys in the chosen lookup render as blank cells, so the gene /
+    chemical pages keep their schema even when the source JSON is missing or
+    incomplete.
     """
     if not records_template_str:
         return
@@ -573,15 +678,26 @@ def render_drilldown_pages(row_specs, records_template_str, output_dir,
         basename = s.get("drilldown_basename")
         if not entries or not basename:
             continue
-        show_labels = bool(s.get("drilldown_is_go")) and bool(ontology_labels)
-        columns = [{"label": "Entry"}]
-        if show_labels:
-            columns.append({"label": "Label"})
+
+        kind = s.get("drilldown_label_kind")
+        if kind == "gene":
+            columns = [{"label": "id"}, {"label": "label"}]
+            label_lookup = gene_labels
+        elif kind == "chebi":
+            columns = [{"label": "id"}, {"label": "label"}]
+            label_lookup = chebi_labels
+        elif kind == "go" and ontology_labels:
+            columns = [{"label": "Entry"}, {"label": "Label"}]
+            label_lookup = ontology_labels
+        else:
+            columns = [{"label": "Entry"}]
+            label_lookup = None
+
         records = []
         for entry in entries:
             cells = [{"value": entry}]
-            if show_labels:
-                cells.append({"value": ontology_labels.get(entry, "")})
+            if label_lookup is not None:
+                cells.append({"value": label_lookup.get(entry, "")})
             records.append({"cells": cells})
         render_and_write(records_template_str, {
             "title": "GO-CAM {} ({})".format(s.get("drilldown_title") or "Unique Entries", len(entries)),
@@ -642,6 +758,11 @@ def main(directory, template, output, template_records, resource, metadata, date
     if resource:
         ontology_labels, ontology_namespaces = load_ontology_labels(resource)
 
+    # Load gene / CHEBI id-to-label maps from the stats input directory.
+    # Missing files yield empty dicts so the drilldown 'label' column still
+    # renders (with blank values) when the source data isn't available.
+    gene_labels, chebi_labels = load_id_labels(directory)
+
     # Build dynamic available_pages list based on which JSON files exist
     available_pages = [
         ("go-cam-aggregate-stats.html", "Aggregate Statistics"),
@@ -676,7 +797,8 @@ def main(directory, template, output, template_records, resource, metadata, date
     }, os.path.join(output, "go-cam-aggregate-stats.html"))
 
     render_drilldown_pages(row_specs, records_template_str, output,
-                           available_pages, ontology_labels, date)
+                           available_pages, ontology_labels, gene_labels,
+                           chebi_labels, date)
 
     # --- Build curator info from stats_by_curator ---
     curator_dir = os.path.join(directory, "stats_by_curator")
@@ -772,6 +894,34 @@ def main(directory, template, output, template_records, resource, metadata, date
                 rows.append({
                     "field": field,
                     "field_display": field.replace("_", " "),
+                    "values": values,
+                })
+
+            # Derived MF/BP/CC count rows: partition each group's
+            # list_go_terms by namespace (from --resource go.json) and emit
+            # one row per namespace. Counts are totals (with duplicates),
+            # matching number_of_go_terms semantics. When --resource was not
+            # supplied, ontology_namespaces is empty and all counts are 0,
+            # but the rows are still emitted to keep the table schema stable.
+            mf_counts, bp_counts, cc_counts = [], [], []
+            for data in group_data:
+                go_terms = data.get("list_go_terms", []) or []
+                mf, bp, cc = _classify_go_terms(go_terms, ontology_namespaces)
+                mf_counts.append(len(mf))
+                bp_counts.append(len(bp))
+                cc_counts.append(len(cc))
+
+            for field_name, display_label, per_group_counts in [
+                ("number_of_go_mf_terms", "number of GO MF terms", mf_counts),
+                ("number_of_go_bp_terms", "number of GO BP terms", bp_counts),
+                ("number_of_go_cc_terms", "number of GO CC terms", cc_counts),
+            ]:
+                values = [{"value": c} for c in per_group_counts]
+                if ungrouped_curators:
+                    values.append({"value": ""})
+                rows.append({
+                    "field": field_name,
+                    "field_display": display_label,
                     "values": values,
                 })
 
