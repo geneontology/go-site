@@ -36,6 +36,7 @@ Inputs (under ``--directory``)
     * ``unique_protein_complex_in_activity_term``               (Set — semantically the unique entries of ``list_enabled_by_protein_complex``)
     * ``unique_member_protein_complex_genes``                   (count)
     * ``list_of_unique_protein_complex_genes``                  (Set — drilldown entries; renamed to disambiguate from the int count ``unique_protein_complex_genes`` on per-entity records)
+    * ``unique_gene_product_and_protein_complex_gene_enablers`` (count — drives the "number of genes (enablers + inputs)" Unique cell; drilldown entries come from the union of ``unique_enabled_by_gene_product`` and ``list_of_unique_protein_complex_genes``)
     * ``chemical_inputs`` / ``unique_chemical_inputs`` and counterparts for other inputs / chemical outputs / other outputs (all counts)
     * ``list_has_input_term`` / ``list_has_output_term``        (sources for the input/output unique drilldown pages)
     * ``go_terms`` / ``unique_go_terms`` / ``list_go_terms``    (counts + source list)
@@ -70,7 +71,7 @@ Outputs (written to ``--output``)
     4.  activity units enabled by protein complex                  — Total + Unique→page
     5.  unique member protein complex gene products                — Unique only → page
     6.  number of enablers (proteins + protein complex members)    — Unique only → page (union of per-model list_enabled_by_protein_complex with aggregate unique_protein_complex_in_activity_term)
-    7.  genes                                                      — Total only
+    7.  number of genes (enablers + inputs)                        — Unique only → page (union of unique_enabled_by_gene_product with list_of_unique_protein_complex_genes)
     8.  references                                                 — Unique only → page
     9.  pmids                                                      — Unique only → page (PMIDs filtered from list_of_unique_references)
     10. chemical inputs                                            — Total + Unique→page
@@ -112,6 +113,7 @@ Outputs (written to ``--output``)
     Gene-valued pages — columns ``id`` + ``label`` (label from
     ``gene_id_to_label.json``):
       * ``go-cam-unique-protein-complex-member-genes.html``
+      * ``go-cam-unique-genes-enablers-inputs.html``
       * ``go-cam-unique-other-inputs.html``
       * ``go-cam-unique-other-outputs.html``
 
@@ -553,6 +555,11 @@ def build_aggregate_row_specs(model_entity, namespaces,
     aggregate_pc = set(agg.get("unique_protein_complex_in_activity_term", []) or [])
     combined_enablers = sorted(per_model_pc | aggregate_pc)
 
+    combined_genes = sorted(
+        set(agg.get("unique_enabled_by_gene_product", []) or [])
+        | set(agg.get("list_of_unique_protein_complex_genes", []) or [])
+    )
+
     go_terms = agg.get("list_go_terms", []) or []
     mf_terms, bp_terms, cc_terms = _classify_go_terms(go_terms, namespaces)
     unique_mf = sorted(set(mf_terms))
@@ -609,8 +616,12 @@ def build_aggregate_row_specs(model_entity, namespaces,
              drilldown_basename="go-cam-unique-enablers-proteins-protein-complex-members.html",
              drilldown_title="Unique Enablers (Proteins + Protein Complex Members)",
              drilldown_label_kind="go"),
-        spec("genes",
-             total=agg.get("genes", 0)),
+        spec("number of genes (enablers + inputs)",
+             unique=agg.get("unique_gene_product_and_protein_complex_gene_enablers", 0),
+             entries=combined_genes,
+             drilldown_basename="go-cam-unique-genes-enablers-inputs.html",
+             drilldown_title="Unique Genes (Enablers + Inputs)",
+             drilldown_label_kind="gene"),
         spec("references",
              unique=agg.get("unique_references", 0),
              entries=unique_refs,
