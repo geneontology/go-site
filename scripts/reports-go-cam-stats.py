@@ -141,7 +141,9 @@ Outputs (written to ``--output``)
 
 - ``go-cam-protein-complex.html`` + ``go-cam-protein-complex.tsv`` —
   unchanged.
-- ``go-cam-variable-definitions.html`` — unchanged.
+- ``go-cam-variable-definitions.html`` — still emitted, but no longer linked
+  from any page's navigation (omitted from ``available_pages``); it is now a
+  standalone page reachable only by direct URL.
 
 Where
 -----
@@ -800,8 +802,8 @@ def main(directory, template, output, template_records, resource, metadata, date
     definitions_file = os.path.join(directory, "member_variable_definitions.json")
     if records_template_str and os.path.exists(protein_complex_file):
         available_pages.append(("go-cam-protein-complex.html", "Protein Complex Activities"))
-    if records_template_str and os.path.exists(definitions_file):
-        available_pages.append(("go-cam-variable-definitions.html", "Variable Definitions"))
+    # go-cam-variable-definitions.html is still generated below, but intentionally
+    # NOT added to available_pages so no page links to it (standalone page).
 
     # --- Aggregate stats (Model only) ---
     aggregate_file = os.path.join(directory, "aggregate_model_stats.json")
@@ -1090,7 +1092,8 @@ def main(directory, template, output, template_records, resource, metadata, date
                 "title": "GO-CAM Variable Definitions",
                 "columns": columns,
                 "records": records,
-                "links": build_links("go-cam-variable-definitions.html", available_pages),
+                # available_pages no longer contains this page, so exclude is a no-op.
+                "links": build_links(None, available_pages),
                 "date": date,
             }, os.path.join(output, "go-cam-variable-definitions.html"))
         else:
