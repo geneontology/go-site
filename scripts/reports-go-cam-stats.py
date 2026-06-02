@@ -31,9 +31,9 @@ Inputs (under ``--directory``)
   Set side. Relevant fields:
 
     * ``activity_units_enabled_by_gene_product_association``    (total count)
+    * ``unique_gene_product_enablers``                          (count — drives the "gene product enablers" Unique cell; drilldown entries come from ``unique_enabled_by_gene_product``)
     * ``unique_enabled_by_gene_product``                        (Set — drilldown entries)
     * ``activity_units_enabled_by_protein_complex_association`` (total count)
-    * ``unique_protein_complex_in_activity_term``               (Set — semantically the unique entries of ``list_enabled_by_protein_complex``)
     * ``unique_member_protein_complex_genes``                   (count)
     * ``list_of_unique_protein_complex_genes``                  (Set — drilldown entries; renamed to disambiguate from the int count ``unique_protein_complex_genes`` on per-entity records)
     * ``unique_gene_product_and_protein_complex_gene_enablers`` (count — drives the "number of genes (enablers + inputs)" Unique cell; drilldown entries come from the union of ``unique_enabled_by_gene_product`` and ``list_of_unique_protein_complex_genes``)
@@ -68,22 +68,22 @@ Outputs (written to ``--output``)
     1.  production models                                          — Total only
     2.  activity units                                             — Total only
     3.  activity units enabled by gene product                     — Total only
-    4.  activity units enabled by protein complex                  — Total + Unique→page
-    5.  unique member protein complex gene products                — Unique only → page
-    6.  number of enablers (proteins + protein complex members)    — Unique only → page (union of per-model list_enabled_by_protein_complex with aggregate unique_protein_complex_in_activity_term)
-    7.  number of genes (enablers + inputs)                        — Unique only → page (union of unique_enabled_by_gene_product with list_of_unique_protein_complex_genes)
-    8.  references                                                 — Unique only → page
-    9.  pmids                                                      — Unique only → page (PMIDs filtered from list_of_unique_references)
-    10. chemical inputs                                            — Total + Unique→page
-    11. other inputs (gene products and protein complexes)         — Total + Unique→page
-    12. chemical outputs                                           — Total + Unique→page
-    13. other outputs (gene products and protein complexes)        — Total + Unique→page
-    14. GO terms                                                   — Total + Unique→page
-    15. GO MF terms                                                — Total + Unique→page
-    16. GO BP terms                                                — Total + Unique→page
-    17. GO CC terms                                                — Total + Unique→page
-    18. explicit causal relations                                  — Total only (positioned next to inferred relations for explicit-vs-inferred comparison)
-    19. number of inferred relations (has output -> has input)     — Total only
+    4.  gene product enablers                                      — Unique only → page (entries from unique_enabled_by_gene_product Set; count from unique_gene_product_enablers)
+    5.  activity units enabled by protein complex                  — Total only
+    6.  members of protein complex enablers                        — Unique only → page
+    7.  genes (enablers + inputs)                                  — Unique only → page (union of unique_enabled_by_gene_product with list_of_unique_protein_complex_genes)
+    8.  chemical inputs                                            — Total + Unique→page
+    9.  other inputs (gene products and protein complexes)         — Total + Unique→page
+    10. chemical outputs                                           — Total + Unique→page
+    11. other outputs (gene products and protein complexes)        — Total + Unique→page
+    12. GO terms                                                   — Total + Unique→page
+    13. GO MF terms                                                — Total + Unique→page
+    14. GO BP terms                                                — Total + Unique→page
+    15. GO CC terms                                                — Total + Unique→page
+    16. causal relations                                           — Total only (positioned next to inferred relations for explicit-vs-inferred comparison)
+    17. inferred causal relations (has output > has input)         — Total only
+    18. references                                                 — Unique only → page
+    19. PMIDs                                                      — Unique only → page (PMIDs filtered from list_of_unique_references)
 
   Cells with no meaningful value render as ``-``.
 
@@ -126,8 +126,6 @@ Outputs (written to ``--output``)
     OBO-JSON; the ``Label`` column is omitted when ``--resource`` is not
     supplied; entries missing from the ontology render with a blank ``Label``
     cell rather than failing):
-      * ``go-cam-unique-protein-complex-enablers.html``
-      * ``go-cam-unique-enablers-proteins-protein-complex-members.html``
       * ``go-cam-unique-go-terms.html``
       * ``go-cam-unique-go-mf-terms.html``
       * ``go-cam-unique-go-bp-terms.html``
@@ -161,19 +159,13 @@ Where
 
     * ``GocamStats.list_enabled_by_gene_product`` (per-model: list of gene
       product enabler terms, may contain duplicates; sorted).
-    * ``GocamStats.list_enabled_by_protein_complex`` (per-model: list of
-      protein complex enabler terms — the complex itself, not its member
-      genes; may contain duplicates; sorted).
     * ``AggregateInfo.unique_enabled_by_gene_product`` (cross-model set;
-      this is what powers row 3's Unique drilldown).
-    * ``AggregateInfo.unique_protein_complex_in_activity_term`` (cross-model
-      set; semantically the unique entries of
-      ``list_enabled_by_protein_complex``; powers row 4's Unique drilldown).
+      this is what powers the "gene product enablers" Unique drilldown).
     * ``AggregateInfo.list_of_unique_protein_complex_genes`` (cross-model
       set of gene products that are members of protein complexes; powers
-      row 5. Renamed from ``unique_protein_complex_genes`` upstream to
-      disambiguate from the int count on ``GocamStats`` with the same
-      base name).
+      the "members of protein complex enablers" row. Renamed from
+      ``unique_protein_complex_genes`` upstream to disambiguate from the
+      int count on ``GocamStats`` with the same base name).
 
 Why
 ---
@@ -231,14 +223,9 @@ Notes
   are not new fields on ``GocamStats`` upstream. This keeps the
   per-group stats producer unchanged and means refreshing the go.json
   ontology is enough to pick up reclassified terms.
-- ``list_enabled_by_gene_product`` / ``list_enabled_by_protein_complex``
-  are intentionally NOT added to ``AggregateInfo`` — the corresponding
-  ``unique_*`` Sets already carry the deduplicated entries needed for the
-  drilldown pages. The only render-time aggregation pass over per-model
-  files is ``collect_per_model_protein_complex_enablers``, which unions
-  ``list_enabled_by_protein_complex`` across every ``stats_by_model_*.json``
-  to power the "number of enablers (proteins + protein complex members)"
-  row alongside the aggregate's ``unique_protein_complex_in_activity_term``.
+- ``list_enabled_by_gene_product`` is intentionally NOT added to
+  ``AggregateInfo`` — the ``unique_enabled_by_gene_product`` Set already
+  carries the deduplicated entries needed for the drilldown page.
 """
 
 import click
@@ -250,6 +237,15 @@ import glob
 import re
 import yaml
 from urllib.parse import urlparse
+
+
+def capitalize_first(s):
+    """Uppercase the first letter of s, leave the rest untouched.
+
+    Unlike str.capitalize(), preserves existing casing after position 0,
+    so acronyms like "GO terms" survive intact instead of becoming "Go terms".
+    """
+    return s[:1].upper() + s[1:] if s else s
 
 
 def build_table_data(json_data_list, column_names):
@@ -269,7 +265,7 @@ def build_table_data(json_data_list, column_names):
             values.append({"value": data.get(field, "")})
         rows.append({
             "field": field,
-            "field_display": field.replace("_", " "),
+            "field_display": capitalize_first(field.replace("_", " ")),
             "values": values,
         })
 
@@ -354,7 +350,7 @@ def build_record_table_data(records, field_specs):
         columns: [{"label": str}]
         record_rows: [{"cells": [{"value": str}]}]
     """
-    columns = [{"label": label} for _, label, _ in field_specs]
+    columns = [{"label": capitalize_first(label)} for _, label, _ in field_specs]
     record_rows = []
     for rec in records:
         cells = []
@@ -501,28 +497,7 @@ def _classify_go_terms(go_terms, namespaces):
     return mf, bp, cc
 
 
-def collect_per_model_protein_complex_enablers(directory):
-    """Union ``list_enabled_by_protein_complex`` across per-model stats files.
-
-    Iterates every ``stats_by_model_*.json`` under
-    ``<directory>/stats_by_model/`` and returns the sorted union of their
-    ``list_enabled_by_protein_complex`` entries (protein-complex GO terms).
-    Returns ``[]`` when the ``stats_by_model`` directory is absent.
-    """
-    model_dir = os.path.join(directory, "stats_by_model")
-    if not os.path.isdir(model_dir):
-        return []
-    union = set()
-    for fpath in glob.glob(os.path.join(model_dir, "stats_by_model_*.json")):
-        with open(fpath) as f:
-            data = json.load(f)
-        for entry in (data.get("list_enabled_by_protein_complex") or []):
-            union.add(entry)
-    return sorted(union)
-
-
-def build_aggregate_row_specs(model_entity, namespaces,
-                              per_model_protein_complex_enablers=None):
+def build_aggregate_row_specs(model_entity, namespaces):
     """Build the row catalog for the aggregate stats page.
 
     Each row spec is a dict with these keys:
@@ -541,19 +516,9 @@ def build_aggregate_row_specs(model_entity, namespaces,
               * "go"    → columns ``Entry`` + ``Label`` (from --resource
                 ontology labels)
               * None    → single ``Entry`` column (references, PMIDs)
-
-    ``per_model_protein_complex_enablers`` is the sorted union of
-    ``list_enabled_by_protein_complex`` across every per-model stats file
-    (see ``collect_per_model_protein_complex_enablers``). It is unioned with
-    ``unique_protein_complex_in_activity_term`` from the aggregate to populate
-    the "number of enablers (proteins + protein complex members)" row.
     """
     agg = model_entity
     models_by_status = agg.get("models_by_status", {})
-
-    per_model_pc = set(per_model_protein_complex_enablers or [])
-    aggregate_pc = set(agg.get("unique_protein_complex_in_activity_term", []) or [])
-    combined_enablers = sorted(per_model_pc | aggregate_pc)
 
     combined_genes = sorted(
         set(agg.get("unique_enabled_by_gene_product", []) or [])
@@ -597,41 +562,26 @@ def build_aggregate_row_specs(model_entity, namespaces,
              total=agg.get("unique_activity_units", 0)),
         spec("activity units enabled by gene product",
              total=agg.get("activity_units_enabled_by_gene_product_association", 0)),
+        spec("gene product enablers",
+             unique=agg.get("unique_gene_product_enablers", 0),
+             entries=sorted(agg.get("unique_enabled_by_gene_product", []) or []),
+             drilldown_basename="go-cam-unique-gene-product-enablers.html",
+             drilldown_title="Unique Gene Product Enablers",
+             drilldown_label_kind="gene"),
         spec("activity units enabled by protein complex",
-             total=agg.get("activity_units_enabled_by_protein_complex_association", 0),
-             unique=agg.get("unique_protein_complex_terms", 0),
-             entries=sorted(agg.get("unique_protein_complex_in_activity_term", []) or []),
-             drilldown_basename="go-cam-unique-protein-complex-enablers.html",
-             drilldown_title="Unique Protein Complex Enablers",
-             drilldown_label_kind="go"),
-        spec("unique member protein complex gene products",
+             total=agg.get("activity_units_enabled_by_protein_complex_association", 0)),
+        spec("members of protein complex enablers",
              unique=agg.get("unique_member_protein_complex_genes", 0),
              entries=sorted(agg.get("list_of_unique_protein_complex_genes", []) or []),
              drilldown_basename="go-cam-unique-protein-complex-member-genes.html",
-             drilldown_title="Unique Member Protein Complex Gene Products",
+             drilldown_title="Members of Protein Complex Enablers",
              drilldown_label_kind="gene"),
-        spec("number of enablers (proteins + protein complex members)",
-             unique=len(combined_enablers),
-             entries=combined_enablers,
-             drilldown_basename="go-cam-unique-enablers-proteins-protein-complex-members.html",
-             drilldown_title="Unique Enablers (Proteins + Protein Complex Members)",
-             drilldown_label_kind="go"),
-        spec("number of genes (enablers + inputs)",
+        spec("genes (enablers + inputs)",
              unique=agg.get("unique_gene_product_and_protein_complex_gene_enablers", 0),
              entries=combined_genes,
              drilldown_basename="go-cam-unique-genes-enablers-inputs.html",
              drilldown_title="Unique Genes (Enablers + Inputs)",
              drilldown_label_kind="gene"),
-        spec("references",
-             unique=agg.get("unique_references", 0),
-             entries=unique_refs,
-             drilldown_basename="go-cam-unique-references.html",
-             drilldown_title="Unique References"),
-        spec("pmids",
-             unique=agg.get("unique_pmid", 0),
-             entries=unique_pmids,
-             drilldown_basename="go-cam-unique-pmids.html",
-             drilldown_title="Unique PMIDs"),
         spec("chemical inputs",
              total=agg.get("chemical_inputs", 0),
              unique=len(unique_chem_inputs),
@@ -688,10 +638,20 @@ def build_aggregate_row_specs(model_entity, namespaces,
              drilldown_basename="go-cam-unique-go-cc-terms.html",
              drilldown_title="Unique GO Cellular Component Terms",
              drilldown_label_kind="go"),
-        spec("explicit causal relations",
+        spec("causal relations",
              total=agg.get("explicit_causal_relations", 0)),
-        spec("number of inferred relations (has output -> has input)",
+        spec("inferred causal relations (has output > has input)",
              total=agg.get("total_inferred_relations", 0)),
+        spec("references",
+             unique=agg.get("unique_references", 0),
+             entries=unique_refs,
+             drilldown_basename="go-cam-unique-references.html",
+             drilldown_title="Unique References"),
+        spec("PMIDs",
+             unique=agg.get("unique_pmid", 0),
+             entries=unique_pmids,
+             drilldown_basename="go-cam-unique-pmids.html",
+             drilldown_title="Unique PMIDs"),
     ]
 
 
@@ -712,7 +672,7 @@ def _cell_unique(spec_):
 def render_aggregate_rows(row_specs):
     """Convert aggregate row specs into template-ready row dicts."""
     return [{
-        "field_display": s["label"],
+        "field_display": capitalize_first(s["label"]),
         "values": [_cell_total(s), _cell_unique(s)],
     } for s in row_specs]
 
@@ -749,10 +709,10 @@ def render_drilldown_pages(row_specs, records_template_str, output_dir,
 
         kind = s.get("drilldown_label_kind")
         if kind == "gene":
-            columns = [{"label": "id"}, {"label": "label"}]
+            columns = [{"label": "Id"}, {"label": "Label"}]
             label_lookup = gene_labels
         elif kind == "chebi":
-            columns = [{"label": "id"}, {"label": "label"}]
+            columns = [{"label": "Id"}, {"label": "Label"}]
             label_lookup = chebi_labels
         elif kind == "go" and ontology_labels:
             columns = [{"label": "Entry"}, {"label": "Label"}]
@@ -852,9 +812,7 @@ def main(directory, template, output, template_records, resource, metadata, date
     with open(aggregate_file) as f:
         model_entity = json.load(f)
 
-    per_model_pc_enablers = collect_per_model_protein_complex_enablers(directory)
-    row_specs = build_aggregate_row_specs(
-        model_entity, ontology_namespaces, per_model_pc_enablers)
+    row_specs = build_aggregate_row_specs(model_entity, ontology_namespaces)
     aggregate_rows = render_aggregate_rows(row_specs)
     aggregate_header = [{"id": "Total"}, {"id": "Unique"}]
 
@@ -971,9 +929,9 @@ def main(directory, template, output, template_records, resource, metadata, date
                     values.append({"value": ""})
                 rows.append({
                     "field": field,
-                    "field_display": group_field_label_overrides.get(
+                    "field_display": capitalize_first(group_field_label_overrides.get(
                         field, field.replace("_", " ")
-                    ),
+                    )),
                     "values": values,
                 })
 
@@ -1001,7 +959,7 @@ def main(directory, template, output, template_records, resource, metadata, date
                     values.append({"value": ""})
                 rows.append({
                     "field": field_name,
-                    "field_display": display_label,
+                    "field_display": capitalize_first(display_label),
                     "values": values,
                 })
 
