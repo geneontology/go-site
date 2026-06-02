@@ -447,7 +447,7 @@ organisms:
     code_uniprot: GOSHI
     code_goc:
     group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000189702
+    uniprot_proteome_id: uniprot.proteome:UP000818029
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:64091
     taxonomic_group: NCBITaxon:2157
@@ -747,7 +747,7 @@ organisms:
     code_uniprot: TOBAC
     code_goc:
     group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000084051
+    uniprot_proteome_id: uniprot.proteome:UP000790787
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:436308
     taxonomic_group: NCBITaxon:2157
@@ -1007,7 +1007,7 @@ organisms:
     code_uniprot: SPIOL
     code_goc:
     group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP001155700
+    uniprot_proteome_id: uniprot.proteome:UP000813463
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:171101
     taxonomic_group: NCBITaxon:2
