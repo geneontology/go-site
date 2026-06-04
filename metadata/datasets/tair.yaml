@@ -16,8 +16,8 @@ datasets:
    dataset: tair
    submitter: tair
    compression: gzip
-   source: https://mirror.geneontology.io/ARATH_3702_UP000006548.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gaf/ARATH_3702_UP000006548.gaf.gz
+   source: https://mirror.geneontology.io/ARATH-mod.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gaf/ARATH-mod.gaf.gz
    entity_type:
    status: active
    species_code: Atal
