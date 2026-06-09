@@ -202,6 +202,18 @@
       url_syntax: http://www.cazy.org/[example_id].html
       example_id: CAZY:PL11
       example_url: http://www.cazy.org/PL11.html
+- database: CL
+  name: Cell Type Ontology
+  rdf_uri_prefix: http://purl.obolibrary.org/obo/CL_
+  generic_urls:
+    - http://cellontology.org
+  entity_types:
+    - type_name: cell
+      type_id: GO:0005623
+      id_syntax: '[0-9]{7}'
+      url_syntax: http://purl.obolibrary.org/obo/CL_[example_id]
+      example_id: CL:0000041
+      example_url: http://purl.obolibrary.org/obo/CL_0000041
 - database: DTU
   name:  DTU Health Tech Services
   description: Formerly CBS (Center for Biological Sequence Analysis)
