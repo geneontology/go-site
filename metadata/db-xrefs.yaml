@@ -206,7 +206,7 @@
   name: Cell Type Ontology
   rdf_uri_prefix: http://purl.obolibrary.org/obo/CL_
   generic_urls:
-    - http://cellontology.org
+    - https://cell-ontology.github.io/
   entity_types:
     - type_name: cell
       type_id: GO:0005623
