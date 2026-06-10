@@ -601,10 +601,10 @@ e.g. SGD_REF:S000047763|PMID:2676709. PMID, DOIs, Agricola, GO_REF and internal 
 ## DEPRECATED GO aspect should match the term's namespace; otherwise it is repaired to the appropriate aspect
 
  * id: [GORULE:0000028](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000028.md)
- * status: deprcated
+ * status: deprecated
 
 
-This information is injected directy in the GAF file, upstream sources errors do not cause errors in this data anymore.
+This rule was deprecated because this information is injected directy in the GAF file, so that upstream sources errors do not lead to errors in this data.
 
 The GO aspect (GAF column 9) should correspond to the namespace of the GO term (GAF column 5). 
 The value in this column must be on of: C, P, or F, corresponding to the three GO aspects, 
