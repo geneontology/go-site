@@ -61,7 +61,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000056">GORULE:0000056 Annotations should validate against GO shape expressions</a>
  * <a href="#gorule0000057">GORULE:0000057 Group specific filter rules should be applied to annotations</a>
  * <a href="#gorule0000058">GORULE:0000058 Object extensions should conform to the extensions-patterns.yaml file in metadata</a>
- * <a href="#gorule0000059">GORULE:0000059 GAF Version 2.0 and 2.1 are converted into GAF Version 2.2</a>
+ * <a href="#gorule0000059">GORULE:0000059 DEPRECATED GAF Version 2.0 and 2.1 are converted into GAF Version 2.2</a>
  * <a href="#gorule0000061">GORULE:0000061 Allowed gene product to term relations (gp2term)</a>
  * <a href="#gorule0000062">GORULE:0000062 Infer annotations on molecular function via has_part</a>
  * <a href="#gorule0000063">GORULE:0000063 Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column)</a>
@@ -949,10 +949,13 @@ Note that in the GO Central pipeline, this is only implmented upon imports of ex
 
 <a name="gorule0000059"/>
 
-## GAF Version 2.0 and 2.1 are converted into GAF Version 2.2
+## DEPRECATED GAF Version 2.0 and 2.1 are converted into GAF Version 2.2
 
  * id: [GORULE:0000059](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000059.md)
- * status: implemented
+ * status: deprecated
+
+
+## This rule was deprecated because it is redundant with GORULE:0000061.
 
 
 In GAF2.2, a gp2term relation (column 4; see https://wiki.geneontology.org/Annotation_Relations#Gene_Product_to_GO_term_Relations_(%22qualifiers%22)) is mandatory for every annotation.
