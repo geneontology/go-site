@@ -34,7 +34,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000025">GORULE:0000025 Creating more specific annotations by reasoning over extensions</a>
  * <a href="#gorule0000026">GORULE:0000026 IBA annotations must have been sourced from the PAINT inference pipeline</a>
  * <a href="#gorule0000027">GORULE:0000027 Each identifier in GAF is valid</a>
- * <a href="#gorule0000028">GORULE:0000028 GO aspect should match the term's namespace; otherwise it is repaired to the appropriate aspect</a>
+ * <a href="#gorule0000028">GORULE:0000028 DEPRECATED GO aspect should match the term's namespace; otherwise it is repaired to the appropriate aspect</a>
  * <a href="#gorule0000029">GORULE:0000029 IEAs should be less than one year old.</a>
  * <a href="#gorule0000030">GORULE:0000030 Only valid GO_REFs are allowed</a>
  * <a href="#gorule0000031">GORULE:0000031 DEPRECATED. Annotation relations are replaced when not provided by source</a>
@@ -628,11 +628,13 @@ e.g. SGD_REF:S000047763|PMID:2676709. PMID, DOIs, Agricola, GO_REF and internal 
 
 <a name="gorule0000028"/>
 
-## GO aspect should match the term's namespace; otherwise it is repaired to the appropriate aspect
+## DEPRECATED GO aspect should match the term's namespace; otherwise it is repaired to the appropriate aspect
 
  * id: [GORULE:0000028](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000028.md)
- * status: implemented
+ * status: deprcated
 
+
+This information is injected directy in the GAF file, upstream sources errors do not cause errors in this data anymore.
 
 The GO aspect (GAF column 9) should correspond to the namespace of the GO term (GAF column 5). 
 The value in this column must be on of: C, P, or F, corresponding to the three GO aspects, 
