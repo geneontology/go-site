@@ -59,7 +59,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000054">GORULE:0000054 Genes annotated with ND should have no other annotations for that aspect</a>
  * <a href="#gorule0000055">GORULE:0000055 References should have only one ID per ID space</a>
  * <a href="#gorule0000056">GORULE:0000056 Annotations should validate against GO shape expressions</a>
- * <a href="#gorule0000057">GORULE:0000057 Group specific filter rules should be applied to annotations</a>
+ * <a href="#gorule0000057">GORULE:0000057 DEPRECATED Group specific filter rules should be applied to annotations</a>
  * <a href="#gorule0000058">GORULE:0000058 Object extensions should conform to the extensions-patterns.yaml file in metadata</a>
  * <a href="#gorule0000059">GORULE:0000059 DEPRECATED GAF Version 2.0 and 2.1 are converted into GAF Version 2.2</a>
  * <a href="#gorule0000061">GORULE:0000061 Allowed gene product to term relations (gp2term)</a>
@@ -922,7 +922,7 @@ Annotations as GO-CAMs should successfully validate against this set of Shex Sha
 
 <a name="gorule0000057"/>
 
-## Group specific filter rules should be applied to annotations
+## DEPRECATED Group specific filter rules should be applied to annotations
 
  * id: [GORULE:0000057](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000057.md)
  * status: deprecated
