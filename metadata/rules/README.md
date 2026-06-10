@@ -672,7 +672,7 @@ DEPRECATED. See GORULE:0000043
 ## Group-specific Reference IDs are not allowed, only public reference IDs (PMID, doi, or GO_REF)
 
  * id: [GORULE:0000033](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000033.md)
- * status: approved
+ * status: implemented
 
 
 
@@ -680,9 +680,9 @@ DEPRECATED. See GORULE:0000043
 
 References for an annotation (GAF column 6; GPAD column 5) must use either a PMID, a doi, or a GO_REF. Group-specific reference records are stripped during the data load process. 
 
-Group-specific reference records that are a external xrefs of a GO_REF (https://github.com/geneontology/go-site/tree/master/metadata/gorefs.yaml) is replaced by that GO_REF. For example, `FB:FBrf0159398` is an external accession for `GO_REF:0000015`, so the FB ID is repaired to the GO_REF. 
+Group-specific reference records that are listed as external xrefs on a valid GO_REF (https://github.com/geneontology/go-site/tree/master/metadata/gorefs.yaml) are replaced by that GO_REF. For example, `FB:FBrf0159398` is an external accession for `GO_REF:0000015`, so the FB ID is repaired to the GO_REF. 
 
-If the group reference is the only one present, it will be reported as an error, and the annotation line removed since the reference field is mandatory.
+If the group reference is the only one present, the annotation line removed since the reference field is mandatory, and reported as an error.
 
 
 <a name="gorule0000035"/>
