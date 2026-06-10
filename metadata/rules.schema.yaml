@@ -26,7 +26,7 @@ mapping:
   "fail_mode":
     type: str
     required: true
-    enum: ["hard", "soft"]
+    enum: ["hard", "soft", "mixed"]
   "tags":
     type: seq
     required: false
