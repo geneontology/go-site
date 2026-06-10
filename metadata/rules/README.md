@@ -63,7 +63,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000058">GORULE:0000058 Object extensions should conform to the extensions-patterns.yaml file in metadata</a>
  * <a href="#gorule0000059">GORULE:0000059 DEPRECATED GAF Version 2.0 and 2.1 are converted into GAF Version 2.2</a>
  * <a href="#gorule0000061">GORULE:0000061 Allowed gene product to term relations (gp2term)</a>
- * <a href="#gorule0000062">GORULE:0000062 Infer annotations on molecular function via has_part</a>
+ * <a href="#gorule0000062">GORULE:0000062 DEPRECATED Infer annotations on molecular function via has_part</a>
  * <a href="#gorule0000063">GORULE:0000063 Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column)</a>
  * <a href="#gorule0000064">GORULE:0000064 TreeGrafter IEAs should be filtered for GO reference species</a>
  * <a href="#gorule0000065">GORULE:0000065 Annotations to term that are candidates for obsoletion should be produce a warning</a>
@@ -1005,10 +1005,10 @@ GAF2.2 files require a gene product to term (gp2term) relation in Column 4. Allo
 
 <a name="gorule0000062"/>
 
-## Infer annotations on molecular function via has_part
+## DEPRECATED Infer annotations on molecular function via has_part
 
  * id: [GORULE:0000062](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000062.md)
- * status: approved
+ * status: deprecated
 
 
 For any annotation to a molecular function MF-X, infer annotation to all MFs that stand in a has_part relationship to MF-X, except if the annotation uses the 'contributes_to' qualifier, then do not infer annotations from the has_part relationship to MF-X.
