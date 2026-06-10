@@ -620,7 +620,7 @@ Note that this rule does not apply to GPAD files, since the GO aspect is not par
  * status: deprecated
 
 
-## This rule was deprcated because in the GOEx pipeline, all IEA annotations come from GOA, and are generated at each release.
+This rule was deprecated because in the GOEx pipeline, all IEA annotations come from GOA, and are generated at each release.
 
 All IEA annotations with a date more than three years old should be filered.
 IEAs between 1 and 3 years old trigger a WARNING.
