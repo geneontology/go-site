@@ -150,7 +150,7 @@ UniProtKB	O76187	darA	enables	GO:0004672	PMID:9802899	IDA		F	GORULE_TEST:0000020
 ! FAILS GORULE:0000027 - TEST 6 - Alt GO ID in Col 5 												
 UniProtKB	Q6UW15	REG3G	involved_in	GO:0036459	PMID:23072806	IDA		C	GORULE_TEST:0000020-6 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	
 ! FAILS GORULE:0000027 - TEST 7 - Alt GO ID in Extension (Col 16)														
-UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:23072806	IDA		C	GORULE_TEST:0000020-2 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	part_of(GO:0036459)	
+UniProtKB	Q6UW15	REG3G	involved_in	GO:0006401	PMID:23072806	IDA		C	GORULE_TEST:0000020-7 Regenerating islet-derived protein 3-gamma	REG3G|PAP1B|UNQ429/PRO162	protein	taxon:9606	20220606	GO_Central	part_of(GO:0036459)	
 ! FAILS GORULE:0000022 - TEST 1 - retracted paper															
 UniProtKB	O76187	darA	involved_in	GO:0017015	PMID:37278189	IDA		F	GORULE_TEST:0000022-1		protein	taxon:44689	20230513	GO_Central	
 ! FAILS GORULE:0000027 - TEST 1 - Prefix not in /db-xrefs.yaml															
