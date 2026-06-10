@@ -35,7 +35,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000026">GORULE:0000026 IBA annotations must have been sourced from the PAINT inference pipeline</a>
  * <a href="#gorule0000027">GORULE:0000027 Each identifier in GAF is valid</a>
  * <a href="#gorule0000028">GORULE:0000028 DEPRECATED GO aspect should match the term's namespace; otherwise it is repaired to the appropriate aspect</a>
- * <a href="#gorule0000029">GORULE:0000029 IEAs should be less than one year old.</a>
+ * <a href="#gorule0000029">GORULE:0000029 DEPRECATED. IEAs should be less than one year old.</a>
  * <a href="#gorule0000030">GORULE:0000030 Only valid GO_REFs are allowed</a>
  * <a href="#gorule0000031">GORULE:0000031 DEPRECATED. Annotation relations are replaced when not provided by source</a>
  * <a href="#gorule0000032">GORULE:0000032 DEPRECATED Allowed References for each ECO.</a>
@@ -614,11 +614,13 @@ Note that this rule does not apply to GPAD files, since the GO aspect is not par
 
 <a name="gorule0000029"/>
 
-## IEAs should be less than one year old.
+## DEPRECATED. IEAs should be less than one year old.
 
  * id: [GORULE:0000029](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000029.md)
- * status: implemented
+ * status: deprecated
 
+
+## This rule was deprcated because in the GOEx pipeline, all IEA annotations come from GOA, and are generated at each release.
 
 All IEA annotations with a date more than three years old should be filered.
 IEAs between 1 and 3 years old trigger a WARNING.
