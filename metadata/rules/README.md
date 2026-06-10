@@ -26,7 +26,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000017">GORULE:0000017 IDA annotations must not have a With/From entry</a>
  * <a href="#gorule0000018">GORULE:0000018 IPI annotations require a With/From entry</a>
  * <a href="#gorule0000019">GORULE:0000019 Generic Reasoner Validation Check</a>
- * <a href="#gorule0000020">GORULE:0000020 Automatic repair of annotations to merged or obsoleted terms</a>
+ * <a href="#gorule0000020">GORULE:0000020 Automatic repair of annotations to merged or obsoleted terms when replacement is available; otherwise, filter annotation</a>
  * <a href="#gorule0000021">GORULE:0000021 DEPRECATED Check with/from for sequence similarity evidence for valid database ID</a>
  * <a href="#gorule0000022">GORULE:0000022 Check for, and filter, annotations made to retracted publications</a>
  * <a href="#gorule0000023">GORULE:0000023 Materialize annotations for inter-branch links in the GO</a>
@@ -457,7 +457,7 @@ reasoner such as HermiT.
 
 <a name="gorule0000020"/>
 
-## Automatic repair of annotations to merged or obsoleted terms
+## Automatic repair of annotations to merged or obsoleted terms when replacement is available; otherwise, filter annotation
 
  * id: [GORULE:0000020](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000020.md)
  * status: implemented
