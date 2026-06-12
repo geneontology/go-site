@@ -33,7 +33,15 @@
                 "paging": false,
                 "info": false,
                 "ordering": true,
-                "searching": true
+                "searching": true,
+                // scrollX gives a horizontal scrollbar for wide tables (e.g.
+                // the protein-complex page); scrollY bounds the body to the
+                // viewport so that scrollbar stays on screen instead of below
+                // a long table, and scrollCollapse lets short tables (most
+                // drilldown pages) shrink to fit instead of padding to 70vh.
+                "scrollX": true,
+                "scrollY": "70vh",
+                "scrollCollapse": true
             });
         });
         </script>

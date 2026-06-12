@@ -23,6 +23,42 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" crossorigin="anonymous"/>
 
+        <style>
+        /* Keep wide / tall stats tables (e.g. group- and curator-stats, which
+           gain one column per group/curator) inside a viewport-bounded scroll
+           box. Without this the table's own horizontal scrollbar sits at the
+           bottom of the table — below the fold on a many-row page — so users
+           scroll sideways with no scrollbar in view. overflow:auto here keeps
+           BOTH scrollbars on screen. */
+        .gostats-scroll { max-height: 75vh; overflow: auto; }
+        /* Opaque stripes so the sticky cells below can inherit a solid
+           background and not let scrolled-under content bleed through. */
+        .gostats-scroll table tbody tr { background-color: #fff; }
+        .gostats-scroll table tbody tr:nth-of-type(odd) { background-color: #f2f2f2; }
+        /* Freeze the header row and the leading Statistic column on scroll. */
+        .gostats-scroll table thead th { position: sticky; top: 0; z-index: 2; background-color: #fff; }
+        .gostats-scroll table tbody th[scope="row"] { position: sticky; left: 0; z-index: 1; background-color: inherit; }
+        /* Only the Statistic header (first cell of the first header row) is the
+           frozen corner; the per-entity Total/Unique subheader cells scroll. */
+        .gostats-scroll table thead tr:first-child th:first-child { left: 0; z-index: 3; }
+        /* Two-level (grouped) header: the second row sticks just below the
+           first. 2.1rem ≈ one table-sm header row; if header text wraps this
+           can drift, but the bounded scroll box still keeps both bars on screen. */
+        .gostats-grouped table thead tr:nth-child(2) th { top: 2.1rem; }
+        /* Entity (group/curator) column banding: alternate entities (ent-b)
+           get a warm-gray tint. Row striping is preserved by combining both
+           axes into four solid colors; cells stay opaque so the sticky header
+           and first column keep covering scrolled-under content. The neutral
+           ent-a columns match the default white/#f2f2f2 row stripes. */
+        .gostats-grouped tbody tr td.ent-a { background-color: #ffffff; }
+        .gostats-grouped tbody tr:nth-of-type(odd) td.ent-a { background-color: #f2f2f2; }
+        .gostats-grouped tbody tr td.ent-b { background-color: #efece8; }
+        .gostats-grouped tbody tr:nth-of-type(odd) td.ent-b { background-color: #e4ded6; }
+        .gostats-grouped table thead th.ent-b { background-color: #efece8; }
+        /* Visible cell borders (Bootstrap's table-bordered border is very faint). */
+        .gostats-scroll table th, .gostats-scroll table td { border: 1px solid #b8c2cc; }
+        </style>
+
         <title>{{ title }}</title>
 
         <script>
@@ -36,14 +72,30 @@
         <div class="container-fluid">
         <h2>{{ title }}</h2>
         Generated on {{ date }}<br/>
+        {{#note}}<p class="text-muted mt-2 mb-0"><em>{{ note }}</em></p>{{/note}}
         <nav class="mt-2 mb-3">
             {{ #links }}
             <a href="{{ href }}" class="btn btn-outline-primary btn-sm">{{ label }}</a>
             {{ /links }}
         </nav>
-        <div class="table-responsive">
+        <div class="table-responsive gostats-scroll{{#grouped}} gostats-grouped{{/grouped}}">
         <table id="sourcestable" class="table table-sm table-striped rud-compact-table table-bordered table-hover">
         <thead>
+            {{#grouped}}
+            <tr>
+                <th scope="col" rowspan="2">Statistic</th>
+                {{ #header }}
+                {{#href}}<th scope="col" colspan="{{ colspan }}" class="text-center {{ cls }}"><a href="{{ href }}">{{ id }}</a></th>{{/href}}
+                {{^href}}<th scope="col" colspan="{{ colspan }}" class="text-center {{ cls }}">{{ id }}</th>{{/href}}
+                {{ /header }}
+            </tr>
+            <tr>
+                {{ #subheader }}
+                <th scope="col" class="{{ cls }}">{{ label }}</th>
+                {{ /subheader }}
+            </tr>
+            {{/grouped}}
+            {{^grouped}}
             <tr>
                 <th scope="col">Statistic</th>
                 {{ #header }}
@@ -51,13 +103,14 @@
                 {{^href}}<th scope="col">{{ id }}</th>{{/href}}
                 {{ /header }}
             </tr>
+            {{/grouped}}
         </thead>
         <tbody>
             {{ #rows }}
             <tr>
                 <th scope="row" style="white-space: nowrap;">{{ field_display }}</th>
                 {{ #values }}
-                <td>{{#href}}<a href="{{ href }}">{{ value }}</a>{{/href}}{{^href}}{{ value }}{{/href}}</td>
+                <td class="{{ cls }}">{{#href}}<a href="{{ href }}">{{ value }}</a>{{/href}}{{^href}}{{ value }}{{/href}}</td>
                 {{ /values }}
             </tr>
             {{ /rows }}

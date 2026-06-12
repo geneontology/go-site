@@ -51,13 +51,13 @@ Inputs (under ``--directory``)
   Activities record-oriented table (with TSV).
 - ``member_variable_definitions.json`` — optional, drives the variable
   definitions page.
-- ``gene_id_to_label.json`` — optional. Flat ``{id: label}`` map used to
-  populate the ``label`` column on gene-valued drilldown pages (gene product
-  enablers, protein complex member genes, other inputs, other outputs).
-  Keyed by curie-style IDs such as ``UniProtKB:P00387`` or ``FB:FBgn0000566``.
-- ``chebi_id_to_label.json`` — optional. Flat ``{id: label}`` map used to
-  populate the ``label`` column on chemical drilldown pages (chemical inputs,
-  chemical outputs). Keyed by ``CHEBI:<n>`` curies.
+- ``id_to_label.json`` — optional. Flat ``{id: label}`` map used to populate
+  the ``label`` column on every gene- and chemical-valued drilldown page
+  (gene product enablers, protein complex member genes, other inputs, other
+  outputs, chemical inputs, chemical outputs). A single unified map covering
+  all term kinds, keyed by curie-style IDs such as ``UniProtKB:P00387``,
+  ``FB:FBgn0000566`` or ``CHEBI:58211``. Supersedes the former separate
+  ``gene_id_to_label.json`` / ``chebi_id_to_label.json`` maps.
 
 Outputs (written to ``--output``)
 ---------------------------------
@@ -110,19 +110,19 @@ Outputs (written to ``--output``)
   collection on ``AggregateInfo`` is non-empty). The first column header and
   the (optional) label column depend on what kind of entry the page holds:
 
-    Gene-valued pages — columns ``id`` + ``label`` (label from
-    ``gene_id_to_label.json``):
+    Gene-valued pages — columns ``ID`` + ``Label`` (label from
+    ``id_to_label.json``):
       * ``go-cam-unique-protein-complex-member-genes.html``
       * ``go-cam-unique-genes-enablers-inputs.html``
       * ``go-cam-unique-other-inputs.html``
       * ``go-cam-unique-other-outputs.html``
 
-    Chemical (CHEBI) pages — columns ``id`` + ``label`` (label from
-    ``chebi_id_to_label.json``):
+    Chemical (CHEBI) pages — columns ``ID`` + ``Label`` (label from
+    ``id_to_label.json``, the same unified map):
       * ``go-cam-unique-chemical-inputs.html``
       * ``go-cam-unique-chemical-outputs.html``
 
-    GO-term pages — columns ``Entry`` + ``Label`` (label from ``--resource``
+    GO-term pages — columns ``ID`` + ``Label`` (label from ``--resource``
     OBO-JSON; the ``Label`` column is omitted when ``--resource`` is not
     supplied; entries missing from the ontology render with a blank ``Label``
     cell rather than failing):
@@ -131,7 +131,7 @@ Outputs (written to ``--output``)
       * ``go-cam-unique-go-bp-terms.html``
       * ``go-cam-unique-go-cc-terms.html``
 
-    No-label pages — single ``Entry`` column:
+    No-label pages — single ``ID`` column:
       * ``go-cam-unique-references.html``
       * ``go-cam-unique-pmids.html``
 
@@ -153,9 +153,9 @@ Where
   block accepts ``{label, total, unique_value, unique_href}`` so the Unique
   cell renders as count, hyperlinked count, or ``-``).
 - Drilldown pages reuse ``go-cam-records-template.html``.
-- ``gene_id_to_label.json`` and ``chebi_id_to_label.json`` are emitted by
-  ``output_stats_for_gocam_models.py`` into the same directory as
-  ``aggregate_model_stats.json`` and are loaded by ``load_id_labels`` here.
+- ``id_to_label.json`` is emitted by ``output_stats_for_gocam_models.py``
+  into the same directory as ``aggregate_model_stats.json`` and is loaded by
+  ``load_id_labels`` here.
 - Upstream field definitions live in
   ``gocam-py/pipeline/output_stats_for_gocam_models.py``:
 
@@ -201,12 +201,12 @@ How
   drilldown's own filename so navigation back to the aggregate works.
 - Drilldown column layout is driven by ``drilldown_label_kind`` on each row
   spec — one of ``"gene"``, ``"chebi"``, ``"go"`` or ``None``. The renderer
-  picks the corresponding label dict (``gene_labels``, ``chebi_labels``,
-  ``ontology_labels``) and headers (``id``/``label`` for gene+chebi,
-  ``Entry``/``Label`` for go, ``Entry`` only for no-label pages).
-- ``load_id_labels`` reads ``gene_id_to_label.json`` and
-  ``chebi_id_to_label.json`` from the ``--directory`` input. Both files are
-  optional; absence yields empty dicts and blank ``label`` cells.
+  picks the corresponding label dict (``id_labels`` for gene+chebi,
+  ``ontology_labels`` for go) and headers (``ID``/``Label`` for gene+chebi
+  and go, ``ID`` only for no-label pages).
+- ``load_id_labels`` reads ``id_to_label.json`` from the ``--directory``
+  input. The file is optional; absence yields an empty dict and blank
+  ``label`` cells.
 - The producer-side schema rename (``number_of_X`` → ``X``,
   ``total_number_of_X`` → ``total_X``, and ``unique_X`` Sets renamed to
   ``list_of_unique_X`` where they would collide with a count) is the source
@@ -250,28 +250,151 @@ def capitalize_first(s):
     return s[:1].upper() + s[1:] if s else s
 
 
-def build_table_data(json_data_list, column_names):
-    """Build header and rows from a list of JSON dicts and their column names."""
-    header = [{"id": name} for name in column_names]
+# Caveat notes shown on the entity-as-column pages explaining why per-entity
+# columns are not additive (see the group/curator stats render sites).
+GROUP_STATS_NOTE = (
+    "Per-group columns are independent counts and do not add up. The group "
+    "breakdown uses each model's “provided by”, not curator group "
+    "membership, and a model can be provided by more than one group, so the "
+    "same model (and its terms, references, etc.) may be counted under several "
+    "groups. Columns will generally not sum to the aggregate totals."
+)
+CURATOR_STATS_NOTE = (
+    "Per-curator columns are independent counts and do not add up. A curator "
+    "may belong to multiple groups, so the same curator appears on more than "
+    "one group page, and several curators can contribute to the same model, so "
+    "the same item may be counted under multiple curators. Each column is that "
+    "curator's entire GO-CAM contribution across every model they touched — "
+    "not just this group's models — so columns will generally not sum to the "
+    "group or aggregate totals."
+)
 
-    # Collect non-array field names from the first file
-    field_names = [
-        key for key, val in json_data_list[0].items()
-        if not isinstance(val, list) and not isinstance(val, dict)
+
+def build_entity_row_specs(stats, namespaces):
+    """Total/Unique row catalog for one per-entity ``GocamStats`` dict.
+
+    Mirrors the aggregate page's row order and labels (see
+    ``build_aggregate_row_specs``) but reads the ``GocamStats`` field names
+    used in ``stats_by_group_*.json`` / ``stats_by_curator_*.json`` and returns
+    only ``(label, total, unique)`` per row — no drilldown entries, since the
+    per-entity pages link no further. ``total`` / ``unique`` are ``int`` or
+    ``None``; ``None`` renders as ``-`` (a stat that has no Total or no Unique
+    on the aggregate page renders the same way here). Passing an empty dict
+    yields the canonical label/order list with zero/None values.
+
+    The GO MF/BP/CC rows are derived from ``list_go_terms`` partitioned by the
+    ``--resource`` namespace map, exactly as the aggregate and current
+    group-stats pages do.
+    """
+    s = stats
+    go_terms = s.get("list_go_terms", []) or []
+    mf, bp, cc = _classify_go_terms(go_terms, namespaces)
+
+    def spec(label, total=None, unique=None):
+        return {"label": label, "total": total, "unique": unique}
+
+    return [
+        spec("production models", total=s.get("models", 0)),
+        spec("activity units", total=s.get("activity_units", 0)),
+        spec("activity units enabled by gene product",
+             total=s.get("activity_units_enabled_by_gene_product", 0)),
+        spec("gene product enablers",
+             unique=s.get("unique_gene_product_enablers", 0)),
+        spec("activity units enabled by protein complex",
+             total=s.get("activity_units_enabled_by_protein_complex", 0)),
+        spec("members of protein complex enablers",
+             unique=s.get("unique_protein_complex_genes", 0)),
+        spec("genes (enablers + inputs)",
+             unique=s.get("unique_gene_product_and_protein_complex_gene_enablers", 0)),
+        spec("chemical inputs",
+             total=s.get("chemical_inputs", 0),
+             unique=s.get("unique_chemical_inputs", 0)),
+        spec("other inputs (gene products and protein complexes)",
+             total=s.get("other_inputs", 0),
+             unique=s.get("unique_other_inputs", 0)),
+        spec("chemical outputs",
+             total=s.get("chemical_outputs", 0),
+             unique=s.get("unique_chemical_outputs", 0)),
+        spec("other outputs (gene products and protein complexes)",
+             total=s.get("other_outputs", 0),
+             unique=s.get("unique_other_outputs", 0)),
+        spec("GO terms",
+             total=s.get("go_terms", 0),
+             unique=s.get("unique_go_terms", 0)),
+        spec("GO MF terms", total=len(mf), unique=len(set(mf))),
+        spec("GO BP terms", total=len(bp), unique=len(set(bp))),
+        spec("GO CC terms", total=len(cc), unique=len(set(cc))),
+        spec("causal relations", total=s.get("explicit_causal_relations", 0)),
+        spec("inferred causal relations (has output > has input)",
+             total=s.get("total_inferred_relations", 0)),
+        spec("references", unique=s.get("unique_references", 0)),
+        spec("PMIDs", unique=s.get("unique_pmid", 0)),
     ]
 
+
+def build_entity_table(entity_data_list, column_specs, namespaces):
+    """Build a grouped Total/Unique table for entity-as-column pages.
+
+    Each entity (group or curator) becomes a column group spanning two
+    sub-columns, ``Total`` and ``Unique``, so the per-group / per-curator
+    pages read with the same vocabulary as ``go-cam-aggregate-stats.html``.
+
+    Args:
+        entity_data_list: list of per-entity ``GocamStats`` dicts, one per
+            column. An entry of ``None`` renders a blank column (used for the
+            navigation-only "Other" column on the group-stats page).
+        column_specs: list of ``{"id": label, "href": optional}`` aligned with
+            ``entity_data_list``.
+        namespaces: GO-id → namespace map for the MF/BP/CC rows.
+
+    Returns:
+        (header, subheader, rows):
+          * header    — ``[{"id", "href"?, "colspan": 2}]`` (top header row)
+          * subheader — repeated ``[{"label": "Total"}, {"label": "Unique"}]``
+          * rows      — ``[{"field_display", "values": [{"value"}, ...]}]`` with
+            two cells (Total, Unique) per entity; ``-`` where the stat has no
+            Total or Unique, blank for a ``None`` column.
+    """
+    ref = build_entity_row_specs({}, namespaces)  # canonical labels + order
+
+    # Each entity (column group) is tagged ent-a / ent-b by its index so the
+    # template can band alternate groups/curators with a background tint while
+    # row striping is preserved (see go-cam-stats-template.html).
+    def parity(idx):
+        return "ent-a" if idx % 2 == 0 else "ent-b"
+
+    header = [{"id": c["id"], "href": c.get("href"), "colspan": 2,
+               "cls": parity(e)}
+              for e, c in enumerate(column_specs)]
+    subheader = []
+    for e in range(len(column_specs)):
+        subheader.append({"label": "Total", "cls": parity(e)})
+        subheader.append({"label": "Unique", "cls": parity(e)})
+
+    per_entity = [
+        build_entity_row_specs(d, namespaces) if d is not None else None
+        for d in entity_data_list
+    ]
+
+    def cell(value, cls):
+        return {"value": value if value is not None else "-", "cls": cls}
+
     rows = []
-    for field in field_names:
+    for i, r in enumerate(ref):
         values = []
-        for data in json_data_list:
-            values.append({"value": data.get(field, "")})
+        for e, specs in enumerate(per_entity):
+            cls = parity(e)
+            if specs is None:
+                values.append({"value": "", "cls": cls})
+                values.append({"value": "", "cls": cls})
+            else:
+                values.append(cell(specs[i]["total"], cls))
+                values.append(cell(specs[i]["unique"], cls))
         rows.append({
-            "field": field,
-            "field_display": capitalize_first(field.replace("_", " ")),
+            "field_display": capitalize_first(r["label"]),
             "values": values,
         })
-
-    return header, rows
+    return header, subheader, rows
 
 
 NAMESPACE_PRED = "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace"
@@ -318,26 +441,27 @@ def get_go_term_label(go_id, ontology_labels):
 
 
 def load_id_labels(directory):
-    """Load gene and CHEBI ID-to-label maps from the stats input directory.
+    """Load the unified ID-to-label map from the stats input directory.
 
-    Looks for ``gene_id_to_label.json`` and ``chebi_id_to_label.json``
-    (emitted alongside ``aggregate_model_stats.json`` by
-    ``output_stats_for_gocam_models.py``). Either file may be absent; the
-    corresponding dict is returned empty so callers can render the ``label``
-    column with blank cells instead of failing.
+    Looks for ``id_to_label.json`` (emitted alongside
+    ``aggregate_model_stats.json`` by ``output_stats_for_gocam_models.py``).
+    This single file carries labels for *every* term kind — gene products
+    (``UniProtKB:...``, ``MGI:...``, ``FB:...``, ...), chemicals
+    (``CHEBI:...``) and GO terms — superseding the separate
+    ``gene_id_to_label.json`` / ``chebi_id_to_label.json`` maps the upstream
+    producer used to emit. The file may be absent; an empty dict is returned
+    so callers can render the ``label`` column with blank cells instead of
+    failing.
 
     Returns:
-        (gene_labels, chebi_labels) — two dicts keyed by ID
-        (e.g. ``"UniProtKB:P00387"`` → ``"CYC1 Scer"``,
-        ``"CHEBI:58211"`` → display label).
+        id_labels — a dict keyed by ID (e.g. ``"UniProtKB:P00387"`` →
+        ``"CYC1 Scer"``, ``"CHEBI:58211"`` → display label).
     """
-    def _load(name):
-        path = os.path.join(directory, name)
-        if not os.path.exists(path):
-            return {}
-        with open(path) as f:
-            return json.load(f)
-    return _load("gene_id_to_label.json"), _load("chebi_id_to_label.json")
+    path = os.path.join(directory, "id_to_label.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path) as f:
+        return json.load(f)
 
 
 def build_record_table_data(records, field_specs):
@@ -511,13 +635,13 @@ def build_aggregate_row_specs(model_entity, namespaces):
         drilldown_title    — title shown on the drilldown page, or None
         drilldown_label_kind — what the drilldown's first column holds, used to
             pick header text and the label-lookup source:
-              * "gene"  → columns ``id`` + ``label`` (from
-                gene_id_to_label.json)
-              * "chebi" → columns ``id`` + ``label`` (from
-                chebi_id_to_label.json)
-              * "go"    → columns ``Entry`` + ``Label`` (from --resource
+              * "gene"  → columns ``ID`` + ``Label`` (from
+                id_to_label.json)
+              * "chebi" → columns ``ID`` + ``Label`` (from
+                id_to_label.json, the same unified map)
+              * "go"    → columns ``ID`` + ``Label`` (from --resource
                 ontology labels)
-              * None    → single ``Entry`` column (references, PMIDs)
+              * None    → single ``ID`` column (references, PMIDs)
     """
     agg = model_entity
     models_by_status = agg.get("models_by_status", {})
@@ -680,22 +804,23 @@ def render_aggregate_rows(row_specs):
 
 
 def render_drilldown_pages(row_specs, records_template_str, output_dir,
-                           available_pages, ontology_labels, gene_labels,
-                           chebi_labels, date):
+                           available_pages, ontology_labels, id_labels,
+                           date):
     """Emit one drilldown HTML page per row spec that has non-empty entries.
 
     Each page lists the unique entries (one row per entry). The first column
     header and the optional second "label" column are chosen by
     ``drilldown_label_kind`` on the spec:
 
-        - ``"gene"``  → columns ``id`` + ``label`` (lookups in ``gene_labels``,
-          loaded from ``gene_id_to_label.json``).
-        - ``"chebi"`` → columns ``id`` + ``label`` (lookups in
-          ``chebi_labels``, loaded from ``chebi_id_to_label.json``).
-        - ``"go"``    → columns ``Entry`` + ``Label`` (lookups in
+        - ``"gene"``  → columns ``ID`` + ``Label`` (lookups in ``id_labels``,
+          loaded from ``id_to_label.json``).
+        - ``"chebi"`` → columns ``ID`` + ``Label`` (lookups in ``id_labels``,
+          loaded from ``id_to_label.json``; CHEBI labels live in the same
+          unified map as gene-product labels).
+        - ``"go"``    → columns ``ID`` + ``Label`` (lookups in
           ``ontology_labels``, loaded from the OBO-JSON ``--resource``). The
           ``Label`` column is omitted if no ontology was supplied.
-        - otherwise  → single ``Entry`` column (no label lookup).
+        - otherwise  → single ``ID`` column (no label lookup).
 
     Missing keys in the chosen lookup render as blank cells, so the gene /
     chemical pages keep their schema even when the source JSON is missing or
@@ -710,17 +835,14 @@ def render_drilldown_pages(row_specs, records_template_str, output_dir,
             continue
 
         kind = s.get("drilldown_label_kind")
-        if kind == "gene":
-            columns = [{"label": "Id"}, {"label": "Label"}]
-            label_lookup = gene_labels
-        elif kind == "chebi":
-            columns = [{"label": "Id"}, {"label": "Label"}]
-            label_lookup = chebi_labels
+        if kind in ("gene", "chebi"):
+            columns = [{"label": "ID"}, {"label": "Label"}]
+            label_lookup = id_labels
         elif kind == "go" and ontology_labels:
-            columns = [{"label": "Entry"}, {"label": "Label"}]
+            columns = [{"label": "ID"}, {"label": "Label"}]
             label_lookup = ontology_labels
         else:
-            columns = [{"label": "Entry"}]
+            columns = [{"label": "ID"}]
             label_lookup = None
 
         records = []
@@ -788,10 +910,10 @@ def main(directory, template, output, template_records, resource, metadata, date
     if resource:
         ontology_labels, ontology_namespaces = load_ontology_labels(resource)
 
-    # Load gene / CHEBI id-to-label maps from the stats input directory.
-    # Missing files yield empty dicts so the drilldown 'label' column still
-    # renders (with blank values) when the source data isn't available.
-    gene_labels, chebi_labels = load_id_labels(directory)
+    # Load the unified id-to-label map from the stats input directory.
+    # A missing file yields an empty dict so the drilldown 'label' column
+    # still renders (with blank values) when the source data isn't available.
+    id_labels = load_id_labels(directory)
 
     # Build dynamic available_pages list based on which JSON files exist
     available_pages = [
@@ -827,8 +949,8 @@ def main(directory, template, output, template_records, resource, metadata, date
     }, os.path.join(output, "go-cam-aggregate-stats.html"))
 
     render_drilldown_pages(row_specs, records_template_str, output,
-                           available_pages, ontology_labels, gene_labels,
-                           chebi_labels, date)
+                           available_pages, ontology_labels, id_labels,
+                           date)
 
     # --- Build curator info from stats_by_curator ---
     curator_dir = os.path.join(directory, "stats_by_curator")
@@ -845,14 +967,19 @@ def main(directory, template, output, template_records, resource, metadata, date
     # --- Stats by curator (all curators) ---
     if curator_data_list:
         curator_columns = [
-            get_curator_display_name(uri, users_by_uri) for uri in curator_uris
+            {"id": get_curator_display_name(uri, users_by_uri)}
+            for uri in curator_uris
         ]
 
-        header, rows = build_table_data(curator_data_list, curator_columns)
+        header, subheader, rows = build_entity_table(
+            curator_data_list, curator_columns, ontology_namespaces)
 
         render_and_write(template_str, {
             "title": "GO-CAM Stats by Curator",
+            "grouped": True,
+            "note": CURATOR_STATS_NOTE,
             "header": header,
+            "subheader": subheader,
             "rows": rows,
             "links": build_links("go-cam-curator-stats.html", available_pages),
             "date": date,
@@ -886,14 +1013,8 @@ def main(directory, template, output, template_records, resource, metadata, date
                 group_labels.append(label)
                 group_page_filenames.append("go-cam-group-curator-stats-{}.html".format(make_safe_filename(label)))
 
-            # Build header with links to per-group curator pages
-            header = [
-                {"id": label, "href": page_fn}
-                for label, page_fn in zip(group_labels, group_page_filenames)
-            ]
-
-            # Also add "Other" column header if there are ungrouped curators
-            # Build group membership for curators
+            # Build group membership for curators (needed for the per-group
+            # pages below and the navigation-only "Other" column).
             group_to_curators = {}  # group_id -> list of (data, display_name)
             ungrouped_curators = []
             for data, uri in zip(curator_data_list, curator_uris):
@@ -905,69 +1026,30 @@ def main(directory, template, output, template_records, resource, metadata, date
                     for gid in curator_groups:
                         group_to_curators.setdefault(gid, []).append((data, display_name))
 
-            if ungrouped_curators:
-                other_page_fn = "go-cam-group-curator-stats-other.html"
-                header.append({"id": "Other", "href": other_page_fn})
-
-            # Build rows from group_data (non-array, non-dict fields)
-            field_names = [
-                key for key, val in group_data[0].items()
-                if not isinstance(val, list) and not isinstance(val, dict)
+            # One Total/Unique column group per group (linking to its
+            # per-group curator page), plus a navigation-only "Other" column
+            # (blank cells) when there are ungrouped curators.
+            column_specs = [
+                {"id": label, "href": page_fn}
+                for label, page_fn in zip(group_labels, group_page_filenames)
             ]
-
-            # Display-label overrides for fields whose snake_case key doesn't
-            # yield the desired display string when underscores become spaces
-            # (e.g., acronyms that should stay uppercased).
-            group_field_label_overrides = {
-                "go_terms": "GO terms",
-                "unique_go_terms": "unique GO terms",
-            }
-
-            rows = []
-            for field in field_names:
-                values = [{"value": data.get(field, "")} for data in group_data]
-                # Add empty value for "Other" column if present
-                if ungrouped_curators:
-                    values.append({"value": ""})
-                rows.append({
-                    "field": field,
-                    "field_display": capitalize_first(group_field_label_overrides.get(
-                        field, field.replace("_", " ")
-                    )),
-                    "values": values,
+            entity_data = list(group_data)
+            if ungrouped_curators:
+                column_specs.append({
+                    "id": "Other",
+                    "href": "go-cam-group-curator-stats-other.html",
                 })
+                entity_data.append(None)
 
-            # Derived MF/BP/CC count rows: partition each group's
-            # list_go_terms by namespace (from --resource go.json) and emit
-            # one row per namespace. Counts are totals (with duplicates),
-            # matching number_of_go_terms semantics. When --resource was not
-            # supplied, ontology_namespaces is empty and all counts are 0,
-            # but the rows are still emitted to keep the table schema stable.
-            mf_counts, bp_counts, cc_counts = [], [], []
-            for data in group_data:
-                go_terms = data.get("list_go_terms", []) or []
-                mf, bp, cc = _classify_go_terms(go_terms, ontology_namespaces)
-                mf_counts.append(len(mf))
-                bp_counts.append(len(bp))
-                cc_counts.append(len(cc))
-
-            for field_name, display_label, per_group_counts in [
-                ("go_mf_terms", "GO MF terms", mf_counts),
-                ("go_bp_terms", "GO BP terms", bp_counts),
-                ("go_cc_terms", "GO CC terms", cc_counts),
-            ]:
-                values = [{"value": c} for c in per_group_counts]
-                if ungrouped_curators:
-                    values.append({"value": ""})
-                rows.append({
-                    "field": field_name,
-                    "field_display": capitalize_first(display_label),
-                    "values": values,
-                })
+            header, subheader, rows = build_entity_table(
+                entity_data, column_specs, ontology_namespaces)
 
             render_and_write(template_str, {
                 "title": "GO-CAM Stats by Group",
+                "grouped": True,
+                "note": GROUP_STATS_NOTE,
                 "header": header,
+                "subheader": subheader,
                 "rows": rows,
                 "links": build_links("go-cam-group-stats.html", available_pages),
                 "date": date,
@@ -984,6 +1066,7 @@ def main(directory, template, output, template_records, resource, metadata, date
                     # Still create the page so the link from group stats is not broken
                     render_and_write(template_str, {
                         "title": "GO-CAM Curator Stats - {}".format(label),
+                        "note": CURATOR_STATS_NOTE,
                         "header": [],
                         "rows": [],
                         "links": grp_links,
@@ -992,13 +1075,17 @@ def main(directory, template, output, template_records, resource, metadata, date
                     continue
 
                 grp_curator_data = [c[0] for c in curators_in_group]
-                grp_curator_names = [c[1] for c in curators_in_group]
+                grp_columns = [{"id": c[1]} for c in curators_in_group]
 
-                grp_header, grp_rows = build_table_data(grp_curator_data, grp_curator_names)
+                grp_header, grp_subheader, grp_rows = build_entity_table(
+                    grp_curator_data, grp_columns, ontology_namespaces)
 
                 render_and_write(template_str, {
                     "title": "GO-CAM Curator Stats - {}".format(label),
+                    "grouped": True,
+                    "note": CURATOR_STATS_NOTE,
                     "header": grp_header,
+                    "subheader": grp_subheader,
                     "rows": grp_rows,
                     "links": grp_links,
                     "date": date,
@@ -1007,13 +1094,17 @@ def main(directory, template, output, template_records, resource, metadata, date
             # --- Create "Other" page for ungrouped curators ---
             if ungrouped_curators:
                 other_data = [c[0] for c in ungrouped_curators]
-                other_names = [c[1] for c in ungrouped_curators]
+                other_columns = [{"id": c[1]} for c in ungrouped_curators]
 
-                other_header, other_rows = build_table_data(other_data, other_names)
+                other_header, other_subheader, other_rows = build_entity_table(
+                    other_data, other_columns, ontology_namespaces)
 
                 render_and_write(template_str, {
                     "title": "GO-CAM Curator Stats - Other",
+                    "grouped": True,
+                    "note": CURATOR_STATS_NOTE,
                     "header": other_header,
+                    "subheader": other_subheader,
                     "rows": other_rows,
                     "links": build_links("go-cam-group-curator-stats-other.html", available_pages),
                     "date": date,
