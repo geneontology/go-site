@@ -16,7 +16,7 @@ datasets:
    dataset: pombase
    submitter: pombase
    compression: gzip
-   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gaf/SCHPO_284812_UP000002485.gaf.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gaf/SCHPO-mod.gaf.gz
    entity_type:
    status: active
    species_code: Spom
@@ -46,7 +46,7 @@ datasets:
    dataset: pombase
    submitter: pombase
    compression: gzip
-   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gpad/SCHPO_284812_UP000002485.gpa.gz
+   source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gpad/SCHPO-mod.gpa.gz
    entity_type:
    status: active
    species_code: Spom

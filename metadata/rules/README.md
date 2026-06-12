@@ -26,16 +26,16 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000017">GORULE:0000017 IDA annotations must not have a With/From entry</a>
  * <a href="#gorule0000018">GORULE:0000018 IPI annotations require a With/From entry</a>
  * <a href="#gorule0000019">GORULE:0000019 Generic Reasoner Validation Check</a>
- * <a href="#gorule0000020">GORULE:0000020 Automatic repair of annotations to merged or obsoleted terms</a>
+ * <a href="#gorule0000020">GORULE:0000020 Automatic repair of annotations to merged or obsoleted terms when replacement is available; otherwise, filter annotation</a>
  * <a href="#gorule0000021">GORULE:0000021 DEPRECATED Check with/from for sequence similarity evidence for valid database ID</a>
- * <a href="#gorule0000022">GORULE:0000022 Check for, and filter, annotations made to retracted publications</a>
+ * <a href="#gorule0000022">GORULE:0000022 Filter annotations made to retracted publications</a>
  * <a href="#gorule0000023">GORULE:0000023 Materialize annotations for inter-branch links in the GO</a>
  * <a href="#gorule0000024">GORULE:0000024 Prevent propagation of certain terms by orthology</a>
  * <a href="#gorule0000025">GORULE:0000025 Creating more specific annotations by reasoning over extensions</a>
  * <a href="#gorule0000026">GORULE:0000026 IBA annotations must have been sourced from the PAINT inference pipeline</a>
  * <a href="#gorule0000027">GORULE:0000027 Each identifier in GAF is valid</a>
- * <a href="#gorule0000028">GORULE:0000028 GO aspect should match the term's namespace; otherwise it is repaired to the appropriate aspect</a>
- * <a href="#gorule0000029">GORULE:0000029 IEAs should be less than one year old.</a>
+ * <a href="#gorule0000028">GORULE:0000028 DEPRECATED GO aspect should match the term's namespace; otherwise it is repaired to the appropriate aspect</a>
+ * <a href="#gorule0000029">GORULE:0000029 DEPRECATED. IEAs should be less than one year old.</a>
  * <a href="#gorule0000030">GORULE:0000030 Only valid GO_REFs are allowed</a>
  * <a href="#gorule0000031">GORULE:0000031 DEPRECATED. Annotation relations are replaced when not provided by source</a>
  * <a href="#gorule0000032">GORULE:0000032 DEPRECATED Allowed References for each ECO.</a>
@@ -59,11 +59,11 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000054">GORULE:0000054 Genes annotated with ND should have no other annotations for that aspect</a>
  * <a href="#gorule0000055">GORULE:0000055 References should have only one ID per ID space</a>
  * <a href="#gorule0000056">GORULE:0000056 Annotations should validate against GO shape expressions</a>
- * <a href="#gorule0000057">GORULE:0000057 Group specific filter rules should be applied to annotations</a>
+ * <a href="#gorule0000057">GORULE:0000057 DEPRECATED Group specific filter rules should be applied to annotations</a>
  * <a href="#gorule0000058">GORULE:0000058 Object extensions should conform to the extensions-patterns.yaml file in metadata</a>
- * <a href="#gorule0000059">GORULE:0000059 GAF Version 2.0 and 2.1 are converted into GAF Version 2.2</a>
+ * <a href="#gorule0000059">GORULE:0000059 DEPRECATED GAF Version 2.0 and 2.1 are converted into GAF Version 2.2</a>
  * <a href="#gorule0000061">GORULE:0000061 Allowed gene product to term relations (gp2term)</a>
- * <a href="#gorule0000062">GORULE:0000062 Infer annotations on molecular function via has_part</a>
+ * <a href="#gorule0000062">GORULE:0000062 DEPRECATED Infer annotations on molecular function via has_part</a>
  * <a href="#gorule0000063">GORULE:0000063 Annotations using ISS/ISA/ISO evidence should refer to a gene product (in the 'with' column)</a>
  * <a href="#gorule0000064">GORULE:0000064 TreeGrafter IEAs should be filtered for GO reference species</a>
  * <a href="#gorule0000065">GORULE:0000065 Annotations to term that are candidates for obsoletion should be produce a warning</a>
@@ -341,40 +341,10 @@ This information is obtained from the only_in_taxon and never_in_taxon tags in t
 - Taxon constraints DO NOT apply to negated (`NOT` qualifier in GPAD/GAF) annotations.
 
 
-### Implementation Notes
-
-The current implementation of this in GO makes use of the Elk reasoner, wrapped by the [gaferencer](https://github.com/geneontology/gaferencer) tool. This tool produces a gaferences.json file (see [this example file](http://release.geneontology.org/2021-02-01/reports/mgi.gaferences.json)), which includes all OWL inferences over the GAF. A subset of these are taxon violations. 
-
-An example:
-
-```json
-{
-    "annotation":{
-        "annotation":{
-            "relation":"http://purl.obolibrary.org/obo/RO_0002331",
-            "term":"http://purl.obolibrary.org/obo/GO_0098706"
-        },
-        "taxon":"http://purl.obolibrary.org/obo/NCBITaxon_10090",
-        "extension":[
-            
-        ]
-    },
-    "inferences":[
-        
-    ],
-    "satisfiable":false,
-    "taxonProblem":true
-}
-```
-
-This particular class is not valid for Mouse (NCBITaxon:10090)
-
-The gaferences files is processed in the pipeline via ontobio and includes alongside other GO rules reports.
-
 ### Publications
-
 See [http://www.biomedcentral.com/1471-2105/11/530](http://www.biomedcentral.com/1471-2105/11/530)
 for more details.
+
 
 <a name="gorule0000014"/>
 
@@ -457,18 +427,16 @@ reasoner such as HermiT.
 
 <a name="gorule0000020"/>
 
-## Automatic repair of annotations to merged or obsoleted terms
+## Automatic repair of annotations to merged or obsoleted terms when replacement is available; otherwise, filter annotation
 
  * id: [GORULE:0000020](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000020.md)
  * status: implemented
 
 
-There should be no annotations to obsolete terms or to an alternate ID (Column 5 of GAF, Column 4 of GPAD). As well, GO terms present in annotations also should be repaired if possible: 
-* with/from: Column 8 of GAF, Column 7 of GPAD
-* extensions, Column 16 of GAF, Column 11 of GPAD 
+Annotations to obsolete terms or to an alternate ID (Column 5 of GAF, Column 4 of GPAD), in the with/from field (Column 8 of GAF, Column 7 of GPAD) and in extensions, (Column 16 of GAF, Column 11 of GPAD) are not allowed. 
 
-Obsolete terms that have a `replaced_by` tag and terms annotated to one of their alternative IDs (merged terms; `alt_id` in the .obo files) will automatically be repaired to the valid term id.
-If no replacement is found, the annotation will be filtered.
+If there is a 'replaced_by' value or an alternative ID in the ontology file, then the GO term is automatically replaced and a warning is generated. 
+If there is no 'replaced_by' or alternative ID in the ontology file, then the annotation line is filtered. 
 
 
 
@@ -488,7 +456,7 @@ Duplicate of GORULE:0000038
 
 <a name="gorule0000022"/>
 
-## Check for, and filter, annotations made to retracted publications
+## Filter annotations made to retracted publications
 
  * id: [GORULE:0000022](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000022.md)
  * status: implemented
@@ -496,8 +464,7 @@ Duplicate of GORULE:0000038
 
 GO should not include annotations to retracted publications (GAF column 6, GPAD column 5). 
 
-PubMed keeps record of retracted publications in the PublicationTypeList of
-each paper's XML entry. GOC manually download the data from [Europe PMC](https://europepmc.org/betaSearch?query=%28PUB_TYPE%3A%22Retracted%20Publication%22%29&page=1)
+PubMed keeps record of retracted publications in the PublicationTypeList of each paper's XML entry. GOC manually download the data from [Europe PMC](https://europepmc.org/betaSearch?query=%28PUB_TYPE%3A%22Retracted%20Publication%22%29&page=1)
 and save it on the [go-site/metadata folder](https://github.com/geneontology/go-site/blob/master/metadata/retracted-publications.txt).
 
 
@@ -630,11 +597,13 @@ e.g. SGD_REF:S000047763|PMID:2676709. PMID, DOIs, Agricola, GO_REF and internal 
 
 <a name="gorule0000028"/>
 
-## GO aspect should match the term's namespace; otherwise it is repaired to the appropriate aspect
+## DEPRECATED GO aspect should match the term's namespace; otherwise it is repaired to the appropriate aspect
 
  * id: [GORULE:0000028](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000028.md)
- * status: implemented
+ * status: deprecated
 
+
+This rule was deprecated because this information is injected directy in the GAF file, so that upstream sources errors do not lead to errors in this data.
 
 The GO aspect (GAF column 9) should correspond to the namespace of the GO term (GAF column 5). 
 The value in this column must be on of: C, P, or F, corresponding to the three GO aspects, 
@@ -644,11 +613,13 @@ Note that this rule does not apply to GPAD files, since the GO aspect is not par
 
 <a name="gorule0000029"/>
 
-## IEAs should be less than one year old.
+## DEPRECATED. IEAs should be less than one year old.
 
  * id: [GORULE:0000029](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000029.md)
- * status: implemented
+ * status: deprecated
 
+
+This rule was deprecated because in the GOEx pipeline, all IEA annotations come from GOA, and are generated at each release.
 
 All IEA annotations with a date more than three years old should be filered.
 IEAs between 1 and 3 years old trigger a WARNING.
@@ -700,17 +671,15 @@ DEPRECATED. See GORULE:0000043
 ## Group-specific Reference IDs are not allowed, only public reference IDs (PMID, doi, or GO_REF)
 
  * id: [GORULE:0000033](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000033.md)
- * status: approved
+ * status: implemented
 
 
-
-# Approved
 
 References for an annotation (GAF column 6; GPAD column 5) must use either a PMID, a doi, or a GO_REF. Group-specific reference records are stripped during the data load process. 
 
-Group-specific reference records that are a external xrefs of a GO_REF (https://github.com/geneontology/go-site/tree/master/metadata/gorefs.yaml) is replaced by that GO_REF. For example, `FB:FBrf0159398` is an external accession for `GO_REF:0000015`, so the FB ID is repaired to the GO_REF. 
+Group-specific reference records that are listed as external xrefs on a valid GO_REF (https://github.com/geneontology/go-site/tree/master/metadata/gorefs.yaml) are replaced by that GO_REF. For example, `FB:FBrf0159398` is an external accession for `GO_REF:0000015`, so the FB ID is repaired to the GO_REF. 
 
-If the group reference is the only one present, it will be reported as an error, and the annotation line removed since the reference field is mandatory.
+If the group reference is the only one present, the annotation line removed since the reference field is mandatory, and reported as an error.
 
 
 <a name="gorule0000035"/>
@@ -952,7 +921,7 @@ Annotations as GO-CAMs should successfully validate against this set of Shex Sha
 
 <a name="gorule0000057"/>
 
-## Group specific filter rules should be applied to annotations
+## DEPRECATED Group specific filter rules should be applied to annotations
 
  * id: [GORULE:0000057](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000057.md)
  * status: deprecated
@@ -981,10 +950,13 @@ Note that in the GO Central pipeline, this is only implmented upon imports of ex
 
 <a name="gorule0000059"/>
 
-## GAF Version 2.0 and 2.1 are converted into GAF Version 2.2
+## DEPRECATED GAF Version 2.0 and 2.1 are converted into GAF Version 2.2
 
  * id: [GORULE:0000059](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000059.md)
- * status: implemented
+ * status: deprecated
+
+
+## This rule was deprecated because it is redundant with GORULE:0000061.
 
 
 In GAF2.2, a gp2term relation (column 4; see https://wiki.geneontology.org/Annotation_Relations#Gene_Product_to_GO_term_Relations_(%22qualifiers%22)) is mandatory for every annotation.
@@ -1032,10 +1004,10 @@ GAF2.2 files require a gene product to term (gp2term) relation in Column 4. Allo
 
 <a name="gorule0000062"/>
 
-## Infer annotations on molecular function via has_part
+## DEPRECATED Infer annotations on molecular function via has_part
 
  * id: [GORULE:0000062](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000062.md)
- * status: approved
+ * status: deprecated
 
 
 For any annotation to a molecular function MF-X, infer annotation to all MFs that stand in a has_part relationship to MF-X, except if the annotation uses the 'contributes_to' qualifier, then do not infer annotations from the has_part relationship to MF-X.

@@ -16,8 +16,8 @@ datasets:
    dataset: zfin
    submitter: zfin
    compression: gzip
-   source: https://mirror.geneontology.io/DANRE_7955_UP000000437.gaf.gz
-   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gaf/DANRE_7955_UP000000437.gaf.gz
+   source: https://mirror.geneontology.io/DANRE-mod.gaf.gz
+   mirror_of: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gaf/DANRE-mod.gaf.gz
    entity_type:
    status: active
    species_code: Drer
@@ -32,7 +32,7 @@ datasets:
    dataset: zfin
    submitter: zfin
    compression: gzip
-   #source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gpi/DANRE_7955_UP000000437.gpi.gz
+   #source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gpi/DANRE-mod.gpi.gz
    source: https://zfin.org/downloads/zfin.gpi.gz
    #source: https://release.geneontology.org/2025-07-22/products/upstream_and_raw_data/zfin-src.gpi.gz
    entity_type:

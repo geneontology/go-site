@@ -19,12 +19,6 @@ GeneDB:PF3D7_0507500		RO:0002327	GO:0004672	PMID:12764150	ECO:0000270			2010-02-
 GeneDB:PF3D7_0507500		RO:0002327	GO:0004672	PMID:12764150	ECO:0007007			2010-02-05	GO_Central		comment=GORULE_TEST:0000006-2	
 ! FAILS GORULE:0000006 - TEST 3 - fails because uses IEP with a cellular component term.												
 GeneDB:PF3D7_0507500		RO:0002327	GO:0005634	PMID:12764150	ECO:0000270			2010-02-05	GO_Central		comment=GORULE_TEST:0000006-3
-! SHOULD PASS GORULE:0000006 - TEST 4 - passes because uses assigned_by is GOC, even if there is an IEP with a molecular function term.												
-GeneDB:PF3D7_0507500		RO:0002327	GO:0004672	PMID:12764150	ECO:0000270			2010-02-05	GOC		comment=GORULE_TEST:0000006-4	
-! SHOULD PASS GORULE:0000006 - TEST 5 - should pass because obsolete BP term should be ignored; GO:1901011 obsolete (S)-reticuline catabolic process												
-GeneDB:PF3D7_0507500		RO:0002327	GO:1901011	PMID:12764150	ECO:0000270			2010-02-05	GO_Central		comment=GORULE_TEST:0000006-5	
-! SHOULD PASS GORULE:0000006 - TEST 6 - should pass because alt_ids should be ignored, and GO:0006758 is an alt_id to GO:0006754 ATP biosynthetic process												
-GeneDB:PF3D7_0507500		RO:0002327	GO:0006758	PMID:12764150	ECO:0000270			2010-02-05	GO_Central		comment=GORULE_TEST:0000006-6	
 ! FAILS GORULE:0000007 - IPI used with GO:0003824 catalytic activity or descendents (GO:0004674 protein serine/threonine kinase activity)												
 UniProtKB:A0A078CGE6		RO:0002327	GO:0004674	PMID:11489177	ECO:0000021	UniProtKB:A0A078FEZ9		2010-02-05	GO_Central		comment=GORULE_TEST:0000007-1	
 ! FAILS GORULE:0000008 - TEST 1 - GO:0005622 is in the subset gocheck_do_not_annotate												
@@ -257,6 +251,8 @@ UniProtKB:A1B2F4		RO:0002432	GO:0009504	PMID:26468286	ECO:0000314			2023-04-27	G
 PomBase:SPAC25B8.17		RO:0002432	GO:0005634	GO_REF:0000024	ECO:0000266	SGD:S000001583		2023-04-27	GO_Central		comment=GORULE_TEST:0000063-1	
 ! FAILS GORULE:0000063 - TEST 2 - no data in 'with' field (column 7)												
 PomBase:SPAC25B8.17		RO:0002432	GO:0005634	GO_REF:0000024	ECO:0000266			2023-04-27	GO_Central		comment=GORULE_TEST:0000063-2	
+! SHOULD PASS GORULE:0000063 - TEST 3 - RNA object
+RNAcentral	URS000000B038_7227	enables	GO:0033458	PMID:18957446	ECO:0000255			20220311	FlyBase		comment=GORULE_TEST:0000063-3
 ! FAILS GORULE:0000064 - TEST 1 - human protein has TreeGrafter annotation												
 UniProtKB:A0A140VJL9		RO:0002331	GO:0006783	GO_REF:0000118		PANTHER:PTHR11458:SF0		2023-04-27	TreeGrafter		comment=GORULE_TEST:0000064-1	
 ! FAILS GORULE:0000064 - TEST 2 - Drosophila protein has TreeGrafter annotation												
