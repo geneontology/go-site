@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+	  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html lang="en" dir="ltr"
+      xmlns:content="http://purl.org/rss/1.0/modules/content/"
+      xmlns:dc="http://purl.org/dc/terms/"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:sioc="http://rdfs.org/sioc/ns#"
+      xmlns:sioct="http://rdfs.org/sioc/types#"
+      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <head profile="http://www.w3.org/1999/xhtml/vocab">
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="shortcut icon" href="http://geneontology.org/sites/default/files/go-logo-favicon_0.ico" type="image/vnd.microsoft.icon" />
+        <link rel="shortcut icon" href="logo-circle.ico">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" crossorigin="anonymous"/>
+        <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+
+        <title>{{ title }}</title>
+
+        <style>
+        /* Render the table as a single table (no DataTables scrollX/scrollY).
+           Scroll mode splits the header and body into two independently-sized
+           tables whose columns drift out of alignment; a single table keeps
+           header and body cells in the same columns, so they always line up.
+
+           Wide tables (e.g. the protein-complex page) still need a horizontal
+           scrollbar, and tall tables a sticky header. Both come from a single
+           viewport-bounded scroll box (overflow:auto) wrapping ONLY the table,
+           with a sticky thead anchored to that box — the same approach as
+           go-cam-stats-template.html's .gostats-scroll. The box wraps only the
+           table (via DataTables' `dom` option) so the search box stays above
+           it; max-height (not height) lets short tables shrink to fit. */
+        .rud-scroll { max-height: 75vh; overflow: auto; }
+        /* DataTables right-aligns the search box by default; move it to the
+           top-left, on its own line above the table. */
+        #sourcestable_wrapper .dataTables_filter {
+            float: none;
+            text-align: left;
+            margin-bottom: 0.5rem;
+        }
+        #sourcestable thead th {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            /* Opaque background so scrolled-under rows don't show through. */
+            background-color: #f2f2f2;
+            /* table-bordered borders don't travel with a sticky cell in some
+               browsers; draw the header edges with shadows so they stay put. */
+            box-shadow: inset 0 1px 0 #dee2e6, inset 0 -1px 0 #dee2e6;
+        }
+        </style>
+
+        <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+            $('#sourcestable').DataTable({
+                "paging": false,
+                "info": false,
+                "ordering": true,
+                "searching": true,
+                // Layout: search box (f), then a .rud-scroll div wrapping the
+                // table (t). Keeping the scroll box around only the table (not
+                // the whole wrapper) leaves the search box fixed above it.
+                "dom": 'f<"rud-scroll"t>'
+            });
+        });
+        </script>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+        <h2>{{ title }}</h2>
+        Generated on {{ date }}<br/>
+        <nav class="mt-2 mb-3">
+            {{ #links }}
+            <a href="{{ href }}" class="btn btn-outline-primary btn-sm">{{ label }}</a>
+            {{ /links }}
+        </nav>
+        <table id="sourcestable" class="table table-sm table-striped rud-compact-table table-bordered table-hover">
+        <thead>
+            <tr>
+                {{ #columns }}
+                <th scope="col">{{ label }}</th>
+                {{ /columns }}
+            </tr>
+        </thead>
+        <tbody>
+            {{ #records }}
+            <tr>
+                {{ #cells }}
+                <td>{{ value }}</td>
+                {{ /cells }}
+            </tr>
+            {{ /records }}
+        </tbody>
+        </table>
+        </div>
+    </body>
+
+</html>
