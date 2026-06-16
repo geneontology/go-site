@@ -1624,17 +1624,17 @@ organisms:
     full_name: Candida orthopsilosis (strain 90-125) (Co 90-125)
     common_name_goc:
     common_name_uniprot:
-    code_uniprot: CANCO
+    code_uniprot: CANO9
     code_goc:
     group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000005018
-    mod_id_space: CGD
+    mod_id_space: UniProt
   - taxon_id: NCBITaxon:284593
     taxonomic_group: NCBITaxon:4751
     full_name: Candida glabrata (strain ATCC 2001 / BCRC 20586 / JCM 3761 / NBRC 0622 / NRRL Y-65 / CBS 138) (Nakaseomyces glabratus)
     common_name_goc:
     common_name_uniprot:
-    code_uniprot: CANGB
+    code_uniprot: CANGA
     code_goc:
     group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000002428
@@ -1644,7 +1644,7 @@ organisms:
     full_name: Candida parapsilosis (strain CDC 317 / ATCC MYA-4646)
     common_name_goc:
     common_name_uniprot:
-    code_uniprot: CANPA
+    code_uniprot: CANPC
     code_goc:
     group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000005221
@@ -1654,7 +1654,7 @@ organisms:
     full_name: Candida tropicalis (strain ATCC MYA-3404 / T1)
     common_name_goc:
     common_name_uniprot:
-    code_uniprot: CANTI
+    code_uniprot: CANTT
     code_goc:
     group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000002037
@@ -1664,7 +1664,7 @@ organisms:
     full_name: Clavispora lusitaniae (strain ATCC 42720)
     common_name_goc:
     common_name_uniprot:
-    code_uniprot: CLALU
+    code_uniprot: CLAL4
     code_goc:
     group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000007703
@@ -1676,7 +1676,7 @@ organisms:
     common_name_uniprot:
     code_uniprot: DEBHA
     code_goc:
-    group: CGD
+    group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000000599
     mod_id_space: CGD
   - taxon_id: NCBITaxon:379508
@@ -1686,7 +1686,7 @@ organisms:
     common_name_uniprot:
     code_uniprot: LODEL
     code_goc:
-    group: CGD
+    group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000001996
     mod_id_space: CGD
   - taxon_id: NCBITaxon:294746
@@ -1696,7 +1696,7 @@ organisms:
     common_name_uniprot:
     code_uniprot: PICGU
     code_goc:
-    group: CGD
+    group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000001997
     mod_id_space: CGD
   - taxon_id: NCBITaxon:29760
