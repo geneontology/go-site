@@ -517,7 +517,7 @@ organisms:
     code_uniprot: IXOSC
     code_goc:
     group: UniProt
-    uniprot_proteome_id: uniprot.proteome:UP000001555
+    uniprot_proteome_id: uniprot.proteome:UP001735580
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:51240
     taxonomic_group: NCBITaxon:33090
