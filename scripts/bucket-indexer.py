@@ -113,7 +113,9 @@ def main():
     bucket = s3.Bucket(args.bucket)
     result = bucket.meta.client.list_objects(Bucket=bucket.name, Delimiter='/')
     dirs = []
-    for pre in result.get('CommonPrefixes'):
+    # CommonPrefixes is absent (not []) when the bucket has no '/'-delimited keys,
+    # e.g. an empty bucket -- guard against iterating None.
+    for pre in (result.get('CommonPrefixes') or []):
         name = pre.get('Prefix').rstrip('//')
         url = prefix + name + '/' + 'index.html'
         dirs.append({"name": name, "url": url})

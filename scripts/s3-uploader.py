@@ -91,6 +91,8 @@ def get_args():
                         help='TODO: The mimetypes metadata to use, in JSON')
     parser.add_argument('-l', '--location',
                         help='TODO: The S3 location to use')
+    parser.add_argument('-e', '--exclude', action='append', default=[],
+                        help='Directory name to skip entirely -- not descended into and not uploaded (repeatable)')
 
     return parser
 
@@ -154,6 +156,10 @@ def main():
 
     ## Walk tree.
     for curr_dir, dirs, files in os.walk(args.directory):
+
+        ## Prune excluded directories in place so they are never descended
+        ## into or uploaded.
+        dirs[:] = [d for d in dirs if d not in args.exclude]
 
         ## We can navigate up if we are not in the root.
         relative_to_start = curr_dir.rstrip('//')[len(args.directory):]
