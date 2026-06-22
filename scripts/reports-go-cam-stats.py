@@ -49,6 +49,14 @@ Inputs (under ``--directory``)
 - ``stats_by_group/stats_by_group_*.json`` — optional. ``GocamStats`` per group.
 - ``aggregate_protein_complex.json`` — optional, drives the Protein Complex
   Activities record-oriented table (with TSV).
+- ``aggregate_constitutively_upstream.json`` — optional, drives the
+  Constitutively Upstream Relations record-oriented table (with TSV). Each
+  element describes one ``constitutively upstream of`` (RO:0012009) relation
+  between an upstream and a downstream activity within a model, with fields
+  ``model_id``, ``model_name``, ``upstream_activity_id``,
+  ``upstream_activity_label``, ``downstream_activity_id``,
+  ``downstream_activity_label``, ``model_status``, ``unique_curators``,
+  ``unique_groups`` and a (usually empty) ``comment``.
 - ``member_variable_definitions.json`` — optional, drives the variable
   definitions page.
 - ``id_to_label.json`` — optional. Flat ``{id: label}`` map used to populate
@@ -141,6 +149,11 @@ Outputs (written to ``--output``)
 
 - ``go-cam-protein-complex.html`` + ``go-cam-protein-complex.tsv`` —
   unchanged.
+- ``go-cam-constitutively-upstream.html`` +
+  ``go-cam-constitutively-upstream.tsv`` — record-oriented table of
+  ``constitutively upstream of`` activity relations (one row per relation),
+  with a trailing ``Comment`` column for curators to annotate manually. See
+  geneontology/gocam-py#221.
 - ``go-cam-variable-definitions.html`` — still emitted, but no longer linked
   from any page's navigation (omitted from ``available_pages``); it is now a
   standalone page reachable only by direct URL.
@@ -485,6 +498,17 @@ def build_record_table_data(records, field_specs):
             cells.append({"value": formatter(raw)})
         record_rows.append({"cells": cells})
     return columns, record_rows
+
+
+def clean_text(value):
+    """Normalize a free-text cell for TSV/HTML output.
+
+    Collapses embedded newlines/tabs to single spaces and trims surrounding
+    whitespace. Model names and activity labels in the constitutively-upstream
+    data carry trailing newlines (e.g. ``"SARS-COV2/HOST\\n"``) that would
+    otherwise break TSV rows.
+    """
+    return re.sub(r"\s+", " ", str(value)).strip()
 
 
 def format_curator_list(uris, users_by_uri):
@@ -921,9 +945,12 @@ def main(directory, template, output, template_records, resource, metadata, date
         ("go-cam-group-stats.html", "Stats by Group"),
     ]
     protein_complex_file = os.path.join(directory, "aggregate_protein_complex.json")
+    constitutively_upstream_file = os.path.join(directory, "aggregate_constitutively_upstream.json")
     definitions_file = os.path.join(directory, "member_variable_definitions.json")
     if records_template_str and os.path.exists(protein_complex_file):
         available_pages.append(("go-cam-protein-complex.html", "Protein Complex Activities"))
+    if records_template_str and os.path.exists(constitutively_upstream_file):
+        available_pages.append(("go-cam-constitutively-upstream.html", "Constitutively Upstream Relations"))
     # go-cam-variable-definitions.html is still generated below, but intentionally
     # NOT added to available_pages so no page links to it (standalone page).
 
@@ -1165,6 +1192,49 @@ def main(directory, template, output, template_records, resource, metadata, date
             click.echo("aggregate_protein_complex.json is empty", err=True)
     elif records_template_str:
         click.echo("No aggregate_protein_complex.json found in {}".format(directory), err=True)
+
+    # --- Constitutively Upstream Relations report ---
+    if records_template_str and os.path.exists(constitutively_upstream_file):
+        with open(constitutively_upstream_file) as f:
+            constitutively_upstream_data = json.load(f)
+
+        if constitutively_upstream_data:
+            field_specs = [
+                ("model_id", "Model ID", str),
+                ("model_name", "Model Name", clean_text),
+                ("upstream_activity_id", "Upstream Activity ID", str),
+                ("upstream_activity_label", "Upstream Activity Label", clean_text),
+                ("downstream_activity_id", "Downstream Activity ID", str),
+                ("downstream_activity_label", "Downstream Activity Label", clean_text),
+                ("unique_curators", "Curators", lambda uris: format_curator_list(uris, users_by_uri)),
+                ("unique_groups", "Groups", lambda uris: format_group_list(uris, groups_by_id)),
+                ("model_status", "Model State", str),
+                ("comment", "Comment", clean_text),
+            ]
+            columns, records = build_record_table_data(constitutively_upstream_data, field_specs)
+
+            render_and_write(records_template_str, {
+                "title": "GO-CAM Constitutively Upstream Relations",
+                "columns": columns,
+                "records": records,
+                "links": build_links("go-cam-constitutively-upstream.html", available_pages),
+                "date": date,
+            }, os.path.join(output, "go-cam-constitutively-upstream.html"))
+
+            # Also write TSV with the same columns
+            tsv_headers = [label for _, label, _ in field_specs]
+            tsv_rows = []
+            for rec in constitutively_upstream_data:
+                row = []
+                for field_name, _, formatter in field_specs:
+                    raw = rec.get(field_name, "")
+                    row.append(formatter(raw))
+                tsv_rows.append(row)
+            write_tsv(tsv_headers, tsv_rows, os.path.join(output, "go-cam-constitutively-upstream.tsv"))
+        else:
+            click.echo("aggregate_constitutively_upstream.json is empty", err=True)
+    elif records_template_str:
+        click.echo("No aggregate_constitutively_upstream.json found in {}".format(directory), err=True)
 
     # --- Variable Definitions report ---
     if records_template_str and os.path.exists(definitions_file):
