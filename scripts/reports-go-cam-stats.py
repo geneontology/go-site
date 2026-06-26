@@ -905,6 +905,106 @@ def ensure_group_entry(group_uri, groups_by_id):
     groups_by_id[group_uri] = {"id": group_uri, "label": label}
 
 
+def protein_complex_field_specs(ontology_labels, users_by_uri, groups_by_id):
+    """Column spec (field, label, formatter) for the protein-complex record table.
+
+    Single source of truth shared by the production HTML/TSV output and the
+    all-models TSV output so their columns can never drift apart.
+    """
+    specs = [
+        ("model_id", "Model ID", str),
+        ("model_name", "Model Name", str),
+        ("model_status", "Model Status", str),
+        ("activity_id", "Activity ID", str),
+        ("protein_complex_term", "Protein Complex Term", str),
+    ]
+    if ontology_labels:
+        specs.append(
+            ("protein_complex_term", "Protein Complex Label",
+             lambda go_id: get_go_term_label(go_id, ontology_labels)))
+    specs.append(("molecular_function", "Molecular Function", str))
+    if ontology_labels:
+        specs.append(
+            ("molecular_function", "Molecular Function Label",
+             lambda go_id: get_go_term_label(go_id, ontology_labels)))
+    specs.extend([
+        ("unique_curators", "Curators", lambda uris: format_curator_list(uris, users_by_uri)),
+        ("unique_groups", "Groups", lambda uris: format_group_list(uris, groups_by_id)),
+    ])
+    return specs
+
+
+def constitutively_upstream_field_specs(users_by_uri, groups_by_id):
+    """Column spec (field, label, formatter) for the constitutively-upstream table.
+
+    Single source of truth shared by the production HTML/TSV output and the
+    all-models TSV output.
+    """
+    return [
+        ("model_id", "Model ID", str),
+        ("model_name", "Model Name", clean_text),
+        ("upstream_activity_id", "Upstream Activity ID", str),
+        ("upstream_activity_label", "Upstream Activity Label", clean_text),
+        ("downstream_activity_id", "Downstream Activity ID", str),
+        ("downstream_activity_label", "Downstream Activity Label", clean_text),
+        ("unique_curators", "Curators", lambda uris: format_curator_list(uris, users_by_uri)),
+        ("unique_groups", "Groups", lambda uris: format_group_list(uris, groups_by_id)),
+        ("model_status", "Model State", str),
+        ("comment", "Comment", clean_text),
+    ]
+
+
+def write_record_tsv(field_specs, records, output_path):
+    """Write a list of record dicts to TSV using the given field specs."""
+    headers = [label for _, label, _ in field_specs]
+    rows = []
+    for rec in records:
+        rows.append([
+            formatter(rec.get(field_name, ""))
+            for field_name, _, formatter in field_specs
+        ])
+    write_tsv(headers, rows, output_path)
+
+
+def render_all_model_tsvs(all_models_directory, all_models_output,
+                          ontology_labels, users_by_uri, groups_by_id):
+    """Write the two record TSVs computed across ALL GO-CAM models.
+
+    Reads the all-models aggregate JSON files produced by gocam-py's
+    ``--all-models-tsv-dir`` option and emits ONLY the protein-complex and
+    constitutively-upstream TSVs (no HTML, no navigation) into a separate
+    output directory. Columns match the production TSVs exactly via the shared
+    field-spec builders.
+    """
+    os.makedirs(all_models_output, exist_ok=True)
+
+    pc_file = os.path.join(all_models_directory, "aggregate_protein_complex.json")
+    if os.path.exists(pc_file):
+        with open(pc_file) as f:
+            pc_data = json.load(f)
+        if pc_data:
+            specs = protein_complex_field_specs(ontology_labels, users_by_uri, groups_by_id)
+            write_record_tsv(specs, pc_data,
+                             os.path.join(all_models_output, "go-cam-protein-complex.tsv"))
+        else:
+            click.echo("all-models aggregate_protein_complex.json is empty", err=True)
+    else:
+        click.echo("No aggregate_protein_complex.json found in {}".format(all_models_directory), err=True)
+
+    cu_file = os.path.join(all_models_directory, "aggregate_constitutively_upstream.json")
+    if os.path.exists(cu_file):
+        with open(cu_file) as f:
+            cu_data = json.load(f)
+        if cu_data:
+            specs = constitutively_upstream_field_specs(users_by_uri, groups_by_id)
+            write_record_tsv(specs, cu_data,
+                             os.path.join(all_models_output, "go-cam-constitutively-upstream.tsv"))
+        else:
+            click.echo("all-models aggregate_constitutively_upstream.json is empty", err=True)
+    else:
+        click.echo("No aggregate_constitutively_upstream.json found in {}".format(all_models_directory), err=True)
+
+
 @click.command()
 @click.option("--directory", type=click.Path(exists=True), required=True)
 @click.option("--template", type=click.File("r"), required=True)
@@ -915,8 +1015,16 @@ def ensure_group_entry(group_uri, groups_by_id):
               help="Ontology file in OBO JSON format (e.g., go.json) for resolving GO term labels")
 @click.option("--metadata", type=click.Path(exists=True), required=False, default=None,
               help="Directory containing users.yaml and groups.yaml metadata files")
+@click.option("--all-models-directory", type=click.Path(exists=True), required=False, default=None,
+              help="Directory with the all-models TSV-backing aggregate JSON files "
+                   "(from gocam-py --all-models-tsv-dir). When set, the two record "
+                   "TSVs are also generated for ALL GO-CAM models (any status).")
+@click.option("--all-models-output", type=click.Path(), required=False, default=None,
+              help="Output directory for the all-models record TSVs. "
+                   "Defaults to <output>/all_models when --all-models-directory is set.")
 @click.option("--date", default=str(datetime.date.today()))
-def main(directory, template, output, template_records, resource, metadata, date):
+def main(directory, template, output, template_records, resource, metadata,
+         all_models_directory, all_models_output, date):
     os.makedirs(output, exist_ok=True)
     template_str = template.read()
     records_template_str = template_records.read() if template_records else None
@@ -1148,26 +1256,7 @@ def main(directory, template, output, template_records, resource, metadata, date
             protein_complex_data = json.load(f)
 
         if protein_complex_data:
-            field_specs = [
-                ("model_id", "Model ID", str),
-                ("model_name", "Model Name", str),
-                ("model_status", "Model Status", str),
-                ("activity_id", "Activity ID", str),
-                ("protein_complex_term", "Protein Complex Term", str),
-            ]
-            if ontology_labels:
-                field_specs.append(
-                    ("protein_complex_term", "Protein Complex Label",
-                     lambda go_id: get_go_term_label(go_id, ontology_labels)))
-            field_specs.append(("molecular_function", "Molecular Function", str))
-            if ontology_labels:
-                field_specs.append(
-                    ("molecular_function", "Molecular Function Label",
-                     lambda go_id: get_go_term_label(go_id, ontology_labels)))
-            field_specs.extend([
-                ("unique_curators", "Curators", lambda uris: format_curator_list(uris, users_by_uri)),
-                ("unique_groups", "Groups", lambda uris: format_group_list(uris, groups_by_id)),
-            ])
+            field_specs = protein_complex_field_specs(ontology_labels, users_by_uri, groups_by_id)
             columns, records = build_record_table_data(protein_complex_data, field_specs)
 
             render_and_write(records_template_str, {
@@ -1179,15 +1268,8 @@ def main(directory, template, output, template_records, resource, metadata, date
             }, os.path.join(output, "go-cam-protein-complex.html"))
 
             # Also write TSV with the same columns
-            tsv_headers = [label for _, label, _ in field_specs]
-            tsv_rows = []
-            for rec in protein_complex_data:
-                row = []
-                for field_name, _, formatter in field_specs:
-                    raw = rec.get(field_name, "")
-                    row.append(formatter(raw))
-                tsv_rows.append(row)
-            write_tsv(tsv_headers, tsv_rows, os.path.join(output, "go-cam-protein-complex.tsv"))
+            write_record_tsv(field_specs, protein_complex_data,
+                             os.path.join(output, "go-cam-protein-complex.tsv"))
         else:
             click.echo("aggregate_protein_complex.json is empty", err=True)
     elif records_template_str:
@@ -1199,18 +1281,7 @@ def main(directory, template, output, template_records, resource, metadata, date
             constitutively_upstream_data = json.load(f)
 
         if constitutively_upstream_data:
-            field_specs = [
-                ("model_id", "Model ID", str),
-                ("model_name", "Model Name", clean_text),
-                ("upstream_activity_id", "Upstream Activity ID", str),
-                ("upstream_activity_label", "Upstream Activity Label", clean_text),
-                ("downstream_activity_id", "Downstream Activity ID", str),
-                ("downstream_activity_label", "Downstream Activity Label", clean_text),
-                ("unique_curators", "Curators", lambda uris: format_curator_list(uris, users_by_uri)),
-                ("unique_groups", "Groups", lambda uris: format_group_list(uris, groups_by_id)),
-                ("model_status", "Model State", str),
-                ("comment", "Comment", clean_text),
-            ]
+            field_specs = constitutively_upstream_field_specs(users_by_uri, groups_by_id)
             columns, records = build_record_table_data(constitutively_upstream_data, field_specs)
 
             render_and_write(records_template_str, {
@@ -1222,15 +1293,8 @@ def main(directory, template, output, template_records, resource, metadata, date
             }, os.path.join(output, "go-cam-constitutively-upstream.html"))
 
             # Also write TSV with the same columns
-            tsv_headers = [label for _, label, _ in field_specs]
-            tsv_rows = []
-            for rec in constitutively_upstream_data:
-                row = []
-                for field_name, _, formatter in field_specs:
-                    raw = rec.get(field_name, "")
-                    row.append(formatter(raw))
-                tsv_rows.append(row)
-            write_tsv(tsv_headers, tsv_rows, os.path.join(output, "go-cam-constitutively-upstream.tsv"))
+            write_record_tsv(field_specs, constitutively_upstream_data,
+                             os.path.join(output, "go-cam-constitutively-upstream.tsv"))
         else:
             click.echo("aggregate_constitutively_upstream.json is empty", err=True)
     elif records_template_str:
@@ -1261,6 +1325,14 @@ def main(directory, template, output, template_records, resource, metadata, date
             click.echo("member_variable_definitions.json is empty", err=True)
     elif records_template_str:
         click.echo("No member_variable_definitions.json found in {}".format(directory), err=True)
+
+    # --- All-models record TSVs (separate output directory) ---
+    # Production outputs above are unaffected; this only adds the two TSVs
+    # computed across all GO-CAM models when the all-models inputs are provided.
+    if all_models_directory:
+        am_output = all_models_output or os.path.join(output, "all_models")
+        render_all_model_tsvs(all_models_directory, am_output,
+                              ontology_labels, users_by_uri, groups_by_id)
 
 
 if __name__ == "__main__":
