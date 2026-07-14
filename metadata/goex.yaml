@@ -588,7 +588,7 @@ organisms:
     code_goc:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000001408
-    mod_id_space: UniProtKBB
+    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:9544
     taxonomic_group: NCBITaxon:7742
     full_name: Macaca mulatta
@@ -678,7 +678,7 @@ organisms:
     code_goc:
     group: MGI
     uniprot_proteome_id: uniprot.proteome:UP000000589
-    mod_id_space: MGI:MGI
+    mod_id_space: MGI
   - taxon_id: NCBITaxon:83332
     taxonomic_group: NCBITaxon:2
     full_name: Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv)
@@ -1312,7 +1312,7 @@ organisms:
   - taxon_id: NCBITaxon:10254
     taxonomic_group: NCBITaxon:10239
     full_name: Vaccinia virus (strain Western Reserve)
-    common_name_goc:
+    common_name_goc: VACV strain WR
     common_name_uniprot: VACV strain WR
     code_uniprot: VACCW
     code_goc:
@@ -1322,7 +1322,7 @@ organisms:
   - taxon_id: NCBITaxon:10299
     taxonomic_group: NCBITaxon:10239
     full_name: Human herpesvirus 1 (strain 17)
-    common_name_goc:
+    common_name_goc: Human herpes simplex virus 1
     common_name_uniprot: Human herpes simplex virus 1 (HHV-1)
     code_uniprot: HHV11
     code_goc:
@@ -1332,7 +1332,7 @@ organisms:
   - taxon_id: NCBITaxon:10338
     taxonomic_group: NCBITaxon:10239
     full_name: Varicella-zoster virus (Human herpesvirus 3) strain Dumas
-    common_name_goc:
+    common_name_goc: HHV-3 strain Dumas
     common_name_uniprot: HHV-3 strain Dumas
     code_uniprot: VZVD
     code_goc:
@@ -1342,7 +1342,7 @@ organisms:
   - taxon_id: NCBITaxon:10360
     taxonomic_group: NCBITaxon:10239
     full_name: Human cytomegalovirus (strain AD169)
-    common_name_goc:
+    common_name_goc: Human cytomegalovirus HHV-5
     common_name_uniprot: Human herpesvirus 5 (HHV-5)
     code_uniprot: HCMVA
     code_goc:
@@ -1352,27 +1352,27 @@ organisms:
   - taxon_id: NCBITaxon:12118
     taxonomic_group: NCBITaxon:10239
     full_name: Foot-and-mouth disease virus serotype O (FMDV)
-    common_name_goc:
+    common_name_goc: FMDV
     common_name_uniprot: FMDV
     code_uniprot: FMDVO
-    code_goc:
+    code_goc: FMDVO
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000008765
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:63746
     taxonomic_group: NCBITaxon:10239
     full_name: Hepatitis C virus genotype 1a (isolate H77)
-    common_name_goc:
+    common_name_goc: Hepatitis C H77
     common_name_uniprot: HCV
     code_uniprot: HCV77
-    code_goc:
+    code_goc: HCV77
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000000518
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:64320
     taxonomic_group: NCBITaxon:10239
     full_name: Zika virus
-    common_name_goc:
+    common_name_goc: Zika virus
     common_name_uniprot: ZIKV
     code_uniprot: ZIKV
     code_goc:
@@ -1405,7 +1405,7 @@ organisms:
     common_name_goc: E. coli O157:H7
     common_name_uniprot: E. coli O157:H7
     code_uniprot: ECO57
-    code_goc:
+    code_goc: 
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000000558
     mod_id_space: UniProtKB
@@ -1472,7 +1472,7 @@ organisms:
   - taxon_id: NCBITaxon:272558
     taxonomic_group: NCBITaxon:2
     full_name: Halalkalibacterium halodurans (strain ATCC BAA-125 / DSM 18197 / FERM 7344 / JCM 9153 / C-125) (Bacillus halodurans)
-    common_name_goc:
+    common_name_goc: Bacillus halodurans
     common_name_uniprot:
     code_uniprot: HALH5
     code_goc:
@@ -1482,7 +1482,7 @@ organisms:
   - taxon_id: NCBITaxon:272634
     taxonomic_group: NCBITaxon:2
     full_name: Mycoplasma pneumoniae strain ATCC 29342 / M129 / Subtype 1
-    common_name_goc:
+    common_name_goc: Mycoplasma pneumoniae Subtype 1
     common_name_uniprot:
     code_uniprot: MYCPN
     code_goc:
@@ -1492,7 +1492,7 @@ organisms:
   - taxon_id: NCBITaxon:295027
     taxonomic_group: NCBITaxon:10239
     full_name: Human cytomegalovirus (Human herpesvirus 5) strain Merlin
-    common_name_goc:
+    common_name_goc: HHV-5 Merlin
     common_name_uniprot: HHV-5 Merlin
     code_uniprot: HCMVM
     code_goc:
@@ -1552,7 +1552,7 @@ organisms:
   - taxon_id: NCBITaxon:565655
     taxonomic_group: NCBITaxon:2
     full_name: Enterococcus casseliflavus EC20
-    common_name_goc:
+    common_name_goc: Enterococcus casseliflavus EC20
     common_name_uniprot:
     code_uniprot: ENTCA
     code_goc:
@@ -1572,7 +1572,7 @@ organisms:
   - taxon_id: NCBITaxon:587200
     taxonomic_group: NCBITaxon:10239
     full_name: Variola virus (Smallpox virus) (isolate Human/India/Ind3/1967)
-    common_name_goc:
+    common_name_goc: Smallpox virus VAR67
     common_name_uniprot: VARV
     code_uniprot: VAR67
     code_goc:
@@ -1582,7 +1582,7 @@ organisms:
   - taxon_id: NCBITaxon:645098
     taxonomic_group: NCBITaxon:10239
     full_name: Measles virus (Subacute sclerose panencephalitis virus) strain Ichinose-B95a
-    common_name_goc:
+    common_name_goc: Measles virus Ichinose-B95a
     common_name_uniprot: MeV strain Ichinose-B95a
     code_uniprot: MEASC
     code_goc:
@@ -1612,7 +1612,7 @@ organisms:
   - taxon_id: NCBITaxon:573826
     taxonomic_group: NCBITaxon:4751
     full_name: Candida dubliniensis
-    common_name_goc: C. dubliniensis
+    common_name_goc: Candida dubliniensis
     common_name_uniprot:
     code_uniprot: CANDC
     code_goc:
@@ -1622,17 +1622,17 @@ organisms:
   - taxon_id: NCBITaxon:1136231
     taxonomic_group: NCBITaxon:4751
     full_name: Candida orthopsilosis (strain 90-125) (Co 90-125)
-    common_name_goc:
+    common_name_goc: Candida orthopsilosis
     common_name_uniprot:
     code_uniprot: CANO9
     code_goc:
     group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000005018
-    mod_id_space: UniProt
+    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:284593
     taxonomic_group: NCBITaxon:4751
     full_name: Candida glabrata (strain ATCC 2001 / BCRC 20586 / JCM 3761 / NBRC 0622 / NRRL Y-65 / CBS 138) (Nakaseomyces glabratus)
-    common_name_goc:
+    common_name_goc: Candida glabrata
     common_name_uniprot:
     code_uniprot: CANGA
     code_goc:
@@ -1642,7 +1642,7 @@ organisms:
   - taxon_id: NCBITaxon:578454
     taxonomic_group: NCBITaxon:4751
     full_name: Candida parapsilosis (strain CDC 317 / ATCC MYA-4646)
-    common_name_goc:
+    common_name_goc: Candida parapsilosis
     common_name_uniprot:
     code_uniprot: CANPC
     code_goc:
@@ -1652,43 +1652,43 @@ organisms:
   - taxon_id: NCBITaxon:294747
     taxonomic_group: NCBITaxon:4751
     full_name: Candida tropicalis (strain ATCC MYA-3404 / T1)
-    common_name_goc:
+    common_name_goc: Candida tropicalis
     common_name_uniprot:
     code_uniprot: CANTT
     code_goc:
     group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000002037
-    mod_id_space: CGD
+    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:306902
     taxonomic_group: NCBITaxon:4751
     full_name: Clavispora lusitaniae (strain ATCC 42720)
-    common_name_goc:
+    common_name_goc: Clavispora lusitaniae
     common_name_uniprot:
     code_uniprot: CLAL4
     code_goc:
     group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000007703
-    mod_id_space: CGD
+    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:284592
     taxonomic_group: NCBITaxon:4751
     full_name: Debaryomyces hansenii (strain ATCC 36239 / CBS 767 / BCRC 21394 / JCM 1990 / NBRC 0083 / IGC 2968) (Torulaspora hansenii)
-    common_name_goc:
+    common_name_goc: Debaryomyces hansenii
     common_name_uniprot:
     code_uniprot: DEBHA
     code_goc:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000000599
-    mod_id_space: CGD
+    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:379508
     taxonomic_group: NCBITaxon:4751
     full_name: Lodderomyces elongisporus (strain ATCC 11503 / CBS 2605 / JCM 1781 / NBRC 1676 / NRRL YB-4239) (Saccharomyces elongisporus)
-    common_name_goc:
+    common_name_goc: Lodderomyces elongisporus
     common_name_uniprot:
     code_uniprot: LODEL
     code_goc:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000001996
-    mod_id_space: CGD
+    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:294746
     taxonomic_group: NCBITaxon:4751
     full_name: Meyerozyma guilliermondii (strain ATCC 6260 / CBS 566 / DSM 6381 / JCM 1539 / NBRC 10279 / NRRL Y-324) (Candida guilliermondii)
@@ -1696,9 +1696,9 @@ organisms:
     common_name_uniprot:
     code_uniprot: PICGU
     code_goc:
-    group: UniProt
+    group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000001997
-    mod_id_space: CGD
+    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:29760
     taxonomic_group: NCBITaxon:33090
     full_name: Vitis vinifera
