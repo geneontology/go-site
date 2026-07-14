@@ -147,16 +147,23 @@ Outputs (written to ``--output``)
   page schema stays stable across runs even when the source map is absent
   or incomplete.
 
-- ``go-cam-protein-complex.html`` + ``go-cam-protein-complex.tsv`` —
-  unchanged.
+- ``go-cam-protein-complex.html`` + ``go-cam-protein-complex.tsv`` — emitted
+  (and linked) only when the all-models directory is present, since gocam-py
+  only produces their backing JSON under ``--all-models``.
 - ``go-cam-constitutively-upstream.html`` +
   ``go-cam-constitutively-upstream.tsv`` — record-oriented table of
   ``constitutively upstream of`` activity relations (one row per relation),
-  with a trailing ``Comment`` column for curators to annotate manually. See
-  geneontology/gocam-py#221.
+  with a trailing ``Comment`` column for curators to annotate manually. Like
+  the protein-complex report, emitted and linked only when the all-models
+  directory is present. See geneontology/gocam-py#221.
 - ``go-cam-variable-definitions.html`` — still emitted, but no longer linked
   from any page's navigation (omitted from ``available_pages``); it is now a
   standalone page reachable only by direct URL.
+- When ``--all-models-directory`` points at non-empty all-models JSON, the two
+  record TSVs are written under ``--all-models-output`` (default
+  ``<output>/all_models``). These ``.tsv`` files are NOT linked from any page's
+  navigation -- they are reachable only by direct URL. When those inputs are
+  absent or empty, no TSVs and no output directory are produced.
 
 Where
 -----
@@ -475,6 +482,22 @@ def load_id_labels(directory):
         return {}
     with open(path) as f:
         return json.load(f)
+
+
+def _has_records(path):
+    """Return True iff ``path`` exists and holds a non-empty JSON array.
+
+    Used to gate navigation links and all_models processing so empty ``[]``
+    inputs never produce links to empty pages or empty output artifacts.
+    """
+    if not path or not os.path.exists(path):
+        return False
+    try:
+        with open(path) as f:
+            data = json.load(f)
+    except (ValueError, OSError):
+        return False
+    return isinstance(data, list) and len(data) > 0
 
 
 def build_record_table_data(records, field_specs):
@@ -971,38 +994,34 @@ def render_all_model_tsvs(all_models_directory, all_models_output,
     """Write the two record TSVs computed across ALL GO-CAM models.
 
     Reads the all-models aggregate JSON files produced by gocam-py's
-    ``--all-models-tsv-dir`` option and emits ONLY the protein-complex and
-    constitutively-upstream TSVs (no HTML, no navigation) into a separate
-    output directory. Columns match the production TSVs exactly via the shared
-    field-spec builders.
+    ``--all-models`` option and emits ONLY the protein-complex and
+    constitutively-upstream TSVs (no HTML). Each TSV is written only when its
+    source JSON holds records, and the output directory is created only when at
+    least one TSV will be written -- so nothing empty is left behind. Columns
+    match the production TSVs exactly via the shared field-spec builders.
     """
-    os.makedirs(all_models_output, exist_ok=True)
-
     pc_file = os.path.join(all_models_directory, "aggregate_protein_complex.json")
-    if os.path.exists(pc_file):
+    cu_file = os.path.join(all_models_directory, "aggregate_constitutively_upstream.json")
+
+    if _has_records(pc_file):
         with open(pc_file) as f:
             pc_data = json.load(f)
-        if pc_data:
-            specs = protein_complex_field_specs(ontology_labels, users_by_uri, groups_by_id)
-            write_record_tsv(specs, pc_data,
-                             os.path.join(all_models_output, "go-cam-protein-complex.tsv"))
-        else:
-            click.echo("all-models aggregate_protein_complex.json is empty", err=True)
+        os.makedirs(all_models_output, exist_ok=True)
+        specs = protein_complex_field_specs(ontology_labels, users_by_uri, groups_by_id)
+        write_record_tsv(specs, pc_data,
+                         os.path.join(all_models_output, "go-cam-protein-complex.tsv"))
     else:
-        click.echo("No aggregate_protein_complex.json found in {}".format(all_models_directory), err=True)
+        click.echo("No all-models protein-complex records; skipping its TSV")
 
-    cu_file = os.path.join(all_models_directory, "aggregate_constitutively_upstream.json")
-    if os.path.exists(cu_file):
+    if _has_records(cu_file):
         with open(cu_file) as f:
             cu_data = json.load(f)
-        if cu_data:
-            specs = constitutively_upstream_field_specs(users_by_uri, groups_by_id)
-            write_record_tsv(specs, cu_data,
-                             os.path.join(all_models_output, "go-cam-constitutively-upstream.tsv"))
-        else:
-            click.echo("all-models aggregate_constitutively_upstream.json is empty", err=True)
+        os.makedirs(all_models_output, exist_ok=True)
+        specs = constitutively_upstream_field_specs(users_by_uri, groups_by_id)
+        write_record_tsv(specs, cu_data,
+                         os.path.join(all_models_output, "go-cam-constitutively-upstream.tsv"))
     else:
-        click.echo("No aggregate_constitutively_upstream.json found in {}".format(all_models_directory), err=True)
+        click.echo("No all-models constitutively-upstream records; skipping its TSV")
 
 
 @click.command()
@@ -1015,10 +1034,12 @@ def render_all_model_tsvs(all_models_directory, all_models_output,
               help="Ontology file in OBO JSON format (e.g., go.json) for resolving GO term labels")
 @click.option("--metadata", type=click.Path(exists=True), required=False, default=None,
               help="Directory containing users.yaml and groups.yaml metadata files")
-@click.option("--all-models-directory", type=click.Path(exists=True), required=False, default=None,
+@click.option("--all-models-directory", type=click.Path(exists=False), required=False, default=None,
               help="Directory with the all-models TSV-backing aggregate JSON files "
-                   "(from gocam-py --all-models-tsv-dir). When set, the two record "
-                   "TSVs are also generated for ALL GO-CAM models (any status).")
+                   "(from gocam-py --all-models-tsv-dir). When set but missing or empty "
+                   "-- e.g. gocam-py ran without --all-models -- the all-models TSVs are "
+                   "skipped. When present and non-empty, the two record TSVs are also "
+                   "generated for ALL GO-CAM models (any status).")
 @click.option("--all-models-output", type=click.Path(), required=False, default=None,
               help="Output directory for the all-models record TSVs. "
                    "Defaults to <output>/all_models when --all-models-directory is set.")
@@ -1047,6 +1068,26 @@ def main(directory, template, output, template_records, resource, metadata,
     # still renders (with blank values) when the source data isn't available.
     id_labels = load_id_labels(directory)
 
+    # Resolve all_models data up front so its TSV links can be added to the nav
+    # before the aggregate HTML is rendered. Presence of non-empty all_models
+    # JSON is the signal that the TSVs will be produced.
+    # The protein-complex and constitutively-upstream reports (sourced from the
+    # main --directory) are gated on the all-models directory being present:
+    # gocam-py only emits their JSON when run with --all-models, which is also
+    # what creates the all-models directory. No all-models directory => no such
+    # reports and no nav links to them.
+    all_models_present = bool(all_models_directory) and os.path.isdir(all_models_directory)
+    am_output = None
+    am_pc_ok = am_cu_ok = False
+    if all_models_directory:
+        am_output = all_models_output or os.path.join(output, "all_models")
+        am_pc_ok = _has_records(
+            os.path.join(all_models_directory, "aggregate_protein_complex.json")
+        )
+        am_cu_ok = _has_records(
+            os.path.join(all_models_directory, "aggregate_constitutively_upstream.json")
+        )
+
     # Build dynamic available_pages list based on which JSON files exist
     available_pages = [
         ("go-cam-aggregate-stats.html", "Aggregate Statistics"),
@@ -1055,10 +1096,13 @@ def main(directory, template, output, template_records, resource, metadata,
     protein_complex_file = os.path.join(directory, "aggregate_protein_complex.json")
     constitutively_upstream_file = os.path.join(directory, "aggregate_constitutively_upstream.json")
     definitions_file = os.path.join(directory, "member_variable_definitions.json")
-    if records_template_str and os.path.exists(protein_complex_file):
+    if all_models_present and records_template_str and _has_records(protein_complex_file):
         available_pages.append(("go-cam-protein-complex.html", "Protein Complex Activities"))
-    if records_template_str and os.path.exists(constitutively_upstream_file):
+    if all_models_present and records_template_str and _has_records(constitutively_upstream_file):
         available_pages.append(("go-cam-constitutively-upstream.html", "Constitutively Upstream Relations"))
+    # The all-models protein-complex and constitutively-upstream TSVs are still
+    # generated below (see render_all_model_tsvs), but intentionally NOT added to
+    # available_pages, so no page renders a nav link to those .tsv files.
     # go-cam-variable-definitions.html is still generated below, but intentionally
     # NOT added to available_pages so no page links to it (standalone page).
 
@@ -1251,7 +1295,8 @@ def main(directory, template, output, template_records, resource, metadata,
         click.echo("stats_by_group directory not found in {}".format(directory), err=True)
 
     # --- Protein Complex Activities report ---
-    if records_template_str and os.path.exists(protein_complex_file):
+    # Gated on the all-models directory being present (see all_models_present).
+    if all_models_present and records_template_str and os.path.exists(protein_complex_file):
         with open(protein_complex_file) as f:
             protein_complex_data = json.load(f)
 
@@ -1272,11 +1317,12 @@ def main(directory, template, output, template_records, resource, metadata,
                              os.path.join(output, "go-cam-protein-complex.tsv"))
         else:
             click.echo("aggregate_protein_complex.json is empty", err=True)
-    elif records_template_str:
+    elif all_models_present and records_template_str:
         click.echo("No aggregate_protein_complex.json found in {}".format(directory), err=True)
 
     # --- Constitutively Upstream Relations report ---
-    if records_template_str and os.path.exists(constitutively_upstream_file):
+    # Gated on the all-models directory being present (see all_models_present).
+    if all_models_present and records_template_str and os.path.exists(constitutively_upstream_file):
         with open(constitutively_upstream_file) as f:
             constitutively_upstream_data = json.load(f)
 
@@ -1297,7 +1343,7 @@ def main(directory, template, output, template_records, resource, metadata,
                              os.path.join(output, "go-cam-constitutively-upstream.tsv"))
         else:
             click.echo("aggregate_constitutively_upstream.json is empty", err=True)
-    elif records_template_str:
+    elif all_models_present and records_template_str:
         click.echo("No aggregate_constitutively_upstream.json found in {}".format(directory), err=True)
 
     # --- Variable Definitions report ---
@@ -1329,8 +1375,7 @@ def main(directory, template, output, template_records, resource, metadata,
     # --- All-models record TSVs (separate output directory) ---
     # Production outputs above are unaffected; this only adds the two TSVs
     # computed across all GO-CAM models when the all-models inputs are provided.
-    if all_models_directory:
-        am_output = all_models_output or os.path.join(output, "all_models")
+    if all_models_directory and (am_pc_ok or am_cu_ok):
         render_all_model_tsvs(all_models_directory, am_output,
                               ontology_labels, users_by_uri, groups_by_id)
 
