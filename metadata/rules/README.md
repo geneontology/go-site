@@ -956,7 +956,7 @@ Note that in the GO Central pipeline, this is only implmented upon imports of ex
  * status: deprecated
 
 
-## This rule was deprecated because it is redundant with GORULE:0000061.
+**This rule was deprecated because it is redundant with GORULE:0000061.**
 
 
 In GAF2.2, a gp2term relation (column 4; see https://wiki.geneontology.org/Annotation_Relations#Gene_Product_to_GO_term_Relations_(%22qualifiers%22)) is mandatory for every annotation.

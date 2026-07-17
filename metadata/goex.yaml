@@ -440,7 +440,7 @@ organisms:
     uniprot_proteome_id: uniprot.proteome:UP000001519
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:3635
-    taxonomic_group: NCBITaxon:7742
+    taxonomic_group: NCBITaxon:33090
     full_name: Gossypium hirsutum
     common_name_goc: Upland cotton
     common_name_uniprot: Upland cotton
