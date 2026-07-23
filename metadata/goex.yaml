@@ -1629,16 +1629,6 @@ organisms:
     group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000002605
     mod_id_space: CGD
-  - taxon_id: NCBITaxon:1136231
-    taxonomic_group: NCBITaxon:4751
-    full_name: Candida orthopsilosis (strain 90-125) (Co 90-125)
-    common_name_goc: Candida orthopsilosis
-    common_name_uniprot:
-    code_uniprot: CANO9
-    code_goc:
-    group: CGD
-    uniprot_proteome_id: uniprot.proteome:UP000005018
-    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:284593
     taxonomic_group: NCBITaxon:4751
     full_name: Candida glabrata (strain ATCC 2001 / BCRC 20586 / JCM 3761 / NBRC 0622 / NRRL Y-65 / CBS 138) (Nakaseomyces glabratus)
