@@ -28,7 +28,7 @@ For more details for GOC members on how to create rules, see [SOP.md](SOP.md)
  * <a href="#gorule0000019">GORULE:0000019 Generic Reasoner Validation Check</a>
  * <a href="#gorule0000020">GORULE:0000020 Automatic repair of annotations to merged or obsoleted terms when replacement is available; otherwise, filter annotation</a>
  * <a href="#gorule0000021">GORULE:0000021 DEPRECATED Check with/from for sequence similarity evidence for valid database ID</a>
- * <a href="#gorule0000022">GORULE:0000022 Check for, and filter, annotations made to retracted publications</a>
+ * <a href="#gorule0000022">GORULE:0000022 Filter annotations made to retracted publications</a>
  * <a href="#gorule0000023">GORULE:0000023 Materialize annotations for inter-branch links in the GO</a>
  * <a href="#gorule0000024">GORULE:0000024 Prevent propagation of certain terms by orthology</a>
  * <a href="#gorule0000025">GORULE:0000025 Creating more specific annotations by reasoning over extensions</a>
@@ -456,7 +456,7 @@ Duplicate of GORULE:0000038
 
 <a name="gorule0000022"/>
 
-## Check for, and filter, annotations made to retracted publications
+## Filter annotations made to retracted publications
 
  * id: [GORULE:0000022](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000022.md)
  * status: implemented
@@ -464,8 +464,7 @@ Duplicate of GORULE:0000038
 
 GO should not include annotations to retracted publications (GAF column 6, GPAD column 5). 
 
-PubMed keeps record of retracted publications in the PublicationTypeList of
-each paper's XML entry. GOC manually download the data from [Europe PMC](https://europepmc.org/betaSearch?query=%28PUB_TYPE%3A%22Retracted%20Publication%22%29&page=1)
+PubMed keeps record of retracted publications in the PublicationTypeList of each paper's XML entry. GOC manually download the data from [Europe PMC](https://europepmc.org/betaSearch?query=%28PUB_TYPE%3A%22Retracted%20Publication%22%29&page=1)
 and save it on the [go-site/metadata folder](https://github.com/geneontology/go-site/blob/master/metadata/retracted-publications.txt).
 
 
@@ -601,10 +600,10 @@ e.g. SGD_REF:S000047763|PMID:2676709. PMID, DOIs, Agricola, GO_REF and internal 
 ## DEPRECATED GO aspect should match the term's namespace; otherwise it is repaired to the appropriate aspect
 
  * id: [GORULE:0000028](https://github.com/geneontology/go-site/blob/master/metadata/rules/gorule-0000028.md)
- * status: deprcated
+ * status: deprecated
 
 
-This information is injected directy in the GAF file, upstream sources errors do not cause errors in this data anymore.
+This rule was deprecated because this information is injected directy in the GAF file, so that upstream sources errors do not lead to errors in this data.
 
 The GO aspect (GAF column 9) should correspond to the namespace of the GO term (GAF column 5). 
 The value in this column must be on of: C, P, or F, corresponding to the three GO aspects, 
@@ -620,7 +619,7 @@ Note that this rule does not apply to GPAD files, since the GO aspect is not par
  * status: deprecated
 
 
-## This rule was deprcated because in the GOEx pipeline, all IEA annotations come from GOA, and are generated at each release.
+This rule was deprecated because in the GOEx pipeline, all IEA annotations come from GOA, and are generated at each release.
 
 All IEA annotations with a date more than three years old should be filered.
 IEAs between 1 and 3 years old trigger a WARNING.
@@ -957,7 +956,7 @@ Note that in the GO Central pipeline, this is only implmented upon imports of ex
  * status: deprecated
 
 
-## This rule was deprecated because it is redundant with GORULE:0000061.
+**This rule was deprecated because it is redundant with GORULE:0000061.**
 
 
 In GAF2.2, a gp2term relation (column 4; see https://wiki.geneontology.org/Annotation_Relations#Gene_Product_to_GO_term_Relations_(%22qualifiers%22)) is mandatory for every annotation.

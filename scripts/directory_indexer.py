@@ -58,6 +58,8 @@ def main():
                         help='Actually run--not the default dry run')
     parser.add_argument('-u', '--up', action='store_true',
                         help='Release version, where pages have a link pointing up one level')
+    parser.add_argument('-e', '--exclude', action='append', default=[],
+                        help='Directory name to skip entirely -- not descended into and not listed (repeatable)')
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='More verbose output')
     args = parser.parse_args()
@@ -95,11 +97,17 @@ def main():
         'go-release-archive.tgz'
     ]
     LOG.info('Will ignore: "' + '", "'.join(ignore_list) + '"')
+    if args.exclude:
+        LOG.info('Will exclude directories: "' + '", "'.join(args.exclude) + '"')
 
     # Walk tree.
     # First, make a clean path to use in making new pathnames.
     # webrootdir = rootdir.lstrip('.').lstrip('//').rstrip('//')
     for currdir, dirs, files in os.walk(rootdir):
+
+        ## Prune excluded directories in place: os.walk then neither descends
+        ## into them nor (since children are built from dirs) lists them.
+        dirs[:] = [d for d in dirs if d not in args.exclude]
 
         ## Create index on every "root".
         parent = None

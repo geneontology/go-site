@@ -19,6 +19,11 @@ mapping:
     type: str
     required: true
     enum: [filter, report, repair]
+  ## implemented: an active rule in an active codebase
+  ## proposed: a rule that is undergoing discussion
+  ## approved: a rule that has been okayed, but is not yet implemented
+  ## deprecated: a rule that is no longer enforced
+  ## legacy: a rule that is still technically functioning, but in an old and unmaintained codebase (e.e. owltools predictions)
   "status":
     type: str
     required: true
