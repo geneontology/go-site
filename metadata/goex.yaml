@@ -167,7 +167,7 @@ organisms:
     code_uniprot: CANAR
     code_goc: 
     group: CGD
-    uniprot_proteome_id: uniprot.proteome: UP000230249
+    uniprot_proteome_id: uniprot.proteome:UP000230249
     mod_id_space: CGD
   - taxon_id: NCBITaxon:9615
     taxonomic_group: NCBITaxon:7742
