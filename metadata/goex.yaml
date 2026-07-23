@@ -159,13 +159,23 @@ organisms:
     group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000000559
     mod_id_space: CGD
+  - taxon_id: NCBITaxon:498019
+    taxonomic_group: NCBITaxon:4751
+    full_name: Candida auris
+    common_name_goc: Candida auris
+    common_name_uniprot: Yeast
+    code_uniprot: CANAR
+    code_goc: 
+    group: CGD
+    uniprot_proteome_id: uniprot.proteome: UP000230249
+    mod_id_space: CGD
   - taxon_id: NCBITaxon:9615
     taxonomic_group: NCBITaxon:7742
     full_name: Canis lupus familiaris
     common_name_goc: Dog
     common_name_uniprot: Dog
     code_uniprot: CANLF
-    code_goc:
+    code_goc: 
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000805418
     mod_id_space: UniProtKB
@@ -1658,7 +1668,7 @@ organisms:
     code_goc:
     group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000002037
-    mod_id_space: UniProtKB
+    mod_id_space: CGD
   - taxon_id: NCBITaxon:306902
     taxonomic_group: NCBITaxon:4751
     full_name: Clavispora lusitaniae (strain ATCC 42720)
