@@ -66,7 +66,7 @@ datasets:
    dataset: cgd
    submitter: cgd
    compression: gzip
-   source:https://urldefense.com/v3/__https://www.candidagenome.org/download/go/C_dubliniensis_CD36.gpi.gz__;!!G92We9drHetJ8EofZw!YV1gv8nRePA_R3929JunbAJz1HzKHzy10dZbG4cD0iQOJdPbtD6Q1AFEoG_qRmziRA-kLJH9uaRbYXjdCQT-ZXehv1Rp$
+   source: https://urldefense.com/v3/__https://www.candidagenome.org/download/go/C_dubliniensis_CD36.gpi.gz__;!!G92We9drHetJ8EofZw!YV1gv8nRePA_R3929JunbAJz1HzKHzy10dZbG4cD0iQOJdPbtD6Q1AFEoG_qRmziRA-kLJH9uaRbYXjdCQT-ZXehv1Rp$
    entity_type:
    status: active
    species_code: CANDC
