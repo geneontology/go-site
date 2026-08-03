@@ -1,0 +1,23 @@
+id: cgd_caur
+label: CGD (auris)
+description: "GO data for CGD (Candida auris)"
+project_name: "Candida Genome Database (CGD)"
+contact_email: "candida-curator@lists.stanford.edu"
+project_url: "http://www.candidagenome.org/"
+funding_source: "NIDCR at US NIH, grant number 1-R01-DE015873-01"
+email_report: "candida-curator@lists.stanford.edu"
+datasets:
+  -
+    id: cgd_caur.gpi
+    label: "CGD C. auris gpi file"
+    description: "gpi file for C. auris from CGD"
+    type: gpi
+    dataset: cgd_caur
+    submitter: cgd
+    compression: gzip
+    source: https://www.candidagenome.org/download/go/C_auris_B8441.gpi.gz
+    entity_type:
+    status: active
+    species_code: Caur
+    taxa:
+      - NCBITaxon:498019

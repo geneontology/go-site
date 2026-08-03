@@ -1,0 +1,23 @@
+id: cgd_cdub
+label: CGD (dubliniensis)
+description: "GO data for CGD (Candida dubliniensis)"
+project_name: "Candida Genome Database (CGD)"
+contact_email: "candida-curator@lists.stanford.edu"
+project_url: "http://www.candidagenome.org/"
+funding_source: "NIDCR at US NIH, grant number 1-R01-DE015873-01"
+email_report: "candida-curator@lists.stanford.edu"
+datasets:
+  -
+    id: cgd_cdub.gpi
+    label: "CGD C. dubliniensis gpi file"
+    description: "gpi file for C. dubliniensis from CGD"
+    type: gpi
+    dataset: cgd_cdub
+    submitter: cgd
+    compression: gzip
+    source: https://www.candidagenome.org/download/go/C_dubliniensis_CD36.gpi.gz
+    entity_type:
+    status: active
+    species_code: Cdub
+    taxa:
+      - NCBITaxon:573826
