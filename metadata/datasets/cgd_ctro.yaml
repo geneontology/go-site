@@ -1,0 +1,23 @@
+id: cgd_ctro
+label: CGD (tropicalis)
+description: "GO data for CGD (Candida tropicalis)"
+project_name: "Candida Genome Database (CGD)"
+contact_email: "candida-curator@lists.stanford.edu"
+project_url: "http://www.candidagenome.org/"
+funding_source: "NIDCR at US NIH, grant number 1-R01-DE015873-01"
+email_report: "candida-curator@lists.stanford.edu"
+datasets:
+  -
+    id: cgd_ctro.gpi
+    label: "CGD C. tropicalis gpi file"
+    description: "gpi file for C. tropicalis from CGD"
+    type: gpi
+    dataset: cgd_ctro
+    submitter: cgd
+    compression: gzip
+    source: https://www.candidagenome.org/download/go/C_tropicalis.gpi.gz
+    entity_type:
+    status: active
+    species_code: Ctro
+    taxa:
+      - NCBITaxon:294747
