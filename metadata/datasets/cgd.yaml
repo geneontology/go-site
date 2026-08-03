@@ -27,3 +27,93 @@ datasets:
     - NCBITaxon:237561
     - NCBITaxon:498019
     - NCBITaxon:294747
+
+ -
+   id: cgd_calb.gpi
+   label: "cgd_calb gpi file"
+   description: "gpi file for C. albicans from Candida Genome Database"
+   type: gpi
+   dataset: cgd_calb
+   submitter: cgd
+   compression: gzip
+   source: https://www.candidagenome.org/download/go/C_albicans_SC5314_with_B_alleles.gpi.gz
+   entity_type:
+   status: active
+   species_code: Calb
+   taxa:
+    - NCBITaxon:237561
+
+ -
+   id: cgd_caur.gpi
+   label: "cgd_caur gpi file"
+   description: "gpi file for C. auris from Candida Genome Database"
+   type: gpi
+   dataset: cgd_caur
+   submitter: cgd
+   compression: gzip
+   source: https://www.candidagenome.org/download/go/C_auris_B8441.gpi.gz
+   entity_type:
+   status: active
+   species_code: Caur
+   taxa:
+    - NCBITaxon:498019
+
+ -
+   id: cgd_cdub.gpi
+   label: "cgd_cdub gpi file"
+   description: "gpi file for C. dubliniensis from Candida Genome Database"
+   type: gpi
+   dataset: cgd_cdub
+   submitter: cgd
+   compression: gzip
+   source: https://www.candidagenome.org/download/go/C_dubliniensis_CD36.gpi.gz
+   entity_type:
+   status: active
+   species_code: Cdub
+   taxa:
+    - NCBITaxon:573826
+
+ -
+   id: cgd_cgla.gpi
+   label: "cgd_cgla gpi file"
+   description: "gpi file for C. glabrata from Candida Genome Database"
+   type: gpi
+   dataset: cgd_cgla
+   submitter: cgd
+   compression: gzip
+   source: https://www.candidagenome.org/download/go/C_glabrata_CBS138.gpi.gz
+   entity_type:
+   status: active
+   species_code: Cgla
+   taxa:
+    - NCBITaxon:284593
+
+ -
+   id: cgd_cpar.gpi
+   label: "cgd_cpar gpi file"
+   description: "gpi file for C. parapsilosis from Candida Genome Database"
+   type: gpi
+   dataset: cgd_cpar
+   submitter: cgd
+   compression: gzip
+   source: https://www.candidagenome.org/download/go/C_parapsilosis_CDC317.gpi.gz
+   entity_type:
+   status: active
+   species_code: Cpar
+   taxa:
+    - NCBITaxon:578454
+
+ -
+   id: cgd_ctro.gpi
+   label: "cgd_ctro gpi file"
+   description: "gpi file for C. tropicalis from Candida Genome Database"
+   type: gpi
+   dataset: cgd_ctro
+   submitter: cgd
+   compression: gzip
+   source: https://www.candidagenome.org/download/go/C_tropicalis.gpi.gz
+   entity_type:
+   status: active
+   species_code: Ctro
+   taxa:
+    - NCBITaxon:294747
