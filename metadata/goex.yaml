@@ -1659,16 +1659,6 @@ organisms:
     group: CGD
     uniprot_proteome_id: uniprot.proteome:UP000002037
     mod_id_space: CGD
-  - taxon_id: NCBITaxon:306902
-    taxonomic_group: NCBITaxon:4751
-    full_name: Clavispora lusitaniae (strain ATCC 42720)
-    common_name_goc: Clavispora lusitaniae
-    common_name_uniprot:
-    code_uniprot: CLAL4
-    code_goc:
-    group: CGD
-    uniprot_proteome_id: uniprot.proteome:UP000007703
-    mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:284592
     taxonomic_group: NCBITaxon:4751
     full_name: Debaryomyces hansenii (strain ATCC 36239 / CBS 767 / BCRC 21394 / JCM 1990 / NBRC 0083 / IGC 2968) (Torulaspora hansenii)
@@ -1688,16 +1678,6 @@ organisms:
     code_goc:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000001996
-    mod_id_space: UniProtKB
-  - taxon_id: NCBITaxon:294746
-    taxonomic_group: NCBITaxon:4751
-    full_name: Meyerozyma guilliermondii (strain ATCC 6260 / CBS 566 / DSM 6381 / JCM 1539 / NBRC 10279 / NRRL Y-324) (Candida guilliermondii)
-    common_name_goc: Candida guilliermondii
-    common_name_uniprot:
-    code_uniprot: PICGU
-    code_goc:
-    group: CGD
-    uniprot_proteome_id: uniprot.proteome:UP000001997
     mod_id_space: UniProtKB
   - taxon_id: NCBITaxon:29760
     taxonomic_group: NCBITaxon:33090
