@@ -30,7 +30,8 @@ datasets:
     submitter: ecocyc
     compression: gzip
     #source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gpi/ECOLI-mod.gpi.gz
-    source: https://www.ai.sri.com/~kr/go/latest/ecocyc.gpi.gz
+    #source: https://www.ai.sri.com/~kr/go/latest/ecocyc.gpi.gz
+    source: https://current.geneontology.org/annotations/ecocyc.gpi.gz
     entity_type:
     status: active
     species_code: Ecol
