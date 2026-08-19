@@ -1,0 +1,291 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Shex Minerva Report schema, as of Nov 2020",
+    "$comment": "This is the descriptive schema for the Minerva Shex report output, and not aspirational. See https://github.com/geneontology/minerva/pull/359. This will be a seperate schema from the standard rule reports for the time being, until we can make a higher order schema lifting both into one format and reporting system.",
+
+    "definitions": {
+        "rule-message": {
+            "$comment": "Contents of a rule",
+            "type": "object",
+            "properties": {
+                "level": {
+                    "type": "string",
+                    "enum": ["PASS", "WARNING", "ERROR"]
+                },
+                "model-id": {
+                    "$ref": "#/definitions/gomodel-id",
+                    "$comment": "This is a CURIE, with `gomodel` being the namespace. This is the ID for the noctua model being tested with Shex."
+                },
+                "type": {
+                    "type": "string",
+                    "$comment": "Usually should say 'Violates GO Rule', unless it's directly some kind of parse error"
+                },
+                "message": {
+                    "type": "string",
+                    "$comment": "Whatever string message about the nature of the error in the validation source"
+                },
+                "taxa": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/taxon-id"
+                    }
+                },
+                "obj": {
+                    "type": "string",
+                    "default": "",
+                    "$comment": "Optional. If available, this should be the part of the `entity` that failed."
+                },
+                "rule": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9999999
+                },
+                "explanations": {
+                    "$ref": "#/definitions/explanations"
+                }
+            },
+
+            "required": ["level", "model-id", "type", "message", "rule"]
+        },
+
+        "explanations-item": {
+            "type": "object",
+            "properties": {
+                "shape": {
+                    "$ref": "#/definitions/shape-id"
+                },
+                "constraints": {
+                    "type": "array",
+                    "$comment": "Set of shape constraints violated for the `shape`, and `node`",
+                    "item": {
+                        "$ref": "#/definitions/constraints-item"
+                    }
+                }
+            },
+            "required": ["shape", "constraints"]
+        },
+
+        "constraints-item": {
+            "type": "object",
+            "$comment": "The basic form here is that we have an RDF triple of instances that are in violation of the shex. Higher up, in the `explanations` object, the `node` key is the Subject, the Predicate is `property`, and `object` is the Object, making (Subject, Predicate, Object). So `node_types` are the classes that Subject is an instance of, and `object_types` are the classes that Object is an instance of. In a range failure -- where we have a mismatch of expected range from the Predicate and the class of the Subject/Object -- the fields `matched_range_shapes` and `intended-range-shapes` will exist, showing what the shape expeted the triple to be, and what it foudn instead. For a cardinality failure the `nobjects` represents the number of objects that follow the given Subject, Predicate, and how it failed to be in the range specified in the `cardinality` field.",
+
+            "oneOf": [
+                { "$ref": "#/definitions/range-constraint-violation"},
+                { "$ref": "#/definitions/cardinality-constraint-violation"}
+            ]
+        },
+
+        "range-constraint-violation": {
+            "type": "object",
+            "properties": {
+                "object": {
+                    "$ref": "#/definitions/gomodel-id",
+                    "$comment": "The RDF object node that failed the shape validation"
+                },
+                "property": {
+                    "$ref": "#/definitions/curie",
+                    "$comment": "The RDF property pointing at the `object`"
+                },
+                "node_types": {
+                    "$comment": "Classes that the Subject RDF is an instance of",
+                    "item": {
+                        "$ref": "#/definitions/curie"
+                    }
+                },
+                "object_types": {
+                    "$comment": "Classes that the Object RDF is an instance of",
+                    "item": {
+                        "$ref": "#/definitions/curie"
+                    }
+                },
+                "nobjects": {
+                    "type": "integer"
+                },
+                "matched_range_shapes": {
+                    "type": "array",
+                    "$comment": "The set of shapes the shex validator found when looking at this property and object",
+                    "item": {
+                        "$ref": "#/definitions/shape-id"
+                    }
+                },
+                "intended-range-shapes": {
+                    "type": "array",
+                    "$comment": "The set of shapes the shex validator was expecting due to the range of the `property` field. This will be `owl:Nothing` if the property does not belong on the Subject `node` in the first place.",
+                    "item": {
+                        "$ref": "#/definitions/shape-id"
+                    }
+                }
+            },
+            "required": ["object", "property", "node_types", "object_types", "nobjects", "matched_range_shapes", "intended-range-shapes"]
+        },
+
+        "cardinality-constraint-violation": {
+            "type": "object",
+            "properties": {
+                "property": {
+                    "$ref": "#/definitions/curie"
+                },
+                "cardinality": {
+                    "type": "string",
+                    "pattern": "^\\[([0-9]+|\\*);[\\s]*([0-9]+|\\*)\\]$"
+                },
+                "nobjects": {
+                    "type": "integer"
+                }
+            },
+            "required": ["property", "cardinality", "nobjects"]
+        },
+
+        "gomodel-id": {
+            "type": "string",
+            "pattern": "^gomodel:[a-zA-Z0-9][a-zA-Z0-9/_-]*$"
+        },
+
+        "taxon-id": {
+            "type": "string",
+            "pattern": "^((NCBITaxon)|(taxon)):[0-9]+$"
+        },
+
+        "shape-id": {
+            "type": "string",
+            "pattern": "^[a-z]+:[a-zA-Z_][a-zA-Z0-9/_]*$"
+        },
+
+        "curie": {
+            "type": "string",
+            "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*:\\w[\\w_-]*$"
+        },
+
+        "explanations": {
+            "type": "object",
+            "properties": {
+                "is-conformant": {
+                    "type": "boolean",
+                    "$comment": "If this is false, then either it was owl validation failure or shex validation failure"
+                },
+                "owl-validation": {
+                    "type": "object",
+                    "$comment": "Info about owl validation failures",
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "$comment": "Is this the reasoner used?"
+                        },
+                        "is-conformant": {
+                            "type": "boolean",
+                            "$comment": "If the the model is inconsistent, this is false"
+                        },
+                        "tracker": {
+                            "type": "string",
+                            "format": "uri",
+                            "$comment": "geneontology helpdesk issue URL"
+                        },
+                        "rule-file": {
+                            "type": "string",
+                            "format": "uri",
+                            "$comment": "github go-ontolgoy URL"
+                        },
+                        "violations": {
+                            "type": "array",
+                            "item": {
+                                "type": "object",
+                                "properties": {
+                                    "node": {
+                                        "type": "string",
+                                        "$comment": "TODO should this be a URI?"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": ["id", "is-conformant", "tracker", "rule-file"]
+                },
+                "shex-validation": {
+                    "type": "object",
+                    "node-matched-shapes": {
+                        "type": "object",
+                        "$comment": "TODO This is empty currently"
+                    },
+                    "is-conformant": {
+                        "type": "boolean",
+                        "$comment": "False if the model doesn't conform to the shex"
+                    },
+                    "tracker": {
+                        "type": "string",
+                        "format": "uri",
+                        "$comment": "go-shapes github issue URL"
+                    },
+                    "rule-file": {
+                        "type": "string",
+                        "format": "uri",
+                        "$comment": "URL to shex shape file"
+                    },
+                    "violations": {
+                        "type": "array",
+                        "item": {
+                            "type": "object",
+                            "properties": {
+                                "explanations": {
+                                    "type": "array",
+                                    "item": {
+                                        "$ref": "#/definitions/explanations-item"
+                                    }
+                                },
+                                "node": {
+                                    "$ref": "#/definitions/gomodel-id"
+                                }
+                            },
+                            "required": ["explanations", "node"]
+                        }
+                    }
+                }
+            }
+        },
+
+        "messages-group": {
+            "type": "object",
+            "patternProperties": {
+                "^gorule-[0-9]{6}[1-9]$": {
+                    "oneOf": [
+                        {
+                            "type": "string",
+                            "enum": ["skipped"]
+                        },
+                        {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "$ref": "#/definitions/rule-message"
+                            }
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+
+    "type": "object",
+    "properties": {
+        "taxa": {
+            "type": "array"
+        },
+        "messages": {
+            "type": "object",
+            "$ref": "#/definitions/messages-group"
+        },
+        "number_of_models": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "number_of_models_in_error": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "number_of_correct_models": {
+            "type": "integer",
+            "minimum": 0
+        }
+    },
+    "required": ["messages", "taxa", "number_of_models", "number_of_models_in_error", "number_of_correct_models"]
+}
