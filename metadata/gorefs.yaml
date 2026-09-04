@@ -1733,6 +1733,7 @@
   external_accession:
     - J:346132
     - SGD_REF:S000204515
+    - ZFIN:ZDB-PUB-260903-15
   year: 2016
 - id: GO_REF:0000109
   title: Gene Ontology annotation based on curation of genome-wide subcellular localisation
