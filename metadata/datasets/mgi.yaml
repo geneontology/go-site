@@ -16,6 +16,9 @@ filter_out:
       reference: PMID:21873635
   annotation_properties:
     - noctua-model-id
+filter_for:
+  provided_by:
+    - MGI
 datasets:
  -
    id: mgi.gaf
