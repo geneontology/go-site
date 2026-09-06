@@ -21,7 +21,7 @@
         "npm": ">= 2.7.4"
     },
     "dependencies": {
-        "aws-sdk": "2.172.0",
+        "aws-sdk": "2.814.0",
 	"amigo2": "2.4.3",
 	"bbop-manager-golr": "0.0.11",
 	"bbop-response-golr": "0.0.6",
