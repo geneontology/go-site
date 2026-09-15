@@ -3,7 +3,8 @@
 Generate a report of Noctua models that fail or produce warnings during conversion to GO-CAM.
 
 This script:
-1. Reads a pre-computed noctua_conversion_info.txt (JSONL) from the input directory.
+1. Reads the pre-computed JSON Lines conversion log (--conversion-info-file, or
+   noctua_conversion_info.txt in the input directory by default).
 2. For models that were filtered, errored, or had warnings, extracts contributor and
    provider information from the original Noctua JSON files in the noctua_in_json/
    subdirectory.
@@ -188,7 +189,7 @@ def get_provider_display_name(
 def parse_conversion_info(
     conversion_info_file: Path,
 ) -> list[tuple[str, str, str, str]]:
-    """Parse noctua_conversion_info.txt and extract entries needing a report row.
+    """Parse the conversion log and extract entries needing a report row.
 
     Extracts entries with:
     - status "error" (all)
@@ -279,7 +280,7 @@ def main(
             file_okay=False,
             dir_okay=True,
             readable=True,
-            help="Directory containing noctua_conversion_info.txt and noctua_in_json/ subdirectory.",
+            help="Directory containing the noctua_in_json/ subdirectory (and, unless --conversion-info-file is given, noctua_conversion_info.txt).",
         ),
     ],
     metadata_dir: Annotated[
@@ -292,6 +293,19 @@ def main(
             help="Directory containing users.yaml and groups.yaml metadata files.",
         ),
     ],
+    conversion_info_file: Annotated[
+        Path | None,
+        typer.Option(
+            exists=True,
+            file_okay=True,
+            dir_okay=False,
+            readable=True,
+            help=(
+                "Path to the JSON Lines conversion log written by the GO-CAM conversion "
+                "pipeline. Defaults to noctua_conversion_info.txt in --input-dir."
+            ),
+        ),
+    ] = None,
     failure_warning_file: Annotated[
         Path,
         typer.Option(
@@ -321,11 +335,13 @@ def main(
     )
 
     # --- Parse conversion info JSONL ---
-    conversion_info_file = input_dir / "noctua_conversion_info.txt"
-    if not conversion_info_file.exists():
-        raise typer.BadParameter(
-            f"noctua_conversion_info.txt not found in {input_dir}"
-        )
+    if conversion_info_file is None:
+        conversion_info_file = input_dir / "noctua_conversion_info.txt"
+        if not conversion_info_file.exists():
+            raise typer.BadParameter(
+                f"noctua_conversion_info.txt not found in {input_dir}. "
+                "Use --conversion-info-file to point at the conversion log explicitly."
+            )
 
     entries = parse_conversion_info(conversion_info_file)
     logger.info(

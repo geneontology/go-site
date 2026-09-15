@@ -79,7 +79,7 @@ Outputs (written to ``--output``)
     12. GO terms                                                   — Total + Unique→page
     13. GO MF terms                                                — Total + Unique→page
     14. GO BP terms                                                — Total + Unique→page
-    15. GO CC terms                                                — Total + Unique→page
+    15. GO CC terms (excluding protein complexes)                  — Total + Unique→page
     16. causal relations                                           — Total only (positioned next to inferred relations for explicit-vs-inferred comparison)
     17. inferred causal relations (has output > has input)         — Total only
     18. references                                                 — Unique only → page
@@ -98,7 +98,8 @@ Outputs (written to ``--output``)
     * ``GO MF terms``  — count of molecular_function terms in that
       group's ``list_go_terms``
     * ``GO BP terms``  — count of biological_process terms
-    * ``GO CC terms``  — count of cellular_component terms
+    * ``GO CC terms (excluding protein complexes)`` — count of cellular_component
+      terms; protein complexes are already excluded upstream by gocam-py
 
   Counts are totals (with duplicates), matching the existing ``GO terms``
   row's semantics. Namespace classification uses the same ``--resource``
@@ -323,7 +324,7 @@ def build_entity_row_specs(stats, namespaces):
              unique=s.get("unique_go_terms", 0)),
         spec("GO MF terms", total=len(mf), unique=len(set(mf))),
         spec("GO BP terms", total=len(bp), unique=len(set(bp))),
-        spec("GO CC terms", total=len(cc), unique=len(set(cc))),
+        spec("GO CC terms (excluding protein complexes)", total=len(cc), unique=len(set(cc))),
         spec("causal relations", total=s.get("explicit_causal_relations", 0)),
         spec("inferred causal relations (has output > has input)",
              total=s.get("total_inferred_relations", 0)),
@@ -757,12 +758,12 @@ def build_aggregate_row_specs(model_entity, namespaces):
              drilldown_basename="go-cam-unique-go-bp-terms.html",
              drilldown_title="Unique GO Biological Process Terms",
              drilldown_label_kind="go"),
-        spec("GO CC terms",
+        spec("GO CC terms (excluding protein complexes)",
              total=len(cc_terms),
              unique=len(unique_cc),
              entries=unique_cc,
              drilldown_basename="go-cam-unique-go-cc-terms.html",
-             drilldown_title="Unique GO Cellular Component Terms",
+             drilldown_title="Unique GO Cellular Component Terms excluding Protein Complexes",
              drilldown_label_kind="go"),
         spec("causal relations",
              total=agg.get("explicit_causal_relations", 0)),
