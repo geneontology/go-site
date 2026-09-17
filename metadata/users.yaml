@@ -3981,6 +3981,12 @@
     noctua:
       go:
         allow-edit: true
+    sab:
+      - role: edit
+        scope: group
+        group: 'http://geneontology.org'
+      - role: admin
+        scope: global
   groups:
     - 'http://geneontology.org'
   nickname: 'Patrick Kalita'
