@@ -98,7 +98,7 @@ def main():
                 }
                 users[index] = user # save new back into list
 
-        ## Does the user have noctua perms?
+        ## Does the user have noctua or SAB perms?
         if user.get('authorizations', False):
             auth = user.get('authorizations', {})
             if auth.get('noctua-go', False) or \
@@ -145,6 +145,29 @@ def main():
                             die_screaming(user.get('nickname', '???') +\
                                           ' has mistaken group entry: ' + gid)
                             #print(nick + ' has mistaken group entry: ' + gid)
+
+            if auth.get('sab'):
+                # 1. Do they have a GitHub account?
+                if not user.get("accounts", {}).get("github"):
+                    die_screaming(user.get('nickname', '???') +\
+                                  ' has no GitHub account for SAB access.')
+
+                # 2. Check the individual SAB authorizations.
+                for sab_auth in auth.get('sab', []):
+                    # 2.1. Check that self and group scopes have a group.
+                    if sab_auth.get('scope') in ['self', 'group'] and not sab_auth.get('group'):
+                        die_screaming(user.get('nickname', '???') +\
+                                      ' has a SAB auth with scope {} but no group.'.format(sab_auth.get('scope')))
+
+                    # 2.2. Check that global scope does not have a group.
+                    if sab_auth.get('scope') == 'global' and sab_auth.get('group'):
+                        die_screaming(user.get('nickname', '???') +\
+                                      ' has a SAB auth with global scope but a group specified.')
+
+                    # 2.3. Check that the group is valid if specified.
+                    if sab_auth.get('group') and not groups_lookup.get(sab_auth.get('group')):
+                        die_screaming(user.get('nickname', '???') +\
+                                      ' has a SAB auth with an invalid group: {}'.format(sab_auth.get('group')))
 
     violates_both = set(violations["uri"]).intersection(violations["groups"])
     just_uri = set(violations["uri"]).difference(violates_both)
