@@ -81,7 +81,7 @@ Outputs (written to ``--output``)
     14. GO BP terms                                                — Total + Unique→page
     15. GO CC terms (excluding protein complexes)                  — Total + Unique→page
     16. causal relations                                           — Total only (positioned next to inferred relations for explicit-vs-inferred comparison)
-    17. inferred causal relations (has output > has input)         — Total only
+    17. inferred causal relations (has output > has input/has small molecule regulator) — Total only
     18. references                                                 — Unique only → page
     19. PMIDs                                                      — Unique only → page (PMIDs filtered from list_of_unique_references)
 
@@ -396,7 +396,7 @@ def build_entity_row_specs(stats, namespaces, basename_prefix=None):
              slug="unique-go-cc-terms",
              drilldown_title="Unique GO Cellular Component Terms excluding Protein Complexes"),
         spec("causal relations", total=s.get("explicit_causal_relations", 0)),
-        spec("inferred causal relations (has output > has input)",
+        spec("inferred causal relations (has output > has input/has small molecule regulator)",
              total=s.get("total_inferred_relations", 0)),
         spec("references", unique=s.get("unique_references", 0),
              slug="unique-references",
@@ -851,7 +851,7 @@ def build_aggregate_row_specs(model_entity, namespaces):
              drilldown_label_kind="go"),
         spec("causal relations",
              total=agg.get("explicit_causal_relations", 0)),
-        spec("inferred causal relations (has output > has input)",
+        spec("inferred causal relations (has output > has input/has small molecule regulator)",
              total=agg.get("total_inferred_relations", 0)),
         spec("references",
              unique=agg.get("unique_references", 0),
