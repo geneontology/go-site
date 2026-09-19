@@ -40,7 +40,7 @@ datasets:
    compression: gzip
    #source: https://ftp.ebi.ac.uk/pub/contrib/goa/goex/current/gpi/CAEEL-mod.gpi.gz
    #source: https://downloads.wormbase.org/species/c_elegans/PRJNA13758/annotation/gene_product_info/c_elegans.canonical_bioproject.current.gene_product_info.gpi.gz
-   source: https://ftp.ebi.ac.uk/pub/databases/wormbase/releases/WS297/species/c_elegans/PRJNA13758/annotation/c_elegans.PRJNA13758.WS297.gene_product_info.gpi.gz
+   source: https://ftp.ebi.ac.uk/pub/databases/wormbase/releases/WS298/species/c_elegans/PRJNA13758/annotation/c_elegans.PRJNA13758.WS298.gene_product_info.gpi2.gz
    entity_type:
    status: active
    species_code: Cele
