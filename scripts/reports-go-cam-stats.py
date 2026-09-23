@@ -92,6 +92,15 @@ Outputs (written to ``--output``)
   ``-other`` variant for ungrouped curators) — entity-as-column layouts
   where each row is a stat and each column is a curator / group.
 
+  ``go-cam-group-curator-stats-<group>.html`` leads with a
+  ``<group> (group total)`` column carrying that group's own Total/Unique
+  figures — the same numbers the group's column shows on
+  ``go-cam-group-stats.html`` — followed by one column per curator in the
+  group (go-site issue #2743). Its Unique cells link to the ``go-cam-group-
+  <group>-*`` drilldown pages already emitted for the group-stats page. The
+  ``-other`` page (ungrouped curators) has no such column, since no group
+  stats exist for it.
+
   ``go-cam-group-stats.html`` additionally emits three derived rows after
   the scalar fields read from ``stats_by_group_*.json``:
 
@@ -1196,29 +1205,45 @@ def main(directory, template, output, template_records, resource, metadata, date
             }, os.path.join(output, "go-cam-group-stats.html"))
 
             # --- Create per-group curator pages ---
-            for group_uri, label, page_fn in zip(group_uris, group_labels, group_page_filenames):
+            for grp_stats, group_uri, label, page_fn in zip(
+                    group_data, group_uris, group_labels, group_page_filenames):
                 curators_in_group = group_to_curators.get(group_uri, [])
 
                 grp_links = build_links(page_fn, available_pages)
 
+                # Leading column: the group's own Total/Unique figures, the
+                # same values that group's column carries on
+                # go-cam-group-stats.html (go-site issue #2743). Its drilldown
+                # prefix matches the one used for the group-stats page, so the
+                # Unique cells link to pages already emitted above rather than
+                # duplicating them.
+                grp_total_column = {"id": "{} (group total)".format(label)}
+                grp_total_prefix = "go-cam-group-{}".format(make_safe_filename(label))
+
                 if not curators_in_group:
                     click.echo("No curators found for group '{}' via metadata".format(label), err=True)
-                    # Still create the page so the link from group stats is not broken
+                    # Still create the page so the link from group stats is not
+                    # broken; it carries the group totals column on its own.
+                    solo_header, solo_subheader, solo_rows = build_entity_table(
+                        [grp_stats], [grp_total_column], ontology_namespaces,
+                        [grp_total_prefix])
                     render_and_write(template_str, {
                         "title": "GO-CAM Curator Stats - {}".format(label),
+                        "grouped": True,
                         "note": CURATOR_STATS_NOTE,
-                        "header": [],
-                        "rows": [],
+                        "header": solo_header,
+                        "subheader": solo_subheader,
+                        "rows": solo_rows,
                         "links": grp_links,
                         "date": date,
                     }, os.path.join(output, page_fn))
                     continue
 
-                grp_curator_data = [c[0] for c in curators_in_group]
-                grp_columns = [{"id": c[1]} for c in curators_in_group]
-                grp_prefixes = [
+                grp_curator_data = [grp_stats] + [c[0] for c in curators_in_group]
+                grp_columns = [grp_total_column] + [{"id": c[1]} for c in curators_in_group]
+                grp_prefixes = [grp_total_prefix] + [
                     curator_basename_prefix(d.get("uri"), c[1])
-                    for d, c in zip(grp_curator_data, curators_in_group)
+                    for d, c in zip([c[0] for c in curators_in_group], curators_in_group)
                 ]
 
                 grp_header, grp_subheader, grp_rows = build_entity_table(
