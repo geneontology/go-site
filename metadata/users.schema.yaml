@@ -74,6 +74,25 @@ sequence:
                       - type: str
               "monarch": *noctua_auth_template
               "open": *noctua_auth_template
+          # Standard Annotation Backend (SAB)
+          "sab":
+            type: seq
+            required: false
+            sequence:
+              - type: map
+                mapping:
+                  "role":
+                    type: str
+                    required: true
+                    enum: [ read, edit, admin ]
+                  "scope":
+                    type: str
+                    required: true
+                    enum: [ self, group, global ]
+                  "group":
+                    type: str
+                    required: false
+
       "comment":
         type: str
         required: false
