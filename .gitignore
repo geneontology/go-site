@@ -26,4 +26,5 @@ pipeline/*.log
 env
 __pycache__
 .idea
+.vscode/
 .venv

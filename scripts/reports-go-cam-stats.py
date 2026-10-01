@@ -79,9 +79,9 @@ Outputs (written to ``--output``)
     12. GO terms                                                   — Total + Unique→page
     13. GO MF terms                                                — Total + Unique→page
     14. GO BP terms                                                — Total + Unique→page
-    15. GO CC terms                                                — Total + Unique→page
+    15. GO CC terms (excluding protein complexes)                  — Total + Unique→page
     16. causal relations                                           — Total only (positioned next to inferred relations for explicit-vs-inferred comparison)
-    17. inferred causal relations (has output > has input)         — Total only
+    17. inferred causal relations (has output > has input/has small molecule regulator) — Total only
     18. references                                                 — Unique only → page
     19. PMIDs                                                      — Unique only → page (PMIDs filtered from list_of_unique_references)
 
@@ -92,13 +92,23 @@ Outputs (written to ``--output``)
   ``-other`` variant for ungrouped curators) — entity-as-column layouts
   where each row is a stat and each column is a curator / group.
 
+  ``go-cam-group-curator-stats-<group>.html`` leads with a
+  ``<group> (group total)`` column carrying that group's own Total/Unique
+  figures — the same numbers the group's column shows on
+  ``go-cam-group-stats.html`` — followed by one column per curator in the
+  group (go-site issue #2743). Its Unique cells link to the ``go-cam-group-
+  <group>-*`` drilldown pages already emitted for the group-stats page. The
+  ``-other`` page (ungrouped curators) has no such column, since no group
+  stats exist for it.
+
   ``go-cam-group-stats.html`` additionally emits three derived rows after
   the scalar fields read from ``stats_by_group_*.json``:
 
     * ``GO MF terms``  — count of molecular_function terms in that
       group's ``list_go_terms``
     * ``GO BP terms``  — count of biological_process terms
-    * ``GO CC terms``  — count of cellular_component terms
+    * ``GO CC terms (excluding protein complexes)`` — count of cellular_component
+      terms; protein complexes are already excluded upstream by gocam-py
 
   Counts are totals (with duplicates), matching the existing ``GO terms``
   row's semantics. Namespace classification uses the same ``--resource``
@@ -270,14 +280,13 @@ CURATOR_STATS_NOTE = (
 )
 
 
-def build_entity_row_specs(stats, namespaces):
+def build_entity_row_specs(stats, namespaces, basename_prefix=None):
     """Total/Unique row catalog for one per-entity ``GocamStats`` dict.
 
     Mirrors the aggregate page's row order and labels (see
     ``build_aggregate_row_specs``) but reads the ``GocamStats`` field names
     used in ``stats_by_group_*.json`` / ``stats_by_curator_*.json`` and returns
-    only ``(label, total, unique)`` per row — no drilldown entries, since the
-    per-entity pages link no further. ``total`` / ``unique`` are ``int`` or
+    ``(label, total, unique)`` per row. ``total`` / ``unique`` are ``int`` or
     ``None``; ``None`` renders as ``-`` (a stat that has no Total or no Unique
     on the aggregate page renders the same way here). Passing an empty dict
     yields the canonical label/order list with zero/None values.
@@ -285,13 +294,62 @@ def build_entity_row_specs(stats, namespaces):
     The GO MF/BP/CC rows are derived from ``list_go_terms`` partitioned by the
     ``--resource`` namespace map, exactly as the aggregate and current
     group-stats pages do.
+
+    When ``basename_prefix`` is given, rows whose entries this entity actually
+    has also carry ``unique_entries`` / ``drilldown_basename`` /
+    ``drilldown_title`` / ``drilldown_label_kind``, in the same shape
+    ``build_aggregate_row_specs`` produces, so ``render_drilldown_pages`` can
+    emit per-entity entity lists and ``build_entity_table`` can link the Unique
+    cell to them (see go-site issue #2740). Page names are
+    ``<basename_prefix>-<slug>.html``. Without a prefix the specs carry no
+    drilldown keys, which is what the canonical label/order lookup uses.
     """
     s = stats
     go_terms = s.get("list_go_terms", []) or []
     mf, bp, cc = _classify_go_terms(go_terms, namespaces)
 
-    def spec(label, total=None, unique=None):
-        return {"label": label, "total": total, "unique": unique}
+    input_terms = s.get("list_has_input_term", []) or []
+    output_terms = s.get("list_has_output_term", []) or []
+    refs = sorted(s.get("list_of_unique_references", []) or [])
+
+    entries_by_slug = {
+        "unique-gene-product-enablers": (
+            sorted(set(s.get("unique_enabled_by_gene_product", []) or [])), "gene"),
+        "unique-protein-complex-member-genes": (
+            sorted(set(s.get("list_of_unique_protein_complex_genes", []) or [])), "gene"),
+        "unique-genes-enablers-inputs": (
+            sorted(set(s.get("unique_enabled_by_gene_product", []) or [])
+                   | set(s.get("list_of_unique_protein_complex_genes", []) or [])), "gene"),
+        "unique-chemical-inputs": (
+            sorted({t for t in input_terms if _is_chebi(t)}), "chebi"),
+        "unique-other-inputs": (
+            sorted({t for t in input_terms if not _is_chebi(t)}), "gene"),
+        "unique-chemical-outputs": (
+            sorted({t for t in output_terms if _is_chebi(t)}), "chebi"),
+        "unique-other-outputs": (
+            sorted({t for t in output_terms if not _is_chebi(t)}), "gene"),
+        "unique-go-terms": (sorted(set(go_terms)), "go"),
+        "unique-go-mf-terms": (sorted(set(mf)), "go"),
+        "unique-go-bp-terms": (sorted(set(bp)), "go"),
+        "unique-go-cc-terms": (sorted(set(cc)), "go"),
+        "unique-references": (refs, None),
+        "unique-pmids": (sorted(r for r in refs if _is_pmid(r)), None),
+    }
+
+    def spec(label, total=None, unique=None, slug=None, drilldown_title=None):
+        row = {"label": label, "total": total, "unique": unique}
+        if not basename_prefix or not slug:
+            return row
+        entries, kind = entries_by_slug.get(slug, ([], None))
+        if not entries:
+            return row
+        row.update({
+            "unique_entries": entries,
+            "drilldown_basename": "{}-{}.html".format(basename_prefix, slug),
+            "drilldown_title": drilldown_title,
+            "drilldown_label_kind": kind,
+        })
+        return row
 
     return [
         spec("production models", total=s.get("models", 0)),
@@ -299,40 +357,67 @@ def build_entity_row_specs(stats, namespaces):
         spec("activity units enabled by gene product",
              total=s.get("activity_units_enabled_by_gene_product", 0)),
         spec("gene product enablers",
-             unique=s.get("unique_gene_product_enablers", 0)),
+             unique=s.get("unique_gene_product_enablers", 0),
+             slug="unique-gene-product-enablers",
+             drilldown_title="Unique Gene Product Enablers"),
         spec("activity units enabled by protein complex",
              total=s.get("activity_units_enabled_by_protein_complex", 0)),
         spec("members of protein complex enablers",
-             unique=s.get("unique_protein_complex_genes", 0)),
+             unique=s.get("unique_protein_complex_genes", 0),
+             slug="unique-protein-complex-member-genes",
+             drilldown_title="Members of Protein Complex Enablers"),
         spec("genes (enablers + inputs)",
-             unique=s.get("unique_gene_product_and_protein_complex_gene_enablers", 0)),
+             unique=s.get("unique_gene_product_and_protein_complex_gene_enablers", 0),
+             slug="unique-genes-enablers-inputs",
+             drilldown_title="Unique Genes (Enablers + Inputs)"),
         spec("chemical inputs",
              total=s.get("chemical_inputs", 0),
-             unique=s.get("unique_chemical_inputs", 0)),
+             unique=s.get("unique_chemical_inputs", 0),
+             slug="unique-chemical-inputs",
+             drilldown_title="Unique Chemical Inputs"),
         spec("other inputs (gene products and protein complexes)",
              total=s.get("other_inputs", 0),
-             unique=s.get("unique_other_inputs", 0)),
+             unique=s.get("unique_other_inputs", 0),
+             slug="unique-other-inputs",
+             drilldown_title="Unique Other Inputs"),
         spec("chemical outputs",
              total=s.get("chemical_outputs", 0),
-             unique=s.get("unique_chemical_outputs", 0)),
+             unique=s.get("unique_chemical_outputs", 0),
+             slug="unique-chemical-outputs",
+             drilldown_title="Unique Chemical Outputs"),
         spec("other outputs (gene products and protein complexes)",
              total=s.get("other_outputs", 0),
-             unique=s.get("unique_other_outputs", 0)),
+             unique=s.get("unique_other_outputs", 0),
+             slug="unique-other-outputs",
+             drilldown_title="Unique Other Outputs"),
         spec("GO terms",
              total=s.get("go_terms", 0),
-             unique=s.get("unique_go_terms", 0)),
-        spec("GO MF terms", total=len(mf), unique=len(set(mf))),
-        spec("GO BP terms", total=len(bp), unique=len(set(bp))),
-        spec("GO CC terms", total=len(cc), unique=len(set(cc))),
+             unique=s.get("unique_go_terms", 0),
+             slug="unique-go-terms",
+             drilldown_title="Unique GO Terms"),
+        spec("GO MF terms", total=len(mf), unique=len(set(mf)),
+             slug="unique-go-mf-terms",
+             drilldown_title="Unique GO Molecular Function Terms"),
+        spec("GO BP terms", total=len(bp), unique=len(set(bp)),
+             slug="unique-go-bp-terms",
+             drilldown_title="Unique GO Biological Process Terms"),
+        spec("GO CC terms (excluding protein complexes)", total=len(cc), unique=len(set(cc)),
+             slug="unique-go-cc-terms",
+             drilldown_title="Unique GO Cellular Component Terms excluding Protein Complexes"),
         spec("causal relations", total=s.get("explicit_causal_relations", 0)),
-        spec("inferred causal relations (has output > has input)",
+        spec("inferred causal relations (has output > has input/has small molecule regulator)",
              total=s.get("total_inferred_relations", 0)),
-        spec("references", unique=s.get("unique_references", 0)),
-        spec("PMIDs", unique=s.get("unique_pmid", 0)),
+        spec("references", unique=s.get("unique_references", 0),
+             slug="unique-references",
+             drilldown_title="Unique References"),
+        spec("PMIDs", unique=s.get("unique_pmid", 0),
+             slug="unique-pmids",
+             drilldown_title="Unique PMIDs"),
     ]
 
 
-def build_entity_table(entity_data_list, column_specs, namespaces):
+def build_entity_table(entity_data_list, column_specs, namespaces,
+                       basename_prefixes=None):
     """Build a grouped Total/Unique table for entity-as-column pages.
 
     Each entity (group or curator) becomes a column group spanning two
@@ -346,6 +431,10 @@ def build_entity_table(entity_data_list, column_specs, namespaces):
         column_specs: list of ``{"id": label, "href": optional}`` aligned with
             ``entity_data_list``.
         namespaces: GO-id → namespace map for the MF/BP/CC rows.
+        basename_prefixes: optional list aligned with ``entity_data_list``
+            giving each entity's drilldown page-name prefix. When supplied, a
+            Unique cell whose row has entries links to that entity's drilldown
+            page (go-site issue #2740). Entities with no prefix stay plain.
 
     Returns:
         (header, subheader, rows):
@@ -371,13 +460,17 @@ def build_entity_table(entity_data_list, column_specs, namespaces):
         subheader.append({"label": "Total", "cls": parity(e)})
         subheader.append({"label": "Unique", "cls": parity(e)})
 
+    prefixes = basename_prefixes or [None] * len(entity_data_list)
     per_entity = [
-        build_entity_row_specs(d, namespaces) if d is not None else None
-        for d in entity_data_list
+        build_entity_row_specs(d, namespaces, prefixes[i]) if d is not None else None
+        for i, d in enumerate(entity_data_list)
     ]
 
-    def cell(value, cls):
-        return {"value": value if value is not None else "-", "cls": cls}
+    def cell(value, cls, href=None):
+        c = {"value": value if value is not None else "-", "cls": cls}
+        if href and value:
+            c["href"] = href
+        return c
 
     rows = []
     for i, r in enumerate(ref):
@@ -389,7 +482,8 @@ def build_entity_table(entity_data_list, column_specs, namespaces):
                 values.append({"value": "", "cls": cls})
             else:
                 values.append(cell(specs[i]["total"], cls))
-                values.append(cell(specs[i]["unique"], cls))
+                values.append(cell(specs[i]["unique"], cls,
+                                   specs[i].get("drilldown_basename")))
         rows.append({
             "field_display": capitalize_first(r["label"]),
             "values": values,
@@ -757,16 +851,16 @@ def build_aggregate_row_specs(model_entity, namespaces):
              drilldown_basename="go-cam-unique-go-bp-terms.html",
              drilldown_title="Unique GO Biological Process Terms",
              drilldown_label_kind="go"),
-        spec("GO CC terms",
+        spec("GO CC terms (excluding protein complexes)",
              total=len(cc_terms),
              unique=len(unique_cc),
              entries=unique_cc,
              drilldown_basename="go-cam-unique-go-cc-terms.html",
-             drilldown_title="Unique GO Cellular Component Terms",
+             drilldown_title="Unique GO Cellular Component Terms excluding Protein Complexes",
              drilldown_label_kind="go"),
         spec("causal relations",
              total=agg.get("explicit_causal_relations", 0)),
-        spec("inferred causal relations (has output > has input)",
+        spec("inferred causal relations (has output > has input/has small molecule regulator)",
              total=agg.get("total_inferred_relations", 0)),
         spec("references",
              unique=agg.get("unique_references", 0),
@@ -858,6 +952,41 @@ def render_drilldown_pages(row_specs, records_template_str, output_dir,
             "links": build_links(basename, available_pages),
             "date": date,
         }, os.path.join(output_dir, basename))
+
+
+def curator_basename_prefix(uri, fallback_label):
+    """Drilldown page-name prefix for one curator.
+
+    Uses the last path segment of the ORCID URI (e.g.
+    ``https://orcid.org/0000-0002-3358-4423`` → ``0000-0002-3358-4423``), which
+    matches how ``stats_by_curator_*.json`` files are named, falling back to
+    the display label when the URI has no usable segment.
+    """
+    segment = ""
+    if uri:
+        segment = urlparse(uri).path.rstrip("/").split("/")[-1] or uri
+    return "go-cam-curator-{}".format(make_safe_filename(segment or fallback_label))
+
+
+def render_entity_drilldowns(entity_data_list, basename_prefixes, namespaces,
+                             records_template_str, output_dir, available_pages,
+                             ontology_labels, id_labels, date):
+    """Emit per-entity drilldown pages for every group / curator column.
+
+    One page per (entity, row) pair that has entries, named
+    ``<basename_prefix>-<slug>.html``. Rows without entries are skipped by
+    ``render_drilldown_pages``, so entities contribute only the pages they can
+    actually fill (go-site issue #2740).
+    """
+    if not records_template_str:
+        return
+    for data, prefix in zip(entity_data_list, basename_prefixes):
+        if data is None or not prefix:
+            continue
+        specs = build_entity_row_specs(data, namespaces, prefix)
+        render_drilldown_pages(specs, records_template_str, output_dir,
+                               available_pages, ontology_labels, id_labels,
+                               date)
 
 
 def ensure_group_entry(group_uri, groups_by_id):
@@ -970,9 +1099,19 @@ def main(directory, template, output, template_records, resource, metadata, date
             {"id": get_curator_display_name(uri, users_by_uri)}
             for uri in curator_uris
         ]
+        curator_prefixes = [
+            curator_basename_prefix(uri, name["id"])
+            for uri, name in zip(curator_uris, curator_columns)
+        ]
 
         header, subheader, rows = build_entity_table(
-            curator_data_list, curator_columns, ontology_namespaces)
+            curator_data_list, curator_columns, ontology_namespaces,
+            curator_prefixes)
+
+        render_entity_drilldowns(
+            curator_data_list, curator_prefixes, ontology_namespaces,
+            records_template_str, output, available_pages, ontology_labels,
+            id_labels, date)
 
         render_and_write(template_str, {
             "title": "GO-CAM Stats by Curator",
@@ -1034,15 +1173,25 @@ def main(directory, template, output, template_records, resource, metadata, date
                 for label, page_fn in zip(group_labels, group_page_filenames)
             ]
             entity_data = list(group_data)
+            entity_prefixes = [
+                "go-cam-group-{}".format(make_safe_filename(lbl))
+                for lbl in group_labels
+            ]
             if ungrouped_curators:
                 column_specs.append({
                     "id": "Other",
                     "href": "go-cam-group-curator-stats-other.html",
                 })
                 entity_data.append(None)
+                entity_prefixes.append(None)
 
             header, subheader, rows = build_entity_table(
-                entity_data, column_specs, ontology_namespaces)
+                entity_data, column_specs, ontology_namespaces, entity_prefixes)
+
+            render_entity_drilldowns(
+                entity_data, entity_prefixes, ontology_namespaces,
+                records_template_str, output, available_pages, ontology_labels,
+                id_labels, date)
 
             render_and_write(template_str, {
                 "title": "GO-CAM Stats by Group",
@@ -1056,29 +1205,50 @@ def main(directory, template, output, template_records, resource, metadata, date
             }, os.path.join(output, "go-cam-group-stats.html"))
 
             # --- Create per-group curator pages ---
-            for group_uri, label, page_fn in zip(group_uris, group_labels, group_page_filenames):
+            for grp_stats, group_uri, label, page_fn in zip(
+                    group_data, group_uris, group_labels, group_page_filenames):
                 curators_in_group = group_to_curators.get(group_uri, [])
 
                 grp_links = build_links(page_fn, available_pages)
 
+                # Leading column: the group's own Total/Unique figures, the
+                # same values that group's column carries on
+                # go-cam-group-stats.html (go-site issue #2743). Its drilldown
+                # prefix matches the one used for the group-stats page, so the
+                # Unique cells link to pages already emitted above rather than
+                # duplicating them.
+                grp_total_column = {"id": "{} (group total)".format(label)}
+                grp_total_prefix = "go-cam-group-{}".format(make_safe_filename(label))
+
                 if not curators_in_group:
                     click.echo("No curators found for group '{}' via metadata".format(label), err=True)
-                    # Still create the page so the link from group stats is not broken
+                    # Still create the page so the link from group stats is not
+                    # broken; it carries the group totals column on its own.
+                    solo_header, solo_subheader, solo_rows = build_entity_table(
+                        [grp_stats], [grp_total_column], ontology_namespaces,
+                        [grp_total_prefix])
                     render_and_write(template_str, {
                         "title": "GO-CAM Curator Stats - {}".format(label),
+                        "grouped": True,
                         "note": CURATOR_STATS_NOTE,
-                        "header": [],
-                        "rows": [],
+                        "header": solo_header,
+                        "subheader": solo_subheader,
+                        "rows": solo_rows,
                         "links": grp_links,
                         "date": date,
                     }, os.path.join(output, page_fn))
                     continue
 
-                grp_curator_data = [c[0] for c in curators_in_group]
-                grp_columns = [{"id": c[1]} for c in curators_in_group]
+                grp_curator_data = [grp_stats] + [c[0] for c in curators_in_group]
+                grp_columns = [grp_total_column] + [{"id": c[1]} for c in curators_in_group]
+                grp_prefixes = [grp_total_prefix] + [
+                    curator_basename_prefix(d.get("uri"), c[1])
+                    for d, c in zip([c[0] for c in curators_in_group], curators_in_group)
+                ]
 
                 grp_header, grp_subheader, grp_rows = build_entity_table(
-                    grp_curator_data, grp_columns, ontology_namespaces)
+                    grp_curator_data, grp_columns, ontology_namespaces,
+                    grp_prefixes)
 
                 render_and_write(template_str, {
                     "title": "GO-CAM Curator Stats - {}".format(label),
@@ -1095,9 +1265,14 @@ def main(directory, template, output, template_records, resource, metadata, date
             if ungrouped_curators:
                 other_data = [c[0] for c in ungrouped_curators]
                 other_columns = [{"id": c[1]} for c in ungrouped_curators]
+                other_prefixes = [
+                    curator_basename_prefix(d.get("uri"), c[1])
+                    for d, c in zip(other_data, ungrouped_curators)
+                ]
 
                 other_header, other_subheader, other_rows = build_entity_table(
-                    other_data, other_columns, ontology_namespaces)
+                    other_data, other_columns, ontology_namespaces,
+                    other_prefixes)
 
                 render_and_write(template_str, {
                     "title": "GO-CAM Curator Stats - Other",
