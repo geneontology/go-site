@@ -149,8 +149,12 @@ Outputs (written to ``--output``)
   page schema stays stable across runs even when the source map is absent
   or incomplete.
 
-- ``go-cam-protein-complex.html`` + ``go-cam-protein-complex.tsv`` —
-  unchanged.
+- ``go-cam-protein-complex.html`` + ``go-cam-protein-complex.tsv`` — two
+  new columns after the protein complex label: ``Complex Part IDs`` (the
+  complex's ``has_part`` member IDs from ``protein_complex_members``) and
+  ``Complex Parts`` (those IDs resolved to labels via ``id_to_label.json``,
+  falling back to the ID). Both are blank when the complex has no recorded
+  parts, or when the input predates ``protein_complex_members``.
 - ``go-cam-variable-definitions.html`` — still emitted, but no longer linked
   from any page's navigation (omitted from ``available_pages``); it is now a
   standalone page reachable only by direct URL.
@@ -586,6 +590,20 @@ def format_curator_list(uris, users_by_uri):
     if not uris:
         return ""
     return ", ".join(get_curator_display_name(uri, users_by_uri) for uri in uris)
+
+
+def format_id_list(ids):
+    """Comma-join a list of IDs; empty or missing yields an empty string."""
+    if not ids:
+        return ""
+    return ", ".join(ids)
+
+
+def format_id_label_list(ids, id_labels):
+    """Resolve a list of IDs to labels (falling back to the ID), comma-joined."""
+    if not ids:
+        return ""
+    return ", ".join(id_labels.get(term_id) or term_id for term_id in ids)
 
 
 def format_group_list(uris, groups_by_id):
@@ -1307,6 +1325,11 @@ def main(directory, template, output, template_records, resource, metadata, date
                 field_specs.append(
                     ("protein_complex_term", "Protein Complex Label",
                      lambda go_id: get_go_term_label(go_id, ontology_labels)))
+            field_specs.extend([
+                ("protein_complex_members", "Complex Part IDs", format_id_list),
+                ("protein_complex_members", "Complex Parts",
+                 lambda ids: format_id_label_list(ids, id_labels)),
+            ])
             field_specs.append(("molecular_function", "Molecular Function", str))
             if ontology_labels:
                 field_specs.append(
