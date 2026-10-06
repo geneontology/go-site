@@ -10,7 +10,8 @@ Example
         --template-records ./scripts/go-cam-records-template.html \
         --output    /path/to/output \
         --metadata  /path/to/metadata \
-        --resource  /path/to/go.json
+        --resource  /path/to/go.json \
+        --data-subdir full-go-cam-stats/data
 
 What
 ----
@@ -19,6 +20,36 @@ and renders Mustache-templated HTML reports (plus a TSV companion for the
 protein-complex activities list). The aggregate report uses a three-column
 layout — ``Statistic | Total | Unique`` — where the Unique cell, when non-empty,
 hyperlinks to a small per-statistic page that lists the actual unique entries.
+
+Output layout (go-site issue #2744)
+-----------------------------------
+``--output`` is published as ``reports/go-cam-stats/`` in the release, whose
+directory listing (``directory_indexer.py``) shows whatever sits at its top
+level. Only the aggregate page is placed there; every other page lives under
+``full-go-cam-stats/``::
+
+    go-cam-aggregate-stats.html                     <- the only top-level file
+    full-go-cam-stats/
+        go-cam-group-stats.html
+        go-cam-curator-stats.html
+        go-cam-protein-complex.html / .tsv
+        go-cam-variable-definitions.html
+        group-curator-stats/go-cam-group-curator-stats-<group>.html (and -other)
+        drilldowns/aggregate/go-cam-unique-<stat>.html
+        drilldowns/groups/<group>/unique-<stat>.html
+        drilldowns/curators/<orcid>/unique-<stat>.html
+        data/                                       <- only with --data-subdir
+
+The layout is declared once in the ``*_PAGE`` / ``*_DIR`` constants below.
+Every link between pages is a plain relative href computed by ``rel_href``,
+so the reports need no JavaScript to navigate and work both from the release
+server and from a local copy.
+
+``--data-subdir`` (optional, e.g. ``full-go-cam-stats/data``) also places the
+stats input JSON (everything under ``--directory``) in that subdirectory of
+``--output``. It is copied when ``--directory`` differs from ``--output`` and
+moved when they are the same directory, so the raw JSON never sits next to
+the aggregate page. Without it the input directory is left alone.
 
 Inputs (under ``--directory``)
 ------------------------------
@@ -59,8 +90,8 @@ Inputs (under ``--directory``)
   ``FB:FBgn0000566`` or ``CHEBI:58211``. Supersedes the former separate
   ``gene_id_to_label.json`` / ``chebi_id_to_label.json`` maps.
 
-Outputs (written to ``--output``)
----------------------------------
+Outputs (written to ``--output``; see "Output layout" for directories)
+---------------------------------------------------------------------
 - ``go-cam-aggregate-stats.html`` — three-column ``Statistic | Total | Unique``
   table. Row labels intentionally drop the ``number of`` prefix to match the
   prefix-free JSON keys. Rows in order:
@@ -96,8 +127,9 @@ Outputs (written to ``--output``)
   ``<group> (group total)`` column carrying that group's own Total/Unique
   figures — the same numbers the group's column shows on
   ``go-cam-group-stats.html`` — followed by one column per curator in the
-  group (go-site issue #2743). Its Unique cells link to the ``go-cam-group-
-  <group>-*`` drilldown pages already emitted for the group-stats page. The
+  group (go-site issue #2743). Its Unique cells link to the
+  ``drilldowns/groups/<group>/`` pages already emitted for the group-stats
+  page. The
   ``-other`` page (ungrouped curators) has no such column, since no group
   stats exist for it.
 
@@ -117,8 +149,12 @@ Outputs (written to ``--output``)
   stable, but all values are 0.
 
 - Per-statistic drilldown pages (emitted when the corresponding unique
-  collection on ``AggregateInfo`` is non-empty). The first column header and
-  the (optional) label column depend on what kind of entry the page holds:
+  collection on ``AggregateInfo`` is non-empty), under
+  ``full-go-cam-stats/drilldowns/aggregate/``. The group / curator columns get
+  the same pages per entity under ``drilldowns/groups/<group>/`` and
+  ``drilldowns/curators/<orcid>/`` (go-site issue #2740). The first column
+  header and the (optional) label column depend on what kind of entry the
+  page holds:
 
     Gene-valued pages — columns ``ID`` + ``Label`` (label from
     ``id_to_label.json``):
@@ -149,8 +185,12 @@ Outputs (written to ``--output``)
   page schema stays stable across runs even when the source map is absent
   or incomplete.
 
-- ``go-cam-protein-complex.html`` + ``go-cam-protein-complex.tsv`` —
-  unchanged.
+- ``go-cam-protein-complex.html`` + ``go-cam-protein-complex.tsv`` — two
+  new columns after the protein complex label: ``Complex Part IDs`` (the
+  complex's ``has_part`` member IDs from ``protein_complex_members``) and
+  ``Complex Parts`` (those IDs resolved to labels via ``id_to_label.json``,
+  falling back to the ID). Both are blank when the complex has no recorded
+  parts, or when the input predates ``protein_complex_members``.
 - ``go-cam-variable-definitions.html`` — still emitted, but no longer linked
   from any page's navigation (omitted from ``available_pages``); it is now a
   standalone page reachable only by direct URL.
@@ -191,6 +231,13 @@ through an external lookup. Row labels in every emitted table drop the
 old ``number of`` prefix to match the prefix-free JSON keys the upstream
 producer now emits.
 
+Issue #2744. The release folder listed every report, drilldown page and
+JSON file side by side; users asked to see only the aggregate report,
+navigating from it to everything else. Moving the rest into
+``full-go-cam-stats/`` (with per-entity subdirectories for the many
+drilldown pages) achieves that with the existing static directory index,
+no JavaScript and no change to the indexer.
+
 How
 ---
 - Aggregate rows are declared centrally as
@@ -208,7 +255,11 @@ How
   namespace to populate rows 15-17 and their drilldown pages.
 - Each drilldown page is rendered via ``render_and_write`` against the
   record-oriented template, with the ``links`` block excluding the
-  drilldown's own filename so navigation back to the aggregate works.
+  drilldown's own path so navigation back to the aggregate works.
+- Page locations are tracked as paths relative to ``--output`` (row specs
+  carry ``drilldown_path``; tables and nav know the path of the page they
+  are rendered into). ``rel_href`` turns a (from, to) pair into the relative
+  href, and ``render_and_write`` creates subdirectories as needed.
 - Drilldown column layout is driven by ``drilldown_label_kind`` on each row
   spec — one of ``"gene"``, ``"chebi"``, ``"go"`` or ``None``. The renderer
   picks the corresponding label dict (``id_labels`` for gene+chebi,
@@ -245,10 +296,45 @@ import pystache
 import json
 import datetime
 import os
+import posixpath
 import glob
 import re
+import shutil
 import yaml
 from urllib.parse import urlparse
+
+
+# Output layout (go-site issue #2744). Every page path below is relative to
+# ``--output`` and uses "/" separators, since the same strings become hrefs.
+# Only the aggregate page sits at the top of the release folder; everything
+# else lives under FULL_STATS_DIR so the release directory listing shows a
+# single report plus one folder.
+AGGREGATE_PAGE = "go-cam-aggregate-stats.html"
+FULL_STATS_DIR = "full-go-cam-stats"
+GROUP_STATS_PAGE = FULL_STATS_DIR + "/go-cam-group-stats.html"
+CURATOR_STATS_PAGE = FULL_STATS_DIR + "/go-cam-curator-stats.html"
+PROTEIN_COMPLEX_PAGE = FULL_STATS_DIR + "/go-cam-protein-complex.html"
+PROTEIN_COMPLEX_TSV = FULL_STATS_DIR + "/go-cam-protein-complex.tsv"
+VARIABLE_DEFINITIONS_PAGE = FULL_STATS_DIR + "/go-cam-variable-definitions.html"
+GROUP_CURATOR_STATS_DIR = FULL_STATS_DIR + "/group-curator-stats"
+GROUP_CURATOR_STATS_OTHER_PAGE = GROUP_CURATOR_STATS_DIR + "/go-cam-group-curator-stats-other.html"
+AGGREGATE_DRILLDOWN_DIR = FULL_STATS_DIR + "/drilldowns/aggregate"
+GROUP_DRILLDOWN_DIR = FULL_STATS_DIR + "/drilldowns/groups"
+CURATOR_DRILLDOWN_DIR = FULL_STATS_DIR + "/drilldowns/curators"
+
+# Files in the stats input directory that are rendered reports rather than
+# stats data. When the input directory is also the output directory, these
+# are left out of --data-subdir (they are leftovers from an earlier run).
+REPORT_FILE_EXTENSIONS = (".html", ".tsv")
+
+
+def rel_href(from_page, to_page):
+    """Relative href from one output page to another.
+
+    Both arguments are paths relative to ``--output`` (``/``-separated), so a
+    page can link to any other page regardless of how deep either one sits.
+    """
+    return posixpath.relpath(to_page, posixpath.dirname(from_page) or ".")
 
 
 def capitalize_first(s):
@@ -280,7 +366,7 @@ CURATOR_STATS_NOTE = (
 )
 
 
-def build_entity_row_specs(stats, namespaces, basename_prefix=None):
+def build_entity_row_specs(stats, namespaces, drilldown_dir=None):
     """Total/Unique row catalog for one per-entity ``GocamStats`` dict.
 
     Mirrors the aggregate page's row order and labels (see
@@ -295,14 +381,16 @@ def build_entity_row_specs(stats, namespaces, basename_prefix=None):
     ``--resource`` namespace map, exactly as the aggregate and current
     group-stats pages do.
 
-    When ``basename_prefix`` is given, rows whose entries this entity actually
-    has also carry ``unique_entries`` / ``drilldown_basename`` /
+    When ``drilldown_dir`` is given, rows whose entries this entity actually
+    has also carry ``unique_entries`` / ``drilldown_path`` /
     ``drilldown_title`` / ``drilldown_label_kind``, in the same shape
     ``build_aggregate_row_specs`` produces, so ``render_drilldown_pages`` can
     emit per-entity entity lists and ``build_entity_table`` can link the Unique
-    cell to them (see go-site issue #2740). Page names are
-    ``<basename_prefix>-<slug>.html``. Without a prefix the specs carry no
-    drilldown keys, which is what the canonical label/order lookup uses.
+    cell to them (see go-site issue #2740). Page paths are
+    ``<drilldown_dir>/<slug>.html`` — one directory per group / curator, so
+    the many per-entity pages do not crowd a single directory listing (go-site
+    issue #2744). Without a directory the specs carry no drilldown keys, which
+    is what the canonical label/order lookup uses.
     """
     s = stats
     go_terms = s.get("list_go_terms", []) or []
@@ -338,14 +426,14 @@ def build_entity_row_specs(stats, namespaces, basename_prefix=None):
 
     def spec(label, total=None, unique=None, slug=None, drilldown_title=None):
         row = {"label": label, "total": total, "unique": unique}
-        if not basename_prefix or not slug:
+        if not drilldown_dir or not slug:
             return row
         entries, kind = entries_by_slug.get(slug, ([], None))
         if not entries:
             return row
         row.update({
             "unique_entries": entries,
-            "drilldown_basename": "{}-{}.html".format(basename_prefix, slug),
+            "drilldown_path": "{}/{}.html".format(drilldown_dir, slug),
             "drilldown_title": drilldown_title,
             "drilldown_label_kind": kind,
         })
@@ -416,8 +504,8 @@ def build_entity_row_specs(stats, namespaces, basename_prefix=None):
     ]
 
 
-def build_entity_table(entity_data_list, column_specs, namespaces,
-                       basename_prefixes=None):
+def build_entity_table(entity_data_list, column_specs, namespaces, page_path,
+                       drilldown_dirs=None):
     """Build a grouped Total/Unique table for entity-as-column pages.
 
     Each entity (group or curator) becomes a column group spanning two
@@ -429,12 +517,16 @@ def build_entity_table(entity_data_list, column_specs, namespaces,
             column. An entry of ``None`` renders a blank column (used for the
             navigation-only "Other" column on the group-stats page).
         column_specs: list of ``{"id": label, "href": optional}`` aligned with
-            ``entity_data_list``.
+            ``entity_data_list``. ``href`` is a page path relative to
+            ``--output``.
         namespaces: GO-id → namespace map for the MF/BP/CC rows.
-        basename_prefixes: optional list aligned with ``entity_data_list``
-            giving each entity's drilldown page-name prefix. When supplied, a
-            Unique cell whose row has entries links to that entity's drilldown
-            page (go-site issue #2740). Entities with no prefix stay plain.
+        page_path: path (relative to ``--output``) of the page this table is
+            rendered into. Header and Unique-cell links are made relative to
+            it, so they resolve wherever the page sits in the layout.
+        drilldown_dirs: optional list aligned with ``entity_data_list``
+            giving each entity's drilldown directory. When supplied, a Unique
+            cell whose row has entries links to that entity's drilldown page
+            (go-site issue #2740). Entities with no directory stay plain.
 
     Returns:
         (header, subheader, rows):
@@ -452,24 +544,25 @@ def build_entity_table(entity_data_list, column_specs, namespaces,
     def parity(idx):
         return "ent-a" if idx % 2 == 0 else "ent-b"
 
-    header = [{"id": c["id"], "href": c.get("href"), "colspan": 2,
-               "cls": parity(e)}
+    header = [{"id": c["id"],
+               "href": rel_href(page_path, c["href"]) if c.get("href") else None,
+               "colspan": 2, "cls": parity(e)}
               for e, c in enumerate(column_specs)]
     subheader = []
     for e in range(len(column_specs)):
         subheader.append({"label": "Total", "cls": parity(e)})
         subheader.append({"label": "Unique", "cls": parity(e)})
 
-    prefixes = basename_prefixes or [None] * len(entity_data_list)
+    dirs = drilldown_dirs or [None] * len(entity_data_list)
     per_entity = [
-        build_entity_row_specs(d, namespaces, prefixes[i]) if d is not None else None
+        build_entity_row_specs(d, namespaces, dirs[i]) if d is not None else None
         for i, d in enumerate(entity_data_list)
     ]
 
-    def cell(value, cls, href=None):
+    def cell(value, cls, target=None):
         c = {"value": value if value is not None else "-", "cls": cls}
-        if href and value:
-            c["href"] = href
+        if target and value:
+            c["href"] = rel_href(page_path, target)
         return c
 
     rows = []
@@ -483,7 +576,7 @@ def build_entity_table(entity_data_list, column_specs, namespaces,
             else:
                 values.append(cell(specs[i]["total"], cls))
                 values.append(cell(specs[i]["unique"], cls,
-                                   specs[i].get("drilldown_basename")))
+                                   specs[i].get("drilldown_path")))
         rows.append({
             "field_display": capitalize_first(r["label"]),
             "values": values,
@@ -588,6 +681,20 @@ def format_curator_list(uris, users_by_uri):
     return ", ".join(get_curator_display_name(uri, users_by_uri) for uri in uris)
 
 
+def format_id_list(ids):
+    """Comma-join a list of IDs; empty or missing yields an empty string."""
+    if not ids:
+        return ""
+    return ", ".join(ids)
+
+
+def format_id_label_list(ids, id_labels):
+    """Resolve a list of IDs to labels (falling back to the ID), comma-joined."""
+    if not ids:
+        return ""
+    return ", ".join(id_labels.get(term_id) or term_id for term_id in ids)
+
+
 def format_group_list(uris, groups_by_id):
     """Resolve a list of group URIs to labels, comma-joined."""
     if not uris:
@@ -603,14 +710,20 @@ def format_group_list(uris, groups_by_id):
     return ", ".join(labels)
 
 
-def build_links(exclude_filename, available_pages):
-    """Build navigation links excluding the current page."""
-    return [{"href": fn, "label": label} for fn, label in available_pages if fn != exclude_filename]
+def build_links(current_page, available_pages):
+    """Build navigation links excluding the current page.
+
+    ``current_page`` and the paths in ``available_pages`` are relative to
+    ``--output``; each href is made relative to ``current_page``.
+    """
+    return [{"href": rel_href(current_page, path), "label": label}
+            for path, label in available_pages if path != current_page]
 
 
 def render_and_write(template_str, context, output_path):
     """Render a mustache template and write to output_path."""
     rendered = pystache.render(template_str, context)
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, "w") as f:
         f.write(rendered)
     click.echo("Wrote {}".format(output_path))
@@ -725,7 +838,8 @@ def build_aggregate_row_specs(model_entity, namespaces):
         total              — int or None ("-" when None)
         unique             — int or None ("-" when None)
         unique_entries     — iterable of entries for the drilldown page, or None
-        drilldown_basename — output HTML filename for the drilldown, or None
+        drilldown_path     — drilldown page path relative to ``--output``
+                             (under ``AGGREGATE_DRILLDOWN_DIR``), or None
         drilldown_title    — title shown on the drilldown page, or None
         drilldown_label_kind — what the drilldown's first column holds, used to
             pick header text and the label-lookup source:
@@ -763,14 +877,14 @@ def build_aggregate_row_specs(model_entity, namespaces):
     unique_pmids = sorted(r for r in unique_refs if _is_pmid(r))
 
     def spec(label, total=None, unique=None, entries=None,
-             drilldown_basename=None, drilldown_title=None,
+             drilldown_path=None, drilldown_title=None,
              drilldown_label_kind=None):
         return {
             "label": label,
             "total": total,
             "unique": unique,
             "unique_entries": entries,
-            "drilldown_basename": drilldown_basename,
+            "drilldown_path": drilldown_path,
             "drilldown_title": drilldown_title,
             "drilldown_label_kind": drilldown_label_kind,
         }
@@ -785,7 +899,7 @@ def build_aggregate_row_specs(model_entity, namespaces):
         spec("gene product enablers",
              unique=agg.get("unique_gene_product_enablers", 0),
              entries=sorted(agg.get("unique_enabled_by_gene_product", []) or []),
-             drilldown_basename="go-cam-unique-gene-product-enablers.html",
+             drilldown_path=AGGREGATE_DRILLDOWN_DIR + "/go-cam-unique-gene-product-enablers.html",
              drilldown_title="Unique Gene Product Enablers",
              drilldown_label_kind="gene"),
         spec("activity units enabled by protein complex",
@@ -793,69 +907,69 @@ def build_aggregate_row_specs(model_entity, namespaces):
         spec("members of protein complex enablers",
              unique=agg.get("unique_member_protein_complex_genes", 0),
              entries=sorted(agg.get("list_of_unique_protein_complex_genes", []) or []),
-             drilldown_basename="go-cam-unique-protein-complex-member-genes.html",
+             drilldown_path=AGGREGATE_DRILLDOWN_DIR + "/go-cam-unique-protein-complex-member-genes.html",
              drilldown_title="Members of Protein Complex Enablers",
              drilldown_label_kind="gene"),
         spec("genes (enablers + inputs)",
              unique=agg.get("unique_gene_product_and_protein_complex_gene_enablers", 0),
              entries=combined_genes,
-             drilldown_basename="go-cam-unique-genes-enablers-inputs.html",
+             drilldown_path=AGGREGATE_DRILLDOWN_DIR + "/go-cam-unique-genes-enablers-inputs.html",
              drilldown_title="Unique Genes (Enablers + Inputs)",
              drilldown_label_kind="gene"),
         spec("chemical inputs",
              total=agg.get("chemical_inputs", 0),
              unique=len(unique_chem_inputs),
              entries=unique_chem_inputs,
-             drilldown_basename="go-cam-unique-chemical-inputs.html",
+             drilldown_path=AGGREGATE_DRILLDOWN_DIR + "/go-cam-unique-chemical-inputs.html",
              drilldown_title="Unique Chemical Inputs",
              drilldown_label_kind="chebi"),
         spec("other inputs (gene products and protein complexes)",
              total=agg.get("other_inputs", 0),
              unique=len(unique_other_inputs),
              entries=unique_other_inputs,
-             drilldown_basename="go-cam-unique-other-inputs.html",
+             drilldown_path=AGGREGATE_DRILLDOWN_DIR + "/go-cam-unique-other-inputs.html",
              drilldown_title="Unique Other Inputs",
              drilldown_label_kind="gene"),
         spec("chemical outputs",
              total=agg.get("chemical_outputs", 0),
              unique=len(unique_chem_outputs),
              entries=unique_chem_outputs,
-             drilldown_basename="go-cam-unique-chemical-outputs.html",
+             drilldown_path=AGGREGATE_DRILLDOWN_DIR + "/go-cam-unique-chemical-outputs.html",
              drilldown_title="Unique Chemical Outputs",
              drilldown_label_kind="chebi"),
         spec("other outputs (gene products and protein complexes)",
              total=agg.get("other_outputs", 0),
              unique=len(unique_other_outputs),
              entries=unique_other_outputs,
-             drilldown_basename="go-cam-unique-other-outputs.html",
+             drilldown_path=AGGREGATE_DRILLDOWN_DIR + "/go-cam-unique-other-outputs.html",
              drilldown_title="Unique Other Outputs",
              drilldown_label_kind="gene"),
         spec("GO terms",
              total=agg.get("go_terms", 0),
              unique=agg.get("unique_go_terms", 0),
              entries=unique_go,
-             drilldown_basename="go-cam-unique-go-terms.html",
+             drilldown_path=AGGREGATE_DRILLDOWN_DIR + "/go-cam-unique-go-terms.html",
              drilldown_title="Unique GO Terms",
              drilldown_label_kind="go"),
         spec("GO MF terms",
              total=len(mf_terms),
              unique=len(unique_mf),
              entries=unique_mf,
-             drilldown_basename="go-cam-unique-go-mf-terms.html",
+             drilldown_path=AGGREGATE_DRILLDOWN_DIR + "/go-cam-unique-go-mf-terms.html",
              drilldown_title="Unique GO Molecular Function Terms",
              drilldown_label_kind="go"),
         spec("GO BP terms",
              total=len(bp_terms),
              unique=len(unique_bp),
              entries=unique_bp,
-             drilldown_basename="go-cam-unique-go-bp-terms.html",
+             drilldown_path=AGGREGATE_DRILLDOWN_DIR + "/go-cam-unique-go-bp-terms.html",
              drilldown_title="Unique GO Biological Process Terms",
              drilldown_label_kind="go"),
         spec("GO CC terms (excluding protein complexes)",
              total=len(cc_terms),
              unique=len(unique_cc),
              entries=unique_cc,
-             drilldown_basename="go-cam-unique-go-cc-terms.html",
+             drilldown_path=AGGREGATE_DRILLDOWN_DIR + "/go-cam-unique-go-cc-terms.html",
              drilldown_title="Unique GO Cellular Component Terms excluding Protein Complexes",
              drilldown_label_kind="go"),
         spec("causal relations",
@@ -865,12 +979,12 @@ def build_aggregate_row_specs(model_entity, namespaces):
         spec("references",
              unique=agg.get("unique_references", 0),
              entries=unique_refs,
-             drilldown_basename="go-cam-unique-references.html",
+             drilldown_path=AGGREGATE_DRILLDOWN_DIR + "/go-cam-unique-references.html",
              drilldown_title="Unique References"),
         spec("PMIDs",
              unique=agg.get("unique_pmid", 0),
              entries=unique_pmids,
-             drilldown_basename="go-cam-unique-pmids.html",
+             drilldown_path=AGGREGATE_DRILLDOWN_DIR + "/go-cam-unique-pmids.html",
              drilldown_title="Unique PMIDs"),
     ]
 
@@ -881,19 +995,24 @@ def _cell_total(spec_):
     return {"value": spec_["total"]}
 
 
-def _cell_unique(spec_):
+def _cell_unique(spec_, page_path):
     if spec_["unique"] is None:
         return {"value": "-"}
-    if spec_["unique_entries"] and spec_["drilldown_basename"]:
-        return {"value": spec_["unique"], "href": spec_["drilldown_basename"]}
+    if spec_["unique_entries"] and spec_["drilldown_path"]:
+        return {"value": spec_["unique"],
+                "href": rel_href(page_path, spec_["drilldown_path"])}
     return {"value": spec_["unique"]}
 
 
-def render_aggregate_rows(row_specs):
-    """Convert aggregate row specs into template-ready row dicts."""
+def render_aggregate_rows(row_specs, page_path):
+    """Convert aggregate row specs into template-ready row dicts.
+
+    ``page_path`` is where the table is rendered (relative to ``--output``);
+    Unique-cell links are made relative to it.
+    """
     return [{
         "field_display": capitalize_first(s["label"]),
-        "values": [_cell_total(s), _cell_unique(s)],
+        "values": [_cell_total(s), _cell_unique(s, page_path)],
     } for s in row_specs]
 
 
@@ -902,7 +1021,9 @@ def render_drilldown_pages(row_specs, records_template_str, output_dir,
                            date):
     """Emit one drilldown HTML page per row spec that has non-empty entries.
 
-    Each page lists the unique entries (one row per entry). The first column
+    Each page is written to ``<output_dir>/<drilldown_path>``, creating the
+    drilldown subdirectory as needed, and lists the unique entries (one row
+    per entry). The first column
     header and the optional second "label" column are chosen by
     ``drilldown_label_kind`` on the spec:
 
@@ -924,8 +1045,8 @@ def render_drilldown_pages(row_specs, records_template_str, output_dir,
         return
     for s in row_specs:
         entries = s.get("unique_entries")
-        basename = s.get("drilldown_basename")
-        if not entries or not basename:
+        page_path = s.get("drilldown_path")
+        if not entries or not page_path:
             continue
 
         kind = s.get("drilldown_label_kind")
@@ -949,13 +1070,13 @@ def render_drilldown_pages(row_specs, records_template_str, output_dir,
             "title": "GO-CAM {} ({})".format(s.get("drilldown_title") or "Unique Entries", len(entries)),
             "columns": columns,
             "records": records,
-            "links": build_links(basename, available_pages),
+            "links": build_links(page_path, available_pages),
             "date": date,
-        }, os.path.join(output_dir, basename))
+        }, os.path.join(output_dir, page_path))
 
 
-def curator_basename_prefix(uri, fallback_label):
-    """Drilldown page-name prefix for one curator.
+def curator_drilldown_dir(uri, fallback_label):
+    """Drilldown directory for one curator, relative to ``--output``.
 
     Uses the last path segment of the ORCID URI (e.g.
     ``https://orcid.org/0000-0002-3358-4423`` → ``0000-0002-3358-4423``), which
@@ -965,25 +1086,37 @@ def curator_basename_prefix(uri, fallback_label):
     segment = ""
     if uri:
         segment = urlparse(uri).path.rstrip("/").split("/")[-1] or uri
-    return "go-cam-curator-{}".format(make_safe_filename(segment or fallback_label))
+    return "{}/{}".format(CURATOR_DRILLDOWN_DIR,
+                          make_safe_filename(segment or fallback_label))
 
 
-def render_entity_drilldowns(entity_data_list, basename_prefixes, namespaces,
+def group_drilldown_dir(label):
+    """Drilldown directory for one group, relative to ``--output``."""
+    return "{}/{}".format(GROUP_DRILLDOWN_DIR, make_safe_filename(label))
+
+
+def group_curator_stats_page(label):
+    """Per-group curator page path, relative to ``--output``."""
+    return "{}/go-cam-group-curator-stats-{}.html".format(
+        GROUP_CURATOR_STATS_DIR, make_safe_filename(label))
+
+
+def render_entity_drilldowns(entity_data_list, drilldown_dirs, namespaces,
                              records_template_str, output_dir, available_pages,
                              ontology_labels, id_labels, date):
     """Emit per-entity drilldown pages for every group / curator column.
 
-    One page per (entity, row) pair that has entries, named
-    ``<basename_prefix>-<slug>.html``. Rows without entries are skipped by
+    One page per (entity, row) pair that has entries, written to
+    ``<drilldown_dir>/<slug>.html``. Rows without entries are skipped by
     ``render_drilldown_pages``, so entities contribute only the pages they can
     actually fill (go-site issue #2740).
     """
     if not records_template_str:
         return
-    for data, prefix in zip(entity_data_list, basename_prefixes):
-        if data is None or not prefix:
+    for data, drilldown_dir in zip(entity_data_list, drilldown_dirs):
+        if data is None or not drilldown_dir:
             continue
-        specs = build_entity_row_specs(data, namespaces, prefix)
+        specs = build_entity_row_specs(data, namespaces, drilldown_dir)
         render_drilldown_pages(specs, records_template_str, output_dir,
                                available_pages, ontology_labels, id_labels,
                                date)
@@ -1010,6 +1143,70 @@ def ensure_group_entry(group_uri, groups_by_id):
     groups_by_id[group_uri] = {"id": group_uri, "label": label}
 
 
+def validate_data_subdir(ctx, param, value):
+    """Click callback: ``--data-subdir`` must be a subdirectory of ``--output``."""
+    if value is None:
+        return None
+    norm = posixpath.normpath(value.replace(os.sep, "/")) if value else ""
+    if not value or os.path.isabs(value) or norm in (".", "") or norm.split("/")[0] == "..":
+        raise click.BadParameter(
+            "must be a relative path inside --output, e.g. {}/data".format(FULL_STATS_DIR))
+    return norm
+
+
+def list_input_data_entries(directory, output, data_subdir):
+    """Top-level entries of the stats input directory that are stats data.
+
+    Called before any report is written, so the snapshot reflects the input
+    as produced by ``output_stats_for_gocam_models.py``. Skipped:
+
+    - rendered reports (``.html`` / ``.tsv``) left over from an earlier run
+      when ``--output`` is the input directory;
+    - the report tree itself (``full-go-cam-stats/``) and the top directory
+      of ``--data-subdir``, so a re-run never moves them into themselves;
+    - the output directory, when it is nested inside the input directory.
+    """
+    output_real = os.path.realpath(output)
+    in_place = os.path.realpath(directory) == output_real
+    skip_names = {FULL_STATS_DIR, data_subdir.split("/")[0]} if in_place else set()
+    entries = []
+    for name in sorted(os.listdir(directory)):
+        path = os.path.join(directory, name)
+        if name in skip_names:
+            continue
+        if in_place and os.path.isfile(path) and name.endswith(REPORT_FILE_EXTENSIONS):
+            continue
+        if os.path.realpath(path) == output_real:
+            continue
+        entries.append(name)
+    return entries
+
+
+def stage_input_data(directory, output, data_subdir, entries):
+    """Place the stats input data under ``<output>/<data_subdir>``.
+
+    The data is copied when ``--directory`` and ``--output`` differ, leaving
+    the input untouched. When they are the same directory it is moved
+    instead, so the raw JSON no longer sits next to the aggregate page at the
+    top of the release folder (go-site issue #2744).
+    """
+    dest = os.path.join(output, data_subdir)
+    os.makedirs(dest, exist_ok=True)
+    in_place = os.path.realpath(directory) == os.path.realpath(output)
+    for name in entries:
+        src = os.path.join(directory, name)
+        dst = os.path.join(dest, name)
+        if in_place:
+            if os.path.isdir(dst):
+                shutil.rmtree(dst)
+            shutil.move(src, dst)
+        elif os.path.isdir(src):
+            shutil.copytree(src, dst, dirs_exist_ok=True)
+        else:
+            shutil.copy2(src, dst)
+    click.echo("{} stats data to {}".format("Moved" if in_place else "Copied", dest))
+
+
 @click.command()
 @click.option("--directory", type=click.Path(exists=True), required=True)
 @click.option("--template", type=click.File("r"), required=True)
@@ -1021,8 +1218,16 @@ def ensure_group_entry(group_uri, groups_by_id):
 @click.option("--metadata", type=click.Path(exists=True), required=False, default=None,
               help="Directory containing users.yaml and groups.yaml metadata files")
 @click.option("--date", default=str(datetime.date.today()))
-def main(directory, template, output, template_records, resource, metadata, date):
+@click.option("--data-subdir", default=None, callback=validate_data_subdir,
+              help="Also place the stats input JSON (everything under --directory) in this "
+                   "subdirectory of --output, e.g. {}/data. Copied when --directory differs "
+                   "from --output; moved when they are the same directory.".format(FULL_STATS_DIR))
+def main(directory, template, output, template_records, resource, metadata, date, data_subdir):
     os.makedirs(output, exist_ok=True)
+    # Snapshot the input before any report is written into it (--output may be
+    # the input directory itself).
+    data_entries = (list_input_data_entries(directory, output, data_subdir)
+                    if data_subdir else [])
     template_str = template.read()
     records_template_str = template_records.read() if template_records else None
 
@@ -1044,15 +1249,16 @@ def main(directory, template, output, template_records, resource, metadata, date
     # still renders (with blank values) when the source data isn't available.
     id_labels = load_id_labels(directory)
 
-    # Build dynamic available_pages list based on which JSON files exist
+    # Build dynamic available_pages list based on which JSON files exist.
+    # Paths are relative to --output (see the layout constants at the top).
     available_pages = [
-        ("go-cam-aggregate-stats.html", "Aggregate Statistics"),
-        ("go-cam-group-stats.html", "Stats by Group"),
+        (AGGREGATE_PAGE, "Aggregate Statistics"),
+        (GROUP_STATS_PAGE, "Stats by Group"),
     ]
     protein_complex_file = os.path.join(directory, "aggregate_protein_complex.json")
     definitions_file = os.path.join(directory, "member_variable_definitions.json")
     if records_template_str and os.path.exists(protein_complex_file):
-        available_pages.append(("go-cam-protein-complex.html", "Protein Complex Activities"))
+        available_pages.append((PROTEIN_COMPLEX_PAGE, "Protein Complex Activities"))
     # go-cam-variable-definitions.html is still generated below, but intentionally
     # NOT added to available_pages so no page links to it (standalone page).
 
@@ -1066,16 +1272,16 @@ def main(directory, template, output, template_records, resource, metadata, date
         model_entity = json.load(f)
 
     row_specs = build_aggregate_row_specs(model_entity, ontology_namespaces)
-    aggregate_rows = render_aggregate_rows(row_specs)
+    aggregate_rows = render_aggregate_rows(row_specs, AGGREGATE_PAGE)
     aggregate_header = [{"id": "Total"}, {"id": "Unique"}]
 
     render_and_write(template_str, {
         "title": "GO-CAM Aggregate Statistics",
         "header": aggregate_header,
         "rows": aggregate_rows,
-        "links": build_links("go-cam-aggregate-stats.html", available_pages),
+        "links": build_links(AGGREGATE_PAGE, available_pages),
         "date": date,
-    }, os.path.join(output, "go-cam-aggregate-stats.html"))
+    }, os.path.join(output, AGGREGATE_PAGE))
 
     render_drilldown_pages(row_specs, records_template_str, output,
                            available_pages, ontology_labels, id_labels,
@@ -1099,17 +1305,17 @@ def main(directory, template, output, template_records, resource, metadata, date
             {"id": get_curator_display_name(uri, users_by_uri)}
             for uri in curator_uris
         ]
-        curator_prefixes = [
-            curator_basename_prefix(uri, name["id"])
+        curator_dirs = [
+            curator_drilldown_dir(uri, name["id"])
             for uri, name in zip(curator_uris, curator_columns)
         ]
 
         header, subheader, rows = build_entity_table(
             curator_data_list, curator_columns, ontology_namespaces,
-            curator_prefixes)
+            CURATOR_STATS_PAGE, curator_dirs)
 
         render_entity_drilldowns(
-            curator_data_list, curator_prefixes, ontology_namespaces,
+            curator_data_list, curator_dirs, ontology_namespaces,
             records_template_str, output, available_pages, ontology_labels,
             id_labels, date)
 
@@ -1120,9 +1326,9 @@ def main(directory, template, output, template_records, resource, metadata, date
             "header": header,
             "subheader": subheader,
             "rows": rows,
-            "links": build_links("go-cam-curator-stats.html", available_pages),
+            "links": build_links(CURATOR_STATS_PAGE, available_pages),
             "date": date,
-        }, os.path.join(output, "go-cam-curator-stats.html"))
+        }, os.path.join(output, CURATOR_STATS_PAGE))
     else:
         click.echo("No curator stats files found", err=True)
 
@@ -1134,7 +1340,7 @@ def main(directory, template, output, template_records, resource, metadata, date
             group_data = []
             group_uris = []
             group_labels = []
-            group_page_filenames = []
+            group_pages = []
             for fpath in group_files:
                 with open(fpath) as f:
                     data = json.load(f)
@@ -1150,7 +1356,7 @@ def main(directory, template, output, template_records, resource, metadata, date
                 else:
                     label = group_uri
                 group_labels.append(label)
-                group_page_filenames.append("go-cam-group-curator-stats-{}.html".format(make_safe_filename(label)))
+                group_pages.append(group_curator_stats_page(label))
 
             # Build group membership for curators (needed for the per-group
             # pages below and the navigation-only "Other" column).
@@ -1169,27 +1375,25 @@ def main(directory, template, output, template_records, resource, metadata, date
             # per-group curator page), plus a navigation-only "Other" column
             # (blank cells) when there are ungrouped curators.
             column_specs = [
-                {"id": label, "href": page_fn}
-                for label, page_fn in zip(group_labels, group_page_filenames)
+                {"id": label, "href": page_path}
+                for label, page_path in zip(group_labels, group_pages)
             ]
             entity_data = list(group_data)
-            entity_prefixes = [
-                "go-cam-group-{}".format(make_safe_filename(lbl))
-                for lbl in group_labels
-            ]
+            entity_dirs = [group_drilldown_dir(lbl) for lbl in group_labels]
             if ungrouped_curators:
                 column_specs.append({
                     "id": "Other",
-                    "href": "go-cam-group-curator-stats-other.html",
+                    "href": GROUP_CURATOR_STATS_OTHER_PAGE,
                 })
                 entity_data.append(None)
-                entity_prefixes.append(None)
+                entity_dirs.append(None)
 
             header, subheader, rows = build_entity_table(
-                entity_data, column_specs, ontology_namespaces, entity_prefixes)
+                entity_data, column_specs, ontology_namespaces,
+                GROUP_STATS_PAGE, entity_dirs)
 
             render_entity_drilldowns(
-                entity_data, entity_prefixes, ontology_namespaces,
+                entity_data, entity_dirs, ontology_namespaces,
                 records_template_str, output, available_pages, ontology_labels,
                 id_labels, date)
 
@@ -1200,25 +1404,25 @@ def main(directory, template, output, template_records, resource, metadata, date
                 "header": header,
                 "subheader": subheader,
                 "rows": rows,
-                "links": build_links("go-cam-group-stats.html", available_pages),
+                "links": build_links(GROUP_STATS_PAGE, available_pages),
                 "date": date,
-            }, os.path.join(output, "go-cam-group-stats.html"))
+            }, os.path.join(output, GROUP_STATS_PAGE))
 
             # --- Create per-group curator pages ---
-            for grp_stats, group_uri, label, page_fn in zip(
-                    group_data, group_uris, group_labels, group_page_filenames):
+            for grp_stats, group_uri, label, page_path in zip(
+                    group_data, group_uris, group_labels, group_pages):
                 curators_in_group = group_to_curators.get(group_uri, [])
 
-                grp_links = build_links(page_fn, available_pages)
+                grp_links = build_links(page_path, available_pages)
 
                 # Leading column: the group's own Total/Unique figures, the
                 # same values that group's column carries on
                 # go-cam-group-stats.html (go-site issue #2743). Its drilldown
-                # prefix matches the one used for the group-stats page, so the
-                # Unique cells link to pages already emitted above rather than
-                # duplicating them.
+                # directory matches the one used for the group-stats page, so
+                # the Unique cells link to pages already emitted above rather
+                # than duplicating them.
                 grp_total_column = {"id": "{} (group total)".format(label)}
-                grp_total_prefix = "go-cam-group-{}".format(make_safe_filename(label))
+                grp_total_dir = group_drilldown_dir(label)
 
                 if not curators_in_group:
                     click.echo("No curators found for group '{}' via metadata".format(label), err=True)
@@ -1226,7 +1430,7 @@ def main(directory, template, output, template_records, resource, metadata, date
                     # broken; it carries the group totals column on its own.
                     solo_header, solo_subheader, solo_rows = build_entity_table(
                         [grp_stats], [grp_total_column], ontology_namespaces,
-                        [grp_total_prefix])
+                        page_path, [grp_total_dir])
                     render_and_write(template_str, {
                         "title": "GO-CAM Curator Stats - {}".format(label),
                         "grouped": True,
@@ -1236,19 +1440,19 @@ def main(directory, template, output, template_records, resource, metadata, date
                         "rows": solo_rows,
                         "links": grp_links,
                         "date": date,
-                    }, os.path.join(output, page_fn))
+                    }, os.path.join(output, page_path))
                     continue
 
                 grp_curator_data = [grp_stats] + [c[0] for c in curators_in_group]
                 grp_columns = [grp_total_column] + [{"id": c[1]} for c in curators_in_group]
-                grp_prefixes = [grp_total_prefix] + [
-                    curator_basename_prefix(d.get("uri"), c[1])
+                grp_dirs = [grp_total_dir] + [
+                    curator_drilldown_dir(d.get("uri"), c[1])
                     for d, c in zip([c[0] for c in curators_in_group], curators_in_group)
                 ]
 
                 grp_header, grp_subheader, grp_rows = build_entity_table(
                     grp_curator_data, grp_columns, ontology_namespaces,
-                    grp_prefixes)
+                    page_path, grp_dirs)
 
                 render_and_write(template_str, {
                     "title": "GO-CAM Curator Stats - {}".format(label),
@@ -1259,20 +1463,20 @@ def main(directory, template, output, template_records, resource, metadata, date
                     "rows": grp_rows,
                     "links": grp_links,
                     "date": date,
-                }, os.path.join(output, page_fn))
+                }, os.path.join(output, page_path))
 
             # --- Create "Other" page for ungrouped curators ---
             if ungrouped_curators:
                 other_data = [c[0] for c in ungrouped_curators]
                 other_columns = [{"id": c[1]} for c in ungrouped_curators]
-                other_prefixes = [
-                    curator_basename_prefix(d.get("uri"), c[1])
+                other_dirs = [
+                    curator_drilldown_dir(d.get("uri"), c[1])
                     for d, c in zip(other_data, ungrouped_curators)
                 ]
 
                 other_header, other_subheader, other_rows = build_entity_table(
                     other_data, other_columns, ontology_namespaces,
-                    other_prefixes)
+                    GROUP_CURATOR_STATS_OTHER_PAGE, other_dirs)
 
                 render_and_write(template_str, {
                     "title": "GO-CAM Curator Stats - Other",
@@ -1281,9 +1485,9 @@ def main(directory, template, output, template_records, resource, metadata, date
                     "header": other_header,
                     "subheader": other_subheader,
                     "rows": other_rows,
-                    "links": build_links("go-cam-group-curator-stats-other.html", available_pages),
+                    "links": build_links(GROUP_CURATOR_STATS_OTHER_PAGE, available_pages),
                     "date": date,
-                }, os.path.join(output, "go-cam-group-curator-stats-other.html"))
+                }, os.path.join(output, GROUP_CURATOR_STATS_OTHER_PAGE))
 
         else:
             click.echo("No group stats files found in {}".format(group_dir), err=True)
@@ -1307,6 +1511,11 @@ def main(directory, template, output, template_records, resource, metadata, date
                 field_specs.append(
                     ("protein_complex_term", "Protein Complex Label",
                      lambda go_id: get_go_term_label(go_id, ontology_labels)))
+            field_specs.extend([
+                ("protein_complex_members", "Complex Part IDs", format_id_list),
+                ("protein_complex_members", "Complex Parts",
+                 lambda ids: format_id_label_list(ids, id_labels)),
+            ])
             field_specs.append(("molecular_function", "Molecular Function", str))
             if ontology_labels:
                 field_specs.append(
@@ -1322,9 +1531,9 @@ def main(directory, template, output, template_records, resource, metadata, date
                 "title": "GO-CAM Protein Complex Activities",
                 "columns": columns,
                 "records": records,
-                "links": build_links("go-cam-protein-complex.html", available_pages),
+                "links": build_links(PROTEIN_COMPLEX_PAGE, available_pages),
                 "date": date,
-            }, os.path.join(output, "go-cam-protein-complex.html"))
+            }, os.path.join(output, PROTEIN_COMPLEX_PAGE))
 
             # Also write TSV with the same columns
             tsv_headers = [label for _, label, _ in field_specs]
@@ -1335,7 +1544,7 @@ def main(directory, template, output, template_records, resource, metadata, date
                     raw = rec.get(field_name, "")
                     row.append(formatter(raw))
                 tsv_rows.append(row)
-            write_tsv(tsv_headers, tsv_rows, os.path.join(output, "go-cam-protein-complex.tsv"))
+            write_tsv(tsv_headers, tsv_rows, os.path.join(output, PROTEIN_COMPLEX_TSV))
         else:
             click.echo("aggregate_protein_complex.json is empty", err=True)
     elif records_template_str:
@@ -1358,14 +1567,19 @@ def main(directory, template, output, template_records, resource, metadata, date
                 "title": "GO-CAM Variable Definitions",
                 "columns": columns,
                 "records": records,
-                # available_pages no longer contains this page, so exclude is a no-op.
-                "links": build_links(None, available_pages),
+                # available_pages does not contain this page, so every page
+                # in it is linked.
+                "links": build_links(VARIABLE_DEFINITIONS_PAGE, available_pages),
                 "date": date,
-            }, os.path.join(output, "go-cam-variable-definitions.html"))
+            }, os.path.join(output, VARIABLE_DEFINITIONS_PAGE))
         else:
             click.echo("member_variable_definitions.json is empty", err=True)
     elif records_template_str:
         click.echo("No member_variable_definitions.json found in {}".format(directory), err=True)
+
+    # --- Stats input data (optional) ---
+    if data_subdir:
+        stage_input_data(directory, output, data_subdir, data_entries)
 
 
 if __name__ == "__main__":
