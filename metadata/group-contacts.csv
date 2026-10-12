@@ -151,8 +151,8 @@ SynGO,@ftwkoopmans,Frank Koopmans @ftwkoopmans,Curation,< ! > In-house < ! >,
 SynGO-UCL,@RLovering, Ruth Lovering @RLovering,Curation,<P2GO, 
 SYSCILIA_CCNET,@krchristie,Karen Christie @krchristie,Curation,<P2GO?,
 TAIR,,,,,
-° TAIR,@tberardini,Tanya Berardini @tberardini,Curation,<In-house>,Plant biology 
 ° TAIR,,Leonore Reiser @lreiser,Curation,<In-house>,Plant biology
+° TAIR,@tberardini,Tanya Berardini @tberardini,Curation,<In-house>,Plant biology 
 ° TAIR,,Erica Bakker @ebakker2,Curation,<In-house>,Plant biology
 TIGR,@Antonialock @pgaudet @vanaukenk,Not actively maintained/GO_Central,Curation,< (inactive)P2GO,contact @mgiglio99 for queries
 UF_OPP,, Colbie Reed @dexink,,, microbes
