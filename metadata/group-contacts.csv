@@ -1,4 +1,4 @@
-Group,Contact for Annotation Review,Contact name & Contact GitHub ID,Role,Curation Tool,Expertise/Domains of interest
+Group,Contact for Annotation Review,Contact name  @ContactGitHubID,Role,Curation Tool,Expertise/Domains of interest
 ,,,,< ! > = No automatic replacement of obsolete terms,
 AgBase,@Antonialock @pgaudet @vanaukenk,Not actively maintained/GO_Central,Curation (inactive),P2GO,
 Alzheimers_University_of_Toronto,@RLovering, Ruth Lovering @RLovering,Curation,P2GO, 
@@ -161,6 +161,7 @@ UniProt,,,,,
 ° UniProt (EBI),@Antonialock,Antonia Lock @Antonialock,Curation,P2GO, GOA contact for GO
 ° UniProt (EBI),,Michelle Magrane @magrane,Curation,P2GO,
 ° UniProt (EBI),,Sandra Orchard @sandraorchard,Curation,P2GO,
+° UniProt (EBI),,Yvonne Lussi @Yvonne-Lussi,Curation- contractor,P2GO, AI-generated | Google DeepMind
 ° UniProt (EBI),Rizwan Ishtiaq @rizwan-ishtiaq,QuickGO java backend,QuickGO backend,,
 ° UniProt (PIR),,Kati Laiho @laihokati,Curation,P2GO,
 ° UniProt (Swiss-Prot/Geneva),,Lucila Aimo @aimol,Curation,P2GO,lipid metabolism
