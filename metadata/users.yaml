@@ -18,6 +18,8 @@
   accounts:
     github: thomaspd
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -50,6 +52,9 @@
     google-plus: '112360324542574840929'
     orcid: 0000-0001-8244-1536
   authorizations:
+    go-ai-hub:
+      allow-admin: true
+      allow-login: true
     noctua:
       go:
         allow-admin: true
@@ -251,6 +256,9 @@
   accounts:
     github: pgaudet
   authorizations:
+    go-ai-hub:
+      allow-admin: true
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -325,6 +333,8 @@
   accounts:
     github: hattrill
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -634,6 +644,8 @@
   accounts:
     github: LiNiMGI
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -746,6 +758,8 @@
   accounts:
     github: ValWood
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -900,6 +914,9 @@
   accounts:
     github: cmungall
   authorizations:
+    go-ai-hub:
+      allow-admin: true
+      allow-login: true
     noctua:
       go:
         allow-admin: true
@@ -999,6 +1016,8 @@
   accounts:
     github: edwong57
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -1088,6 +1107,8 @@
   accounts:
     github: robnash
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -1432,6 +1453,8 @@
   accounts:
     github: marcfeuermann
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -1480,6 +1503,8 @@
   accounts:
     github: pmasson55
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -1522,6 +1547,8 @@
   accounts:
     github: sylvainpoux
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -1575,6 +1602,8 @@
   accounts:
     github: Argoudpuy
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -1629,6 +1658,9 @@
   accounts:
     github: vanaukenk
   authorizations:
+    go-ai-hub:
+      allow-admin: true
+      allow-login: true
     noctua:
       go:
         allow-admin: true
@@ -1768,6 +1800,8 @@
   accounts:
     github: lbreuza
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -2228,6 +2262,8 @@
   accounts:
     github: jobberkhout
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -2464,6 +2500,8 @@
   accounts:
     github: raymond91125
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -3515,6 +3553,8 @@
   accounts:
     github: ccasalsc
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -3527,6 +3567,8 @@
   accounts:
     github: colinlog
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -3765,6 +3807,8 @@
   accounts:
     github: sjm41
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -3778,6 +3822,8 @@
   accounts:
     github: LucillePo
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -3790,6 +3836,8 @@
   accounts:
     github: PCarme
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -3905,6 +3953,8 @@
   accounts:
     github: Vitalina-Kha
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -3917,6 +3967,8 @@
   accounts:
     github: nadgruaz
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -3929,6 +3981,8 @@
   accounts:
     github: MariaLivia
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true

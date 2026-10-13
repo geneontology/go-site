@@ -92,6 +92,19 @@ sequence:
                   "group":
                     type: str
                     required: false
+          ## GO AI Hub (geneontology/go-jupyter): allow-login admits the person to
+          ## the hub and lets them submit to geneontology/go-cam-drop-box;
+          ## allow-admin marks the drop box's reviewers.
+          "go-ai-hub":
+            type: map
+            required: false
+            mapping:
+              "allow-login":
+                type: bool
+                required: true
+              "allow-admin":
+                type: bool
+                required: false
 
       "comment":
         type: str

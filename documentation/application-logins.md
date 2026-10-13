@@ -44,6 +44,12 @@ following stanzas:
   * <b>noctua</b>
     * <b>go</b>
       * <b>allow-edit</b> for logins to the GO instance of Noctua
+  * <b>go-ai-hub</b> for the GO AI Hub (geneontology/go-jupyter) and the
+    go-cam-drop-box
+    * <b>allow-login</b> admits the person to the hub (GitHub sign-in, matched
+      on <b>accounts.github</b>) and lets them submit models to
+      geneontology/go-cam-drop-box
+    * <b>allow-admin</b> marks a reviewer of go-cam-drop-box submissions
 * <b>accounts</b> to register various login accounts to external sites
   * <b>github</b> should be included here, with your GitHub username as the value
 
