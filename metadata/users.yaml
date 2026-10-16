@@ -2576,7 +2576,7 @@
     github: suzialeksander
   authorizations:
     go-ai-hub:
-	    allow-login: true
+        allow-login: true
     noctua:
       go:
         allow-admin: true
