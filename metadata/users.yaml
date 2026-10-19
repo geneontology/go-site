@@ -4037,7 +4037,7 @@
     noctua:
       go:
         allow-edit: true
-    sab:
+    sabe:
       - role: edit
         scope: group
         group: 'http://geneontology.org'
