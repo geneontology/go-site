@@ -2276,6 +2276,8 @@
   accounts:
     github: balhoff
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
