@@ -1689,3 +1689,13 @@ organisms:
     group: UniProt
     uniprot_proteome_id: uniprot.proteome:UP000009183
     mod_id_space: UniProtKB
+  - taxon_id: NCBITaxon:272624
+    taxonomic_group: NCBITaxon:2
+    full_name: Legionella pneumophila subsp. pneumophila
+    common_name_goc: Legionella
+    common_name_uniprot:
+    code_uniprot: LEGPH
+    code_goc:
+    group: UniProt
+    uniprot_proteome_id: uniprot.proteome:UP000000609
+    mod_id_space: UniProtKB
