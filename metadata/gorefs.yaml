@@ -1894,6 +1894,7 @@
   external_accession:
     - FB:FBrf0253064
     - SGD_REF:S000246363
+    - ZFIN: ZDB-PUB-261021-9
   year: 2018
 - id: GO_REF:0000116
   title: Automatic Gene Ontology annotation based on Rhea mapping
