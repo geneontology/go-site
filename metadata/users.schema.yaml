@@ -74,8 +74,8 @@ sequence:
                       - type: str
               "monarch": *noctua_auth_template
               "open": *noctua_auth_template
-          # Standard Annotation Backend (SAB)
-          "sab":
+          # Standard Annotation Backend (SABE)
+          "sabe":
             type: seq
             required: false
             sequence:

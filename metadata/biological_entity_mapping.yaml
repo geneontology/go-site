@@ -216,7 +216,7 @@ mapping:
     to_id: SO:0000252
     to_label: rRNA
   - from_id: SO:0000370    
-  - from_label: small_regulatory_ncRNA
+    from_label: small_regulatory_ncRNA
     to_id: SO:0000655
     to_label: ncRNA 
   - from_id: SO:0000653

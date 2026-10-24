@@ -2276,6 +2276,8 @@
   accounts:
     github: balhoff
   authorizations:
+    go-ai-hub:
+      allow-login: true
     noctua:
       go:
         allow-edit: true
@@ -2575,6 +2577,8 @@
   accounts:
     github: suzialeksander
   authorizations:
+    go-ai-hub:
+        allow-login: true
     noctua:
       go:
         allow-admin: true
@@ -4035,7 +4039,7 @@
     noctua:
       go:
         allow-edit: true
-    sab:
+    sabe:
       - role: edit
         scope: group
         group: 'http://geneontology.org'
