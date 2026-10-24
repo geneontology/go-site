@@ -17,7 +17,9 @@ my ($dir) = @ARGV;
 my $full_glob = $dir . '/' . '*.gpad';
 
 ## Print header.
-print STDOUT "!gpa-version: 1.2\n";
+print STDOUT "!gpad-version: 2.0\n";
+print STDOUT "!generated-by: GO_Noctua\n";
+print STDOUT "!date-generated: $today\n";
 print STDOUT "!collation date: $today\n";
 
 ## Spray them out.
@@ -39,8 +41,8 @@ exit 0;
 sub write_line_to_file {
   my ($line) = @_;
 
-  my @colvals = split(/\t/);
-  my @props = [];
+  my @colvals = split(/\t/, $line);
+  my @props = ();
   if( $colvals[11] ){
     @props = split(/\|/, $colvals[11]);
   }
