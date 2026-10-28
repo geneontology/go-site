@@ -20,7 +20,6 @@ my $full_glob = $dir . '/' . '*.gpad';
 print STDOUT "!gpad-version: 2.0\n";
 print STDOUT "!generated-by: GO_Noctua\n";
 print STDOUT "!date-generated: $today\n";
-print STDOUT "!collation date: $today\n";
 
 ## Spray them out.
 while (my $curr_model = glob($full_glob)) {
