@@ -93,7 +93,6 @@ sub write_line_to_file {
     print $fh "!gpad-version: 2.0\n";
     print $fh "!generated-by: GO_Noctua\n";
     print $fh "!date-generated: $today\n";
-    print $fh "!collation date: $today\n";
     print $fh "!collated from production models in https://github.com/geneontology/noctua-models/ where the col1 CURIE prefix matches $base; special rules for MGI (https://github.com/geneontology/pipeline/issues/313)\n";
 
     $fhmap{$base} = $fh;
