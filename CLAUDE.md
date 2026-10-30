@@ -107,14 +107,12 @@ Look at neighboring records before adding a new one.
 ## Posting under the user's identity (important)
 
 This is a `geneontology/*` (work-context) repo. Anything posted via `gh`
-(issue/PR comments, reviews, **and fresh issue/PR bodies**) surfaces under the
-user's name. Append an agency-disclosure trailer, e.g.:
-
-> _— Posted by Claude Code agent on behalf of @kltm._
-
-Does **not** apply to commit messages (already attributed via `Co-Authored-By`),
-issue/PR titles, or files committed to the repo. Confirm before posting anything
-third parties will read.
+(issue/PR comments, reviews, and fresh issue/PR bodies) surfaces under the
+user's name and carries the fixed disclosure markers defined in the user's
+global `~/.claude/CLAUDE.md`, section "Disclose agency": the `[bot] ` title
+prefix, the `[bot] … on behalf of @kltm.` lead line, and the matching italic
+trailer. That section is the only source for the wording; do not paraphrase it
+here. Confirm before posting anything third parties will read.
 
 ## Gotchas
 
