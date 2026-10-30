@@ -459,7 +459,7 @@
   xref: 'GOC:aruk'
 -
   accounts:
-    github: zebrafishembryo
+    github: AliceDashow
   groups:
     - 'http://geneontology.org'
   previous-groups:
@@ -3881,6 +3881,18 @@
   nickname: 'Lina Ma'
   organization: LncRNAWiki
   uri: 'https://orcid.org/0000-0001-6390-6289'
+-
+  accounts:
+    github: lfore12
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true
+  groups:
+    - 'https://ngdc.cncb.ac.cn/lncrnawiki'
+  nickname: 'Yuxi Liu'
+  organization: LncRNAWiki
+  uri: 'https://orcid.org/0009-0000-4452-439X'  
 -
   accounts:
     github: wmm1103
