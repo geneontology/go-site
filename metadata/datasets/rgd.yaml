@@ -33,7 +33,7 @@ datasets:
    compression: gzip
    source: https://github.com/rat-genome-database/rgd-annotation-files/raw/master/rgd.gpi.gz
    entity_type:
-   status: inactive
+   status: active
    species_code: Rnor
    taxa:
     - NCBITaxon:10116
