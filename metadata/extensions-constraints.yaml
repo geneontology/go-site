@@ -1,4 +1,58 @@
+# Annotation extension constraints
+#
+# Each entry is a set of conditions that an extension unit in an annotation
+# can satisfy: the GO term being annotated, the relation, the namespace of
+# the filler, and optionally how many such units may appear together. An
+# extension unit is valid if it satisfies all the conditions of at least
+# one entry.
+#
+# This file is the basis for GORULE:0000058.
+#
+# Fields:
+#
+#   relation           Extension relation as a GAF-style label (spaces
+#                      replaced with underscores), e.g. occurs_in. Used by
+#                      consumers that identify relations by label, such as
+#                      ontobio.
+#
+#   relation_id        Optional. CURIE of the same relation (RO, BFO, or
+#                      GOREL), e.g. BFO:0000066 for occurs_in. Used by
+#                      consumers that identify relations by ID, such as the
+#                      Standard Annotation Backend. It always denotes the
+#                      same relation as `relation`; it is not an
+#                      additional condition.
+#
+#                      An entry has no relation_id when its relation has no
+#                      current, non-obsolete RO/BFO/GOREL term with a clear
+#                      one-to-one correspondence. Specifically:
+#                        - the relation is obsolete in RO/GOREL with no
+#                          replacement: has_regulation_target,
+#                          in_presence_of, not_occurs_in, occurs_at,
+#                          regulates_transcription_of,
+#                          regulates_o_acts_on_population_of
+#                        - the relation is obsolete and its replacement
+#                          does not have the same meaning: has_agent
+#                          (RO:0002218, replaced by RO:0002500 "causal
+#                          agent in process", which has the inverse
+#                          direction), regulates_activity_of (GOREL:0098702;
+#                          RO:0011002 relates two material entities, not a
+#                          GO term to a gene product)
+#                      Consumers matching by ID should skip entries without
+#                      relation_id.
+#
+#   namespaces         Allowed ID prefixes for the extension filler (the ID
+#                      inside the parentheses), e.g. UniProtKB, CL, GO.
+#
+#   primary_root_terms GO terms the annotated term must be equal to or a
+#                      subclass (is_a) descendant of.
+#
+#   cardinality        Optional. Maximum number of times an extension with
+#                      this relation and filler namespace may occur within
+#                      a single conjunction (comma-separated group). No
+#                      limit if absent.
+#
 - relation: occurs_in
+  relation_id: BFO:0000066
   namespaces:
     - GO
     - CL
@@ -10,6 +64,7 @@
     - GO:0008150
   cardinality: 1
 - relation: has_input
+  relation_id: RO:0002233
   namespaces:
     - MGI
     - WB
@@ -25,6 +80,7 @@
     - GO:0003674
     - GO:0008150
 - relation: has_direct_input
+  relation_id: RO:0002400
   namespaces:
     - MGI
     - WB
@@ -40,6 +96,7 @@
     - GO:0003674
     - GO:0008150
 - relation: part_of
+  relation_id: BFO:0000050
   namespaces:
     - GO
     - GO
@@ -48,6 +105,7 @@
     - GO:0008150
   cardinality: 1
 - relation: has_part
+  relation_id: BFO:0000051
   namespaces:
     - MGI
     - WB
@@ -68,6 +126,7 @@
     - GO:0008150
   cardinality: 1
 - relation: happens_during
+  relation_id: RO:0002092
   namespaces:
     - GO
     - WBls
@@ -76,18 +135,21 @@
     - GO:0008150
   cardinality: 1
 - relation: activated_by
+  relation_id: GOREL:0000507
   namespaces:
     - CHEBI
   primary_root_terms:
     - GO:0003674
   cardinality: 1
 - relation: inhibited_by
+  relation_id: GOREL:0000508
   namespaces:
     - CHEBI
   primary_root_terms:
     - GO:0003674
   cardinality: 1
 - relation: part_of
+  relation_id: BFO:0000050
   namespaces:
     - GO
     - CL
@@ -98,6 +160,7 @@
     - GO:0005575
   cardinality: 1
 - relation: has_participant
+  relation_id: RO:0000057
   namespaces:
     - EMAPA
     - UBERON
@@ -106,6 +169,7 @@
   primary_root_terms:
     - GO:0008150
 - relation: has_participant
+  relation_id: RO:0000057
   namespaces:
     - CL
     - WBbt
@@ -118,6 +182,7 @@
     - GO:0008150
     - GO:0003674
 - relation: results_in_development_of
+  relation_id: RO:0002296
   namespaces:
     - EMAPA
     - UBERON
@@ -125,6 +190,7 @@
   primary_root_terms:
     - GO:0048856
 - relation: results_in_development_of
+  relation_id: RO:0002296
   namespaces:
     - CL
     - WBbt
@@ -141,6 +207,7 @@
   primary_root_terms:
     - GO:0008150
 - relation: regulates_o_occurs_in
+  relation_id: GOREL:0001004
   namespaces:
     - EMAPA
     - UBERON
@@ -149,16 +216,19 @@
   primary_root_terms:
     - GO:0008150
 - relation: regulates_o_occurs_in
+  relation_id: GOREL:0001004
   namespaces:
     - CL
   primary_root_terms:
     - GO:0003674
 - relation: regulates_o_results_in_division_of
+  relation_id: GOREL:0001024
   namespaces:
     - CL
   primary_root_terms:
     - GO:0050789
 - relation: regulates_o_transports_or_maintains_localization_of
+  relation_id: GOREL:0000038
   namespaces:
     - MGI
     - WB
@@ -167,13 +237,8 @@
     - PR
   primary_root_terms:
     - GO:0050789
-- relation: results_in_acquisition_of_feature_of
-  namespaces:
-    - CL
-    - WBbt
-  primary_root_terms:
-    - GO:0030154
 - relation: has_output_o_axis_of
+  relation_id: GOREL:0001002
   namespaces:
     - EMAPA
     - UBERON
@@ -181,6 +246,7 @@
   primary_root_terms:
     - GO:0007389
 - relation: has_output_o_axis_of
+  relation_id: GOREL:0001002
   namespaces:
     - CL
     - WBbt
@@ -208,18 +274,21 @@
   primary_root_terms:
     - GO:1903429
 - relation: regulates_o_results_in_acquisition_of_features_of
+  relation_id: GOREL:0001010
   namespaces:
     - CL
     - WBbt
   primary_root_terms:
     - GO:0045595
 - relation: results_in_acquisition_of_features_of
+  relation_id: RO:0002315
   namespaces:
     - CL
     - WBbt
   primary_root_terms:
     - GO:0030154
 - relation: regulates_o_has_participant
+  relation_id: GOREL:0001016
   namespaces:
     - EMAPA
     - UBERON
@@ -234,6 +303,7 @@
   primary_root_terms:
     - GO:0008150
 - relation: results_in_formation_of
+  relation_id: RO:0002297
   namespaces:
     - EMAPA
     - UBERON
@@ -241,12 +311,14 @@
   primary_root_terms:
     - GO:0048646
 - relation: regulates_o_has_agent
+  relation_id: GOREL:0001011
   namespaces:
     - CL
     - WBbt
   primary_root_terms:
     - GO:0008150
 - relation: regulates_o_has_agent
+  relation_id: GOREL:0001011
   namespaces:
     - MGI
     - WB
@@ -257,6 +329,7 @@
     - GO:0060284
     - GO:0003674
 - relation: acts_on_population_of
+  relation_id: RO:0012003
   namespaces:
     - CL
     - WBbt
@@ -265,6 +338,7 @@
     - GO:0098727
     - GO:0048872
 - relation: acts_on_population_of
+  relation_id: RO:0012003
   namespaces:
     - EMAPA
     - UBERON
@@ -272,12 +346,14 @@
   primary_root_terms:
     - GO:0008150
 - relation: results_in_movement_of
+  relation_id: RO:0002565
   namespaces:
     - CL
     - WBbt
   primary_root_terms:
     - GO:0040011
 - relation: results_in_movement_of
+  relation_id: RO:0002565
   namespaces:
     - MGI
     - WB
@@ -287,6 +363,7 @@
   primary_root_terms:
     - GO:0008150
 - relation: transports_or_maintains_localization_of
+  relation_id: RO:0002313
   namespaces:
     - MGI
     - WB
@@ -298,6 +375,7 @@
   primary_root_terms:
     - GO:0008150
 - relation: regulates_o_results_in_movement_of
+  relation_id: GOREL:0001005
   namespaces:
     - CL
     - WBbt
@@ -305,6 +383,7 @@
     - GO:0030334
     - GO:0050789
 - relation: regulates_o_results_in_movement_of
+  relation_id: GOREL:0001005
   namespaces:
     - MGI
     - WB
@@ -317,6 +396,7 @@
   primary_root_terms:
     - GO:0008150
 - relation: results_in_morphogenesis_of
+  relation_id: RO:0002298
   namespaces:
     - EMAPA
     - UBERON
@@ -324,12 +404,14 @@
   primary_root_terms:
     - GO:0009653
 - relation: results_in_morphogenesis_of
+  relation_id: RO:0002298
   namespaces:
     - CL
     - WBbt
   primary_root_terms:
     - GO:0000902
 - relation: regulates_o_results_in_development_of
+  relation_id: GOREL:0001023
   namespaces:
     - EMAPA
     - UBERON
@@ -337,12 +419,14 @@
   primary_root_terms:
     - GO:0050793
 - relation: regulates_o_results_in_development_of
+  relation_id: GOREL:0001023
   namespaces:
     - CL
     - WBbt
   primary_root_terms:
     - GO:0060284
 - relation: regulates_o_has_output
+  relation_id: GOREL:0001003
   namespaces:
     - MGI
     - WB
@@ -354,12 +438,14 @@
   primary_root_terms:
     - GO:0008150
 - relation: results_in_maturation_of
+  relation_id: RO:0002299
   namespaces:
     - CL
     - WBbt
   primary_root_terms:
     - GO:0048469
 - relation: results_in_maturation_of
+  relation_id: RO:0002299
   namespaces:
     - EMAPA
     - UBERON
@@ -367,6 +453,7 @@
   primary_root_terms:
     - GO:0071695
 - relation: regulates_o_results_in_formation_of
+  relation_id: GOREL:0001025
   namespaces:
     - EMAPA
     - UBERON
@@ -374,6 +461,7 @@
   primary_root_terms:
     - GO:0022603
 - relation: adjacent_to
+  relation_id: RO:0002220
   namespaces:
     - CL
     - WBbt
@@ -382,12 +470,14 @@
     - GO:0005615
     - GO:0031012
 - relation: exists_during
+  relation_id: GOREL:0000032
   namespaces:
     - GO
     - WBls
   primary_root_terms:
     - GO:0005575
 - relation: results_in_commitment_to
+  relation_id: RO:0002348
   namespaces:
     - CL
     - WBbt
@@ -403,6 +493,7 @@
   primary_root_terms:
     - GO:1903506
 - relation: regulates_o_has_input
+  relation_id: GOREL:0001030
   namespaces:
     - MGI
     - WB
@@ -413,6 +504,7 @@
     - GO:0008150
     - GO:0003674
 - relation: regulates_o_has_input
+  relation_id: GOREL:0001030
   namespaces:
     - CL
     - WBbt
@@ -427,6 +519,7 @@
   primary_root_terms:
     - GO:0008150
 - relation: part_of
+  relation_id: BFO:0000050
   namespaces:
     - MGI
     - WB
@@ -437,12 +530,14 @@
   primary_root_terms:
     - GO:0008150
 - relation: part_of
+  relation_id: BFO:0000050
   namespaces:
     - CL
     - WBbt
   primary_root_terms:
     - GO:0010453
 - relation: part_of
+  relation_id: BFO:0000050
   namespaces:
     - EMAPA
     - UBERON
@@ -451,12 +546,14 @@
     - GO:0008150
     - GO:0003674
 - relation: results_in_specification_of
+  relation_id: RO:0002356
   namespaces:
     - CL
     - WBbt
   primary_root_terms:
     - GO:0001708
 - relation: negatively_regulates
+  relation_id: RO:0002212
   namespaces:
     - MGI
     - WB
@@ -467,26 +564,31 @@
     - GO:0008150
     - GO:0003674
 - relation: negatively_regulates
+  relation_id: RO:0002212
   namespaces:
     - GO
   primary_root_terms:
     - GO:0008150
 - relation: negatively_regulates
+  relation_id: RO:0002212
   namespaces:
     - GO
   primary_root_terms:
     - GO:0005488
 - relation: regulates
+  relation_id: RO:0002211
   namespaces:
     - GO
   primary_root_terms:
     - GO:0008150
 - relation: regulates
+  relation_id: RO:0002211
   namespaces:
     - GO
   primary_root_terms:
     - GO:0003674
 - relation: regulates_o_results_in_morphogenesis_of
+  relation_id: GOREL:0001026
   namespaces:
     - EMAPA
     - UBERON
@@ -494,12 +596,14 @@
   primary_root_terms:
     - GO:0022603
 - relation: regulates_o_results_in_morphogenesis_of
+  relation_id: GOREL:0001026
   namespaces:
     - CL
     - WBbt
   primary_root_terms:
     - GO:0022604
 - relation: happens_during
+  relation_id: RO:0002092
   namespaces:
     - GO
     - WBls
@@ -525,12 +629,14 @@
   primary_root_terms:
     - GO:0003674
 - relation: results_in_determination_of
+  relation_id: RO:0002349
   namespaces:
     - CL
     - WBbt
   primary_root_terms:
     - GO:0008150
 - relation: gene_product_of
+  relation_id: RO:0002204
   namespaces:
     - MGI
     - WB
@@ -540,6 +646,7 @@
   primary_root_terms:
     - GO:0008150
 - relation: has_output_o_product_of
+  relation_id: GOREL:0001029
   namespaces:
     - MGI
     - WB
@@ -549,12 +656,14 @@
   primary_root_terms:
     - GO:0008150
 - relation: results_in_division_of
+  relation_id: GOREL:0001019
   namespaces:
     - CL
     - WBbt
   primary_root_terms:
     - GO:0051301
 - relation: has_output
+  relation_id: RO:0002234
   namespaces:
     - PR
     - EMAPA
@@ -564,6 +673,7 @@
   primary_root_terms:
     - GO:0008150
 - relation: has_output
+  relation_id: RO:0002234
   namespaces:
     - MGI
     - WB
@@ -574,24 +684,28 @@
     - GO:0008150
     - GO:0003674
 - relation: regulates_o_results_in_specification_of
+  relation_id: GOREL:0001027
   namespaces:
     - CL
     - WBbt
   primary_root_terms:
     - GO:0042659
 - relation: regulates_o_results_in_commitment_to
+  relation_id: GOREL:0001022
   namespaces:
     - CL
     - WBbt
   primary_root_terms:
     - GO:0010453
 - relation: occurs_in
+  relation_id: BFO:0000066
   namespaces:
     - CL
     - WBbt
   primary_root_terms:
     - GO:0010453
 - relation: occurs_in
+  relation_id: BFO:0000066
   namespaces:
     - MGI
     - WB
@@ -614,6 +728,7 @@
     - GO:0003674
     - GO:0065009
 - relation: enabled_by
+  relation_id: RO:0002333
   namespaces:
     - MGI
     - WB
@@ -624,6 +739,7 @@
     - GO:0008150
     - GO:0003674
 - relation: has_target_end_location
+  relation_id: RO:0002339
   namespaces:
     - MGI
     - WB
@@ -634,6 +750,7 @@
   primary_root_terms:
     - GO:0008150
 - relation: positively_regulates
+  relation_id: RO:0002213
   namespaces:
     - MGI
     - WB
@@ -644,16 +761,19 @@
     - GO:0008150
     - GO:0003674
 - relation: positively_regulates
+  relation_id: RO:0002213
   namespaces:
     - GO
   primary_root_terms:
     - GO:0008150
 - relation: positively_regulates
+  relation_id: RO:0002213
   namespaces:
     - GO
   primary_root_terms:
     - GO:0005488
 - relation: regulates_level_of
+  relation_id: RO:0002332
   namespaces:
     - MGI
     - WB
@@ -663,6 +783,7 @@
   primary_root_terms:
     - GO:0008150
 - relation: regulates_level_of
+  relation_id: RO:0002332
   namespaces:
     - CHEBI
   primary_root_terms:
@@ -682,22 +803,26 @@
   primary_root_terms:
     - GO:0003674
 - relation: activated_by
+  relation_id: GOREL:0000507
   namespaces:
     - CHEBI
   primary_root_terms:
     - GO:0008150
 - relation: during
+  relation_id: GOREL:0000002
   namespaces:
     - GO
   primary_root_terms:
     - GO:0008150
 - relation: regulates_o_results_in_maturation_of
+  relation_id: GOREL:0001012
   namespaces:
     - CL
     - WBbt
   primary_root_terms:
     - GO:1903429
 - relation: imports
+  relation_id: RO:0002340
   namespaces:
     - GO
     - CHEBI
@@ -711,6 +836,7 @@
   primary_root_terms:
     - GO:0006810
 - relation: causally_upstream_of
+  relation_id: RO:0002411
   namespaces:
     - GO
     - GO
@@ -718,6 +844,7 @@
     - GO:0008150
     - GO:0003674
 - relation: causally_upstream_of_negative_effect
+  relation_id: RO:0002305
   namespaces:
     - GO
     - GO
@@ -725,6 +852,7 @@
     - GO:0008150
     - GO:0003674
 - relation: causally_upstream_of_positive_effect
+  relation_id: RO:0002304
   namespaces:
     - GO
     - GO
@@ -732,21 +860,25 @@
     - GO:0008150
     - GO:0003674
 - relation: causally_upstream_of_or_within
+  relation_id: RO:0002418
   namespaces:
     - GO
   primary_root_terms:
     - GO:0003674
 - relation: causally_upstream_of_or_within_negative_effect
+  relation_id: RO:0004046
   namespaces:
     - GO
   primary_root_terms:
     - GO:0003674
 - relation: causally_upstream_of_or_within_positive_effect
+  relation_id: RO:0004047
   namespaces:
     - GO
   primary_root_terms:
     - GO:0003674
 - relation: overlaps
+  relation_id: RO:0002131
   namespaces:
     - CL
     - EMAPA

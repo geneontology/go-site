@@ -5,6 +5,10 @@ sequence:
       "relation":
         type: str
         required: true
+      "relation_id":
+        type: str
+        required: false
+        pattern: /^(RO|BFO|GOREL):[0-9]{7}$/
       "namespaces":
         type: seq
         required: true
