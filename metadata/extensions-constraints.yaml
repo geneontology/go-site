@@ -392,7 +392,7 @@
     - FBbt
   primary_root_terms:
     - GO:0045595
-- relation: results_in_acquisition_of_features_of
+- relation: results_in_acquisition_of_feature_of
   relation_id: RO:0002315
   namespaces:
     - CL
