@@ -59,6 +59,9 @@
     - UBERON
     - EMAPA
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0003674
     - GO:0008150
@@ -76,6 +79,9 @@
     - CL
     - GO
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0003674
     - GO:0008150
@@ -92,6 +98,9 @@
     - CL
     - GO
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0003674
     - GO:0008150
@@ -156,6 +165,9 @@
     - UBERON
     - EMAPA
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0005575
   cardinality: 1
@@ -165,6 +177,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
     - CHEBI
   primary_root_terms:
     - GO:0008150
@@ -173,6 +188,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
     - MGI
     - WB
     - PR
@@ -187,6 +205,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0048856
 - relation: results_in_development_of
@@ -194,6 +215,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0048468
 - relation: has_regulation_target
@@ -212,6 +236,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
     - CL
   primary_root_terms:
     - GO:0008150
@@ -243,6 +270,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0007389
 - relation: has_output_o_axis_of
@@ -250,6 +280,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0008150
 - relation: regulates_o_acts_on_population_of
@@ -264,6 +297,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0008283
 - relation: regulates_o_acts_on_population_of
@@ -271,6 +307,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:1903429
 - relation: regulates_o_results_in_acquisition_of_features_of
@@ -278,6 +317,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0045595
 - relation: results_in_acquisition_of_features_of
@@ -285,6 +327,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0030154
 - relation: regulates_o_has_participant
@@ -293,6 +338,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
     - MGI
     - WB
     - PR
@@ -308,6 +356,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0048646
 - relation: regulates_o_has_agent
@@ -315,6 +366,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0008150
 - relation: regulates_o_has_agent
@@ -333,6 +387,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0008283
     - GO:0098727
@@ -343,6 +400,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0008150
 - relation: results_in_movement_of
@@ -350,6 +410,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0040011
 - relation: results_in_movement_of
@@ -379,6 +442,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0030334
     - GO:0050789
@@ -392,6 +458,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
     - PR
   primary_root_terms:
     - GO:0008150
@@ -401,6 +470,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0009653
 - relation: results_in_morphogenesis_of
@@ -408,6 +480,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0000902
 - relation: regulates_o_results_in_development_of
@@ -416,6 +491,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0050793
 - relation: regulates_o_results_in_development_of
@@ -423,6 +501,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0060284
 - relation: regulates_o_has_output
@@ -442,6 +523,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0048469
 - relation: results_in_maturation_of
@@ -450,6 +534,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0071695
 - relation: regulates_o_results_in_formation_of
@@ -458,6 +545,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0022603
 - relation: adjacent_to
@@ -465,6 +555,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0005576
     - GO:0005615
@@ -481,6 +574,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0045165
 - relation: regulates_transcription_of
@@ -508,6 +604,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
     - CHEBI
     - SO
   primary_root_terms:
@@ -516,6 +615,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0008150
 - relation: part_of
@@ -534,6 +636,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0010453
 - relation: part_of
@@ -542,6 +647,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0008150
     - GO:0003674
@@ -550,6 +658,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0001708
 - relation: negatively_regulates
@@ -593,6 +704,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0022603
 - relation: regulates_o_results_in_morphogenesis_of
@@ -600,6 +714,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0022604
 - relation: happens_during
@@ -614,6 +731,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
     - GO
     - CL
     - MGI
@@ -633,6 +753,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0008150
 - relation: gene_product_of
@@ -660,6 +783,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0051301
 - relation: has_output
@@ -669,6 +795,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
     - GO
   primary_root_terms:
     - GO:0008150
@@ -688,6 +817,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0042659
 - relation: regulates_o_results_in_commitment_to
@@ -695,6 +827,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0010453
 - relation: occurs_in
@@ -702,6 +837,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0010453
 - relation: occurs_in
@@ -714,6 +852,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
     - PR
   primary_root_terms:
     - GO:0008150
@@ -819,6 +960,9 @@
   namespaces:
     - CL
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:1903429
 - relation: imports
@@ -833,6 +977,9 @@
     - EMAPA
     - UBERON
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
   primary_root_terms:
     - GO:0006810
 - relation: causally_upstream_of
@@ -883,6 +1030,9 @@
     - CL
     - EMAPA
     - WBbt
+    - ZFA
+    - XAO
+    - FBbt
     - UBERON
   primary_root_terms:
     - GO:0005575
