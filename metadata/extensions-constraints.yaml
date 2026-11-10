@@ -73,6 +73,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - CHEBI
     - PR
     - SO
@@ -92,6 +102,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - CHEBI
     - PR
     - SO
@@ -120,6 +140,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:0032991
@@ -129,6 +159,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:0003674
@@ -195,6 +235,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:0008150
@@ -226,6 +276,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
     - SO
   primary_root_terms:
@@ -261,6 +321,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:0050789
@@ -345,6 +415,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - CL
     - CHEBI
     - PR
@@ -378,6 +458,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:0060284
@@ -422,6 +512,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:0008150
@@ -432,6 +532,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - CHEBI
     - GO
     - PR
@@ -455,6 +565,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - EMAPA
     - UBERON
     - WBbt
@@ -513,6 +633,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - GO
     - CHEBI
     - PR
@@ -585,6 +715,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:1903506
@@ -595,6 +735,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:0008150
@@ -627,6 +777,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - GO
     - PR
   primary_root_terms:
@@ -670,6 +830,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:0008150
@@ -740,6 +910,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:0008150
@@ -765,6 +945,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:0008150
@@ -775,6 +965,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:0008150
@@ -808,6 +1008,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:0008150
@@ -849,6 +1059,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - EMAPA
     - UBERON
     - WBbt
@@ -864,6 +1084,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:0003674
@@ -875,6 +1105,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:0008150
@@ -886,6 +1126,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - GO
     - PR
   primary_root_terms:
@@ -897,6 +1147,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:0008150
@@ -920,6 +1180,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:0008150
@@ -935,6 +1205,16 @@
     - WB
     - PR
     - UniProtKB
+    - SGD
+    - ZFIN
+    - RGD
+    - PomBase
+    - FB
+    - Xenbase
+    - AGI_LocusCode
+    - EcoCyc
+    - ComplexPortal
+    - RNAcentral
     - PR
   primary_root_terms:
     - GO:0008150
