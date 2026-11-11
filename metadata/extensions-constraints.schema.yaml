@@ -8,7 +8,7 @@ sequence:
       "relation_id":
         type: str
         required: false
-        pattern: /^(RO|BFO|GOREL):[0-9]{7}$/
+        pattern: /^(RO|BFO):[0-9]{7}$/
       "namespaces":
         type: seq
         required: true
