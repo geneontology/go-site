@@ -84,7 +84,7 @@ mapping:
     to_id: SO:0001463
     to_label: lincRNA 
   - from_id: SO:0002184
-    from_label: sense_intronic_ncRNA_gene
+    from_label: sense_intronic_lncRNA_gene
     to_id: SO:0001877
     to_label: lncRNA
   - from_id: SO:0001643
@@ -131,10 +131,6 @@ mapping:
     from_label: enzymatic_RNA
     to_id: SO:0000372
     to_label: enzymatic_RNA
-  - from_id: SO:0001269
-    from_label: SRP_RNA_gene
-    to_id: SO:0000655
-    to_label: ncRNA
   - from_id: SO:0001266
     from_label: scRNA_gene
     to_id: SO:0000655
@@ -185,10 +181,6 @@ mapping:
     to_label: rRNA
   - from_id: SO:0000650
     from_label: cytosolic_SSU_rRNA
-    to_id: SO:0000252
-    to_label: rRNA
-  - from_id: SO:0000252
-    from_label: rRNA
     to_id: SO:0000252
     to_label: rRNA
   - from_id: SO:0001244
@@ -263,7 +255,35 @@ mapping:
     from_label: siRNA
     to_id: SO:0000646
     to_label: siRNA
-  - from_id: SO_0002353
-    from_label: sbRNA
+  - from_id: SO:0002353
+    from_label: sbRNA_gene
+    to_id: SO:0000655
+    to_label: ncRNA
+  - from_id: SO:0002129
+    from_label: mt_tRNA
+    to_id: SO:0000253
+    to_label: tRNA
+  - from_id: SO:0002363
+    from_label: mt_rRNA_gene
+    to_id: SO:0000252
+    to_label: rRNA
+  - from_id: SO:0002185
+    from_label: bidirectional_promoter_lncRNA_gene
+    to_id: SO:0001877
+    to_label: lncRNA
+  - from_id: SO:0002342
+    from_label: sncRNA_gene
+    to_id: SO:0000655
+    to_label: ncRNA
+  - from_id: SO:0002359
+    from_label: Y_RNA_gene
+    to_id: SO:0000655
+    to_label: ncRNA
+  - from_id: SO:0000404
+    from_label: vault_RNA
+    to_id: SO:0000655
+    to_label: ncRNA
+  - from_id: SO:0002095
+    from_label: scaRNA
     to_id: SO:0000655
     to_label: ncRNA
