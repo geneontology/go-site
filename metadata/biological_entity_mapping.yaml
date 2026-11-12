@@ -259,6 +259,10 @@ mapping:
     from_label: sbRNA_gene
     to_id: SO:0000655
     to_label: ncRNA
+  - from_id: SO:0002354
+    from_label: sbRNA
+    to_id: SO:0000655
+    to_label: ncRNA
   - from_id: SO:0002129
     from_label: mt_tRNA
     to_id: SO:0000253
