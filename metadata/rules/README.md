@@ -181,7 +181,7 @@ This rule only applies to direct annotations to GO:0005515 and GO:0005488 (GAF c
 Annotations to descendant terms such as mitogen-activated protein kinase p38 binding ; GO:0048273 are allowed, since the GO term name contains 
 specific information describing the identity of the interactor.
 
-The following evidence codes (GAF column 7, GPAD column 6) are not allowed: IEA, ISS, ISM, ISO, ISA, IBA.
+The following evidence codes (GAF column 7, GPAD column 6) are not allowed: IEA, ISS, ISO, ISM, ISA, IBA, RCA.
 
 If we take an example annotation:
 
