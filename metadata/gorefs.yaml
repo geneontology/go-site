@@ -425,7 +425,7 @@
   is_obsolete: false
   year: 2011
 - id: GO_REF:0000025
-  title: DEPRECATED Operon structure as IGC evidence
+  title: OBSOLETE Operon structure as IGC evidence
   description: |-
     Genes in prokaryotic organisms are often arranged in operons. Genes in an operon
     are all transcribed into one mRNA. Generally the genes in the operons code for
@@ -491,7 +491,7 @@
   year: 2007
   is_obsolete: false
 - id: GO_REF:0000028
-  title: DEPRECATED Criteria for IDA, IEP, ISS, IGC, RCA, and IEA assignment in PAMGO_MGG
+  title: OBSOLETE Criteria for IDA, IEP, ISS, IGC, RCA, and IEA assignment in PAMGO_MGG
   description: |-
     This GO reference describes the criteria used in assigning the evidence codes
     of IDA (ECO:0000314), IEP (ECO:0000270), ISS (ECO:0000250), IGC (ECO_0000317),
