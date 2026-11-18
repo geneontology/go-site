@@ -8,6 +8,21 @@ funding_source: "National Institute of Child Health and Human Development, grant
 email_report: "malcolm.fisher@cchmc.org"
 datasets:
   -
+    id: xenbase_xtro.gaf
+    label: "Xenbase X. tropicalis gaf file"
+    description: "gaf file for X. tropicalis from Xenbase"
+    url: https://current.geneontology.org/annotations/xenbase_xtro.gaf.gz
+    type: gaf
+    dataset: xenbase_xtro
+    submitter: xenbase
+    compression: gzip
+    source: https://download.xenbase.org/xenbase/GenePageReports/GOBySpecies/xenbase.xtrop.only.gaf.gz
+    entity_type:
+    status: active
+    species_code: Xtro
+    taxa:
+      - NCBITaxon:8364
+  -
     id: xenbase_xtro.gpi
     label: "Xenbase X. tropicalis gpi file"
     description: "gpi file for X. tropicalis from Xenbase"
