@@ -460,6 +460,10 @@
 -
   accounts:
     github: AliceDashow
+  authorizations:
+    noctua:
+      go:
+        allow-edit: true    
   groups:
     - 'http://geneontology.org'
   previous-groups:
