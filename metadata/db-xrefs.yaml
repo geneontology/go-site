@@ -1100,7 +1100,7 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: https://ibeetle-base.uni-goettingen.de/details|[example_id]
+      url_syntax: https://ibeetle-base.uni-goettingen.de/details/[example_id]
       example_id: TC006055
       example_url: https://ibeetle-base.uni-goettingen.de/details/TC006055
 - database: IMG
@@ -1949,8 +1949,8 @@
   entity_types:
     - type_name: entity
       type_id: BET:0000000
-      url_syntax: http://purl.obolibrary.org/obo/
-      example_id: MI_0018
+      url_syntax: http://purl.obolibrary.org/obo/MI_[example_id]
+      example_id: MI:0018
       example_url: http://purl.obolibrary.org/obo/MI_0018
 - database: PSI-MOD
   name: Proteomics Standards Initiative protein modification ontology
